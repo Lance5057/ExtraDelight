@@ -16,5 +16,11 @@ public class ExtraDelight {
 
     public ExtraDelight() {
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    	
+    	ExtraDelightBlocks.BLOCKS.register(modEventBus);
+    	ExtraDelightItems.ITEMS.register(modEventBus);
+    	
+    	ExtraDelightBlockEntities.TILES.register(modEventBus);
+    	ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
     }
 }

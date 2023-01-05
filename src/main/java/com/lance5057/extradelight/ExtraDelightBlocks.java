@@ -1,10 +1,15 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.workstations.OvenBlock;
+
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ExtraDelightBlocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			ExtraDelight.MOD_ID);
+
+	public static final RegistryObject<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);
 }

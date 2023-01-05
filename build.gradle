@@ -109,9 +109,9 @@ sourceSets {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.73'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.2.0'
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-	implementation fg.deobf("curse.maven:farmersdelight-398521:3765351")
+	implementation fg.deobf("curse.maven:farmersdelight-398521:3999153")
    
     compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.7.0.193:api")
     runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.7.0.193")
