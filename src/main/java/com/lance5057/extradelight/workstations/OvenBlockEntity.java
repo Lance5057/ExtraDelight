@@ -1,17 +1,9 @@
 package com.lance5057.extradelight.workstations;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 import com.google.common.collect.Lists;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.workstations.inventory.OvenItemHandler;
 import com.lance5057.extradelight.workstations.recipes.OvenRecipe;
-
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.BlockPos;
@@ -23,6 +15,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Nameable;
 import net.minecraft.world.entity.ExperienceOrb;
@@ -37,8 +30,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
@@ -51,6 +44,11 @@ import vectorwing.farmersdelight.common.registry.ModParticleTypes;
 import vectorwing.farmersdelight.common.registry.ModRecipeTypes;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 import vectorwing.farmersdelight.common.utility.TextUtils;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Optional;
 
 public class OvenBlockEntity extends SyncedBlockEntity
 		implements MenuProvider, HeatableBlockEntity, Nameable, RecipeHolder {
@@ -223,7 +221,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 
 	public static void animationTick(Level level, BlockPos pos, BlockState state, OvenBlockEntity Oven) {
 		if (Oven.isHeated(level, pos)) {
-			Random random = level.random;
+			RandomSource random = level.random;
 			if (random.nextFloat() < 0.2F) {
 				double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.6D - 0.3D);
 				double y = (double) pos.getY() + 0.7D;
@@ -275,7 +273,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		if (!mealContainerStack.isEmpty()) {
 			return mealContainerStack;
 		} else {
-			return getMeal().getContainerItem();
+			return getMeal().getCraftingRemainingItem();
 		}
 	}
 
@@ -333,13 +331,19 @@ public class OvenBlockEntity extends SyncedBlockEntity
 
 		for (int i = 0; i < MEAL_DISPLAY_SLOT; ++i) {
 			ItemStack slotStack = inventory.getStackInSlot(i);
-			if (slotStack.hasContainerItem()) {
+			if (!slotStack.hasCraftingRemainingItem()) {
 				Direction direction = getBlockState().getValue(OvenBlock.FACING).getCounterClockWise();
 				double x = worldPosition.getX() + 0.5 + (direction.getStepX() * 0.25);
 				double y = worldPosition.getY() + 0.7;
 				double z = worldPosition.getZ() + 0.5 + (direction.getStepZ() * 0.25);
-				ItemUtils.spawnItemEntity(level, inventory.getStackInSlot(i).getContainerItem(), x, y, z,
-						direction.getStepX() * 0.08F, 0.25F, direction.getStepZ() * 0.08F);
+				ItemUtils.spawnItemEntity(level,
+						inventory.getStackInSlot(i).getCraftingRemainingItem(),
+						x,
+						y,
+						z,
+						direction.getStepX() * 0.08F,
+						0.25F,
+						direction.getStepZ() * 0.08F);
 			}
 			if (!slotStack.isEmpty())
 				slotStack.shrink(1);
@@ -456,7 +460,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 	}
 
 	private boolean doesMealHaveContainer(ItemStack meal) {
-		return !mealContainerStack.isEmpty() || meal.hasContainerItem();
+		return !mealContainerStack.isEmpty() || meal.hasCraftingRemainingItem();
 	}
 
 	public boolean isContainerValid(ItemStack containerItem) {
@@ -465,7 +469,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		if (!mealContainerStack.isEmpty()) {
 			return mealContainerStack.sameItem(containerItem);
 		} else {
-			return getMeal().getContainerItem().sameItem(containerItem);
+			return getMeal().getCraftingRemainingItem().sameItem(containerItem);
 		}
 	}
 
@@ -497,7 +501,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 	@Override
 	@Nonnull
 	public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
-		if (cap.equals(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)) {
+		if (cap.equals(ForgeCapabilities.ITEM_HANDLER)) {
 			if (side == null || side.equals(Direction.UP)) {
 				return inputHandler.cast();
 			} else {

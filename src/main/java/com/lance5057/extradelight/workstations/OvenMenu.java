@@ -1,23 +1,14 @@
 package com.lance5057.extradelight.workstations;
 
-import java.util.Objects;
-
 import com.lance5057.extradelight.workstations.slots.OvenMealSlot;
 import com.lance5057.extradelight.workstations.slots.OvenResultSlot;
 import com.mojang.datafixers.util.Pair;
-
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
-import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.InventoryMenu;
-import net.minecraft.world.inventory.RecipeBookMenu;
-import net.minecraft.world.inventory.RecipeBookType;
-import net.minecraft.world.inventory.SimpleContainerData;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
@@ -31,6 +22,8 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModMenuTypes;
+
+import java.util.Objects;
 
 public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = new ResourceLocation(FarmersDelight.MODID,
@@ -96,6 +89,7 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 	}
 
 	private static OvenBlockEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
+		// TODO This might be iffy?
 		Objects.requireNonNull(playerInventory, "playerInventory cannot be null");
 		Objects.requireNonNull(data, "data cannot be null");
 		final BlockEntity tileAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
