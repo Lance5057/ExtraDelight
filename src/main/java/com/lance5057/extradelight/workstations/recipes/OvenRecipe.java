@@ -186,9 +186,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
             int i = buffer.readVarInt();
             NonNullList<Ingredient> inputItemsIn = NonNullList.withSize(i, Ingredient.EMPTY);
 
-            for (int j = 0; j < inputItemsIn.size(); ++j) {
-                inputItemsIn.set(j, Ingredient.fromNetwork(buffer));
-            }
+            inputItemsIn.replaceAll(ignored -> Ingredient.fromNetwork(buffer));
 
             ItemStack outputIn = buffer.readItem();
             ItemStack container = buffer.readItem();
