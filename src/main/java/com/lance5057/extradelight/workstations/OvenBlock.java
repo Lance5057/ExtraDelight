@@ -1,6 +1,12 @@
 package com.lance5057.extradelight.workstations;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.state.OvenSupport;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -23,7 +29,11 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -45,21 +55,16 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.NetworkHooks;
-import vectorwing.farmersdelight.common.block.state.CookingPotSupport;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.MathUtils;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
-import javax.annotation.Nullable;
-import java.util.List;
-
 @SuppressWarnings("deprecation")
 public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-	public static final EnumProperty<CookingPotSupport> SUPPORT = EnumProperty.create("support",
-			CookingPotSupport.class);
+	public static final EnumProperty<OvenSupport> SUPPORT = EnumProperty.create("support", OvenSupport.class);
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D);
@@ -69,7 +74,7 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 	public OvenBlock() {
 		super(Properties.of(Material.METAL).strength(0.5F, 6.0F).sound(SoundType.LANTERN));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
-				.setValue(SUPPORT, CookingPotSupport.NONE).setValue(WATERLOGGED, false));
+				.setValue(SUPPORT, OvenSupport.NONE).setValue(WATERLOGGED, false));
 	}
 
 	@Override
@@ -79,8 +84,8 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 		if (heldStack.isEmpty() && player.isShiftKeyDown()) {
 			level.setBlockAndUpdate(pos,
 					state.setValue(SUPPORT,
-							state.getValue(SUPPORT).equals(CookingPotSupport.HANDLE) ? getTrayState(level, pos)
-									: CookingPotSupport.HANDLE));
+							state.getValue(SUPPORT).equals(OvenSupport.HANDLE) ? getTrayState(level, pos)
+									: OvenSupport.HANDLE));
 			level.playSound(null, pos, SoundEvents.LANTERN_PLACE, SoundSource.BLOCKS, 0.7F, 1.0F);
 		} else if (!level.isClientSide) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
@@ -112,7 +117,7 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 
 	@Override
 	public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		return state.getValue(SUPPORT).equals(CookingPotSupport.TRAY) ? SHAPE_WITH_TRAY : SHAPE;
+		return state.getValue(SUPPORT).equals(OvenSupport.TRAY) ? SHAPE_WITH_TRAY : SHAPE;
 	}
 
 	@Override
@@ -125,7 +130,7 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 				.setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
 
 		if (context.getClickedFace().equals(Direction.DOWN)) {
-			return state.setValue(SUPPORT, CookingPotSupport.HANDLE);
+			return state.setValue(SUPPORT, OvenSupport.HANDLE);
 		}
 		return state.setValue(SUPPORT, getTrayState(level, pos));
 	}
@@ -136,17 +141,17 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 		if (state.getValue(WATERLOGGED)) {
 			level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
 		}
-		if (facing.getAxis().equals(Direction.Axis.Y) && !state.getValue(SUPPORT).equals(CookingPotSupport.HANDLE)) {
+		if (facing.getAxis().equals(Direction.Axis.Y) && !state.getValue(SUPPORT).equals(OvenSupport.HANDLE)) {
 			return state.setValue(SUPPORT, getTrayState(level, currentPos));
 		}
 		return state;
 	}
 
-	private CookingPotSupport getTrayState(LevelAccessor level, BlockPos pos) {
+	private OvenSupport getTrayState(LevelAccessor level, BlockPos pos) {
 		if (level.getBlockState(pos.below()).is(ModTags.TRAY_HEAT_SOURCES)) {
-			return CookingPotSupport.TRAY;
+			return OvenSupport.TRAY;
 		}
-		return CookingPotSupport.NONE;
+		return OvenSupport.NONE;
 	}
 
 	@Override
@@ -189,13 +194,13 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 
 		if (!mealStack.isEmpty()) {
 			MutableComponent textServingsOf = mealStack.getCount() == 1
-					? TextUtils.getTranslation("tooltip.cooking_pot.single_serving")
-					: TextUtils.getTranslation("tooltip.cooking_pot.many_servings", mealStack.getCount());
+					? TextUtils.getTranslation("tooltip.oven.single_serving")
+					: TextUtils.getTranslation("tooltip.oven.many_servings", mealStack.getCount());
 			tooltip.add(textServingsOf.withStyle(ChatFormatting.GRAY));
 			MutableComponent textMealName = mealStack.getHoverName().copy();
 			tooltip.add(textMealName.withStyle(mealStack.getRarity().color));
 		} else {
-			MutableComponent textEmpty = TextUtils.getTranslation("tooltip.cooking_pot.empty");
+			MutableComponent textEmpty = TextUtils.getTranslation("tooltip.oven.empty");
 			tooltip.add(textEmpty.withStyle(ChatFormatting.GRAY));
 		}
 	}
@@ -219,7 +224,7 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
+	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
 		BlockEntity tileEntity = level.getBlockEntity(pos);
 		if (tileEntity instanceof OvenBlockEntity OvenEntity && OvenEntity.isHeated()) {
 			SoundEvent boilSound = !OvenEntity.getMeal().isEmpty() ? ModSounds.BLOCK_COOKING_POT_BOIL_SOUP.get()
@@ -227,8 +232,8 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 			double x = (double) pos.getX() + 0.5D;
 			double y = pos.getY();
 			double z = (double) pos.getZ() + 0.5D;
-			if (rand.nextInt(10) == 0) {
-				level.playLocalSound(x, y, z, boilSound, SoundSource.BLOCKS, 0.5F, rand.nextFloat() * 0.2F + 0.9F,
+			if (random.nextInt(10) == 0) {
+				level.playLocalSound(x, y, z, boilSound, SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.2F + 0.9F,
 						false);
 			}
 		}
@@ -257,7 +262,7 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return ModBlockEntityTypes.COOKING_POT.get().create(pos, state);
+		return ExtraDelightBlockEntities.OVEN.get().create(pos, state);
 	}
 
 	@Nullable

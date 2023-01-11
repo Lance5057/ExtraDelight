@@ -1,14 +1,27 @@
 package com.lance5057.extradelight.workstations;
 
+import java.util.Objects;
+
+import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightContainers;
+import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.workstations.slots.OvenMealSlot;
 import com.lance5057.extradelight.workstations.slots.OvenResultSlot;
 import com.mojang.datafixers.util.Pair;
+
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
-import net.minecraft.world.inventory.*;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.InventoryMenu;
+import net.minecraft.world.inventory.RecipeBookMenu;
+import net.minecraft.world.inventory.RecipeBookType;
+import net.minecraft.world.inventory.SimpleContainerData;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
@@ -19,14 +32,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
-import vectorwing.farmersdelight.FarmersDelight;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
-import vectorwing.farmersdelight.common.registry.ModMenuTypes;
-
-import java.util.Objects;
 
 public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
-	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = new ResourceLocation(FarmersDelight.MODID,
+	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = new ResourceLocation(ExtraDelight.MOD_ID,
 			"item/empty_container_slot_bowl");
 
 	public final OvenBlockEntity tileEntity;
@@ -37,7 +45,7 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 
 	public OvenMenu(final int windowId, final Inventory playerInventory, final OvenBlockEntity tileEntity,
 			ContainerData OvenDataIn) {
-		super(ModMenuTypes.COOKING_POT.get(), windowId);
+		super(ExtraDelightContainers.OVEN_MENU.get(), windowId);
 		this.tileEntity = tileEntity;
 		this.inventory = tileEntity.getInventory();
 		this.OvenData = OvenDataIn;
@@ -50,7 +58,7 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 		int inputStartX = 30;
 		int inputStartY = 17;
 		int borderSlotSize = 18;
-		for (int row = 0; row < 2; ++row) {
+		for (int row = 0; row < 3; ++row) {
 			for (int column = 0; column < 3; ++column) {
 				this.addSlot(new SlotItemHandler(inventory, (row * 3) + column, inputStartX + (column * borderSlotSize),
 						inputStartY + (row * borderSlotSize)));
@@ -58,10 +66,10 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 		}
 
 		// Meal Display
-		this.addSlot(new OvenMealSlot(inventory, 6, 124, 26));
+		this.addSlot(new OvenMealSlot(inventory, 9, 124, 26));
 
 		// Bowl Input
-		this.addSlot(new SlotItemHandler(inventory, 7, 92, 55) {
+		this.addSlot(new SlotItemHandler(inventory, 10, 92, 55) {
 			@OnlyIn(Dist.CLIENT)
 			public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
 				return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BOWL);
@@ -69,13 +77,13 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 		});
 
 		// Bowl Output
-		this.addSlot(new OvenResultSlot(playerInventory.player, tileEntity, inventory, 8, 124, 55));
+		this.addSlot(new OvenResultSlot(playerInventory.player, tileEntity, inventory, 11, 124, 55));
 
 		// Main Player Inventory
 		int startPlayerInvY = startY * 4 + 12;
 		for (int row = 0; row < 3; ++row) {
 			for (int column = 0; column < 9; ++column) {
-				this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, startX + (column * borderSlotSize),
+				this.addSlot(new Slot(playerInventory, 12 + (row * 9) + column, startX + (column * borderSlotSize),
 						startPlayerInvY + (row * borderSlotSize)));
 			}
 		}
@@ -89,7 +97,6 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 	}
 
 	private static OvenBlockEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
-		// TODO This might be iffy?
 		Objects.requireNonNull(playerInventory, "playerInventory cannot be null");
 		Objects.requireNonNull(data, "data cannot be null");
 		final BlockEntity tileAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
@@ -105,14 +112,14 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 
 	@Override
 	public boolean stillValid(Player playerIn) {
-		return stillValid(canInteractWithCallable, playerIn, ModBlocks.COOKING_POT.get());
+		return stillValid(canInteractWithCallable, playerIn, ExtraDelightBlocks.OVEN.get());
 	}
 
 	@Override
 	public ItemStack quickMoveStack(Player playerIn, int index) {
-		int indexMealDisplay = 6;
-		int indexContainerInput = 7;
-		int indexOutput = 8;
+		int indexMealDisplay = 9;
+		int indexContainerInput = 10;
+		int indexOutput = 11;
 		int startPlayerInv = indexOutput + 1;
 		int endPlayerInv = startPlayerInv + 36;
 		ItemStack itemstack = ItemStack.EMPTY;
@@ -173,7 +180,7 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 
 	@Override
 	public void clearCraftingContent() {
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 12; i++) {
 			this.inventory.setStackInSlot(i, ItemStack.EMPTY);
 		}
 	}
@@ -185,7 +192,7 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 
 	@Override
 	public int getResultSlotIndex() {
-		return 7;
+		return 11;
 	}
 
 	@Override
@@ -195,17 +202,17 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 
 	@Override
 	public int getGridHeight() {
-		return 2;
+		return 3;
 	}
 
 	@Override
 	public int getSize() {
-		return 7;
+		return 10;
 	}
 
 	@Override
 	public RecipeBookType getRecipeBookType() {
-		return FarmersDelight.RECIPE_TYPE_COOKING;
+		return ExtraDelightRecipes.RECIPE_TYPE_OVEN;
 	}
 
 	@Override

@@ -1,17 +1,16 @@
 package com.lance5057.extradelight.workstations.inventory;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-public class OvenItemHandler implements IItemHandler
-{
-	private static final int SLOTS_INPUT = 9;
-	private static final int SLOT_CONTAINER_INPUT = 10;
-	private static final int SLOT_MEAL_OUTPUT = 11;
+public class OvenItemHandler implements IItemHandler {
+	private static final int SLOTS_INPUT = 6;
+	private static final int SLOT_CONTAINER_INPUT = 7;
+	private static final int SLOT_MEAL_OUTPUT = 8;
 	private final IItemHandler itemHandler;
 	private final Direction side;
 
