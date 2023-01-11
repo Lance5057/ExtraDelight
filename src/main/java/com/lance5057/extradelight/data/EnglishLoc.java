@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 

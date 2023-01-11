@@ -29,7 +29,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17) // Mojang ships Java
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'parchment', version: '2022.08.07-1.18.2'
+    mappings channel: 'parchment', version: '2022.11.27-1.19.2'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
      accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -109,12 +109,11 @@ sourceSets {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.2.0'
+    minecraft 'net.minecraftforge:forge:1.19.2-43.2.3'
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-	implementation fg.deobf("curse.maven:farmersdelight-398521:3999153")
-   
-    compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.7.0.193:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.7.0.193")
+	implementation fg.deobf("curse.maven:farmersdelight-398521:3999157")
+
+    implementation fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
 }
 
 repositories {

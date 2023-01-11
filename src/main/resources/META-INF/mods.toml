@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[40,)"
+loaderVersion = "[43,)"
 license = "MIT"
 issueTrackerURL = "https://github.com/Lance5057/ExtraDelight/issues"
 
@@ -11,7 +11,7 @@ issueTrackerURL = "https://github.com/Lance5057/ExtraDelight/issues"
 	credits = "Alan199921, DivineAspect, Skysom, FreneticScribbler, Lanse505, Belathus, RoyalJelly"
 	authors = "Lance5057"
 
-[[dependencies.butchercraft]]
+[[dependencies.extradelight]]
     modId = "farmersdelight"
     mandatory = true
     versionRange = "[1.2.0,)"
