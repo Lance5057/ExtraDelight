@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "facing=north,support=none": {
+      "model": "extradelight:block/oven"
+    },
+    "facing=south,support=none": {
+      "model": "extradelight:block/oven",
+      "y": 180
+    },
+    "facing=west,support=none": {
+      "model": "extradelight:block/oven",
+      "y": 270
+    },
+    "facing=east,support=none": {
+      "model": "extradelight:block/oven",
+      "y": 90
+    },
+    "facing=north,support=tray": {
+      "model": "extradelight:block/oven_tray"
+    },
+    "facing=south,support=tray": {
+      "model": "extradelight:block/oven_tray",
+      "y": 180
+    },
+    "facing=west,support=tray": {
+      "model": "extradelight:block/oven_tray",
+      "y": 270
+    },
+    "facing=east,support=tray": {
+      "model": "extradelight:block/oven_tray",
+      "y": 90
+    },
+    "facing=north,support=handle": {
+      "model": "extradelight:block/oven_handle"
+    },
+    "facing=south,support=handle": {
+      "model": "extradelight:block/oven_handle",
+      "y": 180
+    },
+    "facing=west,support=handle": {
+      "model": "extradelight:block/oven_handle",
+      "y": 270
+    },
+    "facing=east,support=handle": {
+      "model": "extradelight:block/oven_handle",
+      "y": 90
+    }
+  }
+}

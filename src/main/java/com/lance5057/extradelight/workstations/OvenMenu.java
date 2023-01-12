@@ -32,9 +32,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
+import vectorwing.farmersdelight.FarmersDelight;
 
 public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
-	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = new ResourceLocation(ExtraDelight.MOD_ID,
+	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = new ResourceLocation(FarmersDelight.MODID,
 			"item/empty_container_slot_bowl");
 
 	public final OvenBlockEntity tileEntity;
@@ -66,10 +67,10 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 		}
 
 		// Meal Display
-		this.addSlot(new OvenMealSlot(inventory, 9, 124, 26));
+		this.addSlot(new OvenMealSlot(inventory, 9, 124, 26+10));
 
 		// Bowl Input
-		this.addSlot(new SlotItemHandler(inventory, 10, 92, 55) {
+		this.addSlot(new SlotItemHandler(inventory, 10, 92, 55+8) {
 			@OnlyIn(Dist.CLIENT)
 			public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
 				return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BOWL);
@@ -77,10 +78,10 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 		});
 
 		// Bowl Output
-		this.addSlot(new OvenResultSlot(playerInventory.player, tileEntity, inventory, 11, 124, 55));
+		this.addSlot(new OvenResultSlot(playerInventory.player, tileEntity, inventory, 11, 124, 55+8));
 
 		// Main Player Inventory
-		int startPlayerInvY = startY * 4 + 12;
+		int startPlayerInvY = startY * 4 + 30;
 		for (int row = 0; row < 3; ++row) {
 			for (int column = 0; column < 9; ++column) {
 				this.addSlot(new Slot(playerInventory, 12 + (row * 9) + column, startX + (column * borderSlotSize),
@@ -90,7 +91,7 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 
 		// Hotbar
 		for (int column = 0; column < 9; ++column) {
-			this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 142));
+			this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 160));
 		}
 
 		this.addDataSlots(OvenDataIn);

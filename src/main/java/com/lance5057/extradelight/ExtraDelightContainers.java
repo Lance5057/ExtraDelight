@@ -17,7 +17,7 @@ public class ExtraDelightContainers {
 	public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.MENU_TYPES,
 			ExtraDelight.MOD_ID);
 
-	public static final RegistryObject<MenuType<OvenMenu>> OVEN_MENU = MENU_TYPES.register("cooking_pot",
+	public static final RegistryObject<MenuType<OvenMenu>> OVEN_MENU = MENU_TYPES.register("oven",
 			() -> IForgeMenuType.create(OvenMenu::new));
 
 	public static void register(IEventBus modBus) {

@@ -102,24 +102,24 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		return ItemStack.EMPTY;
 	}
 
-	public static void takeServingFromItem(ItemStack OvenStack) {
-		if (!OvenStack.is(ExtraDelightItems.OVEN.get())) {
-			return;
-		}
-
-		CompoundTag compound = OvenStack.getTagElement("BlockEntityTag");
-		if (compound != null) {
-			CompoundTag inventoryTag = compound.getCompound("Inventory");
-			if (inventoryTag.contains("Items", 9)) {
-				ItemStackHandler handler = new ItemStackHandler();
-				handler.deserializeNBT(inventoryTag);
-				ItemStack newMealStack = handler.getStackInSlot(6);
-				newMealStack.shrink(1);
-				compound.remove("Inventory");
-				compound.put("Inventory", handler.serializeNBT());
-			}
-		}
-	}
+//	public static void takeServingFromItem(ItemStack OvenStack) {
+//		if (!OvenStack.is(ExtraDelightItems.OVEN.get())) {
+//			return;
+//		}
+//
+//		CompoundTag compound = OvenStack.getTagElement("BlockEntityTag");
+//		if (compound != null) {
+//			CompoundTag inventoryTag = compound.getCompound("Inventory");
+//			if (inventoryTag.contains("Items", 9)) {
+//				ItemStackHandler handler = new ItemStackHandler();
+//				handler.deserializeNBT(inventoryTag);
+//				ItemStack newMealStack = handler.getStackInSlot(6);
+//				newMealStack.shrink(1);
+//				compound.remove("Inventory");
+//				compound.put("Inventory", handler.serializeNBT());
+//			}
+//		}
+//	}
 
 	public static ItemStack getContainerFromItem(ItemStack OvenStack) {
 		if (!OvenStack.is(ExtraDelightItems.OVEN.get())) {
@@ -446,13 +446,13 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		}
 	}
 
-	public ItemStack useHeldItemOnMeal(ItemStack container) {
-		if (isContainerValid(container) && !getMeal().isEmpty()) {
-			container.shrink(1);
-			return getMeal().split(1);
-		}
-		return ItemStack.EMPTY;
-	}
+//	public ItemStack useHeldItemOnMeal(ItemStack container) {
+//		if (isContainerValid(container) && !getMeal().isEmpty()) {
+//			container.shrink(1);
+//			return getMeal().split(1);
+//		}
+//		return ItemStack.EMPTY;
+//	}
 
 	private boolean doesMealHaveContainer(ItemStack meal) {
 		return !mealContainerStack.isEmpty() || meal.hasCraftingRemainingItem();

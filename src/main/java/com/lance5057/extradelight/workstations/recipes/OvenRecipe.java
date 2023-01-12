@@ -48,8 +48,6 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 
 		if (!container.isEmpty()) {
 			this.container = container;
-		} else if (!output.getCraftingRemainingItem().isEmpty()) {
-			this.container = output.getCraftingRemainingItem();
 		} else {
 			this.container = ItemStack.EMPTY;
 		}

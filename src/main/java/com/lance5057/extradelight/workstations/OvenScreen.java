@@ -90,7 +90,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 	}
 
 	private void renderHeatIndicatorTooltip(PoseStack ms, int mouseX, int mouseY) {
-		if (this.isHovering(HEAT_ICON.x, HEAT_ICON.y, HEAT_ICON.width, HEAT_ICON.height, mouseX, mouseY)) {
+		if (this.isHovering(HEAT_ICON.x, HEAT_ICON.y+20, HEAT_ICON.width, HEAT_ICON.height, mouseX, mouseY)) {
 			List<Component> tooltip = new ArrayList<>();
 			String key = "container.cooking_pot." + (this.menu.isHeated() ? "heated" : "not_heated");
 			tooltip.add(TextUtils.getTranslation(key, menu));
@@ -124,8 +124,8 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 
 	@Override
 	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
-		super.renderLabels(ms, mouseX, mouseY);
-		this.font.draw(ms, this.playerInventoryTitle, 8.0f, (float) (this.imageHeight - 96 + 2), 4210752);
+		this.font.draw(ms, this.title, (float)this.titleLabelX, (float)this.titleLabelY, 4210752);
+		this.font.draw(ms, this.playerInventoryTitle, 8.0f, (float) (this.imageHeight - 96 + 22), 4210752);
 	}
 
 	@Override
@@ -136,11 +136,11 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 			return;
 
 		RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
-		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
+		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight+16);
 
 		// Render heat icon
 		if (this.menu.isHeated()) {
-			this.blit(ms, this.leftPos + HEAT_ICON.x, this.topPos + HEAT_ICON.y, 176, 0, HEAT_ICON.width,
+			this.blit(ms, this.leftPos + HEAT_ICON.x, this.topPos + HEAT_ICON.y+20, 176, 0, HEAT_ICON.width,
 					HEAT_ICON.height);
 		}
 

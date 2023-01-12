@@ -80,27 +80,11 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
 			BlockHitResult result) {
-		ItemStack heldStack = player.getItemInHand(hand);
-		if (heldStack.isEmpty() && player.isShiftKeyDown()) {
-			level.setBlockAndUpdate(pos,
-					state.setValue(SUPPORT,
-							state.getValue(SUPPORT).equals(OvenSupport.HANDLE) ? getTrayState(level, pos)
-									: OvenSupport.HANDLE));
-			level.playSound(null, pos, SoundEvents.LANTERN_PLACE, SoundSource.BLOCKS, 0.7F, 1.0F);
-		} else if (!level.isClientSide) {
+		if (!level.isClientSide) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof OvenBlockEntity OvenEntity) {
-				ItemStack servingStack = OvenEntity.useHeldItemOnMeal(heldStack);
-				if (servingStack != ItemStack.EMPTY) {
-					if (!player.getInventory().add(servingStack)) {
-						player.drop(servingStack, false);
-					}
-					level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
-				} else {
-					NetworkHooks.openScreen((ServerPlayer) player, OvenEntity, pos);
-				}
+				NetworkHooks.openScreen((ServerPlayer) player, OvenEntity, pos);
 			}
-			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.SUCCESS;
 	}

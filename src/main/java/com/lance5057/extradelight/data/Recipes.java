@@ -6,6 +6,8 @@ import net.minecraft.data.recipes.RecipeProvider;
 
 import java.util.function.Consumer;
 
+import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
+
 public class Recipes extends RecipeProvider {
 	public Recipes(DataGenerator generator) {
 		super(generator);
@@ -13,7 +15,7 @@ public class Recipes extends RecipeProvider {
 
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-
+		OvenRecipeBuilder.OvenRecipe(null, 0, 0, 0, null)
 	}
 
 }
