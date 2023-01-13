@@ -1,6 +1,7 @@
 package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -14,11 +15,12 @@ public class DataGen {
 	public static void gatherData(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
 		ExistingFileHelper helper = event.getExistingFileHelper();
-		if (event.includeServer()) {
-			generator.addProvider(true, new Recipes(generator));
-		}
-		if (event.includeClient()) {
 
-		}
+		generator.addProvider(event.includeServer(), new Recipes(generator));
+		
+		generator.addProvider(event.includeClient(), new ItemModels(generator, helper));
+		//generator.addProvider(true, new BlockModels(generator, helper));
+
+		//generator.addProvider(true, new EnglishLoc(generator));
 	}
 }

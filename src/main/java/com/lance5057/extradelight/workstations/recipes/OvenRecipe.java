@@ -27,7 +27,7 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 @SuppressWarnings("ClassCanBeRecord")
 public class OvenRecipe implements Recipe<RecipeWrapper> {
-	public static final int INPUT_SLOTS = 6;
+	public static final int INPUT_SLOTS = 9;
 
 	private final ResourceLocation id;
 	private final String group;

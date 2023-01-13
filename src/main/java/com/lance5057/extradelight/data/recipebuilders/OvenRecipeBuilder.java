@@ -9,6 +9,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.workstations.recipetab.OvenRecipeBookTab;
 
@@ -28,12 +29,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
-import vectorwing.farmersdelight.FarmersDelight;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class OvenRecipeBuilder
-{
+public class OvenRecipeBuilder {
 	private OvenRecipeBookTab tab;
 	private final List<Ingredient> ingredients = Lists.newArrayList();
 	private final Item result;
@@ -43,7 +42,8 @@ public class OvenRecipeBuilder
 	private final Item container;
 	private final Advancement.Builder advancement = Advancement.Builder.advancement();
 
-	private OvenRecipeBuilder(ItemLike resultIn, int count, int cookingTime, float experience, @Nullable ItemLike container) {
+	private OvenRecipeBuilder(ItemLike resultIn, int count, int cookingTime, float experience,
+			@Nullable ItemLike container) {
 		this.result = resultIn.asItem();
 		this.count = count;
 		this.cookingTime = cookingTime;
@@ -52,11 +52,8 @@ public class OvenRecipeBuilder
 		this.tab = null;
 	}
 
-	public static OvenRecipeBuilder OvenRecipe(ItemLike mainResult, int count, int cookingTime, float experience) {
-		return new OvenRecipeBuilder(mainResult, count, cookingTime, experience, null);
-	}
-
-	public static OvenRecipeBuilder OvenRecipe(ItemLike mainResult, int count, int cookingTime, float experience, ItemLike container) {
+	public static OvenRecipeBuilder OvenRecipe(ItemLike mainResult, int count, int cookingTime, float experience,
+			ItemLike container) {
 		return new OvenRecipeBuilder(mainResult, count, cookingTime, experience, container);
 	}
 
@@ -96,7 +93,8 @@ public class OvenRecipeBuilder
 	}
 
 	public OvenRecipeBuilder unlockedByAnyIngredient(ItemLike... items) {
-		advancement.addCriterion("has_any_ingredient", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(items).build()));
+		advancement.addCriterion("has_any_ingredient",
+				InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(items).build()));
 		return this;
 	}
 
@@ -107,7 +105,7 @@ public class OvenRecipeBuilder
 
 	public void build(Consumer<FinishedRecipe> consumerIn) {
 		ResourceLocation location = ForgeRegistries.ITEMS.getKey(result);
-		build(consumerIn, FarmersDelight.MODID + ":cooking/" + location.getPath());
+		build(consumerIn, ExtraDelight.MOD_ID + ":oven/" + location.getPath());
 	}
 
 	public void build(Consumer<FinishedRecipe> consumerIn, String save) {
@@ -121,18 +119,20 @@ public class OvenRecipeBuilder
 
 	public void build(Consumer<FinishedRecipe> consumerIn, ResourceLocation id) {
 		if (!advancement.getCriteria().isEmpty()) {
-			advancement.parent(new ResourceLocation("recipes/root")).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
-					.rewards(AdvancementRewards.Builder.recipe(id))
-					.requirements(RequirementsStrategy.OR);
-			ResourceLocation advancementId = new ResourceLocation(id.getNamespace(), "recipes/" + result.getItemCategory().getRecipeFolderName() + "/" + id.getPath());
-			consumerIn.accept(new OvenRecipeBuilder.Result(id, result, count, ingredients, cookingTime, experience, container, tab, advancement, advancementId));
+			advancement.parent(new ResourceLocation("recipes/root"))
+					.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
+					.rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
+			ResourceLocation advancementId = new ResourceLocation(id.getNamespace(),
+					"recipes/" + result.getItemCategory().getRecipeFolderName() + "/" + id.getPath());
+			consumerIn.accept(new OvenRecipeBuilder.Result(id, result, count, ingredients, cookingTime, experience,
+					container, tab, advancement, advancementId));
 		} else {
-			consumerIn.accept(new OvenRecipeBuilder.Result(id, result, count, ingredients, cookingTime, experience, container, tab));
+			consumerIn.accept(new OvenRecipeBuilder.Result(id, result, count, ingredients, cookingTime, experience,
+					container, tab));
 		}
 	}
 
-	public static class Result implements FinishedRecipe
-	{
+	public static class Result implements FinishedRecipe {
 		private final ResourceLocation id;
 		private final OvenRecipeBookTab tab;
 		private final List<Ingredient> ingredients;
@@ -144,7 +144,9 @@ public class OvenRecipeBuilder
 		private final Advancement.Builder advancement;
 		private final ResourceLocation advancementId;
 
-		public Result(ResourceLocation idIn, Item resultIn, int countIn, List<Ingredient> ingredientsIn, int cookingTimeIn, float experienceIn, @Nullable Item containerIn, @Nullable OvenRecipeBookTab tabIn, @Nullable Advancement.Builder advancement, @Nullable ResourceLocation advancementId) {
+		public Result(ResourceLocation idIn, Item resultIn, int countIn, List<Ingredient> ingredientsIn,
+				int cookingTimeIn, float experienceIn, @Nullable Item containerIn, @Nullable OvenRecipeBookTab tabIn,
+				@Nullable Advancement.Builder advancement, @Nullable ResourceLocation advancementId) {
 			this.id = idIn;
 			this.tab = tabIn;
 			this.ingredients = ingredientsIn;
@@ -157,7 +159,8 @@ public class OvenRecipeBuilder
 			this.advancementId = advancementId;
 		}
 
-		public Result(ResourceLocation idIn, Item resultIn, int countIn, List<Ingredient> ingredientsIn, int cookingTimeIn, float experienceIn, @Nullable Item containerIn, @Nullable OvenRecipeBookTab tabIn) {
+		public Result(ResourceLocation idIn, Item resultIn, int countIn, List<Ingredient> ingredientsIn,
+				int cookingTimeIn, float experienceIn, @Nullable Item containerIn, @Nullable OvenRecipeBookTab tabIn) {
 			this(idIn, resultIn, countIn, ingredientsIn, cookingTimeIn, experienceIn, containerIn, tabIn, null, null);
 		}
 

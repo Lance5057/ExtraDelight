@@ -436,11 +436,11 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			int smallerStackCount = Math.min(mealStack.getCount(), containerInputStack.getCount());
 			int mealCount = Math.min(smallerStackCount, mealStack.getMaxStackSize() - outputStack.getCount());
 			if (outputStack.isEmpty()) {
-				containerInputStack.shrink(mealCount);
+				containerInputStack.hurt(1, this.level.random, null);
 				inventory.setStackInSlot(OUTPUT_SLOT, mealStack.split(mealCount));
 			} else if (outputStack.getItem() == mealStack.getItem()) {
 				mealStack.shrink(mealCount);
-				containerInputStack.shrink(mealCount);
+				containerInputStack.hurt(1, this.level.random, null);
 				outputStack.grow(mealCount);
 			}
 		}
