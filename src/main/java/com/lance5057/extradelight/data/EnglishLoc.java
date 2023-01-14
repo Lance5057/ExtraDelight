@@ -2,10 +2,13 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class EnglishLoc extends LanguageProvider {
 
@@ -18,7 +21,7 @@ public class EnglishLoc extends LanguageProvider {
 	protected void addTranslations() {
 		this.add("itemGroup.extradelight.items", "Extra Delight");
 		this.add("itemGroup.extradelight.aesthetic", "Extra Delight Aesthetic");
-		
+
 		this.add("farmersdelight.tooltip.oven.empty", "");
 
 		this.add("extradelight.dynamicname.1", "%s");
@@ -152,22 +155,22 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MUSHROOM_RISOTTO.get(), "Mushroom Risotto");
 		this.add(ExtraDelightItems.MUSHROOM_BURGER.get(), "Mushroom Burger");
 		this.add(ExtraDelightItems.STUFFED_MUSHROOMS.get(), "Stuffed Mushrooms");
-		
+
 		this.add(ExtraDelightItems.FURIKAKE.get(), "Furikake");
 		this.add(ExtraDelightItems.CURRY_POWDER.get(), "Curry Powder");
 		this.add(ExtraDelightItems.FISH_FLAKES.get(), "Fish Flakes");
-		
+
 		this.add(ExtraDelightItems.MACARONI.get(), "Macaroni");
 		this.add(ExtraDelightItems.LASAGNA_NOODLES.get(), "Lasagna Noodles");
-		
+
 		this.add(ExtraDelightItems.CHEESE_BLOCK_ITEM.get(), "Block of Cheese");
 		this.add(ExtraDelightItems.BUTTER_BLOCK_ITEM.get(), "Block of Butter");
-		
+
 		this.add(ExtraDelightItems.POTATO_SOUP.get(), "Potato Soup");
 		this.add(ExtraDelightItems.TOMATO_SOUP.get(), "Tomato Soup");
 		this.add(ExtraDelightItems.FISH_SOUP.get(), "Fish Soup");
 		this.add(ExtraDelightItems.CARROT_SOUP.get(), "Carrot Soup");
-		
+
 		this.add(ExtraDelightItems.BBQ_SAUCE.get(), "BBQ Sauce");
 		this.add(ExtraDelightItems.KETCHUP.get(), "Ketchup");
 		this.add(ExtraDelightItems.MAYO.get(), "Mayo");
@@ -175,7 +178,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.EGG_MIX.get(), "Egg Mix");
 		this.add(ExtraDelightItems.OMELETTE_MIX.get(), "Omelette Mix");
-		
+
 		this.add(ExtraDelightItems.AGAR_AGAR.get(), "Agar Agar Powder");
 		this.add(ExtraDelightItems.AGAR_SHEETS.get(), "Agar Agar Sheets");
 		this.add(ExtraDelightItems.SEAWEED_PASTE.get(), "Seaweed Paste");
@@ -190,7 +193,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.LAMB_STEW.get(), "Mutton Stew");
 		this.add(ExtraDelightItems.CHICKEN_STEW.get(), "Chicken Stew");
 		this.add(ExtraDelightItems.CURRY.get(), "Curry");
-		
+
 		this.add(ExtraDelightItems.BEEF_STEW_FEAST.get(), "Pot of Beef Stew");
 		this.add(ExtraDelightItems.PORK_STEW_FEAST.get(), "Pot of Pork Stew");
 		this.add(ExtraDelightItems.LAMB_STEW_FEAST.get(), "Pot of Lamb Stew");
@@ -211,17 +214,17 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.FRIED_BRAINS.get(), "Fried Brains");
 		this.add(ExtraDelightItems.OXTAIL_SOUP.get(), "Oxtail Soup");
 		this.add(ExtraDelightItems.GRILLED_CHEESE.get(), "Grilled Cheese");
-		
+
 		this.add(ExtraDelightItems.MACARONI_CHEESE.get(), "Mac and Cheese");
 		this.add(ExtraDelightItems.MACARONI_CHEESE_FEAST.get(), "Pot of Mac and Cheese");
-		
+
 		this.add(ExtraDelightItems.MEAT_LOAF.get(), "Plate of Meat Loaf");
 		this.add(ExtraDelightItems.MEAT_LOAF_SANDWICH.get(), "Meat Loaf Sandwich");
 		this.add(ExtraDelightItems.MEAT_LOAF_FEAST.get(), "Meat Loaf");
-		
+
 		this.add(ExtraDelightItems.LASAGNA.get(), "Lasagna");
 		this.add(ExtraDelightItems.LASANGA_FEAST.get(), "Pan of Lasagna");
-		
+
 		this.add(ExtraDelightItems.HOTDISH.get(), "Hotdish");
 		this.add(ExtraDelightItems.HOTDISH_FEAST.get(), "Hotdish Dinner");
 
@@ -299,12 +302,32 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.JELLY_WHITE.get(), "Bowl of Coconut Jelly");
 		this.add(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get(), "Coconut Jelly");
-		
+
 		this.add(ExtraDelightItems.COOKED_PASTA.get(), "Cooked Pasta");
 		this.add(ExtraDelightItems.BUTTERED_PASTA.get(), "Buttered Pasta");
-		
+
 		this.add(ExtraDelightItems.BAD_FOOD.get(), "Bad Food");
-		
+
+		add(ExtraDelightItems.OVEN.get(), "Oven");
+		add(ExtraDelightItems.SHEET.get(), "Baking Sheet");
+		add(ExtraDelightItems.TRAY.get(), "Baking Tray");
+		add(ExtraDelightItems.LOAF_PAN.get(), "Loaf Pan");
+		add(ExtraDelightItems.PIE_DISH.get(), "Pie Dish");
+		add(ExtraDelightItems.ROUND_PAN.get(), "Round Pan");
+		add(ExtraDelightItems.SQUARE_PAN.get(), "Square Pan");
+		add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
+		add(ExtraDelightItems.MUFFIN_TIN.get(), "Muffin Tin");
+		add(TranslatableKeys.OVEN_CONTAINER, "Baking Oven");
+		add(TranslatableKeys.OVEN_SERVED_ON, "Served on %s");
+		add(TranslatableKeys.MANY_SERVINGS, "Holds %s servings of:");
+		add(TranslatableKeys.SINGLE_SERVING, "Holds 1 serving of:");
+		add(TranslatableKeys.EMPTY, "Empty");
+
 		AestheticBlocks.EngLoc(this);
+	}
+
+	private void add(MenuType<?> key, String name) {
+		ResourceLocation menuKey = ForgeRegistries.MENU_TYPES.getKey(key);
+		add("%s.container.%s".formatted(menuKey.getNamespace(), menuKey.getPath()), name);
 	}
 }

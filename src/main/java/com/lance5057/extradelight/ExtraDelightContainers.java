@@ -10,7 +10,6 @@ import com.lance5057.extradelight.workstations.doughshaping.DoughShapingMenu;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.oven.OvenMenu;
 import com.lance5057.extradelight.workstations.oven.OvenScreen;
-
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
