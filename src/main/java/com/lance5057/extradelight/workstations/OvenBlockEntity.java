@@ -1,10 +1,10 @@
 package com.lance5057.extradelight.workstations;
 
 import com.google.common.collect.Lists;
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.workstations.inventory.OvenItemHandler;
 import com.lance5057.extradelight.workstations.recipes.OvenRecipe;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
@@ -473,7 +473,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 
 	@Override
 	public Component getName() {
-		return customName != null ? customName : Component.translatable(TranslatableKeys.OVEN_CONTAINER);
+		return customName != null ? customName : Component.translatable(ExtraDelight.MOD_ID + ".container.oven");
 	}
 
 	@Override

@@ -1,8 +1,8 @@
 package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.TranslatableKeys;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.MenuType;
@@ -27,11 +27,7 @@ public class EnglishLoc extends LanguageProvider {
 		add(ExtraDelightItems.SQUARE_PAN.get(), "Square Pan");
 		add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		add(ExtraDelightItems.MUFFIN_TIN.get(), "Muffin Tin");
-		add(TranslatableKeys.OVEN_CONTAINER, "Baking Oven");
-		add(TranslatableKeys.OVEN_SERVED_ON, "Served on %s");
-		add(TranslatableKeys.MANY_SERVINGS, "Holds %s servings of:");
-		add(TranslatableKeys.SINGLE_SERVING, "Holds 1 serving of:");
-		add(TranslatableKeys.EMPTY, "Empty");
+		add(ExtraDelightContainers.OVEN_MENU.get(), "Baking Oven");
 	}
 
 	private void add(MenuType<?> key, String name) {

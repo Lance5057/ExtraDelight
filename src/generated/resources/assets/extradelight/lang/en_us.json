@@ -1,10 +1,6 @@
 {
   "block.extradelight.oven": "Oven",
   "extradelight.container.oven": "Baking Oven",
-  "extradelight.container.oven.served_on": "Served on %s",
-  "extradelight.tooltip.oven.empty": "Empty",
-  "extradelight.tooltip.oven.many_servings": "Holds %s servings of:",
-  "extradelight.tooltip.oven.single_serving": "Holds 1 serving of:",
   "item.extradelight.baking_stone": "Baking Stone",
   "item.extradelight.loaf_pan": "Loaf Pan",
   "item.extradelight.muffin_tin": "Muffin Tin",

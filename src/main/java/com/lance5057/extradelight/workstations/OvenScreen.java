@@ -2,7 +2,6 @@ package com.lance5057.extradelight.workstations;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightConfig;
-import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.workstations.recipetab.OvenRecipeBookComponent;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -111,7 +110,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 				String container = !containerStack.isEmpty() ? containerStack.getItem().getDescription().getString()
 						: "";
 
-				tooltip.add(Component.translatable(TranslatableKeys.OVEN_SERVED_ON, container)
+				tooltip.add(TextUtils.getTranslation("container.cooking_pot.served_on", container)
 						.withStyle(ChatFormatting.GRAY));
 
 				this.renderComponentTooltip(ms, tooltip, mouseX, mouseY);

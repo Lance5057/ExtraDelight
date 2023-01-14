@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.workstations;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
-import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.state.OvenSupport;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -49,6 +48,7 @@ import net.minecraftforge.network.NetworkHooks;
 import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.MathUtils;
+import vectorwing.farmersdelight.common.utility.TextUtils;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -170,13 +170,13 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 
 		if (!mealStack.isEmpty()) {
 			MutableComponent textServingsOf = mealStack.getCount() == 1
-					? Component.translatable(TranslatableKeys.SINGLE_SERVING)
-					: Component.translatable(TranslatableKeys.MANY_SERVINGS, mealStack.getCount());
+					? TextUtils.getTranslation("tooltip.cooking_pot.single_serving")
+					: TextUtils.getTranslation("tooltip.cooking_pot.many_servings", mealStack.getCount());
 			tooltip.add(textServingsOf.withStyle(ChatFormatting.GRAY));
 			MutableComponent textMealName = mealStack.getHoverName().copy();
 			tooltip.add(textMealName.withStyle(mealStack.getRarity().color));
 		} else {
-			MutableComponent textEmpty = Component.translatable(TranslatableKeys.EMPTY);
+			MutableComponent textEmpty = TextUtils.getTranslation("tooltip.cooking_pot.empty");
 			tooltip.add(textEmpty.withStyle(ChatFormatting.GRAY));
 		}
 	}
