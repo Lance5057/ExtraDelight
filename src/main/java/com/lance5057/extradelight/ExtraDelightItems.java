@@ -1,5 +1,8 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.food.FoodVanilla;
+
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -18,7 +21,7 @@ public class ExtraDelightItems {
 			return new ItemStack(OVEN.get());
 		}
 	};
-	
+
 	public static final RegistryObject<Item> OVEN = ITEMS.register("oven",
 			() -> new BlockItem(ExtraDelightBlocks.OVEN.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
@@ -38,7 +41,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).durability(35)));
 	public static final RegistryObject<Item> MUFFIN_TIN = ITEMS.register("muffin_tin",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).durability(35)));
-	
-	public static final RegistryObject<Item> TEST_CUPCAKE = ITEMS.register("cupcake",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<Item> CUPCAKE = ITEMS.register("cupcake",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.CUPCAKE)));
 }

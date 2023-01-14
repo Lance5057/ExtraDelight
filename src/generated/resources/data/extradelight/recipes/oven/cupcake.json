@@ -36,6 +36,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
+    "count": 6,
     "item": "extradelight:cupcake"
   }
 }

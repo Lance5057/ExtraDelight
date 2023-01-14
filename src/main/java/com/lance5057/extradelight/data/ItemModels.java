@@ -30,6 +30,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.SHEET, "sheet");
 		forItem(ExtraDelightItems.SQUARE_PAN, "square_pan");
 		forItem(ExtraDelightItems.TRAY, "tray");
+		
+		forItem(ExtraDelightItems.CUPCAKE, "cupcake");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

@@ -38,15 +38,15 @@ public class Recipes extends RecipeProvider {
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
 		
-		OvenRecipeBuilder.OvenRecipe(ExtraDelightItems.TEST_CUPCAKE.get(), 1, FAST_COOKING, MEDIUM_EXP, ExtraDelightItems.MUFFIN_TIN.get())
-		.addIngredient(Items.WHEAT, 3)
-		.addIngredient(ForgeTags.MILK)
-		.addIngredient(ForgeTags.MILK)
-		.addIngredient(ForgeTags.MILK)
-		.addIngredient(Items.EGG)
-		.addIngredient(Items.SUGAR, 2)
-		.setRecipeBookTab(OvenRecipeBookTab.MEALS)
-		.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
+		OvenRecipeBuilder.OvenRecipe(ExtraDelightItems.CUPCAKE.get(), 6, FAST_COOKING, MEDIUM_EXP, ExtraDelightItems.MUFFIN_TIN.get())
+				.addIngredient(Items.WHEAT, 3)
+				.addIngredient(ForgeTags.MILK)
+				.addIngredient(ForgeTags.MILK)
+				.addIngredient(ForgeTags.MILK)
+				.addIngredient(Items.EGG)
+				.addIngredient(Items.SUGAR, 2)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
 	}
 
 }

@@ -225,9 +225,9 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			RandomSource random = level.random;
 			if (random.nextFloat() < 0.2F) {
 				double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.6D - 0.3D);
-				double y = (double) pos.getY() + 0.7D;
+				double y = (double) pos.getY() + 0.1D;
 				double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.6D - 0.3D);
-				level.addParticle(ParticleTypes.BUBBLE_POP, x, y, z, 0.0D, 0.0D, 0.0D);
+				level.addParticle(ParticleTypes.FLAME, x, y, z, 0.0D, 0.0D, 0.0D);
 			}
 			if (random.nextFloat() < 0.05F) {
 				double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
@@ -324,6 +324,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			return false;
 		}
 
+		inventory.getStackInSlot(CONTAINER_SLOT).hurt(1, this.level.random, null);
 		cookTime = 0;
 		mealContainerStack = recipe.getOutputContainer();
 		ItemStack resultStack = recipe.getResultItem();
@@ -441,11 +442,11 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			int smallerStackCount = Math.min(mealStack.getCount(), containerInputStack.getCount());
 			int mealCount = Math.min(smallerStackCount, mealStack.getMaxStackSize() - outputStack.getCount());
 			if (outputStack.isEmpty()) {
-				containerInputStack.hurt(1, this.level.random, null);
+//				containerInputStack.hurt(1, this.level.random, null);
 				inventory.setStackInSlot(OUTPUT_SLOT, mealStack.split(mealCount));
 			} else if (outputStack.getItem() == mealStack.getItem()) {
 				mealStack.shrink(mealCount);
-				containerInputStack.hurt(1, this.level.random, null);
+				
 				outputStack.grow(mealCount);
 			}
 		}
