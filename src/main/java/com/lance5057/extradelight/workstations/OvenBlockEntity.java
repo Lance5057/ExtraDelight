@@ -289,11 +289,11 @@ public class OvenBlockEntity extends SyncedBlockEntity
 	protected boolean canCook(OvenRecipe recipe) {
 		if (hasInput()) {
 			ItemStack resultStack = recipe.getResultItem();
-			
-			//Vessel Required
-			if(inventory.getStackInSlot(CONTAINER_SLOT).getItem() != recipe.getOutputContainer().getItem())
+
+			// Vessel Required
+			if (inventory.getStackInSlot(CONTAINER_SLOT).getItem() != recipe.getOutputContainer().getItem())
 				return false;
-			
+
 			if (resultStack.isEmpty()) {
 				return false;
 			} else {
@@ -527,9 +527,10 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		return new ItemStackHandler(INVENTORY_SIZE) {
 			@Override
 			protected void onContentsChanged(int slot) {
-				if (slot >= 0 && slot < MEAL_DISPLAY_SLOT) {
+				if (slot >= 0 && slot < MEAL_DISPLAY_SLOT || slot == CONTAINER_SLOT) {
 					checkNewRecipe = true;
 				}
+
 				inventoryChanged();
 			}
 		};
