@@ -1,9 +1,9 @@
 {
   "type": "extradelight:oven",
   "container": {
-    "item": "extradelight:round_pan"
+    "item": "extradelight:muffin_tin"
   },
-  "cookingtime": 800,
+  "cookingtime": 400,
   "experience": 1.0,
   "ingredients": [
     {
@@ -36,6 +36,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "minecraft:cake"
+    "item": "extradelight:cupcake"
   }
 }

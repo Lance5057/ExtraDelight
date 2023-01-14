@@ -38,4 +38,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).durability(35)));
 	public static final RegistryObject<Item> MUFFIN_TIN = ITEMS.register("muffin_tin",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).durability(35)));
+	
+	public static final RegistryObject<Item> TEST_CUPCAKE = ITEMS.register("cupcake",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 }

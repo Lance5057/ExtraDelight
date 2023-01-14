@@ -18,9 +18,17 @@ public class Recipes extends RecipeProvider {
 		super(generator);
 	}
 
+	public static final int FAST_COOKING = 400;      // 20 seconds
+	public static final int NORMAL_COOKING = 800;    // 40 seconds
+	public static final int SLOW_COOKING = 1600;      // 80 seconds
+
+	public static final float SMALL_EXP = 0.35F;
+	public static final float MEDIUM_EXP = 1.0F;
+	public static final float LARGE_EXP = 2.0F;
+	
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-		OvenRecipeBuilder.OvenRecipe(Items.CAKE, 1, 0, 0, ExtraDelightItems.ROUND_PAN.get())
+		OvenRecipeBuilder.OvenRecipe(Items.CAKE, 1, NORMAL_COOKING, MEDIUM_EXP, ExtraDelightItems.ROUND_PAN.get())
 				.addIngredient(Items.WHEAT, 3)
 				.addIngredient(ForgeTags.MILK)
 				.addIngredient(ForgeTags.MILK)
@@ -29,6 +37,16 @@ public class Recipes extends RecipeProvider {
 				.addIngredient(Items.SUGAR, 2)
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
+		
+		OvenRecipeBuilder.OvenRecipe(ExtraDelightItems.TEST_CUPCAKE.get(), 1, FAST_COOKING, MEDIUM_EXP, ExtraDelightItems.MUFFIN_TIN.get())
+		.addIngredient(Items.WHEAT, 3)
+		.addIngredient(ForgeTags.MILK)
+		.addIngredient(ForgeTags.MILK)
+		.addIngredient(ForgeTags.MILK)
+		.addIngredient(Items.EGG)
+		.addIngredient(Items.SUGAR, 2)
+		.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+		.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
 	}
 
 }

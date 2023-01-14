@@ -111,7 +111,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 			}
 		}
 		return i == this.inputItems.size()
-				&& net.minecraftforge.common.util.RecipeMatcher.findMatches(inputs, this.inputItems) != null;
+				&& net.minecraftforge.common.util.RecipeMatcher.findMatches(inputs, this.inputItems) != null && inv.getItem(INPUT_SLOTS) == this.container;
 	}
 
 	@Override

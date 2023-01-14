@@ -2,9 +2,7 @@ package com.lance5057.extradelight.workstations.recipetab;
 
 public enum OvenRecipeBookTab
 {
-	MEALS("meals"),
-	DRINKS("drinks"),
-	MISC("misc");
+	MEALS("meals");
 
 	public final String name;
 

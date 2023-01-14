@@ -289,6 +289,11 @@ public class OvenBlockEntity extends SyncedBlockEntity
 	protected boolean canCook(OvenRecipe recipe) {
 		if (hasInput()) {
 			ItemStack resultStack = recipe.getResultItem();
+			
+			//Vessel Required
+			if(inventory.getStackInSlot(CONTAINER_SLOT).getItem() != recipe.getOutputContainer().getItem())
+				return false;
+			
 			if (resultStack.isEmpty()) {
 				return false;
 			} else {
