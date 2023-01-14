@@ -18,7 +18,7 @@ public class EnglishLoc extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
-		add(ExtraDelightItems.OVEN.get(), "Oven");
+		add(ExtraDelightItems.OVEN.get(), "Baking Oven");
 		add(ExtraDelightItems.SHEET.get(), "Baking Sheet");
 		add(ExtraDelightItems.TRAY.get(), "Baking Tray");
 		add(ExtraDelightItems.LOAF_PAN.get(), "Loaf Pan");
