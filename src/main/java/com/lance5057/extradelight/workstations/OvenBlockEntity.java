@@ -1,18 +1,12 @@
 package com.lance5057.extradelight.workstations;
 
-import java.util.List;
-import java.util.Optional;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 import com.google.common.collect.Lists;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.workstations.inventory.OvenItemHandler;
 import com.lance5057.extradelight.workstations.recipes.OvenRecipe;
-
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.BlockPos;
@@ -39,8 +33,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
@@ -49,7 +43,11 @@ import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
 import vectorwing.farmersdelight.common.mixin.accessor.RecipeManagerAccessor;
 import vectorwing.farmersdelight.common.registry.ModParticleTypes;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
-import vectorwing.farmersdelight.common.utility.TextUtils;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Optional;
 
 public class OvenBlockEntity extends SyncedBlockEntity
 		implements MenuProvider, HeatableBlockEntity, Nameable, RecipeHolder {
@@ -475,7 +473,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 
 	@Override
 	public Component getName() {
-		return customName != null ? customName : TextUtils.getTranslation("container.oven");
+		return customName != null ? customName : Component.translatable(TranslatableKeys.OVEN_CONTAINER);
 	}
 
 	@Override
@@ -501,7 +499,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 	@Override
 	@Nonnull
 	public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
-		if (cap.equals(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)) {
+		if (cap.equals(ForgeCapabilities.ITEM_HANDLER)) {
 			if (side == null || side.equals(Direction.UP)) {
 				return inputHandler.cast();
 			} else {

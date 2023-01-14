@@ -1,18 +1,11 @@
 package com.lance5057.extradelight.workstations;
 
-import java.awt.Rectangle;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
-
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightConfig;
+import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.workstations.recipetab.OvenRecipeBookComponent;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -26,6 +19,12 @@ import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import vectorwing.farmersdelight.common.utility.TextUtils;
+
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @ParametersAreNonnullByDefault
 public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements RecipeUpdateListener {
@@ -112,7 +111,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 				String container = !containerStack.isEmpty() ? containerStack.getItem().getDescription().getString()
 						: "";
 
-				tooltip.add(TextUtils.getTranslation("container.oven.served_on", container)
+				tooltip.add(Component.translatable(TranslatableKeys.OVEN_SERVED_ON, container)
 						.withStyle(ChatFormatting.GRAY));
 
 				this.renderComponentTooltip(ms, tooltip, mouseX, mouseY);

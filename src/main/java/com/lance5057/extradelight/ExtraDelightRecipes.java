@@ -1,8 +1,6 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.workstations.recipes.OvenRecipe;
-
-import net.minecraft.core.Registry;
 import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -13,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ExtraDelightRecipes {
 	public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister
-			.create(Registry.RECIPE_TYPE.key(), ExtraDelight.MOD_ID);
+			.create(ForgeRegistries.RECIPE_TYPES, ExtraDelight.MOD_ID);
 
 	public static final RegistryObject<RecipeType<OvenRecipe>> OVEN = RECIPE_TYPES.register("oven",
 			() -> registerRecipeType("oven"));

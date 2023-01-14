@@ -1,12 +1,7 @@
 package com.lance5057.extradelight.workstations.recipetab;
 
-import java.util.List;
-
-import javax.annotation.Nonnull;
-
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.workstations.recipes.OvenRecipe;
-
 import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +10,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import vectorwing.farmersdelight.common.utility.TextUtils;
+
+import javax.annotation.Nonnull;
+import java.util.List;
 
 public class OvenRecipeBookComponent extends RecipeBookComponent {
 	protected static final ResourceLocation RECIPE_BOOK_BUTTONS = new ResourceLocation(ExtraDelight.MOD_ID,

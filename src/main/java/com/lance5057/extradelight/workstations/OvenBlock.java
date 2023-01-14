@@ -1,12 +1,8 @@
 package com.lance5057.extradelight.workstations;
 
-import java.util.List;
-
-import javax.annotation.Nullable;
-
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.state.OvenSupport;
-
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -15,7 +11,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
@@ -29,11 +24,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -55,11 +46,12 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.NetworkHooks;
-import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.MathUtils;
-import vectorwing.farmersdelight.common.utility.TextUtils;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 @SuppressWarnings("deprecation")
 public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
@@ -178,13 +170,13 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 
 		if (!mealStack.isEmpty()) {
 			MutableComponent textServingsOf = mealStack.getCount() == 1
-					? TextUtils.getTranslation("tooltip.oven.single_serving")
-					: TextUtils.getTranslation("tooltip.oven.many_servings", mealStack.getCount());
+					? Component.translatable(TranslatableKeys.SINGLE_SERVING)
+					: Component.translatable(TranslatableKeys.MANY_SERVINGS, mealStack.getCount());
 			tooltip.add(textServingsOf.withStyle(ChatFormatting.GRAY));
 			MutableComponent textMealName = mealStack.getHoverName().copy();
 			tooltip.add(textMealName.withStyle(mealStack.getRarity().color));
 		} else {
-			MutableComponent textEmpty = TextUtils.getTranslation("tooltip.oven.empty");
+			MutableComponent textEmpty = Component.translatable(TranslatableKeys.EMPTY);
 			tooltip.add(textEmpty.withStyle(ChatFormatting.GRAY));
 		}
 	}

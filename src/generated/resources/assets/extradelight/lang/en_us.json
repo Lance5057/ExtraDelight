@@ -1,0 +1,16 @@
+{
+  "block.extradelight.oven": "Oven",
+  "extradelight.container.oven": "Baking Oven",
+  "extradelight.container.oven.served_on": "Served on %s",
+  "extradelight.tooltip.oven.empty": "Empty",
+  "extradelight.tooltip.oven.many_servings": "Holds %s servings of:",
+  "extradelight.tooltip.oven.single_serving": "Holds 1 serving of:",
+  "item.extradelight.baking_stone": "Baking Stone",
+  "item.extradelight.loaf_pan": "Loaf Pan",
+  "item.extradelight.muffin_tin": "Muffin Tin",
+  "item.extradelight.pie_dish": "Pie Dish",
+  "item.extradelight.round_pan": "Round Pan",
+  "item.extradelight.sheet": "Baking Sheet",
+  "item.extradelight.square_pan": "Square Pan",
+  "item.extradelight.tray": "Baking Tray"
+}
