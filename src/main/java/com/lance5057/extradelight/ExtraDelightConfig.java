@@ -14,8 +14,8 @@ public class ExtraDelightConfig {
 		ForgeConfigSpec.Builder Builder = new ForgeConfigSpec.Builder();
 
 		Builder.comment("Recipe book").push(CATEGORY_RECIPE_BOOK);
-		ENABLE_RECIPE_BOOK_OVEN = Builder.comment("Should the Oven have a Recipe Book available on its interface?")
-				.define("enableRecipeBookOven", true);
+		ENABLE_RECIPE_BOOK_OVEN = Builder.comment("(Broken!) Should the Oven have a Recipe Book available on its interface?")
+				.define("enableRecipeBookOven", false);
 		Builder.pop();
 
 		spec = Builder.build();
