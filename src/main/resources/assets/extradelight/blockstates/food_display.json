@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,encased=false": {
+      "model": "extradelight:block/food_display"
+    },
+    "facing=south,encased=false": {
+      "model": "extradelight:block/food_display",
+      "y": 180
+    },
+    "facing=west,encased=false": {
+      "model": "extradelight:block/food_display",
+      "y": 270
+    },
+    "facing=east,encased=false": {
+      "model": "extradelight:block/food_display",
+      "y": 90
+    },
+    "facing=north,encased=true": {
+      "model": "extradelight:block/food_display_encased"
+    },
+    "facing=south,encased=true": {
+      "model": "extradelight:block/food_display_encased",
+      "y": 180
+    },
+    "facing=west,encased=true": {
+      "model": "extradelight:block/food_display_encased",
+      "y": 270
+    },
+    "facing=east,encased=true": {
+      "model": "extradelight:block/food_display_encased",
+      "y": 90
+    }
+  }
+}

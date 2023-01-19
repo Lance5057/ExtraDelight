@@ -24,6 +24,8 @@ public class ExtraDelightItems {
 
 	public static final RegistryObject<Item> OVEN = ITEMS.register("oven",
 			() -> new BlockItem(ExtraDelightBlocks.OVEN.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> FOOD_DISPLAY = ITEMS.register("food_display",
+			() -> new BlockItem(ExtraDelightBlocks.FOOD_DISPLAY.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> SHEET = ITEMS.register("sheet",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).durability(35)));

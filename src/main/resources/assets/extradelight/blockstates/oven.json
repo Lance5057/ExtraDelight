@@ -31,18 +31,18 @@
       "y": 90
     },
     "facing=north,support=handle": {
-      "model": "extradelight:block/oven_handle"
+      "model": "extradelight:block/oven_tray"
     },
     "facing=south,support=handle": {
-      "model": "extradelight:block/oven_handle",
+      "model": "extradelight:block/oven_tray",
       "y": 180
     },
     "facing=west,support=handle": {
-      "model": "extradelight:block/oven_handle",
+      "model": "extradelight:block/oven_tray",
       "y": 270
     },
     "facing=east,support=handle": {
-      "model": "extradelight:block/oven_handle",
+      "model": "extradelight:block/oven_tray",
       "y": 90
     }
   }

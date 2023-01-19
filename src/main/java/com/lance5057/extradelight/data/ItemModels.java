@@ -20,7 +20,9 @@ public class ItemModels extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		getBuilder(ExtraDelightItems.OVEN.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "item/oven")));
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/oven")));
+		getBuilder(ExtraDelightItems.FOOD_DISPLAY.getId().getPath())
+		.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/food_display")));
 
 		forItem(ExtraDelightItems.ROUND_PAN, "round_pan");
 		forItem(ExtraDelightItems.BAKING_STONE, "baking_stone");

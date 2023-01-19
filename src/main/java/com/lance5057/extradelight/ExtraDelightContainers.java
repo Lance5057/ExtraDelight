@@ -1,5 +1,7 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.containers.FoodDisplayMenu;
+import com.lance5057.extradelight.containers.FoodDisplayScreen;
 import com.lance5057.extradelight.workstations.OvenMenu;
 import com.lance5057.extradelight.workstations.OvenScreen;
 
@@ -19,6 +21,8 @@ public class ExtraDelightContainers {
 
 	public static final RegistryObject<MenuType<OvenMenu>> OVEN_MENU = MENU_TYPES.register("oven",
 			() -> IForgeMenuType.create(OvenMenu::new));
+	public static final RegistryObject<MenuType<FoodDisplayMenu>> FOOD_DISPLAY_MENU = MENU_TYPES
+			.register("food_display", () -> IForgeMenuType.create(FoodDisplayMenu::new));
 
 	public static void register(IEventBus modBus) {
 		MENU_TYPES.register(modBus);
@@ -26,5 +30,6 @@ public class ExtraDelightContainers {
 
 	public static void registerClient(FMLClientSetupEvent event) {
 		MenuScreens.register(OVEN_MENU.get(), OvenScreen::new);
+		MenuScreens.register(FOOD_DISPLAY_MENU.get(), FoodDisplayScreen::new);
 	}
 }

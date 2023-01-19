@@ -1,5 +1,6 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.blocks.entities.FoodDisplayEntity;
 import com.lance5057.extradelight.workstations.OvenBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -13,4 +14,7 @@ public class ExtraDelightBlockEntities {
 
 	public static final RegistryObject<BlockEntityType<OvenBlockEntity>> OVEN = TILES.register("oven",
 			() -> BlockEntityType.Builder.of(OvenBlockEntity::new, ExtraDelightBlocks.OVEN.get()).build(null));
+	
+	public static final RegistryObject<BlockEntityType<FoodDisplayEntity>> FOOD_DISPLAY = TILES.register("food_display",
+			() -> BlockEntityType.Builder.of(FoodDisplayEntity::new,  ExtraDelightBlocks.FOOD_DISPLAY.get()).build(null));
 }

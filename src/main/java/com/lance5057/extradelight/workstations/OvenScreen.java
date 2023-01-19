@@ -146,7 +146,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 
 		// Render progress arrow
 		int l = this.menu.getCookProgressionScaled();
-		this.blit(ms, this.leftPos + PROGRESS_ARROW.x, this.topPos + PROGRESS_ARROW.y, 176, 15, l + 1,
+		this.blit(ms, this.leftPos + PROGRESS_ARROW.x, this.topPos + PROGRESS_ARROW.y, 176, 25, l + 1,
 				PROGRESS_ARROW.height);
 	}
 

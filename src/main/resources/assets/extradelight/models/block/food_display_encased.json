@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"0": "extradelight:block/oven",
-		"1": "block/glass",
-		"particle": "extradelight:block/oven"
+		"0": "minecraft:block/oak_planks",
+		"1": "minecraft:block/glass",
+		"particle": "minecraft:block/oak_planks"
 	},
 	"elements": [
 		{

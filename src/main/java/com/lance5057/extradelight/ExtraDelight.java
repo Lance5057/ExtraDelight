@@ -35,8 +35,11 @@ public class ExtraDelight {
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {
-		ExtraDelightContainers.registerClient(event);
-		
-		ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.OVEN.get(), RenderType.cutout());
+
+		event.enqueueWork(() -> {
+			ExtraDelightClientEvents.setTERenderers();
+			ExtraDelightContainers.registerClient(event);
+			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.OVEN.get(), RenderType.cutout());
+		});
 	}
 }

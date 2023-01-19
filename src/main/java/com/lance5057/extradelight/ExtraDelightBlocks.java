@@ -1,5 +1,6 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.blocks.FoodDisplayBlock;
 import com.lance5057.extradelight.workstations.OvenBlock;
 
 import net.minecraft.world.level.block.Block;
@@ -12,4 +13,5 @@ public class ExtraDelightBlocks {
 			ExtraDelight.MOD_ID);
 
 	public static final RegistryObject<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);
+	public static final RegistryObject<Block> FOOD_DISPLAY = BLOCKS.register("food_display", FoodDisplayBlock::new);
 }
