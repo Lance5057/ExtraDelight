@@ -13,5 +13,5 @@ public class ExtraDelightBlocks {
 			ExtraDelight.MOD_ID);
 
 	public static final RegistryObject<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);
-	public static final RegistryObject<Block> FOOD_DISPLAY = BLOCKS.register("food_display", FoodDisplayBlock::new);
+	public static final RegistryObject<Block> FOOD_DISPLAY = BLOCKS.register("food_display", () -> new FoodDisplayBlock(0,9));
 }

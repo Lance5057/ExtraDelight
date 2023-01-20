@@ -28,13 +28,29 @@ import net.minecraftforge.items.ItemStackHandler;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
 public class FoodDisplayEntity extends BlockEntity implements MenuProvider {
-	
+
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
-	public static final int NUM_SLOTS = 6;
+	private int NUM_SLOTS_TOP;
+	private int NUM_SLOTS_BOTTOM;
 
 	public FoodDisplayEntity(BlockPos pPos, BlockState pBlockState) {
+
 		super(ExtraDelightBlockEntities.FOOD_DISPLAY.get(), pPos, pBlockState);
-		// TODO Auto-generated constructor stub
+
+	}
+
+	public FoodDisplayEntity setSlots(int slots_top, int slots_bottom) {
+		NUM_SLOTS_TOP = slots_top;
+		NUM_SLOTS_BOTTOM = slots_bottom;
+		return this;
+	}
+
+	public int getTopSlots() {
+		return this.NUM_SLOTS_TOP;
+	}
+
+	public int getBottomSlots() {
+		return this.NUM_SLOTS_BOTTOM;
 	}
 
 	@Nonnull
@@ -48,7 +64,7 @@ public class FoodDisplayEntity extends BlockEntity implements MenuProvider {
 	}
 
 	private IItemHandlerModifiable createHandler() {
-		return new ItemStackHandler(NUM_SLOTS) {
+		return new ItemStackHandler(NUM_SLOTS_TOP + NUM_SLOTS_BOTTOM) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				return 1;

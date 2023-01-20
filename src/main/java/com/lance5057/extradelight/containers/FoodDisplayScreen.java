@@ -15,11 +15,17 @@ public class FoodDisplayScreen extends AbstractContainerScreen<FoodDisplayMenu> 
 
 	public FoodDisplayScreen(FoodDisplayMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
 		super(pMenu, pPlayerInventory, pTitle);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
+	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
+		//this.font.draw(ms, this.title, (float)this.titleLabelX, (float)this.titleLabelY, 4210752);
+		//this.font.draw(ms, this.playerInventoryTitle, 8.0f, (float) (this.imageHeight - 96 + 22), 4210752);
+	}
+	
+	@Override
 	protected void renderBg(PoseStack pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {
+		this.renderBackground(pPoseStack);
 		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 		if (this.minecraft == null)
 			return;

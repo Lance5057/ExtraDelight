@@ -36,11 +36,11 @@ public class FoodDisplayMenu extends AbstractContainerMenu {
 			tileEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(h -> {
 				// Ingredient Slots - 2 Rows x 3 Columns
 				int startX = 8;
-				int startY = 18;
-				int inputStartX = 30;
-				int inputStartY = 17;
+				int startY = 8;
+				int inputStartX = 62;
+				int inputStartY = 8;
 				int borderSlotSize = 18;
-				for (int row = 0; row < 2; ++row) {
+				for (int row = 0; row < 3; ++row) {
 					for (int column = 0; column < 3; ++column) {
 						this.addSlot(new SlotItemHandler(h, (row * 3) + column, inputStartX + (column * borderSlotSize),
 								inputStartY + (row * borderSlotSize)));
@@ -48,7 +48,7 @@ public class FoodDisplayMenu extends AbstractContainerMenu {
 				}
 
 				// Main Player Inventory
-				int startPlayerInvY = startY * 4 + 30;
+				int startPlayerInvY = startY * 4 + 36;
 				for (int row = 0; row < 3; ++row) {
 					for (int column = 0; column < 9; ++column) {
 						this.addSlot(new Slot(playerInventory, 12 + (row * 9) + column,
@@ -58,7 +58,7 @@ public class FoodDisplayMenu extends AbstractContainerMenu {
 
 				// Hotbar
 				for (int column = 0; column < 9; ++column) {
-					this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 160));
+					this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 126));
 				}
 			});
 		}

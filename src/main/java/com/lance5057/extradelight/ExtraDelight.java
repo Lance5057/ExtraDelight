@@ -40,6 +40,7 @@ public class ExtraDelight {
 			ExtraDelightClientEvents.setTERenderers();
 			ExtraDelightContainers.registerClient(event);
 			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.OVEN.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.FOOD_DISPLAY.get(), RenderType.cutout());
 		});
 	}
 }
