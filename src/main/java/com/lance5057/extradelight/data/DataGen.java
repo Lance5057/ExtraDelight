@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -21,6 +20,6 @@ public class DataGen {
 		generator.addProvider(event.includeClient(), new ItemModels(generator, helper));
 		//generator.addProvider(true, new BlockModels(generator, helper));
 
-		//generator.addProvider(true, new EnglishLoc(generator));
+		generator.addProvider(event.includeClient(), new EnglishLoc(generator));
 	}
 }
