@@ -21,8 +21,10 @@ public class ItemModels extends ItemModelProvider {
 	protected void registerModels() {
 		getBuilder(ExtraDelightItems.OVEN.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/oven")));
-		getBuilder(ExtraDelightItems.FOOD_DISPLAY.getId().getPath())
-		.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/food_display")));
+		getBuilder(ExtraDelightItems.FOOD_DISPLAY.getId().getPath()).parent(
+				new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/food_display")));
+		getBuilder(ExtraDelightItems.DOUGH_SHAPING.getId().getPath())
+		.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/doughforming")));
 
 		forItem(ExtraDelightItems.ROUND_PAN, "round_pan");
 		forItem(ExtraDelightItems.BAKING_STONE, "baking_stone");
@@ -32,7 +34,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.SHEET, "sheet");
 		forItem(ExtraDelightItems.SQUARE_PAN, "square_pan");
 		forItem(ExtraDelightItems.TRAY, "tray");
-		
+
 		forItem(ExtraDelightItems.CUPCAKE, "cupcake");
 	}
 

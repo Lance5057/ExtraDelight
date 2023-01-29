@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.workstations;
+package com.lance5057.extradelight.workstations.oven;
 
 import java.awt.Rectangle;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightConfig;
-import com.lance5057.extradelight.workstations.recipetab.OvenRecipeBookComponent;
+import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookComponent;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 

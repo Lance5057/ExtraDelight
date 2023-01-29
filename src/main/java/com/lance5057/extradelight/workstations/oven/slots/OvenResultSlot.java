@@ -1,9 +1,9 @@
-package com.lance5057.extradelight.workstations.slots;
+package com.lance5057.extradelight.workstations.oven.slots;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import com.lance5057.extradelight.workstations.OvenBlockEntity;
+import com.lance5057.extradelight.workstations.oven.OvenBlockEntity;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;

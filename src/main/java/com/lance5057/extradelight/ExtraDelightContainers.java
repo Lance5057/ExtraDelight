@@ -2,8 +2,10 @@ package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.containers.FoodDisplayMenu;
 import com.lance5057.extradelight.containers.FoodDisplayScreen;
-import com.lance5057.extradelight.workstations.OvenMenu;
-import com.lance5057.extradelight.workstations.OvenScreen;
+import com.lance5057.extradelight.workstations.doughshaping.DoughShapingMenu;
+import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
+import com.lance5057.extradelight.workstations.oven.OvenMenu;
+import com.lance5057.extradelight.workstations.oven.OvenScreen;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.inventory.MenuType;
@@ -23,6 +25,8 @@ public class ExtraDelightContainers {
 			() -> IForgeMenuType.create(OvenMenu::new));
 	public static final RegistryObject<MenuType<FoodDisplayMenu>> FOOD_DISPLAY_MENU = MENU_TYPES
 			.register("food_display", () -> IForgeMenuType.create(FoodDisplayMenu::new));
+	public static final RegistryObject<MenuType<DoughShapingMenu>> DOUGH_SHAPING_MENU = MENU_TYPES
+			.register("dough_shaping", () -> IForgeMenuType.create(DoughShapingMenu::new));
 
 	public static void register(IEventBus modBus) {
 		MENU_TYPES.register(modBus);
@@ -31,5 +35,6 @@ public class ExtraDelightContainers {
 	public static void registerClient(FMLClientSetupEvent event) {
 		MenuScreens.register(OVEN_MENU.get(), OvenScreen::new);
 		MenuScreens.register(FOOD_DISPLAY_MENU.get(), FoodDisplayScreen::new);
+		MenuScreens.register(DOUGH_SHAPING_MENU.get(), DoughShapingScreen::new);
 	}
 }

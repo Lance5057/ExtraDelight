@@ -1,11 +1,11 @@
-package com.lance5057.extradelight.workstations.recipetab;
+package com.lance5057.extradelight.workstations.oven.recipetab;
 
 import java.util.function.Supplier;
 
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableList;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.recipes.OvenRecipe;
+import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.world.item.ItemStack;

@@ -1,11 +1,11 @@
-package com.lance5057.extradelight.workstations.recipetab;
+package com.lance5057.extradelight.workstations.oven.recipetab;
 
 import java.util.List;
 
 import javax.annotation.Nonnull;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.workstations.recipes.OvenRecipe;
+import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 
 import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
 import net.minecraft.network.chat.Component;

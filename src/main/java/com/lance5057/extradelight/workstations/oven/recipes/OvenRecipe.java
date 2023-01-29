@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.workstations.recipes;
+package com.lance5057.extradelight.workstations.oven.recipes;
 
 import java.util.EnumSet;
 
@@ -10,7 +10,7 @@ import com.google.gson.JsonParseException;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.recipetab.OvenRecipeBookTab;
+import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;

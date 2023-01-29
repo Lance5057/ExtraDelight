@@ -1,6 +1,7 @@
 package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -15,6 +16,6 @@ public class BlockModels extends BlockStateProvider {
 
 	@Override
 	protected void registerStatesAndModels() {
-
+		this.horizontalBlock(ExtraDelightBlocks.DOUGH_SHAPING.get(), models().getExistingFile(modLoc("block/doughforming")));
 	}
 }

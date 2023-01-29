@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.workstations.recipetab;
+package com.lance5057.extradelight.workstations.oven.recipetab;
 
 public enum OvenRecipeBookTab
 {

@@ -1,13 +1,12 @@
-package com.lance5057.extradelight.workstations;
+package com.lance5057.extradelight.workstations.oven;
 
 import java.util.Objects;
 
-import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.slots.OvenMealSlot;
-import com.lance5057.extradelight.workstations.slots.OvenResultSlot;
+import com.lance5057.extradelight.workstations.oven.slots.OvenMealSlot;
+import com.lance5057.extradelight.workstations.oven.slots.OvenResultSlot;
 import com.mojang.datafixers.util.Pair;
 
 import net.minecraft.network.FriendlyByteBuf;

@@ -19,7 +19,7 @@ public class DataGen {
 		generator.addProvider(event.includeServer(), new Recipes(generator));
 		
 		generator.addProvider(event.includeClient(), new ItemModels(generator, helper));
-		//generator.addProvider(true, new BlockModels(generator, helper));
+		generator.addProvider(true, new BlockModels(generator, helper));
 
 		//generator.addProvider(true, new EnglishLoc(generator));
 	}

@@ -1,7 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.containers.FoodDisplayRenderer;
-import com.lance5057.extradelight.workstations.recipetab.OvenRecipeCatagories;
+import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeCatagories;
 
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;

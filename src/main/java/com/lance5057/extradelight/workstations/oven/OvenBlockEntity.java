@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.workstations;
+package com.lance5057.extradelight.workstations.oven;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +10,8 @@ import com.google.common.collect.Lists;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.inventory.OvenItemHandler;
-import com.lance5057.extradelight.workstations.recipes.OvenRecipe;
+import com.lance5057.extradelight.workstations.oven.inventory.OvenItemHandler;
+import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;

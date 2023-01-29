@@ -1,7 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.blocks.entities.FoodDisplayEntity;
-import com.lance5057.extradelight.workstations.OvenBlockEntity;
+import com.lance5057.extradelight.workstations.oven.OvenBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;

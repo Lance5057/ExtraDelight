@@ -2,7 +2,6 @@ package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.food.FoodVanilla;
 
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -26,6 +25,9 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.OVEN.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> FOOD_DISPLAY = ITEMS.register("food_display",
 			() -> new BlockItem(ExtraDelightBlocks.FOOD_DISPLAY.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<Item> DOUGH_SHAPING = ITEMS.register("dough_shaping",
+			() -> new BlockItem(ExtraDelightBlocks.DOUGH_SHAPING.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> SHEET = ITEMS.register("sheet",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).durability(35)));

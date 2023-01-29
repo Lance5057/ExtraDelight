@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.workstations.inventory;
+package com.lance5057.extradelight.workstations.oven.inventory;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

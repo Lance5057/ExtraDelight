@@ -11,7 +11,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.recipetab.OvenRecipeBookTab;
+import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.advancements.Advancement;

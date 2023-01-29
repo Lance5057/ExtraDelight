@@ -1,17 +1,16 @@
 package com.lance5057.extradelight.data;
 
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.world.item.Items;
-import net.minecraftforge.common.Tags;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
-
 import java.util.function.Consumer;
 
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
-import com.lance5057.extradelight.workstations.recipetab.OvenRecipeBookTab;
+import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
+
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.world.item.Items;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 public class Recipes extends RecipeProvider {
 	public Recipes(DataGenerator generator) {

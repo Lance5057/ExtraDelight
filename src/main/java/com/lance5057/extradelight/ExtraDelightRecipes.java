@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.workstations.recipes.OvenRecipe;
+import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
+import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 
 import net.minecraft.core.Registry;
 import net.minecraft.world.inventory.RecipeBookType;
@@ -17,6 +18,8 @@ public class ExtraDelightRecipes {
 
 	public static final RegistryObject<RecipeType<OvenRecipe>> OVEN = RECIPE_TYPES.register("oven",
 			() -> registerRecipeType("oven"));
+	public static final RegistryObject<RecipeType<DoughShapingRecipe>> DOUGH_SHAPING = RECIPE_TYPES
+			.register("dough_shaping", () -> registerRecipeType("dough_shaping"));
 
 	public static <T extends Recipe<?>> RecipeType<T> registerRecipeType(final String identifier) {
 		return new RecipeType<>() {
@@ -32,6 +35,8 @@ public class ExtraDelightRecipes {
 
 	public static final RegistryObject<RecipeSerializer<?>> OVEN_SERIALIZER = RECIPE_SERIALIZERS.register("oven",
 			OvenRecipe.Serializer::new);
+	public static final RegistryObject<RecipeSerializer<?>> DOUGH_SHAPING_SERIALIZER = RECIPE_SERIALIZERS
+			.register("dough_shaping", DoughShapingRecipe.Serializer::new);
 
 	public static final RecipeBookType RECIPE_TYPE_OVEN = RecipeBookType.create("OVEN");
 }

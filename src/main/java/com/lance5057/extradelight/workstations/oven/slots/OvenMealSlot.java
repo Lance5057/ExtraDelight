@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.workstations.slots;
+package com.lance5057.extradelight.workstations.oven.slots;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
