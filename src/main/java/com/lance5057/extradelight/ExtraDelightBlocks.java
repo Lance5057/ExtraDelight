@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.blocks.FoodDisplayBlock;
+import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.oven.OvenBlock;
 
@@ -17,4 +18,6 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<Block> FOOD_DISPLAY = BLOCKS.register("food_display",
 			() -> new FoodDisplayBlock(0, 9));
 	public static final RegistryObject<Block> DOUGH_SHAPING = BLOCKS.register("dough_shaping", DoughShapingBlock::new);
+	
+	public static final RegistryObject<Block> YEAST_POT = BLOCKS.register("yeast_pot", YeastPotBlock::new);
 }

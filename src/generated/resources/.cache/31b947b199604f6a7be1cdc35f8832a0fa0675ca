@@ -1,4 +1,4 @@
-// 1.19.2	2023-01-29T01:30:54.4223793	Item Models: extradelight
+// 1.19.2	2023-01-29T16:15:58.9869858	Item Models: extradelight
 7a693de01321b8ff36eb6d21da1e9f8c0fe07800 assets/extradelight/models/item/baking_stone.json
 2f7aaaf67c525d315dfc8418cab3f48edbe2098c assets/extradelight/models/item/cupcake.json
 6459c63533254cc0204b0d87d2bbeae84fdd7950 assets/extradelight/models/item/dough_shaping.json
@@ -11,3 +11,5 @@ f076aba57fc412787512f15f2e3a5033be860ebd assets/extradelight/models/item/pie_dis
 55dabd8f81bf858a7b936f5658a34dc92f76f85b assets/extradelight/models/item/sheet.json
 40e7b67ba85e68021e952ace6f360f5f34ae6f71 assets/extradelight/models/item/square_pan.json
 8271734f5c2d1dce70054d3dcf41fdcce3fab033 assets/extradelight/models/item/tray.json
+850cc654799ea3c51189bffd633411585e603816 assets/extradelight/models/item/yeast.json
+5b97e276c163f088e42843bb640211bad99b18d4 assets/extradelight/models/item/yeast_pot.json

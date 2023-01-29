@@ -46,6 +46,11 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> MUFFIN_TIN = ITEMS.register("muffin_tin",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).durability(35)));
 
+	public static final RegistryObject<Item> YEAST_POT = ITEMS.register("yeast_pot",
+			() -> new BlockItem(ExtraDelightBlocks.YEAST_POT.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> YEAST = ITEMS.register("yeast",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
 	public static final RegistryObject<Item> CUPCAKE = ITEMS.register("cupcake",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.CUPCAKE)));
 }

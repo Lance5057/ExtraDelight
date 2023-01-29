@@ -17,10 +17,12 @@ public class DataGen {
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
 		generator.addProvider(event.includeServer(), new Recipes(generator));
-		
+
 		generator.addProvider(event.includeClient(), new ItemModels(generator, helper));
 		generator.addProvider(true, new BlockModels(generator, helper));
 
-		//generator.addProvider(true, new EnglishLoc(generator));
+		generator.addProvider(true, new AllLootTables(generator));
+
+		// generator.addProvider(true, new EnglishLoc(generator));
 	}
 }

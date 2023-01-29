@@ -16,6 +16,8 @@ public class BlockModels extends BlockStateProvider {
 
 	@Override
 	protected void registerStatesAndModels() {
-		this.horizontalBlock(ExtraDelightBlocks.DOUGH_SHAPING.get(), models().getExistingFile(modLoc("block/doughforming")));
+		this.horizontalBlock(ExtraDelightBlocks.DOUGH_SHAPING.get(),
+				models().getExistingFile(modLoc("block/doughforming")));
+		this.simpleBlock(ExtraDelightBlocks.YEAST_POT.get(), models().getExistingFile(modLoc("block/yeast_pot")));
 	}
 }
