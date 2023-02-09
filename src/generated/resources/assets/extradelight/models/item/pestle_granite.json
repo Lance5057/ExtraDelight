@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:pestle_granite",
+  "textures": {
+    "0": "minecraft:block/granite"
+  }
+}

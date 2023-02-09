@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:pestle_amethyst",
+  "textures": {
+    "0": "minecraft:block/amethyst_block"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:pestle_diorite",
+  "textures": {
+    "0": "minecraft:block/diorite"
+  }
+}
