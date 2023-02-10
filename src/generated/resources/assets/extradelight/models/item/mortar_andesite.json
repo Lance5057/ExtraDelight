@@ -1,3 +1,6 @@
 {
-  "parent": "extradelight:mortar_andesite"
+  "parent": "extradelight:item/mortar",
+  "textures": {
+    "0": "minecraft:block/andesite"
+  }
 }

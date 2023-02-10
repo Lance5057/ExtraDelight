@@ -1,5 +1,5 @@
 {
-  "parent": "extradelight:pestle_gilded_blackstone",
+  "parent": "extradelight:item/pestle",
   "textures": {
     "0": "minecraft:block/gilded_blackstone"
   }

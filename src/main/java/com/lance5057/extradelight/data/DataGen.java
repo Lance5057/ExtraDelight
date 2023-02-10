@@ -23,6 +23,9 @@ public class DataGen {
 
 		generator.addProvider(true, new AllLootTables(generator));
 
+		BlockTags bt = new BlockTags(generator, ExtraDelight.MOD_ID, event.getExistingFileHelper());
+		generator.addProvider(true, new ItemTags(generator, bt, ExtraDelight.MOD_ID, helper));
+
 		// generator.addProvider(true, new EnglishLoc(generator));
 	}
 }

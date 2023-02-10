@@ -1,3 +1,6 @@
 {
-  "parent": "extradelight:mortar_diorite"
+  "parent": "extradelight:item/mortar",
+  "textures": {
+    "0": "minecraft:block/diorite"
+  }
 }

@@ -1,3 +1,6 @@
 {
-  "parent": "extradelight:mortar_basalt"
+  "parent": "extradelight:item/mortar",
+  "textures": {
+    "0": "minecraft:block/basalt_top"
+  }
 }

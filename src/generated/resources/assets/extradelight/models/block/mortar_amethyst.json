@@ -1,6 +1,6 @@
 {
   "parent": "extradelight:block/mortar",
   "textures": {
-    "texture": "minecraft:block/amethyst_block"
+    "0": "minecraft:block/amethyst_block"
   }
 }

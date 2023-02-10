@@ -1,5 +1,7 @@
-// 1.19.2	2023-01-14T11:35:35.2020586	Recipes
+// 1.19.2	2023-02-10T13:50:35.0994606	Recipes
 87410246898a53328f4d5b57b13eb62116ea8219 data/extradelight/advancements/recipes/extradelight.items/oven/cupcake.json
 f4cc7935ab299a81c1f3e4daabd65445ae973da3 data/extradelight/advancements/recipes/food/oven/cake.json
+9c053a2c5807c37beb6340eab989ce9f5c145320 data/extradelight/advancements/recipes/misc/mortar/blue_dye.json
+047f34d40fc1b3f50a3a731f3b3143327f3ad213 data/extradelight/recipes/mortar/blue_dye.json
 440c13047d22926c50334ea28a07374a4ed3bd6f data/extradelight/recipes/oven/cake.json
 13101863bfbd9e7b9ac8866ad4f334b96f59b063 data/extradelight/recipes/oven/cupcake.json

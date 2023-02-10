@@ -1,3 +1,6 @@
 {
-  "parent": "extradelight:mortar_stone"
+  "parent": "extradelight:item/mortar",
+  "textures": {
+    "0": "minecraft:block/stone"
+  }
 }

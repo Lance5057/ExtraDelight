@@ -1,3 +1,6 @@
 {
-  "parent": "extradelight:mortar_deepslate"
+  "parent": "extradelight:item/mortar",
+  "textures": {
+    "0": "minecraft:block/deepslate"
+  }
 }

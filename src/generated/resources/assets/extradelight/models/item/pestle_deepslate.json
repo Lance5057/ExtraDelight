@@ -1,5 +1,5 @@
 {
-  "parent": "extradelight:pestle_deepslate",
+  "parent": "extradelight:item/pestle",
   "textures": {
     "0": "minecraft:block/deepslate"
   }

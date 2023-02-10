@@ -1,5 +1,5 @@
 {
-  "parent": "extradelight:pestle_basalt",
+  "parent": "extradelight:item/pestle",
   "textures": {
     "0": "minecraft:block/basalt_top"
   }
