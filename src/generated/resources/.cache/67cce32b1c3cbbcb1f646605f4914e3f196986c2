@@ -1,5 +1,16 @@
-// 1.19.2	2023-01-29T18:02:40.6047854	LootTables
+// 1.19.2	2023-02-09T14:05:40.9471923	LootTables
 ec7f41fe763e7618e43a3fe30fbe258755b4a770 data/extradelight/loot_tables/blocks/dough_shaping.json
 d91e09aa11085b0cdf0032665c5567280a0be625 data/extradelight/loot_tables/blocks/food_display.json
+0d70cc35f8ad71ac1497d22f9ede864bcd088b5d data/extradelight/loot_tables/blocks/mixing_bowl.json
+d3555b928dc9697f5a3e68d2b950f6be2a639324 data/extradelight/loot_tables/blocks/mortar_amethyst.json
+9ab977016ed7f2e712434ba44f4348d5c8c76aa0 data/extradelight/loot_tables/blocks/mortar_andesite.json
+ccd648244bf52bed5742b7aced7cec32e20208e9 data/extradelight/loot_tables/blocks/mortar_basalt.json
+fbba48c1610847966e692323ddd123cbfd8d2df8 data/extradelight/loot_tables/blocks/mortar_blackstone.json
+f1d1098a9971cd5759f026cdc420702bdb8755ec data/extradelight/loot_tables/blocks/mortar_deepslate.json
+135985e86c37362dd6c8a60e5e24ad452d8fd261 data/extradelight/loot_tables/blocks/mortar_diorite.json
+2189e4fd59b7c9df35fcb92e4461cd2772f0a0b1 data/extradelight/loot_tables/blocks/mortar_endstone.json
+3f5f978743d6c2ea3f5c4a1c5ad7594573383a7c data/extradelight/loot_tables/blocks/mortar_gilded_blackstone.json
+af7c66649c613cb92e979ae6587d4af57547fa43 data/extradelight/loot_tables/blocks/mortar_granite.json
+204171e270bd314200e02a6a28afb7294c84bac3 data/extradelight/loot_tables/blocks/mortar_stone.json
 590e1f089a06471614a1146ab7c21ea013a64ae7 data/extradelight/loot_tables/blocks/oven.json
 615b13a18822f502528bd3572e827f4a617abb7f data/extradelight/loot_tables/blocks/yeast_pot.json

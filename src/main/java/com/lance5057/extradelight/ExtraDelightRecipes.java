@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
+import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
 import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 
 import net.minecraft.core.Registry;
@@ -20,6 +21,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("oven"));
 	public static final RegistryObject<RecipeType<DoughShapingRecipe>> DOUGH_SHAPING = RECIPE_TYPES
 			.register("dough_shaping", () -> registerRecipeType("dough_shaping"));
+	public static final RegistryObject<RecipeType<MortarRecipe>> MORTAR = RECIPE_TYPES.register("mortar",
+			() -> registerRecipeType("mortar"));
 
 	public static <T extends Recipe<?>> RecipeType<T> registerRecipeType(final String identifier) {
 		return new RecipeType<>() {
@@ -33,10 +36,12 @@ public class ExtraDelightRecipes {
 	public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister
 			.create(ForgeRegistries.RECIPE_SERIALIZERS, ExtraDelight.MOD_ID);
 
-	public static final RegistryObject<RecipeSerializer<?>> OVEN_SERIALIZER = RECIPE_SERIALIZERS.register("oven",
+	public static final RegistryObject<OvenRecipe.Serializer> OVEN_SERIALIZER = RECIPE_SERIALIZERS.register("oven",
 			OvenRecipe.Serializer::new);
-	public static final RegistryObject<RecipeSerializer<?>> DOUGH_SHAPING_SERIALIZER = RECIPE_SERIALIZERS
+	public static final RegistryObject<DoughShapingRecipe.Serializer> DOUGH_SHAPING_SERIALIZER = RECIPE_SERIALIZERS
 			.register("dough_shaping", DoughShapingRecipe.Serializer::new);
+	public static final RegistryObject<MortarRecipe.Serializer> MORTAR_SERIALIZER = RECIPE_SERIALIZERS
+			.register("mortar", MortarRecipe.Serializer::new);
 
 	public static final RecipeBookType RECIPE_TYPE_OVEN = RecipeBookType.create("OVEN");
 }

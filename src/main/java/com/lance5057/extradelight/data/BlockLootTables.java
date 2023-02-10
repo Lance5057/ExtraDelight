@@ -20,6 +20,7 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.OVEN.get());
 		this.dropSelf(ExtraDelightBlocks.DOUGH_SHAPING.get());
 		this.dropSelf(ExtraDelightBlocks.FOOD_DISPLAY.get());
+		this.dropSelf(ExtraDelightBlocks.MIXING_BOWL.get());
 
 		this.add(ExtraDelightBlocks.YEAST_POT.get(),
 				LootTable.lootTable()
@@ -27,6 +28,18 @@ public class BlockLootTables extends BlockLoot {
 								.add(LootItem.lootTableItem(Items.FLOWER_POT)))
 						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
+		
+		this.dropSelf(ExtraDelightBlocks.MORTAR_STONE.get());
+		this.dropSelf(ExtraDelightBlocks.MORTAR_ANDESITE.get());
+		this.dropSelf(ExtraDelightBlocks.MORTAR_GRANITE.get());
+		this.dropSelf(ExtraDelightBlocks.MORTAR_DIORITE.get());
+		this.dropSelf(ExtraDelightBlocks.MORTAR_DEEPSLATE.get());
+		this.dropSelf(ExtraDelightBlocks.MORTAR_BLACKSTONE.get());
+		this.dropSelf(ExtraDelightBlocks.MORTAR_BASALT.get());
+		this.dropSelf(ExtraDelightBlocks.MORTAR_ENDSTONE.get());
+		
+		this.dropSelf(ExtraDelightBlocks.MORTAR_AMETHYST.get()); //not craftable, dungeon item
+		this.dropSelf(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get()); //not craftable, dungeon item	
 	}
 
 	@Override

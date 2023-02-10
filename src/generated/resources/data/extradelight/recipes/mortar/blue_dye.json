@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 2,
+  "ingredient": {
+    "item": "minecraft:lapis_lazuli"
+  },
+  "result": {
+    "count": 4,
+    "item": "minecraft:blue_dye"
+  }
+}
