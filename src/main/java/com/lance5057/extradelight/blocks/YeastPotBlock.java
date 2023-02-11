@@ -41,8 +41,8 @@ public class YeastPotBlock extends Block {
 
 	@Override
 	public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-		// if (pRandom.nextInt() % speed == 0)
-		pLevel.setBlock(pPos, this.defaultBlockState().setValue(YEASTED, true), 2);
+		if (pRandom.nextInt() % speed == 0)
+			pLevel.setBlock(pPos, this.defaultBlockState().setValue(YEASTED, true), 2);
 	}
 
 	@Override
@@ -81,7 +81,8 @@ public class YeastPotBlock extends Block {
 			double d1 = (double) pPos.getY() + 0.4D;
 			double d2 = (double) pPos.getZ() + 0.25D + pRandom.nextDouble() / 2;
 			pLevel.addParticle(ParticleTypes.BUBBLE_POP, d0, d1, d2, 0.0D, 0.0D, 0.0D);
-			pLevel.playLocalSound(d0, d1, d2, SoundEvents.BUBBLE_COLUMN_BUBBLE_POP, SoundSource.AMBIENT, 0.1f, 0, false);
+			pLevel.playLocalSound(d0, d1, d2, SoundEvents.BUBBLE_COLUMN_BUBBLE_POP, SoundSource.AMBIENT, 0.1f, 0,
+					false);
 		}
 	}
 
