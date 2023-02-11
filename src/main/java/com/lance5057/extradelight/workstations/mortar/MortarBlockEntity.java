@@ -55,7 +55,7 @@ public class MortarBlockEntity extends BlockEntity {
 		return new ItemStackHandler(1) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
-				return 16;
+				return 4;
 			}
 
 			@Override
@@ -113,6 +113,11 @@ public class MortarBlockEntity extends BlockEntity {
 
 	public ItemStack getInsertedItem() {
 		return handler.map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
+	}
+	
+	public int getGrind()
+	{
+		return grinds;
 	}
 
 	@Override
@@ -202,12 +207,18 @@ public class MortarBlockEntity extends BlockEntity {
 
 					level.playSound(Player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
 				} else {
-					for (int i = 0; i < getInsertedItem().getCount(); i++) {
-						new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY(), getBlockPos().getZ(),
-								recipe.getResultItem()).spawnAtLocation(recipe.getResultItem());
+					ItemStack in = getInsertedItem();
+					
+					for (int i = 0; i < in.getCount(); i++) {
+						
+						ItemStack r = recipe.getResultItem().copy();
+						
+						new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY()+0.5f, getBlockPos().getZ(),
+								recipe.getResultItem()).spawnAtLocation(r);
 					}
 					inv.setStackInSlot(0, ItemStack.EMPTY);
 				}
+				updateInventory();
 			}
 		});
 

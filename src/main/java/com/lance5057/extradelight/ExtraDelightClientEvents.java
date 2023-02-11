@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.containers.FoodDisplayRenderer;
+import com.lance5057.extradelight.workstations.mortar.MortarRenderer;
 import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeCatagories;
 
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -19,5 +20,6 @@ public class ExtraDelightClientEvents {
 	
 	public static void setTERenderers() {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.FOOD_DISPLAY.get(), FoodDisplayRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.MORTAR.get(), MortarRenderer::new);
 	}
 }

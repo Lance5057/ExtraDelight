@@ -30,21 +30,27 @@ public class MortarRenderer implements BlockEntityRenderer<MortarBlockEntity> {
 
 		itemInteractionHandler.ifPresent(inv -> {
 			ItemStack item = inv.getStackInSlot(0);
+			int g = pBlockEntity.getGrind();
 
 			if (!item.isEmpty()) {
-				BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
-				pPoseStack.pushPose();
+				for (int i = 0; i < item.getCount(); i++) {
+					BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
+					pPoseStack.pushPose();
 
-				pPoseStack.translate(0.5f, 0.45f, 0.5f);
+					pPoseStack.translate(0.5f, 0.15f, 0.5f);
+					pPoseStack.mulPose(new Quaternion(0, (90 * i) + (45 * g), 0, true));
+					pPoseStack.mulPose(new Quaternion(45, 0, 45, true));
+					pPoseStack.translate(0.15f, 0, 0);
 
-				pPoseStack.mulPose(new Quaternion(90, 0, 0, true));
-				pPoseStack.translate(0.25f, 0, 0);
+					float scale = 1 - (g * 0.2f);
+					pPoseStack.scale(scale, scale, scale);
 
-				float uniscale = 0.65f;
-				pPoseStack.scale(uniscale, uniscale, uniscale);
-				itemRenderer.render(item, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
-						pPackedLight, pPackedOverlay, bakedmodel);
-				pPoseStack.popPose();
+					float uniscale = 0.65f;
+					pPoseStack.scale(uniscale, uniscale, uniscale);
+					itemRenderer.render(item, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
+							pPackedLight, pPackedOverlay, bakedmodel);
+					pPoseStack.popPose();
+				}
 			}
 		});
 	}
