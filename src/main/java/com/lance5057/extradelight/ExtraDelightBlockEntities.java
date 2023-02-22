@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.blocks.entities.FoodDisplayEntity;
+import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;
 import com.lance5057.extradelight.workstations.oven.OvenBlockEntity;
 
@@ -27,4 +28,8 @@ public class ExtraDelightBlockEntities {
 					ExtraDelightBlocks.MORTAR_DIORITE.get(), ExtraDelightBlocks.MORTAR_ENDSTONE.get(),
 					ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(), ExtraDelightBlocks.MORTAR_GRANITE.get(),
 					ExtraDelightBlocks.MORTAR_STONE.get()).build(null));
+
+	public static final RegistryObject<BlockEntityType<MixingBowlBlockEntity>> MIXING_BOWL = TILES.register("mixing_bowl",
+			() -> BlockEntityType.Builder.of(MixingBowlBlockEntity::new, ExtraDelightBlocks.MIXING_BOWL.get())
+					.build(null));
 }

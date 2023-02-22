@@ -181,7 +181,7 @@ public class MortarBlockEntity extends BlockEntity {
 		writeNBT(nbt);
 	}
 
-	public Optional<MortarRecipe> matchRecipe(ItemStack itemstack) {
+	public Optional<MortarRecipe> matchRecipe(ItemStack... itemstack) {
 		if (this.level != null) {
 			return level.getRecipeManager().getRecipeFor(ExtraDelightRecipes.MORTAR.get(),
 					new SimpleContainer(itemstack), level);

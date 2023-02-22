@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "b": {
+      "item": "minecraft:glow_berries"
+    },
+    "f": {
+      "item": "extradelight:flour"
+    },
+    "p": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "s": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    "fff",
+    "bbb",
+    "sps"
+  ],
+  "result": {
+    "item": "extradelight:glow_berry_pie"
+  }
+}

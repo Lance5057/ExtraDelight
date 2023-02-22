@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "m": {
+      "tag": "forge:milk"
+    },
+    "p": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "s": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    " s ",
+    "mpm"
+  ],
+  "result": {
+    "item": "extradelight:cheesecake"
+  }
+}

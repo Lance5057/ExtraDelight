@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 4,
+  "ingredient": {
+    "item": "minecraft:sunflower"
+  },
+  "result": {
+    "count": 3,
+    "item": "minecraft:yellow_dye"
+  }
+}

@@ -10,9 +10,9 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ItemTags extends ItemTagsProvider {
+public class EDItemTags extends ItemTagsProvider {
 
-	public ItemTags(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, String modId,
+	public EDItemTags(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, String modId,
 			@Nullable ExistingFileHelper existingFileHelper) {
 		super(pGenerator, pBlockTagsProvider, modId, existingFileHelper);
 	}

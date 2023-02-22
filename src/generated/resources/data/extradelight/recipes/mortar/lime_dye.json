@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 4,
+  "ingredient": {
+    "item": "minecraft:sea_pickle"
+  },
+  "result": {
+    "count": 2,
+    "item": "minecraft:lime_dye"
+  }
+}

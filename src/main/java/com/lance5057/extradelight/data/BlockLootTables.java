@@ -29,6 +29,8 @@ public class BlockLootTables extends BlockLoot {
 						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
 		
+		this.dropSelf(ExtraDelightBlocks.FLOUR.get());
+		
 		this.dropSelf(ExtraDelightBlocks.MORTAR_STONE.get());
 		this.dropSelf(ExtraDelightBlocks.MORTAR_ANDESITE.get());
 		this.dropSelf(ExtraDelightBlocks.MORTAR_GRANITE.get());
@@ -40,6 +42,14 @@ public class BlockLootTables extends BlockLoot {
 		
 		this.dropSelf(ExtraDelightBlocks.MORTAR_AMETHYST.get()); //not craftable, dungeon item
 		this.dropSelf(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get()); //not craftable, dungeon item	
+		
+		this.dropSelf(ExtraDelightBlocks.CHEESECAKE.get());
+		this.dropSelf(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get());
+		this.dropSelf(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get());
+		this.dropSelf(ExtraDelightBlocks.GLOW_BERRY_PIE.get());
+		this.dropSelf(ExtraDelightBlocks.HONEY_CHEESECAKE.get());
+		this.dropSelf(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get());
+		this.dropSelf(ExtraDelightBlocks.SWEET_BERRY_PIE.get());
 	}
 
 	@Override

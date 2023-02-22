@@ -7,13 +7,13 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:wheat"
+      "item": "extradelight:flour"
     },
     {
-      "item": "minecraft:wheat"
+      "item": "extradelight:flour"
     },
     {
-      "item": "minecraft:wheat"
+      "item": "extradelight:flour"
     },
     {
       "tag": "forge:milk"
