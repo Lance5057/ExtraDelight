@@ -26,7 +26,7 @@ public class MortarRecipe extends SingleItemRecipe {
 		this.grinds = grinds;
 	}
 	
-	public int getGrinds()
+	public int getStirs()
 	{
 		return grinds;
 	}

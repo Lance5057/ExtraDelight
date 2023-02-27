@@ -114,9 +114,8 @@ public class MortarBlockEntity extends BlockEntity {
 	public ItemStack getInsertedItem() {
 		return handler.map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
 	}
-	
-	public int getGrind()
-	{
+
+	public int getGrind() {
 		return grinds;
 	}
 
@@ -196,7 +195,7 @@ public class MortarBlockEntity extends BlockEntity {
 			if (recipeOptional.isPresent()) {
 				MortarRecipe recipe = recipeOptional.get();
 
-				if (this.grinds < recipe.getGrinds()) {
+				if (this.grinds < recipe.getStirs()) {
 					grinds++;
 
 					for (int i = 0; i < 1 + level.random.nextInt(4); i++)
@@ -208,13 +207,13 @@ public class MortarBlockEntity extends BlockEntity {
 					level.playSound(Player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
 				} else {
 					ItemStack in = getInsertedItem();
-					
+
 					for (int i = 0; i < in.getCount(); i++) {
-						
+
 						ItemStack r = recipe.getResultItem().copy();
-						
-						new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY()+0.5f, getBlockPos().getZ(),
-								recipe.getResultItem()).spawnAtLocation(r);
+
+						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
+								getBlockPos().getZ(), recipe.getResultItem()));
 					}
 					inv.setStackInSlot(0, ItemStack.EMPTY);
 				}

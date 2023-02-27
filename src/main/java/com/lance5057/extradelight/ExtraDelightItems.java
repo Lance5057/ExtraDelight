@@ -16,6 +16,7 @@ import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.MelonJuiceItem;
+import vectorwing.farmersdelight.common.item.MilkBottleItem;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ExtraDelightItems {
@@ -117,7 +118,7 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.FLOUR.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> CUPCAKE = ITEMS.register("cupcake",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.CUPCAKE_PROPERTY)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.CUPCAKE)));
 
 	// Juice
 	public static final RegistryObject<Item> GLOW_BERRY_JUICE = ITEMS.register("glow_berry_juice",
@@ -194,4 +195,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.POPSICLE)));
 	public static final RegistryObject<Item> HONEY_POPSICLE = ITEMS.register("honey_popsicle",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.POPSICLE)));
+
+	public static final RegistryObject<Item> WHIPPED_CREAM = ITEMS.register("whipped_cream",
+			() -> new Item(new MilkBottleItem.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.WHIPPED_CREAM)));
 }

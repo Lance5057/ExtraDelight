@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
+import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
 import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 
@@ -23,6 +24,8 @@ public class ExtraDelightRecipes {
 			.register("dough_shaping", () -> registerRecipeType("dough_shaping"));
 	public static final RegistryObject<RecipeType<MortarRecipe>> MORTAR = RECIPE_TYPES.register("mortar",
 			() -> registerRecipeType("mortar"));
+	public static final RegistryObject<RecipeType<MixingBowlRecipe>> MIXING_BOWL = RECIPE_TYPES.register("mixing_bowl",
+			() -> registerRecipeType("mixing_bowl"));
 
 	public static <T extends Recipe<?>> RecipeType<T> registerRecipeType(final String identifier) {
 		return new RecipeType<>() {
@@ -42,6 +45,8 @@ public class ExtraDelightRecipes {
 			.register("dough_shaping", DoughShapingRecipe.Serializer::new);
 	public static final RegistryObject<MortarRecipe.Serializer> MORTAR_SERIALIZER = RECIPE_SERIALIZERS
 			.register("mortar", MortarRecipe.Serializer::new);
+	public static final RegistryObject<MixingBowlRecipe.Serializer> MIXING_BOWL_SERIALIZER = RECIPE_SERIALIZERS
+			.register("mixing_bowl", MixingBowlRecipe.Serializer::new);
 
 	public static final RecipeBookType RECIPE_TYPE_OVEN = RecipeBookType.create("OVEN");
 }

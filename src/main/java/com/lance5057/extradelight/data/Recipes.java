@@ -2,8 +2,9 @@ package com.lance5057.extradelight.data;
 
 import java.util.function.Consumer;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
@@ -14,10 +15,10 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
@@ -47,6 +48,19 @@ public class Recipes extends RecipeProvider {
 		knifeRecipes(consumer);
 		potRecipes(consumer);
 		craftingRecipes(consumer);
+		mixingbowlRecipes(consumer);
+	}
+
+	private void mixingbowlRecipes(Consumer<FinishedRecipe> consumer) {
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+				.requires(ModItems.MILK_BOTTLE.get())
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MILK_BOTTLE.get()))
+				.save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 4)
+				.requires(Items.MILK_BUCKET)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.MILK_BUCKET))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "whipped_cream_bucket"));
 	}
 
 	private void craftingRecipes(Consumer<FinishedRecipe> consumer) {

@@ -148,6 +148,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.SWEET_BERRY_POPSICLE, "sweet_berry_popsicle");
 		forItem(ExtraDelightItems.FUDGE_POPSICLE, "fudge_popsicle");
 		forItem(ExtraDelightItems.HONEY_POPSICLE, "honey_popsicle");
+
+		forItem(ExtraDelightItems.WHIPPED_CREAM, "whipped_cream");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

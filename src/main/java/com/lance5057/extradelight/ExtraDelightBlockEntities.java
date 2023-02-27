@@ -29,7 +29,7 @@ public class ExtraDelightBlockEntities {
 					ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(), ExtraDelightBlocks.MORTAR_GRANITE.get(),
 					ExtraDelightBlocks.MORTAR_STONE.get()).build(null));
 
-	public static final RegistryObject<BlockEntityType<MixingBowlBlockEntity>> MIXING_BOWL = TILES.register("mixing_bowl",
-			() -> BlockEntityType.Builder.of(MixingBowlBlockEntity::new, ExtraDelightBlocks.MIXING_BOWL.get())
-					.build(null));
+	public static final RegistryObject<BlockEntityType<MixingBowlBlockEntity>> MIXING_BOWL = TILES
+			.register("mixing_bowl", () -> BlockEntityType.Builder
+					.of(MixingBowlBlockEntity::new, ExtraDelightBlocks.MIXING_BOWL.get()).build(null));
 }

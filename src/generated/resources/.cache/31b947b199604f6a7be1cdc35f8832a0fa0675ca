@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-19T20:23:06.8582548	Item Models: extradelight
+// 1.19.2	2023-02-26T23:56:29.9554515	Item Models: extradelight
 7a693de01321b8ff36eb6d21da1e9f8c0fe07800 assets/extradelight/models/item/baking_stone.json
 e8cdf431cb5eadba66fa2a4b5aa104c59dff2760 assets/extradelight/models/item/cheesecake.json
 5c8d549bc242a8445c268be4c42989206c0ff92f assets/extradelight/models/item/cheesecake_slice.json
@@ -61,6 +61,7 @@ adb6cfc22432e89846f60a971c05669d2133529e assets/extradelight/models/item/sweet_b
 00fc43d4c8b9ae1fdc7a09488297c016732638b5 assets/extradelight/models/item/sweet_berry_popsicle.json
 b4d11e6e6017ac7a51b9c215d2e23aca3d5e9e59 assets/extradelight/models/item/tomato_juice.json
 8271734f5c2d1dce70054d3dcf41fdcce3fab033 assets/extradelight/models/item/tray.json
+2f24921a3f377363274f1ac771df100f8462d6c3 assets/extradelight/models/item/whipped_cream.json
 39654d064c01474f401aa37806ea70b3b92be3e2 assets/extradelight/models/item/wooden_spoon.json
 850cc654799ea3c51189bffd633411585e603816 assets/extradelight/models/item/yeast.json
 5b97e276c163f088e42843bb640211bad99b18d4 assets/extradelight/models/item/yeast_pot.json

@@ -25,6 +25,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.PESTLE_DIORITE.get(), ExtraDelightItems.PESTLE_ENDSTONE.get(),
 				ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.get(), ExtraDelightItems.PESTLE_GRANITE.get(),
 				ExtraDelightItems.PESTLE_STONE.get());
+
+		tag(ExtraDelightTags.SPOONS).add(ExtraDelightItems.WOODEN_SPOON.get());
 	}
 
 }
