@@ -268,6 +268,8 @@ public class Recipes extends RecipeProvider {
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(Items.WHEAT), Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.WHEAT_SEEDS, 2)
 				.addResult(ModItems.STRAW.get()).build(consumer);
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.SUNFLOWER), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+				ExtraDelightItems.SUNFLOWER_SEEDS.get(), 2).addResult(Items.YELLOW_DYE, 2).build(consumer);
 	}
 
 	void mortarRecipes(Consumer<FinishedRecipe> consumer) {
@@ -346,6 +348,13 @@ public class Recipes extends RecipeProvider {
 
 		MortarRecipeBuilder.grind(Ingredient.of(Items.WHEAT_SEEDS), ExtraDelightItems.FLOUR.get(), STANDARD_GRIND, 1)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL)).save(consumer);
+
+		MortarRecipeBuilder
+				.grind(Ingredient.of(Items.BEETROOT_SEEDS, ModItems.CABBAGE_SEEDS.get(), ModItems.TOMATO_SEEDS.get(),
+						ExtraDelightItems.SUNFLOWER_SEEDS.get()), ExtraDelightItems.COOKING_OIL.get(), STANDARD_GRIND,
+						1)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BEETROOT_SEEDS))
+				.save(consumer);
 	}
 
 	void ovenRecipes(Consumer<FinishedRecipe> consumer) {

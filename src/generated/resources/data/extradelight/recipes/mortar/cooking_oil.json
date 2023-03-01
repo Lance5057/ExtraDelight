@@ -1,0 +1,21 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 4,
+  "ingredient": [
+    {
+      "item": "minecraft:beetroot_seeds"
+    },
+    {
+      "item": "farmersdelight:cabbage_seeds"
+    },
+    {
+      "item": "farmersdelight:tomato_seeds"
+    },
+    {
+      "item": "extradelight:sunflower_seeds"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cooking_oil"
+  }
+}

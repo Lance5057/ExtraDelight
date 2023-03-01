@@ -53,6 +53,10 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(),
 				models().withExistingParent("mortar_gilded_blackstone", modLoc("block/mortar")).texture("0",
 						mcLoc("block/gilded_blackstone"))); // not craftable, dungeon item
+		
+		this.simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(),
+				models().withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool",
+						modLoc("block/cooking_oil")));
 
 		pieBlock(ExtraDelightBlocks.SWEET_BERRY_PIE.get());
 		pieBlock(ExtraDelightBlocks.GLOW_BERRY_PIE.get());

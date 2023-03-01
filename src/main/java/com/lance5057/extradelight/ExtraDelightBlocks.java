@@ -50,6 +50,9 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.of(Material.MOSS).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
+	public static final RegistryObject<Block> COOKING_OIL = BLOCKS.register("cooking_oil",
+			() -> new CarpetBlock(Properties.of(Material.WATER).strength(0.1F, 0.0F).sound(SoundType.SLIME_BLOCK)
+					.noOcclusion().friction(0.98f)));
 
 	public static final RegistryObject<Block> SWEET_BERRY_PIE = ExtraDelightBlocks.BLOCKS.register("sweet_berry_pie",
 			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.SWEET_BERRY_PIE_SLICE));

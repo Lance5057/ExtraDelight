@@ -113,12 +113,17 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> YEAST_POT = ITEMS.register("yeast_pot",
 			() -> new BlockItem(ExtraDelightBlocks.YEAST_POT.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> YEAST = ITEMS.register("yeast",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> FLOUR = ITEMS.register("flour",
 			() -> new BlockItem(ExtraDelightBlocks.FLOUR.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> COOKING_OIL = ITEMS.register("cooking_oil",
+			() -> new BlockItem(ExtraDelightBlocks.COOKING_OIL.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> CUPCAKE = ITEMS.register("cupcake",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.CUPCAKE)));
+
+	public static final RegistryObject<Item> SUNFLOWER_SEEDS = ITEMS.register("sunflower_seeds",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.EDIBLE_SEEDS)));
 
 	// Juice
 	public static final RegistryObject<Item> GLOW_BERRY_JUICE = ITEMS.register("glow_berry_juice",

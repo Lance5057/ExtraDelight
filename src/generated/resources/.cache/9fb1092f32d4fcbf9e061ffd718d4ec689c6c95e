@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-27T03:21:12.7733523	Recipes
+// 1.19.2	2023-03-01T11:43:52.5031397	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 78c4e19f8c4e9245c107b960893c416621517f00 data/extradelight/advancements/recipes/extradelight.items/baking_stone.json
 f7a23419d2119fba76b2f6d8c28801efb339a784 data/extradelight/advancements/recipes/extradelight.items/cheesecake.json
@@ -13,6 +13,7 @@ b0c05672d6b6142fccda3c82ae0460ac4da89323 data/extradelight/advancements/recipes/
 64b7471ed4a91ac44e20210ac18e3a5b86ae1fe8 data/extradelight/advancements/recipes/extradelight.items/honey_popsicle.json
 d5203a4549fb1c90e539bee345c53e531637345e data/extradelight/advancements/recipes/extradelight.items/loaf_pan.json
 7a7a1fbe1267922827f5c3e30e9437e3bc5d8cf5 data/extradelight/advancements/recipes/extradelight.items/mixingbowl/whipped_cream.json
+32fd7bfd03a147923f9bd483f3cc02f31d836ee6 data/extradelight/advancements/recipes/extradelight.items/mortar/cooking_oil.json
 b36259830513e15a23f88a55016386a98c841968 data/extradelight/advancements/recipes/extradelight.items/mortar/flour.json
 de1e4588c351ab577c46f30f46f58e0d4d6781fd data/extradelight/advancements/recipes/extradelight.items/mortar_andesite.json
 eb27c55e47b8ffd8dfffbb4b62badd062966da65 data/extradelight/advancements/recipes/extradelight.items/mortar_basalt.json
@@ -83,6 +84,7 @@ ad07df4f5c12cffee73c558c8186ae2f4571e43d data/extradelight/recipes/mixingbowl/wh
 8712e41acf9421e70d6343573d2b9d392ddac3f6 data/extradelight/recipes/mortar/blue_dye.json
 f26e5d10ad6bcd546baa802f5dc35052d27007e4 data/extradelight/recipes/mortar/bone_meal.json
 7264317ba6c1945f2b2d4afbcb2b135ae058070c data/extradelight/recipes/mortar/brown_dye.json
+49f7570fd721e7b098a3bda9e6a8538529bd5937 data/extradelight/recipes/mortar/cooking_oil.json
 4ba78ac3c7394cb26fd5873e3327cefcb37fc98a data/extradelight/recipes/mortar/flour.json
 90dd3515bd8f86e7634775681a6a37853d6de32b data/extradelight/recipes/mortar/green_dye.json
 a1d0c273ad5394741b776f31a1d4e2c72f1f373d data/extradelight/recipes/mortar/light_blue_dye.json
@@ -133,6 +135,7 @@ fb2136f49b2cb87d1757876db09bf9c033ade33f data/extradelight/recipes/whipped_cream
 932721ab3d5452f49a921842f32ae6b2e10d6bfe data/farmersdelight/recipes/cooking/honey_custard.json
 5ec3d5f73d4ace2311dad675578effec48e243f2 data/farmersdelight/recipes/cooking/pumpkin_custard.json
 a9d07d333cc29f98ba84f1257d3a0d816ecd351a data/farmersdelight/recipes/cooking/sweet_berry_custard.json
+6b7ddcc6e1c1fddf7217ade2894d4b243cd0c2f4 data/farmersdelight/recipes/cutting/sunflower.json
 829377bea3b5b690ebc59925481db4361c94d66d data/farmersdelight/recipes/cutting/wheat.json
 28ee34440039ecc9f679c1d178a83c29d9bc570a data/minecraft/advancements/recipes/misc/blue_corn.json
 944174d1e2c480a63165660b28d426b5bcd51327 data/minecraft/advancements/recipes/misc/lgray_azure.json

@@ -31,6 +31,7 @@ public class BlockLootTables extends BlockLoot {
 								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
 		
 		this.dropSelf(ExtraDelightBlocks.FLOUR.get());
+		this.dropSelf(ExtraDelightBlocks.COOKING_OIL.get());
 		
 		this.dropSelf(ExtraDelightBlocks.MORTAR_STONE.get());
 		this.dropSelf(ExtraDelightBlocks.MORTAR_ANDESITE.get());

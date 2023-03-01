@@ -7,4 +7,6 @@ public class FoodVanilla {
 			.build();
 	public static final FoodProperties WHIPPED_CREAM = (new FoodProperties.Builder()).nutrition(0).saturationMod(0.1f)
 			.build();
+	public static final FoodProperties EDIBLE_SEEDS = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1f)
+			.build();
 }

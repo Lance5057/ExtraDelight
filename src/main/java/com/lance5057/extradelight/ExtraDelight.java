@@ -44,6 +44,7 @@ public class ExtraDelight {
 			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.DOUGH_SHAPING.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.YEAST_POT.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.FLOUR.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.COOKING_OIL.get(), RenderType.translucent());
 		});
 	}
 }

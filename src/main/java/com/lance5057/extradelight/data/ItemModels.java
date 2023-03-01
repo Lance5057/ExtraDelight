@@ -107,8 +107,10 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(ExtraDelightItems.YEAST, "yeast");
 		forItem(ExtraDelightItems.FLOUR, "flour");
+		forItem(ExtraDelightItems.COOKING_OIL, "cooking_oil");
 
 		forItem(ExtraDelightItems.CUPCAKE, "cupcake");
+		forItem(ExtraDelightItems.SUNFLOWER_SEEDS, "sunflower_seeds");
 
 		// Juice
 		forItem(ExtraDelightItems.GLOW_BERRY_JUICE, "glow_berry_juice");

@@ -1,6 +1,7 @@
-// 1.19.2	2023-02-27T14:28:07.4077401	LootTables
+// 1.19.2	2023-03-01T11:17:32.0128166	LootTables
 b3f8c2b5e5f1a6c3bb678f404e9166d8503c781b data/extradelight/loot_tables/blocks/cheesecake.json
 3aa2868f3b7f4c767ee53761cef7f67ec06e828a data/extradelight/loot_tables/blocks/chocolate_cheesecake.json
+bc5e6f6f35cb909e6cdce5270f5cdcbe6e507000 data/extradelight/loot_tables/blocks/cooking_oil.json
 ec7f41fe763e7618e43a3fe30fbe258755b4a770 data/extradelight/loot_tables/blocks/dough_shaping.json
 716634042bdd88d98b9a3780ea86d7f752b6196c data/extradelight/loot_tables/blocks/flour.json
 d91e09aa11085b0cdf0032665c5567280a0be625 data/extradelight/loot_tables/blocks/food_display.json
