@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-26T23:56:29.9554515	Item Models: extradelight
+// 1.19.2	2023-02-27T14:28:07.4047374	Item Models: extradelight
 7a693de01321b8ff36eb6d21da1e9f8c0fe07800 assets/extradelight/models/item/baking_stone.json
 e8cdf431cb5eadba66fa2a4b5aa104c59dff2760 assets/extradelight/models/item/cheesecake.json
 5c8d549bc242a8445c268be4c42989206c0ff92f assets/extradelight/models/item/cheesecake_slice.json
@@ -46,6 +46,7 @@ f9150ea27aa85199e409c80a54f776ce2fe25444 assets/extradelight/models/item/pestle_
 6add926d50575c8dcc29d4802d37ed814d3ecaf0 assets/extradelight/models/item/pestle_granite.json
 75aee982272f88b72bd3e469e9a40823753fc24e assets/extradelight/models/item/pestle_stone.json
 f076aba57fc412787512f15f2e3a5033be860ebd assets/extradelight/models/item/pie_dish.json
+45d4510c0b736256201b48735e322200ca18a975 assets/extradelight/models/item/plain_cake.json
 5f844979d4e2ea18fbb48bd04061777d4bc11ba8 assets/extradelight/models/item/pumpkin_cheesecake.json
 6749d90d57cf28adb2fb1c7ecfede7ffa12e56bd assets/extradelight/models/item/pumpkin_cheesecake_slice.json
 4cd8403eb917e1adae6654c0a6e02fd20f290c88 assets/extradelight/models/item/pumpkin_cookie.json

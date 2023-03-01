@@ -5,6 +5,7 @@ buildscript {
             name = "Parchment"
             url = 'https://maven.parchmentmc.org'
         }
+		maven { url 'https://maven.blamejared.com' }
         mavenCentral()
     }
     dependencies {
@@ -114,6 +115,9 @@ dependencies {
 	implementation fg.deobf("curse.maven:farmersdelight-398521:3999157")
 
     implementation fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+	compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-76:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-76")
+	//implementation fg.deobf('curse.maven:patchouli-datagen-ptd-lib-585667:4399634')
 }
 
 repositories {

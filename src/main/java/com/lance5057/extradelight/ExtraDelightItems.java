@@ -197,5 +197,10 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.POPSICLE)));
 
 	public static final RegistryObject<Item> WHIPPED_CREAM = ITEMS.register("whipped_cream",
-			() -> new Item(new MilkBottleItem.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.WHIPPED_CREAM)));
+			() -> new Item(new MilkBottleItem.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.WHIPPED_CREAM)
+					.craftRemainder(Items.BOWL)));
+
+	public static final RegistryObject<Item> PLAIN_CAKE = ITEMS.register("plain_cake",
+			() -> new BlockItem(ExtraDelightBlocks.PLAIN_CAKE.get(),
+					new BlockItem.Properties().tab(EXTRA_DELIGHT_TAB)));
 }

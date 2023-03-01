@@ -7,6 +7,7 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -50,6 +51,8 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.HONEY_CHEESECAKE.get());
 		this.dropSelf(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get());
 		this.dropSelf(ExtraDelightBlocks.SWEET_BERRY_PIE.get());
+		
+		this.add(ExtraDelightBlocks.PLAIN_CAKE.get(), noDrop());
 	}
 
 	@Override

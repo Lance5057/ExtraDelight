@@ -6,6 +6,7 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -60,6 +61,23 @@ public class BlockModels extends BlockStateProvider {
 		pieBlock(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get());
 		pieBlock(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get());
 		pieBlock(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get());
+
+		createCakeBlock(ExtraDelightBlocks.PLAIN_CAKE.get(), "plain");
+	}
+
+	private void createCakeBlock(Block block, String prefix) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int bites = state.getValue(BlockStateProperties.BITES);
+			String suffix = bites > 0 ? "_slice" + bites : "";
+			return ConfiguredModel.builder().modelFile(models()
+					.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
+							mcLoc("block/cake" + suffix))
+					.texture("particle", modLoc("block/" + prefix + "_cake_top"))
+					.texture("bottom", modLoc("block/" + prefix + "_cake_bottom"))
+					.texture("side", modLoc("block/" + prefix + "_cake_side"))
+					.texture("top", modLoc("block/" + prefix + "_cake_top"))
+					.texture("inside", modLoc("block/" + prefix + "_cake_inner"))).build();
+		});
 	}
 
 	public void pieBlock(Block block) {
