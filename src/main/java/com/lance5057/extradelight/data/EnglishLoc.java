@@ -17,7 +17,7 @@ public class EnglishLoc extends LanguageProvider {
 	protected void addTranslations() {
 		this.add("itemGroup.extradelight.items", "Extra Delight");
 		this.add("farmersdelight.tooltip.oven.empty", "");
-		
+
 		this.add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		this.add(ExtraDelightItems.CHEESECAKE_ITEM.get(), "Cheesecake");
 		this.add(ExtraDelightItems.CHEESECAKE_SLICE.get(), "Slice of Cheesecake");
@@ -42,7 +42,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.HONEY_POPSICLE.get(), "Honey Cream Popsicle");
 		this.add(ExtraDelightItems.LOAF_PAN.get(), "Loaf Pan");
 		this.add(ExtraDelightItems.MIXING_BOWL.get(), "Mixing Bowl");
-		
+
 		this.add(ExtraDelightItems.MORTAR_AMETHYST.get(), "Mortar");
 		this.add(ExtraDelightItems.MORTAR_ANDESITE.get(), "Mortar");
 		this.add(ExtraDelightItems.MORTAR_BASALT.get(), "Mortar");
@@ -53,10 +53,10 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(), "Mortar");
 		this.add(ExtraDelightItems.MORTAR_GRANITE.get(), "Mortar");
 		this.add(ExtraDelightItems.MORTAR_STONE.get(), "Mortar");
-		
+
 		this.add(ExtraDelightItems.MUFFIN_TIN.get(), "Muffin Tin");
 		this.add(ExtraDelightItems.OVEN.get(), "Oven");
-		
+
 		this.add(ExtraDelightItems.PESTLE_AMETHYST.get(), "Pestle");
 		this.add(ExtraDelightItems.PESTLE_ANDESITE.get(), "Pestle");
 		this.add(ExtraDelightItems.PESTLE_BASALT.get(), "Pestle");
@@ -67,7 +67,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.get(), "Pestle");
 		this.add(ExtraDelightItems.PESTLE_GRANITE.get(), "Pestle");
 		this.add(ExtraDelightItems.PESTLE_STONE.get(), "Pestle");
-		
+
 		this.add(ExtraDelightItems.PIE_DISH.get(), "Pie Dish");
 		this.add(ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get(), "Pumpkin Cheesecake");
 		this.add(ExtraDelightItems.PUMPKIN_CHEESECAKE_SLICE.get(), "Slice of Pumpkin Cheesecake");
@@ -87,5 +87,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.WOODEN_SPOON.get(), "Wooden Spoon");
 		this.add(ExtraDelightItems.YEAST.get(), "Yeast");
 		this.add(ExtraDelightItems.YEAST_POT.get(), "Yeast Pot");
+
+		this.add(ExtraDelightItems.BBQ_JAR_ITEM.get(), "BBQ Sauce");
+		this.add(ExtraDelightItems.KETCHUP_JAR_ITEM.get(), "Ketchup");
+		
+		this.add(ExtraDelightItems.EGG_MIX.get(), "Egg Mix");
+		this.add(ExtraDelightItems.OMELETTE_MIX.get(), "Omelette Mix");
 	}
 }

@@ -154,6 +154,17 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.WHIPPED_CREAM, "whipped_cream");
 
 		forItem(ExtraDelightItems.PLAIN_CAKE, "plain_cake");
+
+		// Eggs
+		forItem(ExtraDelightItems.EGG_MIX, "egg_mix");
+		forItem(ExtraDelightItems.SCRAMBLED_EGGS, "scrambled_eggs");
+		forItem(ExtraDelightItems.OMELETTE_MIX, "omelette_mix");
+		forItem(ExtraDelightItems.OMELETTE, "omelette");
+		forItem(ExtraDelightItems.BOILED_EGG, "hard_boiled_egg");
+
+		forItem(ExtraDelightItems.KETCHUP_JAR_ITEM, "ketchup");
+		forItem(ExtraDelightItems.BBQ_JAR_ITEM, "bbq");
+		forItem(ExtraDelightItems.MAYO_JAR_ITEM, "mayo");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

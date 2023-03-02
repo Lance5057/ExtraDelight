@@ -19,6 +19,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.Tags;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
@@ -61,6 +62,12 @@ public class Recipes extends RecipeProvider {
 				.requires(Items.MILK_BUCKET)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.MILK_BUCKET))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "whipped_cream_bucket"));
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.EGG_MIX.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+				.requires(ModItems.MILK_BOTTLE.get()).requires(Items.EGG).requires(Items.EGG)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.EGG))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "egg_mix"));
+
 	}
 
 	private void craftingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -239,6 +246,21 @@ public class Recipes extends RecipeProvider {
 		ShapedRecipeBuilder.shaped(ExtraDelightItems.SWEET_BERRY_POPSICLE.get()).pattern(" gg").pattern("igg")
 				.pattern("Si ").define('g', Items.SWEET_BERRIES).define('S', Items.STICK).define('i', Items.ICE)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE)).save(consumer);
+
+		// Omelette
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.OMELETTE_MIX.get())
+				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(ForgeTags.VEGETABLES))
+				.requires(Ingredient.of(ForgeTags.VEGETABLES))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TOMATO.get()))
+				.save(consumer, "veg_omelette");
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.OMELETTE_MIX.get())
+				.requires(ExtraDelightItems.EGG_MIX.get(), 1)
+				.requires(Ingredient.of(Items.COOKED_BEEF, Items.COOKED_CHICKEN, Items.COOKED_MUTTON,
+						Items.COOKED_PORKCHOP))
+				.requires(Ingredient.of(ForgeTags.VEGETABLES))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TOMATO.get()))
+				.save(consumer, "veg_meat_omelette");
 	}
 
 	private void potRecipes(Consumer<FinishedRecipe> consumer) {
@@ -262,6 +284,24 @@ public class Recipes extends RecipeProvider {
 						Items.GLASS_BOTTLE)
 				.addIngredient(Items.SWEET_BERRIES).addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.EGGS)
 				.addIngredient(Items.SUGAR).build(consumer);
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.KETCHUP_JAR_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ForgeTags.VEGETABLES_TOMATO).addIngredient(Items.SUGAR)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "ketchup_jar"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.BBQ_JAR_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ForgeTags.VEGETABLES_TOMATO).addIngredient(ForgeTags.VEGETABLES_ONION)
+				.addIngredient(Items.SUGAR).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "bbq_sugar"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.BBQ_JAR_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ForgeTags.VEGETABLES_TOMATO).addIngredient(ForgeTags.VEGETABLES_ONION)
+				.addIngredient(Items.HONEY_BOTTLE)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "bbq_honey"));
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {

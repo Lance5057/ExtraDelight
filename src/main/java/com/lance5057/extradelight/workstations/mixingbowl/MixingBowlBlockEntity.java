@@ -32,6 +32,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 public class MixingBowlBlockEntity extends BlockEntity {
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
@@ -261,10 +262,15 @@ public class MixingBowlBlockEntity extends BlockEntity {
 					level.playSound(player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
 				} else {
 					this.containerItem = recipe.getUsedItem();
+					
+					ItemStack i = recipe.getResultItem().copy();
+					
+					i.onCraftedBy(player.level, player, 1);
+					net.minecraftforge.event.ForgeEventFactory.firePlayerCraftingEvent(player, i, new RecipeWrapper(inv));
+					
 					dropContainers(inv, player);
 					clearItems(inv);
-					ItemStack i = recipe.getResultItem();
-					inv.setStackInSlot(32, i.copy());
+					inv.setStackInSlot(32, i);
 				}
 				updateInventory();
 			}

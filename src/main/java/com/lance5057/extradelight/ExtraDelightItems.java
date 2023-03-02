@@ -4,6 +4,7 @@ import com.lance5057.extradelight.food.FoodVanilla;
 import com.lance5057.extradelight.items.GlowberryFoodItem;
 import com.lance5057.extradelight.items.GlowberryJuiceItem;
 import com.lance5057.extradelight.items.GlowberryPopsicleItem;
+import com.lance5057.extradelight.items.SimpleDynamicNameFood;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -15,6 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MelonJuiceItem;
 import vectorwing.farmersdelight.common.item.MilkBottleItem;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -208,4 +210,26 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> PLAIN_CAKE = ITEMS.register("plain_cake",
 			() -> new BlockItem(ExtraDelightBlocks.PLAIN_CAKE.get(),
 					new BlockItem.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	// Eggs
+	public static final RegistryObject<Item> EGG_MIX = ITEMS.register("egg_mix", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.BAD_EGG).craftRemainder(Items.BOWL)));
+	public static final RegistryObject<Item> SCRAMBLED_EGGS = ITEMS.register("scrambled_eggs", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SCRAMBLED_EGGS).craftRemainder(Items.BOWL)));
+	public static final RegistryObject<Item> OMELETTE_MIX = ITEMS.register("omelette_mix",
+			() -> new SimpleDynamicNameFood(EGG_MIX.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.BAD_EGG).craftRemainder(Items.BOWL)));
+	public static final RegistryObject<Item> OMELETTE = ITEMS.register("omelette",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.OMELETTE)));
+	public static final RegistryObject<Item> BOILED_EGG = ITEMS.register("boiled_egg",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.FRIED_EGG)));
+
+	// Condiments
+	public static final RegistryObject<Item> BBQ_JAR_ITEM = ITEMS.register("bbq_jar_item", () -> new DrinkableItem(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.BBQ).craftRemainder(Items.GLASS_BOTTLE)));
+	public static final RegistryObject<Item> KETCHUP_JAR_ITEM = ITEMS.register("ketchup_jar_item",
+			() -> new DrinkableItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.KETCHUP)
+					.craftRemainder(Items.GLASS_BOTTLE)));
+	public static final RegistryObject<Item> MAYO_JAR_ITEM = ITEMS.register("mayo_jar_item", () -> new DrinkableItem(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.MAYO).craftRemainder(Items.GLASS_BOTTLE)));
 }
