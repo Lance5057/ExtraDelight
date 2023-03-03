@@ -1,5 +1,6 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.recipe.DynamicNameSmeltingRecipe;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
@@ -10,6 +11,8 @@ import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SimpleCookingSerializer;
+import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -26,6 +29,10 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("mortar"));
 	public static final RegistryObject<RecipeType<MixingBowlRecipe>> MIXING_BOWL = RECIPE_TYPES.register("mixing_bowl",
 			() -> registerRecipeType("mixing_bowl"));
+
+	// Dynamic Names
+	public static final RegistryObject<RecipeType<DynamicNameSmeltingRecipe>> DYNAMIC_SMELT = RECIPE_TYPES
+			.register("dynamic_smelt", () -> registerRecipeType("dynamic_smelt"));
 
 	public static <T extends Recipe<?>> RecipeType<T> registerRecipeType(final String identifier) {
 		return new RecipeType<>() {
@@ -47,6 +54,9 @@ public class ExtraDelightRecipes {
 			.register("mortar", MortarRecipe.Serializer::new);
 	public static final RegistryObject<MixingBowlRecipe.Serializer> MIXING_BOWL_SERIALIZER = RECIPE_SERIALIZERS
 			.register("mixing_bowl", MixingBowlRecipe.Serializer::new);
+
+	public static final RegistryObject<DynamicNameSmeltingRecipe.Serializer> DYNAMIC_SMELT_SERIALIZER = RECIPE_SERIALIZERS
+			.register("dynamic_smelt", DynamicNameSmeltingRecipe.Serializer::new);
 
 	public static final RecipeBookType RECIPE_TYPE_OVEN = RecipeBookType.create("OVEN");
 }

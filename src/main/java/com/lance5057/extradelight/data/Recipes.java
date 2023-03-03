@@ -4,6 +4,7 @@ import java.util.function.Consumer;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.data.recipebuilders.DynamicNameSimpleCookingRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
@@ -15,6 +16,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
@@ -50,6 +52,28 @@ public class Recipes extends RecipeProvider {
 		potRecipes(consumer);
 		craftingRecipes(consumer);
 		mixingbowlRecipes(consumer);
+		cookingRecipes(consumer);
+	}
+
+	private void cookingRecipes(Consumer<FinishedRecipe> consumer) {
+		DynamicNameSimpleCookingRecipeBuilder
+				.smelting(Ingredient.of(ExtraDelightItems.OMELETTE_MIX.get()), ExtraDelightItems.OMELETTE.get(),
+						MEDIUM_EXP, NORMAL_COOKING)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.OMELETTE_MIX.get()))
+				.save(consumer, "omelette_smoker");
+//		SimpleCookingRecipeBuilder
+//				.campfireCooking(Ingredient.of(ExtraDelightItems.OMELETTE_MIX.get()), ExtraDelightItems.OMELETTE.get(),
+//						MEDIUM_EXP, NORMAL_COOKING)
+//				.unlockedBy(getName(),
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.OMELETTE_MIX.get()))
+//				.save(consumer, "omelette_fire");
+//		SimpleCookingRecipeBuilder
+//				.smelting(Ingredient.of(ExtraDelightItems.OMELETTE_MIX.get()), ExtraDelightItems.OMELETTE.get(),
+//						MEDIUM_EXP, NORMAL_COOKING)
+//				.unlockedBy(getName(),
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.OMELETTE_MIX.get()))
+//				.save(consumer, "omelette_furnace");
 	}
 
 	private void mixingbowlRecipes(Consumer<FinishedRecipe> consumer) {

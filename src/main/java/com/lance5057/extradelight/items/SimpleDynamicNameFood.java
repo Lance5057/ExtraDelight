@@ -3,7 +3,9 @@ package com.lance5057.extradelight.items;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.client.resources.language.I18n;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -21,25 +23,53 @@ public class SimpleDynamicNameFood extends Item implements IDynamicNamedFood {
 	}
 
 	@Override
-	public String getDynamicName(Player p, Level l, ItemStack i, String base, Container c) {
+	public Component getName(ItemStack pStack) {
+		return getDynamicName(pStack);
+	}
 
-		String s = "";
-		List<String> items = new ArrayList<String>();
-		if (l.isClientSide()) {
-			for (int j = 0; j < c.getContainerSize() - 1; j++) {
-				if (c.getItem(j) != ItemStack.EMPTY) {
-					if (c.getItem(j).getItem() != ignore)
-						items.add(c.getItem(j).getDescriptionId());
-				}
-			}
+	@Override
+	public MutableComponent getDynamicName(ItemStack stack) {
+		StringBuilder sb = new StringBuilder();
+		String[] items = IDynamicNamedFood.readNBTIngredientList(stack);
+		List<String> trans = new ArrayList<String>();
 
-			for (int k = 0; k < items.size() - 1; k++) {
-				s += I18n.get(items.get(k)) + " ";
-			}
-			s += "and " + I18n.get(items.get(items.size() - 1)) + " ";
-			s += I18n.get(i.getItem().getDescriptionId());
+		if (items.length <= 0)
+			return Component.translatable(this.getDescriptionId());
+
+		for (int i = 0; i < items.length; i++) {
+			if (items[i] != ignore.getDescriptionId())
+				trans.add(Component.translatable(items[i]).getString());
 		}
-		return s;
+
+		trans.add(Component.translatable(this.getDescriptionId()).getString());
+
+		sb.append(Component.translatable("extradelight.dynamicname." + items.length, trans.toArray()).getString());
+
+//		for (int i = 0; i < items.length; i++) {
+//			if (items[i] != ignore.getDescriptionId()) {
+//				sb.append(Component.translatable(items[i]).getString());
+//				sb.append(" ");
+//			}
+//		}
+//		// if (l.isClientSide()) {
+//		for (int j = 0; j < c.getContainerSize() - 1; j++) {
+//			if (c.getItem(j) != ItemStack.EMPTY) {
+//				if (c.getItem(j).getItem() != ignore)
+//					items.add(c.getItem(j).getDescriptionId());
+//			}
+//		}
+//
+//		for (int k = 0; k < items.size() - 1; k++) {
+//			s += new TranslatableContents(items.get(k)).toString();
+//			// s += I18n.get(items.get(k)) + " ";
+//		}
+//		s += "and " + new TranslatableContents(items.get(items.size() - 1)) + " ";
+//		s += new TranslatableContents(i.getItem().getDescriptionId());
+//		// }
+
+		// sb.append(Component.translatable(this.getDescriptionId()).getString());
+
+		return Component.literal(sb.toString());
 	}
 
 }

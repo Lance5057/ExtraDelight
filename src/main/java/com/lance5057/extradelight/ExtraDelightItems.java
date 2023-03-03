@@ -217,10 +217,11 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> SCRAMBLED_EGGS = ITEMS.register("scrambled_eggs", () -> new Item(
 			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SCRAMBLED_EGGS).craftRemainder(Items.BOWL)));
 	public static final RegistryObject<Item> OMELETTE_MIX = ITEMS.register("omelette_mix",
-			() -> new SimpleDynamicNameFood(EGG_MIX.get(),
+			() -> new SimpleDynamicNameFood(ExtraDelightItems.EGG_MIX.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.BAD_EGG).craftRemainder(Items.BOWL)));
 	public static final RegistryObject<Item> OMELETTE = ITEMS.register("omelette",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.OMELETTE)));
+			() -> new SimpleDynamicNameFood(ExtraDelightItems.OMELETTE_MIX.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.OMELETTE)));
 	public static final RegistryObject<Item> BOILED_EGG = ITEMS.register("boiled_egg",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.FRIED_EGG)));
 

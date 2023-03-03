@@ -1,4 +1,4 @@
-// 1.19.2	2023-03-02T13:15:17.3688743	Recipes
+// 1.19.2	2023-03-03T13:44:51.1852633	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 78c4e19f8c4e9245c107b960893c416621517f00 data/extradelight/advancements/recipes/extradelight.items/baking_stone.json
 f7a23419d2119fba76b2f6d8c28801efb339a784 data/extradelight/advancements/recipes/extradelight.items/cheesecake.json
@@ -142,6 +142,7 @@ fb2136f49b2cb87d1757876db09bf9c033ade33f data/extradelight/recipes/whipped_cream
 a9d07d333cc29f98ba84f1257d3a0d816ecd351a data/farmersdelight/recipes/cooking/sweet_berry_custard.json
 6b7ddcc6e1c1fddf7217ade2894d4b243cd0c2f4 data/farmersdelight/recipes/cutting/sunflower.json
 829377bea3b5b690ebc59925481db4361c94d66d data/farmersdelight/recipes/cutting/wheat.json
+3f065edbc93eb4f02de50056acd4a77da1b2772e data/minecraft/advancements/recipes/extradelight.items/omelette_smoker.json
 59a60eb788f6f6d61639b94a5d4b9919f8c1d9f0 data/minecraft/advancements/recipes/extradelight.items/veg_meat_omelette.json
 81f11a6c51d22d193e020c0009a999adf37af734 data/minecraft/advancements/recipes/extradelight.items/veg_omelette.json
 28ee34440039ecc9f679c1d178a83c29d9bc570a data/minecraft/advancements/recipes/misc/blue_corn.json
@@ -160,6 +161,7 @@ c44dcdd518f4cb5ee0b43bf743484bb6a5084ee1 data/minecraft/recipes/lgray_azure.json
 cb0ebf38dff22f9fcf019f18524e9781d463a954 data/minecraft/recipes/lgray_tulip.json
 605c6a3689188d43b05978cb49d1b084270b28c4 data/minecraft/recipes/lilac_magenta.json
 b88882bed79d5a62eea4c099c582b853df61bff9 data/minecraft/recipes/lily_white.json
+0d3eb786cf2984d0ee47b71f0f8a2cec54628e45 data/minecraft/recipes/omelette_smoker.json
 0ad4fca331b1ac7a38e85b2839c67275d11432cc data/minecraft/recipes/peony_pink.json
 ada4f3a0255f49ac726a47f045f5b5f0d6093acc data/minecraft/recipes/poppy_red.json
 9dca2b1246c49e26287298cfbec9ad616531693a data/minecraft/recipes/red_beet.json

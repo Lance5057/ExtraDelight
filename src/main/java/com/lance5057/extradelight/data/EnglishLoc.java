@@ -18,6 +18,16 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("itemGroup.extradelight.items", "Extra Delight");
 		this.add("farmersdelight.tooltip.oven.empty", "");
 
+		this.add("extradelight.dynamicname.1", "%s");
+		this.add("extradelight.dynamicname.2", "%s %s");
+		this.add("extradelight.dynamicname.3", "%s and %s %s");
+		this.add("extradelight.dynamicname.4", "%s, %s and %s %s");
+		this.add("extradelight.dynamicname.5", "%s, %s, %s and %s %s");
+		this.add("extradelight.dynamicname.6", "%s, %s, %s, %s and %s %s");
+		this.add("extradelight.dynamicname.7", "%s, %s, %s, %s, %s and %s %s");
+		this.add("extradelight.dynamicname.8", "%s, %s, %s, %s, %s, %s and %s %s");
+		this.add("extradelight.dynamicname.9", "%s, %s, %s, %s, %s, %s, %s and %s %s");
+
 		this.add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		this.add(ExtraDelightItems.CHEESECAKE_ITEM.get(), "Cheesecake");
 		this.add(ExtraDelightItems.CHEESECAKE_SLICE.get(), "Slice of Cheesecake");
@@ -90,7 +100,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.BBQ_JAR_ITEM.get(), "BBQ Sauce");
 		this.add(ExtraDelightItems.KETCHUP_JAR_ITEM.get(), "Ketchup");
-		
+
 		this.add(ExtraDelightItems.EGG_MIX.get(), "Egg Mix");
 		this.add(ExtraDelightItems.OMELETTE_MIX.get(), "Omelette Mix");
 	}
