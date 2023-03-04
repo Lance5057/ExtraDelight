@@ -53,18 +53,19 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(),
 				models().withExistingParent("mortar_gilded_blackstone", modLoc("block/mortar")).texture("0",
 						mcLoc("block/gilded_blackstone"))); // not craftable, dungeon item
-		
-		this.simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(),
-				models().withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool",
-						modLoc("block/cooking_oil")));
 
-		pieBlock(ExtraDelightBlocks.SWEET_BERRY_PIE.get());
-		pieBlock(ExtraDelightBlocks.GLOW_BERRY_PIE.get());
-		pieBlock(ExtraDelightBlocks.CHEESECAKE.get());
-		pieBlock(ExtraDelightBlocks.HONEY_CHEESECAKE.get());
-		pieBlock(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get());
-		pieBlock(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get());
-		pieBlock(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get());
+		this.simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(), models()
+				.withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool", modLoc("block/cooking_oil")));
+
+		pieBlock(ExtraDelightBlocks.SWEET_BERRY_PIE.get(), "sweet_berry_pie");
+		pieBlock(ExtraDelightBlocks.GLOW_BERRY_PIE.get(), "glow_berry_pie");
+		pieBlock(ExtraDelightBlocks.CHEESECAKE.get(), "cheesecake");
+		pieBlock(ExtraDelightBlocks.HONEY_CHEESECAKE.get(), "honey_cheesecake");
+		pieBlock(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get(), "chocolate_cheesecake");
+		pieBlock(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get(), "pumpkin_cheesecake");
+		pieBlock(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get(), "glow_berry_cheesecake");
+
+		pieBlock(ExtraDelightBlocks.QUICHE.get(), "quiche");
 
 		createCakeBlock(ExtraDelightBlocks.PLAIN_CAKE.get(), "plain");
 	}
@@ -84,15 +85,19 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	public void pieBlock(Block block) {
+	public void pieBlock(Block block, String prefix) {
 		getVariantBuilder(block).forAllStates(state -> {
 			int bites = state.getValue(PieBlock.BITES);
 			String suffix = bites > 0 ? "_slice" + bites : "";
 			return ConfiguredModel.builder()
-					.modelFile(new ModelFile.ExistingModelFile(
-							new ResourceLocation(ExtraDelight.MOD_ID,
-									"block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix),
-							models().existingFileHelper))
+					.modelFile(models()
+							.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
+									modLoc("block/pie" + suffix))
+							.texture("particle", modLoc("block/" + prefix + "_top"))
+//					.texture("bottom", "farmersdelight:block/pie_bottom")
+//					.texture("side", "farmersdelight:block/pie_side")
+							.texture("top", modLoc("block/" + prefix + "_top"))
+							.texture("inner", modLoc("block/" + prefix + "_inner")))
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}

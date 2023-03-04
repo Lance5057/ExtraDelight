@@ -224,6 +224,10 @@ public class ExtraDelightItems {
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.OMELETTE)));
 	public static final RegistryObject<Item> BOILED_EGG = ITEMS.register("boiled_egg",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.FRIED_EGG)));
+	public static final RegistryObject<Item> QUICHE = ITEMS.register("quiche",
+			() -> new BlockItem(ExtraDelightBlocks.QUICHE.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> QUICHE_SLICE = ITEMS.register("quiche_slice",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.FRIED_EGG)));
 
 	// Condiments
 	public static final RegistryObject<Item> BBQ_JAR_ITEM = ITEMS.register("bbq_jar_item", () -> new DrinkableItem(
@@ -233,4 +237,5 @@ public class ExtraDelightItems {
 					.craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> MAYO_JAR_ITEM = ITEMS.register("mayo_jar_item", () -> new DrinkableItem(
 			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.MAYO).craftRemainder(Items.GLASS_BOTTLE)));
+
 }

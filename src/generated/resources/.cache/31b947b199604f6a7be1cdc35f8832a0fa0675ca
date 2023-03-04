@@ -1,4 +1,4 @@
-// 1.19.2	2023-03-02T12:43:15.7454261	Item Models: extradelight
+// 1.19.2	2023-03-04T10:23:16.7368345	Item Models: extradelight
 7a693de01321b8ff36eb6d21da1e9f8c0fe07800 assets/extradelight/models/item/baking_stone.json
 06adba1f727fc2375578741a8976050e59b7a96e assets/extradelight/models/item/bbq_jar_item.json
 716b95eee08ed1d9863eaf3930a8b1faaa0c5168 assets/extradelight/models/item/boiled_egg.json
@@ -59,6 +59,8 @@ f076aba57fc412787512f15f2e3a5033be860ebd assets/extradelight/models/item/pie_dis
 6749d90d57cf28adb2fb1c7ecfede7ffa12e56bd assets/extradelight/models/item/pumpkin_cheesecake_slice.json
 4cd8403eb917e1adae6654c0a6e02fd20f290c88 assets/extradelight/models/item/pumpkin_cookie.json
 b699d674331217e93bcadc5148c934e19c5fb267 assets/extradelight/models/item/pumpkin_custard.json
+c218818c9bf9c2fd259630bc94089f7f0408b292 assets/extradelight/models/item/quiche.json
+2ab179a7e3bbae14170d663fbfad18ad5dd9a83b assets/extradelight/models/item/quiche_slice.json
 60d51c53b477c73c353375a9e775de79d9b7d608 assets/extradelight/models/item/round_pan.json
 cc1227714b7d19abbd5f0c7c5b47d3a93b221614 assets/extradelight/models/item/scrambled_eggs.json
 55dabd8f81bf858a7b936f5658a34dc92f76f85b assets/extradelight/models/item/sheet.json

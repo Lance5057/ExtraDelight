@@ -161,6 +161,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.OMELETTE_MIX, "omelette_mix");
 		forItem(ExtraDelightItems.OMELETTE, "omelette");
 		forItem(ExtraDelightItems.BOILED_EGG, "hard_boiled_egg");
+		forItem(ExtraDelightItems.QUICHE, "quiche");
+		forItem(ExtraDelightItems.QUICHE_SLICE, "quiche_slice");
 
 		forItem(ExtraDelightItems.KETCHUP_JAR_ITEM, "ketchup");
 		forItem(ExtraDelightItems.BBQ_JAR_ITEM, "bbq");

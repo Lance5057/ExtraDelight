@@ -45,13 +45,15 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.MORTAR_AMETHYST.get()); //not craftable, dungeon item
 		this.dropSelf(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get()); //not craftable, dungeon item	
 		
-		this.dropSelf(ExtraDelightBlocks.CHEESECAKE.get());
-		this.dropSelf(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get());
-		this.dropSelf(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get());
-		this.dropSelf(ExtraDelightBlocks.GLOW_BERRY_PIE.get());
-		this.dropSelf(ExtraDelightBlocks.HONEY_CHEESECAKE.get());
-		this.dropSelf(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get());
-		this.dropSelf(ExtraDelightBlocks.SWEET_BERRY_PIE.get());
+		this.add(ExtraDelightBlocks.CHEESECAKE.get(), noDrop());
+		this.add(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get(), noDrop());
+		this.add(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get(), noDrop());
+		this.add(ExtraDelightBlocks.GLOW_BERRY_PIE.get(), noDrop());
+		this.add(ExtraDelightBlocks.HONEY_CHEESECAKE.get(), noDrop());
+		this.add(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get(), noDrop());
+		this.add(ExtraDelightBlocks.SWEET_BERRY_PIE.get(), noDrop());
+		
+		this.add(ExtraDelightBlocks.QUICHE.get(), noDrop());
 		
 		this.add(ExtraDelightBlocks.PLAIN_CAKE.get(), noDrop());
 	}

@@ -74,4 +74,7 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<Block> PLAIN_CAKE = ExtraDelightBlocks.BLOCKS.register("plain_cake",
 			() -> new CakeBlock(Block.Properties.copy(Blocks.CAKE)));
+
+	public static final RegistryObject<Block> QUICHE = ExtraDelightBlocks.BLOCKS.register("quiche",
+			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.QUICHE_SLICE));
 }

@@ -1,7 +1,7 @@
 {
-    "name": "Sweet Berry Juice",
-    "icon": "extradelight:sweet_berry_juice",
-    "category": "extradelight:beverages",
+    "name": "Mayonnaise",
+    "icon": "extradelight:mayo_jar_item",
+    "category": "extradelight:condiments",
     "pages": [
         {
             "type": "patchouli:text",
@@ -13,7 +13,7 @@
         },
 		{
             "type": "patchouli:text",
-			"title": "Lingonberry Juice",
+			"title": "BBQ Sauce",
             "text": "$(br) Time: 30min $(br) Ingredients: 3 $(br2)$(l) Ingredients - $()$(br)$(li) 1 lb lingonberries$(li) 5 cups water$(li) 1 cups sugar $(br2)"
         },
 		{
