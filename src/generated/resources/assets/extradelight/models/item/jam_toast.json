@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "extradelight:item/cupcake"
+    "layer0": "extradelight:item/jam_toast"
   }
 }

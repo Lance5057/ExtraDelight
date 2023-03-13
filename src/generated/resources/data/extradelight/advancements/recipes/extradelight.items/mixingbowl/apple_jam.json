@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:milk_bucket"
+              "farmersdelight:milk_bottle"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:whipped_cream_bucket"
+        "recipe": "extradelight:mixingbowl/apple_jam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:whipped_cream_bucket"
+      "extradelight:mixingbowl/apple_jam"
     ]
   }
 }

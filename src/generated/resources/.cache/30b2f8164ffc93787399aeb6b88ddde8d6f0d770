@@ -1,10 +1,11 @@
-// 1.19.2	2023-03-04T10:55:58.5182168	Block States: extradelight
+// 1.19.2	2023-03-12T23:01:44.0858915	Block States: extradelight
 2854b5ab7407360f333057db13bb97ee0c14103d assets/extradelight/blockstates/cheesecake.json
 c5b678446796101206983d6f3bd55788ace43ad7 assets/extradelight/blockstates/chocolate_cheesecake.json
 380e0d2f16afb444ff85ec179ffa4544f6ba6109 assets/extradelight/blockstates/cooking_oil.json
 cc1f426731574384592b6001085fe9445434bad0 assets/extradelight/blockstates/dough_shaping.json
 2bfe9fc03b9048c001dac5478df4a421774e9e66 assets/extradelight/blockstates/glow_berry_cheesecake.json
 d5fa0d95516754bfbc3b4d6890a08050c9e8ec62 assets/extradelight/blockstates/glow_berry_pie.json
+ea8e21b1beb7a8e234c89295c0c974904613d53b assets/extradelight/blockstates/grater.json
 85274de78400e85c808020a87bda151a649b715e assets/extradelight/blockstates/honey_cheesecake.json
 54d9a646c607ab507897afa1755defe37c918883 assets/extradelight/blockstates/mixing_bowl.json
 565fd2703b13dac1295aab8a889b3120013069b1 assets/extradelight/blockstates/mortar_amethyst.json

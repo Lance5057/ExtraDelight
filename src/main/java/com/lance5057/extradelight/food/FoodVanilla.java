@@ -13,6 +13,9 @@ public class FoodVanilla {
 			.build();
 	public static final FoodProperties SLICED_BREAD = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.12f)
 			.build();
+	
+	public static final FoodProperties JAM_BREAD = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.4f)
+			.build();
 
 	// eggs
 	public static final FoodProperties BAD_EGG = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.0f)

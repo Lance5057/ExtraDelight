@@ -4,6 +4,7 @@ import java.util.function.Consumer;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.data.recipebuilders.DynamicNameSimpleCookingRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
@@ -16,7 +17,6 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
@@ -77,21 +77,27 @@ public class Recipes extends RecipeProvider {
 	}
 
 	private void mixingbowlRecipes(Consumer<FinishedRecipe> consumer) {
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
-				.requires(ModItems.MILK_BOTTLE.get())
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MILK_BOTTLE.get()))
-				.save(consumer);
-
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 4)
-				.requires(Items.MILK_BUCKET)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.MILK_BUCKET))
-				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "whipped_cream_bucket"));
+//		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+//				.requires(ModItems.MILK_BOTTLE.get())
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MILK_BOTTLE.get()))
+//				.save(consumer);
+//
+//		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 4)
+//				.requires(Items.MILK_BUCKET)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.MILK_BUCKET))
+//				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "whipped_cream_bucket"));
 
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.EGG_MIX.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
 				.requires(ModItems.MILK_BOTTLE.get()).requires(Items.EGG).requires(Items.EGG)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.EGG))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "egg_mix"));
 
+		// Test, Remove!
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.APPLE_JAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+				.requires(ModItems.MILK_BOTTLE.get()).requires(Items.CHAIN).requires(Items.ACACIA_DOOR)
+				.requires(Items.BLUE_STAINED_GLASS_PANE).requires(Items.DARK_OAK_LOG).requires(Items.ELYTRA)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MILK_BOTTLE.get()))
+				.save(consumer);
 	}
 
 	private void craftingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -326,6 +332,18 @@ public class Recipes extends RecipeProvider {
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO).addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(Items.HONEY_BOTTLE)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "bbq_honey"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.STOCK_JAR_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ExtraDelightTags.STOCK).addIngredient(Items.BONE)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stock_jar"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.GRAVY_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
+						Items.BOWL)
+				.addIngredient(ExtraDelightItems.FLOUR.get()).addIngredient(ExtraDelightItems.STOCK_JAR_ITEM.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "gravy_boat"));
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -428,13 +446,13 @@ public class Recipes extends RecipeProvider {
 				.addIngredient(Items.SUGAR, 2).setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
 
-		OvenRecipeBuilder
-				.OvenRecipe(ExtraDelightItems.CUPCAKE.get(), 6, FAST_COOKING, MEDIUM_EXP,
-						ExtraDelightItems.MUFFIN_TIN.get())
-				.addIngredient(ExtraDelightItems.FLOUR.get(), 3).addIngredient(ForgeTags.MILK)
-				.addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.MILK).addIngredient(Items.EGG)
-				.addIngredient(Items.SUGAR, 2).setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
+//		OvenRecipeBuilder
+//				.OvenRecipe(ExtraDelightItems.CUPCAKE.get(), 6, FAST_COOKING, MEDIUM_EXP,
+//						ExtraDelightItems.MUFFIN_TIN.get())
+//				.addIngredient(ExtraDelightItems.FLOUR.get(), 3).addIngredient(ForgeTags.MILK)
+//				.addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.MILK).addIngredient(Items.EGG)
+//				.addIngredient(Items.SUGAR, 2).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+//				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.GLOW_BERRY_COOKIE.get(), 6, FAST_COOKING, MEDIUM_EXP,

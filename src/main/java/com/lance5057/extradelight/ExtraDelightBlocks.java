@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.blocks.FoodDisplayBlock;
+import com.lance5057.extradelight.blocks.GraterBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
@@ -30,6 +31,7 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<Block> MIXING_BOWL = BLOCKS.register("mixing_bowl", MixingBowlBlock::new);
 
 	public static final RegistryObject<Block> YEAST_POT = BLOCKS.register("yeast_pot", YeastPotBlock::new);
+	public static final RegistryObject<Block> GRATER = BLOCKS.register("grater", GraterBlock::new);
 
 	public static final RegistryObject<Block> MORTAR_STONE = BLOCKS.register("mortar_stone", MortarBlock::new);
 	public static final RegistryObject<Block> MORTAR_ANDESITE = BLOCKS.register("mortar_andesite", MortarBlock::new);

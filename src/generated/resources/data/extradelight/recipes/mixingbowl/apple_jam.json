@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "farmersdelight:milk_bottle"
+    },
+    {
+      "item": "minecraft:chain"
+    },
+    {
+      "item": "minecraft:acacia_door"
+    },
+    {
+      "item": "minecraft:blue_stained_glass_pane"
+    },
+    {
+      "item": "minecraft:dark_oak_log"
+    },
+    {
+      "item": "minecraft:elytra"
+    }
+  ],
+  "result": {
+    "item": "extradelight:apple_jam"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

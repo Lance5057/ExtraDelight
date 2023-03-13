@@ -34,7 +34,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get(), "Chocolate Cheesecake");
 		this.add(ExtraDelightItems.CHOCOLATE_CHEESECAKE_SLICE.get(), "Slice of Chocolate Cheesecake");
 		this.add(ExtraDelightItems.CHOCOLATE_CUSTARD.get(), "Chocolate Custard");
-		this.add(ExtraDelightItems.CUPCAKE.get(), "Cupcake");
 		this.add(ExtraDelightItems.DOUGH_SHAPING.get(), "Dough Shaping Station");
 		this.add(ExtraDelightItems.FLOUR.get(), "Flour");
 		this.add(ExtraDelightItems.FOOD_DISPLAY.get(), "Food Display");
@@ -97,6 +96,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.WOODEN_SPOON.get(), "Wooden Spoon");
 		this.add(ExtraDelightItems.YEAST.get(), "Yeast");
 		this.add(ExtraDelightItems.YEAST_POT.get(), "Yeast Pot");
+		this.add(ExtraDelightItems.STOCK_JAR_ITEM.get(), "Stock");
+		this.add(ExtraDelightItems.GRAVY_ITEM.get(), "Gravy");
 
 		this.add(ExtraDelightItems.BBQ_JAR_ITEM.get(), "BBQ Sauce");
 		this.add(ExtraDelightItems.KETCHUP_JAR_ITEM.get(), "Ketchup");

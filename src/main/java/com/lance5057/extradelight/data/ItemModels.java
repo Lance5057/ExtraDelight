@@ -29,6 +29,8 @@ public class ItemModels extends ItemModelProvider {
 				new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/mixing_bowl")));
 		getBuilder(ExtraDelightItems.YEAST_POT.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/yeast_pot")));
+		getBuilder(ExtraDelightItems.GRATER.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/grater")));
 
 		getBuilder(ExtraDelightItems.MORTAR_STONE.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "item/mortar")))
@@ -104,13 +106,18 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.TRAY, "tray");
 
 		forItem(ExtraDelightItems.WOODEN_SPOON, "wooden_spoon");
+		forItem(ExtraDelightItems.DIAMOND_SPOON, "diamond_spoon");
+		forItem(ExtraDelightItems.GOLD_SPOON, "gold_spoon");
+		forItem(ExtraDelightItems.IRON_SPOON, "iron_spoon");
+		forItem(ExtraDelightItems.NETHERITE_SPOON, "netherite_spoon");
+		forItem(ExtraDelightItems.STONE_SPOON, "stone_spoon");
 
 		forItem(ExtraDelightItems.YEAST, "yeast");
 		forItem(ExtraDelightItems.FLOUR, "flour");
 		forItem(ExtraDelightItems.COOKING_OIL, "cooking_oil");
-
-		forItem(ExtraDelightItems.CUPCAKE, "cupcake");
 		forItem(ExtraDelightItems.SUNFLOWER_SEEDS, "sunflower_seeds");
+		forItem(ExtraDelightItems.STOCK_JAR_ITEM, "broth");
+		forItem(ExtraDelightItems.GRAVY_ITEM, "gravy");
 
 		// Juice
 		forItem(ExtraDelightItems.GLOW_BERRY_JUICE, "glow_berry_juice");
@@ -151,9 +158,9 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.FUDGE_POPSICLE, "fudge_popsicle");
 		forItem(ExtraDelightItems.HONEY_POPSICLE, "honey_popsicle");
 
-		forItem(ExtraDelightItems.WHIPPED_CREAM, "whipped_cream");
-
-		forItem(ExtraDelightItems.PLAIN_CAKE, "plain_cake");
+//		forItem(ExtraDelightItems.WHIPPED_CREAM, "whipped_cream");
+//
+//		forItem(ExtraDelightItems.PLAIN_CAKE, "plain_cake");
 
 		// Eggs
 		forItem(ExtraDelightItems.EGG_MIX, "egg_mix");
@@ -167,6 +174,32 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.KETCHUP_JAR_ITEM, "ketchup");
 		forItem(ExtraDelightItems.BBQ_JAR_ITEM, "bbq");
 		forItem(ExtraDelightItems.MAYO_JAR_ITEM, "mayo");
+
+		// Bread
+		forItem(ExtraDelightItems.BREAD_SLICE, "bread_slice");
+		forItem(ExtraDelightItems.TOAST, "toast");
+		forItem(ExtraDelightItems.JAM_TOAST, "jam_toast");
+		forItem(ExtraDelightItems.EGG_BASKET, "egg_in_the_basket");
+
+		// Jam
+		forItem(ExtraDelightItems.APPLE_JAM, "apple_jam");
+		forItem(ExtraDelightItems.CARROT_JAM, "carrot_jam");
+		forItem(ExtraDelightItems.GLOW_BERRY_JAM, "glow_berry_jam");
+		forItem(ExtraDelightItems.SWEET_BERRY_JAM, "sweet_berry_jam");
+
+		// Potato
+		forItem(ExtraDelightItems.POTATO_CHIPS, "potato_chips");
+		forItem(ExtraDelightItems.SLICED_POTATO, "sliced_potato");
+		forItem(ExtraDelightItems.GRATED_POTATO, "grated_potato");
+		forItem(ExtraDelightItems.HASHBROWNS, "hashbrowns");
+		forItem(ExtraDelightItems.POTATO_STICKS, "potato_sticks");
+		forItem(ExtraDelightItems.FRENCH_FRIES, "frenchfries");
+		
+		//Soup
+		forItem(ExtraDelightItems.CARROT_SOUP, "carrot_soup");
+		forItem(ExtraDelightItems.FISH_SOUP, "fish_soup");
+		forItem(ExtraDelightItems.POTATO_SOUP, "potato_soup");
+		forItem(ExtraDelightItems.TOMATO_SOUP, "tomato_soup");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

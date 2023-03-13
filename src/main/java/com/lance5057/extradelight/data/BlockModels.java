@@ -28,6 +28,7 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.MIXING_BOWL.get(), models().getExistingFile(modLoc("block/mixing_bowl")));
 
 		this.simpleBlock(ExtraDelightBlocks.YEAST_POT.get(), models().getExistingFile(modLoc("block/yeast_pot")));
+		this.simpleBlock(ExtraDelightBlocks.GRATER.get(), models().getExistingFile(modLoc("block/grater")));
 
 		this.simpleBlock(ExtraDelightBlocks.MORTAR_STONE.get(),
 				models().withExistingParent("mortar_stone", modLoc("block/mortar")).texture("0", mcLoc("block/stone")));

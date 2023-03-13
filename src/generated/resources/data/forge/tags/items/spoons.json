@@ -1,5 +1,10 @@
 {
   "values": [
-    "extradelight:wooden_spoon"
+    "extradelight:wooden_spoon",
+    "extradelight:stone_spoon",
+    "extradelight:iron_spoon",
+    "extradelight:gold_spoon",
+    "extradelight:diamond_spoon",
+    "extradelight:netherite_spoon"
   ]
 }
