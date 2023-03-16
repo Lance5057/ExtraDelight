@@ -5,10 +5,12 @@ import com.lance5057.extradelight.ExtraDelightItems;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ItemModels extends ItemModelProvider {
@@ -170,7 +172,9 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.BOILED_EGG, "hard_boiled_egg");
 		forItem(ExtraDelightItems.QUICHE, "quiche");
 		forItem(ExtraDelightItems.QUICHE_SLICE, "quiche_slice");
+		forItem(ExtraDelightItems.EGG_SALAD, "egg_salad");
 
+		// Condiments
 		forItem(ExtraDelightItems.KETCHUP_JAR_ITEM, "ketchup");
 		forItem(ExtraDelightItems.BBQ_JAR_ITEM, "bbq");
 		forItem(ExtraDelightItems.MAYO_JAR_ITEM, "mayo");
@@ -179,6 +183,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.BREAD_SLICE, "bread_slice");
 		forItem(ExtraDelightItems.TOAST, "toast");
 		forItem(ExtraDelightItems.JAM_TOAST, "jam_toast");
+		forItem(ExtraDelightItems.GOLDEN_JAM_TOAST, "golden_jam_toast");
 		forItem(ExtraDelightItems.EGG_BASKET, "egg_in_the_basket");
 
 		// Jam
@@ -186,6 +191,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CARROT_JAM, "carrot_jam");
 		forItem(ExtraDelightItems.GLOW_BERRY_JAM, "glow_berry_jam");
 		forItem(ExtraDelightItems.SWEET_BERRY_JAM, "sweet_berry_jam");
+		forItem(ExtraDelightItems.GOLDEN_APPLE_JAM, "golden_apple_jam");
 
 		// Potato
 		forItem(ExtraDelightItems.POTATO_CHIPS, "potato_chips");
@@ -194,15 +200,54 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.HASHBROWNS, "hashbrowns");
 		forItem(ExtraDelightItems.POTATO_STICKS, "potato_sticks");
 		forItem(ExtraDelightItems.FRENCH_FRIES, "frenchfries");
-		
-		//Soup
+
+		// Carrot
+		forItem(ExtraDelightItems.GLAZED_CARROT, "glazed_carrot");
+		forItem(ExtraDelightItems.ROASTED_CARROT, "roasted_carrot");
+		forItem(ExtraDelightItems.CARROT_SALAD, "carrot_salad");
+
+		// Apple
+		forItem(ExtraDelightItems.APPLE_SAUCE, "apple_sauce");
+		forItem(ExtraDelightItems.ROASTED_APPLE, "roasted_apple");
+		forItem(ExtraDelightItems.SLICED_APPLE, "apple_slices");
+
+		// Soup
 		forItem(ExtraDelightItems.CARROT_SOUP, "carrot_soup");
 		forItem(ExtraDelightItems.FISH_SOUP, "fish_soup");
 		forItem(ExtraDelightItems.POTATO_SOUP, "potato_soup");
 		forItem(ExtraDelightItems.TOMATO_SOUP, "tomato_soup");
+
+		// Sandwiches
+		forItem(ExtraDelightItems.DYNAMIC_SANDWICH, "sandwich");
+		forItem(ExtraDelightItems.EGG_SALAD_SANDWICH, "egg_salad_sandwich");
+
+		// Feasts
+		forBlockItem(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/salisbury_steak_block_stage0"));
+		forItem(ExtraDelightItems.SALISBURY_STEAK, "salisbury_steak");
+
+		forBlockItem(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/mashed_potato_gravy_block_stage0"));
+		forItem(ExtraDelightItems.MASHED_POTATO_GRAVY, "mashed_potato_gravy");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {
 		this.singleTexture(item.getId().getPath(), mcLoc("item/handheld"), "layer0", modLoc("item/" + name));
+	}
+
+	public void forBlockItem(RegistryObject<? extends BlockItem> item, String name) {
+		getBuilder(item.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID,
+						"block/" + ForgeRegistries.BLOCKS.getKey(item.get().getBlock()).getPath())));
+	}
+
+	public void forBlockItem(RegistryObject<? extends BlockItem> item, ResourceLocation modelLocation) {
+		getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation));
+	}
+
+	public void forBlockItem(RegistryObject<? extends BlockItem> item, ResourceLocation modelLocation, String key,
+			ResourceLocation texture) {
+		getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation)).texture(key,
+				texture);
 	}
 }

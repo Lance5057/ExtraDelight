@@ -21,7 +21,6 @@ import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MelonJuiceItem;
-import vectorwing.farmersdelight.common.item.MilkBottleItem;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ExtraDelightItems {
@@ -250,6 +249,8 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.FRIED_EGG)));
 	public static final RegistryObject<Item> EGG_BASKET = ITEMS.register("egg_in_the_basket",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SCRAMBLED_EGGS)));
+	public static final RegistryObject<Item> EGG_SALAD = ITEMS.register("egg_salad",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SCRAMBLED_EGGS)));
 
 	// Condiments
 	public static final RegistryObject<Item> BBQ_JAR_ITEM = ITEMS.register("bbq_jar_item", () -> new DrinkableItem(
@@ -269,6 +270,8 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.APPLE)));
 	public static final RegistryObject<Item> APPLE_JAM = ITEMS.register("apple_jam",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.APPLE)));
+	public static final RegistryObject<Item> GOLDEN_APPLE_JAM = ITEMS.register("golden_apple_jam",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.GOLDEN_APPLE)));
 
 	// Bread
 	public static final RegistryObject<Item> BREAD_SLICE = ITEMS.register("bread_slice",
@@ -277,6 +280,8 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SLICED_BREAD)));
 	public static final RegistryObject<Item> JAM_TOAST = ITEMS.register("jam_toast",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.JAM_BREAD)));
+	public static final RegistryObject<Item> GOLDEN_JAM_TOAST = ITEMS.register("golden_jam_toast",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.GOLDEN_JAM_BREAD)));
 
 	// Potato
 	public static final RegistryObject<Item> GRATED_POTATO = ITEMS.register("grated_potato",
@@ -285,14 +290,30 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.POTATO)));
 	public static final RegistryObject<Item> POTATO_STICKS = ITEMS.register("potato_sticks",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.POTATO)));
-	
+
 	public static final RegistryObject<Item> POTATO_CHIPS = ITEMS.register("potato_chips",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.BAKED_POTATO)));
 	public static final RegistryObject<Item> HASHBROWNS = ITEMS.register("hashbrowns",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.BAKED_POTATO)));
 	public static final RegistryObject<Item> FRENCH_FRIES = ITEMS.register("french_fries",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.BAKED_POTATO)));
-	
+
+	// Carrot
+	public static final RegistryObject<Item> ROASTED_CARROT = ITEMS.register("roasted_carrot",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_CARROT)));
+	public static final RegistryObject<Item> GLAZED_CARROT = ITEMS.register("glazed_carrot",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_CARROT)));
+	public static final RegistryObject<Item> CARROT_SALAD = ITEMS.register("carrot_salad",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_CARROT)));
+
+	// Apple
+	public static final RegistryObject<Item> SLICED_APPLE = ITEMS.register("sliced_apple",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.APPLE)));
+	public static final RegistryObject<Item> ROASTED_APPLE = ITEMS.register("roasted_apple",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_APPLE)));
+	public static final RegistryObject<Item> APPLE_SAUCE = ITEMS.register("apple_sauce",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_APPLE)));
+
 	// Soup
 	public static final RegistryObject<Item> POTATO_SOUP = ITEMS.register("potato_soup",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.VEGETABLE_SOUP)));
@@ -302,5 +323,26 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.VEGETABLE_SOUP)));
 	public static final RegistryObject<Item> CARROT_SOUP = ITEMS.register("carrot_soup",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.VEGETABLE_SOUP)));
+
+	// Sandwiches
+	public static final RegistryObject<Item> DYNAMIC_SANDWICH = ITEMS.register("dynamic_sandwich",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.BACON_SANDWICH)));
+	public static final RegistryObject<Item> EGG_SALAD_SANDWICH = ITEMS.register("egg_salad_sandwich",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.EGG_SANDWICH)));
+
+	// Feasts
+	public static final RegistryObject<BlockItem> SALISBURY_STEAK_FEAST_ITEM = ITEMS
+			.register("salisbury_steak_block_item", () -> new BlockItem(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> SALISBURY_STEAK = ITEMS.register("salisbury_steak",
+			() -> new Item(new Item.Properties().food(Foods.COOKED_BEEF).craftRemainder(Items.BOWL).stacksTo(4)
+					.tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<BlockItem> MASHED_POTATO_GRAVY_FEAST_ITEM = ITEMS.register(
+			"mashed_potato_gravy_block_item", () -> new BlockItem(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> MASHED_POTATO_GRAVY = ITEMS.register("mashed_potato_gravy",
+			() -> new Item(new Item.Properties().food(Foods.BAKED_POTATO).craftRemainder(Items.BOWL).stacksTo(4)
+					.tab(EXTRA_DELIGHT_TAB)));
 
 }

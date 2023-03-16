@@ -1,4 +1,4 @@
-// 1.19.2	2023-03-12T23:01:44.0838893	LootTables
+// 1.19.2	2023-03-13T13:44:02.8109698	LootTables
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/cheesecake.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/chocolate_cheesecake.json
 bc5e6f6f35cb909e6cdce5270f5cdcbe6e507000 data/extradelight/loot_tables/blocks/cooking_oil.json
@@ -9,6 +9,7 @@ d91e09aa11085b0cdf0032665c5567280a0be625 data/extradelight/loot_tables/blocks/fo
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/glow_berry_pie.json
 d7a597cfde8638f62de880b9709cf6103944aa51 data/extradelight/loot_tables/blocks/grater.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/honey_cheesecake.json
+217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/mashed_potato_gravy_block.json
 0d70cc35f8ad71ac1497d22f9ede864bcd088b5d data/extradelight/loot_tables/blocks/mixing_bowl.json
 d3555b928dc9697f5a3e68d2b950f6be2a639324 data/extradelight/loot_tables/blocks/mortar_amethyst.json
 9ab977016ed7f2e712434ba44f4348d5c8c76aa0 data/extradelight/loot_tables/blocks/mortar_andesite.json
@@ -24,5 +25,6 @@ af7c66649c613cb92e979ae6587d4af57547fa43 data/extradelight/loot_tables/blocks/mo
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/plain_cake.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/pumpkin_cheesecake.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/quiche.json
+217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/salisbury_steak_block.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/sweet_berry_pie.json
 615b13a18822f502528bd3572e827f4a617abb7f data/extradelight/loot_tables/blocks/yeast_pot.json

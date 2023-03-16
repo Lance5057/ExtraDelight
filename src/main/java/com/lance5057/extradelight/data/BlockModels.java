@@ -12,6 +12,7 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
 public class BlockModels extends BlockStateProvider {
@@ -69,6 +70,9 @@ public class BlockModels extends BlockStateProvider {
 		pieBlock(ExtraDelightBlocks.QUICHE.get(), "quiche");
 
 		createCakeBlock(ExtraDelightBlocks.PLAIN_CAKE.get(), "plain");
+
+		this.feastBlock(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get());
+		this.feastBlock(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get());
 	}
 
 	private void createCakeBlock(Block block, String prefix) {
@@ -100,6 +104,25 @@ public class BlockModels extends BlockStateProvider {
 							.texture("top", modLoc("block/" + prefix + "_top"))
 							.texture("inner", modLoc("block/" + prefix + "_inner")))
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
+		});
+	}
+
+	public void feastBlock(FeastBlock block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(FeastBlock.SERVINGS);
+
+			String suffix = "_stage" + (block.getMaxServings() - servings);
+
+			if (servings == 0) {
+				suffix = block.hasLeftovers ? "_leftover" : "_stage3";
+			}
+
+			return ConfiguredModel.builder()
+					.modelFile(new ModelFile.ExistingModelFile(
+							new ResourceLocation(ExtraDelight.MOD_ID,
+									"block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix),
+							models().existingFileHelper))
+					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}
 }

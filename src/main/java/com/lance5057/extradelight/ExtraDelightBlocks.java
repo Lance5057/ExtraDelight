@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.blocks.FoodDisplayBlock;
 import com.lance5057.extradelight.blocks.GraterBlock;
+import com.lance5057.extradelight.blocks.SalisburySteakBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
@@ -13,8 +14,10 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -79,4 +82,14 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<Block> QUICHE = ExtraDelightBlocks.BLOCKS.register("quiche",
 			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.QUICHE_SLICE));
+
+	// Feasts
+	public static final RegistryObject<SalisburySteakBlock> SALISBURY_STEAK_FEAST = BLOCKS.register(
+			"salisbury_steak_block",
+			() -> new SalisburySteakBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
+					ExtraDelightItems.SALISBURY_STEAK, true));
+	public static final RegistryObject<SalisburySteakBlock> MASHED_POTATO_GRAVY = BLOCKS.register(
+			"mashed_potato_gravy_block",
+			() -> new SalisburySteakBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
+					ExtraDelightItems.MASHED_POTATO_GRAVY, true));
 }

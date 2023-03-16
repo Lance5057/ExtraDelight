@@ -104,5 +104,11 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.EGG_MIX.get(), "Egg Mix");
 		this.add(ExtraDelightItems.OMELETTE_MIX.get(), "Omelette Mix");
+		
+		// Feasts
+		this.add(ExtraDelightItems.SALISBURY_STEAK.get(), "Plate of Salisbury Steak");
+		this.add(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.get(), "Salisbury Steak");
+		this.add(ExtraDelightItems.MASHED_POTATO_GRAVY.get(), "Bowl of Mashed Potatos with Gravy");
+		this.add(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(), "Mashed Potatos with Gravy");
 	}
 }

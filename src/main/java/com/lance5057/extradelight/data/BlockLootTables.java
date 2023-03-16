@@ -56,6 +56,9 @@ public class BlockLootTables extends BlockLoot {
 		this.add(ExtraDelightBlocks.QUICHE.get(), noDrop());
 
 		this.add(ExtraDelightBlocks.PLAIN_CAKE.get(), noDrop());
+		
+		this.dropOther(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(), Items.BOWL);
 	}
 
 	@Override

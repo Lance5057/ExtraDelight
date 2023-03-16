@@ -1,4 +1,4 @@
-// 1.19.2	2023-03-13T01:32:28.9700447	Recipes
+// 1.19.2	2023-03-13T13:44:02.8099688	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 78c4e19f8c4e9245c107b960893c416621517f00 data/extradelight/advancements/recipes/extradelight.items/baking_stone.json
 f7a23419d2119fba76b2f6d8c28801efb339a784 data/extradelight/advancements/recipes/extradelight.items/cheesecake.json
@@ -72,6 +72,7 @@ d3c71343d52db409a23349f16eaee5720928c575 data/extradelight/recipes/cheesecake.js
 f0231e7d79674ba2ae3e1f1e3115996c5d0726e9 data/extradelight/recipes/dough_shaping.json
 3a56359bf5c4e047576fce5be703c3bf8a9d2d3c data/extradelight/recipes/egg_mix.json
 79cf0a801fd5047e4a9f3e36b4cdac0cf5c5c51c data/extradelight/recipes/food_display.json
+b217ca37cfe0816eb7ea0b23b0adfc513e66ebc2 data/extradelight/recipes/fries.json
 8dec76d75beba05b43b7b1a866b6398cdbf90e98 data/extradelight/recipes/fudge_popsicle.json
 33f0ab5179e8107919860a967f5663f11d4110ea data/extradelight/recipes/glow_berry_cheesecake.json
 3f6f8ec83752de83c1dab931922827a913a1c3ed data/extradelight/recipes/glow_berry_juice.json
@@ -82,6 +83,7 @@ d3dd44607f1f7116ae372471addd2567555815c1 data/extradelight/recipes/gravy_boat.js
 e7a4bbbb9583e010dbd4ee962a519fce2924b691 data/extradelight/recipes/honey_popsicle.json
 2f5cd7fb9eb12b557db5224bb363488775458cd8 data/extradelight/recipes/ketchup_jar.json
 e6b53fe27b9d31ba7e47682385969a732d333a70 data/extradelight/recipes/loaf_pan.json
+285a82d700d1cbb321118b69887a2cb75c1bfca0 data/extradelight/recipes/mashed_potato_gravy_feast.json
 c5d336319977860c3377e10891112fc603a42c50 data/extradelight/recipes/mixingbowl/apple_jam.json
 3fb73141f2da15d8f5f06ffbeadbbff3359b6182 data/extradelight/recipes/mortar/black_dye.json
 3e85cf92be53984bef77ace9b3915accd52a79ed data/extradelight/recipes/mortar/blaze_powder.json
@@ -125,6 +127,7 @@ d0c5de7206c8b73a20ebd55971afb219757fff08 data/extradelight/recipes/pestle_stone.
 4786768115a243cab21ca83ff6b8b9414dc155c9 data/extradelight/recipes/pie_dish.json
 ef2e44c0d8407619ae74f13fb652d9836cd71868 data/extradelight/recipes/pumpkin_cheesecake.json
 d4c4a753e7537a555df1a0b4533abedd8ee8eab8 data/extradelight/recipes/round_pan.json
+53263fe51cd15715b15908a3f2ddcd39db6591fd data/extradelight/recipes/salisbury_steak_feast.json
 b20e54997fc6a9797c4e07fddba22fd0d257272e data/extradelight/recipes/sheet.json
 90c9cf0aa4c5e8a5e818c494597bb3b1ffd8cdb6 data/extradelight/recipes/square_pan.json
 d8791de4fff6149ddd17f20450078ac073cd01d6 data/extradelight/recipes/stock_jar.json

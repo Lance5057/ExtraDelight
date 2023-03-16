@@ -32,7 +32,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.IRON_SPOON.get(), ExtraDelightItems.GOLD_SPOON.get(),
 				ExtraDelightItems.DIAMOND_SPOON.get(), ExtraDelightItems.NETHERITE_SPOON.get());
 
-		tag(ExtraDelightTags.STOCK).add(Items.BONE).addOptionalTag(new ResourceLocation("forge", "vegetables")).add(
+		tag(ExtraDelightTags.MAKES_STOCK).add(Items.BONE).addOptionalTag(new ResourceLocation("forge", "vegetables")).add(
 				Items.BEEF, Items.COOKED_BEEF, Items.PORKCHOP, Items.COOKED_PORKCHOP, Items.CHICKEN,
 				Items.COOKED_CHICKEN, Items.COD, Items.COOKED_COD, Items.SALMON, Items.COOKED_SALMON);
 	}

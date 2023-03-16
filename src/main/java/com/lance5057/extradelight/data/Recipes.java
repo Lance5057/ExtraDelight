@@ -336,7 +336,7 @@ public class Recipes extends RecipeProvider {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.STOCK_JAR_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
 						Items.GLASS_BOTTLE)
-				.addIngredient(ExtraDelightTags.STOCK).addIngredient(Items.BONE)
+				.addIngredient(ExtraDelightTags.MAKES_STOCK).addIngredient(Items.BONE)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stock_jar"));
 
 		CookingPotRecipeBuilder
@@ -344,6 +344,25 @@ public class Recipes extends RecipeProvider {
 						Items.BOWL)
 				.addIngredient(ExtraDelightItems.FLOUR.get()).addIngredient(ExtraDelightItems.STOCK_JAR_ITEM.get())
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "gravy_boat"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING,
+						0.35F, Items.BOWL)
+				.addIngredient(ModItems.MINCED_BEEF.get(), 3).addIngredient(ForgeTags.VEGETABLES_ONION)
+				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightItems.GRAVY_ITEM.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "salisbury_steak_feast"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(), 1,
+						CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL)
+				.addIngredient(Items.POTATO, 4).addIngredient(ExtraDelightItems.GRAVY_ITEM.get())
+				.addIngredient(Items.MILK_BUCKET)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mashed_potato_gravy_feast"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.FRENCH_FRIES.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
+				.addIngredient(Items.POTATO).addIngredient(ExtraDelightTags.FRYING_OIL)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fries"));
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {

@@ -46,6 +46,7 @@ public class ExtraDelight {
 			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.FLOUR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.COOKING_OIL.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.GRATER.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), RenderType.cutout());
 		});
 	}
 }
