@@ -33,6 +33,8 @@ public class ItemModels extends ItemModelProvider {
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/yeast_pot")));
 		getBuilder(ExtraDelightItems.GRATER.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/grater")));
+		getBuilder(ExtraDelightItems.DRYING_RACK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/drying_rack")));
 
 		getBuilder(ExtraDelightItems.MORTAR_STONE.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "item/mortar")))
@@ -229,6 +231,101 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/mashed_potato_gravy_block_stage0"));
 		forItem(ExtraDelightItems.MASHED_POTATO_GRAVY, "mashed_potato_gravy");
+
+		forItem(ExtraDelightItems.SAUSAGE, "sausage");
+		forItem(ExtraDelightItems.COOKED_SAUSAGE, "sausagecooked");
+
+		forItem(ExtraDelightItems.LAMB_STEW, "lamb_stew");
+		forItem(ExtraDelightItems.PORK_STEW, "pork_stew");
+
+		forItem(ExtraDelightItems.SAUSAGE_ROLL, "sausage_roll");
+		forItem(ExtraDelightItems.SOS, "sos");
+		forItem(ExtraDelightItems.LIVER_ONIONS, "liver_onions");
+		// forItem(ExtraDelightItems.FRIES, "frenchfries");
+		forItem(ExtraDelightItems.FRIED_FISH, "friedfish");
+		forItem(ExtraDelightItems.CHICKEN_FRIED_STEAK, "chickenfriedsteak");
+		forItem(ExtraDelightItems.PORK_TENDERLOIN, "pork_tenderloin");
+		forItem(ExtraDelightItems.FRIED_CHICKEN, "friedchicken");
+		forItem(ExtraDelightItems.STUFFED_HEART, "stuffedheart");
+		forItem(ExtraDelightItems.FRIED_BRAINS, "friedbrains");
+		forItem(ExtraDelightItems.OXTAIL_SOUP, "oxtail_soup");
+		forItem(ExtraDelightItems.GRILLED_CHEESE, "grilled_cheese");
+
+		forItem(ExtraDelightItems.CHEESE, "cheese");
+		forItem(ExtraDelightItems.BUTTER, "butter");
+
+		forBlockItem(ExtraDelightItems.CHEESE_BLOCK_ITEM, "cheese_block");
+		forBlockItem(ExtraDelightItems.BUTTER_BLOCK_ITEM, "butter_block");
+
+		forBlockItem(ExtraDelightItems.HASH_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/hash_block_stage0"));
+		forItem(ExtraDelightItems.HASH, "hash");
+
+		forBlockItem(ExtraDelightItems.POT_ROAST_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/potroast_block_stage0"));
+		forItem(ExtraDelightItems.POT_ROAST, "pot_roast");
+
+		forBlockItem(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/bbq_ribs_block_stage0"));
+		forItem(ExtraDelightItems.BBQ_RIBS, "bbq_ribs");
+
+		forBlockItem(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/meat_pie"));
+		forItem(ExtraDelightItems.MEAT_PIE_SLICE, "meat_pie_slice");
+
+		forBlockItem(ExtraDelightItems.PULLED_PORK_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/pulled_pork_block_stage0"));
+		forItem(ExtraDelightItems.PULLED_PORK_SANDWICH, "pulled_pork_sandwich");
+
+		forBlockItem(ExtraDelightItems.RACK_LAMB_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/rack_lamb_block_stage0"));
+		forItem(ExtraDelightItems.RACK_LAMB, "rack_lamb");
+
+		forBlockItem(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/beef_wellington_block_stage0"));
+		forItem(ExtraDelightItems.BEEF_WELLINGTON, "beef_wellington");
+
+		forBlockItem(ExtraDelightItems.HAGGIS_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/haggis_block_stage0"));
+		forItem(ExtraDelightItems.HAGGIS, "haggis");
+
+		forBlockItem(ExtraDelightItems.STIRFRY_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/stirfry_block_stage0"));
+		forItem(ExtraDelightItems.STIRFRY, "stirfry");
+
+		this.jellyBlock(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM, "white");
+		this.jellyBlock(ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM, "orange");
+		this.jellyBlock(ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM, "magenta");
+		this.jellyBlock(ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM, "light_blue");
+		this.jellyBlock(ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM, "yellow");
+		this.jellyBlock(ExtraDelightItems.JELLY_LIME_FEAST_ITEM, "lime");
+		this.jellyBlock(ExtraDelightItems.JELLY_PINK_FEAST_ITEM, "pink");
+		this.jellyBlock(ExtraDelightItems.JELLY_GREY_FEAST_ITEM, "grey");
+		this.jellyBlock(ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM, "light_grey");
+		this.jellyBlock(ExtraDelightItems.JELLY_CYAN_FEAST_ITEM, "cyan");
+		this.jellyBlock(ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM, "purple");
+		this.jellyBlock(ExtraDelightItems.JELLY_BLUE_FEAST_ITEM, "blue");
+		this.jellyBlock(ExtraDelightItems.JELLY_BROWN_FEAST_ITEM, "brown");
+		this.jellyBlock(ExtraDelightItems.JELLY_GREEN_FEAST_ITEM, "green");
+		this.jellyBlock(ExtraDelightItems.JELLY_RED_FEAST_ITEM, "red");
+		this.jellyBlock(ExtraDelightItems.JELLY_BLACK_FEAST_ITEM, "black");
+
+		forItem(ExtraDelightItems.JELLY_WHITE, "jelly_white");
+		forItem(ExtraDelightItems.JELLY_ORANGE, "jelly_orange");
+		forItem(ExtraDelightItems.JELLY_MAGENTA, "jelly_magenta");
+		forItem(ExtraDelightItems.JELLY_LIGHT_BLUE, "jelly_light_blue");
+		forItem(ExtraDelightItems.JELLY_YELLOW, "jelly_yellow");
+		forItem(ExtraDelightItems.JELLY_LIME, "jelly_lime");
+		forItem(ExtraDelightItems.JELLY_PINK, "jelly_pink");
+		forItem(ExtraDelightItems.JELLY_GREY, "jelly_grey");
+		forItem(ExtraDelightItems.JELLY_LIGHT_GREY, "jelly_light_grey");
+		forItem(ExtraDelightItems.JELLY_CYAN, "jelly_cyan");
+		forItem(ExtraDelightItems.JELLY_PURPLE, "jelly_purple");
+		forItem(ExtraDelightItems.JELLY_BLUE, "jelly_blue");
+		forItem(ExtraDelightItems.JELLY_BROWN, "jelly_brown");
+		forItem(ExtraDelightItems.JELLY_GREEN, "jelly_green");
+		forItem(ExtraDelightItems.JELLY_RED, "jelly_red");
+		forItem(ExtraDelightItems.JELLY_BLACK, "jelly_black");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {
@@ -249,5 +346,12 @@ public class ItemModels extends ItemModelProvider {
 			ResourceLocation texture) {
 		getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation)).texture(key,
 				texture);
+	}
+
+	public void jellyBlock(RegistryObject<? extends BlockItem> item, String color) {
+		ModelFile jellyModel = new ModelFile.UncheckedModelFile(modLoc("block/jelly_block_stage0"));
+
+		getBuilder(item.getId().getPath()).parent(jellyModel).texture("1",
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/jelly_" + color));
 	}
 }

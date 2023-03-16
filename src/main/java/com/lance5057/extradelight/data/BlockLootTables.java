@@ -22,6 +22,7 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.FOOD_DISPLAY.get());
 		this.dropSelf(ExtraDelightBlocks.MIXING_BOWL.get());
 		this.dropSelf(ExtraDelightBlocks.GRATER.get());
+		this.dropSelf(ExtraDelightBlocks.DRYING_RACK.get());
 
 		this.add(ExtraDelightBlocks.YEAST_POT.get(),
 				LootTable.lootTable()
@@ -56,9 +57,42 @@ public class BlockLootTables extends BlockLoot {
 		this.add(ExtraDelightBlocks.QUICHE.get(), noDrop());
 
 		this.add(ExtraDelightBlocks.PLAIN_CAKE.get(), noDrop());
-		
+
 		this.dropOther(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(), Items.BOWL);
+
+		dropSelf(ExtraDelightBlocks.CHEESE_BLOCK.get());
+		dropSelf(ExtraDelightBlocks.BUTTER_BLOCK.get());
+
+		this.dropOther(ExtraDelightBlocks.HASH_FEAST.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.POT_ROAST_FEAST.get(), Items.BOWL);
+
+		this.dropOther(ExtraDelightBlocks.BBQ_RIBS_FEAST.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.PULLED_PORK_FEAST.get(), Items.BOWL);
+
+		this.dropOther(ExtraDelightBlocks.RACK_LAMB.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.STIRFRY.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.BEEF_WELLINGTON.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.HAGGIS.get(), Items.BOWL);
+
+		this.dropOther(ExtraDelightBlocks.JELLY_WHITE.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_ORANGE.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_MAGENTA.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_LIGHT_BLUE.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_YELLOW.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_LIME.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_PINK.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_GREY.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_LIGHT_GREY.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_CYAN.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_PURPLE.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_BLUE.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_BROWN.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_GREEN.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_RED.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.JELLY_BLACK.get(), Items.BOWL);
+
+		this.dropOther(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), Items.AIR);
 	}
 
 	@Override

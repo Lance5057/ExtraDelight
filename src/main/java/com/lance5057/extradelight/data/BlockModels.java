@@ -30,6 +30,7 @@ public class BlockModels extends BlockStateProvider {
 
 		this.simpleBlock(ExtraDelightBlocks.YEAST_POT.get(), models().getExistingFile(modLoc("block/yeast_pot")));
 		this.simpleBlock(ExtraDelightBlocks.GRATER.get(), models().getExistingFile(modLoc("block/grater")));
+		this.simpleBlock(ExtraDelightBlocks.DRYING_RACK.get(), models().getExistingFile(modLoc("block/drying_rack")));
 
 		this.simpleBlock(ExtraDelightBlocks.MORTAR_STONE.get(),
 				models().withExistingParent("mortar_stone", modLoc("block/mortar")).texture("0", mcLoc("block/stone")));
@@ -73,6 +74,57 @@ public class BlockModels extends BlockStateProvider {
 
 		this.feastBlock(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get());
 		this.feastBlock(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get());
+		this.simpleBlock(ExtraDelightBlocks.CHEESE_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.BUTTER_BLOCK.get());
+
+		this.feastBlock(ExtraDelightBlocks.HASH_FEAST.get());
+		this.feastBlock(ExtraDelightBlocks.POT_ROAST_FEAST.get());
+
+		this.feastBlock(ExtraDelightBlocks.BBQ_RIBS_FEAST.get());
+		this.feastBlock(ExtraDelightBlocks.PULLED_PORK_FEAST.get());
+
+		this.feastBlock(ExtraDelightBlocks.RACK_LAMB.get());
+		this.feastBlock(ExtraDelightBlocks.STIRFRY.get());
+		this.feastBlock(ExtraDelightBlocks.BEEF_WELLINGTON.get());
+		this.feastBlock(ExtraDelightBlocks.HAGGIS.get());
+
+		this.jellyBlock(ExtraDelightBlocks.JELLY_WHITE.get(), "white");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_ORANGE.get(), "orange");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_MAGENTA.get(), "magenta");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_LIGHT_BLUE.get(), "light_blue");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_YELLOW.get(), "yellow");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_LIME.get(), "lime");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_PINK.get(), "pink");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_GREY.get(), "grey");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_LIGHT_GREY.get(), "light_grey");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_CYAN.get(), "cyan");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_PURPLE.get(), "purple");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_BLUE.get(), "blue");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_BROWN.get(), "brown");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_GREEN.get(), "green");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_RED.get(), "red");
+		this.jellyBlock(ExtraDelightBlocks.JELLY_BLACK.get(), "black");
+
+		this.pieBlock(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), "meat");
+	}
+
+	public void jellyBlock(FeastBlock block, String color) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(FeastBlock.SERVINGS);
+
+			String suffix = "_stage" + (block.getMaxServings() - servings);
+
+			if (servings == 0) {
+				suffix = block.hasLeftovers ? "_leftover" : "_stage3";
+			}
+
+			ModelFile jellyModel = models()
+					.withExistingParent("jelly_" + color + "_block" + suffix, modLoc("block/jelly_block" + suffix))
+					.texture("1", new ResourceLocation(ExtraDelight.MOD_ID, "block/jelly_" + color));
+
+			return ConfiguredModel.builder().modelFile(jellyModel)
+					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
+		});
 	}
 
 	private void createCakeBlock(Block block, String prefix) {
