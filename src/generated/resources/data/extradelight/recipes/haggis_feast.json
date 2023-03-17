@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:stomach"
+    },
+    {
+      "tag": "forge:offal"
+    },
+    {
+      "tag": "forge:offal"
+    },
+    {
+      "tag": "forge:offal"
+    },
+    {
+      "tag": "forge:lung"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "result": {
+    "item": "extradelight:haggis_block_item"
+  }
+}

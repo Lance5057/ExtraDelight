@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "farmersdelight:chicken_cuts"
+    },
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    }
+  ],
+  "result": {
+    "item": "extradelight:fried_chicken"
+  }
+}

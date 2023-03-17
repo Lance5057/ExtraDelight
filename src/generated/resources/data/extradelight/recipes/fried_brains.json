@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:brain"
+    },
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    },
+    {
+      "item": "minecraft:egg"
+    }
+  ],
+  "result": {
+    "item": "extradelight:fried_brains"
+  }
+}

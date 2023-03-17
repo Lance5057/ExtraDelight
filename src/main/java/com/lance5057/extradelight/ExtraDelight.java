@@ -3,8 +3,6 @@ package com.lance5057.extradelight;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -36,17 +34,9 @@ public class ExtraDelight {
 
 	public void setupClient(FMLClientSetupEvent event) {
 
-		event.enqueueWork(() -> {
-			ExtraDelightClientEvents.setTERenderers();
-			ExtraDelightContainers.registerClient(event);
-			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.OVEN.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.FOOD_DISPLAY.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.DOUGH_SHAPING.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.YEAST_POT.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.FLOUR.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.COOKING_OIL.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.GRATER.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), RenderType.cutout());
-		});
+		// event.enqueueWork(() -> {
+		ExtraDelightClientEvents.setTERenderers();
+		ExtraDelightContainers.registerClient(event);
+		// });
 	}
 }

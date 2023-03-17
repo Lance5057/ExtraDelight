@@ -105,7 +105,7 @@ public class BlockModels extends BlockStateProvider {
 		this.jellyBlock(ExtraDelightBlocks.JELLY_RED.get(), "red");
 		this.jellyBlock(ExtraDelightBlocks.JELLY_BLACK.get(), "black");
 
-		this.pieBlock(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), "meat");
+		this.pieBlock(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), "meat_pie");
 	}
 
 	public void jellyBlock(FeastBlock block, String color) {
@@ -120,7 +120,7 @@ public class BlockModels extends BlockStateProvider {
 
 			ModelFile jellyModel = models()
 					.withExistingParent("jelly_" + color + "_block" + suffix, modLoc("block/jelly_block" + suffix))
-					.texture("1", new ResourceLocation(ExtraDelight.MOD_ID, "block/jelly_" + color));
+					.texture("1", new ResourceLocation(ExtraDelight.MOD_ID, "block/jelly_" + color)).renderType("translucent");
 
 			return ConfiguredModel.builder().modelFile(jellyModel)
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();

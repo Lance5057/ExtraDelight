@@ -234,6 +234,7 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(ExtraDelightItems.SAUSAGE, "sausage");
 		forItem(ExtraDelightItems.COOKED_SAUSAGE, "sausagecooked");
+		forItem(ExtraDelightItems.JERKY, "beef_jerky");
 
 		forItem(ExtraDelightItems.LAMB_STEW, "lamb_stew");
 		forItem(ExtraDelightItems.PORK_STEW, "pork_stew");

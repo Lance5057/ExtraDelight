@@ -141,6 +141,8 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> GRAVY_ITEM = ITEMS.register("gravy_boat_item",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> AGAR_AGAR = ITEMS.register("agar_agar",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 //	public static final RegistryObject<Item> CUPCAKE = ITEMS.register("cupcake",
 //			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.CUPCAKE)));
@@ -526,4 +528,8 @@ public class ExtraDelightItems {
 
 	public static final RegistryObject<Item> JERKY = ITEMS.register("jerky",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.JERKY)));
+	
+	// Pasta
+	public static final RegistryObject<Item> MACARONI = ITEMS.register("macaroni",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 }

@@ -2,7 +2,6 @@ package com.lance5057.extradelight.data;
 
 import java.util.function.Consumer;
 
-import com.lance5057.butchercraft.tags.ExtraDelightItemTags;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
@@ -128,8 +127,8 @@ public class Recipes extends RecipeProvider {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FLOUR.get()))
 				.save(consumer);
 
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.DRYING_RACK.get()).pattern("WSW").pattern("SSS")
-				.pattern("WSW").define('W', ItemTags.PLANKS).define('S', Tags.Items.STRING)
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.DRYING_RACK.get()).pattern("WSW").pattern("SSS").pattern("WSW")
+				.define('W', ItemTags.PLANKS).define('S', Tags.Items.STRING)
 				.unlockedBy("has_string", has(Tags.Items.STRING))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "drying_rack"));
 
@@ -385,20 +384,20 @@ public class Recipes extends RecipeProvider {
 				.addIngredient(Items.MILK_BUCKET).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "butter"));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ExtraDelightItems.CHEESE.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F)
-				.addIngredient(Items.MILK_BUCKET).addIngredient(ExtraDelightItems.STOMACH.get())
+				.addIngredient(Items.MILK_BUCKET).addIngredient(ExtraDelightTags.STOMACH)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cheese"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.LAMB_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(ExtraDelightItems.LAMB_STEW_MEAT.get()).addIngredient(Items.CARROT)
-				.addIngredient(Items.POTATO).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "lamb_stew"));
+				.addIngredient(ExtraDelightTags.STEW_MUTTON).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "lamb_stew"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.PORK_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(ExtraDelightItems.PORK_STEW_MEAT.get()).addIngredient(Items.CARROT)
-				.addIngredient(Items.POTATO).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew"));
+				.addIngredient(ExtraDelightTags.STEW_PORK).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.SAUSAGE_ROLL.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
@@ -407,12 +406,8 @@ public class Recipes extends RecipeProvider {
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.SOS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BREAD)
-				.addIngredient(ExtraDelightItems.BEEF_SCRAPS.get()).addIngredient(Items.WHEAT)
-				.addIngredient(ForgeTags.MILK).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sos"));
-
-		CookingPotRecipeBuilder.cookingPotRecipe(ExtraDelightItems.LARD.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
-				.addIngredient(ExtraDelightItems.FAT.get()).addIngredient(ExtraDelightItems.FAT.get())
-				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "lard"));
+				.addIngredient(ExtraDelightTags.SCRAP_BEEF).addIngredient(Items.WHEAT).addIngredient(ForgeTags.MILK)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sos"));
 
 //		CookingPotRecipeBuilder
 //				.cookingPotRecipe(ExtraDelightItems.HASH_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
@@ -424,7 +419,7 @@ public class Recipes extends RecipeProvider {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.POT_ROAST_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(ExtraDelightItemTags.ROAST_RAW).addIngredient(ForgeTags.VEGETABLES_ONION)
+				.addIngredient(ExtraDelightTags.ROAST_RAW).addIngredient(ForgeTags.CROPS_ONION)
 				.addIngredient(Items.POTATO).addIngredient(Items.CARROT)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pot_roast_feast"));
 
@@ -438,8 +433,8 @@ public class Recipes extends RecipeProvider {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(ExtraDelightItemTags.GROUND_MEAT_RAW).addIngredient(ExtraDelightItemTags.GROUND_MEAT_RAW)
-				.addIngredient(ExtraDelightItemTags.GROUND_MEAT_RAW).addIngredient(Items.POTATO)
+				.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
+				.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(Items.POTATO)
 				.addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(ModItems.PIE_CRUST.get())
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "meat_pie"));
 
@@ -452,14 +447,14 @@ public class Recipes extends RecipeProvider {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(ExtraDelightItems.LAMB_RIBS.get(), 2).addIngredient(ForgeTags.VEGETABLES_ONION)
-				.addIngredient(Items.BREAD).addIngredient(Items.SWEET_BERRIES)
+				.addIngredient(ExtraDelightTags.MUTTON_RIBS).addIngredient(ExtraDelightTags.MUTTON_RIBS)
+				.addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(Items.BREAD).addIngredient(Items.SWEET_BERRIES)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "rack_lamb_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.STIRFRY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(ExtraDelightItemTags.SCRAP_MEAT_RAW).addIngredient(ExtraDelightItemTags.SCRAP_MEAT_RAW)
+				.addIngredient(ExtraDelightTags.SCRAP_MEAT_RAW).addIngredient(ExtraDelightTags.SCRAP_MEAT_RAW)
 				.addIngredient(ForgeTags.VEGETABLES).addIngredient(ForgeTags.VEGETABLES)
 				.addIngredient(ForgeTags.VEGETABLES).addIngredient(ForgeTags.VEGETABLES)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stirfry_feast"));
@@ -467,184 +462,174 @@ public class Recipes extends RecipeProvider {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING,
 						0.35F, Items.BOWL)
-				.addIngredient(ExtraDelightItems.BEEF_ROAST.get(), 2).addIngredient(ModItems.WHEAT_DOUGH.get())
-				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightItems.LIVER.get())
+				.addIngredient(ExtraDelightTags.BEEF_ROAST).addIngredient(ModItems.WHEAT_DOUGH.get())
+				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.LIVER)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "beef_wellington_feast"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.HAGGIS_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
-						ExtraDelightItems.STOMACH.get())
-				.addIngredient(ExtraDelightItemTags.OFFAL).addIngredient(ExtraDelightItemTags.OFFAL)
-				.addIngredient(ExtraDelightItemTags.OFFAL).addIngredient(ExtraDelightItems.LUNG.get())
-				.addIngredient(Items.WHEAT).addIngredient(Items.POTATO)
+				.cookingPotRecipe(ExtraDelightItems.HAGGIS_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
+				.addIngredient(ExtraDelightTags.STOMACH).addIngredient(ExtraDelightTags.OFFAL)
+				.addIngredient(ExtraDelightTags.OFFAL).addIngredient(ExtraDelightTags.OFFAL)
+				.addIngredient(ExtraDelightTags.LUNG).addIngredient(Items.WHEAT).addIngredient(Items.POTATO)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "haggis_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(Tags.Items.DYES_BLACK).addIngredient(ExtraDelightItems.GELATIN.get())
-				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Tags.Items.DYES_BLACK).addIngredient(ExtraDelightTags.GELATIN).addIngredient(Items.SUGAR)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "black_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_RED_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(Tags.Items.DYES_RED).addIngredient(ExtraDelightItems.GELATIN.get())
-				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Tags.Items.DYES_RED).addIngredient(ExtraDelightTags.GELATIN).addIngredient(Items.SUGAR)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "red_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_GREEN_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(Tags.Items.DYES_GREEN).addIngredient(ExtraDelightItems.GELATIN.get())
-				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Tags.Items.DYES_GREEN).addIngredient(ExtraDelightTags.GELATIN).addIngredient(Items.SUGAR)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "green_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_BROWN_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(Tags.Items.DYES_BROWN).addIngredient(ExtraDelightItems.GELATIN.get())
-				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Tags.Items.DYES_BROWN).addIngredient(ExtraDelightTags.GELATIN).addIngredient(Items.SUGAR)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "brown_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_BLUE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(Tags.Items.DYES_BLUE).addIngredient(ExtraDelightItems.GELATIN.get())
-				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Tags.Items.DYES_BLUE).addIngredient(ExtraDelightTags.GELATIN).addIngredient(Items.SUGAR)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "blue_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING,
 						0.35F, Items.BOWL)
-				.addIngredient(Tags.Items.DYES_PURPLE).addIngredient(ExtraDelightItems.GELATIN.get())
+				.addIngredient(Tags.Items.DYES_PURPLE).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "purple_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_CYAN_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(Tags.Items.DYES_CYAN).addIngredient(ExtraDelightItems.GELATIN.get())
-				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Tags.Items.DYES_CYAN).addIngredient(ExtraDelightTags.GELATIN).addIngredient(Items.SUGAR)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cyan_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING,
 						0.35F, Items.BOWL)
-				.addIngredient(Tags.Items.DYES_LIGHT_GRAY).addIngredient(ExtraDelightItems.GELATIN.get())
+				.addIngredient(Tags.Items.DYES_LIGHT_GRAY).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "light_grey_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_GREY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(Tags.Items.DYES_GRAY).addIngredient(ExtraDelightItems.GELATIN.get())
-				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Tags.Items.DYES_GRAY).addIngredient(ExtraDelightTags.GELATIN).addIngredient(Items.SUGAR)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "grey_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_PINK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(Tags.Items.DYES_PINK).addIngredient(ExtraDelightItems.GELATIN.get())
-				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Tags.Items.DYES_PINK).addIngredient(ExtraDelightTags.GELATIN).addIngredient(Items.SUGAR)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pink_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_LIME_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(Tags.Items.DYES_LIME).addIngredient(ExtraDelightItems.GELATIN.get())
-				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Tags.Items.DYES_LIME).addIngredient(ExtraDelightTags.GELATIN).addIngredient(Items.SUGAR)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "lime_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING,
 						0.35F, Items.BOWL)
-				.addIngredient(Tags.Items.DYES_YELLOW).addIngredient(ExtraDelightItems.GELATIN.get())
+				.addIngredient(Tags.Items.DYES_YELLOW).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "yellow_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING,
 						0.35F, Items.BOWL)
-				.addIngredient(Tags.Items.DYES_LIGHT_BLUE).addIngredient(ExtraDelightItems.GELATIN.get())
+				.addIngredient(Tags.Items.DYES_LIGHT_BLUE).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "light_blue_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING,
 						0.35F, Items.BOWL)
-				.addIngredient(Tags.Items.DYES_MAGENTA).addIngredient(ExtraDelightItems.GELATIN.get())
+				.addIngredient(Tags.Items.DYES_MAGENTA).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "magenta_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING,
 						0.35F, Items.BOWL)
-				.addIngredient(Tags.Items.DYES_ORANGE).addIngredient(ExtraDelightItems.GELATIN.get())
+				.addIngredient(Tags.Items.DYES_ORANGE).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "orange_jelly_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(Tags.Items.DYES_WHITE).addIngredient(ExtraDelightItems.GELATIN.get())
-				.addIngredient(Items.SUGAR).addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Tags.Items.DYES_WHITE).addIngredient(ExtraDelightTags.GELATIN).addIngredient(Items.SUGAR)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "white_jelly_feast"));
-
-		CookingPotRecipeBuilder.cookingPotRecipe(ExtraDelightItems.GELATIN.get(), 4, CookingRecipes.SLOW_COOKING, 0.35F)
-				.addIngredient(ExtraDelightItemTags.GELATIN_PROVIDER)
-				.addIngredient(ExtraDelightItemTags.GELATIN_PROVIDER)
-				.addIngredient(ExtraDelightItemTags.GELATIN_PROVIDER)
-				.addIngredient(ExtraDelightItemTags.GELATIN_PROVIDER)
-				.addIngredient(ExtraDelightItemTags.GELATIN_PROVIDER)
-				.addIngredient(ExtraDelightItemTags.GELATIN_PROVIDER)
-				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "gelatin"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.LIVER_ONIONS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(ExtraDelightItems.LIVER.get()).addIngredient(ForgeTags.VEGETABLES_ONION)
+				.addIngredient(ExtraDelightTags.LIVER).addIngredient(ForgeTags.VEGETABLES_ONION)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "liver_onions"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.FRIED_FISH.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
 				.addIngredient(ItemTags.FISHES).addIngredient(Tags.Items.CROPS_WHEAT)
-				.addIngredient(ExtraDelightItems.LARD.get())
+				.addIngredient(ExtraDelightTags.FRYING_OIL)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fried_fish"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.CHICKEN_FRIED_STEAK.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
 				.addIngredient(Items.BEEF).addIngredient(Tags.Items.CROPS_WHEAT)
-				.addIngredient(ExtraDelightItems.LARD.get()).addIngredient(ExtraDelightItems.GRAVY_ITEM.get())
+				.addIngredient(ExtraDelightTags.FRYING_OIL).addIngredient(ExtraDelightItems.GRAVY_ITEM.get())
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "chicken_fried_steak"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.PORK_TENDERLOIN.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
 				.addIngredient(Items.PORKCHOP).addIngredient(Tags.Items.CROPS_WHEAT)
-				.addIngredient(ExtraDelightItems.LARD.get()).addIngredient(Items.BREAD)
+				.addIngredient(ExtraDelightTags.FRYING_OIL).addIngredient(Items.BREAD)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pork_tenderloin"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.FRIED_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
 				.addIngredient(ModItems.CHICKEN_CUTS.get()).addIngredient(Tags.Items.CROPS_WHEAT)
-				.addIngredient(ExtraDelightItems.LARD.get())
+				.addIngredient(ExtraDelightTags.FRYING_OIL)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fried_chicken"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.STUFFED_HEART.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
-				.addIngredient(ExtraDelightItems.HEART.get()).addIngredient(Tags.Items.MUSHROOMS)
-				.addIngredient(Items.BREAD).addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(Items.EGG)
+				.addIngredient(ExtraDelightTags.HEART).addIngredient(Tags.Items.MUSHROOMS).addIngredient(Items.BREAD)
+				.addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(Items.EGG)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stuffed_heart"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.FRIED_BRAINS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
-				.addIngredient(ExtraDelightItems.BRAIN.get()).addIngredient(Tags.Items.CROPS_WHEAT)
-				.addIngredient(ExtraDelightItems.LARD.get()).addIngredient(Items.EGG)
+				.addIngredient(ExtraDelightTags.BRAIN).addIngredient(Tags.Items.CROPS_WHEAT)
+				.addIngredient(ExtraDelightTags.FRYING_OIL).addIngredient(Items.EGG)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fried_brains"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.OXTAIL_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
-				.addIngredient(ExtraDelightItems.OXTAIL.get()).addIngredient(Items.CARROT)
+				.addIngredient(ExtraDelightTags.OXTAIL).addIngredient(Items.CARROT)
 				.addIngredient(ExtraDelightItems.STOCK_JAR_ITEM.get()).addIngredient(ForgeTags.VEGETABLES_TOMATO)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "oxtail_soup"));
 	}
