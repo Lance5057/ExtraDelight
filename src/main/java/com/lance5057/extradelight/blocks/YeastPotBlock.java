@@ -1,6 +1,6 @@
 package com.lance5057.extradelight.blocks;
 
-import com.lance5057.extradelight.ExtraDelightItems;
+import java.util.function.Supplier;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,6 +12,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
@@ -23,7 +24,6 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -32,11 +32,14 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class YeastPotBlock extends Block {
 	protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 6.0D, 11.0D);
 	public static final BooleanProperty YEASTED = BooleanProperty.create("yeasted");
-	private final int speed = 4;
+	private final int speed;
+	final Supplier<Item> output;
 
-	public YeastPotBlock() {
+	public YeastPotBlock(Supplier<Item> output, int speed) {
 		super(Properties.of(Material.STONE).strength(0.5F, 1.0F).sound(SoundType.STONE).randomTicks());
 		this.registerDefaultState(this.stateDefinition.any().setValue(YEASTED, false));
+		this.speed = speed;
+		this.output = output;
 	}
 
 	@Override
@@ -64,7 +67,7 @@ public class YeastPotBlock extends Block {
 		if (!level.isClientSide) {
 			if (state.getValue(YEASTED)) {
 				if (player.getItemInHand(hand).getItem() == Items.GLASS_BOTTLE) {
-					player.setItemInHand(hand, new ItemStack(ExtraDelightItems.YEAST.get()));
+					player.setItemInHand(hand, new ItemStack(output.get()));
 					level.destroyBlock(pos, true);
 					return InteractionResult.SUCCESS;
 				}

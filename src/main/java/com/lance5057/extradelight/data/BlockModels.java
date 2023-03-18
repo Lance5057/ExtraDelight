@@ -29,6 +29,9 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.MIXING_BOWL.get(), models().getExistingFile(modLoc("block/mixing_bowl")));
 
 		this.simpleBlock(ExtraDelightBlocks.YEAST_POT.get(), models().getExistingFile(modLoc("block/yeast_pot")));
+		this.simpleBlock(ExtraDelightBlocks.VINEGAR_POT.get(),
+				models().withExistingParent("vinegar_pot", modLoc("block/yeast_pot")).texture("0",
+						modLoc("block/vinegarpot")));
 		this.simpleBlock(ExtraDelightBlocks.GRATER.get(), models().getExistingFile(modLoc("block/grater")));
 		this.simpleBlock(ExtraDelightBlocks.DRYING_RACK.get(), models().getExistingFile(modLoc("block/drying_rack")));
 
@@ -87,6 +90,9 @@ public class BlockModels extends BlockStateProvider {
 		this.feastBlock(ExtraDelightBlocks.STIRFRY.get());
 		this.feastBlock(ExtraDelightBlocks.BEEF_WELLINGTON.get());
 		this.feastBlock(ExtraDelightBlocks.HAGGIS.get());
+		this.feastBlock(ExtraDelightBlocks.MACARONI_CHEESE.get());
+		this.feastBlock(ExtraDelightBlocks.HOTDISH.get());
+		this.feastBlock(ExtraDelightBlocks.LASAGNA.get());
 
 		this.jellyBlock(ExtraDelightBlocks.JELLY_WHITE.get(), "white");
 		this.jellyBlock(ExtraDelightBlocks.JELLY_ORANGE.get(), "orange");
@@ -120,7 +126,8 @@ public class BlockModels extends BlockStateProvider {
 
 			ModelFile jellyModel = models()
 					.withExistingParent("jelly_" + color + "_block" + suffix, modLoc("block/jelly_block" + suffix))
-					.texture("1", new ResourceLocation(ExtraDelight.MOD_ID, "block/jelly_" + color)).renderType("translucent");
+					.texture("1", new ResourceLocation(ExtraDelight.MOD_ID, "block/jelly_" + color))
+					.renderType("translucent");
 
 			return ConfiguredModel.builder().modelFile(jellyModel)
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();

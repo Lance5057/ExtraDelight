@@ -1,4 +1,4 @@
-// 1.19.2	2023-03-17T10:06:01.5093768	LootTables
+// 1.19.2	2023-03-18T11:41:25.1414271	LootTables
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/bbq_ribs_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/beef_wellington_block.json
 125a4f59a47674002e17ec4cf66b31977bdb1941 data/extradelight/loot_tables/blocks/butter_block.json
@@ -16,6 +16,7 @@ d7a597cfde8638f62de880b9709cf6103944aa51 data/extradelight/loot_tables/blocks/gr
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/haggis_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/hash_block.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/honey_cheesecake.json
+217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/hotdish_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/jelly_black_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/jelly_blue_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/jelly_brown_block.json
@@ -32,6 +33,8 @@ d7a597cfde8638f62de880b9709cf6103944aa51 data/extradelight/loot_tables/blocks/gr
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/jelly_red_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/jelly_white_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/jelly_yellow_block.json
+217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/lasagna_block.json
+217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/macaroni_cheese_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/mashed_potato_gravy_block.json
 2b2a4bde1a1c86393b28fa3ff9b81ef1ddeed22d data/extradelight/loot_tables/blocks/meat_pie.json
 0d70cc35f8ad71ac1497d22f9ede864bcd088b5d data/extradelight/loot_tables/blocks/mixing_bowl.json
@@ -55,4 +58,5 @@ af7c66649c613cb92e979ae6587d4af57547fa43 data/extradelight/loot_tables/blocks/mo
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/salisbury_steak_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/stirfry_block.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/sweet_berry_pie.json
+615b13a18822f502528bd3572e827f4a617abb7f data/extradelight/loot_tables/blocks/vinegar_pot.json
 615b13a18822f502528bd3572e827f4a617abb7f data/extradelight/loot_tables/blocks/yeast_pot.json

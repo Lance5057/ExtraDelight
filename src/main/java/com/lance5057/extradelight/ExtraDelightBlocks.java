@@ -40,7 +40,10 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<Block> DOUGH_SHAPING = BLOCKS.register("dough_shaping", DoughShapingBlock::new);
 	public static final RegistryObject<Block> MIXING_BOWL = BLOCKS.register("mixing_bowl", MixingBowlBlock::new);
 
-	public static final RegistryObject<Block> YEAST_POT = BLOCKS.register("yeast_pot", YeastPotBlock::new);
+	public static final RegistryObject<Block> YEAST_POT = BLOCKS.register("yeast_pot",
+			() -> new YeastPotBlock(ExtraDelightItems.YEAST, 4));
+	public static final RegistryObject<Block> VINEGAR_POT = BLOCKS.register("vinegar_pot",
+			() -> new YeastPotBlock(ExtraDelightItems.VINEGAR, 8));
 	public static final RegistryObject<Block> GRATER = BLOCKS.register("grater", GraterBlock::new);
 
 	public static final RegistryObject<Block> MORTAR_STONE = BLOCKS.register("mortar_stone", MortarBlock::new);
@@ -185,4 +188,14 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<Block> BUTTER_BLOCK = BLOCKS.register("butter_block",
 			() -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_YELLOW).friction(0.98F)
 					.sound(SoundType.SLIME_BLOCK)));
+
+	public static final RegistryObject<BbqRibsBlock> MACARONI_CHEESE = BLOCKS.register("macaroni_cheese_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW),
+					ExtraDelightItems.MACARONI_CHEESE, true));
+	public static final RegistryObject<BbqRibsBlock> LASAGNA = BLOCKS.register("lasagna_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW),
+					ExtraDelightItems.LASAGNA, true));
+	public static final RegistryObject<BbqRibsBlock> HOTDISH = BLOCKS.register("hotdish_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW),
+					ExtraDelightItems.HOTDISH, true));
 }

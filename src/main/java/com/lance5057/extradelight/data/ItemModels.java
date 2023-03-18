@@ -31,10 +31,13 @@ public class ItemModels extends ItemModelProvider {
 				new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/mixing_bowl")));
 		getBuilder(ExtraDelightItems.YEAST_POT.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/yeast_pot")));
+		getBuilder(ExtraDelightItems.VINEGAR_POT.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/yeast_pot")))
+				.texture("0", modLoc("block/vinegarpot"));
 		getBuilder(ExtraDelightItems.GRATER.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/grater")));
-		getBuilder(ExtraDelightItems.DRYING_RACK.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/drying_rack")));
+		getBuilder(ExtraDelightItems.DRYING_RACK.getId().getPath()).parent(
+				new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/drying_rack")));
 
 		getBuilder(ExtraDelightItems.MORTAR_STONE.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "item/mortar")))
@@ -180,6 +183,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.KETCHUP_JAR_ITEM, "ketchup");
 		forItem(ExtraDelightItems.BBQ_JAR_ITEM, "bbq");
 		forItem(ExtraDelightItems.MAYO_JAR_ITEM, "mayo");
+		forItem(ExtraDelightItems.VINEGAR, "vinegar");
 
 		// Bread
 		forItem(ExtraDelightItems.BREAD_SLICE, "bread_slice");
@@ -327,6 +331,19 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.JELLY_GREEN, "jelly_green");
 		forItem(ExtraDelightItems.JELLY_RED, "jelly_red");
 		forItem(ExtraDelightItems.JELLY_BLACK, "jelly_black");
+
+		forItem(ExtraDelightItems.MACARONI, "macaroni");
+		forBlockItem(ExtraDelightItems.MACARONI_CHEESE_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/macaroni_cheese_block_stage0"));
+		forItem(ExtraDelightItems.MACARONI_CHEESE, "macaroni_cheese");
+
+		forBlockItem(ExtraDelightItems.HOTDISH_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/hotdish_block_stage0"));
+		forItem(ExtraDelightItems.HOTDISH, "hotdish");
+
+		forBlockItem(ExtraDelightItems.LASANGA_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/lasagna_block_stage0"));
+		forItem(ExtraDelightItems.LASAGNA, "lasagna");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

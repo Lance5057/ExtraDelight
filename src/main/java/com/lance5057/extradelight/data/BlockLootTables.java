@@ -30,6 +30,12 @@ public class BlockLootTables extends BlockLoot {
 								.add(LootItem.lootTableItem(Items.FLOWER_POT)))
 						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
+		this.add(ExtraDelightBlocks.VINEGAR_POT.get(),
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+								.add(LootItem.lootTableItem(Items.FLOWER_POT)))
+						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
 
 		this.dropSelf(ExtraDelightBlocks.FLOUR.get());
 		this.dropSelf(ExtraDelightBlocks.COOKING_OIL.get());
@@ -93,6 +99,9 @@ public class BlockLootTables extends BlockLoot {
 		this.dropOther(ExtraDelightBlocks.JELLY_BLACK.get(), Items.BOWL);
 
 		this.dropOther(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.MACARONI_CHEESE.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.HOTDISH.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.LASAGNA.get(), Items.BOWL);
 	}
 
 	@Override

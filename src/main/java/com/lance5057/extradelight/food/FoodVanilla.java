@@ -50,7 +50,8 @@ public class FoodVanilla {
 	public static final FoodProperties GRAVY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1F).build();
 
 	public static final FoodProperties CHEESE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).build();
-	public static final FoodProperties BUTTER = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.5F).build();
+	public static final FoodProperties BUTTER = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.5F)
+			.effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
 
 	public static final FoodProperties SAUSAGE_ROLL = (new FoodProperties.Builder()).nutrition(10).saturationMod(1F)
 			.build();
@@ -80,4 +81,7 @@ public class FoodVanilla {
 			.build();
 	public static final FoodProperties JERKY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat()
 			.fast().alwaysEat().build();
+
+	public static final FoodProperties PASTA = (new FoodProperties.Builder()).nutrition(8).saturationMod(1.0F).build();
+	public static final FoodProperties HOTDISH = (new FoodProperties.Builder()).nutrition(10).saturationMod(2.0F).build();
 }

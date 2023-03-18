@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "block/block",
+	"parent": "block/block", "render_type": "cutout",
 	"textures": {
 		"0": "extradelight:block/oven",
 		"1": "extradelight:block/oven_fire_front",

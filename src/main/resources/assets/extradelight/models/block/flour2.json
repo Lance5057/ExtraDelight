@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "block/thin_block",
+	"parent": "block/thin_block","render_type": "cutout",
 	"textures": {
 		"3": "extradelight:block/flour_dust3",
 		"particle": "extradelight:block/flour_dust2"

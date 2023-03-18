@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"ambientocclusion": false,
+	"parent": "block/block", "render_type": "cutout",
 	"textures": {
 		"0": "extradelight:block/yeastpot",
 		"particle": "extradelight:block/yeastpot"
