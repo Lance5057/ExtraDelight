@@ -21,6 +21,7 @@ import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MelonJuiceItem;
+import vectorwing.farmersdelight.common.item.MilkBottleItem;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ExtraDelightItems {
@@ -232,9 +233,9 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> HONEY_POPSICLE = ITEMS.register("honey_popsicle",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.POPSICLE)));
 
-//	public static final RegistryObject<Item> WHIPPED_CREAM = ITEMS.register("whipped_cream",
-//			() -> new Item(new MilkBottleItem.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.WHIPPED_CREAM)
-//					.craftRemainder(Items.BOWL)));
+	public static final RegistryObject<Item> WHIPPED_CREAM = ITEMS.register("whipped_cream",
+			() -> new Item(new MilkBottleItem.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.WHIPPED_CREAM)
+					.craftRemainder(Items.BOWL)));
 //
 //	public static final RegistryObject<Item> PLAIN_CAKE = ITEMS.register("plain_cake",
 //			() -> new BlockItem(ExtraDelightBlocks.PLAIN_CAKE.get(),
@@ -309,6 +310,8 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.BAKED_POTATO)));
 
 	// Carrot
+	public static final RegistryObject<Item> GRATED_CARROT = ITEMS.register("grated_carrot",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.CARROT)));
 	public static final RegistryObject<Item> ROASTED_CARROT = ITEMS.register("roasted_carrot",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_CARROT)));
 	public static final RegistryObject<Item> GLAZED_CARROT = ITEMS.register("glazed_carrot",

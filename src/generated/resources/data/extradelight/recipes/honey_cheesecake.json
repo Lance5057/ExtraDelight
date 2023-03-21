@@ -1,19 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "h": {
-      "item": "minecraft:honey_bottle"
-    },
-    "m": {
-      "tag": "forge:milk"
-    },
-    "p": {
-      "item": "farmersdelight:pie_crust"
+    "f": {
+      "item": "extradelight:honey_cheesecake_slice"
     }
   },
   "pattern": [
-    "hhh",
-    "mpm"
+    "ff ",
+    "ff "
   ],
   "result": {
     "item": "extradelight:honey_cheesecake"

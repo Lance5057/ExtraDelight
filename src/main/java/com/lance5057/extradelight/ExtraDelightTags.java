@@ -17,8 +17,23 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> STOCK = ItemTags.create(new ResourceLocation("extradelight", "stock"));
 	public static final TagKey<Item> FRYING_OIL = ItemTags.create(new ResourceLocation("extradelight", "frying_oil"));
 
+	public static final TagKey<Item> FRUIT = forgeTag("fruit");
+	public static final TagKey<Item> FRUIT_APPLE = forgeTag("fruit/apple");
+	public static final TagKey<Item> FRUIT_SWEET_BERRY = forgeTag("fruit/sweet_berry");
+	public static final TagKey<Item> FRUIT_GLOW_BERRY = forgeTag("fruit/glow_berry");
+
+	public static final TagKey<Item> JAM = forgeTag("jam");
+	public static final TagKey<Item> JAM_APPLE = forgeTag("jam/apple");
+	public static final TagKey<Item> JAM_SWEET_BERRY = forgeTag("jam/sweet_berry");
+	public static final TagKey<Item> JAM_GLOW_BERRY = forgeTag("jam/glow_berry");
+
+	// Bread
+	public static final TagKey<Item> BREAD = forgeTag("bread");
+	public static final TagKey<Item> BREAD_SLICE = forgeTag("bread/sliced");
+	public static final TagKey<Item> TOAST = forgeTag("toast");
+
 	// Butchercraft
-	
+
 	// Generic Meat
 	public static final TagKey<Item> MEAT = forgeTag("meat");
 	public static final TagKey<Item> MEAT_RAW = forgeTag("meat/raw");

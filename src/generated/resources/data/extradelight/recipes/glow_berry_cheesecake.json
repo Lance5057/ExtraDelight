@@ -1,20 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "h": {
-      "item": "minecraft:glow_berries"
-    },
-    "m": {
-      "tag": "forge:milk"
-    },
-    "p": {
-      "item": "farmersdelight:pie_crust"
+    "f": {
+      "item": "extradelight:glow_berry_cheesecake_slice"
     }
   },
   "pattern": [
-    "hhh",
-    "hhh",
-    "mpm"
+    "ff ",
+    "ff "
   ],
   "result": {
     "item": "extradelight:glow_berry_cheesecake"

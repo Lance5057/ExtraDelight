@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:egg_mix"
+  },
+  "result": "extradelight:scrambled_eggs"
+}

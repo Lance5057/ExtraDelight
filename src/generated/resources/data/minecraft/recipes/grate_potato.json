@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "forge:crops/potato"
+    }
+  ],
+  "result": [
+    {
+      "item": "extradelight:grated_potato"
+    }
+  ],
+  "tool": {
+    "item": "extradelight:grater"
+  }
+}

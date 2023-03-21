@@ -1,0 +1,24 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "extradelight:cooking_oil"
+    },
+    {
+      "item": "extradelight:vinegar"
+    }
+  ],
+  "result": {
+    "item": "extradelight:mayo_jar_item"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "tag": "forge:spoons"
+  }
+}

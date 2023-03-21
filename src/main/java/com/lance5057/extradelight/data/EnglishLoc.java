@@ -109,13 +109,12 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.EGG_MIX.get(), "Egg Mix");
 		this.add(ExtraDelightItems.OMELETTE_MIX.get(), "Omelette Mix");
-		
+
 		// Feasts
 		this.add(ExtraDelightItems.SALISBURY_STEAK.get(), "Plate of Salisbury Steak");
 		this.add(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.get(), "Salisbury Steak");
 		this.add(ExtraDelightItems.MASHED_POTATO_GRAVY.get(), "Bowl of Mashed Potatos with Gravy");
 		this.add(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(), "Mashed Potatos with Gravy");
-		
 
 		this.add(ExtraDelightItems.PORK_STEW.get(), "Pork Stew");
 		this.add(ExtraDelightItems.LAMB_STEW.get(), "Mutton Stew");
@@ -123,7 +122,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.SAUSAGE_ROLL.get(), "Sausage Roll");
 		this.add(ExtraDelightItems.SOS.get(), "SOS");
 		this.add(ExtraDelightItems.LIVER_ONIONS.get(), "Liver and Onions");
-		// this.add(ExtraDelightItems.FRIES.get(), "French Fries");
+		this.add(ExtraDelightItems.FRENCH_FRIES.get(), "French Fries");
 		this.add(ExtraDelightItems.FRIED_FISH.get(), "Fried Fish");
 		this.add(ExtraDelightItems.CHICKEN_FRIED_STEAK.get(), "Chicken Fried Steak");
 		this.add(ExtraDelightItems.PORK_TENDERLOIN.get(), "Pork Tenderloin");

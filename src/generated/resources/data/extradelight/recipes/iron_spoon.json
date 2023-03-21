@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "w": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "pattern": [
+    "  w",
+    " s ",
+    "s  "
+  ],
+  "result": {
+    "item": "extradelight:iron_spoon"
+  }
+}

@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.integration.jei;
 
+import java.util.Collections;
+
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -7,15 +9,25 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.integration.jei.categories.MixingBowlRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MortarRecipeCategory;
+import com.lance5057.extradelight.integration.jei.categories.OvenRecipeCategory;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.VanillaTypes;
+import mezz.jei.api.recipe.IRecipeManager;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.runtime.IIngredientManager;
+import mezz.jei.api.runtime.IJeiRuntime;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeManager;
 
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
@@ -29,7 +41,8 @@ public class JEIPlugin implements IModPlugin {
 	@Override
 	public void registerCategories(IRecipeCategoryRegistration registry) {
 		registry.addRecipeCategories(new MortarRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
-				new MixingBowlRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
+				new MixingBowlRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new OvenRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
 	}
 
 	@Override
@@ -38,6 +51,8 @@ public class JEIPlugin implements IModPlugin {
 				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ExtraDelightRecipes.MORTAR.get()));
 		registry.addRecipes(MixingBowlRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
 				.getAllRecipesFor(ExtraDelightRecipes.MIXING_BOWL.get()));
+		registry.addRecipes(OvenRecipeCategory.TYPE,
+				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ExtraDelightRecipes.OVEN.get()));
 	}
 
 	@Override
@@ -65,13 +80,63 @@ public class JEIPlugin implements IModPlugin {
 				MortarRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_GRANITE.get()), MortarRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_STONE.get()), MortarRecipeCategory.TYPE);
-		
+
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.WOODEN_SPOON.get()), MixingBowlRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.STONE_SPOON.get()), MixingBowlRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.IRON_SPOON.get()), MixingBowlRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.GOLD_SPOON.get()), MixingBowlRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.DIAMOND_SPOON.get()), MixingBowlRecipeCategory.TYPE);
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.NETHERITE_SPOON.get()), MixingBowlRecipeCategory.TYPE);
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.NETHERITE_SPOON.get()),
+				MixingBowlRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MIXING_BOWL.get()), MixingBowlRecipeCategory.TYPE);
+
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.OVEN.get()), OvenRecipeCategory.TYPE);
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.BAKING_STONE.get()), OvenRecipeCategory.TYPE);
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.LOAF_PAN.get()), OvenRecipeCategory.TYPE);
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.ROUND_PAN.get()), OvenRecipeCategory.TYPE);
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), OvenRecipeCategory.TYPE);
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.SHEET.get()), OvenRecipeCategory.TYPE);
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.TRAY.get()), OvenRecipeCategory.TYPE);
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.PIE_DISH.get()), OvenRecipeCategory.TYPE);
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), OvenRecipeCategory.TYPE);
 	}
+
+	@Override
+	public void onRuntimeAvailable(IJeiRuntime jeiRuntime) {
+		// jeiRuntime.getIngredientManager().removeIngredientsAtRuntime(null, null);
+		IIngredientManager rr = jeiRuntime.getIngredientManager();
+		RecipeManager rm = Minecraft.getInstance().level.getRecipeManager();
+
+//		rm.get
+//		ExtraDelightItems.ITEMS.getEntries().forEach(i -> i.get());
+	}
+
+	private void testRecipe(Recipe<?> r, IIngredientManager rr) {
+		if (r.getId().getNamespace().compareTo(ExtraDelight.MOD_ID) == 0) {
+			testIngredients(r, rr);
+		}
+	}
+
+	private void testIngredients(Recipe<?> r, IIngredientManager rr) {
+		r.getIngredients().forEach(i -> {
+			if (!testIngredient(i, rr))
+				removeItem(r, rr);
+		});
+	}
+
+	private void removeItem(Recipe<?> r, IIngredientManager rr) {
+		ItemStack i = r.getResultItem();
+		ResourceLocation s = Registry.ITEM.getKey(i.getItem());
+
+		if (s.getNamespace().compareTo(ExtraDelight.MOD_ID) == 0)
+			rr.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, Collections.singleton(i));
+	}
+
+	private boolean testIngredient(Ingredient i, IIngredientManager rr) {
+		if (i.getItems().length <= 1)
+			if (i.getItems()[0].getItem() == Items.BARRIER)
+				return true;
+		return false;
+	}
+
 }

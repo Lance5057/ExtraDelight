@@ -35,8 +35,8 @@ public class DynamicNameSimpleCookingRecipeBuilder implements RecipeBuilder {
 	private String group;
 	private final Serializer serializer;
 
-	private DynamicNameSimpleCookingRecipeBuilder(ItemLike pResult, Ingredient pIngredient, float pExperience, int pCookingTime,
-			Serializer pSerializer) {
+	private DynamicNameSimpleCookingRecipeBuilder(ItemLike pResult, Ingredient pIngredient, float pExperience,
+			int pCookingTime, Serializer pSerializer) {
 		this.result = pResult.asItem();
 		this.ingredient = pIngredient;
 		this.experience = pExperience;
@@ -44,24 +44,25 @@ public class DynamicNameSimpleCookingRecipeBuilder implements RecipeBuilder {
 		this.serializer = pSerializer;
 	}
 
-	public static DynamicNameSimpleCookingRecipeBuilder cooking(Ingredient pIngredient, ItemLike pResult, float pExperience,
-			int pCookingTime, @NotNull Serializer serializer) {
+	public static DynamicNameSimpleCookingRecipeBuilder cooking(Ingredient pIngredient, ItemLike pResult,
+			float pExperience, int pCookingTime, @NotNull Serializer serializer) {
 		return new DynamicNameSimpleCookingRecipeBuilder(pResult, pIngredient, pExperience, pCookingTime, serializer);
 	}
 
-//	public static DynamicNameSimpleCookingRecipeBuilder campfireCooking(Ingredient pIngredient, ItemLike pResult,
-//			float pExperience, int pCookingTime) {
-//		return cooking(pIngredient, pResult, pExperience, pCookingTime, RecipeSerializer.CAMPFIRE_COOKING_RECIPE);
-//	}
+	public static DynamicNameSimpleCookingRecipeBuilder campfireCooking(Ingredient pIngredient, ItemLike pResult,
+			float pExperience, int pCookingTime) {
+		return cooking(pIngredient, pResult, pExperience, pCookingTime, ExtraDelightRecipes.DYNAMIC_SMELT_SERIALIZER.get());
+	}
 //
 //	public static DynamicNameSimpleCookingRecipeBuilder blasting(Ingredient pIngredient, ItemLike pResult, float pExperience,
 //			int pCookingTime) {
 //		return cooking(pIngredient, pResult, pExperience, pCookingTime, RecipeSerializer.BLASTING_RECIPE);
 //	}
 
-	public static DynamicNameSimpleCookingRecipeBuilder smelting(Ingredient pIngredient, ItemLike pResult, float pExperience,
-			int pCookingTime) {
-		return cooking(pIngredient, pResult, pExperience, pCookingTime, ExtraDelightRecipes.DYNAMIC_SMELT_SERIALIZER.get());
+	public static DynamicNameSimpleCookingRecipeBuilder smelting(Ingredient pIngredient, ItemLike pResult,
+			float pExperience, int pCookingTime) {
+		return cooking(pIngredient, pResult, pExperience, pCookingTime,
+				ExtraDelightRecipes.DYNAMIC_SMELT_SERIALIZER.get());
 	}
 
 //	public static DynamicNameSimpleCookingRecipeBuilder smoking(Ingredient pIngredient, ItemLike pResult, float pExperience,
@@ -69,7 +70,8 @@ public class DynamicNameSimpleCookingRecipeBuilder implements RecipeBuilder {
 //		return cooking(pIngredient, pResult, pExperience, pCookingTime, RecipeSerializer.SMOKING_RECIPE);
 //	}
 
-	public DynamicNameSimpleCookingRecipeBuilder unlockedBy(String pCriterionName, CriterionTriggerInstance pCriterionTrigger) {
+	public DynamicNameSimpleCookingRecipeBuilder unlockedBy(String pCriterionName,
+			CriterionTriggerInstance pCriterionTrigger) {
 		this.advancement.addCriterion(pCriterionName, pCriterionTrigger);
 		return this;
 	}

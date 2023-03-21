@@ -1,11 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
             "items": [
+              "minecraft:milk_bucket",
               "farmersdelight:milk_bottle"
             ]
           }
@@ -15,20 +16,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:mixingbowl/apple_jam"
+        "recipe": "extradelight:oven/cheesecake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "Recipes",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:mixingbowl/apple_jam"
+      "extradelight:oven/cheesecake"
     ]
   }
 }
