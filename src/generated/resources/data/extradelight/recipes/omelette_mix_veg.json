@@ -12,18 +12,20 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "key": {
-          "f": {
-            "item": "extradelight:quiche_slice"
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "extradelight:egg_mix"
+          },
+          {
+            "tag": "forge:vegetables"
+          },
+          {
+            "tag": "forge:vegetables"
           }
-        },
-        "pattern": [
-          "ff ",
-          "ff "
         ],
         "result": {
-          "item": "extradelight:quiche"
+          "item": "extradelight:omelette_mix"
         }
       }
     }

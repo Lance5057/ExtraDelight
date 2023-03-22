@@ -7,7 +7,14 @@
           "type": "forge:not",
           "value": {
             "type": "forge:tag_empty",
-            "tag": "forge:crops/tomato"
+            "tag": "forge:jam"
+          }
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:bread"
           }
         }
       ],
@@ -15,20 +22,14 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "tag": "forge:crops/tomato"
+            "tag": "forge:jam"
           },
           {
-            "tag": "forge:crops/tomato"
-          },
-          {
-            "item": "minecraft:sugar"
-          },
-          {
-            "item": "minecraft:glass_bottle"
+            "tag": "forge:bread"
           }
         ],
         "result": {
-          "item": "extradelight:tomato_juice"
+          "item": "extradelight:jam_toast"
         }
       }
     }

@@ -1,25 +1,41 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "c": {
-      "item": "minecraft:honey_bottle"
-    },
-    "i": {
-      "item": "minecraft:ice"
-    },
-    "m": {
-      "tag": "forge:milk"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:crops/tomato"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "S": {
+            "item": "minecraft:stick"
+          },
+          "c": {
+            "item": "minecraft:honey_bottle"
+          },
+          "i": {
+            "item": "minecraft:ice"
+          },
+          "m": {
+            "tag": "forge:milk"
+          }
+        },
+        "pattern": [
+          " cm",
+          "imc",
+          "Si "
+        ],
+        "result": {
+          "item": "extradelight:honey_popsicle"
+        }
+      }
     }
-  },
-  "pattern": [
-    " cm",
-    "imc",
-    "Si "
-  ],
-  "result": {
-    "item": "extradelight:honey_popsicle"
-  }
+  ]
 }

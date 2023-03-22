@@ -1,28 +1,44 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "c": {
-      "item": "minecraft:cocoa_beans"
-    },
-    "i": {
-      "item": "minecraft:ice"
-    },
-    "m": {
-      "tag": "forge:milk"
-    },
-    "s": {
-      "item": "minecraft:sugar"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:crops/tomato"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "S": {
+            "item": "minecraft:stick"
+          },
+          "c": {
+            "item": "minecraft:cocoa_beans"
+          },
+          "i": {
+            "item": "minecraft:ice"
+          },
+          "m": {
+            "tag": "forge:milk"
+          },
+          "s": {
+            "item": "minecraft:sugar"
+          }
+        },
+        "pattern": [
+          " cm",
+          "isc",
+          "Si "
+        ],
+        "result": {
+          "item": "extradelight:fudge_popsicle"
+        }
+      }
     }
-  },
-  "pattern": [
-    " cm",
-    "isc",
-    "Si "
-  ],
-  "result": {
-    "item": "extradelight:fudge_popsicle"
-  }
+  ]
 }

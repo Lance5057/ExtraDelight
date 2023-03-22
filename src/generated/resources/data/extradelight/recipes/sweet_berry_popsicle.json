@@ -1,22 +1,38 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "g": {
-      "item": "minecraft:sweet_berries"
-    },
-    "i": {
-      "item": "minecraft:ice"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:crops/tomato"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "S": {
+            "item": "minecraft:stick"
+          },
+          "g": {
+            "item": "minecraft:sweet_berries"
+          },
+          "i": {
+            "item": "minecraft:ice"
+          }
+        },
+        "pattern": [
+          " gg",
+          "igg",
+          "Si "
+        ],
+        "result": {
+          "item": "extradelight:sweet_berry_popsicle"
+        }
+      }
     }
-  },
-  "pattern": [
-    " gg",
-    "igg",
-    "Si "
-  ],
-  "result": {
-    "item": "extradelight:sweet_berry_popsicle"
-  }
+  ]
 }

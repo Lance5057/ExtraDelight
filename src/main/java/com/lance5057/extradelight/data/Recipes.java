@@ -75,6 +75,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		DryingRackRecipeBuilder.drying(Ingredient.of(Items.KELP), Items.DRIED_KELP, 10, 1000)
 				.unlockedBy("has_kelp", has(Items.KELP))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "dried_kelp"));
+		
+		//Test
+		tagConditional(DryingRackRecipeBuilder.drying(Ingredient.of(ExtraDelightTags.SCRAP_BEEF), ExtraDelightItems.JERKY.get(), 10, 1000)
+		.unlockedBy("has_scrap", has(ExtraDelightTags.SCRAP_BEEF)),
+		consumer, "jerky", List.of(ExtraDelightTags.SCRAP_BEEF));
 	}
 
 	private void cookingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -289,100 +294,121 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.define('p', Ingredient.of(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
 				.unlockedBy(getName(), has(Tags.Items.INGOTS_IRON)).save(consumer);
 
+		// Juice
 		tagConditional(
 				ShapelessRecipeBuilder.shapeless(ExtraDelightItems.GLOW_BERRY_JUICE.get())
 						.requires(Ingredient.of(ExtraDelightTags.FRUIT_GLOW_BERRY), 6).requires(Items.SUGAR)
 						.requires(Items.GLASS_BOTTLE)
 						.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLOW_BERRIES)),
 				consumer, "glow_berry_juice", List.of(ExtraDelightTags.FRUIT_GLOW_BERRY));
-		// Juice
-//		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.GLOW_BERRY_JUICE.get()).requires(Items.GLOW_BERRIES, 6)
-//				.requires(Items.SUGAR).requires(Items.GLASS_BOTTLE)
-//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLOW_BERRIES))
-//				.save(consumer);
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.SWEET_BERRY_JUICE.get()).requires(Items.SWEET_BERRIES, 6)
-				.requires(Items.SUGAR).requires(Items.GLASS_BOTTLE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.SWEET_BERRIES))
-				.save(consumer);
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.TOMATO_JUICE.get())
-				.requires(Ingredient.of(ForgeTags.CROPS_TOMATO), 2).requires(Items.SUGAR).requires(Items.GLASS_BOTTLE)
-				.unlockedBy(getName(), has(ForgeTags.CROPS_TOMATO)).save(consumer);
+
+		tagConditional(
+				ShapelessRecipeBuilder.shapeless(ExtraDelightItems.SWEET_BERRY_JUICE.get())
+						.requires(Ingredient.of(ExtraDelightTags.FRUIT_SWEET_BERRY), 6).requires(Items.SUGAR)
+						.requires(Items.GLASS_BOTTLE)
+						.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.SWEET_BERRIES)),
+				consumer, "sweet_berry_juice", List.of(ExtraDelightTags.FRUIT_SWEET_BERRY));
+		tagConditional(
+				ShapelessRecipeBuilder.shapeless(ExtraDelightItems.TOMATO_JUICE.get())
+						.requires(Ingredient.of(ForgeTags.CROPS_TOMATO), 2).requires(Items.SUGAR)
+						.requires(Items.GLASS_BOTTLE).unlockedBy(getName(), has(ForgeTags.CROPS_TOMATO)),
+				consumer, "tomato_juice", List.of(ForgeTags.CROPS_TOMATO));
 
 		// Pie
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get()).pattern("ff ").pattern("ff ")
-				.define('f', ExtraDelightItems.SWEET_BERRY_PIE_SLICE.get())
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get()))
-				.save(consumer);
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get()).pattern("ff ").pattern("ff ")
-				.define('f', ExtraDelightItems.GLOW_BERRY_PIE_SLICE.get())
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get()))
-				.save(consumer);
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
-				.define('f', ExtraDelightItems.CHEESECAKE_SLICE.get())
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESECAKE_ITEM.get()))
-				.save(consumer);
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.HONEY_CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
-				.define('f', ExtraDelightItems.HONEY_CHEESECAKE_SLICE.get())
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HONEY_CHEESECAKE_ITEM.get()))
-				.save(consumer);
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
-				.define('f', ExtraDelightItems.CHOCOLATE_CHEESECAKE_SLICE.get())
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance
-						.hasItems(ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get()))
-				.save(consumer);
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
-				.define('f', ExtraDelightItems.PUMPKIN_CHEESECAKE_SLICE.get())
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance
-						.hasItems(ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get()))
-				.save(consumer);
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
-				.define('f', ExtraDelightItems.GLOW_BERRY_CHEESECAKE_SLICE.get())
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance
-						.hasItems(ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM.get()))
-				.save(consumer);
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.QUICHE.get()).pattern("ff ").pattern("ff ")
-				.define('f', ExtraDelightItems.QUICHE_SLICE.get())
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.QUICHE.get()))
-				.save(consumer);
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get()).pattern("ff ").pattern("ff ")
+						.define('f', ExtraDelightItems.SWEET_BERRY_PIE_SLICE.get()).unlockedBy(getName(),
+								InventoryChangeTrigger.TriggerInstance
+										.hasItems(ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get())),
+				consumer, "sweet_berry_pie", List.of(ForgeTags.CROPS_TOMATO));
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get()).pattern("ff ").pattern("ff ")
+						.define('f', ExtraDelightItems.GLOW_BERRY_PIE_SLICE.get()).unlockedBy(getName(),
+								InventoryChangeTrigger.TriggerInstance
+										.hasItems(ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get())),
+				consumer, "glow_berry_pie", List.of(ForgeTags.CROPS_TOMATO));
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
+						.define('f', ExtraDelightItems.CHEESECAKE_SLICE.get()).unlockedBy(getName(),
+								InventoryChangeTrigger.TriggerInstance
+										.hasItems(ExtraDelightItems.CHEESECAKE_ITEM.get())),
+				consumer, "cheesecake", List.of(ForgeTags.CROPS_TOMATO));
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.HONEY_CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
+						.define('f', ExtraDelightItems.HONEY_CHEESECAKE_SLICE.get()).unlockedBy(getName(),
+								InventoryChangeTrigger.TriggerInstance
+										.hasItems(ExtraDelightItems.HONEY_CHEESECAKE_ITEM.get())),
+				consumer, "honey_cheesecake", List.of(ForgeTags.CROPS_TOMATO));
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get()).pattern("ff ")
+						.pattern("ff ").define('f', ExtraDelightItems.CHOCOLATE_CHEESECAKE_SLICE.get())
+						.unlockedBy(getName(),
+								InventoryChangeTrigger.TriggerInstance
+										.hasItems(ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get())),
+				consumer, "chocolate_cheesecake", List.of(ForgeTags.CROPS_TOMATO));
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get()).pattern("ff ")
+						.pattern("ff ").define('f', ExtraDelightItems.PUMPKIN_CHEESECAKE_SLICE.get())
+						.unlockedBy(getName(),
+								InventoryChangeTrigger.TriggerInstance
+										.hasItems(ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get())),
+				consumer, "pumpkin_cheesecake", List.of(ForgeTags.CROPS_TOMATO));
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM.get()).pattern("ff ")
+						.pattern("ff ").define('f', ExtraDelightItems.GLOW_BERRY_CHEESECAKE_SLICE.get())
+						.unlockedBy(getName(),
+								InventoryChangeTrigger.TriggerInstance
+										.hasItems(ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM.get())),
+				consumer, "glow_berry_cheesecake", List.of(ForgeTags.CROPS_TOMATO));
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.QUICHE.get()).pattern("ff ").pattern("ff ")
+						.define('f', ExtraDelightItems.QUICHE_SLICE.get()).unlockedBy(getName(),
+								InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.QUICHE.get())),
+				consumer, "quiche", List.of(ForgeTags.CROPS_TOMATO));
 
 		// Popsicles
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.FUDGE_POPSICLE.get()).pattern(" cm").pattern("isc").pattern("Si ")
-				.define('m', ForgeTags.MILK).define('c', Items.COCOA_BEANS).define('s', Items.SUGAR)
-				.define('S', Items.STICK).define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE)).save(consumer);
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.HONEY_POPSICLE.get()).pattern(" cm").pattern("imc").pattern("Si ")
-				.define('m', ForgeTags.MILK).define('c', Items.HONEY_BOTTLE).define('S', Items.STICK)
-				.define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE)).save(consumer);
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.GLOW_BERRY_POPSICLE.get()).pattern(" gg").pattern("igg")
-				.pattern("Si ").define('g', Items.GLOW_BERRIES).define('S', Items.STICK).define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE)).save(consumer);
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.SWEET_BERRY_POPSICLE.get()).pattern(" gg").pattern("igg")
-				.pattern("Si ").define('g', Items.SWEET_BERRIES).define('S', Items.STICK).define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE)).save(consumer);
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.FUDGE_POPSICLE.get()).pattern(" cm").pattern("isc")
+						.pattern("Si ").define('m', ForgeTags.MILK).define('c', Items.COCOA_BEANS)
+						.define('s', Items.SUGAR).define('S', Items.STICK).define('i', Items.ICE)
+						.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE)),
+				consumer, "fudge_popsicle", List.of(ForgeTags.CROPS_TOMATO));
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.HONEY_POPSICLE.get()).pattern(" cm").pattern("imc")
+						.pattern("Si ").define('m', ForgeTags.MILK).define('c', Items.HONEY_BOTTLE)
+						.define('S', Items.STICK).define('i', Items.ICE)
+						.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE)),
+				consumer, "honey_popsicle", List.of(ForgeTags.CROPS_TOMATO));
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.GLOW_BERRY_POPSICLE.get()).pattern(" gg").pattern("igg")
+						.pattern("Si ").define('g', Items.GLOW_BERRIES).define('S', Items.STICK).define('i', Items.ICE)
+						.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE)),
+				consumer, "glow_berry_popsicle", List.of(ForgeTags.CROPS_TOMATO));
+		tagConditional(
+				ShapedRecipeBuilder.shaped(ExtraDelightItems.SWEET_BERRY_POPSICLE.get()).pattern(" gg").pattern("igg")
+						.pattern("Si ").define('g', Items.SWEET_BERRIES).define('S', Items.STICK).define('i', Items.ICE)
+						.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE)),
+				consumer, "sweet_berry_popsicle", List.of(ForgeTags.CROPS_TOMATO));
 
 		// Omelette
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.OMELETTE_MIX.get())
-				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(ForgeTags.VEGETABLES))
-				.requires(Ingredient.of(ForgeTags.VEGETABLES))
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TOMATO.get()))
-				.save(consumer, "veg_omelette");
+		tagConditional(
+				ShapelessRecipeBuilder.shapeless(ExtraDelightItems.OMELETTE_MIX.get())
+						.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(ForgeTags.VEGETABLES))
+						.requires(Ingredient.of(ForgeTags.VEGETABLES))
+						.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TOMATO.get())),
+				consumer, "omelette_mix_veg", List.of(ForgeTags.CROPS_TOMATO));
 
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.OMELETTE_MIX.get())
-				.requires(ExtraDelightItems.EGG_MIX.get(), 1)
-				.requires(Ingredient.of(Items.COOKED_BEEF, Items.COOKED_CHICKEN, Items.COOKED_MUTTON,
-						Items.COOKED_PORKCHOP))
-				.requires(Ingredient.of(ForgeTags.VEGETABLES))
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TOMATO.get()))
-				.save(consumer, "veg_meat_omelette");
+		tagConditional(
+				ShapelessRecipeBuilder.shapeless(ExtraDelightItems.OMELETTE_MIX.get())
+						.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(ExtraDelightTags.MEAT))
+						.requires(Ingredient.of(ForgeTags.VEGETABLES)).unlockedBy(getName(), has(ForgeTags.VEGETABLES)),
+				consumer, "omelette_mix_meat", List.of(ForgeTags.VEGETABLES, ExtraDelightTags.MEAT));
 
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.JAM_TOAST.get())
-				.requires(Ingredient.of(ExtraDelightTags.JAM)).requires(Ingredient.of(ExtraDelightTags.BREAD))
-				.unlockedBy(getName(), has(ExtraDelightTags.JAM)).save(consumer, "jam_toast");
+		tagConditional(
+				ShapelessRecipeBuilder.shapeless(ExtraDelightItems.JAM_TOAST.get())
+						.requires(Ingredient.of(ExtraDelightTags.JAM)).requires(Ingredient.of(ExtraDelightTags.BREAD))
+						.unlockedBy(getName(), has(ExtraDelightTags.JAM)),
+				consumer, "jam_toast", List.of(ExtraDelightTags.JAM, ExtraDelightTags.BREAD));
 	}
 
 	private void tagConditional(RecipeBuilder rb, Consumer<FinishedRecipe> consumer, String id,

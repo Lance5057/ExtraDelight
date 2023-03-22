@@ -7,7 +7,14 @@
           "type": "forge:not",
           "value": {
             "type": "forge:tag_empty",
-            "tag": "forge:crops/tomato"
+            "tag": "forge:vegetables"
+          }
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:meat"
           }
         }
       ],
@@ -15,20 +22,17 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "tag": "forge:crops/tomato"
+            "item": "extradelight:egg_mix"
           },
           {
-            "tag": "forge:crops/tomato"
+            "tag": "forge:meat"
           },
           {
-            "item": "minecraft:sugar"
-          },
-          {
-            "item": "minecraft:glass_bottle"
+            "tag": "forge:vegetables"
           }
         ],
         "result": {
-          "item": "extradelight:tomato_juice"
+          "item": "extradelight:omelette_mix"
         }
       }
     }

@@ -1,8 +1,0 @@
-{
-  "parent": "extradelight:block/pie",
-  "textures": {
-    "inner": "extradelight:block/quiche_inner",
-    "particle": "extradelight:block/quiche_top",
-    "top": "extradelight:block/quiche_top"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "extradelight:block/jelly_block_leftover",
-  "render_type": "minecraft:translucent",
-  "textures": {
-    "1": "extradelight:block/jelly_black"
-  }
-}
