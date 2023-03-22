@@ -3,7 +3,7 @@ package com.lance5057.extradelight.data;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.tags.ExtraDelightTags;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;

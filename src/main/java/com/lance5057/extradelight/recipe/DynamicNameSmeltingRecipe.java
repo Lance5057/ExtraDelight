@@ -2,7 +2,6 @@ package com.lance5057.extradelight.recipe;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 
 import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;

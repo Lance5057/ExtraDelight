@@ -2,7 +2,7 @@ package com.lance5057.extradelight.integration.jei.categories;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.tags.ExtraDelightTags;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;

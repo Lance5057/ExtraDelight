@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.workstations.mortar;
 
-import com.lance5057.extradelight.ExtraDelightTags;
-import com.lance5057.extradelight.workstations.oven.OvenBlockEntity;
+import com.lance5057.extradelight.tags.ExtraDelightTags;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
