@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.data;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.function.Consumer;
 
 import org.jetbrains.annotations.NotNull;
@@ -17,6 +19,7 @@ import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
@@ -24,17 +27,20 @@ import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
+import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
-public class Recipes extends RecipeProvider {
+public class Recipes extends RecipeProvider implements IConditionBuilder {
 	public Recipes(DataGenerator generator) {
 		super(generator);
 	}
@@ -283,19 +289,24 @@ public class Recipes extends RecipeProvider {
 				.define('p', Ingredient.of(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
 				.unlockedBy(getName(), has(Tags.Items.INGOTS_IRON)).save(consumer);
 
+		tagConditional(
+				ShapelessRecipeBuilder.shapeless(ExtraDelightItems.GLOW_BERRY_JUICE.get())
+						.requires(Ingredient.of(ExtraDelightTags.FRUIT_GLOW_BERRY), 6).requires(Items.SUGAR)
+						.requires(Items.GLASS_BOTTLE)
+						.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLOW_BERRIES)),
+				consumer, "glow_berry_juice", List.of(ExtraDelightTags.FRUIT_GLOW_BERRY));
 		// Juice
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.GLOW_BERRY_JUICE.get()).requires(Items.GLOW_BERRIES, 6)
-				.requires(Items.SUGAR).requires(Items.GLASS_BOTTLE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLOW_BERRIES))
-				.save(consumer);
+//		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.GLOW_BERRY_JUICE.get()).requires(Items.GLOW_BERRIES, 6)
+//				.requires(Items.SUGAR).requires(Items.GLASS_BOTTLE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLOW_BERRIES))
+//				.save(consumer);
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.SWEET_BERRY_JUICE.get()).requires(Items.SWEET_BERRIES, 6)
 				.requires(Items.SUGAR).requires(Items.GLASS_BOTTLE)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.SWEET_BERRIES))
 				.save(consumer);
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.TOMATO_JUICE.get()).requires(ModItems.TOMATO.get(), 2)
-				.requires(Items.SUGAR).requires(Items.GLASS_BOTTLE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TOMATO.get()))
-				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.TOMATO_JUICE.get())
+				.requires(Ingredient.of(ForgeTags.CROPS_TOMATO), 2).requires(Items.SUGAR).requires(Items.GLASS_BOTTLE)
+				.unlockedBy(getName(), has(ForgeTags.CROPS_TOMATO)).save(consumer);
 
 		// Pie
 		ShapedRecipeBuilder.shaped(ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get()).pattern("ff ").pattern("ff ")
@@ -372,6 +383,16 @@ public class Recipes extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.JAM_TOAST.get())
 				.requires(Ingredient.of(ExtraDelightTags.JAM)).requires(Ingredient.of(ExtraDelightTags.BREAD))
 				.unlockedBy(getName(), has(ExtraDelightTags.JAM)).save(consumer, "jam_toast");
+	}
+
+	private void tagConditional(RecipeBuilder rb, Consumer<FinishedRecipe> consumer, String id,
+			Collection<TagKey<Item>> tags) {
+		ConditionalRecipe.Builder b = ConditionalRecipe.builder();
+
+		for (TagKey<Item> t : tags)
+			b.addCondition(not(tagEmpty(t)));
+
+		b.addRecipe(rb::save).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, id));
 	}
 
 	private void potRecipes(Consumer<FinishedRecipe> consumer) {

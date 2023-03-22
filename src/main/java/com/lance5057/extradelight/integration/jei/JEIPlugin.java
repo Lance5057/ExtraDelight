@@ -111,32 +111,5 @@ public class JEIPlugin implements IModPlugin {
 //		ExtraDelightItems.ITEMS.getEntries().forEach(i -> i.get());
 	}
 
-	private void testRecipe(Recipe<?> r, IIngredientManager rr) {
-		if (r.getId().getNamespace().compareTo(ExtraDelight.MOD_ID) == 0) {
-			testIngredients(r, rr);
-		}
-	}
-
-	private void testIngredients(Recipe<?> r, IIngredientManager rr) {
-		r.getIngredients().forEach(i -> {
-			if (!testIngredient(i, rr))
-				removeItem(r, rr);
-		});
-	}
-
-	private void removeItem(Recipe<?> r, IIngredientManager rr) {
-		ItemStack i = r.getResultItem();
-		ResourceLocation s = Registry.ITEM.getKey(i.getItem());
-
-		if (s.getNamespace().compareTo(ExtraDelight.MOD_ID) == 0)
-			rr.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, Collections.singleton(i));
-	}
-
-	private boolean testIngredient(Ingredient i, IIngredientManager rr) {
-		if (i.getItems().length <= 1)
-			if (i.getItems()[0].getItem() == Items.BARRIER)
-				return true;
-		return false;
-	}
 
 }
