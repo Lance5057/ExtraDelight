@@ -8,7 +8,7 @@
       "tag": "minecraft:planks"
     },
     {
-      "item": "extradelight:flour"
+      "tag": "forge:flour"
     }
   ],
   "result": {

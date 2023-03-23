@@ -45,10 +45,9 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.FRYING_OIL).add(ExtraDelightItems.COOKING_OIL.get());
 
-		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
-		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
-		tag(ExtraDelightTags.BREAD).add(Items.BREAD).addTag(ExtraDelightTags.BREAD_SLICE)
-				.addTag(ExtraDelightTags.TOAST);
+//		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
+//		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
+		tag(ExtraDelightTags.BREAD).add(Items.BREAD);
 	}
 
 }

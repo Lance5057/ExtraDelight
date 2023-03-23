@@ -1,4 +1,4 @@
-// 1.19.2	2023-03-19T17:01:39.4703657	Item Models: extradelight
+// 1.19.2	2023-03-23T11:33:01.3297233	Item Models: extradelight
 2333a06362a634867d4808003a51393ffccbb705 assets/extradelight/models/item/apple_jam.json
 3dac844c85d4dd1d2fd4a89933b61b0a9ec3937e assets/extradelight/models/item/apple_sauce.json
 7a693de01321b8ff36eb6d21da1e9f8c0fe07800 assets/extradelight/models/item/baking_stone.json
@@ -8,7 +8,6 @@
 e8abc7f7e8cf297021b1784c2b55e043660091dc assets/extradelight/models/item/beef_wellington.json
 60c96ccbffb6c48fb9d359e3d48b11df67a58189 assets/extradelight/models/item/beef_wellington_block_item.json
 716b95eee08ed1d9863eaf3930a8b1faaa0c5168 assets/extradelight/models/item/boiled_egg.json
-b0bd5d0a625f139072c9ee43e5758aff91dacdaa assets/extradelight/models/item/bread_slice.json
 9157882fd740a086ce9181c4c46225d547ac97a4 assets/extradelight/models/item/butter.json
 13c20df82ca28b39a0fa5f4281f23a428db955f5 assets/extradelight/models/item/butter_block_item.json
 cfd31e622775889c39be7e9fd76ac873898c578d assets/extradelight/models/item/carrot_jam.json
@@ -108,7 +107,6 @@ f1a6b429929d83e1687e4dbedd82b37a010262b6 assets/extradelight/models/item/ketchup
 e9673170cbb576ea6c18cb0845bd3f3b794b529d assets/extradelight/models/item/lasanga_feast.json
 e623850b11abd6ad7e18e2df9fd48b30e0390a5c assets/extradelight/models/item/liver_onions.json
 46795af87fc2a9c71874defe9501ef3f201e7aea assets/extradelight/models/item/loaf_pan.json
-e0b00204adba86c3a441f33c14dada9b52ae3f77 assets/extradelight/models/item/macaroni.json
 a0f04c22e6a388c48ea272639ebc347e7ca52a57 assets/extradelight/models/item/macaroni_cheese.json
 ccfacccb3a24b6b3f91a4ab859f2b3e0b60043e4 assets/extradelight/models/item/macaroni_cheese_feast.json
 95cfb378f5d318d57826cb3eb1a603b9c119ba29 assets/extradelight/models/item/mashed_potato_gravy.json
@@ -187,7 +185,6 @@ cd59f9843e187c2e46c6856af4b680689652c6e7 assets/extradelight/models/item/sweet_b
 9bfaeea8ddd3bee81eb360290f9042f9a57f7a35 assets/extradelight/models/item/sweet_berry_pie.json
 adb6cfc22432e89846f60a971c05669d2133529e assets/extradelight/models/item/sweet_berry_pie_slice.json
 00fc43d4c8b9ae1fdc7a09488297c016732638b5 assets/extradelight/models/item/sweet_berry_popsicle.json
-40124cec6abf847fa9fefbfda7a045f633995ac8 assets/extradelight/models/item/toast.json
 b4d11e6e6017ac7a51b9c215d2e23aca3d5e9e59 assets/extradelight/models/item/tomato_juice.json
 0abc177890a6c4cd86ec9986d80e857e0f4aa31b assets/extradelight/models/item/tomato_soup.json
 8271734f5c2d1dce70054d3dcf41fdcce3fab033 assets/extradelight/models/item/tray.json

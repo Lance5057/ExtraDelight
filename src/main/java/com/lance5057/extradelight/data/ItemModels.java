@@ -165,7 +165,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.FUDGE_POPSICLE, "fudge_popsicle");
 		forItem(ExtraDelightItems.HONEY_POPSICLE, "honey_popsicle");
 
-		forItem(ExtraDelightItems.WHIPPED_CREAM, "whipped_cream");
+//		forItem(ExtraDelightItems.WHIPPED_CREAM, "whipped_cream");
 //
 //		forItem(ExtraDelightItems.PLAIN_CAKE, "plain_cake");
 
@@ -186,8 +186,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.VINEGAR, "vinegar");
 
 		// Bread
-		forItem(ExtraDelightItems.BREAD_SLICE, "bread_slice");
-		forItem(ExtraDelightItems.TOAST, "toast");
+//		forItem(ExtraDelightItems.BREAD_SLICE, "bread_slice");
+//		forItem(ExtraDelightItems.TOAST, "toast");
 		forItem(ExtraDelightItems.JAM_TOAST, "jam_toast");
 		forItem(ExtraDelightItems.GOLDEN_JAM_TOAST, "golden_jam_toast");
 		forItem(ExtraDelightItems.EGG_BASKET, "egg_in_the_basket");
@@ -332,7 +332,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.JELLY_RED, "jelly_red");
 		forItem(ExtraDelightItems.JELLY_BLACK, "jelly_black");
 
-		forItem(ExtraDelightItems.MACARONI, "macaroni");
+//		forItem(ExtraDelightItems.MACARONI, "macaroni");
 		forBlockItem(ExtraDelightItems.MACARONI_CHEESE_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/macaroni_cheese_block_stage0"));
 		forItem(ExtraDelightItems.MACARONI_CHEESE, "macaroni_cheese");

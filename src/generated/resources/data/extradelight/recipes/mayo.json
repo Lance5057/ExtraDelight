@@ -7,14 +7,21 @@
           "type": "forge:not",
           "value": {
             "type": "forge:tag_empty",
-            "tag": "forge:milk"
+            "tag": "forge:eggs"
           }
         },
         {
           "type": "forge:not",
           "value": {
             "type": "forge:tag_empty",
-            "tag": "forge:eggs"
+            "tag": "forge:cooking_oil"
+          }
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:vinegar"
           }
         }
       ],
@@ -22,21 +29,24 @@
         "type": "extradelight:mixing_bowl",
         "ingredients": [
           {
-            "tag": "forge:milk"
-          },
-          {
             "tag": "forge:eggs"
           },
           {
             "tag": "forge:eggs"
+          },
+          {
+            "tag": "forge:cooking_oil"
+          },
+          {
+            "tag": "forge:vinegar"
           }
         ],
         "result": {
-          "item": "extradelight:egg_mix"
+          "item": "extradelight:mayo_jar_item"
         },
         "stirs": 8,
         "usedItem": {
-          "item": "minecraft:bowl"
+          "tag": "forge:spoons"
         }
       }
     }

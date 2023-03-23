@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.integration.jei;
 
+import java.util.Collections;
+
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -11,6 +13,7 @@ import com.lance5057.extradelight.integration.jei.categories.OvenRecipeCategory;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -18,6 +21,7 @@ import mezz.jei.api.runtime.IIngredientManager;
 import mezz.jei.api.runtime.IJeiRuntime;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeManager;
 
@@ -96,12 +100,18 @@ public class JEIPlugin implements IModPlugin {
 	@Override
 	public void onRuntimeAvailable(IJeiRuntime jeiRuntime) {
 		// jeiRuntime.getIngredientManager().removeIngredientsAtRuntime(null, null);
-		IIngredientManager rr = jeiRuntime.getIngredientManager();
+		IIngredientManager im = jeiRuntime.getIngredientManager();
 		RecipeManager rm = Minecraft.getInstance().level.getRecipeManager();
 
 //		rm.get
-//		ExtraDelightItems.ITEMS.getEntries().forEach(i -> i.get());
+		ExtraDelightItems.ITEMS.getEntries().forEach(i -> {
+			if (checkRecipe(i.get(), rm))
+				im.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, Collections.singleton(new ItemStack(i.get())));
+		});
 	}
 
+	private boolean checkRecipe(@NotNull Item item, RecipeManager rm) {
+		return !rm.getRecipes().stream().anyMatch(r -> r.getResultItem().getItem() == item);
+	}
 
 }

@@ -7,7 +7,7 @@
           "type": "forge:not",
           "value": {
             "type": "forge:tag_empty",
-            "tag": "forge:beef/scrap"
+            "tag": "forge:meat/scrap"
           }
         }
       ],
@@ -16,7 +16,7 @@
         "cookingtime": 1000,
         "experience": 10.0,
         "ingredient": {
-          "tag": "forge:beef/scrap"
+          "tag": "forge:meat/scrap"
         },
         "result": "extradelight:jerky"
       }

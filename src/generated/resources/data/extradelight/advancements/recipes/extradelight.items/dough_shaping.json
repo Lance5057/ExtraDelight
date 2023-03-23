@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "extradelight:flour"
-            ]
+            "tag": "forge:flour"
           }
         ]
       },

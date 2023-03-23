@@ -75,11 +75,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		DryingRackRecipeBuilder.drying(Ingredient.of(Items.KELP), Items.DRIED_KELP, 10, 1000)
 				.unlockedBy("has_kelp", has(Items.KELP))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "dried_kelp"));
-		
-		//Test
-		tagConditional(DryingRackRecipeBuilder.drying(Ingredient.of(ExtraDelightTags.SCRAP_BEEF), ExtraDelightItems.JERKY.get(), 10, 1000)
-		.unlockedBy("has_scrap", has(ExtraDelightTags.SCRAP_BEEF)),
-		consumer, "jerky", List.of(ExtraDelightTags.SCRAP_BEEF));
+
+		tagConditional(
+				DryingRackRecipeBuilder
+						.drying(Ingredient.of(ExtraDelightTags.SCRAP_MEAT), ExtraDelightItems.JERKY.get(), 10, 1000)
+						.unlockedBy("has_scrap", has(ExtraDelightTags.SCRAP_MEAT)),
+				consumer, "jerky", List.of(ExtraDelightTags.SCRAP_MEAT));
 	}
 
 	private void cookingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -108,34 +109,30 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void mixingbowlRecipes(Consumer<FinishedRecipe> consumer) {
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
-				.requires(ModItems.MILK_BOTTLE.get())
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MILK_BOTTLE.get()))
-				.save(consumer);
+//		tagConditional(MixingBowlRecipeBuilder
+//				.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+//				.requires(Ingredient.of(ForgeTags.MILK_BOTTLE)).unlockedBy(getName(), has(ForgeTags.MILK_BOTTLE)),
+//				consumer, "whipped_cream_bottle", List.of(ForgeTags.MILK_BOTTLE));
+//
+//		tagConditional(MixingBowlRecipeBuilder
+//				.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 4)
+//				.requires(Ingredient.of(ForgeTags.MILK_BUCKET)).unlockedBy(getName(), has(ForgeTags.MILK_BUCKET)),
+//				consumer, "whipped_cream_bucket", List.of(ForgeTags.MILK_BUCKET));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 4)
-				.requires(Items.MILK_BUCKET)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.MILK_BUCKET))
-				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "whipped_cream_bucket"));
+		tagConditional(
+				MixingBowlRecipeBuilder.stir(ExtraDelightItems.EGG_MIX.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+						.requires(Ingredient.of(ForgeTags.MILK)).requires(Ingredient.of(ForgeTags.EGGS))
+						.requires(Ingredient.of(ForgeTags.EGGS)).unlockedBy(getName(), has(ForgeTags.EGGS)),
+				consumer, "egg_mix", List.of(ForgeTags.MILK, ForgeTags.EGGS));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.EGG_MIX.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
-				.requires(ModItems.MILK_BOTTLE.get()).requires(Items.EGG).requires(Items.EGG)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.EGG))
-				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "egg_mix"));
-
-		MixingBowlRecipeBuilder
-				.stir(ExtraDelightItems.BUTTER.get(), LONG_GRIND, Ingredient.of(ExtraDelightTags.SPOONS), 1)
-				.requires(ExtraDelightItems.WHIPPED_CREAM.get())
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHIPPED_CREAM.get()))
-				.save(consumer);
-		MixingBowlRecipeBuilder
-				.stir(ExtraDelightItems.MAYO_JAR_ITEM.get(), LONG_GRIND, Ingredient.of(ExtraDelightTags.SPOONS), 1)
-				.requires(Items.EGG, 2).requires(ExtraDelightItems.COOKING_OIL.get())
-				.requires(ExtraDelightItems.VINEGAR.get())
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHIPPED_CREAM.get()))
-				.save(consumer);
+		tagConditional(
+				MixingBowlRecipeBuilder
+						.stir(ExtraDelightItems.MAYO_JAR_ITEM.get(), LONG_GRIND, Ingredient.of(ExtraDelightTags.SPOONS),
+								1)
+						.requires(Ingredient.of(ForgeTags.EGGS), 2)
+						.requires(Ingredient.of(ExtraDelightTags.COOKING_OIL))
+						.requires(Ingredient.of(ExtraDelightTags.VINEGAR)).unlockedBy(getName(), has(ForgeTags.EGGS)),
+				consumer, "mayo", List.of(ForgeTags.EGGS, ExtraDelightTags.COOKING_OIL, ExtraDelightTags.VINEGAR));
 	}
 
 	private void craftingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -150,9 +147,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.OAK_SLAB)).save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.DOUGH_SHAPING.get()).requires(Items.STICK, 1)
-				.requires(ItemTags.PLANKS).requires(ExtraDelightItems.FLOUR.get())
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FLOUR.get()))
-				.save(consumer);
+				.requires(ItemTags.PLANKS).requires(Ingredient.of(ExtraDelightTags.FLOUR))
+				.unlockedBy(getName(), has(ExtraDelightTags.FLOUR)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(ExtraDelightItems.DRYING_RACK.get()).pattern("WSW").pattern("SSS").pattern("WSW")
 				.define('W', ItemTags.PLANKS).define('S', Tags.Items.STRING)

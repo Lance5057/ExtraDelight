@@ -7,7 +7,7 @@
           "type": "forge:not",
           "value": {
             "type": "forge:tag_empty",
-            "tag": "forge:milk/milk"
+            "tag": "forge:milk/milk_bottle"
           }
         }
       ],
@@ -15,11 +15,10 @@
         "type": "extradelight:mixing_bowl",
         "ingredients": [
           {
-            "tag": "forge:milk/milk"
+            "tag": "forge:milk/milk_bottle"
           }
         ],
         "result": {
-          "count": 4,
           "item": "extradelight:whipped_cream"
         },
         "stirs": 8,

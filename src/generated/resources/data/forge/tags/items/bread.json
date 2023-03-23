@@ -1,7 +1,5 @@
 {
   "values": [
-    "minecraft:bread",
-    "#forge:bread/sliced",
-    "#forge:toast"
+    "minecraft:bread"
   ]
 }
