@@ -83,4 +83,6 @@ public class FoodVanilla {
 	public static final FoodProperties HOTDISH = (new FoodProperties.Builder()).nutrition(10).saturationMod(2.0F)
 			.build();
 	public static final FoodProperties PASTA = (new FoodProperties.Builder()).nutrition(8).saturationMod(1.0F).build();
+	public static final FoodProperties SLICED_BREAD = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.12f)
+			.build();
 }

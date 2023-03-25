@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.data.recipebuilders.DoughShapingRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DynamicNameSimpleCookingRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
@@ -66,6 +67,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		mixingbowlRecipes(consumer);
 		cookingRecipes(consumer);
 		dryingRackRecipes(consumer);
+		doughShapeRecipes(consumer);
+	}
+
+	private void doughShapeRecipes(Consumer<FinishedRecipe> consumer) {
+		DoughShapingRecipeBuilder.shape(Ingredient.of(ModItems.WHEAT_DOUGH.get()), ExtraDelightItems.MACARONI.get(), 1)
+				.unlockedBy("has_dough", has(ModItems.WHEAT_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ModItems.WHEAT_DOUGH.get()), ExtraDelightItems.LASAGNA_NOODLES.get(), 1)
+				.unlockedBy("has_dough", has(ModItems.WHEAT_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder.shape(Ingredient.of(ModItems.WHEAT_DOUGH.get()), ModItems.RAW_PASTA.get(), 1)
+				.unlockedBy("has_dough", has(ModItems.WHEAT_DOUGH.get())).save(consumer);
 	}
 
 	private void dryingRackRecipes(Consumer<FinishedRecipe> consumer) {
@@ -491,6 +503,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CookingPotRecipeBuilder.cookingPotRecipe(ExtraDelightItems.CHEESE.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F)
 				.addIngredient(Items.MILK_BUCKET).addIngredient(ExtraDelightTags.STOMACH)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cheese"));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(ExtraDelightItems.CHEESE.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F)
+				.addIngredient(Items.MILK_BUCKET).addIngredient(ExtraDelightTags.VINEGAR)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cheese_vinegar"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.LAMB_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,

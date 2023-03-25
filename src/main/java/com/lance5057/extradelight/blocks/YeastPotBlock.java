@@ -67,7 +67,9 @@ public class YeastPotBlock extends Block {
 		if (!level.isClientSide) {
 			if (state.getValue(YEASTED)) {
 				if (player.getItemInHand(hand).getItem() == Items.GLASS_BOTTLE) {
-					player.setItemInHand(hand, new ItemStack(output.get()));
+					player.addItem(new ItemStack(output.get()));
+					ItemStack s = player.getItemInHand(hand);
+					s.setCount(s.getCount()-1);
 					level.destroyBlock(pos, true);
 					return InteractionResult.SUCCESS;
 				}
