@@ -3,13 +3,14 @@ package com.lance5057.extradelight.data;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.tags.ExtraDelightTags;
+import com.lance5057.extradelight.ExtraDelightTags;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class EDItemTags extends ItemTagsProvider {
@@ -49,6 +50,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
 		tag(ExtraDelightTags.BREAD).add(Items.BREAD);
+
+		tag(Tags.Items.SLIMEBALLS).add(ExtraDelightItems.SEAWEED_PASTE.get());
 	}
 
 }

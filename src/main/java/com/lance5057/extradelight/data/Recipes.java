@@ -8,13 +8,13 @@ import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.data.recipebuilders.DoughShapingRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DynamicNameSimpleCookingRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
-import com.lance5057.extradelight.tags.ExtraDelightTags;
 import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -87,6 +87,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		DryingRackRecipeBuilder.drying(Ingredient.of(Items.KELP), Items.DRIED_KELP, 10, 1000)
 				.unlockedBy("has_kelp", has(Items.KELP))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "dried_kelp"));
+
+		DryingRackRecipeBuilder
+				.drying(Ingredient.of(ExtraDelightItems.SEAWEED_PASTE.get()), ExtraDelightItems.AGAR_SHEETS.get(), 10,
+						1000)
+				.unlockedBy("has_paste", has(ExtraDelightItems.SEAWEED_PASTE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "agar_sheets"));
 
 		tagConditional(
 				DryingRackRecipeBuilder
@@ -810,6 +816,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cookingPotRecipe(ExtraDelightItems.SWEET_BERRY_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
 				.addIngredient(Ingredient.of(Items.SWEET_BERRIES), 3).addIngredient(Ingredient.of(Items.SUGAR), 1)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sweet_berry_jam"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.SEAWEED_PASTE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
+				.addIngredient(Ingredient.of(Items.DRIED_KELP), 3)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "seaweed_paste"));
+
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -948,6 +960,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.SUNFLOWER_SEEDS.get()), ExtraDelightItems.COOKING_OIL.get(), STANDARD_GRIND,
 						1)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BEETROOT_SEEDS))
+				.save(consumer);
+
+		MortarRecipeBuilder
+				.grind(Ingredient.of(ExtraDelightItems.AGAR_SHEETS.get()), ExtraDelightItems.AGAR_AGAR.get(),
+						LONG_GRIND, 1)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.AGAR_SHEETS.get()))
 				.save(consumer);
 	}
 

@@ -3,6 +3,7 @@ package com.lance5057.extradelight.food;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class FoodVanilla {
 	public static final FoodProperties CUPCAKE = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2f)
@@ -85,4 +86,9 @@ public class FoodVanilla {
 	public static final FoodProperties PASTA = (new FoodProperties.Builder()).nutrition(8).saturationMod(1.0F).build();
 	public static final FoodProperties SLICED_BREAD = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.12f)
 			.build();
+	public static final FoodProperties FURIKAKE_RICE = (new FoodProperties.Builder())
+			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).nutrition(6)
+			.saturationMod(0.4f).build();
+	public static final FoodProperties FRIED_RICE = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.8f)
+			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();
 }

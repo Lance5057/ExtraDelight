@@ -1,4 +1,6 @@
-// 1.19.2	2023-03-25T11:25:22.4156224	Item Models: extradelight
+// 1.19.2	2023-03-28T18:06:33.825699	Item Models: extradelight
+05ddd64b4e446cf5e011353fb59f24a9a3c4fad6 assets/extradelight/models/item/agar_agar.json
+9eb993f470454d76d4c482d70f24db101f0f24b1 assets/extradelight/models/item/agar_sheets.json
 2333a06362a634867d4808003a51393ffccbb705 assets/extradelight/models/item/apple_jam.json
 3dac844c85d4dd1d2fd4a89933b61b0a9ec3937e assets/extradelight/models/item/apple_sauce.json
 7a693de01321b8ff36eb6d21da1e9f8c0fe07800 assets/extradelight/models/item/baking_stone.json
@@ -52,6 +54,7 @@ dad3069ea03938324cc1313850ea6280eb3b9ea6 assets/extradelight/models/item/glow_be
 fda6324f83131f978d98e58dd67aeaa78b3ca5e1 assets/extradelight/models/item/golden_apple_jam.json
 30890098042c6a92d04e6e352207334ec50dec2c assets/extradelight/models/item/golden_jam_toast.json
 cb6589946f75b7002a900a71e8830915b5b133f0 assets/extradelight/models/item/gold_spoon.json
+8c3ac61587ff7abb55868cacdd3bd64b71fcae30 assets/extradelight/models/item/grated_carrot.json
 4070632a88c0abafa4228e3d4fd6d26acebff97f assets/extradelight/models/item/grated_potato.json
 9e4ea2361aff10d32a77049a30a165f0e3b1b8c5 assets/extradelight/models/item/grater.json
 4ef87bbe622366ea4d81fa82f75b6b2bb29e6f19 assets/extradelight/models/item/gravy_boat_item.json
@@ -170,6 +173,7 @@ c61891b364ac6d80fbbde0f4e76ed2bb7f3389c0 assets/extradelight/models/item/rack_la
 ce3fb3ccd5376c7b070fc4d05db82b845a9c0eeb assets/extradelight/models/item/sausage.json
 7cd0bb05dffe1c13560f9e020b2e16b841c48e98 assets/extradelight/models/item/sausage_roll.json
 cc1227714b7d19abbd5f0c7c5b47d3a93b221614 assets/extradelight/models/item/scrambled_eggs.json
+ab8ec1fc7792a9e4abc0f84cab0f6b288478ecd3 assets/extradelight/models/item/seaweed_paste.json
 55dabd8f81bf858a7b936f5658a34dc92f76f85b assets/extradelight/models/item/sheet.json
 b2ceed056e736531064cfb7e4066027e30ced8dd assets/extradelight/models/item/sliced_apple.json
 13449ddd9eae7acceaede905a5735c47aee8bf9b assets/extradelight/models/item/sliced_potato.json

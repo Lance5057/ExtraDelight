@@ -1,6 +1,7 @@
-// 1.19.2	2023-03-25T11:57:44.459344	Recipes
+// 1.19.2	2023-03-28T18:06:33.8206945	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
+c3162fb14d185b250f0901b664e508861cd606fe data/extradelight/advancements/recipes/extradelight.items/agar_sheets.json
 78c4e19f8c4e9245c107b960893c416621517f00 data/extradelight/advancements/recipes/extradelight.items/baking_stone.json
 bcc9445060b0ae4ece75e06f68a8974ac0e3d66a data/extradelight/advancements/recipes/extradelight.items/diamond_spoon.json
 6113474c1c3f7e4bb49a5d3608df170417800c72 data/extradelight/advancements/recipes/extradelight.items/dough_shaping.json
@@ -13,6 +14,7 @@ b022d227897c35310fdbebebe9668b349a127673 data/extradelight/advancements/recipes/
 d5203a4549fb1c90e539bee345c53e531637345e data/extradelight/advancements/recipes/extradelight.items/loaf_pan.json
 2a934753dc9c037093a94f064dcc2393982d1e35 data/extradelight/advancements/recipes/extradelight.items/macaroni.json
 c536e444f8e2d9e7c535d5f47aa8966eafa7641d data/extradelight/advancements/recipes/extradelight.items/mixing_bowl.json
+fafd6e183966f65b86f2d1379f7c4d657798cfdb data/extradelight/advancements/recipes/extradelight.items/mortar/agar_agar.json
 32fd7bfd03a147923f9bd483f3cc02f31d836ee6 data/extradelight/advancements/recipes/extradelight.items/mortar/cooking_oil.json
 b36259830513e15a23f88a55016386a98c841968 data/extradelight/advancements/recipes/extradelight.items/mortar/flour.json
 de1e4588c351ab577c46f30f46f58e0d4d6781fd data/extradelight/advancements/recipes/extradelight.items/mortar_andesite.json
@@ -69,6 +71,7 @@ a47fce4d962524f6f534756decee543fd1d1cdb4 data/extradelight/advancements/recipes/
 6a10384226fc7c0aecc5cc8712a1ac3e7d9287ce data/extradelight/advancements/recipes/misc/mortar/red_dye.json
 cf070a9e80709f8d319bf89513ce5ec24a98aac7 data/extradelight/advancements/recipes/misc/mortar/white_dye.json
 1774d1042c1a33727bdf7eb9bb07a20ab4ea5805 data/extradelight/advancements/recipes/misc/mortar/yellow_dye.json
+bbcdf49e8fbd553b3f51ca3e46519bebd2f837fc data/extradelight/recipes/agar_sheets.json
 7e4ceaa3909b11e2664901a216caf25d20e507d7 data/extradelight/recipes/apple_jam.json
 a8694101a65db93b63cdebbea3300d0701f31f2c data/extradelight/recipes/baking_stone.json
 c1aaa83330dc9870035bfd947c68bfd57c2de7e8 data/extradelight/recipes/bbq_honey.json
@@ -129,6 +132,7 @@ e6b53fe27b9d31ba7e47682385969a732d333a70 data/extradelight/recipes/loaf_pan.json
 d74bbdac8e4d75e2c24418809f4fe17e5382ef9d data/extradelight/recipes/mayo.json
 7a40ea4b317782a7059eae19c494d88c6d657062 data/extradelight/recipes/meat_pie.json
 a97154c5853520dd5dd0e40d6c05afd9a367c6eb data/extradelight/recipes/mixing_bowl.json
+eded840085983f55978019967ba8e04d5371ca03 data/extradelight/recipes/mortar/agar_agar.json
 3fb73141f2da15d8f5f06ffbeadbbff3359b6182 data/extradelight/recipes/mortar/black_dye.json
 3e85cf92be53984bef77ace9b3915accd52a79ed data/extradelight/recipes/mortar/blaze_powder.json
 8712e41acf9421e70d6343573d2b9d392ddac3f6 data/extradelight/recipes/mortar/blue_dye.json
@@ -194,6 +198,7 @@ ab88eaf260e85f5e3588e9f4884ecde3e3c44567 data/extradelight/recipes/pot_roast_fea
 d4c4a753e7537a555df1a0b4533abedd8ee8eab8 data/extradelight/recipes/round_pan.json
 53263fe51cd15715b15908a3f2ddcd39db6591fd data/extradelight/recipes/salisbury_steak_feast.json
 e32e23508ca8d17469f75c56b024326e9b86d5b6 data/extradelight/recipes/sausage_roll.json
+bc408a1e19301ad8e8c8ac85385b4e9be5b13f41 data/extradelight/recipes/seaweed_paste.json
 b20e54997fc6a9797c4e07fddba22fd0d257272e data/extradelight/recipes/sheet.json
 d119ad510774c0b497e1227b6f8068e76aa2e420 data/extradelight/recipes/sos.json
 21f66b2f256066d0f6a4eb5bbefb76e51f5e8e44 data/extradelight/recipes/sponge.json

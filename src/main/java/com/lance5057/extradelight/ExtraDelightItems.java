@@ -148,7 +148,19 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> GRAVY_ITEM = ITEMS.register("gravy_boat_item",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	// Seaweed
+	// Agar Agar Process
+	public static final RegistryObject<Item> SEAWEED_PASTE = ITEMS.register("seaweed_paste",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> AGAR_SHEETS = ITEMS.register("agar_sheets",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> AGAR_AGAR = ITEMS.register("agar_agar",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<Item> SEAWEED_CRISPS = ITEMS.register("seaweed_crisps",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> SEAWEED_SALAD = ITEMS.register("seaweed_salad",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 //	public static final RegistryObject<Item> CUPCAKE = ITEMS.register("cupcake",
@@ -271,6 +283,8 @@ public class ExtraDelightItems {
 					.craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> MAYO_JAR_ITEM = ITEMS.register("mayo_jar_item", () -> new DrinkableItem(
 			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.MAYO).craftRemainder(Items.GLASS_BOTTLE)));
+	public static final RegistryObject<Item> FURIKAKE = ITEMS.register("furikake",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	// Jams
 	public static final RegistryObject<Item> SWEET_BERRY_JAM = ITEMS.register("sweet_berry_jam",
@@ -545,7 +559,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> LASAGNA_NOODLES = ITEMS.register("lasagna_noodles",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
-	
+
 	public static final RegistryObject<Item> MACARONI_CHEESE = ITEMS.register("macaroni_cheese",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.PASTA)));
 	public static final RegistryObject<BlockItem> MACARONI_CHEESE_FEAST = ITEMS.register("macaroni_cheese_feast",
@@ -561,4 +575,14 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.HOTDISH)));
 	public static final RegistryObject<BlockItem> HOTDISH_FEAST = ITEMS.register("hotdish_feast",
 			() -> new BlockItem(ExtraDelightBlocks.HOTDISH.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	// Rice
+	public static final RegistryObject<Item> FURIKAKE_RICE = ITEMS.register("furikake_rice",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.FURIKAKE_RICE)));
+	public static final RegistryObject<Item> FRIED_RICE = ITEMS.register("fried_rice",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.FRIED_RICE)));
+
+	// Fish
+	public static final RegistryObject<Item> FISH_FLAKES = ITEMS.register("fish_flakes",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 }

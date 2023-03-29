@@ -125,6 +125,10 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.SUNFLOWER_SEEDS, "sunflower_seeds");
 		forItem(ExtraDelightItems.STOCK_JAR_ITEM, "broth");
 		forItem(ExtraDelightItems.GRAVY_ITEM, "gravy");
+		
+		forItem(ExtraDelightItems.SEAWEED_PASTE, "seaweed_paste");
+		forItem(ExtraDelightItems.AGAR_SHEETS, "agar_sheets");
+		forItem(ExtraDelightItems.AGAR_AGAR, "agaragar");
 
 		// Juice
 		forItem(ExtraDelightItems.GLOW_BERRY_JUICE, "glow_berry_juice");
@@ -211,6 +215,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.GLAZED_CARROT, "glazed_carrot");
 		forItem(ExtraDelightItems.ROASTED_CARROT, "roasted_carrot");
 		forItem(ExtraDelightItems.CARROT_SALAD, "carrot_salad");
+		forItem(ExtraDelightItems.GRATED_CARROT, "shredded_carrot");
 
 		// Apple
 		forItem(ExtraDelightItems.APPLE_SAUCE, "apple_sauce");

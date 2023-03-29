@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.tags.ExtraDelightTags;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -63,40 +63,10 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, MixingBowlRecipe recipe, IFocusGroup focuses) {
-		List<Ingredient> input = recipe.getIngredients();
-		Ingredient pestle = Ingredient.of(ExtraDelightTags.SPOONS);
+		Ingredient input = recipe.getIngredients().get(0);
 		ItemStack output = recipe.getResultItem();
 
-		float angle = -90;
-		Vec2 center = new Vec2(42, 34);
-		Vec2 point = getNextPointOnCircle(center, new Vec2(42, 34 - 25), angle);
-
-		for (Ingredient i : input) {
-			builder.addSlot(RecipeIngredientRole.INPUT, (int) point.x, (int) point.y).addIngredients(i);
-
-			angle += 360 / input.size();
-			point = getNextPointOnCircle(center, point, angle);
-			
-		}
-		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 12, 83).addIngredients(pestle);
-		//builder.addSlot(RecipeIngredientRole.CATALYST, (int) center.x, (int) center.y).addIngredients(pestle);
+		builder.addSlot(RecipeIngredientRole.INPUT, 0, 0).addIngredients(input);
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 - 8, 83).addItemStack(output);
-	}
-
-	@Override
-	public void draw(MixingBowlRecipe recipe, IRecipeSlotsView slotsView, PoseStack ms, double mouseX, double mouseY) {
-		RenderSystem.enableBlend();
-
-		Minecraft minecraft = Minecraft.getInstance();
-		Font fontRenderer = minecraft.font;
-		fontRenderer.draw(ms, "x" + recipe.getStirs(), this.getWidth() / 2 + 30, 90, 0);
-
-		RenderSystem.disableBlend();
-	}
-
-	public static Vec2 getNextPointOnCircle(Vec2 center, Vec2 lastPoint, float angle) {
-		double nextX = center.x + 25 * Math.cos(Math.toRadians(angle));
-		double nextY = center.y + 25 * Math.sin(Math.toRadians(angle));
-		return new Vec2((float) nextX, (float) nextY);
 	}
 }

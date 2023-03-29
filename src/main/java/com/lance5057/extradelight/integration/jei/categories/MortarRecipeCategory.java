@@ -2,7 +2,7 @@ package com.lance5057.extradelight.integration.jei.categories;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.tags.ExtraDelightTags;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -31,7 +31,8 @@ public class MortarRecipeCategory implements IRecipeCategory<MortarRecipe> {
 	private final IDrawable icon;
 
 	public MortarRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 0, 84, 52);
+		background = guiHelper.createDrawable(new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 0,
+				84, 52);
 		localizedName = Component.translatable("extradelight.jei.mortar");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ExtraDelightItems.MORTAR_AMETHYST.get()));
@@ -63,19 +64,19 @@ public class MortarRecipeCategory implements IRecipeCategory<MortarRecipe> {
 		Ingredient pestle = Ingredient.of(ExtraDelightTags.PESTLES);
 		ItemStack output = recipe.getResultItem();
 
-		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth()/2-39+6, 26).addIngredients(input);
-		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth()/2-13+6, 3).addIngredients(pestle);
-		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth()/2+13+6, 26).addItemStack(output);
+		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 39 + 6, 26).addIngredients(input);
+		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 - 13 + 6, 3).addIngredients(pestle);
+		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 13 + 6, 26).addItemStack(output);
 	}
 
 	@Override
 	public void draw(MortarRecipe recipe, IRecipeSlotsView slotsView, PoseStack ms, double mouseX, double mouseY) {
 		RenderSystem.enableBlend();
-		
+
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
-		fontRenderer.draw(ms, "x"+recipe.getStirs(), this.getWidth()/2+6+6, 10, 0);
-		
+		fontRenderer.draw(ms, "x" + recipe.getStirs(), this.getWidth() / 2 + 6 + 6, 10, 0);
+
 		RenderSystem.disableBlend();
 	}
 
