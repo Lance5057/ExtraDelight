@@ -1,11 +1,12 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.food.FoodVanilla;
+import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.GlowberryFoodItem;
 import com.lance5057.extradelight.items.GlowberryJuiceItem;
 import com.lance5057.extradelight.items.GlowberryPopsicleItem;
 import com.lance5057.extradelight.items.SimpleDynamicNameFood;
 
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,6 +23,7 @@ import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MelonJuiceItem;
 import vectorwing.farmersdelight.common.item.MilkBottleItem;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ExtraDelightItems {
@@ -167,7 +169,7 @@ public class ExtraDelightItems {
 //			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.CUPCAKE)));
 
 	public static final RegistryObject<Item> SUNFLOWER_SEEDS = ITEMS.register("sunflower_seeds",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.EDIBLE_SEEDS)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.EDIBLE_SEEDS)));
 
 	// Juice
 	public static final RegistryObject<Item> GLOW_BERRY_JUICE = ITEMS.register("glow_berry_juice",
@@ -246,7 +248,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.POPSICLE)));
 
 	public static final RegistryObject<Item> WHIPPED_CREAM = ITEMS.register("whipped_cream",
-			() -> new Item(new MilkBottleItem.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.WHIPPED_CREAM)
+			() -> new Item(new MilkBottleItem.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.WHIPPED_CREAM)
 					.craftRemainder(Items.BOWL)));
 //
 //	public static final RegistryObject<Item> PLAIN_CAKE = ITEMS.register("plain_cake",
@@ -255,15 +257,15 @@ public class ExtraDelightItems {
 
 	// Eggs
 	public static final RegistryObject<Item> EGG_MIX = ITEMS.register("egg_mix", () -> new Item(
-			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.BAD_EGG).craftRemainder(Items.BOWL)));
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.BAD_EGG).craftRemainder(Items.BOWL)));
 	public static final RegistryObject<Item> SCRAMBLED_EGGS = ITEMS.register("scrambled_eggs", () -> new Item(
-			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SCRAMBLED_EGGS).craftRemainder(Items.BOWL)));
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SCRAMBLED_EGGS).craftRemainder(Items.BOWL)));
 	public static final RegistryObject<Item> OMELETTE_MIX = ITEMS.register("omelette_mix",
 			() -> new SimpleDynamicNameFood(ExtraDelightItems.EGG_MIX.get(),
-					new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.BAD_EGG).craftRemainder(Items.BOWL)));
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.BAD_EGG).craftRemainder(Items.BOWL)));
 	public static final RegistryObject<Item> OMELETTE = ITEMS.register("omelette",
 			() -> new SimpleDynamicNameFood(ExtraDelightItems.OMELETTE_MIX.get(),
-					new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.OMELETTE)));
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.OMELETTE)));
 	public static final RegistryObject<Item> BOILED_EGG = ITEMS.register("boiled_egg",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.FRIED_EGG)));
 	public static final RegistryObject<Item> QUICHE = ITEMS.register("quiche",
@@ -271,18 +273,18 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> QUICHE_SLICE = ITEMS.register("quiche_slice",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.FRIED_EGG)));
 	public static final RegistryObject<Item> EGG_BASKET = ITEMS.register("egg_in_the_basket",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SCRAMBLED_EGGS)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SCRAMBLED_EGGS)));
 	public static final RegistryObject<Item> EGG_SALAD = ITEMS.register("egg_salad",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SCRAMBLED_EGGS)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SCRAMBLED_EGGS)));
 
 	// Condiments
 	public static final RegistryObject<Item> BBQ_JAR_ITEM = ITEMS.register("bbq_jar_item", () -> new DrinkableItem(
-			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.BBQ).craftRemainder(Items.GLASS_BOTTLE)));
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.BBQ).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> KETCHUP_JAR_ITEM = ITEMS.register("ketchup_jar_item",
-			() -> new DrinkableItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.KETCHUP)
+			() -> new DrinkableItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.KETCHUP)
 					.craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> MAYO_JAR_ITEM = ITEMS.register("mayo_jar_item", () -> new DrinkableItem(
-			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.MAYO).craftRemainder(Items.GLASS_BOTTLE)));
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.MAYO).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> FURIKAKE = ITEMS.register("furikake",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
@@ -301,9 +303,9 @@ public class ExtraDelightItems {
 	// Bread
 
 	public static final RegistryObject<Item> JAM_TOAST = ITEMS.register("jam_toast",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.JAM_BREAD)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.JAM_BREAD)));
 	public static final RegistryObject<Item> GOLDEN_JAM_TOAST = ITEMS.register("golden_jam_toast",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.GOLDEN_JAM_BREAD)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.GOLDEN_JAM_BREAD)));
 
 	// Potato
 	public static final RegistryObject<Item> GRATED_POTATO = ITEMS.register("grated_potato",
@@ -324,19 +326,19 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> GRATED_CARROT = ITEMS.register("grated_carrot",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.CARROT)));
 	public static final RegistryObject<Item> ROASTED_CARROT = ITEMS.register("roasted_carrot",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_CARROT)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKED_CARROT)));
 	public static final RegistryObject<Item> GLAZED_CARROT = ITEMS.register("glazed_carrot",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_CARROT)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKED_CARROT)));
 	public static final RegistryObject<Item> CARROT_SALAD = ITEMS.register("carrot_salad",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_CARROT)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKED_CARROT)));
 
 	// Apple
 	public static final RegistryObject<Item> SLICED_APPLE = ITEMS.register("sliced_apple",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.APPLE)));
 	public static final RegistryObject<Item> ROASTED_APPLE = ITEMS.register("roasted_apple",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_APPLE)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKED_APPLE)));
 	public static final RegistryObject<Item> APPLE_SAUCE = ITEMS.register("apple_sauce",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_APPLE)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKED_APPLE)));
 
 	// Soup
 	public static final RegistryObject<Item> POTATO_SOUP = ITEMS.register("potato_soup",
@@ -370,14 +372,14 @@ public class ExtraDelightItems {
 					.tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> SAUSAGE = ITEMS.register("sausage",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SAUSAGE)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SAUSAGE)));
 	public static final RegistryObject<Item> COOKED_SAUSAGE = ITEMS.register("cooked_sausage",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.COOKED_SAUSAGE)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKED_SAUSAGE)));
 
-	public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese", () -> new Item(new Item.Properties()
-			.food(FoodVanilla.CHEESE).stacksTo(64).tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.CHEESE)));
-	public static final RegistryObject<Item> BUTTER = ITEMS.register("butter", () -> new Item(new Item.Properties()
-			.food(FoodVanilla.BUTTER).stacksTo(64).tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.BUTTER)));
+	public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese", () -> new Item(
+			new Item.Properties().food(EDFoods.CHEESE).stacksTo(64).tab(EXTRA_DELIGHT_TAB).food(EDFoods.CHEESE)));
+	public static final RegistryObject<Item> BUTTER = ITEMS.register("butter", () -> new Item(
+			new Item.Properties().food(EDFoods.BUTTER).stacksTo(64).tab(EXTRA_DELIGHT_TAB).food(EDFoods.BUTTER)));
 
 	public static final RegistryObject<BlockItem> CHEESE_BLOCK_ITEM = ITEMS.register("cheese_block_item",
 			() -> new BlockItem(ExtraDelightBlocks.CHEESE_BLOCK.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
@@ -392,100 +394,83 @@ public class ExtraDelightItems {
 					.tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> SAUSAGE_ROLL = ITEMS.register("sausage_roll",
-			() -> new Item(new Item.Properties().food(FoodVanilla.SAUSAGE_ROLL).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().food(EDFoods.SAUSAGE_ROLL).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> SOS = ITEMS.register("sos",
-			() -> new Item(new Item.Properties().food(FoodVanilla.SOS).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().food(EDFoods.SOS).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> LIVER_ONIONS = ITEMS.register("liver_onions",
-			() -> new Item(new Item.Properties().food(FoodVanilla.LIVERONION).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().food(EDFoods.LIVERONION).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> FRIED_FISH = ITEMS.register("fried_fish",
 			() -> new Item(new Item.Properties().food(Foods.COOKED_SALMON).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> CHICKEN_FRIED_STEAK = ITEMS.register("chicken_fried_steak", () -> new Item(
-			new Item.Properties().food(FoodVanilla.CHICKEN_FRIED_STEAK).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
+			new Item.Properties().food(EDFoods.CHICKEN_FRIED_STEAK).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> PORK_TENDERLOIN = ITEMS.register("pork_tenderloin", () -> new Item(
-			new Item.Properties().food(FoodVanilla.CHICKEN_FRIED_STEAK).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
+			new Item.Properties().food(EDFoods.CHICKEN_FRIED_STEAK).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> FRIED_CHICKEN = ITEMS.register("fried_chicken",
 			() -> new Item(new Item.Properties().food(Foods.COOKED_CHICKEN).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> STUFFED_HEART = ITEMS.register("stuffed_heart",
-			() -> new Item(new Item.Properties().food(FoodVanilla.STUFFED_HEART).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().food(EDFoods.STUFFED_HEART).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> FRIED_BRAINS = ITEMS.register("fried_brains",
-			() -> new Item(new Item.Properties().food(FoodVanilla.FRIED_BRAIN).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().food(EDFoods.FRIED_BRAIN).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> OXTAIL_SOUP = ITEMS.register("oxtail_soup",
 			() -> new Item(new Item.Properties().food(FoodValues.BEEF_STEW).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> GRILLED_CHEESE = ITEMS.register("grilled_cheese",
-			() -> new Item(new Item.Properties().food(FoodVanilla.GRILLED_CHEESE).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().food(EDFoods.GRILLED_CHEESE).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> HASH = ITEMS.register("hash", () -> new Item(new Item.Properties()
 			.food(Foods.BAKED_POTATO).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> POT_ROAST = ITEMS.register("potroast", () -> new Item(new Item.Properties()
 			.food(FoodValues.BEEF_STEW).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Item> BBQ_RIBS = ITEMS.register("bbq_ribs", () -> new Item(new Item.Properties()
-			.food(FoodVanilla.RIBS).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> BBQ_RIBS = ITEMS.register("bbq_ribs", () -> new Item(
+			new Item.Properties().food(EDFoods.RIBS).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> MEAT_PIE_SLICE = ITEMS.register("meat_pie_slice",
 			() -> new Item(new Item.Properties().food(FoodValues.PIE_SLICE).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> PULLED_PORK_SANDWICH = ITEMS.register("pulled_pork_sandwich",
 			() -> new Item(new Item.Properties().food(FoodValues.HAMBURGER).craftRemainder(Items.BREAD).stacksTo(4)
 					.tab(EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Item> RACK_LAMB = ITEMS.register("rack_lamb",
-			() -> new Item(new Item.Properties().food(FoodVanilla.RIBS).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> STIRFRY = ITEMS.register("stirfry", () -> new Item(new Item.Properties()
-			.food(FoodVanilla.STIRFRY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> RACK_LAMB = ITEMS.register("rack_lamb", () -> new Item(
+			new Item.Properties().food(EDFoods.RIBS).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> STIRFRY = ITEMS.register("stirfry", () -> new Item(
+			new Item.Properties().food(EDFoods.STIRFRY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> BEEF_WELLINGTON = ITEMS.register("beef_wellington",
-			() -> new Item(new Item.Properties().food(FoodVanilla.WELLINGTON).craftRemainder(Items.BOWL).stacksTo(4)
+			() -> new Item(new Item.Properties().food(EDFoods.WELLINGTON).craftRemainder(Items.BOWL).stacksTo(4)
 					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> HAGGIS = ITEMS.register("haggis", () -> new Item(new Item.Properties()
-			.food(FoodVanilla.HAGGIS).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> HAGGIS = ITEMS.register("haggis", () -> new Item(
+			new Item.Properties().food(EDFoods.HAGGIS).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Item> JELLY_WHITE = ITEMS.register("jelly_white",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_ORANGE = ITEMS.register("jelly_orange",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_MAGENTA = ITEMS.register("jelly_magenta",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_LIGHT_BLUE = ITEMS.register("jelly_light_blue",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_YELLOW = ITEMS.register("jelly_yellow",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_LIME = ITEMS.register("jelly_lime",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_PINK = ITEMS.register("jelly_pink",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_GREY = ITEMS.register("jelly_grey",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_LIGHT_GREY = ITEMS.register("jelly_light_grey",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_CYAN = ITEMS.register("jelly_cyan",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_PURPLE = ITEMS.register("jelly_purple",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_BLUE = ITEMS.register("jelly_blue",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_BROWN = ITEMS.register("jelly_brown",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_GREEN = ITEMS.register("jelly_green",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_RED = ITEMS.register("jelly_red",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> JELLY_BLACK = ITEMS.register("jelly_black",
-			() -> new Item(new Item.Properties().food(FoodVanilla.JELLY).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_WHITE = ITEMS.register("jelly_white", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_ORANGE = ITEMS.register("jelly_orange", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_MAGENTA = ITEMS.register("jelly_magenta", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_LIGHT_BLUE = ITEMS.register("jelly_light_blue", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_YELLOW = ITEMS.register("jelly_yellow", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_LIME = ITEMS.register("jelly_lime", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_PINK = ITEMS.register("jelly_pink", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_GREY = ITEMS.register("jelly_grey", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_LIGHT_GREY = ITEMS.register("jelly_light_grey", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_CYAN = ITEMS.register("jelly_cyan", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_PURPLE = ITEMS.register("jelly_purple", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_BLUE = ITEMS.register("jelly_blue", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_BROWN = ITEMS.register("jelly_brown", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_GREEN = ITEMS.register("jelly_green", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_RED = ITEMS.register("jelly_red", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JELLY_BLACK = ITEMS.register("jelly_black", () -> new Item(
+			new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<BlockItem> HASH_FEAST_ITEM = ITEMS.register("hash_block_item",
 			() -> new BlockItem(ExtraDelightBlocks.HASH_FEAST.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
@@ -547,12 +532,12 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.JELLY_BLACK.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> JERKY = ITEMS.register("jerky",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.JERKY)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.JERKY)));
 
 	public static final RegistryObject<Item> BREAD_SLICE = ITEMS.register("bread_slice",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SLICED_BREAD)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SLICED_BREAD)));
 	public static final RegistryObject<Item> TOAST = ITEMS.register("toast",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.SLICED_BREAD)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SLICED_BREAD)));
 
 	// Pasta
 	public static final RegistryObject<Item> MACARONI = ITEMS.register("macaroni",
@@ -560,29 +545,50 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> LASAGNA_NOODLES = ITEMS.register("lasagna_noodles",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Item> MACARONI_CHEESE = ITEMS.register("macaroni_cheese",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.PASTA)));
+	public static final RegistryObject<Item> MACARONI_CHEESE = ITEMS.register("macaroni_cheese", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.PASTA)));
 	public static final RegistryObject<BlockItem> MACARONI_CHEESE_FEAST = ITEMS.register("macaroni_cheese_feast",
 			() -> new BlockItem(ExtraDelightBlocks.MACARONI_CHEESE.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Item> LASAGNA = ITEMS.register("lasanga",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.PASTA)));
+	public static final RegistryObject<Item> LASAGNA = ITEMS.register("lasanga", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.PASTA)));
 	public static final RegistryObject<BlockItem> LASANGA_FEAST = ITEMS.register("lasanga_feast",
 			() -> new BlockItem(ExtraDelightBlocks.LASAGNA.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Item> HOTDISH = ITEMS.register("hotdish",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.HOTDISH)));
+	public static final RegistryObject<Item> HOTDISH = ITEMS.register("hotdish", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.HOTDISH)));
 	public static final RegistryObject<BlockItem> HOTDISH_FEAST = ITEMS.register("hotdish_feast",
 			() -> new BlockItem(ExtraDelightBlocks.HOTDISH.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
+	public static final RegistryObject<Item> CURRY = ITEMS.register("curry", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.FRIED_RICE)));
+	public static final RegistryObject<BlockItem> CURRY_FEAST = ITEMS.register("curry_feast",
+			() -> new BlockItem(ExtraDelightBlocks.CURRY.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
 	// Rice
-	public static final RegistryObject<Item> FURIKAKE_RICE = ITEMS.register("furikake_rice",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.FURIKAKE_RICE)));
-	public static final RegistryObject<Item> FRIED_RICE = ITEMS.register("fried_rice",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.FRIED_RICE)));
+	public static final RegistryObject<Item> FURIKAKE_RICE = ITEMS.register("furikake_rice", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.FURIKAKE_RICE)));
+	public static final RegistryObject<Item> FRIED_RICE = ITEMS.register("fried_rice", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.FRIED_RICE)));
 
 	// Fish
 	public static final RegistryObject<Item> FISH_FLAKES = ITEMS.register("fish_flakes",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> FISH_CAKES = ITEMS.register("fish_cakes",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.COOKED_SALMON)));
+	public static final RegistryObject<Item> FISH_AND_CHIPS = ITEMS.register("fish_chips",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)
+					.food(EDFoods.addFoods(Foods.BAKED_POTATO, Foods.COOKED_COD)
+							.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build())));
+
+	// Mushrooms
+	public static final RegistryObject<Item> FRIED_MUSHROOMS = ITEMS.register("fried_mushrooms",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.MUSHROOM_STEW)));
+	public static final RegistryObject<Item> MUSHROOM_RISOTTO = ITEMS.register("mushroom_risotto", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.FRIED_RICE)));
+	public static final RegistryObject<Item> STUFFED_MUSHROOMS = ITEMS.register("stuffed_mushrooms",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.MUSHROOM_STEW)));
+	public static final RegistryObject<Item> MUSHROOM_BURGER = ITEMS.register("mushroom_burger",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.HAMBURGER)));
 }

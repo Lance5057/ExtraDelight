@@ -198,4 +198,7 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<BbqRibsBlock> HOTDISH = BLOCKS.register("hotdish_block",
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW),
 					ExtraDelightItems.HOTDISH, true));
+	public static final RegistryObject<BbqRibsBlock> CURRY = BLOCKS.register("curry_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE),
+					ExtraDelightItems.CURRY, true));
 }

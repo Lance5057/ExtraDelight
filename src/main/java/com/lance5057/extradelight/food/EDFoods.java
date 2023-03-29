@@ -3,9 +3,10 @@ package com.lance5057.extradelight.food;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.FoodProperties.Builder;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
-public class FoodVanilla {
+public class EDFoods {
 	public static final FoodProperties CUPCAKE = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2f)
 			.build();
 	public static final FoodProperties WHIPPED_CREAM = (new FoodProperties.Builder()).nutrition(0).saturationMod(0.1f)
@@ -91,4 +92,9 @@ public class FoodVanilla {
 			.saturationMod(0.4f).build();
 	public static final FoodProperties FRIED_RICE = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.8f)
 			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();
+	
+	public static Builder addFoods(FoodProperties A, FoodProperties B)
+	{
+		return new FoodProperties.Builder().nutrition(A.getNutrition() + B.getNutrition()).saturationMod(A.getSaturationModifier() + B.getSaturationModifier());
+	}
 }
