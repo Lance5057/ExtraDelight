@@ -569,8 +569,8 @@ public class ExtraDelightItems {
 	// Rice
 	public static final RegistryObject<Item> FURIKAKE_RICE = ITEMS.register("furikake_rice", () -> new Item(
 			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.FURIKAKE_RICE)));
-	public static final RegistryObject<Item> FRIED_RICE = ITEMS.register("fried_rice", () -> new Item(
-			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.FRIED_RICE)));
+//	public static final RegistryObject<Item> FRIED_RICE = ITEMS.register("fried_rice", () -> new Item(
+//			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.FRIED_RICE)));
 
 	// Fish
 	public static final RegistryObject<Item> FISH_FLAKES = ITEMS.register("fish_flakes",
