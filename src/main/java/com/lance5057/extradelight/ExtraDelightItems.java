@@ -287,6 +287,8 @@ public class ExtraDelightItems {
 			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.MAYO).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> FURIKAKE = ITEMS.register("furikake",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CURRY_POWDER = ITEMS.register("curry_powder",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	// Jams
 	public static final RegistryObject<Item> SWEET_BERRY_JAM = ITEMS.register("sweet_berry_jam",
@@ -568,13 +570,13 @@ public class ExtraDelightItems {
 
 	// Rice
 	public static final RegistryObject<Item> FURIKAKE_RICE = ITEMS.register("furikake_rice", () -> new Item(
-			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.FURIKAKE_RICE)));
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.FURIKAKE_RICE)));
 //	public static final RegistryObject<Item> FRIED_RICE = ITEMS.register("fried_rice", () -> new Item(
 //			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.FRIED_RICE)));
 
 	// Fish
 	public static final RegistryObject<Item> FISH_FLAKES = ITEMS.register("fish_flakes",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL)));
 	public static final RegistryObject<Item> FISH_CAKES = ITEMS.register("fish_cakes",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.COOKED_SALMON)));
 	public static final RegistryObject<Item> FISH_AND_CHIPS = ITEMS.register("fish_chips",
