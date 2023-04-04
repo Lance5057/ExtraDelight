@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.recipe.DynamicNameSmeltingRecipe;
+import com.lance5057.extradelight.recipe.FeastRecipe;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackSerializer;
@@ -31,6 +32,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("mixing_bowl"));
 	public static final RegistryObject<RecipeType<DryingRackRecipe>> DRYING_RACK = RECIPE_TYPES.register("drying_rack",
 			() -> registerRecipeType("drying_rack"));
+	public static final RegistryObject<RecipeType<FeastRecipe>> FEAST = RECIPE_TYPES.register("feast",
+			() -> registerRecipeType("feast"));
 
 	// Dynamic Names
 	public static final RegistryObject<RecipeType<DynamicNameSmeltingRecipe>> DYNAMIC_SMELT = RECIPE_TYPES
@@ -62,6 +65,8 @@ public class ExtraDelightRecipes {
 
 	public static final RegistryObject<DryingRackSerializer> DRYING_RACK_SERIALIZER = RECIPE_SERIALIZERS
 			.register("drying_rack", DryingRackSerializer::new);
+	public static final RegistryObject<FeastRecipe.Serializer> FEAST_SERIALIZER = RECIPE_SERIALIZERS
+			.register("feast", FeastRecipe.Serializer::new);
 
 	public static final RecipeBookType RECIPE_TYPE_OVEN = RecipeBookType.create("OVEN");
 }
