@@ -1,7 +1,7 @@
 package com.lance5057.extradelight.containers;
 
-import com.lance5057.extradelight.blocks.FoodDisplayBlock;
-import com.lance5057.extradelight.blocks.entities.FoodDisplayEntity;
+import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
+import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Quaternion;
 

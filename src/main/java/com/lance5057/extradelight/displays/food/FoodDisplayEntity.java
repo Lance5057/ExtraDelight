@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.blocks.entities;
+package com.lance5057.extradelight.displays.food;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

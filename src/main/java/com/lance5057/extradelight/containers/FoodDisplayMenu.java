@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
-import com.lance5057.extradelight.blocks.entities.FoodDisplayEntity;
+import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;

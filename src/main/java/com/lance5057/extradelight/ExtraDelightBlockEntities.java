@@ -1,6 +1,6 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.blocks.entities.FoodDisplayEntity;
+import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlockEntity;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;

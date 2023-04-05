@@ -1,13 +1,13 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.blocks.BbqRibsBlock;
-import com.lance5057.extradelight.blocks.FoodDisplayBlock;
 import com.lance5057.extradelight.blocks.GraterBlock;
 import com.lance5057.extradelight.blocks.HashBowlBlock;
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.PotRoastBlock;
 import com.lance5057.extradelight.blocks.SalisburySteakBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
+import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;

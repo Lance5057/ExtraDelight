@@ -1,9 +1,8 @@
-package com.lance5057.extradelight.blocks;
+package com.lance5057.extradelight.displays.food;
 
 import java.util.stream.IntStream;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
-import com.lance5057.extradelight.blocks.entities.FoodDisplayEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
