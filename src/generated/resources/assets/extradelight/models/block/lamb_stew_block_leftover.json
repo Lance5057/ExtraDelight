@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/curry_block_leftover",
+  "textures": {
+    "1": "extradelight:block/lamb_stew"
+  }
+}

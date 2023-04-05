@@ -96,35 +96,35 @@ public class RecipeFeastBlock extends Block {
 
 	protected InteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player,
 			InteractionHand hand) {
-		int servings = state.getValue(getServingsProperty());
-
-		if (servings == 0) {
-			level.playSound(null, pos, SoundEvents.WOOD_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
-			level.destroyBlock(pos, true);
-			return InteractionResult.SUCCESS;
-		}
-
-		ItemStack heldStack = player.getItemInHand(hand);
-
-		if (servings > 0) {
-			if (!serving.hasCraftingRemainingItem() || heldStack.sameItem(serving.getCraftingRemainingItem())) {
-				level.setBlock(pos, state.setValue(getServingsProperty(), servings - 1), 3);
-				if (!player.getAbilities().instabuild && serving.hasCraftingRemainingItem()) {
-					heldStack.shrink(1);
-				}
-				if (!player.getInventory().add(serving)) {
-					player.drop(serving, false);
-				}
-				if (level.getBlockState(pos).getValue(getServingsProperty()) == 0 && !this.hasLeftovers) {
-					level.removeBlock(pos, false);
-				}
-				level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
-				return InteractionResult.SUCCESS;
-			} else {
-				player.displayClientMessage(TextUtils.getTranslation("block.feast.use_container",
-						serving.getCraftingRemainingItem().getHoverName()), true);
-			}
-		}
+//		int servings = state.getValue(getServingsProperty());
+//
+//		if (servings == 0) {
+//			level.playSound(null, pos, SoundEvents.WOOD_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+//			level.destroyBlock(pos, true);
+//			return InteractionResult.SUCCESS;
+//		}
+//
+//		ItemStack heldStack = player.getItemInHand(hand);
+//
+//		if (servings > 0) {
+//			if (!serving.hasCraftingRemainingItem() || heldStack.sameItem(serving.getCraftingRemainingItem())) {
+//				level.setBlock(pos, state.setValue(getServingsProperty(), servings - 1), 3);
+//				if (!player.getAbilities().instabuild && serving.hasCraftingRemainingItem()) {
+//					heldStack.shrink(1);
+//				}
+//				if (!player.getInventory().add(serving)) {
+//					player.drop(serving, false);
+//				}
+//				if (level.getBlockState(pos).getValue(getServingsProperty()) == 0 && !this.hasLeftovers) {
+//					level.removeBlock(pos, false);
+//				}
+//				level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
+//				return InteractionResult.SUCCESS;
+//			} else {
+//				player.displayClientMessage(TextUtils.getTranslation("block.feast.use_container",
+//						serving.getCraftingRemainingItem().getHoverName()), true);
+//			}
+//		}
 		return InteractionResult.PASS;
 	}
 

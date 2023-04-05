@@ -93,6 +93,14 @@ public class BlockModels extends BlockStateProvider {
 		this.feastBlock(ExtraDelightBlocks.HOTDISH.get());
 		this.feastBlock(ExtraDelightBlocks.LASAGNA.get());
 
+		this.feastBlock(ExtraDelightBlocks.CURRY.get());
+		this.stewBlock(ExtraDelightBlocks.BEEF_STEW.get(), "beef_stew");
+		this.stewBlock(ExtraDelightBlocks.CHICKEN_STEW.get(), "chicken_stew");
+		this.stewBlock(ExtraDelightBlocks.FISH_STEW.get(), "fish_stew");
+		this.stewBlock(ExtraDelightBlocks.LAMB_STEW.get(), "lamb_stew");
+		this.stewBlock(ExtraDelightBlocks.PORK_STEW.get(), "pork_stew");
+		this.stewBlock(ExtraDelightBlocks.RABBIT_STEW.get(), "rabbit_stew");
+
 		this.jellyBlock(ExtraDelightBlocks.JELLY_WHITE.get(), "white");
 		this.jellyBlock(ExtraDelightBlocks.JELLY_ORANGE.get(), "orange");
 		this.jellyBlock(ExtraDelightBlocks.JELLY_MAGENTA.get(), "magenta");
@@ -166,6 +174,10 @@ public class BlockModels extends BlockStateProvider {
 	}
 
 	public void feastBlock(FeastBlock block) {
+		feastBlock(block, ForgeRegistries.BLOCKS.getKey(block).getPath());
+	}
+
+	public void feastBlock(FeastBlock block, String path) {
 		getVariantBuilder(block).forAllStates(state -> {
 			int servings = state.getValue(FeastBlock.SERVINGS);
 
@@ -177,9 +189,25 @@ public class BlockModels extends BlockStateProvider {
 
 			return ConfiguredModel.builder()
 					.modelFile(new ModelFile.ExistingModelFile(
-							new ResourceLocation(ExtraDelight.MOD_ID,
-									"block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix),
+							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + path + suffix),
 							models().existingFileHelper))
+					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
+		});
+	}
+
+	public void stewBlock(FeastBlock block, String texture) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(FeastBlock.SERVINGS);
+
+			String suffix = "_stage" + (block.getMaxServings() - servings);
+
+			if (servings == 0) {
+				suffix = block.hasLeftovers ? "_leftover" : "_stage3";
+			}
+
+			return ConfiguredModel.builder()
+					.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
+							modLoc("curry_block" + suffix)).texture("1", modLoc("block/"+texture)))
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}

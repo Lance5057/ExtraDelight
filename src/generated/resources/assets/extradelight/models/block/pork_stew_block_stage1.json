@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/curry_block_stage1",
+  "textures": {
+    "1": "extradelight:block/pork_stew"
+  }
+}

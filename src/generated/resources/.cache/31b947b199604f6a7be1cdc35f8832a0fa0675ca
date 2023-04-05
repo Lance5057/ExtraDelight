@@ -1,4 +1,4 @@
-// 1.19.2	2023-03-28T18:06:33.825699	Item Models: extradelight
+// 1.19.2	2023-04-04T13:53:00.3815652	Item Models: extradelight
 05ddd64b4e446cf5e011353fb59f24a9a3c4fad6 assets/extradelight/models/item/agar_agar.json
 9eb993f470454d76d4c482d70f24db101f0f24b1 assets/extradelight/models/item/agar_sheets.json
 2333a06362a634867d4808003a51393ffccbb705 assets/extradelight/models/item/apple_jam.json
@@ -21,11 +21,14 @@ e8cdf431cb5eadba66fa2a4b5aa104c59dff2760 assets/extradelight/models/item/cheesec
 5c8d549bc242a8445c268be4c42989206c0ff92f assets/extradelight/models/item/cheesecake_slice.json
 4fdfb8be54c36018c2f9212eea965ccf4a1d1e8a assets/extradelight/models/item/cheese_block_item.json
 b42804b8f5afc18b90d6b50803a4dd071f224dd1 assets/extradelight/models/item/chicken_fried_steak.json
+291743211c1edd044a8b20219b1fcee7f6710179 assets/extradelight/models/item/chicken_stew.json
 3d61c839f2b989fbe46b2895cc8c029e7fa4efab assets/extradelight/models/item/chocolate_cheesecake.json
 223f70164d28393adcd2a19891ab3b1becce7233 assets/extradelight/models/item/chocolate_cheesecake_slice.json
 bc1f773791bfda0107deb8213f2fd2af6126de85 assets/extradelight/models/item/chocolate_custard.json
 a7b78fc7e74d356021e24008f454cdfcc23fe9ca assets/extradelight/models/item/cooked_sausage.json
 3009687d5b75c0fb61f0f2ea72cbb349b6e6e717 assets/extradelight/models/item/cooking_oil.json
+b5debd1c4f9e38c9bd4002bcc75ab2001a9e3dbd assets/extradelight/models/item/curry.json
+fe545f12614ab86c6f408d39c6d6407117c174f6 assets/extradelight/models/item/curry_powder.json
 23f159e9b0f3290f33a8c9a5a2c040d825570e30 assets/extradelight/models/item/diamond_spoon.json
 6459c63533254cc0204b0d87d2bbeae84fdd7950 assets/extradelight/models/item/dough_shaping.json
 8a2865984ba1358bceb3dceac55a5084f3536f31 assets/extradelight/models/item/drying_rack_item.json
@@ -34,6 +37,9 @@ a8ed04f668cd6f9686fa18418d560e18e7397d16 assets/extradelight/models/item/egg_in_
 d1ae3bc0f6c78fc9dfaede65dd062df29374fe9c assets/extradelight/models/item/egg_mix.json
 d4209bf4743e3b1924b9389fc2624086d7e453c5 assets/extradelight/models/item/egg_salad.json
 f8070c7fa640f377fd8a6fdefb3c8043e184a0d1 assets/extradelight/models/item/egg_salad_sandwich.json
+2d774b9659eea8bd75d9dd8617bc4c33f7bcb858 assets/extradelight/models/item/fish_cakes.json
+327a424a19b8eede1622a6d4cd84322b4bca5516 assets/extradelight/models/item/fish_chips.json
+af5e6f8506b74a7e0c647b15d830c489bc8f1782 assets/extradelight/models/item/fish_flakes.json
 3b1877d16d9c535aeda47b59af1e6380590de44e assets/extradelight/models/item/fish_soup.json
 7d3a1f0f9b43dd6524d436e399b966e00f5d1e82 assets/extradelight/models/item/flour.json
 310b38a3dffb771c263f3b58614f6ec925696506 assets/extradelight/models/item/food_display.json
@@ -41,7 +47,10 @@ f8070c7fa640f377fd8a6fdefb3c8043e184a0d1 assets/extradelight/models/item/egg_sal
 b6ed9159cd379b99657d71cf6a3409b2768dc1a9 assets/extradelight/models/item/fried_brains.json
 9dd481a576ec63c87b46dd8de1441af2f37f173b assets/extradelight/models/item/fried_chicken.json
 c7a18c2e5b3641a2196d112692d46e7b8166e765 assets/extradelight/models/item/fried_fish.json
+2aaa6c86b090861d7da7d9e551c8d1638f9ae833 assets/extradelight/models/item/fried_mushrooms.json
 10c632ede36a53fdcdf5908f76ac31694f6541b2 assets/extradelight/models/item/fudge_popsicle.json
+a1559a1ea6b24323571fba59b7f03ba2d13c6578 assets/extradelight/models/item/furikake.json
+68628d6c7629a534eb7e7c4378a8b570c0805e8d assets/extradelight/models/item/furikake_rice.json
 577a27798c0af67b1edbd667d61a4900e43be2ee assets/extradelight/models/item/glazed_carrot.json
 1bc024f300ef6a7c4a008743fdad2bc2146a1b29 assets/extradelight/models/item/glow_berry_cheesecake.json
 431c9c8c1769a3e1e786203986a2d086949e3ef8 assets/extradelight/models/item/glow_berry_cheesecake_slice.json
@@ -132,6 +141,8 @@ c67ec35011c111d5440ecd2435bfac70cfe3075a assets/extradelight/models/item/mortar_
 725cfa6ec135f5a578bda3f38bd7ea0d17ff5e42 assets/extradelight/models/item/mortar_granite.json
 192263d7e2c5fa4c4fb269b622358912abe75df5 assets/extradelight/models/item/mortar_stone.json
 ba2ad65c95c636af2b19eeb01c503c2cbef940e9 assets/extradelight/models/item/muffin_tin.json
+861251e0619d915116250c24ba0fe2c78d01a56d assets/extradelight/models/item/mushroom_burger.json
+889594feb3d7363d8f622e9eb22277929c52e02c assets/extradelight/models/item/mushroom_risotto.json
 62ce8fdb533f4f4436f95217596554248f9f52d0 assets/extradelight/models/item/netherite_spoon.json
 9659fd98c247f473b9d3f4a1c131e0b049fd4ba8 assets/extradelight/models/item/omelette.json
 eb455e26995303da46cd6fa02af7cb316987b464 assets/extradelight/models/item/omelette_mix.json
@@ -163,6 +174,7 @@ a89fca957bbade579404819cc563558013e59062 assets/extradelight/models/item/potroas
 b699d674331217e93bcadc5148c934e19c5fb267 assets/extradelight/models/item/pumpkin_custard.json
 c218818c9bf9c2fd259630bc94089f7f0408b292 assets/extradelight/models/item/quiche.json
 2ab179a7e3bbae14170d663fbfad18ad5dd9a83b assets/extradelight/models/item/quiche_slice.json
+60414a9e28b4ce867a3d233d02191b367c0cf231 assets/extradelight/models/item/rabbit_stew.json
 22d39db39743a5810ae986571b580d8e9d2df657 assets/extradelight/models/item/rack_lamb.json
 c61891b364ac6d80fbbde0f4e76ed2bb7f3389c0 assets/extradelight/models/item/rack_lamb_block_item.json
 10f490e4f546f88781612c3a6f42bda699882824 assets/extradelight/models/item/roasted_apple.json
@@ -173,7 +185,9 @@ c61891b364ac6d80fbbde0f4e76ed2bb7f3389c0 assets/extradelight/models/item/rack_la
 ce3fb3ccd5376c7b070fc4d05db82b845a9c0eeb assets/extradelight/models/item/sausage.json
 7cd0bb05dffe1c13560f9e020b2e16b841c48e98 assets/extradelight/models/item/sausage_roll.json
 cc1227714b7d19abbd5f0c7c5b47d3a93b221614 assets/extradelight/models/item/scrambled_eggs.json
+2a413da0e773f4b36eb9073549c599b2b7d73de9 assets/extradelight/models/item/seaweed_crisps.json
 ab8ec1fc7792a9e4abc0f84cab0f6b288478ecd3 assets/extradelight/models/item/seaweed_paste.json
+6f27c44e57c4b86e553e4630ec6955c5870616c1 assets/extradelight/models/item/seaweed_salad.json
 55dabd8f81bf858a7b936f5658a34dc92f76f85b assets/extradelight/models/item/sheet.json
 b2ceed056e736531064cfb7e4066027e30ced8dd assets/extradelight/models/item/sliced_apple.json
 13449ddd9eae7acceaede905a5735c47aee8bf9b assets/extradelight/models/item/sliced_potato.json
@@ -184,6 +198,7 @@ a66ff93381665959700c6c4445dd9c760e52bdf8 assets/extradelight/models/item/stirfry
 b6f6ca71719c189cc94746abb41bae6f9e6ec6fc assets/extradelight/models/item/stock_jar_item.json
 1693a37cc73fe88c683dbdf9c8d028f5243c0646 assets/extradelight/models/item/stone_spoon.json
 f6e27cfb27884cb80a25bd45e03dcdd20793e7ee assets/extradelight/models/item/stuffed_heart.json
+1e89272ef2f7c684a48bb7e33ef64346b6778c97 assets/extradelight/models/item/stuffed_mushrooms.json
 765f4ca380421c63bffbb8e46c14b8f6cd245f5c assets/extradelight/models/item/sugar_cookie.json
 f12a127280c49603c7f14baa3ccc48e24015317a assets/extradelight/models/item/sunflower_seeds.json
 9fbf315759c4bc639c76f2b0ec6a0232716a4f5d assets/extradelight/models/item/sweet_berry_custard.json

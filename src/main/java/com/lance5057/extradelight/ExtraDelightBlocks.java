@@ -27,6 +27,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.PieBlock;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ExtraDelightBlocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
@@ -198,7 +199,27 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<BbqRibsBlock> HOTDISH = BLOCKS.register("hotdish_block",
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW),
 					ExtraDelightItems.HOTDISH, true));
+	
+	//Stew
 	public static final RegistryObject<BbqRibsBlock> CURRY = BLOCKS.register("curry_block",
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE),
 					ExtraDelightItems.CURRY, true));
+	public static final RegistryObject<BbqRibsBlock> BEEF_STEW = BLOCKS.register("beef_stew_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
+					ModItems.BEEF_STEW, true));
+	public static final RegistryObject<BbqRibsBlock> PORK_STEW = BLOCKS.register("pork_stew_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
+					ExtraDelightItems.PORK_STEW, true));
+	public static final RegistryObject<BbqRibsBlock> LAMB_STEW = BLOCKS.register("lamb_stew_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
+					ExtraDelightItems.LAMB_STEW, true));
+	public static final RegistryObject<BbqRibsBlock> RABBIT_STEW = BLOCKS.register("rabbit_stew_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
+					ExtraDelightItems.RABBIT_STEW, true));
+	public static final RegistryObject<BbqRibsBlock> CHICKEN_STEW = BLOCKS.register("chicken_stew_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
+					ExtraDelightItems.CHICKEN_STEW, true));
+	public static final RegistryObject<BbqRibsBlock> FISH_STEW = BLOCKS.register("fish_stew_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
+					ModItems.FISH_STEW, true));
 }

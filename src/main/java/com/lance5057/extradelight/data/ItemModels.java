@@ -340,6 +340,23 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.MACARONI, "macaroni");
 		forItem(ExtraDelightItems.LASAGNA_NOODLES, "lasagna_noodles");
 		
+		forItem(ExtraDelightItems.SEAWEED_CRISPS, "seaweed_crisps");
+		forItem(ExtraDelightItems.SEAWEED_SALAD, "seaweed_salad");
+		forItem(ExtraDelightItems.FURIKAKE, "furikake");
+		forItem(ExtraDelightItems.FURIKAKE_RICE, "furikake_rice");
+		forItem(ExtraDelightItems.FISH_FLAKES, "fish_flakes");
+		forItem(ExtraDelightItems.CURRY_POWDER, "curry_powder");
+		forItem(ExtraDelightItems.FISH_CAKES, "fish_cakes");
+		forItem(ExtraDelightItems.FISH_AND_CHIPS, "fish_chips");
+		forItem(ExtraDelightItems.FRIED_MUSHROOMS, "fried_mushrooms");
+		forItem(ExtraDelightItems.MUSHROOM_RISOTTO, "mushroom_risotto");
+		forItem(ExtraDelightItems.STUFFED_MUSHROOMS, "stuffed_mushrooms");
+		forItem(ExtraDelightItems.MUSHROOM_BURGER, "mushroom_burger");
+		
+		forItem(ExtraDelightItems.RABBIT_STEW, "rabbit_stew");
+		forItem(ExtraDelightItems.CURRY, "curry");
+		forItem(ExtraDelightItems.CHICKEN_STEW, "chicken_stew");
+		
 		forBlockItem(ExtraDelightItems.MACARONI_CHEESE_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/macaroni_cheese_block_stage0"));
 		forItem(ExtraDelightItems.MACARONI_CHEESE, "macaroni_cheese");
