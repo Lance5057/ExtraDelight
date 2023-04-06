@@ -36,20 +36,22 @@ public class JellyBlock extends FeastBlock {
 
 	@Override
 	public void fallOn(Level pLevel, BlockState pState, BlockPos pPos, Entity pEntity, float pFallDistance) {
-		if (pEntity.isSuppressingBounce()) {
-			super.fallOn(pLevel, pState, pPos, pEntity, pFallDistance);
-			if(pLevel.random.nextInt(4) == 0)
+		if (pState.getValue(SERVINGS) == 0) {
+			if (pEntity.isSuppressingBounce()) {
+				super.fallOn(pLevel, pState, pPos, pEntity, pFallDistance);
+				if (pLevel.random.nextInt(4) == 0)
+					squish(pLevel, pPos);
+			} else {
+				pEntity.causeFallDamage(pFallDistance, 0.0F, DamageSource.FALL);
 				squish(pLevel, pPos);
-		} else {
-			pEntity.causeFallDamage(pFallDistance, 0.0F, DamageSource.FALL);
-			squish(pLevel, pPos);
-		}
+			}
 
+		}
 	}
-	
-	private void squish(Level pLevel, BlockPos pPos)
-	{
-		pLevel.playLocalSound(pPos.getX(), pPos.getY(), pPos.getZ(), SoundEvents.SLIME_BLOCK_FALL, SoundSource.BLOCKS, 1, 0, false);
+
+	private void squish(Level pLevel, BlockPos pPos) {
+		pLevel.playLocalSound(pPos.getX(), pPos.getY(), pPos.getZ(), SoundEvents.SLIME_BLOCK_FALL, SoundSource.BLOCKS,
+				1, 0, false);
 		pLevel.setBlock(pPos, this.defaultBlockState().setValue(SERVINGS, 0), 1);
 	}
 
@@ -60,7 +62,7 @@ public class JellyBlock extends FeastBlock {
 		} else {
 			this.bounceUp(pEntity);
 		}
-		
+
 	}
 
 	private void bounceUp(Entity pEntity) {
@@ -74,12 +76,14 @@ public class JellyBlock extends FeastBlock {
 
 	@Override
 	public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
-		double d0 = Math.abs(pEntity.getDeltaMovement().y);
-		if (d0 < 0.1D && !pEntity.isSteppingCarefully()) {
-			double d1 = 0.4D + d0 * 0.2D;
-			pEntity.setDeltaMovement(pEntity.getDeltaMovement().multiply(d1, 1.0D, d1));
+		if (pState.getValue(SERVINGS) == 0) {
+			double d0 = Math.abs(pEntity.getDeltaMovement().y);
+			if (d0 < 0.1D && !pEntity.isSteppingCarefully()) {
+				double d1 = 0.4D + d0 * 0.2D;
+				pEntity.setDeltaMovement(pEntity.getDeltaMovement().multiply(d1, 1.0D, d1));
+			}
 		}
-
 		super.stepOn(pLevel, pPos, pState, pEntity);
+
 	}
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "extradelight:block/crimson_spice_rack",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "extradelight:block/crimson_spice_rack"
+    },
+    "facing=south": {
+      "model": "extradelight:block/crimson_spice_rack",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extradelight:block/crimson_spice_rack",
+      "y": 270
+    }
+  }
+}

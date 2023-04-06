@@ -75,6 +75,79 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
+	public static final RegistryObject<Item> OAK_STEP_STOOL = ITEMS.register("oak_step_stool",
+			() -> new BlockItem(ExtraDelightBlocks.OAK_STEPSTOOL.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> DARK_OAK_STEP_STOOL = ITEMS.register("dark_oak_step_stool",
+			() -> new BlockItem(ExtraDelightBlocks.DARK_OAK_STEPSTOOL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> BIRCH_STEP_STOOL = ITEMS.register("birch_step_stool",
+			() -> new BlockItem(ExtraDelightBlocks.BIRCH_STEPSTOOL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> SPRUCE_STEP_STOOL = ITEMS.register("spruce_step_stool",
+			() -> new BlockItem(ExtraDelightBlocks.SPRUCE_STEPSTOOL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JUNGLE_STEP_STOOL = ITEMS.register("jungle_step_stool",
+			() -> new BlockItem(ExtraDelightBlocks.JUNGLE_STEPSTOOL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> ACACIA_STEP_STOOL = ITEMS.register("acacia_step_stool",
+			() -> new BlockItem(ExtraDelightBlocks.ACACIA_STEPSTOOL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> WARPED_STEP_STOOL = ITEMS.register("warped_step_stool",
+			() -> new BlockItem(ExtraDelightBlocks.WARPED_STEPSTOOL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CRIMSON_STEP_STOOL = ITEMS.register("crimson_step_stool",
+			() -> new BlockItem(ExtraDelightBlocks.CRIMSON_STEPSTOOL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<Item> OAK_SPICERACK = ITEMS.register("oak_spice_rack",
+			() -> new BlockItem(ExtraDelightBlocks.OAK_SPICERACK.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> DARK_OAK_SPICERACK = ITEMS.register("dark_oak_spice_rack",
+			() -> new BlockItem(ExtraDelightBlocks.DARK_OAK_SPICERACK.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> BIRCH_SPICERACK = ITEMS.register("birch_spice_rack",
+			() -> new BlockItem(ExtraDelightBlocks.BIRCH_SPICERACK.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> SPRUCE_SPICERACK = ITEMS.register("spruce_spice_rack",
+			() -> new BlockItem(ExtraDelightBlocks.SPRUCE_SPICERACK.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JUNGLE_SPICERACK = ITEMS.register("jungle_spice_rack",
+			() -> new BlockItem(ExtraDelightBlocks.JUNGLE_SPICERACK.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> ACACIA_SPICERACK = ITEMS.register("acacia_spice_rack",
+			() -> new BlockItem(ExtraDelightBlocks.ACACIA_SPICERACK.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> WARPED_SPICERACK = ITEMS.register("warped_spice_rack",
+			() -> new BlockItem(ExtraDelightBlocks.WARPED_SPICERACK.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CRIMSON_SPICERACK = ITEMS.register("crimson_spice_rack",
+			() -> new BlockItem(ExtraDelightBlocks.CRIMSON_SPICERACK.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<Item> OAK_SPICERACK_FULL = ITEMS.register("oak_spice_rack_full",
+			() -> new BlockItem(ExtraDelightBlocks.OAK_SPICERACK_FULL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> DARK_OAK_SPICERACK_FULL = ITEMS.register("dark_oak_spice_rack_full",
+			() -> new BlockItem(ExtraDelightBlocks.DARK_OAK_SPICERACK_FULL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> BIRCH_SPICERACK_FULL = ITEMS.register("birch_spice_rack_full",
+			() -> new BlockItem(ExtraDelightBlocks.BIRCH_SPICERACK_FULL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> SPRUCE_SPICERACK_FULL = ITEMS.register("spruce_spice_rack_full",
+			() -> new BlockItem(ExtraDelightBlocks.SPRUCE_SPICERACK_FULL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> JUNGLE_SPICERACK_FULL = ITEMS.register("jungle_spice_rack_full",
+			() -> new BlockItem(ExtraDelightBlocks.JUNGLE_SPICERACK_FULL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> ACACIA_SPICERACK_FULL = ITEMS.register("acacia_spice_rack_full",
+			() -> new BlockItem(ExtraDelightBlocks.ACACIA_SPICERACK_FULL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> WARPED_SPICERACK_FULL = ITEMS.register("warped_spice_rack_full",
+			() -> new BlockItem(ExtraDelightBlocks.WARPED_SPICERACK_FULL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CRIMSON_SPICERACK_FULL = ITEMS.register("crimson_spice_rack_full",
+			() -> new BlockItem(ExtraDelightBlocks.CRIMSON_SPICERACK_FULL.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
 	public static final RegistryObject<Item> PESTLE_STONE = ITEMS.register("pestle_stone",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).durability(150)));
 	public static final RegistryObject<Item> PESTLE_ANDESITE = ITEMS.register("pestle_andesite",

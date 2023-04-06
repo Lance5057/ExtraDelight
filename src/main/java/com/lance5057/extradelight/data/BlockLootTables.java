@@ -52,6 +52,36 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.MORTAR_AMETHYST.get()); // not craftable, dungeon item
 		this.dropSelf(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get()); // not craftable, dungeon item
 
+		this.dropSelf(ExtraDelightBlocks.OAK_STEPSTOOL.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_OAK_STEPSTOOL.get());
+		this.dropSelf(ExtraDelightBlocks.ACACIA_STEPSTOOL.get());
+		this.dropSelf(ExtraDelightBlocks.BIRCH_STEPSTOOL.get());
+		this.dropSelf(ExtraDelightBlocks.CRIMSON_STEPSTOOL.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_OAK_STEPSTOOL.get());
+		this.dropSelf(ExtraDelightBlocks.JUNGLE_STEPSTOOL.get());
+		this.dropSelf(ExtraDelightBlocks.SPRUCE_STEPSTOOL.get());
+		this.dropSelf(ExtraDelightBlocks.WARPED_STEPSTOOL.get());
+		
+		this.dropSelf(ExtraDelightBlocks.OAK_SPICERACK.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_OAK_SPICERACK.get());
+		this.dropSelf(ExtraDelightBlocks.ACACIA_SPICERACK.get());
+		this.dropSelf(ExtraDelightBlocks.BIRCH_SPICERACK.get());
+		this.dropSelf(ExtraDelightBlocks.CRIMSON_SPICERACK.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_OAK_SPICERACK.get());
+		this.dropSelf(ExtraDelightBlocks.JUNGLE_SPICERACK.get());
+		this.dropSelf(ExtraDelightBlocks.SPRUCE_SPICERACK.get());
+		this.dropSelf(ExtraDelightBlocks.WARPED_SPICERACK.get());
+
+		this.dropSelf(ExtraDelightBlocks.OAK_SPICERACK_FULL.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_OAK_SPICERACK_FULL.get());
+		this.dropSelf(ExtraDelightBlocks.ACACIA_SPICERACK_FULL.get());
+		this.dropSelf(ExtraDelightBlocks.BIRCH_SPICERACK_FULL.get());
+		this.dropSelf(ExtraDelightBlocks.CRIMSON_SPICERACK_FULL.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_OAK_SPICERACK_FULL.get());
+		this.dropSelf(ExtraDelightBlocks.JUNGLE_SPICERACK_FULL.get());
+		this.dropSelf(ExtraDelightBlocks.SPRUCE_SPICERACK_FULL.get());
+		this.dropSelf(ExtraDelightBlocks.WARPED_SPICERACK_FULL.get());
+		
 		this.add(ExtraDelightBlocks.CHEESECAKE.get(), noDrop());
 		this.add(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get(), noDrop());
 		this.add(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get(), noDrop());
@@ -102,7 +132,7 @@ public class BlockLootTables extends BlockLoot {
 		this.dropOther(ExtraDelightBlocks.MACARONI_CHEESE.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.HOTDISH.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.LASAGNA.get(), Items.BOWL);
-		
+
 		this.dropOther(ExtraDelightBlocks.BEEF_STEW.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.CHICKEN_STEW.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.FISH_STEW.get(), Items.BOWL);

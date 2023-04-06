@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/stepstool",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "minecraft:block/birch_planks"
+  }
+}
