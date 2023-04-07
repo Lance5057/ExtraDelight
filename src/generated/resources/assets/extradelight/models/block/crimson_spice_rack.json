@@ -1,8 +1,0 @@
-{
-  "parent": "extradelight:block/spicerack",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "0": "minecraft:block/crimson_planks",
-    "2": "extradelight:block/crimson_ornate"
-  }
-}

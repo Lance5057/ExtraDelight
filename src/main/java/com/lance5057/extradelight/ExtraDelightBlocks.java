@@ -1,15 +1,14 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.BbqRibsBlock;
 import com.lance5057.extradelight.blocks.GraterBlock;
 import com.lance5057.extradelight.blocks.HashBowlBlock;
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.PotRoastBlock;
 import com.lance5057.extradelight.blocks.SalisburySteakBlock;
-import com.lance5057.extradelight.blocks.StepStoolBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
-import com.lance5057.extradelight.displays.spice.SpiceRackBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
@@ -25,6 +24,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -34,6 +34,11 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 public class ExtraDelightBlocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			ExtraDelight.MOD_ID);
+
+	public static void register(IEventBus modEventBus) {
+//		AestheticBlocks.BLOCKS.register(modEventBus);
+		BLOCKS.register(modEventBus);
+	}
 
 	public static final RegistryObject<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);
 	public static final RegistryObject<DryingRackBlock> DRYING_RACK = BLOCKS.register("drying_rack",
@@ -65,57 +70,6 @@ public class ExtraDelightBlocks {
 																														// item
 	public static final RegistryObject<Block> MORTAR_GILDED_BLACKSTONE = BLOCKS.register("mortar_gilded_blackstone",
 			MortarBlock::new); // not craftable, dungeon item
-	
-	public static final RegistryObject<Block> OAK_STEPSTOOL = BLOCKS.register("oak_step_stool",
-			StepStoolBlock::new);
-	public static final RegistryObject<Block> DARK_OAK_STEPSTOOL = BLOCKS.register("dark_oak_step_stool",
-			StepStoolBlock::new);
-	public static final RegistryObject<Block> BIRCH_STEPSTOOL = BLOCKS.register("birch_step_stool",
-			StepStoolBlock::new);
-	public static final RegistryObject<Block> SPRUCE_STEPSTOOL = BLOCKS.register("spruce_step_stool",
-			StepStoolBlock::new);
-	public static final RegistryObject<Block> ACACIA_STEPSTOOL = BLOCKS.register("acacia_step_stool",
-			StepStoolBlock::new);
-	public static final RegistryObject<Block> JUNGLE_STEPSTOOL = BLOCKS.register("jungle_step_stool",
-			StepStoolBlock::new);
-	public static final RegistryObject<Block> WARPED_STEPSTOOL = BLOCKS.register("warped_step_stool",
-			StepStoolBlock::new);
-	public static final RegistryObject<Block> CRIMSON_STEPSTOOL = BLOCKS.register("crimson_step_stool",
-			StepStoolBlock::new);
-	
-	public static final RegistryObject<Block> OAK_SPICERACK = BLOCKS.register("oak_spice_rack",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> DARK_OAK_SPICERACK = BLOCKS.register("dark_oak_spice_rack",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> BIRCH_SPICERACK = BLOCKS.register("birch_spice_rack",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> SPRUCE_SPICERACK = BLOCKS.register("spruce_spice_rack",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> ACACIA_SPICERACK = BLOCKS.register("acacia_spice_rack",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> JUNGLE_SPICERACK = BLOCKS.register("jungle_spice_rack",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> WARPED_SPICERACK = BLOCKS.register("warped_spice_rack",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> CRIMSON_SPICERACK = BLOCKS.register("crimson_spice_rack",
-			SpiceRackBlock::new);
-	
-	public static final RegistryObject<Block> OAK_SPICERACK_FULL = BLOCKS.register("oak_spice_rack_full",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> DARK_OAK_SPICERACK_FULL = BLOCKS.register("dark_oak_spice_rack_full",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> BIRCH_SPICERACK_FULL = BLOCKS.register("birch_spice_rack_full",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> SPRUCE_SPICERACK_FULL = BLOCKS.register("spruce_spice_rack_full",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> ACACIA_SPICERACK_FULL = BLOCKS.register("acacia_spice_rack_full",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> JUNGLE_SPICERACK_FULL = BLOCKS.register("jungle_spice_rack_full",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> WARPED_SPICERACK_FULL = BLOCKS.register("warped_spice_rack_full",
-			SpiceRackBlock::new);
-	public static final RegistryObject<Block> CRIMSON_SPICERACK_FULL = BLOCKS.register("crimson_spice_rack_full",
-			SpiceRackBlock::new);
 
 	public static final RegistryObject<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.of(Material.MOSS).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
@@ -252,8 +206,8 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<BbqRibsBlock> HOTDISH = BLOCKS.register("hotdish_block",
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW),
 					ExtraDelightItems.HOTDISH, true));
-	
-	//Stew
+
+	// Stew
 	public static final RegistryObject<BbqRibsBlock> CURRY = BLOCKS.register("curry_block",
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE),
 					ExtraDelightItems.CURRY, true));

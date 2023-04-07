@@ -59,80 +59,121 @@ public class BlockModels extends BlockStateProvider {
 				models().withExistingParent("mortar_gilded_blackstone", modLoc("block/mortar")).texture("0",
 						mcLoc("block/gilded_blackstone"))); // not craftable, dungeon item
 
-		this.horizontalBlock(ExtraDelightBlocks.OAK_STEPSTOOL.get(),
-				models().withExistingParent("oak_step_stool", modLoc("block/stepstool")).texture("0",
-						mcLoc("block/oak_planks")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.DARK_OAK_STEPSTOOL.get(),
-				models().withExistingParent("dark_oak_step_stool", modLoc("block/stepstool")).texture("0",
-						mcLoc("block/dark_oak_planks")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.ACACIA_STEPSTOOL.get(),
-				models().withExistingParent("acacia_step_stool", modLoc("block/stepstool")).texture("0",
-						mcLoc("block/acacia_planks")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.BIRCH_STEPSTOOL.get(),
-				models().withExistingParent("birch_step_stool", modLoc("block/stepstool")).texture("0",
-						mcLoc("block/birch_planks")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.CRIMSON_STEPSTOOL.get(),
-				models().withExistingParent("crimson_step_stool", modLoc("block/stepstool")).texture("0",
-						mcLoc("block/crimson_planks")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.JUNGLE_STEPSTOOL.get(),
-				models().withExistingParent("jungle_step_stool", modLoc("block/stepstool")).texture("0",
-						mcLoc("block/jungle_planks")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.SPRUCE_STEPSTOOL.get(),
-				models().withExistingParent("spruce_step_stool", modLoc("block/stepstool")).texture("0",
-						mcLoc("block/spruce_planks")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.WARPED_STEPSTOOL.get(),
-				models().withExistingParent("warped_step_stool", modLoc("block/stepstool")).texture("0",
-						mcLoc("block/warped_planks")).renderType("cutout"));
-		
-		this.horizontalBlock(ExtraDelightBlocks.OAK_SPICERACK.get(),
-				models().withExistingParent("oak_spice_rack", modLoc("block/spicerack")).texture("0",
-						mcLoc("block/oak_planks")).texture("2", modLoc("block/oak_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.DARK_OAK_SPICERACK.get(),
-				models().withExistingParent("dark_oak_spice_rack", modLoc("block/spicerack")).texture("0",
-						mcLoc("block/dark_oak_planks")).texture("2", modLoc("block/dark_oak_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.ACACIA_SPICERACK.get(),
-				models().withExistingParent("acacia_spice_rack", modLoc("block/spicerack")).texture("0",
-						mcLoc("block/acacia_planks")).texture("2", modLoc("block/acacia_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.BIRCH_SPICERACK.get(),
-				models().withExistingParent("birch_spice_rack", modLoc("block/spicerack")).texture("0",
-						mcLoc("block/birch_planks")).texture("2", modLoc("block/birch_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.CRIMSON_SPICERACK.get(),
-				models().withExistingParent("crimson_spice_rack", modLoc("block/spicerack")).texture("0",
-						mcLoc("block/crimson_planks")).texture("2", modLoc("block/crimson_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.JUNGLE_SPICERACK.get(),
-				models().withExistingParent("jungle_spice_rack", modLoc("block/spicerack")).texture("0",
-						mcLoc("block/jungle_planks")).texture("2", modLoc("block/jungle_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.SPRUCE_SPICERACK.get(),
-				models().withExistingParent("spruce_spice_rack", modLoc("block/spicerack")).texture("0",
-						mcLoc("block/spruce_planks")).texture("2", modLoc("block/spruce_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.WARPED_SPICERACK.get(),
-				models().withExistingParent("warped_spice_rack", modLoc("block/spicerack")).texture("0",
-						mcLoc("block/warped_planks")).texture("2", modLoc("block/warped_ornate")).renderType("cutout"));
-		
-		this.horizontalBlock(ExtraDelightBlocks.OAK_SPICERACK_FULL.get(),
-				models().withExistingParent("oak_spice_rack_full", modLoc("block/spicerack_filled")).texture("0",
-						mcLoc("block/oak_planks")).texture("2", modLoc("block/oak_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.DARK_OAK_SPICERACK_FULL.get(),
-				models().withExistingParent("dark_oak_spice_rack_full", modLoc("block/spicerack_filled")).texture("0",
-						mcLoc("block/dark_oak_planks")).texture("2", modLoc("block/dark_oak_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.ACACIA_SPICERACK_FULL.get(),
-				models().withExistingParent("acacia_spice_rack_full", modLoc("block/spicerack_filled")).texture("0",
-						mcLoc("block/acacia_planks")).texture("2", modLoc("block/acacia_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.BIRCH_SPICERACK_FULL.get(),
-				models().withExistingParent("birch_spice_rack_full", modLoc("block/spicerack_filled")).texture("0",
-						mcLoc("block/birch_planks")).texture("2", modLoc("block/birch_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.CRIMSON_SPICERACK_FULL.get(),
-				models().withExistingParent("crimson_spice_rack_full", modLoc("block/spicerack_filled")).texture("0",
-						mcLoc("block/crimson_planks")).texture("2", modLoc("block/crimson_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.JUNGLE_SPICERACK_FULL.get(),
-				models().withExistingParent("jungle_spice_rack_full", modLoc("block/spicerack_filled")).texture("0",
-						mcLoc("block/jungle_planks")).texture("2", modLoc("block/jungle_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.SPRUCE_SPICERACK_FULL.get(),
-				models().withExistingParent("spruce_spice_rack_full", modLoc("block/spicerack_filled")).texture("0",
-						mcLoc("block/spruce_planks")).texture("2", modLoc("block/spruce_ornate")).renderType("cutout"));
-		this.horizontalBlock(ExtraDelightBlocks.WARPED_SPICERACK_FULL.get(),
-				models().withExistingParent("warped_spice_rack_full", modLoc("block/spicerack_filled")).texture("0",
-						mcLoc("block/warped_planks")).texture("2", modLoc("block/warped_ornate")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.OAK_STEPSTOOL.get(),
+//				models().withExistingParent("oak_step_stool", modLoc("block/stepstool"))
+//						.texture("0", mcLoc("block/oak_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.DARK_OAK_STEPSTOOL.get(),
+//				models().withExistingParent("dark_oak_step_stool", modLoc("block/stepstool"))
+//						.texture("0", mcLoc("block/dark_oak_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.ACACIA_STEPSTOOL.get(),
+//				models().withExistingParent("acacia_step_stool", modLoc("block/stepstool"))
+//						.texture("0", mcLoc("block/acacia_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.BIRCH_STEPSTOOL.get(),
+//				models().withExistingParent("birch_step_stool", modLoc("block/stepstool"))
+//						.texture("0", mcLoc("block/birch_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.CRIMSON_STEPSTOOL.get(),
+//				models().withExistingParent("crimson_step_stool", modLoc("block/stepstool"))
+//						.texture("0", mcLoc("block/crimson_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.JUNGLE_STEPSTOOL.get(),
+//				models().withExistingParent("jungle_step_stool", modLoc("block/stepstool"))
+//						.texture("0", mcLoc("block/jungle_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.SPRUCE_STEPSTOOL.get(),
+//				models().withExistingParent("spruce_step_stool", modLoc("block/stepstool"))
+//						.texture("0", mcLoc("block/spruce_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.WARPED_STEPSTOOL.get(),
+//				models().withExistingParent("warped_step_stool", modLoc("block/stepstool"))
+//						.texture("0", mcLoc("block/warped_planks")).renderType("cutout"));
+//
+//		this.horizontalBlock(ExtraDelightBlocks.OAK_KNIFEBLOCK.get(),
+//				models().withExistingParent("oak_knife_block", modLoc("block/knifeblock"))
+//						.texture("0", mcLoc("block/oak_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.DARK_OAK_KNIFEBLOCK.get(),
+//				models().withExistingParent("dark_oak_knife_block", modLoc("block/knifeblock"))
+//						.texture("0", mcLoc("block/dark_oak_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.ACACIA_KNIFEBLOCK.get(),
+//				models().withExistingParent("acacia_knife_block", modLoc("block/knifeblock"))
+//						.texture("0", mcLoc("block/acacia_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.BIRCH_KNIFEBLOCK.get(),
+//				models().withExistingParent("birch_knife_block", modLoc("block/knifeblock"))
+//						.texture("0", mcLoc("block/birch_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.CRIMSON_KNIFEBLOCK.get(),
+//				models().withExistingParent("crimson_knife_block", modLoc("block/knifeblock"))
+//						.texture("0", mcLoc("block/crimson_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.JUNGLE_KNIFEBLOCK.get(),
+//				models().withExistingParent("jungle_knife_block", modLoc("block/knifeblock"))
+//						.texture("0", mcLoc("block/jungle_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.SPRUCE_KNIFEBLOCK.get(),
+//				models().withExistingParent("spruce_knife_block", modLoc("block/knifeblock"))
+//						.texture("0", mcLoc("block/spruce_planks")).renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.WARPED_KNIFEBLOCK.get(),
+//				models().withExistingParent("warped_knife_block", modLoc("block/knifeblock"))
+//						.texture("0", mcLoc("block/warped_planks")).renderType("cutout"));
+//
+//		this.horizontalBlock(ExtraDelightBlocks.OAK_SPICERACK.get(),
+//				models().withExistingParent("oak_spice_rack", modLoc("block/spicerack"))
+//						.texture("0", mcLoc("block/oak_planks")).texture("2", modLoc("block/oak_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.DARK_OAK_SPICERACK.get(),
+//				models().withExistingParent("dark_oak_spice_rack", modLoc("block/spicerack"))
+//						.texture("0", mcLoc("block/dark_oak_planks")).texture("2", modLoc("block/dark_oak_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.ACACIA_SPICERACK.get(),
+//				models().withExistingParent("acacia_spice_rack", modLoc("block/spicerack"))
+//						.texture("0", mcLoc("block/acacia_planks")).texture("2", modLoc("block/acacia_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.BIRCH_SPICERACK.get(),
+//				models().withExistingParent("birch_spice_rack", modLoc("block/spicerack"))
+//						.texture("0", mcLoc("block/birch_planks")).texture("2", modLoc("block/birch_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.CRIMSON_SPICERACK.get(),
+//				models().withExistingParent("crimson_spice_rack", modLoc("block/spicerack"))
+//						.texture("0", mcLoc("block/crimson_planks")).texture("2", modLoc("block/crimson_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.JUNGLE_SPICERACK.get(),
+//				models().withExistingParent("jungle_spice_rack", modLoc("block/spicerack"))
+//						.texture("0", mcLoc("block/jungle_planks")).texture("2", modLoc("block/jungle_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.SPRUCE_SPICERACK.get(),
+//				models().withExistingParent("spruce_spice_rack", modLoc("block/spicerack"))
+//						.texture("0", mcLoc("block/spruce_planks")).texture("2", modLoc("block/spruce_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.WARPED_SPICERACK.get(),
+//				models().withExistingParent("warped_spice_rack", modLoc("block/spicerack"))
+//						.texture("0", mcLoc("block/warped_planks")).texture("2", modLoc("block/warped_ornate"))
+//						.renderType("cutout"));
+//
+//		this.horizontalBlock(ExtraDelightBlocks.OAK_SPICERACK_FULL.get(),
+//				models().withExistingParent("oak_spice_rack_full", modLoc("block/spicerack_filled"))
+//						.texture("0", mcLoc("block/oak_planks")).texture("2", modLoc("block/oak_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.DARK_OAK_SPICERACK_FULL.get(),
+//				models().withExistingParent("dark_oak_spice_rack_full", modLoc("block/spicerack_filled"))
+//						.texture("0", mcLoc("block/dark_oak_planks")).texture("2", modLoc("block/dark_oak_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.ACACIA_SPICERACK_FULL.get(),
+//				models().withExistingParent("acacia_spice_rack_full", modLoc("block/spicerack_filled"))
+//						.texture("0", mcLoc("block/acacia_planks")).texture("2", modLoc("block/acacia_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.BIRCH_SPICERACK_FULL.get(),
+//				models().withExistingParent("birch_spice_rack_full", modLoc("block/spicerack_filled"))
+//						.texture("0", mcLoc("block/birch_planks")).texture("2", modLoc("block/birch_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.CRIMSON_SPICERACK_FULL.get(),
+//				models().withExistingParent("crimson_spice_rack_full", modLoc("block/spicerack_filled"))
+//						.texture("0", mcLoc("block/crimson_planks")).texture("2", modLoc("block/crimson_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.JUNGLE_SPICERACK_FULL.get(),
+//				models().withExistingParent("jungle_spice_rack_full", modLoc("block/spicerack_filled"))
+//						.texture("0", mcLoc("block/jungle_planks")).texture("2", modLoc("block/jungle_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.SPRUCE_SPICERACK_FULL.get(),
+//				models().withExistingParent("spruce_spice_rack_full", modLoc("block/spicerack_filled"))
+//						.texture("0", mcLoc("block/spruce_planks")).texture("2", modLoc("block/spruce_ornate"))
+//						.renderType("cutout"));
+//		this.horizontalBlock(ExtraDelightBlocks.WARPED_SPICERACK_FULL.get(),
+//				models().withExistingParent("warped_spice_rack_full", modLoc("block/spicerack_filled"))
+//						.texture("0", mcLoc("block/warped_planks")).texture("2", modLoc("block/warped_ornate"))
+//						.renderType("cutout"));
 
 		this.simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(), models()
 				.withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool", modLoc("block/cooking_oil")));

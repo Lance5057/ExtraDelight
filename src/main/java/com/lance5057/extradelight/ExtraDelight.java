@@ -3,6 +3,8 @@ package com.lance5057.extradelight;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -23,7 +25,11 @@ public class ExtraDelight {
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setupClient);
 
-		ExtraDelightBlocks.BLOCKS.register(modEventBus);
+		AestheticBlocks.setup();
+		AestheticBlocks.BLOCKS.register(modEventBus);
+		AestheticBlocks.ITEMS.register(modEventBus);
+		
+		ExtraDelightBlocks.register(modEventBus);
 		ExtraDelightItems.ITEMS.register(modEventBus);
 
 		ExtraDelightBlockEntities.TILES.register(modEventBus);

@@ -103,80 +103,80 @@ public class ItemModels extends ItemModelProvider {
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/gilded_blackstone")); // not craftable, dungeon item
 
-		getBuilder(ExtraDelightItems.ACACIA_STEP_STOOL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
-				.texture("0", mcLoc("block/acacia_planks"));
-		getBuilder(ExtraDelightItems.BIRCH_STEP_STOOL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
-				.texture("0", mcLoc("block/birch_planks"));
-		getBuilder(ExtraDelightItems.CRIMSON_STEP_STOOL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
-				.texture("0", mcLoc("block/crimson_planks"));
-		getBuilder(ExtraDelightItems.DARK_OAK_STEP_STOOL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
-				.texture("0", mcLoc("block/dark_oak_planks"));
-		getBuilder(ExtraDelightItems.JUNGLE_STEP_STOOL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
-				.texture("0", mcLoc("block/jungle_planks"));
-		getBuilder(ExtraDelightItems.OAK_STEP_STOOL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
-				.texture("0", mcLoc("block/oak_planks"));
-		getBuilder(ExtraDelightItems.SPRUCE_STEP_STOOL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
-				.texture("0", mcLoc("block/spruce_planks"));
-		getBuilder(ExtraDelightItems.WARPED_STEP_STOOL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
-				.texture("0", mcLoc("block/warped_planks"));
-
-		getBuilder(ExtraDelightItems.ACACIA_SPICERACK.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
-				.texture("0", mcLoc("block/acacia_planks")).texture("2", modLoc("block/acacia_ornate"));
-		getBuilder(ExtraDelightItems.BIRCH_SPICERACK.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
-				.texture("0", mcLoc("block/birch_planks")).texture("2", modLoc("block/birch_ornate"));
-		getBuilder(ExtraDelightItems.CRIMSON_SPICERACK.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
-				.texture("0", mcLoc("block/crimson_planks")).texture("2", modLoc("block/crimson_ornate"));
-		getBuilder(ExtraDelightItems.DARK_OAK_SPICERACK.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
-				.texture("0", mcLoc("block/dark_oak_planks")).texture("2", modLoc("block/dark_oak_ornate"));
-		getBuilder(ExtraDelightItems.JUNGLE_SPICERACK.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
-				.texture("0", mcLoc("block/jungle_planks")).texture("2", modLoc("block/jungle_ornate"));
-		getBuilder(ExtraDelightItems.OAK_SPICERACK.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
-				.texture("0", mcLoc("block/oak_planks")).texture("2", modLoc("block/oak_ornate"));
-		getBuilder(ExtraDelightItems.SPRUCE_SPICERACK.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
-				.texture("0", mcLoc("block/spruce_planks")).texture("2", modLoc("block/spruce_ornate"));
-		getBuilder(ExtraDelightItems.WARPED_SPICERACK.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
-				.texture("0", mcLoc("block/warped_planks")).texture("2", modLoc("block/warped_ornate"));
-
-		getBuilder(ExtraDelightItems.ACACIA_SPICERACK_FULL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
-				.texture("0", mcLoc("block/acacia_planks")).texture("2", modLoc("block/acacia_ornate"));
-		getBuilder(ExtraDelightItems.BIRCH_SPICERACK_FULL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
-				.texture("0", mcLoc("block/birch_planks")).texture("2", modLoc("block/birch_ornate"));
-		getBuilder(ExtraDelightItems.CRIMSON_SPICERACK_FULL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
-				.texture("0", mcLoc("block/crimson_planks")).texture("2", modLoc("block/crimson_ornate"));
-		getBuilder(ExtraDelightItems.DARK_OAK_SPICERACK_FULL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
-				.texture("0", mcLoc("block/dark_oak_planks")).texture("2", modLoc("block/dark_oak_ornate"));
-		getBuilder(ExtraDelightItems.JUNGLE_SPICERACK_FULL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
-				.texture("0", mcLoc("block/jungle_planks")).texture("2", modLoc("block/jungle_ornate"));
-		getBuilder(ExtraDelightItems.OAK_SPICERACK_FULL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
-				.texture("0", mcLoc("block/oak_planks")).texture("2", modLoc("block/oak_ornate"));
-		getBuilder(ExtraDelightItems.SPRUCE_SPICERACK_FULL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
-				.texture("0", mcLoc("block/spruce_planks")).texture("2", modLoc("block/spruce_ornate"));
-		getBuilder(ExtraDelightItems.WARPED_SPICERACK_FULL.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
-				.texture("0", mcLoc("block/warped_planks")).texture("2", modLoc("block/warped_ornate"));
+//		getBuilder(ExtraDelightItems.ACACIA_STEP_STOOL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
+//				.texture("0", mcLoc("block/acacia_planks"));
+//		getBuilder(ExtraDelightItems.BIRCH_STEP_STOOL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
+//				.texture("0", mcLoc("block/birch_planks"));
+//		getBuilder(ExtraDelightItems.CRIMSON_STEP_STOOL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
+//				.texture("0", mcLoc("block/crimson_planks"));
+//		getBuilder(ExtraDelightItems.DARK_OAK_STEP_STOOL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
+//				.texture("0", mcLoc("block/dark_oak_planks"));
+//		getBuilder(ExtraDelightItems.JUNGLE_STEP_STOOL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
+//				.texture("0", mcLoc("block/jungle_planks"));
+//		getBuilder(ExtraDelightItems.OAK_STEP_STOOL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
+//				.texture("0", mcLoc("block/oak_planks"));
+//		getBuilder(ExtraDelightItems.SPRUCE_STEP_STOOL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
+//				.texture("0", mcLoc("block/spruce_planks"));
+//		getBuilder(ExtraDelightItems.WARPED_STEP_STOOL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/stepstool")))
+//				.texture("0", mcLoc("block/warped_planks"));
+//
+//		getBuilder(ExtraDelightItems.ACACIA_SPICERACK.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
+//				.texture("0", mcLoc("block/acacia_planks")).texture("2", modLoc("block/acacia_ornate"));
+//		getBuilder(ExtraDelightItems.BIRCH_SPICERACK.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
+//				.texture("0", mcLoc("block/birch_planks")).texture("2", modLoc("block/birch_ornate"));
+//		getBuilder(ExtraDelightItems.CRIMSON_SPICERACK.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
+//				.texture("0", mcLoc("block/crimson_planks")).texture("2", modLoc("block/crimson_ornate"));
+//		getBuilder(ExtraDelightItems.DARK_OAK_SPICERACK.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
+//				.texture("0", mcLoc("block/dark_oak_planks")).texture("2", modLoc("block/dark_oak_ornate"));
+//		getBuilder(ExtraDelightItems.JUNGLE_SPICERACK.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
+//				.texture("0", mcLoc("block/jungle_planks")).texture("2", modLoc("block/jungle_ornate"));
+//		getBuilder(ExtraDelightItems.OAK_SPICERACK.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
+//				.texture("0", mcLoc("block/oak_planks")).texture("2", modLoc("block/oak_ornate"));
+//		getBuilder(ExtraDelightItems.SPRUCE_SPICERACK.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
+//				.texture("0", mcLoc("block/spruce_planks")).texture("2", modLoc("block/spruce_ornate"));
+//		getBuilder(ExtraDelightItems.WARPED_SPICERACK.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack")))
+//				.texture("0", mcLoc("block/warped_planks")).texture("2", modLoc("block/warped_ornate"));
+//
+//		getBuilder(ExtraDelightItems.ACACIA_SPICERACK_FULL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
+//				.texture("0", mcLoc("block/acacia_planks")).texture("2", modLoc("block/acacia_ornate"));
+//		getBuilder(ExtraDelightItems.BIRCH_SPICERACK_FULL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
+//				.texture("0", mcLoc("block/birch_planks")).texture("2", modLoc("block/birch_ornate"));
+//		getBuilder(ExtraDelightItems.CRIMSON_SPICERACK_FULL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
+//				.texture("0", mcLoc("block/crimson_planks")).texture("2", modLoc("block/crimson_ornate"));
+//		getBuilder(ExtraDelightItems.DARK_OAK_SPICERACK_FULL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
+//				.texture("0", mcLoc("block/dark_oak_planks")).texture("2", modLoc("block/dark_oak_ornate"));
+//		getBuilder(ExtraDelightItems.JUNGLE_SPICERACK_FULL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
+//				.texture("0", mcLoc("block/jungle_planks")).texture("2", modLoc("block/jungle_ornate"));
+//		getBuilder(ExtraDelightItems.OAK_SPICERACK_FULL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
+//				.texture("0", mcLoc("block/oak_planks")).texture("2", modLoc("block/oak_ornate"));
+//		getBuilder(ExtraDelightItems.SPRUCE_SPICERACK_FULL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
+//				.texture("0", mcLoc("block/spruce_planks")).texture("2", modLoc("block/spruce_ornate"));
+//		getBuilder(ExtraDelightItems.WARPED_SPICERACK_FULL.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(modLoc("block/spicerack_filled")))
+//				.texture("0", mcLoc("block/warped_planks")).texture("2", modLoc("block/warped_ornate"));
 
 		forItem(ExtraDelightItems.ROUND_PAN, "round_pan");
 		forItem(ExtraDelightItems.BAKING_STONE, "baking_stone");
