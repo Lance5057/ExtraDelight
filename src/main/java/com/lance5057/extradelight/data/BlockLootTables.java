@@ -1,5 +1,8 @@
 package com.lance5057.extradelight.data;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
@@ -157,6 +160,9 @@ public class BlockLootTables extends BlockLoot {
 
 	@Override
 	protected @NotNull Iterable<Block> getKnownBlocks() {
-		return ExtraDelightBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList();
+		Collection<Block> l = new ArrayList<Block>();
+		l.addAll(ExtraDelightBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
+		l.addAll(AestheticBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
+		return l;
 	}
 }

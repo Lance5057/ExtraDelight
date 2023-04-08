@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "extradelight:block/oak_knife_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "extradelight:block/oak_knife_block"
+    },
+    "facing=south": {
+      "model": "extradelight:block/oak_knife_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extradelight:block/oak_knife_block",
+      "y": 270
+    }
+  }
+}

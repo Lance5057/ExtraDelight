@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -235,6 +236,8 @@ public class BlockModels extends BlockStateProvider {
 		this.jellyBlock(ExtraDelightBlocks.JELLY_BLACK.get(), "black");
 
 		this.pieBlock(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), "meat_pie");
+		
+		AestheticBlocks.blockModel(this);
 	}
 
 	public void jellyBlock(FeastBlock block, String color) {

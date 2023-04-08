@@ -16,6 +16,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -40,20 +42,20 @@ public class AestheticBlocks {
 	public static final List<RegistryObject<Block>> STEP_STOOLS = new ArrayList<RegistryObject<Block>>();
 	public static final List<RegistryObject<Block>> SPICE_RACKS = new ArrayList<RegistryObject<Block>>();
 	public static final List<RegistryObject<Block>> SPICE_RACKS_FULL = new ArrayList<RegistryObject<Block>>();
-	public static final List<RegistryObject<Block>> KNIFE_BLOCK = new ArrayList<RegistryObject<Block>>();
+	public static final List<RegistryObject<Block>> KNIFE_BLOCKS = new ArrayList<RegistryObject<Block>>();
 
 	public static final List<RegistryObject<Item>> STEP_STOOL_ITEMS = new ArrayList<RegistryObject<Item>>();
 	public static final List<RegistryObject<Item>> SPICE_RACKS_ITEMS = new ArrayList<RegistryObject<Item>>();
 	public static final List<RegistryObject<Item>> SPICE_RACKS_FULL_ITEMS = new ArrayList<RegistryObject<Item>>();
 	public static final List<RegistryObject<Item>> KNIFE_BLOCK_ITEMS = new ArrayList<RegistryObject<Item>>();
 
-	public static void registerAllWood(String name, Supplier<? extends Block> block,
-			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
+	public static void registerAllWood(String name, Supplier<? extends Block> block, List<RegistryObject<Block>> blocks,
+			List<RegistryObject<Item>> items) {
 		for (WOOD w : WOOD.values()) {
 			RegistryObject<Block> b = BLOCKS.register(w.toString() + "_" + name, block);
-			RegistryObject<Item> t = ITEMS.register(w.toString() + "_" + name + "_item",
+			RegistryObject<Item> t = ITEMS.register(w.toString() + "_" + name,
 					() -> new BlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
-			
+
 			blocks.add(b);
 			items.add(t);
 		}
@@ -63,7 +65,7 @@ public class AestheticBlocks {
 		registerAllWood("step_stool", StepStoolBlock::new, STEP_STOOLS, STEP_STOOL_ITEMS);
 		registerAllWood("spice_rack", SpiceRackBlock::new, SPICE_RACKS, SPICE_RACKS_ITEMS);
 		registerAllWood("spice_rack_full", SpiceRackBlock::new, SPICE_RACKS_FULL, SPICE_RACKS_FULL_ITEMS);
-		registerAllWood("knife_block", KnifeBlock::new, KNIFE_BLOCK, KNIFE_BLOCK_ITEMS);
+		registerAllWood("knife_block", KnifeBlock::new, KNIFE_BLOCKS, KNIFE_BLOCK_ITEMS);
 	}
 
 	public static void loot(BlockLoot bl) {
@@ -73,20 +75,51 @@ public class AestheticBlocks {
 			bl.dropSelf(b.get());
 		for (RegistryObject<Block> b : SPICE_RACKS_FULL)
 			bl.dropSelf(b.get());
-		for (RegistryObject<Block> b : KNIFE_BLOCK)
+		for (RegistryObject<Block> b : KNIFE_BLOCKS)
 			bl.dropSelf(b.get());
 	}
 
 	public static void blockModel(BlockStateProvider bsp) {
-		for (int i = 0; i < WOOD.values().length; i++)
+		for (int i = 0; i < WOOD.values().length; i++) {
 			bsp.horizontalBlock(STEP_STOOLS.get(i).get(), bsp.models()
 					.withExistingParent(WOOD.values()[i].toString() + "_step_stool", bsp.modLoc("block/stepstool"))
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks")).renderType("cutout"));
-//		for (RegistryObject<Block> b : SPICE_RACKS)
-//			bl.dropSelf(b.get());
-//		for (RegistryObject<Block> b : SPICE_RACKS_FULL)
-//			bl.dropSelf(b.get());
-//		for (RegistryObject<Block> b : KNIFE_BLOCK)
-//			bl.dropSelf(b.get());
+
+			bsp.horizontalBlock(SPICE_RACKS.get(i).get(), bsp.models()
+					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack", bsp.modLoc("block/spicerack"))
+					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate")).renderType("cutout"));
+
+			bsp.horizontalBlock(SPICE_RACKS_FULL.get(i).get(), bsp.models()
+					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack_full", bsp.modLoc("block/spicerack_filled"))
+					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate")).renderType("cutout"));
+
+			bsp.horizontalBlock(KNIFE_BLOCKS.get(i).get(), bsp.models()
+					.withExistingParent(WOOD.values()[i].toString() + "_knife_block", bsp.modLoc("block/knifeblock"))
+					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks")).renderType("cutout"));
+		}
+	}
+
+	public static void itemModel(ItemModelProvider tmp) {
+		for (int i = 0; i < WOOD.values().length; i++) {
+			tmp.getBuilder(STEP_STOOLS.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/stepstool")))
+					.texture("0", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"));
+
+			tmp.getBuilder(SPICE_RACKS.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/spicerack")))
+					.texture("0", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.texture("2", tmp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate"));
+
+			tmp.getBuilder(SPICE_RACKS_FULL.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/spicerack_filled")))
+					.texture("0", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.texture("2", tmp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate"));
+
+			tmp.getBuilder(KNIFE_BLOCKS.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/knifeblock")))
+					.texture("0", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"));
+		}
 	}
 }

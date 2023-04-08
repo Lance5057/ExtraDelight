@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/knifeblock",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "minecraft:block/oak_planks"
+  }
+}
