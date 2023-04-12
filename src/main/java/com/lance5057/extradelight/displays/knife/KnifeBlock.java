@@ -14,8 +14,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class KnifeBlock extends Block {
-	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 6.0D);
-	protected static final VoxelShape SHAPE2 = Block.box(0.0D, 0.0D, 0.0D, 6.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
 	public KnifeBlock() {
@@ -25,10 +24,7 @@ public class KnifeBlock extends Block {
 
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
 		Direction d = pState.getValue(FACING);
-
-		if (d == Direction.EAST || d == Direction.WEST)
-			return SHAPE;
-		return SHAPE2;
+		return SHAPE;
 	}
 
 	public boolean useShapeForLightOcclusion(BlockState pState) {

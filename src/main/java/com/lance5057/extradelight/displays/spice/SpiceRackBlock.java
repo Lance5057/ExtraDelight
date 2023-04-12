@@ -17,8 +17,10 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SpiceRackBlock extends Block {
-	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 6.0D);
-	protected static final VoxelShape SHAPE2 = Block.box(0.0D, 0.0D, 0.0D, 6.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE_E = Block.box(0.0D, 0.0D, 0.0D, 6.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE_N = Block.box(0.0D, 0.0D, 10.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE_W = Block.box(10.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE_S = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 6.0D);
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
 	public SpiceRackBlock() {
@@ -29,9 +31,13 @@ public class SpiceRackBlock extends Block {
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
 		Direction d = pState.getValue(FACING);
 
-		if (d == Direction.EAST || d == Direction.WEST)
-			return SHAPE;
-		return SHAPE2;
+		if (d == Direction.EAST)
+			return SHAPE_E;
+		if (d == Direction.WEST)
+			return SHAPE_W;
+		if (d == Direction.SOUTH)
+			return SHAPE_S;
+		return SHAPE_N;
 	}
 
 	public boolean useShapeForLightOcclusion(BlockState pState) {

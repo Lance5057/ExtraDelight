@@ -12,9 +12,12 @@ import com.lance5057.extradelight.displays.spice.SpiceRackBlock;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -43,11 +46,15 @@ public class AestheticBlocks {
 	public static final List<RegistryObject<Block>> SPICE_RACKS = new ArrayList<RegistryObject<Block>>();
 	public static final List<RegistryObject<Block>> SPICE_RACKS_FULL = new ArrayList<RegistryObject<Block>>();
 	public static final List<RegistryObject<Block>> KNIFE_BLOCKS = new ArrayList<RegistryObject<Block>>();
+	
+	public static final List<RegistryObject<Block>> WALLPAPER_BLOCKS = new ArrayList<RegistryObject<Block>>();
 
 	public static final List<RegistryObject<Item>> STEP_STOOL_ITEMS = new ArrayList<RegistryObject<Item>>();
 	public static final List<RegistryObject<Item>> SPICE_RACKS_ITEMS = new ArrayList<RegistryObject<Item>>();
 	public static final List<RegistryObject<Item>> SPICE_RACKS_FULL_ITEMS = new ArrayList<RegistryObject<Item>>();
 	public static final List<RegistryObject<Item>> KNIFE_BLOCK_ITEMS = new ArrayList<RegistryObject<Item>>();
+	
+	public static final List<RegistryObject<Item>> WALLPAPER_ITEMS = new ArrayList<RegistryObject<Item>>();
 
 	public static void registerAllWood(String name, Supplier<? extends Block> block, List<RegistryObject<Block>> blocks,
 			List<RegistryObject<Item>> items) {
@@ -60,12 +67,26 @@ public class AestheticBlocks {
 			items.add(t);
 		}
 	}
+	
+	public static void registerAllColors(String name, Supplier<? extends Block> block, List<RegistryObject<Block>> blocks,
+			List<RegistryObject<Item>> items) {
+		for (DyeColor w : DyeColor.values()) {
+			RegistryObject<Block> b = BLOCKS.register(name + "_" + w.getName(), block);
+			RegistryObject<Item> t = ITEMS.register(name + "_" + w.toString(),
+					() -> new BlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+
+			blocks.add(b);
+			items.add(t);
+		}
+	}
 
 	public static void setup() {
 		registerAllWood("step_stool", StepStoolBlock::new, STEP_STOOLS, STEP_STOOL_ITEMS);
 		registerAllWood("spice_rack", SpiceRackBlock::new, SPICE_RACKS, SPICE_RACKS_ITEMS);
 		registerAllWood("spice_rack_full", SpiceRackBlock::new, SPICE_RACKS_FULL, SPICE_RACKS_FULL_ITEMS);
 		registerAllWood("knife_block", KnifeBlock::new, KNIFE_BLOCKS, KNIFE_BLOCK_ITEMS);
+		
+		registerAllColors("wallpaper", () -> new Block(Properties.of(Material.WOOD)), WALLPAPER_BLOCKS, WALLPAPER_ITEMS);
 	}
 
 	public static void loot(BlockLoot bl) {
@@ -76,6 +97,9 @@ public class AestheticBlocks {
 		for (RegistryObject<Block> b : SPICE_RACKS_FULL)
 			bl.dropSelf(b.get());
 		for (RegistryObject<Block> b : KNIFE_BLOCKS)
+			bl.dropSelf(b.get());
+		
+		for (RegistryObject<Block> b : WALLPAPER_BLOCKS)
 			bl.dropSelf(b.get());
 	}
 
@@ -98,6 +122,10 @@ public class AestheticBlocks {
 			bsp.horizontalBlock(KNIFE_BLOCKS.get(i).get(), bsp.models()
 					.withExistingParent(WOOD.values()[i].toString() + "_knife_block", bsp.modLoc("block/knifeblock"))
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks")).renderType("cutout"));
+		}
+		
+		for (int i = 0; i < DyeColor.values().length; i++) {
+			bsp.simpleBlock(WALLPAPER_BLOCKS.get(i).get());
 		}
 	}
 
