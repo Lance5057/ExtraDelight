@@ -38,15 +38,10 @@ public class FoodDisplayBlock extends BaseEntityBlock implements SimpleWaterlogg
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final BooleanProperty ENCASED = BooleanProperty.create("encased");
 	
-	private final int NUM_SLOTS_TOP;
-	private final int NUM_SLOTS_BOTTOM;
-
-	public FoodDisplayBlock(int slots_top, int slots_bottom) {
+	public FoodDisplayBlock() {
 		super(Properties.of(Material.METAL).strength(0.5F, 6.0F).sound(SoundType.WOOD).noOcclusion());
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
 				.setValue(WATERLOGGED, false).setValue(ENCASED, false));
-		this.NUM_SLOTS_TOP = slots_top;
-		this.NUM_SLOTS_BOTTOM = slots_bottom;
 	}
 
 	@Override
@@ -73,7 +68,7 @@ public class FoodDisplayBlock extends BaseEntityBlock implements SimpleWaterlogg
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-		return ExtraDelightBlockEntities.FOOD_DISPLAY.get().create(pPos, pState).setSlots(NUM_SLOTS_TOP, NUM_SLOTS_BOTTOM);
+		return ExtraDelightBlockEntities.FOOD_DISPLAY.get().create(pPos, pState);
 	}
 
 	@Override

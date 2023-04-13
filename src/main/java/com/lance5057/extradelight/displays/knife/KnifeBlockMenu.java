@@ -1,10 +1,8 @@
-package com.lance5057.extradelight.containers;
+package com.lance5057.extradelight.displays.knife;
 
 import java.util.Objects;
 
-import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
-import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -18,15 +16,15 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class FoodDisplayMenu extends AbstractContainerMenu {
+public class KnifeBlockMenu extends AbstractContainerMenu {
 
-	public final FoodDisplayEntity tileEntity;
+	public final KnifeBlockEntity tileEntity;
 //	private final ContainerData data;
 	private final ContainerLevelAccess canInteractWithCallable;
 	protected final Level level;
 
-	public FoodDisplayMenu(final int windowId, final Inventory playerInventory, final FoodDisplayEntity tileEntity) {
-		super(ExtraDelightContainers.FOOD_DISPLAY_MENU.get(), windowId);
+	public KnifeBlockMenu(final int windowId, final Inventory playerInventory, final KnifeBlockEntity tileEntity) {
+		super(ExtraDelightContainers.KNIFE_BLOCK_MENU.get(), windowId);
 		this.tileEntity = tileEntity;
 //		this.data = OvenDataIn;
 		this.level = playerInventory.player.level;
@@ -37,18 +35,19 @@ public class FoodDisplayMenu extends AbstractContainerMenu {
 				// Ingredient Slots - 2 Rows x 3 Columns
 				int startX = 8;
 				int startY = 8;
-				int inputStartX = 62;
-				int inputStartY = 8;
+//				int inputStartX = 62;
+//				int inputStartY = 8;
 				int borderSlotSize = 18;
-				for (int row = 0; row < 3; ++row) {
-					for (int column = 0; column < 3; ++column) {
-						this.addSlot(new SlotItemHandler(h, (row * 3) + column, inputStartX + (column * borderSlotSize),
-								inputStartY + (row * borderSlotSize)));
-					}
-				}
+
+				int knifeStartX = 62;
+				int knifeStartY = 26;
+				this.addSlot(new SlotItemHandler(h, 0, knifeStartX, knifeStartY));
+				this.addSlot(new SlotItemHandler(h, 1, knifeStartX+18, knifeStartY));
+				this.addSlot(new SlotItemHandler(h, 2, knifeStartX+18*2, knifeStartY));
+				this.addSlot(new SlotItemHandler(h, 3, knifeStartX+18, knifeStartY+18));
 
 				// Main Player Inventory
-				int startPlayerInvY = startY * 4 + 36;
+				int startPlayerInvY = 8 * 4 + 36;
 				for (int row = 0; row < 3; ++row) {
 					for (int column = 0; column < 9; ++column) {
 						this.addSlot(new Slot(playerInventory, 12 + (row * 9) + column,
@@ -65,17 +64,17 @@ public class FoodDisplayMenu extends AbstractContainerMenu {
 		// this.addDataSlots(OvenDataIn);
 	}
 
-	private static FoodDisplayEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
+	private static KnifeBlockEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
 		Objects.requireNonNull(playerInventory, "playerInventory cannot be null");
 		Objects.requireNonNull(data, "data cannot be null");
 		final BlockEntity tileAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
-		if (tileAtPos instanceof FoodDisplayEntity) {
-			return (FoodDisplayEntity) tileAtPos;
+		if (tileAtPos instanceof KnifeBlockEntity) {
+			return (KnifeBlockEntity) tileAtPos;
 		}
 		throw new IllegalStateException("Tile entity is not correct! " + tileAtPos);
 	}
 
-	public FoodDisplayMenu(final int windowId, final Inventory playerInventory, final FriendlyByteBuf data) {
+	public KnifeBlockMenu(final int windowId, final Inventory playerInventory, final FriendlyByteBuf data) {
 		this(windowId, playerInventory, getTileEntity(playerInventory, data));
 	}
 
@@ -118,7 +117,12 @@ public class FoodDisplayMenu extends AbstractContainerMenu {
 
 	@Override
 	public boolean stillValid(Player pPlayer) {
-		return stillValid(canInteractWithCallable, pPlayer, ExtraDelightBlocks.FOOD_DISPLAY.get());
+		//return stillValid(canInteractWithCallable, pPlayer, new KnifeBlock());
+		return canInteractWithCallable.evaluate((p_38916_, p_38917_) -> {
+			return !(p_38916_.getBlockState(p_38917_).getBlock() instanceof KnifeBlock) ? false
+					: pPlayer.distanceToSqr((double) p_38917_.getX() + 0.5D, (double) p_38917_.getY() + 0.5D,
+							(double) p_38917_.getZ() + 0.5D) <= 64.0D;
+		}, true);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.containers;
+package com.lance5057.extradelight.displays.food;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -31,7 +31,10 @@ public class FoodDisplayScreen extends AbstractContainerScreen<FoodDisplayMenu> 
 			return;
 		
 		RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
-		this.blit(pPoseStack, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight+16);
+		this.blit(pPoseStack, this.leftPos, this.topPos+60, 0, 0, 175, 89);
+		this.blit(pPoseStack, this.leftPos+54, this.topPos, 0, 191, 68, 65);
+		
+		
 	}
 
 }

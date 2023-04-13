@@ -1,7 +1,5 @@
-package com.lance5057.extradelight.containers;
+package com.lance5057.extradelight.displays.food;
 
-import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
-import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Quaternion;
 
@@ -47,7 +45,7 @@ public class FoodDisplayRenderer implements BlockEntityRenderer<FoodDisplayEntit
 			float yoff = 0;
 			float zoff = 0;
 
-			for (int i = 0; i < pBlockEntity.getBottomSlots(); i++) {
+			for (int i = 0; i < pBlockEntity.getNumSlots(); i++) {
 				xoff = (i % 3) * 0.28f;
 				if (i % 3 == 0) {
 					zoff += 0.22f;

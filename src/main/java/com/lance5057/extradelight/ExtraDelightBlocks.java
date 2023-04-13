@@ -1,6 +1,5 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.BbqRibsBlock;
 import com.lance5057.extradelight.blocks.GraterBlock;
 import com.lance5057.extradelight.blocks.HashBowlBlock;
@@ -44,7 +43,7 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<DryingRackBlock> DRYING_RACK = BLOCKS.register("drying_rack",
 			DryingRackBlock::new);
 	public static final RegistryObject<Block> FOOD_DISPLAY = BLOCKS.register("food_display",
-			() -> new FoodDisplayBlock(0, 9));
+			() -> new FoodDisplayBlock());
 	public static final RegistryObject<Block> DOUGH_SHAPING = BLOCKS.register("dough_shaping", DoughShapingBlock::new);
 	public static final RegistryObject<Block> MIXING_BOWL = BLOCKS.register("mixing_bowl", MixingBowlBlock::new);
 

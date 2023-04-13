@@ -1,17 +1,32 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,waterlogged=false": {
       "model": "extradelight:block/spruce_knife_block",
       "y": 90
     },
-    "facing=north": {
+    "facing=east,waterlogged=true": {
+      "model": "extradelight:block/spruce_knife_block",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
       "model": "extradelight:block/spruce_knife_block"
     },
-    "facing=south": {
+    "facing=north,waterlogged=true": {
+      "model": "extradelight:block/spruce_knife_block"
+    },
+    "facing=south,waterlogged=false": {
       "model": "extradelight:block/spruce_knife_block",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,waterlogged=true": {
+      "model": "extradelight:block/spruce_knife_block",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "extradelight:block/spruce_knife_block",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
       "model": "extradelight:block/spruce_knife_block",
       "y": 270
     }

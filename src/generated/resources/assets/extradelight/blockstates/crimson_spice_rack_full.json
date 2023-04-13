@@ -1,17 +1,32 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,waterlogged=false": {
       "model": "extradelight:block/crimson_spice_rack_full",
       "y": 90
     },
-    "facing=north": {
+    "facing=east,waterlogged=true": {
+      "model": "extradelight:block/crimson_spice_rack_full",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
       "model": "extradelight:block/crimson_spice_rack_full"
     },
-    "facing=south": {
+    "facing=north,waterlogged=true": {
+      "model": "extradelight:block/crimson_spice_rack_full"
+    },
+    "facing=south,waterlogged=false": {
       "model": "extradelight:block/crimson_spice_rack_full",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,waterlogged=true": {
+      "model": "extradelight:block/crimson_spice_rack_full",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "extradelight:block/crimson_spice_rack_full",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
       "model": "extradelight:block/crimson_spice_rack_full",
       "y": 270
     }

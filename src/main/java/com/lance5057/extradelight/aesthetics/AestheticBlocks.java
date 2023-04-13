@@ -55,6 +55,19 @@ public class AestheticBlocks {
 	public static final List<RegistryObject<Item>> KNIFE_BLOCK_ITEMS = new ArrayList<RegistryObject<Item>>();
 	
 	public static final List<RegistryObject<Item>> WALLPAPER_ITEMS = new ArrayList<RegistryObject<Item>>();
+	
+	public static Block[] getRegistryListAsBlocks(List<RegistryObject<Block>> blocks)
+	{
+		List<Block> l = new ArrayList<Block>();
+		
+		for(RegistryObject<Block> b : blocks)
+		{
+			l.add(b.get());
+		}
+		Block[] a = l.toArray(Block[]::new);
+		
+		return a;
+	}
 
 	public static void registerAllWood(String name, Supplier<? extends Block> block, List<RegistryObject<Block>> blocks,
 			List<RegistryObject<Item>> items) {

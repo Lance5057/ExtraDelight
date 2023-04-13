@@ -1,7 +1,9 @@
-package com.lance5057.extradelight.displays.food;
+package com.lance5057.extradelight.displays.spice;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
@@ -24,16 +26,17 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
+import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
-public class FoodDisplayEntity extends BlockEntity implements MenuProvider {
+public class SpiceRackEntity extends BlockEntity implements MenuProvider {
 
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
-	private int NUM_SLOTS = 9;
+	private int NUM_SLOTS = 4;
 
-	public FoodDisplayEntity(BlockPos pPos, BlockState pBlockState) {
+	public SpiceRackEntity(BlockPos pPos, BlockState pBlockState) {
 
-		super(ExtraDelightBlockEntities.FOOD_DISPLAY.get(), pPos, pBlockState);
+		super(ExtraDelightBlockEntities.KNIFE_BLOCK.get(), pPos, pBlockState);
 
 	}
 
@@ -57,7 +60,15 @@ public class FoodDisplayEntity extends BlockEntity implements MenuProvider {
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				return 1;
 			}
+			
+			@Override
+		    public boolean isItemValid(int slot, @NotNull ItemStack stack)
+		    {
+		        return stack.is(ModTags.KNIVES);
+		    }
 		};
+		
+		
 	}
 
 	@Override
@@ -119,7 +130,7 @@ public class FoodDisplayEntity extends BlockEntity implements MenuProvider {
 
 	@Override
 	public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-		return new FoodDisplayMenu(pContainerId, pPlayerInventory, this);
+		return new SpiceRackMenu(pContainerId, pPlayerInventory, this);
 	}
 
 	@Override
