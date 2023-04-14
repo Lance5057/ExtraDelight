@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.aesthetics.block.MoldingBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
 import com.lance5057.extradelight.displays.knife.KnifeBlock;
 import com.lance5057.extradelight.displays.spice.SpiceRackBlock;
@@ -17,6 +18,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -46,27 +48,41 @@ public class AestheticBlocks {
 	public static final List<RegistryObject<Block>> SPICE_RACKS = new ArrayList<RegistryObject<Block>>();
 	public static final List<RegistryObject<Block>> SPICE_RACKS_FULL = new ArrayList<RegistryObject<Block>>();
 	public static final List<RegistryObject<Block>> KNIFE_BLOCKS = new ArrayList<RegistryObject<Block>>();
-	
+
 	public static final List<RegistryObject<Block>> WALLPAPER_BLOCKS = new ArrayList<RegistryObject<Block>>();
+	public static final List<RegistryObject<Block>> MOLDED_WALLPAPER_BLOCKS = new ArrayList<RegistryObject<Block>>();
 
 	public static final List<RegistryObject<Item>> STEP_STOOL_ITEMS = new ArrayList<RegistryObject<Item>>();
 	public static final List<RegistryObject<Item>> SPICE_RACKS_ITEMS = new ArrayList<RegistryObject<Item>>();
 	public static final List<RegistryObject<Item>> SPICE_RACKS_FULL_ITEMS = new ArrayList<RegistryObject<Item>>();
 	public static final List<RegistryObject<Item>> KNIFE_BLOCK_ITEMS = new ArrayList<RegistryObject<Item>>();
-	
+
 	public static final List<RegistryObject<Item>> WALLPAPER_ITEMS = new ArrayList<RegistryObject<Item>>();
-	
-	public static Block[] getRegistryListAsBlocks(List<RegistryObject<Block>> blocks)
-	{
+	public static final List<RegistryObject<Item>> MOLDED_WALLPAPER_ITEMS = new ArrayList<RegistryObject<Item>>();
+
+	public static Block[] getRegistryListAsBlocks(List<RegistryObject<Block>> blocks) {
 		List<Block> l = new ArrayList<Block>();
-		
-		for(RegistryObject<Block> b : blocks)
-		{
+
+		for (RegistryObject<Block> b : blocks) {
 			l.add(b.get());
 		}
 		Block[] a = l.toArray(Block[]::new);
-		
+
 		return a;
+	}
+
+	public static void registerMoldedWallpaper(String name, Supplier<? extends Block> block,
+			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
+		for (WOOD w : WOOD.values()) {
+			for (DyeColor d : DyeColor.values()) {
+				RegistryObject<Block> b = BLOCKS.register(w.toString() + "_molded_" + d.getName() + "_" + name, block);
+				RegistryObject<Item> t = ITEMS.register(w.toString() + "_molded_" + d.getName() + "_" + name,
+						() -> new BlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+
+				blocks.add(b);
+				items.add(t);
+			}
+		}
 	}
 
 	public static void registerAllWood(String name, Supplier<? extends Block> block, List<RegistryObject<Block>> blocks,
@@ -80,9 +96,9 @@ public class AestheticBlocks {
 			items.add(t);
 		}
 	}
-	
-	public static void registerAllColors(String name, Supplier<? extends Block> block, List<RegistryObject<Block>> blocks,
-			List<RegistryObject<Item>> items) {
+
+	public static void registerAllColors(String name, Supplier<? extends Block> block,
+			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
 		for (DyeColor w : DyeColor.values()) {
 			RegistryObject<Block> b = BLOCKS.register(name + "_" + w.getName(), block);
 			RegistryObject<Item> t = ITEMS.register(name + "_" + w.toString(),
@@ -98,8 +114,11 @@ public class AestheticBlocks {
 		registerAllWood("spice_rack", SpiceRackBlock::new, SPICE_RACKS, SPICE_RACKS_ITEMS);
 		registerAllWood("spice_rack_full", SpiceRackBlock::new, SPICE_RACKS_FULL, SPICE_RACKS_FULL_ITEMS);
 		registerAllWood("knife_block", KnifeBlock::new, KNIFE_BLOCKS, KNIFE_BLOCK_ITEMS);
-		
-		registerAllColors("wallpaper", () -> new Block(Properties.of(Material.WOOD)), WALLPAPER_BLOCKS, WALLPAPER_ITEMS);
+
+		registerAllColors("wallpaper", () -> new Block(Properties.of(Material.WOOD)), WALLPAPER_BLOCKS,
+				WALLPAPER_ITEMS);
+		registerMoldedWallpaper("wallpaper", () -> new MoldingBlock(Properties.of(Material.WOOD)),
+				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
 	}
 
 	public static void loot(BlockLoot bl) {
@@ -111,8 +130,10 @@ public class AestheticBlocks {
 			bl.dropSelf(b.get());
 		for (RegistryObject<Block> b : KNIFE_BLOCKS)
 			bl.dropSelf(b.get());
-		
+
 		for (RegistryObject<Block> b : WALLPAPER_BLOCKS)
+			bl.dropSelf(b.get());
+		for (RegistryObject<Block> b : MOLDED_WALLPAPER_BLOCKS)
 			bl.dropSelf(b.get());
 	}
 
@@ -128,17 +149,43 @@ public class AestheticBlocks {
 					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate")).renderType("cutout"));
 
 			bsp.horizontalBlock(SPICE_RACKS_FULL.get(i).get(), bsp.models()
-					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack_full", bsp.modLoc("block/spicerack_filled"))
+					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack_full",
+							bsp.modLoc("block/spicerack_filled"))
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate")).renderType("cutout"));
 
 			bsp.horizontalBlock(KNIFE_BLOCKS.get(i).get(), bsp.models()
 					.withExistingParent(WOOD.values()[i].toString() + "_knife_block", bsp.modLoc("block/knifeblock"))
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks")).renderType("cutout"));
+
 		}
-		
+
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			bsp.simpleBlock(WALLPAPER_BLOCKS.get(i).get());
+		}
+
+		for (int i = 0; i < WOOD.values().length; i++) {
+			for (int c = 0; c < DyeColor.values().length; c++) {
+				int o = (i * DyeColor.values().length) + c;
+				Block b = MOLDED_WALLPAPER_BLOCKS.get(o).get();
+				
+				//ExtraDelight.logger.error(b.getName().getString() + "_" + o);
+				
+				bsp.getVariantBuilder(b).partialState().with(MoldingBlock.HALF, Half.TOP).modelForState()
+						.modelFile(bsp.models()
+								.withExistingParent(b.getName().getString() + "_top", bsp.modLoc("block/molding_top"))
+								.texture("0", bsp.modLoc("block/wallpaper_" + DyeColor.values()[c]))
+								.texture("1", bsp.mcLoc("block/" + WOOD.values()[i] + "_planks")))
+						.addModel().partialState().with(MoldingBlock.HALF, Half.BOTTOM).modelForState()
+						.modelFile(bsp.models()
+								.withExistingParent(b.getName().getString() + "_bottom",
+										bsp.modLoc("block/molding_bottom"))
+								.texture("0", bsp.modLoc("block/wallpaper_" + DyeColor.values()[c]))
+								.texture("1", bsp.mcLoc("block/" + WOOD.values()[i] + "_planks")))
+						.addModel();
+				
+				
+			}
 		}
 	}
 

@@ -19,6 +19,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
@@ -36,7 +37,7 @@ public class SpiceRackEntity extends BlockEntity implements MenuProvider {
 
 	public SpiceRackEntity(BlockPos pPos, BlockState pBlockState) {
 
-		super(ExtraDelightBlockEntities.KNIFE_BLOCK.get(), pPos, pBlockState);
+		super(ExtraDelightBlockEntities.SPICE_RACK.get(), pPos, pBlockState);
 
 	}
 
@@ -60,15 +61,9 @@ public class SpiceRackEntity extends BlockEntity implements MenuProvider {
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				return 1;
 			}
-			
-			@Override
-		    public boolean isItemValid(int slot, @NotNull ItemStack stack)
-		    {
-		        return stack.is(ModTags.KNIVES);
-		    }
+
 		};
-		
-		
+
 	}
 
 	@Override

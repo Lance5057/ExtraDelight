@@ -32,7 +32,7 @@ public class SpiceRackScreen extends AbstractContainerScreen<SpiceRackMenu> {
 		
 		RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
 		this.blit(pPoseStack, this.leftPos, this.topPos+60, 0, 0, 175, 89);
-		this.blit(pPoseStack, this.leftPos+54, this.topPos+18, 68, 209, 68, 47);
+		this.blit(pPoseStack, this.leftPos+45, this.topPos+36, 136, 227, 86, 29);
 		
 		
 	}

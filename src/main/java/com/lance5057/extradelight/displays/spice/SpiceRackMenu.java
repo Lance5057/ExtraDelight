@@ -24,7 +24,7 @@ public class SpiceRackMenu extends AbstractContainerMenu {
 	protected final Level level;
 
 	public SpiceRackMenu(final int windowId, final Inventory playerInventory, final SpiceRackEntity tileEntity) {
-		super(ExtraDelightContainers.KNIFE_BLOCK_MENU.get(), windowId);
+		super(ExtraDelightContainers.SPICE_RACK_MENU.get(), windowId);
 		this.tileEntity = tileEntity;
 //		this.data = OvenDataIn;
 		this.level = playerInventory.player.level;
@@ -39,12 +39,12 @@ public class SpiceRackMenu extends AbstractContainerMenu {
 //				int inputStartY = 8;
 				int borderSlotSize = 18;
 
-				int knifeStartX = 62;
-				int knifeStartY = 26;
+				int knifeStartX = 53;
+				int knifeStartY = 44;
 				this.addSlot(new SlotItemHandler(h, 0, knifeStartX, knifeStartY));
 				this.addSlot(new SlotItemHandler(h, 1, knifeStartX+18, knifeStartY));
 				this.addSlot(new SlotItemHandler(h, 2, knifeStartX+18*2, knifeStartY));
-				this.addSlot(new SlotItemHandler(h, 3, knifeStartX+18, knifeStartY+18));
+				this.addSlot(new SlotItemHandler(h, 3, knifeStartX+18*3, knifeStartY));
 
 				// Main Player Inventory
 				int startPlayerInvY = 8 * 4 + 36;

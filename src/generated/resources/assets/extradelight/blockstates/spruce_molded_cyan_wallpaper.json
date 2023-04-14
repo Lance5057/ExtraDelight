@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "extradelight:block/block.extradelight.spruce_molded_cyan_wallpaper_bottom"
+    },
+    "half=top": {
+      "model": "extradelight:block/block.extradelight.spruce_molded_cyan_wallpaper_top"
+    }
+  }
+}

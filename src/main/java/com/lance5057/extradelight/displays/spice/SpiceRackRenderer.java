@@ -13,6 +13,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -41,13 +42,13 @@ public class SpiceRackRenderer implements BlockEntityRenderer<SpiceRackEntity> {
 			Direction dir = pBlockEntity.getBlockState().getValue(SpiceRackBlock.FACING);
 
 			renderItem(0, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-					0.33f, 0.65f, 0.65f, -90, -90, 90);
+					0.2f, 0.55f, 0.15f, 0, 0, 0);
 			renderItem(1, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-					0.5f, 0.65f, 0.65f, -90, -90, 90);
+					0.4f, 0.55f, 0.125f, 0, 0, 0);
 			renderItem(2, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-					0.67f, 0.65f, 0.65f, -90, -90, 90);
+					0.6f, 0.55f, 0.15f, 0, 0, 0);
 			renderItem(3, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-					0.33f, 0.33f, 0.85f, 45, 0, -135);
+					0.8f, 0.55f, 0.125f, 0, 0, 0);
 		});
 	}
 
@@ -60,10 +61,11 @@ public class SpiceRackRenderer implements BlockEntityRenderer<SpiceRackEntity> {
 		if (!item.isEmpty()) {
 			BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 			pPoseStack.pushPose();
+			float uniscale = 0.75f;
 			pPoseStack.translate(x, y, z);
 
 			pPoseStack.mulPose(new Quaternion(rx, ry, rz, true));
-			float uniscale = 1f;
+
 			pPoseStack.scale(uniscale, uniscale, uniscale);
 			itemRenderer.render(item, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
 					pPackedLight, pPackedOverlay, bakedmodel);
