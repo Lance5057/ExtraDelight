@@ -452,6 +452,8 @@ public class ExtraDelightItems {
 			.food(Foods.BAKED_POTATO).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> POT_ROAST = ITEMS.register("potroast", () -> new Item(new Item.Properties()
 			.food(FoodValues.BEEF_STEW).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> MEAT_LOAF = ITEMS.register("meatloaf", () -> new Item(new Item.Properties()
+			.food(EDFoods.addFoods(EDFoods.KETCHUP, FoodValues.BEEF_PATTY).build()).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> BBQ_RIBS = ITEMS.register("bbq_ribs", () -> new Item(
 			new Item.Properties().food(EDFoods.RIBS).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));

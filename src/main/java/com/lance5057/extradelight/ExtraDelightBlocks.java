@@ -116,6 +116,10 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<PotRoastBlock> POT_ROAST_FEAST = BLOCKS.register("potroast_block",
 			() -> new PotRoastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
 					ExtraDelightItems.POT_ROAST, true));
+	
+	public static final RegistryObject<PotRoastBlock> MEATLOAF_FEAST = BLOCKS.register("meatloaf_block",
+			() -> new PotRoastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
+					ExtraDelightItems.MEAT_LOAF, true));
 
 	public static final RegistryObject<BbqRibsBlock> BBQ_RIBS_FEAST = BLOCKS.register("bbq_ribs_block",
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
