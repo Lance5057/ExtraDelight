@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.displays.cabinet.HalfCabinetEntity;
 import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 import com.lance5057.extradelight.displays.spice.SpiceRackEntity;
@@ -24,15 +25,24 @@ public class ExtraDelightBlockEntities {
 	public static final RegistryObject<BlockEntityType<FoodDisplayEntity>> FOOD_DISPLAY = TILES.register("food_display",
 			() -> BlockEntityType.Builder.of(FoodDisplayEntity::new, ExtraDelightBlocks.FOOD_DISPLAY.get())
 					.build(null));
-	
+
 	public static final RegistryObject<BlockEntityType<KnifeBlockEntity>> KNIFE_BLOCK = TILES.register("knife_block",
-			() -> BlockEntityType.Builder.of(KnifeBlockEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.KNIFE_BLOCKS))
+			() -> BlockEntityType.Builder
+					.of(KnifeBlockEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.KNIFE_BLOCKS))
 					.build(null));
 	public static final RegistryObject<BlockEntityType<SpiceRackEntity>> SPICE_RACK = TILES.register("spice_rack",
-			() -> BlockEntityType.Builder.of(SpiceRackEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS))
+			() -> BlockEntityType.Builder
+					.of(SpiceRackEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS))
 					.build(null));
-	public static final RegistryObject<BlockEntityType<SpiceRackEntity>> SPICE_RACK_FULL = TILES.register("spice_rack_full",
-			() -> BlockEntityType.Builder.of(SpiceRackEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS_FULL))
+	public static final RegistryObject<BlockEntityType<SpiceRackEntity>> SPICE_RACK_FULL = TILES.register(
+			"spice_rack_full",
+			() -> BlockEntityType.Builder
+					.of(SpiceRackEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS_FULL))
+					.build(null));
+
+	public static final RegistryObject<BlockEntityType<HalfCabinetEntity>> HALF_CABINET = TILES.register("half_cabinet",
+			() -> BlockEntityType.Builder
+					.of(HalfCabinetEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.CABINETS))
 					.build(null));
 
 	public static final RegistryObject<BlockEntityType<MortarBlockEntity>> MORTAR = TILES.register("mortar",
@@ -46,7 +56,7 @@ public class ExtraDelightBlockEntities {
 	public static final RegistryObject<BlockEntityType<MixingBowlBlockEntity>> MIXING_BOWL = TILES
 			.register("mixing_bowl", () -> BlockEntityType.Builder
 					.of(MixingBowlBlockEntity::new, ExtraDelightBlocks.MIXING_BOWL.get()).build(null));
-	
+
 	public static final RegistryObject<BlockEntityType<DryingRackBlockEntity>> DRYING_RACK = TILES
 			.register("drying_rack", () -> BlockEntityType.Builder
 					.of(DryingRackBlockEntity::new, ExtraDelightBlocks.DRYING_RACK.get()).build(null));

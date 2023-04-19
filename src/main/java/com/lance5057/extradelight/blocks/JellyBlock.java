@@ -36,13 +36,15 @@ public class JellyBlock extends FeastBlock {
 
 	@Override
 	public void fallOn(Level pLevel, BlockState pState, BlockPos pPos, Entity pEntity, float pFallDistance) {
-		if (pState.getValue(SERVINGS) == 0) {
+		if (pState.getValue(SERVINGS) != 0) {
 			if (pEntity.isSuppressingBounce()) {
 				super.fallOn(pLevel, pState, pPos, pEntity, pFallDistance);
-				if (pLevel.random.nextInt(4) == 0)
-					squish(pLevel, pPos);
+
+				this.bounceUp(pEntity);
+				squish(pLevel, pPos);
 			} else {
 				pEntity.causeFallDamage(pFallDistance, 0.0F, DamageSource.FALL);
+				this.bounceUp(pEntity);
 				squish(pLevel, pPos);
 			}
 
@@ -60,7 +62,7 @@ public class JellyBlock extends FeastBlock {
 		if (pEntity.isSuppressingBounce()) {
 			super.updateEntityAfterFallOn(pLevel, pEntity);
 		} else {
-			this.bounceUp(pEntity);
+
 		}
 
 	}

@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/molding_bottom",
+  "textures": {
+    "0": "extradelight:block/wallpaper_green",
+    "1": "minecraft:block/dark_oak_planks"
+  }
+}
