@@ -452,8 +452,16 @@ public class ExtraDelightItems {
 			.food(Foods.BAKED_POTATO).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> POT_ROAST = ITEMS.register("potroast", () -> new Item(new Item.Properties()
 			.food(FoodValues.BEEF_STEW).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> MEAT_LOAF = ITEMS.register("meatloaf", () -> new Item(new Item.Properties()
-			.food(EDFoods.addFoods(EDFoods.KETCHUP, FoodValues.BEEF_PATTY).build()).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<BlockItem> MEAT_LOAF_FEAST = ITEMS.register("meatloaf_feast",
+			() -> new BlockItem(ExtraDelightBlocks.MEATLOAF_FEAST.get(),
+					new Item.Properties().stacksTo(1).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> MEAT_LOAF = ITEMS.register("meatloaf",
+			() -> new Item(new Item.Properties().food(EDFoods.addFoods(EDFoods.KETCHUP, FoodValues.BEEF_PATTY).build())
+					.craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> MEAT_LOAF_SANDWICH = ITEMS.register("meatloaf_sandwich",
+			() -> new Item(new Item.Properties().food(FoodValues.HAMBURGER).craftRemainder(Items.BOWL).stacksTo(4)
+					.tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> BBQ_RIBS = ITEMS.register("bbq_ribs", () -> new Item(
 			new Item.Properties().food(EDFoods.RIBS).craftRemainder(Items.BOWL).stacksTo(4).tab(EXTRA_DELIGHT_TAB)));

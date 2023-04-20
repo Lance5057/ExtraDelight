@@ -1,4 +1,4 @@
-// 1.19.2	2023-03-28T18:06:33.8206945	Recipes
+// 1.19.2	2023-04-20T12:28:15.6641395	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 c3162fb14d185b250f0901b664e508861cd606fe data/extradelight/advancements/recipes/extradelight.items/agar_sheets.json
@@ -13,6 +13,8 @@ b022d227897c35310fdbebebe9668b349a127673 data/extradelight/advancements/recipes/
 604498520bf4a5e200bc81f42c1e532c3ef2fb9b data/extradelight/advancements/recipes/extradelight.items/lasagna_noodles.json
 d5203a4549fb1c90e539bee345c53e531637345e data/extradelight/advancements/recipes/extradelight.items/loaf_pan.json
 2a934753dc9c037093a94f064dcc2393982d1e35 data/extradelight/advancements/recipes/extradelight.items/macaroni.json
+3783ed8b8d10453a925c7d23be93fac4eb93cb75 data/extradelight/advancements/recipes/extradelight.items/meatloaf_bowl.json
+d5920bbca4d731a1ae2801b35e2c95678f709ec1 data/extradelight/advancements/recipes/extradelight.items/meatloaf_sandwich.json
 c536e444f8e2d9e7c535d5f47aa8966eafa7641d data/extradelight/advancements/recipes/extradelight.items/mixing_bowl.json
 fafd6e183966f65b86f2d1379f7c4d657798cfdb data/extradelight/advancements/recipes/extradelight.items/mortar/agar_agar.json
 32fd7bfd03a147923f9bd483f3cc02f31d836ee6 data/extradelight/advancements/recipes/extradelight.items/mortar/cooking_oil.json
@@ -130,6 +132,8 @@ e6b53fe27b9d31ba7e47682385969a732d333a70 data/extradelight/recipes/loaf_pan.json
 91dabcb91eabce7b1b7b534a8b6a1e74648e6f22 data/extradelight/recipes/magenta_jelly_feast.json
 285a82d700d1cbb321118b69887a2cb75c1bfca0 data/extradelight/recipes/mashed_potato_gravy_feast.json
 d74bbdac8e4d75e2c24418809f4fe17e5382ef9d data/extradelight/recipes/mayo.json
+17c1f451ae2627a7821a7df1cbe9e84d6b5cfd54 data/extradelight/recipes/meatloaf_bowl.json
+6fcf8e2de8cfd11798053a15e307d4c0e8be49e8 data/extradelight/recipes/meatloaf_sandwich.json
 7a40ea4b317782a7059eae19c494d88c6d657062 data/extradelight/recipes/meat_pie.json
 a97154c5853520dd5dd0e40d6c05afd9a367c6eb data/extradelight/recipes/mixing_bowl.json
 eded840085983f55978019967ba8e04d5371ca03 data/extradelight/recipes/mortar/agar_agar.json

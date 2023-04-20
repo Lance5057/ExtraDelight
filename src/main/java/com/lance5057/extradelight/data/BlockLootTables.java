@@ -116,6 +116,7 @@ public class BlockLootTables extends BlockLoot {
 
 		this.dropOther(ExtraDelightBlocks.HASH_FEAST.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.POT_ROAST_FEAST.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.MEATLOAF_FEAST.get(), Items.BOWL);
 
 		this.dropOther(ExtraDelightBlocks.BBQ_RIBS_FEAST.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.PULLED_PORK_FEAST.get(), Items.BOWL);

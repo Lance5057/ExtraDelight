@@ -1,4 +1,4 @@
-// 1.19.2	2023-04-15T11:22:34.469983	LootTables
+// 1.19.2	2023-04-20T10:05:05.4981209	LootTables
 05bda07b99556daec2d260732806933073ff86c5 data/extradelight/loot_tables/blocks/acacia_cabinet.json
 7747bac4a9ea01dff06964433ec737b240944275 data/extradelight/loot_tables/blocks/acacia_knife_block.json
 09c450a44e0758dd3e30e647c970e55dd25ca5f6 data/extradelight/loot_tables/blocks/acacia_molded_black_wallpaper.json
@@ -167,6 +167,7 @@ eacebe9203615a93457a718a07438117c075b21c data/extradelight/loot_tables/blocks/ma
 b788718713b6139f76f9b781eb08ecdb3700e13e data/extradelight/loot_tables/blocks/mangrove_spice_rack_full.json
 8bcd72bdc7ac17a73292e58fe3f816401c5943ac data/extradelight/loot_tables/blocks/mangrove_step_stool.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/mashed_potato_gravy_block.json
+217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/meatloaf_block.json
 2b2a4bde1a1c86393b28fa3ff9b81ef1ddeed22d data/extradelight/loot_tables/blocks/meat_pie.json
 0d70cc35f8ad71ac1497d22f9ede864bcd088b5d data/extradelight/loot_tables/blocks/mixing_bowl.json
 d3555b928dc9697f5a3e68d2b950f6be2a639324 data/extradelight/loot_tables/blocks/mortar_amethyst.json

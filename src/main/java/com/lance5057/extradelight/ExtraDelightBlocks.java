@@ -5,6 +5,7 @@ import com.lance5057.extradelight.blocks.GraterBlock;
 import com.lance5057.extradelight.blocks.HashBowlBlock;
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.PotRoastBlock;
+import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.SalisburySteakBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
@@ -116,10 +117,10 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<PotRoastBlock> POT_ROAST_FEAST = BLOCKS.register("potroast_block",
 			() -> new PotRoastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
 					ExtraDelightItems.POT_ROAST, true));
-	
-	public static final RegistryObject<PotRoastBlock> MEATLOAF_FEAST = BLOCKS.register("meatloaf_block",
-			() -> new PotRoastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.MEAT_LOAF, true));
+
+	public static final RegistryObject<RecipeFeastBlock> MEATLOAF_FEAST = BLOCKS.register("meatloaf_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					Block.box(1.0D, 0.0D, 1.0D, 14.0D, 2.0D, 14.0D), Block.box(2.0D, 2.0D, 2.0D, 14.0D, 8.0D, 14.0D)));
 
 	public static final RegistryObject<BbqRibsBlock> BBQ_RIBS_FEAST = BLOCKS.register("bbq_ribs_block",
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),

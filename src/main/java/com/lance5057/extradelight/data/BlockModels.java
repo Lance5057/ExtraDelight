@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -201,6 +202,7 @@ public class BlockModels extends BlockStateProvider {
 
 		this.feastBlock(ExtraDelightBlocks.BBQ_RIBS_FEAST.get());
 		this.feastBlock(ExtraDelightBlocks.PULLED_PORK_FEAST.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.MEATLOAF_FEAST.get());
 
 		this.feastBlock(ExtraDelightBlocks.RACK_LAMB.get());
 		this.feastBlock(ExtraDelightBlocks.STIRFRY.get());
@@ -297,6 +299,28 @@ public class BlockModels extends BlockStateProvider {
 	}
 
 	public void feastBlock(FeastBlock block, String path) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(FeastBlock.SERVINGS);
+
+			String suffix = "_stage" + (block.getMaxServings() - servings);
+
+			if (servings == 0) {
+				suffix = block.hasLeftovers ? "_leftover" : "_stage3";
+			}
+
+			return ConfiguredModel.builder()
+					.modelFile(new ModelFile.ExistingModelFile(
+							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + path + suffix),
+							models().existingFileHelper))
+					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
+		});
+	}
+	
+	public void recipeFeastBlock(RecipeFeastBlock block) {
+		recipeFeastBlock(block, ForgeRegistries.BLOCKS.getKey(block).getPath());
+	}
+
+	public void recipeFeastBlock(RecipeFeastBlock block, String path) {
 		getVariantBuilder(block).forAllStates(state -> {
 			int servings = state.getValue(FeastBlock.SERVINGS);
 

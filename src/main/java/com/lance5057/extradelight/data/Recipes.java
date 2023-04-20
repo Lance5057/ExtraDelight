@@ -12,6 +12,7 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.data.recipebuilders.DoughShapingRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DynamicNameSimpleCookingRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
@@ -68,6 +69,21 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		cookingRecipes(consumer);
 		dryingRackRecipes(consumer);
 		doughShapeRecipes(consumer);
+		feastRecipes(consumer);
+	}
+
+	private void feastRecipes(Consumer<FinishedRecipe> consumer) {
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.MEAT_LOAF.get(),
+						ExtraDelightItems.MEAT_LOAF_FEAST.get())
+				.unlockedBy("has_meatloaf", has(ExtraDelightItems.MEAT_LOAF_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "meatloaf_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BREAD), ExtraDelightItems.MEAT_LOAF_SANDWICH.get(),
+						ExtraDelightItems.MEAT_LOAF_FEAST.get())
+				.unlockedBy("has_meatloaf", has(ExtraDelightItems.MEAT_LOAF_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "meatloaf_sandwich"));
 	}
 
 	private void doughShapeRecipes(Consumer<FinishedRecipe> consumer) {

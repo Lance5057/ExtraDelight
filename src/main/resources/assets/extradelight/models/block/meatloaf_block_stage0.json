@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "cutout",
 	"textures": {
 		"0": "farmersdelight:block/tray_bottom",
 		"1": "farmersdelight:block/tray_top",
@@ -48,8 +49,8 @@
 			}
 		},
 		{
-			"from": [8, 2, 4],
-			"to": [16, 2, 12],
+			"from": [8, 2.1, 4],
+			"to": [16, 2.1, 12],
 			"rotation": {"angle": 0, "axis": "z", "origin": [8, 2, 12]},
 			"faces": {
 				"north": {"uv": [0, 0, 0, 0], "texture": "#3"},
@@ -74,8 +75,8 @@
 			}
 		},
 		{
-			"from": [4, 2, 9],
-			"to": [12, 2, 17],
+			"from": [4, 2.1, 9],
+			"to": [12, 2.1, 17],
 			"rotation": {"angle": 0, "axis": "z", "origin": [4, 2, 17]},
 			"faces": {
 				"north": {"uv": [0, 0, 0, 0], "texture": "#3"},
@@ -87,8 +88,8 @@
 			}
 		},
 		{
-			"from": [4, 2, -1],
-			"to": [12, 2, 7],
+			"from": [4, 2.1, -1],
+			"to": [12, 2.1, 7],
 			"rotation": {"angle": 0, "axis": "z", "origin": [4, 2, 7]},
 			"faces": {
 				"north": {"uv": [0, 0, 0, 0], "texture": "#3"},
@@ -122,8 +123,8 @@
 			}
 		},
 		{
-			"from": [0, 2, 4],
-			"to": [8, 2, 12],
+			"from": [0, 2.1, 4],
+			"to": [8, 2.1, 12],
 			"rotation": {"angle": 0, "axis": "z", "origin": [0, 2, 12]},
 			"faces": {
 				"north": {"uv": [0, 0, 0, 0], "texture": "#3"},

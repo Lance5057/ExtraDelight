@@ -28,7 +28,9 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
@@ -39,9 +41,7 @@ public class RecipeFeastBlock extends Block {
 
 	public final boolean hasLeftovers;
 
-	protected static final VoxelShape[] SHAPES = new VoxelShape[] { Block.box(2.0D, 0.0D, 2.0D, 14.0D, 1.0D, 14.0D),
-			Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D), Block.box(2.0D, 0.0D, 2.0D, 14.0D, 6.0D, 14.0D),
-			Block.box(2.0D, 0.0D, 2.0D, 14.0D, 8.0D, 14.0D), Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D), };
+	protected final VoxelShape[] SHAPES;
 
 	/**
 	 * This block provides up to 4 servings of food to players who interact with it.
@@ -53,8 +53,9 @@ public class RecipeFeastBlock extends Block {
 	 * @param hasLeftovers Whether the block remains when out of servings. If false,
 	 *                     the block vanishes once it runs out.
 	 */
-	public RecipeFeastBlock(Properties properties, boolean hasLeftovers) {
+	public RecipeFeastBlock(Properties properties, boolean hasLeftovers, VoxelShape... shapes) {
 		super(properties);
+		SHAPES = shapes;
 		this.hasLeftovers = hasLeftovers;
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
 				.setValue(getServingsProperty(), getMaxServings()));
@@ -70,7 +71,8 @@ public class RecipeFeastBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		return SHAPES[state.getValue(SERVINGS)];
+		return state.getValue(SERVINGS) == 0 ? SHAPES[0]
+				: Shapes.joinUnoptimized(SHAPES[0], SHAPES[1], BooleanOp.OR);
 	}
 
 	public Optional<FeastRecipe> matchRecipe(Level level, ItemStack... itemstack) {
@@ -96,35 +98,40 @@ public class RecipeFeastBlock extends Block {
 
 	protected InteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player,
 			InteractionHand hand) {
-//		int servings = state.getValue(getServingsProperty());
-//
-//		if (servings == 0) {
-//			level.playSound(null, pos, SoundEvents.WOOD_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
-//			level.destroyBlock(pos, true);
-//			return InteractionResult.SUCCESS;
-//		}
-//
-//		ItemStack heldStack = player.getItemInHand(hand);
-//
-//		if (servings > 0) {
-//			if (!serving.hasCraftingRemainingItem() || heldStack.sameItem(serving.getCraftingRemainingItem())) {
-//				level.setBlock(pos, state.setValue(getServingsProperty(), servings - 1), 3);
-//				if (!player.getAbilities().instabuild && serving.hasCraftingRemainingItem()) {
-//					heldStack.shrink(1);
-//				}
-//				if (!player.getInventory().add(serving)) {
-//					player.drop(serving, false);
-//				}
-//				if (level.getBlockState(pos).getValue(getServingsProperty()) == 0 && !this.hasLeftovers) {
-//					level.removeBlock(pos, false);
-//				}
-//				level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
-//				return InteractionResult.SUCCESS;
-//			} else {
-//				player.displayClientMessage(TextUtils.getTranslation("block.feast.use_container",
-//						serving.getCraftingRemainingItem().getHoverName()), true);
-//			}
-//		}
+
+		int servings = state.getValue(getServingsProperty());
+
+		if (servings == 0) {
+			level.playSound(null, pos, SoundEvents.WOOD_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+			level.destroyBlock(pos, true);
+			return InteractionResult.SUCCESS;
+		}
+
+		ItemStack heldStack = player.getItemInHand(hand);
+		Optional<FeastRecipe> r = level.getRecipeManager().getRecipeFor(ExtraDelightRecipes.FEAST.get(),
+				new SimpleContainer(heldStack, new ItemStack(this.asItem())), level);
+
+		if (r.isPresent()) {
+			if (servings > 0) {
+				ItemStack result = r.get().getResultItem().copy();
+				level.setBlock(pos, state.setValue(getServingsProperty(), servings - 1), 3);
+				if (!player.getAbilities().instabuild) {
+					if(heldStack.isDamageableItem())
+						heldStack.hurtAndBreak(1, player, null);
+					else
+						heldStack.shrink(1);
+				}
+				if (!player.getInventory().add(result)) {
+					player.drop(result, false);
+				}
+				if (level.getBlockState(pos).getValue(getServingsProperty()) == 0 && !this.hasLeftovers) {
+					level.removeBlock(pos, false);
+				}
+				level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
+				return InteractionResult.SUCCESS;
+			}
+		}
+
 		return InteractionResult.PASS;
 	}
 

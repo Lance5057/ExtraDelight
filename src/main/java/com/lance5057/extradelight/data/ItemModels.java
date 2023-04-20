@@ -304,6 +304,37 @@ public class ItemModels extends ItemModelProvider {
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/stirfry_block_stage0"));
 		forItem(ExtraDelightItems.STIRFRY, "stirfry");
 
+		forBlockItem(ExtraDelightItems.MEAT_LOAF_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/meatloaf_block_stage0"));
+
+		getBuilder(ExtraDelightItems.BEEF_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
+				.texture("1", modLoc("block/beef_stew"));
+		getBuilder(ExtraDelightItems.CHICKEN_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
+				.texture("1", modLoc("block/chicken_stew"));
+		getBuilder(ExtraDelightItems.FISH_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
+				.texture("1", modLoc("block/fish_stew"));
+		getBuilder(ExtraDelightItems.LAMB_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
+				.texture("1", modLoc("block/lamb_stew"));
+		getBuilder(ExtraDelightItems.PORK_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
+				.texture("1", modLoc("block/pork_stew"));
+		getBuilder(ExtraDelightItems.RABBIT_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
+				.texture("1", modLoc("block/rabbit_stew"));
+		getBuilder(ExtraDelightItems.CURRY_FEAST.getId().getPath())
+		.parent(new ModelFile.UncheckedModelFile(
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/curry_block_stage0")));
+
 		this.jellyBlock(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM, "white");
 		this.jellyBlock(ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM, "orange");
 		this.jellyBlock(ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM, "magenta");
@@ -357,6 +388,9 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.RABBIT_STEW, "rabbit_stew");
 		forItem(ExtraDelightItems.CURRY, "curry");
 		forItem(ExtraDelightItems.CHICKEN_STEW, "chicken_stew");
+
+		forItem(ExtraDelightItems.MEAT_LOAF, "meatloaf");
+		forItem(ExtraDelightItems.MEAT_LOAF_SANDWICH, "meatloaf_sandwich");
 
 		forBlockItem(ExtraDelightItems.MACARONI_CHEESE_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/macaroni_cheese_block_stage0"));
