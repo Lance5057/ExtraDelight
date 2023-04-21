@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+import org.apache.commons.lang3.text.WordUtils;
+
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.aesthetics.block.MoldingBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
@@ -25,6 +27,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -233,6 +236,35 @@ public class AestheticBlocks {
 						.texture("1", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 						.texture("0", tmp.modLoc("block/wallpaper_" + DyeColor.values()[c].toString()));
 			}
+		}
+	}
+	
+	public static void EngLoc(LanguageProvider lp)
+	{
+		for (int i = 0; i < WOOD.values().length; i++) {
+			String w = WOOD.values()[i].toString();
+			w = WordUtils.capitalize(w.replace('_', ' '));
+			
+			lp.add(STEP_STOOLS.get(i).get(), w + " Step Stool");
+			lp.add(SPICE_RACKS.get(i).get(), w + " Spice Rack");
+			lp.add(SPICE_RACKS_FULL.get(i).get(), w + " Spice Rack");
+			lp.add(KNIFE_BLOCKS.get(i).get(), w + " Knife Block");
+			lp.add(CABINETS.get(i).get(), w + " Cabinet");
+			
+			for (int j = 0; j < DyeColor.values().length; j++) {
+				int o = (i * DyeColor.values().length) + j;
+				String d = DyeColor.values()[i].toString();
+				d = WordUtils.capitalize(d.replace('_', ' '));
+				
+				lp.add(MOLDED_WALLPAPER_ITEMS.get(o).get(), w + " Molded " + d + " Wallpaper");
+			}
+		}
+		
+		for (int i = 0; i < DyeColor.values().length; i++) {
+			String w = DyeColor.values()[i].toString();
+			w = WordUtils.capitalize(w.replace('_', ' '));
+			
+			lp.add(WALLPAPER_ITEMS.get(i).get(), w + " Wallpaper");
 		}
 	}
 }

@@ -26,15 +26,17 @@ public class SimpleDynamicNameFood extends Item implements IDynamicNamedFood {
 	@Override
 	public MutableComponent getDynamicName(ItemStack stack) {
 		StringBuilder sb = new StringBuilder();
-		String[] items = IDynamicNamedFood.readNBTIngredientList(stack);
+		String[] items = IDynamicNamedFood.readNBTIngredientList(stack, ignore);
 		List<String> trans = new ArrayList<String>();
 
 		if (items.length <= 0)
 			return Component.translatable(this.getDescriptionId());
 
 		for (int i = 0; i < items.length; i++) {
-			if (items[i] != ignore.getDescriptionId())
-				trans.add(Component.translatable(items[i]).getString());
+			if (items[i] != null) {
+				if (items[i] != ignore.getDescriptionId())
+					trans.add(Component.translatable(items[i]).getString());
+			}
 		}
 
 		trans.add(Component.translatable(this.getDescriptionId()).getString());

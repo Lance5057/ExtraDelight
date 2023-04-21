@@ -23,7 +23,7 @@ public interface IDynamicNamedFood {
 		tag.put("ingredients", list);
 	}
 
-	public static String[] readNBTIngredientList(ItemStack stack) {
+	public static String[] readNBTIngredientList(ItemStack stack, Item ignore) {
 		List<String> strings = new ArrayList<String>();
 
 		CompoundTag tag = stack.getTag();
@@ -36,8 +36,14 @@ public interface IDynamicNamedFood {
 					count = list.getInt("length");
 
 					for (int i = 0; i < count; i++) {
-						if (list.contains("item" + i))
-							strings.add(list.getString("item" + i));
+						if (list.contains("item" + i)) {
+							if (list.getString("item" + i) != ignore.getDescriptionId())
+								strings.add(list.getString("item" + i));
+							else
+							{
+								list.remove("item" + i);
+							}
+						}
 					}
 				}
 			}
