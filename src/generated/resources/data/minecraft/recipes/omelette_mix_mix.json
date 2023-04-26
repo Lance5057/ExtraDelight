@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extradelight:egg_mix"
+    },
+    {
+      "tag": "forge:vegetables"
+    },
+    {
+      "tag": "forge:meat"
+    }
+  ],
+  "result": {
+    "item": "extradelight:omelette_mix"
+  }
+}

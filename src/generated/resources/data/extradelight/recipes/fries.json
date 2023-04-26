@@ -4,7 +4,7 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "item": "minecraft:potato"
+      "item": "extradelight:potato_sticks"
     },
     {
       "tag": "extradelight:frying_oil"

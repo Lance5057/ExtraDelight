@@ -1,9 +1,9 @@
 {
-  "type": "minecraft:smelting",
+  "type": "extradelight:dynamic_smelt",
   "cookingtime": 800,
   "experience": 1.0,
   "ingredient": {
-    "item": "extradelight:egg_mix"
+    "item": "extradelight:omelette_mix"
   },
-  "result": "extradelight:scrambled_eggs"
+  "result": "extradelight:omelette"
 }

@@ -1,0 +1,20 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "forge:bread"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:egg_in_the_basket"
+  }
+}

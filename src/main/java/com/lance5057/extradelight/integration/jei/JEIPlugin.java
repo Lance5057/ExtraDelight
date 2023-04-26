@@ -100,14 +100,14 @@ public class JEIPlugin implements IModPlugin {
 	@Override
 	public void onRuntimeAvailable(IJeiRuntime jeiRuntime) {
 		// jeiRuntime.getIngredientManager().removeIngredientsAtRuntime(null, null);
-		IIngredientManager im = jeiRuntime.getIngredientManager();
-		RecipeManager rm = Minecraft.getInstance().level.getRecipeManager();
-
-//		rm.get
-		ExtraDelightItems.ITEMS.getEntries().forEach(i -> {
-			if (checkRecipe(i.get(), rm))
-				im.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, Collections.singleton(new ItemStack(i.get())));
-		});
+//		IIngredientManager im = jeiRuntime.getIngredientManager();
+//		RecipeManager rm = Minecraft.getInstance().level.getRecipeManager();
+//
+////		rm.get
+//		ExtraDelightItems.ITEMS.getEntries().forEach(i -> {
+//			if (checkRecipe(i.get(), rm))
+//				im.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, Collections.singleton(new ItemStack(i.get())));
+//		});
 	}
 
 	private boolean checkRecipe(@NotNull Item item, RecipeManager rm) {

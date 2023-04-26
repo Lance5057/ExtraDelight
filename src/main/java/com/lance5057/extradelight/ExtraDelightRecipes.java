@@ -1,5 +1,7 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.recipe.DynamicNameCampfireRecipe;
+import com.lance5057.extradelight.recipe.DynamicNameCookingRecipe;
 import com.lance5057.extradelight.recipe.DynamicNameSmeltingRecipe;
 import com.lance5057.extradelight.recipe.FeastRecipe;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
@@ -38,7 +40,11 @@ public class ExtraDelightRecipes {
 	// Dynamic Names
 	public static final RegistryObject<RecipeType<DynamicNameSmeltingRecipe>> DYNAMIC_SMELT = RECIPE_TYPES
 			.register("dynamic_smelt", () -> registerRecipeType("dynamic_smelt"));
-
+	public static final RegistryObject<RecipeType<DynamicNameCookingRecipe>> DYNAMIC_SMOKE = RECIPE_TYPES
+			.register("dynamic_smoke", () -> registerRecipeType("dynamic_smoke"));
+	public static final RegistryObject<RecipeType<DynamicNameCampfireRecipe>> DYNAMIC_CAMPFIRE = RECIPE_TYPES
+			.register("dynamic_campfire", () -> registerRecipeType("dynamic_campfire"));
+	
 	public static <T extends Recipe<?>> RecipeType<T> registerRecipeType(final String identifier) {
 		return new RecipeType<>() {
 			public String toString() {
@@ -62,6 +68,10 @@ public class ExtraDelightRecipes {
 
 	public static final RegistryObject<DynamicNameSmeltingRecipe.Serializer> DYNAMIC_SMELT_SERIALIZER = RECIPE_SERIALIZERS
 			.register("dynamic_smelt", DynamicNameSmeltingRecipe.Serializer::new);
+	public static final RegistryObject<DynamicNameCookingRecipe.Serializer> DYNAMIC_SMOKE_SERIALIZER = RECIPE_SERIALIZERS
+			.register("dynamic_smoke", DynamicNameCookingRecipe.Serializer::new);
+	public static final RegistryObject<DynamicNameCampfireRecipe.Serializer> DYNAMIC_CAMPFIRE_SERIALIZER = RECIPE_SERIALIZERS
+			.register("dynamic_campfire", DynamicNameCampfireRecipe.Serializer::new);
 
 	public static final RegistryObject<DryingRackSerializer> DRYING_RACK_SERIALIZER = RECIPE_SERIALIZERS
 			.register("drying_rack", DryingRackSerializer::new);

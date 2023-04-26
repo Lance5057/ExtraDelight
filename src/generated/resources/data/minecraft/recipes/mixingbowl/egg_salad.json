@@ -1,0 +1,21 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "extradelight:boiled_egg"
+    },
+    {
+      "item": "extradelight:boiled_egg"
+    },
+    {
+      "tag": "forge:mayonnaise"
+    }
+  ],
+  "result": {
+    "item": "extradelight:egg_salad"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

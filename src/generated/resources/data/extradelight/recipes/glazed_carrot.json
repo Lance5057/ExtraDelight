@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:glazed_carrot"
+  }
+}

@@ -13,7 +13,10 @@
       "tag": "forge:vegetables/onion"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:vinegar"
     }
   ],
   "result": {

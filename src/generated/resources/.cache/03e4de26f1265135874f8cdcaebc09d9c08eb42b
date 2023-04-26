@@ -1,14 +1,26 @@
-// 1.19.2	2023-03-28T18:06:33.8246982	Tags for minecraft:item
+// 1.19.2	2023-04-26T13:49:11.3507661	Tags for minecraft:item
 241fbe7e67bee8a47ff80dbdccae69f91ffd0743 data/extradelight/tags/items/frying_oil.json
 1ab002d480b20f981fede42987de00f396034347 data/extradelight/tags/items/makes_stock.json
-0bdc999a7f653eecbb3c513a0baf1b963a2587ab data/forge/tags/items/bread.json
-ed9f7124259ab5c74b506edc159756998d469f90 data/forge/tags/items/bread/sliced.json
+dca695606359ef650f7a9e689200aad635381abe data/extradelight/tags/items/sweetener.json
+93067fb98f2e47f2880078b7ca96c7c8bf5ba887 data/forge/tags/items/bread/sliced.json
+d270b13f293c6940c038f56c4b90f54297ef25d3 data/forge/tags/items/cheese.json
+41e795acc544d35726d856b9001016bbe620b6be data/forge/tags/items/flour.json
 91b3de4a8233b2a0733c059713e404dae827fd58 data/forge/tags/items/fruit.json
 b33dde3cf95c3f821d49bc84b8c46f9fd65289e8 data/forge/tags/items/fruit/apple.json
 33221392eaadbbebce9b701da69e2f20fd46c490 data/forge/tags/items/fruit/glow_berry.json
 65a948972be54d0dc9ce5ee6eb59a29341fd6ec0 data/forge/tags/items/fruit/sweet_berry.json
+527d6929187d8beaa03513b37a2133eadcb379c7 data/forge/tags/items/jam.json
+d0ed3c776c4a186feb51edf78732f86010fc2e0d data/forge/tags/items/jam/apple.json
+f824ffb7d51b5f9180c4c65db9fbf79657e2e3f8 data/forge/tags/items/jam/carrot.json
+9468b69a145f5d1210c1df109c2e77e465c9f8e8 data/forge/tags/items/jam/glow_berry.json
+30d913aba7c4ef7b604b043ed469d9238642fd92 data/forge/tags/items/jam/golden_apple.json
+442e9ed3e06f57d71e7c231cffa05a3052377027 data/forge/tags/items/jam/sweet_berry.json
+5a704d1b714e86fbc2f3c4737a5c03fa0491be3b data/forge/tags/items/mayonnaise.json
+dac730db8e085a2bf6b01900c69ca446b767464b data/forge/tags/items/meat.json
+59f58ea6f8b85deda96c784c66ca9699db493df3 data/forge/tags/items/meat/cooked.json
+212df42b76dbfd28f47f99244d2ae386f6e543f8 data/forge/tags/items/meat/raw.json
 b3459e637edd1eca0b39324b66872499f21d1548 data/forge/tags/items/pestles.json
 5adc09bbd5a2cd8171536bee70a61623844411d3 data/forge/tags/items/slimeballs.json
 13ebe12bf46fa5dc19658973790dd69452308bb3 data/forge/tags/items/spoons.json
-0c057b46a53ddc0f16bb5150b9e4fb0bf7342bd2 data/forge/tags/items/toast.json
+e004a0a3a54e9923f91bdbf68b36a686ff2135d5 data/forge/tags/items/toast.json
 30ada45a48d3e5b7f8d961ae85018a9ae81457ce data/forge/tags/items/vinegar.json

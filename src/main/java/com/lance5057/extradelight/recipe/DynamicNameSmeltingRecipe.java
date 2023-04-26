@@ -15,13 +15,14 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapedRecipe;
+import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.block.Blocks;
 
-public class DynamicNameSmeltingRecipe extends AbstractCookingRecipe {
+public class DynamicNameSmeltingRecipe extends SmeltingRecipe {
 
 	public DynamicNameSmeltingRecipe(ResourceLocation pId, String pGroup, Ingredient pIngredient, ItemStack pResult,
 			float pExperience, int pCookingTime) {
-		super(RecipeType.SMELTING, pId, pGroup, pIngredient, pResult, pExperience, pCookingTime);
+		super(pId, pGroup, pIngredient, pResult, pExperience, pCookingTime);
 	}
 
 	@Override
@@ -36,14 +37,6 @@ public class DynamicNameSmeltingRecipe extends AbstractCookingRecipe {
 		}
 
 		return stack;
-	}
-
-	public ItemStack getToastSymbol() {
-		return new ItemStack(Blocks.FURNACE);
-	}
-
-	public RecipeSerializer<?> getSerializer() {
-		return RecipeSerializer.SMELTING_RECIPE;
 	}
 
 	public static class Serializer implements RecipeSerializer<DynamicNameSmeltingRecipe> {

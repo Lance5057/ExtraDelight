@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:jam/golden_apple"
+    },
+    {
+      "tag": "forge:bread/sliced"
+    }
+  ],
+  "result": {
+    "item": "extradelight:golden_jam_toast"
+  }
+}

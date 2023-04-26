@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "minecraft:carrot"
+  },
+  "result": "extradelight:roasted_carrot"
+}

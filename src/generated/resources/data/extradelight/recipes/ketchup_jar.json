@@ -10,7 +10,10 @@
       "tag": "forge:vegetables/tomato"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:vinegar"
     }
   ],
   "result": {

@@ -17,6 +17,8 @@ public class EnglishLoc extends LanguageProvider {
 	@Override
 	protected void addTranslations() {
 		this.add("itemGroup.extradelight.items", "Extra Delight");
+		this.add("itemGroup.extradelight.aesthetic", "Extra Delight Aesthetic");
+		
 		this.add("farmersdelight.tooltip.oven.empty", "");
 
 		this.add("extradelight.dynamicname.1", "%s");

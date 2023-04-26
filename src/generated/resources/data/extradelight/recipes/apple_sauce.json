@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:apple_sauce"
+  }
+}

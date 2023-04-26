@@ -1,0 +1,24 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "extradelight:grated_carrot"
+    },
+    {
+      "item": "extradelight:grated_carrot"
+    },
+    {
+      "item": "extradelight:sliced_apple"
+    },
+    {
+      "tag": "forge:mayonnaise"
+    }
+  ],
+  "result": {
+    "item": "extradelight:carrot_salad"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

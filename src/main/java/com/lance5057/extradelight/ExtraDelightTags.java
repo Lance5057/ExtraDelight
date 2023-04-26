@@ -19,6 +19,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> COOKING_OIL = forgeTag("cooking_oil");
 	public static final TagKey<Item> VINEGAR = forgeTag("vinegar");
 	public static final TagKey<Item> FLOUR = forgeTag("flour");
+	public static final TagKey<Item> SWEETENER = ItemTags.create(new ResourceLocation("extradelight", "sweetener"));
+	public static final TagKey<Item> MAYO = forgeTag("mayonnaise");
 
 	public static final TagKey<Item> FRUIT = forgeTag("fruit");
 	public static final TagKey<Item> FRUIT_APPLE = forgeTag("fruit/apple");
@@ -29,9 +31,10 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> JAM_APPLE = forgeTag("jam/apple");
 	public static final TagKey<Item> JAM_SWEET_BERRY = forgeTag("jam/sweet_berry");
 	public static final TagKey<Item> JAM_GLOW_BERRY = forgeTag("jam/glow_berry");
+	public static final TagKey<Item> JAM_GOLDEN_APPLE = forgeTag("jam/golden_apple");
+	public static final TagKey<Item> JAM_CARROT = forgeTag("jam/carrot");
 
 	// Bread
-	public static final TagKey<Item> BREAD = forgeTag("bread");
 	public static final TagKey<Item> BREAD_SLICE = forgeTag("bread/sliced");
 	public static final TagKey<Item> TOAST = forgeTag("toast");
 
@@ -173,4 +176,5 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> TONGUE_COOKED = forgeTag("tongue/cooked");
 
 	public static final TagKey<Item> GELATIN = forgeTag("gelatin");
+	public static final TagKey<Item> CHEESE = forgeTag("cheese");
 }
