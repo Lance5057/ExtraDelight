@@ -16,13 +16,13 @@
       "item": "extradelight:flour"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "item": "minecraft:glow_berries"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "item": "minecraft:glow_berries"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "item": "minecraft:glow_berries"
     },
     {
       "tag": "extradelight:sweetener"
@@ -36,6 +36,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "extradelight:sweet_berry_pie"
+    "item": "extradelight:glow_berry_pie"
   }
 }

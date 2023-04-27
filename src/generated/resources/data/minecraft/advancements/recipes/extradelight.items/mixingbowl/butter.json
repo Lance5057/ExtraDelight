@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_any_ingredient": {
+    "Recipes": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:sweet_berries"
+              "extradelight:whipped_cream"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:sweet_berry_pie_jam"
+        "recipe": "minecraft:mixingbowl/butter"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_any_ingredient",
+      "Recipes",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:sweet_berry_pie_jam"
+      "minecraft:mixingbowl/butter"
     ]
   }
 }

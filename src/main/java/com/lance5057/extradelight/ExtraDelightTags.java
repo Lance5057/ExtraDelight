@@ -177,4 +177,5 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> GELATIN = forgeTag("gelatin");
 	public static final TagKey<Item> CHEESE = forgeTag("cheese");
+	public static final TagKey<Item> BUTTER = forgeTag("butter");
 }
