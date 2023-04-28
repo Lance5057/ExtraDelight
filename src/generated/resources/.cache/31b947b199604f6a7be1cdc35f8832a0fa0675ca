@@ -1,4 +1,4 @@
-// 1.19.2	2023-04-20T13:48:08.3000114	Item Models: extradelight
+// 1.19.2	2023-04-28T10:21:00.993348	Item Models: extradelight
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
 d1ff53358c1d82a41f4477b0283cfc0f46d9acbc assets/extradelight/models/item/acacia_molded_black_wallpaper.json
@@ -69,7 +69,6 @@ b42804b8f5afc18b90d6b50803a4dd071f224dd1 assets/extradelight/models/item/chicken
 3d61c839f2b989fbe46b2895cc8c029e7fa4efab assets/extradelight/models/item/chocolate_cheesecake.json
 223f70164d28393adcd2a19891ab3b1becce7233 assets/extradelight/models/item/chocolate_cheesecake_slice.json
 bc1f773791bfda0107deb8213f2fd2af6126de85 assets/extradelight/models/item/chocolate_custard.json
-a7b78fc7e74d356021e24008f454cdfcc23fe9ca assets/extradelight/models/item/cooked_sausage.json
 3009687d5b75c0fb61f0f2ea72cbb349b6e6e717 assets/extradelight/models/item/cooking_oil.json
 2bebaf95951fe4074cedc22c96e62aad48f6ee7b assets/extradelight/models/item/crimson_cabinet.json
 2e514581f66d911f3d2244bcacb313fba179f25d assets/extradelight/models/item/crimson_knife_block.json
@@ -339,7 +338,6 @@ c61891b364ac6d80fbbde0f4e76ed2bb7f3389c0 assets/extradelight/models/item/rack_la
 60d51c53b477c73c353375a9e775de79d9b7d608 assets/extradelight/models/item/round_pan.json
 000953be28543692c2375c73e8c0f27598097c89 assets/extradelight/models/item/salisbury_steak.json
 4d0562f3d5d4f3f197f840a747aa71eba6ffb78e assets/extradelight/models/item/salisbury_steak_block_item.json
-ce3fb3ccd5376c7b070fc4d05db82b845a9c0eeb assets/extradelight/models/item/sausage.json
 7cd0bb05dffe1c13560f9e020b2e16b841c48e98 assets/extradelight/models/item/sausage_roll.json
 cc1227714b7d19abbd5f0c7c5b47d3a93b221614 assets/extradelight/models/item/scrambled_eggs.json
 2a413da0e773f4b36eb9073549c599b2b7d73de9 assets/extradelight/models/item/seaweed_crisps.json

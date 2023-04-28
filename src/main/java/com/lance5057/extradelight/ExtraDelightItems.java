@@ -372,10 +372,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().food(Foods.BAKED_POTATO).craftRemainder(Items.BOWL).stacksTo(4)
 					.tab(EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Item> SAUSAGE = ITEMS.register("sausage",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SAUSAGE)));
-	public static final RegistryObject<Item> COOKED_SAUSAGE = ITEMS.register("cooked_sausage",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKED_SAUSAGE)));
+	
 
 	public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese", () -> new Item(
 			new Item.Properties().food(EDFoods.CHEESE).stacksTo(64).tab(EXTRA_DELIGHT_TAB).food(EDFoods.CHEESE)));

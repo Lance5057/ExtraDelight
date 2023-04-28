@@ -1,9 +1,10 @@
-// 1.19.2	2023-04-27T10:16:07.1072184	Tags for minecraft:item
+// 1.19.2	2023-04-28T10:21:01.0063477	Tags for minecraft:item
 241fbe7e67bee8a47ff80dbdccae69f91ffd0743 data/extradelight/tags/items/frying_oil.json
 1ab002d480b20f981fede42987de00f396034347 data/extradelight/tags/items/makes_stock.json
 dca695606359ef650f7a9e689200aad635381abe data/extradelight/tags/items/sweetener.json
 93067fb98f2e47f2880078b7ca96c7c8bf5ba887 data/forge/tags/items/bread/sliced.json
 d270b13f293c6940c038f56c4b90f54297ef25d3 data/forge/tags/items/cheese.json
+241fbe7e67bee8a47ff80dbdccae69f91ffd0743 data/forge/tags/items/cooking_oil.json
 41e795acc544d35726d856b9001016bbe620b6be data/forge/tags/items/flour.json
 91b3de4a8233b2a0733c059713e404dae827fd58 data/forge/tags/items/fruit.json
 b33dde3cf95c3f821d49bc84b8c46f9fd65289e8 data/forge/tags/items/fruit/apple.json

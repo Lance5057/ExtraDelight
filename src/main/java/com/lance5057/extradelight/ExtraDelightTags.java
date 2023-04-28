@@ -6,6 +6,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
 public class ExtraDelightTags {
+	
 	public static TagKey<Item> forgeTag(String tag) {
 		return ItemTags.create(new ResourceLocation("forge", tag));
 	}
@@ -44,6 +45,10 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> MEAT = forgeTag("meat");
 	public static final TagKey<Item> MEAT_RAW = forgeTag("meat/raw");
 	public static final TagKey<Item> MEAT_COOKED = forgeTag("meat/cooked");
+	
+	public static final TagKey<Item> SAUSAGE = forgeTag("sausage");
+	public static final TagKey<Item> SAUSAGE_RAW = forgeTag("sausage/raw");
+	public static final TagKey<Item> SAUSAGE_COOKED = forgeTag("sausage/cooked");
 
 	public static final TagKey<Item> SCRAP_MEAT = forgeTag("meat/scrap");
 	public static final TagKey<Item> SCRAP_MEAT_RAW = forgeTag("meat/scrap/raw");

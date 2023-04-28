@@ -46,6 +46,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.FRUIT).addTag(ExtraDelightTags.FRUIT_APPLE).addTag(ExtraDelightTags.FRUIT_GLOW_BERRY)
 				.addTag(ExtraDelightTags.FRUIT_SWEET_BERRY);
 
+		tag(ExtraDelightTags.COOKING_OIL).add(ExtraDelightItems.COOKING_OIL.get());
 		tag(ExtraDelightTags.FRYING_OIL).add(ExtraDelightItems.COOKING_OIL.get());
 		tag(ExtraDelightTags.VINEGAR).add(ExtraDelightItems.VINEGAR.get());
 

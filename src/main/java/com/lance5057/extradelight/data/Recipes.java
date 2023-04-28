@@ -132,25 +132,25 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 	private void vanillaCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
 		SimpleCookingRecipeBuilder.campfireCooking(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.EGG_MIX.get()))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, name + "_fire");
 		SimpleCookingRecipeBuilder.smelting(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.EGG_MIX.get()))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, name + "_smelt");
 		SimpleCookingRecipeBuilder.smoking(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.EGG_MIX.get()))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, name + "_smoke");
 	}
 
 	private void dynamicCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
 		DynamicNameSmeltingRecipeBuilder.campfireCooking(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.EGG_MIX.get()))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, name + "_fire");
 		DynamicNameSmeltingRecipeBuilder.smelting(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.EGG_MIX.get()))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, name + "_smelt");
 		DynamicNameSmeltingRecipeBuilder.smoking(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.EGG_MIX.get()))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, name + "_smoke");
 	}
 
@@ -605,16 +605,31 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.STEW_MUTTON).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "lamb_stew"));
 
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.PORK_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
-						Items.BOWL)
-				.addIngredient(ExtraDelightTags.STEW_PORK).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
-				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew"));
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.STEW_PORK)))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.PORK_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+								Items.BOWL)
+						.addIngredient(ExtraDelightTags.STEW_PORK).addIngredient(Items.CARROT)
+						.addIngredient(Items.POTATO)
+						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew_bc")))
+				.addCondition(tagEmpty(ExtraDelightTags.STEW_PORK))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.PORK_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+								Items.BOWL)
+						.addIngredient(Items.PORKCHOP).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew_vanilla")))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew_test"));
 
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.SAUSAGE_ROLL.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
-				.addIngredient(ExtraDelightItems.SAUSAGE.get()).addIngredient(ModItems.WHEAT_DOUGH.get())
-				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sausage_roll"));
+//		CookingPotRecipeBuilder
+//				.cookingPotRecipe(ExtraDelightItems.PORK_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+//						Items.BOWL)
+//				.addIngredient(ExtraDelightTags.STEW_PORK).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+//				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew"));
+
+//		CookingPotRecipeBuilder
+//				.cookingPotRecipe(ExtraDelightItems.SAUSAGE_ROLL.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
+//				.addIngredient(ExtraDelightTags.SAUSAGE).addIngredient(ModItems.WHEAT_DOUGH.get())
+//				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sausage_roll"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.SOS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BREAD)

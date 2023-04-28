@@ -1,9 +1,9 @@
 {
-  "type": "extradelight:dynamic_campfire",
+  "type": "minecraft:campfire_cooking",
   "cookingtime": 800,
   "experience": 1.0,
   "ingredient": {
-    "item": "extradelight:omelette_mix"
+    "item": "extradelight:egg_mix"
   },
-  "result": "extradelight:omelette"
+  "result": "extradelight:scrambled_eggs"
 }

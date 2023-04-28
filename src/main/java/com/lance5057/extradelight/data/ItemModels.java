@@ -242,8 +242,6 @@ public class ItemModels extends ItemModelProvider {
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/mashed_potato_gravy_block_stage0"));
 		forItem(ExtraDelightItems.MASHED_POTATO_GRAVY, "mashed_potato_gravy");
 
-		forItem(ExtraDelightItems.SAUSAGE, "sausage");
-		forItem(ExtraDelightItems.COOKED_SAUSAGE, "sausagecooked");
 		forItem(ExtraDelightItems.JERKY, "beef_jerky");
 
 		forItem(ExtraDelightItems.LAMB_STEW, "lamb_stew");

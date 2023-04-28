@@ -1,0 +1,38 @@
+{
+	"type": "forge:conditional",
+	"recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:jam"
+          }
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:bread"
+          }
+        }
+      ],
+      "recipe": {
+		  "type": "farmersdelight:cooking",
+		  "cookingtime": 200,
+		  "experience": 0.35,
+		  "ingredients": [
+			{
+			  "item": "extradelight:sausage"
+			},
+			{
+			  "item": "farmersdelight:wheat_dough"
+			}
+		  ],
+		  "result": {
+			"item": "extradelight:sausage_roll"
+		  }
+	  }
+	}
+}
