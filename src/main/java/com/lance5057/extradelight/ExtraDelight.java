@@ -36,6 +36,7 @@ public class ExtraDelight {
 		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
 		ExtraDelightRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
+		ExtraDelightLoot.register(modEventBus);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {

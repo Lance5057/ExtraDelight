@@ -29,11 +29,12 @@ public class AllLootTables extends LootTableProvider {
 	@Override
 	@Nonnull
 	protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
-		return ImmutableList.of(Pair.of(BlockLootTables::new, LootContextParamSets.BLOCK));
+		return ImmutableList.of(Pair.of(BlockLootTables::new, LootContextParamSets.BLOCK),
+				Pair.of(StructureLootTables::new, LootContextParamSets.EMPTY));
 	}
 
 	@Override
-    protected void validate(Map<ResourceLocation, LootTable> map, @Nonnull ValidationContext validationtracker) {
-        map.forEach((name, table) -> LootTables.validate(validationtracker, name, table));
-    }
+	protected void validate(Map<ResourceLocation, LootTable> map, @Nonnull ValidationContext validationtracker) {
+		map.forEach((name, table) -> LootTables.validate(validationtracker, name, table));
+	}
 }

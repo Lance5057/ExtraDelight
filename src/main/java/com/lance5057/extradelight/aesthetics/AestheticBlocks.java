@@ -148,7 +148,7 @@ public class AestheticBlocks {
 	}
 
 	public static void blockModel(BlockStateProvider bsp) {
-		for (int i = 0; i < WOOD.values().length; i++) {
+		for (int i = 0; i < WOOD.values().length; i++) { 
 			bsp.horizontalBlock(STEP_STOOLS.get(i).get(), bsp.models()
 					.withExistingParent(WOOD.values()[i].toString() + "_step_stool", bsp.modLoc("block/stepstool"))
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks")).renderType("cutout"));
@@ -159,7 +159,7 @@ public class AestheticBlocks {
 					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate")).renderType("cutout"));
 
 			bsp.horizontalBlock(SPICE_RACKS_FULL.get(i).get(), bsp.models()
-					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack_full",
+					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack_full", 
 							bsp.modLoc("block/spicerack_filled"))
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate")).renderType("cutout"));
@@ -238,32 +238,31 @@ public class AestheticBlocks {
 			}
 		}
 	}
-	
-	public static void EngLoc(LanguageProvider lp)
-	{
+
+	public static void EngLoc(LanguageProvider lp) {
 		for (int i = 0; i < WOOD.values().length; i++) {
 			String w = WOOD.values()[i].toString();
 			w = WordUtils.capitalize(w.replace('_', ' '));
-			
+
 			lp.add(STEP_STOOLS.get(i).get(), w + " Step Stool");
 			lp.add(SPICE_RACKS.get(i).get(), w + " Spice Rack");
 			lp.add(SPICE_RACKS_FULL.get(i).get(), w + " Spice Rack");
 			lp.add(KNIFE_BLOCKS.get(i).get(), w + " Knife Block");
 			lp.add(CABINETS.get(i).get(), w + " Cabinet");
-			
+
 			for (int j = 0; j < DyeColor.values().length; j++) {
 				int o = (i * DyeColor.values().length) + j;
 				String d = DyeColor.values()[i].toString();
 				d = WordUtils.capitalize(d.replace('_', ' '));
-				
+
 				lp.add(MOLDED_WALLPAPER_ITEMS.get(o).get(), w + " Molded " + d + " Wallpaper");
 			}
 		}
-		
+
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			String w = DyeColor.values()[i].toString();
 			w = WordUtils.capitalize(w.replace('_', ' '));
-			
+
 			lp.add(WALLPAPER_ITEMS.get(i).get(), w + " Wallpaper");
 		}
 	}

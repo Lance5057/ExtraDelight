@@ -7,7 +7,7 @@
           "type": "forge:not",
           "value": {
             "type": "forge:tag_empty",
-            "tag": "forge:pork/stew"
+            "tag": "forge:mutton/stew"
           }
         }
       ],
@@ -20,7 +20,7 @@
         "experience": 0.35,
         "ingredients": [
           {
-            "tag": "forge:pork/stew"
+            "tag": "forge:mutton/stew"
           },
           {
             "item": "minecraft:carrot"
@@ -39,7 +39,7 @@
           }
         ],
         "result": {
-          "item": "extradelight:pork_stew_feast"
+          "item": "extradelight:lamb_stew_feast"
         }
       }
     },
@@ -47,7 +47,7 @@
       "conditions": [
         {
           "type": "forge:tag_empty",
-          "tag": "forge:pork/stew"
+          "tag": "forge:mutton/stew"
         }
       ],
       "recipe": {
@@ -59,7 +59,7 @@
         "experience": 0.35,
         "ingredients": [
           {
-            "item": "minecraft:porkchop"
+            "item": "minecraft:mutton"
           },
           {
             "item": "minecraft:carrot"
@@ -78,7 +78,7 @@
           }
         ],
         "result": {
-          "item": "extradelight:pork_stew_feast"
+          "item": "extradelight:lamb_stew_feast"
         }
       }
     }

@@ -1,4 +1,4 @@
-// 1.19.2	2023-04-20T10:05:05.4981209	LootTables
+// 1.19.2	2023-05-03T13:38:44.5376717	LootTables
 05bda07b99556daec2d260732806933073ff86c5 data/extradelight/loot_tables/blocks/acacia_cabinet.json
 7747bac4a9ea01dff06964433ec737b240944275 data/extradelight/loot_tables/blocks/acacia_knife_block.json
 09c450a44e0758dd3e30e647c970e55dd25ca5f6 data/extradelight/loot_tables/blocks/acacia_molded_black_wallpaper.json
@@ -273,3 +273,4 @@ bba548cb9d15462e562d1e3178b1eb887ca35d6a data/extradelight/loot_tables/blocks/wa
 a5ded68593f4b9a4571ce12d0b8e844b0cc095cd data/extradelight/loot_tables/blocks/warped_spice_rack_full.json
 670f3f4de060a5398e36d6ad8e0a2a56cfa651c5 data/extradelight/loot_tables/blocks/warped_step_stool.json
 615b13a18822f502528bd3572e827f4a617abb7f data/extradelight/loot_tables/blocks/yeast_pot.json
+57202e7eff9cf5c6aef46cc9e9cd8767aa0631c0 data/extradelight/loot_tables/structures/curry_powder.json

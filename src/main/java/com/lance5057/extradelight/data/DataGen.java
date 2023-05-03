@@ -16,8 +16,6 @@ public class DataGen {
 		DataGenerator generator = event.getGenerator();
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
-		
-
 		generator.addProvider(event.includeClient(), new ItemModels(generator, helper));
 		generator.addProvider(true, new BlockModels(generator, helper));
 
@@ -28,5 +26,6 @@ public class DataGen {
 
 		generator.addProvider(event.includeServer(), new Recipes(generator));
 		generator.addProvider(true, new EnglishLoc(generator));
+		generator.addProvider(event.includeServer(), new LootModifiers(generator));
 	}
 }

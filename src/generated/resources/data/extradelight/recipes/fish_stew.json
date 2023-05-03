@@ -3,20 +3,29 @@
   "container": {
     "item": "minecraft:bowl"
   },
-  "cookingtime": 200,
+  "cookingtime": 400,
   "experience": 0.35,
   "ingredients": [
     {
-      "tag": "forge:mutton/stew"
+      "tag": "forge:raw_fishes"
     },
     {
       "item": "minecraft:carrot"
     },
     {
       "item": "minecraft:potato"
+    },
+    {
+      "tag": "forge:crops/onion"
+    },
+    {
+      "tag": "extradelight:stock"
+    },
+    {
+      "tag": "forge:flour"
     }
   ],
   "result": {
-    "item": "extradelight:lamb_stew"
+    "item": "extradelight:fish_stew_feast"
   }
 }

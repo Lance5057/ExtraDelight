@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "extradelight:sliced_potato"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    }
+  ],
+  "result": {
+    "item": "extradelight:potato_chips"
+  }
+}

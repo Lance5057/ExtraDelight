@@ -591,6 +591,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightItems.POTATO_STICKS.get()).addIngredient(ExtraDelightTags.FRYING_OIL)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fries"));
 
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.POTATO_CHIPS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
+				.addIngredient(ExtraDelightItems.SLICED_POTATO.get()).addIngredient(ExtraDelightTags.FRYING_OIL)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "chips"));
+
 		CookingPotRecipeBuilder.cookingPotRecipe(ExtraDelightItems.CHEESE.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F)
 				.addIngredient(Items.MILK_BUCKET).addIngredient(ExtraDelightTags.STOMACH)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cheese"));
@@ -599,32 +604,83 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Items.MILK_BUCKET).addIngredient(ExtraDelightTags.VINEGAR)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cheese_vinegar"));
 
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.LAMB_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
-						Items.BOWL)
-				.addIngredient(ExtraDelightTags.STEW_MUTTON).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
-				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "lamb_stew"));
-
 		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.STEW_PORK)))
 				.addRecipe(r -> CookingPotRecipeBuilder
-						.cookingPotRecipe(ExtraDelightItems.PORK_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
-								Items.BOWL)
+						.cookingPotRecipe(ExtraDelightItems.PORK_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING,
+								0.35F, Items.BOWL)
 						.addIngredient(ExtraDelightTags.STEW_PORK).addIngredient(Items.CARROT)
-						.addIngredient(Items.POTATO)
+						.addIngredient(Items.POTATO).addIngredient(ForgeTags.CROPS_ONION)
+						.addIngredient(ExtraDelightTags.STOCK).addIngredient(ExtraDelightTags.FLOUR)
 						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew_bc")))
 				.addCondition(tagEmpty(ExtraDelightTags.STEW_PORK))
 				.addRecipe(r -> CookingPotRecipeBuilder
-						.cookingPotRecipe(ExtraDelightItems.PORK_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
-								Items.BOWL)
+						.cookingPotRecipe(ExtraDelightItems.PORK_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING,
+								0.35F, Items.BOWL)
 						.addIngredient(Items.PORKCHOP).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+						.addIngredient(ForgeTags.CROPS_ONION).addIngredient(ExtraDelightTags.STOCK)
+						.addIngredient(ExtraDelightTags.FLOUR)
 						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew_vanilla")))
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew_test"));
 
-//		CookingPotRecipeBuilder
-//				.cookingPotRecipe(ExtraDelightItems.PORK_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
-//						Items.BOWL)
-//				.addIngredient(ExtraDelightTags.STEW_PORK).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
-//				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew"));
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.STEW_MUTTON)))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.LAMB_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING,
+								0.35F, Items.BOWL)
+						.addIngredient(ExtraDelightTags.STEW_MUTTON).addIngredient(Items.CARROT)
+						.addIngredient(Items.POTATO).addIngredient(ForgeTags.CROPS_ONION)
+						.addIngredient(ExtraDelightTags.STOCK).addIngredient(ExtraDelightTags.FLOUR)
+						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "mutton_stew_bc")))
+				.addCondition(tagEmpty(ExtraDelightTags.STEW_MUTTON))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.LAMB_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING,
+								0.35F, Items.BOWL)
+						.addIngredient(Items.MUTTON).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+						.addIngredient(ForgeTags.CROPS_ONION).addIngredient(ExtraDelightTags.STOCK)
+						.addIngredient(ExtraDelightTags.FLOUR)
+						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "mutton_stew_vanilla")))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mutton_stew_test"));
+
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.STEW_BEEF)))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.BEEF_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING,
+								0.35F, Items.BOWL)
+						.addIngredient(ExtraDelightTags.STEW_BEEF).addIngredient(Items.CARROT)
+						.addIngredient(Items.POTATO).addIngredient(ForgeTags.CROPS_ONION)
+						.addIngredient(ExtraDelightTags.STOCK).addIngredient(ExtraDelightTags.FLOUR)
+						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "beef_stew_bc")))
+				.addCondition(tagEmpty(ExtraDelightTags.STEW_BEEF))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.BEEF_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING,
+								0.35F, Items.BOWL)
+						.addIngredient(Items.BEEF).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+						.addIngredient(ForgeTags.CROPS_ONION).addIngredient(ExtraDelightTags.STOCK)
+						.addIngredient(ExtraDelightTags.FLOUR)
+						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "beef_stew_vanilla")))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "beef_stew_test"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.RABBIT_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.BOWL)
+				.addIngredient(Items.RABBIT).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+				.addIngredient(ForgeTags.CROPS_ONION).addIngredient(ExtraDelightTags.STOCK)
+				.addIngredient(ExtraDelightTags.FLOUR)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "rabbit_stew"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CHICKEN_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.BOWL)
+				.addIngredient(Items.CHICKEN).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+				.addIngredient(ForgeTags.CROPS_ONION).addIngredient(ExtraDelightTags.STOCK)
+				.addIngredient(ExtraDelightTags.FLOUR)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "chicken_stew"));
+		
+		CookingPotRecipeBuilder
+		.cookingPotRecipe(ExtraDelightItems.FISH_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+				Items.BOWL)
+		.addIngredient(ForgeTags.RAW_FISHES).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+		.addIngredient(ForgeTags.CROPS_ONION).addIngredient(ExtraDelightTags.STOCK)
+		.addIngredient(ExtraDelightTags.FLOUR)
+		.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fish_stew"));
 
 //		CookingPotRecipeBuilder
 //				.cookingPotRecipe(ExtraDelightItems.SAUSAGE_ROLL.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)

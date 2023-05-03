@@ -77,6 +77,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CHEESE).add(ExtraDelightItems.CHEESE.get());
 		tag(ExtraDelightTags.GROUND_MEAT_RAW).add(ModItems.MINCED_BEEF.get());
 		tag(ExtraDelightTags.GELATIN).add(ExtraDelightItems.AGAR_AGAR.get());
+		tag(ExtraDelightTags.STOCK).add(ExtraDelightItems.STOCK_JAR_ITEM.get());
+		
 	}
 
 }
