@@ -1,3 +1,8 @@
-// 1.19.2	2023-05-03T13:38:44.5486713	Global Loot Modifiers : extradelight
-4572bf9e9883eb1ba9fb710537bf026784228ef5 data/extradelight/loot_modifiers/loot_table_test.json
-6a89361cf608accbaedd2221edd600d90ba6edfc data/forge/loot_modifiers/global_loot_modifiers.json
+// 1.19.2	2023-05-04T09:36:51.3511644	Global Loot Modifiers : extradelight
+2297f557ea23bff1699ac1a798327e9f774189d0 data/extradelight/loot_modifiers/curry_mansion.json
+4572bf9e9883eb1ba9fb710537bf026784228ef5 data/extradelight/loot_modifiers/curry_pyramid.json
+583218509d57201fdedee3ebfe905361108032c9 data/extradelight/loot_modifiers/curry_ship.json
+c88429138ea6228a70b708f1f3a7763cb05672d3 data/extradelight/loot_modifiers/curry_village.json
+c3cf119cd2e7e12f974a134c164b1c9f1db2ef20 data/extradelight/loot_modifiers/furikake_ruins.json
+00a940d0c95e718aaa036192769e5e8a5770bc90 data/extradelight/loot_modifiers/furikake_ruins_big.json
+a31de37de984385fb1a782c1cda94798fdfb28cd data/forge/loot_modifiers/global_loot_modifiers.json

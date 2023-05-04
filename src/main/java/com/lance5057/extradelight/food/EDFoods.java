@@ -61,6 +61,9 @@ public class EDFoods {
 			.build();
 	public static final FoodProperties FRIED_BRAIN = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.5F)
 			.build();
+	
+	public static final FoodProperties CHEESE_SANDWICH = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.65F)
+			.build();
 	public static final FoodProperties GRILLED_CHEESE = (new FoodProperties.Builder()).nutrition(7).saturationMod(0.75F)
 			.build();
 

@@ -23,24 +23,48 @@ public class LootModifiers extends GlobalLootModifierProvider {
 						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(0.5f).build(),
 								LootTableIdCondition.builder(BuiltInLootTables.DESERT_PYRAMID).build() },
 						StructureLootTables.curry_powder));
-		
+
 		add("curry_mansion",
 				new FoodLoot(
 						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(0.75f).build(),
 								LootTableIdCondition.builder(BuiltInLootTables.WOODLAND_MANSION).build() },
 						StructureLootTables.curry_powder));
-		
+
 		add("curry_ship",
 				new FoodLoot(
 						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(1.5f).build(),
 								LootTableIdCondition.builder(BuiltInLootTables.SHIPWRECK_TREASURE).build() },
 						StructureLootTables.curry_powder));
-		
+
 		add("curry_village",
 				new FoodLoot(
 						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(0.25f).build(),
 								LootTableIdCondition.builder(BuiltInLootTables.VILLAGE_DESERT_HOUSE).build() },
 						StructureLootTables.curry_powder));
+
+		add("furikake_ruins",
+				new FoodLoot(
+						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(0.5f).build(),
+								LootTableIdCondition.builder(BuiltInLootTables.UNDERWATER_RUIN_SMALL).build() },
+						StructureLootTables.furikake));
+
+		add("furikake_ruins_big",
+				new FoodLoot(
+						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(0.75f).build(),
+								LootTableIdCondition.builder(BuiltInLootTables.UNDERWATER_RUIN_BIG).build() },
+						StructureLootTables.furikake));
+
+		add("furikake_ruins_big",
+				new FoodLoot(
+						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(1.5f).build(),
+								LootTableIdCondition.builder(BuiltInLootTables.SHIPWRECK_TREASURE).build() },
+						StructureLootTables.furikake));
+
+		add("furikake_ruins_big",
+				new FoodLoot(
+						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(0.25f).build(),
+								LootTableIdCondition.builder(BuiltInLootTables.VILLAGE_FISHER).build() },
+						StructureLootTables.furikake));
 	}
 
 }

@@ -1,6 +1,11 @@
 {
   "entries": [
-    "extradelight:loot_table_test"
+    "extradelight:curry_pyramid",
+    "extradelight:curry_ship",
+    "extradelight:furikake_ruins_big",
+    "extradelight:curry_village",
+    "extradelight:furikake_ruins",
+    "extradelight:curry_mansion"
   ],
   "replace": false
 }

@@ -442,6 +442,9 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().food(EDFoods.FRIED_BRAIN).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> OXTAIL_SOUP = ITEMS.register("oxtail_soup",
 			() -> new Item(new Item.Properties().food(FoodValues.BEEF_STEW).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
+	
+	public static final RegistryObject<Item> CHEESE_SANDWICH = ITEMS.register("cheese_sandwich",
+			() -> new Item(new Item.Properties().food(EDFoods.GRILLED_CHEESE).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> GRILLED_CHEESE = ITEMS.register("grilled_cheese",
 			() -> new Item(new Item.Properties().food(EDFoods.GRILLED_CHEESE).stacksTo(16).tab(EXTRA_DELIGHT_TAB)));
 

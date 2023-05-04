@@ -258,6 +258,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.STUFFED_HEART, "stuffedheart");
 		forItem(ExtraDelightItems.FRIED_BRAINS, "friedbrains");
 		forItem(ExtraDelightItems.OXTAIL_SOUP, "oxtail_soup");
+		
+		forItem(ExtraDelightItems.CHEESE_SANDWICH, "cheese_sandwich");
 		forItem(ExtraDelightItems.GRILLED_CHEESE, "grilled_cheese");
 
 		forItem(ExtraDelightItems.CHEESE, "cheese");
