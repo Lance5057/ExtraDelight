@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.integration.jei.categories.DoughShapingRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.DryingRackRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MixingBowlRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MortarRecipeCategory;
@@ -36,7 +37,8 @@ public class JEIPlugin implements IModPlugin {
 		registry.addRecipeCategories(new MortarRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new MixingBowlRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new OvenRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
-				new DryingRackRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
+				new DryingRackRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new DoughShapingRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
 	}
 
 	@Override
@@ -47,8 +49,10 @@ public class JEIPlugin implements IModPlugin {
 				.getAllRecipesFor(ExtraDelightRecipes.MIXING_BOWL.get()));
 		registry.addRecipes(OvenRecipeCategory.TYPE,
 				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ExtraDelightRecipes.OVEN.get()));
-		registry.addRecipes(DryingRackRecipeCategory.TYPE,
-				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ExtraDelightRecipes.DRYING_RACK.get()));
+		registry.addRecipes(DryingRackRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.DRYING_RACK.get()));
+		registry.addRecipes(DoughShapingRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.DOUGH_SHAPING.get()));
 	}
 
 	@Override
@@ -95,8 +99,11 @@ public class JEIPlugin implements IModPlugin {
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.TRAY.get()), OvenRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.PIE_DISH.get()), OvenRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), OvenRecipeCategory.TYPE);
-		
+
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.DRYING_RACK.get()), DryingRackRecipeCategory.TYPE);
+
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.DOUGH_SHAPING.get()),
+				DoughShapingRecipeCategory.TYPE);
 	}
 
 	@Override

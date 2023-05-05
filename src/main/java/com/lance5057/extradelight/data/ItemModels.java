@@ -124,8 +124,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.FLOUR, "flour");
 		forItem(ExtraDelightItems.COOKING_OIL, "cooking_oil");
 		forItem(ExtraDelightItems.SUNFLOWER_SEEDS, "sunflower_seeds");
-		forItem(ExtraDelightItems.STOCK_JAR_ITEM, "broth");
-		forItem(ExtraDelightItems.GRAVY_ITEM, "gravy");
+		forItem(ExtraDelightItems.STOCK, "broth");
+		forItem(ExtraDelightItems.GRAVY, "gravy");
 
 		forItem(ExtraDelightItems.SEAWEED_PASTE, "seaweed_paste");
 		forItem(ExtraDelightItems.AGAR_SHEETS, "agar_sheets");
@@ -185,9 +185,9 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.EGG_SALAD, "egg_salad");
 
 		// Condiments
-		forItem(ExtraDelightItems.KETCHUP_JAR_ITEM, "ketchup");
-		forItem(ExtraDelightItems.BBQ_JAR_ITEM, "bbq");
-		forItem(ExtraDelightItems.MAYO_JAR_ITEM, "mayo");
+		forItem(ExtraDelightItems.KETCHUP, "ketchup");
+		forItem(ExtraDelightItems.BBQ_SAUCE, "bbq");
+		forItem(ExtraDelightItems.MAYO, "mayo");
 		forItem(ExtraDelightItems.VINEGAR, "vinegar");
 
 		// Bread
@@ -230,7 +230,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.TOMATO_SOUP, "tomato_soup");
 
 		// Sandwiches
-		forItem(ExtraDelightItems.DYNAMIC_SANDWICH, "sandwich");
+//		forItem(ExtraDelightItems.DYNAMIC_SANDWICH, "sandwich");
 		forItem(ExtraDelightItems.EGG_SALAD_SANDWICH, "egg_salad_sandwich");
 
 		// Feasts
@@ -254,6 +254,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.FRIED_FISH, "friedfish");
 		forItem(ExtraDelightItems.CHICKEN_FRIED_STEAK, "chickenfriedsteak");
 		forItem(ExtraDelightItems.PORK_TENDERLOIN, "pork_tenderloin");
+		forItem(ExtraDelightItems.PORK_TENDERLOIN_SANDWICH, "pork_tenderloin_sandwich");
 		forItem(ExtraDelightItems.FRIED_CHICKEN, "friedchicken");
 		forItem(ExtraDelightItems.STUFFED_HEART, "stuffedheart");
 		forItem(ExtraDelightItems.FRIED_BRAINS, "friedbrains");

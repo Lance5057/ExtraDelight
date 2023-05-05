@@ -1,10 +1,12 @@
-// 1.19.2	2023-05-03T10:22:03.3475836	Tags for minecraft:item
+// 1.19.2	2023-05-05T12:42:43.6113371	Tags for minecraft:item
 241fbe7e67bee8a47ff80dbdccae69f91ffd0743 data/extradelight/tags/items/frying_oil.json
 1ab002d480b20f981fede42987de00f396034347 data/extradelight/tags/items/makes_stock.json
 bfa053167cb2ed12554bf06fe5c52667e740a514 data/extradelight/tags/items/stock.json
 dca695606359ef650f7a9e689200aad635381abe data/extradelight/tags/items/sweetener.json
 93067fb98f2e47f2880078b7ca96c7c8bf5ba887 data/forge/tags/items/bread/sliced.json
+e5705a9f78eb7df60504609b9c5142c9fb2a6bbe data/forge/tags/items/butter.json
 d270b13f293c6940c038f56c4b90f54297ef25d3 data/forge/tags/items/cheese.json
+097caf9dbddbaefd5ed1d939219e0e8a359cc68c data/forge/tags/items/condiment.json
 241fbe7e67bee8a47ff80dbdccae69f91ffd0743 data/forge/tags/items/cooking_oil.json
 41e795acc544d35726d856b9001016bbe620b6be data/forge/tags/items/flour.json
 91b3de4a8233b2a0733c059713e404dae827fd58 data/forge/tags/items/fruit.json
@@ -12,6 +14,7 @@ b33dde3cf95c3f821d49bc84b8c46f9fd65289e8 data/forge/tags/items/fruit/apple.json
 33221392eaadbbebce9b701da69e2f20fd46c490 data/forge/tags/items/fruit/glow_berry.json
 65a948972be54d0dc9ce5ee6eb59a29341fd6ec0 data/forge/tags/items/fruit/sweet_berry.json
 fa7d629b4518f2e177d481095a4c50befbaa384c data/forge/tags/items/gelatin.json
+645556c797aa579e3f36a0b3d86e17b4d5d79eb5 data/forge/tags/items/gravy.json
 f3d0d10c37cd93f38f84dada8adbad5189a07c02 data/forge/tags/items/ground_meat/raw.json
 527d6929187d8beaa03513b37a2133eadcb379c7 data/forge/tags/items/jam.json
 d0ed3c776c4a186feb51edf78732f86010fc2e0d data/forge/tags/items/jam/apple.json

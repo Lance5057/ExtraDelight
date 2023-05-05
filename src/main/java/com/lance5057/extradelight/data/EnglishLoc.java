@@ -107,8 +107,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.WOODEN_SPOON.get(), "Wooden Spoon");
 		this.add(ExtraDelightItems.YEAST.get(), "Yeast");
 		this.add(ExtraDelightItems.YEAST_POT.get(), "Yeast Pot");
-		this.add(ExtraDelightItems.STOCK_JAR_ITEM.get(), "Stock");
-		this.add(ExtraDelightItems.GRAVY_ITEM.get(), "Gravy");
+		this.add(ExtraDelightItems.STOCK.get(), "Stock");
+		this.add(ExtraDelightItems.GRAVY.get(), "Gravy");
 		this.add(ExtraDelightItems.BUTTER.get(), "Butter");
 		this.add(ExtraDelightItems.CHEESE.get(), "Cheese");
 		this.add(ExtraDelightItems.JERKY.get(), "Jerky");
@@ -142,7 +142,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.ROASTED_APPLE.get(), "Roasted Apple");
 		this.add(ExtraDelightItems.APPLE_SAUCE.get(), "Apple Sauce");
 		this.add(ExtraDelightItems.EGG_SALAD_SANDWICH.get(), "Egg Salad Sandwich");
-		this.add(ExtraDelightItems.DYNAMIC_SANDWICH.get(), "Sandwich");
+//		this.add(ExtraDelightItems.DYNAMIC_SANDWICH.get(), "Sandwich");
 		this.add(ExtraDelightItems.WHIPPED_CREAM.get(), "Whipped Cream");
 		this.add(ExtraDelightItems.GRATED_CARROT.get(), "Grated Carrot");
 		this.add(ExtraDelightItems.SEAWEED_CRISPS.get(), "Seaweed Crisps");
@@ -169,9 +169,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.FISH_SOUP.get(), "Fish Soup");
 		this.add(ExtraDelightItems.CARROT_SOUP.get(), "Carrot Soup");
 		
-		this.add(ExtraDelightItems.BBQ_JAR_ITEM.get(), "BBQ Sauce");
-		this.add(ExtraDelightItems.KETCHUP_JAR_ITEM.get(), "Ketchup");
-		this.add(ExtraDelightItems.MAYO_JAR_ITEM.get(), "Mayo");
+		this.add(ExtraDelightItems.BBQ_SAUCE.get(), "BBQ Sauce");
+		this.add(ExtraDelightItems.KETCHUP.get(), "Ketchup");
+		this.add(ExtraDelightItems.MAYO.get(), "Mayo");
 		this.add(ExtraDelightItems.VINEGAR.get(), "Vinegar");
 
 		this.add(ExtraDelightItems.EGG_MIX.get(), "Egg Mix");

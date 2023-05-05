@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:oven/sausage_roll"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "sausage_roll": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:sausage"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "sausage_roll",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:oven/sausage_roll"
+    ]
+  }
+}

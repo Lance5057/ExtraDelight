@@ -13,7 +13,6 @@ import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.registry.ModItems;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 public class EDItemTags extends ItemTagsProvider {
 
@@ -71,14 +70,17 @@ public class EDItemTags extends ItemTagsProvider {
 				.add(Items.RABBIT);
 		tag(ExtraDelightTags.MEAT).addTag(ExtraDelightTags.MEAT_COOKED).addTag(ExtraDelightTags.MEAT_RAW);
 		tag(ExtraDelightTags.SWEETENER).add(Items.HONEY_BOTTLE).add(Items.SUGAR);
-		tag(ExtraDelightTags.MAYO).add(ExtraDelightItems.MAYO_JAR_ITEM.get());
+		tag(ExtraDelightTags.MAYO).add(ExtraDelightItems.MAYO.get());
 		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get()).add(ExtraDelightItems.TOAST.get());
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
 		tag(ExtraDelightTags.CHEESE).add(ExtraDelightItems.CHEESE.get());
 		tag(ExtraDelightTags.GROUND_MEAT_RAW).add(ModItems.MINCED_BEEF.get());
 		tag(ExtraDelightTags.GELATIN).add(ExtraDelightItems.AGAR_AGAR.get());
-		tag(ExtraDelightTags.STOCK).add(ExtraDelightItems.STOCK_JAR_ITEM.get());
-		
+		tag(ExtraDelightTags.STOCK).add(ExtraDelightItems.STOCK.get());
+		tag(ExtraDelightTags.BUTTER).add(ExtraDelightItems.BUTTER.get());
+		tag(ExtraDelightTags.GRAVY).add(ExtraDelightItems.GRAVY.get());
+		tag(ExtraDelightTags.CONDIMENTS).add(ExtraDelightItems.KETCHUP.get()).add(ExtraDelightItems.BBQ_SAUCE.get())
+				.add(ExtraDelightItems.MAYO.get());
 	}
 
 }

@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-04T10:32:35.6760108	Item Models: extradelight
+// 1.19.2	2023-05-05T11:26:46.436436	Item Models: extradelight
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
 d1ff53358c1d82a41f4477b0283cfc0f46d9acbc assets/extradelight/models/item/acacia_molded_black_wallpaper.json
@@ -119,7 +119,6 @@ aadb0b9650d33cd980e3f9718fd79adb1360407a assets/extradelight/models/item/dark_oa
 23f159e9b0f3290f33a8c9a5a2c040d825570e30 assets/extradelight/models/item/diamond_spoon.json
 6459c63533254cc0204b0d87d2bbeae84fdd7950 assets/extradelight/models/item/dough_shaping.json
 8a2865984ba1358bceb3dceac55a5084f3536f31 assets/extradelight/models/item/drying_rack_item.json
-0a45b9f6344638402461344438a848a201e1187b assets/extradelight/models/item/dynamic_sandwich.json
 a8ed04f668cd6f9686fa18418d560e18e7397d16 assets/extradelight/models/item/egg_in_the_basket.json
 d1ae3bc0f6c78fc9dfaede65dd062df29374fe9c assets/extradelight/models/item/egg_mix.json
 d4209bf4743e3b1924b9389fc2624086d7e453c5 assets/extradelight/models/item/egg_salad.json
@@ -317,6 +316,7 @@ f076aba57fc412787512f15f2e3a5033be860ebd assets/extradelight/models/item/pie_dis
 15f511febec895f9367b0d973bdcf4882e65e572 assets/extradelight/models/item/pork_stew.json
 957a2c665ba296ec01ec555ace060e0b9e46d336 assets/extradelight/models/item/pork_stew_feast.json
 34212d8bc0285041bd908114d63955a6705a7c4c assets/extradelight/models/item/pork_tenderloin.json
+b65ec405ca5f860b66eb16fa4b3ef08e1513e917 assets/extradelight/models/item/pork_tenderloin_sandwich.json
 b4f97433736d07841ba8c74a26fbf3fcf9a047bb assets/extradelight/models/item/potato_chips.json
 1f72893a7f923a801bfe323aa67294e33989fef9 assets/extradelight/models/item/potato_soup.json
 34a36fa6a8fea2871e7dab37b295966cc1a7f664 assets/extradelight/models/item/potato_sticks.json

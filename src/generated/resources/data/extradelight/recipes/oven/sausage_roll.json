@@ -7,14 +7,14 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:eggs"
+      "tag": "forge:sausage"
     },
     {
-      "tag": "forge:bread/sliced"
+      "tag": "forge:dough"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "extradelight:egg_in_the_basket"
+    "item": "extradelight:sausage_roll"
   }
 }

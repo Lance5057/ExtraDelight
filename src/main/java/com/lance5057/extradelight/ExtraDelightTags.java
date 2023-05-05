@@ -21,8 +21,11 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> VINEGAR = forgeTag("vinegar");
 	public static final TagKey<Item> FLOUR = forgeTag("flour");
 	public static final TagKey<Item> SWEETENER = ItemTags.create(new ResourceLocation("extradelight", "sweetener"));
+	public static final TagKey<Item> GRAVY = forgeTag("gravy");
+	
+	public static final TagKey<Item> CONDIMENTS = forgeTag("condiment");
 	public static final TagKey<Item> MAYO = forgeTag("mayonnaise");
-
+	
 	public static final TagKey<Item> FRUIT = forgeTag("fruit");
 	public static final TagKey<Item> FRUIT_APPLE = forgeTag("fruit/apple");
 	public static final TagKey<Item> FRUIT_SWEET_BERRY = forgeTag("fruit/sweet_berry");
