@@ -1,0 +1,16 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "minecraft:milk_bucket"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:whipped_cream"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

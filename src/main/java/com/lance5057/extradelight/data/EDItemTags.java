@@ -81,6 +81,14 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.GRAVY).add(ExtraDelightItems.GRAVY.get());
 		tag(ExtraDelightTags.CONDIMENTS).add(ExtraDelightItems.KETCHUP.get()).add(ExtraDelightItems.BBQ_SAUCE.get())
 				.add(ExtraDelightItems.MAYO.get());
+
+		tag(ExtraDelightTags.STARCH).add(ModItems.RICE.get(), ExtraDelightItems.POTATO_STICKS.get(),
+				ExtraDelightItems.GRATED_POTATO.get(), ExtraDelightItems.SLICED_POTATO.get());
+
+		tag(ExtraDelightTags.SOUP).add(ExtraDelightItems.CARROT_SOUP.get(), ExtraDelightItems.FISH_SOUP.get(),
+				ExtraDelightItems.OXTAIL_SOUP.get(), ExtraDelightItems.POTATO_SOUP.get(),
+				ExtraDelightItems.TOMATO_SOUP.get(), ModItems.CHICKEN_SOUP.get(), ModItems.NOODLE_SOUP.get(),
+				ModItems.PUMPKIN_SOUP.get(), ModItems.VEGETABLE_SOUP.get(), Items.BEETROOT_SOUP, Items.MUSHROOM_STEW);
 	}
 
 }

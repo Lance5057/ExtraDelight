@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "extradelight:stock"
+    },
+    {
+      "tag": "forge:crops/rice"
+    },
+    {
+      "tag": "forge:crops/onion"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:mushroom_risotto"
+  }
+}

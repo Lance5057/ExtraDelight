@@ -160,9 +160,10 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> SEAWEED_CRISPS = ITEMS.register("seaweed_crisps",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.DRIED_KELP)));
 	public static final RegistryObject<Item> SEAWEED_SALAD = ITEMS.register("seaweed_salad",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)
+					.food(EDFoods.addFoods(Foods.CARROT, Foods.DRIED_KELP).build())));
 
 //	public static final RegistryObject<Item> CUPCAKE = ITEMS.register("cupcake",
 //			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.CUPCAKE)));
@@ -279,9 +280,8 @@ public class ExtraDelightItems {
 	// Condiments
 	public static final RegistryObject<Item> BBQ_SAUCE = ITEMS.register("bbq_jar_item", () -> new DrinkableItem(
 			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.BBQ).craftRemainder(Items.GLASS_BOTTLE)));
-	public static final RegistryObject<Item> KETCHUP = ITEMS.register("ketchup_jar_item",
-			() -> new DrinkableItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.KETCHUP)
-					.craftRemainder(Items.GLASS_BOTTLE)));
+	public static final RegistryObject<Item> KETCHUP = ITEMS.register("ketchup_jar_item", () -> new DrinkableItem(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.KETCHUP).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> MAYO = ITEMS.register("mayo_jar_item", () -> new DrinkableItem(
 			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.MAYO).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> FURIKAKE = ITEMS.register("furikake",

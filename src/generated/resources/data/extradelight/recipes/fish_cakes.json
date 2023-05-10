@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:cooked_fishes"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:crops/onion"
+    },
+    {
+      "tag": "forge:vegetables/potato"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:fish_cakes"
+  }
+}
