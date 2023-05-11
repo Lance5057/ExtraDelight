@@ -247,6 +247,14 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.LAMB_STEW, "lamb_stew");
 		forItem(ExtraDelightItems.PORK_STEW, "pork_stew");
 
+		forItem(ExtraDelightItems.LAMB_STEW_RICE, "lamb_stew_rice");
+		forItem(ExtraDelightItems.PORK_STEW_RICE, "pork_stew_rice");
+		forItem(ExtraDelightItems.RABBIT_STEW_RICE, "rabbit_stew_rice");
+		forItem(ExtraDelightItems.CHICKEN_STEW_RICE, "chicken_stew_rice");
+		forItem(ExtraDelightItems.BEEF_STEW_RICE, "beef_stew_rice");
+		forItem(ExtraDelightItems.FISH_STEW_RICE, "fish_stew_rice");
+		forItem(ExtraDelightItems.CURRY_RICE, "curry_rice");
+
 		forItem(ExtraDelightItems.SAUSAGE_ROLL, "sausage_roll");
 		forItem(ExtraDelightItems.SOS, "sos");
 		forItem(ExtraDelightItems.LIVER_ONIONS, "liver_onions");
@@ -259,7 +267,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.STUFFED_HEART, "stuffedheart");
 		forItem(ExtraDelightItems.FRIED_BRAINS, "friedbrains");
 		forItem(ExtraDelightItems.OXTAIL_SOUP, "oxtail_soup");
-		
+
 		forItem(ExtraDelightItems.CHEESE_SANDWICH, "cheese_sandwich");
 		forItem(ExtraDelightItems.GRILLED_CHEESE, "grilled_cheese");
 
@@ -332,8 +340,7 @@ public class ItemModels extends ItemModelProvider {
 				.parent(new ModelFile.UncheckedModelFile(
 						new ResourceLocation(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
 				.texture("1", modLoc("block/rabbit_stew"));
-		getBuilder(ExtraDelightItems.CURRY_FEAST.getId().getPath())
-		.parent(new ModelFile.UncheckedModelFile(
+		getBuilder(ExtraDelightItems.CURRY_FEAST.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/curry_block_stage0")));
 
 		this.jellyBlock(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM, "white");
@@ -404,6 +411,24 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.LASANGA_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/lasagna_block_stage0"));
 		forItem(ExtraDelightItems.LASAGNA, "lasagna");
+
+		forItem(ExtraDelightItems.BREAD_CRUMBS, "breadcrumbs");
+		forItem(ExtraDelightItems.BREADING_MISANPLAS, "breading_misanplas");
+
+		forItem(ExtraDelightItems.BACON_EGG_SANDWICH, "bacon_egg_sandwich");
+		forItem(ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH, "bacon_egg_cheese_sandwich");
+		forItem(ExtraDelightItems.BUTTERED_TOAST, "buttered_toast");
+		forItem(ExtraDelightItems.CROUTONS, "croutons");
+
+		forItem(ExtraDelightItems.SALAD, "chef_salad");
+		forBlockItem(ExtraDelightItems.SALAD_FEAST_ITEM,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/salad_block_stage0"));
+
+		forItem(ExtraDelightItems.CHICKEN_ALFREDO, "chicken_alfredo");
+		forItem(ExtraDelightItems.PASTA_ALFREDO, "pasta_alfredo_sauce");
+		forItem(ExtraDelightItems.PASTA_TOMATO, "pasta_tomato_sauce");
+		forItem(ExtraDelightItems.CHICKEN_PARM, "chicken_parm");
+		forItem(ExtraDelightItems.CHOPPED_CHEESE, "chopped_cheese");
 
 		AestheticBlocks.itemModel(this);
 	}

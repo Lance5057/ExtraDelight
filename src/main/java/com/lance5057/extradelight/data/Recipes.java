@@ -1090,6 +1090,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Ingredient.of(ExtraDelightTags.STOCK)).addIngredient(Ingredient.of(ForgeTags.CROPS_RICE))
 				.addIngredient(Ingredient.of(ForgeTags.CROPS_ONION))
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mushroom_risotto"));
+		
+		CookingPotRecipeBuilder
+		.cookingPotRecipe(ExtraDelightItems.CURRY_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
+		.addIngredient(Ingredient.of(ForgeTags.RAW_CHICKEN))
+		.addIngredient(Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()))
+		.addIngredient(Ingredient.of(ExtraDelightTags.STOCK))
+		.addIngredient(Ingredient.of(ForgeTags.CROPS_ONION))
+		.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "curry"));
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {

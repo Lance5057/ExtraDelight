@@ -233,4 +233,8 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<BbqRibsBlock> FISH_STEW = BLOCKS.register("fish_stew_block",
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
 					ModItems.FISH_STEW, true));
+
+	public static final RegistryObject<BbqRibsBlock> SALAD = BLOCKS.register("salad_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN),
+					ExtraDelightItems.SALAD, true));
 }

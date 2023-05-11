@@ -1,13 +1,14 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "cutout",
 	"textures": {
 		"2": "farmersdelight:item/cabbage_leaf",
 		"3": "extradelight:item/shredded_carrot",
 		"4": "extradelight:block/chefsalad",
+		"particle": "farmersdelight:item/cabbage_leaf",
 		"tray_top": "extradelight:block/bowl_top",
-		"tray_side": "farmersdelight:block/tray_bottom",
-		"particle": "farmersdelight:item/cabbage_leaf"
+		"tray_side": "farmersdelight:block/tray_bottom"
 	},
 	"elements": [
 		{

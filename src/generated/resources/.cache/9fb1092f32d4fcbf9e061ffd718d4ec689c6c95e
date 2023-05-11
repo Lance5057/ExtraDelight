@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-10T13:59:16.3842367	Recipes
+// 1.19.2	2023-05-11T10:29:57.7711346	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 c3162fb14d185b250f0901b664e508861cd606fe data/extradelight/advancements/recipes/extradelight.items/agar_sheets.json
@@ -100,6 +100,7 @@ a83db1cedac9047e1fcf2b81b986577233304455 data/extradelight/recipes/carrot_soup.j
 46e16e4da61d0ad088f9deb6b23c5bb42d6bb5d0 data/extradelight/recipes/chicken_fried_steak.json
 8cadc8adeae6c8f5104daad417687754c930d804 data/extradelight/recipes/chicken_stew.json
 b4b0a712f4ca12b16a97bc5f700fc815634e5e41 data/extradelight/recipes/chips.json
+5a58dadbc97f565d8c6ce5291d9cadaceab09666 data/extradelight/recipes/curry.json
 3633dae0c3ef7c3562de31b6be9b6bec00438987 data/extradelight/recipes/cyan_jelly_feast.json
 ef3d1e08123797f0acae1431342c1e12fb4c68fb data/extradelight/recipes/diamond_spoon.json
 2c2f161d9e5c5c60dc65476e424c947fff493509 data/extradelight/recipes/dough_shaping.json

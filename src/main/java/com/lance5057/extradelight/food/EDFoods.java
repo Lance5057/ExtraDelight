@@ -41,8 +41,6 @@ public class EDFoods {
 	public static final FoodProperties BBQ = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.4F).alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
 
-	
-
 	public static final FoodProperties STOCK = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.0F).build();
 	public static final FoodProperties GRAVY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1F).build();
 
@@ -61,9 +59,9 @@ public class EDFoods {
 			.build();
 	public static final FoodProperties FRIED_BRAIN = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.5F)
 			.build();
-	
-	public static final FoodProperties CHEESE_SANDWICH = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.65F)
-			.build();
+
+	public static final FoodProperties CHEESE_SANDWICH = (new FoodProperties.Builder()).nutrition(6)
+			.saturationMod(0.65F).build();
 	public static final FoodProperties GRILLED_CHEESE = (new FoodProperties.Builder()).nutrition(7).saturationMod(0.75F)
 			.build();
 
@@ -92,9 +90,11 @@ public class EDFoods {
 			.saturationMod(0.4f).build();
 	public static final FoodProperties FRIED_RICE = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.8f)
 			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();
-	
-	public static Builder addFoods(FoodProperties A, FoodProperties B)
-	{
-		return new FoodProperties.Builder().nutrition(A.getNutrition() + B.getNutrition()).saturationMod(A.getSaturationModifier() + B.getSaturationModifier());
+	public static final FoodProperties SALAD = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2f)
+			.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0F).build();
+
+	public static Builder addFoods(FoodProperties A, FoodProperties B) {
+		return new FoodProperties.Builder().nutrition(A.getNutrition() + B.getNutrition())
+				.saturationMod(A.getSaturationModifier() + B.getSaturationModifier());
 	}
 }

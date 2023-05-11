@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:raw_chicken"
+    },
+    {
+      "item": "extradelight:curry_powder"
+    },
+    {
+      "tag": "extradelight:stock"
+    },
+    {
+      "tag": "forge:crops/onion"
+    }
+  ],
+  "result": {
+    "item": "extradelight:curry_feast"
+  }
+}

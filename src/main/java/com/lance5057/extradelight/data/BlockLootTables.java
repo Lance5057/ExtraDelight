@@ -155,6 +155,7 @@ public class BlockLootTables extends BlockLoot {
 		this.dropOther(ExtraDelightBlocks.PORK_STEW.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.RABBIT_STEW.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.CURRY.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.SALAD.get(), Items.BOWL);
 		
 		AestheticBlocks.loot(this);
 	}
