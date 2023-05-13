@@ -7,19 +7,13 @@
       "tag": "forge:cooked_fishes"
     },
     {
-      "tag": "forge:flour"
-    },
-    {
       "tag": "forge:crops/onion"
     },
     {
-      "tag": "forge:vegetables/potato"
+      "item": "extradelight:grated_potato"
     },
     {
-      "tag": "forge:eggs"
-    },
-    {
-      "tag": "extradelight:frying_oil"
+      "item": "extradelight:breading_misanplas"
     }
   ],
   "result": {

@@ -429,6 +429,11 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.PASTA_TOMATO, "pasta_tomato_sauce");
 		forItem(ExtraDelightItems.CHICKEN_PARM, "chicken_parm");
 		forItem(ExtraDelightItems.CHOPPED_CHEESE, "chopped_cheese");
+		forItem(ExtraDelightItems.CHEESEBURGER, "cheeseburger");
+		forItem(ExtraDelightItems.BACON_CHEESEBURGER, "bacon_cheeseburger");
+		
+		forItem(ExtraDelightItems.SLICED_TOMATO, "sliced_tomato");
+		forItem(ExtraDelightItems.SLICED_ONION, "sliced_onion");
 
 		AestheticBlocks.itemModel(this);
 	}

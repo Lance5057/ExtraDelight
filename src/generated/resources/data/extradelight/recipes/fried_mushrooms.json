@@ -13,13 +13,7 @@
       "tag": "forge:mushrooms"
     },
     {
-      "tag": "forge:flour"
-    },
-    {
-      "tag": "forge:eggs"
-    },
-    {
-      "tag": "extradelight:frying_oil"
+      "item": "extradelight:breading_misanplas"
     }
   ],
   "result": {

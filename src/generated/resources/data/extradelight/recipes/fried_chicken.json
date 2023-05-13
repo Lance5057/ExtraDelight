@@ -7,10 +7,7 @@
       "item": "farmersdelight:chicken_cuts"
     },
     {
-      "tag": "forge:crops/wheat"
-    },
-    {
-      "tag": "extradelight:frying_oil"
+      "item": "extradelight:breading_misanplas"
     }
   ],
   "result": {

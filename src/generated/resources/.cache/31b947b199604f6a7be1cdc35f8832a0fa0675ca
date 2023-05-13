@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-11T13:04:21.3721591	Item Models: extradelight
+// 1.19.2	2023-05-13T12:19:23.7954551	Item Models: extradelight
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
 d1ff53358c1d82a41f4477b0283cfc0f46d9acbc assets/extradelight/models/item/acacia_molded_black_wallpaper.json
@@ -24,6 +24,7 @@ e813d1a4281fdce2834ed8ca752c6619226f790e assets/extradelight/models/item/acacia_
 9eb993f470454d76d4c482d70f24db101f0f24b1 assets/extradelight/models/item/agar_sheets.json
 2333a06362a634867d4808003a51393ffccbb705 assets/extradelight/models/item/apple_jam.json
 3dac844c85d4dd1d2fd4a89933b61b0a9ec3937e assets/extradelight/models/item/apple_sauce.json
+f5202b5c093cf4ab297a3fe6243ea567ae213747 assets/extradelight/models/item/bacon_cheeseburger.json
 4014d37b39ae054ea886de6af70aaf014df5b5c7 assets/extradelight/models/item/bacon_egg_cheese_sandwich.json
 5b851801dbb5c0bad5077ddac97791c8f4843d89 assets/extradelight/models/item/bacon_egg_sandwich.json
 7a693de01321b8ff36eb6d21da1e9f8c0fe07800 assets/extradelight/models/item/baking_stone.json
@@ -66,6 +67,7 @@ cfd31e622775889c39be7e9fd76ac873898c578d assets/extradelight/models/item/carrot_
 560113cd62b69d14ae321244e38ca0f0dbba57e4 assets/extradelight/models/item/carrot_salad.json
 2829885a7cc5556b99cece6a20146778f33cf12e assets/extradelight/models/item/carrot_soup.json
 4da495ed60d7aa2a5eb49f3e7f5d859c74ebbb4e assets/extradelight/models/item/cheese.json
+4c518ac67e178df388970e384248ca3744285964 assets/extradelight/models/item/cheeseburger.json
 e8cdf431cb5eadba66fa2a4b5aa104c59dff2760 assets/extradelight/models/item/cheesecake.json
 5c8d549bc242a8445c268be4c42989206c0ff92f assets/extradelight/models/item/cheesecake_slice.json
 4fdfb8be54c36018c2f9212eea965ccf4a1d1e8a assets/extradelight/models/item/cheese_block_item.json
@@ -366,7 +368,9 @@ ab8ec1fc7792a9e4abc0f84cab0f6b288478ecd3 assets/extradelight/models/item/seaweed
 6f27c44e57c4b86e553e4630ec6955c5870616c1 assets/extradelight/models/item/seaweed_salad.json
 55dabd8f81bf858a7b936f5658a34dc92f76f85b assets/extradelight/models/item/sheet.json
 b2ceed056e736531064cfb7e4066027e30ced8dd assets/extradelight/models/item/sliced_apple.json
+9ebd03de282619b43158cacdb07ea8109324d658 assets/extradelight/models/item/sliced_onion.json
 13449ddd9eae7acceaede905a5735c47aee8bf9b assets/extradelight/models/item/sliced_potato.json
+e0cc2c7980b4762ca1a94d916f65014ff2162a68 assets/extradelight/models/item/sliced_tomato.json
 0fdcd5cc82bbd7f3b7e5942d8bb01f22bf71ddb4 assets/extradelight/models/item/sos.json
 bdf234ae64ba473711b387f0be630a3879135a98 assets/extradelight/models/item/spruce_cabinet.json
 54021bb6a1086b9300285fbab0a1a78c01d63ba4 assets/extradelight/models/item/spruce_knife_block.json

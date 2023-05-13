@@ -7,10 +7,7 @@
       "tag": "minecraft:fishes"
     },
     {
-      "tag": "forge:crops/wheat"
-    },
-    {
-      "tag": "extradelight:frying_oil"
+      "item": "extradelight:breading_misanplas"
     }
   ],
   "result": {

@@ -7,13 +7,7 @@
       "tag": "forge:brain"
     },
     {
-      "tag": "forge:crops/wheat"
-    },
-    {
-      "tag": "extradelight:frying_oil"
-    },
-    {
-      "item": "minecraft:egg"
+      "item": "extradelight:breading_misanplas"
     }
   ],
   "result": {
