@@ -7,6 +7,7 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.integration.jei.categories.DoughShapingRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.DryingRackRecipeCategory;
+import com.lance5057.extradelight.integration.jei.categories.FeastRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MixingBowlRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MortarRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.OvenRecipeCategory;
@@ -38,7 +39,8 @@ public class JEIPlugin implements IModPlugin {
 				new MixingBowlRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new OvenRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new DryingRackRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
-				new DoughShapingRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
+				new DoughShapingRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new FeastRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
 	}
 
 	@Override
@@ -53,6 +55,8 @@ public class JEIPlugin implements IModPlugin {
 				.getAllRecipesFor(ExtraDelightRecipes.DRYING_RACK.get()));
 		registry.addRecipes(DoughShapingRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
 				.getAllRecipesFor(ExtraDelightRecipes.DOUGH_SHAPING.get()));
+		registry.addRecipes(FeastRecipeCategory.TYPE,
+				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ExtraDelightRecipes.FEAST.get()));
 	}
 
 	@Override

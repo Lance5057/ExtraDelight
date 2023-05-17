@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-13T12:19:23.7824537	Recipes
+// 1.19.2	2023-05-17T12:22:39.4933528	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 c3162fb14d185b250f0901b664e508861cd606fe data/extradelight/advancements/recipes/extradelight.items/agar_sheets.json
@@ -503,6 +503,7 @@ ee13f844eefef0259ac400120e8bb56d26781d06 data/minecraft/recipes/egg_mix_fire.jso
 3a6256e27231a6173a43c50129c1dfc3c08b3ede data/minecraft/recipes/glow_berry_cheesecake.json
 1f3563362414b012ed581a3df2b7669d4068c764 data/minecraft/recipes/glow_berry_pie.json
 e3b1a5f4eabe2e21fec033cb1da4e9b3c2e97bf0 data/minecraft/recipes/golden_jam_toast.json
+7e39c3395db1510ef30247e32cf1b729f9e467b1 data/minecraft/recipes/grate_bread.json
 c4bc84559633d132947fde9f21a51ffee1b52c5c data/minecraft/recipes/grate_carrot.json
 3750fec6cd12a93056c1aeea6c179114b1c9a598 data/minecraft/recipes/grate_potato.json
 5559fa7cdb3a46e2bc04cbb54c0025ef76571767 data/minecraft/recipes/grilled_cheese1.json

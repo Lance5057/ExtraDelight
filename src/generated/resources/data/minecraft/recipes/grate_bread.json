@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "forge:bread"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "extradelight:breadcrumbs"
+    }
+  ],
+  "tool": {
+    "item": "extradelight:grater"
+  }
+}

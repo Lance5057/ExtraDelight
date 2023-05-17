@@ -574,8 +574,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, "breading_misanplas");
 
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.MUSHROOM_BURGER.get(), 1).requires(ForgeTags.BREAD)
-				.requires(ModItems.BEEF_PATTY.get()).requires(ExtraDelightItems.BREAD_CRUMBS.get())
-				.requires(ExtraDelightTags.CHEESE).unlockedBy(getName(), has(ExtraDelightItems.BREAD_CRUMBS.get()))
+				.requires(ModItems.BEEF_PATTY.get()).requires(Tags.Items.MUSHROOMS).requires(Tags.Items.MUSHROOMS)
+				.requires(ExtraDelightTags.CHEESE).unlockedBy(getName(), has(Tags.Items.MUSHROOMS))
 				.save(consumer, "mushroom_burger");
 
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CHEESEBURGER.get(), 1).requires(ForgeTags.BREAD)
@@ -1133,6 +1133,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Tags.Items.CROPS_CARROT),
 				Ingredient.of(ExtraDelightItems.GRATER.get()), ExtraDelightItems.GRATED_CARROT.get(), 1)
 				.build(consumer, "grate_carrot");
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ForgeTags.BREAD),
+				Ingredient.of(ExtraDelightItems.GRATER.get()), ExtraDelightItems.BREAD_CRUMBS.get(), 2)
+				.build(consumer, "grate_bread");
 
 		// Potato
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Tags.Items.CROPS_POTATO),

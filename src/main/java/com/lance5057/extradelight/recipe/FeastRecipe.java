@@ -27,6 +27,14 @@ public class FeastRecipe extends SingleItemRecipe {
 		this.feast = feast;
 	}
 
+	public BlockItem getFeast() {
+		return feast;
+	}
+	
+	public ItemStack getFeastStack() {
+		return new ItemStack(feast);
+	}
+
 	@Override
 	public boolean matches(Container pContainer, Level pLevel) {
 		return this.ingredient.test(pContainer.getItem(0)) && this.feast == pContainer.getItem(1).getItem();

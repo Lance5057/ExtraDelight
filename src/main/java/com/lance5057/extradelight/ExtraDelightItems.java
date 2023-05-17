@@ -715,4 +715,15 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> BACON_CHEESEBURGER = ITEMS.register("bacon_cheeseburger",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)
 					.food(EDFoods.addFoods(FoodValues.BACON, FoodValues.HAMBURGER).build())));
+
+	public static final RegistryObject<Item> RICEBALL = ITEMS.register("riceball", () -> new Item(new Item.Properties()
+			.tab(EXTRA_DELIGHT_TAB).food(EDFoods.addFoods(FoodValues.COOKED_RICE, Foods.DRIED_KELP).build())));
+	public static final RegistryObject<Item> RICEBALL_FILLED = ITEMS.register("riceball_filled",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)
+					.food(EDFoods.addFoods(FoodValues.COOKED_RICE, EDFoods.SCRAMBLED_EGGS).build())));
+
+	public static final RegistryObject<Item> FISH_SALAD = ITEMS.register("fish_salad",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.COOKED_CHICKEN)));
+	public static final RegistryObject<Item> FISH_SALAD_SANDWICH = ITEMS.register("fish_salad_sandwich",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.CHICKEN_SANDWICH)));
 }
