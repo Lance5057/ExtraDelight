@@ -212,27 +212,27 @@ public class ExtraDelightBlocks {
 					ExtraDelightItems.HOTDISH, true));
 
 	// Stew
-	public static final RegistryObject<BbqRibsBlock> CURRY = BLOCKS.register("curry_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE),
-					ExtraDelightItems.CURRY, true));
-	public static final RegistryObject<BbqRibsBlock> BEEF_STEW = BLOCKS.register("beef_stew_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
-					ModItems.BEEF_STEW, true));
-	public static final RegistryObject<BbqRibsBlock> PORK_STEW = BLOCKS.register("pork_stew_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.PORK_STEW, true));
-	public static final RegistryObject<BbqRibsBlock> LAMB_STEW = BLOCKS.register("lamb_stew_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.LAMB_STEW, true));
-	public static final RegistryObject<BbqRibsBlock> RABBIT_STEW = BLOCKS.register("rabbit_stew_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.RABBIT_STEW, true));
-	public static final RegistryObject<BbqRibsBlock> CHICKEN_STEW = BLOCKS.register("chicken_stew_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.CHICKEN_STEW, true));
-	public static final RegistryObject<BbqRibsBlock> FISH_STEW = BLOCKS.register("fish_stew_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN),
-					ModItems.FISH_STEW, true));
+	public static final RegistryObject<RecipeFeastBlock> CURRY = BLOCKS.register("curry_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE), true,
+					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+	public static final RegistryObject<RecipeFeastBlock> BEEF_STEW = BLOCKS.register("beef_stew_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
+					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+	public static final RegistryObject<RecipeFeastBlock> PORK_STEW = BLOCKS.register("pork_stew_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
+					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+	public static final RegistryObject<RecipeFeastBlock> LAMB_STEW = BLOCKS.register("lamb_stew_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
+					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+	public static final RegistryObject<RecipeFeastBlock> RABBIT_STEW = BLOCKS.register("rabbit_stew_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
+					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+	public static final RegistryObject<RecipeFeastBlock> CHICKEN_STEW = BLOCKS.register("chicken_stew_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
+					Block.box(1.0D, 0.0D, 1.0D, 14.0D, 2.0D, 14.0D)));
+	public static final RegistryObject<RecipeFeastBlock> FISH_STEW = BLOCKS.register("fish_stew_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
+					Block.box(1.0D, 0.0D, 1.0D, 14.0D, 2.0D, 14.0D)));
 
 	public static final RegistryObject<BbqRibsBlock> SALAD = BLOCKS.register("salad_block",
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN),

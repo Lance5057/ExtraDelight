@@ -7,10 +7,10 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "tag": "forge:meat/scrap/raw"
+      "tag": "forge:meat/raw"
     },
     {
-      "tag": "forge:meat/scrap/raw"
+      "tag": "forge:meat/raw"
     },
     {
       "tag": "forge:vegetables"

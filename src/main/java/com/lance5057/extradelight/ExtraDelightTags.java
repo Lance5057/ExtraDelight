@@ -39,6 +39,23 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> JAM_CARROT = forgeTag("jam/carrot");
 	
 	public static final TagKey<Item> STARCH = forgeTag("food/starch");
+	
+	public static final TagKey<Item> PROCESSED_POTATO = forgeTag("potato/processed");
+	public static final TagKey<Item> GRATED_POTATO = forgeTag("potato/grated");
+	public static final TagKey<Item> SLICED_POTATO = forgeTag("potato/sliced");
+	public static final TagKey<Item> POTATO_STICKS = forgeTag("potato/sticks");
+	
+	public static final TagKey<Item> PROCESSED_CARROT = forgeTag("carrot/processed");
+	public static final TagKey<Item> GRATED_CARROT = forgeTag("carrot/grated");
+	
+	public static final TagKey<Item> PROCESSED_ONION = forgeTag("onion/processed");
+	public static final TagKey<Item> SLICED_ONION = forgeTag("onion/sliced");
+	
+	public static final TagKey<Item> PROCESSED_TOMATO = forgeTag("tomato/processed");
+	public static final TagKey<Item> SLICED_TOMATO = forgeTag("tomato/sliced");
+	
+	public static final TagKey<Item> PROCESSED_APPLE = forgeTag("apple/processed");
+	public static final TagKey<Item> SLICED_APPLE = forgeTag("apple/sliced");
 
 	// Bread
 	public static final TagKey<Item> BREAD_SLICE = forgeTag("bread/sliced");

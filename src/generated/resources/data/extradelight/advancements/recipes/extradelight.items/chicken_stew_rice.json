@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_chicken_stew": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:mushrooms"
+            "items": [
+              "extradelight:chicken_stew_feast"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:mushroom_burger"
+        "recipe": "extradelight:chicken_stew_rice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "Recipes",
+      "has_chicken_stew",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:mushroom_burger"
+      "extradelight:chicken_stew_rice"
     ]
   }
 }

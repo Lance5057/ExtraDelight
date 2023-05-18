@@ -212,7 +212,7 @@ public class BlockModels extends BlockStateProvider {
 		this.feastBlock(ExtraDelightBlocks.HOTDISH.get());
 		this.feastBlock(ExtraDelightBlocks.LASAGNA.get());
 
-		this.feastBlock(ExtraDelightBlocks.CURRY.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.CURRY.get());
 		this.stewBlock(ExtraDelightBlocks.BEEF_STEW.get(), "beef_stew");
 		this.stewBlock(ExtraDelightBlocks.CHICKEN_STEW.get(), "chicken_stew");
 		this.stewBlock(ExtraDelightBlocks.FISH_STEW.get(), "fish_stew");
@@ -339,9 +339,9 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	public void stewBlock(FeastBlock block, String texture) {
+	public void stewBlock(RecipeFeastBlock block, String texture) {
 		getVariantBuilder(block).forAllStates(state -> {
-			int servings = state.getValue(FeastBlock.SERVINGS);
+			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
 
 			String suffix = "_stage" + (block.getMaxServings() - servings);
 
@@ -352,7 +352,7 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder()
 					.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
 							modLoc("curry_block" + suffix)).texture("1", modLoc("block/" + texture)))
-					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
+					.rotationY(((int) state.getValue(RecipeFeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}
 }

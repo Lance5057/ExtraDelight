@@ -1,0 +1,8 @@
+{
+  "type": "extradelight:feast",
+  "block": "extradelight:pork_stew_feast",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "result": "extradelight:pork_stew_rice"
+}

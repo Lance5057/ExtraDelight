@@ -1,0 +1,77 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:pork/roast/raw"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 400,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "tag": "forge:pork/roast"
+          },
+          {
+            "tag": "forge:pork/roast"
+          },
+          {
+            "item": "extradelight:bbq_jar_item"
+          }
+        ],
+        "result": {
+          "item": "extradelight:pulled_pork_block_item"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:pork/roast/raw"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 400,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "item": "minecraft:porkchop"
+          },
+          {
+            "item": "minecraft:porkchop"
+          },
+          {
+            "item": "minecraft:porkchop"
+          },
+          {
+            "item": "minecraft:porkchop"
+          },
+          {
+            "item": "minecraft:porkchop"
+          },
+          {
+            "item": "extradelight:bbq_jar_item"
+          }
+        ],
+        "result": {
+          "item": "extradelight:pulled_pork_block_item"
+        }
+      }
+    }
+  ]
+}

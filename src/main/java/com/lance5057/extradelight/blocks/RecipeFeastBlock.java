@@ -71,8 +71,11 @@ public class RecipeFeastBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		return state.getValue(SERVINGS) == 0 ? SHAPES[0]
-				: Shapes.joinUnoptimized(SHAPES[0], SHAPES[1], BooleanOp.OR);
+		if (SHAPES.length > 1)
+			return state.getValue(SERVINGS) == 0 ? SHAPES[0]
+					: Shapes.joinUnoptimized(SHAPES[0], SHAPES[1], BooleanOp.OR);
+		else
+			return SHAPES[0];
 	}
 
 	public Optional<FeastRecipe> matchRecipe(Level level, ItemStack... itemstack) {
@@ -116,7 +119,7 @@ public class RecipeFeastBlock extends Block {
 				ItemStack result = r.get().getResultItem().copy();
 				level.setBlock(pos, state.setValue(getServingsProperty(), servings - 1), 3);
 				if (!player.getAbilities().instabuild) {
-					if(heldStack.isDamageableItem())
+					if (heldStack.isDamageableItem())
 						heldStack.hurtAndBreak(1, player, null);
 					else
 						heldStack.shrink(1);

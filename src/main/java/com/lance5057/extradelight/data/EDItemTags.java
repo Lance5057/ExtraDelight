@@ -13,6 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 public class EDItemTags extends ItemTagsProvider {
 
@@ -48,7 +49,6 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.COOKING_OIL).add(ExtraDelightItems.COOKING_OIL.get());
 		tag(ExtraDelightTags.FRYING_OIL).add(ExtraDelightItems.COOKING_OIL.get());
 		tag(ExtraDelightTags.VINEGAR).add(ExtraDelightItems.VINEGAR.get());
-		
 
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
 
@@ -90,6 +90,31 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.OXTAIL_SOUP.get(), ExtraDelightItems.POTATO_SOUP.get(),
 				ExtraDelightItems.TOMATO_SOUP.get(), ModItems.CHICKEN_SOUP.get(), ModItems.NOODLE_SOUP.get(),
 				ModItems.PUMPKIN_SOUP.get(), ModItems.VEGETABLE_SOUP.get(), Items.BEETROOT_SOUP, Items.MUSHROOM_STEW);
+
+		tag(ExtraDelightTags.PROCESSED_ONION).addOptionalTag(ForgeTags.CROPS_ONION.location())
+				.add(ExtraDelightItems.SLICED_ONION.get());
+		tag(ExtraDelightTags.SLICED_ONION).add(ExtraDelightItems.SLICED_ONION.get());
+
+		tag(ExtraDelightTags.PROCESSED_POTATO).addTag(Tags.Items.CROPS_POTATO).add(
+				ExtraDelightItems.POTATO_STICKS.get(), ExtraDelightItems.SLICED_POTATO.get(),
+				ExtraDelightItems.GRATED_POTATO.get());
+		tag(ExtraDelightTags.POTATO_STICKS).add(ExtraDelightItems.POTATO_STICKS.get());
+		tag(ExtraDelightTags.SLICED_POTATO).add(ExtraDelightItems.SLICED_POTATO.get());
+		tag(ExtraDelightTags.GRATED_POTATO).add(ExtraDelightItems.GRATED_POTATO.get());
+
+		tag(ExtraDelightTags.PROCESSED_CARROT).addTag(Tags.Items.CROPS_CARROT)
+				.add(ExtraDelightItems.GRATED_CARROT.get());
+		tag(ExtraDelightTags.GRATED_CARROT).add(ExtraDelightItems.GRATED_CARROT.get());
+
+		tag(ExtraDelightTags.PROCESSED_TOMATO).addOptionalTag(ForgeTags.CROPS_TOMATO.location())
+				.add(ExtraDelightItems.SLICED_TOMATO.get());
+		tag(ExtraDelightTags.SLICED_TOMATO).add(ExtraDelightItems.SLICED_TOMATO.get());
+
+		tag(ExtraDelightTags.PROCESSED_APPLE).addTag(ExtraDelightTags.FRUIT_APPLE)
+				.add(ExtraDelightItems.SLICED_APPLE.get());
+		tag(ExtraDelightTags.SLICED_APPLE).add(ExtraDelightItems.SLICED_APPLE.get());
+
+		tag(ForgeTags.COOKED_EGGS).add(ExtraDelightItems.BOILED_EGG.get(), ExtraDelightItems.SCRAMBLED_EGGS.get());
 	}
 
 }

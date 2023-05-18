@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "forge:mushrooms"
+            "tag": "forge:cooked_bacon"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:mushroom_burger"
+        "recipe": "minecraft:bacon_egg_sandwich"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:mushroom_burger"
+      "minecraft:bacon_egg_sandwich"
     ]
   }
 }

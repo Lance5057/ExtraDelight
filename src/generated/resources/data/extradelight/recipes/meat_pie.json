@@ -1,10 +1,10 @@
 {
-  "type": "farmersdelight:cooking",
+  "type": "extradelight:oven",
   "container": {
-    "item": "minecraft:bowl"
+    "item": "extradelight:pie_dish"
   },
-  "cookingtime": 400,
-  "experience": 0.35,
+  "cookingtime": 800,
+  "experience": 1.0,
   "ingredients": [
     {
       "tag": "forge:ground_meat/raw"
@@ -16,15 +16,19 @@
       "tag": "forge:ground_meat/raw"
     },
     {
-      "item": "minecraft:potato"
+      "tag": "forge:mushrooms"
     },
     {
-      "tag": "forge:vegetables/onion"
+      "tag": "forge:potato/processed"
+    },
+    {
+      "tag": "forge:onion/processed"
     },
     {
       "item": "farmersdelight:pie_crust"
     }
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "item": "extradelight:meat_pie_block_item"
   }

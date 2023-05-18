@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_rabbit_stew": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:mushrooms"
+            "items": [
+              "extradelight:rabbit_stew_feast"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:mushroom_burger"
+        "recipe": "extradelight:rabbit_stew_rice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "Recipes",
+      "has_rabbit_stew",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:mushroom_burger"
+      "extradelight:rabbit_stew_rice"
     ]
   }
 }

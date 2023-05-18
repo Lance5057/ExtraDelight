@@ -85,6 +85,87 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.MEAT_LOAF_FEAST.get())
 				.unlockedBy("has_meatloaf", has(ExtraDelightItems.MEAT_LOAF_FEAST.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "meatloaf_sandwich"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ModItems.BEEF_STEW.get(), ExtraDelightItems.BEEF_STEW_FEAST.get())
+				.unlockedBy("has_beef_stew", has(ExtraDelightItems.BEEF_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "beef_stew_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ModItems.COOKED_RICE.get()), ExtraDelightItems.BEEF_STEW_RICE.get(),
+						ExtraDelightItems.BEEF_STEW_FEAST.get())
+				.unlockedBy("has_beef_stew", has(ExtraDelightItems.BEEF_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "beef_stew_rice"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.PORK_STEW.get(),
+						ExtraDelightItems.PORK_STEW_FEAST.get())
+				.unlockedBy("has_pork_stew", has(ExtraDelightItems.PORK_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ModItems.COOKED_RICE.get()), ExtraDelightItems.PORK_STEW_RICE.get(),
+						ExtraDelightItems.PORK_STEW_FEAST.get())
+				.unlockedBy("has_pork_stew", has(ExtraDelightItems.PORK_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pork_stew_rice"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.CHICKEN_STEW.get(),
+						ExtraDelightItems.CHICKEN_STEW_FEAST.get())
+				.unlockedBy("has_chicken_stew", has(ExtraDelightItems.CHICKEN_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "chicken_stew_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ModItems.COOKED_RICE.get()), ExtraDelightItems.CHICKEN_STEW_RICE.get(),
+						ExtraDelightItems.CHICKEN_STEW_FEAST.get())
+				.unlockedBy("has_chicken_stew", has(ExtraDelightItems.CHICKEN_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "chicken_stew_rice"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.RABBIT_STEW.get(),
+						ExtraDelightItems.RABBIT_STEW_FEAST.get())
+				.unlockedBy("has_rabbit_stew", has(ExtraDelightItems.RABBIT_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "rabbit_stew_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ModItems.COOKED_RICE.get()), ExtraDelightItems.RABBIT_STEW_RICE.get(),
+						ExtraDelightItems.RABBIT_STEW_FEAST.get())
+				.unlockedBy("has_rabbit_stew", has(ExtraDelightItems.RABBIT_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "rabbit_stew_rice"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ModItems.FISH_STEW.get(), ExtraDelightItems.FISH_STEW_FEAST.get())
+				.unlockedBy("has_fish_stew", has(ExtraDelightItems.FISH_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fish_stew_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ModItems.COOKED_RICE.get()), ExtraDelightItems.FISH_STEW_RICE.get(),
+						ExtraDelightItems.FISH_STEW_FEAST.get())
+				.unlockedBy("has_fish_stew", has(ExtraDelightItems.FISH_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fish_stew_rice"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.LAMB_STEW.get(),
+						ExtraDelightItems.LAMB_STEW_FEAST.get())
+				.unlockedBy("has_lamb_stew", has(ExtraDelightItems.LAMB_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "lamb_stew_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ModItems.COOKED_RICE.get()), ExtraDelightItems.LAMB_STEW_RICE.get(),
+						ExtraDelightItems.LAMB_STEW_FEAST.get())
+				.unlockedBy("has_lamb_stew", has(ExtraDelightItems.LAMB_STEW_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "lamb_stew_rice"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.CURRY.get(), ExtraDelightItems.CURRY_FEAST.get())
+				.unlockedBy("has_pork_stew", has(ExtraDelightItems.CURRY_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "curry_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ModItems.COOKED_RICE.get()), ExtraDelightItems.CURRY_RICE.get(),
+						ExtraDelightItems.CURRY_FEAST.get())
+				.unlockedBy("has_pork_stew", has(ExtraDelightItems.CURRY_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "curry_rice"));
 	}
 
 	private void doughShapeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -586,6 +667,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CHEESEBURGER.get(), 1).requires(ModItems.HAMBURGER.get())
 				.requires(ExtraDelightTags.CHEESE).unlockedBy(getName(), has(ModItems.HAMBURGER.get()))
 				.save(consumer, "cheeseburger_burger");
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.BACON_EGG_SANDWICH.get(), 1)
+				.requires(ModItems.EGG_SANDWICH.get()).requires(ForgeTags.COOKED_BACON).requires(ForgeTags.COOKED_BACON)
+				.unlockedBy(getName(), has(ForgeTags.COOKED_BACON)).save(consumer, "bacon_egg_sandwich");
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.BACON_EGG_SANDWICH.get(), 1).requires(ForgeTags.BREAD)
+				.requires(ForgeTags.COOKED_BACON).requires(ForgeTags.COOKED_BACON).requires(ForgeTags.COOKED_EGGS)
+				.requires(ForgeTags.COOKED_EGGS).unlockedBy(getName(), has(ForgeTags.COOKED_BACON))
+				.save(consumer, "bacon_egg_sandwich_full");
 	}
 
 	private void tagConditional(RecipeBuilder rb, Consumer<FinishedRecipe> consumer, String id,
@@ -758,22 +848,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.FLOUR)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fish_stew"));
 
-//		CookingPotRecipeBuilder
-//				.cookingPotRecipe(ExtraDelightItems.SAUSAGE_ROLL.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
-//				.addIngredient(ExtraDelightTags.SAUSAGE).addIngredient(ModItems.WHEAT_DOUGH.get())
-//				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sausage_roll"));
-
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.SOS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BREAD)
 				.addIngredient(ExtraDelightTags.SCRAP_BEEF).addIngredient(Items.WHEAT).addIngredient(ForgeTags.MILK)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sos"));
-
-//		CookingPotRecipeBuilder
-//				.cookingPotRecipe(ExtraDelightItems.HASH_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
-//						Items.BOWL)
-//				.addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(Items.POTATO)
-//				.addIngredient(ExtraDelightItems.GROUND_BEEF.get())
-//				.addIngredient(ExtraDelightItems.KETCHUP_JAR_ITEM.get()).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "hash_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.POT_ROAST_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
@@ -790,20 +868,22 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightItems.BBQ_SAUCE.get())
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "bbq_ribs_feast"));
 
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
-						Items.BOWL)
-				.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
-				.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(Items.POTATO)
-				.addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(ModItems.PIE_CRUST.get())
-				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "meat_pie"));
-
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.PULLED_PORK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
-						Items.BOWL)
-				.addIngredient(ExtraDelightTags.PORK_ROAST).addIngredient(ExtraDelightTags.PORK_ROAST)
-				.addIngredient(ExtraDelightItems.BBQ_SAUCE.get())
-				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pulled_pork_feast"));
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.PORK_ROAST_RAW)))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.PULLED_PORK_FEAST_ITEM.get(), 1,
+								CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL)
+						.addIngredient(ExtraDelightTags.PORK_ROAST).addIngredient(ExtraDelightTags.PORK_ROAST)
+						.addIngredient(ExtraDelightItems.BBQ_SAUCE.get())
+						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "pulled_pork_feast")))
+				.addCondition(tagEmpty(ExtraDelightTags.PORK_ROAST_RAW))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.PULLED_PORK_FEAST_ITEM.get(), 1,
+								CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL)
+						.addIngredient(Items.PORKCHOP).addIngredient(Items.PORKCHOP).addIngredient(Items.PORKCHOP)
+						.addIngredient(Items.PORKCHOP).addIngredient(Items.PORKCHOP)
+						.addIngredient(ExtraDelightItems.BBQ_SAUCE.get())
+						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "pulled_pork_feast_vanilla")))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pulled_pork_cond"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
@@ -815,7 +895,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.STIRFRY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
-				.addIngredient(ExtraDelightTags.SCRAP_MEAT_RAW).addIngredient(ExtraDelightTags.SCRAP_MEAT_RAW)
+				.addIngredient(ExtraDelightTags.MEAT_RAW).addIngredient(ExtraDelightTags.MEAT_RAW)
 				.addIngredient(ForgeTags.VEGETABLES).addIngredient(ForgeTags.VEGETABLES)
 				.addIngredient(ForgeTags.VEGETABLES).addIngredient(ForgeTags.VEGETABLES)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stirfry_feast"));
@@ -1422,6 +1502,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightItems.BREAD_CRUMBS.get()).addIngredient(ExtraDelightTags.BUTTER)
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedBy("stuffed_mushroom", has(Tags.Items.MUSHROOMS))
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stuffed_mushroom"));
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.PIE_DISH.get())
+				.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
+				.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(Tags.Items.MUSHROOMS)
+				.addIngredient(ExtraDelightTags.PROCESSED_POTATO).addIngredient(ExtraDelightTags.PROCESSED_ONION)
+				.addIngredient(ModItems.PIE_CRUST.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedBy("meat_pie", has(ModItems.PIE_CRUST.get()))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "meat_pie"));
 
 		bulkBake(Items.BAKED_POTATO, Items.POTATO, consumer, ExtraDelightItems.SHEET.get(), "potato");
 		bulkBake(ExtraDelightItems.ROASTED_CARROT.get(), Items.CARROT, consumer, ExtraDelightItems.SHEET.get(),

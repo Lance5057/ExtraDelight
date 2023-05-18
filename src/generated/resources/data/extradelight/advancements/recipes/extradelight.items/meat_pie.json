@@ -1,32 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:meat_pie"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "meat_pie": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:mushrooms"
+            "items": [
+              "farmersdelight:pie_crust"
+            ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "minecraft:mushroom_burger"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "Recipes",
+      "meat_pie",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:mushroom_burger"
+      "extradelight:meat_pie"
     ]
   }
 }
