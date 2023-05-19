@@ -696,6 +696,8 @@ public class ExtraDelightItems {
 	public static final RegistryObject<BlockItem> SALAD_FEAST_ITEM = ITEMS.register("salad_block_item",
 			() -> new BlockItem(ExtraDelightBlocks.SALAD.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
+	public static final RegistryObject<Item> ALFREDO_SAUCE = ITEMS.register("alfredo_sauce",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.TOMATO_SAUCE)));
 	public static final RegistryObject<Item> PASTA_TOMATO = ITEMS.register("pasta_tomato",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.PASTA)));
 	public static final RegistryObject<Item> PASTA_ALFREDO = ITEMS.register("pasta_alfredo",

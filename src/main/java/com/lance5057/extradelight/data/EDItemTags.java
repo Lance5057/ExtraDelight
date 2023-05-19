@@ -114,6 +114,14 @@ public class EDItemTags extends ItemTagsProvider {
 				.add(ExtraDelightItems.SLICED_APPLE.get());
 		tag(ExtraDelightTags.SLICED_APPLE).add(ExtraDelightItems.SLICED_APPLE.get());
 
+		tag(ExtraDelightTags.PROCESSED_VEG).addTag(ExtraDelightTags.PROCESSED_CARROT)
+				.addTag(ExtraDelightTags.PROCESSED_TOMATO).addTag(ExtraDelightTags.PROCESSED_POTATO)
+				.addTag(ExtraDelightTags.PROCESSED_ONION);
+		
+		tag(ExtraDelightTags.PROCESSED_FRUIT).addTag(ExtraDelightTags.PROCESSED_APPLE);
+		tag(ExtraDelightTags.PROCESSED_PRODUCE).addTag(ExtraDelightTags.PROCESSED_FRUIT)
+				.addTag(ExtraDelightTags.PROCESSED_VEG);
+
 		tag(ForgeTags.COOKED_EGGS).add(ExtraDelightItems.BOILED_EGG.get(), ExtraDelightItems.SCRAMBLED_EGGS.get());
 	}
 

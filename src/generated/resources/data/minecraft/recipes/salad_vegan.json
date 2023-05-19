@@ -1,0 +1,45 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "farmersdelight:cabbage"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/carrot"
+    },
+    {
+      "item": "extradelight:croutons"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:vinegar"
+    },
+    {
+      "tag": "extradelight:processed/produce"
+    },
+    {
+      "tag": "extradelight:processed/produce"
+    },
+    {
+      "tag": "extradelight:processed/produce"
+    },
+    {
+      "tag": "extradelight:processed/produce"
+    },
+    {
+      "tag": "extradelight:processed/produce"
+    }
+  ],
+  "result": {
+    "item": "extradelight:salad_block_item"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

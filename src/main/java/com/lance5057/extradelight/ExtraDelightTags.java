@@ -6,9 +6,13 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
 public class ExtraDelightTags {
-	
+
 	public static TagKey<Item> forgeTag(String tag) {
 		return ItemTags.create(new ResourceLocation("forge", tag));
+	}
+	
+	public static TagKey<Item> modTag(String tag) {
+		return ItemTags.create(new ResourceLocation("extradelight", tag));
 	}
 
 	public static final TagKey<Item> PESTLES = ItemTags.create(new ResourceLocation("forge", "pestles"));
@@ -22,10 +26,10 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> FLOUR = forgeTag("flour");
 	public static final TagKey<Item> SWEETENER = ItemTags.create(new ResourceLocation("extradelight", "sweetener"));
 	public static final TagKey<Item> GRAVY = forgeTag("gravy");
-	
+
 	public static final TagKey<Item> CONDIMENTS = forgeTag("condiment");
 	public static final TagKey<Item> MAYO = forgeTag("mayonnaise");
-	
+
 	public static final TagKey<Item> FRUIT = forgeTag("fruit");
 	public static final TagKey<Item> FRUIT_APPLE = forgeTag("fruit/apple");
 	public static final TagKey<Item> FRUIT_SWEET_BERRY = forgeTag("fruit/sweet_berry");
@@ -37,24 +41,29 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> JAM_GLOW_BERRY = forgeTag("jam/glow_berry");
 	public static final TagKey<Item> JAM_GOLDEN_APPLE = forgeTag("jam/golden_apple");
 	public static final TagKey<Item> JAM_CARROT = forgeTag("jam/carrot");
-	
+
 	public static final TagKey<Item> STARCH = forgeTag("food/starch");
-	
-	public static final TagKey<Item> PROCESSED_POTATO = forgeTag("potato/processed");
+
+	public static final TagKey<Item> PROCESSED_PRODUCE = modTag("processed/produce");
+
+	public static final TagKey<Item> PROCESSED_VEG = modTag("processed/vegetable");
+	public static final TagKey<Item> PROCESSED_FRUIT = modTag("processed/fruit");
+
+	public static final TagKey<Item> PROCESSED_POTATO = modTag("processed/potato");
 	public static final TagKey<Item> GRATED_POTATO = forgeTag("potato/grated");
 	public static final TagKey<Item> SLICED_POTATO = forgeTag("potato/sliced");
 	public static final TagKey<Item> POTATO_STICKS = forgeTag("potato/sticks");
-	
-	public static final TagKey<Item> PROCESSED_CARROT = forgeTag("carrot/processed");
+
+	public static final TagKey<Item> PROCESSED_CARROT = modTag("processed/carrot");
 	public static final TagKey<Item> GRATED_CARROT = forgeTag("carrot/grated");
-	
-	public static final TagKey<Item> PROCESSED_ONION = forgeTag("onion/processed");
+
+	public static final TagKey<Item> PROCESSED_ONION = modTag("processed/onion");
 	public static final TagKey<Item> SLICED_ONION = forgeTag("onion/sliced");
-	
-	public static final TagKey<Item> PROCESSED_TOMATO = forgeTag("tomato/processed");
+
+	public static final TagKey<Item> PROCESSED_TOMATO = modTag("processed/tomato");
 	public static final TagKey<Item> SLICED_TOMATO = forgeTag("tomato/sliced");
-	
-	public static final TagKey<Item> PROCESSED_APPLE = forgeTag("apple/processed");
+
+	public static final TagKey<Item> PROCESSED_APPLE = modTag("processed/apple");
 	public static final TagKey<Item> SLICED_APPLE = forgeTag("apple/sliced");
 
 	// Bread
@@ -67,7 +76,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> MEAT = forgeTag("meat");
 	public static final TagKey<Item> MEAT_RAW = forgeTag("meat/raw");
 	public static final TagKey<Item> MEAT_COOKED = forgeTag("meat/cooked");
-	
+
 	public static final TagKey<Item> SAUSAGE = forgeTag("sausage");
 	public static final TagKey<Item> SAUSAGE_RAW = forgeTag("sausage/raw");
 	public static final TagKey<Item> SAUSAGE_COOKED = forgeTag("sausage/cooked");
@@ -205,6 +214,6 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> GELATIN = forgeTag("gelatin");
 	public static final TagKey<Item> CHEESE = forgeTag("cheese");
 	public static final TagKey<Item> BUTTER = forgeTag("butter");
-	
+
 	public static final TagKey<Item> SOUP = forgeTag("soup");
 }

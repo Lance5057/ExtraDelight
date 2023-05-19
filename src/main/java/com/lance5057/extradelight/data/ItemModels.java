@@ -424,6 +424,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.SALAD_FEAST_ITEM,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/salad_block_stage0"));
 
+		forItem(ExtraDelightItems.ALFREDO_SAUCE, "alfredo_sauce");
 		forItem(ExtraDelightItems.CHICKEN_ALFREDO, "chicken_alfredo");
 		forItem(ExtraDelightItems.PASTA_ALFREDO, "pasta_alfredo_sauce");
 		forItem(ExtraDelightItems.PASTA_TOMATO, "pasta_tomato_sauce");
@@ -431,6 +432,12 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CHOPPED_CHEESE, "chopped_cheese");
 		forItem(ExtraDelightItems.CHEESEBURGER, "cheeseburger");
 		forItem(ExtraDelightItems.BACON_CHEESEBURGER, "bacon_cheeseburger");
+		
+		forItem(ExtraDelightItems.RICEBALL, "riceball");
+		forItem(ExtraDelightItems.RICEBALL_FILLED, "riceball_filled");
+		
+		forItem(ExtraDelightItems.FISH_SALAD, "fish_salad");
+		forItem(ExtraDelightItems.FISH_SALAD_SANDWICH, "fish_salad_sandwich");
 		
 		forItem(ExtraDelightItems.SLICED_TOMATO, "sliced_tomato");
 		forItem(ExtraDelightItems.SLICED_ONION, "sliced_onion");

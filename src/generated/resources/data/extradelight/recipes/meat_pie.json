@@ -19,10 +19,10 @@
       "tag": "forge:mushrooms"
     },
     {
-      "tag": "forge:potato/processed"
+      "tag": "extradelight:processed/potato"
     },
     {
-      "tag": "forge:onion/processed"
+      "tag": "extradelight:processed/onion"
     },
     {
       "item": "farmersdelight:pie_crust"

@@ -291,6 +291,34 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(Ingredient.of(ExtraDelightItems.FISH_FLAKES.get()))
 				.requires(Ingredient.of(ExtraDelightItems.FISH_FLAKES.get())).unlockedBy(getName(), has(Items.KELP))
 				.save(consumer, "mixingbowl/furikake");
+
+		MixingBowlRecipeBuilder
+				.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 1)
+				.requires(ModItems.CABBAGE.get()).requires(ExtraDelightTags.PROCESSED_ONION)
+				.requires(ExtraDelightTags.PROCESSED_CARROT).requires(ExtraDelightItems.CROUTONS.get())
+				.requires(ExtraDelightTags.COOKING_OIL).requires(ExtraDelightTags.VINEGAR)
+				.requires(ExtraDelightTags.PROCESSED_PRODUCE).requires(ExtraDelightTags.PROCESSED_PRODUCE)
+				.requires(ExtraDelightTags.PROCESSED_PRODUCE).requires(ExtraDelightTags.PROCESSED_PRODUCE)
+				.requires(ExtraDelightTags.PROCESSED_PRODUCE).unlockedBy(getName(), has(ForgeTags.CROPS_CABBAGE))
+				.save(consumer, "salad_vegan");
+
+		MixingBowlRecipeBuilder
+				.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 1)
+				.requires(ModItems.CABBAGE.get()).requires(ExtraDelightTags.PROCESSED_ONION)
+				.requires(ExtraDelightTags.PROCESSED_CARROT).requires(ExtraDelightItems.CROUTONS.get())
+				.requires(ExtraDelightItems.CHEESE.get()).requires(ExtraDelightTags.COOKING_OIL)
+				.requires(ExtraDelightTags.VINEGAR).requires(ExtraDelightTags.PROCESSED_PRODUCE).requires(ForgeTags.VEGETABLES)
+				.requires(ExtraDelightTags.PROCESSED_PRODUCE).unlockedBy(getName(), has(ForgeTags.CROPS_CABBAGE))
+				.save(consumer, "salad_veg");
+
+		MixingBowlRecipeBuilder
+				.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 1)
+				.requires(ModItems.CABBAGE.get()).requires(ExtraDelightTags.PROCESSED_ONION)
+				.requires(ExtraDelightTags.PROCESSED_CARROT).requires(ExtraDelightItems.CROUTONS.get())
+				.requires(ExtraDelightItems.CHEESE.get()).requires(ExtraDelightTags.COOKING_OIL)
+				.requires(ExtraDelightTags.VINEGAR).requires(ExtraDelightTags.PROCESSED_PRODUCE)
+				.requires(ExtraDelightTags.MEAT_COOKED).unlockedBy(getName(), has(ForgeTags.CROPS_CABBAGE))
+				.save(consumer, "salad_meat");
 	}
 
 	private void craftingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -676,6 +704,26 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(ForgeTags.COOKED_BACON).requires(ForgeTags.COOKED_BACON).requires(ForgeTags.COOKED_EGGS)
 				.requires(ForgeTags.COOKED_EGGS).unlockedBy(getName(), has(ForgeTags.COOKED_BACON))
 				.save(consumer, "bacon_egg_sandwich_full");
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get(), 1)
+				.requires(ModItems.EGG_SANDWICH.get()).requires(ForgeTags.COOKED_BACON).requires(ForgeTags.COOKED_BACON)
+				.requires(ExtraDelightTags.CHEESE).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
+				.save(consumer, "bacon_egg_cheese_sandwich_egg");
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get(), 1)
+				.requires(ExtraDelightItems.BACON_EGG_SANDWICH.get()).requires(ExtraDelightTags.CHEESE)
+				.unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
+				.save(consumer, "bacon_egg_cheese_sandwich_egg_bacon");
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get(), 1).requires(ForgeTags.BREAD)
+				.requires(ForgeTags.COOKED_BACON).requires(ForgeTags.COOKED_BACON).requires(ForgeTags.COOKED_EGGS)
+				.requires(ForgeTags.COOKED_EGGS).requires(ExtraDelightTags.CHEESE)
+				.unlockedBy(getName(), has(ExtraDelightTags.CHEESE)).save(consumer, "bacon_egg_cheese_sandwich_full");
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.BUTTERED_TOAST.get(), 1)
+				.requires(ExtraDelightTags.BREAD_SLICE).requires(ExtraDelightTags.BUTTER)
+				.unlockedBy(getName(), has(ExtraDelightTags.BUTTER)).save(consumer, "butter_toast");
+
 	}
 
 	private void tagConditional(RecipeBuilder rb, Consumer<FinishedRecipe> consumer, String id,
@@ -1263,6 +1311,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.QUICHE_SLICE.get(), 4).build(consumer);
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BREAD), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 				ExtraDelightItems.BREAD_SLICE.get(), 4).build(consumer);
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightTags.BREAD_SLICE),
+				Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.CROUTONS.get(), 4).build(consumer);
 	}
 
 	void mortarRecipes(Consumer<FinishedRecipe> consumer) {
