@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "s": {
+      "item": "minecraft:warped_trapdoor"
+    },
+    "w": {
+      "item": "minecraft:warped_slab"
+    }
+  },
+  "pattern": [
+    "wsw"
+  ],
+  "result": {
+    "item": "extradelight:warped_cabinet"
+  }
+}

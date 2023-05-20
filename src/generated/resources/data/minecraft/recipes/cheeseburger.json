@@ -14,10 +14,10 @@
       "tag": "forge:cheese"
     },
     {
-      "tag": "forge:crops/tomato"
+      "tag": "extradelight:processed/tomato"
     },
     {
-      "tag": "forge:crops/onion"
+      "tag": "extradelight:processed/onion"
     }
   ],
   "result": {

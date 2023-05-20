@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/lime"
+    },
+    {
+      "item": "minecraft:spruce_slab"
+    }
+  ],
+  "result": {
+    "item": "extradelight:spruce_molded_lime_wallpaper"
+  }
+}

@@ -708,9 +708,6 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> CHICKEN_PARM = ITEMS.register("chicken_parm",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.CHICKEN_FRIED_STEAK)));
 
-	public static final RegistryObject<Item> CHOPPED_CHEESE = ITEMS.register("chopped_cheese",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)
-					.food(EDFoods.addFoods(EDFoods.CHEESE_SANDWICH, Foods.COOKED_BEEF).build())));
 	public static final RegistryObject<Item> CHEESEBURGER = ITEMS.register("cheeseburger",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)
 					.food(EDFoods.addFoods(EDFoods.CHEESE, FoodValues.HAMBURGER).build())));

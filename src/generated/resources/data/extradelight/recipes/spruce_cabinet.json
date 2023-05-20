@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "s": {
+      "item": "minecraft:spruce_trapdoor"
+    },
+    "w": {
+      "item": "minecraft:spruce_slab"
+    }
+  },
+  "pattern": [
+    "wsw"
+  ],
+  "result": {
+    "item": "extradelight:spruce_cabinet"
+  }
+}

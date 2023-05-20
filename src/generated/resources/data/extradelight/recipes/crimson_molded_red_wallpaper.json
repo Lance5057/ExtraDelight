@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/red"
+    },
+    {
+      "item": "minecraft:crimson_slab"
+    }
+  ],
+  "result": {
+    "item": "extradelight:crimson_molded_red_wallpaper"
+  }
+}

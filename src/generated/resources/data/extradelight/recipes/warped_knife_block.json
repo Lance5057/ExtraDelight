@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "k": {
+      "tag": "forge:tools/knives"
+    },
+    "w": {
+      "item": "minecraft:warped_slab"
+    }
+  },
+  "pattern": [
+    "wkw"
+  ],
+  "result": {
+    "item": "extradelight:warped_knife_block"
+  }
+}

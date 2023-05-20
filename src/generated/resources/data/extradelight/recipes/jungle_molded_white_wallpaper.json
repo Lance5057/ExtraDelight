@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/white"
+    },
+    {
+      "item": "minecraft:jungle_slab"
+    }
+  ],
+  "result": {
+    "item": "extradelight:jungle_molded_white_wallpaper"
+  }
+}

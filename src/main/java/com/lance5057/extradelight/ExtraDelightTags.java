@@ -216,4 +216,6 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> BUTTER = forgeTag("butter");
 
 	public static final TagKey<Item> SOUP = forgeTag("soup");
+	
+	public static final TagKey<Item> RICEBALL_FILLING = modTag("riceball_filling");
 }

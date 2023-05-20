@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/cyan"
+    },
+    {
+      "item": "minecraft:acacia_slab"
+    }
+  ],
+  "result": {
+    "item": "extradelight:acacia_molded_cyan_wallpaper"
+  }
+}

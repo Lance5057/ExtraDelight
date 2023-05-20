@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/gray"
+    },
+    {
+      "item": "minecraft:warped_slab"
+    }
+  ],
+  "result": {
+    "item": "extradelight:warped_molded_gray_wallpaper"
+  }
+}

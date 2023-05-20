@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/purple"
+    },
+    {
+      "item": "minecraft:birch_slab"
+    }
+  ],
+  "result": {
+    "item": "extradelight:birch_molded_purple_wallpaper"
+  }
+}

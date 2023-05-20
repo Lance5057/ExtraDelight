@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "k": {
+      "tag": "forge:tools/knives"
+    },
+    "w": {
+      "item": "minecraft:spruce_slab"
+    }
+  },
+  "pattern": [
+    "wkw"
+  ],
+  "result": {
+    "item": "extradelight:spruce_knife_block"
+  }
+}

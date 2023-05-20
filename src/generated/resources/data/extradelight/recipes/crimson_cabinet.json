@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "s": {
+      "item": "minecraft:crimson_trapdoor"
+    },
+    "w": {
+      "item": "minecraft:crimson_slab"
+    }
+  },
+  "pattern": [
+    "wsw"
+  ],
+  "result": {
+    "item": "extradelight:crimson_cabinet"
+  }
+}

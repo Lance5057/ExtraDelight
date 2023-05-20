@@ -2,6 +2,7 @@ package com.lance5057.extradelight.aesthetics;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 import org.apache.commons.lang3.text.WordUtils;
@@ -13,13 +14,19 @@ import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
 import com.lance5057.extradelight.displays.knife.KnifeBlock;
 import com.lance5057.extradelight.displays.spice.SpiceRackBlock;
 
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.Half;
@@ -31,6 +38,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 public class AestheticBlocks {
 	public static final CreativeModeTab AESTHETIC_TAB = new CreativeModeTab("extradelight.aesthetic") {
@@ -148,7 +156,7 @@ public class AestheticBlocks {
 	}
 
 	public static void blockModel(BlockStateProvider bsp) {
-		for (int i = 0; i < WOOD.values().length; i++) { 
+		for (int i = 0; i < WOOD.values().length; i++) {
 			bsp.horizontalBlock(STEP_STOOLS.get(i).get(), bsp.models()
 					.withExistingParent(WOOD.values()[i].toString() + "_step_stool", bsp.modLoc("block/stepstool"))
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks")).renderType("cutout"));
@@ -159,7 +167,7 @@ public class AestheticBlocks {
 					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate")).renderType("cutout"));
 
 			bsp.horizontalBlock(SPICE_RACKS_FULL.get(i).get(), bsp.models()
-					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack_full", 
+					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack_full",
 							bsp.modLoc("block/spicerack_filled"))
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate")).renderType("cutout"));
@@ -252,7 +260,7 @@ public class AestheticBlocks {
 
 			for (int j = 0; j < DyeColor.values().length; j++) {
 				int o = (i * DyeColor.values().length) + j;
-				String d = DyeColor.values()[i].toString();
+				String d = DyeColor.values()[j].toString();
 				d = WordUtils.capitalize(d.replace('_', ' '));
 
 				lp.add(MOLDED_WALLPAPER_ITEMS.get(o).get(), w + " Molded " + d + " Wallpaper");
@@ -265,5 +273,74 @@ public class AestheticBlocks {
 
 			lp.add(WALLPAPER_ITEMS.get(i).get(), w + " Wallpaper");
 		}
+	}
+
+	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove
+	public static void Recipes(Consumer<FinishedRecipe> consumer) {
+		woodRecipe(consumer, Items.ACACIA_SLAB, Items.ACACIA_TRAPDOOR, WOOD.acacia);
+		woodRecipe(consumer, Items.BIRCH_SLAB, Items.BIRCH_TRAPDOOR, WOOD.birch);
+		woodRecipe(consumer, Items.CRIMSON_SLAB, Items.CRIMSON_TRAPDOOR, WOOD.crimson);
+		woodRecipe(consumer, Items.DARK_OAK_SLAB, Items.DARK_OAK_TRAPDOOR, WOOD.dark_oak);
+		woodRecipe(consumer, Items.JUNGLE_SLAB, Items.JUNGLE_TRAPDOOR, WOOD.jungle);
+		woodRecipe(consumer, Items.MANGROVE_SLAB, Items.MANGROVE_TRAPDOOR, WOOD.mangrove);
+		woodRecipe(consumer, Items.OAK_SLAB, Items.OAK_TRAPDOOR, WOOD.oak);
+		woodRecipe(consumer, Items.SPRUCE_SLAB, Items.SPRUCE_TRAPDOOR, WOOD.spruce);
+		woodRecipe(consumer, Items.WARPED_SLAB, Items.WARPED_TRAPDOOR, WOOD.warped);
+
+		moldRecipe(consumer, Items.OAK_SLAB, WOOD.oak, 0);
+		moldRecipe(consumer, Items.DARK_OAK_SLAB, WOOD.dark_oak, 1*16);
+		moldRecipe(consumer, Items.SPRUCE_SLAB, WOOD.spruce, 2*16);
+		moldRecipe(consumer, Items.BIRCH_SLAB, WOOD.birch, 3*16);
+		moldRecipe(consumer, Items.JUNGLE_SLAB, WOOD.jungle, 4*16);
+		moldRecipe(consumer, Items.ACACIA_SLAB, WOOD.acacia, 5*16);
+		moldRecipe(consumer, Items.CRIMSON_SLAB, WOOD.crimson, 6*16);
+		moldRecipe(consumer, Items.WARPED_SLAB, WOOD.warped, 7*16);
+		moldRecipe(consumer, Items.MANGROVE_SLAB, WOOD.mangrove, 8*16);
+
+		for (
+
+				int i = 0; i < DyeColor.values().length; i++) {
+			DyeColor dye = DyeColor.values()[i];
+			ShapelessRecipeBuilder.shapeless(WALLPAPER_ITEMS.get(dye.ordinal()).get()).requires(Items.PAPER, 4)
+					.requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + dye)))
+					.unlockedBy(dye + "_wallpaper", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
+					.save(consumer);
+		}
+	}
+
+	static void moldRecipe(Consumer<FinishedRecipe> consumer, Item slab, WOOD name, int add) {
+		for (int j = 0; j < 16; j++) {
+			DyeColor d = DyeColor.values()[j];
+			String n = d + "_" + name + "_wallpaper";
+			ShapelessRecipeBuilder.shapeless(MOLDED_WALLPAPER_ITEMS.get(j + add).get()).requires(Items.PAPER, 4)
+					.requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + d))).requires(slab)
+					.unlockedBy(n, InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER)).save(consumer);
+		}
+	}
+
+	static void woodRecipe(Consumer<FinishedRecipe> consumer, Item slab, Item trapdoor, WOOD name) {
+
+		ShapedRecipeBuilder.shaped(STEP_STOOLS.get(name.ordinal()).get()).pattern(" w ").pattern("s s").pattern("s s")
+				.define('w', slab).define('s', Items.STICK)
+				.unlockedBy(name + "_step_stool", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(SPICE_RACKS.get(name.ordinal()).get()).pattern("wsw").pattern("b b")
+				.define('w', slab).define('s', Items.STICK).define('b', Items.IRON_BARS)
+				.unlockedBy(name + "_spice_rack", InventoryChangeTrigger.TriggerInstance.hasItems(slab)).save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(SPICE_RACKS_FULL.get(name.ordinal()).get())
+				.requires(SPICE_RACKS.get(name.ordinal()).get()).requires(Items.GLASS_BOTTLE, 4)
+				.unlockedBy(name + "_spice_rack_full", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(KNIFE_BLOCKS.get(name.ordinal()).get()).pattern("wkw").define('w', slab)
+				.define('k', ForgeTags.TOOLS_KNIVES)
+				.unlockedBy(name + "_knife_block", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(CABINETS.get(name.ordinal()).get()).pattern("wsw").define('w', slab)
+				.define('s', trapdoor)
+				.unlockedBy(name + "_cabinet", InventoryChangeTrigger.TriggerInstance.hasItems(slab)).save(consumer);
 	}
 }

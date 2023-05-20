@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "extradelight:fish_flakes"
+    }
+  ],
+  "result": {
+    "item": "extradelight:riceball"
+  }
+}
