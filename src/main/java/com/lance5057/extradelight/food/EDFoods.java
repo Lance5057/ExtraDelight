@@ -4,11 +4,10 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.FoodProperties.Builder;
+import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class EDFoods {
-	public static final FoodProperties CUPCAKE = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2f)
-			.build();
 	public static final FoodProperties WHIPPED_CREAM = (new FoodProperties.Builder()).nutrition(0).saturationMod(0.1f)
 			.build();
 	public static final FoodProperties EDIBLE_SEEDS = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1f)
@@ -41,7 +40,6 @@ public class EDFoods {
 	public static final FoodProperties BBQ = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.4F).alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
 
-	public static final FoodProperties STOCK = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.0F).build();
 	public static final FoodProperties GRAVY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1F).build();
 
 	public static final FoodProperties CHEESE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).build();
@@ -73,7 +71,8 @@ public class EDFoods {
 	public static final FoodProperties HAGGIS = (new FoodProperties.Builder()).nutrition(8).saturationMod(1F).build();
 
 	public static final FoodProperties JELLY = (new FoodProperties.Builder()).nutrition(0).saturationMod(0.2F)
-			.alwaysEat().build();
+			.effect(() -> new MobEffectInstance(MobEffects.JUMP, FoodValues.BRIEF_DURATION, 0), 1.0F).alwaysEat()
+			.build();
 
 	public static final FoodProperties RIBS = (new FoodProperties.Builder()).nutrition(13).saturationMod(1.2F).meat()
 			.build();
@@ -85,6 +84,8 @@ public class EDFoods {
 	public static final FoodProperties PASTA = (new FoodProperties.Builder()).nutrition(8).saturationMod(1.0F).build();
 	public static final FoodProperties SLICED_BREAD = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.12f)
 			.build();
+	public static final FoodProperties BUTTERED_BREAD = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.22f)
+			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), FoodValues.BRIEF_DURATION, 0), 1.0F).build();
 	public static final FoodProperties FURIKAKE_RICE = (new FoodProperties.Builder())
 			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).nutrition(6)
 			.saturationMod(0.4f).build();
@@ -92,6 +93,9 @@ public class EDFoods {
 			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();
 	public static final FoodProperties SALAD = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2f)
 			.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0F).build();
+	
+	public static final FoodProperties BADFOOD = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2f)
+			.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, FoodValues.SHORT_DURATION, 0), 1.0F).build();
 
 	public static Builder addFoods(FoodProperties A, FoodProperties B) {
 		return new FoodProperties.Builder().nutrition(A.getNutrition() + B.getNutrition())

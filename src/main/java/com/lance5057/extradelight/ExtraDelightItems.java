@@ -145,8 +145,7 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.FLOUR.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> COOKING_OIL = ITEMS.register("cooking_oil",
 			() -> new BlockItem(ExtraDelightBlocks.COOKING_OIL.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> STOCK = ITEMS.register("stock_jar_item",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
 	public static final RegistryObject<Item> GRAVY = ITEMS.register("gravy_boat_item",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
@@ -392,9 +391,6 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().food(FoodValues.BEEF_STEW).craftRemainder(Items.BOWL).stacksTo(4)
 					.tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> LAMB_STEW = ITEMS.register("lamb_stew",
-			() -> new Item(new Item.Properties().food(FoodValues.BEEF_STEW).craftRemainder(Items.BOWL).stacksTo(4)
-					.tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<Item> RABBIT_STEW = ITEMS.register("rabbit_stew",
 			() -> new Item(new Item.Properties().food(FoodValues.BEEF_STEW).craftRemainder(Items.BOWL).stacksTo(4)
 					.tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> CHICKEN_STEW = ITEMS.register("chicken_stew",
@@ -725,4 +721,11 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.COOKED_CHICKEN)));
 	public static final RegistryObject<Item> FISH_SALAD_SANDWICH = ITEMS.register("fish_salad_sandwich",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.CHICKEN_SANDWICH)));
+
+	public static final RegistryObject<Item> COOKED_PASTA = ITEMS.register("cooked_pasta",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SLICED_BREAD)));
+	public static final RegistryObject<Item> BUTTERED_PASTA = ITEMS.register("buttered_pasta",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SLICED_BREAD)));
+	public static final RegistryObject<Item> BAD_FOOD = ITEMS.register("bad_food",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.BADFOOD)));
 }

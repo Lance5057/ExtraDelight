@@ -107,7 +107,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.WOODEN_SPOON.get(), "Wooden Spoon");
 		this.add(ExtraDelightItems.YEAST.get(), "Yeast");
 		this.add(ExtraDelightItems.YEAST_POT.get(), "Yeast Pot");
-		this.add(ExtraDelightItems.STOCK.get(), "Stock");
 		this.add(ExtraDelightItems.GRAVY.get(), "Gravy");
 		this.add(ExtraDelightItems.BUTTER.get(), "Butter");
 		this.add(ExtraDelightItems.CHEESE.get(), "Cheese");
@@ -189,7 +188,6 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.PORK_STEW.get(), "Pork Stew");
 		this.add(ExtraDelightItems.LAMB_STEW.get(), "Mutton Stew");
-		this.add(ExtraDelightItems.RABBIT_STEW.get(), "Rabbit Stew");
 		this.add(ExtraDelightItems.CHICKEN_STEW.get(), "Chicken Stew");
 		this.add(ExtraDelightItems.CURRY.get(), "Curry");
 		
@@ -301,6 +299,11 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.JELLY_WHITE.get(), "Bowl of Coconut Jelly");
 		this.add(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get(), "Coconut Jelly");
+		
+		this.add(ExtraDelightItems.COOKED_PASTA.get(), "Cooked Pasta");
+		this.add(ExtraDelightItems.BUTTERED_PASTA.get(), "Buttered Pasta");
+		
+		this.add(ExtraDelightItems.BAD_FOOD.get(), "Bad Food");
 		
 		AestheticBlocks.EngLoc(this);
 	}

@@ -7,21 +7,21 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:potato"
+      "item": "farmersdelight:wheat_dough"
     },
     {
-      "item": "minecraft:potato"
+      "item": "farmersdelight:wheat_dough"
     },
     {
-      "item": "minecraft:potato"
+      "item": "farmersdelight:wheat_dough"
     },
     {
-      "item": "minecraft:potato"
+      "item": "farmersdelight:wheat_dough"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
     "count": 4,
-    "item": "minecraft:baked_potato"
+    "item": "minecraft:bread"
   }
 }

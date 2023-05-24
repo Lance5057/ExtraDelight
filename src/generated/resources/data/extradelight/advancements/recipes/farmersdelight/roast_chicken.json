@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:roast_chicken"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roast_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:chicken"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roast_chicken",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:roast_chicken"
+    ]
+  }
+}

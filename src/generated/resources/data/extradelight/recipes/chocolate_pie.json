@@ -1,0 +1,41 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "extradelight:whipped_cream"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersdelight:chocolate_pie"
+  }
+}

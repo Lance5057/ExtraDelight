@@ -124,7 +124,6 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.FLOUR, "flour");
 		forItem(ExtraDelightItems.COOKING_OIL, "cooking_oil");
 		forItem(ExtraDelightItems.SUNFLOWER_SEEDS, "sunflower_seeds");
-		forItem(ExtraDelightItems.STOCK, "broth");
 		forItem(ExtraDelightItems.GRAVY, "gravy");
 
 		forItem(ExtraDelightItems.SEAWEED_PASTE, "seaweed_paste");
@@ -392,8 +391,10 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.MUSHROOM_RISOTTO, "mushroom_risotto");
 		forItem(ExtraDelightItems.STUFFED_MUSHROOMS, "stuffed_mushrooms");
 		forItem(ExtraDelightItems.MUSHROOM_BURGER, "mushroom_burger");
+		
+		forItem(ExtraDelightItems.COOKED_PASTA, "cooked_pasta");
+		forItem(ExtraDelightItems.BUTTERED_PASTA, "buttered_pasta");
 
-		forItem(ExtraDelightItems.RABBIT_STEW, "rabbit_stew");
 		forItem(ExtraDelightItems.CURRY, "curry");
 		forItem(ExtraDelightItems.CHICKEN_STEW, "chicken_stew");
 
@@ -440,6 +441,11 @@ public class ItemModels extends ItemModelProvider {
 		
 		forItem(ExtraDelightItems.SLICED_TOMATO, "sliced_tomato");
 		forItem(ExtraDelightItems.SLICED_ONION, "sliced_onion");
+		
+		forItem(ExtraDelightItems.COOKED_PASTA, "cooked_pasta");
+		forItem(ExtraDelightItems.BUTTERED_PASTA, "buttered_pasta");
+		
+		forItem(ExtraDelightItems.BAD_FOOD, "badfood");
 
 		AestheticBlocks.itemModel(this);
 	}

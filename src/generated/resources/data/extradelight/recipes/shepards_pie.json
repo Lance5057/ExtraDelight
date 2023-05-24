@@ -23,7 +23,7 @@
             "item": "minecraft:baked_potato"
           },
           {
-            "tag": "extradelight:stock"
+            "item": "farmersdelight:bone_broth"
           },
           {
             "item": "minecraft:baked_potato"
@@ -72,7 +72,7 @@
             "item": "minecraft:baked_potato"
           },
           {
-            "tag": "extradelight:stock"
+            "item": "farmersdelight:bone_broth"
           },
           {
             "item": "minecraft:baked_potato"
@@ -81,16 +81,16 @@
             "tag": "forge:cooked_mutton"
           },
           {
-            "tag": "extradelight:processed/carrot"
+            "tag": "forge:flour"
           },
           {
             "tag": "forge:cooked_mutton"
           },
           {
-            "tag": "forge:flour"
+            "tag": "extradelight:processed/carrot"
           },
           {
-            "item": "farmersdelight:tomato_sauce"
+            "tag": "forge:butter"
           },
           {
             "tag": "extradelight:processed/onion"

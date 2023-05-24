@@ -1,0 +1,13 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 0.15,
+  "ingredients": [
+    {
+      "item": "farmersdelight:raw_pasta"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cooked_pasta"
+  }
+}

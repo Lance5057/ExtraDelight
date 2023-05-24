@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-20T13:57:25.0478673	Tags for minecraft:item
+// 1.19.2	2023-05-24T10:07:04.422049	Tags for minecraft:item
 241fbe7e67bee8a47ff80dbdccae69f91ffd0743 data/extradelight/tags/items/frying_oil.json
 1ab002d480b20f981fede42987de00f396034347 data/extradelight/tags/items/makes_stock.json
 dc8c40429625c82c3c63801f4c6289c2837e7713 data/extradelight/tags/items/processed/apple.json
@@ -10,7 +10,6 @@ dc8c40429625c82c3c63801f4c6289c2837e7713 data/extradelight/tags/items/processed/
 57f4050cd2dade829f5a0b795dead8fc7aea0822 data/extradelight/tags/items/processed/tomato.json
 1ba488d3e6f4116d14bc20df9b703c2dc733415c data/extradelight/tags/items/processed/vegetable.json
 899d8f44abf5a4c72c2924e1643b5ffc78682c59 data/extradelight/tags/items/riceball_filling.json
-bfa053167cb2ed12554bf06fe5c52667e740a514 data/extradelight/tags/items/stock.json
 dca695606359ef650f7a9e689200aad635381abe data/extradelight/tags/items/sweetener.json
 a3e40d195bb00e2a4e7afc2e30c97d7c44e7bfcb data/forge/tags/items/apple/sliced.json
 93067fb98f2e47f2880078b7ca96c7c8bf5ba887 data/forge/tags/items/bread/sliced.json

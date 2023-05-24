@@ -1,0 +1,41 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "forge:gravy"
+    },
+    {
+      "tag": "forge:bread"
+    },
+    {
+      "tag": "extradelight:processed/carrot"
+    },
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    },
+    {
+      "tag": "extradelight:processed/carrot"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersdelight:roast_chicken_block"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersdelight:sweet_berry_cheesecake"
+  }
+}
