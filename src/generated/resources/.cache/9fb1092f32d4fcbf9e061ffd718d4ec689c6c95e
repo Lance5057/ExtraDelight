@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-20T13:52:13.9211933	Recipes
+// 1.19.2	2023-05-22T02:19:54.9670703	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 f2dd2ebd0927649c509d7bed0140dd5062fd825f data/extradelight/advancements/recipes/extradelight.aesthetic/acacia_cabinet.json
@@ -510,6 +510,7 @@ c407db388d3986401c75763e4ebb767d666a8ab4 data/extradelight/recipes/mangrove_mold
 4aeb445a23c07ed5605364f7c38064948fe15030 data/extradelight/recipes/mangrove_spice_rack_full.json
 0fce214a70afcf3e508a160e4bf0cc5764d0b40b data/extradelight/recipes/mangrove_step_stool.json
 285a82d700d1cbb321118b69887a2cb75c1bfca0 data/extradelight/recipes/mashed_potato_gravy_feast.json
+03001f11d4a47ac1945a3e6f820e6cacca66aaa7 data/extradelight/recipes/meatloaf.json
 17c1f451ae2627a7821a7df1cbe9e84d6b5cfd54 data/extradelight/recipes/meatloaf_bowl.json
 6fcf8e2de8cfd11798053a15e307d4c0e8be49e8 data/extradelight/recipes/meatloaf_sandwich.json
 90711bd8e9a9fd342d2b3c478c10624a8425a72c data/extradelight/recipes/meat_pie.json
@@ -615,6 +616,7 @@ d4c4a753e7537a555df1a0b4533abedd8ee8eab8 data/extradelight/recipes/round_pan.jso
 a48570d2809536fec2b2ff5ebc8c64f855d97afd data/extradelight/recipes/seaweed_crisps.json
 bc408a1e19301ad8e8c8ac85385b4e9be5b13f41 data/extradelight/recipes/seaweed_paste.json
 b20e54997fc6a9797c4e07fddba22fd0d257272e data/extradelight/recipes/sheet.json
+b70239dd79019ecf1399ea8442a5e2b88aed0634 data/extradelight/recipes/shepards_pie.json
 d119ad510774c0b497e1227b6f8068e76aa2e420 data/extradelight/recipes/sos.json
 21f66b2f256066d0f6a4eb5bbefb76e51f5e8e44 data/extradelight/recipes/sponge.json
 af735f9a1ce20a68b6e4d473eb3bf7d9dd6d9fa1 data/extradelight/recipes/spruce_cabinet.json
@@ -825,6 +827,9 @@ ddcfc16b1b9382abd5e79e03c4f761ae3ba7192b data/minecraft/advancements/recipes/ext
 97d0951dc0834651bfe9fdee6d7de31b36d9b82f data/minecraft/advancements/recipes/extradelight.items/toast7.json
 52b59b5c2596fd595c85f29daf3d35e212ed873f data/minecraft/advancements/recipes/extradelight.items/toast8.json
 c3c7fbc297a15693ea15602fd07b21db2807e49a data/minecraft/advancements/recipes/extradelight.items/toast9.json
+82eec8fba48cccf771d0064b6add24c2f8f5631f data/minecraft/advancements/recipes/extradelight.items/toast_fire.json
+8e8191a883a8269342ec3a3cdcc4a94f79bdd7af data/minecraft/advancements/recipes/extradelight.items/toast_smelt.json
+49b8ef9233e26b5d916ce53f1635709868041207 data/minecraft/advancements/recipes/extradelight.items/toast_smoke.json
 1acd7f497cde6c69c46879dd9f47523e6c922013 data/minecraft/advancements/recipes/farmersdelight/pasta_meatball.json
 8895290e84479e6f3655d2c9cd89d41662ad7bc2 data/minecraft/advancements/recipes/farmersdelight/pasta_mutton.json
 09c725c05bb9db03e043bce8f8bf8725f5ddee1f data/minecraft/advancements/recipes/food/beef1.json
@@ -1081,7 +1086,7 @@ c5ed451747d052242adbd38507b2cb587e54a007 data/minecraft/recipes/rabbit7.json
 54dadcf0c1e975f50bbf0c430eeb954f9830f55f data/minecraft/recipes/rabbit9.json
 9dca2b1246c49e26287298cfbec9ad616531693a data/minecraft/recipes/red_beet.json
 d5059e41b9807ffecc07a2751c21c772999e4e39 data/minecraft/recipes/riceball.json
-02ef8e50a5faad1501e8becacc562ea5597f2268 data/minecraft/recipes/riceball_filled.json
+92a823c5805ae4045da18982f16b945fd67752cb data/minecraft/recipes/riceball_filled.json
 432c3e3efab4d733512ea2cf4aa6c92842496c30 data/minecraft/recipes/roasted_apple_fire.json
 ce34f9462ad3b617c8b4b4917efb20832831431e data/minecraft/recipes/roasted_apple_smelt.json
 ead95f6e864a546c07e24ee8c164fcf14d47ca10 data/minecraft/recipes/roasted_apple_smoke.json
@@ -1116,4 +1121,7 @@ d8195b867f0e05009c290a6497cfd241fa004495 data/minecraft/recipes/sweet_berry_pie.
 92f132f04ba7f3afd56fa52deeaba1afbdbad37f data/minecraft/recipes/toast7.json
 78c754dac6453ce2e94afb9730db7245cd68b451 data/minecraft/recipes/toast8.json
 4ae51fd441e34720b5f5b91950d87087b89eece1 data/minecraft/recipes/toast9.json
+0257f1a066bceeda4c792ccb8cb2d7e55b1fbbd0 data/minecraft/recipes/toast_fire.json
+47a5d5bfc3be2761e3780dc895fddfd3684e6ce4 data/minecraft/recipes/toast_smelt.json
+9519c954e34f38506ebf6a6976a70302b0e4aae9 data/minecraft/recipes/toast_smoke.json
 12c8bd12cae76f9ae4c1c7035747c2171932074f data/minecraft/recipes/wither_black.json

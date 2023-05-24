@@ -113,6 +113,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CUBED_BEEF = forgeTag("beef/cubed");
 	public static final TagKey<Item> STEW_BEEF = forgeTag("beef/stew");
 	public static final TagKey<Item> OXTAIL = forgeTag("beef/oxtail");
+	public static final TagKey<Item> GROUND_BEEF = forgeTag("beef/ground");
 
 	public static final TagKey<Item> BEEF_RAW = forgeTag("beef/raw");
 	public static final TagKey<Item> SCRAP_BEEF_RAW = forgeTag("beef/scrap/raw");
@@ -121,6 +122,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CUBED_BEEF_RAW = forgeTag("beef/cubed/raw");
 	public static final TagKey<Item> STEW_BEEF_RAW = forgeTag("beef/stew/raw");
 	public static final TagKey<Item> OXTAIL_RAW = forgeTag("beef/oxtail/raw");
+	public static final TagKey<Item> GROUND_BEEF_RAW = forgeTag("beef/ground/raw");
 
 	public static final TagKey<Item> BEEF_COOKED = forgeTag("beef/cooked");
 	public static final TagKey<Item> SCRAP_BEEF_COOKED = forgeTag("beef/scrap/cooked");
@@ -129,6 +131,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CUBED_BEEF_COOKED = forgeTag("beef/cubed/cooked");
 	public static final TagKey<Item> STEW_BEEF_COOKED = forgeTag("beef/stew/cooked");
 	public static final TagKey<Item> OXTAIL_COOKED = forgeTag("beef/oxtail/cooked");
+	public static final TagKey<Item> GROUND_BEEF_COOKED = forgeTag("beef/ground/cooked");
 
 	// Pork
 	public static final TagKey<Item> PORK = forgeTag("pork");
@@ -137,6 +140,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> PORK_RIBS = forgeTag("pork/ribs");
 	public static final TagKey<Item> CUBED_PORK = forgeTag("pork/cubed");
 	public static final TagKey<Item> STEW_PORK = forgeTag("pork/stew");
+	public static final TagKey<Item> GROUND_PORK = forgeTag("pork/ground");
 
 	public static final TagKey<Item> PORK_RAW = forgeTag("pork/raw");
 	public static final TagKey<Item> SCRAP_PORK_RAW = forgeTag("pork/scrap/raw");
@@ -144,6 +148,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> PORK_RIBS_RAW = forgeTag("pork/ribs/raw");
 	public static final TagKey<Item> CUBED_PORK_RAW = forgeTag("pork/cubed/raw");
 	public static final TagKey<Item> STEW_PORK_RAW = forgeTag("pork/stew/raw");
+	public static final TagKey<Item> GROUND_PORK_RAW = forgeTag("pork/ground/raw");
 
 	public static final TagKey<Item> PORK_COOKED = forgeTag("pork/cooked");
 	public static final TagKey<Item> SCRAP_PORK_COOKED = forgeTag("pork/scrap/cooked");
@@ -151,6 +156,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> PORK_RIBS_COOKED = forgeTag("pork/ribs/cooked");
 	public static final TagKey<Item> CUBED_PORK_COOKED = forgeTag("pork/cubed/cooked");
 	public static final TagKey<Item> STEW_PORK_COOKED = forgeTag("pork/stew/cooked");
+	public static final TagKey<Item> GROUND_PORK_COOKED = forgeTag("pork/ground/cooked");
 
 	// Mutton
 	public static final TagKey<Item> MUTTON = forgeTag("mutton");
@@ -159,6 +165,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> MUTTON_RIBS = forgeTag("mutton/ribs");
 	public static final TagKey<Item> CUBED_MUTTON = forgeTag("mutton/cubed");
 	public static final TagKey<Item> STEW_MUTTON = forgeTag("mutton/stew");
+	public static final TagKey<Item> GROUND_MUTTON = forgeTag("mutton/ground");
 
 	public static final TagKey<Item> MUTTON_RAW = forgeTag("mutton/raw");
 	public static final TagKey<Item> SCRAP_MUTTON_RAW = forgeTag("mutton/scrap/raw");
@@ -166,6 +173,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> MUTTON_RIBS_RAW = forgeTag("mutton/ribs/raw");
 	public static final TagKey<Item> CUBED_MUTTON_RAW = forgeTag("mutton/cubed/raw");
 	public static final TagKey<Item> STEW_MUTTON_RAW = forgeTag("mutton/stew/raw");
+	public static final TagKey<Item> GROUND_MUTTON_RAW = forgeTag("mutton/ground/raw");
 
 	public static final TagKey<Item> MUTTON_COOKED = forgeTag("mutton/cooked");
 	public static final TagKey<Item> SCRAP_MUTTON_COOKED = forgeTag("mutton/scrap/cooked");
@@ -173,6 +181,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> MUTTON_RIBS_COOKED = forgeTag("mutton/ribs/cooked");
 	public static final TagKey<Item> CUBED_MUTTON_COOKED = forgeTag("mutton/cubed/cooked");
 	public static final TagKey<Item> STEW_MUTTON_COOKED = forgeTag("mutton/stew/cooked");
+	public static final TagKey<Item> GROUND_MUTTON_COOKED = forgeTag("mutton/ground/cooked");
 
 	// Guts
 	public static final TagKey<Item> OFFAL = forgeTag("offal");

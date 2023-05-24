@@ -220,6 +220,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		vanillaCooking(Ingredient.of(Items.APPLE), ExtraDelightItems.ROASTED_APPLE.get(), consumer, "roasted_apple");
 		vanillaCooking(Ingredient.of(ExtraDelightItems.CHEESE_SANDWICH.get()), ExtraDelightItems.GRILLED_CHEESE.get(),
 				consumer, "grilled_cheese");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.BREAD_SLICE.get()), ExtraDelightItems.TOAST.get(), consumer,
+				"toast");
 	}
 
 	private void vanillaCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
@@ -773,10 +775,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(Items.DRIED_KELP).requires(ExtraDelightItems.FISH_FLAKES.get())
 				.unlockedBy(getName(), has(ModItems.COOKED_RICE.get())).save(consumer, "riceball");
 
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.RICEBALL.get(), 1).requires(ModItems.COOKED_RICE.get())
-				.requires(Items.DRIED_KELP).requires(ExtraDelightItems.FISH_FLAKES.get())
-				.requires(ExtraDelightTags.RICEBALL_FILLING).unlockedBy(getName(), has(ModItems.COOKED_RICE.get()))
-				.save(consumer, "riceball_filled");
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.RICEBALL_FILLED.get(), 1)
+				.requires(ModItems.COOKED_RICE.get()).requires(Items.DRIED_KELP)
+				.requires(ExtraDelightItems.FISH_FLAKES.get()).requires(ExtraDelightTags.RICEBALL_FILLING)
+				.unlockedBy(getName(), has(ModItems.COOKED_RICE.get())).save(consumer, "riceball_filled");
 
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.FISH_SALAD_SANDWICH.get(), 1)
 				.requires(ExtraDelightItems.FISH_SALAD.get()).requires(Items.BREAD)
@@ -1635,6 +1637,53 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 					.unlockedBy("lasagna", has(ExtraDelightItems.LASAGNA_NOODLES.get()))
 					.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "lasagna_vanilla"));
 		}).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "lasagna"));
+
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.GROUND_MEAT_RAW))).addRecipe(r -> {
+			OvenRecipeBuilder
+					.OvenRecipe(ExtraDelightItems.MEAT_LOAF_FEAST.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+							ExtraDelightItems.LOAF_PAN.get())
+					.addIngredient(ExtraDelightItems.KETCHUP.get()).addIngredient(ExtraDelightItems.BREAD_CRUMBS.get())
+					.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
+					.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
+					.addIngredient(ExtraDelightTags.PROCESSED_ONION).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+					.unlockedBy("meatloaf", has(ExtraDelightTags.GROUND_MEAT_RAW))
+					.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "meatloaf_bc"));
+		}).addCondition(tagEmpty(ExtraDelightTags.GROUND_MEAT_RAW)).addRecipe(r -> {
+			OvenRecipeBuilder
+					.OvenRecipe(ExtraDelightItems.MEAT_LOAF_FEAST.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+							ExtraDelightItems.LOAF_PAN.get())
+					.addIngredient(ExtraDelightItems.KETCHUP.get()).addIngredient(ExtraDelightItems.BREAD_CRUMBS.get())
+					.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ModItems.BEEF_PATTY.get())
+					.addIngredient(ModItems.BEEF_PATTY.get()).addIngredient(ModItems.BEEF_PATTY.get())
+					.addIngredient(ExtraDelightTags.PROCESSED_ONION).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+					.unlockedBy("meatloaf", has(ExtraDelightItems.LASAGNA_NOODLES.get()))
+					.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "meatloaf_vanilla"));
+		}).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "meatloaf"));
+
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.GROUND_MUTTON_COOKED))).addRecipe(r -> {
+			OvenRecipeBuilder
+					.OvenRecipe(ModItems.SHEPHERDS_PIE_BLOCK.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+							ExtraDelightItems.SQUARE_PAN.get())
+					.addIngredient(Items.BAKED_POTATO).addIngredient(ExtraDelightTags.STOCK)
+					.addIngredient(Items.BAKED_POTATO).addIngredient(ExtraDelightTags.GROUND_MUTTON_COOKED)
+					.addIngredient(ExtraDelightTags.PROCESSED_CARROT)
+					.addIngredient(ExtraDelightTags.GROUND_MUTTON_COOKED).addIngredient(ExtraDelightTags.FLOUR)
+					.addIngredient(ModItems.TOMATO_SAUCE.get()).addIngredient(ExtraDelightTags.PROCESSED_ONION)
+					.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+					.unlockedBy("shepards_pie", has(ExtraDelightTags.GROUND_MEAT_RAW))
+					.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "shepards_pie_bc"));
+		}).addCondition(tagEmpty(ExtraDelightTags.GROUND_MUTTON_COOKED)).addRecipe(r -> {
+			OvenRecipeBuilder
+					.OvenRecipe(ModItems.SHEPHERDS_PIE_BLOCK.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+							ExtraDelightItems.SQUARE_PAN.get())
+					.addIngredient(Items.BAKED_POTATO).addIngredient(ExtraDelightTags.STOCK)
+					.addIngredient(Items.BAKED_POTATO).addIngredient(ForgeTags.COOKED_MUTTON)
+					.addIngredient(ExtraDelightTags.PROCESSED_CARROT).addIngredient(ForgeTags.COOKED_MUTTON)
+					.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ModItems.TOMATO_SAUCE.get())
+					.addIngredient(ExtraDelightTags.PROCESSED_ONION).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+					.unlockedBy("shepards_pie", has(ExtraDelightTags.GROUND_MEAT_RAW))
+					.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "shepards_pie_vanilla"));
+		}).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "shepards_pie"));
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.HOTDISH_FEAST.get(), 1, SLOW_COOKING, MEDIUM_EXP,
