@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "acacia_cabinet": {
+    "acacia_half_cabinet": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:acacia_slab"
+              "farmersdelight:acacia_cabinet"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "acacia_cabinet",
+      "acacia_half_cabinet",
       "has_the_recipe"
     ]
   ],

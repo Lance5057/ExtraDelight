@@ -1,15 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "s": {
-      "item": "minecraft:jungle_trapdoor"
-    },
-    "w": {
-      "item": "minecraft:jungle_slab"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "farmersdelight:jungle_cabinet"
     }
-  },
-  "pattern": [
-    "wsw"
   ],
   "result": {
     "item": "extradelight:jungle_cabinet"

@@ -1,11 +1,27 @@
 {
   "entries": [
     "extradelight:curry_pyramid",
+    "extradelight:pestle_nether",
+    "extradelight:food_city",
+    "extradelight:food_outpost",
+    "extradelight:mortar_nether",
+    "extradelight:pestle_dungeon",
+    "extradelight:food_dungeon",
     "extradelight:curry_ship",
+    "extradelight:food_ship",
+    "extradelight:food_mansion1",
     "extradelight:furikake_ruins_big",
+    "extradelight:food_ship_feast",
+    "extradelight:food_mansion3",
     "extradelight:curry_village",
     "extradelight:furikake_ruins",
-    "extradelight:curry_mansion"
+    "extradelight:food_house",
+    "extradelight:food_mansion2",
+    "extradelight:curry_mansion",
+    "extradelight:food_igloo",
+    "extradelight:mortar_dungeon",
+    "extradelight:food_city_ice",
+    "extradelight:food_butcher"
   ],
   "replace": false
 }

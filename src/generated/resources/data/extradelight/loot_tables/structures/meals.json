@@ -1,0 +1,508 @@
+{
+  "type": "minecraft:empty",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:apple_sauce"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:bacon_cheeseburger"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:bacon_egg_cheese_sandwich"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:bacon_egg_sandwich"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:bbq_ribs"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:beef_stew_rice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:beef_wellington"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:boiled_egg"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:buttered_pasta"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:buttered_toast"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:carrot_salad"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:carrot_soup"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cheese_sandwich"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cheeseburger"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cheesecake_slice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:chicken_alfredo"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:chicken_fried_steak"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:chicken_parm"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:chicken_stew"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:chicken_stew_rice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:chocolate_cheesecake_slice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:chocolate_custard"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:curry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:curry_rice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:egg_in_the_basket"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:egg_salad"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:egg_salad_sandwich"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fish_chips"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fish_cakes"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fish_salad"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fish_salad_sandwich"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fish_soup"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fish_stew_rice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:french_fries"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fried_brains"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fried_chicken"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fried_fish"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fried_mushrooms"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fudge_popsicle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:furikake_rice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:glazed_carrot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:glow_berry_cheesecake_slice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:glow_berry_cookie"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:glow_berry_juice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:glow_berry_pie_slice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:glow_berry_popsicle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:golden_jam_toast"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:grilled_cheese"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:haggis"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:hash"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:hashbrowns"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:honey_cheesecake_slice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:honey_custard"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:honey_popsicle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:hotdish"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jam_toast"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_black"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_blue"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_brown"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_cyan"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_green"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_grey"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_light_blue"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_light_grey"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_lime"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_magenta"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_orange"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_pink"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_purple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_red"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_white"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jelly_yellow"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:jerky"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:lamb_stew"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:lamb_stew_rice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:lasanga"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:liver_onions"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:macaroni_cheese"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:mashed_potato_gravy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:meatloaf"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:meatloaf_sandwich"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:meat_pie_slice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:mushroom_burger"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:mushroom_risotto"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:omelette"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:oxtail_soup"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:pasta_alfredo"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:pasta_tomato"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:pork_stew"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:pork_stew_rice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:pork_tenderloin"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:pork_tenderloin_sandwich"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:potroast"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:potato_chips"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:potato_soup"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:pulled_pork_sandwich"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:pumpkin_cheesecake_slice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:pumpkin_cookie"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:pumpkin_custard"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:quiche_slice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:rabbit_stew_rice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:rack_lamb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:riceball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:riceball_filled"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:roasted_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:roasted_carrot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:salad"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:salisbury_steak"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sausage_roll"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:scrambled_eggs"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:seaweed_crisps"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:seaweed_salad"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sos"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:stirfry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:stuffed_heart"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:stuffed_mushrooms"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sugar_cookie"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sweet_berry_custard"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sweet_berry_juice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sweet_berry_pie_slice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sweet_berry_popsicle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:tomato_juice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:tomato_soup"
+        }
+      ],
+      "name": "main",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 15.0,
+        "min": 1.0
+      }
+    }
+  ]
+}

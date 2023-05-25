@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "jungle_cabinet": {
+    "jungle_half_cabinet": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:jungle_slab"
+              "farmersdelight:jungle_cabinet"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "jungle_cabinet",
+      "jungle_half_cabinet",
       "has_the_recipe"
     ]
   ],

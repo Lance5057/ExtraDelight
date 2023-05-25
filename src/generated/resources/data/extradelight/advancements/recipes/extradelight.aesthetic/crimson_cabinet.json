@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "crimson_cabinet": {
+    "crimson_half_cabinet": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:crimson_slab"
+              "farmersdelight:crimson_cabinet"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "crimson_cabinet",
+      "crimson_half_cabinet",
       "has_the_recipe"
     ]
   ],

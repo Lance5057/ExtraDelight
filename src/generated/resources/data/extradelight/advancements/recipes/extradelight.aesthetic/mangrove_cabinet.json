@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "mangrove_cabinet": {
+    "mangrove_half_cabinet": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:mangrove_slab"
+              "farmersdelight:mangrove_cabinet"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "mangrove_cabinet",
+      "mangrove_half_cabinet",
       "has_the_recipe"
     ]
   ],

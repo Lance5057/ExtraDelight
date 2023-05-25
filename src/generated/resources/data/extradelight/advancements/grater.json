@@ -1,0 +1,37 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "grater": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:grater"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.grater.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:grater"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.grater.name"
+    }
+  },
+  "requirements": [
+    [
+      "grater"
+    ]
+  ]
+}

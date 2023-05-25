@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:food_loot",
+  "conditions": [
+    {
+      "chance": 0.5,
+      "condition": "minecraft:random_chance"
+    },
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/ancient_city"
+    }
+  ],
+  "loot_table": "extradelight:structures/dungeon_rot"
+}

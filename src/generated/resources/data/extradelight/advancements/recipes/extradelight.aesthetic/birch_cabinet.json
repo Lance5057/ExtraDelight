@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "birch_cabinet": {
+    "birch_half_cabinet": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:birch_slab"
+              "farmersdelight:birch_cabinet"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "birch_cabinet",
+      "birch_half_cabinet",
       "has_the_recipe"
     ]
   ],

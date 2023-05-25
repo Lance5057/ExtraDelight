@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "spruce_cabinet": {
+    "spruce_half_cabinet": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:spruce_slab"
+              "farmersdelight:spruce_cabinet"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "spruce_cabinet",
+      "spruce_half_cabinet",
       "has_the_recipe"
     ]
   ],

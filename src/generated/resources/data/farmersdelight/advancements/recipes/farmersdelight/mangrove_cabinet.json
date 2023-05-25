@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "farmersdelight:mangrove_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "mangrove_cabinet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:mangrove_cabinet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "mangrove_cabinet",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "farmersdelight:mangrove_cabinet"
+    ]
+  }
+}

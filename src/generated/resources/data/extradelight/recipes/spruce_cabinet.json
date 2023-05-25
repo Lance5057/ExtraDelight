@@ -1,15 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "s": {
-      "item": "minecraft:spruce_trapdoor"
-    },
-    "w": {
-      "item": "minecraft:spruce_slab"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "farmersdelight:spruce_cabinet"
     }
-  },
-  "pattern": [
-    "wsw"
   ],
   "result": {
     "item": "extradelight:spruce_cabinet"

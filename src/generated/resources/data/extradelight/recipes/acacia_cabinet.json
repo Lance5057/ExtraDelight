@@ -1,15 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "s": {
-      "item": "minecraft:acacia_trapdoor"
-    },
-    "w": {
-      "item": "minecraft:acacia_slab"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "farmersdelight:acacia_cabinet"
     }
-  },
-  "pattern": [
-    "wsw"
   ],
   "result": {
     "item": "extradelight:acacia_cabinet"

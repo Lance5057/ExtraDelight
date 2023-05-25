@@ -1,15 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "s": {
-      "item": "minecraft:birch_trapdoor"
-    },
-    "w": {
-      "item": "minecraft:birch_slab"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "farmersdelight:birch_cabinet"
     }
-  },
-  "pattern": [
-    "wsw"
   ],
   "result": {
     "item": "extradelight:birch_cabinet"

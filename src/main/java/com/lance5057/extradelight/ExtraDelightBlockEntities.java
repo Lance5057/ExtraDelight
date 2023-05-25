@@ -1,7 +1,6 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.displays.cabinet.HalfCabinetEntity;
 import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 import com.lance5057.extradelight.displays.spice.SpiceRackEntity;
@@ -40,10 +39,10 @@ public class ExtraDelightBlockEntities {
 					.of(SpiceRackEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS_FULL))
 					.build(null));
 
-	public static final RegistryObject<BlockEntityType<HalfCabinetEntity>> HALF_CABINET = TILES.register("half_cabinet",
-			() -> BlockEntityType.Builder
-					.of(HalfCabinetEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.CABINETS))
-					.build(null));
+//	public static final RegistryObject<BlockEntityType<HalfCabinetEntity>> HALF_CABINET = TILES.register("half_cabinet",
+//			() -> BlockEntityType.Builder
+//					.of(HalfCabinetEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.CABINETS))
+//					.build(null));
 
 	public static final RegistryObject<BlockEntityType<MortarBlockEntity>> MORTAR = TILES.register("mortar",
 			() -> BlockEntityType.Builder.of(MortarBlockEntity::new, ExtraDelightBlocks.MORTAR_AMETHYST.get(),

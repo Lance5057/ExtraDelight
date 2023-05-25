@@ -27,5 +27,6 @@ public class DataGen {
 		generator.addProvider(event.includeServer(), new Recipes(generator));
 		generator.addProvider(true, new EnglishLoc(generator));
 		generator.addProvider(event.includeServer(), new LootModifiers(generator));
+		generator.addProvider(event.includeServer(), new Advancements(generator, helper));
 	}
 }

@@ -1,0 +1,144 @@
+{
+  "type": "minecraft:empty",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:agar_agar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:alfredo_sauce"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:apple_jam"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:bbq_jar_item"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:breadcrumbs"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:bread_slice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:butter"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:carrot_jam"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cheese"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cooked_pasta"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cooking_oil"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:croutons"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:egg_mix"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:fish_flakes"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:flour"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:grated_carrot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:grated_potato"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:gravy_boat_item"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:ketchup_jar_item"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:macaroni"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:mayo_jar_item"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:omelette_mix"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:potato_sticks"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sliced_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sliced_onion"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sliced_potato"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sliced_tomato"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:sunflower_seeds"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:toast"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:vinegar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:whipped_cream"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:yeast"
+        }
+      ],
+      "name": "main",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 30.0,
+        "min": 1.0
+      }
+    }
+  ]
+}

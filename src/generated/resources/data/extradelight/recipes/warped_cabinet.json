@@ -1,15 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "s": {
-      "item": "minecraft:warped_trapdoor"
-    },
-    "w": {
-      "item": "minecraft:warped_slab"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "farmersdelight:warped_cabinet"
     }
-  },
-  "pattern": [
-    "wsw"
   ],
   "result": {
     "item": "extradelight:warped_cabinet"

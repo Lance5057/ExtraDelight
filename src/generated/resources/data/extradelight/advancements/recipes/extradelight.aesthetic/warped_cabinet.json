@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "warped_cabinet": {
+    "warped_half_cabinet": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:warped_slab"
+              "farmersdelight:warped_cabinet"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "warped_cabinet",
+      "warped_half_cabinet",
       "has_the_recipe"
     ]
   ],

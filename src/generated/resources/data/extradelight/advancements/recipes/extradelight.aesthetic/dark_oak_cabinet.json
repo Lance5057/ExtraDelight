@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "dark_oak_cabinet": {
+    "dark_oak_half_cabinet": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:dark_oak_slab"
+              "farmersdelight:dark_oak_cabinet"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "dark_oak_cabinet",
+      "dark_oak_half_cabinet",
       "has_the_recipe"
     ]
   ],

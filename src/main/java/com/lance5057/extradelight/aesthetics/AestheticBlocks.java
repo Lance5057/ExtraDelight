@@ -38,6 +38,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 public class AestheticBlocks {
@@ -288,14 +289,16 @@ public class AestheticBlocks {
 		woodRecipe(consumer, Items.WARPED_SLAB, Items.WARPED_TRAPDOOR, WOOD.warped);
 
 		moldRecipe(consumer, Items.OAK_SLAB, WOOD.oak, 0);
-		moldRecipe(consumer, Items.DARK_OAK_SLAB, WOOD.dark_oak, 1*16);
-		moldRecipe(consumer, Items.SPRUCE_SLAB, WOOD.spruce, 2*16);
-		moldRecipe(consumer, Items.BIRCH_SLAB, WOOD.birch, 3*16);
-		moldRecipe(consumer, Items.JUNGLE_SLAB, WOOD.jungle, 4*16);
-		moldRecipe(consumer, Items.ACACIA_SLAB, WOOD.acacia, 5*16);
-		moldRecipe(consumer, Items.CRIMSON_SLAB, WOOD.crimson, 6*16);
-		moldRecipe(consumer, Items.WARPED_SLAB, WOOD.warped, 7*16);
-		moldRecipe(consumer, Items.MANGROVE_SLAB, WOOD.mangrove, 8*16);
+		moldRecipe(consumer, Items.DARK_OAK_SLAB, WOOD.dark_oak, 1 * 16);
+		moldRecipe(consumer, Items.SPRUCE_SLAB, WOOD.spruce, 2 * 16);
+		moldRecipe(consumer, Items.BIRCH_SLAB, WOOD.birch, 3 * 16);
+		moldRecipe(consumer, Items.JUNGLE_SLAB, WOOD.jungle, 4 * 16);
+		moldRecipe(consumer, Items.ACACIA_SLAB, WOOD.acacia, 5 * 16);
+		moldRecipe(consumer, Items.CRIMSON_SLAB, WOOD.crimson, 6 * 16);
+		moldRecipe(consumer, Items.WARPED_SLAB, WOOD.warped, 7 * 16);
+		moldRecipe(consumer, Items.MANGROVE_SLAB, WOOD.mangrove, 8 * 16);
+
+		cabinetRecipes(consumer);
 
 		for (
 
@@ -339,8 +342,98 @@ public class AestheticBlocks {
 				.unlockedBy(name + "_knife_block", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
 				.save(consumer);
 
-		ShapedRecipeBuilder.shaped(CABINETS.get(name.ordinal()).get()).pattern("wsw").define('w', slab)
-				.define('s', trapdoor)
-				.unlockedBy(name + "_cabinet", InventoryChangeTrigger.TriggerInstance.hasItems(slab)).save(consumer);
+	}
+
+	static void cabinetRecipes(Consumer<FinishedRecipe> consumer) {
+		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.mangrove.ordinal()).get())
+				.requires(ModItems.MANGROVE_CABINET.get())
+				.unlockedBy("mangrove_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MANGROVE_CABINET.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(ModItems.MANGROVE_CABINET.get())
+				.requires(CABINETS.get(WOOD.mangrove.ordinal()).get())
+				.unlockedBy("mangrove_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.mangrove.ordinal()).get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.crimson.ordinal()).get())
+				.requires(ModItems.CRIMSON_CABINET.get()).unlockedBy("crimson_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CRIMSON_CABINET.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(ModItems.CRIMSON_CABINET.get())
+				.requires(CABINETS.get(WOOD.crimson.ordinal()).get())
+				.unlockedBy("crimson_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.crimson.ordinal()).get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.warped.ordinal()).get())
+				.requires(ModItems.WARPED_CABINET.get()).unlockedBy("warped_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.WARPED_CABINET.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(ModItems.WARPED_CABINET.get())
+				.requires(CABINETS.get(WOOD.warped.ordinal()).get())
+				.unlockedBy("warped_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.warped.ordinal()).get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.acacia.ordinal()).get())
+				.requires(ModItems.ACACIA_CABINET.get()).unlockedBy("acacia_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ACACIA_CABINET.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(ModItems.ACACIA_CABINET.get())
+				.requires(CABINETS.get(WOOD.acacia.ordinal()).get())
+				.unlockedBy("acacia_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.acacia.ordinal()).get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.oak.ordinal()).get()).requires(ModItems.OAK_CABINET.get())
+				.unlockedBy("oak_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.OAK_CABINET.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(ModItems.OAK_CABINET.get()).requires(CABINETS.get(WOOD.oak.ordinal()).get())
+				.unlockedBy("oak_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.oak.ordinal()).get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.dark_oak.ordinal()).get())
+				.requires(ModItems.DARK_OAK_CABINET.get())
+				.unlockedBy("dark_oak_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.DARK_OAK_CABINET.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(ModItems.DARK_OAK_CABINET.get())
+				.requires(CABINETS.get(WOOD.dark_oak.ordinal()).get())
+				.unlockedBy("dark_oak_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.dark_oak.ordinal()).get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.spruce.ordinal()).get())
+				.requires(ModItems.SPRUCE_CABINET.get()).unlockedBy("spruce_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPRUCE_CABINET.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(ModItems.SPRUCE_CABINET.get())
+				.requires(CABINETS.get(WOOD.spruce.ordinal()).get())
+				.unlockedBy("spruce_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.spruce.ordinal()).get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.birch.ordinal()).get())
+				.requires(ModItems.BIRCH_CABINET.get()).unlockedBy("birch_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BIRCH_CABINET.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(ModItems.BIRCH_CABINET.get())
+				.requires(CABINETS.get(WOOD.birch.ordinal()).get())
+				.unlockedBy("birch_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.birch.ordinal()).get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.jungle.ordinal()).get())
+				.requires(ModItems.JUNGLE_CABINET.get()).unlockedBy("jungle_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.JUNGLE_CABINET.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(ModItems.JUNGLE_CABINET.get())
+				.requires(CABINETS.get(WOOD.jungle.ordinal()).get())
+				.unlockedBy("jungle_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.jungle.ordinal()).get()))
+				.save(consumer);
 	}
 }
