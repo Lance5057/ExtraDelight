@@ -304,7 +304,7 @@ public class AestheticBlocks {
 
 				int i = 0; i < DyeColor.values().length; i++) {
 			DyeColor dye = DyeColor.values()[i];
-			ShapelessRecipeBuilder.shapeless(WALLPAPER_ITEMS.get(dye.ordinal()).get()).requires(Items.PAPER, 4)
+			ShapelessRecipeBuilder.shapeless(WALLPAPER_ITEMS.get(dye.ordinal()).get(),4).requires(Items.PAPER, 4)
 					.requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + dye)))
 					.unlockedBy(dye + "_wallpaper", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
 					.save(consumer);
@@ -315,7 +315,7 @@ public class AestheticBlocks {
 		for (int j = 0; j < 16; j++) {
 			DyeColor d = DyeColor.values()[j];
 			String n = d + "_" + name + "_wallpaper";
-			ShapelessRecipeBuilder.shapeless(MOLDED_WALLPAPER_ITEMS.get(j + add).get()).requires(Items.PAPER, 4)
+			ShapelessRecipeBuilder.shapeless(MOLDED_WALLPAPER_ITEMS.get(j + add).get(), 4).requires(Items.PAPER, 4)
 					.requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + d))).requires(slab)
 					.unlockedBy(n, InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER)).save(consumer);
 		}
