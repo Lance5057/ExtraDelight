@@ -1,0 +1,63 @@
+{
+	"processor": "com.lance5057.extradelight.integration.patchouli.MixingBowlProcessor",
+	"components": [
+	{
+			"type": "patchouli:frame",
+			"x": -1,
+			"y": 7
+		},
+		{
+			"type": "patchouli:header",
+			"text": "#name",
+			"x": -1
+		},
+		{
+		  "type": "patchouli:custom",
+		  "class": "com.lance5057.extradelight.integration.patchouli.components.RoundItemList",
+		  "x": -1,
+		  "y": 21,
+		  "recipe_name": "#recipe"
+		},
+		{
+		  "type": "patchouli:item",
+		  "item": "#output",
+		  "framed": "true",
+		  "link_recipe": true,
+		  "x": 49,
+		  "y": 113
+		},
+		{
+		  "type": "patchouli:item",
+		  "item": "#used",
+		  "framed": "false",
+		  "x": 29,
+		  "y": 113
+		},
+		{
+		  "type": "patchouli:item",
+		  "item": "extradelight:wooden_spoon",
+		  "framed": "false",
+		  "x": 71,
+		  "y": 113
+		},
+		{
+            "type": "patchouli:text",
+            "text": "#stirs",
+			"x": 91,
+			"y": 120,
+			"max_width": 20,
+			"line_height": 26,
+			"color": "000000"
+        },
+		{
+            "type": "patchouli:text",
+            "text": "x",
+			"x": 85,
+			"y": 120,
+			"max_width": 40,
+			"line_height": 40,
+			"color": "000000"
+        }
+		
+	]
+}

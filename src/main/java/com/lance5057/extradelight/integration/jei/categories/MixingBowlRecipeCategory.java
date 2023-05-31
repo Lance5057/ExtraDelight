@@ -65,6 +65,7 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 	public void setRecipe(IRecipeLayoutBuilder builder, MixingBowlRecipe recipe, IFocusGroup focuses) {
 		List<Ingredient> input = recipe.getIngredients();
 		Ingredient pestle = Ingredient.of(ExtraDelightTags.SPOONS);
+		ItemStack used = recipe.getUsedItem();
 		ItemStack output = recipe.getResultItem();
 
 		float angle = -90;
@@ -79,6 +80,7 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 
 		}
 		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 12, 83).addIngredients(pestle);
+		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 - 8, 63).addItemStack(used);
 		// builder.addSlot(RecipeIngredientRole.CATALYST, (int) center.x, (int)
 		// center.y).addIngredients(pestle);
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 - 8, 83).addItemStack(output);
