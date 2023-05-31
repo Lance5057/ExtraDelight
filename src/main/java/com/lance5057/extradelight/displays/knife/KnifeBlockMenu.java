@@ -80,8 +80,8 @@ public class KnifeBlockMenu extends AbstractContainerMenu {
 
 	@Override
 	public ItemStack quickMoveStack(Player pPlayer, int pIndex) {
-		int indexOutput = 5;
-		int startPlayerInv = indexOutput + 1;
+		int indexOutput = 4;
+		int startPlayerInv = indexOutput;
 		int endPlayerInv = startPlayerInv + 36;
 
 		ItemStack itemstack = ItemStack.EMPTY;
@@ -90,7 +90,7 @@ public class KnifeBlockMenu extends AbstractContainerMenu {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
 
-			if (pIndex <= indexOutput) {
+			if (pIndex >= indexOutput) {
 				if (!this.moveItemStackTo(itemstack1, 0, indexOutput, true)) {
 					return ItemStack.EMPTY;
 				}

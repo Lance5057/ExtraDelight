@@ -43,7 +43,7 @@ public class KnifeBlock extends BaseEntityBlock implements SimpleWaterloggedBloc
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public KnifeBlock() {
-		super(Properties.of(Material.WOOD));
+		super(Properties.of(Material.WOOD).noOcclusion());
 		this.registerDefaultState(
 				this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
 	}

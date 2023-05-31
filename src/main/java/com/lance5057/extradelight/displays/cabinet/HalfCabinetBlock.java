@@ -45,7 +45,7 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 	public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
 	public HalfCabinetBlock() {
-		super(Properties.of(Material.WOOD));
+		super(Properties.of(Material.WOOD).noOcclusion());
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, false));
 	}
 

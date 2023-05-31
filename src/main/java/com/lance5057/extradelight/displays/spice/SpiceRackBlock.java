@@ -44,7 +44,7 @@ public class SpiceRackBlock extends BaseEntityBlock implements SimpleWaterlogged
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public SpiceRackBlock() {
-		super(Properties.of(Material.WOOD));
+		super(Properties.of(Material.WOOD).noOcclusion());
 		this.registerDefaultState(
 				this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
 	}
