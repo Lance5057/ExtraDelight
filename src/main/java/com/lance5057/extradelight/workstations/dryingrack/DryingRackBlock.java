@@ -1,11 +1,13 @@
 package com.lance5057.extradelight.workstations.dryingrack;
 
 import java.util.Optional;
+import java.util.stream.IntStream;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -23,6 +25,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public class DryingRackBlock extends Block implements EntityBlock {
 
@@ -79,5 +82,21 @@ public class DryingRackBlock extends Block implements EntityBlock {
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState,
 			BlockEntityType<T> pBlockEntityType) {
 		return pBlockEntityType == ExtraDelightBlockEntities.DRYING_RACK.get() ? DryingRackBlockEntity::tick : null;
+	}
+	
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity tileentity = level.getBlockEntity(pos);
+			if (tileentity instanceof DryingRackBlockEntity) {
+				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
+						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots())
+								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
+
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
+
+			super.onRemove(state, level, pos, newState, isMoving);
+		}
 	}
 }

@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
+import java.util.stream.IntStream;
+
 import com.lance5057.extradelight.ExtraDelightTags;
 
 import net.minecraft.core.BlockPos;
@@ -19,6 +21,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public class MixingBowlBlock extends Block implements EntityBlock {
 	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
@@ -79,6 +82,22 @@ public class MixingBowlBlock extends Block implements EntityBlock {
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
 		// TODO Auto-generated method stub
 		return new MixingBowlBlockEntity(pPos, pState);
+	}
+	
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity tileentity = level.getBlockEntity(pos);
+			if (tileentity instanceof MixingBowlBlockEntity) {
+				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
+						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots())
+								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
+
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
+
+			super.onRemove(state, level, pos, newState, isMoving);
+		}
 	}
 
 }

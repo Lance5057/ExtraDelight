@@ -1,6 +1,9 @@
 package com.lance5057.extradelight.workstations.mortar;
 
+import java.util.stream.IntStream;
+
 import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -21,6 +24,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public class MortarBlock extends Block implements EntityBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -72,5 +76,21 @@ public class MortarBlock extends Block implements EntityBlock {
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
 		return new MortarBlockEntity(pPos, pState);
+	}
+	
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity tileentity = level.getBlockEntity(pos);
+			if (tileentity instanceof MortarBlockEntity) {
+				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
+						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots())
+								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
+
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
+
+			super.onRemove(state, level, pos, newState, isMoving);
+		}
 	}
 }
