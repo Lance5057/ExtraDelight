@@ -80,6 +80,7 @@ public class FeastRecipe extends SingleItemRecipe {
 			pBuffer.writeUtf(pRecipe.group);
 			pRecipe.ingredient.toNetwork(pBuffer);
 			pBuffer.writeItem(pRecipe.result);
+			pBuffer.writeId(Registry.ITEM, pRecipe.getFeast());
 		}
 	}
 }
