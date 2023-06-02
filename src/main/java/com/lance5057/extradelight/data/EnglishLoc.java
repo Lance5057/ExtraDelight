@@ -30,6 +30,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.dynamicname.7", "%s, %s, %s, %s, %s and %s %s");
 		this.add("extradelight.dynamicname.8", "%s, %s, %s, %s, %s, %s and %s %s");
 		this.add("extradelight.dynamicname.9", "%s, %s, %s, %s, %s, %s, %s and %s %s");
+		this.add("extradelight.jei.oven", "Oven");
 
 		this.add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		this.add(ExtraDelightItems.CHEESECAKE_ITEM.get(), "Cheesecake");
@@ -63,30 +64,30 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.NETHERITE_SPOON.get(), "Netherite Spoon");
 		this.add(ExtraDelightItems.VINEGAR_POT.get(), "Vinegar Pot");
 
-		this.add(ExtraDelightItems.MORTAR_AMETHYST.get(), "Mortar");
-		this.add(ExtraDelightItems.MORTAR_ANDESITE.get(), "Mortar");
-		this.add(ExtraDelightItems.MORTAR_BASALT.get(), "Mortar");
-		this.add(ExtraDelightItems.MORTAR_BLACKSTONE.get(), "Mortar");
-		this.add(ExtraDelightItems.MORTAR_DEEPSLATE.get(), "Mortar");
-		this.add(ExtraDelightItems.MORTAR_DIORITE.get(), "Mortar");
-		this.add(ExtraDelightItems.MORTAR_ENDSTONE.get(), "Mortar");
-		this.add(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(), "Mortar");
-		this.add(ExtraDelightItems.MORTAR_GRANITE.get(), "Mortar");
-		this.add(ExtraDelightItems.MORTAR_STONE.get(), "Mortar");
+		this.add(ExtraDelightItems.MORTAR_AMETHYST.get(), "Amethyst Mortar");
+		this.add(ExtraDelightItems.MORTAR_ANDESITE.get(), "Andesite Mortar");
+		this.add(ExtraDelightItems.MORTAR_BASALT.get(), "Basalt Mortar");
+		this.add(ExtraDelightItems.MORTAR_BLACKSTONE.get(), "Blackstone Mortar");
+		this.add(ExtraDelightItems.MORTAR_DEEPSLATE.get(), "Deepslate Mortar");
+		this.add(ExtraDelightItems.MORTAR_DIORITE.get(), "Diorite Mortar");
+		this.add(ExtraDelightItems.MORTAR_ENDSTONE.get(), "Endstone Mortar");
+		this.add(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(), "Gilded Blackstone Mortar");
+		this.add(ExtraDelightItems.MORTAR_GRANITE.get(), "Granite Mortar");
+		this.add(ExtraDelightItems.MORTAR_STONE.get(), "Stone Mortar");
 
 		this.add(ExtraDelightItems.MUFFIN_TIN.get(), "Muffin Tin");
 		this.add(ExtraDelightItems.OVEN.get(), "Oven");
 
-		this.add(ExtraDelightItems.PESTLE_AMETHYST.get(), "Pestle");
-		this.add(ExtraDelightItems.PESTLE_ANDESITE.get(), "Pestle");
-		this.add(ExtraDelightItems.PESTLE_BASALT.get(), "Pestle");
-		this.add(ExtraDelightItems.PESTLE_BLACKSTONE.get(), "Pestle");
-		this.add(ExtraDelightItems.PESTLE_DEEPSLATE.get(), "Pestle");
-		this.add(ExtraDelightItems.PESTLE_DIORITE.get(), "Pestle");
-		this.add(ExtraDelightItems.PESTLE_ENDSTONE.get(), "Pestle");
-		this.add(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.get(), "Pestle");
-		this.add(ExtraDelightItems.PESTLE_GRANITE.get(), "Pestle");
-		this.add(ExtraDelightItems.PESTLE_STONE.get(), "Pestle");
+		this.add(ExtraDelightItems.PESTLE_AMETHYST.get(), "Amethyst Pestle");
+		this.add(ExtraDelightItems.PESTLE_ANDESITE.get(), "Andesite Pestle");
+		this.add(ExtraDelightItems.PESTLE_BASALT.get(), "Basalt Pestle");
+		this.add(ExtraDelightItems.PESTLE_BLACKSTONE.get(), "Blackstone Pestle");
+		this.add(ExtraDelightItems.PESTLE_DEEPSLATE.get(), "Deepslate Pestle");
+		this.add(ExtraDelightItems.PESTLE_DIORITE.get(), "Diorite Pestle");
+		this.add(ExtraDelightItems.PESTLE_ENDSTONE.get(), "Endstone Pestle");
+		this.add(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.get(), "Gilded Blackstone Pestle");
+		this.add(ExtraDelightItems.PESTLE_GRANITE.get(), "Granite Pestle");
+		this.add(ExtraDelightItems.PESTLE_STONE.get(), "Stone Pestle");
 
 		this.add(ExtraDelightItems.PIE_DISH.get(), "Pie Dish");
 		this.add(ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get(), "Pumpkin Cheesecake");
@@ -156,6 +157,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.FURIKAKE.get(), "Furikake");
 		this.add(ExtraDelightItems.CURRY_POWDER.get(), "Curry Powder");
 		this.add(ExtraDelightItems.FISH_FLAKES.get(), "Fish Flakes");
+		this.add(ExtraDelightItems.BREAD_CRUMBS.get(), "Breadcrumbs");
+		this.add(ExtraDelightItems.BREADING_MISANPLAS.get(), "Breading Mise en place");
 
 		this.add(ExtraDelightItems.MACARONI.get(), "Macaroni");
 		this.add(ExtraDelightItems.LASAGNA_NOODLES.get(), "Lasagna Noodles");
@@ -240,6 +243,24 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.PULLED_PORK_SANDWICH.get(), "Pulled Pork Sandwich");
 		this.add(ExtraDelightItems.PULLED_PORK_FEAST_ITEM.get(), "Pulled Pork");
 
+		this.add(ExtraDelightItems.BACON_EGG_SANDWICH.get(), "Bacon Egg Sandwich");
+		this.add(ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get(), "Bacon Egg and Cheese Sandwich");
+
+		this.add(ExtraDelightItems.BUTTERED_TOAST.get(), "Buttered Toast");
+		this.add(ExtraDelightItems.CROUTONS.get(), "Croutons");
+		this.add(ExtraDelightItems.SALAD.get(), "Salad");
+		this.add(ExtraDelightItems.SALAD_FEAST_ITEM.get(), "Salad Feast");
+		this.add(ExtraDelightItems.ALFREDO_SAUCE.get(), "Alfredo Sauce");
+		this.add(ExtraDelightItems.PASTA_TOMATO.get(), "Tomato Pasta");
+		this.add(ExtraDelightItems.PASTA_ALFREDO.get(), "Alfredo Pasta");
+		this.add(ExtraDelightItems.CHICKEN_PARM.get(), "Chicken Parmesan");
+		this.add(ExtraDelightItems.CHEESEBURGER.get(), "Cheeseburger");
+		this.add(ExtraDelightItems.BACON_CHEESEBURGER.get(), "Bacon Cheeseburger");
+		this.add(ExtraDelightItems.RICEBALL.get(), "Riceball");
+		this.add(ExtraDelightItems.RICEBALL_FILLED.get(), "Filled Riceball");
+		this.add(ExtraDelightItems.FISH_SALAD.get(), "Fish Salad");
+		this.add(ExtraDelightItems.FISH_SALAD_SANDWICH.get(), "Fish Salad Sandwich");
+
 		this.add(ExtraDelightItems.RACK_LAMB.get(), "Rack of Lamb Plate");
 		this.add(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), "Rack of Lamb");
 
@@ -303,7 +324,18 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.COOKED_PASTA.get(), "Cooked Pasta");
 		this.add(ExtraDelightItems.BUTTERED_PASTA.get(), "Buttered Pasta");
 
+		this.add(ExtraDelightItems.BEEF_STEW_RICE.get(), "Beef Stew with Rice");
+		this.add(ExtraDelightItems.PORK_STEW_RICE.get(), "Pork Stew with Rice");
+		this.add(ExtraDelightItems.LAMB_STEW_RICE.get(), "Lamb Stew with Rice");
+		this.add(ExtraDelightItems.RABBIT_STEW_RICE.get(), "Rabbit Stew with Rice");
+		this.add(ExtraDelightItems.CHICKEN_STEW_RICE.get(), "Chicken Stew with Rice");
+		this.add(ExtraDelightItems.FISH_STEW_RICE.get(), "Fish Stew with Rice");
+		this.add(ExtraDelightItems.CURRY_RICE.get(), "Curry Rice");
+		this.add(ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get(), "Tenderloin Sandwich");
+		this.add(ExtraDelightItems.CHEESE_SANDWICH.get(), "Cheese Sandwich");
+
 		this.add(ExtraDelightItems.BAD_FOOD.get(), "Bad Food");
+
 
 		add(TranslatableKeys.OVEN_CONTAINER, "Baking Oven");
 		add(TranslatableKeys.OVEN_SERVED_ON, "Served on %s");

@@ -105,7 +105,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 
 				ItemStack mealStack = this.hoveredSlot.getItem();
 				tooltip.add(((MutableComponent) mealStack.getItem().getDescription())
-						.withStyle(mealStack.getRarity().color));
+						.withStyle(mealStack.getRarity().getStyleModifier()));
 
 				ItemStack containerStack = this.menu.tileEntity.getContainer();
 				String container = !containerStack.isEmpty() ? containerStack.getItem().getDescription().getString()
