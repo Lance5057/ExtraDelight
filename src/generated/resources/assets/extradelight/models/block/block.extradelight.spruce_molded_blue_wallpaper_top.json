@@ -2,6 +2,7 @@
   "parent": "extradelight:block/molding_top",
   "textures": {
     "0": "extradelight:block/wallpaper_blue",
-    "1": "minecraft:block/spruce_planks"
+    "1": "minecraft:block/spruce_planks",
+    "particle": "extradelight:block/wallpaper_blue"
   }
 }

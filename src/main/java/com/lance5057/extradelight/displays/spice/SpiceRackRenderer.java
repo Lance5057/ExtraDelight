@@ -61,9 +61,11 @@ public class SpiceRackRenderer implements BlockEntityRenderer<SpiceRackEntity> {
 		if (!item.isEmpty()) {
 			BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 			pPoseStack.pushPose();
-			float uniscale = 0.75f;
-			pPoseStack.translate(x, y, z);
+			float uniscale = 0.75f; 
 
+			pPoseStack.translate(0.5f, 0, 0.5f);
+			pPoseStack.mulPose(new Quaternion(0, -dir.toYRot(), 0, true));
+			pPoseStack.translate(x-0.5f, y, z-0.5f);
 			pPoseStack.mulPose(new Quaternion(rx, ry, rz, true));
 
 			pPoseStack.scale(uniscale, uniscale, uniscale);

@@ -12,12 +12,19 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.PieBlock;
+
 public class ExtraDelightBlocks {
+	
+	final static VoxelShape bowl = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D);
+	final static VoxelShape plate = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 1.0D, 15.0D);
+	final static VoxelShape pan = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D);
+	
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			ExtraDelight.MOD_ID);
 
@@ -37,7 +44,8 @@ public class ExtraDelightBlocks {
 			() -> new YeastPotBlock(ExtraDelightItems.YEAST, 4));
 	public static final RegistryObject<Block> VINEGAR_POT = BLOCKS.register("vinegar_pot",
 			() -> new YeastPotBlock(ExtraDelightItems.VINEGAR, 8));
-	public static final RegistryObject<Block> GRATER = BLOCKS.register("grater", GraterBlock::new);
+	// public static final RegistryObject<Block> GRATER = BLOCKS.register("grater",
+	// GraterBlock::new);
 
 	public static final RegistryObject<Block> MORTAR_STONE = BLOCKS.register("mortar_stone", MortarBlock::new);
 	public static final RegistryObject<Block> MORTAR_ANDESITE = BLOCKS.register("mortar_andesite", MortarBlock::new);
@@ -87,45 +95,45 @@ public class ExtraDelightBlocks {
 			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.QUICHE_SLICE));
 
 	// Feasts
-	public static final RegistryObject<SalisburySteakBlock> SALISBURY_STEAK_FEAST = BLOCKS.register(
+	public static final RegistryObject<RecipeFeastBlock> SALISBURY_STEAK_FEAST = BLOCKS.register(
 			"salisbury_steak_block",
-			() -> new SalisburySteakBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.SALISBURY_STEAK, true));
-	public static final RegistryObject<SalisburySteakBlock> MASHED_POTATO_GRAVY = BLOCKS.register(
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					bowl));
+	public static final RegistryObject<RecipeFeastBlock> MASHED_POTATO_GRAVY = BLOCKS.register(
 			"mashed_potato_gravy_block",
-			() -> new SalisburySteakBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.MASHED_POTATO_GRAVY, true));
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					bowl));
 
-	public static final RegistryObject<HashBowlBlock> HASH_FEAST = BLOCKS.register("hash_block",
-			() -> new HashBowlBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.HASH, true));
-	public static final RegistryObject<PotRoastBlock> POT_ROAST_FEAST = BLOCKS.register("potroast_block",
-			() -> new PotRoastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.POT_ROAST, true));
+	public static final RegistryObject<RecipeFeastBlock> HASH_FEAST = BLOCKS.register("hash_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					bowl));
+	public static final RegistryObject<RecipeFeastBlock> POT_ROAST_FEAST = BLOCKS.register("potroast_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					plate));
 
 	public static final RegistryObject<RecipeFeastBlock> MEATLOAF_FEAST = BLOCKS.register("meatloaf_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
 					Block.box(1.0D, 0.0D, 1.0D, 14.0D, 2.0D, 14.0D), Block.box(2.0D, 2.0D, 2.0D, 14.0D, 8.0D, 14.0D)));
 
-	public static final RegistryObject<BbqRibsBlock> BBQ_RIBS_FEAST = BLOCKS.register("bbq_ribs_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.BBQ_RIBS, true));
-	public static final RegistryObject<BbqRibsBlock> PULLED_PORK_FEAST = BLOCKS.register("pulled_pork_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.PULLED_PORK_SANDWICH, true));
+	public static final RegistryObject<RecipeFeastBlock> BBQ_RIBS_FEAST = BLOCKS.register("bbq_ribs_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+	public static final RegistryObject<RecipeFeastBlock> PULLED_PORK_FEAST = BLOCKS.register("pulled_pork_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
 
-	public static final RegistryObject<BbqRibsBlock> RACK_LAMB = BLOCKS.register("rack_lamb_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.RACK_LAMB, true));
-	public static final RegistryObject<BbqRibsBlock> STIRFRY = BLOCKS.register("stirfry_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.STIRFRY, true));
-	public static final RegistryObject<BbqRibsBlock> BEEF_WELLINGTON = BLOCKS.register("beef_wellington_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.BEEF_WELLINGTON, true));
-	public static final RegistryObject<BbqRibsBlock> HAGGIS = BLOCKS.register("haggis_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
-					ExtraDelightItems.HAGGIS, true));
+	public static final RegistryObject<RecipeFeastBlock> RACK_LAMB = BLOCKS.register("rack_lamb_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+	public static final RegistryObject<RecipeFeastBlock> STIRFRY = BLOCKS.register("stirfry_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+	public static final RegistryObject<RecipeFeastBlock> BEEF_WELLINGTON = BLOCKS.register("beef_wellington_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+	public static final RegistryObject<RecipeFeastBlock> HAGGIS = BLOCKS.register("haggis_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
+					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
 
 	public static final RegistryObject<JellyBlock> JELLY_WHITE = BLOCKS.register("jelly_white_block",
 			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_WHITE),
@@ -186,15 +194,15 @@ public class ExtraDelightBlocks {
 			() -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_YELLOW).friction(0.98F)
 					.sound(SoundType.SLIME_BLOCK)));
 
-	public static final RegistryObject<BbqRibsBlock> MACARONI_CHEESE = BLOCKS.register("macaroni_cheese_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW),
-					ExtraDelightItems.MACARONI_CHEESE, true));
-	public static final RegistryObject<BbqRibsBlock> LASAGNA = BLOCKS.register("lasagna_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW),
-					ExtraDelightItems.LASAGNA, true));
-	public static final RegistryObject<BbqRibsBlock> HOTDISH = BLOCKS.register("hotdish_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW),
-					ExtraDelightItems.HOTDISH, true));
+	public static final RegistryObject<RecipeFeastBlock> MACARONI_CHEESE = BLOCKS.register("macaroni_cheese_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW), true,
+					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+	public static final RegistryObject<RecipeFeastBlock> LASAGNA = BLOCKS.register("lasagna_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW), true,
+					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+	public static final RegistryObject<RecipeFeastBlock> HOTDISH = BLOCKS.register("hotdish_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW), true,
+					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
 
 	// Stew
 	public static final RegistryObject<RecipeFeastBlock> CURRY = BLOCKS.register("curry_block",
@@ -219,7 +227,7 @@ public class ExtraDelightBlocks {
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
 					Block.box(1.0D, 0.0D, 1.0D, 14.0D, 2.0D, 14.0D)));
 
-	public static final RegistryObject<BbqRibsBlock> SALAD = BLOCKS.register("salad_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN),
-					ExtraDelightItems.SALAD, true));
+	public static final RegistryObject<RecipeFeastBlock> SALAD = BLOCKS.register("salad_block",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN), true,
+					Block.box(1.0D, 0.0D, 1.0D, 14.0D, 2.0D, 14.0D)));
 }
