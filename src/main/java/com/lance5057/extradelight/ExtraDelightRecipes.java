@@ -10,8 +10,6 @@ import com.lance5057.extradelight.workstations.dryingrack.DryingRackSerializer;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
 import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
-
-import net.minecraft.core.Registry;
 import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -22,7 +20,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ExtraDelightRecipes {
 	public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister
-			.create(Registry.RECIPE_TYPE.key(), ExtraDelight.MOD_ID);
+			.create(ForgeRegistries.RECIPE_TYPES, ExtraDelight.MOD_ID);
 
 	public static final RegistryObject<RecipeType<OvenRecipe>> OVEN = RECIPE_TYPES.register("oven",
 			() -> registerRecipeType("oven"));
@@ -44,7 +42,7 @@ public class ExtraDelightRecipes {
 			.register("dynamic_smoke", () -> registerRecipeType("dynamic_smoke"));
 	public static final RegistryObject<RecipeType<DynamicNameCampfireRecipe>> DYNAMIC_CAMPFIRE = RECIPE_TYPES
 			.register("dynamic_campfire", () -> registerRecipeType("dynamic_campfire"));
-	
+
 	public static <T extends Recipe<?>> RecipeType<T> registerRecipeType(final String identifier) {
 		return new RecipeType<>() {
 			public String toString() {

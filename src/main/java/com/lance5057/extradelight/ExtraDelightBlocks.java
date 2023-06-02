@@ -1,25 +1,13 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.blocks.BbqRibsBlock;
-import com.lance5057.extradelight.blocks.GraterBlock;
-import com.lance5057.extradelight.blocks.HashBowlBlock;
-import com.lance5057.extradelight.blocks.JellyBlock;
-import com.lance5057.extradelight.blocks.PotRoastBlock;
-import com.lance5057.extradelight.blocks.RecipeFeastBlock;
-import com.lance5057.extradelight.blocks.SalisburySteakBlock;
-import com.lance5057.extradelight.blocks.YeastPotBlock;
+import com.lance5057.extradelight.blocks.*;
 import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.oven.OvenBlock;
-
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CakeBlock;
-import net.minecraft.world.level.block.CarpetBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
@@ -29,8 +17,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.PieBlock;
-import vectorwing.farmersdelight.common.registry.ModItems;
-
 public class ExtraDelightBlocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			ExtraDelight.MOD_ID);
@@ -43,8 +29,7 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);
 	public static final RegistryObject<DryingRackBlock> DRYING_RACK = BLOCKS.register("drying_rack",
 			DryingRackBlock::new);
-	public static final RegistryObject<Block> FOOD_DISPLAY = BLOCKS.register("food_display",
-			() -> new FoodDisplayBlock());
+	public static final RegistryObject<Block> FOOD_DISPLAY = BLOCKS.register("food_display", FoodDisplayBlock::new);
 	public static final RegistryObject<Block> DOUGH_SHAPING = BLOCKS.register("dough_shaping", DoughShapingBlock::new);
 	public static final RegistryObject<Block> MIXING_BOWL = BLOCKS.register("mixing_bowl", MixingBowlBlock::new);
 

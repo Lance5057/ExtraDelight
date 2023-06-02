@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -25,8 +24,8 @@ public class DataGen {
 		generator.addProvider(true, new EDItemTags(generator, bt, ExtraDelight.MOD_ID, helper));
 
 		generator.addProvider(event.includeServer(), new Recipes(generator));
-		generator.addProvider(true, new EnglishLoc(generator));
 		generator.addProvider(event.includeServer(), new LootModifiers(generator));
 		generator.addProvider(event.includeServer(), new Advancements(generator, helper));
+		generator.addProvider(event.includeClient(), new EnglishLoc(generator));
 	}
 }
