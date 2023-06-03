@@ -25,7 +25,6 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.DOUGH_SHAPING.get());
 		this.dropSelf(ExtraDelightBlocks.FOOD_DISPLAY.get());
 		this.dropSelf(ExtraDelightBlocks.MIXING_BOWL.get());
-		this.dropSelf(ExtraDelightBlocks.GRATER.get());
 		this.dropSelf(ExtraDelightBlocks.DRYING_RACK.get());
 
 		this.add(ExtraDelightBlocks.YEAST_POT.get(),

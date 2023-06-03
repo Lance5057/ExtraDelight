@@ -12,11 +12,11 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.Half;
 
 public class MoldingBlock extends Block {
-	public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
+	public static final EnumProperty<Direction> HALF = BlockStateProperties.VERTICAL_DIRECTION;
 
 	public MoldingBlock(BlockBehaviour.Properties pProperties) {
 		super(pProperties);
-		this.registerDefaultState(this.defaultBlockState().setValue(HALF, Half.BOTTOM));
+		this.registerDefaultState(this.defaultBlockState().setValue(HALF, Direction.UP));
 	}
 
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
@@ -27,7 +27,7 @@ public class MoldingBlock extends Block {
 		//BlockPos blockpos = pContext.getClickedPos();
 		//BlockState blockstate = pContext.getLevel().getBlockState(blockpos);
 		Direction direction = pContext.getClickedFace();
-		return this.defaultBlockState().setValue(HALF, direction == Direction.UP ? Half.BOTTOM : Half.TOP);
+		return this.defaultBlockState().setValue(HALF, direction == Direction.UP ? Direction.DOWN : Direction.UP);
 
 	}
 }

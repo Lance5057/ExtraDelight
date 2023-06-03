@@ -91,7 +91,7 @@ public class KnifeBlockMenu extends AbstractContainerMenu {
 			itemstack = itemstack1.copy();
 
 			if (pIndex >= indexOutput) {
-				if (!this.moveItemStackTo(itemstack1, 0, indexOutput, true)) {
+				if (!this.moveItemStackTo(itemstack1, 0, indexOutput, false)) {
 					return ItemStack.EMPTY;
 				}
 			} else {

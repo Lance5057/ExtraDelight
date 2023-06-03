@@ -33,7 +33,6 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.YEAST_POT.get(), models().getExistingFile(modLoc("block/yeast_pot")));
 		this.simpleBlock(ExtraDelightBlocks.VINEGAR_POT.get(), models()
 				.withExistingParent("vinegar_pot", modLoc("block/yeast_pot")).texture("0", modLoc("block/vinegarpot")));
-		this.simpleBlock(ExtraDelightBlocks.GRATER.get(), models().getExistingFile(modLoc("block/grater")));
 		this.simpleBlock(ExtraDelightBlocks.DRYING_RACK.get(), models().getExistingFile(modLoc("block/drying_rack")));
 
 		this.simpleBlock(ExtraDelightBlocks.MORTAR_STONE.get(),
@@ -192,25 +191,25 @@ public class BlockModels extends BlockStateProvider {
 
 		createCakeBlock(ExtraDelightBlocks.PLAIN_CAKE.get(), "plain");
 
-		this.feastBlock(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get());
-		this.feastBlock(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get());
 		this.simpleBlock(ExtraDelightBlocks.CHEESE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.BUTTER_BLOCK.get());
 
-		this.feastBlock(ExtraDelightBlocks.HASH_FEAST.get());
-		this.feastBlock(ExtraDelightBlocks.POT_ROAST_FEAST.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.HASH_FEAST.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.POT_ROAST_FEAST.get());
 
-		this.feastBlock(ExtraDelightBlocks.BBQ_RIBS_FEAST.get());
-		this.feastBlock(ExtraDelightBlocks.PULLED_PORK_FEAST.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.BBQ_RIBS_FEAST.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.PULLED_PORK_FEAST.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.MEATLOAF_FEAST.get());
 
-		this.feastBlock(ExtraDelightBlocks.RACK_LAMB.get());
-		this.feastBlock(ExtraDelightBlocks.STIRFRY.get());
-		this.feastBlock(ExtraDelightBlocks.BEEF_WELLINGTON.get());
-		this.feastBlock(ExtraDelightBlocks.HAGGIS.get());
-		this.feastBlock(ExtraDelightBlocks.MACARONI_CHEESE.get());
-		this.feastBlock(ExtraDelightBlocks.HOTDISH.get());
-		this.feastBlock(ExtraDelightBlocks.LASAGNA.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.RACK_LAMB.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.STIRFRY.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.BEEF_WELLINGTON.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.HAGGIS.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.MACARONI_CHEESE.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.HOTDISH.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.LASAGNA.get());
 
 		this.recipeFeastBlock(ExtraDelightBlocks.CURRY.get());
 		this.stewBlock(ExtraDelightBlocks.BEEF_STEW.get(), "beef_stew");
@@ -238,7 +237,7 @@ public class BlockModels extends BlockStateProvider {
 		this.jellyBlock(ExtraDelightBlocks.JELLY_BLACK.get(), "black");
 
 		this.pieBlock(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), "meat_pie");
-		this.feastBlock(ExtraDelightBlocks.SALAD.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.SALAD.get());
 
 		AestheticBlocks.blockModel(this);
 	}

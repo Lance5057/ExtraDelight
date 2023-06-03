@@ -1,9 +1,9 @@
 {
   "variants": {
-    "half=bottom": {
+    "vertical_direction=down": {
       "model": "extradelight:block/block.extradelight.jungle_molded_yellow_wallpaper_bottom"
     },
-    "half=top": {
+    "vertical_direction=up": {
       "model": "extradelight:block/block.extradelight.jungle_molded_yellow_wallpaper_top"
     }
   }

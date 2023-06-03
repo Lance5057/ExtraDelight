@@ -114,7 +114,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).durability(35)));
 
 	public static final RegistryObject<Item> GRATER = ITEMS.register("grater",
-			() -> new BlockItem(ExtraDelightBlocks.GRATER.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<BlockItem> DRYING_RACK = ITEMS.register("drying_rack_item",
 			() -> new BlockItem(ExtraDelightBlocks.DRYING_RACK.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 

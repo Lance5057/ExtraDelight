@@ -33,7 +33,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(ExtraDelight.MOD_ID,
 			"textures/gui/oven.png");
 	private static final Rectangle HEAT_ICON = new Rectangle(47, 55, 17, 15);
-	private static final Rectangle PROGRESS_ARROW = new Rectangle(89, 25, 0, 17);
+	private static final Rectangle PROGRESS_ARROW = new Rectangle(89, 25, 10, 17);
 
 	private final OvenRecipeBookComponent recipeBookComponent = new OvenRecipeBookComponent();
 	private boolean widthTooNarrow;
@@ -145,8 +145,8 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 
 		// Render progress arrow
 		int l = this.menu.getCookProgressionScaled();
-		this.blit(ms, this.leftPos + PROGRESS_ARROW.x, this.topPos + PROGRESS_ARROW.y, 176, 25, l + 1,
-				PROGRESS_ARROW.height);
+		this.blit(ms, this.leftPos + PROGRESS_ARROW.x, this.topPos + PROGRESS_ARROW.y + 10, 176, 15, l + 1,
+				PROGRESS_ARROW.height+7);
 	}
 
 	@Override

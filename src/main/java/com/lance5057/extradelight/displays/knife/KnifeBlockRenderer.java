@@ -56,8 +56,10 @@ public class KnifeBlockRenderer implements BlockEntityRenderer<KnifeBlockEntity>
 		if (!item.isEmpty()) {
 			BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 			pPoseStack.pushPose();
-			pPoseStack.translate(x, y, z);
-
+			
+			pPoseStack.translate(0.5f, 0, 0.5f);
+			pPoseStack.mulPose(new Quaternion(0, -dir.toYRot(), 0, true));
+			pPoseStack.translate(x-0.5f, y, z-0.5f);
 			pPoseStack.mulPose(new Quaternion(rx, ry, rz, true));
 			float uniscale = 1f;
 			pPoseStack.scale(uniscale, uniscale, uniscale);

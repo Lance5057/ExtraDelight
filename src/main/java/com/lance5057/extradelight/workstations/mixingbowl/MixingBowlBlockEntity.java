@@ -261,7 +261,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 					level.playSound(player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
 				} else {
-					this.containerItem = recipe.getUsedItem();
+					this.containerItem = recipe.getUsedItem().copy();
 					
 					ItemStack i = recipe.getResultItem().copy();
 					

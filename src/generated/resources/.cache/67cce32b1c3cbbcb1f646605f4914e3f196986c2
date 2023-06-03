@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-25T11:16:02.3966385	LootTables
+// 1.19.2	2023-06-02T10:39:12.6769832	LootTables
 05bda07b99556daec2d260732806933073ff86c5 data/extradelight/loot_tables/blocks/acacia_cabinet.json
 7747bac4a9ea01dff06964433ec737b240944275 data/extradelight/loot_tables/blocks/acacia_knife_block.json
 09c450a44e0758dd3e30e647c970e55dd25ca5f6 data/extradelight/loot_tables/blocks/acacia_molded_black_wallpaper.json
@@ -100,7 +100,6 @@ bfb3f53042319f505c53b3713efbc7694ad28f19 data/extradelight/loot_tables/blocks/dr
 d91e09aa11085b0cdf0032665c5567280a0be625 data/extradelight/loot_tables/blocks/food_display.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/glow_berry_cheesecake.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/glow_berry_pie.json
-d7a597cfde8638f62de880b9709cf6103944aa51 data/extradelight/loot_tables/blocks/grater.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/haggis_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/hash_block.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/honey_cheesecake.json
