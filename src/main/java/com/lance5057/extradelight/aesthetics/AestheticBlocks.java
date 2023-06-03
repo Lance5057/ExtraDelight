@@ -15,6 +15,7 @@ import com.lance5057.extradelight.displays.knife.KnifeBlock;
 import com.lance5057.extradelight.displays.spice.SpiceRackBlock;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.core.Direction;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -189,13 +190,13 @@ public class AestheticBlocks {
 
 				// ExtraDelight.logger.error(b.getName().getString() + "_" + o);
 
-				bsp.getVariantBuilder(b).partialState().with(MoldingBlock.HALF, Half.TOP).modelForState()
+				bsp.getVariantBuilder(b).partialState().with(MoldingBlock.HALF, Direction.UP).modelForState()
 						.modelFile(bsp.models()
 								.withExistingParent(b.getName().getString() + "_top", bsp.modLoc("block/molding_top"))
 								.texture("0", bsp.modLoc("block/wallpaper_" + DyeColor.values()[c]))
 								.texture("1", bsp.mcLoc("block/" + WOOD.values()[i] + "_planks"))
 								.texture("particle", bsp.modLoc("block/wallpaper_" + DyeColor.values()[c])))
-						.addModel().partialState().with(MoldingBlock.HALF, Half.BOTTOM).modelForState()
+						.addModel().partialState().with(MoldingBlock.HALF, Direction.DOWN).modelForState()
 						.modelFile(bsp.models()
 								.withExistingParent(b.getName().getString() + "_bottom",
 										bsp.modLoc("block/molding_bottom"))

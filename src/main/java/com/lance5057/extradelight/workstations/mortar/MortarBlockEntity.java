@@ -213,7 +213,7 @@ public class MortarBlockEntity extends BlockEntity {
 						ItemStack r = recipe.getResultItem().copy();
 
 						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
-								getBlockPos().getZ(), recipe.getResultItem()));
+								getBlockPos().getZ(), r));
 					}
 					inv.setStackInSlot(0, ItemStack.EMPTY);
 				}
