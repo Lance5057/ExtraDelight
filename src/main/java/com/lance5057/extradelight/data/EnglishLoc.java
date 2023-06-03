@@ -31,6 +31,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.dynamicname.8", "%s, %s, %s, %s, %s, %s and %s %s");
 		this.add("extradelight.dynamicname.9", "%s, %s, %s, %s, %s, %s, %s and %s %s");
 		this.add("extradelight.jei.oven", "Oven");
+		this.add("extradelight.jei.mixingbowl", "Mixing Bowl");
+		this.add("extradelight.jei.dryingrack", "Drying Rack");
 
 		this.add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		this.add(ExtraDelightItems.CHEESECAKE_ITEM.get(), "Cheesecake");
@@ -134,6 +136,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.SLICED_POTATO.get(), "Sliced Potato");
 		this.add(ExtraDelightItems.POTATO_STICKS.get(), "Potato Sticks");
 		this.add(ExtraDelightItems.POTATO_CHIPS.get(), "Potato Chips");
+		this.add(ExtraDelightItems.FISH_AND_CHIPS.get(), "Fish n' Chips");
 		this.add(ExtraDelightItems.HASHBROWNS.get(), "Hashbrowns");
 		this.add(ExtraDelightItems.ROASTED_CARROT.get(), "Roasted Carrot");
 		this.add(ExtraDelightItems.GLAZED_CARROT.get(), "Glazed Carrot");
@@ -253,6 +256,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.ALFREDO_SAUCE.get(), "Alfredo Sauce");
 		this.add(ExtraDelightItems.PASTA_TOMATO.get(), "Tomato Pasta");
 		this.add(ExtraDelightItems.PASTA_ALFREDO.get(), "Alfredo Pasta");
+		this.add(ExtraDelightItems.CHICKEN_ALFREDO.get(), "Chicken Alfredo Pasta");
 		this.add(ExtraDelightItems.CHICKEN_PARM.get(), "Chicken Parmesan");
 		this.add(ExtraDelightItems.CHEESEBURGER.get(), "Cheeseburger");
 		this.add(ExtraDelightItems.BACON_CHEESEBURGER.get(), "Bacon Cheeseburger");
