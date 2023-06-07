@@ -28,7 +28,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public class MortarBlock extends Block implements EntityBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 6.0D, 12.0D);
 
 	public MortarBlock() {
 		super(Properties.of(Material.STONE).strength(1.5F, 2.0F).sound(SoundType.STONE).noOcclusion());

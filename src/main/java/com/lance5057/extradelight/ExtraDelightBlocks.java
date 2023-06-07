@@ -20,11 +20,12 @@ import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
 public class ExtraDelightBlocks {
-	
+
 	final static VoxelShape bowl = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D);
-	final static VoxelShape plate = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 1.0D, 15.0D);
+	final static VoxelShape plate = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
 	final static VoxelShape pan = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D);
-	
+	final static VoxelShape pot = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D);
+
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			ExtraDelight.MOD_ID);
 
@@ -109,31 +110,34 @@ public class ExtraDelightBlocks {
 					bowl));
 	public static final RegistryObject<RecipeFeastBlock> POT_ROAST_FEAST = BLOCKS.register("potroast_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
-					plate));
+					plate, Block.box(5.0D, 2.0D, 2.0D, 11.0D, 8.0D, 14.0D),
+					Block.box(2.0D, 2.0D, 5.0D, 14.0D, 8.0D, 11.0D)));
 
 	public static final RegistryObject<RecipeFeastBlock> MEATLOAF_FEAST = BLOCKS.register("meatloaf_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
-					Block.box(1.0D, 0.0D, 1.0D, 14.0D, 2.0D, 14.0D), Block.box(2.0D, 2.0D, 2.0D, 14.0D, 8.0D, 14.0D)));
+					plate, Block.box(5.0D, 2.0D, 3.0D, 11.0D, 8.0D, 13.0D),
+					Block.box(3.0D, 2.0D, 5.0D, 13.0D, 8.0D, 11.0D)));
 
 	public static final RegistryObject<RecipeFeastBlock> BBQ_RIBS_FEAST = BLOCKS.register("bbq_ribs_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
-					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+					plate, Block.box(2.0D, 2.0D, 2.0D, 14.0D, 6.0D, 14.0D)));
 	public static final RegistryObject<RecipeFeastBlock> PULLED_PORK_FEAST = BLOCKS.register("pulled_pork_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
-					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+					bowl));
 
 	public static final RegistryObject<RecipeFeastBlock> RACK_LAMB = BLOCKS.register("rack_lamb_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
-					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+					plate, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 8.0D, 12.0D)));
 	public static final RegistryObject<RecipeFeastBlock> STIRFRY = BLOCKS.register("stirfry_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
-					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+					bowl));
 	public static final RegistryObject<RecipeFeastBlock> BEEF_WELLINGTON = BLOCKS.register("beef_wellington_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
-					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+					plate, Block.box(4.5D, 2.0D, 2.0D, 11.5D, 9.0D, 14.0D),
+					Block.box(2.0D, 2.0D, 4.5D, 14.0D, 9.0D, 11.5D)));
 	public static final RegistryObject<RecipeFeastBlock> HAGGIS = BLOCKS.register("haggis_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN), true,
-					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+					plate, Block.box(4.0D, 2.0D, 4.0D, 12.0D, 10.0D, 12.0D)));
 
 	public static final RegistryObject<JellyBlock> JELLY_WHITE = BLOCKS.register("jelly_white_block",
 			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_WHITE),
@@ -196,38 +200,38 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<RecipeFeastBlock> MACARONI_CHEESE = BLOCKS.register("macaroni_cheese_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW), true,
-					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+					pot));
 	public static final RegistryObject<RecipeFeastBlock> LASAGNA = BLOCKS.register("lasagna_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW), true,
-					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+					pan));
 	public static final RegistryObject<RecipeFeastBlock> HOTDISH = BLOCKS.register("hotdish_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW), true,
-					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D)));
+					pan));
 
 	// Stew
 	public static final RegistryObject<RecipeFeastBlock> CURRY = BLOCKS.register("curry_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE), true,
-					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+					pot));
 	public static final RegistryObject<RecipeFeastBlock> BEEF_STEW = BLOCKS.register("beef_stew_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
-					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+					pot));
 	public static final RegistryObject<RecipeFeastBlock> PORK_STEW = BLOCKS.register("pork_stew_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
-					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+					pot));
 	public static final RegistryObject<RecipeFeastBlock> LAMB_STEW = BLOCKS.register("lamb_stew_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
-					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+					pot));
 	public static final RegistryObject<RecipeFeastBlock> RABBIT_STEW = BLOCKS.register("rabbit_stew_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
-					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+					pot));
 	public static final RegistryObject<RecipeFeastBlock> CHICKEN_STEW = BLOCKS.register("chicken_stew_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
-					Block.box(1.0D, 0.0D, 1.0D, 14.0D, 2.0D, 14.0D)));
+					pot));
 	public static final RegistryObject<RecipeFeastBlock> FISH_STEW = BLOCKS.register("fish_stew_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN), true,
-					Block.box(1.0D, 0.0D, 1.0D, 14.0D, 2.0D, 14.0D)));
+					pot));
 
 	public static final RegistryObject<RecipeFeastBlock> SALAD = BLOCKS.register("salad_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN), true,
-					Block.box(1.0D, 0.0D, 1.0D, 14.0D, 2.0D, 14.0D)));
+					bowl));
 }

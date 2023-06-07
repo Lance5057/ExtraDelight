@@ -226,7 +226,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MEAT_LOAF_FEAST.get(), "Meat Loaf");
 
 		this.add(ExtraDelightItems.LASAGNA.get(), "Lasagna");
-		this.add(ExtraDelightItems.LASANGA_FEAST.get(), "Pan of Lasagna");
+		this.add(ExtraDelightItems.LASAGNA_FEAST.get(), "Pan of Lasagna");
 
 		this.add(ExtraDelightItems.HOTDISH.get(), "Hotdish");
 		this.add(ExtraDelightItems.HOTDISH_FEAST.get(), "Hotdish Dinner");

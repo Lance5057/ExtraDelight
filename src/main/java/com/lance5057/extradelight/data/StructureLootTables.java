@@ -238,7 +238,7 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 				.add(LootItem.lootTableItem(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()).setWeight(1))
 				.add(LootItem.lootTableItem(ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM.get()).setWeight(1))
 				.add(LootItem.lootTableItem(ExtraDelightItems.LAMB_STEW_FEAST.get()).setWeight(1))
-				.add(LootItem.lootTableItem(ExtraDelightItems.LASANGA_FEAST.get()).setWeight(1))
+				.add(LootItem.lootTableItem(ExtraDelightItems.LASAGNA_FEAST.get()).setWeight(1))
 				.add(LootItem.lootTableItem(ExtraDelightItems.MACARONI_CHEESE_FEAST.get()).setWeight(1))
 				.add(LootItem.lootTableItem(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get()).setWeight(1))
 				.add(LootItem.lootTableItem(ExtraDelightItems.MEAT_LOAF_FEAST.get()).setWeight(1))

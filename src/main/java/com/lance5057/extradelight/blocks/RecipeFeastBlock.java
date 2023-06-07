@@ -1,5 +1,6 @@
 package com.lance5057.extradelight.blocks;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.lance5057.extradelight.ExtraDelightRecipes;
@@ -27,12 +28,12 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import vectorwing.farmersdelight.common.utility.TextUtils;
 
 public class RecipeFeastBlock extends Block {
 
@@ -73,9 +74,23 @@ public class RecipeFeastBlock extends Block {
 	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 		if (SHAPES.length > 1)
 			return state.getValue(SERVINGS) == 0 ? SHAPES[0]
-					: Shapes.joinUnoptimized(SHAPES[0], SHAPES[1], BooleanOp.OR);
+					: Shapes.joinUnoptimized(SHAPES[0], rotateShape(state), BooleanOp.OR);
 		else
 			return SHAPES[0];
+	}
+
+	private VoxelShape rotateShape(BlockState state) {
+		if (SHAPES.length > 2)
+			switch (state.getValue(FACING)) {
+			case EAST:
+			case WEST:
+				return SHAPES[2];
+			case SOUTH:
+			case NORTH:
+			default:
+				return SHAPES[1];
+			}
+		return SHAPES[1];
 	}
 
 	public Optional<FeastRecipe> matchRecipe(Level level, ItemStack... itemstack) {

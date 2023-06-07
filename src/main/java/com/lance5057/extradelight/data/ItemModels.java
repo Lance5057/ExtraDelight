@@ -409,7 +409,7 @@ public class ItemModels extends ItemModelProvider {
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/hotdish_block_stage0"));
 		forItem(ExtraDelightItems.HOTDISH, "hotdish");
 
-		forBlockItem(ExtraDelightItems.LASANGA_FEAST,
+		forBlockItem(ExtraDelightItems.LASAGNA_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/lasagna_block_stage0"));
 		forItem(ExtraDelightItems.LASAGNA, "lasagna");
 

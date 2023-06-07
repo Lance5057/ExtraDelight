@@ -640,7 +640,7 @@ public class ExtraDelightItems {
 
 	public static final RegistryObject<Item> LASAGNA = ITEMS.register("lasanga", () -> new Item(
 			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.PASTA)));
-	public static final RegistryObject<BlockItem> LASANGA_FEAST = ITEMS.register("lasanga_feast",
+	public static final RegistryObject<BlockItem> LASAGNA_FEAST = ITEMS.register("lasanga_feast",
 			() -> new BlockItem(ExtraDelightBlocks.LASAGNA.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> HOTDISH = ITEMS.register("hotdish", () -> new Item(
