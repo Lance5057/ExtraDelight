@@ -1,5 +1,6 @@
 {    
 	"name": "Deserts",
 	"description": "This is a test category for testing!",
-	"icon": "extradelight:chocolate_custard"
+	"icon": "extradelight:chocolate_custard",
+	"sortnum": 5
 }

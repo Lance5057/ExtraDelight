@@ -1,5 +1,6 @@
 {    
 	"name": "Breakfast",
 	"description": "This is a test category for testing!",
-	"icon": "extradelight:egg_in_the_basket"
+	"icon": "extradelight:egg_in_the_basket",
+	"sortnum": 0
 }

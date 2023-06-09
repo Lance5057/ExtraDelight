@@ -1,6 +1,6 @@
 {
     "name": "Sugar Cookies",
-    "icon": "extradelight:pumpkin_custard",
+    "icon": "extradelight:sugar_cookie",
     "category": "extradelight:deserts",
     "pages": [
         {
@@ -9,7 +9,6 @@
         },
 		{
             "type": "extradelight:oven",
-            "text": "This is a test entry, but it should show up!",
 			"recipe": "extradelight:oven/sugar_cookie"
         },
 		{

@@ -5,25 +5,30 @@ import java.util.function.UnaryOperator;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gson.annotations.SerializedName;
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
+import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiComponent;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.level.Level;
 import vazkii.patchouli.api.IComponentRenderContext;
 import vazkii.patchouli.api.ICustomComponent;
 import vazkii.patchouli.api.IVariable;
 
-public class RoundItemList implements ICustomComponent {
+public class OvenComponent implements ICustomComponent {
 	@SerializedName("recipe_name")
 	public String recipeName;
 
 	protected transient List<Ingredient> ingredients;
 	protected transient int x, y;
 
+	private static final ResourceLocation OVEN_GRID = new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/patchouli.png");
+	
 	@Override
 	public void build(int componentX, int componentY, int pageNum) {
 		this.x = componentX != -1 ? componentX : 17;
@@ -32,10 +37,8 @@ public class RoundItemList implements ICustomComponent {
 	}
 
 	protected List<Ingredient> makeIngredients() {
-		Level world = Minecraft.getInstance().level;
-
-		List<MixingBowlRecipe> recipes = Minecraft.getInstance().level.getRecipeManager()
-				.getAllRecipesFor(ExtraDelightRecipes.MIXING_BOWL.get());
+		List<OvenRecipe> recipes = Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.OVEN.get());
 
 		Recipe<?> recipe = recipes.stream().filter(r -> r.getId().toString().equals(recipeName)).findFirst()
 				.orElse(null);
@@ -47,31 +50,28 @@ public class RoundItemList implements ICustomComponent {
 
 	@Override
 	public void render(PoseStack ms, IComponentRenderContext context, float pticks, int mouseX, int mouseY) {
-		int degreePerInput = (int) (360F / ingredients.size());
-
-		float currentDegree = 0;
-
-		for (Ingredient input : ingredients) {
-			renderIngredientAtAngle(ms, context, currentDegree, input, mouseX, mouseY);
-
-			currentDegree += degreePerInput;
-		}
-	}
-
-	private void renderIngredientAtAngle(PoseStack ms, IComponentRenderContext context, float angle,
-			Ingredient ingredient, int mouseX, int mouseY) {
-		if (ingredient.isEmpty()) {
-			return;
-		}
-
-		angle -= 90;
-		int radius = 32;
-		double xPos = x + Math.cos(angle * Math.PI / 180D) * radius + 32;
-		double yPos = y + Math.sin(angle * Math.PI / 180D) * radius + 32;
-
 		ms.pushPose();
-		ms.translate(xPos - (int) xPos, yPos - (int) yPos, 0);
-		context.renderIngredient(ms, (int) xPos, (int) yPos, mouseX, mouseY, ingredient);
+
+		RenderSystem.setShaderTexture(0, OVEN_GRID);
+		RenderSystem.enableBlend();
+		GuiComponent.blit(ms, 22, 22, 0, 0, 76, 128, 256, 256);
+		
+		int x = 0;
+		int y = 0;
+		int xOff = 27;
+		int yOff = 27;
+		
+		int size = 19;
+		int count = 0;
+		for (Ingredient input : ingredients) {
+			//ms.translate(x - (int) x, y - (int) y, 0);
+			context.renderIngredient(ms, xOff + x, yOff + y, mouseX, mouseY, input);
+			x += size;
+			if (x >= size * 3) {
+				x = 0;
+				y += size;
+			}
+		}
 		ms.popPose();
 	}
 

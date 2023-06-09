@@ -8,8 +8,8 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "patchouli:text",
-            "text": "This is a test entry, but it should show up!"
+            "type": "extradelight:pot",
+            "recipe": "farmersdelight:cooking/sweet_berry_custard"
         },
 		{
             "type": "patchouli:text",

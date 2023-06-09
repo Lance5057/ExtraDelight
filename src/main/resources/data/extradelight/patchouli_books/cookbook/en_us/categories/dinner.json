@@ -1,5 +1,6 @@
 {    
 	"name": "Dinner",
 	"description": "This is a test category for testing!",
-	"icon": "extradelight:pot_roast_block_item"
+	"icon": "extradelight:pot_roast_block_item",
+	"sortnum": 4
 }

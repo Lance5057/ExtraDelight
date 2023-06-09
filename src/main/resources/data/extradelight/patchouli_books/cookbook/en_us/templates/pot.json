@@ -1,5 +1,5 @@
 {
-	"processor": "com.lance5057.extradelight.integration.patchouli.OvenProcessor",
+	"processor": "com.lance5057.extradelight.integration.patchouli.PotProcessor",
 	"components": [
 			{
 			"type": "patchouli:header",
@@ -8,7 +8,7 @@
 		},
 		{
 		  "type": "patchouli:custom",
-		  "class": "com.lance5057.extradelight.integration.patchouli.components.OvenComponent",
+		  "class": "com.lance5057.extradelight.integration.patchouli.components.CookingPotComponent",
 		  "x": -1,
 		  "y": 21,
 		  "recipe_name": "#recipe"
@@ -19,14 +19,14 @@
 		  "framed": "false",
 		  "link_recipe": true,
 		  "x": 46,
-		  "y": 114
+		  "y": 96
 		},
 		{
 		  "type": "patchouli:item",
-		  "item": "#pan",
+		  "item": "#container",
 		  "framed": "false",
 		  "x": 71,
-		  "y": 89
+		  "y": 71
 		}
 		
 	]

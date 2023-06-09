@@ -1,6 +1,6 @@
 {
-    "name": "Pumpkin Custard",
-    "icon": "extradelight:pumpkin_custard",
+    "name": "Sweet Berry Pie",
+    "icon": "extradelight:sweet_berry_pie",
     "category": "extradelight:deserts",
     "pages": [
         {
@@ -8,8 +8,8 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-            "recipe": "farmersdelight:cooking/pumpkin_custard"
+            "type": "extradelight:oven",
+            "recipe": "extradelight:oven/sweet_berry_pie"
         },
 		{
             "type": "patchouli:text",
