@@ -1,15 +1,15 @@
 {
-    "name": "BBQ Sauce",
-    "icon": "extradelight:bbq_jar_item",
-    "category": "extradelight:condiments",
+    "name": "Glow Berry Popsicle",
+    "icon": "extradelight:glow_berry_popsicle",
+    "category": "extradelight:deserts",
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-            "recipe": "extradelight:bbq_sugar"
+            "type": "patchouli:crafting",
+			"recipe": "extradelight:glow_berry_popsicle"
         },
 		{
             "type": "patchouli:text",

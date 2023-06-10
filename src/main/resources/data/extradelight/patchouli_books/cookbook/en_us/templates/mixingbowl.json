@@ -20,6 +20,13 @@
 		},
 		{
 		  "type": "patchouli:item",
+		  "item": "extradelight:mixing_bowl",
+		  "framed": "false",
+		  "x": 49,
+		  "y": 53
+		},
+		{
+		  "type": "patchouli:item",
 		  "item": "#output",
 		  "framed": "true",
 		  "link_recipe": true,

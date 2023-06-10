@@ -1,7 +1,7 @@
 {
-    "name": "BBQ Sauce",
-    "icon": "extradelight:bbq_jar_item",
-    "category": "extradelight:condiments",
+    "name": "Glazed Carrot",
+    "icon": "extradelight:glazed_carrot",
+    "category": "extradelight:vegetables",
     "pages": [
         {
             "type": "patchouli:text",
@@ -9,7 +9,7 @@
         },
 		{
             "type": "extradelight:pot",
-            "recipe": "extradelight:bbq_sugar"
+			"recipe": "extradelight:glazed_carrot"
         },
 		{
             "type": "patchouli:text",

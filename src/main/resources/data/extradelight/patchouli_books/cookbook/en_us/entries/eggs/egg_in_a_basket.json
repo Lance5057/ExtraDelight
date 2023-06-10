@@ -1,19 +1,19 @@
 {
-    "name": "BBQ Sauce",
-    "icon": "extradelight:bbq_jar_item",
-    "category": "extradelight:condiments",
+    "name": "Egg in the Basket",
+    "icon": "extradelight:egg_in_the_basket",
+    "category": "extradelight:eggs",
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-            "recipe": "extradelight:bbq_sugar"
+            "type": "extradelight:oven",
+            "recipe": "extradelight:oven/egg_in_the_basket"
         },
 		{
             "type": "patchouli:text",
-			"title": "BBQ Sauce",
+			"title": "Lingonberry Juice",
             "text": "$(br) Time: 30min $(br) Ingredients: 3 $(br2)$(l) Ingredients - $()$(br)$(li) 1 lb lingonberries$(li) 5 cups water$(li) 1 cups sugar $(br2)"
         },
 		{

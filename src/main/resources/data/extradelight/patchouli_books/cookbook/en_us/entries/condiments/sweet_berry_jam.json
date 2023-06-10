@@ -1,6 +1,6 @@
 {
-    "name": "BBQ Sauce",
-    "icon": "extradelight:bbq_jar_item",
+    "name": "Sweet Berry Jam",
+    "icon": "extradelight:sweet_berry_jam",
     "category": "extradelight:condiments",
     "pages": [
         {
@@ -9,7 +9,7 @@
         },
 		{
             "type": "extradelight:pot",
-            "recipe": "extradelight:bbq_sugar"
+            "recipe": "extradelight:sweet_berry_jam"
         },
 		{
             "type": "patchouli:text",

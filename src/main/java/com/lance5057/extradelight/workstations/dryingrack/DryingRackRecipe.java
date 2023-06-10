@@ -2,6 +2,7 @@ package com.lance5057.extradelight.workstations.dryingrack;
 
 import com.lance5057.extradelight.ExtraDelightRecipes;
 
+import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
@@ -28,6 +29,11 @@ public class DryingRackRecipe implements Recipe<Container> {
 		this.result = pResult;
 		this.experience = pExperience;
 		this.cookingTime = pCookingTime;
+	}
+
+	@Override
+	public NonNullList<Ingredient> getIngredients() {
+		return NonNullList.of(null, ingredient);
 	}
 
 	@Override

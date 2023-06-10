@@ -1,6 +1,6 @@
 {
-    "name": "BBQ Sauce",
-    "icon": "extradelight:bbq_jar_item",
+    "name": "Apple Jam",
+    "icon": "extradelight:apple_jam",
     "category": "extradelight:condiments",
     "pages": [
         {
@@ -9,7 +9,7 @@
         },
 		{
             "type": "extradelight:pot",
-            "recipe": "extradelight:bbq_sugar"
+            "recipe": "extradelight:apple_jam"
         },
 		{
             "type": "patchouli:text",

@@ -8,8 +8,8 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "patchouli:text",
-            "text": "This is a test entry, but it should show up!"
+            "type": "extradelight:mixingbowl",
+            "recipe": "extradelight:mixingbowl/mayo"
         },
 		{
             "type": "patchouli:text",

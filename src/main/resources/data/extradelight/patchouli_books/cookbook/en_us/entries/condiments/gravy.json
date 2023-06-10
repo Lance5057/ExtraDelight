@@ -1,6 +1,6 @@
 {
-    "name": "BBQ Sauce",
-    "icon": "extradelight:bbq_jar_item",
+    "name": "Gravy",
+    "icon": "extradelight:gravy_boat_item",
     "category": "extradelight:condiments",
     "pages": [
         {
@@ -9,7 +9,7 @@
         },
 		{
             "type": "extradelight:pot",
-            "recipe": "extradelight:bbq_sugar"
+            "recipe": "extradelight:gravy_boat"
         },
 		{
             "type": "patchouli:text",

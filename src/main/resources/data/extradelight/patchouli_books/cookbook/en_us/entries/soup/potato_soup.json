@@ -1,7 +1,7 @@
 {
-    "name": "BBQ Sauce",
-    "icon": "extradelight:bbq_jar_item",
-    "category": "extradelight:condiments",
+    "name": "Potato Soup",
+    "icon": "extradelight:potato_soup",
+    "category": "extradelight:soups",
     "pages": [
         {
             "type": "patchouli:text",
@@ -9,7 +9,7 @@
         },
 		{
             "type": "extradelight:pot",
-            "recipe": "extradelight:bbq_sugar"
+			"recipe": "extradelight:potato_soup"
         },
 		{
             "type": "patchouli:text",

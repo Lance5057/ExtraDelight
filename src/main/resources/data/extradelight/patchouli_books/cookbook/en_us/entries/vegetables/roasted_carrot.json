@@ -1,15 +1,15 @@
 {
-    "name": "BBQ Sauce",
-    "icon": "extradelight:bbq_jar_item",
-    "category": "extradelight:condiments",
+    "name": "Roasted Carrot",
+    "icon": "extradelight:roasted_carrot",
+    "category": "extradelight:vegetables",
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-            "recipe": "extradelight:bbq_sugar"
+            "type": "patchouli:smelting",
+			"recipe": "extradelight:roasted_carrot_smelt"
         },
 		{
             "type": "patchouli:text",

@@ -1,7 +1,7 @@
 {
     "name": "Egg Salad",
     "icon": "extradelight:egg_salad",
-    "category": "extradelight:lunch",
+    "category": "extradelight:eggs",
     "pages": [
         {
             "type": "patchouli:text",
