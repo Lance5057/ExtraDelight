@@ -5,7 +5,7 @@
 		"0": "farmersdelight:block/tray_bottom",
 		"1": "extradelight:block/bowl_top",
 		"3": "extradelight:block/stirfry",
-		"particle": "farmersdelight:block/tray_bottom"
+		"particle": "extradelight:block/stirfry"
 	},
 	"elements": [
 		{

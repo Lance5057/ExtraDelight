@@ -1,6 +1,7 @@
 {
   "parent": "extradelight:block/mortar",
   "textures": {
-    "0": "minecraft:block/granite"
+    "0": "minecraft:block/granite",
+    "particle": "minecraft:block/granite"
   }
 }

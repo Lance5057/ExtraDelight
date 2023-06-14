@@ -4,7 +4,7 @@
 	"textures": {
 		"1": "extradelight:block/curry",
 		"3": "extradelight:block/pan",
-		"particle": "extradelight:block/curry"
+		"particle": "extradelight:block/pan"
 	},
 	"elements": [
 		{

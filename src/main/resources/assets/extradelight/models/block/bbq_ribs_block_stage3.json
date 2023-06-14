@@ -5,7 +5,7 @@
 	"textures": {
 		"0": "farmersdelight:block/tray_bottom",
 		"1": "extradelight:block/bbq_ribs",
-		"particle": "farmersdelight:block/tray_bottom"
+		"particle": "extradelight:block/bbq_ribs"
 	},
 	"elements": [
 		{

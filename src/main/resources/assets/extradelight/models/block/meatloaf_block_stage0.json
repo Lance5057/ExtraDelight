@@ -7,7 +7,7 @@
 		"1": "farmersdelight:block/tray_top",
 		"2": "extradelight:block/meatloaf",
 		"3": "farmersdelight:item/cabbage_leaf",
-		"particle": "farmersdelight:block/tray_bottom"
+		"particle": "extradelight:block/meatloaf"
 	},
 	"elements": [
 		{

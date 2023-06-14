@@ -6,7 +6,7 @@
 		"4": "extradelight:block/chefsalad",
 		"tray_top": "extradelight:block/bowl_top",
 		"tray_side": "farmersdelight:block/tray_bottom",
-		"particle": "farmersdelight:item/cabbage_leaf"
+		"particle": "farmersdelight:block/tray_bottom"
 	},
 	"elements": [
 		{

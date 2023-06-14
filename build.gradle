@@ -92,7 +92,9 @@ minecraft {
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             args '--all', '--output', file('src/generated/resources/'),
-                    '--mod', 'extradelight', '--reports',
+                    '--mod', 'extradelight',
+                    '--existing-mod', 'farmersdelight',
+                    '--reports',
                     '--existing', sourceSets.main.resources.srcDirs[0]
         }
     }

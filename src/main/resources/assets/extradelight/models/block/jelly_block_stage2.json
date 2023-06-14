@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "farmersdelight:block/tray_bottom",
 		"1": "extradelight:block/jelly_white",
-		"particle": "farmersdelight:block/tray_bottom"
+		"particle": "extradelight:block/jelly_white"
 	},
 	"elements": [
 		{

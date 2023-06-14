@@ -3,6 +3,7 @@
   "textures": {
     "0": "farmersdelight:block/crimson_cabinet_front_open",
     "1": "farmersdelight:block/crimson_cabinet_side",
-    "2": "farmersdelight:block/crimson_cabinet_top"
+    "2": "farmersdelight:block/crimson_cabinet_top",
+    "particle": "farmersdelight:block/crimson_cabinet_front"
   }
 }

@@ -5,7 +5,7 @@
 		"1": "farmersdelight:block/tray_bottom",
 		"2": "extradelight:block/salisburysteak",
 		"3": "extradelight:block/tray_bottom_gravy",
-		"particle": "extradelight:block/bowl_top"
+		"particle": "extradelight:block/tray_bottom_gravy"
 	},
 	"elements": [
 		{

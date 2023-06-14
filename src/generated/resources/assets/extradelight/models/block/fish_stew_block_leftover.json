@@ -1,6 +1,7 @@
 {
   "parent": "extradelight:block/curry_block_leftover",
   "textures": {
-    "1": "extradelight:block/fish_stew"
+    "1": "extradelight:block/fish_stew",
+    "particle": "extradelight:block/pan"
   }
 }
