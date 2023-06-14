@@ -135,10 +135,10 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 		ItemStack stack = super.getCloneItemStack(level, pos, state);
 		OvenBlockEntity OvenEntity = (OvenBlockEntity) level.getBlockEntity(pos);
 		if (OvenEntity != null) {
-			CompoundTag nbt = OvenEntity.writeMeal(new CompoundTag());
-			if (!nbt.isEmpty()) {
-				stack.addTagElement("BlockEntityTag", nbt);
-			}
+//			CompoundTag nbt = OvenEntity.writeMeal(new CompoundTag());
+//			if (!nbt.isEmpty()) {
+//				stack.addTagElement("BlockEntityTag", nbt);
+//			}
 			if (OvenEntity.hasCustomName()) {
 				stack.setHoverName(OvenEntity.getCustomName());
 			}
@@ -160,26 +160,26 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 		}
 	}
 
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> tooltip,
-			TooltipFlag flagIn) {
-		super.appendHoverText(stack, level, tooltip, flagIn);
-		CompoundTag nbt = stack.getTagElement("BlockEntityTag");
-		ItemStack mealStack = OvenBlockEntity.getMealFromItem(stack);
-
-		if (!mealStack.isEmpty()) {
-			MutableComponent textServingsOf = mealStack.getCount() == 1
-					? Component.translatable(TranslatableKeys.SINGLE_SERVING)
-					: Component.translatable(TranslatableKeys.MANY_SERVINGS, mealStack.getCount());
-			tooltip.add(textServingsOf.withStyle(ChatFormatting.GRAY));
-			MutableComponent textMealName = mealStack.getHoverName().copy();
-			tooltip.add(textMealName.withStyle(mealStack.getRarity().color));
-		} else {
-			MutableComponent textEmpty = Component.translatable(TranslatableKeys.EMPTY);
-			tooltip.add(textEmpty.withStyle(ChatFormatting.GRAY));
-		}
-	}
+//	@Override
+//	@OnlyIn(Dist.CLIENT)
+//	public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> tooltip,
+//			TooltipFlag flagIn) {
+//		super.appendHoverText(stack, level, tooltip, flagIn);
+//		//CompoundTag nbt = stack.getTagElement("BlockEntityTag");
+//		ItemStack mealStack = OvenBlockEntity.getMealFromItem(stack);
+//
+//		if (!mealStack.isEmpty()) {
+//			MutableComponent textServingsOf = mealStack.getCount() == 1
+//					? Component.translatable(TranslatableKeys.SINGLE_SERVING)
+//					: Component.translatable(TranslatableKeys.MANY_SERVINGS, mealStack.getCount());
+//			tooltip.add(textServingsOf.withStyle(ChatFormatting.GRAY));
+//			MutableComponent textMealName = mealStack.getHoverName().copy();
+//			tooltip.add(textMealName.withStyle(mealStack.getRarity().color));
+//		} else {
+//			MutableComponent textEmpty = Component.translatable(TranslatableKeys.EMPTY);
+//			tooltip.add(textEmpty.withStyle(ChatFormatting.GRAY));
+//		}
+//	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

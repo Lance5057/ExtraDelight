@@ -1,16 +1,15 @@
 {
-    "name": "Jerky",
-    "icon": "extradelight:jerky",
-    "category": "extradelight:meats",
-	"sortnum": 1,
+    "name": "Roasted Apple",
+    "icon": "extradelight:roasted_apple",
+    "category": "extradelight:vegetables",
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:dryingrack",
-			"recipe": "extradelight:jerky"
+            "type": "patchouli:smelting",
+			"recipe": "extradelight:roasted_apple_smelt"
         },
 		{
             "type": "patchouli:text",

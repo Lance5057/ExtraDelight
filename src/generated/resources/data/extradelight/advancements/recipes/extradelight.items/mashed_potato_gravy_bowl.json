@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_hotdish": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:crops/cabbage"
+            "items": [
+              "extradelight:mashed_potato_gravy_block_item"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:salad_meat"
+        "recipe": "extradelight:mashed_potato_gravy_bowl"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "Recipes",
+      "has_hotdish",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:salad_meat"
+      "extradelight:mashed_potato_gravy_bowl"
     ]
   }
 }

@@ -59,7 +59,7 @@
         "experience": 0.35,
         "ingredients": [
           {
-            "item": "minecraft:beef"
+            "tag": "forge:beef"
           },
           {
             "item": "minecraft:carrot"
