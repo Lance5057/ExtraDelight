@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import net.minecraft.world.level.block.SoundType;
 import org.apache.commons.lang3.text.WordUtils;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -133,9 +134,13 @@ public class AestheticBlocks {
 		registerAllWood("knife_block", KnifeBlock::new, KNIFE_BLOCKS, KNIFE_BLOCK_ITEMS);
 		registerAllWood("cabinet", HalfCabinetBlock::new, CABINETS, CABINET_ITEMS);
 
-		registerAllColors("wallpaper", () -> new Block(Properties.of(Material.WOOD)), WALLPAPER_BLOCKS,
-				WALLPAPER_ITEMS);
-		registerMoldedWallpaper("wallpaper", () -> new MoldingBlock(Properties.of(Material.WOOD)),
+		registerAllColors("wallpaper", () -> new Block(Properties
+						.of(Material.WOOD)
+						.sound(SoundType.WOOL)),
+				WALLPAPER_BLOCKS, WALLPAPER_ITEMS);
+		registerMoldedWallpaper("wallpaper", () -> new MoldingBlock(Properties
+						.of(Material.WOOD)
+						.sound(SoundType.WOOL)),
 				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
 	}
 

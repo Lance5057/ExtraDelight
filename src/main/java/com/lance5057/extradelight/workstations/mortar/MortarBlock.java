@@ -34,6 +34,10 @@ public class MortarBlock extends Block implements EntityBlock {
 		super(Properties.of(Material.STONE).strength(1.5F, 2.0F).sound(SoundType.STONE).noOcclusion());
 	}
 
+	public MortarBlock(SoundType soundType) {
+		super(Properties.of(Material.STONE).strength(1.5F, 2.0F).sound(soundType).noOcclusion());
+	}
+
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
 		return SHAPE;
 	}
