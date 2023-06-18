@@ -141,52 +141,52 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<JellyBlock> JELLY_WHITE = BLOCKS.register("jelly_white_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_WHITE),
-					ExtraDelightItems.JELLY_WHITE, true));
+					ExtraDelightItems.JELLY_WHITE::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_ORANGE = BLOCKS.register("jelly_orange_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_ORANGE),
-					ExtraDelightItems.JELLY_ORANGE, true));
+					ExtraDelightItems.JELLY_ORANGE::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_MAGENTA = BLOCKS.register("jelly_magenta_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_MAGENTA),
-					ExtraDelightItems.JELLY_MAGENTA, true));
+					ExtraDelightItems.JELLY_MAGENTA::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_LIGHT_BLUE = BLOCKS.register("jelly_light_blue_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_LIGHT_BLUE),
-					ExtraDelightItems.JELLY_LIGHT_BLUE, true));
+					ExtraDelightItems.JELLY_LIGHT_BLUE::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_YELLOW = BLOCKS.register("jelly_yellow_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_YELLOW),
-					ExtraDelightItems.JELLY_YELLOW, true));
+					ExtraDelightItems.JELLY_YELLOW::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_LIME = BLOCKS.register("jelly_lime_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_LIGHT_GREEN),
-					ExtraDelightItems.JELLY_LIME, true));
+					ExtraDelightItems.JELLY_LIME::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_PINK = BLOCKS.register("jelly_pink_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_PINK),
-					ExtraDelightItems.JELLY_PINK, true));
+					ExtraDelightItems.JELLY_PINK::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_GREY = BLOCKS.register("jelly_grey_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_GRAY),
-					ExtraDelightItems.JELLY_GREY, true));
+					ExtraDelightItems.JELLY_GREY::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_LIGHT_GREY = BLOCKS.register("jelly_light_grey_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_LIGHT_GRAY),
-					ExtraDelightItems.JELLY_LIGHT_GREY, true));
+					ExtraDelightItems.JELLY_LIGHT_GREY::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_CYAN = BLOCKS.register("jelly_cyan_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_CYAN),
-					ExtraDelightItems.JELLY_CYAN, true));
+					ExtraDelightItems.JELLY_CYAN::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_PURPLE = BLOCKS.register("jelly_purple_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_PURPLE),
-					ExtraDelightItems.JELLY_PURPLE, true));
+					ExtraDelightItems.JELLY_PURPLE::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_BLUE = BLOCKS.register("jelly_blue_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_BLUE),
-					ExtraDelightItems.JELLY_BLUE, true));
+					ExtraDelightItems.JELLY_BLUE::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_BROWN = BLOCKS.register("jelly_brown_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_BROWN),
-					ExtraDelightItems.JELLY_BROWN, true));
+					ExtraDelightItems.JELLY_BROWN::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_GREEN = BLOCKS.register("jelly_green_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_GREEN),
-					ExtraDelightItems.JELLY_GREEN, true));
+					ExtraDelightItems.JELLY_GREEN::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_RED = BLOCKS.register("jelly_red_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_RED),
-					ExtraDelightItems.JELLY_RED, true));
+					ExtraDelightItems.JELLY_RED::get, true));
 	public static final RegistryObject<JellyBlock> JELLY_BLACK = BLOCKS.register("jelly_black_block",
 			() -> new JellyBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_BLACK),
-					ExtraDelightItems.JELLY_BLACK, true));
+					ExtraDelightItems.JELLY_BLACK::get, true));
 
 	//Used to use:
 	//BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN)

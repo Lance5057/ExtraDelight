@@ -34,6 +34,12 @@ public class EDFoods {
 	public static final FoodProperties EDIBLE_SEEDS = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1f)
 			.build();
 
+	public static final FoodProperties JAM_BREAD = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.4f)
+			.build();
+	public static final FoodProperties GOLDEN_JAM_BREAD = (new FoodProperties.Builder()).nutrition(4)
+			.saturationMod(1.2F).effect(new MobEffectInstance(MobEffects.REGENERATION, 100, 1), 1.0F)
+			.effect(new MobEffectInstance(MobEffects.ABSORPTION, 2400, 0), 1.0F).alwaysEat().build();
+
 	public static final FoodProperties COOKED_CARROT = EDFoods.cookFood("cooked carrot", Foods.CARROT).build();
 	public static final FoodProperties COOKED_APPLE = EDFoods.cookFood("cooked apple", Foods.APPLE).build();
 
