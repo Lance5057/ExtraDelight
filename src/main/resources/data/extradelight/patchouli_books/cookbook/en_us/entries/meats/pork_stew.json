@@ -1,16 +1,23 @@
 {
-    "name": "Jerky",
-    "icon": "extradelight:jerky",
+    "name": "Pork Stew",
+    "icon": "extradelight:pork_stew",
     "category": "extradelight:meats",
-	"sortnum": 1,
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:dryingrack",
-			"recipe": "extradelight:jerky"
+            "type": "extradelight:pot",
+			"recipe": "extradelight:pork_stew_test"
+        },
+		{
+            "type": "extradelight:feast",
+			"recipe": "extradelight:pork_stew_bowl"
+        },
+		{
+            "type": "extradelight:feast",
+			"recipe": "extradelight:pork_stew_rice"
         },
 		{
             "type": "patchouli:text",

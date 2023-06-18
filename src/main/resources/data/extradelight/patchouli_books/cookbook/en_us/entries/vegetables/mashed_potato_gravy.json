@@ -1,16 +1,19 @@
 {
-    "name": "Jerky",
-    "icon": "extradelight:jerky",
-    "category": "extradelight:meats",
-	"sortnum": 1,
+    "name": "Mashed Potatos with Gravy",
+    "icon": "extradelight:mashed_potato_gravy",
+    "category": "extradelight:vegetables",
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:dryingrack",
-			"recipe": "extradelight:jerky"
+            "type": "extradelight:pot",
+			"recipe": "extradelight:mashed_potato_gravy_feast"
+        },
+		{
+            "type": "extradelight:feast",
+			"recipe": "extradelight:mashed_potato_gravy_bowl"
         },
 		{
             "type": "patchouli:text",

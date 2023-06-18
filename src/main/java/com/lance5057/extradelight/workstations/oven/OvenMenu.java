@@ -66,10 +66,10 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 		}
 
 		// Meal Display
-		this.addSlot(new OvenMealSlot(inventory, 9, 124, 26+10));
+		// this.addSlot(new OvenMealSlot(inventory, 9, 124, 26+10));
 
 		// Bowl Input
-		this.addSlot(new SlotItemHandler(inventory, 10, 92, 55+8) {
+		this.addSlot(new SlotItemHandler(inventory, 10, 92, 55 + 8) {
 			@OnlyIn(Dist.CLIENT)
 			public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
 				return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BOWL);
@@ -77,7 +77,7 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 		});
 
 		// Bowl Output
-		this.addSlot(new OvenResultSlot(playerInventory.player, tileEntity, inventory, 11, 124, 55+8));
+		this.addSlot(new OvenResultSlot(playerInventory.player, tileEntity, inventory, 11, 124, 26 + 10));
 
 		// Main Player Inventory
 		int startPlayerInvY = startY * 4 + 30;

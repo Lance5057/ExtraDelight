@@ -1,6 +1,6 @@
 {
-    "name": "Jerky",
-    "icon": "extradelight:jerky",
+    "name": "Fried Fish",
+    "icon": "extradelight:fried_fish",
     "category": "extradelight:meats",
 	"sortnum": 1,
     "pages": [
@@ -9,8 +9,8 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:dryingrack",
-			"recipe": "extradelight:jerky"
+            "type": "extradelight:pot",
+			"recipe": "extradelight:fried_fish"
         },
 		{
             "type": "patchouli:text",

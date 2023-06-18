@@ -23,13 +23,10 @@
       "tag": "forge:vinegar"
     },
     {
-      "tag": "extradelight:processed/produce"
+      "item": "extradelight:boiled_egg"
     },
     {
-      "tag": "forge:vegetables"
-    },
-    {
-      "tag": "extradelight:processed/produce"
+      "tag": "forge:meat/cooked"
     }
   ],
   "result": {
