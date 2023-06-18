@@ -1,0 +1,4 @@
+// 1.19.2	2023-06-18T21:48:13.2307007	Tags for minecraft:block
+c3af15daab9eb8cbb5567e73b9bf79f92cef742f data/farmersdelight/tags/blocks/mineable/knife.json
+e8fd0796c4f05386f5fcb3f2edde8fd100a56d59 data/minecraft/tags/blocks/mineable/axe.json
+01b76e135be04ca41f44b93e41428c49c10260d3 data/minecraft/tags/blocks/mineable/pickaxe.json

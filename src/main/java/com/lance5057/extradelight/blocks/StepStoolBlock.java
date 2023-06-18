@@ -29,7 +29,7 @@ public class StepStoolBlock extends Block {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
 	public StepStoolBlock() {
-		super(Properties.of(Material.WOOD).sound(SoundType.WOOD));
+		super(Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 

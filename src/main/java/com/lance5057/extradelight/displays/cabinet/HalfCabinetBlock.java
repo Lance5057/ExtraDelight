@@ -41,7 +41,7 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 	public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
 	public HalfCabinetBlock() {
-		super(Properties.of(Material.WOOD).sound(SoundType.WOOD).noOcclusion());
+		super(Block.Properties.copy(Blocks.BARREL).noOcclusion()); //Copy barrel properties like a normal cabinet
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, false));
 	}
 

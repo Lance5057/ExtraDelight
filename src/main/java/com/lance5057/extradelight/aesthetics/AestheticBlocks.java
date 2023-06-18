@@ -136,11 +136,13 @@ public class AestheticBlocks {
 
 		registerAllColors("wallpaper", () -> new Block(Properties
 						.of(Material.WOOD)
-						.sound(SoundType.WOOL)),
+						.strength(2.0F, 3.0F)
+						.sound(SoundType.GRASS)), //.sound(SoundType.WOOl)
 				WALLPAPER_BLOCKS, WALLPAPER_ITEMS);
 		registerMoldedWallpaper("wallpaper", () -> new MoldingBlock(Properties
 						.of(Material.WOOD)
-						.sound(SoundType.WOOL)),
+						.strength(2.0F, 3.0F)
+						.sound(SoundType.GRASS)), //.sound(SoundType.WOOl)
 				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
 	}
 

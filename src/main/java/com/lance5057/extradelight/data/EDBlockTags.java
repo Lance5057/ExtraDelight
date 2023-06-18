@@ -1,8 +1,17 @@
 package com.lance5057.extradelight.data;
 
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.tag.ModTags;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EDBlockTags extends BlockTagsProvider {
 	public EDBlockTags(DataGenerator generator, String modId, ExistingFileHelper existingFileHelper) {
@@ -11,7 +20,78 @@ public class EDBlockTags extends BlockTagsProvider {
 
 	@Override
 	protected void addTags() {
+		this.registerBlockMineableTags();
+	}
 
+	protected void registerBlockMineableTags() {
+
+		tag(BlockTags.MINEABLE_WITH_AXE).add(
+				ExtraDelightBlocks.DRYING_RACK.get(),
+				ExtraDelightBlocks.FOOD_DISPLAY.get(),
+				ExtraDelightBlocks.DOUGH_SHAPING.get(),
+				ExtraDelightBlocks.MIXING_BOWL.get()
+		);
+		AestheticBlocks.STEP_STOOLS.forEach(this::makeMineableWithAxe);
+		AestheticBlocks.SPICE_RACKS.forEach(this::makeMineableWithAxe);
+		AestheticBlocks.SPICE_RACKS_FULL.forEach(this::makeMineableWithAxe);
+		AestheticBlocks.KNIFE_BLOCKS.forEach(this::makeMineableWithAxe);
+		AestheticBlocks.CABINETS.forEach(this::makeMineableWithAxe);
+		AestheticBlocks.WALLPAPER_BLOCKS.forEach(this::makeMineableWithAxe);
+		AestheticBlocks.MOLDED_WALLPAPER_BLOCKS.forEach(this::makeMineableWithAxe);
+
+//		tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_HOE).add(
+//
+//		);
+
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+				ExtraDelightBlocks.OVEN.get(),
+				ExtraDelightBlocks.MORTAR_STONE.get(),
+				ExtraDelightBlocks.MORTAR_ANDESITE.get(),
+				ExtraDelightBlocks.MORTAR_GRANITE.get(),
+				ExtraDelightBlocks.MORTAR_DIORITE.get(),
+				ExtraDelightBlocks.MORTAR_DEEPSLATE.get(),
+				ExtraDelightBlocks.MORTAR_BLACKSTONE.get(),
+				ExtraDelightBlocks.MORTAR_BASALT.get(),
+				ExtraDelightBlocks.MORTAR_ENDSTONE.get(),
+				ExtraDelightBlocks.MORTAR_AMETHYST.get(),
+				ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get()
+		);
+
+//		tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_SHOVEL).add(
+//
+//		);
+
+//		tag(ModTags.MINEABLE_WITH_KNIFE).add(
+//
+//		);
+		AestheticBlocks.WALLPAPER_BLOCKS.forEach(this::makeMineableWithKnife);
+		AestheticBlocks.MOLDED_WALLPAPER_BLOCKS.forEach(this::makeMineableWithKnife);
+
+	}
+
+	protected void makeMineableWithAxe(RegistryObject<Block> blockRegistryObject) {
+		tag(BlockTags.MINEABLE_WITH_AXE).add(
+				blockRegistryObject.get());
+	}
+
+	protected void makeMineableWithHoe(RegistryObject<Block> blockRegistryObject) {
+		tag(BlockTags.MINEABLE_WITH_HOE).add(
+				blockRegistryObject.get());
+	}
+
+	protected void makeMineableWithPickaxe(RegistryObject<Block> blockRegistryObject) {
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+				blockRegistryObject.get());
+	}
+
+	protected void makeMineableWithShovel(RegistryObject<Block> blockRegistryObject) {
+		tag(BlockTags.MINEABLE_WITH_AXE).add(
+				blockRegistryObject.get());
+	}
+
+	protected void makeMineableWithKnife(RegistryObject<Block> blockRegistryObject) {
+		tag(ModTags.MINEABLE_WITH_KNIFE).add(
+				blockRegistryObject.get());
 	}
 
 }
