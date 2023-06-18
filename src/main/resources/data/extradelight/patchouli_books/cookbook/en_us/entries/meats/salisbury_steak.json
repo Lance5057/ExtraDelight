@@ -1,6 +1,6 @@
 {
-    "name": "Jerky",
-    "icon": "extradelight:jerky",
+    "name": "Salisbury Steak",
+    "icon": "extradelight:salisbury_steak",
     "category": "extradelight:meats",
 	"sortnum": 1,
     "pages": [
@@ -9,8 +9,12 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:dryingrack",
-			"recipe": "extradelight:jerky"
+            "type": "extradelight:pot",
+			"recipe": "extradelight:salisbury_steak_feast"
+        },
+		{
+            "type": "extradelight:feast",
+			"recipe": "extradelight:salisbury_steak_bowl"
         },
 		{
             "type": "patchouli:text",

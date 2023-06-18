@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:salad_veg"
+        "recipe": "extradelight:salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:salad_veg"
+      "extradelight:salad"
     ]
   }
 }

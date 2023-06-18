@@ -1,6 +1,6 @@
 {
-    "name": "Jerky",
-    "icon": "extradelight:jerky",
+    "name": "Liver and Onions",
+    "icon": "extradelight:liver_onions",
     "category": "extradelight:meats",
 	"sortnum": 1,
     "pages": [
@@ -9,8 +9,8 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:dryingrack",
-			"recipe": "extradelight:jerky"
+            "type": "extradelight:pot",
+			"recipe": "extradelight:liver_onions"
         },
 		{
             "type": "patchouli:text",

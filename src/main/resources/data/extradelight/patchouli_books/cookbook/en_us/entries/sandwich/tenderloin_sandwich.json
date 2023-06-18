@@ -1,16 +1,16 @@
 {
-    "name": "Jerky",
-    "icon": "extradelight:jerky",
-    "category": "extradelight:meats",
-	"sortnum": 1,
+    "name": "Pork Tenderloin Sandwich",
+    "icon": "extradelight:pork_tenderloin_sandwich",
+    "category": "extradelight:sandwiches",
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:dryingrack",
-			"recipe": "extradelight:jerky"
+            "type": "patchouli:crafting",
+			"recipe": "extradelight:pork_tenderloin_gravy",
+			"recipe2": "extradelight:pork_tenderloin_sandwich"
         },
 		{
             "type": "patchouli:text",

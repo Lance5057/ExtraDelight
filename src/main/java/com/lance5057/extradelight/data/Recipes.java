@@ -240,6 +240,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "ribs_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.MASHED_POTATO_GRAVY.get(),
+						ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mashed_potato_gravy_bowl"));
 	}
 
 	private void doughShapeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -381,29 +387,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 1)
 				.requires(ModItems.CABBAGE.get()).requires(ExtraDelightTags.PROCESSED_ONION)
 				.requires(ExtraDelightTags.PROCESSED_CARROT).requires(ExtraDelightItems.CROUTONS.get())
-				.requires(ExtraDelightTags.COOKING_OIL).requires(ExtraDelightTags.VINEGAR)
-				.requires(ExtraDelightTags.PROCESSED_PRODUCE).requires(ExtraDelightTags.PROCESSED_PRODUCE)
-				.requires(ExtraDelightTags.PROCESSED_PRODUCE).requires(ExtraDelightTags.PROCESSED_PRODUCE)
-				.requires(ExtraDelightTags.PROCESSED_PRODUCE).unlockedBy(getName(), has(ForgeTags.CROPS_CABBAGE))
-				.save(consumer, "extradelight:salad_vegan");
-
-		MixingBowlRecipeBuilder
-				.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 1)
-				.requires(ModItems.CABBAGE.get()).requires(ExtraDelightTags.PROCESSED_ONION)
-				.requires(ExtraDelightTags.PROCESSED_CARROT).requires(ExtraDelightItems.CROUTONS.get())
 				.requires(ExtraDelightItems.CHEESE.get()).requires(ExtraDelightTags.COOKING_OIL)
-				.requires(ExtraDelightTags.VINEGAR).requires(ExtraDelightTags.PROCESSED_PRODUCE)
-				.requires(ForgeTags.VEGETABLES).requires(ExtraDelightTags.PROCESSED_PRODUCE)
-				.unlockedBy(getName(), has(ForgeTags.CROPS_CABBAGE)).save(consumer, "extradelight:salad_veg");
-
-		MixingBowlRecipeBuilder
-				.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 1)
-				.requires(ModItems.CABBAGE.get()).requires(ExtraDelightTags.PROCESSED_ONION)
-				.requires(ExtraDelightTags.PROCESSED_CARROT).requires(ExtraDelightItems.CROUTONS.get())
-				.requires(ExtraDelightItems.CHEESE.get()).requires(ExtraDelightTags.COOKING_OIL)
-				.requires(ExtraDelightTags.VINEGAR).requires(ExtraDelightTags.PROCESSED_PRODUCE)
+				.requires(ExtraDelightTags.VINEGAR).requires(ExtraDelightItems.BOILED_EGG.get())
 				.requires(ExtraDelightTags.MEAT_COOKED).unlockedBy(getName(), has(ForgeTags.CROPS_CABBAGE))
-				.save(consumer, "extradelight:salad_meat");
+				.save(consumer, "extradelight:salad");
 
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PASTA_ALFREDO.get(), FAST_GRIND, Ingredient.of(Items.BOWL), 1)
 				.requires(ExtraDelightItems.ALFREDO_SAUCE.get()).requires(ExtraDelightItems.BUTTERED_PASTA.get())
@@ -1009,7 +996,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addRecipe(r -> CookingPotRecipeBuilder
 						.cookingPotRecipe(ExtraDelightItems.BEEF_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING,
 								0.35F, Items.BOWL)
-						.addIngredient(Items.BEEF).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
+						.addIngredient(ExtraDelightTags.BEEF).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
 						.addIngredient(ForgeTags.CROPS_ONION).addIngredient(ModItems.BONE_BROTH.get())
 						.addIngredient(ExtraDelightTags.FLOUR)
 						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "beef_stew_vanilla")))
