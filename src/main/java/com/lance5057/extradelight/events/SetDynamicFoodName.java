@@ -28,7 +28,6 @@ public class SetDynamicFoodName {
 		Container craftMatrix = event.getInventory();
 
 		for (int i = 0; i < craftMatrix.getContainerSize(); i++) {
-			//if (craftMatrix.getItem(i) == ItemStack.EMPTY) continue;
 			if (craftMatrix.getItem(i).isEmpty()) continue;
 
 			ingredients.add(craftMatrix.getItem(i).getItem());
