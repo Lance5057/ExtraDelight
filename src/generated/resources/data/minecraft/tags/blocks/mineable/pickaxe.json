@@ -10,6 +10,16 @@
     "extradelight:mortar_basalt",
     "extradelight:mortar_endstone",
     "extradelight:mortar_amethyst",
-    "extradelight:mortar_gilded_blackstone"
+    "extradelight:mortar_gilded_blackstone",
+    "extradelight:lasagna_block",
+    "extradelight:hotdish_block",
+    "extradelight:macaroni_cheese_block",
+    "extradelight:curry_block",
+    "extradelight:beef_stew_block",
+    "extradelight:pork_stew_block",
+    "extradelight:lamb_stew_block",
+    "extradelight:rabbit_stew_block",
+    "extradelight:chicken_stew_block",
+    "extradelight:fish_stew_block"
   ]
 }
