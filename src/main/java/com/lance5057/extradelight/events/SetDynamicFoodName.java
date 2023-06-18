@@ -1,6 +1,7 @@
 package com.lance5057.extradelight.events;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -27,10 +28,13 @@ public class SetDynamicFoodName {
 		Container craftMatrix = event.getInventory();
 
 		for (int i = 0; i < craftMatrix.getContainerSize(); i++) {
-			if (craftMatrix.getItem(i) != ItemStack.EMPTY)
-				ingredients.add(craftMatrix.getItem(i).getItem());
+			//if (craftMatrix.getItem(i) == ItemStack.EMPTY) continue;
+			if (craftMatrix.getItem(i).isEmpty()) continue;
+
+			ingredients.add(craftMatrix.getItem(i).getItem());
 		}
 
+		ingredients.sort(Comparator.comparing(Item::toString));
 		IDynamicNamedFood.writeNBTIngredientList(craftedItemStack, ingredients);
 
 //		if (items.getItem() instanceof IDynamicNamedFood dnf) {
