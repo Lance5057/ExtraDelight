@@ -3,6 +3,7 @@
   "render_type": "minecraft:cutout",
   "textures": {
     "0": "minecraft:block/spruce_planks",
-    "2": "extradelight:block/spruce_ornate"
+    "2": "extradelight:block/spruce_ornate",
+    "particle": "minecraft:block/spruce_planks"
   }
 }

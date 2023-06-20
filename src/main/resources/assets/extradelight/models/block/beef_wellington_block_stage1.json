@@ -5,7 +5,7 @@
 		"0": "farmersdelight:block/tray_bottom",
 		"1": "farmersdelight:block/tray_top",
 		"2": "extradelight:block/beefwellington",
-		"particle": "farmersdelight:block/tray_bottom"
+		"particle": "extradelight:block/beefwellington"
 	},
 	"elements": [
 		{

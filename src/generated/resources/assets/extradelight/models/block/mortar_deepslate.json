@@ -1,6 +1,7 @@
 {
   "parent": "extradelight:block/mortar",
   "textures": {
-    "0": "minecraft:block/deepslate"
+    "0": "minecraft:block/deepslate",
+    "particle": "minecraft:block/deepslate"
   }
 }

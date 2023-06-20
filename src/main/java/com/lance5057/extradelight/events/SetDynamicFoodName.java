@@ -1,6 +1,7 @@
 package com.lance5057.extradelight.events;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -18,15 +19,23 @@ import net.minecraftforge.fml.common.Mod;
 public class SetDynamicFoodName {
 	@SubscribeEvent
 	public static void onCrafting(PlayerEvent.ItemCraftedEvent event) {
-		ItemStack item = event.getCrafting();
-		List<Item> items = new ArrayList<Item>();
-		Container c = event.getInventory();
+		ItemStack craftedItemStack = event.getCrafting();
 
-		for (int i = 0; i < c.getContainerSize(); i++)
-			if (c.getItem(i) != ItemStack.EMPTY)
-				items.add(c.getItem(i).getItem());
+		if (!(craftedItemStack.getItem() instanceof IDynamicNamedFood))
+			return;
 
-		IDynamicNamedFood.writeNBTIngredientList(item, items);
+		List<Item> ingredients = new ArrayList<Item>();
+		Container craftMatrix = event.getInventory();
+
+		for (int i = 0; i < craftMatrix.getContainerSize(); i++) {
+			if (craftMatrix.getItem(i).isEmpty()) continue;
+
+			ingredients.add(craftMatrix.getItem(i).getItem());
+		}
+
+		ingredients.sort(Comparator.comparing(Item::toString));
+		IDynamicNamedFood.writeNBTIngredientList(craftedItemStack, ingredients);
+
 //		if (items.getItem() instanceof IDynamicNamedFood dnf) {
 //			items.setHoverName(
 //					dnf.getDynamicName(event.getEntity(), event.getEntity().level, items, "ye", event.getInventory()));

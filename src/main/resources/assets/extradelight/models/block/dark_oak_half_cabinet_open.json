@@ -3,6 +3,7 @@
   "textures": {
     "0": "farmersdelight:block/dark_oak_cabinet_front_open",
     "1": "farmersdelight:block/dark_oak_cabinet_side",
-    "2": "farmersdelight:block/dark_oak_cabinet_top"
+    "2": "farmersdelight:block/dark_oak_cabinet_top",
+    "particle": "farmersdelight:block/dark_oak_cabinet_front"
   }
 }

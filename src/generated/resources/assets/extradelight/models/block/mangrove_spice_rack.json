@@ -3,6 +3,7 @@
   "render_type": "minecraft:cutout",
   "textures": {
     "0": "minecraft:block/mangrove_planks",
-    "2": "extradelight:block/mangrove_ornate"
+    "2": "extradelight:block/mangrove_ornate",
+    "particle": "minecraft:block/mangrove_planks"
   }
 }

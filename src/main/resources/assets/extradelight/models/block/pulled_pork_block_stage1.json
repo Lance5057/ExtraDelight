@@ -6,7 +6,7 @@
 		"1": "extradelight:block/bowl_top",
 		"2": "extradelight:block/pulledpork2",
 		"3": "extradelight:block/pulledpork",
-		"particle": "farmersdelight:block/tray_bottom"
+		"particle": "extradelight:block/pulledpork"
 	},
 	"elements": [
 		{

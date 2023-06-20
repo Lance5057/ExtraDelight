@@ -1,6 +1,7 @@
 {
   "parent": "extradelight:block/curry_block_stage3",
   "textures": {
-    "1": "extradelight:block/beef_stew"
+    "1": "extradelight:block/beef_stew",
+    "particle": "extradelight:block/beef_stew"
   }
 }

@@ -20,8 +20,9 @@ public class DataGen {
 
 		generator.addProvider(true, new AllLootTables(generator));
 
-		EDBlockTags bt = new EDBlockTags(generator, ExtraDelight.MOD_ID, event.getExistingFileHelper());
-		generator.addProvider(true, new EDItemTags(generator, bt, ExtraDelight.MOD_ID, helper));
+		EDBlockTags blockTags = new EDBlockTags(generator, ExtraDelight.MOD_ID, event.getExistingFileHelper());
+		generator.addProvider(true, blockTags);
+		generator.addProvider(true, new EDItemTags(generator, blockTags, ExtraDelight.MOD_ID, helper));
 
 		generator.addProvider(event.includeServer(), new Recipes(generator));
 		generator.addProvider(event.includeServer(), new LootModifiers(generator));

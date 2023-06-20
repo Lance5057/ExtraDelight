@@ -64,7 +64,7 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 			Block.box(0.0D, -1.0D, 0.0D, 16.0D, 0.0D, 16.0D));
 
 	public OvenBlock() {
-		super(Properties.of(Material.METAL).strength(0.5F, 6.0F).sound(SoundType.LANTERN));
+		super(Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3.5F, 6.0F).sound(SoundType.STONE));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
 				.setValue(SUPPORT, OvenSupport.NONE).setValue(WATERLOGGED, false));
 	}

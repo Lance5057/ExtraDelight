@@ -4,7 +4,7 @@
 	"textures": {
 		"3": "extradelight:block/pan",
 		"5": "extradelight:block/pan_bottom_dirty",
-		"particle": "extradelight:block/lasagna_top"
+		"particle": "extradelight:block/pan_bottom_dirty"
 	},
 	"elements": [
 		{

@@ -3,6 +3,7 @@
   "textures": {
     "0": "farmersdelight:block/birch_cabinet_front",
     "1": "farmersdelight:block/birch_cabinet_side",
-    "2": "farmersdelight:block/birch_cabinet_top"
+    "2": "farmersdelight:block/birch_cabinet_top",
+    "particle": "farmersdelight:block/birch_cabinet_front"
   }
 }

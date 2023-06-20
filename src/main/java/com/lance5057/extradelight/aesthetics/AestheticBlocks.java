@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import net.minecraft.world.level.block.SoundType;
 import org.apache.commons.lang3.text.WordUtils;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -133,9 +134,15 @@ public class AestheticBlocks {
 		registerAllWood("knife_block", KnifeBlock::new, KNIFE_BLOCKS, KNIFE_BLOCK_ITEMS);
 		registerAllWood("cabinet", HalfCabinetBlock::new, CABINETS, CABINET_ITEMS);
 
-		registerAllColors("wallpaper", () -> new Block(Properties.of(Material.WOOD)), WALLPAPER_BLOCKS,
-				WALLPAPER_ITEMS);
-		registerMoldedWallpaper("wallpaper", () -> new MoldingBlock(Properties.of(Material.WOOD)),
+		registerAllColors("wallpaper", () -> new Block(Properties
+						.of(Material.WOOD)
+						.strength(2.0F, 3.0F)
+						.sound(SoundType.GRASS)), //.sound(SoundType.WOOl)
+				WALLPAPER_BLOCKS, WALLPAPER_ITEMS);
+		registerMoldedWallpaper("wallpaper", () -> new MoldingBlock(Properties
+						.of(Material.WOOD)
+						.strength(2.0F, 3.0F)
+						.sound(SoundType.GRASS)), //.sound(SoundType.WOOl)
 				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
 	}
 
@@ -161,22 +168,30 @@ public class AestheticBlocks {
 		for (int i = 0; i < WOOD.values().length; i++) {
 			bsp.horizontalBlock(STEP_STOOLS.get(i).get(), bsp.models()
 					.withExistingParent(WOOD.values()[i].toString() + "_step_stool", bsp.modLoc("block/stepstool"))
-					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks")).renderType("cutout"));
+					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.renderType("cutout"));
 
 			bsp.horizontalBlock(SPICE_RACKS.get(i).get(), bsp.models()
 					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack", bsp.modLoc("block/spicerack"))
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
-					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate")).renderType("cutout"));
+					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate"))
+					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.renderType("cutout"));
 
 			bsp.horizontalBlock(SPICE_RACKS_FULL.get(i).get(), bsp.models()
 					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack_full",
 							bsp.modLoc("block/spicerack_filled"))
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
-					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate")).renderType("cutout"));
+					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate"))
+					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.renderType("cutout"));
 
 			bsp.horizontalBlock(KNIFE_BLOCKS.get(i).get(), bsp.models()
 					.withExistingParent(WOOD.values()[i].toString() + "_knife_block", bsp.modLoc("block/knifeblock"))
-					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks")).renderType("cutout"));
+					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.renderType("cutout"));
 		}
 
 		for (int i = 0; i < DyeColor.values().length; i++) {

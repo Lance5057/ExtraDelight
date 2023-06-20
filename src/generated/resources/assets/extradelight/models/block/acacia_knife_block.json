@@ -2,6 +2,7 @@
   "parent": "extradelight:block/knifeblock",
   "render_type": "minecraft:cutout",
   "textures": {
-    "0": "minecraft:block/acacia_planks"
+    "0": "minecraft:block/acacia_planks",
+    "particle": "minecraft:block/acacia_planks"
   }
 }

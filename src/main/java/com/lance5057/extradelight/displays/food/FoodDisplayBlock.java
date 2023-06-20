@@ -39,7 +39,9 @@ public class FoodDisplayBlock extends BaseEntityBlock implements SimpleWaterlogg
 	public static final BooleanProperty ENCASED = BooleanProperty.create("encased");
 	
 	public FoodDisplayBlock() {
-		super(Properties.of(Material.METAL).strength(0.5F, 6.0F).sound(SoundType.WOOD).noOcclusion());
+		//strength used to be (0.5f, 6.0f)
+		//properties.of used to be Material.METAL for some reason, this makes it gray
+		super(Properties.of(Material.WOOD).strength(2.5F, 6.0F).sound(SoundType.WOOD).noOcclusion());
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
 				.setValue(WATERLOGGED, false).setValue(ENCASED, false));
 	}

@@ -6,7 +6,7 @@
 		"1": "extradelight:block/bowl_top",
 		"2": "extradelight:block/stirfry2",
 		"3": "extradelight:block/stirfry",
-		"particle": "farmersdelight:block/tray_bottom"
+		"particle": "extradelight:block/stirfry"
 	},
 	"elements": [
 		{

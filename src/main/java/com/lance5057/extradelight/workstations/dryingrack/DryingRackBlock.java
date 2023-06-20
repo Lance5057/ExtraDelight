@@ -18,6 +18,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -30,7 +31,8 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 public class DryingRackBlock extends Block implements EntityBlock {
 
 	public DryingRackBlock() {
-		super(BlockBehaviour.Properties.of(Material.WOOD).strength(1, 1).noOcclusion());
+		//strength used to be (1, 1)
+		super(BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD).noOcclusion());
 		// TODO Auto-generated constructor stub
 	}
 

@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "farmersdelight:block/tray_top",
 		"1": "extradelight:block/rack_ribs",
-		"particle": "farmersdelight:block/tray_top"
+		"particle": "extradelight:block/rack_ribs"
 	},
 	"elements": [
 		{
