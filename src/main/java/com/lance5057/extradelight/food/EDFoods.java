@@ -60,7 +60,7 @@ public class EDFoods {
 	public static final FoodProperties FLOUR = new FoodProperties.Builder().nutrition(1).saturationMod(0.2f).build();
 
 	public static final FoodProperties BADFOOD = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2f)
-			.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, FoodValues.SHORT_DURATION, 0), 1.0F).build();
+			.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 120, 0), 0.8F).build();
 
 	// Basic Cooked Items
 	public static final FoodProperties COOKED_CARROT = EDFoods.cookFood("cooked carrot", Foods.CARROT).build();
