@@ -895,8 +895,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.KETCHUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
 						Items.GLASS_BOTTLE)
-				.addIngredient(ForgeTags.VEGETABLES_TOMATO).addIngredient(ExtraDelightTags.SWEETENER)
-				.addIngredient(ExtraDelightTags.VINEGAR)
+				.addIngredient(ForgeTags.VEGETABLES_TOMATO).addIngredient(ForgeTags.VEGETABLES_TOMATO)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.VINEGAR)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "ketchup_jar"));
 
 		CookingPotRecipeBuilder
@@ -926,8 +926,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(), 1,
 						CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL)
-				.addIngredient(Items.POTATO, 4).addIngredient(ExtraDelightItems.GRAVY.get())
-				.addIngredient(Items.MILK_BUCKET)
+				.addIngredient(Items.POTATO, 3).addIngredient(ExtraDelightItems.GRAVY.get())
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(Items.MILK_BUCKET)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mashed_potato_gravy_feast"));
 
 		CookingPotRecipeBuilder
