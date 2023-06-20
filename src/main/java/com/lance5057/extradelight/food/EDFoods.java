@@ -215,21 +215,29 @@ public class EDFoods {
 			.addFoods("fish stew rice", FoodValues.FISH_STEW, FoodValues.COOKED_RICE).build();
 	public static final FoodProperties CURRY_RICE = EDFoods
 			.addFoods("curry stew rice", EDFoods.CURRY, FoodValues.COOKED_RICE).build();
-	public static final FoodProperties SAUSAGE_ROLL = null;
-	public static final FoodProperties SOS = null;
-	public static final FoodProperties LIVERONION = null;
-	public static final FoodProperties FRIED_FISH = null;
-	public static final FoodProperties CHICKEN_FRIED_STEAK = null;
-	public static final FoodProperties PORK_TENDERLOIN = null;
-	public static final FoodProperties PORK_TENDERLOIN_SANDWICH = null;
-	public static final FoodProperties FRIED_CHICKEN = null;
-	public static final FoodProperties STUFFED_HEART = null;
-	public static final FoodProperties FRIED_BRAIN = null;
-	public static final FoodProperties OXTAIL_SOUP = null;
-	public static final FoodProperties GRILLED_CHEESE = null;
-	public static final FoodProperties CHEESE_SANDWICH = null;
-	public static final FoodProperties HASH = null;
-	public static final FoodProperties POT_ROAST = null;
+
+	//TODO: Sort these in the right categories, split if needed
+	public static final FoodProperties COOKED_PASTA = EDFoods
+			.cookFood("cooked pasta", FoodValues.RAW_PASTA).build();
+	public static final FoodProperties BUTTERED_PASTA = EDFoods
+			.addFoods("buttered pasta", EDFoods.COOKED_PASTA, EDFoods.BUTTER).build();
+	public static final FoodProperties FRIED_FISH = EDFoods
+			.addFoods("fried fish", Foods.COOKED_COD, EDFoods.BREADING).build();
+	public static final FoodProperties CHICKEN_FRIED_STEAK = EDFoods
+			.addFoods("chicken fried steak", Foods.COOKED_BEEF, EDFoods.BREADING, EDFoods.GRAVY).build();
+	public static final FoodProperties PORK_TENDERLOIN = EDFoods
+			.addFoods("pork tenderloin", Foods.COOKED_PORKCHOP, EDFoods.BREADING).build();
+	public static final FoodProperties PORK_TENDERLOIN_SANDWICH = EDFoods
+			.addFoods("pork tenderloin sandwich", EDFoods.PORK_TENDERLOIN, Foods.BREAD, EDFoods.GRAVY).build();
+	public static final FoodProperties GRILLED_CHEESE = EDFoods
+			.cookFood("grilled cheese", EDFoods.CHEESE_SANDWICH).build();
+	public static final FoodProperties CHEESE_SANDWICH = EDFoods
+			.addFoods("cheese sandwich", EDFoods.SLICED_BREAD, EDFoods.SLICED_BREAD, EDFoods.CHEESE, EDFoods.BUTTER).build();
+	public static final FoodProperties HASH = EDFoods
+			.addFoods("hash", Foods.POTATO, Foods.POTATO, FoodValues.ONION, EDFoods.OIL, Foods.COOKED_PORKCHOP).build();
+
+
+	//TODO: Assign these food values
 	public static final FoodProperties MEAT_LOAF = null;
 	public static final FoodProperties MEAT_LOAF_SANDWICH = null;
 	public static final FoodProperties BBQ_RIBS = null;
@@ -266,8 +274,16 @@ public class EDFoods {
 	public static final FoodProperties RICEBALL_FILLED = null;
 	public static final FoodProperties FISH_SALAD = null;
 	public static final FoodProperties FISH_SALAD_SANDWICH = null;
-	public static final FoodProperties COOKED_PASTA = null;
-	public static final FoodProperties BUTTERED_PASTA = null;
+
+	//have empty tags
+	public static final FoodProperties SAUSAGE_ROLL = null;
+	public static final FoodProperties SOS = null;
+	public static final FoodProperties LIVERONION = null;
+	public static final FoodProperties FRIED_CHICKEN = null;
+	public static final FoodProperties STUFFED_HEART = null;
+	public static final FoodProperties FRIED_BRAIN = null;
+	public static final FoodProperties OXTAIL_SOUP = null;
+	public static final FoodProperties POT_ROAST = null;
 
 	public static Builder addFoods(String name, FoodProperties... foods) {
 
