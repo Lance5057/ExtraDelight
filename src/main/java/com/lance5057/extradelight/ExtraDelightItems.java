@@ -318,7 +318,7 @@ public class ExtraDelightItems {
 
 	public static final RegistryObject<Item> JAM_TOAST = ITEMS.register("jam_toast",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.JAM_BREAD)));
-	public static final RegistryObject<Item> GLOW_JAM_TOAST = ITEMS.register("jam_toast",
+	public static final RegistryObject<Item> GLOW_JAM_TOAST = ITEMS.register("glow_jam_toast",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.GLOW_JAM_BREAD)));
 	public static final RegistryObject<Item> GOLDEN_JAM_TOAST = ITEMS.register("golden_jam_toast",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.GOLDEN_JAM_BREAD)));
