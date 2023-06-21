@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "farmersdelight:crimson_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelight:crimson_half_cabinet"
+  }
+}
