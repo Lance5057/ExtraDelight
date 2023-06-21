@@ -229,10 +229,10 @@ public class EDFoods {
 			.addFoods("pork tenderloin", Foods.COOKED_PORKCHOP, EDFoods.BREADING).build();
 	public static final FoodProperties PORK_TENDERLOIN_SANDWICH = EDFoods
 			.addFoods("pork tenderloin sandwich", EDFoods.PORK_TENDERLOIN, Foods.BREAD, EDFoods.GRAVY).build();
-	public static final FoodProperties GRILLED_CHEESE = EDFoods
-			.cookFood("grilled cheese", EDFoods.CHEESE_SANDWICH).build();
 	public static final FoodProperties CHEESE_SANDWICH = EDFoods
 			.addFoods("cheese sandwich", EDFoods.SLICED_BREAD, EDFoods.SLICED_BREAD, EDFoods.CHEESE, EDFoods.BUTTER).build();
+	public static final FoodProperties GRILLED_CHEESE = EDFoods
+			.cookFood("grilled cheese", EDFoods.CHEESE_SANDWICH).build();
 	public static final FoodProperties AGAR_AGAR_POWDER = EDFoods
 			.addFoods("agar agar powder", Foods.DRIED_KELP, Foods.DRIED_KELP, Foods.DRIED_KELP).build();
 	//hash feast&derivatives
@@ -258,7 +258,7 @@ public class EDFoods {
 	public static final FoodProperties MEAT_LOAF_SERVING = EDFoods
 			.divideFoods("meat loaf plate", EDFoods.MEAT_LOAF_FEAST, 4).build();
 	public static final FoodProperties MEAT_LOAF_SANDWICH = EDFoods
-			.addFoods("meat loaf sandwich", EDFoods.MEAT_LOAF_SANDWICH, Foods.BREAD).build();
+			.addFoods("meat loaf sandwich", EDFoods.MEAT_LOAF_SERVING, Foods.BREAD).build();
 	//meat pie&derivatives
 	public static final FoodProperties MEAT_PIE_WHOLE = EDFoods
 			.addFoods("meat pie whole",

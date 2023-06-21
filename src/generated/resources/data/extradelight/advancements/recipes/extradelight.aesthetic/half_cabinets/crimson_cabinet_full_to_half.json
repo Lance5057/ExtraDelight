@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "crimson_half_cabinet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "farmersdelight:crimson_cabinet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:half_cabinets/crimson_cabinet_full_to_half"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "crimson_half_cabinet",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:half_cabinets/crimson_cabinet_full_to_half"
+    ]
+  }
+}

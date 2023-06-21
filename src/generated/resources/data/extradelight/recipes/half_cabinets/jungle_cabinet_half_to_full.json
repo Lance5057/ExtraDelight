@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extradelight:jungle_half_cabinet"
+    }
+  ],
+  "result": {
+    "item": "farmersdelight:jungle_cabinet"
+  }
+}
