@@ -1,7 +1,7 @@
 {
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "minecraft:bread"
+    "item": "extradelight:bread_slice"
   },
   "cookingtime": 200,
   "experience": 0.35,
@@ -10,7 +10,7 @@
       "tag": "forge:beef/scrap"
     },
     {
-      "item": "minecraft:wheat"
+      "tag": "forge:flour"
     },
     {
       "tag": "forge:milk"

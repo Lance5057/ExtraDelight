@@ -151,9 +151,9 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> SLICED_ONION = ITEMS.register("sliced_onion",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.EDIBLE_SEEDS)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SLICED_ONION)));
 	public static final RegistryObject<Item> SLICED_TOMATO = ITEMS.register("sliced_tomato",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.EDIBLE_SEEDS)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SLICED_TOMATO)));
 
 	// Seaweed
 	// Agar Agar Process
@@ -165,10 +165,9 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> SEAWEED_CRISPS = ITEMS.register("seaweed_crisps",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.DRIED_KELP)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SEAWEED_CRISPS)));
 	public static final RegistryObject<Item> SEAWEED_SALAD = ITEMS.register("seaweed_salad",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)
-					.food(EDFoods.addFoods("SEAWEED_SALAD", Foods.CARROT, Foods.DRIED_KELP).build())));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SEAWEED_SALAD)));
 
 //	public static final RegistryObject<Item> CUPCAKE = ITEMS.register("cupcake",
 //			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodVanilla.CUPCAKE)));
@@ -722,7 +721,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.FISH_SALAD_SANDWICH)));
 
 	public static final RegistryObject<Item> COOKED_PASTA = ITEMS.register("cooked_pasta",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKED_PASTA)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(Foods.BREAD)));
 	public static final RegistryObject<Item> BUTTERED_PASTA = ITEMS.register("buttered_pasta",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.BUTTERED_PASTA)));
 	public static final RegistryObject<BowlFoodItem> BAD_FOOD = ITEMS.register("bad_food",

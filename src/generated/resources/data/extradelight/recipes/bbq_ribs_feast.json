@@ -1,10 +1,10 @@
 {
-  "type": "farmersdelight:cooking",
+  "type": "extradelight:oven",
   "container": {
-    "item": "minecraft:bowl"
+    "item": "extradelight:tray"
   },
   "cookingtime": 400,
-  "experience": 0.35,
+  "experience": 1.0,
   "ingredients": [
     {
       "tag": "forge:meat/ribs/raw"

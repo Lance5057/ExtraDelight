@@ -27,62 +27,50 @@ public class BlockModels extends BlockStateProvider {
 
 	@Override
 	protected void registerStatesAndModels() {
-		this.horizontalBlock(ExtraDelightBlocks.DOUGH_SHAPING.get(), models()
-				.getExistingFile(modLoc("block/doughforming")));
-		this.simpleBlock(ExtraDelightBlocks.MIXING_BOWL.get(), models()
-				.getExistingFile(modLoc("block/mixing_bowl")));
+		this.horizontalBlock(ExtraDelightBlocks.DOUGH_SHAPING.get(),
+				models().getExistingFile(modLoc("block/doughforming")));
+		this.simpleBlock(ExtraDelightBlocks.MIXING_BOWL.get(), models().getExistingFile(modLoc("block/mixing_bowl")));
 
-		this.simpleBlock(ExtraDelightBlocks.YEAST_POT.get(), models()
-				.getExistingFile(modLoc("block/yeast_pot")));
-		this.simpleBlock(ExtraDelightBlocks.VINEGAR_POT.get(), models()
-				.withExistingParent("vinegar_pot", modLoc("block/yeast_pot"))
-				.texture("0", modLoc("block/vinegarpot"))
-				.texture("particle", modLoc("block/vinegarpot")));
-		this.simpleBlock(ExtraDelightBlocks.DRYING_RACK.get(), models()
-				.getExistingFile(modLoc("block/drying_rack")));
+		this.simpleBlock(ExtraDelightBlocks.YEAST_POT.get(), models().getExistingFile(modLoc("block/yeast_pot")));
+		this.simpleBlock(ExtraDelightBlocks.VINEGAR_POT.get(),
+				models().withExistingParent("vinegar_pot", modLoc("block/yeast_pot"))
+						.texture("0", modLoc("block/vinegarpot")).texture("particle", modLoc("block/vinegarpot")));
+		this.simpleBlock(ExtraDelightBlocks.DRYING_RACK.get(), models().getExistingFile(modLoc("block/drying_rack")));
 
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_STONE.get(), models()
-				.withExistingParent("mortar_stone", modLoc("block/mortar"))
-				.texture("0", mcLoc("block/stone"))
-				.texture("particle", mcLoc("block/stone")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_ANDESITE.get(), models()
-				.withExistingParent("mortar_andesite", modLoc("block/mortar"))
-				.texture("0", mcLoc("block/andesite"))
-				.texture("particle", mcLoc("block/andesite")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_GRANITE.get(), models()
-				.withExistingParent("mortar_granite", modLoc("block/mortar"))
-				.texture("0", mcLoc("block/granite"))
-				.texture("particle", mcLoc("block/granite")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_DIORITE.get(), models()
-				.withExistingParent("mortar_diorite", modLoc("block/mortar"))
-				.texture("0", mcLoc("block/diorite"))
-				.texture("particle", mcLoc("block/diorite")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_DEEPSLATE.get(), models()
-				.withExistingParent("mortar_deepslate", modLoc("block/mortar"))
-				.texture("0", mcLoc("block/deepslate"))
-				.texture("particle", mcLoc("block/deepslate")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_BLACKSTONE.get(), models()
-				.withExistingParent("mortar_blackstone", modLoc("block/mortar"))
-				.texture("0", mcLoc("block/blackstone"))
-				.texture("particle", mcLoc("block/blackstone")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_BASALT.get(), models()
-				.withExistingParent("mortar_basalt", modLoc("block/mortar"))
-				.texture("0", mcLoc("block/basalt_side"))
-				.texture("particle", mcLoc("block/basalt_side")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_ENDSTONE.get(), models()
-				.withExistingParent("mortar_endstone", modLoc("block/mortar"))
-				.texture("0", mcLoc("block/end_stone"))
-				.texture("particle", mcLoc("block/end_stone")));
+		this.simpleBlock(ExtraDelightBlocks.MORTAR_STONE.get(),
+				models().withExistingParent("mortar_stone", modLoc("block/mortar")).texture("0", mcLoc("block/stone"))
+						.texture("particle", mcLoc("block/stone")));
+		this.simpleBlock(ExtraDelightBlocks.MORTAR_ANDESITE.get(),
+				models().withExistingParent("mortar_andesite", modLoc("block/mortar"))
+						.texture("0", mcLoc("block/andesite")).texture("particle", mcLoc("block/andesite")));
+		this.simpleBlock(ExtraDelightBlocks.MORTAR_GRANITE.get(),
+				models().withExistingParent("mortar_granite", modLoc("block/mortar"))
+						.texture("0", mcLoc("block/granite")).texture("particle", mcLoc("block/granite")));
+		this.simpleBlock(ExtraDelightBlocks.MORTAR_DIORITE.get(),
+				models().withExistingParent("mortar_diorite", modLoc("block/mortar"))
+						.texture("0", mcLoc("block/diorite")).texture("particle", mcLoc("block/diorite")));
+		this.simpleBlock(ExtraDelightBlocks.MORTAR_DEEPSLATE.get(),
+				models().withExistingParent("mortar_deepslate", modLoc("block/mortar"))
+						.texture("0", mcLoc("block/deepslate")).texture("particle", mcLoc("block/deepslate")));
+		this.simpleBlock(ExtraDelightBlocks.MORTAR_BLACKSTONE.get(),
+				models().withExistingParent("mortar_blackstone", modLoc("block/mortar"))
+						.texture("0", mcLoc("block/blackstone")).texture("particle", mcLoc("block/blackstone")));
+		this.simpleBlock(ExtraDelightBlocks.MORTAR_BASALT.get(),
+				models().withExistingParent("mortar_basalt", modLoc("block/mortar"))
+						.texture("0", mcLoc("block/basalt_side")).texture("particle", mcLoc("block/basalt_side")));
+		this.simpleBlock(ExtraDelightBlocks.MORTAR_ENDSTONE.get(),
+				models().withExistingParent("mortar_endstone", modLoc("block/mortar"))
+						.texture("0", mcLoc("block/end_stone")).texture("particle", mcLoc("block/end_stone")));
 
 		// not craftable, dungeon items
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_AMETHYST.get(), models()
-				.withExistingParent("mortar_amethyst", modLoc("block/mortar"))
-				.texture("0", mcLoc("block/amethyst_block"))
-				.texture("particle", mcLoc("block/amethyst_block")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(), models()
-				.withExistingParent("mortar_gilded_blackstone", modLoc("block/mortar"))
-				.texture("0", mcLoc("block/gilded_blackstone"))
-				.texture("particle", mcLoc("block/gilded_blackstone")));
+		this.simpleBlock(ExtraDelightBlocks.MORTAR_AMETHYST.get(),
+				models().withExistingParent("mortar_amethyst", modLoc("block/mortar"))
+						.texture("0", mcLoc("block/amethyst_block"))
+						.texture("particle", mcLoc("block/amethyst_block")));
+		this.simpleBlock(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(),
+				models().withExistingParent("mortar_gilded_blackstone", modLoc("block/mortar"))
+						.texture("0", mcLoc("block/gilded_blackstone"))
+						.texture("particle", mcLoc("block/gilded_blackstone")));
 
 //		this.horizontalBlock(ExtraDelightBlocks.OAK_STEPSTOOL.get(),
 //				models().withExistingParent("oak_step_stool", modLoc("block/stepstool"))
@@ -277,14 +265,11 @@ public class BlockModels extends BlockStateProvider {
 
 			if (servings == 0) {
 				suffix = block.hasLeftovers ? "_leftover" : "_stage3";
-				particleTexture = new ResourceLocation(FarmersDelight.MODID, "block/tray_bottom");
 			}
 
 			ModelFile jellyModel = models()
 					.withExistingParent("jelly_" + color + "_block" + suffix, modLoc("block/jelly_block" + suffix))
-					.texture("1", contentsTexture)
-					.texture("particle", particleTexture)
-					.renderType("translucent");
+					.texture("1", contentsTexture).renderType("translucent");
 
 			return ConfiguredModel.builder().modelFile(jellyModel)
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
@@ -344,7 +329,7 @@ public class BlockModels extends BlockStateProvider {
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}
-	
+
 	public void recipeFeastBlock(RecipeFeastBlock block) {
 		recipeFeastBlock(block, ForgeRegistries.BLOCKS.getKey(block).getPath());
 	}
@@ -385,8 +370,7 @@ public class BlockModels extends BlockStateProvider {
 					.modelFile(models()
 							.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
 									modLoc("curry_block" + suffix))
-							.texture("1", contentsTexture)
-							.texture("particle", particleTexture))
+							.texture("1", contentsTexture).texture("particle", particleTexture))
 					.rotationY(((int) state.getValue(RecipeFeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}

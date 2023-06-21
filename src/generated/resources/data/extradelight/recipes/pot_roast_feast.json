@@ -1,13 +1,28 @@
 {
-  "type": "farmersdelight:cooking",
+  "type": "extradelight:oven",
   "container": {
-    "item": "minecraft:bowl"
+    "item": "extradelight:square_pan"
   },
   "cookingtime": 400,
-  "experience": 0.35,
+  "experience": 1.0,
   "ingredients": [
     {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
       "tag": "forge:meat/roast/raw"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:crops/onion"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:carrot"
     },
     {
       "tag": "forge:crops/onion"

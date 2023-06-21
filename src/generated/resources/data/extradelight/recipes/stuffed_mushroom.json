@@ -27,6 +27,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
+    "count": 3,
     "item": "extradelight:stuffed_mushrooms"
   }
 }

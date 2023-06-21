@@ -1,5 +1,8 @@
 {
-  "type": "farmersdelight:cooking",
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:tray"
+  },
   "cookingtime": 200,
   "experience": 0.35,
   "ingredients": [
@@ -10,7 +13,7 @@
       "tag": "forge:mushrooms"
     },
     {
-      "item": "minecraft:bread"
+      "item": "extradelight:breadcrumbs"
     },
     {
       "tag": "forge:vegetables/onion"

@@ -2,7 +2,6 @@
   "parent": "extradelight:block/jelly_block_stage2",
   "render_type": "minecraft:translucent",
   "textures": {
-    "1": "extradelight:block/jelly_red",
-    "particle": "extradelight:block/jelly_red"
+    "1": "extradelight:block/jelly_red"
   }
 }
