@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "extradelight:scrambled_eggs"
+              "extradelight:omelette"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:egg_mix_smelt"
+        "recipe": "extradelight:omelette_mix_smoke"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:egg_mix_smelt"
+      "extradelight:omelette_mix_smoke"
     ]
   }
 }

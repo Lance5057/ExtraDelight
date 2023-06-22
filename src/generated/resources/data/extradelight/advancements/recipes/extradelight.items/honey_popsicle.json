@@ -1,32 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "extradelight:oven/sausage_roll"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "sausage_roll": {
+    "Recipes": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:sausage"
+            "items": [
+              "minecraft:ice"
+            ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:honey_popsicle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "sausage_roll",
+      "Recipes",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:oven/sausage_roll"
+      "extradelight:honey_popsicle"
     ]
   }
 }

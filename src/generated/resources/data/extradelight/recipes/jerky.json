@@ -1,25 +1,9 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "forge:not",
-          "value": {
-            "type": "forge:tag_empty",
-            "tag": "forge:meat"
-          }
-        }
-      ],
-      "recipe": {
-        "type": "extradelight:drying_rack",
-        "cookingtime": 1000,
-        "experience": 10.0,
-        "ingredient": {
-          "tag": "forge:meat"
-        },
-        "result": "extradelight:jerky"
-      }
-    }
-  ]
+  "type": "extradelight:drying_rack",
+  "cookingtime": 1000,
+  "experience": 10.0,
+  "ingredient": {
+    "tag": "forge:meat"
+  },
+  "result": "extradelight:jerky"
 }

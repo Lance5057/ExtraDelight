@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "extradelight:omelette"
+              "minecraft:sweet_berries"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:omelette_mix_smelt"
+        "recipe": "extradelight:sweet_berry_juice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:omelette_mix_smelt"
+      "extradelight:sweet_berry_juice"
     ]
   }
 }

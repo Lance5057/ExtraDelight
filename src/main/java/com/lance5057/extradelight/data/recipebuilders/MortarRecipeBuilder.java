@@ -73,10 +73,13 @@ public class MortarRecipeBuilder implements RecipeBuilder {
 		this.advancement.parent(new ResourceLocation("recipes/root"))
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(pRecipeId))
 				.rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(RequirementsStrategy.OR);
+		
+		ResourceLocation r = new ResourceLocation(pRecipeId.getNamespace(),
+				"recipes/" + this.result.getItemCategory().getRecipeFolderName() + "/" + pRecipeId.getPath());
+		
 		pFinishedRecipeConsumer.accept(new MortarRecipeBuilder.Result(pRecipeId, this.group == null ? "" : this.group,
 				this.ingredient, this.result, this.grinds, this.count, this.advancement,
-				new ResourceLocation(pRecipeId.getNamespace(),
-						"recipes/" + this.result.getItemCategory().getRecipeFolderName() + "/" + pRecipeId.getPath()),
+				r,
 				this.serializer));
 	}
 

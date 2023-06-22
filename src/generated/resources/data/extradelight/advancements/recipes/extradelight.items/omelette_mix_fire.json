@@ -1,15 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_any_ingredient": {
+    "Recipes": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:wheat",
-              "minecraft:egg",
-              "minecraft:sugar",
-              "minecraft:milk_bucket"
+              "extradelight:omelette"
             ]
           }
         ]
@@ -18,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:oven/beef_wellington_block_item"
+        "recipe": "extradelight:omelette_mix_fire"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_any_ingredient",
+      "Recipes",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:oven/beef_wellington_block_item"
+      "extradelight:omelette_mix_fire"
     ]
   }
 }

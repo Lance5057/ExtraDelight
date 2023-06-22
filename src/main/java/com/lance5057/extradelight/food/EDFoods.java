@@ -355,22 +355,23 @@ public class EDFoods {
 
 	public static final FoodProperties OXTAIL_SOUP = EDFoods
 			.addFoods("oxtail soup", Foods.COOKED_BEEF, COOKED_CARROT, FoodValues.BONE_BROTH, FoodValues.TOMATO)
-			.build();
+			.effect(COMFORT_LONG, 1).build();
 
 	public static final FoodProperties POT_ROAST = EDFoods.addFoods("pot roast", Foods.COOKED_BEEF, COOKED_CARROT,
-			COOKED_CARROT, FoodValues.ONION, Foods.BAKED_POTATO, Foods.BAKED_POTATO).build();
+			COOKED_CARROT, FoodValues.ONION, Foods.BAKED_POTATO, Foods.BAKED_POTATO).effect(COMFORT_MEDIUM, 1).build();
 
 	public static final FoodProperties BBQ_RIBS = EDFoods
 			.addFoods("bbq ribs", Foods.COOKED_BEEF, Foods.COOKED_BEEF, Foods.COOKED_BEEF, Foods.COOKED_BEEF, BBQ)
-			.build();
+			.effect(COMFORT_MEDIUM, 1).build();
 
 	public static final FoodProperties RACK_LAMB = EDFoods
 			.addFoods("rack lamb", Foods.COOKED_MUTTON, Foods.COOKED_MUTTON, Foods.COOKED_MUTTON, Foods.COOKED_MUTTON,
 					FoodValues.ONION, OIL, Foods.BREAD, Foods.SWEET_BERRIES, Foods.SWEET_BERRIES)
-			.build();
+			.effect(COMFORT_MEDIUM, 1).build();
 
 	public static final FoodProperties WELLINGTON = EDFoods.addFoods("wellington", Foods.COOKED_BEEF, Foods.BREAD,
-			MUSHROOM, MUSHROOM, COOKED_LIVER, BUTTER, FoodValues.COOKED_BACON, FoodValues.ONION).build();
+			MUSHROOM, MUSHROOM, COOKED_LIVER, BUTTER, FoodValues.COOKED_BACON, FoodValues.ONION)
+			.effect(COMFORT_MEDIUM, 1).build();
 
 	public static final FoodProperties HAGGIS = EDFoods.addFoods("haggis", COOKED_STOMACH, COOKED_LIVER, COOKED_LIVER,
 			COOKED_LIVER, COOKED_LUNG, FLOUR, FLOUR, FLOUR, Foods.COOKED_MUTTON).build();
@@ -378,7 +379,7 @@ public class EDFoods {
 	public static final FoodProperties HOTDISH = EDFoods.divideFoods("hotdish",
 			EDFoods.addFoods("", Foods.BAKED_POTATO, Foods.BAKED_POTATO, Foods.BAKED_POTATO, Foods.COOKED_PORKCHOP,
 					Foods.COOKED_PORKCHOP, EDFoods.POTATO_SOUP, EDFoods.POTATO_SOUP, EDFoods.COOKED_CARROT,
-					EDFoods.COOKED_CARROT).build(),
+					EDFoods.COOKED_CARROT).effect(COMFORT_LONG, 1).build(),
 			4).build();
 	public static final FoodProperties FURIKAKE_RICE = EDFoods
 			.addFoods("furikake rice", FURIKAKE, FoodValues.COOKED_RICE).build();

@@ -1,0 +1,57 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:liver"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "extradelight:oven",
+        "container": {
+          "item": "extradelight:tray"
+        },
+        "cookingtime": 1600,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:offal"
+          },
+          {
+            "tag": "forge:offal"
+          },
+          {
+            "tag": "forge:offal"
+          },
+          {
+            "tag": "forge:lung"
+          },
+          {
+            "tag": "forge:stomach"
+          },
+          {
+            "tag": "forge:meat/scrap"
+          },
+          {
+            "item": "minecraft:wheat_seeds"
+          },
+          {
+            "item": "minecraft:wheat_seeds"
+          },
+          {
+            "item": "minecraft:wheat_seeds"
+          }
+        ],
+        "recipe_book_tab": "meals",
+        "result": {
+          "item": "extradelight:haggis_block_item"
+        }
+      }
+    }
+  ]
+}

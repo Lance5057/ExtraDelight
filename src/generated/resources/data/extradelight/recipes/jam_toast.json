@@ -1,37 +1,14 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:not",
-          "value": {
-            "type": "forge:tag_empty",
-            "tag": "forge:jam"
-          }
-        },
-        {
-          "type": "forge:not",
-          "value": {
-            "type": "forge:tag_empty",
-            "tag": "forge:bread"
-          }
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "ingredients": [
-          {
-            "tag": "forge:jam"
-          },
-          {
-            "tag": "forge:bread/sliced"
-          }
-        ],
-        "result": {
-          "item": "extradelight:jam_toast"
-        }
-      }
+      "tag": "forge:jam"
+    },
+    {
+      "tag": "forge:bread/sliced"
     }
-  ]
+  ],
+  "result": {
+    "item": "extradelight:jam_toast"
+  }
 }

@@ -1,48 +1,32 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:not",
-          "value": {
-            "type": "forge:tag_empty",
-            "tag": "forge:fruit/glow_berry"
-          }
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "ingredients": [
-          {
-            "tag": "forge:fruit/glow_berry"
-          },
-          {
-            "tag": "forge:fruit/glow_berry"
-          },
-          {
-            "tag": "forge:fruit/glow_berry"
-          },
-          {
-            "tag": "forge:fruit/glow_berry"
-          },
-          {
-            "tag": "forge:fruit/glow_berry"
-          },
-          {
-            "tag": "forge:fruit/glow_berry"
-          },
-          {
-            "item": "minecraft:sugar"
-          },
-          {
-            "item": "minecraft:glass_bottle"
-          }
-        ],
-        "result": {
-          "item": "extradelight:glow_berry_juice"
-        }
-      }
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:glass_bottle"
     }
-  ]
+  ],
+  "result": {
+    "item": "extradelight:glow_berry_juice"
+  }
 }

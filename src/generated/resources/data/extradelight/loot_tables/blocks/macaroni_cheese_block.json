@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:bowl"
+          "name": "minecraft:air"
         }
       ],
       "rolls": 1.0

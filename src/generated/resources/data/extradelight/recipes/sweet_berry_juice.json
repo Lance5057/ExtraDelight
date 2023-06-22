@@ -1,48 +1,32 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:not",
-          "value": {
-            "type": "forge:tag_empty",
-            "tag": "forge:fruit/sweet_berry"
-          }
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "ingredients": [
-          {
-            "tag": "forge:fruit/sweet_berry"
-          },
-          {
-            "tag": "forge:fruit/sweet_berry"
-          },
-          {
-            "tag": "forge:fruit/sweet_berry"
-          },
-          {
-            "tag": "forge:fruit/sweet_berry"
-          },
-          {
-            "tag": "forge:fruit/sweet_berry"
-          },
-          {
-            "tag": "forge:fruit/sweet_berry"
-          },
-          {
-            "item": "minecraft:sugar"
-          },
-          {
-            "item": "minecraft:glass_bottle"
-          }
-        ],
-        "result": {
-          "item": "extradelight:sweet_berry_juice"
-        }
-      }
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:glass_bottle"
     }
-  ]
+  ],
+  "result": {
+    "item": "extradelight:sweet_berry_juice"
+  }
 }

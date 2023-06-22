@@ -1,36 +1,20 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:not",
-          "value": {
-            "type": "forge:tag_empty",
-            "tag": "forge:crops/tomato"
-          }
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "ingredients": [
-          {
-            "tag": "forge:crops/tomato"
-          },
-          {
-            "tag": "forge:crops/tomato"
-          },
-          {
-            "item": "minecraft:sugar"
-          },
-          {
-            "item": "minecraft:glass_bottle"
-          }
-        ],
-        "result": {
-          "item": "extradelight:tomato_juice"
-        }
-      }
+      "tag": "forge:crops/tomato"
+    },
+    {
+      "tag": "forge:crops/tomato"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:glass_bottle"
     }
-  ]
+  ],
+  "result": {
+    "item": "extradelight:tomato_juice"
+  }
 }

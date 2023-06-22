@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "extradelight:toast"
+              "extradelight:scrambled_eggs"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:toast_fire"
+        "recipe": "extradelight:egg_mix_fire"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:toast_fire"
+      "extradelight:egg_mix_fire"
     ]
   }
 }

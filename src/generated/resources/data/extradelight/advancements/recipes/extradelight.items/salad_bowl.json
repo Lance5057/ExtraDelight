@@ -1,15 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_any_ingredient": {
+    "has_hotdish": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:wheat",
-              "minecraft:egg",
-              "minecraft:sugar",
-              "minecraft:milk_bucket"
+              "extradelight:salad_block_item"
             ]
           }
         ]
@@ -18,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:oven/haggis_block_item"
+        "recipe": "extradelight:salad_bowl"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_any_ingredient",
+      "has_hotdish",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:oven/haggis_block_item"
+      "extradelight:salad_bowl"
     ]
   }
 }

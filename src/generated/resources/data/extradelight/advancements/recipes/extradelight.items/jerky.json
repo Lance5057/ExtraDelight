@@ -1,13 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_meat": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "extradelight:scrambled_eggs"
-            ]
+            "tag": "forge:meat"
           }
         ]
       },
@@ -15,20 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:egg_mix_fire"
+        "recipe": "extradelight:jerky"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "Recipes",
+      "has_meat",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:egg_mix_fire"
+      "extradelight:jerky"
     ]
   }
 }

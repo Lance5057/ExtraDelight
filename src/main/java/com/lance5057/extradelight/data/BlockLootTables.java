@@ -143,9 +143,9 @@ public class BlockLootTables extends BlockLoot {
 		this.dropOther(ExtraDelightBlocks.JELLY_BLACK.get(), Items.BOWL);
 
 		this.dropOther(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.MACARONI_CHEESE.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.HOTDISH.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.LASAGNA.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.MACARONI_CHEESE.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.HOTDISH.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.LASAGNA.get(), Items.AIR);
 
 		this.dropOther(ExtraDelightBlocks.BEEF_STEW.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.CHICKEN_STEW.get(), Items.BOWL);

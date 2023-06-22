@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:egg_mix_smoke"
+        "recipe": "extradelight:egg_mix_smoke"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:egg_mix_smoke"
+      "extradelight:egg_mix_smoke"
     ]
   }
 }

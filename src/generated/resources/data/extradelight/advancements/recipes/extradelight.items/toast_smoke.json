@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "extradelight:omelette"
+              "extradelight:toast"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:omelette_mix_smoke"
+        "recipe": "extradelight:toast_smoke"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:omelette_mix_smoke"
+      "extradelight:toast_smoke"
     ]
   }
 }

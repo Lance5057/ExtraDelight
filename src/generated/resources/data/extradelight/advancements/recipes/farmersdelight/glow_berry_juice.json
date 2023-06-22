@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "extradelight:toast"
+              "minecraft:glow_berries"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:toast_smelt"
+        "recipe": "extradelight:glow_berry_juice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:toast_smelt"
+      "extradelight:glow_berry_juice"
     ]
   }
 }

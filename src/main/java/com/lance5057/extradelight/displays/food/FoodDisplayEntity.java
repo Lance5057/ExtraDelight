@@ -53,8 +53,9 @@ public class FoodDisplayEntity extends BlockEntity implements MenuProvider {
 
 	private IItemHandlerModifiable createHandler() {
 		return new ItemStackHandler(NUM_SLOTS) {
+
 			@Override
-			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
+			public int getSlotLimit(int slot) {
 				return 1;
 			}
 		};
