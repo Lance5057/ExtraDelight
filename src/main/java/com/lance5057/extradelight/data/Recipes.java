@@ -711,6 +711,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), has(ExtraDelightTags.JAM))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "jam_toast"));
 
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.GLOW_JAM_TOAST.get())
+				.requires(Ingredient.of(ExtraDelightTags.JAM_GLOW_BERRY)).requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE))
+				.unlockedBy(getName(), has(ExtraDelightTags.JAM_GLOW_BERRY))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "glow_jam_toast"));
+
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.GOLDEN_JAM_TOAST.get())
 				.requires(Ingredient.of(ExtraDelightTags.JAM_GOLDEN_APPLE))
 				.requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE))

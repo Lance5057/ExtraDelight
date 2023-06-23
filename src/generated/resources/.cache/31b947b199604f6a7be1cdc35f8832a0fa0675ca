@@ -1,4 +1,4 @@
-// 1.19.2	2023-06-21T02:00:03.6905207	Item Models: extradelight
+// 1.19.2	2023-06-23T11:23:31.2479711	Item Models: extradelight
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
 d1ff53358c1d82a41f4477b0283cfc0f46d9acbc assets/extradelight/models/item/acacia_molded_black_wallpaper.json
@@ -167,6 +167,7 @@ a08de0b52ea9e076104b88fdd89878017506eb6e assets/extradelight/models/item/glow_be
 c199296490ec2602ecc9a4ec613db406eb0d7740 assets/extradelight/models/item/glow_berry_pie.json
 dad3069ea03938324cc1313850ea6280eb3b9ea6 assets/extradelight/models/item/glow_berry_pie_slice.json
 422a307d15e3e254b823317a2450d6608a5d5f2e assets/extradelight/models/item/glow_berry_popsicle.json
+4e2d6fc3a13a2a5a7aa5dec9b7e1d0144c1626c8 assets/extradelight/models/item/glow_jam_toast.json
 fda6324f83131f978d98e58dd67aeaa78b3ca5e1 assets/extradelight/models/item/golden_apple_jam.json
 30890098042c6a92d04e6e352207334ec50dec2c assets/extradelight/models/item/golden_jam_toast.json
 cb6589946f75b7002a900a71e8830915b5b133f0 assets/extradelight/models/item/gold_spoon.json

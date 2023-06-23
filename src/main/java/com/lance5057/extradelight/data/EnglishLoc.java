@@ -33,6 +33,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.oven", "Oven");
 		this.add("extradelight.jei.mixingbowl", "Mixing Bowl");
 		this.add("extradelight.jei.dryingrack", "Drying Rack");
+		this.add("extradelight.jei.feast", "Feast Servings");
+		this.add("extradelight.jei.mortar", "Mortar");
+		this.add("extradelight.jei.doughshaping", "Dough Shaping");
 
 		this.add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		this.add(ExtraDelightItems.CHEESECAKE_ITEM.get(), "Cheesecake");
@@ -131,6 +134,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.BREAD_SLICE.get(), "Slice of Bread");
 		this.add(ExtraDelightItems.TOAST.get(), "Toast");
 		this.add(ExtraDelightItems.JAM_TOAST.get(), "Jam on Bread");
+		this.add(ExtraDelightItems.GLOW_JAM_TOAST.get(), "Glowing Jam on Bread");
 		this.add(ExtraDelightItems.GOLDEN_JAM_TOAST.get(), "Golden Jam on Bread");
 		this.add(ExtraDelightItems.GRATED_POTATO.get(), "Grated Potato");
 		this.add(ExtraDelightItems.SLICED_POTATO.get(), "Sliced Potato");

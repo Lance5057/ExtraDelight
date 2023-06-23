@@ -193,6 +193,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.BREAD_SLICE, "bread_slice");
 		forItem(ExtraDelightItems.TOAST, "toast");
 		forItem(ExtraDelightItems.JAM_TOAST, "jam_toast");
+		forItem(ExtraDelightItems.GLOW_JAM_TOAST, "glow_jam_toast");
 		forItem(ExtraDelightItems.GOLDEN_JAM_TOAST, "golden_jam_toast");
 		forItem(ExtraDelightItems.EGG_BASKET, "egg_in_the_basket");
 

@@ -1,8 +1,7 @@
 {
   "values": [
-    "#forge:jam/apple",
-    "#forge:jam/carrot",
-    "#forge:jam/glow_berry",
-    "#forge:jam/sweet_berry"
+    "#forge:jam/mundane",
+    "#forge:jam/golden_apple",
+    "#forge:jam/glow_berry"
   ]
 }

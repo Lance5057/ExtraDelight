@@ -63,8 +63,10 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.JAM_CARROT).add(ExtraDelightItems.CARROT_JAM.get());
 		tag(ExtraDelightTags.JAM_GOLDEN_APPLE).add(ExtraDelightItems.GOLDEN_APPLE_JAM.get());
 
-		tag(ExtraDelightTags.JAM).addTag(ExtraDelightTags.JAM_APPLE).addTag(ExtraDelightTags.JAM_CARROT)
-				.addTag(ExtraDelightTags.JAM_GLOW_BERRY).addTag(ExtraDelightTags.JAM_SWEET_BERRY);
+		tag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_APPLE).addTag(ExtraDelightTags.JAM_CARROT)
+				.addTag(ExtraDelightTags.JAM_SWEET_BERRY);
+		tag(ExtraDelightTags.JAM).addTag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_GOLDEN_APPLE)
+				.addTag(ExtraDelightTags.JAM_GLOW_BERRY);
 
 		tag(ExtraDelightTags.MEAT_COOKED).add(Items.COOKED_BEEF).add(Items.COOKED_CHICKEN).add(Items.COOKED_MUTTON)
 				.add(Items.COOKED_PORKCHOP).add(Items.COOKED_RABBIT);

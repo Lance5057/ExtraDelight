@@ -80,7 +80,7 @@ public class SpiceRackMenu extends AbstractContainerMenu {
 
 	@Override
 	public ItemStack quickMoveStack(Player pPlayer, int pIndex) {
-		int indexOutput = 5;
+		int indexOutput = 4;
 		int startPlayerInv = indexOutput;
 		int endPlayerInv = startPlayerInv + 36;
 

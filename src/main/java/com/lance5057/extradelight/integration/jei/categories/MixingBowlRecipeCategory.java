@@ -80,7 +80,7 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 
 		}
 		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 12, 83).addIngredients(pestle);
-		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 - 32, 83).addItemStack(used);
+		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 - 35, 83).addItemStack(used);
 		// builder.addSlot(RecipeIngredientRole.CATALYST, (int) center.x, (int)
 		// center.y).addIngredients(pestle);
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 - 8, 83).addItemStack(output);

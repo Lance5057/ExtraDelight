@@ -1,4 +1,4 @@
-// 1.19.2	2023-06-22T13:27:12.0228143	Recipes
+// 1.19.2	2023-06-23T11:23:31.2229688	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 3db09cde228aa7774f6794554d525229f1b9f4c6 data/extradelight/advancements/recipes/extradelight.aesthetic/acacia_knife_block.json
@@ -271,6 +271,7 @@ a44ac45e7b5c49de9d65ce403d72da6cbeda2935 data/extradelight/advancements/recipes/
 5ee3527940ad6c8356f92b40840a95f95bbc8acd data/extradelight/advancements/recipes/extradelight.items/glow_berry_cheesecake_slice.json
 4a8fdf48699dfa64b6a24fc39adbea806d6804b5 data/extradelight/advancements/recipes/extradelight.items/glow_berry_pie_slice.json
 b0c05672d6b6142fccda3c82ae0460ac4da89323 data/extradelight/advancements/recipes/extradelight.items/glow_berry_popsicle.json
+9759439e807360b9524414774a11c13e0a425828 data/extradelight/advancements/recipes/extradelight.items/glow_jam_toast.json
 313bb7aa9b40979f920c21b7fae747d2f7d2d6c7 data/extradelight/advancements/recipes/extradelight.items/golden_jam_toast.json
 b022d227897c35310fdbebebe9668b349a127673 data/extradelight/advancements/recipes/extradelight.items/gold_spoon.json
 145f52427e5d7cf550a3a2061afc0772a2ca8d5d data/extradelight/advancements/recipes/extradelight.items/grater.json
@@ -892,6 +893,7 @@ b0be0686cbc56bdb43fd0001f8c8f5dbbc5d1c8a data/extradelight/recipes/fried_fish.js
 f0819ec0a4386a39d6fe486c5645ec31ad4e5acd data/extradelight/recipes/glow_berry_juice.json
 1f3563362414b012ed581a3df2b7669d4068c764 data/extradelight/recipes/glow_berry_pie_slice.json
 0b47cfe4cb87fc735ac6a8ed8e0b157a31456894 data/extradelight/recipes/glow_berry_popsicle.json
+83a262208c598688553c4a747033bc00fd084a89 data/extradelight/recipes/glow_jam_toast.json
 4beb3060c3fae7d12d7a954584454f33bc8f0bff data/extradelight/recipes/golden_apple_jam.json
 e3b1a5f4eabe2e21fec033cb1da4e9b3c2e97bf0 data/extradelight/recipes/golden_jam_toast.json
 0e48e25c0fcb24a23253bce7196f1428f209fceb data/extradelight/recipes/gold_spoon.json
