@@ -1,15 +1,16 @@
 {
-    "name": "Apple Jam",
-    "icon": "extradelight:apple_jam",
-    "category": "extradelight:condiments",
+    "name": "Alfredo Pasta",
+    "icon": "extradelight:pasta_alfredo",
+    "category": "extradelight:pasta",
+	"sortnum": 1,
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-            "recipe": "extradelight:apple_jam"
+            "type": "extradelight:mixingbowl",
+			"recipe": "extradelight:mixingbowl/pasta_alfredo"
         },
 		{
             "type": "patchouli:text",

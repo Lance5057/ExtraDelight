@@ -1,15 +1,16 @@
 {
-    "name": "Carrot Jam",
-    "icon": "extradelight:carrot_jam",
-    "category": "extradelight:condiments",
+    "name": "Mushroom and Swiss Burger",
+    "icon": "extradelight:mushroom_burger",
+    "category": "extradelight:meats",
+	"sortnum": 1,
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-            "recipe": "extradelight:carrot_jam"
+            "type": "patchouli:crafting",
+			"recipe": "extradelight:mushroom_burger"
         },
 		{
             "type": "patchouli:text",

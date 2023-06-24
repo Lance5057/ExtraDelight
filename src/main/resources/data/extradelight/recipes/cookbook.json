@@ -1,0 +1,12 @@
+{
+  "type": "patchouli:shapeless_book_recipe",
+  "ingredients": [
+    {
+      "item": "extradelight:wooden_spoon"
+    },
+    {
+      "item": "minecraft:book"
+    }
+  ],
+  "book": "extradelight:cookbook"
+}

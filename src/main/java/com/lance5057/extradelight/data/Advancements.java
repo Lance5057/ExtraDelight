@@ -89,7 +89,8 @@ public class Advancements extends AdvancementProvider {
 				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.GRATER.get()),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.grater.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.grater.desc"), null, FrameType.TASK,
-						true, true, false)).parent(start)
+						true, true, false))
+				.parent(start)
 				.addCriterion("grater", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GRATER.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":grater");
 
@@ -97,7 +98,8 @@ public class Advancements extends AdvancementProvider {
 				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.DIAMOND_SPOON.get()),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.spoon.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.spoon.desc"), null, FrameType.TASK,
-						true, true, false)).parent(start)
+						true, true, false))
+				.parent(start)
 				.addCriterion("diamond_spoon",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DIAMOND_SPOON.get()))
 				.addCriterion("gold_spoon",
@@ -113,10 +115,12 @@ public class Advancements extends AdvancementProvider {
 				.requirements(RequirementsStrategy.OR).save(consumer, ExtraDelight.MOD_ID + ":spoon");
 
 		mixingbowl = Advancement.Builder.advancement()
-				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.MIXING_BOWL.get()),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.mixingbowl.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.mixingbowl.desc"), null, FrameType.TASK,
-						true, true, false)).parent(spoon)
+				.display(
+						new DisplayInfo(new ItemStack(ExtraDelightItems.MIXING_BOWL.get()),
+								Component.translatable(ExtraDelight.MOD_ID + ".advancement.mixingbowl.name"),
+								Component.translatable(ExtraDelight.MOD_ID + ".advancement.mixingbowl.desc"), null,
+								FrameType.TASK, true, true, false))
+				.parent(spoon)
 				.addCriterion("mixingbowl",
 						ItemInteractWithBlockTrigger.TriggerInstance.itemUsedOnBlock(
 								LocationPredicate.Builder.location()

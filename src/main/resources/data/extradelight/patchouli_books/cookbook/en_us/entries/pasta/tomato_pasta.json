@@ -1,7 +1,7 @@
 {
-    "name": "Chicken Stew",
-    "icon": "extradelight:chicken_stew",
-    "category": "extradelight:casseroles",
+    "name": "Tomato Pasta",
+    "icon": "extradelight:pasta_tomato",
+    "category": "extradelight:pasta",
 	"sortnum": 1,
     "pages": [
         {
@@ -9,16 +9,8 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-			"recipe": "extradelight:chicken_stew"
-        },
-		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_bowl"
-        },
-		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_rice"
+            "type": "extradelight:mixingbowl",
+			"recipe": "extradelight:mixingbowl/pasta_tomato"
         },
 		{
             "type": "patchouli:text",

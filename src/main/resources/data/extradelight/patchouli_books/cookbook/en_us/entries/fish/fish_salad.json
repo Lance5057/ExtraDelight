@@ -1,15 +1,21 @@
 {
-    "name": "Sweet Berry Jam",
-    "icon": "extradelight:sweet_berry_jam",
-    "category": "extradelight:condiments",
+    "name": "Fish Salad",
+    "icon": "extradelight:fish_salad",
+    "category": "extradelight:fish",
+	"sortnum": 1,
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-            "recipe": "extradelight:sweet_berry_jam"
+            "type": "extradelight:mixingbowl",
+			"recipe": "extradelight:mixingbowl/fish_salad"
+        },
+		{
+            "type": "patchouli:crafting",
+			"recipe": "extradelight:fish_salad_sandwich",
+			"recipe2": "extradelight:fish_salad_sandwich_slice"
         },
 		{
             "type": "patchouli:text",

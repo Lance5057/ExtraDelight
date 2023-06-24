@@ -1,8 +1,7 @@
 {
-    "name": "Chicken Stew",
-    "icon": "extradelight:chicken_stew",
-    "category": "extradelight:casseroles",
-	"sortnum": 1,
+    "name": "Jam",
+    "icon": "extradelight:sweet_berry_jam",
+    "category": "extradelight:condiments",
     "pages": [
         {
             "type": "patchouli:text",
@@ -10,15 +9,32 @@
         },
 		{
             "type": "extradelight:pot",
-			"recipe": "extradelight:chicken_stew"
+            "recipe": "extradelight:sweet_berry_jam"
         },
 		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_bowl"
+            "type": "extradelight:pot",
+            "recipe": "extradelight:glow_berry_jam"
         },
 		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_rice"
+            "type": "extradelight:pot",
+            "recipe": "extradelight:carrot_jam"
+        },
+		{
+            "type": "extradelight:pot",
+            "recipe": "extradelight:apple_jam"
+        },
+		{
+            "type": "extradelight:pot",
+            "recipe": "extradelight:golden_apple_jam"
+        },
+		{
+            "type": "patchouli:crafting",
+            "recipe": "extradelight:jam_toast",
+			"recipe2": "extradelight:golden_jam_toast"
+        },
+		{
+            "type": "patchouli:crafting",
+            "recipe": "extradelight:glow_jam_toast"
         },
 		{
             "type": "patchouli:text",

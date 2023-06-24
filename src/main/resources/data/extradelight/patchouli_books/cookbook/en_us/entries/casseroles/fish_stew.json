@@ -1,6 +1,6 @@
 {
-    "name": "Chicken Stew",
-    "icon": "extradelight:chicken_stew",
+    "name": "Fish Stew",
+    "icon": "farmersdelight:fish_stew",
     "category": "extradelight:casseroles",
 	"sortnum": 1,
     "pages": [
@@ -10,15 +10,15 @@
         },
 		{
             "type": "extradelight:pot",
-			"recipe": "extradelight:chicken_stew"
+			"recipe": "extradelight:fish_stew"
         },
 		{
             "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_bowl"
+			"recipe": "extradelight:fish_stew_bowl"
         },
 		{
             "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_rice"
+			"recipe": "extradelight:fish_stew_rice"
         },
 		{
             "type": "patchouli:text",

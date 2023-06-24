@@ -9,7 +9,65 @@
         },
 		{
             "type": "extradelight:pot",
+			"recipe": "extradelight:white_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:orange_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:magenta_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:light_blue_jelly_feast"
+        },{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:yellow_jelly_feast"
+        },{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:lime_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:pink_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:grey_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:light_grey_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:cyan_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:purple_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
 			"recipe": "extradelight:blue_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:brown_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:apple_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:red_jelly_feast"
+        },
+		{
+            "type": "extradelight:pot",
+			"recipe": "extradelight:black_jelly_feast"
         },
 		{
             "type": "patchouli:text",

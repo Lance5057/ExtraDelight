@@ -75,8 +75,8 @@ public class EDFoods {
 			.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 120, 0), 0.8F).build();
 
 	// Basic Cooked Items
-	public static final FoodProperties COOKED_CARROT = EDFoods.cookFood("cooked carrot", Foods.CARROT).build();
-	public static final FoodProperties COOKED_APPLE = EDFoods.cookFood("cooked apple", Foods.APPLE).build();
+	public static final FoodProperties COOKED_CARROT = new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).build();
+	public static final FoodProperties COOKED_APPLE = new FoodProperties.Builder().nutrition(6).saturationMod(0.5f).build();
 
 	public static final FoodProperties SLICED_BREAD = EDFoods.divideFoods("sliced bread", Foods.BREAD, 4).build();
 	public static final FoodProperties BREADING = EDFoods
@@ -107,26 +107,14 @@ public class EDFoods {
 
 	// Condiments
 	public static final FoodProperties MAYO = EDFoods
-			.divideFoods("mayo", EDFoods.addFoods("", FoodValues.FRIED_EGG, FoodValues.FRIED_EGG, OIL).build(), 4)
-			.effect(ABSORPTION_SIXTY_SECONDS, 1.0F).build();
-
-	public static final FoodProperties MAYO_RAW = EDFoods
 			.divideFoods("mayo raw", EDFoods.addFoods("", FoodValues.FRIED_EGG, FoodValues.FRIED_EGG, OIL).build(), 4)
 			.effect(HUNGER, 1.0F).build();
 
-	public static final FoodProperties BBQ = EDFoods
-			.divideFoods("bbq", EDFoods.addFoods("", FoodValues.TOMATO, FoodValues.ONION, SUGAR, VINEGAR).build(), 4)
-			.effect(DAMAGE_RESISTANCE_THIRTY_SECONDS, 1.0F).build();
-
-	public static final FoodProperties BBQ_RAW = EDFoods.divideFoods("bbq raw",
+	public static final FoodProperties BBQ = EDFoods.divideFoods("bbq raw",
 			EDFoods.addFoods("", FoodValues.TOMATO, FoodValues.ONION, SUGAR, VINEGAR).build(), 4).effect(HUNGER, 1.0F)
 			.build();
 
-	public static final FoodProperties KETCHUP = EDFoods.divideFoods("ketchup",
-			EDFoods.addFoods("", FoodValues.TOMATO, FoodValues.ONION, SUGAR, VINEGAR).build(), 4)
-			.effect(REGENERATION_FIVE_SECONDS, 1.0F).build();
-
-	public static final FoodProperties KETCHUP_RAW = EDFoods
+	public static final FoodProperties KETCHUP = EDFoods
 			.divideFoods("ketchup raw",
 					EDFoods.addFoods("", FoodValues.TOMATO, FoodValues.TOMATO, SUGAR, VINEGAR).build(), 4)
 			.effect(HUNGER, 1.0F).build();
@@ -443,9 +431,6 @@ public class EDFoods {
 		for (int i = 0; i < foods.length; i++) {
 			nut += foods[i].getNutrition();
 			sat += foods[i].getSaturationModifier();
-
-			for (Pair<MobEffectInstance, Float> effect : foods[i].getEffects())
-				b.effect(effect.getFirst(), effect.getSecond());
 		}
 
 		if (name != "")
@@ -457,8 +442,6 @@ public class EDFoods {
 		int nut = food.getNutrition() / by;
 		float sat = food.getSaturationModifier() / by;
 		Builder b = new FoodProperties.Builder();
-		for (Pair<MobEffectInstance, Float> effect : food.getEffects())
-			b.effect(effect.getFirst(), effect.getSecond());
 
 		if (name != "")
 			ExtraDelight.logger.debug(name + ": " + nut + "," + sat);

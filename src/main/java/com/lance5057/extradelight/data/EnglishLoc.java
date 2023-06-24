@@ -158,7 +158,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.FISH_CAKES.get(), "Fish Cakes");
 		this.add(ExtraDelightItems.FRIED_MUSHROOMS.get(), "Fried Mushrooms");
 		this.add(ExtraDelightItems.MUSHROOM_RISOTTO.get(), "Mushroom Risotto");
-		this.add(ExtraDelightItems.MUSHROOM_BURGER.get(), "Mushroom Burger");
+		this.add(ExtraDelightItems.MUSHROOM_BURGER.get(), "Mushroom and Swiss Burger");
 		this.add(ExtraDelightItems.STUFFED_MUSHROOMS.get(), "Stuffed Mushrooms");
 
 		this.add(ExtraDelightItems.FURIKAKE.get(), "Furikake");

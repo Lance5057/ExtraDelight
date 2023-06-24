@@ -1,7 +1,7 @@
 {
-    "name": "Chicken Stew",
-    "icon": "extradelight:chicken_stew",
-    "category": "extradelight:casseroles",
+    "name": "Bacon Cheeseburger",
+    "icon": "extradelight:bacon_cheeseburger",
+    "category": "extradelight:meats",
 	"sortnum": 1,
     "pages": [
         {
@@ -9,16 +9,13 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-			"recipe": "extradelight:chicken_stew"
+            "type": "patchouli:crafting",
+			"recipe": "extradelight:bacon_cheeseburger",
+			"recipe2": "extradelight:bacon_cheeseburger_burger"
         },
 		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_bowl"
-        },
-		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_rice"
+            "type": "patchouli:crafting",
+			"recipe": "extradelight:bacon_cheeseburger_cheeseburger"
         },
 		{
             "type": "patchouli:text",

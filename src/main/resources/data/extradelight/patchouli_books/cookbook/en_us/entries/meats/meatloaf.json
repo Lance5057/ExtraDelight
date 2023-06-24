@@ -1,7 +1,7 @@
 {
-    "name": "Chicken Stew",
-    "icon": "extradelight:chicken_stew",
-    "category": "extradelight:casseroles",
+    "name": "Meatloaf",
+    "icon": "extradelight:meatloaf",
+    "category": "extradelight:meats",
 	"sortnum": 1,
     "pages": [
         {
@@ -9,16 +9,16 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-			"recipe": "extradelight:chicken_stew"
+            "type": "extradelight:oven",
+			"recipe": "extradelight:meatloaf"
         },
 		{
             "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_bowl"
+			"recipe": "extradelight:meatloaf_bowl"
         },
 		{
             "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_rice"
+			"recipe": "extradelight:meatloaf_sandwich"
         },
 		{
             "type": "patchouli:text",

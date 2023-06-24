@@ -1,7 +1,7 @@
 {
-    "name": "Chicken Stew",
-    "icon": "extradelight:chicken_stew",
-    "category": "extradelight:casseroles",
+    "name": "Chicken Alfredo Pasta",
+    "icon": "extradelight:chicken_alfredo",
+    "category": "extradelight:pasta",
 	"sortnum": 1,
     "pages": [
         {
@@ -9,16 +9,8 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-			"recipe": "extradelight:chicken_stew"
-        },
-		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_bowl"
-        },
-		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_rice"
+            "type": "extradelight:mixingbowl",
+			"recipe": "extradelight:mixingbowl/chicken_alfredo"
         },
 		{
             "type": "patchouli:text",

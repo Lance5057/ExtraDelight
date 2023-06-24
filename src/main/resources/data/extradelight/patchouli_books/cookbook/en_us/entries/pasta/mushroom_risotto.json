@@ -1,7 +1,7 @@
 {
-    "name": "Chicken Stew",
-    "icon": "extradelight:chicken_stew",
-    "category": "extradelight:casseroles",
+    "name": "Mushroom Risotto",
+    "icon": "extradelight:mushroom_risotto",
+    "category": "extradelight:pasta",
 	"sortnum": 1,
     "pages": [
         {
@@ -10,15 +10,7 @@
         },
 		{
             "type": "extradelight:pot",
-			"recipe": "extradelight:chicken_stew"
-        },
-		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_bowl"
-        },
-		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_rice"
+			"recipe": "extradelight:mushroom_risotto"
         },
 		{
             "type": "patchouli:text",

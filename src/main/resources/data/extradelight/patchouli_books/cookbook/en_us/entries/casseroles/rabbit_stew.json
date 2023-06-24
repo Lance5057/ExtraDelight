@@ -1,6 +1,6 @@
 {
-    "name": "Chicken Stew",
-    "icon": "extradelight:chicken_stew",
+    "name": "Rabbit Stew",
+    "icon": "minecraft:rabbit_stew",
     "category": "extradelight:casseroles",
 	"sortnum": 1,
     "pages": [
@@ -10,15 +10,15 @@
         },
 		{
             "type": "extradelight:pot",
-			"recipe": "extradelight:chicken_stew"
+			"recipe": "extradelight:rabbit_stew"
         },
 		{
             "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_bowl"
+			"recipe": "extradelight:rabbit_stew_bowl"
         },
 		{
             "type": "extradelight:feast",
-			"recipe": "extradelight:chicken_stew_rice"
+			"recipe": "extradelight:rabbit_stew_rice"
         },
 		{
             "type": "patchouli:text",

@@ -1,19 +1,32 @@
 {
-    "name": "Glow Berry Jam",
-    "icon": "extradelight:glow_berry_jam",
-    "category": "extradelight:condiments",
+    "name": "Breakfast Sandwich",
+    "icon": "extradelight:bacon_egg_cheese_sandwich",
+    "category": "extradelight:eggs",
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-            "recipe": "extradelight:glow_berry_jam"
+            "type": "patchouli:crafting",
+			"title": " ",
+            "recipe": "extradelight:bacon_egg_cheese_sandwich_full",
+			"recipe2": "extradelight:bacon_egg_cheese_sandwich_egg"
+        },
+		{
+            "type": "patchouli:crafting",
+			"title": " ",
+            "recipe": "extradelight:bacon_egg_cheese_sandwich_egg_bacon",
+			"recipe2": "extradelight:bacon_egg_sandwich"
+        },
+		{
+            "type": "patchouli:crafting",
+			"title": " ",
+			"recipe": "extradelight:bacon_egg_sandwich_full"
         },
 		{
             "type": "patchouli:text",
-			"title": "BBQ Sauce",
+			"title": "Lingonberry Juice",
             "text": "$(br) Time: 30min $(br) Ingredients: 3 $(br2)$(l) Ingredients - $()$(br)$(li) 1 lb lingonberries$(li) 5 cups water$(li) 1 cups sugar $(br2)"
         },
 		{

@@ -1,4 +1,4 @@
-// 1.19.2	2023-06-23T11:23:31.2229688	Recipes
+// 1.19.2	2023-06-24T12:18:16.3330155	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 3db09cde228aa7774f6794554d525229f1b9f4c6 data/extradelight/advancements/recipes/extradelight.aesthetic/acacia_knife_block.json
@@ -393,8 +393,9 @@ d5000d2ff3d32f4cb69f0c4606f1f70aa6f8feee data/extradelight/advancements/recipes/
 9e7fcb3c72961f76bb2680ad4ea89d8e5189a15d data/extradelight/advancements/recipes/extradelight.items/roasted_carrot_smelt.json
 35df45a60ede5881c8d2ef6b01890849f386a065 data/extradelight/advancements/recipes/extradelight.items/roasted_carrot_smoke.json
 c9471471087b34d052acf240723d4883c83352e6 data/extradelight/advancements/recipes/extradelight.items/round_pan.json
-97adf839c6a3f0401383218409aa162df006163a data/extradelight/advancements/recipes/extradelight.items/salad.json
 41579e0d3644c97504e847433193d7981041ecd7 data/extradelight/advancements/recipes/extradelight.items/salad_bowl.json
+db51b896cd9b4adefe9c493ede119504c86542b0 data/extradelight/advancements/recipes/extradelight.items/salad_meat.json
+54397a188d52d136a80caf9cf90e58adf063f992 data/extradelight/advancements/recipes/extradelight.items/salad_veg.json
 4eaf50d2525f1c216d64185fea3b98f403ba2412 data/extradelight/advancements/recipes/extradelight.items/salisbury_steak_bowl.json
 9bbae9f04599fd84831e8a965374d041ec428fe2 data/extradelight/advancements/recipes/extradelight.items/sheet.json
 8c01ad44497c5af9c4983a36a5b943d96fa9fada data/extradelight/advancements/recipes/extradelight.items/square_pan.json
@@ -1214,8 +1215,9 @@ e8aacb8e2a7416bc7d74375ffe7fbf900c5ccab8 data/extradelight/recipes/roasted_carro
 9182cba626c11e640f0bc943a1ddefa4ea9cd393 data/extradelight/recipes/roast_chicken.json
 a10aa4a1a7c944047bacd9b35e1145849c284c39 data/extradelight/recipes/rose_red.json
 d4c4a753e7537a555df1a0b4533abedd8ee8eab8 data/extradelight/recipes/round_pan.json
-511f230bb600e93aeebad683d9e9046f1d2b2826 data/extradelight/recipes/salad.json
 83173a8ab16237ffcda1bd058337228b85aae4c0 data/extradelight/recipes/salad_bowl.json
+511f230bb600e93aeebad683d9e9046f1d2b2826 data/extradelight/recipes/salad_meat.json
+3560a9fd522596cb81c5606ee596050eba7ab52a data/extradelight/recipes/salad_veg.json
 4e9b00f3cf22a4e138fbdfbeaa9752cdecc67e9d data/extradelight/recipes/salisbury_steak_bowl.json
 53263fe51cd15715b15908a3f2ddcd39db6591fd data/extradelight/recipes/salisbury_steak_feast.json
 567784d4c33d1890b73d65e68076564ba63213c0 data/extradelight/recipes/salmon1.json
