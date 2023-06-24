@@ -1,6 +1,6 @@
 {
-    "name": "Stuffed Heart",
-    "icon": "extradelight:stuffed_heart",
+    "name": "Haggis",
+    "icon": "extradelight:haggis",
     "category": "extradelight:meats",
 	"sortnum": 1,
     "pages": [
@@ -10,7 +10,11 @@
         },
 		{
             "type": "extradelight:oven",
-			"recipe": "extradelight:stuffed_heart"
+			"recipe": "extradelight:haggis_test"
+        },
+		{
+            "type": "extradelight:feast",
+			"recipe": "extradelight:haggis_bowl"
         },
 		{
             "type": "patchouli:text",

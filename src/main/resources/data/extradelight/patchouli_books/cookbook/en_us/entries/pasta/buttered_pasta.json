@@ -1,7 +1,7 @@
 {
-    "name": "Oxtail Soup",
-    "icon": "farmersdelight:oxtail_soup",
-    "category": "extradelight:meats",
+    "name": "Buttered Pasta",
+    "icon": "extradelight:buttered_pasta",
+    "category": "extradelight:pasta",
 	"sortnum": 1,
     "pages": [
         {
@@ -9,8 +9,8 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-			"recipe": "extradelight:oxtail_soup"
+            "type": "extradelight:mixingbowl",
+			"recipe": "extradelight:mixingbowl/buttered_pasta"
         },
 		{
             "type": "patchouli:text",

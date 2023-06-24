@@ -1,6 +1,6 @@
 {
-    "name": "Mutton Stew",
-    "icon": "extradelight:lamb_stew",
+    "name": "Stir Fry",
+    "icon": "extradelight:stirfry",
     "category": "extradelight:meats",
 	"sortnum": 1,
     "pages": [
@@ -10,15 +10,11 @@
         },
 		{
             "type": "extradelight:pot",
-			"recipe": "extradelight:mutton_stew_test"
+			"recipe": "extradelight:stirfry_feast"
         },
 		{
             "type": "extradelight:feast",
-			"recipe": "extradelight:lamb_stew_bowl"
-        },
-		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:lamb_stew_rice"
+			"recipe": "extradelight:stirfry_bowl"
         },
 		{
             "type": "patchouli:text",

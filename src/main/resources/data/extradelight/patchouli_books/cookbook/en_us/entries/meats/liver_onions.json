@@ -10,7 +10,7 @@
         },
 		{
             "type": "extradelight:pot",
-			"recipe": "extradelight:liver_onions"
+			"recipe": "extradelight:liveronions_test"
         },
 		{
             "type": "patchouli:text",

@@ -1,6 +1,6 @@
 {
-    "name": "Stuffed Heart",
-    "icon": "extradelight:stuffed_heart",
+    "name": "Meat Pie",
+    "icon": "extradelight:meat_pie_slice",
     "category": "extradelight:meats",
 	"sortnum": 1,
     "pages": [
@@ -10,7 +10,7 @@
         },
 		{
             "type": "extradelight:oven",
-			"recipe": "extradelight:stuffed_heart"
+			"recipe": "extradelight:meat_pie"
         },
 		{
             "type": "patchouli:text",

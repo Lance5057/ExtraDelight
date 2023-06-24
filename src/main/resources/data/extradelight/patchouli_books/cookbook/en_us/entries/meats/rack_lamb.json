@@ -1,6 +1,6 @@
 {
-    "name": "Stuffed Heart",
-    "icon": "extradelight:stuffed_heart",
+    "name": "Crown Roast of Lamb",
+    "icon": "extradelight:rack_lamb",
     "category": "extradelight:meats",
 	"sortnum": 1,
     "pages": [
@@ -10,7 +10,11 @@
         },
 		{
             "type": "extradelight:oven",
-			"recipe": "extradelight:stuffed_heart"
+			"recipe": "extradelight:rack_lamb_test"
+        },
+		{
+            "type": "extradelight:feast",
+			"recipe": "extradelight:rack_lamb_bowl"
         },
 		{
             "type": "patchouli:text",

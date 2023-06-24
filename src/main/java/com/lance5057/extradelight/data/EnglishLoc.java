@@ -269,8 +269,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.FISH_SALAD.get(), "Fish Salad");
 		this.add(ExtraDelightItems.FISH_SALAD_SANDWICH.get(), "Fish Salad Sandwich");
 
-		this.add(ExtraDelightItems.RACK_LAMB.get(), "Rack of Lamb Plate");
-		this.add(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), "Rack of Lamb");
+		this.add(ExtraDelightItems.RACK_LAMB.get(), "Crown Roast of Lamb Plate");
+		this.add(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), "Crown Roast of Lamb");
 
 		this.add(ExtraDelightItems.STIRFRY.get(), "Bowl of Stirfry");
 		this.add(ExtraDelightItems.STIRFRY_FEAST_ITEM.get(), "Stirfry");

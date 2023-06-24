@@ -1,6 +1,6 @@
 {
-    "name": "Stuffed Heart",
-    "icon": "extradelight:stuffed_heart",
+    "name": "Pulled Pork",
+    "icon": "extradelight:pulled_pork_sandwich",
     "category": "extradelight:meats",
 	"sortnum": 1,
     "pages": [
@@ -9,8 +9,12 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:oven",
-			"recipe": "extradelight:stuffed_heart"
+            "type": "extradelight:pot",
+			"recipe": "extradelight:pulled_pork_cond"
+        },
+		{
+            "type": "extradelight:feast",
+			"recipe": "extradelight:pulled_pork_bread"
         },
 		{
             "type": "patchouli:text",

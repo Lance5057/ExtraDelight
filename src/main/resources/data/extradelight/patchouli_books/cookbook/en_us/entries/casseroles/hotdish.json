@@ -1,7 +1,7 @@
 {
-    "name": "Fried Fish",
-    "icon": "extradelight:fried_fish",
-    "category": "extradelight:meats",
+    "name": "Hotdish",
+    "icon": "extradelight:hotdish",
+    "category": "extradelight:casseroles",
 	"sortnum": 1,
     "pages": [
         {
@@ -9,8 +9,12 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:pot",
-			"recipe": "extradelight:fried_fish"
+            "type": "extradelight:oven",
+			"recipe": "extradelight:hotdish"
+        },
+		{
+            "type": "extradelight:feast",
+			"recipe": "extradelight:hotdish_bowl"
         },
 		{
             "type": "patchouli:text",

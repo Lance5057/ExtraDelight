@@ -18,7 +18,6 @@ public class FeastProcessor implements IComponentProcessor {
 		ResourceLocation id = new ResourceLocation(variables.get("recipe").asString());
 		RecipeManager manager = Minecraft.getInstance().level.getRecipeManager();
 		recipe = manager.byKey(id).orElse(null);
-		recipe.getGroup();
 	}
 
 	@Override

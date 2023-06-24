@@ -1,7 +1,7 @@
 {
-    "name": "Stuffed Heart",
-    "icon": "extradelight:stuffed_heart",
-    "category": "extradelight:meats",
+    "name": "Fish and Chips",
+    "icon": "extradelight:fish_chips",
+    "category": "extradelight:fish",
 	"sortnum": 1,
     "pages": [
         {
@@ -9,8 +9,8 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:oven",
-			"recipe": "extradelight:stuffed_heart"
+            "type": "patchouli:crafting",
+			"recipe": "extradelight:fish_chips"
         },
 		{
             "type": "patchouli:text",

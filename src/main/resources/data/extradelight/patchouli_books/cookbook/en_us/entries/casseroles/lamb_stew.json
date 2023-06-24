@@ -1,7 +1,7 @@
 {
-    "name": "Stuffed Heart",
-    "icon": "extradelight:stuffed_heart",
-    "category": "extradelight:meats",
+    "name": "Mutton Stew",
+    "icon": "extradelight:lamb_stew",
+    "category": "extradelight:casseroles",
 	"sortnum": 1,
     "pages": [
         {
@@ -9,8 +9,16 @@
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:oven",
-			"recipe": "extradelight:stuffed_heart"
+            "type": "extradelight:pot",
+			"recipe": "extradelight:mutton_stew_test"
+        },
+		{
+            "type": "extradelight:feast",
+			"recipe": "extradelight:lamb_stew_bowl"
+        },
+		{
+            "type": "extradelight:feast",
+			"recipe": "extradelight:lamb_stew_rice"
         },
 		{
             "type": "patchouli:text",

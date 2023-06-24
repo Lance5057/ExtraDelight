@@ -1,7 +1,7 @@
 {
-    "name": "Beef Stew",
-    "icon": "farmersdelight:beef_stew",
-    "category": "extradelight:meats",
+    "name": "Seaweed Crisps",
+    "icon": "extradelight:seaweed_crisps",
+    "category": "extradelight:vegetables",
     "pages": [
         {
             "type": "patchouli:text",
@@ -9,15 +9,7 @@
         },
 		{
             "type": "extradelight:pot",
-			"recipe": "extradelight:beef_stew_test"
-        },
-		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:beef_stew_bowl"
-        },
-		{
-            "type": "extradelight:feast",
-			"recipe": "extradelight:beef_stew_rice"
+			"recipe": "extradelight:seaweed_crisps"
         },
 		{
             "type": "patchouli:text",

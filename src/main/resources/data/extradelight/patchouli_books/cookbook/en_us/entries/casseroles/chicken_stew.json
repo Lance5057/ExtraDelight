@@ -1,7 +1,7 @@
 {
-    "name": "Pork Stew",
-    "icon": "extradelight:pork_stew",
-    "category": "extradelight:meats",
+    "name": "Chicken Stew",
+    "icon": "extradelight:chicken_stew",
+    "category": "extradelight:casseroles",
 	"sortnum": 1,
     "pages": [
         {
@@ -10,15 +10,15 @@
         },
 		{
             "type": "extradelight:pot",
-			"recipe": "extradelight:pork_stew_test"
+			"recipe": "extradelight:chicken_stew_test"
         },
 		{
             "type": "extradelight:feast",
-			"recipe": "extradelight:pork_stew_bowl"
+			"recipe": "extradelight:chicken_stew_bowl"
         },
 		{
             "type": "extradelight:feast",
-			"recipe": "extradelight:pork_stew_rice"
+			"recipe": "extradelight:chicken_stew_rice"
         },
 		{
             "type": "patchouli:text",

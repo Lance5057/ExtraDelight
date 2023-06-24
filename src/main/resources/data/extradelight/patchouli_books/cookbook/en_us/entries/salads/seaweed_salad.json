@@ -1,16 +1,15 @@
 {
-    "name": "Stuffed Heart",
-    "icon": "extradelight:stuffed_heart",
-    "category": "extradelight:meats",
-	"sortnum": 1,
+    "name": "Seaweed Salad",
+    "icon": "extradelight:seaweed_salad",
+    "category": "extradelight:salads",
     "pages": [
         {
             "type": "patchouli:text",
             "text": "This is a test entry, but it should show up!"
         },
 		{
-            "type": "extradelight:oven",
-			"recipe": "extradelight:stuffed_heart"
+            "type": "extradelight:mixingbowl",
+			"recipe": "extradelight:mixingbowl/seaweed_salad"
         },
 		{
             "type": "patchouli:text",

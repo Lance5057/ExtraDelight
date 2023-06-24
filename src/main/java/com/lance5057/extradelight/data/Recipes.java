@@ -393,8 +393,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(ExtraDelightItems.CHEESE.get()).requires(ExtraDelightTags.COOKING_OIL)
 				.requires(ExtraDelightTags.VINEGAR).requires(ExtraDelightItems.BOILED_EGG.get())
 				.requires(ExtraDelightTags.MEAT_COOKED).unlockedBy(getName(), has(ForgeTags.CROPS_CABBAGE))
-				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "salad"));
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "salad_meat"));
 
+		MixingBowlRecipeBuilder
+				.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 1)
+				.requires(ModItems.CABBAGE.get()).requires(ExtraDelightTags.PROCESSED_ONION)
+				.requires(ExtraDelightTags.PROCESSED_CARROT).requires(ExtraDelightItems.CROUTONS.get())
+				.requires(ExtraDelightItems.CHEESE.get()).requires(ExtraDelightTags.COOKING_OIL)
+				.requires(ExtraDelightTags.VINEGAR).requires(ExtraDelightItems.BOILED_EGG.get())
+				.requires(ExtraDelightTags.PROCESSED_VEG).unlockedBy(getName(), has(ForgeTags.CROPS_CABBAGE))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "salad_veg"));
+		
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PASTA_ALFREDO.get(), FAST_GRIND, Ingredient.of(Items.BOWL), 1)
 				.requires(ExtraDelightItems.ALFREDO_SAUCE.get()).requires(ModItems.RAW_PASTA.get())
 				.unlockedBy(getName(), has(ExtraDelightItems.ALFREDO_SAUCE.get())).save(consumer);
@@ -712,7 +721,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "jam_toast"));
 
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.GLOW_JAM_TOAST.get())
-				.requires(Ingredient.of(ExtraDelightTags.JAM_GLOW_BERRY)).requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE))
+				.requires(Ingredient.of(ExtraDelightTags.JAM_GLOW_BERRY))
+				.requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE))
 				.unlockedBy(getName(), has(ExtraDelightTags.JAM_GLOW_BERRY))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "glow_jam_toast"));
 
