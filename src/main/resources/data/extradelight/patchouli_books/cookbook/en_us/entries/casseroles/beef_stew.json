@@ -6,7 +6,7 @@
     "pages": [
         {
             "type": "patchouli:text",
-            "text": "This is a test entry, but it should show up!"
+            "text": "A hearty dish of tender beef and veggies in a thick broth. A great dish for a cold day. Tasty on its own or over rice!"
         },
 		{
             "type": "extradelight:pot",
@@ -22,16 +22,16 @@
         },
 		{
             "type": "patchouli:text",
-			"title": "BBQ Sauce",
-            "text": "$(br) Time: 30min $(br) Ingredients: 3 $(br2)$(l) Ingredients - $()$(br)$(li) 1 lb lingonberries$(li) 5 cups water$(li) 1 cups sugar $(br2)"
+			"title": "Beef Stew",
+            "text": "$(br) Time: 3-4hr$(br) 4 Servings$(br2)$(l) Ingredients - $()$(li) 1 tbsp oil $(li) 1lb boneless beef roast $(li) 3 cups beef broth $(li) 2 medium carrots $(li) 2 large potato $(li) 1 medium onion $(li) 2 cloves garlic $(li) 1 bay leaf $(li) 2 tbsp flour $(li) salt and pepper"
         },
 		{
             "type": "patchouli:text",
-            "text": "$(li)Wash or defrost berries. Place berries in saucepan with water. Bring to a low boil over medium-high heat; simmer until berries begin to pop (about 15 minutes). $(li)Remove saucepan from burner and drain berries in a cheese cloth-lined sieve or juice bag over a large, glass bowl. Crush the cooked berries with a potato masher to release the additional juice."
+            "text": "$(li) Chop beef, carrots, and potatos into 1-inch cubes; Roughly chop onion. $(li)In a large bowl, toss beef cubes in flour until all bits are coated.$(li)In a large dutch oven, heat oil over medium heat. Add beef in batches so you don't over crowd, cooking on all sides for about 5 minutes per batch until brown on all sides. $(li) Remove beef, add the broth and bring to a boil. Scrape the bottom of the pot with a wooden spoon until everything is loosened."
         },
 		{
             "type": "patchouli:text",
-            "text": "$(li) Sweeten to taste with up to 1 cup sugar; return to saucepan and heat for 2-3 minutes until sugar is dissolved. Remove from burner, cool, and refrigerate."
+            "text": "$(li) Add bayleaf, salt, and pepper. Bring to a boil, then reduce heat to low. Cover and simmer 2 hours to 3 hours or until beef is almost tender. $(li) Add carrots, potatos, and onions. Continue simmering until veggies are tender, about 30min. $(li) Remove bayleaf, salt and pepper to taste, serve on its own or over rice."
         }
     ]
 }

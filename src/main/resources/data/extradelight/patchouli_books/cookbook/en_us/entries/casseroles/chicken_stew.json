@@ -6,7 +6,7 @@
     "pages": [
         {
             "type": "patchouli:text",
-            "text": "This is a test entry, but it should show up!"
+            "text": "A hearty dish of succulent chicken and veggies in a thick broth. A great dish for a cold day. Tasty on its own or over rice!"
         },
 		{
             "type": "extradelight:pot",
@@ -22,7 +22,7 @@
         },
 		{
             "type": "patchouli:text",
-			"title": "BBQ Sauce",
+			"title": "Chicken Stew",
             "text": "$(br) Time: 30min $(br) Ingredients: 3 $(br2)$(l) Ingredients - $()$(br)$(li) 1 lb lingonberries$(li) 5 cups water$(li) 1 cups sugar $(br2)"
         },
 		{

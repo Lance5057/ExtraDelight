@@ -5,20 +5,21 @@
     "pages": [
         {
             "type": "patchouli:text",
-            "text": "This is a test entry, but it should show up!"
+            "text": "A delightfully sweet juice made from sweet berries. A glass of this juice will perk you right up quickly but provides little nutritional value."
         },
 		{
-            "type": "patchouli:text",
-            "text": "This is a test entry, but it should show up!"
+            "type": "patchouli:crafting",
+            "recipe": "extradelight:sweet_berry_juice",
+			"text": ""
         },
 		{
             "type": "patchouli:text",
 			"title": "Lingonberry Juice",
-            "text": "$(br) Time: 30min $(br) Ingredients: 3 $(br2)$(l) Ingredients - $()$(br)$(li) 1 lb lingonberries$(li) 5 cups water$(li) 1 cups sugar $(br2)"
+            "text": "$(br) Time: 30min $(br)2-3 Servings $(br2)$(l) Ingredients - $()$(br)$(li) 1 lb lingonberries$(li) 5 cups water$(li) 1 cups sugar $(br2)"
         },
 		{
             "type": "patchouli:text",
-            "text": "$(li)Wash or defrost berries. Place berries in saucepan with water. Bring to a low boil over medium-high heat; simmer until berries begin to pop (about 15 minutes). $(li)Remove saucepan from burner and drain berries in a cheese cloth-lined sieve or juice bag over a large, glass bowl. Crush the cooked berries with a potato masher to release the additional juice."
+            "text": "$(li)Wash or defrost berries. Place berries in saucepan with water. Bring to a low boil over medium-high heat; simmer until berries begin to pop (about 15 minutes). $(li)Remove saucepan from burner and drain berries in a cheese cloth-lined sieve or juice bag over a large, glass bowl. Crush the cooked berries with a potato masher to release the additional juice. Discard the mash."
         },
 		{
             "type": "patchouli:text",

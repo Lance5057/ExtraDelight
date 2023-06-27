@@ -5,7 +5,7 @@
     "pages": [
         {
             "type": "patchouli:text",
-            "text": "This is a test entry, but it should show up!"
+            "text": "A savory juice made of tomatos. It's jam packed full of nutrients to keep healthy even in the deepest dungeons!"
         },
 		{
             "type": "patchouli:crafting",
@@ -14,16 +14,16 @@
         },
 		{
             "type": "patchouli:text",
-			"title": "Lingonberry Juice",
-            "text": "$(br) Time: 30min $(br) Ingredients: 3 $(br2)$(l) Ingredients - $()$(br)$(li) 1 lb lingonberries$(li) 5 cups water$(li) 1 cups sugar $(br2)"
+			"title": "Tomato Juice",
+            "text": "$(br) Time: 30min$(br)2-3 Servings$(br2)$(l) Ingredients - $()$(br)$(li) 1.1 lb tomatos$(li) 1 cups water$(li) 1 tbsp salt or sugar (optional) $(br2)"
         },
 		{
             "type": "patchouli:text",
-            "text": "$(li)Wash or defrost berries. Place berries in saucepan with water. Bring to a low boil over medium-high heat; simmer until berries begin to pop (about 15 minutes). $(li)Remove saucepan from burner and drain berries in a cheese cloth-lined sieve or juice bag over a large, glass bowl. Crush the cooked berries with a potato masher to release the additional juice."
+            "text": "$(li)Wash and roughly chop tomatos. Place tomato chunks in saucepan with water. Cook over medium-high heat, stirring continuously. $(li)Remove saucepan from burner and drain into a cheese cloth-lined sieve or juice bag over a large bowl. Press and squeeze the mash to release the juice. Discard the mash."
         },
 		{
             "type": "patchouli:text",
-            "text": "$(li) Sweeten to taste with up to 1 cup sugar; return to saucepan and heat for 2-3 minutes until sugar is dissolved. Remove from burner, cool, and refrigerate."
+            "text": "$(li) Add sugar or salt (optional). $(li)Return to saucepan and heat until just about boiling. Remove from burner, cool, and refrigerate."
         }
     ]
 }

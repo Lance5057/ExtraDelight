@@ -75,8 +75,10 @@ public class EDFoods {
 			.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 120, 0), 0.8F).build();
 
 	// Basic Cooked Items
-	public static final FoodProperties COOKED_CARROT = new FoodProperties.Builder().nutrition(5).saturationMod(0.5f).build();
-	public static final FoodProperties COOKED_APPLE = new FoodProperties.Builder().nutrition(6).saturationMod(0.5f).build();
+	public static final FoodProperties COOKED_CARROT = new FoodProperties.Builder().nutrition(5).saturationMod(0.5f)
+			.build();
+	public static final FoodProperties COOKED_APPLE = new FoodProperties.Builder().nutrition(6).saturationMod(0.5f)
+			.build();
 
 	public static final FoodProperties SLICED_BREAD = EDFoods.divideFoods("sliced bread", Foods.BREAD, 4).build();
 	public static final FoodProperties BREADING = EDFoods
