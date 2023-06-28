@@ -1,5 +1,14 @@
-// 1.19.2	2023-05-25T13:40:01.2794929	Extra Delight Advancements
+// 1.19.2	2023-06-28T10:49:10.8008515	Extra Delight Advancements
+476f2f9dd1fc8cbd6473c80009fcd8aa2881a4fd data/extradelight/advancements/doughshaping.json
+90a698dbb182bcf42d7520ae0a581501603071b5 data/extradelight/advancements/dryingrack.json
 191fcc64bbe23248478f3b378f22af3f43793831 data/extradelight/advancements/grater.json
+b1ced3742890bf9858c1a1efd44665f1115b8bc4 data/extradelight/advancements/grind.json
 707c96f23038fdbc1f5ddd3809cf605e41e2fbe7 data/extradelight/advancements/mixingbowl.json
+580411e6ec0ac635139187c1dee717337a6c7b3b data/extradelight/advancements/mortar.json
+0fbd9f11812f17ce64ec94eadc8501a65407e696 data/extradelight/advancements/noodles.json
+5e0494114c9dae0df3f22b31a67fe028adeb4614 data/extradelight/advancements/oven.json
 25148e0122f9a9b816164cfe6e118d4552947a80 data/extradelight/advancements/spoon.json
 400fb3ba9500f6b7f8383721d8060e884a2b19e8 data/extradelight/advancements/start.json
+08ae384fad5e2ac93a8d6414422d2ddcd17d1fac data/extradelight/advancements/trays.json
+c6085a923182e3e82f3e1232409e19674d87c521 data/extradelight/advancements/vinegarpot.json
+5c6d7bc891c4f614f2d8fa4ed547ba4fa6f2739c data/extradelight/advancements/yeastpot.json

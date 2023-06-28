@@ -1,11 +1,15 @@
 package com.lance5057.extradelight;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class ExtraDelightTags {
+
+	
 
 	public static TagKey<Item> forgeTag(String tag) {
 		return ItemTags.create(new ResourceLocation("forge", tag));
@@ -15,6 +19,8 @@ public class ExtraDelightTags {
 		return ItemTags.create(new ResourceLocation("extradelight", tag));
 	}
 
+	public static final TagKey<Block> MORTAR_BLOCK = BlockTags.create(new ResourceLocation("forge", "mortars"));
+	public static final TagKey<Item> MORTAR = ItemTags.create(new ResourceLocation("forge", "mortars"));
 	public static final TagKey<Item> PESTLES = ItemTags.create(new ResourceLocation("forge", "pestles"));
 	public static final TagKey<Item> SPOONS = ItemTags.create(new ResourceLocation("forge", "spoons"));
 

@@ -1,0 +1,38 @@
+{
+  "parent": "extradelight:mortar",
+  "criteria": {
+    "grind": {
+      "conditions": {
+        "item": {
+          "tag": "forge:spoons"
+        },
+        "location": {
+          "block": {
+            "tag": "forge:mortars"
+          }
+        }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.grind.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:mixing_bowl"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.grind.name"
+    }
+  },
+  "requirements": [
+    [
+      "grind"
+    ]
+  ]
+}

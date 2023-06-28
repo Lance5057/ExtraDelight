@@ -1,0 +1,35 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "mortar": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:mortars"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.mortar.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:mortar_stone"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.mortar.name"
+    }
+  },
+  "requirements": [
+    [
+      "mortar"
+    ]
+  ]
+}

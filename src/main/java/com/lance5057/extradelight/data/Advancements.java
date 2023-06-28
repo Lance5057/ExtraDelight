@@ -28,6 +28,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class Advancements extends AdvancementProvider {
 	private final DataGenerator dataGenerator;
@@ -43,7 +44,6 @@ public class Advancements extends AdvancementProvider {
 	private Advancement trays;
 
 	private Advancement mortar;
-	private Advancement pestle;
 	private Advancement grind;
 
 	private Advancement doughshaping;
@@ -67,6 +67,7 @@ public class Advancements extends AdvancementProvider {
 
 	private Advancement jelly;
 	private Advancement jellysplat;
+	private Advancement jellyall;
 
 	public Advancements(@Nonnull DataGenerator dataGenerator, ExistingFileHelper existingFileHelper) {
 		super(dataGenerator, existingFileHelper);
@@ -128,6 +129,119 @@ public class Advancements extends AdvancementProvider {
 												.of(ExtraDelightBlocks.MIXING_BOWL.get()).build()),
 								ItemPredicate.Builder.item().of(ExtraDelightTags.SPOONS)))
 				.save(consumer, ExtraDelight.MOD_ID + ":mixingbowl");
+
+		oven = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.OVEN.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.oven.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.oven.desc"), null, FrameType.TASK,
+						true, true, false))
+				.parent(start)
+				.addCriterion("oven", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.OVEN.get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":oven");
+
+		trays = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.TRAY.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.trays.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.trays.desc"), null, FrameType.TASK,
+						true, true, false))
+				.parent(oven)
+				.addCriterion("tray", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TRAY.get()))
+				.addCriterion("sheet", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SHEET.get()))
+				.addCriterion("baking_stone",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BAKING_STONE.get()))
+				.addCriterion("loaf_pan",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LOAF_PAN.get()))
+				.addCriterion("square_pan",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SQUARE_PAN.get()))
+				.addCriterion("round_pan",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.ROUND_PAN.get()))
+				.addCriterion("pie_dish",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PIE_DISH.get()))
+				.addCriterion("muffin_tin",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MUFFIN_TIN.get()))
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":trays");
+
+		mortar = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.MORTAR_STONE.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.mortar.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.mortar.desc"), null, FrameType.TASK,
+						true, true, false))
+				.parent(start)
+				.addCriterion("mortar",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightTags.MORTAR).build()))
+				.save(consumer, ExtraDelight.MOD_ID + ":mortar");
+
+		grind = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.MIXING_BOWL.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.grind.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.grind.desc"), null, FrameType.TASK,
+						true, true, false))
+				.parent(mortar)
+				.addCriterion("grind",
+						ItemInteractWithBlockTrigger.TriggerInstance
+								.itemUsedOnBlock(
+										LocationPredicate.Builder.location()
+												.setBlock(BlockPredicate.Builder.block()
+														.of(ExtraDelightTags.MORTAR_BLOCK).build()),
+										ItemPredicate.Builder.item().of(ExtraDelightTags.SPOONS)))
+				.save(consumer, ExtraDelight.MOD_ID + ":grind");
+
+		doughshaping = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.DOUGH_SHAPING.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.doughshaping.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.doughshaping.desc"), null,
+						FrameType.TASK, true, true, false))
+				.parent(start)
+				.addCriterion("doughshaping",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DOUGH_SHAPING.get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":doughshaping");
+
+		noodles = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.LASAGNA_NOODLES.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.noodles.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.noodles.desc"), null, FrameType.TASK,
+						true, true, false))
+				.parent(doughshaping)
+				.addCriterion("lasagna_noodles",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LASAGNA_NOODLES.get()))
+				.addCriterion("macaroni_noodles",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MACARONI.get()))
+				.addCriterion("pasta", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_PASTA.get()))
+				.requirements(RequirementsStrategy.OR).save(consumer, ExtraDelight.MOD_ID + ":noodles");
+
+		dryingrack = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.DRYING_RACK.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.dryingrack.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.dryingrack.desc"), null,
+						FrameType.TASK, true, true, false))
+				.parent(start)
+				.addCriterion("dryingrack",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DRYING_RACK.get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":dryingrack");
+
+		yeastpot = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.YEAST_POT.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.yeastpot.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.yeastpot.desc"), null,
+						FrameType.TASK, true, true, false))
+				.parent(start)
+				.addCriterion("yeastpot",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.YEAST_POT.get()))
+				.addCriterion("yeast", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.YEAST.get()))
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":yeastpot");
+
+		vinegarpot = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.YEAST_POT.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.vinegarpot.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.vinegarpot.desc"), null,
+						FrameType.TASK, true, true, false))
+				.parent(start)
+				.addCriterion("vinegarpot",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.VINEGAR_POT.get()))
+				.addCriterion("vinegar",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.VINEGAR.get()))
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":vinegarpot");
 	}
 
 	@Override
