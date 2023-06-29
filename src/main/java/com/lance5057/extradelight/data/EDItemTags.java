@@ -134,6 +134,15 @@ public class EDItemTags extends ItemTagsProvider {
 				.add(ExtraDelightItems.EGG_SALAD.get(), ExtraDelightItems.SCRAMBLED_EGGS.get(),
 						ExtraDelightItems.FISH_SALAD.get(), ExtraDelightItems.BOILED_EGG.get())
 				.addTag(ExtraDelightTags.CHEESE);
+
+		tag(ExtraDelightTags.JELLY).add(ExtraDelightItems.JELLY_BLACK.get(), ExtraDelightItems.JELLY_BLUE.get(),
+				ExtraDelightItems.JELLY_BROWN.get(), ExtraDelightItems.JELLY_CYAN.get(),
+				ExtraDelightItems.JELLY_GREEN.get(), ExtraDelightItems.JELLY_GREY.get(),
+				ExtraDelightItems.JELLY_LIGHT_BLUE.get(),ExtraDelightItems.JELLY_LIGHT_GREY.get(),
+				ExtraDelightItems.JELLY_LIME.get(),ExtraDelightItems.JELLY_MAGENTA.get(),
+				ExtraDelightItems.JELLY_ORANGE.get(),ExtraDelightItems.JELLY_PINK.get(),
+				ExtraDelightItems.JELLY_PURPLE.get(),ExtraDelightItems.JELLY_RED.get(),
+				ExtraDelightItems.JELLY_WHITE.get(),ExtraDelightItems.JELLY_YELLOW.get());
 	}
 
 }

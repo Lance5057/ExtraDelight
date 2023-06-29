@@ -1,0 +1,29 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "food": {
+      "conditions": {},
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.food.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:apple"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.food.name"
+    }
+  },
+  "requirements": [
+    [
+      "food"
+    ]
+  ]
+}

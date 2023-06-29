@@ -5,9 +5,12 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 
 public class ExtraDelightTags {
+
+	
 
 	
 
@@ -233,4 +236,6 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> SOUP = forgeTag("soup");
 	
 	public static final TagKey<Item> RICEBALL_FILLING = modTag("riceball_filling");
+	
+	public static final TagKey<Item> JELLY = modTag("jelly");
 }

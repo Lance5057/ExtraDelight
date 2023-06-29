@@ -43,7 +43,7 @@
     "description": {
       "translate": "extradelight.advancement.noodles.desc"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
       "item": "extradelight:lasagna_noodles"
