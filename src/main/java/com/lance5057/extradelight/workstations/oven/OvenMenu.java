@@ -5,6 +5,7 @@ import java.util.Objects;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.workstations.oven.slots.OvenMealSlot;
 import com.lance5057.extradelight.workstations.oven.slots.OvenResultSlot;
 import com.mojang.datafixers.util.Pair;
@@ -117,9 +118,8 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 
 	@Override
 	public ItemStack quickMoveStack(Player playerIn, int index) {
-		int indexMealDisplay = 9;
-		int indexContainerInput = 10;
-		int indexOutput = 11;
+		int indexContainerInput = 9;
+		int indexOutput = 10;
 		int startPlayerInv = indexOutput + 1;
 		int endPlayerInv = startPlayerInv + 36;
 		ItemStack itemstack = ItemStack.EMPTY;
@@ -127,21 +127,18 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 		if (slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index == indexOutput) {
+			if (index < indexOutput) {
 				if (!this.moveItemStackTo(itemstack1, startPlayerInv, endPlayerInv, true)) {
 					return ItemStack.EMPTY;
 				}
 			} else if (index > indexOutput) {
-				if (itemstack1.getItem() == Items.BOWL
-						&& !this.moveItemStackTo(itemstack1, indexContainerInput, indexContainerInput + 1, false)) {
-					return ItemStack.EMPTY;
-				} else if (!this.moveItemStackTo(itemstack1, 0, indexMealDisplay, false)) {
-					return ItemStack.EMPTY;
-				} else if (!this.moveItemStackTo(itemstack1, indexContainerInput, indexOutput, false)) {
+				if (itemstack1.is(ExtraDelightTags.TRAYS)) {
+					if (!this.moveItemStackTo(itemstack1, indexContainerInput, indexContainerInput, false)) {
+						return ItemStack.EMPTY;
+					}
+				} else if (!this.moveItemStackTo(itemstack1, 0, indexContainerInput, false)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (!this.moveItemStackTo(itemstack1, startPlayerInv, endPlayerInv, false)) {
-				return ItemStack.EMPTY;
 			}
 
 			if (itemstack1.isEmpty()) {

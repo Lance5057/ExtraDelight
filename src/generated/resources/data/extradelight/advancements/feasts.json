@@ -1,192 +1,252 @@
 {
-  "parent": "extradelight:jelly",
+  "parent": "extradelight:start",
   "criteria": {
-    "jellyall_black": {
+    "bbq": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_black_block_item"
+              "extradelight:bbq_ribs_block_item"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_blue": {
+    "beef": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_blue_block_item"
+              "extradelight:beef_stew_feast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_brown": {
+    "chicken_stew": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_brown_block_item"
+              "extradelight:chicken_stew_feast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_cyan": {
+    "curry": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_cyan_block_item"
+              "extradelight:curry_feast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_green": {
+    "fish_stew": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_green_block_item"
+              "extradelight:fish_stew_feast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_grey": {
+    "haggis": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_grey_block_item"
+              "extradelight:haggis_block_item"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_light_blue": {
+    "hotdish": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_light_blue_block_item"
+              "extradelight:hotdish_feast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_light_grey": {
+    "lamb_stew": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_light_grey_block_item"
+              "extradelight:lamb_stew_feast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_lime": {
+    "lasagna": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_lime_block_item"
+              "extradelight:lasanga_feast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_magenta": {
+    "mac_cheese": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_magenta_block_item"
+              "extradelight:macaroni_cheese_feast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_orange": {
+    "mash_potato": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_orange_block_item"
+              "extradelight:mashed_potato_gravy_block_item"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_pink": {
+    "meatloaf": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_pink_block_item"
+              "extradelight:meatloaf_feast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_purple": {
+    "pork_stew": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_purple_block_item"
+              "extradelight:pork_stew_feast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_red": {
+    "pot_roast": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_red_block_item"
+              "extradelight:pot_roast_block_item"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_white": {
+    "pulled_pork": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_white_block_item"
+              "extradelight:pulled_pork_block_item"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jellyall_yellow": {
+    "rabbit_stew": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jelly_yellow_block_item"
+              "extradelight:rabbit_stew_feast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "rack_lamb": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:rack_lamb_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:salad_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "salisbury_steak": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:salisbury_steak_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "stirfry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:stirfry_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "wellington": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:beef_wellington_block_item"
             ]
           }
         ]
@@ -197,66 +257,81 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "extradelight.advancement.jellyall.desc"
+      "translate": "extradelight.advancement.feasts.desc"
     },
     "frame": "challenge",
-    "hidden": true,
+    "hidden": false,
     "icon": {
-      "item": "extradelight:jelly_magenta"
+      "item": "extradelight:beef_wellington_block_item"
     },
     "show_toast": true,
     "title": {
-      "translate": "extradelight.advancement.jellyall.name"
+      "translate": "extradelight.advancement.feasts.name"
     }
   },
   "requirements": [
     [
-      "jellyall_white"
+      "bbq"
     ],
     [
-      "jellyall_orange"
+      "beef"
     ],
     [
-      "jellyall_magenta"
+      "wellington"
     ],
     [
-      "jellyall_light_blue"
+      "chicken_stew"
     ],
     [
-      "jellyall_yellow"
+      "curry"
     ],
     [
-      "jellyall_lime"
+      "fish_stew"
     ],
     [
-      "jellyall_pink"
+      "haggis"
     ],
     [
-      "jellyall_grey"
+      "hotdish"
     ],
     [
-      "jellyall_light_grey"
+      "lamb_stew"
     ],
     [
-      "jellyall_cyan"
+      "lasagna"
     ],
     [
-      "jellyall_purple"
+      "mac_cheese"
     ],
     [
-      "jellyall_blue"
+      "mash_potato"
     ],
     [
-      "jellyall_brown"
+      "meatloaf"
     ],
     [
-      "jellyall_green"
+      "pork_stew"
     ],
     [
-      "jellyall_red"
+      "pot_roast"
     ],
     [
-      "jellyall_black"
+      "pulled_pork"
+    ],
+    [
+      "rabbit_stew"
+    ],
+    [
+      "rack_lamb"
+    ],
+    [
+      "salad"
+    ],
+    [
+      "salisbury_steak"
+    ],
+    [
+      "stirfry"
     ]
   ]
 }

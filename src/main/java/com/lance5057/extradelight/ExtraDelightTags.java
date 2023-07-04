@@ -26,6 +26,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> MORTAR = ItemTags.create(new ResourceLocation("forge", "mortars"));
 	public static final TagKey<Item> PESTLES = ItemTags.create(new ResourceLocation("forge", "pestles"));
 	public static final TagKey<Item> SPOONS = ItemTags.create(new ResourceLocation("forge", "spoons"));
+	public static final TagKey<Item> TRAYS = ItemTags.create(new ResourceLocation("extradelight", "baking_trays"));
 
 	public static final TagKey<Item> MAKES_STOCK = ItemTags.create(new ResourceLocation("extradelight", "makes_stock"));
 	public static final TagKey<Item> FRYING_OIL = ItemTags.create(new ResourceLocation("extradelight", "frying_oil"));

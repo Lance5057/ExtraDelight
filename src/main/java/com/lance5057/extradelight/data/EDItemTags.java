@@ -25,6 +25,10 @@ public class EDItemTags extends ItemTagsProvider {
 
 	@Override
 	protected void addTags() {
+		tag(ExtraDelightTags.TRAYS).add(ExtraDelightItems.TRAY.get(), ExtraDelightItems.BAKING_STONE.get(),
+				ExtraDelightItems.PIE_DISH.get(), ExtraDelightItems.SQUARE_PAN.get(), ExtraDelightItems.LOAF_PAN.get(),
+				ExtraDelightItems.ROUND_PAN.get(), ExtraDelightItems.SHEET.get(), ExtraDelightItems.MUFFIN_TIN.get());
+		
 		tag(ExtraDelightTags.PESTLES).add(ExtraDelightItems.PESTLE_AMETHYST.get(),
 				ExtraDelightItems.PESTLE_ANDESITE.get(), ExtraDelightItems.PESTLE_BASALT.get(),
 				ExtraDelightItems.PESTLE_BLACKSTONE.get(), ExtraDelightItems.PESTLE_DEEPSLATE.get(),
@@ -32,7 +36,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.get(), ExtraDelightItems.PESTLE_GRANITE.get(),
 				ExtraDelightItems.PESTLE_STONE.get());
 
-		tag(ExtraDelightTags.SPOONS).add(ExtraDelightItems.WOODEN_SPOON.get(), ExtraDelightItems.STONE_SPOON.get(),
+		tag(ExtraDelightTags.SPOONS).add(ExtraDelightItems.WOODEN_SPOON.get(), ExtraDelightItems.STONE_SPOON.get(), 
 				ExtraDelightItems.IRON_SPOON.get(), ExtraDelightItems.GOLD_SPOON.get(),
 				ExtraDelightItems.DIAMOND_SPOON.get(), ExtraDelightItems.NETHERITE_SPOON.get());
 
@@ -138,11 +142,11 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.JELLY).add(ExtraDelightItems.JELLY_BLACK.get(), ExtraDelightItems.JELLY_BLUE.get(),
 				ExtraDelightItems.JELLY_BROWN.get(), ExtraDelightItems.JELLY_CYAN.get(),
 				ExtraDelightItems.JELLY_GREEN.get(), ExtraDelightItems.JELLY_GREY.get(),
-				ExtraDelightItems.JELLY_LIGHT_BLUE.get(),ExtraDelightItems.JELLY_LIGHT_GREY.get(),
-				ExtraDelightItems.JELLY_LIME.get(),ExtraDelightItems.JELLY_MAGENTA.get(),
-				ExtraDelightItems.JELLY_ORANGE.get(),ExtraDelightItems.JELLY_PINK.get(),
-				ExtraDelightItems.JELLY_PURPLE.get(),ExtraDelightItems.JELLY_RED.get(),
-				ExtraDelightItems.JELLY_WHITE.get(),ExtraDelightItems.JELLY_YELLOW.get());
+				ExtraDelightItems.JELLY_LIGHT_BLUE.get(), ExtraDelightItems.JELLY_LIGHT_GREY.get(),
+				ExtraDelightItems.JELLY_LIME.get(), ExtraDelightItems.JELLY_MAGENTA.get(),
+				ExtraDelightItems.JELLY_ORANGE.get(), ExtraDelightItems.JELLY_PINK.get(),
+				ExtraDelightItems.JELLY_PURPLE.get(), ExtraDelightItems.JELLY_RED.get(),
+				ExtraDelightItems.JELLY_WHITE.get(), ExtraDelightItems.JELLY_YELLOW.get());
 	}
 
 }
