@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "cutout",
 	"textures": {
 		"0": "minecraft:block/oak_planks",
 		"1": "extradelight:block/drying_rack",

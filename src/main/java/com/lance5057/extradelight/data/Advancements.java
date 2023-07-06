@@ -63,6 +63,7 @@ public class Advancements extends AdvancementProvider {
 	private Advancement ingredients;
 	private Advancement meals;
 	private Advancement feasts;
+	private Advancement desert;
 	private Advancement badfood;
 
 	private Advancement hellskitchen;
@@ -197,7 +198,7 @@ public class Advancements extends AdvancementProvider {
 				.save(consumer, ExtraDelight.MOD_ID + ":gildedblackstone");
 
 		grind = Advancement.Builder.advancement()
-				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.MIXING_BOWL.get()),
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.PESTLE_ENDSTONE.get()),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.grind.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.grind.desc"), null, FrameType.GOAL,
 						true, true, false))
@@ -338,12 +339,21 @@ public class Advancements extends AdvancementProvider {
 				.parent(start).addCriterion("food", ConsumeItemTrigger.TriggerInstance.usedItem())
 				.save(consumer, ExtraDelight.MOD_ID + ":food");
 
+		badfood = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.BAD_FOOD.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.badfood.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.badfood.desc"), null, FrameType.TASK,
+						true, true, false))
+				.parent(food)
+				.addCriterion("badfood", ConsumeItemTrigger.TriggerInstance.usedItem(ExtraDelightItems.BAD_FOOD.get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":badfood");
+
 		feasts = Advancement.Builder.advancement()
 				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get()),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.feasts.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.feasts.desc"), null,
 						FrameType.CHALLENGE, true, true, false))
-				.parent(start)
+				.parent(food)
 				.addCriterion("bbq",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get()))
 				.addCriterion("beef",
@@ -387,9 +397,225 @@ public class Advancements extends AdvancementProvider {
 				.addCriterion("salisbury_steak",
 						InventoryChangeTrigger.TriggerInstance
 								.hasItems(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.get()))
+				.addCriterion("quiche", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.QUICHE.get()))
+				.addCriterion("meatpie",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get()))
 				.addCriterion("stirfry",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STIRFRY_FEAST_ITEM.get()))
-				.save(consumer, ExtraDelight.MOD_ID + ":feasts");
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":feasts");
+
+		meals = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.RICEBALL_FILLED.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.meals.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.meals.desc"), null,
+						FrameType.CHALLENGE, true, true, false))
+				.parent(food)
+				.addCriterion("JERKY", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.JERKY.get()))
+				.addCriterion("SCRAMBLED_EGGS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SCRAMBLED_EGGS.get()))
+				.addCriterion("OMELETTE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.OMELETTE.get()))
+				.addCriterion("QUICHE_SLICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.QUICHE_SLICE.get()))
+				.addCriterion("COOKED_PASTA",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COOKED_PASTA.get()))
+				.addCriterion("EGG_SALAD",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.EGG_SALAD.get()))
+				.addCriterion("JAM_TOAST",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.JAM_TOAST.get()))
+				.addCriterion("ROASTED_CARROT",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.ROASTED_CARROT.get()))
+				.addCriterion("GLAZED_CARROT",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GLAZED_CARROT.get()))
+				.addCriterion("CARROT_SALAD",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CARROT_SALAD.get()))
+				.addCriterion("ROASTED_APPLE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.ROASTED_APPLE.get()))
+				.addCriterion("APPLE_SAUCE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.APPLE_SAUCE.get()))
+				.addCriterion("POTATO_SOUP",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.POTATO_SOUP.get()))
+				.addCriterion("TOMATO_SOUP",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOMATO_SOUP.get()))
+				.addCriterion("FISH_SOUP",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FISH_SOUP.get()))
+				.addCriterion("CARROT_SOUP",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CARROT_SOUP.get()))
+				.addCriterion("PORK_TENDERLOIN_SANDWICH",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get()))
+				.addCriterion("EGG_SALAD_SANDWICH",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.EGG_SALAD_SANDWICH.get()))
+				.addCriterion("CHEESE_SANDWICH",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESE_SANDWICH.get()))
+				.addCriterion("MASHED_POTATO_GRAVY",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MASHED_POTATO_GRAVY.get()))
+				.addCriterion("SALISBURY_STEAK",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SALISBURY_STEAK.get()))
+				.addCriterion("BEEF_STEW_RICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BEEF_STEW_RICE.get()))
+				.addCriterion("PORK_STEW",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PORK_STEW.get()))
+				.addCriterion("LAMB_STEW",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LAMB_STEW.get()))
+				.addCriterion("SAUSAGE_ROLL",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SAUSAGE_ROLL.get()))
+				.addCriterion("SOS", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SOS.get()))
+				.addCriterion("LIVER_ONIONS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LIVER_ONIONS.get()))
+				.addCriterion("FRIED_FISH",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRIED_FISH.get()))
+				.addCriterion("CHICKEN_FRIED_STEAK",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHICKEN_FRIED_STEAK.get()))
+				.addCriterion("PORK_TENDERLOIN",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PORK_TENDERLOIN.get()))
+				.addCriterion("FRIED_CHICKEN",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRIED_CHICKEN.get()))
+				.addCriterion("STUFFED_HEART",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STUFFED_HEART.get()))
+				.addCriterion("FRIED_BRAINS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRIED_BRAINS.get()))
+				.addCriterion("OXTAIL_SOUP",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.OXTAIL_SOUP.get()))
+				.addCriterion("GRILLED_CHEESE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GRILLED_CHEESE.get()))
+				.addCriterion("HASH", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HASH.get()))
+				.addCriterion("POT_ROAST",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.POT_ROAST.get()))
+				.addCriterion("BBQ_RIBS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BBQ_RIBS.get()))
+				.addCriterion("MEAT_PIE_SLICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_PIE_SLICE.get()))
+				.addCriterion("PULLED_PORK_SANDWICH",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PULLED_PORK_SANDWICH.get()))
+				.addCriterion("RACK_LAMB",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.RACK_LAMB.get()))
+				.addCriterion("STIRFRY",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STIRFRY.get()))
+				.addCriterion("BEEF_WELLINGTON",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BEEF_WELLINGTON.get()))
+				.addCriterion("HAGGIS", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HAGGIS.get()))
+				.addCriterion("MACARONI_CHEESE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MACARONI_CHEESE.get()))
+				.addCriterion("LASAGNA",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LASAGNA.get()))
+				.addCriterion("HOTDISH",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HOTDISH.get()))
+				.addCriterion("SEAWEED_CRISPS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SEAWEED_CRISPS.get()))
+				.addCriterion("SEAWEED_SALAD",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SEAWEED_SALAD.get()))
+				.addCriterion("BUTTERED_PASTA",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BUTTERED_PASTA.get()))
+				.addCriterion("CHICKEN_STEW",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHICKEN_STEW.get()))
+				.addCriterion("CURRY", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CURRY.get()))
+				.addCriterion("FURIKAKE_RICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FURIKAKE_RICE.get()))
+				.addCriterion("FISH_CAKES",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FISH_CAKES.get()))
+				.addCriterion("FISH_AND_CHIPS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FISH_AND_CHIPS.get()))
+				.addCriterion("FRIED_MUSHROOMS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRIED_MUSHROOMS.get()))
+				.addCriterion("MUSHROOM_RISOTTO",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MUSHROOM_RISOTTO.get()))
+				.addCriterion("STUFFED_MUSHROOMS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STUFFED_MUSHROOMS.get()))
+				.addCriterion("MUSHROOM_BURGER",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MUSHROOM_BURGER.get()))
+				.addCriterion("MEAT_LOAF_SANDWICH",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_LOAF_SANDWICH.get()))
+				.addCriterion("MEAT_LOAF",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_LOAF.get()))
+				.addCriterion("PORK_STEW_RICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PORK_STEW_RICE.get()))
+				.addCriterion("LAMB_STEW_RICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LAMB_STEW_RICE.get()))
+				.addCriterion("RABBIT_STEW_RICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.RABBIT_STEW_RICE.get()))
+				.addCriterion("CHICKEN_STEW_RICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHICKEN_STEW_RICE.get()))
+				.addCriterion("FISH_STEW_RICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FISH_STEW_RICE.get()))
+				.addCriterion("CURRY_RICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CURRY_RICE.get()))
+				.addCriterion("BACON_EGG_CHEESE_SANDWICH",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get()))
+				.addCriterion("BACON_EGG_SANDWICH",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BACON_EGG_SANDWICH.get()))
+				.addCriterion("BUTTERED_TOAST",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BUTTERED_TOAST.get()))
+				.addCriterion("SALAD", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SALAD.get()))
+				.addCriterion("PASTA_ALFREDO",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PASTA_ALFREDO.get()))
+				.addCriterion("CHICKEN_ALFREDO",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHICKEN_ALFREDO.get()))
+				.addCriterion("CHICKEN_PARM",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHICKEN_PARM.get()))
+				.addCriterion("PASTA_TOMATO",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PASTA_TOMATO.get()))
+				.addCriterion("CHEESEBURGER",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESEBURGER.get()))
+				.addCriterion("BACON_CHEESEBURGER",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BACON_CHEESEBURGER.get()))
+				.addCriterion("RICEBALL",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.RICEBALL.get()))
+				.addCriterion("RICEBALL_FILLED",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.RICEBALL_FILLED.get()))
+				.addCriterion("FISH_SALAD",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FISH_SALAD.get()))
+				.addCriterion("FISH_SALAD_SANDWICH",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FISH_SALAD_SANDWICH.get()))
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":meals");
+
+		desert = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.desert.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.desert.desc"), null,
+						FrameType.CHALLENGE, true, true, true))
+				.parent(food)
+				.addCriterion("CHOCOLATE_CUSTARD",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHOCOLATE_CUSTARD.get()))
+				.addCriterion("HONEY_CUSTARD",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HONEY_CUSTARD.get()))
+				.addCriterion("PUMPKIN_CUSTARD",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PUMPKIN_CUSTARD.get()))
+				.addCriterion("SWEET_BERRY_CUSTARD",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SWEET_BERRY_CUSTARD.get()))
+				.addCriterion("SWEET_BERRY_PIE_SLICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SWEET_BERRY_PIE_SLICE.get()))
+				.addCriterion("CHEESECAKE_SLICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESECAKE_SLICE.get()))
+				.addCriterion("CHOCOLATE_CHEESECAKE_SLICE",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ExtraDelightItems.CHOCOLATE_CHEESECAKE_SLICE.get()))
+				.addCriterion("GLOW_BERRY_CHEESECAKE_SLICE",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ExtraDelightItems.GLOW_BERRY_CHEESECAKE_SLICE.get()))
+				.addCriterion("GLOW_BERRY_PIE_SLICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GLOW_BERRY_PIE_SLICE.get()))
+				.addCriterion("HONEY_CHEESECAKE_SLICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HONEY_CHEESECAKE_SLICE.get()))
+				.addCriterion("PUMPKIN_CHEESECAKE_SLICE",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ExtraDelightItems.PUMPKIN_CHEESECAKE_SLICE.get()))
+				.addCriterion("GLOW_BERRY_COOKIE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GLOW_BERRY_COOKIE.get()))
+				.addCriterion("PUMPKIN_COOKIE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PUMPKIN_COOKIE.get()))
+				.addCriterion("SUGAR_COOKIE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SUGAR_COOKIE.get()))
+				.addCriterion("FUDGE_POPSICLE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FUDGE_POPSICLE.get()))
+				.addCriterion("GLOW_BERRY_POPSICLE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GLOW_BERRY_POPSICLE.get()))
+				.addCriterion("HONEY_POPSICLE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HONEY_POPSICLE.get()))
+				.addCriterion("SWEET_BERRY_POPSICLE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SWEET_BERRY_POPSICLE.get()))
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":desert");
 	}
 
 	@Override

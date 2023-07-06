@@ -5,6 +5,8 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 
@@ -31,10 +33,12 @@ import net.minecraftforge.items.ItemStackHandler;
 public class DryingRackBlockEntity extends BlockEntity {
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 	public static final int NUM_SLOTS = 8;
+	public static final int OUTPUT = NUM_SLOTS + 1;
 	// private final NonNullList<ItemStack> items = NonNullList.withSize(4,
 	// ItemStack.EMPTY);
 	private int[] cookingProgress = new int[8];
 	private int[] cookingTime = new int[8];
+	private DryingRackRecipe[] recipes = new DryingRackRecipe[8];
 
 	public DryingRackBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ExtraDelightBlockEntities.DRYING_RACK.get(), pPos, pState);
@@ -44,31 +48,37 @@ public class DryingRackBlockEntity extends BlockEntity {
 	@Nonnull
 	@Override
 	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if (side != Direction.DOWN)
-			if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-				return handler.cast();
-			}
+		if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+			return handler.cast();
+		}
 		return super.getCapability(cap, side);
 	}
 
 	private IItemHandlerModifiable createHandler() {
-		return new ItemStackHandler(NUM_SLOTS) {
+		return new ItemStackHandler(OUTPUT+1) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				return 1;
+			}
+
+			@Override
+			@NotNull
+			public ItemStack extractItem(int slot, int amount, boolean simulate) {
+				if (slot == OUTPUT)
+					super.extractItem(slot, amount, simulate);
+
+				return ItemStack.EMPTY;
 			}
 		};
 	}
 
 	public void extractItem(Player playerEntity, IItemHandler inventory) {
-		for (int i = NUM_SLOTS - 1; i >= 0; i--) {
-			if (!inventory.getStackInSlot(i).isEmpty()) {
-				ItemStack itemStack = inventory.extractItem(i, inventory.getStackInSlot(i).getCount(), false);
-				playerEntity.addItem(itemStack);
-				updateInventory();
-				return;
+		if (!inventory.getStackInSlot(OUTPUT).isEmpty()) {
+			ItemStack itemStack = inventory.extractItem(OUTPUT, inventory.getStackInSlot(OUTPUT).getCount(), false);
+			playerEntity.addItem(itemStack);
+			updateInventory();
+			return;
 
-			}
 		}
 		updateInventory();
 	}
@@ -79,9 +89,7 @@ public class DryingRackBlockEntity extends BlockEntity {
 				if (!inventory.insertItem(i, heldItem, true).equals(heldItem, false)) {
 					final int leftover = inventory.insertItem(i, heldItem.copy(), false).getCount();
 					heldItem.setCount(leftover);
-					this.cookingTime[i] = cooktime;
-					this.cookingProgress[i] = 0;
-					updateInventory();
+
 					return;
 				}
 		}
@@ -128,7 +136,7 @@ public class DryingRackBlockEntity extends BlockEntity {
 								}).orElse(itemstack);
 //						Containers.dropItemStack(level, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(),
 //								itemstack1);
-						inv.setStackInSlot(i, itemstack1);
+						inv.setStackInSlot(i, inv.insertItem(OUTPUT, itemstack1, flag));
 						level.sendBlockUpdated(pos, state, state, 3);
 					} else {
 
@@ -137,25 +145,24 @@ public class DryingRackBlockEntity extends BlockEntity {
 							float xOff = 0;
 							float zOff = 0;
 							switch (i % 4) {
-								case 0 -> {
-									xOff = 0.2f + level.random.nextFloat() * .2f;
-									zOff = 0.2f + level.random.nextFloat() * .2f;
-								}
-								case 1 -> {
-									xOff = 0.2f + level.random.nextFloat() * .2f;
-									zOff = 0.8f - level.random.nextFloat() * .2f;
-								}
-								case 2 -> {
-									xOff = 0.8f - level.random.nextFloat() * .2f;
-									zOff = 0.8f - level.random.nextFloat() * .2f;
-								}
-								case 3 -> {
-									xOff = 0.8f - level.random.nextFloat() * .2f;
-									zOff = 0.2f + level.random.nextFloat() * .2f;
-								}
+							case 0 -> {
+								xOff = 0.2f + level.random.nextFloat() * .2f;
+								zOff = 0.2f + level.random.nextFloat() * .2f;
 							}
-							level.addParticle(ParticleTypes.DOLPHIN,
-									pos.getX() + level.random.nextDouble() / 16 + xOff,
+							case 1 -> {
+								xOff = 0.2f + level.random.nextFloat() * .2f;
+								zOff = 0.8f - level.random.nextFloat() * .2f;
+							}
+							case 2 -> {
+								xOff = 0.8f - level.random.nextFloat() * .2f;
+								zOff = 0.8f - level.random.nextFloat() * .2f;
+							}
+							case 3 -> {
+								xOff = 0.8f - level.random.nextFloat() * .2f;
+								zOff = 0.2f + level.random.nextFloat() * .2f;
+							}
+							}
+							level.addParticle(ParticleTypes.DOLPHIN, pos.getX() + level.random.nextDouble() / 16 + xOff,
 									pos.getY() - level.random.nextDouble() / 16 + yOff,
 									pos.getZ() + level.random.nextDouble() / 16 + zOff, 0, 1f, 0);
 						}
