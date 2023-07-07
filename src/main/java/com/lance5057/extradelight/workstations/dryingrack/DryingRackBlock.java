@@ -31,7 +31,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 public class DryingRackBlock extends Block implements EntityBlock {
 
 	public DryingRackBlock() {
-		//strength used to be (1, 1)
+		// strength used to be (1, 1)
 		super(BlockBehaviour.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD).noOcclusion());
 		// TODO Auto-generated constructor stub
 	}
@@ -58,16 +58,13 @@ public class DryingRackBlock extends Block implements EntityBlock {
 			} else {
 
 				ItemStack itemstack = pPlayer.getItemInHand(pHand);
-				Optional<DryingRackRecipe> optional = be.matchRecipe(itemstack);
-				if (optional.isPresent()) {
-					if (!pLevel.isClientSide) {
-						// pPlayer.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
-						be.insertItem(itemstack, optional.get().getCookingTime());
-						return InteractionResult.SUCCESS;
-					}
-
-					return InteractionResult.CONSUME;
+				if (!pLevel.isClientSide) {
+					// pPlayer.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
+					be.insertItem(itemstack);
+					return InteractionResult.SUCCESS;
 				}
+
+				return InteractionResult.CONSUME;
 			}
 		}
 
@@ -85,7 +82,7 @@ public class DryingRackBlock extends Block implements EntityBlock {
 			BlockEntityType<T> pBlockEntityType) {
 		return pBlockEntityType == ExtraDelightBlockEntities.DRYING_RACK.get() ? DryingRackBlockEntity::tick : null;
 	}
-	
+
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {

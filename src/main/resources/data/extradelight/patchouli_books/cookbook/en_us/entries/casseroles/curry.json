@@ -6,7 +6,7 @@
     "pages": [
         {
             "type": "patchouli:text",
-            "text": "This is a test entry, but it should show up!"
+            "text": "A spiced stew dish derived from Indian cuisine that has spread world wide. The name curry itself is derived from the word `kari` which means sauce."
         },
 		{
             "type": "extradelight:pot",

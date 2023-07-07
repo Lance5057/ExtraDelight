@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.workstations.BlockEntityItemHandler;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -33,21 +34,22 @@ import net.minecraftforge.items.ItemStackHandler;
 public class DryingRackBlockEntity extends BlockEntity {
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 	public static final int NUM_SLOTS = 8;
-	public static final int OUTPUT = NUM_SLOTS + 1;
 	// private final NonNullList<ItemStack> items = NonNullList.withSize(4,
 	// ItemStack.EMPTY);
 	private int[] cookingProgress = new int[8];
 	private int[] cookingTime = new int[8];
-	private DryingRackRecipe[] recipes = new DryingRackRecipe[8];
+	private ItemStack[] results = new ItemStack[8];
 
 	public DryingRackBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ExtraDelightBlockEntities.DRYING_RACK.get(), pPos, pState);
-		// TODO Auto-generated constructor stub
+		for (int i = 0; i < 8; i++)
+			results[i] = ItemStack.EMPTY;
 	}
 
 	@Nonnull
 	@Override
 	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+//		if (side != Direction.DOWN)
 		if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
 			return handler.cast();
 		}
@@ -55,7 +57,7 @@ public class DryingRackBlockEntity extends BlockEntity {
 	}
 
 	private IItemHandlerModifiable createHandler() {
-		return new ItemStackHandler(OUTPUT+1) {
+		return new BlockEntityItemHandler<DryingRackBlockEntity>(this, NUM_SLOTS) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				return 1;
@@ -63,33 +65,69 @@ public class DryingRackBlockEntity extends BlockEntity {
 
 			@Override
 			@NotNull
-			public ItemStack extractItem(int slot, int amount, boolean simulate) {
-				if (slot == OUTPUT)
-					super.extractItem(slot, amount, simulate);
+			public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
 
+				Optional<DryingRackRecipe> r = this.getBlockEntity().matchRecipe(stack);
+				if (r.isPresent()) {
+					if (this.getStackInSlot(slot) == ItemStack.EMPTY) {
+						this.getBlockEntity().cookingTime[slot] = r.get().cookingTime;
+						this.getBlockEntity().cookingProgress[slot] = 0;
+						this.getBlockEntity().results[slot] = r.get().result;
+						this.getBlockEntity().updateInventory();
+						return super.insertItem(slot, stack, simulate);
+					}
+				}
+				return stack;
+			}
+
+			@Override
+			@NotNull
+			public ItemStack extractItem(int slot, int amount, boolean simulate) {
+				if (this.getBlockEntity().cookingProgress[slot] >= this.getBlockEntity().cookingTime[slot]) {
+					if (this.getBlockEntity().results[slot].isEmpty()) {
+						this.getBlockEntity().cookingTime[slot] = 0;
+						return super.extractItem(slot, amount, simulate);
+					}
+
+				}
 				return ItemStack.EMPTY;
+			}
+
+			@Override
+			public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+				return this.getBlockEntity().matchRecipe(stack).isPresent();
+			}
+
+			@Override
+			protected void onContentsChanged(int slot) {
+				this.getBlockEntity().updateInventory();
 			}
 		};
 	}
 
 	public void extractItem(Player playerEntity, IItemHandler inventory) {
-		if (!inventory.getStackInSlot(OUTPUT).isEmpty()) {
-			ItemStack itemStack = inventory.extractItem(OUTPUT, inventory.getStackInSlot(OUTPUT).getCount(), false);
-			playerEntity.addItem(itemStack);
-			updateInventory();
-			return;
+		for (int i = NUM_SLOTS - 1; i >= 0; i--) {
+			if (!inventory.getStackInSlot(i).isEmpty()) {
+				ItemStack itemStack = inventory.getStackInSlot(i).copy();
+				playerEntity.addItem(itemStack);
+				updateInventory();
+				this.cookingProgress[i] = 0;
+				this.cookingTime[i] = 0;
 
+				return;
+
+			}
 		}
 		updateInventory();
 	}
 
-	public void insertItem(IItemHandler inventory, ItemStack heldItem, int cooktime) {
+	public void insertItem(IItemHandler inventory, ItemStack heldItem) {
 		for (int i = 0; i < NUM_SLOTS; i++) {
 			if (inventory.isItemValid(i, heldItem))
 				if (!inventory.insertItem(i, heldItem, true).equals(heldItem, false)) {
-					final int leftover = inventory.insertItem(i, heldItem.copy(), false).getCount();
-					heldItem.setCount(leftover);
+					heldItem = inventory.insertItem(i, heldItem.copy(), false);
 
+					updateInventory();
 					return;
 				}
 		}
@@ -103,8 +141,8 @@ public class DryingRackBlockEntity extends BlockEntity {
 	}
 
 	// External insert handler
-	public void insertItem(ItemStack heldItem, int cooktime) {
-		handler.ifPresent(inventory -> this.insertItem(inventory, heldItem, cooktime));
+	public void insertItem(ItemStack heldItem) {
+		handler.ifPresent(inventory -> this.insertItem(inventory, heldItem));
 	}
 
 	public void updateInventory() {
@@ -122,22 +160,19 @@ public class DryingRackBlockEntity extends BlockEntity {
 		pBlockEntity.handler.ifPresent(inv -> {
 			boolean flag = false;
 
-			for (int i = 0; i < inv.getSlots(); ++i) {
+			for (int i = 0; i < NUM_SLOTS; ++i) {
 				ItemStack itemstack = inv.getStackInSlot(i);
 				if (!itemstack.isEmpty()) {
 					flag = true;
 					int j = pBlockEntity.cookingProgress[i]++;
 					if (pBlockEntity.cookingProgress[i] >= pBlockEntity.cookingTime[i]) {
-						Container container = new SimpleContainer(itemstack);
-						ItemStack itemstack1 = level.getRecipeManager()
-								.getRecipeFor(ExtraDelightRecipes.DRYING_RACK.get(), container, level)
-								.map((p_155305_) -> {
-									return p_155305_.assemble(container);
-								}).orElse(itemstack);
-//						Containers.dropItemStack(level, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(),
-//								itemstack1);
-						inv.setStackInSlot(i, inv.insertItem(OUTPUT, itemstack1, flag));
-						level.sendBlockUpdated(pos, state, state, 3);
+						if (!pBlockEntity.results[i].isEmpty()) {
+							Container container = new SimpleContainer(itemstack);
+							ItemStack itemstack1 = pBlockEntity.results[i].copy();
+							pBlockEntity.results[i] = ItemStack.EMPTY;
+							inv.setStackInSlot(i, itemstack1);
+							level.sendBlockUpdated(pos, state, state, 3);
+						}
 					} else {
 
 						for (int k = 0; k < 1; k++) {
@@ -167,6 +202,8 @@ public class DryingRackBlockEntity extends BlockEntity {
 									pos.getZ() + level.random.nextDouble() / 16 + zOff, 0, 1f, 0);
 						}
 					}
+				} else {
+
 				}
 			}
 
@@ -231,6 +268,10 @@ public class DryingRackBlockEntity extends BlockEntity {
 
 		this.cookingProgress = nbt.getIntArray("CookingTimes");
 		this.cookingTime = nbt.getIntArray("CookingTotalTimes");
+
+		for (int i = 0; i < NUM_SLOTS; i++) {
+			results[i].deserializeNBT(nbt.getCompound("item_" + i));
+		}
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
@@ -241,6 +282,10 @@ public class DryingRackBlockEntity extends BlockEntity {
 
 		tag.putIntArray("CookingTimes", this.cookingProgress);
 		tag.putIntArray("CookingTotalTimes", this.cookingTime);
+
+		for (int i = 0; i < NUM_SLOTS; i++) {
+			tag.put("item_" + i, results[i].serializeNBT());
+		}
 
 		return tag;
 	}
