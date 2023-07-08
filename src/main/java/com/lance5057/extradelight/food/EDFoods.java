@@ -3,7 +3,6 @@ package com.lance5057.extradelight.food;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.mojang.datafixers.util.Pair;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -423,6 +422,18 @@ public class EDFoods {
 			.addFoods("seaweed crisps", Foods.DRIED_KELP, Foods.DRIED_KELP, FLOUR, OIL).build();
 	public static final FoodProperties SEAWEED_SALAD = EDFoods
 			.addFoods("seaweed salad", Foods.DRIED_KELP, Foods.DRIED_KELP, Foods.CARROT, VINEGAR).build();
+
+	public static final FoodProperties COOKED_CACTUS = new FoodProperties.Builder().nutrition(4).saturationMod(0.4f)
+			.build();
+	public static final FoodProperties CACTUS_EGGS = EDFoods.addFoods("cactus eggs", COOKED_CACTUS, SCRAMBLED_EGGS)
+			.build();
+	public static final FoodProperties CACTUS_SOUP = EDFoods.divideFoods("cactus soup", EDFoods
+			.addFoods("", COOKED_CACTUS, COOKED_CACTUS, FoodValues.TOMATO, FoodValues.ONION, FoodValues.BONE_BROTH)
+			.build(), 2).build();
+	public static final FoodProperties CACTUS_SALAD = EDFoods
+			.addFoods("cactus salad", COOKED_CACTUS, FoodValues.TOMATO, FoodValues.ONION, CHEESE).build();
+	public static final FoodProperties STUFFED_CACTUS = EDFoods
+			.addFoods("stuffed cactus", COOKED_CACTUS, COOKED_CACTUS, BREADING, CHEESE).build();
 
 	public static Builder addFoods(String name, FoodProperties... foods) {
 
