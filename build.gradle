@@ -124,6 +124,8 @@ dependencies {
 	  
 	compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-76:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-76")
+	
+	//implementation fg.deobf('curse.maven:patchouli-datagen-ptd-lib-585667:4399634')
 }
 
 repositories {
