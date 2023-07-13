@@ -55,6 +55,9 @@ public class EDFoods {
 	public static final Supplier<MobEffectInstance> FIRE_RESIST_SHORT = () -> new MobEffectInstance(
 			MobEffects.FIRE_RESISTANCE, FoodValues.SHORT_DURATION, 0);
 
+	public static final Supplier<MobEffectInstance> PAIN = () -> new MobEffectInstance(MobEffects.HARM,
+			1, 0);
+
 	public static final FoodProperties CUSTARD = new FoodProperties.Builder().nutrition(7).saturationMod(0.6f)
 			.alwaysEat().build();
 	public static final FoodProperties WHIPPED_CREAM = new FoodProperties.Builder().nutrition(0).saturationMod(0.1f)
@@ -423,8 +426,9 @@ public class EDFoods {
 	public static final FoodProperties SEAWEED_SALAD = EDFoods
 			.addFoods("seaweed salad", Foods.DRIED_KELP, Foods.DRIED_KELP, Foods.CARROT, VINEGAR).build();
 
-	public static final FoodProperties COOKED_CACTUS = new FoodProperties.Builder().nutrition(4).saturationMod(0.4f)
-			.build();
+	public static final FoodProperties CACTUS = new FoodProperties.Builder().nutrition(2).saturationMod(0.2f)
+			.effect(PAIN, 1).build();
+	public static final FoodProperties COOKED_CACTUS = EDFoods.cookFood("cooked cactus", CACTUS).build();
 	public static final FoodProperties CACTUS_EGGS = EDFoods.addFoods("cactus eggs", COOKED_CACTUS, SCRAMBLED_EGGS)
 			.build();
 	public static final FoodProperties CACTUS_SOUP = EDFoods.divideFoods("cactus soup", EDFoods

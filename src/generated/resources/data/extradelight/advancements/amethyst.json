@@ -1,12 +1,24 @@
 {
   "parent": "extradelight:mortar",
   "criteria": {
-    "amethyst": {
+    "amethyst_mortar": {
       "conditions": {
         "items": [
           {
             "items": [
               "extradelight:mortar_amethyst"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "amethyst_pestle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pestle_amethyst"
             ]
           }
         ]
@@ -31,7 +43,10 @@
   },
   "requirements": [
     [
-      "amethyst"
+      "amethyst_mortar"
+    ],
+    [
+      "amethyst_pestle"
     ]
   ]
 }

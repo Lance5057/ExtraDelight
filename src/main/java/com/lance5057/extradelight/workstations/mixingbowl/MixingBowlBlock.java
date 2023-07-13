@@ -61,7 +61,7 @@ public class MixingBowlBlock extends Block implements EntityBlock {
 					} else if (mbe.testContainerItem(pPlayer.getItemInHand(pHand))) {
 						mbe.scoop(pPlayer, pHand);
 						return InteractionResult.SUCCESS;
-					} else {
+					} else if (mbe.containerItem.isEmpty()) {
 						mbe.insertItem(pPlayer.getItemInHand(pHand));
 					}
 
@@ -83,14 +83,14 @@ public class MixingBowlBlock extends Block implements EntityBlock {
 		// TODO Auto-generated method stub
 		return new MixingBowlBlockEntity(pPos, pState);
 	}
-	
+
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity tileentity = level.getBlockEntity(pos);
 			if (tileentity instanceof MixingBowlBlockEntity) {
 				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
-						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots())
+						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots()-1)
 								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
 
 				level.updateNeighbourForOutputSignal(pos, this);

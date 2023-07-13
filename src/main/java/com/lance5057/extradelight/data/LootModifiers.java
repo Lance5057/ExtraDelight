@@ -167,6 +167,24 @@ public class LootModifiers extends GlobalLootModifierProvider {
 						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(0.25f).build(),
 								LootTableIdCondition.builder(BuiltInLootTables.VILLAGE_FISHER).build() },
 						StructureLootTables.furikake));
+		
+		add("cactus_juice_portal",
+				new FoodLoot(
+						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(1f).build(),
+								LootTableIdCondition.builder(BuiltInLootTables.RUINED_PORTAL).build(), },
+						StructureLootTables.cactus_juice));
+		
+		add("cactus_juice_desert",
+				new FoodLoot(
+						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(1f).build(),
+								LootTableIdCondition.builder(BuiltInLootTables.VILLAGE_DESERT_HOUSE).build(), },
+						StructureLootTables.cactus_juice));
+		
+		add("cactus_juice_pyramid",
+				new FoodLoot(
+						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(1f).build(),
+								LootTableIdCondition.builder(BuiltInLootTables.DESERT_PYRAMID).build(), },
+						StructureLootTables.cactus_juice));
 	}
 
 }

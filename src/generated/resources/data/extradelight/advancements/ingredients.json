@@ -1,0 +1,487 @@
+{
+  "parent": "extradelight:food",
+  "criteria": {
+    "ALFREDO_SAUCE": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:alfredo_sauce"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "APPLE_JAM": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:apple_jam"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "BREADING_MISANPLAS": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:breading_misanplas"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "BREAD_CRUMBS": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:breadcrumbs"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "BREAD_SLICE": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:bread_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "BUTTER": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:butter"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "CACTUS": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cactus"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "CARROT_JAM": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:carrot_jam"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "CHEESE": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cheese"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "COOKING_OIL": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cooking_oil"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "CROUTONS": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:croutons"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "EGG_MIX": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:egg_mix"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "FISH_FLAKES": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:fish_flakes"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "FLOUR": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:flour"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "FURIKAKE": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:furikake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "GLOW_BERRY_JAM": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:glow_berry_jam"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "GRATED_CARROT": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:grated_carrot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "GRATED_POTATO": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:grated_potato"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "GRAVY": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:gravy_boat_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "LASAGNA_NOODLES": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lasagna_noodles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "MACARONI": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:macaroni"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "OMELETTE_MIX": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:omelette_mix"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "SLICED_APPLE": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sliced_apple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "SLICED_ONION": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sliced_onion"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "SLICED_POTATO": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sliced_potato"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "SLICED_TOMATO": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sliced_tomato"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "SUNFLOWER_SEEDS": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sunflower_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "SWEET_BERRY_JAM": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sweet_berry_jam"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "VINEGAR": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:vinegar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "WHIPPED_CREAM": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:whipped_cream"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "YEAST": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:yeast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.ingredients.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:grated_carrot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.ingredients.name"
+    }
+  },
+  "requirements": [
+    [
+      "ALFREDO_SAUCE"
+    ],
+    [
+      "APPLE_JAM"
+    ],
+    [
+      "BREAD_CRUMBS"
+    ],
+    [
+      "BREAD_SLICE"
+    ],
+    [
+      "BREADING_MISANPLAS"
+    ],
+    [
+      "BUTTER"
+    ],
+    [
+      "CACTUS"
+    ],
+    [
+      "CARROT_JAM"
+    ],
+    [
+      "CHEESE"
+    ],
+    [
+      "COOKING_OIL"
+    ],
+    [
+      "CROUTONS"
+    ],
+    [
+      "EGG_MIX"
+    ],
+    [
+      "FISH_FLAKES"
+    ],
+    [
+      "FLOUR"
+    ],
+    [
+      "FURIKAKE"
+    ],
+    [
+      "GLOW_BERRY_JAM"
+    ],
+    [
+      "GRATED_CARROT"
+    ],
+    [
+      "GRATED_POTATO"
+    ],
+    [
+      "GRAVY"
+    ],
+    [
+      "LASAGNA_NOODLES"
+    ],
+    [
+      "MACARONI"
+    ],
+    [
+      "OMELETTE_MIX"
+    ],
+    [
+      "SLICED_APPLE"
+    ],
+    [
+      "SLICED_ONION"
+    ],
+    [
+      "SLICED_POTATO"
+    ],
+    [
+      "SLICED_TOMATO"
+    ],
+    [
+      "SUNFLOWER_SEEDS"
+    ],
+    [
+      "SWEET_BERRY_JAM"
+    ],
+    [
+      "WHIPPED_CREAM"
+    ],
+    [
+      "YEAST"
+    ],
+    [
+      "VINEGAR"
+    ]
+  ]
+}

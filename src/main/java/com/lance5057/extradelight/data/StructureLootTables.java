@@ -22,6 +22,8 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 	public static ResourceLocation feasts = new ResourceLocation(ExtraDelight.MOD_ID, "structures/feasts");
 	public static ResourceLocation dungeon_rot = new ResourceLocation(ExtraDelight.MOD_ID, "structures/dungeon_rot");
 	
+	public static ResourceLocation cactus_juice = new ResourceLocation(ExtraDelight.MOD_ID, "structures/cactus_juice");
+	
 	public static ResourceLocation mortar_nether = new ResourceLocation(ExtraDelight.MOD_ID, "structures/mortar_nether");
 	public static ResourceLocation mortar_dungeon = new ResourceLocation(ExtraDelight.MOD_ID, "structures/mortar_dungeon");
 	public static ResourceLocation pestle_nether = new ResourceLocation(ExtraDelight.MOD_ID, "structures/pestle_nether");
@@ -174,7 +176,12 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 						.add(LootItem.lootTableItem(ExtraDelightItems.SWEET_BERRY_PIE_SLICE.get()).setWeight(1))
 						.add(LootItem.lootTableItem(ExtraDelightItems.SWEET_BERRY_POPSICLE.get()).setWeight(1))
 						.add(LootItem.lootTableItem(ExtraDelightItems.TOMATO_JUICE.get()).setWeight(1))
-						.add(LootItem.lootTableItem(ExtraDelightItems.TOMATO_SOUP.get()).setWeight(1))));
+						.add(LootItem.lootTableItem(ExtraDelightItems.TOMATO_SOUP.get()).setWeight(1))
+						.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS_EGGS.get()).setWeight(1))
+						.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS_SALAD.get()).setWeight(1))
+						.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS_SOUP.get()).setWeight(1))
+						.add(LootItem.lootTableItem(ExtraDelightItems.STUFFED_CACTUS.get()).setWeight(1))
+						));
 
 		t.accept(ingredients,
 				LootTable.lootTable()
@@ -210,7 +217,10 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 								.add(LootItem.lootTableItem(ExtraDelightItems.TOAST.get()).setWeight(1))
 								.add(LootItem.lootTableItem(ExtraDelightItems.VINEGAR.get()).setWeight(1))
 								.add(LootItem.lootTableItem(ExtraDelightItems.WHIPPED_CREAM.get()).setWeight(1))
-								.add(LootItem.lootTableItem(ExtraDelightItems.YEAST.get()).setWeight(1))));
+								.add(LootItem.lootTableItem(ExtraDelightItems.YEAST.get()).setWeight(1))
+								.add(LootItem.lootTableItem(ExtraDelightItems.COOKED_CACTUS.get()).setWeight(1))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS.get()).setWeight(1))
+								));
 
 		t.accept(feasts, LootTable.lootTable().withPool(LootPool.lootPool().name("main")
 				.setRolls(UniformGenerator.between(1, 5))
@@ -255,6 +265,10 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 				.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 15))
 						.add(LootTableReference.lootTableReference(StructureLootTables.meals).setWeight(1))
 						.add(LootItem.lootTableItem(ExtraDelightItems.BAD_FOOD.get()).setWeight(20))));
+		
+		t.accept(cactus_juice,
+				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 5))
+						.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS_JUICE.get()))));
 	}
 
 }

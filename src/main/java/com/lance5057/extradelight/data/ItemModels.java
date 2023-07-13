@@ -447,6 +447,14 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.BUTTERED_PASTA, "buttered_pasta");
 		
 		forItem(ExtraDelightItems.BAD_FOOD, "badfood");
+		
+		forItem(ExtraDelightItems.CACTUS, "cactus_paddle");
+		forItem(ExtraDelightItems.COOKED_CACTUS, "cactus_paddle_cooked");
+		forItem(ExtraDelightItems.CACTUS_SALAD, "cactus_salad");
+		forItem(ExtraDelightItems.CACTUS_SOUP, "cactus_soup");
+		forItem(ExtraDelightItems.CACTUS_EGGS, "cactus_eggs");
+		forItem(ExtraDelightItems.CACTUS_JUICE, "cactus_juice");
+		forItem(ExtraDelightItems.STUFFED_CACTUS, "stuffed_cactus");
 
 		AestheticBlocks.itemModel(this);
 	}

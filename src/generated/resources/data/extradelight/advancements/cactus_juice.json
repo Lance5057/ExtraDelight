@@ -1,0 +1,35 @@
+{
+  "parent": "extradelight:food",
+  "criteria": {
+    "cactus_juice": {
+      "conditions": {
+        "item": {
+          "items": [
+            "extradelight:cactus_juice"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.cactus_juice.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "item": "extradelight:cactus_juice"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.cactus_juice.name"
+    }
+  },
+  "requirements": [
+    [
+      "cactus_juice"
+    ]
+  ]
+}

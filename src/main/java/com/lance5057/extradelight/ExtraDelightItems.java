@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.food.EDFoods;
+import com.lance5057.extradelight.items.CactusJuiceItem;
 import com.lance5057.extradelight.items.GlowberryFoodItem;
 import com.lance5057.extradelight.items.GlowberryJuiceItem;
 import com.lance5057.extradelight.items.GlowberryPopsicleItem;
@@ -19,6 +20,7 @@ import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
@@ -175,13 +177,19 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> SUNFLOWER_SEEDS = ITEMS.register("sunflower_seeds",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.EDIBLE_SEEDS)));
 
+	public static Item.Properties drinkItem() {
+		return new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(FarmersDelight.CREATIVE_TAB);
+	}
+
 	// Juice
 	public static final RegistryObject<Item> GLOW_BERRY_JUICE = ITEMS.register("glow_berry_juice",
-			() -> new GlowberryJuiceItem(ModItems.drinkItem()));
+			() -> new GlowberryJuiceItem(drinkItem()));
 	public static final RegistryObject<Item> SWEET_BERRY_JUICE = ITEMS.register("sweet_berry_juice",
-			() -> new MelonJuiceItem(ModItems.drinkItem()));
+			() -> new MelonJuiceItem(drinkItem()));
 	public static final RegistryObject<Item> TOMATO_JUICE = ITEMS.register("tomato_juice",
-			() -> new MelonJuiceItem(ModItems.drinkItem()));
+			() -> new MelonJuiceItem(drinkItem()));
+	public static final RegistryObject<Item> CACTUS_JUICE = ITEMS.register("cactus_juice",
+			() -> new CactusJuiceItem(drinkItem()));
 
 	// Custard
 	public static final RegistryObject<Item> SWEET_BERRY_CUSTARD = ITEMS.register("sweet_berry_custard",
@@ -746,4 +754,19 @@ public class ExtraDelightItems {
 			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.BUTTERED_PASTA).craftRemainder(Items.BOWL)));
 	public static final RegistryObject<BowlFoodItem> BAD_FOOD = ITEMS.register("bad_food", () -> new BowlFoodItem(
 			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.BADFOOD)));
+
+	public static final RegistryObject<Item> CACTUS = ITEMS.register("cactus",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.CACTUS)));
+	public static final RegistryObject<Item> COOKED_CACTUS = ITEMS.register("cooked_cactus",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKED_CACTUS)));
+	public static final RegistryObject<BowlFoodItem> CACTUS_EGGS = ITEMS.register("cactus_eggs", () -> new BowlFoodItem(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.CACTUS_EGGS)));
+	public static final RegistryObject<BowlFoodItem> CACTUS_SOUP = ITEMS.register("cactus_soup", () -> new BowlFoodItem(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL).food(EDFoods.CACTUS_SOUP)));
+	public static final RegistryObject<BowlFoodItem> CACTUS_SALAD = ITEMS.register("cactus_salad",
+			() -> new BowlFoodItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL)
+					.food(EDFoods.CACTUS_SALAD)));
+	public static final RegistryObject<BowlFoodItem> STUFFED_CACTUS = ITEMS.register("stuffed_cactus",
+			() -> new BowlFoodItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL)
+					.food(EDFoods.STUFFED_CACTUS)));
 }

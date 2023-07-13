@@ -109,6 +109,42 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "CACTUS_EGGS": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cactus_eggs"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "CACTUS_SALAD": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cactus_salad"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "CACTUS_SOUP": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cactus_soup"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "CARROT_SALAD": {
       "conditions": {
         "items": [
@@ -211,6 +247,18 @@
           {
             "items": [
               "extradelight:chicken_stew_rice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "COOKED_CACTUS": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cooked_cactus"
             ]
           }
         ]
@@ -937,6 +985,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "STUFFED_CACTUS": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:stuffed_cactus"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "STUFFED_HEART": {
       "conditions": {
         "items": [
@@ -1232,6 +1292,21 @@
     ],
     [
       "FISH_SALAD_SANDWICH"
+    ],
+    [
+      "CACTUS_EGGS"
+    ],
+    [
+      "CACTUS_SALAD"
+    ],
+    [
+      "CACTUS_SOUP"
+    ],
+    [
+      "COOKED_CACTUS"
+    ],
+    [
+      "STUFFED_CACTUS"
     ]
   ]
 }

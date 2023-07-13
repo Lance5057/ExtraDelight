@@ -50,6 +50,7 @@ public class Advancements extends AdvancementProvider {
 
 	private Advancement mortar;
 	private Advancement grind;
+	private Advancement flour;
 
 	private Advancement doughshaping;
 	private Advancement noodles;
@@ -65,6 +66,7 @@ public class Advancements extends AdvancementProvider {
 	private Advancement feasts;
 	private Advancement desert;
 	private Advancement badfood;
+	private Advancement cactus_juice;
 
 	private Advancement hellskitchen;
 
@@ -176,6 +178,17 @@ public class Advancements extends AdvancementProvider {
 						InventoryChangeTrigger.TriggerInstance
 								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightTags.MORTAR).build()))
 				.save(consumer, ExtraDelight.MOD_ID + ":mortar");
+		
+		flour = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.FLOUR.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.flour.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.flour.desc"), null, FrameType.TASK,
+						true, true, false))
+				.parent(mortar)
+				.addCriterion("flour",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightTags.FLOUR).build()))
+				.save(consumer, ExtraDelight.MOD_ID + ":flour");
 
 		amethyst = Advancement.Builder.advancement()
 				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.MORTAR_AMETHYST.get()),
@@ -183,8 +196,10 @@ public class Advancements extends AdvancementProvider {
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.amethyst.desc"), null,
 						FrameType.CHALLENGE, true, true, true))
 				.parent(mortar)
-				.addCriterion("amethyst",
+				.addCriterion("amethyst_mortar",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MORTAR_AMETHYST.get()))
+				.addCriterion("amethyst_pestle",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PESTLE_AMETHYST.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":amethyst");
 
 		gildedblackstone = Advancement.Builder.advancement()
@@ -193,8 +208,12 @@ public class Advancements extends AdvancementProvider {
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.desc"), null,
 						FrameType.CHALLENGE, true, true, true))
 				.parent(mortar)
-				.addCriterion("gildedblackstone",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MORTAR_AMETHYST.get()))
+				.addCriterion("gildedblackstone_mortar",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get()))
+				.addCriterion("gildedblackstone_pestle",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":gildedblackstone");
 
 		grind = Advancement.Builder.advancement()
@@ -347,6 +366,16 @@ public class Advancements extends AdvancementProvider {
 				.parent(food)
 				.addCriterion("badfood", ConsumeItemTrigger.TriggerInstance.usedItem(ExtraDelightItems.BAD_FOOD.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":badfood");
+
+		cactus_juice = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.CACTUS_JUICE.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.cactus_juice.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.cactus_juice.desc"), null,
+						FrameType.GOAL, true, true, true))
+				.parent(food)
+				.addCriterion("cactus_juice",
+						ConsumeItemTrigger.TriggerInstance.usedItem(ExtraDelightItems.CACTUS_JUICE.get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":cactus_juice");
 
 		feasts = Advancement.Builder.advancement()
 				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get()),
@@ -568,6 +597,16 @@ public class Advancements extends AdvancementProvider {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FISH_SALAD.get()))
 				.addCriterion("FISH_SALAD_SANDWICH",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FISH_SALAD_SANDWICH.get()))
+				.addCriterion("CACTUS_EGGS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CACTUS_EGGS.get()))
+				.addCriterion("CACTUS_SALAD",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CACTUS_SALAD.get()))
+				.addCriterion("CACTUS_SOUP",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CACTUS_SOUP.get()))
+				.addCriterion("COOKED_CACTUS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COOKED_CACTUS.get()))
+				.addCriterion("STUFFED_CACTUS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STUFFED_CACTUS.get()))
 				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":meals");
 
 		desert = Advancement.Builder.advancement()
@@ -616,6 +655,45 @@ public class Advancements extends AdvancementProvider {
 				.addCriterion("SWEET_BERRY_POPSICLE",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SWEET_BERRY_POPSICLE.get()))
 				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":desert");
+		
+		ingredients = Advancement.Builder.advancement()
+				.display(new DisplayInfo(new ItemStack(ExtraDelightItems.GRATED_CARROT.get()),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.ingredients.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.ingredients.desc"), null,
+						FrameType.CHALLENGE, true, true, false))
+				.parent(food)
+				.addCriterion("ALFREDO_SAUCE", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.ALFREDO_SAUCE.get()))
+				.addCriterion("APPLE_JAM", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.APPLE_JAM.get()))
+				.addCriterion("BREAD_CRUMBS", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BREAD_CRUMBS.get()))
+				.addCriterion("BREAD_SLICE", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BREAD_SLICE.get()))
+				.addCriterion("BREADING_MISANPLAS", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BREADING_MISANPLAS.get()))
+				.addCriterion("BUTTER", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BUTTER.get()))
+				.addCriterion("CACTUS", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CACTUS.get()))
+				.addCriterion("CARROT_JAM", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CARROT_JAM.get()))
+				.addCriterion("CHEESE", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESE.get()))
+				.addCriterion("COOKING_OIL", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COOKING_OIL.get()))
+				.addCriterion("CROUTONS", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CROUTONS.get()))
+				.addCriterion("EGG_MIX", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.EGG_MIX.get()))
+				.addCriterion("FISH_FLAKES", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FISH_FLAKES.get()))
+				.addCriterion("FLOUR", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FLOUR.get()))
+				.addCriterion("FURIKAKE", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FURIKAKE.get()))
+				.addCriterion("GLOW_BERRY_JAM", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GLOW_BERRY_JAM.get()))
+				.addCriterion("GRATED_CARROT", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GRATED_CARROT.get()))
+				.addCriterion("GRATED_POTATO", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GRATED_POTATO.get()))
+				.addCriterion("GRAVY", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GRAVY.get()))
+				.addCriterion("LASAGNA_NOODLES", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LASAGNA_NOODLES.get()))
+				.addCriterion("MACARONI", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MACARONI.get()))
+				.addCriterion("OMELETTE_MIX", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.OMELETTE_MIX.get()))
+				.addCriterion("SLICED_APPLE", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SLICED_APPLE.get()))
+				.addCriterion("SLICED_ONION", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SLICED_ONION.get()))
+				.addCriterion("SLICED_POTATO", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SLICED_POTATO.get()))
+				.addCriterion("SLICED_TOMATO", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SLICED_TOMATO.get()))
+				.addCriterion("SUNFLOWER_SEEDS", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SUNFLOWER_SEEDS.get()))
+				.addCriterion("SWEET_BERRY_JAM", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SWEET_BERRY_JAM.get()))
+				.addCriterion("WHIPPED_CREAM", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHIPPED_CREAM.get()))
+				.addCriterion("YEAST", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.YEAST.get()))
+				.addCriterion("VINEGAR", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.VINEGAR.get()))
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":ingredients");
 	}
 
 	@Override

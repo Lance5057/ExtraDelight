@@ -36,6 +36,84 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.feast", "Feast Servings");
 		this.add("extradelight.jei.mortar", "Mortar");
 		this.add("extradelight.jei.doughshaping", "Dough Shaping");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.start.name", "Extra Delight");
+		this.add(ExtraDelight.MOD_ID + ".advancement.start.desc", "Feeling a little extra.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.grater.name", "It's Grate");
+		this.add(ExtraDelight.MOD_ID + ".advancement.grater.desc", "Use the grater to grate an ingredient.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.spoon.name", "Tick Approved");
+		this.add(ExtraDelight.MOD_ID + ".advancement.spoon.desc", "Make a spoon, you're gonna need it.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.mixingbowl.name", "Normal Sized Cereal Bowl");
+		this.add(ExtraDelight.MOD_ID + ".advancement.mixingbowl.desc", "Make a mixing bowl.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.oven.name", "Hot Box");
+		this.add(ExtraDelight.MOD_ID + ".advancement.oven.desc", "Make an oven and start preparing even more meals!");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.trays.name", "A Worthy Vessel");
+		this.add(ExtraDelight.MOD_ID + ".advancement.trays.desc", "The oven requires baking vessels for its recipes. Make one of each.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.mortar.name", "The Daily Grind");
+		this.add(ExtraDelight.MOD_ID + ".advancement.mortar.desc", "Make or find a mortar.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.grind.name", "Crushing Power");
+		this.add(ExtraDelight.MOD_ID + ".advancement.grind.desc", "Make or find a pestle.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.flour.name", "A Little Less Ruffage");
+		this.add(ExtraDelight.MOD_ID + ".advancement.flour.desc", "Make some flour and make your bread less fiberous.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.name", "Regal Purple");
+		this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.desc", "Find an Amethyst set.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.name", "Deep Shimmer");
+		this.add(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.desc", "Find a Gilded Blackstone set.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.doughshaping.name", "I Kneed it");
+		this.add(ExtraDelight.MOD_ID + ".advancement.doughshaping.desc", "Make a Dough Shaping Station to work dough into different forms.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.hellskitchen.name", "Hell's Kitchen");
+		this.add(ExtraDelight.MOD_ID + ".advancement.hellskitchen.desc", "Make a Netherite utensil set.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.noodles.name", "Oodles Of Noodles");
+		this.add(ExtraDelight.MOD_ID + ".advancement.noodles.desc", "Make all available pasta.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.dryingrack.name", "Hydrophobic");
+		this.add(ExtraDelight.MOD_ID + ".advancement.dryingrack.desc", "Make a drying rack to dry out ingredients.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.yeastpot.name", "Micro Flatulance");
+		this.add(ExtraDelight.MOD_ID + ".advancement.yeastpot.desc", "Make a yeast pot and, once it starts to bubble, get yeast.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.vinegarpot.name", "Positively Pickled");
+		this.add(ExtraDelight.MOD_ID + ".advancement.vinegarpot.desc", "Make a vinegar pot and, once it starts to bubble, get vinegar.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.jelly.name", "A Bouncy Castle For Ants");
+		this.add(ExtraDelight.MOD_ID + ".advancement.jelly.desc", "Make some Jelly!");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.jellyall.name", "Taste The Rainbow");
+		this.add(ExtraDelight.MOD_ID + ".advancement.jellyall.desc", "Make all the Jelly!");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.food.name", "A Small Smackerel");
+		this.add(ExtraDelight.MOD_ID + ".advancement.food.desc", "Eat something will ya?");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.badfood.name", "Wall Chicken");
+		this.add(ExtraDelight.MOD_ID + ".advancement.badfood.desc", "Maybe eating something you found in a dungeon wasn't the best idea...");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.cactusjuice.name", "It'll Quench Ya!");
+		this.add(ExtraDelight.MOD_ID + ".advancement.cactusjuice.desc", "Drink the cactus juice and learn the effects.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.feasts.name", "All You Can Eat Buffet");
+		this.add(ExtraDelight.MOD_ID + ".advancement.feasts.desc", "Make every available feast.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.meals.name", "True Gourmand");
+		this.add(ExtraDelight.MOD_ID + ".advancement.meals.desc", "Make every available meal.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.desert.name", "There's Always Room");
+		this.add(ExtraDelight.MOD_ID + ".advancement.desert.desc", "Make every available desert.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.ingredients.name", "Sous Chef");
+		this.add(ExtraDelight.MOD_ID + ".advancement.ingredients.desc", "Aquire and prepare every ingredient.");
 
 		this.add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		this.add(ExtraDelightItems.CHEESECAKE_ITEM.get(), "Cheesecake");
@@ -344,6 +422,14 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.BAD_FOOD.get(), "Bad Food");
 
+		this.add(ExtraDelightItems.CACTUS.get(), "Cactus Paddle");
+		this.add(ExtraDelightItems.COOKED_CACTUS.get(), "Cooked Cactus Paddle");
+		this.add(ExtraDelightItems.CACTUS_SALAD.get(), "Cactus Salad");
+		this.add(ExtraDelightItems.CACTUS_SOUP.get(), "Cactus Soup");
+		this.add(ExtraDelightItems.CACTUS_EGGS.get(), "Cactus and Eggs");
+		this.add(ExtraDelightItems.CACTUS_JUICE.get(), "Cactus Juice");
+		this.add(ExtraDelight.MOD_ID + ".cactus_juice.hovertext", "It's the quenchiest!");
+		this.add(ExtraDelightItems.STUFFED_CACTUS.get(), "Stuffed Cactus");
 
 		add(TranslatableKeys.OVEN_CONTAINER, "Baking Oven");
 		add(TranslatableKeys.OVEN_SERVED_ON, "Served on %s");

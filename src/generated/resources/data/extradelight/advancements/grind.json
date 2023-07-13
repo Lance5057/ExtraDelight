@@ -23,7 +23,8 @@
     "frame": "goal",
     "hidden": false,
     "icon": {
-      "item": "extradelight:mixing_bowl"
+      "item": "extradelight:pestle_endstone",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {
