@@ -58,7 +58,7 @@ public class MixingBowlRenderer implements BlockEntityRenderer<MixingBowlBlockEn
 			pPoseStack.pushPose();
 
 			pPoseStack.translate(0.5f, 0.4f, 0.5f);
-			pPoseStack.mulPose(new Quaternion(0, 0, 0, true));
+			pPoseStack.mulPose(new Quaternion(0, timer % 360, 0, true));
 
 			float uniscale = 1.0f;
 			pPoseStack.scale(uniscale, uniscale, uniscale);
@@ -79,7 +79,7 @@ public class MixingBowlRenderer implements BlockEntityRenderer<MixingBowlBlockEn
 				BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 				pPoseStack.pushPose();
 
-				float rotY = (i % 8) * 45;
+				float rotY = ((i % 8) * 45) + ((g % 4)*90);
 
 				pPoseStack.translate(0.5f, 0.25f, 0.5f);
 				pPoseStack.mulPose(new Quaternion(0, rotYoffset + rotY, 0, true));

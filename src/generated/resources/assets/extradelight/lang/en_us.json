@@ -345,6 +345,8 @@
   "extradelight.tooltip.oven.empty": "Empty",
   "extradelight.tooltip.oven.many_servings": "Holds %s servings of:",
   "extradelight.tooltip.oven.single_serving": "Holds 1 serving of:",
+  "extradelight.vinegarpot.tooltip": "Use a bottle once the pot begins to bubble.",
+  "extradelight.yeastpot.tooltip": "Use a bottle once the pot begins to bubble.",
   "farmersdelight.tooltip.oven.empty": "",
   "item.extradelight.agar_agar": "Agar Agar Powder",
   "item.extradelight.agar_sheets": "Agar Agar Sheets",

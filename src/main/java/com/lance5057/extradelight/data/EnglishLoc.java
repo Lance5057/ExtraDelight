@@ -37,6 +37,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.mortar", "Mortar");
 		this.add("extradelight.jei.doughshaping", "Dough Shaping");
 		
+		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
+		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
+		
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.name", "Extra Delight");
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.desc", "Feeling a little extra.");
 		

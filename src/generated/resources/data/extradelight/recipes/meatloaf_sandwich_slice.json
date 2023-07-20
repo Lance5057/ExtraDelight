@@ -2,7 +2,7 @@
   "type": "extradelight:feast",
   "block": "extradelight:meatloaf_feast",
   "ingredient": {
-    "tag": "forge:bread"
+    "tag": "forge:bread/sliced"
   },
   "result": "extradelight:meatloaf_sandwich"
 }

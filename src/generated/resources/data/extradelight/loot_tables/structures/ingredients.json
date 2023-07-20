@@ -131,6 +131,14 @@
         {
           "type": "minecraft:item",
           "name": "extradelight:yeast"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cooked_cactus"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cactus"
         }
       ],
       "name": "main",

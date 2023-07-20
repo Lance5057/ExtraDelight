@@ -1,5 +1,9 @@
 package com.lance5057.extradelight;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.CactusJuiceItem;
 import com.lance5057.extradelight.items.GlowberryFoodItem;
@@ -7,7 +11,8 @@ import com.lance5057.extradelight.items.GlowberryJuiceItem;
 import com.lance5057.extradelight.items.GlowberryPopsicleItem;
 import com.lance5057.extradelight.items.SimpleDynamicNameFood;
 
-import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BowlFoodItem;
@@ -17,6 +22,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -26,8 +33,6 @@ import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MelonJuiceItem;
 import vectorwing.farmersdelight.common.item.MilkBottleItem;
-import vectorwing.farmersdelight.common.registry.ModEffects;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ExtraDelightItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
@@ -137,12 +142,28 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> YEAST = ITEMS.register("yeast",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> YEAST_POT = ITEMS.register("yeast_pot",
-			() -> new BlockItem(ExtraDelightBlocks.YEAST_POT.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new BlockItem(ExtraDelightBlocks.YEAST_POT.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)) {
+				@Override
+				public void appendHoverText(ItemStack pStack, @Nullable Level pLevel,
+						List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+					pTooltipComponents.add(Component.literal("  ")
+							.append(Component.translatable(ExtraDelight.MOD_ID + ".yeastpot.tooltip"))
+							.withStyle(ChatFormatting.AQUA));
+				}
+			});
 
 	public static final RegistryObject<Item> VINEGAR = ITEMS.register("vinegar",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> VINEGAR_POT = ITEMS.register("vinegar_pot",
-			() -> new BlockItem(ExtraDelightBlocks.VINEGAR_POT.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new BlockItem(ExtraDelightBlocks.VINEGAR_POT.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)) {
+				@Override
+				public void appendHoverText(ItemStack pStack, @Nullable Level pLevel,
+						List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+					pTooltipComponents.add(Component.literal("  ")
+							.append(Component.translatable(ExtraDelight.MOD_ID + ".vinegarpot.tooltip"))
+							.withStyle(ChatFormatting.AQUA));
+				}
+			});
 
 	public static final RegistryObject<Item> FLOUR = ITEMS.register("flour",
 			() -> new BlockItem(ExtraDelightBlocks.FLOUR.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));

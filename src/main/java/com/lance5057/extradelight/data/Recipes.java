@@ -94,7 +94,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.feast(Ingredient.of(ExtraDelightTags.BREAD_SLICE), ExtraDelightItems.MEAT_LOAF_SANDWICH.get(),
 						ExtraDelightItems.MEAT_LOAF_FEAST.get())
 				.unlockedBy("has_meatloaf", has(ExtraDelightItems.MEAT_LOAF_FEAST.get()))
-				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "meatloaf_sandwich"));
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "meatloaf_sandwich_slice"));
 
 		FeastRecipeBuilder
 				.feast(Ingredient.of(Items.BOWL), ModItems.BEEF_STEW.get(), ExtraDelightItems.BEEF_STEW_FEAST.get())
@@ -221,7 +221,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.feast(Ingredient.of(ExtraDelightTags.BREAD_SLICE), ExtraDelightItems.PULLED_PORK_SANDWICH.get(),
 						ExtraDelightItems.PULLED_PORK_FEAST_ITEM.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.PULLED_PORK_FEAST_ITEM.get()))
-				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pulled_pork_bread"));
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pulled_pork_bread_slice"));
 
 		FeastRecipeBuilder
 				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.RACK_LAMB.get(),

@@ -35,13 +35,6 @@ public class EDFoods {
 	public static final Supplier<MobEffectInstance> DOLPHIN_BRIEF = () -> new MobEffectInstance(
 			MobEffects.DOLPHINS_GRACE, FoodValues.BRIEF_DURATION, 0);
 
-	public static final Supplier<MobEffectInstance> REGENERATION_SHORT = () -> new MobEffectInstance(
-			MobEffects.REGENERATION, FoodValues.SHORT_DURATION, 0);
-	public static final Supplier<MobEffectInstance> DAMAGE_RESISTANCE_SHORT = () -> new MobEffectInstance(
-			MobEffects.DAMAGE_RESISTANCE, FoodValues.SHORT_DURATION, 0);
-	public static final Supplier<MobEffectInstance> DIG_SHORT = () -> new MobEffectInstance(MobEffects.DIG_SPEED,
-			FoodValues.SHORT_DURATION, 0);
-
 	public static final Supplier<MobEffectInstance> COMFORT_BRIEF = () -> new MobEffectInstance(
 			ModEffects.COMFORT.get(), FoodValues.BRIEF_DURATION, 0);
 	public static final Supplier<MobEffectInstance> COMFORT_MEDIUM = () -> new MobEffectInstance(
@@ -49,14 +42,17 @@ public class EDFoods {
 	public static final Supplier<MobEffectInstance> COMFORT_LONG = () -> new MobEffectInstance(ModEffects.COMFORT.get(),
 			FoodValues.LONG_DURATION, 0);
 
+	public static final Supplier<MobEffectInstance> NOURISHMENT_BRIEF = () -> new MobEffectInstance(
+			ModEffects.NOURISHMENT.get(), FoodValues.BRIEF_DURATION, 0);
+	public static final Supplier<MobEffectInstance> NOURISHMENT_MEDIUM = () -> new MobEffectInstance(
+			ModEffects.NOURISHMENT.get(), FoodValues.MEDIUM_DURATION, 0);
+	public static final Supplier<MobEffectInstance> NOURISHMENT_LONG = () -> new MobEffectInstance(
+			ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0);
+
 	public static final Supplier<MobEffectInstance> GLOW_SHORT = () -> new MobEffectInstance(MobEffects.GLOWING,
 			FoodValues.SHORT_DURATION, 0);
 
-	public static final Supplier<MobEffectInstance> FIRE_RESIST_SHORT = () -> new MobEffectInstance(
-			MobEffects.FIRE_RESISTANCE, FoodValues.SHORT_DURATION, 0);
-
-	public static final Supplier<MobEffectInstance> PAIN = () -> new MobEffectInstance(MobEffects.HARM,
-			1, 0);
+	public static final Supplier<MobEffectInstance> PAIN = () -> new MobEffectInstance(MobEffects.HARM, 1, 0);
 
 	public static final FoodProperties CUSTARD = new FoodProperties.Builder().nutrition(7).saturationMod(0.6f)
 			.alwaysEat().build();
@@ -105,10 +101,6 @@ public class EDFoods {
 	public static final FoodProperties COOKED_TRIPE = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F)
 			.meat().build();
 
-	// Spices
-	public static final FoodProperties FURIKAKE = new FoodProperties.Builder().effect(DOLPHIN_BRIEF, 1).build();
-	public static final FoodProperties CURRY_POWDER = new FoodProperties.Builder().effect(FIRE_RESIST_SHORT, 1).build();
-
 	// Condiments
 	public static final FoodProperties MAYO = EDFoods
 			.divideFoods("mayo raw", EDFoods.addFoods("", FoodValues.FRIED_EGG, FoodValues.FRIED_EGG, OIL).build(), 4)
@@ -156,7 +148,8 @@ public class EDFoods {
 	public static final FoodProperties OMELETTE = EDFoods.addFoods("omelette", SCRAMBLED_EGGS, Foods.COOKED_BEEF)
 			.build();
 	public static final FoodProperties QUICHE = EDFoods
-			.divideFoods("quiche", EDFoods.addFoods("", OMELETTE, Foods.BREAD).build(), 4).build();
+			.divideFoods("quiche", EDFoods.addFoods("", OMELETTE, Foods.BREAD).build(), 4).effect(NOURISHMENT_BRIEF, 1)
+			.build();
 
 	public static final FoodProperties EGG_BASKET = EDFoods
 			.addFoods("egg in a basket", FoodValues.FRIED_EGG, SLICED_BREAD).build();
@@ -194,9 +187,11 @@ public class EDFoods {
 
 	// Butchercraft
 	public static final FoodProperties SALISBURY_STEAK = EDFoods
-			.divideFoods("salisbury steak", EDFoods.addFoods("", FoodValues.BEEF_PATTY, FoodValues.BEEF_PATTY,
-					FoodValues.BEEF_PATTY, FoodValues.ONION, MUSHROOM, MILK).build(), 4)
-			.effect(COMFORT_LONG, 1).build();
+			.divideFoods("salisbury steak",
+					EDFoods.addFoods("", FoodValues.BEEF_PATTY, FoodValues.BEEF_PATTY, FoodValues.BEEF_PATTY,
+							FoodValues.ONION, MUSHROOM, MILK).build(),
+					4)
+			.effect(COMFORT_LONG, 1).effect(NOURISHMENT_MEDIUM, 1).build();
 	public static final FoodProperties MASHED_POTATO_GRAVY = EDFoods.divideFoods("mashed potato", EDFoods
 			.addFoods("", Foods.BAKED_POTATO, Foods.BAKED_POTATO, Foods.BAKED_POTATO, GRAVY, BUTTER, MILK).build(), 4)
 			.effect(COMFORT_MEDIUM, 1).build();
@@ -222,41 +217,40 @@ public class EDFoods {
 					4)
 			.effect(COMFORT_MEDIUM, 1).build();
 
-	public static final FoodProperties CURRY = EDFoods
-			.divideFoods("curry",
-					EDFoods.addFoods("", Foods.COOKED_CHICKEN, Foods.BAKED_POTATO, EDFoods.COOKED_CARROT,
-							FoodValues.BONE_BROTH, CURRY_POWDER, FoodValues.ONION).build(),
-					4)
+	public static final FoodProperties CURRY = EDFoods.divideFoods("curry", EDFoods.addFoods("", Foods.COOKED_CHICKEN,
+			Foods.BAKED_POTATO, EDFoods.COOKED_CARROT, FoodValues.BONE_BROTH, FoodValues.ONION).build(), 4)
 			.effect(COMFORT_MEDIUM, 1).build();
 
 	public static final FoodProperties BEEF_STEW_RICE = EDFoods
-			.addFoods("beef stew rice", FoodValues.BEEF_STEW, FoodValues.COOKED_RICE).build();
+			.addFoods("beef stew rice", FoodValues.BEEF_STEW, FoodValues.COOKED_RICE).effect(COMFORT_LONG, 1).build();
 	public static final FoodProperties PORK_STEW_RICE = EDFoods
-			.addFoods("pork stew rice", EDFoods.PORK_STEW, FoodValues.COOKED_RICE).build();
+			.addFoods("pork stew rice", EDFoods.PORK_STEW, FoodValues.COOKED_RICE).effect(COMFORT_LONG, 1).build();
 	public static final FoodProperties LAMB_STEW_RICE = EDFoods
-			.addFoods("lamb stew rice", EDFoods.LAMB_STEW, FoodValues.COOKED_RICE).build();
+			.addFoods("lamb stew rice", EDFoods.LAMB_STEW, FoodValues.COOKED_RICE).effect(COMFORT_LONG, 1).build();
 	public static final FoodProperties RABBIT_STEW_RICE = EDFoods
-			.addFoods("rabbit stew rice", Foods.RABBIT_STEW, FoodValues.COOKED_RICE).build();
+			.addFoods("rabbit stew rice", Foods.RABBIT_STEW, FoodValues.COOKED_RICE).effect(COMFORT_LONG, 1).build();
 	public static final FoodProperties CHICKEN_STEW_RICE = EDFoods
-			.addFoods("chicken stew rice", EDFoods.CHICKEN_STEW, FoodValues.COOKED_RICE).build();
+			.addFoods("chicken stew rice", EDFoods.CHICKEN_STEW, FoodValues.COOKED_RICE).effect(COMFORT_LONG, 1)
+			.build();
 	public static final FoodProperties FISH_STEW_RICE = EDFoods
-			.addFoods("fish stew rice", FoodValues.FISH_STEW, FoodValues.COOKED_RICE).build();
+			.addFoods("fish stew rice", FoodValues.FISH_STEW, FoodValues.COOKED_RICE).effect(COMFORT_LONG, 1).build();
 	public static final FoodProperties CURRY_RICE = EDFoods
-			.addFoods("curry stew rice", EDFoods.CURRY, FoodValues.COOKED_RICE).build();
+			.addFoods("curry stew rice", EDFoods.CURRY, FoodValues.COOKED_RICE).effect(COMFORT_LONG, 1).build();
 
 	// TODO: Sort these in the right categories, split if needed, add
 	// nourishment/comfort
 	public static final FoodProperties COOKED_PASTA = EDFoods.cookFood("cooked pasta", FoodValues.RAW_PASTA).build();
 	public static final FoodProperties BUTTERED_PASTA = EDFoods
-			.addFoods("buttered pasta", EDFoods.COOKED_PASTA, EDFoods.BUTTER).build();
+			.addFoods("buttered pasta", EDFoods.COOKED_PASTA, EDFoods.BUTTER).effect(COMFORT_BRIEF, 1).build();
 	public static final FoodProperties FRIED_FISH = EDFoods.addFoods("fried fish", Foods.COOKED_COD, EDFoods.BREADING)
 			.build();
 	public static final FoodProperties CHICKEN_FRIED_STEAK = EDFoods
-			.addFoods("chicken fried steak", Foods.COOKED_BEEF, EDFoods.BREADING, EDFoods.GRAVY).build();
+			.addFoods("chicken fried steak", Foods.COOKED_BEEF, EDFoods.BREADING, EDFoods.GRAVY)
+			.effect(COMFORT_MEDIUM, 1).build();
 	public static final FoodProperties PORK_TENDERLOIN = EDFoods
-			.addFoods("pork tenderloin", Foods.COOKED_PORKCHOP, EDFoods.BREADING).build();
+			.addFoods("pork tenderloin", Foods.PORKCHOP, EDFoods.BREADING).build();
 	public static final FoodProperties PORK_TENDERLOIN_SANDWICH = EDFoods
-			.addFoods("pork tenderloin sandwich", EDFoods.PORK_TENDERLOIN, Foods.BREAD, EDFoods.GRAVY).build();
+			.addFoods("pork tenderloin sandwich", EDFoods.PORK_TENDERLOIN, Foods.BREAD).build();
 	public static final FoodProperties CHEESE_SANDWICH = EDFoods
 			.addFoods("cheese sandwich", EDFoods.SLICED_BREAD, EDFoods.SLICED_BREAD, EDFoods.CHEESE, EDFoods.BUTTER)
 			.build();
@@ -269,7 +263,8 @@ public class EDFoods {
 	public static final FoodProperties HASH_FEAST = EDFoods
 			.addFoods("hash feast", Foods.POTATO, Foods.POTATO, FoodValues.ONION, EDFoods.OIL, Foods.COOKED_PORKCHOP)
 			.build();
-	public static final FoodProperties HASH_SERVING = EDFoods.divideFoods("hash", EDFoods.HASH_FEAST, 4).build();
+	public static final FoodProperties HASH_SERVING = EDFoods.divideFoods("hash", EDFoods.HASH_FEAST, 4)
+			.effect(COMFORT_BRIEF, 1).build();
 
 	// meat loaf feast&derivatives
 	public static final FoodProperties MEAT_LOAF_FEAST = EDFoods
@@ -277,15 +272,16 @@ public class EDFoods {
 					FoodValues.BEEF_PATTY, FoodValues.BEEF_PATTY, FoodValues.BEEF_PATTY, FoodValues.ONION)
 			.build();
 	public static final FoodProperties MEAT_LOAF_SERVING = EDFoods
-			.divideFoods("meat loaf plate", EDFoods.MEAT_LOAF_FEAST, 4).build();
+			.divideFoods("meat loaf plate", EDFoods.MEAT_LOAF_FEAST, 4).effect(COMFORT_LONG, 1).build();
 	public static final FoodProperties MEAT_LOAF_SANDWICH = EDFoods
-			.addFoods("meat loaf sandwich", EDFoods.MEAT_LOAF_SERVING, Foods.BREAD).build();
+			.addFoods("meat loaf sandwich", EDFoods.MEAT_LOAF_SERVING, Foods.BREAD).effect(COMFORT_LONG, 1)
+			.effect(NOURISHMENT_MEDIUM, 1).build();
 
 	// meat pie&derivatives
 	public static final FoodProperties MEAT_PIE_WHOLE = EDFoods.addFoods("meat pie whole", FoodValues.BEEF_PATTY,
 			FoodValues.BEEF_PATTY, FoodValues.BEEF_PATTY, EDFoods.MUSHROOM, Foods.POTATO, FoodValues.ONION).build();
 	public static final FoodProperties MEAT_PIE_SLICE = EDFoods.divideFoods("meat pie slice", EDFoods.MEAT_PIE_WHOLE, 4)
-			.build();
+			.effect(COMFORT_BRIEF, 1).build();
 
 	// pulled pork feast&derivatives
 	public static final FoodProperties PULLED_PORK_FEAST = EDFoods.addFoods("pulled pork feast", Foods.COOKED_PORKCHOP,
@@ -294,15 +290,17 @@ public class EDFoods {
 	public static final FoodProperties PULLED_PORK_SERVING = EDFoods
 			.divideFoods("pulled pork serving", EDFoods.PULLED_PORK_FEAST, 4).build();
 	public static final FoodProperties PULLED_PORK_SANDWICH = EDFoods
-			.addFoods("pulled pork sandwich", EDFoods.PULLED_PORK_SERVING, Foods.BREAD).build();
+			.addFoods("pulled pork sandwich", EDFoods.PULLED_PORK_SERVING, Foods.BREAD).effect(NOURISHMENT_MEDIUM, 1)
+			.build();
 
 	// stirfry feast&derivatives
 	public static final FoodProperties STIRFRY = EDFoods.addFoods("stirfry feast", Foods.COOKED_PORKCHOP,
 			Foods.COOKED_PORKCHOP, Foods.CARROT, Foods.CARROT, Foods.CARROT, Foods.CARROT).build();
 	public static final FoodProperties STIRFRY_SERVING = EDFoods.divideFoods("stirfry serving", EDFoods.STIRFRY, 4)
-			.build();
+			.effect(NOURISHMENT_MEDIUM, 1).build();
 	public static final FoodProperties STIRFRY_AND_RICE = EDFoods
-			.addFoods("stirfry and rice", EDFoods.STIRFRY_SERVING, FoodValues.COOKED_RICE).build();
+			.addFoods("stirfry and rice", EDFoods.STIRFRY_SERVING, FoodValues.COOKED_RICE).effect(NOURISHMENT_MEDIUM, 1)
+			.effect(COMFORT_MEDIUM, 1).build();
 
 	// jelly feast&derivatives
 	public static final FoodProperties JELLY_FEAST = EDFoods
@@ -323,7 +321,7 @@ public class EDFoods {
 					Foods.BREAD, Foods.BREAD, Foods.BREAD, Foods.COOKED_PORKCHOP, Foods.COOKED_PORKCHOP)
 			.build();
 	public static final FoodProperties LASAGNA_SERVING = EDFoods
-			.divideFoods("lasagna serving", EDFoods.LASAGNA_FEAST, 4).build();
+			.divideFoods("lasagna serving", EDFoods.LASAGNA_FEAST, 4).effect(COMFORT_MEDIUM, 1).build();
 
 	public static final FoodProperties JERKY = EDFoods.addFoods("jerky", Foods.COOKED_PORKCHOP).build();
 
@@ -334,10 +332,10 @@ public class EDFoods {
 			.build();
 
 	public static final FoodProperties LIVERONION = EDFoods.addFoods("liver onions", COOKED_LIVER, FoodValues.ONION)
-			.build();
+			.effect(NOURISHMENT_MEDIUM, 1).build();
 
 	public static final FoodProperties FRIED_CHICKEN = EDFoods.addFoods("fried chicken", Foods.COOKED_CHICKEN, BREADING)
-			.build();
+			.effect(COMFORT_BRIEF, 1).build();
 
 	public static final FoodProperties STUFFED_HEART = EDFoods
 			.addFoods("stuffed heart", COOKED_HEART, SLICED_BREAD, MUSHROOM, FoodValues.ONION, FoodValues.FRIED_EGG)
@@ -346,44 +344,55 @@ public class EDFoods {
 	public static final FoodProperties FRIED_BRAIN = EDFoods.addFoods("fried brain", COOKED_BRAIN, BREADING).build();
 
 	public static final FoodProperties OXTAIL_SOUP = EDFoods
-			.addFoods("oxtail soup", Foods.COOKED_BEEF, COOKED_CARROT, FoodValues.BONE_BROTH, FoodValues.TOMATO)
-			.effect(COMFORT_LONG, 1).build();
+			.addFoods("oxtail soup", Foods.BEEF, COOKED_CARROT, FoodValues.BONE_BROTH, FoodValues.TOMATO)
+			.effect(COMFORT_LONG, 1).effect(NOURISHMENT_MEDIUM, 1).build();
 
-	public static final FoodProperties POT_ROAST = EDFoods.addFoods("pot roast", Foods.COOKED_BEEF, COOKED_CARROT,
-			COOKED_CARROT, FoodValues.ONION, Foods.BAKED_POTATO, Foods.BAKED_POTATO).effect(COMFORT_MEDIUM, 1).build();
+	public static final FoodProperties POT_ROAST_FEAST = EDFoods.addFoods("pot roast feast", Foods.COOKED_BEEF,
+			COOKED_CARROT, COOKED_CARROT, FoodValues.ONION, Foods.BAKED_POTATO, Foods.BAKED_POTATO).build();
+	public static final FoodProperties POT_ROAST = EDFoods.divideFoods("pot roast", POT_ROAST_FEAST, 4)
+			.effect(COMFORT_MEDIUM, 1).effect(NOURISHMENT_MEDIUM, 1).build();
 
-	public static final FoodProperties BBQ_RIBS = EDFoods
-			.addFoods("bbq ribs", Foods.COOKED_BEEF, Foods.COOKED_BEEF, Foods.COOKED_BEEF, Foods.COOKED_BEEF, BBQ)
+	public static final FoodProperties BBQ_RIBS_FEAST = EDFoods
+			.addFoods("bbq ribs feast", Foods.COOKED_BEEF, Foods.COOKED_BEEF, Foods.COOKED_BEEF, Foods.COOKED_BEEF, BBQ)
+			.build();
+	public static final FoodProperties BBQ_RIBS = EDFoods.divideFoods("bbq ribs", BBQ_RIBS_FEAST, 4)
 			.effect(COMFORT_MEDIUM, 1).build();
 
-	public static final FoodProperties RACK_LAMB = EDFoods
-			.addFoods("rack lamb", Foods.COOKED_MUTTON, Foods.COOKED_MUTTON, Foods.COOKED_MUTTON, Foods.COOKED_MUTTON,
-					FoodValues.ONION, OIL, Foods.BREAD, Foods.SWEET_BERRIES, Foods.SWEET_BERRIES)
+	public static final FoodProperties RACK_LAMB_FEAST = EDFoods
+			.addFoods("rack lamb feast", Foods.COOKED_MUTTON, Foods.COOKED_MUTTON, Foods.COOKED_MUTTON,
+					Foods.COOKED_MUTTON, FoodValues.ONION, OIL, Foods.BREAD, Foods.SWEET_BERRIES, Foods.SWEET_BERRIES)
+			.build();
+	public static final FoodProperties RACK_LAMB = EDFoods.divideFoods("rack lamb", RACK_LAMB_FEAST, 4)
 			.effect(COMFORT_MEDIUM, 1).build();
 
-	public static final FoodProperties WELLINGTON = EDFoods.addFoods("wellington", Foods.COOKED_BEEF, Foods.BREAD,
-			MUSHROOM, MUSHROOM, COOKED_LIVER, BUTTER, FoodValues.COOKED_BACON, FoodValues.ONION)
-			.effect(COMFORT_MEDIUM, 1).build();
+	public static final FoodProperties WELLINGTON_FEAST = EDFoods.addFoods("wellington feast", Foods.COOKED_BEEF,
+			Foods.BREAD, MUSHROOM, MUSHROOM, COOKED_LIVER, BUTTER, FoodValues.COOKED_BACON, FoodValues.ONION).build();
+	public static final FoodProperties WELLINGTON = EDFoods.divideFoods("wellington", WELLINGTON_FEAST, 4)
+			.effect(COMFORT_MEDIUM, 1).effect(NOURISHMENT_MEDIUM, 1).build();
 
-	public static final FoodProperties HAGGIS = EDFoods.addFoods("haggis", COOKED_STOMACH, COOKED_LIVER, COOKED_LIVER,
-			COOKED_LIVER, COOKED_LUNG, FLOUR, FLOUR, FLOUR, Foods.COOKED_MUTTON).build();
+	public static final FoodProperties HAGGIS_FEAST = EDFoods.addFoods("haggis feast", COOKED_STOMACH, COOKED_LIVER,
+			COOKED_LIVER, COOKED_LIVER, COOKED_LUNG, FLOUR, FLOUR, FLOUR, Foods.COOKED_MUTTON).build();
+	public static final FoodProperties HAGGIS = EDFoods.divideFoods("haggis", HAGGIS_FEAST, 4)
+			.effect(NOURISHMENT_MEDIUM, 1).effect(COMFORT_MEDIUM, 1).build();
 
-	public static final FoodProperties HOTDISH = EDFoods.divideFoods("hotdish",
-			EDFoods.addFoods("", Foods.BAKED_POTATO, Foods.BAKED_POTATO, Foods.BAKED_POTATO, Foods.COOKED_PORKCHOP,
-					Foods.COOKED_PORKCHOP, EDFoods.POTATO_SOUP, EDFoods.POTATO_SOUP, EDFoods.COOKED_CARROT,
-					EDFoods.COOKED_CARROT).effect(COMFORT_LONG, 1).build(),
-			4).build();
-	public static final FoodProperties FURIKAKE_RICE = EDFoods
-			.addFoods("furikake rice", FURIKAKE, FoodValues.COOKED_RICE).build();
+	public static final FoodProperties HOTDISH_FEAST = EDFoods.addFoods("hotdish feast", Foods.BAKED_POTATO,
+			Foods.BAKED_POTATO, Foods.BAKED_POTATO, Foods.COOKED_PORKCHOP, Foods.COOKED_PORKCHOP, EDFoods.POTATO_SOUP,
+			EDFoods.POTATO_SOUP, EDFoods.COOKED_CARROT, EDFoods.COOKED_CARROT).build();
+	public static final FoodProperties HOTDISH = EDFoods.divideFoods("hotdish", HOTDISH_FEAST, 4)
+			.effect(COMFORT_LONG, 1).effect(NOURISHMENT_LONG, 1).build();
+
+	public static final FoodProperties FURIKAKE_RICE = EDFoods.addFoods("furikake rice", FoodValues.COOKED_RICE)
+			.effect(DOLPHIN_BRIEF, 1).build();
 	public static final FoodProperties FISH_CAKES = EDFoods
 			.addFoods("", Foods.COOKED_COD, Foods.BAKED_POTATO, FoodValues.ONION, BREADING).build();
-	public static final FoodProperties FISH_CHIPS = EDFoods.addFoods("fish chips", FRIED_FISH, FRIED_POTATO).build();
+	public static final FoodProperties FISH_CHIPS = EDFoods.addFoods("fish chips", FRIED_FISH, FRIED_POTATO)
+			.effect(NOURISHMENT_MEDIUM, 1).build();
 	public static final FoodProperties FRIED_MUSHROOMS = EDFoods
 			.divideFoods("fried mushrooms", EDFoods.addFoods("", MUSHROOM, MUSHROOM, MUSHROOM, BREADING).build(), 3)
 			.build();
 	public static final FoodProperties MUSHROOM_RISOTTO = EDFoods.divideFoods("mushroom risotto", EDFoods
 			.addFoods("", MUSHROOM, CHEESE, BUTTER, FoodValues.BONE_BROTH, FoodValues.ONION, FoodValues.COOKED_RICE)
-			.build(), 2).build();
+			.build(), 2).effect(COMFORT_MEDIUM, 1).build();
 	public static final FoodProperties STUFFED_MUSHROOMS = EDFoods.divideFoods("stuffed mushrooms",
 			EDFoods.addFoods("stuffed mushrooms", MUSHROOM, MUSHROOM, MUSHROOM, CHEESE, BUTTER, SLICED_BREAD).build(),
 			3).build();
@@ -396,26 +405,29 @@ public class EDFoods {
 	public static final FoodProperties BUTTERED_TOAST = EDFoods.addFoods("buttered toast", SLICED_BREAD, BUTTER)
 			.build();
 	public static final FoodProperties SALAD = EDFoods
-			.divideFoods("chef salad", EDFoods.addFoods("", FoodValues.CABBAGE, FoodValues.ONION, Foods.CARROT,
-					SLICED_BREAD, CHEESE, OIL, VINEGAR, FoodValues.FRIED_EGG, Foods.PORKCHOP).build(), 4)
-			.build();
+			.divideFoods("chef salad",
+					EDFoods.addFoods("", FoodValues.CABBAGE, FoodValues.ONION, Foods.CARROT, SLICED_BREAD, CHEESE, OIL,
+							VINEGAR, FoodValues.FRIED_EGG, Foods.PORKCHOP).build(),
+					4)
+			.effect(NOURISHMENT_MEDIUM, 1).build();
 	public static final FoodProperties ALFREDO_SAUCE = EDFoods.addFoods("alfredo sauce", MILK, CHEESE, BUTTER).build();
 	public static final FoodProperties PASTA_TOMATO = EDFoods
 			.addFoods("pasta tomato", Foods.BREAD, FoodValues.TOMATO_SAUCE).build();
 	public static final FoodProperties PASTA_ALFREDO = EDFoods.addFoods("pasta alfredo", Foods.BREAD, ALFREDO_SAUCE)
-			.build();
+			.effect(COMFORT_BRIEF, 1).build();
 	public static final FoodProperties CHICKEN_ALFREDO = EDFoods
-			.addFoods("chicken alfredo", Foods.COOKED_CHICKEN, PASTA_ALFREDO).build();
+			.addFoods("chicken alfredo", Foods.COOKED_CHICKEN, PASTA_ALFREDO).effect(COMFORT_MEDIUM, 1).build();
 	public static final FoodProperties CHICKEN_PARM = EDFoods.divideFoods("chicken parm",
-			EDFoods.addFoods("", FRIED_CHICKEN, FoodValues.TOMATO_SAUCE, CHEESE).build(), 2).build();
-	public static final FoodProperties CHEESEBURGER = EDFoods.addFoods("cheeseburger", FoodValues.HAMBURGER, CHEESE)
+			EDFoods.addFoods("", FRIED_CHICKEN, FoodValues.TOMATO_SAUCE, CHEESE).build(), 2).effect(COMFORT_MEDIUM, 1)
 			.build();
+	public static final FoodProperties CHEESEBURGER = EDFoods.addFoods("cheeseburger", FoodValues.HAMBURGER, CHEESE)
+			.effect(COMFORT_MEDIUM, 1).build();
 	public static final FoodProperties BACON_CHEESEBURGER = EDFoods
-			.addFoods("bacon cheeseburger", CHEESEBURGER, FoodValues.COOKED_BACON).build();
+			.addFoods("bacon cheeseburger", CHEESEBURGER, FoodValues.COOKED_BACON).effect(COMFORT_MEDIUM, 1).build();
 	public static final FoodProperties RICEBALL = EDFoods
-			.divideFoods("riceball", EDFoods.addFoods("", Foods.DRIED_KELP, FoodValues.COOKED_RICE).build(), 2).build();
+			.divideFoods("riceball", EDFoods.addFoods("", Foods.DRIED_KELP, FoodValues.COOKED_RICE).build(), 2).effect(NOURISHMENT_BRIEF, 1).build();
 	public static final FoodProperties RICEBALL_FILLED = EDFoods
-			.addFoods("riceball filled", RICEBALL, FoodValues.FRIED_EGG).build();
+			.addFoods("riceball filled", RICEBALL, FoodValues.FRIED_EGG).effect(NOURISHMENT_MEDIUM, 1).build();
 	public static final FoodProperties FISH_SALAD = EDFoods
 			.divideFoods("fish salad", EDFoods.addFoods("", Foods.COOKED_COD, Foods.COOKED_COD, MAYO).build(), 2)
 			.build();
@@ -433,11 +445,11 @@ public class EDFoods {
 			.build();
 	public static final FoodProperties CACTUS_SOUP = EDFoods.divideFoods("cactus soup", EDFoods
 			.addFoods("", COOKED_CACTUS, COOKED_CACTUS, FoodValues.TOMATO, FoodValues.ONION, FoodValues.BONE_BROTH)
-			.build(), 2).build();
+			.build(), 2).effect(COMFORT_MEDIUM, 1).effect(NOURISHMENT_BRIEF, 1).build();
 	public static final FoodProperties CACTUS_SALAD = EDFoods
 			.addFoods("cactus salad", COOKED_CACTUS, FoodValues.TOMATO, FoodValues.ONION, CHEESE).build();
 	public static final FoodProperties STUFFED_CACTUS = EDFoods
-			.addFoods("stuffed cactus", COOKED_CACTUS, COOKED_CACTUS, BREADING, CHEESE).build();
+			.addFoods("stuffed cactus", COOKED_CACTUS, BREADING, CHEESE).effect(COMFORT_MEDIUM, 1).build();
 
 	public static Builder addFoods(String name, FoodProperties... foods) {
 
