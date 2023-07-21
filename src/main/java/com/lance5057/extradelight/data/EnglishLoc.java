@@ -20,7 +20,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("itemGroup.extradelight.aesthetic", "Extra Delight Aesthetic");
 
 		this.add("farmersdelight.tooltip.oven.empty", "");
-
+		this.add("container.doughshaper", "Dough Shaping");
+		
 		this.add("extradelight.dynamicname.1", "%s");
 		this.add("extradelight.dynamicname.2", "%s %s");
 		this.add("extradelight.dynamicname.3", "%s and %s %s");

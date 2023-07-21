@@ -60,7 +60,7 @@ public class DryingRackBlock extends Block implements EntityBlock {
 				ItemStack itemstack = pPlayer.getItemInHand(pHand);
 				if (!pLevel.isClientSide) {
 					// pPlayer.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
-					be.insertItem(itemstack);
+					pPlayer.setItemInHand(pHand, be.insertItem(itemstack));
 					return InteractionResult.SUCCESS;
 				}
 

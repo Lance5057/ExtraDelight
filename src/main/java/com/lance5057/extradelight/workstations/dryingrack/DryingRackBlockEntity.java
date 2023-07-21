@@ -105,11 +105,12 @@ public class DryingRackBlockEntity extends BlockEntity {
 		};
 	}
 
-	public void extractItem(Player playerEntity, IItemHandler inventory) {
+	public void extractItem(Player playerEntity, IItemHandlerModifiable inventory) {
 		for (int i = NUM_SLOTS - 1; i >= 0; i--) {
 			if (!inventory.getStackInSlot(i).isEmpty()) {
 				ItemStack itemStack = inventory.getStackInSlot(i).copy();
 				playerEntity.addItem(itemStack);
+				inventory.setStackInSlot(i, ItemStack.EMPTY);
 				updateInventory();
 				this.cookingProgress[i] = 0;
 				this.cookingTime[i] = 0;
@@ -121,18 +122,18 @@ public class DryingRackBlockEntity extends BlockEntity {
 		updateInventory();
 	}
 
-	public void insertItem(IItemHandler inventory, ItemStack heldItem) {
+	public ItemStack insertItem(IItemHandler inventory, ItemStack heldItem) {
 		for (int i = 0; i < NUM_SLOTS; i++) {
 			if (inventory.isItemValid(i, heldItem))
 				if (!inventory.insertItem(i, heldItem, true).equals(heldItem, false)) {
 					heldItem = inventory.insertItem(i, heldItem.copy(), false);
 
 					updateInventory();
-					return;
+					return heldItem;
 				}
 		}
 		updateInventory();
-
+		return heldItem;
 	}
 
 	// External extract handler
@@ -141,8 +142,13 @@ public class DryingRackBlockEntity extends BlockEntity {
 	}
 
 	// External insert handler
-	public void insertItem(ItemStack heldItem) {
-		handler.ifPresent(inventory -> this.insertItem(inventory, heldItem));
+	public ItemStack insertItem(ItemStack heldItem) {
+		if (handler.isPresent()) {
+			Optional<ItemStack> s = handler.map(i -> insertItem(i, heldItem));
+			if (s.isPresent())
+				return s.get();
+		}
+		return heldItem;
 	}
 
 	public void updateInventory() {
