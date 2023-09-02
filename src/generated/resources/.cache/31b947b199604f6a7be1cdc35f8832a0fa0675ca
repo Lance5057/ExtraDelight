@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-13T10:34:09.9384732	Item Models: extradelight
+// 1.19.2	2023-09-02T09:39:35.2691099	Item Models: extradelight
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
 d1ff53358c1d82a41f4477b0283cfc0f46d9acbc assets/extradelight/models/item/acacia_molded_black_wallpaper.json
@@ -92,6 +92,11 @@ bc1f773791bfda0107deb8213f2fd2af6126de85 assets/extradelight/models/item/chocola
 bb898cda7a7fc2f7931a30ec4755353b957a8edc assets/extradelight/models/item/cooked_cactus.json
 05b5131d583d9905283147ead84bb128cc730b27 assets/extradelight/models/item/cooked_pasta.json
 3009687d5b75c0fb61f0f2ea72cbb349b6e6e717 assets/extradelight/models/item/cooking_oil.json
+7d67e28e2bffc69331031c18e79e1a60bc81092b assets/extradelight/models/item/corn_cob.json
+e8c23a5b047a92dfdb13387eda213596b4807889 assets/extradelight/models/item/corn_husk.json
+2bc4c4b49c88416a3d107bd00a554978d9b76fdc assets/extradelight/models/item/corn_on_cob.json
+ba777dd72b2be2ef5d6ef2b2dc0eb6ab04c8e064 assets/extradelight/models/item/corn_seeds.json
+c9f113637e2a1127b70ff4392e3249d601ffc48f assets/extradelight/models/item/corn_silk.json
 2bebaf95951fe4074cedc22c96e62aad48f6ee7b assets/extradelight/models/item/crimson_half_cabinet.json
 2e514581f66d911f3d2244bcacb313fba179f25d assets/extradelight/models/item/crimson_knife_block.json
 8842567803638f3fef132937196f2e6deb7f2d50 assets/extradelight/models/item/crimson_molded_black_wallpaper.json
@@ -141,6 +146,7 @@ aadb0b9650d33cd980e3f9718fd79adb1360407a assets/extradelight/models/item/dark_oa
 007991539e1e2f6f957174de72e56c94c4611224 assets/extradelight/models/item/dark_oak_step_stool.json
 23f159e9b0f3290f33a8c9a5a2c040d825570e30 assets/extradelight/models/item/diamond_spoon.json
 6459c63533254cc0204b0d87d2bbeae84fdd7950 assets/extradelight/models/item/dough_shaping.json
+062b4ae8a074cd2c401ca6f44aaf7d9edcb92f6f assets/extradelight/models/item/dried_corn_husk.json
 8a2865984ba1358bceb3dceac55a5084f3536f31 assets/extradelight/models/item/drying_rack_item.json
 a8ed04f668cd6f9686fa18418d560e18e7397d16 assets/extradelight/models/item/egg_in_the_basket.json
 d1ae3bc0f6c78fc9dfaede65dd062df29374fe9c assets/extradelight/models/item/egg_mix.json
@@ -425,6 +431,7 @@ adb6cfc22432e89846f60a971c05669d2133529e assets/extradelight/models/item/sweet_b
 b4d11e6e6017ac7a51b9c215d2e23aca3d5e9e59 assets/extradelight/models/item/tomato_juice.json
 0abc177890a6c4cd86ec9986d80e857e0f4aa31b assets/extradelight/models/item/tomato_soup.json
 8271734f5c2d1dce70054d3dcf41fdcce3fab033 assets/extradelight/models/item/tray.json
+3a4f78b967084dbe882f59c8b6cac6027121fd7c assets/extradelight/models/item/unshucked_corn.json
 b3bde98daec6cec2b8e1d1094dd0dd540f132171 assets/extradelight/models/item/vinegar.json
 74f73c730268c27e6cba3f08d7644ad6a6b51298 assets/extradelight/models/item/vinegar_pot.json
 b4eb3739225d03840e59297ad2c16f9e0dfd34fd assets/extradelight/models/item/wallpaper_black.json

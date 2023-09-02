@@ -30,6 +30,7 @@ public class AllLootTables extends LootTableProvider {
 	@Nonnull
 	protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
 		return ImmutableList.of(Pair.of(BlockLootTables::new, LootContextParamSets.BLOCK),
+				Pair.of(MiscLootTables::new, LootContextParamSets.EMPTY),
 				Pair.of(StructureLootTables::new, LootContextParamSets.EMPTY));
 	}
 

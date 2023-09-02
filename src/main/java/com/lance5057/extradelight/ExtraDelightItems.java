@@ -4,11 +4,13 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.CactusJuiceItem;
 import com.lance5057.extradelight.items.GlowberryFoodItem;
 import com.lance5057.extradelight.items.GlowberryJuiceItem;
 import com.lance5057.extradelight.items.GlowberryPopsicleItem;
+import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.SimpleDynamicNameFood;
 
 import net.minecraft.ChatFormatting;
@@ -18,6 +20,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SwordItem;
@@ -790,4 +793,22 @@ public class ExtraDelightItems {
 	public static final RegistryObject<BowlFoodItem> STUFFED_CACTUS = ITEMS.register("stuffed_cactus",
 			() -> new BowlFoodItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL)
 					.food(EDFoods.STUFFED_CACTUS)));
+
+	public static final RegistryObject<Item> CORN_SEEDS = ITEMS.register("corn_seeds",
+			() -> new ItemNameBlockItem(ExtraDelightBlocks.CORN_BOTTOM.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<Item> CORN_ON_COB = ITEMS.register("corn_on_cob",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CORN_HUSK = ITEMS.register("corn_husk",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> DRIED_CORN_HUSK = ITEMS.register("dried_corn_husk",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CORN_SILK = ITEMS.register("corn_silk",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CORN_COB = ITEMS.register("corn_cob",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<Item> UNSHUCKED_CORN = ITEMS.register("unshucked_corn",
+			() -> new ShuckableCorn(MiscLootTables.SHUCKED_CORN, new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 }

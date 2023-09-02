@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import net.minecraft.data.loot.BlockLoot;
@@ -39,6 +40,8 @@ public class BlockLootTables extends BlockLoot {
 								.add(LootItem.lootTableItem(Items.FLOWER_POT)))
 						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
+
+		
 
 		this.dropSelf(ExtraDelightBlocks.FLOUR.get());
 		this.dropSelf(ExtraDelightBlocks.COOKING_OIL.get());
@@ -94,7 +97,7 @@ public class BlockLootTables extends BlockLoot {
 //		this.dropSelf(ExtraDelightBlocks.JUNGLE_KNIFEBLOCK.get());
 //		this.dropSelf(ExtraDelightBlocks.SPRUCE_KNIFEBLOCK.get());
 //		this.dropSelf(ExtraDelightBlocks.WARPED_KNIFEBLOCK.get());
-		
+
 		this.add(ExtraDelightBlocks.CHEESECAKE.get(), noDrop());
 		this.add(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get(), noDrop());
 		this.add(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get(), noDrop());
@@ -155,7 +158,16 @@ public class BlockLootTables extends BlockLoot {
 		this.dropOther(ExtraDelightBlocks.RABBIT_STEW.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.CURRY.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.SALAD.get(), Items.BOWL);
-		
+
+		this.dropOther(ExtraDelightBlocks.CORN_BOTTOM.get(), ExtraDelightItems.CORN_SEEDS.get());
+		this.dropOther(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.CORN_SEEDS.get());
+//		this.add(ExtraDelightBlocks.CORN_TOP.get(),
+//				LootTable.lootTable()
+//						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+//								.add(LootItem.lootTableItem(Items.FLOWER_POT)))
+//						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+//								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
+
 		AestheticBlocks.loot(this);
 	}
 

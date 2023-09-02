@@ -53,6 +53,9 @@ public class EDFoods {
 			FoodValues.SHORT_DURATION, 0);
 
 	public static final Supplier<MobEffectInstance> PAIN = () -> new MobEffectInstance(MobEffects.HARM, 1, 0);
+	
+	public static final FoodProperties NOTFOOD = new FoodProperties.Builder().nutrition(0).saturationMod(0f)
+			.alwaysEat().build();
 
 	public static final FoodProperties CUSTARD = new FoodProperties.Builder().nutrition(7).saturationMod(0.6f)
 			.alwaysEat().build();

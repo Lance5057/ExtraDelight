@@ -455,7 +455,15 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CACTUS_EGGS, "cactus_eggs");
 		forItem(ExtraDelightItems.CACTUS_JUICE, "cactus_juice");
 		forItem(ExtraDelightItems.STUFFED_CACTUS, "stuffed_cactus");
-
+		
+		forItem(ExtraDelightItems.CORN_SEEDS, "crops/corn_seeds");
+		forItem(ExtraDelightItems.CORN_COB, "crops/corn_cob");
+		forItem(ExtraDelightItems.CORN_HUSK, "crops/corn_husk");
+		forItem(ExtraDelightItems.CORN_ON_COB, "crops/corn_on_cob");
+		forItem(ExtraDelightItems.CORN_SILK, "crops/corn_silk");
+		forItem(ExtraDelightItems.DRIED_CORN_HUSK, "crops/dried_corn_husk");
+		forItem(ExtraDelightItems.UNSHUCKED_CORN, "crops/unshucked_corn");
+		
 		AestheticBlocks.itemModel(this);
 	}
 

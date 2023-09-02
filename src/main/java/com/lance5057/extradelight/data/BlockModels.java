@@ -4,17 +4,19 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
+import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
-import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
@@ -251,6 +253,8 @@ public class BlockModels extends BlockStateProvider {
 		this.pieBlock(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), "meat_pie");
 		this.recipeFeastBlock(ExtraDelightBlocks.SALAD.get());
 
+		this.cornBlock(ExtraDelightBlocks.CORN_BOTTOM.get(), ExtraDelightBlocks.CORN_TOP.get());
+
 		AestheticBlocks.blockModel(this);
 	}
 
@@ -372,6 +376,29 @@ public class BlockModels extends BlockStateProvider {
 									modLoc("curry_block" + suffix))
 							.texture("1", contentsTexture).texture("particle", particleTexture))
 					.rotationY(((int) state.getValue(RecipeFeastBlock.FACING).toYRot() + 180) % 360).build();
+		});
+	}
+
+	public void cornBlock(CornBottom bottom, CornTop top) {
+		getVariantBuilder(bottom).forAllStates(state -> {
+			int age = state.getValue(CornBottom.AGE);
+			String suffix = "_stage" + age;
+
+			return ConfiguredModel.builder()
+					.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(bottom).getPath() + suffix,
+							modLoc("block/crops/corn/corn" + suffix)))
+					.build();
+		});
+
+		getVariantBuilder(top).forAllStates(state -> {
+			int age = state.getValue(CornTop.AGE);
+			String suffix = "_stage" + (age + 4);
+			String suffix2 = "_stage" + age;
+
+			return ConfiguredModel.builder()
+					.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(top).getPath() + suffix2,
+							modLoc("block/crops/corn/corn" + suffix)))
+					.build();
 		});
 	}
 }
