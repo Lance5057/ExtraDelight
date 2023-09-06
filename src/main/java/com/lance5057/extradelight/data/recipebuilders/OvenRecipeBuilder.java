@@ -60,6 +60,13 @@ public class OvenRecipeBuilder {
 	public OvenRecipeBuilder addIngredient(TagKey<Item> tagIn) {
 		return addIngredient(Ingredient.of(tagIn));
 	}
+	
+	public OvenRecipeBuilder addIngredient(TagKey<Item> itemIn, int quantity) {
+		for (int i = 0; i < quantity; ++i) {
+			addIngredient(Ingredient.of(itemIn));
+		}
+		return this;
+	}
 
 	public OvenRecipeBuilder addIngredient(ItemLike itemIn) {
 		return addIngredient(itemIn, 1);

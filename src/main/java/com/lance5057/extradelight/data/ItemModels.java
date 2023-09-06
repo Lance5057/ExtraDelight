@@ -392,7 +392,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.MUSHROOM_RISOTTO, "mushroom_risotto");
 		forItem(ExtraDelightItems.STUFFED_MUSHROOMS, "stuffed_mushrooms");
 		forItem(ExtraDelightItems.MUSHROOM_BURGER, "mushroom_burger");
-		
+
 		forItem(ExtraDelightItems.COOKED_PASTA, "cooked_pasta");
 		forItem(ExtraDelightItems.BUTTERED_PASTA, "buttered_pasta");
 
@@ -433,21 +433,21 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CHICKEN_PARM, "chicken_parm");
 		forItem(ExtraDelightItems.CHEESEBURGER, "cheeseburger");
 		forItem(ExtraDelightItems.BACON_CHEESEBURGER, "bacon_cheeseburger");
-		
+
 		forItem(ExtraDelightItems.RICEBALL, "riceball");
 		forItem(ExtraDelightItems.RICEBALL_FILLED, "riceball_filled");
-		
+
 		forItem(ExtraDelightItems.FISH_SALAD, "fish_salad");
 		forItem(ExtraDelightItems.FISH_SALAD_SANDWICH, "fish_salad_sandwich");
-		
+
 		forItem(ExtraDelightItems.SLICED_TOMATO, "sliced_tomato");
 		forItem(ExtraDelightItems.SLICED_ONION, "sliced_onion");
-		
+
 		forItem(ExtraDelightItems.COOKED_PASTA, "cooked_pasta");
 		forItem(ExtraDelightItems.BUTTERED_PASTA, "buttered_pasta");
-		
+
 		forItem(ExtraDelightItems.BAD_FOOD, "badfood");
-		
+
 		forItem(ExtraDelightItems.CACTUS, "cactus_paddle");
 		forItem(ExtraDelightItems.COOKED_CACTUS, "cactus_paddle_cooked");
 		forItem(ExtraDelightItems.CACTUS_SALAD, "cactus_salad");
@@ -455,7 +455,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CACTUS_EGGS, "cactus_eggs");
 		forItem(ExtraDelightItems.CACTUS_JUICE, "cactus_juice");
 		forItem(ExtraDelightItems.STUFFED_CACTUS, "stuffed_cactus");
-		
+
 		forItem(ExtraDelightItems.CORN_SEEDS, "crops/corn_seeds");
 		forItem(ExtraDelightItems.CORN_COB, "crops/corn_cob");
 		forItem(ExtraDelightItems.CORN_HUSK, "crops/corn_husk");
@@ -463,7 +463,24 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CORN_SILK, "crops/corn_silk");
 		forItem(ExtraDelightItems.DRIED_CORN_HUSK, "crops/dried_corn_husk");
 		forItem(ExtraDelightItems.UNSHUCKED_CORN, "crops/unshucked_corn");
-		
+		forItem(ExtraDelightItems.CORN_MEAL, "cornmeal");
+
+		forItem(ExtraDelightItems.CORN_CHOWDER, "corn_chowder");
+		forItem(ExtraDelightItems.CREAM_CORN, "creamed_corn");
+		forItem(ExtraDelightItems.CORN_FRITTERS, "corn_fritters");
+		forItem(ExtraDelightItems.POPCORN, "popcorn");
+		forItem(ExtraDelightItems.GRILLED_CORN_ON_COB, "grilled_corn_on_cob");
+		forItem(ExtraDelightItems.COOKED_CORN, "cooked_corn");
+		forItem(ExtraDelightItems.ROASTED_PUMPKIN_SEEDS, "roasted_pumpkin_seeds");
+		forItem(ExtraDelightItems.CORN_SILK_TEA, "corn_silk_tea");
+		forItem(ExtraDelightItems.STEWED_APPLES, "stewed_apples");
+		forItem(ExtraDelightItems.APPLE_FRITTERS, "apple_fritters");
+		forItem(ExtraDelightItems.CARAMEL_SAUCE, "caramel_sauce");
+		forItem(ExtraDelightItems.CARAMEL_CANDY, "caramel_candy");
+		forItem(ExtraDelightItems.CANDY_APPLE, "candy_apple");
+		forItem(ExtraDelightItems.CARAMEL_APPLE, "caramel_apple");
+		forItem(ExtraDelightItems.CARAMEL_POPCORN, "caramel_corn");
+
 		AestheticBlocks.itemModel(this);
 	}
 

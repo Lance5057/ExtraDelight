@@ -7,10 +7,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "extradelight:flour"
+      "tag": "forge:flour"
     },
     {
-      "item": "extradelight:flour"
+      "tag": "forge:flour"
     },
     {
       "item": "minecraft:sugar"

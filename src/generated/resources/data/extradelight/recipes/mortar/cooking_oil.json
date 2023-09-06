@@ -1,20 +1,20 @@
 {
   "type": "extradelight:mortar",
   "grinds": 4,
-  "ingredient": [
-    {
-      "item": "minecraft:beetroot_seeds"
+  "ingredient": {
+    "type": "forge:difference",
+    "base": {
+      "tag": "forge:seeds"
     },
-    {
-      "item": "farmersdelight:cabbage_seeds"
-    },
-    {
-      "item": "farmersdelight:tomato_seeds"
-    },
-    {
-      "item": "extradelight:sunflower_seeds"
-    }
-  ],
+    "subtracted": [
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "extradelight:corn_seeds"
+      }
+    ]
+  },
   "result": {
     "item": "extradelight:cooking_oil"
   }

@@ -37,6 +37,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
+import net.minecraftforge.common.crafting.DifferenceIngredient;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
@@ -605,6 +606,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.define('p', Ingredient.of(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
 				.unlockedBy(getName(), has(Tags.Items.INGOTS_IRON)).save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(ModItems.WHEAT_DOUGH.get(), 3).requires(Items.WATER_BUCKET)
+				.requires(Ingredient.of(ExtraDelightTags.FLOUR), 3)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.WATER_BUCKET))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "wheat_dough"));
+
 		// Juice
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.GLOW_BERRY_JUICE.get())
 				.requires(Ingredient.of(ExtraDelightTags.FRUIT_GLOW_BERRY), 6).requires(Items.SUGAR)
@@ -962,7 +968,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.GRAVY.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL)
-				.addIngredient(ExtraDelightItems.FLOUR.get()).addIngredient(ModItems.BONE_BROTH.get())
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ModItems.BONE_BROTH.get())
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "gravy_boat"));
 
 		CookingPotRecipeBuilder
@@ -1590,9 +1596,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL)).save(consumer);
 
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.BEETROOT_SEEDS, ModItems.CABBAGE_SEEDS.get(), ModItems.TOMATO_SEEDS.get(),
-						ExtraDelightItems.SUNFLOWER_SEEDS.get()), ExtraDelightItems.COOKING_OIL.get(), STANDARD_GRIND,
-						1)
+				.grind(DifferenceIngredient.of(Ingredient.of(Tags.Items.SEEDS),
+						Ingredient.of(Items.WHEAT_SEEDS, ExtraDelightItems.CORN_SEEDS.get())),
+						ExtraDelightItems.COOKING_OIL.get(), STANDARD_GRIND, 1)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BEETROOT_SEEDS))
 				.save(consumer);
 
@@ -1673,43 +1679,43 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "haggis_test"));
 
 		OvenRecipeBuilder.OvenRecipe(Items.CAKE, 1, NORMAL_COOKING, MEDIUM_EXP, ExtraDelightItems.ROUND_PAN.get())
-				.addIngredient(ExtraDelightItems.FLOUR.get(), 3).addIngredient(ForgeTags.MILK)
-				.addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.MILK).addIngredient(Items.EGG)
-				.addIngredient(Items.SUGAR, 2).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.MILK)
+				.addIngredient(ForgeTags.MILK).addIngredient(Items.EGG).addIngredient(Items.SUGAR, 2)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.GLOW_BERRY_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightItems.FLOUR.get(), 2).addIngredient(Items.GLOW_BERRIES)
+				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(Items.GLOW_BERRIES)
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.GLOW_BERRIES).build(consumer);
 
 		OvenRecipeBuilder.OvenRecipe(Items.COOKIE, 8, FAST_COOKING, MEDIUM_EXP, ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightItems.FLOUR.get(), 2).addIngredient(Items.COCOA_BEANS)
+				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(Items.COCOA_BEANS)
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.COCOA_BEANS).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.SUGAR_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightItems.FLOUR.get(), 2).addIngredient(Items.SUGAR)
+				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(Items.SUGAR)
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.SUGAR).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.PUMPKIN_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightItems.FLOUR.get(), 2).addIngredient(ModItems.PUMPKIN_SLICE.get())
+				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(ModItems.PUMPKIN_SLICE.get())
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ModItems.SWEET_BERRY_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightItems.FLOUR.get(), 2).addIngredient(Items.SWEET_BERRIES)
+				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(Items.SWEET_BERRIES)
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.SWEET_BERRIES).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ModItems.HONEY_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP, ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightItems.FLOUR.get(), 2).addIngredient(Items.HONEY_BOTTLE)
+				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(Items.HONEY_BOTTLE)
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.HONEY_BOTTLE).build(consumer);
 
 		OvenRecipeBuilder
@@ -1763,7 +1769,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.PIE_DISH.get())
-				.addIngredient(ExtraDelightItems.FLOUR.get(), 3).addIngredient(Items.SWEET_BERRIES, 3)
+				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(Items.SWEET_BERRIES, 3)
 				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).addIngredient(ModItems.PIE_CRUST.get(), 1)
 				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedByAnyIngredient(Items.SWEET_BERRIES).build(consumer);
@@ -1771,7 +1777,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.PIE_DISH.get())
-				.addIngredient(ExtraDelightItems.FLOUR.get(), 3).addIngredient(Items.GLOW_BERRIES, 3)
+				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(Items.GLOW_BERRIES, 3)
 				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).addIngredient(ModItems.PIE_CRUST.get(), 1)
 				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedByAnyIngredient(Items.GLOW_BERRIES).build(consumer);

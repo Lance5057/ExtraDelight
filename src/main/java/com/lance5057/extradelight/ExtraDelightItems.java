@@ -797,7 +797,8 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> CORN_SEEDS = ITEMS.register("corn_seeds",
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.CORN_BOTTOM.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
-
+	public static final RegistryObject<Item> UNSHUCKED_CORN = ITEMS.register("unshucked_corn",
+			() -> new ShuckableCorn(MiscLootTables.SHUCKED_CORN, new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> CORN_ON_COB = ITEMS.register("corn_on_cob",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> CORN_HUSK = ITEMS.register("corn_husk",
@@ -808,7 +809,38 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> CORN_COB = ITEMS.register("corn_cob",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CORN_MEAL = ITEMS.register("corn_meal",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Item> UNSHUCKED_CORN = ITEMS.register("unshucked_corn",
-			() -> new ShuckableCorn(MiscLootTables.SHUCKED_CORN, new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CORN_CHOWDER = ITEMS.register("corn_chowder",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CREAM_CORN = ITEMS.register("cream_corn",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CORN_FRITTERS = ITEMS.register("corn_fritters",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> POPCORN = ITEMS.register("popcorn",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> GRILLED_CORN_ON_COB = ITEMS.register("grilled_corn_on_cob",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> COOKED_CORN = ITEMS.register("cooked_corn",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> ROASTED_PUMPKIN_SEEDS = ITEMS.register("roasted_pumpkin_seeds",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CORN_SILK_TEA = ITEMS.register("corn_silk_tea",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> STEWED_APPLES = ITEMS.register("stewed_apples",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> APPLE_FRITTERS = ITEMS.register("apple_fritters",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CARAMEL_SAUCE = ITEMS.register("caramel_sauce",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CARAMEL_CANDY = ITEMS.register("caramel_candy",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CANDY_APPLE = ITEMS.register("candy_apple",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CARAMEL_APPLE = ITEMS.register("caramel_apple",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CARAMEL_POPCORN = ITEMS.register("caramel_popcorn",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
 }

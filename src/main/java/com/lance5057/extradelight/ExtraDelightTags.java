@@ -9,11 +9,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 
 public class ExtraDelightTags {
-
-	
-
-	
-
 	public static TagKey<Item> forgeTag(String tag) {
 		return ItemTags.create(new ResourceLocation("forge", tag));
 	}

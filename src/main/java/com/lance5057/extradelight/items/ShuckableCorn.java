@@ -50,7 +50,7 @@ public class ShuckableCorn extends Item {
 	@Override
 	public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
 		if (pLivingEntity instanceof Player p) {
-			pStack.shrink(1);
+			pStack.shrink(8);
 
 			for (int i = 0; i < 5; ++i) {
 				Vec3 vec3 = new Vec3(((double) pLevel.random.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D,
