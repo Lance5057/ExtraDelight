@@ -1267,34 +1267,39 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.OXTAIL)))
 				.addRecipe(r -> CookingPotRecipeBuilder
-						.cookingPotRecipe(ExtraDelightItems.OXTAIL_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F)
+						.cookingPotRecipe(ExtraDelightItems.OXTAIL_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F,
+								Items.BOWL)
 						.addIngredient(ExtraDelightTags.OXTAIL).addIngredient(Items.CARROT)
 						.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ForgeTags.VEGETABLES_TOMATO)
 						.build(r, new ResourceLocation(ExtraDelight.MOD_ID, "oxtail_soup")))
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "oxtail_soup_test"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.CARROT_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.CARROT_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(Tags.Items.CROPS_CARROT), 2)
 				.addIngredient(Ingredient.of(ForgeTags.CROPS_ONION)).addIngredient(ModItems.BONE_BROTH.get())
 				.addIngredient(ForgeTags.MILK)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "carrot_soup"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.FISH_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.FISH_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(ItemTags.FISHES), 2).addIngredient(Ingredient.of(ForgeTags.CROPS_ONION))
 				.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(Items.DRIED_KELP)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fish_soup"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.POTATO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.POTATO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(Tags.Items.CROPS_POTATO), 2)
 				.addIngredient(Ingredient.of(ForgeTags.CROPS_ONION)).addIngredient(ModItems.BONE_BROTH.get())
 				.addIngredient(ForgeTags.MILK)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "potato_soup"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.TOMATO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.TOMATO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(ForgeTags.CROPS_TOMATO), 2)
 				.addIngredient(Ingredient.of(ForgeTags.CROPS_ONION)).addIngredient(ModItems.BONE_BROTH.get())
 				.addIngredient(ForgeTags.MILK)
@@ -1306,27 +1311,32 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "boiled_egg"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.APPLE_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.APPLE_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
 				.addIngredient(Ingredient.of(Items.APPLE), 3).addIngredient(Ingredient.of(Items.SUGAR), 1)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "apple_jam"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.CARROT_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.CARROT_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
 				.addIngredient(Ingredient.of(Tags.Items.CROPS_CARROT), 3).addIngredient(Ingredient.of(Items.SUGAR), 1)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "carrot_jam"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.GLOW_BERRY_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.GLOW_BERRY_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
 				.addIngredient(Ingredient.of(Items.GLOW_BERRIES), 3).addIngredient(Ingredient.of(Items.SUGAR), 1)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "glow_berry_jam"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.GOLDEN_APPLE_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.GOLDEN_APPLE_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
 				.addIngredient(Ingredient.of(Items.GOLDEN_APPLE), 3).addIngredient(Ingredient.of(Items.SUGAR), 1)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "golden_apple_jam"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.SWEET_BERRY_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.SWEET_BERRY_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
 				.addIngredient(Ingredient.of(Items.SWEET_BERRIES), 3).addIngredient(Ingredient.of(Items.SUGAR), 1)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sweet_berry_jam"));
 
@@ -1336,19 +1346,22 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "seaweed_paste"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.GLAZED_CARROT.get(), 3, CookingRecipes.NORMAL_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.GLAZED_CARROT.get(), 3, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(Items.CARROT), 3)
 				.addIngredient(Ingredient.of(ExtraDelightItems.BUTTER.get()))
 				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER))
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "glazed_carrot"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.APPLE_SAUCE.get(), 3, CookingRecipes.SLOW_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.APPLE_SAUCE.get(), 3, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(Items.APPLE), 3).addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER))
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "apple_sauce"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.HASH_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.HASH_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()), 2)
 				.addIngredient(Ingredient.of(ForgeTags.CROPS_ONION))
 				.addIngredient(Ingredient.of(ExtraDelightTags.FRYING_OIL))
@@ -1363,7 +1376,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.MACARONI_CHEESE_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING,
-						0.35F)
+						0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(ExtraDelightItems.MACARONI.get()), 2)
 				.addIngredient(Ingredient.of(ExtraDelightTags.BUTTER)).addIngredient(Ingredient.of(ForgeTags.MILK))
 				.addIngredient(Ingredient.of(ExtraDelightTags.CHEESE), 2)
@@ -1384,7 +1398,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fried_mushrooms"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.MUSHROOM_RISOTTO.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.MUSHROOM_RISOTTO.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(Tags.Items.MUSHROOMS))
 				.addIngredient(Ingredient.of(ExtraDelightTags.CHEESE))
 				.addIngredient(Ingredient.of(ExtraDelightTags.BUTTER))
@@ -1393,7 +1408,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mushroom_risotto"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.CURRY_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.CURRY_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(ForgeTags.RAW_CHICKEN))
 				.addIngredient(Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()))
 				.addIngredient(Ingredient.of(ModItems.BONE_BROTH.get()))
@@ -1401,7 +1417,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "curry"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.ALFREDO_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.ALFREDO_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(Ingredient.of(ForgeTags.MILK_BOTTLE))
 				.addIngredient(Ingredient.of(ExtraDelightTags.CHEESE))
 				.addIngredient(Ingredient.of(ExtraDelightTags.BUTTER))
@@ -1413,7 +1430,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cooked_pasta"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.CACTUS_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F)
+				.cookingPotRecipe(ExtraDelightItems.CACTUS_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
 				.addIngredient(ExtraDelightItems.COOKED_CACTUS.get(), 2)
 				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO))
 				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))

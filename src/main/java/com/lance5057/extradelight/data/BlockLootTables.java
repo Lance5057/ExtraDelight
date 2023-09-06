@@ -41,8 +41,6 @@ public class BlockLootTables extends BlockLoot {
 						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
 
-		
-
 		this.dropSelf(ExtraDelightBlocks.FLOUR.get());
 		this.dropSelf(ExtraDelightBlocks.COOKING_OIL.get());
 
@@ -161,12 +159,8 @@ public class BlockLootTables extends BlockLoot {
 
 		this.dropOther(ExtraDelightBlocks.CORN_BOTTOM.get(), ExtraDelightItems.CORN_SEEDS.get());
 		this.dropOther(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.CORN_SEEDS.get());
-//		this.add(ExtraDelightBlocks.CORN_TOP.get(),
-//				LootTable.lootTable()
-//						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-//								.add(LootItem.lootTableItem(Items.FLOWER_POT)))
-//						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-//								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
+
+		this.dropOther(ExtraDelightBlocks.CORNBREAD.get(), Items.AIR);
 
 		AestheticBlocks.loot(this);
 	}

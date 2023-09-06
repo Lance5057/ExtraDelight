@@ -481,6 +481,10 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CARAMEL_APPLE, "caramel_apple");
 		forItem(ExtraDelightItems.CARAMEL_POPCORN, "caramel_corn");
 
+		forItem(ExtraDelightItems.CORNBREAD, "cornbread");
+		forBlockItem(ExtraDelightItems.CORNBREAD_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/cornbread_stage0"));
+
 		AestheticBlocks.itemModel(this);
 	}
 

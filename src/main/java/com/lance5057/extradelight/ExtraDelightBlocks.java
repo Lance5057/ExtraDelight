@@ -251,4 +251,8 @@ public class ExtraDelightBlocks {
 			() -> new CornBottom(Block.Properties.copy(Blocks.WHEAT).color(MaterialColor.COLOR_GREEN).offsetType(BlockBehaviour.OffsetType.XZ)));
 	public static final RegistryObject<CornTop> CORN_TOP = BLOCKS.register("corn_top",
 			() -> new CornTop(Block.Properties.copy(Blocks.WHEAT).color(MaterialColor.COLOR_GREEN).offsetType(BlockBehaviour.OffsetType.XZ)));
+	
+	public static final RegistryObject<RecipeFeastBlock> CORNBREAD = BLOCKS.register("cornbread",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_YELLOW), true,
+					bowl));
 }

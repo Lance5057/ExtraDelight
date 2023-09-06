@@ -1,4 +1,4 @@
-// 1.19.2	2023-09-02T11:44:21.0584764	LootTables
+// 1.19.2	2023-09-06T12:22:12.6299166	LootTables
 2df5ce0c265b62e0751dfbde70e812a38a2bd169 data/extradelight/loot_tables/blocks/acacia_half_cabinet.json
 7747bac4a9ea01dff06964433ec737b240944275 data/extradelight/loot_tables/blocks/acacia_knife_block.json
 09c450a44e0758dd3e30e647c970e55dd25ca5f6 data/extradelight/loot_tables/blocks/acacia_molded_black_wallpaper.json
@@ -50,6 +50,7 @@ b31e84cf40785423d49c34c0521f6e4a9924e36d data/extradelight/loot_tables/blocks/bi
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/chicken_stew_block.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/chocolate_cheesecake.json
 bc5e6f6f35cb909e6cdce5270f5cdcbe6e507000 data/extradelight/loot_tables/blocks/cooking_oil.json
+2b2a4bde1a1c86393b28fa3ff9b81ef1ddeed22d data/extradelight/loot_tables/blocks/cornbread.json
 1eb4bba094f5f7b7dc3e44e5b78d0d287363b4e0 data/extradelight/loot_tables/blocks/corn_bottom.json
 1eb4bba094f5f7b7dc3e44e5b78d0d287363b4e0 data/extradelight/loot_tables/blocks/corn_top.json
 55ac68bc73d172680c19bc1097ec376a1c7c8104 data/extradelight/loot_tables/blocks/crimson_half_cabinet.json

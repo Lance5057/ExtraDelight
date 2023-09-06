@@ -843,4 +843,8 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> CARAMEL_POPCORN = ITEMS.register("caramel_popcorn",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
+	public static final RegistryObject<Item> CORNBREAD = ITEMS.register("cornbread",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CORNBREAD_FEAST = ITEMS.register("cornbread_feast",
+			() -> new BlockItem(ExtraDelightBlocks.CORNBREAD.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 }

@@ -1,4 +1,4 @@
-// 1.19.2	2023-09-01T10:23:17.1027727	Block States: extradelight
+// 1.19.2	2023-09-06T12:22:12.6189178	Block States: extradelight
 e59ff0ab2be841ce0a186208c61c6671872c7575 assets/extradelight/blockstates/acacia_knife_block.json
 b53c748ec0e40232b62085300f2468fdee1f61d9 assets/extradelight/blockstates/acacia_molded_black_wallpaper.json
 4d3db9c88a83e95afe7d99e412c3b4c7f666eb73 assets/extradelight/blockstates/acacia_molded_blue_wallpaper.json
@@ -48,6 +48,7 @@ ab324a3878a73a07ea6b09a2118a0f375fc31625 assets/extradelight/blockstates/birch_s
 13929ca147795a56e134891c8bda44e9b8151ab4 assets/extradelight/blockstates/chicken_stew_block.json
 c5b678446796101206983d6f3bd55788ace43ad7 assets/extradelight/blockstates/chocolate_cheesecake.json
 380e0d2f16afb444ff85ec179ffa4544f6ba6109 assets/extradelight/blockstates/cooking_oil.json
+4fb8c9d6ffad8b3e41333ec2c5bea2aa5046fe82 assets/extradelight/blockstates/cornbread.json
 f696fcc0947b8d060297b1abb8cf8cd0c8550b11 assets/extradelight/blockstates/corn_bottom.json
 5ac56789467253c507e98f7d0cc1d9b192e477d6 assets/extradelight/blockstates/corn_top.json
 8fead0c01c524ef2871d1e9a2da7e78c0dedb22e assets/extradelight/blockstates/crimson_knife_block.json
