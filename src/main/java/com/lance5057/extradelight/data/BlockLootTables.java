@@ -161,7 +161,11 @@ public class BlockLootTables extends BlockLoot {
 		this.dropOther(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.CORN_SEEDS.get());
 
 		this.dropOther(ExtraDelightBlocks.CORNBREAD.get(), Items.AIR);
-
+		this.dropOther(ExtraDelightBlocks.CARAMEL_CHEESECAKE.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.CORN_PUDDING.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.PUMPKIN_PIE.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.PUMPKIN_ROLL.get(), Items.AIR);
+		
 		AestheticBlocks.loot(this);
 	}
 

@@ -480,10 +480,24 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CANDY_APPLE, "candy_apple");
 		forItem(ExtraDelightItems.CARAMEL_APPLE, "caramel_apple");
 		forItem(ExtraDelightItems.CARAMEL_POPCORN, "caramel_corn");
+		forItem(ExtraDelightItems.CARAMEL_CHEESECAKE_ITEM, "caramel_cheesecake");
+		forItem(ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE, "caramel_cheesecake_slice");
+		forItem(ExtraDelightItems.CARAMEL_CUSTARD, "caramel_custard");
+		forItem(ExtraDelightItems.CARAMEL_POPSICLE, "caramel_popsicle");
+		forItem(ExtraDelightItems.PUMPKIN_PIE_ITEM, "pumpkin_pie");
+		forItem(ExtraDelightItems.PUMPKIN_PIE_SLICE, "pumpkin_pie_slice");
 
 		forItem(ExtraDelightItems.CORNBREAD, "cornbread");
 		forBlockItem(ExtraDelightItems.CORNBREAD_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/cornbread_stage0"));
+		
+		forItem(ExtraDelightItems.CORN_PUDDING, "corn_pudding");
+		forBlockItem(ExtraDelightItems.CORN_PUDDING_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/corn_pudding_stage0"));
+		
+		forItem(ExtraDelightItems.PUMPKIN_ROLL, "pumpkin_roll");
+		forBlockItem(ExtraDelightItems.PUMPKIN_ROLL_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/pumpkin_roll_stage0"));
 
 		AestheticBlocks.itemModel(this);
 	}

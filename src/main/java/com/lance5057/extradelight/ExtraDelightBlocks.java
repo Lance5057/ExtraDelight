@@ -248,11 +248,28 @@ public class ExtraDelightBlocks {
 					bowl));
 
 	public static final RegistryObject<CornBottom> CORN_BOTTOM = BLOCKS.register("corn_bottom",
-			() -> new CornBottom(Block.Properties.copy(Blocks.WHEAT).color(MaterialColor.COLOR_GREEN).offsetType(BlockBehaviour.OffsetType.XZ)));
+			() -> new CornBottom(Block.Properties.copy(Blocks.WHEAT).color(MaterialColor.COLOR_GREEN)
+					.offsetType(BlockBehaviour.OffsetType.XZ)));
 	public static final RegistryObject<CornTop> CORN_TOP = BLOCKS.register("corn_top",
-			() -> new CornTop(Block.Properties.copy(Blocks.WHEAT).color(MaterialColor.COLOR_GREEN).offsetType(BlockBehaviour.OffsetType.XZ)));
-	
+			() -> new CornTop(Block.Properties.copy(Blocks.WHEAT).color(MaterialColor.COLOR_GREEN)
+					.offsetType(BlockBehaviour.OffsetType.XZ)));
+
 	public static final RegistryObject<RecipeFeastBlock> CORNBREAD = BLOCKS.register("cornbread",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_YELLOW), true,
+					bowl));
+
+	public static final RegistryObject<Block> CARAMEL_CHEESECAKE = ExtraDelightBlocks.BLOCKS.register(
+			"caramel_cheesecake",
+			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE));
+
+	public static final RegistryObject<Block> PUMPKIN_PIE = ExtraDelightBlocks.BLOCKS.register("pumpkin_pie", 
+			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.PUMPKIN_PIE_SLICE));
+
+	public static final RegistryObject<RecipeFeastBlock> CORN_PUDDING = BLOCKS.register("corn_pudding",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_YELLOW), true,
+					bowl));
+	
+	public static final RegistryObject<RecipeFeastBlock> PUMPKIN_ROLL = BLOCKS.register("pumpkin_roll",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
 					bowl));
 }

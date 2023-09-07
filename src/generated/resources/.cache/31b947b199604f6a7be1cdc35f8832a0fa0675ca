@@ -1,4 +1,4 @@
-// 1.19.2	2023-09-06T12:41:26.8127428	Item Models: extradelight
+// 1.19.2	2023-09-07T12:30:52.0186722	Item Models: extradelight
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
 d1ff53358c1d82a41f4477b0283cfc0f46d9acbc assets/extradelight/models/item/acacia_molded_black_wallpaper.json
@@ -75,7 +75,11 @@ bb746d3297704458c02e237dfc39449de16380b2 assets/extradelight/models/item/cactus_
 9fff5a4e84299775b79294fb7f3dac1165c4af68 assets/extradelight/models/item/candy_apple.json
 8049dfe4dfe23d2e29c659f955c46d19f28774e4 assets/extradelight/models/item/caramel_apple.json
 530bce40cbe713b45b73b7f2b132d5a7e6426950 assets/extradelight/models/item/caramel_candy.json
+57a3025665a10bd19e23491dd7a3860cd713d6df assets/extradelight/models/item/caramel_cheescake_slice.json
+e37f5bd93e5e8c0ca7aac5f7ee4bc59b79162222 assets/extradelight/models/item/caramel_cheesecake_item.json
+4f4f10889124954af90f03c658a396653c16986e assets/extradelight/models/item/caramel_custard.json
 5720f41bf78a48d85a709c692e7899d274fb5d69 assets/extradelight/models/item/caramel_popcorn.json
+feb122133aa8f7082f2c1a5f90138e6f2fe2fbd1 assets/extradelight/models/item/caramel_popsicle.json
 b38c5aeb56b835a38a157ccc5e5128f4723fb737 assets/extradelight/models/item/caramel_sauce.json
 cfd31e622775889c39be7e9fd76ac873898c578d assets/extradelight/models/item/carrot_jam.json
 560113cd62b69d14ae321244e38ca0f0dbba57e4 assets/extradelight/models/item/carrot_salad.json
@@ -107,6 +111,8 @@ d10cf55bb589b484b5133e2d659701c2a2cfce32 assets/extradelight/models/item/corn_fr
 e8c23a5b047a92dfdb13387eda213596b4807889 assets/extradelight/models/item/corn_husk.json
 d1224a3e0c6b925a81422328b276b63d8dae61a9 assets/extradelight/models/item/corn_meal.json
 2bc4c4b49c88416a3d107bd00a554978d9b76fdc assets/extradelight/models/item/corn_on_cob.json
+5656cbfea07464d8add6549dccda4647050c0cfa assets/extradelight/models/item/corn_pudding.json
+c31936eb6bbc51b8a7ea0986474cf070ebf9e736 assets/extradelight/models/item/corn_pudding_feast.json
 ba777dd72b2be2ef5d6ef2b2dc0eb6ab04c8e064 assets/extradelight/models/item/corn_seeds.json
 c9f113637e2a1127b70ff4392e3249d601ffc48f assets/extradelight/models/item/corn_silk.json
 23ccc9d1d6632f6eb36096824104dbb5785ed813 assets/extradelight/models/item/corn_silk_tea.json
@@ -381,6 +387,10 @@ a89fca957bbade579404819cc563558013e59062 assets/extradelight/models/item/potroas
 6749d90d57cf28adb2fb1c7ecfede7ffa12e56bd assets/extradelight/models/item/pumpkin_cheesecake_slice.json
 4cd8403eb917e1adae6654c0a6e02fd20f290c88 assets/extradelight/models/item/pumpkin_cookie.json
 b699d674331217e93bcadc5148c934e19c5fb267 assets/extradelight/models/item/pumpkin_custard.json
+11d926851f74026000e238928e856b3adb0ce878 assets/extradelight/models/item/pumpkin_pie_item.json
+4a32788633349ca1a7cb6767f7143bf675d66d36 assets/extradelight/models/item/pumpkin_pie_slice.json
+94a0ac815d9c7b4ed43adf2d16d38cb2b009d89b assets/extradelight/models/item/pumpkin_roll.json
+0b2bd2fa9b26714c9c0eba13689d8b817bb5929b assets/extradelight/models/item/pumpkin_roll_feast.json
 c218818c9bf9c2fd259630bc94089f7f0408b292 assets/extradelight/models/item/quiche.json
 2ab179a7e3bbae14170d663fbfad18ad5dd9a83b assets/extradelight/models/item/quiche_slice.json
 64aac75097e2285fcb13d117cd07c7679f3da3dd assets/extradelight/models/item/rabbit_stew_feast.json
