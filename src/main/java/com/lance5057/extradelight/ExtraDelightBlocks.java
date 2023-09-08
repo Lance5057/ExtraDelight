@@ -267,9 +267,21 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<RecipeFeastBlock> CORN_PUDDING = BLOCKS.register("corn_pudding",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_YELLOW), true,
-					bowl));
+					pan));
 	
 	public static final RegistryObject<RecipeFeastBlock> PUMPKIN_ROLL = BLOCKS.register("pumpkin_roll",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
 					bowl));
+	
+	public static final RegistryObject<RecipeFeastBlock> APPLE_CRISP = BLOCKS.register("apple_crisp",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
+					pan));
+	
+	public static final RegistryObject<RecipeFeastBlock> STUFFING = BLOCKS.register("stuffing",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
+					pot));
+	
+	public static final RegistryObject<RecipeFeastBlock> POTATO_AU_GRATIN = BLOCKS.register("potato_au_gratin",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
+					pan));
 }

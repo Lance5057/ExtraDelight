@@ -1,4 +1,4 @@
-// 1.19.2	2023-09-07T12:30:52.0376738	LootTables
+// 1.19.2	2023-09-08T11:45:46.7455624	LootTables
 2df5ce0c265b62e0751dfbde70e812a38a2bd169 data/extradelight/loot_tables/blocks/acacia_half_cabinet.json
 7747bac4a9ea01dff06964433ec737b240944275 data/extradelight/loot_tables/blocks/acacia_knife_block.json
 09c450a44e0758dd3e30e647c970e55dd25ca5f6 data/extradelight/loot_tables/blocks/acacia_molded_black_wallpaper.json
@@ -20,6 +20,7 @@ e930810260badc4968bc74f2035186be0a6dde93 data/extradelight/loot_tables/blocks/ac
 50a48199bcc98676ce541883216968ebc74f9380 data/extradelight/loot_tables/blocks/acacia_spice_rack.json
 840f0f995fa230bf6bf06f2ba1893d1f72dc9d07 data/extradelight/loot_tables/blocks/acacia_spice_rack_full.json
 4b4588c968b914ac3712902502f674eddb83e132 data/extradelight/loot_tables/blocks/acacia_step_stool.json
+217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/apple_crisp.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/bbq_ribs_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/beef_stew_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/beef_wellington_block.json
@@ -208,6 +209,7 @@ f4c747bc00d2212f0435ec278292785af2c498c2 data/extradelight/loot_tables/blocks/oa
 590e1f089a06471614a1146ab7c21ea013a64ae7 data/extradelight/loot_tables/blocks/oven.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/plain_cake.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/pork_stew_block.json
+217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/potato_au_gratin.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/potroast_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/pulled_pork_block.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/pumpkin_cheesecake.json
@@ -240,6 +242,7 @@ ae439cbd6d22fc4e00b956a340d846b2078518a8 data/extradelight/loot_tables/blocks/sp
 ef95324608af003865a468fc67fbdfd867a51d1d data/extradelight/loot_tables/blocks/spruce_spice_rack_full.json
 bf0a23867c3ba480b92aa0d9b045e0e74f9c3194 data/extradelight/loot_tables/blocks/spruce_step_stool.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/stirfry_block.json
+217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/stuffing.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/sweet_berry_pie.json
 615b13a18822f502528bd3572e827f4a617abb7f data/extradelight/loot_tables/blocks/vinegar_pot.json
 8d196c9d1246a62762290668019d5d5f0ba8d4ba data/extradelight/loot_tables/blocks/wallpaper_black.json

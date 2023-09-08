@@ -498,6 +498,18 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.PUMPKIN_ROLL, "pumpkin_roll");
 		forBlockItem(ExtraDelightItems.PUMPKIN_ROLL_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/pumpkin_roll_stage0"));
+		
+		forItem(ExtraDelightItems.APPLE_CRISP, "apple_crisp");
+		forBlockItem(ExtraDelightItems.APPLE_CRISP_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/apple_crisp_stage0"));
+		
+		forItem(ExtraDelightItems.STUFFING, "stuffing");
+		forBlockItem(ExtraDelightItems.STUFFING_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/stuffing_stage0"));
+		
+		forItem(ExtraDelightItems.POTATO_AU_GRATIN, "potato_au_gratin");
+		forBlockItem(ExtraDelightItems.POTATO_AU_GRATIN_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/potato_au_gratin_stage0"));
 
 		AestheticBlocks.itemModel(this);
 	}

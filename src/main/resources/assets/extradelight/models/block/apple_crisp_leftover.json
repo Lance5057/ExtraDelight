@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
-	"render_type": "cutout",
 	"textures": {
+		"2": "extradelight:block/apple_crisp",
 		"3": "extradelight:block/pan",
 		"5": "extradelight:block/pan_bottom_dirty",
 		"particle": "extradelight:block/pan_bottom_dirty"
@@ -91,6 +91,22 @@
 				"up": {"uv": [0, 0, 4, 1], "texture": "#3"},
 				"down": {"uv": [0, 0, 4, 1], "texture": "#3"}
 			}
+		},
+		{
+			"from": [8, 1, 6],
+			"to": [13, 1, 9],
+			"rotation": {"angle": 45, "axis": "y", "origin": [10.5, 1, 7.5]},
+			"faces": {
+				"up": {"uv": [0, 13, 5, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [4, 1, 8],
+			"to": [7, 1, 13],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [5.5, 1, 10.5]},
+			"faces": {
+				"up": {"uv": [0, 13, 5, 16], "rotation": 270, "texture": "#2"}
+			}
 		}
 	],
 	"groups": [
@@ -105,7 +121,7 @@
 			"name": "pie",
 			"origin": [8, 8, 8],
 			"color": 0,
-			"children": []
+			"children": [7, 8]
 		}
 	]
 }

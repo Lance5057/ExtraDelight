@@ -261,6 +261,9 @@ public class BlockModels extends BlockStateProvider {
 		this.recipeFeastBlock(ExtraDelightBlocks.CORN_PUDDING.get());
 		pieBlock(ExtraDelightBlocks.PUMPKIN_PIE.get(), "pumpkin_pie");
 		this.recipeFeastBlock(ExtraDelightBlocks.PUMPKIN_ROLL.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.APPLE_CRISP.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.STUFFING.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.POTATO_AU_GRATIN.get());
 
 		AestheticBlocks.blockModel(this);
 	}

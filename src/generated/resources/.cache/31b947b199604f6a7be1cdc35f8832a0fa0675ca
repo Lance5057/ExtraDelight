@@ -1,4 +1,4 @@
-// 1.19.2	2023-09-07T12:30:52.0186722	Item Models: extradelight
+// 1.19.2	2023-09-08T11:45:46.7365609	Item Models: extradelight
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
 d1ff53358c1d82a41f4477b0283cfc0f46d9acbc assets/extradelight/models/item/acacia_molded_black_wallpaper.json
@@ -23,6 +23,8 @@ e813d1a4281fdce2834ed8ca752c6619226f790e assets/extradelight/models/item/acacia_
 05ddd64b4e446cf5e011353fb59f24a9a3c4fad6 assets/extradelight/models/item/agar_agar.json
 9eb993f470454d76d4c482d70f24db101f0f24b1 assets/extradelight/models/item/agar_sheets.json
 066abf2ac24756bf7d3d6b68b5a81e95dabd303d assets/extradelight/models/item/alfredo_sauce.json
+d3bd4cbef2154ec1ef11cac167dcd855e2410d34 assets/extradelight/models/item/apple_crisp.json
+2658c5156ce54b8287ef1b619fac0bb4693d3063 assets/extradelight/models/item/apple_crisp_feast.json
 8b7edf87144059d855fedd64ac1e9fadd0898506 assets/extradelight/models/item/apple_fritters.json
 2333a06362a634867d4808003a51393ffccbb705 assets/extradelight/models/item/apple_jam.json
 3dac844c85d4dd1d2fd4a89933b61b0a9ec3937e assets/extradelight/models/item/apple_sauce.json
@@ -376,6 +378,8 @@ f076aba57fc412787512f15f2e3a5033be860ebd assets/extradelight/models/item/pie_dis
 9de1bfc683b38fdf0a91ceb9083a8cd5d061f20c assets/extradelight/models/item/pork_stew_rice.json
 34212d8bc0285041bd908114d63955a6705a7c4c assets/extradelight/models/item/pork_tenderloin.json
 b65ec405ca5f860b66eb16fa4b3ef08e1513e917 assets/extradelight/models/item/pork_tenderloin_sandwich.json
+97da8a1dadcf9ef271ab6d27b2e4b3b727385cb0 assets/extradelight/models/item/potato_au_gratin.json
+b22d26c3f7265cd1f0cc92e935e041bed28b8f08 assets/extradelight/models/item/potato_au_gratin_feast.json
 b4f97433736d07841ba8c74a26fbf3fcf9a047bb assets/extradelight/models/item/potato_chips.json
 1f72893a7f923a801bfe323aa67294e33989fef9 assets/extradelight/models/item/potato_soup.json
 34a36fa6a8fea2871e7dab37b295966cc1a7f664 assets/extradelight/models/item/potato_sticks.json
@@ -447,6 +451,8 @@ a66ff93381665959700c6c4445dd9c760e52bdf8 assets/extradelight/models/item/stirfry
 67219d8b4ff080e81d7bb8ef2a7902602375e343 assets/extradelight/models/item/stuffed_cactus.json
 f6e27cfb27884cb80a25bd45e03dcdd20793e7ee assets/extradelight/models/item/stuffed_heart.json
 1e89272ef2f7c684a48bb7e33ef64346b6778c97 assets/extradelight/models/item/stuffed_mushrooms.json
+b7a8f33d9f9926b0ee921e527b89d1613872b6ea assets/extradelight/models/item/stuffing.json
+64c1fd82c37b34eabc7506d1e20b86a29727b873 assets/extradelight/models/item/stuffing_feast.json
 765f4ca380421c63bffbb8e46c14b8f6cd245f5c assets/extradelight/models/item/sugar_cookie.json
 f12a127280c49603c7f14baa3ccc48e24015317a assets/extradelight/models/item/sunflower_seeds.json
 9fbf315759c4bc639c76f2b0ec6a0232716a4f5d assets/extradelight/models/item/sweet_berry_custard.json
