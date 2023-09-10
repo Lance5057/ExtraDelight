@@ -1,5 +1,6 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.aesthetics.block.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
@@ -284,4 +285,6 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<RecipeFeastBlock> POTATO_AU_GRATIN = BLOCKS.register("potato_au_gratin",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
 					pan));
+	
+	
 }

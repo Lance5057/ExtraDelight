@@ -1,4 +1,4 @@
-// 1.19.2	2023-09-08T11:45:46.7365609	Item Models: extradelight
+// 1.19.2	2023-09-10T01:14:20.5156611	Item Models: extradelight
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
 d1ff53358c1d82a41f4477b0283cfc0f46d9acbc assets/extradelight/models/item/acacia_molded_black_wallpaper.json
@@ -111,6 +111,7 @@ bb898cda7a7fc2f7931a30ec4755353b957a8edc assets/extradelight/models/item/cooked_
 7d67e28e2bffc69331031c18e79e1a60bc81092b assets/extradelight/models/item/corn_cob.json
 d10cf55bb589b484b5133e2d659701c2a2cfce32 assets/extradelight/models/item/corn_fritters.json
 e8c23a5b047a92dfdb13387eda213596b4807889 assets/extradelight/models/item/corn_husk.json
+0e519c79c58619271b7229279fc0f0454c29f95c assets/extradelight/models/item/corn_husk_doll.json
 d1224a3e0c6b925a81422328b276b63d8dae61a9 assets/extradelight/models/item/corn_meal.json
 2bc4c4b49c88416a3d107bd00a554978d9b76fdc assets/extradelight/models/item/corn_on_cob.json
 5656cbfea07464d8add6549dccda4647050c0cfa assets/extradelight/models/item/corn_pudding.json

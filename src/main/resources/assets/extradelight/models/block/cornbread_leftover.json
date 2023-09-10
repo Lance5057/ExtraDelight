@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"ambientocclusion": false,
+	"parent": "block/block",
 	"textures": {
 		"4": "extradelight:block/cornmeal_crumbs",
 		"side": "farmersdelight:block/skillet_side",

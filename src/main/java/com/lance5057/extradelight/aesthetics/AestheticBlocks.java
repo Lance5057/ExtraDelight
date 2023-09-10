@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-import net.minecraft.world.level.block.SoundType;
 import org.apache.commons.lang3.text.WordUtils;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.aesthetics.block.CornHuskDollBlock;
 import com.lance5057.extradelight.aesthetics.block.MoldingBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
 import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
@@ -30,8 +30,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
-import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -77,6 +77,11 @@ public class AestheticBlocks {
 
 	public static final List<RegistryObject<Item>> WALLPAPER_ITEMS = new ArrayList<RegistryObject<Item>>();
 	public static final List<RegistryObject<Item>> MOLDED_WALLPAPER_ITEMS = new ArrayList<RegistryObject<Item>>();
+
+	public static final RegistryObject<CornHuskDollBlock> CORN_HUSK_DOLL = BLOCKS.register("corn_husk_doll",
+			() -> new CornHuskDollBlock());
+	public static final RegistryObject<BlockItem> CORN_HUSK_DOLL_ITEM = ITEMS.register("corn_husk_doll",
+			() -> new BlockItem(CORN_HUSK_DOLL.get(), new Item.Properties().tab(AESTHETIC_TAB)));
 
 	public static Block[] getRegistryListAsBlocks(List<RegistryObject<Block>> blocks) {
 		List<Block> l = new ArrayList<Block>();
@@ -134,15 +139,11 @@ public class AestheticBlocks {
 		registerAllWood("knife_block", KnifeBlock::new, KNIFE_BLOCKS, KNIFE_BLOCK_ITEMS);
 		registerAllWood("half_cabinet", HalfCabinetBlock::new, CABINETS, CABINET_ITEMS);
 
-		registerAllColors("wallpaper", () -> new Block(Properties
-						.of(Material.WOOD)
-						.strength(2.0F, 3.0F)
-						.sound(SoundType.GRASS)), //.sound(SoundType.WOOl)
+		registerAllColors("wallpaper",
+				() -> new Block(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)), // .sound(SoundType.WOOl)
 				WALLPAPER_BLOCKS, WALLPAPER_ITEMS);
-		registerMoldedWallpaper("wallpaper", () -> new MoldingBlock(Properties
-						.of(Material.WOOD)
-						.strength(2.0F, 3.0F)
-						.sound(SoundType.GRASS)), //.sound(SoundType.WOOl)
+		registerMoldedWallpaper("wallpaper",
+				() -> new MoldingBlock(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)), // .sound(SoundType.WOOl)
 				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
 	}
 
@@ -162,6 +163,8 @@ public class AestheticBlocks {
 			bl.dropSelf(b.get());
 		for (RegistryObject<Block> b : MOLDED_WALLPAPER_BLOCKS)
 			bl.dropSelf(b.get());
+
+		bl.dropSelf(CORN_HUSK_DOLL.get());
 	}
 
 	public static void blockModel(BlockStateProvider bsp) {
@@ -179,13 +182,14 @@ public class AestheticBlocks {
 					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.renderType("cutout"));
 
-			bsp.horizontalBlock(SPICE_RACKS_FULL.get(i).get(), bsp.models()
-					.withExistingParent(WOOD.values()[i].toString() + "_spice_rack_full",
-							bsp.modLoc("block/spicerack_filled"))
-					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
-					.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate"))
-					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
-					.renderType("cutout"));
+			bsp.horizontalBlock(SPICE_RACKS_FULL.get(i).get(),
+					bsp.models()
+							.withExistingParent(WOOD.values()[i].toString() + "_spice_rack_full",
+									bsp.modLoc("block/spicerack_filled"))
+							.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+							.texture("2", bsp.modLoc("block/" + WOOD.values()[i].toString() + "_ornate"))
+							.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+							.renderType("cutout"));
 
 			bsp.horizontalBlock(KNIFE_BLOCKS.get(i).get(), bsp.models()
 					.withExistingParent(WOOD.values()[i].toString() + "_knife_block", bsp.modLoc("block/knifeblock"))
@@ -223,6 +227,9 @@ public class AestheticBlocks {
 
 			}
 		}
+
+		bsp.horizontalBlock(CORN_HUSK_DOLL.get(),
+				bsp.models().withExistingParent("cornhuskdoll", bsp.modLoc("block/corn_husk_doll")));
 	}
 
 	public static void itemModel(ItemModelProvider tmp) {
@@ -265,6 +272,9 @@ public class AestheticBlocks {
 						.texture("0", tmp.modLoc("block/wallpaper_" + DyeColor.values()[c].toString()));
 			}
 		}
+
+		tmp.getBuilder(CORN_HUSK_DOLL.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/corn_husk_doll")));
 	}
 
 	public static void EngLoc(LanguageProvider lp) {
@@ -368,109 +378,97 @@ public class AestheticBlocks {
 				.requires(ModItems.MANGROVE_CABINET.get())
 				.unlockedBy("mangrove_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MANGROVE_CABINET.get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.mangrove + "_cabinet_full_to_half");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.mangrove + "_cabinet_full_to_half");
 		ShapelessRecipeBuilder.shapeless(ModItems.MANGROVE_CABINET.get())
 				.requires(CABINETS.get(WOOD.mangrove.ordinal()).get())
 				.unlockedBy("mangrove_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.mangrove.ordinal()).get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.mangrove + "_cabinet_half_to_full");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.mangrove + "_cabinet_half_to_full");
 
 		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.crimson.ordinal()).get())
-				.requires(ModItems.CRIMSON_CABINET.get()).unlockedBy("crimson_half_cabinet",
+				.requires(ModItems.CRIMSON_CABINET.get())
+				.unlockedBy("crimson_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CRIMSON_CABINET.get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.crimson + "_cabinet_full_to_half");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.crimson + "_cabinet_full_to_half");
 		ShapelessRecipeBuilder.shapeless(ModItems.CRIMSON_CABINET.get())
 				.requires(CABINETS.get(WOOD.crimson.ordinal()).get())
 				.unlockedBy("crimson_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.crimson.ordinal()).get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.crimson + "_cabinet_half_to_full");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.crimson + "_cabinet_half_to_full");
 
 		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.warped.ordinal()).get())
-				.requires(ModItems.WARPED_CABINET.get()).unlockedBy("warped_half_cabinet",
+				.requires(ModItems.WARPED_CABINET.get())
+				.unlockedBy("warped_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.WARPED_CABINET.get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.warped + "_cabinet_full_to_half");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.warped + "_cabinet_full_to_half");
 		ShapelessRecipeBuilder.shapeless(ModItems.WARPED_CABINET.get())
 				.requires(CABINETS.get(WOOD.warped.ordinal()).get())
 				.unlockedBy("warped_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.warped.ordinal()).get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.warped + "_cabinet_half_to_full");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.warped + "_cabinet_half_to_full");
 
 		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.acacia.ordinal()).get())
-				.requires(ModItems.ACACIA_CABINET.get()).unlockedBy("acacia_half_cabinet",
+				.requires(ModItems.ACACIA_CABINET.get())
+				.unlockedBy("acacia_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ACACIA_CABINET.get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.acacia + "_cabinet_full_to_half");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.acacia + "_cabinet_full_to_half");
 		ShapelessRecipeBuilder.shapeless(ModItems.ACACIA_CABINET.get())
 				.requires(CABINETS.get(WOOD.acacia.ordinal()).get())
 				.unlockedBy("acacia_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.acacia.ordinal()).get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.acacia + "_cabinet_half_to_full");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.acacia + "_cabinet_half_to_full");
 
 		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.oak.ordinal()).get()).requires(ModItems.OAK_CABINET.get())
 				.unlockedBy("oak_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.OAK_CABINET.get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.oak + "_cabinet_full_to_half");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.oak + "_cabinet_full_to_half");
 		ShapelessRecipeBuilder.shapeless(ModItems.OAK_CABINET.get()).requires(CABINETS.get(WOOD.oak.ordinal()).get())
 				.unlockedBy("oak_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.oak.ordinal()).get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.oak + "_cabinet_half_to_full");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.oak + "_cabinet_half_to_full");
 
 		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.dark_oak.ordinal()).get())
 				.requires(ModItems.DARK_OAK_CABINET.get())
 				.unlockedBy("dark_oak_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.DARK_OAK_CABINET.get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.dark_oak + "_cabinet_full_to_half");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.dark_oak + "_cabinet_full_to_half");
 		ShapelessRecipeBuilder.shapeless(ModItems.DARK_OAK_CABINET.get())
 				.requires(CABINETS.get(WOOD.dark_oak.ordinal()).get())
 				.unlockedBy("dark_oak_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.dark_oak.ordinal()).get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.dark_oak + "_cabinet_half_to_full");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.dark_oak + "_cabinet_half_to_full");
 
 		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.spruce.ordinal()).get())
-				.requires(ModItems.SPRUCE_CABINET.get()).unlockedBy("spruce_half_cabinet",
+				.requires(ModItems.SPRUCE_CABINET.get())
+				.unlockedBy("spruce_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPRUCE_CABINET.get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.spruce + "_cabinet_full_to_half");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.spruce + "_cabinet_full_to_half");
 		ShapelessRecipeBuilder.shapeless(ModItems.SPRUCE_CABINET.get())
 				.requires(CABINETS.get(WOOD.spruce.ordinal()).get())
 				.unlockedBy("spruce_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.spruce.ordinal()).get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.spruce + "_cabinet_half_to_full");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.spruce + "_cabinet_half_to_full");
 
 		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.birch.ordinal()).get())
-				.requires(ModItems.BIRCH_CABINET.get()).unlockedBy("birch_half_cabinet",
+				.requires(ModItems.BIRCH_CABINET.get())
+				.unlockedBy("birch_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BIRCH_CABINET.get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.birch + "_cabinet_full_to_half");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.birch + "_cabinet_full_to_half");
 		ShapelessRecipeBuilder.shapeless(ModItems.BIRCH_CABINET.get())
 				.requires(CABINETS.get(WOOD.birch.ordinal()).get())
 				.unlockedBy("birch_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.birch.ordinal()).get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.birch + "_cabinet_half_to_full");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.birch + "_cabinet_half_to_full");
 
 		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.jungle.ordinal()).get())
-				.requires(ModItems.JUNGLE_CABINET.get()).unlockedBy("jungle_half_cabinet",
+				.requires(ModItems.JUNGLE_CABINET.get())
+				.unlockedBy("jungle_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.JUNGLE_CABINET.get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.jungle + "_cabinet_full_to_half");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.jungle + "_cabinet_full_to_half");
 		ShapelessRecipeBuilder.shapeless(ModItems.JUNGLE_CABINET.get())
 				.requires(CABINETS.get(WOOD.jungle.ordinal()).get())
 				.unlockedBy("jungle_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.jungle.ordinal()).get()))
-				.save(consumer, ExtraDelight.MOD_ID +
-						":half_cabinets/" + WOOD.jungle + "_cabinet_half_to_full");
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.jungle + "_cabinet_half_to_full");
 	}
 }
