@@ -1,6 +1,6 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.aesthetics.block.CornHuskDollBlock;
+import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;

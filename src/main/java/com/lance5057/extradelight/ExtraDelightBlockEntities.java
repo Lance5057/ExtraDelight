@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlockEntity;
 import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 import com.lance5057.extradelight.displays.spice.SpiceRackEntity;
@@ -59,4 +60,8 @@ public class ExtraDelightBlockEntities {
 	public static final RegistryObject<BlockEntityType<DryingRackBlockEntity>> DRYING_RACK = TILES
 			.register("drying_rack", () -> BlockEntityType.Builder
 					.of(DryingRackBlockEntity::new, ExtraDelightBlocks.DRYING_RACK.get()).build(null));
+
+	public static final RegistryObject<BlockEntityType<CornHuskDollBlockEntity>> CORN_HUSK_DOLL = TILES
+			.register("corn_husk_doll", () -> BlockEntityType.Builder
+					.of(CornHuskDollBlockEntity::new, AestheticBlocks.CORN_HUSK_DOLL.get()).build(null));
 }
