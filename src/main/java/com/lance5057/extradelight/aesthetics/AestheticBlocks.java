@@ -31,12 +31,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
-import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -231,18 +228,8 @@ public class AestheticBlocks {
 			}
 		}
 
-//		bsp.horizontalBlock(CORN_HUSK_DOLL.get(),
-//				bsp.models().withExistingParent("cornhuskdoll", bsp.modLoc("block/corn_husk_doll")));
-
-		bsp.getVariantBuilder(CORN_HUSK_DOLL.get()).forAllStatesExcept(state -> {
-			int facing = state.getValue(CornHuskDollBlock.FACING);
-			Boolean half = state.getValue(CornHuskDollBlock.HANGING);
-
-			return ConfiguredModel.builder()
-					.modelFile(half ? bsp.models().getExistingFile(bsp.modLoc("block/corn_husk_doll"))
-							: bsp.models().getExistingFile(bsp.modLoc("block/corn_husk_doll_hanging")))
-					.rotationY(facing).build();
-		}, StairBlock.WATERLOGGED);
+		bsp.simpleBlock(CORN_HUSK_DOLL.get(),
+				bsp.models().getExistingFile(new ResourceLocation("minecraft", "block/air")));
 	}
 
 	public static void itemModel(ItemModelProvider tmp) {

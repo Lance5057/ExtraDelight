@@ -40,6 +40,7 @@ public class ExtraDelight {
 		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
 		ExtraDelightLoot.register(modEventBus);
 
+		ExtraDelightWorldGen.FEATURES.register(modEventBus);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {

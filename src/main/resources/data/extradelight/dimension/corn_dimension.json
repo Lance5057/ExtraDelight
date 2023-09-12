@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:corn",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "extradelight:cornfield",
+      "lakes": false,
+      "features": true,
+      "layers": [
+        {
+          "block": "minecraft:bedrock",
+          "height": 1
+        },
+        {
+          "block": "minecraft:stone",
+          "height": 10
+        },
+        {
+          "block": "minecraft:dirt",
+          "height": 3
+        },
+        {
+          "block": "minecraft:grass_block",
+          "height": 1
+        }
+      ]
+    }
+  }
+}

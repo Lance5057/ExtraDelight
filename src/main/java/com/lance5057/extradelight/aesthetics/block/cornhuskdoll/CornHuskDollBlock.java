@@ -1,8 +1,8 @@
 package com.lance5057.extradelight.aesthetics.block.cornhuskdoll;
 
-import java.util.stream.IntStream;
+import javax.annotation.Nullable;
 
-import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
+import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,6 +17,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -26,10 +28,9 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public class CornHuskDollBlock extends Block implements SimpleWaterloggedBlock, EntityBlock {
-	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 0.0D, 12.0D, 8.0D, 16.0D);
+	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
 	public static final IntegerProperty FACING = BlockStateProperties.ROTATION_16;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final BooleanProperty HANGING = BlockStateProperties.HANGING;
@@ -62,7 +63,7 @@ public class CornHuskDollBlock extends Block implements SimpleWaterloggedBlock, 
 						Integer.valueOf(
 								Mth.floor((double) ((180.0F + pContext.getRotation()) * 16.0F / 360.0F) + 0.5D) & 15))
 				.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER))
-				.setValue(HANGING, direction != Direction.DOWN ? true : false);
+				.setValue(HANGING, direction != Direction.DOWN ? false : true);
 
 	}
 
@@ -75,29 +76,23 @@ public class CornHuskDollBlock extends Block implements SimpleWaterloggedBlock, 
 
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-		return level.getBlockState(pos.below()).getMaterial().isSolid();
+		return level.getBlockState(pos.below()).getMaterial().isSolid()
+				|| level.getBlockState(pos.above()).getMaterial().isSolid();
 	}
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-		// TODO Auto-generated method stub
-		return new MixingBowlBlockEntity(pPos, pState);
+		return new CornHuskDollBlockEntity(pPos, pState);
 	}
 
+	@Nullable
 	@Override
-	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity tileentity = level.getBlockEntity(pos);
-			if (tileentity instanceof MixingBowlBlockEntity) {
-				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
-						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots() - 1)
-								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
-
-				level.updateNeighbourForOutputSignal(pos, this);
-			}
-
-			super.onRemove(state, level, pos, newState, isMoving);
-		}
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState,
+			BlockEntityType<T> pBlockEntityType) {
+		if (pLevel.dimension() == Level.OVERWORLD)
+			return pBlockEntityType == ExtraDelightBlockEntities.CORN_HUSK_DOLL.get() ? CornHuskDollBlockEntity::tick
+					: null;
+		return null;
 	}
 
 }
