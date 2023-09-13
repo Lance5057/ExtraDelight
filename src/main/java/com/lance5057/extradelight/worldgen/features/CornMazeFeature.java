@@ -1,10 +1,12 @@
 package com.lance5057.extradelight.worldgen.features;
 
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
+import com.lance5057.extradelight.util.EllersGen;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -25,23 +27,50 @@ public class CornMazeFeature extends Feature<SimpleBlockConfiguration> {
 	 */
 	public boolean place(FeaturePlaceContext<SimpleBlockConfiguration> p_160341_) {
 		SimpleBlockConfiguration simpleblockconfiguration = p_160341_.config();
+
 		WorldGenLevel worldgenlevel = p_160341_.level();
 		BlockPos blockpos = p_160341_.origin();
+
+		int cx = worldgenlevel.getChunk(blockpos).getPos().getMinBlockX();
+		int cz = worldgenlevel.getChunk(blockpos).getPos().getMinBlockZ();
+
+		blockpos = new BlockPos(cx, blockpos.getY(), cz);
 		BlockState blockstate = simpleblockconfiguration.toPlace().getState(p_160341_.random(), blockpos);
-		if (blockstate.canSurvive(worldgenlevel, blockpos)) {
-			if (blockstate.getBlock() instanceof CornBottom) {
-				if (!worldgenlevel.isEmptyBlock(blockpos.above())) {
+
+		int h = 18;
+		int w = 18;
+
+		EllersGen maze = new EllersGen(h, w);
+		maze.makeMaze();
+		// maze.printMaze();
+
+		char[][] m = maze.getMaze();
+
+		// scan area
+		for (int x = 0; x < w; x++) {
+			for (int z = 0; z < h; z++) {
+				BlockPos p = new BlockPos(blockpos.getX() + x, blockpos.getY(), blockpos.getZ() + z);
+				if (!worldgenlevel.isEmptyBlock(p)) {
 					return false;
 				}
-
-				CornBottom.placeAt(worldgenlevel, blockstate, blockpos, 2);
-			} else {
-				worldgenlevel.setBlock(blockpos, blockstate, 2);
 			}
-
-			return true;
-		} else {
-			return false;
 		}
+
+		for (int x = 1; x < w-1 ; x++) {
+			for (int z = 1; z < h-1 ; z++) {
+				if (blockstate.canSurvive(worldgenlevel, blockpos)) {
+					if (blockstate.getBlock() instanceof CornBottom) {
+						BlockPos p = new BlockPos(blockpos.getX() + x-1, blockpos.getY(), blockpos.getZ() + z-1);
+
+						if (m[x][z] == '#')
+							worldgenlevel.setBlock(p, Blocks.STONE.defaultBlockState(), 0);
+						// CornBottom.placeAt(worldgenlevel, blockstate, p, 0);
+					}
+				}
+			}
+		}
+
+		return true;
 	}
+
 }

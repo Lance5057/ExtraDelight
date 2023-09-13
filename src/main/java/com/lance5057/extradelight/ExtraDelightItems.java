@@ -862,30 +862,45 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<BlockItem> CORN_PUDDING_FEAST = ITEMS.register("corn_pudding_feast",
 			() -> new BlockItem(ExtraDelightBlocks.CORN_PUDDING.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
-	
+
 	public static final RegistryObject<Item> PUMPKIN_PIE_SLICE = ITEMS.register("pumpkin_pie_slice",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> PUMPKIN_PIE_ITEM = ITEMS.register("pumpkin_pie_item",
-			() -> new BlockItem(ExtraDelightBlocks.PUMPKIN_PIE.get(),
-					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
-	
+			() -> new BlockItem(ExtraDelightBlocks.PUMPKIN_PIE.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
 	public static final RegistryObject<Item> PUMPKIN_ROLL = ITEMS.register("pumpkin_roll",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<BlockItem> PUMPKIN_ROLL_FEAST = ITEMS.register("pumpkin_roll_feast",
 			() -> new BlockItem(ExtraDelightBlocks.PUMPKIN_ROLL.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
-	
+
 	public static final RegistryObject<Item> APPLE_CRISP = ITEMS.register("apple_crisp",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<BlockItem> APPLE_CRISP_FEAST = ITEMS.register("apple_crisp_feast",
 			() -> new BlockItem(ExtraDelightBlocks.APPLE_CRISP.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
-	
+
 	public static final RegistryObject<Item> STUFFING = ITEMS.register("stuffing",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<BlockItem> STUFFING_FEAST = ITEMS.register("stuffing_feast",
 			() -> new BlockItem(ExtraDelightBlocks.STUFFING.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
-	
+
 	public static final RegistryObject<Item> POTATO_AU_GRATIN = ITEMS.register("potato_au_gratin",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<BlockItem> POTATO_AU_GRATIN_FEAST = ITEMS.register("potato_au_gratin_feast",
-			() -> new BlockItem(ExtraDelightBlocks.POTATO_AU_GRATIN.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new BlockItem(ExtraDelightBlocks.POTATO_AU_GRATIN.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<BlockItem> FLOUR_SACK = ITEMS.register("flour_sack",
+			() -> new BlockItem(ExtraDelightBlocks.FLOUR_SACK.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CORNMEAL_SACK = ITEMS.register("cornmeal_sack",
+			() -> new BlockItem(ExtraDelightBlocks.CORNMEAL_SACK.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> SUGAR_SACK = ITEMS.register("sugar_sack",
+			() -> new BlockItem(ExtraDelightBlocks.SUGAR_SACK.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CORN_CRATE = ITEMS.register("corn_crate",
+			() -> new BlockItem(ExtraDelightBlocks.CORN_CRATE.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CORN_HUSK_BUNDLE = ITEMS.register("corn_husk_bundle",
+			() -> new BlockItem(ExtraDelightBlocks.CORN_HUSK_BUNDLE.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> DRIED_CORN_HUSK_BUNDLE = ITEMS.register("dried_corn_husk_bundle",
+			() -> new BlockItem(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 }

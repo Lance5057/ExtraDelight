@@ -30,12 +30,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -82,6 +85,9 @@ public class AestheticBlocks {
 			() -> new CornHuskDollBlock());
 	public static final RegistryObject<BlockItem> CORN_HUSK_DOLL_ITEM = ITEMS.register("corn_husk_doll",
 			() -> new BlockItem(CORN_HUSK_DOLL.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+
+	public static final List<RegistryObject<Block>> DRIED_CORN_FENCE = new ArrayList<RegistryObject<Block>>();
+	public static final List<RegistryObject<Item>> DRIED_CORN_FENCE_ITEMS = new ArrayList<RegistryObject<Item>>();
 
 	public static Block[] getRegistryListAsBlocks(List<RegistryObject<Block>> blocks) {
 		List<Block> l = new ArrayList<Block>();
@@ -140,11 +146,14 @@ public class AestheticBlocks {
 		registerAllWood("half_cabinet", HalfCabinetBlock::new, CABINETS, CABINET_ITEMS);
 
 		registerAllColors("wallpaper",
-				() -> new Block(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)), // .sound(SoundType.WOOl)
+				() -> new Block(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
 				WALLPAPER_BLOCKS, WALLPAPER_ITEMS);
 		registerMoldedWallpaper("wallpaper",
-				() -> new MoldingBlock(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)), // .sound(SoundType.WOOl)
+				() -> new MoldingBlock(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
 				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
+
+		registerAllWood("dried_corn_fence", () -> new FenceBlock(Properties.of(Material.WOOD)), DRIED_CORN_FENCE,
+				DRIED_CORN_FENCE_ITEMS);
 	}
 
 	public static void loot(BlockLoot bl) {
@@ -157,6 +166,8 @@ public class AestheticBlocks {
 		for (RegistryObject<Block> b : KNIFE_BLOCKS)
 			bl.dropSelf(b.get());
 		for (RegistryObject<Block> b : CABINETS)
+			bl.dropSelf(b.get());
+		for (RegistryObject<Block> b : DRIED_CORN_FENCE)
 			bl.dropSelf(b.get());
 
 		for (RegistryObject<Block> b : WALLPAPER_BLOCKS)
@@ -196,6 +207,22 @@ public class AestheticBlocks {
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.renderType("cutout"));
+
+			String s = WOOD.values()[i].toString();
+
+			MultiPartBlockStateBuilder builder = bsp.getMultipartBuilder(DRIED_CORN_FENCE.get(i).get()).part()
+					.modelFile(bsp.models().withExistingParent(s + "dried_corn_fence", bsp.modLoc("dried_corn_fence"))
+							.texture("1", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks")))
+					.addModel().end();
+
+			PipeBlock.PROPERTY_BY_DIRECTION.entrySet().forEach(e -> {
+				Direction dir = e.getKey();
+				if (dir.getAxis().isHorizontal()) {
+					builder.part().modelFile(bsp.models().fenceSide(s + "_side", bsp.mcLoc("block/" + s + "_planks")))
+							.rotationY((((int) dir.toYRot()) + 180) % 360).uvLock(true).addModel()
+							.condition(e.getValue(), true);
+				}
+			});
 		}
 
 		for (int i = 0; i < DyeColor.values().length; i++) {

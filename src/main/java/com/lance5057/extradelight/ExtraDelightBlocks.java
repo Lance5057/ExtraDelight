@@ -1,6 +1,5 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
@@ -17,6 +16,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.CarpetBlock;
+import net.minecraft.world.level.block.HayBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
@@ -263,28 +263,39 @@ public class ExtraDelightBlocks {
 			"caramel_cheesecake",
 			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE));
 
-	public static final RegistryObject<Block> PUMPKIN_PIE = ExtraDelightBlocks.BLOCKS.register("pumpkin_pie", 
+	public static final RegistryObject<Block> PUMPKIN_PIE = ExtraDelightBlocks.BLOCKS.register("pumpkin_pie",
 			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.PUMPKIN_PIE_SLICE));
 
 	public static final RegistryObject<RecipeFeastBlock> CORN_PUDDING = BLOCKS.register("corn_pudding",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_YELLOW), true,
 					pan));
-	
+
 	public static final RegistryObject<RecipeFeastBlock> PUMPKIN_ROLL = BLOCKS.register("pumpkin_roll",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
 					bowl));
-	
+
 	public static final RegistryObject<RecipeFeastBlock> APPLE_CRISP = BLOCKS.register("apple_crisp",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
 					pan));
-	
+
 	public static final RegistryObject<RecipeFeastBlock> STUFFING = BLOCKS.register("stuffing",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
 					pot));
-	
+
 	public static final RegistryObject<RecipeFeastBlock> POTATO_AU_GRATIN = BLOCKS.register("potato_au_gratin",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
 					pan));
-	
-	
+
+	public static final RegistryObject<Block> FLOUR_SACK = BLOCKS.register("flour_sack",
+			() -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN)));
+	public static final RegistryObject<Block> CORNMEAL_SACK = BLOCKS.register("cornmeal_sack",
+			() -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN)));
+	public static final RegistryObject<Block> SUGAR_SACK = BLOCKS.register("sugar_sack",
+			() -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN)));
+	public static final RegistryObject<Block> CORN_CRATE = BLOCKS.register("corn_crate",
+			() -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_YELLOW)));
+	public static final RegistryObject<HayBlock> CORN_HUSK_BUNDLE = BLOCKS.register("corn_husk_bundle",
+			() -> new HayBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_LIGHT_GREEN)));
+	public static final RegistryObject<HayBlock> DRIED_CORN_HUSK_BUNDLE = BLOCKS.register("dried_corn_husk_bundle",
+			() -> new HayBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.TERRACOTTA_YELLOW)));
 }

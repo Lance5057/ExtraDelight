@@ -510,6 +510,13 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.POTATO_AU_GRATIN, "potato_au_gratin");
 		forBlockItem(ExtraDelightItems.POTATO_AU_GRATIN_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/potato_au_gratin_stage0"));
+		
+		forBlockItem(ExtraDelightItems.FLOUR_SACK, "flour_sack");
+		forBlockItem(ExtraDelightItems.CORNMEAL_SACK, "cornmeal_sack");
+		forBlockItem(ExtraDelightItems.SUGAR_SACK, "sugar_sack");
+		forBlockItem(ExtraDelightItems.CORN_CRATE, "corn_crate");
+		forBlockItem(ExtraDelightItems.CORN_HUSK_BUNDLE, "corn_husk_bundle");
+		forBlockItem(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE, "dried_corn_husk_bundle");
 
 		AestheticBlocks.itemModel(this);
 	}
