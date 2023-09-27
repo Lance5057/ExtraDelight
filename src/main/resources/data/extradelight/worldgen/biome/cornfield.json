@@ -58,6 +58,7 @@
     [],
     [],
     [
+		"extradelight:rail_placer",
 		"minecraft:patch_pumpkin",
 		"extradelight:corn_placer"
 	],

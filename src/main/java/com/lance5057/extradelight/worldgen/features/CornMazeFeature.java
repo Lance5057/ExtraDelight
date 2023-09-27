@@ -53,18 +53,18 @@ public class CornMazeFeature extends Feature<SimpleBlockConfiguration> {
 
 		char[][] m = maze.getMaze();
 
-		// scan area
-		for (int x = 0; x < w - 2; x++) {
-			for (int z = 0; z < h - 2; z++) {
-				BlockPos p = new BlockPos(blockpos.getX() + x, blockpos.getY(), blockpos.getZ() + z);
-				// if (worldgenlevel.getBlockState(p).is(ExtraDelightBlocks.CORN_BOTTOM.get()))
-				// {
-
-//				if (worldgenlevel.getBlockState(p).is(expected)) {
-//					return false;
-//				}
-			}
-		}
+//		// scan area
+//		for (int x = 0; x < w - 2; x++) {
+//			for (int z = 0; z < h - 2; z++) {
+//				BlockPos p = new BlockPos(blockpos.getX() + x, blockpos.getY(), blockpos.getZ() + z);
+//				// if (worldgenlevel.getBlockState(p).is(ExtraDelightBlocks.CORN_BOTTOM.get()))
+//				// {
+//
+////				if (worldgenlevel.getBlockState(p).is(expected)) {
+////					return false;
+////				}
+//			}
+//		}
 
 		for (int x = 1; x < w - 1; x++) {
 			for (int z = 1; z < h - 1; z++) {
@@ -73,9 +73,9 @@ public class CornMazeFeature extends Feature<SimpleBlockConfiguration> {
 						BlockPos p = new BlockPos(blockpos.getX() + x - 1, blockpos.getY(), blockpos.getZ() + z - 1);
 
 						if (m[x][z] == '#' && worldgenlevel.canSeeSky(p))
-							if (checkAround(worldgenlevel, p, 3))
-								worldgenlevel.setBlock(p, Blocks.STONE.defaultBlockState(), 0);
-						// CornBottom.placeAt(worldgenlevel, blockstate, p, 0);
+							if (checkAround(worldgenlevel, p, 5))
+								CornBottom.placeAt(worldgenlevel, blockstate, p, 0);
+						// 
 					}
 				}
 			}
@@ -85,8 +85,8 @@ public class CornMazeFeature extends Feature<SimpleBlockConfiguration> {
 	}
 
 	boolean checkAround(WorldGenLevel level, BlockPos pos, int size) {
-		for (int x = -size; x < size; x++) {
-			for (int z = -size; z < size; z++) {
+		for (int x = -size; x < size+1; x++) {
+			for (int z = -size; z < size+1; z++) {
 				BlockPos p = new BlockPos(pos.getX() + x, pos.getY(), pos.getZ() + z);
 
 				if (!expected.contains(level.getBlockState(p).getBlock()))

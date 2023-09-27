@@ -28,6 +28,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -36,6 +37,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class CornBottom extends BushBlock implements BonemealableBlock {
 	public static final int MAX_AGE = 3;
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
+	public static final BooleanProperty DIMENSION = BooleanProperty.create("dimension");
 	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] { Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
 			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
 			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
@@ -44,7 +46,7 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 
 	public CornBottom(BlockBehaviour.Properties pProperties) {
 		super(pProperties);
-		this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)));
+		this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)).setValue(DIMENSION, false));
 	}
 
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -242,7 +244,7 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 	}
 
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-		pBuilder.add(AGE);
+		pBuilder.add(AGE, DIMENSION);
 	}
 
 	@Override
@@ -258,8 +260,8 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 
 	@Nullable
 	public static void placeAt(LevelAccessor pLevel, BlockState pState, BlockPos pPos, int pFlags) {
-		pLevel.setBlock(pPos.above(), ExtraDelightBlocks.CORN_TOP.get().defaultBlockState().setValue(AGE, 3), 0);
-		pLevel.setBlock(pPos,  ExtraDelightBlocks.CORN_BOTTOM.get().defaultBlockState().setValue(AGE, 3), 0);
+		pLevel.setBlock(pPos.above(), ExtraDelightBlocks.CORN_TOP.get().defaultBlockState().setValue(AGE, 3).setValue(DIMENSION, true), 0);
+		pLevel.setBlock(pPos,  ExtraDelightBlocks.CORN_BOTTOM.get().defaultBlockState().setValue(AGE, 3).setValue(DIMENSION, true), 0);
 
 	}
 
