@@ -22,7 +22,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.0.2'
+version = '1.0.3_test'
 group = 'com.lance5057.extradelight' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'extradelight'
 

@@ -23,7 +23,8 @@
           "block": "minecraft:grass_block",
           "height": 1
         }
-      ]
+      ],
+      "structure_overrides": "minecraft:ruined_portals"
     }
   }
 }
