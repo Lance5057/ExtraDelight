@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.util.EllersGen;
 import com.mojang.serialization.Codec;
@@ -22,7 +23,7 @@ public class CornMazeFeature extends Feature<SimpleBlockConfiguration> {
 		super(p_66808_);
 	}
 
-	List<Block> expected = Arrays.asList(Blocks.STONE, Blocks.AIR);// ExtraDelightBlocks.CORN_BOTTOM.get();
+	List<Block> expected = Arrays.asList(ExtraDelightBlocks.CORN_BOTTOM.get(), Blocks.AIR);// ExtraDelightBlocks.CORN_BOTTOM.get();
 
 	/**
 	 * Places the given feature at the given location. During world generation,
