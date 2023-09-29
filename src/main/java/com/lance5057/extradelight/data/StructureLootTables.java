@@ -7,12 +7,14 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 	public static ResourceLocation curry_powder = new ResourceLocation(ExtraDelight.MOD_ID, "structures/curry_powder");
@@ -21,17 +23,25 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 	public static ResourceLocation ingredients = new ResourceLocation(ExtraDelight.MOD_ID, "structures/ingredients");
 	public static ResourceLocation feasts = new ResourceLocation(ExtraDelight.MOD_ID, "structures/feasts");
 	public static ResourceLocation dungeon_rot = new ResourceLocation(ExtraDelight.MOD_ID, "structures/dungeon_rot");
-	
+
 	public static ResourceLocation cactus_juice = new ResourceLocation(ExtraDelight.MOD_ID, "structures/cactus_juice");
-	
-	public static ResourceLocation mortar_nether = new ResourceLocation(ExtraDelight.MOD_ID, "structures/mortar_nether");
-	public static ResourceLocation mortar_dungeon = new ResourceLocation(ExtraDelight.MOD_ID, "structures/mortar_dungeon");
-	public static ResourceLocation pestle_nether = new ResourceLocation(ExtraDelight.MOD_ID, "structures/pestle_nether");
-	public static ResourceLocation pestle_dungeon = new ResourceLocation(ExtraDelight.MOD_ID, "structures/pestle_dungeon");
+
+	public static ResourceLocation mortar_nether = new ResourceLocation(ExtraDelight.MOD_ID,
+			"structures/mortar_nether");
+	public static ResourceLocation mortar_dungeon = new ResourceLocation(ExtraDelight.MOD_ID,
+			"structures/mortar_dungeon");
+	public static ResourceLocation pestle_nether = new ResourceLocation(ExtraDelight.MOD_ID,
+			"structures/pestle_nether");
+	public static ResourceLocation pestle_dungeon = new ResourceLocation(ExtraDelight.MOD_ID,
+			"structures/pestle_dungeon");
+
+	public static ResourceLocation corn_common = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_common");
+	public static ResourceLocation corn_uncommon = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_uncommon");
+	public static ResourceLocation corn_rare = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_rare");
 
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
-		
+
 		t.accept(mortar_nether,
 				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 1))
 						.add(LootItem.lootTableItem(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get()))));
@@ -44,7 +54,7 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 		t.accept(pestle_dungeon,
 				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 1))
 						.add(LootItem.lootTableItem(ExtraDelightItems.PESTLE_AMETHYST.get()))));
-		
+
 		t.accept(curry_powder,
 				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 4))
 						.add(LootItem.lootTableItem(ExtraDelightItems.CURRY_POWDER.get()))));
@@ -180,8 +190,7 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 						.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS_EGGS.get()).setWeight(1))
 						.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS_SALAD.get()).setWeight(1))
 						.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS_SOUP.get()).setWeight(1))
-						.add(LootItem.lootTableItem(ExtraDelightItems.STUFFED_CACTUS.get()).setWeight(1))
-						));
+						.add(LootItem.lootTableItem(ExtraDelightItems.STUFFED_CACTUS.get()).setWeight(1))));
 
 		t.accept(ingredients,
 				LootTable.lootTable()
@@ -219,8 +228,7 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 								.add(LootItem.lootTableItem(ExtraDelightItems.WHIPPED_CREAM.get()).setWeight(1))
 								.add(LootItem.lootTableItem(ExtraDelightItems.YEAST.get()).setWeight(1))
 								.add(LootItem.lootTableItem(ExtraDelightItems.COOKED_CACTUS.get()).setWeight(1))
-								.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS.get()).setWeight(1))
-								));
+								.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS.get()).setWeight(1))));
 
 		t.accept(feasts, LootTable.lootTable().withPool(LootPool.lootPool().name("main")
 				.setRolls(UniformGenerator.between(1, 5))
@@ -261,14 +269,59 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 				.add(LootItem.lootTableItem(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.get()).setWeight(1))
 				.add(LootItem.lootTableItem(ExtraDelightItems.STIRFRY_FEAST_ITEM.get()).setWeight(1))));
 
-		t.accept(dungeon_rot, LootTable.lootTable()
-				.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 15))
-						.add(LootTableReference.lootTableReference(StructureLootTables.meals).setWeight(1))
-						.add(LootItem.lootTableItem(ExtraDelightItems.BAD_FOOD.get()).setWeight(20))));
-		
+		t.accept(dungeon_rot,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 15))
+								.add(LootTableReference.lootTableReference(StructureLootTables.meals).setWeight(1))
+								.add(LootItem.lootTableItem(ExtraDelightItems.BAD_FOOD.get()).setWeight(20))));
+
 		t.accept(cactus_juice,
 				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 5))
 						.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS_JUICE.get()))));
+
+		t.accept(corn_common,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 2))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_SEEDS.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_COB.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.UNSHUCKED_CORN.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_SILK.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_HUSK.get())))
+						.withPool(LootPool.lootPool().name("dead").setRolls(UniformGenerator.between(1, 5))
+								.add(LootItem.lootTableItem(Items.BONE))
+								.add(LootItem.lootTableItem(Items.ROTTEN_FLESH))
+								.add(LootItem.lootTableItem(Items.SKELETON_SKULL))
+								.add(LootItem.lootTableItem(Items.BONE_MEAL))));
+		
+		t.accept(corn_uncommon,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 2))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_CHOWDER.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_FRITTERS.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_PUDDING.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORNBREAD.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CREAM_CORN.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.POPCORN.get())))
+						.withPool(LootPool.lootPool().name("better").setRolls(UniformGenerator.between(0, 1))
+								.add(LootItem.lootTableItem(ModItems.FLINT_KNIFE.get()))
+								.add(LootItem.lootTableItem(ModItems.IRON_KNIFE.get()))
+								.add(LootItem.lootTableItem(ModItems.ROPE.get()))
+								.add(LootItem.lootTableItem(ModItems.SKILLET.get()))));
+		
+		t.accept(corn_rare,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 2))
+								.add(LootItem.lootTableItem(ExtraDelightItems.BUTTER.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_CRATE.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORNBREAD_FEAST.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_PUDDING_FEAST.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get())))
+							.withPool(LootPool.lootPool().name("better").setRolls(UniformGenerator.between(1, 2))
+									.add(LootItem.lootTableItem(ModItems.GOLDEN_KNIFE.get()))
+									.add(LootItem.lootTableItem(ModItems.COOKING_POT.get()))
+									.add(LootItem.lootTableItem(Items.GOLD_INGOT))
+									.add(LootItem.lootTableItem(Items.CORNFLOWER))
+									.add(LootItem.lootTableItem(Items.CAKE))));
 	}
 
 }

@@ -1,15 +1,27 @@
 {
   "variants": {
-    "age=0": {
+    "age=0,dimension=false": {
       "model": "extradelight:block/corn_top_stage0"
     },
-    "age=1": {
+    "age=0,dimension=true": {
+      "model": "extradelight:block/corn_top_stage0"
+    },
+    "age=1,dimension=false": {
       "model": "extradelight:block/corn_top_stage1"
     },
-    "age=2": {
+    "age=1,dimension=true": {
+      "model": "extradelight:block/corn_top_stage1"
+    },
+    "age=2,dimension=false": {
       "model": "extradelight:block/corn_top_stage2"
     },
-    "age=3": {
+    "age=2,dimension=true": {
+      "model": "extradelight:block/corn_top_stage2"
+    },
+    "age=3,dimension=false": {
+      "model": "extradelight:block/corn_top_stage3"
+    },
+    "age=3,dimension=true": {
       "model": "extradelight:block/corn_top_stage3"
     }
   }
