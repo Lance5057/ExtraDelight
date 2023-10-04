@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import com.lance5057.extradelight.armor.CorncobPipe;
+import com.lance5057.extradelight.armor.EDArmorMaterial;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.CactusJuiceItem;
@@ -903,4 +905,7 @@ public class ExtraDelightItems {
 	public static final RegistryObject<BlockItem> DRIED_CORN_HUSK_BUNDLE = ITEMS.register("dried_corn_husk_bundle",
 			() -> new BlockItem(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<Item> CORN_COB_PIPE = ITEMS.register("corn_cob_pipe",
+			() -> new CorncobPipe(EDArmorMaterial.CORNCOB, new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 }

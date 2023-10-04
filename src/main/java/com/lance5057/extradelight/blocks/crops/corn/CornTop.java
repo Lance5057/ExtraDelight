@@ -1,13 +1,18 @@
 package com.lance5057.extradelight.blocks.crops.corn;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightWorldGen;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.monster.Ravager;
 import net.minecraft.world.entity.player.Player;
@@ -16,6 +21,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -28,13 +34,16 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class CornTop extends BushBlock implements BonemealableBlock {
 	public static final int MAX_AGE = 3;
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 	public static final BooleanProperty DIMENSION = BooleanProperty.create("dimension");
+	public static final BooleanProperty DENSE = BooleanProperty.create("dense");
 	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] { Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
 			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
 			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
@@ -43,7 +52,8 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 
 	public CornTop(BlockBehaviour.Properties pProperties) {
 		super(pProperties);
-		this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)).setValue(DIMENSION, false));
+		this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0))
+				.setValue(DIMENSION, false).setValue(DENSE, false));
 	}
 
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -95,6 +105,29 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 			}
 		}
 
+	}
+
+	@Override
+	public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel,
+			BlockPos pCurrentPos, BlockPos pFacingPos) {
+		BlockState s = super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+
+		if (isMaxAge(pState)) {
+			if (checkSides(pLevel, pCurrentPos.east()) && checkSides(pLevel, pCurrentPos.north())
+					&& checkSides(pLevel, pCurrentPos.west()) && checkSides(pLevel, pCurrentPos.south())) {
+				pLevel.setBlock(pCurrentPos, s.setValue(CornTop.DENSE, true), 4);
+			}
+		}
+
+		return s;
+	}
+
+	boolean checkSides(LevelAccessor pLevel, BlockPos pos) {
+		BlockState e = pLevel.getBlockState(pos);
+		if (e.getBlock() instanceof CornTop) {
+			return isMaxAge(e);
+		}
+		return false;
 	}
 
 	public void growCrops(Level pLevel, BlockPos pPos, BlockState pState) {
@@ -167,6 +200,29 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 			pLevel.destroyBlock(pPos, true, pEntity);
 		}
 
+		if (pEntity instanceof Player p) {
+			boolean b = pState.getValue(CornTop.DENSE);
+			if (b) {
+				if (p.hasEffect(MobEffects.CONFUSION)) {
+					MobEffectInstance mei = p.getEffect(MobEffects.CONFUSION);
+					if (mei.getDuration() <= 1) {
+						if (pLevel instanceof ServerLevel && !pEntity.isPassenger() && !pEntity.isVehicle()
+								&& pEntity.canChangeDimensions()) {
+							ResourceKey<Level> resourcekey = ExtraDelightWorldGen.CORNFIELD;
+							ServerLevel serverlevel = ((ServerLevel) pLevel).getServer().getLevel(resourcekey);
+							if (serverlevel == null) {
+								return;
+							}
+
+							pEntity.changeDimension(serverlevel);
+						}
+					}
+				} else {
+					p.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200));
+				}
+			}
+		}
+
 		super.entityInside(pState, pLevel, pPos, pEntity);
 	}
 
@@ -194,15 +250,14 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 	}
 
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-		pBuilder.add(AGE, DIMENSION);
+		pBuilder.add(AGE, DIMENSION, DENSE);
 	}
-	
+
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
 			BlockHitResult hit) {
-		if(this.isMaxAge(state))
-		{
-			
+		if (this.isMaxAge(state)) {
+
 			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.PASS;

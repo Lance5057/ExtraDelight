@@ -442,6 +442,15 @@ public class EnglishLoc extends LanguageProvider {
 		add(TranslatableKeys.MANY_SERVINGS, "Holds %s servings of:");
 		add(TranslatableKeys.SINGLE_SERVING, "Holds 1 serving of:");
 		add(TranslatableKeys.EMPTY, "Empty");
+		
+		this.add(ExtraDelightItems.CORN_SEEDS.get(), "Corn");
+		this.add(ExtraDelightItems.UNSHUCKED_CORN.get(), "Unshucked Corn");
+		this.add(ExtraDelightItems.CORN_ON_COB.get(), "Corn on the Cob");
+		this.add(ExtraDelightItems.CORN_HUSK.get(), "Corn Husk");
+		this.add(ExtraDelightItems.DRIED_CORN_HUSK.get(), "Dried Corn Husk");
+		this.add(ExtraDelightItems.CORN_SILK.get(), "Corn Silk");
+		this.add(ExtraDelightItems.CORN_COB.get(), "Corn Cob");
+		this.add(ExtraDelightItems.CORN_MEAL.get(), "Cornmeal");
 
 		AestheticBlocks.EngLoc(this);
 	}
