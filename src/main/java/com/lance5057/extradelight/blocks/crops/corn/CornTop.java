@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.blocks.crops.corn;
 
+import java.util.function.Function;
+
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightWorldGen;
 
@@ -7,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -33,11 +36,11 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.portal.PortalInfo;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.util.ITeleporter;
 
 public class CornTop extends BushBlock implements BonemealableBlock {
 	public static final int MAX_AGE = 3;
@@ -214,7 +217,34 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 								return;
 							}
 
-							pEntity.changeDimension(serverlevel);
+							pEntity.changeDimension(serverlevel, new ITeleporter() {
+								@Override
+								public Entity placeEntity(Entity entity, ServerLevel currentWorld,
+										ServerLevel destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
+									Entity repositionedEntity = repositionEntity.apply(false);
+									if (repositionedEntity != null) {
+										// Teleport all passengers to the other dimension and then make them start
+										// riding the entity again
+										for (Entity passenger : passengers) {
+											teleportPassenger(destWorld, destination, repositionedEntity, passenger);
+										}
+									}
+									return repositionedEntity;
+								}
+
+								@Override
+								public PortalInfo getPortalInfo(Entity entity, ServerLevel destWorld,
+										Function<ServerLevel, PortalInfo> defaultPortalInfo) {
+									return new PortalInfo(destination, entity.getDeltaMovement(), entity.getYRot(),
+											entity.getXRot());
+								}
+
+								@Override
+								public boolean playTeleportSound(ServerPlayer player, ServerLevel sourceWorld,
+										ServerLevel destWorld) {
+									return false;
+								}
+							});
 						}
 					}
 				} else {
