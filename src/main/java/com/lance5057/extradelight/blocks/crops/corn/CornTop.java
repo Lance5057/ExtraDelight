@@ -14,6 +14,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -38,6 +39,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.portal.PortalInfo;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.util.ITeleporter;
@@ -222,21 +224,15 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 								public Entity placeEntity(Entity entity, ServerLevel currentWorld,
 										ServerLevel destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
 									Entity repositionedEntity = repositionEntity.apply(false);
-									if (repositionedEntity != null) {
-										// Teleport all passengers to the other dimension and then make them start
-										// riding the entity again
-										for (Entity passenger : passengers) {
-											teleportPassenger(destWorld, destination, repositionedEntity, passenger);
-										}
-									}
+
 									return repositionedEntity;
 								}
 
 								@Override
 								public PortalInfo getPortalInfo(Entity entity, ServerLevel destWorld,
 										Function<ServerLevel, PortalInfo> defaultPortalInfo) {
-									return new PortalInfo(destination, entity.getDeltaMovement(), entity.getYRot(),
-											entity.getXRot());
+									return new PortalInfo(new Vec3(p.getX(), 20, p.getZ()), entity.getDeltaMovement(),
+											entity.getYRot(), entity.getXRot());
 								}
 
 								@Override
@@ -249,6 +245,11 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 					}
 				} else {
 					p.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200));
+				}
+			} else {
+				if (pState.getValue(CornTop.DIMENSION)) {
+					pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
+
 				}
 			}
 		}
@@ -291,5 +292,12 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.PASS;
+	}
+
+	@Override
+	public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+		if (pState.getValue(DIMENSION)) {
+			pLevel.setBlock(pPos, pState, 4);
+		}
 	}
 }
