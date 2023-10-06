@@ -1,27 +1,51 @@
 {
   "variants": {
-    "age=0,dimension=false": {
+    "age=0,dense=false,dimension=false": {
       "model": "extradelight:block/corn_top_stage0"
     },
-    "age=0,dimension=true": {
+    "age=0,dense=false,dimension=true": {
       "model": "extradelight:block/corn_top_stage0"
     },
-    "age=1,dimension=false": {
+    "age=0,dense=true,dimension=false": {
+      "model": "extradelight:block/corn_top_stage0"
+    },
+    "age=0,dense=true,dimension=true": {
+      "model": "extradelight:block/corn_top_stage0"
+    },
+    "age=1,dense=false,dimension=false": {
       "model": "extradelight:block/corn_top_stage1"
     },
-    "age=1,dimension=true": {
+    "age=1,dense=false,dimension=true": {
       "model": "extradelight:block/corn_top_stage1"
     },
-    "age=2,dimension=false": {
+    "age=1,dense=true,dimension=false": {
+      "model": "extradelight:block/corn_top_stage1"
+    },
+    "age=1,dense=true,dimension=true": {
+      "model": "extradelight:block/corn_top_stage1"
+    },
+    "age=2,dense=false,dimension=false": {
       "model": "extradelight:block/corn_top_stage2"
     },
-    "age=2,dimension=true": {
+    "age=2,dense=false,dimension=true": {
       "model": "extradelight:block/corn_top_stage2"
     },
-    "age=3,dimension=false": {
+    "age=2,dense=true,dimension=false": {
+      "model": "extradelight:block/corn_top_stage2"
+    },
+    "age=2,dense=true,dimension=true": {
+      "model": "extradelight:block/corn_top_stage2"
+    },
+    "age=3,dense=false,dimension=false": {
       "model": "extradelight:block/corn_top_stage3"
     },
-    "age=3,dimension=true": {
+    "age=3,dense=false,dimension=true": {
+      "model": "extradelight:block/corn_top_stage3"
+    },
+    "age=3,dense=true,dimension=false": {
+      "model": "extradelight:block/corn_top_stage3"
+    },
+    "age=3,dense=true,dimension=true": {
       "model": "extradelight:block/corn_top_stage3"
     }
   }

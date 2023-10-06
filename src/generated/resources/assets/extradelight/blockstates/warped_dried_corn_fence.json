@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "extradelight:block/warpeddried_corn_fence"
+        "model": "extradelight:block/warped_dried_corn_fence"
       }
     },
     {

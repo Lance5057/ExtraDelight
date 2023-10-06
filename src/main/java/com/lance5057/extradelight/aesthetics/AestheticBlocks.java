@@ -211,7 +211,7 @@ public class AestheticBlocks {
 			String s = WOOD.values()[i].toString();
 
 			MultiPartBlockStateBuilder builder = bsp.getMultipartBuilder(DRIED_CORN_FENCE.get(i).get()).part()
-					.modelFile(bsp.models().withExistingParent(s + "dried_corn_fence", bsp.modLoc("dried_corn_fence"))
+					.modelFile(bsp.models().withExistingParent(s + "_dried_corn_fence", bsp.modLoc("dried_corn_fence"))
 							.texture("1", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks")))
 					.addModel().end();
 
@@ -281,6 +281,9 @@ public class AestheticBlocks {
 
 			tmp.getBuilder(CABINETS.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_half_cabinet")));
+			
+			tmp.getBuilder(DRIED_CORN_FENCE.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_dried_corn_fence")));
 		}
 
 		for (int i = 0; i < DyeColor.values().length; i++) {

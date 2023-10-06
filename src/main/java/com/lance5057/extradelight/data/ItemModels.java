@@ -103,6 +103,10 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/gilded_blackstone")); // not craftable, dungeon item
+		
+		getBuilder(ExtraDelightItems.CORN_COB_PIPE.getId().getPath())
+		.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "item/corncob_pipe")))
+		.texture("1", modLoc("item/corncob_pipe")); // not craftable, dungeon item
 
 		forItem(ExtraDelightItems.ROUND_PAN, "round_pan");
 		forItem(ExtraDelightItems.BAKING_STONE, "baking_stone");

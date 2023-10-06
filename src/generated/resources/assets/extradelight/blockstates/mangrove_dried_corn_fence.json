@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "extradelight:block/mangrovedried_corn_fence"
+        "model": "extradelight:block/mangrove_dried_corn_fence"
       }
     },
     {
