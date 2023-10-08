@@ -848,6 +848,8 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> CARAMEL_POPSICLE = ITEMS.register("caramel_popsicle",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<Item> CANDY = ITEMS.register("candy",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> CARAMEL_CHEESECAKE_SLICE = ITEMS.register("caramel_cheescake_slice",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));

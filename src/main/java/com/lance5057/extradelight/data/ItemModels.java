@@ -490,6 +490,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CARAMEL_POPSICLE, "caramel_popsicle");
 		forItem(ExtraDelightItems.PUMPKIN_PIE_ITEM, "pumpkin_pie");
 		forItem(ExtraDelightItems.PUMPKIN_PIE_SLICE, "pumpkin_pie_slice");
+		forItem(ExtraDelightItems.CANDY, "candy");
 
 		forItem(ExtraDelightItems.CORNBREAD, "cornbread");
 		forBlockItem(ExtraDelightItems.CORNBREAD_FEAST,

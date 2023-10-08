@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:paper"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "extradelight:caramel_sauce"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "extradelight:caramel_candy"
+  }
+}

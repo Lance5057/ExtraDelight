@@ -451,7 +451,51 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.CORN_SILK.get(), "Corn Silk");
 		this.add(ExtraDelightItems.CORN_COB.get(), "Corn Cob");
 		this.add(ExtraDelightItems.CORN_MEAL.get(), "Cornmeal");
-
+		
+		this.add(ExtraDelightItems.CORN_CHOWDER.get(), "Corn Chowder");
+		this.add(ExtraDelightItems.CREAM_CORN.get(), "Creamed Corn");
+		this.add(ExtraDelightItems.CORN_FRITTERS.get(), "Corn Fritters");
+		this.add(ExtraDelightItems.POPCORN.get(), "Popcorn");
+		this.add(ExtraDelightItems.GRILLED_CORN_ON_COB.get(), "Grilled Corn on the Cob");
+		this.add(ExtraDelightItems.COOKED_CORN.get(), "Cooked Corn");
+		this.add(ExtraDelightItems.ROASTED_PUMPKIN_SEEDS.get(), "Roasted Pumpkin Seeds");
+		this.add(ExtraDelightItems.CORN_SILK_TEA.get(), "Corn Silk Tea");
+		this.add(ExtraDelightItems.STEWED_APPLES.get(), "Stewed Apples");
+		this.add(ExtraDelightItems.APPLE_FRITTERS.get(), "Apple Fritters");
+		this.add(ExtraDelightItems.CARAMEL_SAUCE.get(), "Caramel Sauce");
+		this.add(ExtraDelightItems.CARAMEL_CANDY.get(), "Caramel Candy");
+		this.add(ExtraDelightItems.CANDY_APPLE.get(), "Candy Apple");
+		this.add(ExtraDelightItems.CARAMEL_APPLE.get(), "Caramel Apple");
+		this.add(ExtraDelightItems.CARAMEL_POPCORN.get(), "Caramel Popcorn");
+		this.add(ExtraDelightItems.CARAMEL_CUSTARD.get(), "Caramel Custard");
+		this.add(ExtraDelightItems.CARAMEL_POPSICLE.get(), "Caramel Pop");
+		this.add(ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE.get(), "Slice of Caramel Cheesecake");
+		this.add(ExtraDelightItems.CARAMEL_CHEESECAKE_ITEM.get(), "Caramel Cheesecake");
+		this.add(ExtraDelightItems.CORNBREAD.get(), "Slice of Cornbread");
+		this.add(ExtraDelightItems.CORNBREAD_FEAST.get(), "Cornbread");
+		this.add(ExtraDelightItems.CORN_PUDDING.get(), "Plate of Corn Pudding");
+		this.add(ExtraDelightItems.CORN_PUDDING_FEAST.get(), "Corn Pudding");
+		this.add(ExtraDelightItems.PUMPKIN_PIE_SLICE.get(), "Slice of Pumpkin Pie");
+		this.add(ExtraDelightItems.PUMPKIN_PIE_ITEM.get(), "Pumpkin Pie");
+		this.add(ExtraDelightItems.PUMPKIN_ROLL.get(), "Slice of Pumpkin Roll");
+		this.add(ExtraDelightItems.PUMPKIN_ROLL_FEAST.get(), "Pumpkin Roll");
+		this.add(ExtraDelightItems.APPLE_CRISP.get(), "Bowl of Apple Crisp");
+		this.add(ExtraDelightItems.APPLE_CRISP_FEAST.get(), "Apple Crisp");
+		this.add(ExtraDelightItems.STUFFING.get(), "Bowl of Stuffing");
+		this.add(ExtraDelightItems.STUFFING_FEAST.get(), "Stuffing");
+		this.add(ExtraDelightItems.POTATO_AU_GRATIN.get(), "Plate of Potatoes Au Gratin");
+		this.add(ExtraDelightItems.POTATO_AU_GRATIN_FEAST.get(), "Potatoes Au Gratin");
+		this.add(ExtraDelightItems.CANDY.get(), "Candy");
+		
+		this.add(ExtraDelightItems.FLOUR_SACK.get(), "Flour Sack");
+		this.add(ExtraDelightItems.CORNMEAL_SACK.get(), "Cornmeal Sack");
+		this.add(ExtraDelightItems.SUGAR_SACK.get(), "Sugar Sack");
+		this.add(ExtraDelightItems.CORN_CRATE.get(), "Corn Crate");
+		this.add(ExtraDelightItems.CORN_HUSK_BUNDLE.get(), "Corn Husk Bundle");
+		this.add(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get(), "Dried Corn Husk Bundle");
+		
+		this.add(ExtraDelightItems.CORN_COB_PIPE.get(), "Corn Cob Pipe");
+		
 		AestheticBlocks.EngLoc(this);
 	}
 }

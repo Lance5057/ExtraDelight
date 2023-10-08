@@ -8,6 +8,7 @@ import java.util.function.Supplier;
 import org.apache.commons.lang3.text.WordUtils;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.block.MoldingBlock;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
@@ -281,7 +282,7 @@ public class AestheticBlocks {
 
 			tmp.getBuilder(CABINETS.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_half_cabinet")));
-			
+
 			tmp.getBuilder(DRIED_CORN_FENCE.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_dried_corn_fence")));
 		}
@@ -317,6 +318,7 @@ public class AestheticBlocks {
 			lp.add(SPICE_RACKS_FULL.get(i).get(), w + " Spice Rack");
 			lp.add(KNIFE_BLOCKS.get(i).get(), w + " Knife Block");
 			lp.add(CABINETS.get(i).get(), w + " Half Cabinet");
+			lp.add(DRIED_CORN_FENCE.get(i).get(), "Dried Corn " + w + " Fence");
 
 			for (int j = 0; j < DyeColor.values().length; j++) {
 				int o = (i * DyeColor.values().length) + j;
@@ -337,15 +339,15 @@ public class AestheticBlocks {
 
 	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove
 	public static void Recipes(Consumer<FinishedRecipe> consumer) {
-		woodRecipe(consumer, Items.ACACIA_SLAB, Items.ACACIA_TRAPDOOR, WOOD.acacia);
-		woodRecipe(consumer, Items.BIRCH_SLAB, Items.BIRCH_TRAPDOOR, WOOD.birch);
-		woodRecipe(consumer, Items.CRIMSON_SLAB, Items.CRIMSON_TRAPDOOR, WOOD.crimson);
-		woodRecipe(consumer, Items.DARK_OAK_SLAB, Items.DARK_OAK_TRAPDOOR, WOOD.dark_oak);
-		woodRecipe(consumer, Items.JUNGLE_SLAB, Items.JUNGLE_TRAPDOOR, WOOD.jungle);
-		woodRecipe(consumer, Items.MANGROVE_SLAB, Items.MANGROVE_TRAPDOOR, WOOD.mangrove);
-		woodRecipe(consumer, Items.OAK_SLAB, Items.OAK_TRAPDOOR, WOOD.oak);
-		woodRecipe(consumer, Items.SPRUCE_SLAB, Items.SPRUCE_TRAPDOOR, WOOD.spruce);
-		woodRecipe(consumer, Items.WARPED_SLAB, Items.WARPED_TRAPDOOR, WOOD.warped);
+		woodRecipe(consumer, Items.ACACIA_SLAB, Items.ACACIA_TRAPDOOR, Items.ACACIA_FENCE, WOOD.acacia);
+		woodRecipe(consumer, Items.BIRCH_SLAB, Items.BIRCH_TRAPDOOR, Items.BIRCH_FENCE, WOOD.birch);
+		woodRecipe(consumer, Items.CRIMSON_SLAB, Items.CRIMSON_TRAPDOOR, Items.CRIMSON_FENCE, WOOD.crimson);
+		woodRecipe(consumer, Items.DARK_OAK_SLAB, Items.DARK_OAK_TRAPDOOR, Items.DARK_OAK_FENCE, WOOD.dark_oak);
+		woodRecipe(consumer, Items.JUNGLE_SLAB, Items.JUNGLE_TRAPDOOR, Items.JUNGLE_FENCE, WOOD.jungle);
+		woodRecipe(consumer, Items.MANGROVE_SLAB, Items.MANGROVE_TRAPDOOR, Items.MANGROVE_FENCE, WOOD.mangrove);
+		woodRecipe(consumer, Items.OAK_SLAB, Items.OAK_TRAPDOOR, Items.OAK_FENCE, WOOD.oak);
+		woodRecipe(consumer, Items.SPRUCE_SLAB, Items.SPRUCE_TRAPDOOR, Items.SPRUCE_FENCE, WOOD.spruce);
+		woodRecipe(consumer, Items.WARPED_SLAB, Items.WARPED_TRAPDOOR, Items.WARPED_FENCE, WOOD.warped);
 
 		moldRecipe(consumer, Items.OAK_SLAB, WOOD.oak, 0);
 		moldRecipe(consumer, Items.DARK_OAK_SLAB, WOOD.dark_oak, 1 * 16);
@@ -380,7 +382,7 @@ public class AestheticBlocks {
 		}
 	}
 
-	static void woodRecipe(Consumer<FinishedRecipe> consumer, Item slab, Item trapdoor, WOOD name) {
+	static void woodRecipe(Consumer<FinishedRecipe> consumer, Item slab, Item trapdoor, Item fence, WOOD name) {
 
 		ShapedRecipeBuilder.shaped(STEP_STOOLS.get(name.ordinal()).get()).pattern(" w ").pattern("s s").pattern("s s")
 				.define('w', slab).define('s', Items.STICK)
@@ -401,6 +403,15 @@ public class AestheticBlocks {
 				.unlockedBy(name + "_knife_block", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
 				.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(DRIED_CORN_FENCE.get(name.ordinal()).get()).requires(fence)
+				.requires(ExtraDelightItems.DRIED_CORN_HUSK.get())
+				.unlockedBy(name + "_dried_corn_fence", InventoryChangeTrigger.TriggerInstance.hasItems(fence))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(fence).requires(DRIED_CORN_FENCE.get(name.ordinal()).get())
+				.unlockedBy(name + "_dried_corn_fence_back",
+						InventoryChangeTrigger.TriggerInstance.hasItems(DRIED_CORN_FENCE.get(name.ordinal()).get()))
+				.save(consumer, name + "_dried_corn_fence_back");
 	}
 
 	static void cabinetRecipes(Consumer<FinishedRecipe> consumer) {

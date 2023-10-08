@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.data;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.function.Consumer;
 
 import org.jetbrains.annotations.NotNull;
@@ -265,6 +264,36 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.SALAD_FEAST_ITEM.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.SALAD_FEAST_ITEM.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "salad_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.CORNBREAD.get(),
+						ExtraDelightItems.CORNBREAD_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.CORNBREAD_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cornbread_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.CORN_PUDDING.get(),
+						ExtraDelightItems.CORN_PUDDING_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.CORN_PUDDING_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn_pudding_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.APPLE_CRISP.get(),
+						ExtraDelightItems.APPLE_CRISP_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.APPLE_CRISP_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "apple_crisp_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.STUFFING.get(),
+						ExtraDelightItems.STUFFING_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.STUFFING_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stuffing_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.POTATO_AU_GRATIN.get(),
+						ExtraDelightItems.POTATO_AU_GRATIN_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.POTATO_AU_GRATIN_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "potato_au_gratin_bowl"));
 	}
 
 	private void doughShapeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -1376,8 +1405,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.MACARONI_CHEESE_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING,
-						0.35F,
-						Items.BOWL)
+						0.35F, Items.BOWL)
 				.addIngredient(Ingredient.of(ExtraDelightItems.MACARONI.get()), 2)
 				.addIngredient(Ingredient.of(ExtraDelightTags.BUTTER)).addIngredient(Ingredient.of(ForgeTags.MILK))
 				.addIngredient(Ingredient.of(ExtraDelightTags.CHEESE), 2)
@@ -1445,6 +1473,35 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()))
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stuffed_cactus"));
 
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CARAMEL_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(ExtraDelightTags.BUTTER))
+				.addIngredient(Ingredient.of(ForgeTags.MILK))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "caramel_sauce"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CARAMEL_CANDY.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "caramel_candy"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.STICK)
+				.addIngredient(Items.APPLE).addIngredient(ExtraDelightItems.CANDY.get(), 2)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_apple"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CARAMEL_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.STICK)
+				.addIngredient(Items.APPLE).addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "caramel_apple"));
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {

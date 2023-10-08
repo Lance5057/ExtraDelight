@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:spruce_dried_corn_fence_back"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "spruce_dried_corn_fence_back": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:spruce_dried_corn_fence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "spruce_dried_corn_fence_back",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:spruce_dried_corn_fence_back"
+    ]
+  }
+}
