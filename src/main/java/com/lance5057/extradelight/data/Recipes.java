@@ -1,6 +1,5 @@
 package com.lance5057.extradelight.data;
 
-import java.util.Collection;
 import java.util.function.Consumer;
 
 import org.jetbrains.annotations.NotNull;
@@ -21,7 +20,6 @@ import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
@@ -29,7 +27,7 @@ import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -347,6 +345,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"toast");
 		vanillaCooking(Ingredient.of(ExtraDelightItems.CACTUS.get()), ExtraDelightItems.COOKED_CACTUS.get(), consumer,
 				"cactus");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.CORN_SEEDS.get()), ExtraDelightItems.POPCORN.get(), consumer,
+				"popcorn");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.CORN_ON_COB.get()), ExtraDelightItems.GRILLED_CORN_ON_COB.get(),
+				consumer, "corn_cob");
+		vanillaCooking(Ingredient.of(Items.PUMPKIN_SEEDS), ExtraDelightItems.ROASTED_PUMPKIN_SEEDS.get(), consumer,
+				"pumpkin_seeds");
 	}
 
 	private void vanillaCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
@@ -481,6 +485,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void craftingRecipes(Consumer<FinishedRecipe> consumer) {
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CORN_COB_PIPE.get()).pattern("cs")
+				.define('c', ExtraDelightItems.CORN_COB.get()).define('s', Items.STICK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CORN_COB.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn_cob_pipe"));
 
 		ShapedRecipeBuilder.shaped(ExtraDelightItems.OVEN.get()).pattern("bBb").pattern("BfB").pattern("BtB")
 				.define('b', Items.BRICK).define('B', Items.BRICKS).define('f', Items.FURNACE)
@@ -939,17 +949,52 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), has(ExtraDelightItems.COOKED_CACTUS.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cooked_cactus"));
 
+		// Halloween Start!
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CARAMEL_POPCORN.get(), 1)
+				.requires(ExtraDelightItems.POPCORN.get()).requires(ExtraDelightItems.CARAMEL_SAUCE.get(), 1)
+				.unlockedBy(getName(), has(ExtraDelightItems.POPCORN.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "caramel_popcorn"));
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CARAMEL_POPSICLE.get()).pattern(" cm").pattern("isc")
+				.pattern("Si ").define('m', ForgeTags.MILK).define('c', ExtraDelightItems.CARAMEL_SAUCE.get())
+				.define('s', Items.SUGAR).define('S', Items.STICK).define('i', Items.ICE)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fudge_popsicle"));
+
+		bundleItem9(Ingredient.of(ExtraDelightTags.FLOUR), ExtraDelightItems.FLOUR_SACK.get(),
+				ExtraDelightItems.FLOUR.get(), consumer, "flour");
+		bundleItem9(Ingredient.of(ExtraDelightItems.CORN_MEAL.get()), ExtraDelightItems.CORNMEAL_SACK.get(),
+				ExtraDelightItems.CORN_MEAL.get(), consumer, "cornmeal");
+		bundleItem9(Ingredient.of(Items.SUGAR), ExtraDelightItems.SUGAR_SACK.get(), Items.SUGAR, consumer, "sugar");
+		bundleItem9(Ingredient.of(ExtraDelightItems.CORN_ON_COB.get()), ExtraDelightItems.CORN_CRATE.get(),
+				ExtraDelightItems.CORN_ON_COB.get(), consumer, "corn");
 	}
 
-	private void tagConditional(RecipeBuilder rb, Consumer<FinishedRecipe> consumer, String id,
-			Collection<TagKey<Item>> tags) {
-		ConditionalRecipe.Builder b = ConditionalRecipe.builder();
+	void bundleItem9(Ingredient in, BlockItem b, Item out, Consumer<FinishedRecipe> consumer, String name) {
+		ShapelessRecipeBuilder.shapeless(b, 1).requires(in, 9).unlockedBy(getName(), has(out)).save(consumer,
+				new ResourceLocation(ExtraDelight.MOD_ID, name + "_to_block"));
 
-		for (TagKey<Item> t : tags)
-			b.addCondition(not(tagEmpty(t)));
-
-		b.addRecipe(rb::save).build(consumer, new ResourceLocation(id));
+		ShapelessRecipeBuilder.shapeless(out, 9).requires(b).unlockedBy(getName(), has(b)).save(consumer,
+				new ResourceLocation(ExtraDelight.MOD_ID, name + "_from_block"));
 	}
+
+	void bundleItem4(Ingredient in, BlockItem b, Item out, Consumer<FinishedRecipe> consumer, String name) {
+		ShapedRecipeBuilder.shaped(b, 1).pattern("xx").pattern("xx").define('x', in).unlockedBy(getName(), has(out))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, name + "_to_block"));
+
+		ShapelessRecipeBuilder.shapeless(out, 9).requires(b).unlockedBy(getName(), has(b)).save(consumer,
+				new ResourceLocation(ExtraDelight.MOD_ID, name + "_from_block"));
+	}
+
+//	private void tagConditional(RecipeBuilder rb, Consumer<FinishedRecipe> consumer, String id,
+//			Collection<TagKey<Item>> tags) {
+//		ConditionalRecipe.Builder b = ConditionalRecipe.builder();
+//
+//		for (TagKey<Item> t : tags)
+//			b.addCondition(not(tagEmpty(t)));
+//
+//		b.addRecipe(rb::save).build(consumer, new ResourceLocation(id));
+//	}
 
 	private void potRecipes(Consumer<FinishedRecipe> consumer) {
 		CookingPotRecipeBuilder
@@ -1473,6 +1518,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()))
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stuffed_cactus"));
 
+		// Halloween Start!
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.CANDY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER)
 				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES))
@@ -1502,6 +1548,71 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Items.STICK)
 				.addIngredient(Items.APPLE).addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get())
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "caramel_apple"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CORN_CHOWDER.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
+				.addIngredient(ExtraDelightItems.COOKED_CORN.get())
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_POTATO)).addIngredient(ForgeTags.COOKED_BACON)
+				.addIngredient(ExtraDelightTags.PROCESSED_ONION).addIngredient(ForgeTags.MILK)
+				.addIngredient(ModItems.BONE_BROTH.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn_chowder"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CREAM_CORN.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
+				.addIngredient(ExtraDelightItems.COOKED_CORN.get()).addIngredient(ForgeTags.MILK)
+				.addIngredient(ExtraDelightTags.BUTTER)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cream_corn"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CORN_FRITTERS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
+				.addIngredient(ExtraDelightItems.COOKED_CORN.get()).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(Items.SUGAR).addIngredient(ExtraDelightItems.EGG_MIX.get())
+				.addIngredient(ExtraDelightTags.FRYING_OIL).addIngredient(ExtraDelightTags.PROCESSED_ONION)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn_fritters"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CORN_FRITTERS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
+				.addIngredient(ExtraDelightItems.COOKED_CORN.get()).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(Items.SUGAR).addIngredient(ExtraDelightItems.EGG_MIX.get())
+				.addIngredient(ExtraDelightTags.FRYING_OIL).addIngredient(ExtraDelightTags.PROCESSED_ONION)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn_fritters"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.COOKED_CORN.get(), 1, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.BOWL)
+				.addIngredient(ExtraDelightItems.CORN_SEEDS.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CORN_SILK_TEA.get(), 1, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ExtraDelightItems.CORN_SILK.get(), 2).addIngredient(Items.SUGAR)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn_silk_tea"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.STEWED_APPLES.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE).addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(Items.SUGAR).addIngredient(ExtraDelightTags.BUTTER)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stewed_apples"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.APPLE_FRITTERS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.BOWL)
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(Items.SUGAR).addIngredient(ExtraDelightItems.EGG_MIX.get())
+				.addIngredient(ExtraDelightTags.FRYING_OIL).addIngredient(Items.SUGAR)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "apple_fritters"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CARAMEL_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get()).addIngredient(ForgeTags.MILK)
+				.addIngredient(ForgeTags.EGGS).addIngredient(ExtraDelightTags.SWEETENER).build(consumer);
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -1591,6 +1702,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(Items.CACTUS), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 						ExtraDelightItems.CACTUS.get(), 2)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sliced_cactus"));
+
+		// Halloween Start
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CARAMEL_CHEESECAKE_ITEM.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE.get(), 4)
+				.build(consumer);
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.PUMPKIN_PIE_ITEM.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.PUMPKIN_PIE_SLICE.get(), 4)
+				.build(consumer);
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.PUMPKIN_ROLL_FEAST.get()),
+				Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.PUMPKIN_ROLL.get(), 4).build(consumer);
 	}
 
 	void mortarRecipes(Consumer<FinishedRecipe> consumer) {
@@ -1682,6 +1805,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						LONG_GRIND, 1)
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.AGAR_SHEETS.get()))
+				.save(consumer);
+
+		MortarRecipeBuilder
+				.grind(Ingredient.of(ExtraDelightItems.CORN_SEEDS.get()), ExtraDelightItems.CORN_MEAL.get(),
+						STANDARD_GRIND, 1)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CORN_SEEDS.get()))
 				.save(consumer);
 	}
 
@@ -2094,6 +2224,59 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.SHEET.get(), "grilled_cheese");
 		bulkBake(ExtraDelightItems.COOKED_CACTUS.get(), ExtraDelightItems.CACTUS.get(), consumer,
 				ExtraDelightItems.SHEET.get(), "cooked_cactus");
+		bulkBake(ExtraDelightItems.GRILLED_CORN_ON_COB.get(), ExtraDelightItems.CORN_ON_COB.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "cooked_corn_cob");
+
+		// Halloween Start!
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.CARAMEL_CHEESECAKE_ITEM.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.PIE_DISH.get())
+				.addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get(), 3).addIngredient(Ingredient.of(ForgeTags.MILK))
+				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(ForgeTags.MILK))
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.CARAMEL_SAUCE.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.CORNBREAD_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.ROUND_PAN.get())
+				.addIngredient(ExtraDelightItems.CORN_MEAL.get()).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(Items.SUGAR).addIngredient(ExtraDelightItems.BUTTER.get())
+				.addIngredient(ExtraDelightItems.EGG_MIX.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.CORN_MEAL.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.CORN_PUDDING_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SQUARE_PAN.get())
+				.addIngredient(ExtraDelightItems.CORN_MEAL.get()).addIngredient(ExtraDelightItems.COOKED_CORN.get())
+				.addIngredient(Items.SUGAR).addIngredient(ExtraDelightItems.BUTTER.get())
+				.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(Ingredient.of(ForgeTags.MILK))
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ExtraDelightItems.CORN_MEAL.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.PUMPKIN_PIE_ITEM.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.PIE_DISH.get())
+				.addIngredient(ModItems.PUMPKIN_SLICE.get(), 3).addIngredient(Items.SUGAR)
+				.addIngredient(ModItems.PIE_CRUST.get()).addIngredient(ExtraDelightItems.EGG_MIX.get())
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.APPLE_CRISP_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SQUARE_PAN.get())
+				.addIngredient(Items.WHEAT_SEEDS).addIngredient(ExtraDelightTags.FLOUR).addIngredient(Items.SUGAR)
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.SLICED_APPLE.get(), Items.APPLE).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.POTATO_AU_GRATIN_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SQUARE_PAN.get())
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ForgeTags.MILK)
+				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.SLICED_POTATO).addIngredient(ExtraDelightTags.SLICED_POTATO)
+				.addIngredient(ExtraDelightTags.SLICED_POTATO).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.SLICED_POTATO.get()).build(consumer);
 	}
 
 	void bulkBake(ItemLike mainResult, ItemLike in, Consumer<FinishedRecipe> consumer, ItemLike pan, String name) {

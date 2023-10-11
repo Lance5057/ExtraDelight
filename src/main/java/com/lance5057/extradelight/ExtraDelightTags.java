@@ -5,9 +5,12 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 
 public class ExtraDelightTags {
+	
+
 	public static TagKey<Item> forgeTag(String tag) {
 		return ItemTags.create(new ResourceLocation("forge", tag));
 	}
@@ -69,6 +72,8 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> PROCESSED_APPLE = modTag("processed/apple");
 	public static final TagKey<Item> SLICED_APPLE = forgeTag("apple/sliced");
+	
+	public static final TagKey<Item> CORN = forgeTag("vegetable/corn");
 
 	// Bread
 	public static final TagKey<Item> BREAD_SLICE = forgeTag("bread/sliced");
