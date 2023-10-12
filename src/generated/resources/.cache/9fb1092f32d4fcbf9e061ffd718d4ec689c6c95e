@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-11T20:39:45.4618114	Recipes
+// 1.19.2	2023-10-12T10:08:12.0879942	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 7f68d9c8875e68adbfd9db6129a8e9c2979cf290 data/extradelight/advancements/recipes/extradelight.aesthetic/acacia_dried_corn_fence.json
@@ -1531,7 +1531,7 @@ d9141cf97a56bd61f2d243a47f017e1f5ea9c178 data/extradelight/recipes/yellow_jelly_
 53a305c75587f166952a684150b08579f8422c89 data/farmersdelight/recipes/cooking/chocolate_custard.json
 136da796090509afbf5e254c31059618ffa8aaa3 data/farmersdelight/recipes/cooking/honey_custard.json
 485447c3c1c19cf658e015f22412b7f6732579f8 data/farmersdelight/recipes/cooking/pumpkin_custard.json
-1a811025a2aece61235005d172062d2d423a4b98 data/farmersdelight/recipes/cooking/stuffing_feast.json
+f3f2fe4a8d1610803ddfab77558abb97e40973df data/farmersdelight/recipes/cooking/stuffing_feast.json
 24a59281374064ce4f19e0a23d48a674dd05e2c1 data/farmersdelight/recipes/cooking/sweet_berry_custard.json
 445dbf57e0bef97bdc97b105a499bc89404e2860 data/farmersdelight/recipes/cutting/barrier.json
 7d963a546dd0981ab4434629e7c9b62982f808fd data/farmersdelight/recipes/cutting/bread.json

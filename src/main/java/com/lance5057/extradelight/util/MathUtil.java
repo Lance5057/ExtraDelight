@@ -42,4 +42,9 @@ public class MathUtil {
 	{
 		return ArrayUtils.indexOf(blockAngles, value);
 	}
+	
+	public static float lerp(float a, float b, float t)
+	{
+		return (a * (1.0F - t)) + (b * t);
+	}
 }
