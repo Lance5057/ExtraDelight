@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_corn"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    }
+  ],
+  "result": {
+    "item": "extradelight:corn_fritters"
+  }
+}

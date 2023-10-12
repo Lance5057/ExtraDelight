@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:round_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:corn_meal"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:cornbread_feast"
+  }
+}

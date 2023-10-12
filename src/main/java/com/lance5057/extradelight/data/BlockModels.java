@@ -143,7 +143,7 @@ public class BlockModels extends BlockStateProvider {
 		pieBlock(ExtraDelightBlocks.CARAMEL_CHEESECAKE.get(), "caramel_cheesecake");
 		this.recipeFeastBlock(ExtraDelightBlocks.CORN_PUDDING.get());
 		pieBlock(ExtraDelightBlocks.PUMPKIN_PIE.get(), "pumpkin_pie");
-		this.recipeFeastBlock(ExtraDelightBlocks.PUMPKIN_ROLL.get());
+		this.pieLikeBlock(ExtraDelightBlocks.PUMPKIN_ROLL.get(), "pumpkin_roll");
 		this.recipeFeastBlock(ExtraDelightBlocks.APPLE_CRISP.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.STUFFING.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.POTATO_AU_GRATIN.get());
@@ -204,6 +204,19 @@ public class BlockModels extends BlockStateProvider {
 //					.texture("side", "farmersdelight:block/pie_side")
 							.texture("top", modLoc("block/" + prefix + "_top"))
 							.texture("inner", modLoc("block/" + prefix + "_inner")))
+					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
+		});
+	}
+
+	public void pieLikeBlock(Block block, String path) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int bites = state.getValue(PieBlock.BITES);
+			String suffix = "_stage" + bites;
+
+			return ConfiguredModel.builder()
+					.modelFile(new ModelFile.ExistingModelFile(
+							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + path + suffix),
+							models().existingFileHelper))
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}

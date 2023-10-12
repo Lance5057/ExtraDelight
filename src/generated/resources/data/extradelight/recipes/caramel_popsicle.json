@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "extradelight:caramel_sauce"
+    },
+    "i": {
+      "item": "minecraft:ice"
+    },
+    "m": {
+      "tag": "forge:milk"
+    },
+    "s": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    " cm",
+    "isc",
+    "Si "
+  ],
+  "result": {
+    "item": "extradelight:caramel_popsicle"
+  }
+}

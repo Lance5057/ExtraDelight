@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.blocks.crops.corn;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
 import java.util.function.Function;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
@@ -208,53 +210,64 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 		if (pEntity instanceof Player p) {
 			boolean b = pState.getValue(CornTop.DENSE);
 			if (b) {
-				if (p.hasEffect(MobEffects.CONFUSION)) {
-					MobEffectInstance mei = p.getEffect(MobEffects.CONFUSION);
-					if (mei.getDuration() <= 1) {
-						if (pLevel instanceof ServerLevel && !pEntity.isPassenger() && !pEntity.isVehicle()
-								&& pEntity.canChangeDimensions()) {
-							ResourceKey<Level> resourcekey = ExtraDelightWorldGen.CORNFIELD;
-							ServerLevel serverlevel = ((ServerLevel) pLevel).getServer().getLevel(resourcekey);
-							if (serverlevel == null) {
-								return;
+				if (isHalloween()) {
+					if (p.hasEffect(MobEffects.CONFUSION)) {
+						MobEffectInstance mei = p.getEffect(MobEffects.CONFUSION);
+						if (mei.getDuration() <= 1) {
+							if (pLevel instanceof ServerLevel && !pEntity.isPassenger() && !pEntity.isVehicle()
+									&& pEntity.canChangeDimensions()) {
+								ResourceKey<Level> resourcekey = ExtraDelightWorldGen.CORNFIELD;
+								ServerLevel serverlevel = ((ServerLevel) pLevel).getServer().getLevel(resourcekey);
+								if (serverlevel == null) {
+									return;
+								}
+
+								pEntity.changeDimension(serverlevel, new ITeleporter() {
+									@Override
+									public Entity placeEntity(Entity entity, ServerLevel currentWorld,
+											ServerLevel destWorld, float yaw,
+											Function<Boolean, Entity> repositionEntity) {
+										Entity repositionedEntity = repositionEntity.apply(false);
+
+										return repositionedEntity;
+									}
+
+									@Override
+									public PortalInfo getPortalInfo(Entity entity, ServerLevel destWorld,
+											Function<ServerLevel, PortalInfo> defaultPortalInfo) {
+										return new PortalInfo(new Vec3(p.getX(), 20, p.getZ()),
+												entity.getDeltaMovement(), entity.getYRot(), entity.getXRot());
+									}
+
+									@Override
+									public boolean playTeleportSound(ServerPlayer player, ServerLevel sourceWorld,
+											ServerLevel destWorld) {
+										return false;
+									}
+								});
 							}
-
-							pEntity.changeDimension(serverlevel, new ITeleporter() {
-								@Override
-								public Entity placeEntity(Entity entity, ServerLevel currentWorld,
-										ServerLevel destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
-									Entity repositionedEntity = repositionEntity.apply(false);
-
-									return repositionedEntity;
-								}
-
-								@Override
-								public PortalInfo getPortalInfo(Entity entity, ServerLevel destWorld,
-										Function<ServerLevel, PortalInfo> defaultPortalInfo) {
-									return new PortalInfo(new Vec3(p.getX(), 20, p.getZ()), entity.getDeltaMovement(),
-											entity.getYRot(), entity.getXRot());
-								}
-
-								@Override
-								public boolean playTeleportSound(ServerPlayer player, ServerLevel sourceWorld,
-										ServerLevel destWorld) {
-									return false;
-								}
-							});
 						}
+					} else {
+						if (pLevel.random.nextInt(100) == 0)
+							p.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200));
 					}
 				} else {
-					p.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200));
-				}
-			} else {
-				if (pState.getValue(CornTop.DIMENSION)) {
-					pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
+					if (pState.getValue(CornTop.DIMENSION)) {
+						pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
 
+					}
 				}
 			}
 		}
 
 		super.entityInside(pState, pLevel, pPos, pEntity);
+	}
+
+	private static boolean isHalloween() {
+		LocalDate localdate = LocalDate.now();
+		int i = localdate.get(ChronoField.DAY_OF_MONTH);
+		int j = localdate.get(ChronoField.MONTH_OF_YEAR);
+		return j == 10 && i >= 1 || j == 11 && i <= 10;
 	}
 
 	protected ItemLike getBaseSeedId() {

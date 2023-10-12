@@ -20,7 +20,7 @@ public class CornHuskDollBlockEntity extends BlockEntity {
 
 	public int maxDistance = 32;
 	public int timer = 0;
-	public int timerMax = 100;
+	public int timerMax = 1000;
 
 	public CornHuskDollBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ExtraDelightBlockEntities.CORN_HUSK_DOLL.get(), pPos, pState);
@@ -65,6 +65,9 @@ public class CornHuskDollBlockEntity extends BlockEntity {
 						int i = MathUtil.getAngleIndex(MathUtil.search(angle2));
 						level.setBlock(pos, state.setValue(CornHuskDollBlock.FACING, i), 0);
 					}
+
+					c.timer = 0;
+					c.timerMax = 1000 + level.random.nextInt(1000);
 				}
 			} else
 				c.timer++;

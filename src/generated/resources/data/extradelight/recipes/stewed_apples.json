@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "result": {
+    "item": "extradelight:stewed_apples"
+  }
+}

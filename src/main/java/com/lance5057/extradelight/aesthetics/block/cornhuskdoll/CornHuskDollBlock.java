@@ -3,6 +3,7 @@ package com.lance5057.extradelight.aesthetics.block.cornhuskdoll;
 import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightWorldGen;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -89,7 +90,7 @@ public class CornHuskDollBlock extends Block implements SimpleWaterloggedBlock, 
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState,
 			BlockEntityType<T> pBlockEntityType) {
-		if (pLevel.dimension() == Level.OVERWORLD)
+		if (pLevel.dimension() == ExtraDelightWorldGen.CORNFIELD)
 			return pBlockEntityType == ExtraDelightBlockEntities.CORN_HUSK_DOLL.get() ? CornHuskDollBlockEntity::tick
 					: null;
 		return null;

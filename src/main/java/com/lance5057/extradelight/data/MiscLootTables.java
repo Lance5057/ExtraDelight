@@ -25,7 +25,7 @@ public class MiscLootTables implements Consumer<BiConsumer<ResourceLocation, Loo
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
 		t.accept(SHUCKED_CORN,
-				LootTable.lootTable().withPool(createPoolWithItem(ExtraDelightItems.CORN_HUSK.get(), 5, 6))
+				LootTable.lootTable().withPool(createPoolWithItem(ExtraDelightItems.CORN_HUSK.get(), 2, 3))
 						.withPool(createPoolWithItem(ExtraDelightItems.CORN_SILK.get(), 1, 2))
 						.withPool(createPoolWithItem(ExtraDelightItems.CORN_ON_COB.get(), 1)));
 	}

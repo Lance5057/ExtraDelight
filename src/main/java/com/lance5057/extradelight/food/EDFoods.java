@@ -53,9 +53,9 @@ public class EDFoods {
 			FoodValues.SHORT_DURATION, 0);
 
 	public static final Supplier<MobEffectInstance> PAIN = () -> new MobEffectInstance(MobEffects.HARM, 1, 0);
-	
-	public static final FoodProperties NOTFOOD = new FoodProperties.Builder().nutrition(0).saturationMod(0f)
-			.alwaysEat().build();
+
+	public static final FoodProperties NOTFOOD = new FoodProperties.Builder().nutrition(0).saturationMod(0f).alwaysEat()
+			.build();
 
 	public static final FoodProperties CUSTARD = new FoodProperties.Builder().nutrition(7).saturationMod(0.6f)
 			.alwaysEat().build();
@@ -428,7 +428,8 @@ public class EDFoods {
 	public static final FoodProperties BACON_CHEESEBURGER = EDFoods
 			.addFoods("bacon cheeseburger", CHEESEBURGER, FoodValues.COOKED_BACON).effect(COMFORT_MEDIUM, 1).build();
 	public static final FoodProperties RICEBALL = EDFoods
-			.divideFoods("riceball", EDFoods.addFoods("", Foods.DRIED_KELP, FoodValues.COOKED_RICE).build(), 2).effect(NOURISHMENT_BRIEF, 1).build();
+			.divideFoods("riceball", EDFoods.addFoods("", Foods.DRIED_KELP, FoodValues.COOKED_RICE).build(), 2)
+			.effect(NOURISHMENT_BRIEF, 1).build();
 	public static final FoodProperties RICEBALL_FILLED = EDFoods
 			.addFoods("riceball filled", RICEBALL, FoodValues.FRIED_EGG).effect(NOURISHMENT_MEDIUM, 1).build();
 	public static final FoodProperties FISH_SALAD = EDFoods
@@ -446,13 +447,51 @@ public class EDFoods {
 	public static final FoodProperties COOKED_CACTUS = EDFoods.cookFood("cooked cactus", CACTUS).build();
 	public static final FoodProperties CACTUS_EGGS = EDFoods.addFoods("cactus eggs", COOKED_CACTUS, SCRAMBLED_EGGS)
 			.build();
-	public static final FoodProperties CACTUS_SOUP = EDFoods.divideFoods("cactus soup", EDFoods
-			.addFoods("", COOKED_CACTUS, COOKED_CACTUS, FoodValues.TOMATO, FoodValues.ONION, FoodValues.BONE_BROTH)
-			.build(), 2).effect(COMFORT_MEDIUM, 1).effect(NOURISHMENT_BRIEF, 1).build();
+	public static final FoodProperties CACTUS_SOUP = EDFoods
+			.divideFoods("cactus soup",
+					EDFoods.addFoods("", COOKED_CACTUS, COOKED_CACTUS, FoodValues.TOMATO, FoodValues.ONION,
+							FoodValues.BONE_BROTH).build(),
+					2)
+			.effect(COMFORT_MEDIUM, 1).effect(NOURISHMENT_BRIEF, 1).build();
 	public static final FoodProperties CACTUS_SALAD = EDFoods
 			.addFoods("cactus salad", COOKED_CACTUS, FoodValues.TOMATO, FoodValues.ONION, CHEESE).build();
 	public static final FoodProperties STUFFED_CACTUS = EDFoods
 			.addFoods("stuffed cactus", COOKED_CACTUS, BREADING, CHEESE).effect(COMFORT_MEDIUM, 1).build();
+
+	// Halloween Start!
+	public static final FoodProperties COOKED_CORN = new FoodProperties.Builder().nutrition(2).saturationMod(0.2f)
+			.build();
+	public static final FoodProperties GRILLED_CORN = new FoodProperties.Builder().nutrition(3).saturationMod(0.2f)
+			.build();
+
+	public static final FoodProperties CORN_CHOWDER = EDFoods.addFoods("corn chowder", COOKED_CORN, Foods.BAKED_POTATO,
+			FoodValues.COOKED_BACON, FoodValues.ONION, MILK, FoodValues.BONE_BROTH).effect(COMFORT_MEDIUM, 1).build();
+	public static final FoodProperties CREAMED_CORN = EDFoods.addFoods("creamed corn", COOKED_CORN, MILK, BUTTER)
+			.build();
+	public static final FoodProperties CORN_FRITTERS = EDFoods
+			.addFoods("corn fritters", COOKED_CORN, FoodValues.FRIED_EGG, SUGAR, FLOUR, OIL, FoodValues.ONION).build();
+	public static final FoodProperties STEWED_APPLES = EDFoods.addFoods("stewed apples", Foods.APPLE, SUGAR, BUTTER)
+			.build();
+	public static final FoodProperties APPLE_FRITTERS = EDFoods
+			.addFoods("apple fritters", Foods.APPLE, SUGAR, OIL, SUGAR, FLOUR, FoodValues.FRIED_EGG).build();
+	public static final FoodProperties CARAMEL_SAUCE = EDFoods.addFoods("caramel sauce", SUGAR, BUTTER, MILK).build();
+	public static final FoodProperties CARAMEL_CANDY = EDFoods.divideFoods("caramel candy", CARAMEL_SAUCE, 2).build();
+	public static final FoodProperties CANDY_APPLE = EDFoods.addFoods("candy apple", Foods.APPLE, SUGAR, SUGAR).build();
+	public static final FoodProperties CARAMEL_APPLE = EDFoods.addFoods("caramel apple", Foods.APPLE, CARAMEL_SAUCE)
+			.build();
+	public static final FoodProperties CARAMEL_POPCORN = EDFoods.addFoods("caramel popcorn", COOKED_CORN, CARAMEL_SAUCE)
+			.build();
+
+	public static final FoodProperties CORNBREAD = EDFoods.divideFoods("cornbread",
+			EDFoods.addFoods("", FLOUR, FLOUR, SUGAR, BUTTER, FoodValues.FRIED_EGG).build(), 4).build();
+	public static final FoodProperties APPLE_CRISP = EDFoods.divideFoods("apple crisp",
+			EDFoods.addFoods("", FLOUR, FLOUR, SUGAR, BUTTER, Foods.APPLE, Foods.APPLE).build(), 4).build();
+	public static final FoodProperties STUFFING = EDFoods.divideFoods("stuffing", EDFoods
+			.addFoods("", SLICED_BREAD, FoodValues.BONE_BROTH, FoodValues.ONION, FoodValues.FRIED_EGG, BUTTER).build(), 4).build();
+	public static final FoodProperties CORN_PUDDING = EDFoods.divideFoods("corn pudding", EDFoods
+			.addFoods("", FLOUR, COOKED_CORN, SUGAR, FoodValues.FRIED_EGG, BUTTER, MILK).build(), 4).build();
+	public static final FoodProperties POTATOES_AU_GRATIN = EDFoods.divideFoods("potatoes au gratin", EDFoods
+			.addFoods("", FLOUR, CHEESE, BUTTER, MILK, Foods.BAKED_POTATO, Foods.BAKED_POTATO, Foods.BAKED_POTATO).build(), 4).build();
 
 	public static Builder addFoods(String name, FoodProperties... foods) {
 

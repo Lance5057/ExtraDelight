@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extradelight:corn_husk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    }
+  ],
+  "result": {
+    "item": "extradelight:corn_husk_bundle"
+  }
+}

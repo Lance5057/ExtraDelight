@@ -1,78 +1,63 @@
 {
   "variants": {
-    "facing=east,servings=0": {
-      "model": "extradelight:block/pumpkin_roll_stage3",
-      "y": 90
-    },
-    "facing=east,servings=1": {
-      "model": "extradelight:block/pumpkin_roll_stage3",
-      "y": 90
-    },
-    "facing=east,servings=2": {
-      "model": "extradelight:block/pumpkin_roll_stage2",
-      "y": 90
-    },
-    "facing=east,servings=3": {
-      "model": "extradelight:block/pumpkin_roll_stage1",
-      "y": 90
-    },
-    "facing=east,servings=4": {
+    "bites=0,facing=east": {
       "model": "extradelight:block/pumpkin_roll_stage0",
       "y": 90
     },
-    "facing=north,servings=0": {
-      "model": "extradelight:block/pumpkin_roll_stage3"
-    },
-    "facing=north,servings=1": {
-      "model": "extradelight:block/pumpkin_roll_stage3"
-    },
-    "facing=north,servings=2": {
-      "model": "extradelight:block/pumpkin_roll_stage2"
-    },
-    "facing=north,servings=3": {
-      "model": "extradelight:block/pumpkin_roll_stage1"
-    },
-    "facing=north,servings=4": {
+    "bites=0,facing=north": {
       "model": "extradelight:block/pumpkin_roll_stage0"
     },
-    "facing=south,servings=0": {
-      "model": "extradelight:block/pumpkin_roll_stage3",
-      "y": 180
-    },
-    "facing=south,servings=1": {
-      "model": "extradelight:block/pumpkin_roll_stage3",
-      "y": 180
-    },
-    "facing=south,servings=2": {
-      "model": "extradelight:block/pumpkin_roll_stage2",
-      "y": 180
-    },
-    "facing=south,servings=3": {
-      "model": "extradelight:block/pumpkin_roll_stage1",
-      "y": 180
-    },
-    "facing=south,servings=4": {
+    "bites=0,facing=south": {
       "model": "extradelight:block/pumpkin_roll_stage0",
       "y": 180
     },
-    "facing=west,servings=0": {
-      "model": "extradelight:block/pumpkin_roll_stage3",
+    "bites=0,facing=west": {
+      "model": "extradelight:block/pumpkin_roll_stage0",
       "y": 270
     },
-    "facing=west,servings=1": {
-      "model": "extradelight:block/pumpkin_roll_stage3",
-      "y": 270
+    "bites=1,facing=east": {
+      "model": "extradelight:block/pumpkin_roll_stage1",
+      "y": 90
     },
-    "facing=west,servings=2": {
-      "model": "extradelight:block/pumpkin_roll_stage2",
-      "y": 270
+    "bites=1,facing=north": {
+      "model": "extradelight:block/pumpkin_roll_stage1"
     },
-    "facing=west,servings=3": {
+    "bites=1,facing=south": {
+      "model": "extradelight:block/pumpkin_roll_stage1",
+      "y": 180
+    },
+    "bites=1,facing=west": {
       "model": "extradelight:block/pumpkin_roll_stage1",
       "y": 270
     },
-    "facing=west,servings=4": {
-      "model": "extradelight:block/pumpkin_roll_stage0",
+    "bites=2,facing=east": {
+      "model": "extradelight:block/pumpkin_roll_stage2",
+      "y": 90
+    },
+    "bites=2,facing=north": {
+      "model": "extradelight:block/pumpkin_roll_stage2"
+    },
+    "bites=2,facing=south": {
+      "model": "extradelight:block/pumpkin_roll_stage2",
+      "y": 180
+    },
+    "bites=2,facing=west": {
+      "model": "extradelight:block/pumpkin_roll_stage2",
+      "y": 270
+    },
+    "bites=3,facing=east": {
+      "model": "extradelight:block/pumpkin_roll_stage3",
+      "y": 90
+    },
+    "bites=3,facing=north": {
+      "model": "extradelight:block/pumpkin_roll_stage3"
+    },
+    "bites=3,facing=south": {
+      "model": "extradelight:block/pumpkin_roll_stage3",
+      "y": 180
+    },
+    "bites=3,facing=west": {
+      "model": "extradelight:block/pumpkin_roll_stage3",
       "y": 270
     }
   }

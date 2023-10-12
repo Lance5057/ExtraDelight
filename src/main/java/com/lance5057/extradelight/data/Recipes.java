@@ -263,6 +263,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.SALAD_FEAST_ITEM.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "salad_bowl"));
 
+		// Halloween Start!
 		FeastRecipeBuilder
 				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.CORNBREAD.get(),
 						ExtraDelightItems.CORNBREAD_FEAST.get())
@@ -292,6 +293,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.POTATO_AU_GRATIN_FEAST.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.POTATO_AU_GRATIN_FEAST.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "potato_au_gratin_bowl"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.PUMPKIN_ROLL.get(),
+						ExtraDelightItems.PUMPKIN_ROLL_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.PUMPKIN_ROLL_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pumpkin_roll_knife"));
 	}
 
 	private void doughShapeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -327,6 +334,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy("has_meat", has(ExtraDelightTags.MEAT))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "jerky"));
 
+		DryingRackRecipeBuilder
+				.drying(Ingredient.of(ExtraDelightItems.CORN_HUSK.get()), ExtraDelightItems.DRIED_CORN_HUSK.get(), 10,
+						1000)
+				.unlockedBy("has_husk", has(ExtraDelightItems.CORN_HUSK.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn_husk"));
 	}
 
 	private void cookingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -959,7 +971,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern("Si ").define('m', ForgeTags.MILK).define('c', ExtraDelightItems.CARAMEL_SAUCE.get())
 				.define('s', Items.SUGAR).define('S', Items.STICK).define('i', Items.ICE)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
-				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fudge_popsicle"));
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "caramel_popsicle"));
 
 		bundleItem9(Ingredient.of(ExtraDelightTags.FLOUR), ExtraDelightItems.FLOUR_SACK.get(),
 				ExtraDelightItems.FLOUR.get(), consumer, "flour");
@@ -968,6 +980,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		bundleItem9(Ingredient.of(Items.SUGAR), ExtraDelightItems.SUGAR_SACK.get(), Items.SUGAR, consumer, "sugar");
 		bundleItem9(Ingredient.of(ExtraDelightItems.CORN_ON_COB.get()), ExtraDelightItems.CORN_CRATE.get(),
 				ExtraDelightItems.CORN_ON_COB.get(), consumer, "corn");
+		bundleItem9(Ingredient.of(ExtraDelightItems.CORN_HUSK.get()), ExtraDelightItems.CORN_HUSK_BUNDLE.get(),
+				ExtraDelightItems.CORN_HUSK.get(), consumer, "corn_husk");
+		bundleItem9(Ingredient.of(ExtraDelightItems.DRIED_CORN_HUSK.get()),
+				ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get(), ExtraDelightItems.DRIED_CORN_HUSK.get(), consumer,
+				"dried_corn_husk");
 	}
 
 	void bundleItem9(Ingredient in, BlockItem b, Item out, Consumer<FinishedRecipe> consumer, String name) {
@@ -1574,14 +1591,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn_fritters"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.CORN_FRITTERS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
-						Items.BOWL)
-				.addIngredient(ExtraDelightItems.COOKED_CORN.get()).addIngredient(ExtraDelightTags.FLOUR)
-				.addIngredient(Items.SUGAR).addIngredient(ExtraDelightItems.EGG_MIX.get())
-				.addIngredient(ExtraDelightTags.FRYING_OIL).addIngredient(ExtraDelightTags.PROCESSED_ONION)
-				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn_fritters"));
-
-		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.COOKED_CORN.get(), 1, CookingRecipes.FAST_COOKING, 0.35F,
 						Items.BOWL)
 				.addIngredient(ExtraDelightItems.CORN_SEEDS.get())
@@ -1613,6 +1622,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Items.GLASS_BOTTLE)
 				.addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get()).addIngredient(ForgeTags.MILK)
 				.addIngredient(ForgeTags.EGGS).addIngredient(ExtraDelightTags.SWEETENER).build(consumer);
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.STUFFING_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
+						Items.BOWL)
+				.addIngredient(ExtraDelightItems.CROUTONS.get()).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ExtraDelightTags.PROCESSED_ONION)
+				.addIngredient(ForgeTags.EGGS).build(consumer);
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -1714,6 +1730,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer);
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.PUMPKIN_ROLL_FEAST.get()),
 				Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.PUMPKIN_ROLL.get(), 4).build(consumer);
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CORN_ON_COB.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.CORN_SEEDS.get(), 1)
+				.addResult(ExtraDelightItems.CORN_COB.get(), 1)
+				.addResultWithChance(ExtraDelightItems.CORN_SEEDS.get(), 0.75f, 1).build(consumer);
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.UNSHUCKED_CORN.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.CORN_ON_COB.get(), 1)
+				.addResult(ExtraDelightItems.CORN_HUSK.get(), 2).addResult(ExtraDelightItems.CORN_SILK.get(), 1)
+				.addResultWithChance(ExtraDelightItems.CORN_HUSK.get(), 0.75f, 1).build(consumer);
 	}
 
 	void mortarRecipes(Consumer<FinishedRecipe> consumer) {
@@ -2224,8 +2250,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.SHEET.get(), "grilled_cheese");
 		bulkBake(ExtraDelightItems.COOKED_CACTUS.get(), ExtraDelightItems.CACTUS.get(), consumer,
 				ExtraDelightItems.SHEET.get(), "cooked_cactus");
-		bulkBake(ExtraDelightItems.GRILLED_CORN_ON_COB.get(), ExtraDelightItems.CORN_ON_COB.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "cooked_corn_cob");
 
 		// Halloween Start!
 		OvenRecipeBuilder
@@ -2277,6 +2301,21 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.SLICED_POTATO).addIngredient(ExtraDelightTags.SLICED_POTATO)
 				.addIngredient(ExtraDelightTags.SLICED_POTATO).setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedByAnyIngredient(ExtraDelightItems.SLICED_POTATO.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.PUMPKIN_ROLL_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.TRAY.get())
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ForgeTags.MILK)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(ModItems.PUMPKIN_SLICE.get()).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ModItems.PUMPKIN_SLICE.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get()).build(consumer);
+
+		bulkBake(ExtraDelightItems.GRILLED_CORN_ON_COB.get(), ExtraDelightItems.CORN_ON_COB.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "cooked_corn_cob");
+		bulkBake(ExtraDelightItems.ROASTED_PUMPKIN_SEEDS.get(), Items.PUMPKIN_SEEDS, consumer,
+				ExtraDelightItems.TRAY.get(), "cooked_pumpkin_seeds");
 	}
 
 	void bulkBake(ItemLike mainResult, ItemLike in, Consumer<FinishedRecipe> consumer, ItemLike pan, String name) {

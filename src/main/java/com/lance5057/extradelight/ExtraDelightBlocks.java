@@ -270,9 +270,8 @@ public class ExtraDelightBlocks {
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_YELLOW), true,
 					pan));
 
-	public static final RegistryObject<RecipeFeastBlock> PUMPKIN_ROLL = BLOCKS.register("pumpkin_roll",
-			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,
-					bowl));
+	public static final RegistryObject<PieBlock> PUMPKIN_ROLL = BLOCKS.register("pumpkin_roll",
+			() -> new PieBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), ExtraDelightItems.PUMPKIN_ROLL));
 
 	public static final RegistryObject<RecipeFeastBlock> APPLE_CRISP = BLOCKS.register("apple_crisp",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), false,

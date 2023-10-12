@@ -40,6 +40,7 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -335,6 +336,8 @@ public class AestheticBlocks {
 
 			lp.add(WALLPAPER_ITEMS.get(i).get(), w + " Wallpaper");
 		}
+
+		lp.add(CORN_HUSK_DOLL.get(), "Corn Husk Doll");
 	}
 
 	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove
@@ -370,6 +373,12 @@ public class AestheticBlocks {
 					.unlockedBy(dye + "_wallpaper", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
 					.save(consumer);
 		}
+
+		ShapedRecipeBuilder.shaped(CORN_HUSK_DOLL.get()).pattern(" c ").pattern(" s ").pattern("ccc")
+				.define('c', ExtraDelightItems.DRIED_CORN_HUSK.get()).define('s', Tags.Items.STRING)
+				.unlockedBy("corn_husk_doll",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DRIED_CORN_HUSK.get()))
+				.save(consumer);
 	}
 
 	static void moldRecipe(Consumer<FinishedRecipe> consumer, Item slab, WOOD name, int add) {

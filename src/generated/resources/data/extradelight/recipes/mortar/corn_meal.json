@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 4,
+  "ingredient": {
+    "item": "extradelight:corn_seeds"
+  },
+  "result": {
+    "item": "extradelight:corn_meal"
+  }
+}
