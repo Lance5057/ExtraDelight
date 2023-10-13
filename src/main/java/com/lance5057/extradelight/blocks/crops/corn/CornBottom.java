@@ -1,15 +1,24 @@
 package com.lance5057.extradelight.blocks.crops.corn;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
+import java.util.function.Function;
+
 import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightWorldGen;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Ravager;
@@ -30,9 +39,12 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.portal.PortalInfo;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.util.ITeleporter;
 
 public class CornBottom extends BushBlock implements BonemealableBlock {
 	public static final int MAX_AGE = 3;
@@ -179,6 +191,8 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 	}
 
 	public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
+		if(pState.getValue(CornTop.DIMENSION))
+			return true;
 		return (pLevel.getRawBrightness(pPos, 0) >= 8 || pLevel.canSeeSky(pPos))
 				&& super.canSurvive(pState, pLevel, pPos);
 	}
@@ -189,7 +203,66 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 			pLevel.destroyBlock(pPos, true, pEntity);
 		}
 
+		if (pEntity instanceof Player p) {
+			boolean b = pState.getValue(CornTop.DENSE);
+			if (b) {
+				if (isHalloween()) {
+					if (p.hasEffect(MobEffects.CONFUSION)) {
+						MobEffectInstance mei = p.getEffect(MobEffects.CONFUSION);
+						if (mei.getDuration() <= 1) {
+							if (pLevel instanceof ServerLevel && !pEntity.isPassenger() && !pEntity.isVehicle()
+									&& pEntity.canChangeDimensions()) {
+								ResourceKey<Level> resourcekey = ExtraDelightWorldGen.CORNFIELD;
+								ServerLevel serverlevel = ((ServerLevel) pLevel).getServer().getLevel(resourcekey);
+								if (serverlevel == null) {
+									return;
+								}
+
+								pEntity.changeDimension(serverlevel, new ITeleporter() {
+									@Override
+									public Entity placeEntity(Entity entity, ServerLevel currentWorld,
+											ServerLevel destWorld, float yaw,
+											Function<Boolean, Entity> repositionEntity) {
+										Entity repositionedEntity = repositionEntity.apply(false);
+
+										return repositionedEntity;
+									}
+
+									@Override
+									public PortalInfo getPortalInfo(Entity entity, ServerLevel destWorld,
+											Function<ServerLevel, PortalInfo> defaultPortalInfo) {
+										return new PortalInfo(new Vec3(p.getX(), 20, p.getZ()),
+												entity.getDeltaMovement(), entity.getYRot(), entity.getXRot());
+									}
+
+									@Override
+									public boolean playTeleportSound(ServerPlayer player, ServerLevel sourceWorld,
+											ServerLevel destWorld) {
+										return false;
+									}
+								});
+							}
+						}
+					} else {
+						if (pLevel.random.nextInt(100) == 0)
+							p.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200));
+					}
+				}
+			}
+			if (pState.getValue(CornTop.DIMENSION)) {
+				pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
+
+			}
+		}
+
 		super.entityInside(pState, pLevel, pPos, pEntity);
+	}
+	
+	private static boolean isHalloween() {
+		LocalDate localdate = LocalDate.now();
+		int i = localdate.get(ChronoField.DAY_OF_MONTH);
+		int j = localdate.get(ChronoField.MONTH_OF_YEAR);
+		return j == 10 && i >= 1 || j == 11 && i <= 10;
 	}
 
 	protected ItemLike getBaseSeedId() {

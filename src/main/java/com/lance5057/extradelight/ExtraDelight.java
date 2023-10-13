@@ -5,8 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.Foods;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -41,6 +40,11 @@ public class ExtraDelight {
 		ExtraDelightLoot.register(modEventBus);
 
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
+
+		IEventBus bus = MinecraftForge.EVENT_BUS;
+		bus.addListener(ExtraDelightClientEvents::onFogDensityEvent);
+		bus.addListener(ExtraDelightClientEvents::onFogColorEvent);
+		bus.addListener(ExtraDelightEvents::stopDimensionDestruction);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {

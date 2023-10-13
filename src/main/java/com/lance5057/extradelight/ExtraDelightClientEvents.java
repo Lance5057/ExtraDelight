@@ -10,6 +10,7 @@ import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlRenderer;
 import com.lance5057.extradelight.workstations.mortar.MortarRenderer;
 import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeCatagories;
+import com.mojang.blaze3d.shaders.FogShape;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -18,6 +19,7 @@ import net.minecraft.server.packs.resources.Resource;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelEvent.RegisterAdditional;
 import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
+import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -34,7 +36,7 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.KNIFE_BLOCK.get(), KnifeBlockRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.SPICE_RACK.get(), SpiceRackRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.MORTAR.get(), MortarRenderer::new);
-		BlockEntityRenderers.register(ExtraDelightBlockEntities.MIXING_BOWL.get(), MixingBowlRenderer::new); 
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.MIXING_BOWL.get(), MixingBowlRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.DRYING_RACK.get(), DryingRackRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.CORN_HUSK_DOLL.get(), CornHuskDollRenderer::new);
 	}
@@ -57,5 +59,25 @@ public class ExtraDelightClientEvents {
 
 			event.register(rl2);
 		});
+	}
+
+	public static void onFogDensityEvent(ViewportEvent.RenderFog event) {
+		if (Minecraft.getInstance().player.level.dimension() == ExtraDelightWorldGen.CORNFIELD) {
+			event.setNearPlaneDistance(-8);
+			event.scaleFarPlaneDistance(0.25f);
+			event.setFogShape(FogShape.CYLINDER);
+			event.setCanceled(true);
+		}
+
+	}
+
+	public static void onFogColorEvent(ViewportEvent.ComputeFogColor event) {
+		if (Minecraft.getInstance().player.level.dimension() == ExtraDelightWorldGen.CORNFIELD) {
+			float f = 0.5f;
+			event.setRed(f);
+			event.setBlue(f);
+			event.setGreen(f);
+			event.setCanceled(true);
+		}
 	}
 }

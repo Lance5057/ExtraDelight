@@ -291,7 +291,14 @@ public class BlockModels extends BlockStateProvider {
 	public void cornBlock(CornBottom bottom, CornTop top) {
 		getVariantBuilder(bottom).forAllStates(state -> {
 			int age = state.getValue(CornBottom.AGE);
+			boolean dry = state.getValue(CornBottom.DIMENSION);
 			String suffix = "_stage" + age;
+
+			if (dry)
+				return ConfiguredModel.builder()
+						.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(bottom).getPath() + "_dimension",
+								modLoc("block/crops/corn/dimension_corn_bottom")))
+						.build();
 
 			return ConfiguredModel.builder()
 					.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(bottom).getPath() + suffix,
@@ -301,8 +308,15 @@ public class BlockModels extends BlockStateProvider {
 
 		getVariantBuilder(top).forAllStates(state -> {
 			int age = state.getValue(CornTop.AGE);
+			boolean dry = state.getValue(CornBottom.DIMENSION);
 			String suffix = "_stage" + (age + 4);
 			String suffix2 = "_stage" + age;
+
+			if (dry)
+				return ConfiguredModel.builder()
+						.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(top).getPath() + "_dimension",
+								modLoc("block/crops/corn/dimension_corn_top")))
+						.build();
 
 			return ConfiguredModel.builder()
 					.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(top).getPath() + suffix2,

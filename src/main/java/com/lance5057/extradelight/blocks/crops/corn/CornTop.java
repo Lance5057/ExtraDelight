@@ -197,6 +197,8 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 	}
 
 	public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
+		if(pState.getValue(CornTop.DIMENSION))
+			return true;
 		return (pLevel.getRawBrightness(pPos, 0) >= 8 || pLevel.canSeeSky(pPos))
 				&& pLevel.getBlockState(pPos.below()).getBlock() == ExtraDelightBlocks.CORN_BOTTOM.get();
 	}
@@ -251,12 +253,11 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 						if (pLevel.random.nextInt(100) == 0)
 							p.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200));
 					}
-				} else {
-					if (pState.getValue(CornTop.DIMENSION)) {
-						pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
-
-					}
 				}
+			}
+			if (pState.getValue(CornTop.DIMENSION)) {
+				pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
+
 			}
 		}
 

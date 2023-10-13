@@ -4,49 +4,49 @@
       "model": "extradelight:block/corn_top_stage0"
     },
     "age=0,dense=false,dimension=true": {
-      "model": "extradelight:block/corn_top_stage0"
+      "model": "extradelight:block/corn_top_dimension"
     },
     "age=0,dense=true,dimension=false": {
       "model": "extradelight:block/corn_top_stage0"
     },
     "age=0,dense=true,dimension=true": {
-      "model": "extradelight:block/corn_top_stage0"
+      "model": "extradelight:block/corn_top_dimension"
     },
     "age=1,dense=false,dimension=false": {
       "model": "extradelight:block/corn_top_stage1"
     },
     "age=1,dense=false,dimension=true": {
-      "model": "extradelight:block/corn_top_stage1"
+      "model": "extradelight:block/corn_top_dimension"
     },
     "age=1,dense=true,dimension=false": {
       "model": "extradelight:block/corn_top_stage1"
     },
     "age=1,dense=true,dimension=true": {
-      "model": "extradelight:block/corn_top_stage1"
+      "model": "extradelight:block/corn_top_dimension"
     },
     "age=2,dense=false,dimension=false": {
       "model": "extradelight:block/corn_top_stage2"
     },
     "age=2,dense=false,dimension=true": {
-      "model": "extradelight:block/corn_top_stage2"
+      "model": "extradelight:block/corn_top_dimension"
     },
     "age=2,dense=true,dimension=false": {
       "model": "extradelight:block/corn_top_stage2"
     },
     "age=2,dense=true,dimension=true": {
-      "model": "extradelight:block/corn_top_stage2"
+      "model": "extradelight:block/corn_top_dimension"
     },
     "age=3,dense=false,dimension=false": {
       "model": "extradelight:block/corn_top_stage3"
     },
     "age=3,dense=false,dimension=true": {
-      "model": "extradelight:block/corn_top_stage3"
+      "model": "extradelight:block/corn_top_dimension"
     },
     "age=3,dense=true,dimension=false": {
       "model": "extradelight:block/corn_top_stage3"
     },
     "age=3,dense=true,dimension=true": {
-      "model": "extradelight:block/corn_top_stage3"
+      "model": "extradelight:block/corn_top_dimension"
     }
   }
 }
