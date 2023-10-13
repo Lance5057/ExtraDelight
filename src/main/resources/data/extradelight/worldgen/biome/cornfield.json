@@ -49,21 +49,22 @@
   "spawn_costs": {},
   "carvers": {},
   "features": [
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
     [
 		"extradelight:rail_placer",
-		"minecraft:patch_pumpkin",
-		"extradelight:corn_placer"
+		"minecraft:patch_pumpkin"
 	],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
     [
 		
+	],
+    [
+		"extradelight:corn_placer"
     ]
   ]
 }

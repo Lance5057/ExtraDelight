@@ -1,14 +1,14 @@
 {
   "structures": [
     {
-      "structure": "extradelight:barn",
-      "weight": 1
+      "structure": "extradelight:camp1",
+      "weight": 5
     }
   ],
   "placement": {
     "type": "minecraft:random_spread",
     "spacing": 50,
     "separation": 25,
-    "salt": 430508
+    "salt": 743517
   }
 }

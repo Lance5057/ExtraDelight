@@ -74,7 +74,7 @@ public class CornMazeFeature extends Feature<SimpleBlockConfiguration> {
 						BlockPos p = new BlockPos(blockpos.getX() + x - 1, blockpos.getY(), blockpos.getZ() + z - 1);
 
 						if (m[x][z] == '#' && worldgenlevel.canSeeSky(p))
-							if (checkAround(worldgenlevel, p, 5))
+							if (checkAround(worldgenlevel, p, 10))
 								CornBottom.placeAt(worldgenlevel, blockstate, p, 0);
 						// 
 					}
@@ -90,7 +90,8 @@ public class CornMazeFeature extends Feature<SimpleBlockConfiguration> {
 			for (int z = -size; z < size+1; z++) {
 				BlockPos p = new BlockPos(pos.getX() + x, pos.getY(), pos.getZ() + z);
 
-				if (!expected.contains(level.getBlockState(p).getBlock()))
+				Block b = level.getBlockState(p).getBlock();
+				if (!expected.contains(b))
 					return false;
 
 			}
