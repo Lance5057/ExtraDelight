@@ -4,11 +4,11 @@
   "precipitation": "rain",
   "effects": {
     "sky_color": 0,
-    "fog_color": 16777215,
+    "fog_color": 1248036,
     "water_color": 2955861,
     "water_fog_color": 1248036,
-    "grass_color": 4006931,
-    "foliage_color": 4006931,
+    "grass_color": 4798742,
+    "foliage_color": 4798742,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,

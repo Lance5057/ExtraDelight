@@ -204,51 +204,6 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 		}
 
 		if (pEntity instanceof Player p) {
-			boolean b = pState.getValue(CornTop.DENSE);
-			if (b) {
-				if (isHalloween()) {
-					if (p.hasEffect(MobEffects.CONFUSION)) {
-						MobEffectInstance mei = p.getEffect(MobEffects.CONFUSION);
-						if (mei.getDuration() <= 1) {
-							if (pLevel instanceof ServerLevel && !pEntity.isPassenger() && !pEntity.isVehicle()
-									&& pEntity.canChangeDimensions()) {
-								ResourceKey<Level> resourcekey = ExtraDelightWorldGen.CORNFIELD;
-								ServerLevel serverlevel = ((ServerLevel) pLevel).getServer().getLevel(resourcekey);
-								if (serverlevel == null) {
-									return;
-								}
-
-								pEntity.changeDimension(serverlevel, new ITeleporter() {
-									@Override
-									public Entity placeEntity(Entity entity, ServerLevel currentWorld,
-											ServerLevel destWorld, float yaw,
-											Function<Boolean, Entity> repositionEntity) {
-										Entity repositionedEntity = repositionEntity.apply(false);
-
-										return repositionedEntity;
-									}
-
-									@Override
-									public PortalInfo getPortalInfo(Entity entity, ServerLevel destWorld,
-											Function<ServerLevel, PortalInfo> defaultPortalInfo) {
-										return new PortalInfo(new Vec3(p.getX(), 20, p.getZ()),
-												entity.getDeltaMovement(), entity.getYRot(), entity.getXRot());
-									}
-
-									@Override
-									public boolean playTeleportSound(ServerPlayer player, ServerLevel sourceWorld,
-											ServerLevel destWorld) {
-										return false;
-									}
-								});
-							}
-						}
-					} else {
-						if (pLevel.random.nextInt(100) == 0)
-							p.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200));
-					}
-				}
-			}
 			if (pState.getValue(CornTop.DIMENSION)) {
 				pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
 
