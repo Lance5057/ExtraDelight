@@ -36,6 +36,7 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 	public static ResourceLocation corn_common = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_common");
 	public static ResourceLocation corn_uncommon = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_uncommon");
 	public static ResourceLocation corn_rare = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_rare");
+	public static ResourceLocation corn_legendary = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_legendary");
 
 	static int COMMON = 100;
 	static int UNCOMMON = 50;
@@ -198,8 +199,8 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 				.add(LootItem.lootTableItem(ExtraDelightItems.GOLDEN_APPLE_JAM.get()).setWeight(LEGENDARY))
 				.add(LootItem.lootTableItem(ExtraDelightItems.GOLDEN_JAM_TOAST.get()).setWeight(LEGENDARY))
 				.add(LootItem.lootTableItem(ExtraDelightItems.OXTAIL_SOUP.get()).setWeight(LEGENDARY))
-				
-				//Feasts
+
+				// Feasts
 				.add(LootItem.lootTableItem(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get()).setWeight(RARE))
 				.add(LootItem.lootTableItem(ExtraDelightItems.BEEF_STEW_FEAST.get()).setWeight(RARE))
 
@@ -238,8 +239,8 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 				.add(LootItem.lootTableItem(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get()).setWeight(LEGENDARY))
 				.add(LootItem.lootTableItem(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get()).setWeight(LEGENDARY))
 				.add(LootItem.lootTableItem(ExtraDelightItems.HAGGIS_FEAST_ITEM.get()).setWeight(LEGENDARY))
-				
-				//Ingredients
+
+				// Ingredients
 				.add(LootItem.lootTableItem(ExtraDelightItems.BBQ_SAUCE.get()).setWeight(COMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.BREAD_CRUMBS.get()).setWeight(COMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.BREAD_SLICE.get()).setWeight(COMMON))
@@ -329,6 +330,20 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 								.add(LootItem.lootTableItem(Items.GOLD_INGOT))
 								.add(LootItem.lootTableItem(Items.CORNFLOWER))
 								.add(LootItem.lootTableItem(Items.CAKE))));
+
+		t.accept(corn_legendary,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(2, 4))
+								.add(LootItem.lootTableItem(ExtraDelightItems.BUTTER_BLOCK_ITEM.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_CRATE.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORNBREAD_FEAST.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_PUDDING_FEAST.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get())))
+						.withPool(LootPool.lootPool().name("better").setRolls(UniformGenerator.between(2, 4))
+								.add(LootItem.lootTableItem(Items.GOLD_BLOCK))
+								.add(LootItem.lootTableItem(Items.GOLD_INGOT))
+								.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))
+								));
 	}
 
 }

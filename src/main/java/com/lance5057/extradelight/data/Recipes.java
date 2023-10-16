@@ -1018,25 +1018,29 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cookingPotRecipe(ExtraDelightItems.CHOCOLATE_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
 						Items.GLASS_BOTTLE)
 				.addIngredient(Items.COCOA_BEANS).addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.EGGS)
-				.addIngredient(ExtraDelightTags.SWEETENER).build(consumer);
+				.addIngredient(ExtraDelightTags.SWEETENER)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "chocolate_custard"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.PUMPKIN_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
 						Items.GLASS_BOTTLE)
 				.addIngredient(ModItems.PUMPKIN_SLICE.get()).addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.EGGS)
-				.addIngredient(ExtraDelightTags.SWEETENER).build(consumer);
+				.addIngredient(ExtraDelightTags.SWEETENER)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pumpkin_custard"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.HONEY_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
 						Items.GLASS_BOTTLE)
 				.addIngredient(Items.HONEY_BOTTLE).addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.EGGS)
-				.addIngredient(ExtraDelightTags.SWEETENER).build(consumer);
+				.addIngredient(ExtraDelightTags.SWEETENER)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "honey_custard"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.SWEET_BERRY_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
 						Items.GLASS_BOTTLE)
 				.addIngredient(Items.SWEET_BERRIES).addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.EGGS)
-				.addIngredient(ExtraDelightTags.SWEETENER).build(consumer);
+				.addIngredient(ExtraDelightTags.SWEETENER)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sweet_berry_custard"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.KETCHUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
@@ -1561,13 +1565,19 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_apple"));
 
 		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.STICK)
+				.addIngredient(Items.APPLE).addIngredient(Items.SUGAR, 1)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_apple_sugar"));
+
+		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.CARAMEL_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.STICK)
 				.addIngredient(Items.APPLE).addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get())
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "caramel_apple"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.CORN_CHOWDER.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+				.cookingPotRecipe(ExtraDelightItems.CORN_CHOWDER.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F,
 						Items.BOWL)
 				.addIngredient(ExtraDelightItems.COOKED_CORN.get())
 				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_POTATO)).addIngredient(ForgeTags.COOKED_BACON)
@@ -1621,14 +1631,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cookingPotRecipe(ExtraDelightItems.CARAMEL_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
 						Items.GLASS_BOTTLE)
 				.addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get()).addIngredient(ForgeTags.MILK)
-				.addIngredient(ForgeTags.EGGS).addIngredient(ExtraDelightTags.SWEETENER).build(consumer);
+				.addIngredient(ForgeTags.EGGS).addIngredient(ExtraDelightTags.SWEETENER)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "caramel_custard"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.STUFFING_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
 						Items.BOWL)
 				.addIngredient(ExtraDelightItems.CROUTONS.get()).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ExtraDelightTags.PROCESSED_ONION)
-				.addIngredient(ForgeTags.EGGS).build(consumer);
+				.addIngredient(ForgeTags.EGGS).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stuffing"));
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {

@@ -7,6 +7,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,13 +24,17 @@ public class ExtraDelightEvents {
 	}
 
 	public static void stopDimensionDestruction(BlockEvent.BreakEvent event) {
-		if (event.getPlayer().level.dimension() == ExtraDelightWorldGen.CORNFIELD) {
-			if (event.getState().getBlock() == ExtraDelightBlocks.CORN_BOTTOM.get()
-					|| event.getState().getBlock() == ExtraDelightBlocks.CORN_TOP.get()) {
-				event.getPlayer().hurt(DamageSource.MAGIC, 1);
-				event.getLevel().playSound(event.getPlayer(), event.getPos(), SoundEvents.WITCH_CELEBRATE, SoundSource.HOSTILE, 0, 1);
-				event.setCanceled(true);
+		if (!event.getPlayer().isCreative())
+			if (event.getPlayer().level.dimension() == ExtraDelightWorldGen.CORNFIELD) {
+				if (event.getState().getBlock() == ExtraDelightBlocks.CORN_BOTTOM.get()
+						|| event.getState().getBlock() == ExtraDelightBlocks.CORN_TOP.get()) {
+					event.getPlayer().hurt(DamageSource.MAGIC, 1);
+					event.getLevel().playSound(event.getPlayer(), event.getPos(), SoundEvents.WITCH_CELEBRATE,
+							SoundSource.HOSTILE, 0, 1);
+					event.setCanceled(true);
+				} else {
+					event.getPlayer().addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 200, 1));
+				}
 			}
-		}
 	}
 }
