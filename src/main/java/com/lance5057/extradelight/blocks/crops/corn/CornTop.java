@@ -5,6 +5,7 @@ import java.time.temporal.ChronoField;
 import java.util.function.Function;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightWorldGen;
 
 import net.minecraft.core.BlockPos;
@@ -51,11 +52,11 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 	public static final BooleanProperty DIMENSION = BooleanProperty.create("dimension");
 	public static final BooleanProperty DENSE = BooleanProperty.create("dense");
-	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] { Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
-			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
-			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
-			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D) };
+	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] { 
+			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D),
+			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 14.0D, 12.0D), 
+			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D),
+			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D) };
 
 	public CornTop(BlockBehaviour.Properties pProperties) {
 		super(pProperties);
@@ -119,12 +120,13 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 			BlockPos pCurrentPos, BlockPos pFacingPos) {
 		BlockState s = super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
 
-		if (isMaxAge(pState)) {
-			if (checkSides(pLevel, pCurrentPos.east()) && checkSides(pLevel, pCurrentPos.north())
-					&& checkSides(pLevel, pCurrentPos.west()) && checkSides(pLevel, pCurrentPos.south())) {
-				pLevel.setBlock(pCurrentPos, s.setValue(CornTop.DENSE, true), 4);
+		if (s.getBlock() == ExtraDelightBlocks.CORN_TOP.get())
+			if (isMaxAge(pState)) {
+				if (checkSides(pLevel, pCurrentPos.east()) && checkSides(pLevel, pCurrentPos.north())
+						&& checkSides(pLevel, pCurrentPos.west()) && checkSides(pLevel, pCurrentPos.south())) {
+					pLevel.setBlock(pCurrentPos, s.setValue(CornTop.DENSE, true), 4);
+				}
 			}
-		}
 
 		return s;
 	}
@@ -197,7 +199,7 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 	}
 
 	public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-		if(pState.getValue(CornTop.DIMENSION))
+		if (pState.getValue(CornTop.DIMENSION))
 			return true;
 		return (pLevel.getRawBrightness(pPos, 0) >= 8 || pLevel.canSeeSky(pPos))
 				&& pLevel.getBlockState(pPos.below()).getBlock() == ExtraDelightBlocks.CORN_BOTTOM.get();
@@ -215,7 +217,7 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 				if (isHalloween()) {
 					if (p.hasEffect(MobEffects.CONFUSION)) {
 						MobEffectInstance mei = p.getEffect(MobEffects.CONFUSION);
-						if (mei.getDuration() <= 1) {
+						if (mei.getDuration() <= 3) {
 							if (pLevel instanceof ServerLevel && !pEntity.isPassenger() && !pEntity.isVehicle()
 									&& pEntity.canChangeDimensions()) {
 								ResourceKey<Level> resourcekey = ExtraDelightWorldGen.CORNFIELD;
@@ -237,7 +239,7 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 									@Override
 									public PortalInfo getPortalInfo(Entity entity, ServerLevel destWorld,
 											Function<ServerLevel, PortalInfo> defaultPortalInfo) {
-										return new PortalInfo(new Vec3(p.getX(), 20, p.getZ()),
+										return new PortalInfo(new Vec3(p.getX(), 33, p.getZ()),
 												entity.getDeltaMovement(), entity.getYRot(), entity.getXRot());
 									}
 
@@ -255,12 +257,14 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 					}
 				}
 			}
-			if (pState.getValue(CornTop.DIMENSION)) {
-				pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
-
-			}
+			
 		}
+		if (pState.getValue(CornTop.DIMENSION)) {
+			if (pEntity.isSprinting())
+				pEntity.hurt(DamageSource.SWEET_BERRY_BUSH, 1);
+			pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
 
+		}
 		super.entityInside(pState, pLevel, pPos, pEntity);
 	}
 
@@ -272,7 +276,7 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 	}
 
 	protected ItemLike getBaseSeedId() {
-		return Items.WHEAT_SEEDS;
+		return ExtraDelightItems.CORN_SEEDS.get();
 	}
 
 	public ItemStack getCloneItemStack(BlockGetter pLevel, BlockPos pPos, BlockState pState) {
@@ -302,6 +306,11 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
 			BlockHitResult hit) {
 		if (this.isMaxAge(state)) {
+			level.setBlock(pos, this.getStateForAge(0), 2);
+			ItemStack corn = new ItemStack(ExtraDelightItems.UNSHUCKED_CORN.get(), 4);
+			if (!player.getInventory().add(corn)) {
+				player.drop(corn, false);
+			}
 
 			return InteractionResult.SUCCESS;
 		}

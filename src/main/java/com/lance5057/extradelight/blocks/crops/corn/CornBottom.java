@@ -17,6 +17,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -39,6 +40,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.level.portal.PortalInfo;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -51,11 +53,10 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 	public static final BooleanProperty DIMENSION = BooleanProperty.create("dimension");
 
-	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] { Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
-			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
-			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
-			Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D) };
+	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] {
+			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 4.0D, 12.0D),
+			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 6.0D, 12.0D), Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D),
+			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D) };
 
 	public CornBottom(BlockBehaviour.Properties pProperties) {
 		super(pProperties);
@@ -191,10 +192,11 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 	}
 
 	public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-		if(pState.getValue(CornTop.DIMENSION))
+		if (pState.getValue(CornTop.DIMENSION))
 			return true;
 		return (pLevel.getRawBrightness(pPos, 0) >= 8 || pLevel.canSeeSky(pPos))
-				&& super.canSurvive(pState, pLevel, pPos);
+				&& super.canSurvive(pState, pLevel, pPos)
+				&& pLevel.getBlockState(pPos.below()).getBlock() == Blocks.FARMLAND;
 	}
 
 	public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
@@ -202,22 +204,26 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 				&& net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(pLevel, pEntity)) {
 			pLevel.destroyBlock(pPos, true, pEntity);
 		}
+		if (pState.getValue(CornTop.DIMENSION)) {
+			if (pEntity.isSprinting())
+				pEntity.hurt(DamageSource.SWEET_BERRY_BUSH, 1);
+			pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
 
-		if (pEntity instanceof Player p) {
-			if (pState.getValue(CornTop.DIMENSION)) {
-				pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
-
-			}
 		}
 
 		super.entityInside(pState, pLevel, pPos, pEntity);
 	}
-	
+
 	private static boolean isHalloween() {
 		LocalDate localdate = LocalDate.now();
 		int i = localdate.get(ChronoField.DAY_OF_MONTH);
 		int j = localdate.get(ChronoField.MONTH_OF_YEAR);
 		return j == 10 && i >= 1 || j == 11 && i <= 10;
+	}
+
+	@Override
+	public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
+		return false;
 	}
 
 	protected ItemLike getBaseSeedId() {

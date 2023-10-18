@@ -464,8 +464,10 @@ public class EDFoods {
 	public static final FoodProperties GRILLED_CORN = new FoodProperties.Builder().nutrition(3).saturationMod(0.2f)
 			.build();
 
-	public static final FoodProperties CORN_CHOWDER = EDFoods.addFoods("corn chowder", COOKED_CORN, Foods.BAKED_POTATO,
-			FoodValues.COOKED_BACON, FoodValues.ONION, MILK, FoodValues.BONE_BROTH).effect(COMFORT_MEDIUM, 1).build();
+	public static final FoodProperties CORN_CHOWDER = EDFoods
+			.divideFoods("corn chowder", EDFoods.addFoods("", COOKED_CORN, Foods.BAKED_POTATO, FoodValues.COOKED_BACON,
+					FoodValues.ONION, MILK, FoodValues.BONE_BROTH).effect(COMFORT_MEDIUM, 1).build(), 2)
+			.build();
 	public static final FoodProperties CREAMED_CORN = EDFoods.addFoods("creamed corn", COOKED_CORN, MILK, BUTTER)
 			.build();
 	public static final FoodProperties CORN_FRITTERS = EDFoods
@@ -483,15 +485,19 @@ public class EDFoods {
 			.build();
 
 	public static final FoodProperties CORNBREAD = EDFoods.divideFoods("cornbread",
-			EDFoods.addFoods("", FLOUR, FLOUR, SUGAR, BUTTER, FoodValues.FRIED_EGG).build(), 4).build();
+			EDFoods.addFoods("", FLOUR, FLOUR, SUGAR, BUTTER, FoodValues.FRIED_EGG).build(), 2).build();
 	public static final FoodProperties APPLE_CRISP = EDFoods.divideFoods("apple crisp",
-			EDFoods.addFoods("", FLOUR, FLOUR, SUGAR, BUTTER, Foods.APPLE, Foods.APPLE).build(), 4).build();
+			EDFoods.addFoods("", FLOUR, FLOUR, SUGAR, BUTTER, Foods.APPLE, Foods.APPLE).build(), 2).build();
 	public static final FoodProperties STUFFING = EDFoods.divideFoods("stuffing", EDFoods
-			.addFoods("", SLICED_BREAD, FoodValues.BONE_BROTH, FoodValues.ONION, FoodValues.FRIED_EGG, BUTTER).build(), 4).build();
-	public static final FoodProperties CORN_PUDDING = EDFoods.divideFoods("corn pudding", EDFoods
-			.addFoods("", FLOUR, COOKED_CORN, SUGAR, FoodValues.FRIED_EGG, BUTTER, MILK).build(), 4).build();
+			.addFoods("", SLICED_BREAD, FoodValues.BONE_BROTH, FoodValues.ONION, FoodValues.FRIED_EGG, BUTTER).build(),
+			3).build();
+	public static final FoodProperties CORN_PUDDING = EDFoods
+			.divideFoods("corn pudding",
+					EDFoods.addFoods("", FLOUR, COOKED_CORN, SUGAR, FoodValues.FRIED_EGG, BUTTER, MILK).build(), 4)
+			.build();
 	public static final FoodProperties POTATOES_AU_GRATIN = EDFoods.divideFoods("potatoes au gratin", EDFoods
-			.addFoods("", FLOUR, CHEESE, BUTTER, MILK, Foods.BAKED_POTATO, Foods.BAKED_POTATO, Foods.BAKED_POTATO).build(), 4).build();
+			.addFoods("", FLOUR, CHEESE, BUTTER, MILK, Foods.BAKED_POTATO, Foods.BAKED_POTATO, Foods.BAKED_POTATO)
+			.build(), 4).build();
 
 	public static Builder addFoods(String name, FoodProperties... foods) {
 

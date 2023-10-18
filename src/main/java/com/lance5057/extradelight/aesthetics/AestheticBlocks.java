@@ -31,6 +31,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -45,6 +46,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
@@ -154,7 +156,7 @@ public class AestheticBlocks {
 				() -> new MoldingBlock(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
 				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
 
-		registerAllWood("dried_corn_fence", () -> new FenceBlock(Properties.of(Material.WOOD)), DRIED_CORN_FENCE,
+		registerAllWood("dried_corn_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.ACACIA_FENCE)), DRIED_CORN_FENCE,
 				DRIED_CORN_FENCE_ITEMS);
 	}
 

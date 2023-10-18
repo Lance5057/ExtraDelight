@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "block/thin_block", "render_type": "cutout",
+	"parent": "block/thin_block",
+	"render_type": "cutout",
 	"textures": {
 		"1": "extradelight:block/flour_dust",
 		"particle": "extradelight:block/flour_dust2"
@@ -9,9 +10,10 @@
 		{
 			"name": "flour",
 			"from": [0, 0, 0],
-			"to": [16, 1, 16],
+			"to": [16, 0, 16],
 			"faces": {
-				"up": {"uv": [0, 0, 16, 16], "texture": "#1"}
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#1"}
 			}
 		}
 	]

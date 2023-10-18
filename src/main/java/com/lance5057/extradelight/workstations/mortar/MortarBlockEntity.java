@@ -195,7 +195,7 @@ public class MortarBlockEntity extends BlockEntity {
 			if (recipeOptional.isPresent()) {
 				MortarRecipe recipe = recipeOptional.get();
 
-				if (this.grinds < recipe.getStirs()) {
+				if ((this.grinds + 1) < recipe.getStirs()) {
 					grinds++;
 
 					for (int i = 0; i < 1 + level.random.nextInt(4); i++)

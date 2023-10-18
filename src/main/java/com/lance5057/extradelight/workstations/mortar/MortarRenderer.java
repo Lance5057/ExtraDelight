@@ -30,7 +30,7 @@ public class MortarRenderer implements BlockEntityRenderer<MortarBlockEntity> {
 
 		itemInteractionHandler.ifPresent(inv -> {
 			ItemStack item = inv.getStackInSlot(0);
-			int g = pBlockEntity.getGrind();
+			float g = pBlockEntity.getGrind();
 
 			if (!item.isEmpty()) {
 				for (int i = 0; i < item.getCount(); i++) {
@@ -42,8 +42,8 @@ public class MortarRenderer implements BlockEntityRenderer<MortarBlockEntity> {
 					pPoseStack.mulPose(new Quaternion(45, 0, 45, true));
 					pPoseStack.translate(0.15f, 0, 0);
 
-					float scale = 1 - (g * 0.2f);
-					pPoseStack.scale(scale, scale, scale);
+					float scale = 1/(1+g);
+					pPoseStack.scale(scale, scale, scale); 
 
 					float uniscale = 0.65f;
 					pPoseStack.scale(uniscale, uniscale, uniscale);

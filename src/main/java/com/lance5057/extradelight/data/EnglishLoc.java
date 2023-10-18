@@ -233,7 +233,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.ROASTED_APPLE.get(), "Roasted Apple");
 		this.add(ExtraDelightItems.APPLE_SAUCE.get(), "Apple Sauce");
 		this.add(ExtraDelightItems.EGG_SALAD_SANDWICH.get(), "Egg Salad Sandwich");
-//		this.add(ExtraDelightItems.DYNAMIC_SANDWICH.get(), "Sandwich");
 		this.add(ExtraDelightItems.WHIPPED_CREAM.get(), "Whipped Cream");
 		this.add(ExtraDelightItems.GRATED_CARROT.get(), "Grated Carrot");
 		this.add(ExtraDelightItems.SEAWEED_CRISPS.get(), "Seaweed Crisps");
@@ -244,6 +243,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MUSHROOM_RISOTTO.get(), "Mushroom Risotto");
 		this.add(ExtraDelightItems.MUSHROOM_BURGER.get(), "Mushroom and Swiss Burger");
 		this.add(ExtraDelightItems.STUFFED_MUSHROOMS.get(), "Stuffed Mushrooms");
+		this.add(ExtraDelightItems.SLICED_ONION.get(), "Sliced Onion");
+		this.add(ExtraDelightItems.SLICED_TOMATO.get(), "Sliced Tomato");
 
 		this.add(ExtraDelightItems.FURIKAKE.get(), "Furikake");
 		this.add(ExtraDelightItems.CURRY_POWDER.get(), "Curry Powder");

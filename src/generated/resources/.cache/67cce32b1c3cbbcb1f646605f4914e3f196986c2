@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-11T18:49:37.6248131	LootTables
+// 1.19.2	2023-10-15T13:46:15.6704778	LootTables
 6f2f14764aeccabb899ed56e1d8a8f0074aa0929 data/extradelight/loot_tables/blocks/acacia_dried_corn_fence.json
 2df5ce0c265b62e0751dfbde70e812a38a2bd169 data/extradelight/loot_tables/blocks/acacia_half_cabinet.json
 7747bac4a9ea01dff06964433ec737b240944275 data/extradelight/loot_tables/blocks/acacia_knife_block.json
@@ -300,6 +300,7 @@ a5ded68593f4b9a4571ce12d0b8e844b0cc095cd data/extradelight/loot_tables/blocks/wa
 670f3f4de060a5398e36d6ad8e0a2a56cfa651c5 data/extradelight/loot_tables/blocks/warped_step_stool.json
 615b13a18822f502528bd3572e827f4a617abb7f data/extradelight/loot_tables/blocks/yeast_pot.json
 2a939999ccc2ef7bb62d0991408d678595cc8409 data/extradelight/loot_tables/chests/corn_common.json
+205486e4c8141a5f8b0cfdb353de277490305e84 data/extradelight/loot_tables/chests/corn_legendary.json
 f92a54fb3f82c10d6fcf7fc2ed2d80fcaa99e431 data/extradelight/loot_tables/chests/corn_rare.json
 0136b9db7ec44e4793ee82960c4d9a44e7734393 data/extradelight/loot_tables/chests/corn_uncommon.json
 4ca3f8ef74fe44da8985ace2ecee795388104446 data/extradelight/loot_tables/misc/shucked_corn.json

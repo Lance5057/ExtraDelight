@@ -152,7 +152,7 @@ public class ExtraDelightItems {
 				@Override
 				public void appendHoverText(ItemStack pStack, @Nullable Level pLevel,
 						List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-					pTooltipComponents.add(Component.literal("  ")
+					pTooltipComponents.add(Component.literal("")
 							.append(Component.translatable(ExtraDelight.MOD_ID + ".yeastpot.tooltip"))
 							.withStyle(ChatFormatting.AQUA));
 				}
@@ -165,7 +165,7 @@ public class ExtraDelightItems {
 				@Override
 				public void appendHoverText(ItemStack pStack, @Nullable Level pLevel,
 						List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-					pTooltipComponents.add(Component.literal("  ")
+					pTooltipComponents.add(Component.literal("")
 							.append(Component.translatable(ExtraDelight.MOD_ID + ".vinegarpot.tooltip"))
 							.withStyle(ChatFormatting.AQUA));
 				}
@@ -205,7 +205,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.EDIBLE_SEEDS)));
 
 	public static Item.Properties drinkItem() {
-		return new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(FarmersDelight.CREATIVE_TAB);
+		return new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(EXTRA_DELIGHT_TAB);
 	}
 
 	// Juice

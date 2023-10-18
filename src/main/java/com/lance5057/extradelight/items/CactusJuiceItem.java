@@ -50,7 +50,7 @@ public class CactusJuiceItem extends DrinkableItem {
 	public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
 			TooltipFlag pIsAdvanced) {
 		pTooltipComponents.add(
-				Component.literal("  ").append(Component.translatable(ExtraDelight.MOD_ID + ".cactus_juice.hovertext"))
+				Component.literal("").append(Component.translatable(ExtraDelight.MOD_ID + ".cactus_juice.hovertext"))
 						.withStyle(ChatFormatting.GREEN));
 	}
 }
