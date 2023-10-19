@@ -1577,6 +1577,24 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "caramel_apple"));
 
 		CookingPotRecipeBuilder
+		.cookingPotRecipe(ExtraDelightItems.CANDY_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+				Items.STICK)
+		.addIngredient(Items.GOLDEN_APPLE).addIngredient(ExtraDelightItems.CANDY.get(), 2)
+		.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_golden_apple"));
+		
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.STICK)
+				.addIngredient(Items.GOLDEN_APPLE).addIngredient(Items.SUGAR, 1)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_golden_apple_sugar"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CARAMEL_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.STICK)
+				.addIngredient(Items.GOLDEN_APPLE).addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "caramel_golden_apple"));
+
+		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.CORN_CHOWDER.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F,
 						Items.BOWL)
 				.addIngredient(ExtraDelightItems.COOKED_CORN.get())
@@ -1974,8 +1992,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ForgeTags.COOKED_MUTTON).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ForgeTags.COOKED_MUTTON).addIngredient(ExtraDelightTags.PROCESSED_VEG)
 				.addIngredient(ExtraDelightTags.PROCESSED_VEG).addIngredient(ExtraDelightTags.PROCESSED_VEG)
-				.addIngredient(Ingredient.of(ForgeTags.MILK)).setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedBy("shepard_pie", has(ForgeTags.COOKED_MUTTON)).build(consumer);
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedBy("shepard_pie", has(ForgeTags.COOKED_MUTTON))
+				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get(), 1, NORMAL_COOKING, MEDIUM_EXP,

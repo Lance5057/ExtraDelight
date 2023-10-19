@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-16T11:53:48.8203253	Recipes
+// 1.19.2	2023-10-17T16:38:12.8084923	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 7f68d9c8875e68adbfd9db6129a8e9c2979cf290 data/extradelight/advancements/recipes/extradelight.aesthetic/acacia_dried_corn_fence.json
@@ -841,9 +841,11 @@ dfe04021ad1316b826731883aa5d760d5b74031a data/extradelight/recipes/cactus_soup.j
 6110bf5decdcbc999bac0092ba7c0da8a4413a36 data/extradelight/recipes/candy.json
 4ec4f9247fbe27f014eaa593a88b3cee1049aec8 data/extradelight/recipes/candy_apple.json
 e60a040dbde6533c01c9063e82283719d0c88714 data/extradelight/recipes/candy_apple_sugar.json
+442c5b67dfaa12647f1f4bdb410ccdc304add584 data/extradelight/recipes/candy_golden_apple_sugar.json
 1e7c87cba3c1f77ae23586c95b50c67cd375e9e5 data/extradelight/recipes/caramel_apple.json
 66eee9b906a50e12439f8232876af88c718ae3bd data/extradelight/recipes/caramel_candy.json
 1b75832d739d84a25ad8a2a3ce4d681a055ca3c7 data/extradelight/recipes/caramel_custard.json
+2f2aba62f8e6c852295a218d9ba46055d7b759d3 data/extradelight/recipes/caramel_golden_apple.json
 492cac143f538ffb26db4c874692450e7033e6fa data/extradelight/recipes/caramel_popcorn.json
 681ec34f5c418991603a3b97ce3a44e18fdea443 data/extradelight/recipes/caramel_popsicle.json
 a8836cc7518be4d076efefc21f670fa830c65a40 data/extradelight/recipes/caramel_sauce.json
@@ -1308,7 +1310,7 @@ ceb8b2f532e2292771346f53ab0f8bb0924bb123 data/extradelight/recipes/oven/glow_ber
 4413fbde81faf1e06d72f8b5ca8eb3d24778760a data/extradelight/recipes/oven/pumpkin_pie_item.json
 49d4db2dec0dffb3d37fd1a5c3ee22d136d46f9a data/extradelight/recipes/oven/pumpkin_roll_feast.json
 24df3d8bae9f7cfcd56a1a5daa0af40dba18acea data/extradelight/recipes/oven/quiche.json
-2d0b906f8cca72c7203d1b59b57efad21e519bf8 data/extradelight/recipes/oven/shepherds_pie_block.json
+8822fe44d9af29d3b32bac8ac536dedbc7ee9834 data/extradelight/recipes/oven/shepherds_pie_block.json
 1bf2f1d7e5a3fed23372596bc3fce88289f7f615 data/extradelight/recipes/oven/sugar_cookie.json
 f0a5873a8ff9dc81b7c2ea17134723e8918ad5bf data/extradelight/recipes/oven/sweet_berry_cookie.json
 2280f504ac48547d8e2ad839bb5e5b09236e05f3 data/extradelight/recipes/oven/sweet_berry_pie.json

@@ -103,10 +103,11 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/gilded_blackstone")); // not craftable, dungeon item
-		
+
 		getBuilder(ExtraDelightItems.CORN_COB_PIPE.getId().getPath())
-		.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "item/corncob_pipe")))
-		.texture("1", modLoc("item/corncob_pipe")); // not craftable, dungeon item
+				.parent(new ModelFile.UncheckedModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "item/corncob_pipe")))
+				.texture("1", modLoc("item/corncob_pipe")); // not craftable, dungeon item
 
 		forItem(ExtraDelightItems.ROUND_PAN, "round_pan");
 		forItem(ExtraDelightItems.BAKING_STONE, "baking_stone");
@@ -483,6 +484,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CARAMEL_CANDY, "caramel_candy");
 		forItem(ExtraDelightItems.CANDY_APPLE, "candy_apple");
 		forItem(ExtraDelightItems.CARAMEL_APPLE, "caramel_apple");
+		forItem(ExtraDelightItems.CANDY_GOLDEN_APPLE, "candy_golden_apple");
+		forItem(ExtraDelightItems.CARAMEL_GOLDEN_APPLE, "caramel_golden_apple");
 		forItem(ExtraDelightItems.CARAMEL_POPCORN, "caramel_corn");
 		forItem(ExtraDelightItems.CARAMEL_CHEESECAKE_ITEM, "caramel_cheesecake");
 		forItem(ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE, "caramel_cheesecake_slice");
@@ -495,27 +498,27 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CORNBREAD, "cornbread");
 		forBlockItem(ExtraDelightItems.CORNBREAD_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/cornbread_stage0"));
-		
+
 		forItem(ExtraDelightItems.CORN_PUDDING, "corn_pudding");
 		forBlockItem(ExtraDelightItems.CORN_PUDDING_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/corn_pudding_stage0"));
-		
+
 		forItem(ExtraDelightItems.PUMPKIN_ROLL, "pumpkin_roll");
 		forBlockItem(ExtraDelightItems.PUMPKIN_ROLL_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/pumpkin_roll_stage0"));
-		
+
 		forItem(ExtraDelightItems.APPLE_CRISP, "apple_crisp");
 		forBlockItem(ExtraDelightItems.APPLE_CRISP_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/apple_crisp_stage0"));
-		
+
 		forItem(ExtraDelightItems.STUFFING, "stuffing");
 		forBlockItem(ExtraDelightItems.STUFFING_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/stuffing_stage0"));
-		
+
 		forItem(ExtraDelightItems.POTATO_AU_GRATIN, "potato_au_gratin");
 		forBlockItem(ExtraDelightItems.POTATO_AU_GRATIN_FEAST,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/potato_au_gratin_stage0"));
-		
+
 		forBlockItem(ExtraDelightItems.FLOUR_SACK, "flour_sack");
 		forBlockItem(ExtraDelightItems.CORNMEAL_SACK, "cornmeal_sack");
 		forBlockItem(ExtraDelightItems.SUGAR_SACK, "sugar_sack");

@@ -52,10 +52,8 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 	public static final BooleanProperty DIMENSION = BooleanProperty.create("dimension");
 	public static final BooleanProperty DENSE = BooleanProperty.create("dense");
-	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] { 
-			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D),
-			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 14.0D, 12.0D), 
-			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D),
+	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] { Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D),
+			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 14.0D, 12.0D), Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D),
 			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D) };
 
 	public CornTop(BlockBehaviour.Properties pProperties) {
@@ -257,7 +255,7 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 					}
 				}
 			}
-			
+
 		}
 		if (pState.getValue(CornTop.DIMENSION)) {
 			if (pEntity.isSprinting())
@@ -305,15 +303,16 @@ public class CornTop extends BushBlock implements BonemealableBlock {
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
 			BlockHitResult hit) {
-		if (this.isMaxAge(state)) {
-			level.setBlock(pos, this.getStateForAge(0), 2);
-			ItemStack corn = new ItemStack(ExtraDelightItems.UNSHUCKED_CORN.get(), 4);
-			if (!player.getInventory().add(corn)) {
-				player.drop(corn, false);
-			}
+		if (!state.getValue(CornTop.DIMENSION))
+			if (this.isMaxAge(state)) {
+				level.setBlock(pos, this.getStateForAge(0), 2);
+				ItemStack corn = new ItemStack(ExtraDelightItems.UNSHUCKED_CORN.get(), 4);
+				if (!player.getInventory().add(corn)) {
+					player.drop(corn, false);
+				}
 
-			return InteractionResult.SUCCESS;
-		}
+				return InteractionResult.SUCCESS;
+			}
 		return InteractionResult.PASS;
 	}
 

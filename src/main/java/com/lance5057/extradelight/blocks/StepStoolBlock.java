@@ -71,7 +71,7 @@ public class StepStoolBlock extends Block {
 			BlockHitResult result) {
 		if (!level.isClientSide) {
 			player.addItem(new ItemStack(this.asItem()));
-			level.setBlock(pos, Blocks.AIR.defaultBlockState(), 0);
+			level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
 			
 			return InteractionResult.SUCCESS;
 		}

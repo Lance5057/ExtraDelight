@@ -49,7 +49,7 @@ public class CornMazeRail extends Feature<SimpleBlockConfiguration> {
 
 					for (int j = -1; j < 2; j++) {
 						BlockPos p2 = new BlockPos(blockpos.getX() + i, blockpos.getY() - 1, blockpos.getZ() + j + 8);
-						worldgenlevel.setBlock(p2, Blocks.GRAVEL.defaultBlockState(), 0);
+						worldgenlevel.setBlock(p2, Blocks.GRAVEL.defaultBlockState(), 2);
 					}
 
 					worldgenlevel.setBlock(p,

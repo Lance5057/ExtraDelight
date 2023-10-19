@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-07T22:33:17.5378204	Item Models: extradelight
+// 1.19.2	2023-10-17T16:38:12.8270156	Item Models: extradelight
 d6cec988d96345e08c89e0c2f114a2c1312de993 assets/extradelight/models/item/acacia_dried_corn_fence.json
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
@@ -78,11 +78,13 @@ bb746d3297704458c02e237dfc39449de16380b2 assets/extradelight/models/item/cactus_
 9799d96430d18b1e8664e424b8630a4d88c48aed assets/extradelight/models/item/cactus_soup.json
 a7184748d261a572ba69655d5324ae3b640ba83b assets/extradelight/models/item/candy.json
 9fff5a4e84299775b79294fb7f3dac1165c4af68 assets/extradelight/models/item/candy_apple.json
+ddfaa5aa39fdb7aa6a2c72beb270a384f7f93b62 assets/extradelight/models/item/candy_golden_apple.json
 8049dfe4dfe23d2e29c659f955c46d19f28774e4 assets/extradelight/models/item/caramel_apple.json
 530bce40cbe713b45b73b7f2b132d5a7e6426950 assets/extradelight/models/item/caramel_candy.json
 57a3025665a10bd19e23491dd7a3860cd713d6df assets/extradelight/models/item/caramel_cheescake_slice.json
 e37f5bd93e5e8c0ca7aac5f7ee4bc59b79162222 assets/extradelight/models/item/caramel_cheesecake_item.json
 4f4f10889124954af90f03c658a396653c16986e assets/extradelight/models/item/caramel_custard.json
+7565632105883f6a561b5c91f5753fc16b0a30d9 assets/extradelight/models/item/caramel_golden_apple.json
 5720f41bf78a48d85a709c692e7899d274fb5d69 assets/extradelight/models/item/caramel_popcorn.json
 feb122133aa8f7082f2c1a5f90138e6f2fe2fbd1 assets/extradelight/models/item/caramel_popsicle.json
 b38c5aeb56b835a38a157ccc5e5128f4723fb737 assets/extradelight/models/item/caramel_sauce.json

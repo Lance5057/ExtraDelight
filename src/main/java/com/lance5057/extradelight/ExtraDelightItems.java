@@ -843,6 +843,10 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.CANDY_APPLE)));
 	public static final RegistryObject<Item> CARAMEL_APPLE = ITEMS.register("caramel_apple",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.CARAMEL_APPLE)));
+	public static final RegistryObject<Item> CANDY_GOLDEN_APPLE = ITEMS.register("candy_golden_apple",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.CANDY_GOLDEN_APPLE)));
+	public static final RegistryObject<Item> CARAMEL_GOLDEN_APPLE = ITEMS.register("caramel_golden_apple",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.CARAMEL_GOLDEN_APPLE)));
 	public static final RegistryObject<Item> CARAMEL_POPCORN = ITEMS.register("caramel_popcorn",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.CARAMEL_POPCORN)));
 	public static final RegistryObject<Item> CARAMEL_CUSTARD = ITEMS.register("caramel_custard",

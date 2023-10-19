@@ -2,24 +2,19 @@ package com.lance5057.extradelight.blocks.crops.corn;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoField;
-import java.util.function.Function;
 
 import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.ExtraDelightWorldGen;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Ravager;
@@ -41,20 +36,17 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
-import net.minecraft.world.level.portal.PortalInfo;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.util.ITeleporter;
 
 public class CornBottom extends BushBlock implements BonemealableBlock {
 	public static final int MAX_AGE = 3;
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 	public static final BooleanProperty DIMENSION = BooleanProperty.create("dimension");
 
-	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] {
-			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 4.0D, 12.0D),
+	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] { Block.box(4.0D, 0.0D, 4.0D, 12.0D, 4.0D, 12.0D),
 			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 6.0D, 12.0D), Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D),
 			Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D) };
 
@@ -192,7 +184,10 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 	}
 
 	public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-		if (pState.getValue(CornTop.DIMENSION))
+		if (pLevel instanceof WorldGenRegion)
+			if (pLevel.getBlockState(pPos.below()).getBlock() == Blocks.GRASS_BLOCK)
+				return true;
+		if (pState.getValue(CornBottom.DIMENSION))
 			return true;
 		return (pLevel.getRawBrightness(pPos, 0) >= 8 || pLevel.canSeeSky(pPos))
 				&& super.canSurvive(pState, pLevel, pPos)

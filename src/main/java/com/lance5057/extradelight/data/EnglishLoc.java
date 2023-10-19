@@ -467,6 +467,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.CARAMEL_CANDY.get(), "Caramel Candy");
 		this.add(ExtraDelightItems.CANDY_APPLE.get(), "Candy Apple");
 		this.add(ExtraDelightItems.CARAMEL_APPLE.get(), "Caramel Apple");
+		this.add(ExtraDelightItems.CANDY_GOLDEN_APPLE.get(), "Candy Golden Apple");
+		this.add(ExtraDelightItems.CARAMEL_GOLDEN_APPLE.get(), "Caramel Golden Apple");
 		this.add(ExtraDelightItems.CARAMEL_POPCORN.get(), "Caramel Popcorn");
 		this.add(ExtraDelightItems.CARAMEL_CUSTARD.get(), "Caramel Custard");
 		this.add(ExtraDelightItems.CARAMEL_POPSICLE.get(), "Caramel Pop");
