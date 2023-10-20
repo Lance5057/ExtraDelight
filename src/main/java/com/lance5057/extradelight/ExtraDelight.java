@@ -19,7 +19,7 @@ import vectorwing.farmersdelight.common.world.WildCropGeneration;
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "1.1.2a";
+	public static final String VERSION = "1.1.5";
 
 	public static Logger logger = LogManager.getLogger();
 
@@ -46,8 +46,6 @@ public class ExtraDelight {
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
 
 		IEventBus bus = MinecraftForge.EVENT_BUS;
-		bus.addListener(ExtraDelightClientEvents::onFogDensityEvent);
-		bus.addListener(ExtraDelightClientEvents::onFogColorEvent);
 		bus.addListener(ExtraDelightEvents::stopDimensionDestruction);
 	}
 

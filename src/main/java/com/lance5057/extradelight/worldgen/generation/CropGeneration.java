@@ -37,7 +37,7 @@ public class CropGeneration {
 
 		PATCH_WILD_CORN = registerPlacement(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_corn"),
 				FEATURE_PATCH_WILD_CORN, RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
-				PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), WildCropGeneration.TAGGED_IS_OVERWORLD); // TODO config
+				PlacementUtils.HEIGHTMAP, BiomeFilter.biome()); // TODO config
 	}
 
 	static Holder<PlacedFeature> registerPlacement(ResourceLocation id,

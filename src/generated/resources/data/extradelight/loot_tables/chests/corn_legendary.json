@@ -22,6 +22,14 @@
         },
         {
           "type": "minecraft:item",
+          "name": "extradelight:candy_golden_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:caramel_golden_apple"
+        },
+        {
+          "type": "minecraft:item",
           "name": "extradelight:dried_corn_husk_bundle"
         }
       ],
@@ -30,6 +38,25 @@
         "type": "minecraft:uniform",
         "max": 4.0,
         "min": 2.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:caramel_candy"
+        }
+      ],
+      "name": "candy",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 10.0,
+        "min": 5.0
       }
     },
     {

@@ -41,6 +41,25 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "extradelight:candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:caramel_candy"
+        }
+      ],
+      "name": "candy",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 6.0,
+        "min": 3.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
           "name": "farmersdelight:flint_knife"
         },
         {
