@@ -27,8 +27,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.BushBlock;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -41,7 +40,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class CornBottom extends BushBlock implements BonemealableBlock {
+public class CornBottom extends CropBlock {
 	public static final int MAX_AGE = 3;
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 	public static final BooleanProperty DIMENSION = BooleanProperty.create("dimension");
@@ -190,8 +189,7 @@ public class CornBottom extends BushBlock implements BonemealableBlock {
 		if (pState.getValue(CornBottom.DIMENSION))
 			return true;
 		return (pLevel.getRawBrightness(pPos, 0) >= 8 || pLevel.canSeeSky(pPos))
-				&& super.canSurvive(pState, pLevel, pPos)
-				&& pLevel.getBlockState(pPos.below()).getBlock() == Blocks.FARMLAND;
+				&& super.canSurvive(pState, pLevel, pPos);
 	}
 
 	public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {

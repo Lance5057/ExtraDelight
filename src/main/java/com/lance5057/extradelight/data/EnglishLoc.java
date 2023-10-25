@@ -106,8 +106,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".advancement.badfood.name", "Wall Chicken");
 		this.add(ExtraDelight.MOD_ID + ".advancement.badfood.desc", "Maybe eating something you found in a dungeon wasn't the best idea...");
 		
-		this.add(ExtraDelight.MOD_ID + ".advancement.cactusjuice.name", "It'll Quench Ya!");
-		this.add(ExtraDelight.MOD_ID + ".advancement.cactusjuice.desc", "Drink the cactus juice and learn the effects.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.cactus_juice.name", "It'll Quench Ya!");
+		this.add(ExtraDelight.MOD_ID + ".advancement.cactus_juice.desc", "Drink the cactus juice and learn the effects.");
 		
 		this.add(ExtraDelight.MOD_ID + ".advancement.feasts.name", "All You Can Eat Buffet");
 		this.add(ExtraDelight.MOD_ID + ".advancement.feasts.desc", "Make every available feast.");
