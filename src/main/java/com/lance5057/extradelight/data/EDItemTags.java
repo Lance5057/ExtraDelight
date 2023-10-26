@@ -30,6 +30,13 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.PIE_DISH.get(), ExtraDelightItems.SQUARE_PAN.get(), ExtraDelightItems.LOAF_PAN.get(),
 				ExtraDelightItems.ROUND_PAN.get(), ExtraDelightItems.SHEET.get(), ExtraDelightItems.MUFFIN_TIN.get());
 
+		tag(ExtraDelightTags.MORTAR).add(ExtraDelightItems.MORTAR_AMETHYST.get(),
+				ExtraDelightItems.MORTAR_ANDESITE.get(), ExtraDelightItems.MORTAR_BASALT.get(),
+				ExtraDelightItems.MORTAR_BLACKSTONE.get(), ExtraDelightItems.MORTAR_DEEPSLATE.get(),
+				ExtraDelightItems.MORTAR_DIORITE.get(), ExtraDelightItems.MORTAR_ENDSTONE.get(),
+				ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(), ExtraDelightItems.MORTAR_GRANITE.get(),
+				ExtraDelightItems.MORTAR_STONE.get());
+
 		tag(ExtraDelightTags.PESTLES).add(ExtraDelightItems.PESTLE_AMETHYST.get(),
 				ExtraDelightItems.PESTLE_ANDESITE.get(), ExtraDelightItems.PESTLE_BASALT.get(),
 				ExtraDelightItems.PESTLE_BLACKSTONE.get(), ExtraDelightItems.PESTLE_DEEPSLATE.get(),

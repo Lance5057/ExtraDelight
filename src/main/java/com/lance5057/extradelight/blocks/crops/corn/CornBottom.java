@@ -59,6 +59,7 @@ public class CornBottom extends CropBlock {
 		return SHAPE_BY_AGE[pState.getValue(this.getAgeProperty())];
 	}
 
+	@Override
 	protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
 		return pState.is(Blocks.FARMLAND);
 	}

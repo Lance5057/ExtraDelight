@@ -1,4 +1,4 @@
-// 1.19.2	2023-09-12T00:30:24.8422476	Tags for minecraft:item
+// 1.19.2	2023-10-24T18:28:14.7327915	Tags for minecraft:item
 4a3061524de4471a4ab72261f6d48d7924b60789 data/extradelight/tags/items/baking_trays.json
 d66647ad5deec92ba941c7dffec33a9986028e94 data/extradelight/tags/items/corn_dim_confiscate.json
 241fbe7e67bee8a47ff80dbdccae69f91ffd0743 data/extradelight/tags/items/frying_oil.json
@@ -45,6 +45,7 @@ a81eb504301bca0cce687fcd32422422a1420a30 data/forge/tags/items/jam/mundane.json
 dac730db8e085a2bf6b01900c69ca446b767464b data/forge/tags/items/meat.json
 59f58ea6f8b85deda96c784c66ca9699db493df3 data/forge/tags/items/meat/cooked.json
 212df42b76dbfd28f47f99244d2ae386f6e543f8 data/forge/tags/items/meat/raw.json
+f2ced66709f0ddb2dec0a6ba1b2b5a2b4579f991 data/forge/tags/items/mortars.json
 0e6ff56f33d80847c56995ddeff2d1a16c74949d data/forge/tags/items/onion/sliced.json
 b3459e637edd1eca0b39324b66872499f21d1548 data/forge/tags/items/pestles.json
 44a543db9efa96e8eb379c1cbae69e5038d12408 data/forge/tags/items/potato/grated.json

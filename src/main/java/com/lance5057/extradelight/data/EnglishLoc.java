@@ -89,10 +89,10 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".advancement.dryingrack.desc", "Make a drying rack to dry out ingredients.");
 		
 		this.add(ExtraDelight.MOD_ID + ".advancement.yeastpot.name", "Micro Flatulance");
-		this.add(ExtraDelight.MOD_ID + ".advancement.yeastpot.desc", "Make a yeast pot and, once it starts to bubble, get yeast.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.yeastpot.desc", "Make a yeast pot and, once it starts to bubble use a bottle get yeast.");
 		
 		this.add(ExtraDelight.MOD_ID + ".advancement.vinegarpot.name", "Positively Pickled");
-		this.add(ExtraDelight.MOD_ID + ".advancement.vinegarpot.desc", "Make a vinegar pot and, once it starts to bubble, get vinegar.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.vinegarpot.desc", "Make a vinegar pot and, once it starts to bubble use a bottle to get vinegar.");
 		
 		this.add(ExtraDelight.MOD_ID + ".advancement.jelly.name", "A Bouncy Castle For Ants");
 		this.add(ExtraDelight.MOD_ID + ".advancement.jelly.desc", "Make some Jelly!");
