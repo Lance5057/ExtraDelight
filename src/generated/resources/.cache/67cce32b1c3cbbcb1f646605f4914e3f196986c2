@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-19T10:01:34.2864253	LootTables
+// 1.19.2	2023-10-26T11:35:32.1495657	LootTables
 6f2f14764aeccabb899ed56e1d8a8f0074aa0929 data/extradelight/loot_tables/blocks/acacia_dried_corn_fence.json
 2df5ce0c265b62e0751dfbde70e812a38a2bd169 data/extradelight/loot_tables/blocks/acacia_half_cabinet.json
 7747bac4a9ea01dff06964433ec737b240944275 data/extradelight/loot_tables/blocks/acacia_knife_block.json
@@ -53,6 +53,9 @@ b31e84cf40785423d49c34c0521f6e4a9924e36d data/extradelight/loot_tables/blocks/bi
 360d0dcedd592a4bb3635485d50aa2105c2dbaae data/extradelight/loot_tables/blocks/cheese_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/chicken_stew_block.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/extradelight/loot_tables/blocks/chocolate_cheesecake.json
+76ee3a8aae6ca24d75ead9860c96e5e3fb17fbaf data/extradelight/loot_tables/blocks/cinnamon_leaves.json
+fea89437eaaf3454f2acb2d9469c848804cc53dc data/extradelight/loot_tables/blocks/cinnamon_log.json
+1d85b817d663172f786cc5f635cd9fb4e8aed53a data/extradelight/loot_tables/blocks/cinnamon_planks.json
 bc5e6f6f35cb909e6cdce5270f5cdcbe6e507000 data/extradelight/loot_tables/blocks/cooking_oil.json
 2b2a4bde1a1c86393b28fa3ff9b81ef1ddeed22d data/extradelight/loot_tables/blocks/cornbread.json
 174fe26017e7ec604d99da3d544b9a2f0c3bb731 data/extradelight/loot_tables/blocks/cornmeal_sack.json

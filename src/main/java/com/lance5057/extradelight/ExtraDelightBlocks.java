@@ -12,16 +12,15 @@ import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.oven.OvenBlock;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.HayBlock;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -297,10 +296,18 @@ public class ExtraDelightBlocks {
 			() -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN)));
 	public static final RegistryObject<Block> SUGAR_SACK = BLOCKS.register("sugar_sack",
 			() -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN)));
-	public static final RegistryObject<Block> CORN_CRATE = BLOCKS.register("corn_crate",
-			() -> new Block(Block.Properties.copy(ModBlocks.BEETROOT_CRATE.get()).color(MaterialColor.TERRACOTTA_YELLOW)));
+	public static final RegistryObject<Block> CORN_CRATE = BLOCKS.register("corn_crate", () -> new Block(
+			Block.Properties.copy(ModBlocks.BEETROOT_CRATE.get()).color(MaterialColor.TERRACOTTA_YELLOW)));
 	public static final RegistryObject<HayBlock> CORN_HUSK_BUNDLE = BLOCKS.register("corn_husk_bundle",
 			() -> new HayBlock(Block.Properties.copy(Blocks.HAY_BLOCK).color(MaterialColor.TERRACOTTA_LIGHT_GREEN)));
 	public static final RegistryObject<HayBlock> DRIED_CORN_HUSK_BUNDLE = BLOCKS.register("dried_corn_husk_bundle",
 			() -> new HayBlock(Block.Properties.copy(Blocks.HAY_BLOCK).color(MaterialColor.TERRACOTTA_YELLOW)));
+
+	// Winter start!
+	public static final RegistryObject<RotatedPillarBlock> CINNAMON_LOG = BLOCKS.register("cinnamon_log",
+			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> CINNAMON_PLANKS = BLOCKS.register("cinnamon_planks",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<LeavesBlock> CINNAMON_LEAVES = BLOCKS.register("cinnamon_leaves",
+			() -> new LeavesBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
 }

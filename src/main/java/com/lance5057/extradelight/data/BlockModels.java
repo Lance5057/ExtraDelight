@@ -151,6 +151,8 @@ public class BlockModels extends BlockStateProvider {
 		this.axisBlock(ExtraDelightBlocks.CORN_HUSK_BUNDLE.get());
 		this.axisBlock(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get());
 
+		this.logBlock(ExtraDelightBlocks.CINNAMON_LOG.get());
+
 		AestheticBlocks.blockModel(this);
 	}
 
@@ -296,7 +298,8 @@ public class BlockModels extends BlockStateProvider {
 
 			if (dry)
 				return ConfiguredModel.builder()
-						.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(bottom).getPath() + "_dimension",
+						.modelFile(models().withExistingParent(
+								ForgeRegistries.BLOCKS.getKey(bottom).getPath() + "_dimension",
 								modLoc("block/crops/corn/dimension_corn_bottom")))
 						.build();
 
@@ -314,8 +317,9 @@ public class BlockModels extends BlockStateProvider {
 
 			if (dry)
 				return ConfiguredModel.builder()
-						.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(top).getPath() + "_dimension",
-								modLoc("block/crops/corn/dimension_corn_top")))
+						.modelFile(
+								models().withExistingParent(ForgeRegistries.BLOCKS.getKey(top).getPath() + "_dimension",
+										modLoc("block/crops/corn/dimension_corn_top")))
 						.build();
 
 			return ConfiguredModel.builder()

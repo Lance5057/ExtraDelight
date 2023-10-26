@@ -915,4 +915,12 @@ public class ExtraDelightItems {
 
 	public static final RegistryObject<Item> CORN_COB_PIPE = ITEMS.register("corn_cob_pipe",
 			() -> new CorncobPipe(EDArmorMaterial.CORNCOB, new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	// Winter start!
+	public static final RegistryObject<BlockItem> CINNAMON_LOG = ITEMS.register("cinnamon_log",
+			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_LOG.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CINNAMON_PLANKS = ITEMS.register("cinnamon_planks",
+			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_PLANKS.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CINNAMON_LEAVES = ITEMS.register("cinnamon_leaves",
+			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_LEAVES.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 }

@@ -136,6 +136,10 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.CORN_HUSK_BUNDLE.get());
 		this.dropSelf(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get());
 
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_LOG.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_PLANKS.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_LEAVES.get());
+
 		AestheticBlocks.loot(this);
 	}
 
