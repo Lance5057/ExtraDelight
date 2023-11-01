@@ -152,6 +152,8 @@ public class BlockModels extends BlockStateProvider {
 		this.axisBlock(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get());
 
 		this.logBlock(ExtraDelightBlocks.CINNAMON_LOG.get());
+		this.simpleBlock(ExtraDelightBlocks.CINNAMON_LEAVES.get());
+		this.simpleBlock(ExtraDelightBlocks.CINNAMON_PLANKS.get());
 
 		AestheticBlocks.blockModel(this);
 	}
