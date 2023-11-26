@@ -63,6 +63,7 @@ public class BlockLootTables extends BlockLoot {
 		this.add(ExtraDelightBlocks.HONEY_CHEESECAKE.get(), noDrop());
 		this.add(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get(), noDrop());
 		this.add(ExtraDelightBlocks.SWEET_BERRY_PIE.get(), noDrop());
+		this.add(ExtraDelightBlocks.APPLE_CHEESECAKE.get(), noDrop());
 
 		this.add(ExtraDelightBlocks.QUICHE.get(), noDrop());
 
@@ -137,8 +138,18 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get());
 
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_LOG.get());
+		this.dropSelf(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_PLANKS.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_LEAVES.get());
+		
+		this.dropSelf(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.GINGERBREAD_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.GLOW_BERRY_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.HONEY_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.PUMPKIN_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.SUGAR_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
 
 		AestheticBlocks.loot(this);
 	}

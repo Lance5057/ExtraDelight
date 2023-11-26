@@ -1,45 +1,37 @@
 package com.lance5057.extradelight.data;
 
-import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-import java.util.stream.Stream;
 
 import org.jetbrains.annotations.NotNull;
 
-import com.google.common.collect.ImmutableSet;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
-import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.ApplyExplosionDecay;
-import net.minecraft.world.level.storage.loot.functions.FunctionUserBuilder;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class MiscLootTables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 
 	public static final ResourceLocation SHUCKED_CORN = new ResourceLocation(ExtraDelight.MOD_ID, "misc/shucked_corn");
 	public static final ResourceLocation CORN_TOP = new ResourceLocation(ExtraDelight.MOD_ID, "misc/corn_top");
+	public static final ResourceLocation CINNAMON_LOG = new ResourceLocation(ExtraDelight.MOD_ID, "misc/cinnamon_log");
 
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
@@ -48,11 +40,14 @@ public class MiscLootTables implements Consumer<BiConsumer<ResourceLocation, Loo
 						.withPool(createPoolWithItem(ExtraDelightItems.CORN_SILK.get(), 1, 2))
 						.withPool(createPoolWithItem(ExtraDelightItems.CORN_ON_COB.get(), 1)));
 
-		t.accept(CORN_TOP, createCropDrops(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
-				ExtraDelightItems.CORN_SEEDS.get(),
-				LootItemBlockStatePropertyCondition.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
-						.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 3))));
+		t.accept(CINNAMON_LOG,
+				LootTable.lootTable().withPool(createPoolWithItem(ExtraDelightItems.CINNAMON_BARK.get(), 1, 4))
+						.withPool(createPoolWithItem(ModItems.TREE_BARK.get(), 0, 2)));
 
+//		t.accept(CORN_TOP, createCropDrops(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
+//				ExtraDelightItems.CORN_SEEDS.get(),
+//				LootItemBlockStatePropertyCondition.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
+//						.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 3))));
 	}
 
 	@NotNull

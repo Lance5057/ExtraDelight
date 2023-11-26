@@ -2,9 +2,11 @@ package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.StrippableLog;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
@@ -304,10 +306,34 @@ public class ExtraDelightBlocks {
 			() -> new HayBlock(Block.Properties.copy(Blocks.HAY_BLOCK).color(MaterialColor.TERRACOTTA_YELLOW)));
 
 	// Winter start!
-	public static final RegistryObject<RotatedPillarBlock> CINNAMON_LOG = BLOCKS.register("cinnamon_log",
-			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.ACACIA_LOG)));
+
+	public static final RegistryObject<RotatedPillarBlock> STRIPPED_CINNAMON_LOG = BLOCKS
+			.register("stripped_cinnamon_log", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<StrippableLog> CINNAMON_LOG = BLOCKS.register("cinnamon_log",
+			() -> new StrippableLog(STRIPPED_CINNAMON_LOG.get(), MiscLootTables.CINNAMON_LOG,
+					Block.Properties.copy(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> CINNAMON_PLANKS = BLOCKS.register("cinnamon_planks",
 			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 	public static final RegistryObject<LeavesBlock> CINNAMON_LEAVES = BLOCKS.register("cinnamon_leaves",
 			() -> new LeavesBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
+
+	public static final RegistryObject<Block> APPLE_CHEESECAKE = ExtraDelightBlocks.BLOCKS.register("apple_cheesecake",
+			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.APPLE_CHEESECAKE_SLICE));
+	
+	public static final RegistryObject<Block> SUGAR_COOKIE_BLOCK = BLOCKS.register("sugar_cookie_block",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> CHOCOLATE_CHIP_COOKIE_BLOCK = BLOCKS.register("chocolate_chip_cookie_block",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> APPLE_COOKIE_BLOCK = BLOCKS.register("apple_cookie_block",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> HONEY_COOKIE_BLOCK = BLOCKS.register("honey_cookie_block",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> SWEET_BERRY_COOKIE_BLOCK = BLOCKS.register("sweet_berry_cookie_block",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> GLOW_BERRY_COOKIE_BLOCK = BLOCKS.register("glow_berry_cookie_block",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> PUMPKIN_COOKIE_BLOCK = BLOCKS.register("pumpkin_cookie_block",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> GINGERBREAD_COOKIE_BLOCK = BLOCKS.register("gingerbread_cookie_block",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 }

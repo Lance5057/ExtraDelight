@@ -83,7 +83,7 @@ public class BlockModels extends BlockStateProvider {
 		pieBlock(ExtraDelightBlocks.HONEY_CHEESECAKE.get(), "honey_cheesecake");
 		pieBlock(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get(), "chocolate_cheesecake");
 		pieBlock(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get(), "pumpkin_cheesecake");
-		pieBlock(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get(), "glow_berry_cheesecake");
+		pieBlock(ExtraDelightBlocks.APPLE_CHEESECAKE.get(), "apple_cheesecake");
 
 		pieBlock(ExtraDelightBlocks.QUICHE.get(), "quiche");
 
@@ -152,8 +152,18 @@ public class BlockModels extends BlockStateProvider {
 		this.axisBlock(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get());
 
 		this.logBlock(ExtraDelightBlocks.CINNAMON_LOG.get());
+		this.logBlock(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_PLANKS.get());
+		
+		this.simpleBlock(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.GINGERBREAD_COOKIE_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.GLOW_BERRY_COOKIE_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.HONEY_COOKIE_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.PUMPKIN_COOKIE_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.SUGAR_COOKIE_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
 
 		AestheticBlocks.blockModel(this);
 	}

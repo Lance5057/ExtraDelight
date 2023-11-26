@@ -512,6 +512,13 @@ public class EDFoods {
 					4)
 			.effect(EDFoods.COMFORT_MEDIUM, 1).effect(EDFoods.NOURISHMENT_MEDIUM, 1).build();
 
+	public static final FoodProperties ICE_CREAM = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f)
+			.fast().alwaysEat().build();
+	public static final FoodProperties TOPPED_ICE_CREAM = (new FoodProperties.Builder()).nutrition(6)
+			.saturationMod(0.5f).fast().alwaysEat().build();
+	public static final FoodProperties COOKIE_DOUGH = (new FoodProperties.Builder())
+			.nutrition(1).saturationMod(0.0f).effect(EDFoods.HUNGER, 0.1f).build();
+
 	public static Builder addFoods(String name, FoodProperties... foods) {
 
 		int nut = 0;
