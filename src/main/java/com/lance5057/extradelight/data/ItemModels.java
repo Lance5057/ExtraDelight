@@ -582,7 +582,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.SUGAR_COOKIE_STEVE, "sugar_cookie_steve");
 		forItem(ExtraDelightItems.SUGAR_COOKIE_SWORD, "sugar_cookie_sword");
 		forItem(ExtraDelightItems.SUGAR_COOKIE_VILLAGER, "sugar_cookie_villager");
-		
+
 		forItem(ExtraDelightItems.RAW_GINGERBREAD_ALEX, "raw_gingerbread_alex");
 		forItem(ExtraDelightItems.RAW_GINGERBREAD_CREEPER, "raw_gingerbread_creeper");
 		forItem(ExtraDelightItems.RAW_GINGERBREAD_PICKAXE, "raw_gingerbread_pickaxe");
@@ -591,12 +591,12 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.RAW_GINGERBREAD_VILLAGER, "raw_gingerbread_villager");
 
 		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_ALEX, "raw_sugar_cookie_alex");
-		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_CREEPER, "raw_sugar_cookie_creeper"); 
+		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_CREEPER, "raw_sugar_cookie_creeper");
 		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_PICKAXE, "raw_sugar_cookie_pickaxe");
 		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_STEVE, "raw_sugar_cookie_steve");
 		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_SWORD, "raw_sugar_cookie_sword");
 		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_VILLAGER, "raw_sugar_cookie_villager");
-		
+
 		forBlockItem(ExtraDelightItems.APPLE_COOKIE_BLOCK, "apple_cookie_block");
 		forBlockItem(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_BLOCK, "chocolate_chip_cookie_block");
 		forBlockItem(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK, "gingerbread_cookie_block");
@@ -605,7 +605,10 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.PUMPKIN_COOKIE_BLOCK, "pumpkin_cookie_block");
 		forBlockItem(ExtraDelightItems.SUGAR_COOKIE_BLOCK, "sugar_cookie_block");
 		forBlockItem(ExtraDelightItems.SWEET_BERRY_COOKIE_BLOCK, "sweet_berry_cookie_block");
-	
+		
+		forItem(ExtraDelightItems.GINGER, "ginger");
+		forItem(ExtraDelightItems.GINGER_CUTTING, "ginger_cutting");
+
 		AestheticBlocks.itemModel(this);
 	}
 

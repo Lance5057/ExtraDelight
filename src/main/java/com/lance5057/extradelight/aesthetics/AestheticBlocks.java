@@ -15,6 +15,7 @@ import com.lance5057.extradelight.blocks.StepStoolBlock;
 import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
 import com.lance5057.extradelight.displays.knife.KnifeBlock;
 import com.lance5057.extradelight.displays.spice.SpiceRackBlock;
+import com.lance5057.extradelight.displays.wreath.WreathBlock;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.Direction;
@@ -92,6 +93,9 @@ public class AestheticBlocks {
 	public static final List<RegistryObject<Block>> DRIED_CORN_FENCE = new ArrayList<RegistryObject<Block>>();
 	public static final List<RegistryObject<Item>> DRIED_CORN_FENCE_ITEMS = new ArrayList<RegistryObject<Item>>();
 
+	public static final List<RegistryObject<Block>> WREATHS = new ArrayList<RegistryObject<Block>>();
+	public static final List<RegistryObject<Item>> WREATH_ITEMS = new ArrayList<RegistryObject<Item>>();
+
 	public static Block[] getRegistryListAsBlocks(List<RegistryObject<Block>> blocks) {
 		List<Block> l = new ArrayList<Block>();
 
@@ -99,6 +103,17 @@ public class AestheticBlocks {
 			l.add(b.get());
 		}
 		Block[] a = l.toArray(Block[]::new);
+
+		return a;
+	}
+
+	public static Item[] getRegistryListAsItems(List<RegistryObject<Item>> items) {
+		List<Item> l = new ArrayList<Item>();
+
+		for (RegistryObject<Item> b : items) {
+			l.add(b.get());
+		}
+		Item[] a = l.toArray(Item[]::new);
 
 		return a;
 	}
@@ -155,8 +170,10 @@ public class AestheticBlocks {
 				() -> new MoldingBlock(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
 				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
 
-		registerAllWood("dried_corn_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.ACACIA_FENCE)), DRIED_CORN_FENCE,
-				DRIED_CORN_FENCE_ITEMS);
+		registerAllWood("dried_corn_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.ACACIA_FENCE)),
+				DRIED_CORN_FENCE, DRIED_CORN_FENCE_ITEMS);
+
+		registerAllWood("wreath", WreathBlock::new, WREATHS, WREATH_ITEMS);
 	}
 
 	public static void loot(BlockLoot bl) {
@@ -179,6 +196,9 @@ public class AestheticBlocks {
 			bl.dropSelf(b.get());
 
 		bl.dropSelf(CORN_HUSK_DOLL.get());
+
+		for (RegistryObject<Block> b : WREATHS)
+			bl.dropSelf(b.get());
 	}
 
 	public static void blockModel(BlockStateProvider bsp) {
@@ -210,6 +230,23 @@ public class AestheticBlocks {
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.renderType("cutout"));
+
+			if (WOOD.values()[i].toString() == "crimson")
+				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
+						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
+						.texture("all", bsp.mcLoc("block/nether_wart_block"))
+						.texture("particle", bsp.mcLoc("block/nether_wart_block")).renderType("cutout"));
+			else if (WOOD.values()[i].toString() == "warped")
+				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
+						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
+						.texture("all", bsp.mcLoc("block/warped_wart_block"))
+						.texture("particle", bsp.mcLoc("block/warped_wart_block")).renderType("cutout"));
+			else
+				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
+						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
+						.texture("all", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
+						.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
+						.renderType("cutout"));
 
 			String s = WOOD.values()[i].toString();
 
@@ -287,6 +324,19 @@ public class AestheticBlocks {
 
 			tmp.getBuilder(DRIED_CORN_FENCE.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_dried_corn_fence")));
+
+			if (WOOD.values()[i].toString() == "crimson")
+				tmp.getBuilder(WREATHS.get(i).getId().getPath())
+						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
+						.texture("0", tmp.mcLoc("block/nether_wart_block"));
+			else if (WOOD.values()[i].toString() == "warped")
+				tmp.getBuilder(WREATHS.get(i).getId().getPath())
+						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
+						.texture("0", tmp.mcLoc("block/warped_wart_block"));
+			else
+				tmp.getBuilder(WREATHS.get(i).getId().getPath())
+						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
+						.texture("0", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"));
 		}
 
 		for (int i = 0; i < DyeColor.values().length; i++) {

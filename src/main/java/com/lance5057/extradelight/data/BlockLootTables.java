@@ -8,13 +8,22 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.blocks.crops.GingerCrop;
 
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Builder;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -141,7 +150,7 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_PLANKS.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_LEAVES.get());
-		
+
 		this.dropSelf(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.GINGERBREAD_COOKIE_BLOCK.get());
@@ -150,6 +159,12 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.PUMPKIN_COOKIE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.SUGAR_COOKIE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
+
+		LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
+				.hasBlockStateProperties(ExtraDelightBlocks.GINGER_CROP.get())
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GingerCrop.AGE, 3));
+		crop(ExtraDelightBlocks.GINGER_CROP.get(), ExtraDelightItems.GINGER.get(),
+				ExtraDelightItems.GINGER_CUTTING.get(), lootitemcondition$builder);
 
 		AestheticBlocks.loot(this);
 	}
@@ -160,5 +175,17 @@ public class BlockLootTables extends BlockLoot {
 		l.addAll(ExtraDelightBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
 		l.addAll(AestheticBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
 		return l;
+	}
+
+	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition) {
+		this.add(pCropBlock,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool()
+								.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)
+										.otherwise(LootItem.lootTableItem(pSeedsItem))))
+						.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
+								.add(LootItem.lootTableItem(pGrownCropItem).apply(
+										ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE,
+												0.5714286F, 1)))));
 	}
 }

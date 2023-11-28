@@ -4,6 +4,7 @@ import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.StrippableLog;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
+import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.data.MiscLootTables;
@@ -319,11 +320,11 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<Block> APPLE_CHEESECAKE = ExtraDelightBlocks.BLOCKS.register("apple_cheesecake",
 			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.APPLE_CHEESECAKE_SLICE));
-	
+
 	public static final RegistryObject<Block> SUGAR_COOKIE_BLOCK = BLOCKS.register("sugar_cookie_block",
 			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
-	public static final RegistryObject<Block> CHOCOLATE_CHIP_COOKIE_BLOCK = BLOCKS.register("chocolate_chip_cookie_block",
-			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> CHOCOLATE_CHIP_COOKIE_BLOCK = BLOCKS
+			.register("chocolate_chip_cookie_block", () -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 	public static final RegistryObject<Block> APPLE_COOKIE_BLOCK = BLOCKS.register("apple_cookie_block",
 			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 	public static final RegistryObject<Block> HONEY_COOKIE_BLOCK = BLOCKS.register("honey_cookie_block",
@@ -336,4 +337,7 @@ public class ExtraDelightBlocks {
 			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 	public static final RegistryObject<Block> GINGERBREAD_COOKIE_BLOCK = BLOCKS.register("gingerbread_cookie_block",
 			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+
+	public static final RegistryObject<GingerCrop> GINGER_CROP = BLOCKS.register("ginger_crop",
+			() -> new GingerCrop(Block.Properties.copy(Blocks.WHEAT)));
 }

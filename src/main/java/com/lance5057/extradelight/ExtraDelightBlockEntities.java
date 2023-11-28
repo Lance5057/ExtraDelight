@@ -5,6 +5,7 @@ import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBloc
 import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 import com.lance5057.extradelight.displays.spice.SpiceRackEntity;
+import com.lance5057.extradelight.displays.wreath.WreathEntity;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlockEntity;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;
@@ -38,6 +39,10 @@ public class ExtraDelightBlockEntities {
 			"spice_rack_full",
 			() -> BlockEntityType.Builder
 					.of(SpiceRackEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS_FULL))
+					.build(null));
+	
+	public static final RegistryObject<BlockEntityType<WreathEntity>> WREATH = TILES.register("wreath",
+			() -> BlockEntityType.Builder.of(WreathEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS))
 					.build(null));
 
 //	public static final RegistryObject<BlockEntityType<HalfCabinetEntity>> HALF_CABINET = TILES.register("half_cabinet",

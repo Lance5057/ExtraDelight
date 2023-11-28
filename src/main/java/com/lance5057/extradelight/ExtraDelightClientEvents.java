@@ -2,24 +2,32 @@ package com.lance5057.extradelight;
 
 import java.util.Map;
 
+import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
 import com.lance5057.extradelight.displays.knife.KnifeBlockRenderer;
 import com.lance5057.extradelight.displays.spice.SpiceRackRenderer;
+import com.lance5057.extradelight.displays.wreath.WreathRenderer;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlRenderer;
 import com.lance5057.extradelight.workstations.mortar.MortarRenderer;
 import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeCatagories;
-import com.mojang.blaze3d.shaders.FogShape;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelEvent.RegisterAdditional;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
-import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -39,6 +47,7 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.MIXING_BOWL.get(), MixingBowlRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.DRYING_RACK.get(), DryingRackRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.CORN_HUSK_DOLL.get(), CornHuskDollRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.WREATH.get(), WreathRenderer::new);
 	}
 
 	@SubscribeEvent
@@ -61,4 +70,30 @@ public class ExtraDelightClientEvents {
 		});
 	}
 
+	@SubscribeEvent
+	public static void registerBlockColourHandlers(final RegisterColorHandlersEvent.Block event) {
+		final BlockColor bc = (state, blockAccess, pos, tintIndex) -> {
+			if (blockAccess != null && pos != null) {
+				return BiomeColors.getAverageFoliageColor(blockAccess, pos);
+			}
+
+			return FoliageColor.getDefaultColor();
+		};
+
+		event.register(bc, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS));
+	}
+
+	@SubscribeEvent
+	public static void registerItemColourHandlers(final RegisterColorHandlersEvent.Item event) {
+		final BlockColors blockColors = event.getBlockColors();
+
+		// Use the Block's colour handler for an ItemBlock
+		final ItemColor itemBlockColourHandler = (stack, tintIndex) -> {
+			final BlockState state = ((BlockItem) stack.getItem()).getBlock().defaultBlockState();
+			return blockColors.getColor(state, null, null, tintIndex);
+		};
+
+//		for (RegistryObject<Item> b : AestheticBlocks.WREATH_ITEMS)
+		event.register(itemBlockColourHandler, AestheticBlocks.getRegistryListAsItems(AestheticBlocks.WREATH_ITEMS));
+	}
 }

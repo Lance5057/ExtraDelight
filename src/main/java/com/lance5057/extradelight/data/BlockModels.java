@@ -155,7 +155,7 @@ public class BlockModels extends BlockStateProvider {
 		this.logBlock(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_PLANKS.get());
-		
+
 		this.simpleBlock(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.GINGERBREAD_COOKIE_BLOCK.get());
@@ -164,6 +164,8 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.PUMPKIN_COOKIE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.SUGAR_COOKIE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
+
+		this.cropCrossBlock(ExtraDelightBlocks.GINGER_CROP.get(), "ginger");
 
 		AestheticBlocks.blockModel(this);
 	}
@@ -339,5 +341,20 @@ public class BlockModels extends BlockStateProvider {
 							modLoc("block/crops/corn/corn" + suffix)))
 					.build();
 		});
+	}
+
+	public void cropCrossBlock(CropBlock block, String name) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int age = state.getValue(CornBottom.AGE);
+			String suffix = "_stage" + age;
+
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
+									mcLoc("block/cross"))
+							.texture("cross", modLoc("block/crops/" + name + "/" + name + suffix)).renderType("cutout"))
+					.build();
+		});
+
 	}
 }
