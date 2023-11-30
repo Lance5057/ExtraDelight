@@ -1,11 +1,8 @@
 package com.lance5057.extradelight.displays.wreath;
 
-import java.util.List;
 import java.util.Objects;
 
-import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
-import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -15,11 +12,9 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
-import net.minecraftforge.registries.RegistryObject;
 
 public class WreathMenu extends AbstractContainerMenu {
 
@@ -42,17 +37,26 @@ public class WreathMenu extends AbstractContainerMenu {
 				int inputStartX = 62;
 				int inputStartY = 8;
 				int borderSlotSize = 18;
-				int i = 0;
-				for (int row = 0; row < 3; ++row) {
-					for (int column = 0; column < 3; ++column) {
-						if (!(row == 1 && column == 1))
-						{
-							this.addSlot(new SlotItemHandler(h, i,
-									inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize)));
-							i++;
-						}
-					}
-				}
+
+				this.addSlot(new SlotItemHandler(h, 1, inputStartX + 0, inputStartY + 0));
+				this.addSlot(new SlotItemHandler(h, 0, inputStartX + 18, inputStartY + 0));
+				this.addSlot(new SlotItemHandler(h, 7, inputStartX + 36, inputStartY + 0));
+				this.addSlot(new SlotItemHandler(h, 2, inputStartX + 0, inputStartY + 18));
+				this.addSlot(new SlotItemHandler(h, 6, inputStartX + 36, inputStartY + 18));
+				this.addSlot(new SlotItemHandler(h, 3, inputStartX + 0, inputStartY + 36));
+				this.addSlot(new SlotItemHandler(h, 4, inputStartX + 18, inputStartY + 36));
+				this.addSlot(new SlotItemHandler(h, 5, inputStartX + 36, inputStartY + 36));
+
+//				for (int row = 0; row < 3; ++row) {
+//					for (int column = 0; column < 3; ++column) {
+//						if (!(row == 1 && column == 1))
+//						{
+//							this.addSlot(new SlotItemHandler(h, i,
+//									inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize)));
+//							i++;
+//						}
+//					}
+//				}
 
 				// Main Player Inventory
 				int startPlayerInvY = startY * 4 + 36;
@@ -125,9 +129,11 @@ public class WreathMenu extends AbstractContainerMenu {
 
 	@Override
 	public boolean stillValid(Player pPlayer) {
-		for (RegistryObject<Block> b : AestheticBlocks.WREATHS)
-			return stillValid(canInteractWithCallable, pPlayer, b.get());
-		return false;
+		return canInteractWithCallable.evaluate((p_38916_, p_38917_) -> {
+			return !(p_38916_.getBlockState(p_38917_).getBlock() instanceof WreathBlock) ? false
+					: pPlayer.distanceToSqr((double) p_38917_.getX() + 0.5D, (double) p_38917_.getY() + 0.5D,
+							(double) p_38917_.getZ() + 0.5D) <= 64.0D;
+		}, true);
 	}
 
 }

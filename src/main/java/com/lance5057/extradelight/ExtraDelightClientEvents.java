@@ -23,6 +23,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelEvent.RegisterAdditional;
@@ -72,6 +73,7 @@ public class ExtraDelightClientEvents {
 
 	@SubscribeEvent
 	public static void registerBlockColourHandlers(final RegisterColorHandlersEvent.Block event) {
+
 		final BlockColor bc = (state, blockAccess, pos, tintIndex) -> {
 			if (blockAccess != null && pos != null) {
 				return BiomeColors.getAverageFoliageColor(blockAccess, pos);
@@ -80,7 +82,21 @@ public class ExtraDelightClientEvents {
 			return FoliageColor.getDefaultColor();
 		};
 
-		event.register(bc, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS));
+		event.register((p_92636_, p_92637_, p_92638_, p_92639_) -> {
+			return FoliageColor.getEvergreenColor();
+		}, AestheticBlocks.WREATHS.get(AestheticBlocks.WOOD.spruce.ordinal()).get());
+
+		event.register((p_92631_, p_92632_, p_92633_, p_92634_) -> {
+			return FoliageColor.getBirchColor();
+		}, AestheticBlocks.WREATHS.get(AestheticBlocks.WOOD.birch.ordinal()).get());
+		event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
+			return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, p_92628_)
+					: FoliageColor.getDefaultColor();
+		}, AestheticBlocks.WREATHS.get(AestheticBlocks.WOOD.oak.ordinal()).get(),
+				AestheticBlocks.WREATHS.get(AestheticBlocks.WOOD.jungle.ordinal()).get(),
+				AestheticBlocks.WREATHS.get(AestheticBlocks.WOOD.acacia.ordinal()).get(),
+				AestheticBlocks.WREATHS.get(AestheticBlocks.WOOD.dark_oak.ordinal()).get(),
+				AestheticBlocks.WREATHS.get(AestheticBlocks.WOOD.mangrove.ordinal()).get());
 	}
 
 	@SubscribeEvent

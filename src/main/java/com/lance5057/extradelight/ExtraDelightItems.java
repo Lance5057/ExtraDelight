@@ -10,6 +10,7 @@ import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.CactusJuiceItem;
 import com.lance5057.extradelight.items.CornSilkTeaItem;
+import com.lance5057.extradelight.items.FrostingItem;
 import com.lance5057.extradelight.items.GlowberryFoodItem;
 import com.lance5057.extradelight.items.GlowberryJuiceItem;
 import com.lance5057.extradelight.items.GlowberryPopsicleItem;
@@ -1090,4 +1091,37 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> GINGER_CUTTING = ITEMS.register("ginger_cutting",
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.GINGER_CROP.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	
+	public static final RegistryObject<Item> FROSTING_WHITE = ITEMS.register("frosting_white",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_LIGHT_GRAY = ITEMS.register("frosting_light_gray",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_GRAY = ITEMS.register("frosting_gray",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_BLACK = ITEMS.register("frosting_black",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_BROWN = ITEMS.register("frosting_brown",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_RED = ITEMS.register("frosting_red",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_ORANGE = ITEMS.register("frosting_orange",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_YELLOW = ITEMS.register("frosting_yellow",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_LIME = ITEMS.register("frosting_lime",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_GREEN = ITEMS.register("frosting_green",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_CYAN = ITEMS.register("frosting_cyan",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_LIGHT_BLUE = ITEMS.register("frosting_light_blue",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_BLUE = ITEMS.register("frosting_blue",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_PURPLE = ITEMS.register("frosting_purple",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_MAGENTA = ITEMS.register("frosting_magenta",
+			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_PINK = ITEMS.register("frosting_pink",
+			() -> new FrostingItem());
 }

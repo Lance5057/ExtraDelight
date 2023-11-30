@@ -3,7 +3,6 @@ package com.lance5057.extradelight.displays.wreath;
 import java.util.stream.IntStream;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
-import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -33,6 +32,8 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.network.NetworkHooks;
 
@@ -41,15 +42,30 @@ public class WreathBlock extends BaseEntityBlock implements SimpleWaterloggedBlo
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
 
+	protected static final VoxelShape SHAPE_E = Block.box(0.0D, 0.0D, 0.0D, 4.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE_N = Block.box(0.0D, 0.0D, 12.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE_W = Block.box(12.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE_S = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 4.0D);
+
 	public WreathBlock() {
-		// strength used to be (0.5f, 6.0f)
-		// properties.of used to be Material.METAL for some reason, this makes it gray
-		super(Properties.of(Material.WOOD).strength(2.5F, 6.0F).sound(SoundType.WOOD).noOcclusion()
+		super(Properties.of(Material.WOOD).strength(2.5F, 6.0F).sound(SoundType.WOOD).noOcclusion().noCollission()
 				.lightLevel((p_50763_) -> {
 					return p_50763_.getValue(BlockStateProperties.LIT) ? 8 : 0;
 				}));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
 				.setValue(WATERLOGGED, false).setValue(LIT, false));
+	}
+
+	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+		Direction d = pState.getValue(FACING);
+
+		if (d == Direction.EAST)
+			return SHAPE_E;
+		if (d == Direction.WEST)
+			return SHAPE_W;
+		if (d == Direction.SOUTH)
+			return SHAPE_S;
+		return SHAPE_N;
 	}
 
 	@Override
@@ -63,10 +79,11 @@ public class WreathBlock extends BaseEntityBlock implements SimpleWaterloggedBlo
 					player.getItemInHand(hand).setCount(player.getItemInHand(hand).getCount() - 1);
 					return InteractionResult.SUCCESS;
 				}
-			}
-			BlockEntity tileEntity = level.getBlockEntity(pos);
-			if (tileEntity instanceof WreathEntity ent) {
-				NetworkHooks.openScreen((ServerPlayer) player, ent, pos);
+			} else {
+				BlockEntity tileEntity = level.getBlockEntity(pos);
+				if (tileEntity instanceof WreathEntity ent) {
+					NetworkHooks.openScreen((ServerPlayer) player, ent, pos);
+				}
 			}
 		}
 		return InteractionResult.SUCCESS;

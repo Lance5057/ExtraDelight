@@ -1,6 +1,6 @@
 {
   "parent": "extradelight:block/wreath",
   "textures": {
-    "0": "minecraft:block/nether_wart_block"
+    "all": "minecraft:block/nether_wart_block"
   }
 }

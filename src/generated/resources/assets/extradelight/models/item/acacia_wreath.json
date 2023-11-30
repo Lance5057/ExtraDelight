@@ -1,6 +1,6 @@
 {
   "parent": "extradelight:block/wreath",
   "textures": {
-    "0": "minecraft:block/acacia_leaves"
+    "all": "minecraft:block/acacia_leaves"
   }
 }

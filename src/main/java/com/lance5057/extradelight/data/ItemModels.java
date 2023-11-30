@@ -608,6 +608,23 @@ public class ItemModels extends ItemModelProvider {
 		
 		forItem(ExtraDelightItems.GINGER, "ginger");
 		forItem(ExtraDelightItems.GINGER_CUTTING, "ginger_cutting");
+		
+		forItem(ExtraDelightItems.FROSTING_WHITE, "frosting_white");
+		forItem(ExtraDelightItems.FROSTING_ORANGE, "frosting_orange");
+		forItem(ExtraDelightItems.FROSTING_MAGENTA, "frosting_magenta");
+		forItem(ExtraDelightItems.FROSTING_LIGHT_BLUE, "frosting_light_blue");
+		forItem(ExtraDelightItems.FROSTING_YELLOW, "frosting_yellow");
+		forItem(ExtraDelightItems.FROSTING_LIME, "frosting_lime");
+		forItem(ExtraDelightItems.FROSTING_PINK, "frosting_pink");
+		forItem(ExtraDelightItems.FROSTING_GRAY, "frosting_gray");
+		forItem(ExtraDelightItems.FROSTING_LIGHT_GRAY, "frosting_light_gray");
+		forItem(ExtraDelightItems.FROSTING_CYAN, "frosting_cyan");
+		forItem(ExtraDelightItems.FROSTING_PURPLE, "frosting_purple");
+		forItem(ExtraDelightItems.FROSTING_BLUE, "frosting_blue");
+		forItem(ExtraDelightItems.FROSTING_BROWN, "frosting_brown");
+		forItem(ExtraDelightItems.FROSTING_GREEN, "frosting_green");
+		forItem(ExtraDelightItems.FROSTING_RED, "frosting_red");
+		forItem(ExtraDelightItems.FROSTING_BLACK, "frosting_black");
 
 		AestheticBlocks.itemModel(this);
 	}

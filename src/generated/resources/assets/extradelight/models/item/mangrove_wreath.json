@@ -1,6 +1,6 @@
 {
   "parent": "extradelight:block/wreath",
   "textures": {
-    "0": "minecraft:block/mangrove_leaves"
+    "all": "minecraft:block/mangrove_leaves"
   }
 }

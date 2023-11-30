@@ -10,6 +10,7 @@ import org.apache.commons.lang3.text.WordUtils;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.block.MoldingBlock;
+import com.lance5057.extradelight.aesthetics.block.RibbonBlock;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
 import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
@@ -96,6 +97,9 @@ public class AestheticBlocks {
 	public static final List<RegistryObject<Block>> WREATHS = new ArrayList<RegistryObject<Block>>();
 	public static final List<RegistryObject<Item>> WREATH_ITEMS = new ArrayList<RegistryObject<Item>>();
 
+	public static final List<RegistryObject<Block>> BOWS = new ArrayList<RegistryObject<Block>>();
+	public static final List<RegistryObject<Item>> BOW_ITEMS = new ArrayList<RegistryObject<Item>>();
+
 	public static Block[] getRegistryListAsBlocks(List<RegistryObject<Block>> blocks) {
 		List<Block> l = new ArrayList<Block>();
 
@@ -156,6 +160,30 @@ public class AestheticBlocks {
 		}
 	}
 
+	public static void registerAllWoodHelm(String name, Supplier<? extends Block> block,
+			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
+		for (WOOD w : WOOD.values()) {
+			RegistryObject<Block> b = BLOCKS.register(w.toString() + "_" + name, block);
+			RegistryObject<Item> t = ITEMS.register(w.toString() + "_" + name,
+					() -> new HelmetBlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+
+			blocks.add(b);
+			items.add(t);
+		}
+	}
+
+	public static void registerAllColorsHelm(String name, Supplier<? extends Block> block,
+			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
+		for (DyeColor w : DyeColor.values()) {
+			RegistryObject<Block> b = BLOCKS.register(name + "_" + w.getName(), block);
+			RegistryObject<Item> t = ITEMS.register(name + "_" + w.toString(),
+					() -> new HelmetBlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+
+			blocks.add(b);
+			items.add(t);
+		}
+	}
+
 	public static void setup() {
 		registerAllWood("step_stool", StepStoolBlock::new, STEP_STOOLS, STEP_STOOL_ITEMS);
 		registerAllWood("spice_rack", SpiceRackBlock::new, SPICE_RACKS, SPICE_RACKS_ITEMS);
@@ -173,7 +201,9 @@ public class AestheticBlocks {
 		registerAllWood("dried_corn_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.ACACIA_FENCE)),
 				DRIED_CORN_FENCE, DRIED_CORN_FENCE_ITEMS);
 
-		registerAllWood("wreath", WreathBlock::new, WREATHS, WREATH_ITEMS);
+		registerAllWoodHelm("wreath", WreathBlock::new, WREATHS, WREATH_ITEMS);
+
+		registerAllColorsHelm("ribbon_bow", () -> new RibbonBlock(), BOWS, BOW_ITEMS);
 	}
 
 	public static void loot(BlockLoot bl) {
@@ -198,6 +228,8 @@ public class AestheticBlocks {
 		bl.dropSelf(CORN_HUSK_DOLL.get());
 
 		for (RegistryObject<Block> b : WREATHS)
+			bl.dropSelf(b.get());
+		for (RegistryObject<Block> b : BOWS)
 			bl.dropSelf(b.get());
 	}
 
@@ -245,7 +277,6 @@ public class AestheticBlocks {
 				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
 						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
 						.texture("all", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
-						.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
 						.renderType("cutout"));
 
 			String s = WOOD.values()[i].toString();
@@ -267,14 +298,16 @@ public class AestheticBlocks {
 
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			bsp.simpleBlock(WALLPAPER_BLOCKS.get(i).get());
+			bsp.directionalBlock(BOWS.get(i).get(), bsp.models()
+					.withExistingParent(DyeColor.values()[i].toString() + "_bow", bsp.modLoc("block/ribbon_bow"))
+					.texture("0",
+							bsp.modLoc("block/ribbon/" + DyeColor.values()[i].toString().toLowerCase() + "_ribbon")));
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {
 			for (int c = 0; c < DyeColor.values().length; c++) {
 				int o = (i * DyeColor.values().length) + c;
 				Block b = MOLDED_WALLPAPER_BLOCKS.get(o).get();
-
-				// ExtraDelight.logger.error(b.getName().getString() + "_" + o);
 
 				bsp.getVariantBuilder(b).partialState().with(MoldingBlock.HALF, Direction.UP).modelForState()
 						.modelFile(bsp.models()
@@ -328,15 +361,15 @@ public class AestheticBlocks {
 			if (WOOD.values()[i].toString() == "crimson")
 				tmp.getBuilder(WREATHS.get(i).getId().getPath())
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
-						.texture("0", tmp.mcLoc("block/nether_wart_block"));
+						.texture("all", tmp.mcLoc("block/nether_wart_block"));
 			else if (WOOD.values()[i].toString() == "warped")
 				tmp.getBuilder(WREATHS.get(i).getId().getPath())
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
-						.texture("0", tmp.mcLoc("block/warped_wart_block"));
+						.texture("all", tmp.mcLoc("block/warped_wart_block"));
 			else
 				tmp.getBuilder(WREATHS.get(i).getId().getPath())
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
-						.texture("0", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"));
+						.texture("all", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"));
 		}
 
 		for (int i = 0; i < DyeColor.values().length; i++) {
@@ -344,6 +377,10 @@ public class AestheticBlocks {
 					.parent(new ModelFile.UncheckedModelFile(
 							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + ForgeRegistries.BLOCKS
 									.getKey(((BlockItem) WALLPAPER_ITEMS.get(i).get()).getBlock()).getPath())));
+
+			tmp.getBuilder(BOWS.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/ribbon_bow")))
+					.texture("0", tmp.modLoc("block/ribbon/" + DyeColor.values()[i].toString() + "_ribbon"));
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {

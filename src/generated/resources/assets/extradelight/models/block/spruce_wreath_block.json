@@ -2,7 +2,6 @@
   "parent": "extradelight:block/wreath",
   "render_type": "minecraft:cutout",
   "textures": {
-    "all": "minecraft:block/spruce_leaves",
-    "particle": "minecraft:block/spruce_leaves"
+    "all": "minecraft:block/spruce_leaves"
   }
 }

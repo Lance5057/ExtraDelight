@@ -1,6 +1,6 @@
 {
   "parent": "extradelight:block/wreath",
   "textures": {
-    "0": "minecraft:block/spruce_leaves"
+    "all": "minecraft:block/spruce_leaves"
   }
 }
