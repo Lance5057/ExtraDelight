@@ -1540,10 +1540,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stuffed_cactus"));
 
 		// Halloween Start!
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.CANDY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER)
-				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES))
-				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy"));
+//		CookingPotRecipeBuilder
+//				.cookingPotRecipe(ExtraDelightItems.CANDY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER)
+//				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES))
+//				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.CARAMEL_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
@@ -1561,7 +1561,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.CANDY_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.STICK)
-				.addIngredient(Items.APPLE).addIngredient(ExtraDelightItems.CANDY.get(), 2)
+				.addIngredient(Items.APPLE).addIngredient(ExtraDelightTags.CANDY).addIngredient(ExtraDelightTags.CANDY)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_apple"));
 
 		CookingPotRecipeBuilder
@@ -1579,7 +1579,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.CANDY_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.STICK)
-				.addIngredient(Items.GOLDEN_APPLE).addIngredient(ExtraDelightItems.CANDY.get(), 2)
+				.addIngredient(Items.GOLDEN_APPLE).addIngredient(ExtraDelightTags.CANDY)
+				.addIngredient(ExtraDelightTags.CANDY)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_golden_apple"));
 
 		CookingPotRecipeBuilder

@@ -240,4 +240,5 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> JELLY = modTag("jelly");
 
 	public static final TagKey<Item> CORN_CONFISCATE = modTag("corn_dim_confiscate");
+	public static final TagKey<Item> CANDY = forgeTag("candy");;
 }

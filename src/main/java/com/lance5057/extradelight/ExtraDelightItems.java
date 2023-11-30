@@ -867,8 +867,6 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.CUSTARD)));
 	public static final RegistryObject<Item> CARAMEL_POPSICLE = ITEMS.register("caramel_popsicle",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.POPSICLE)));
-	public static final RegistryObject<Item> CANDY = ITEMS.register("candy",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
 
 	public static final RegistryObject<Item> CARAMEL_CHEESECAKE_SLICE = ITEMS.register("caramel_cheescake_slice",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(FoodValues.PIE_SLICE)));
@@ -1091,37 +1089,67 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> GINGER_CUTTING = ITEMS.register("ginger_cutting",
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.GINGER_CROP.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
-	
+
 	public static final RegistryObject<Item> FROSTING_WHITE = ITEMS.register("frosting_white",
 			() -> new FrostingItem());
 	public static final RegistryObject<Item> FROSTING_LIGHT_GRAY = ITEMS.register("frosting_light_gray",
 			() -> new FrostingItem());
-	public static final RegistryObject<Item> FROSTING_GRAY = ITEMS.register("frosting_gray",
-			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_GRAY = ITEMS.register("frosting_gray", () -> new FrostingItem());
 	public static final RegistryObject<Item> FROSTING_BLACK = ITEMS.register("frosting_black",
 			() -> new FrostingItem());
 	public static final RegistryObject<Item> FROSTING_BROWN = ITEMS.register("frosting_brown",
 			() -> new FrostingItem());
-	public static final RegistryObject<Item> FROSTING_RED = ITEMS.register("frosting_red",
-			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_RED = ITEMS.register("frosting_red", () -> new FrostingItem());
 	public static final RegistryObject<Item> FROSTING_ORANGE = ITEMS.register("frosting_orange",
 			() -> new FrostingItem());
 	public static final RegistryObject<Item> FROSTING_YELLOW = ITEMS.register("frosting_yellow",
 			() -> new FrostingItem());
-	public static final RegistryObject<Item> FROSTING_LIME = ITEMS.register("frosting_lime",
-			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_LIME = ITEMS.register("frosting_lime", () -> new FrostingItem());
 	public static final RegistryObject<Item> FROSTING_GREEN = ITEMS.register("frosting_green",
 			() -> new FrostingItem());
-	public static final RegistryObject<Item> FROSTING_CYAN = ITEMS.register("frosting_cyan",
-			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_CYAN = ITEMS.register("frosting_cyan", () -> new FrostingItem());
 	public static final RegistryObject<Item> FROSTING_LIGHT_BLUE = ITEMS.register("frosting_light_blue",
 			() -> new FrostingItem());
-	public static final RegistryObject<Item> FROSTING_BLUE = ITEMS.register("frosting_blue",
-			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_BLUE = ITEMS.register("frosting_blue", () -> new FrostingItem());
 	public static final RegistryObject<Item> FROSTING_PURPLE = ITEMS.register("frosting_purple",
 			() -> new FrostingItem());
 	public static final RegistryObject<Item> FROSTING_MAGENTA = ITEMS.register("frosting_magenta",
 			() -> new FrostingItem());
-	public static final RegistryObject<Item> FROSTING_PINK = ITEMS.register("frosting_pink",
-			() -> new FrostingItem());
+	public static final RegistryObject<Item> FROSTING_PINK = ITEMS.register("frosting_pink", () -> new FrostingItem());
+
+	public static final RegistryObject<Item> CANDY_WHITE = ITEMS.register("candy_white",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_LIGHT_GRAY = ITEMS.register("candy_light_gray",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_GRAY = ITEMS.register("candy_gray",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_BLACK = ITEMS.register("candy_black",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_BROWN = ITEMS.register("candy_brown",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_RED = ITEMS.register("candy_red",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_ORANGE = ITEMS.register("candy_orange",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_YELLOW = ITEMS.register("candy_yellow",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_LIME = ITEMS.register("candy_lime",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_GREEN = ITEMS.register("candy_green",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_CYAN = ITEMS.register("candy_cyan",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_LIGHT_BLUE = ITEMS.register("candy_light_blue",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_BLUE = ITEMS.register("candy_blue",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_PURPLE = ITEMS.register("candy_purple",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_MAGENTA = ITEMS.register("candy_magenta",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+	public static final RegistryObject<Item> CANDY_PINK = ITEMS.register("candy_pink",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SUGAR)));
+
+	public static final RegistryObject<BlockItem> CANDY_BOWL_ITEM = ITEMS.register("candy_bowl_item",
+			() -> new BlockItem(ExtraDelightBlocks.CANDY_BOWL.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 }
