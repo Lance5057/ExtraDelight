@@ -41,9 +41,10 @@ public class ExtraDelightBlockEntities {
 			() -> BlockEntityType.Builder
 					.of(SpiceRackEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS_FULL))
 					.build(null));
-	
+
 	public static final RegistryObject<BlockEntityType<WreathEntity>> WREATH = TILES.register("wreath",
-			() -> BlockEntityType.Builder.of(WreathEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS))
+			() -> BlockEntityType.Builder
+					.of(WreathEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS))
 					.build(null));
 
 //	public static final RegistryObject<BlockEntityType<HalfCabinetEntity>> HALF_CABINET = TILES.register("half_cabinet",
@@ -63,15 +64,14 @@ public class ExtraDelightBlockEntities {
 			.register("mixing_bowl", () -> BlockEntityType.Builder
 					.of(MixingBowlBlockEntity::new, ExtraDelightBlocks.MIXING_BOWL.get()).build(null));
 
-	public static final RegistryObject<BlockEntityType<DryingRackBlockEntity>> DRYING_RACK = TILES 
+	public static final RegistryObject<BlockEntityType<DryingRackBlockEntity>> DRYING_RACK = TILES
 			.register("drying_rack", () -> BlockEntityType.Builder
 					.of(DryingRackBlockEntity::new, ExtraDelightBlocks.DRYING_RACK.get()).build(null));
 
 	public static final RegistryObject<BlockEntityType<CornHuskDollBlockEntity>> CORN_HUSK_DOLL = TILES
 			.register("corn_husk_doll", () -> BlockEntityType.Builder
 					.of(CornHuskDollBlockEntity::new, AestheticBlocks.CORN_HUSK_DOLL.get()).build(null));
-	
-	public static final RegistryObject<BlockEntityType<CandyBowlEntity>> CANDY_BOWL = TILES
-			.register("candy_bowl", () -> BlockEntityType.Builder
-					.of(CandyBowlEntity::new, ExtraDelightBlocks.CANDY_BOWL.get()).build(null));
+
+	public static final RegistryObject<BlockEntityType<CandyBowlEntity>> CANDY_BOWL = TILES.register("candy_bowl",
+			() -> BlockEntityType.Builder.of(CandyBowlEntity::new, ExtraDelightBlocks.CANDY_BOWL.get()).build(null));
 }

@@ -6,12 +6,16 @@ import javax.annotation.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.util.BlockEntityUtils;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -58,19 +62,49 @@ public class CandyBowlEntity extends BlockEntity {
 
 	public void insertItem(ItemStack stack) {
 		handler.ifPresent(i -> {
-			int s = getEmptySlot(i);
-			if (s != -1) {
-				i.insertItem(s, stack, false);
-			}
+//			int s = getEmptySlot(i);
+//			if (s != -1) {
+//				stack.setCount(i.insertItem(s, stack, false).getCount());
+//			}
+
+			BlockEntityUtils.Inventory.insertItem(i, stack, NUM_SLOTS);
+			this.updateInventory();
 		});
 	}
 
-	private int getEmptySlot(@NotNull IItemHandlerModifiable i) {
-		for (int j = 0; j < NUM_SLOTS; j++) {
-			if (i.getStackInSlot(j) == ItemStack.EMPTY)
-				return j;
-		}
-		return -1;
+	public void extractItem(Player p, InteractionHand h) {
+		handler.ifPresent(i -> {
+//			int j = getLastFullSlot(i);
+//			if (j != -1) {
+//				ItemStack itemStack = i.extractItem(j, 1, false);
+//				p.addItem(itemStack);
+//				return;
+//			}
+			BlockEntityUtils.Inventory.extractItem(p, i, NUM_SLOTS);
+			this.updateInventory();
+		});
+	}
+
+//	private int getEmptySlot(@NotNull IItemHandlerModifiable i) {
+//		for (int j = 0; j < NUM_SLOTS; j++) {
+//			if (i.getStackInSlot(j) == ItemStack.EMPTY)
+//				return j;
+//		}
+//		return -1;
+//	}
+//
+//	private int getLastFullSlot(@NotNull IItemHandlerModifiable i) {
+//		for (int j = 0; j < NUM_SLOTS; j++) {
+//			if (i.getStackInSlot(j) == ItemStack.EMPTY)
+//				return j - 1;
+//		}
+//		return -1;
+//	}
+
+	public void updateInventory() {
+		requestModelDataUpdate();
+		this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
+		this.setChanged();
 	}
 
 	@Override
@@ -129,4 +163,5 @@ public class CandyBowlEntity extends BlockEntity {
 		super.saveAdditional(nbt);
 		writeNBT(nbt);
 	}
+
 }

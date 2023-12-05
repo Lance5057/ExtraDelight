@@ -37,6 +37,28 @@ public class ItemModels extends ItemModelProvider {
 				.texture("0", modLoc("block/vinegarpot"));
 		getBuilder(ExtraDelightItems.GRATER.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/grater")));
+
+		getBuilder(ExtraDelightItems.OFFSET_SPATULA_DIAMOND.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
+				.texture("0", modLoc("item/offset_spatula_diamond"));
+		getBuilder(ExtraDelightItems.OFFSET_SPATULA_GOLD.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
+				.texture("0", modLoc("item/offset_spatula_gold"));
+		getBuilder(ExtraDelightItems.OFFSET_SPATULA_IRON.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
+				.texture("0", modLoc("item/offset_spatula_iron"));
+		getBuilder(ExtraDelightItems.OFFSET_SPATULA_NETHERITE.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
+				.texture("0", modLoc("item/offset_spatula_netherite"));
+		getBuilder(ExtraDelightItems.OFFSET_SPATULA_WOOD.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(
+						new ResourceLocation(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
+				.texture("0", modLoc("item/offset_spatula_wood"));
+
 		getBuilder(ExtraDelightItems.DRYING_RACK.getId().getPath()).parent(
 				new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/drying_rack")));
 
@@ -530,6 +552,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CORN_CRATE, "corn_crate");
 		forBlockItem(ExtraDelightItems.CORN_HUSK_BUNDLE, "corn_husk_bundle");
 		forBlockItem(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE, "dried_corn_husk_bundle");
+		forBlockItem(ExtraDelightItems.CORN_COB_BUNDLE, "dried_corn_husk_bundle");
 
 		// Holiday
 		forBlockItem(ExtraDelightItems.STRIPPED_CINNAMON_LOG, "stripped_cinnamon_log");
@@ -605,10 +628,10 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.PUMPKIN_COOKIE_BLOCK, "pumpkin_cookie_block");
 		forBlockItem(ExtraDelightItems.SUGAR_COOKIE_BLOCK, "sugar_cookie_block");
 		forBlockItem(ExtraDelightItems.SWEET_BERRY_COOKIE_BLOCK, "sweet_berry_cookie_block");
-		
+
 		forItem(ExtraDelightItems.GINGER, "ginger");
 		forItem(ExtraDelightItems.GINGER_CUTTING, "ginger_cutting");
-		
+
 		forItem(ExtraDelightItems.FROSTING_WHITE, "frosting_white");
 		forItem(ExtraDelightItems.FROSTING_ORANGE, "frosting_orange");
 		forItem(ExtraDelightItems.FROSTING_MAGENTA, "frosting_magenta");
@@ -625,6 +648,58 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.FROSTING_GREEN, "frosting_green");
 		forItem(ExtraDelightItems.FROSTING_RED, "frosting_red");
 		forItem(ExtraDelightItems.FROSTING_BLACK, "frosting_black");
+
+		forItem(ExtraDelightItems.CANDY_WHITE, "candy_white");
+		forItem(ExtraDelightItems.CANDY_ORANGE, "candy_orange");
+		forItem(ExtraDelightItems.CANDY_MAGENTA, "candy_magenta");
+		forItem(ExtraDelightItems.CANDY_LIGHT_BLUE, "candy_light_blue");
+		forItem(ExtraDelightItems.CANDY_YELLOW, "candy_yellow");
+		forItem(ExtraDelightItems.CANDY_LIME, "candy_lime");
+		forItem(ExtraDelightItems.CANDY_PINK, "candy_pink");
+		forItem(ExtraDelightItems.CANDY_GRAY, "candy_gray");
+		forItem(ExtraDelightItems.CANDY_LIGHT_GRAY, "candy_light_gray");
+		forItem(ExtraDelightItems.CANDY_CYAN, "candy_cyan");
+		forItem(ExtraDelightItems.CANDY_PURPLE, "candy_purple");
+		forItem(ExtraDelightItems.CANDY_BLUE, "candy_blue");
+		forItem(ExtraDelightItems.CANDY_BROWN, "candy_brown");
+		forItem(ExtraDelightItems.CANDY_GREEN, "candy_green");
+		forItem(ExtraDelightItems.CANDY_RED, "candy_red");
+		forItem(ExtraDelightItems.CANDY_BLACK, "candy_black");
+
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_WHITE,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_white"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_ORANGE,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_orange"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_MAGENTA,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_magenta"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_BLUE,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_light_blue"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_YELLOW,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_yellow"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIME,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_lime"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_PINK,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_pink"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_GRAY,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_grey"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_GRAY,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_light_grey"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_CYAN,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_cyan"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_PURPLE,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_purple"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_BLUE,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_blue"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_BROWN,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_brown"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_GREEN,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_green"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_RED,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_red"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_BLACK,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_black"));
+
+		forBlockItem(ExtraDelightItems.CANDY_BOWL_ITEM, "candy_bowl");
 
 		AestheticBlocks.itemModel(this);
 	}

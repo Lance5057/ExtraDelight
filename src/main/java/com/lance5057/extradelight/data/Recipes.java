@@ -15,6 +15,7 @@ import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
 import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -71,8 +72,99 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		dryingRackRecipes(consumer);
 		doughShapeRecipes(consumer);
 		feastRecipes(consumer);
+		toolOnBlockRecipes(consumer);
 
 		AestheticBlocks.Recipes(consumer);
+	}
+
+	private void toolOnBlockRecipes(Consumer<FinishedRecipe> consumer) {
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_WHITE.get()), ExtraDelightItems.GINGERBREAD_BLOCK_WHITE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_WHITE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_white"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_LIGHT_GRAY.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_GRAY.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_LIGHT_GRAY.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_light_gray"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_GRAY.get()), ExtraDelightItems.GINGERBREAD_BLOCK_GRAY.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_GRAY.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_gray"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_BROWN.get()), ExtraDelightItems.GINGERBREAD_BLOCK_BROWN.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_BROWN.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_brown"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_RED.get()), ExtraDelightItems.GINGERBREAD_BLOCK_RED.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_RED.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_red"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_ORANGE.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_ORANGE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_ORANGE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_orange"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_YELLOW.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_YELLOW.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_YELLOW.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_yellow"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_LIME.get()), ExtraDelightItems.GINGERBREAD_BLOCK_LIME.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_LIME.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_lime"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_GREEN.get()), ExtraDelightItems.GINGERBREAD_BLOCK_GREEN.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_GREEN.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_green"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_CYAN.get()), ExtraDelightItems.GINGERBREAD_BLOCK_CYAN.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_CYAN.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_cyan"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_LIGHT_BLUE.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_BLUE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_LIGHT_BLUE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_light_blue"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_BLUE.get()), ExtraDelightItems.GINGERBREAD_BLOCK_BLUE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_BLUE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_blue"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_PURPLE.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_PURPLE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_PURPLE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_purple"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_MAGENTA.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_MAGENTA.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_MAGENTA.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_magenta"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_PINK.get()), ExtraDelightItems.GINGERBREAD_BLOCK_PINK.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_PINK.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_pink"));
+
 	}
 
 	private void feastRecipes(Consumer<FinishedRecipe> consumer) {

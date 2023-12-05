@@ -1,5 +1,6 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.StrippableLog;
@@ -306,6 +307,8 @@ public class ExtraDelightBlocks {
 			() -> new HayBlock(Block.Properties.copy(Blocks.HAY_BLOCK).color(MaterialColor.TERRACOTTA_LIGHT_GREEN)));
 	public static final RegistryObject<HayBlock> DRIED_CORN_HUSK_BUNDLE = BLOCKS.register("dried_corn_husk_bundle",
 			() -> new HayBlock(Block.Properties.copy(Blocks.HAY_BLOCK).color(MaterialColor.TERRACOTTA_YELLOW)));
+	public static final RegistryObject<HayBlock> CORN_COB_BUNDLE = BLOCKS.register("corn_cob_bundle",
+			() -> new HayBlock(Block.Properties.copy(Blocks.HAY_BLOCK).color(MaterialColor.TERRACOTTA_YELLOW)));
 
 	// Winter start!
 
@@ -341,7 +344,42 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<GingerCrop> GINGER_CROP = BLOCKS.register("ginger_crop",
 			() -> new GingerCrop(Block.Properties.copy(Blocks.WHEAT)));
-	
+
 	public static final RegistryObject<CandyBowlBlock> CANDY_BOWL = BLOCKS.register("candy_bowl",
 			() -> new CandyBowlBlock(Block.Properties.copy(Blocks.GLASS)));
+
+	public static RegistryObject<FrostableBlock> WHITE_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"white_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> LIGHT_GRAY_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("light_gray_frosted_gingerbread_block",
+					() -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> GRAY_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"gray_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> BLACK_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"black_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> BROWN_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"brown_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> RED_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"red_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> ORANGE_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"orange_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> YELLOW_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"yellow_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> LIME_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"lime_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> GREEN_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"green_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> CYAN_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"cyan_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> LIGHT_BLUE_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("light_blue_frosted_gingerbread_block",
+					() -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> BLUE_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"blue_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> PURPLE_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"purple_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> MAGENTA_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"magenta_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static RegistryObject<FrostableBlock> PINK_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"pink_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 }

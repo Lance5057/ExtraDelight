@@ -30,7 +30,7 @@ public class FeastRecipe extends SingleItemRecipe {
 	public BlockItem getFeast() {
 		return feast;
 	}
-	
+
 	public ItemStack getFeastStack() {
 		return new ItemStack(feast);
 	}

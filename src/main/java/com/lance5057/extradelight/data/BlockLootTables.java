@@ -145,6 +145,7 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.CORN_CRATE.get());
 		this.dropSelf(ExtraDelightBlocks.CORN_HUSK_BUNDLE.get());
 		this.dropSelf(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get());
+		this.dropSelf(ExtraDelightBlocks.CORN_COB_BUNDLE.get());
 
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_LOG.get());
 		this.dropSelf(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
@@ -159,6 +160,25 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.PUMPKIN_COOKIE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.SUGAR_COOKIE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
+
+		this.dropSelf(ExtraDelightBlocks.CANDY_BOWL.get());
+
+		this.dropSelf(ExtraDelightBlocks.BLACK_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.BLUE_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.BROWN_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.CYAN_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.GRAY_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.GREEN_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.LIGHT_BLUE_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.LIGHT_GRAY_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.LIME_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.MAGENTA_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.ORANGE_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.PINK_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.PURPLE_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.RED_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.WHITE_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.YELLOW_FROSTED_GINGERBREAD_BLOCK.get());
 
 		LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.GINGER_CROP.get())

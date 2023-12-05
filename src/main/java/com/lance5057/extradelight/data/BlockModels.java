@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -150,6 +151,7 @@ public class BlockModels extends BlockStateProvider {
 
 		this.axisBlock(ExtraDelightBlocks.CORN_HUSK_BUNDLE.get());
 		this.axisBlock(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get());
+		this.axisBlock(ExtraDelightBlocks.CORN_COB_BUNDLE.get());
 
 		this.logBlock(ExtraDelightBlocks.CINNAMON_LOG.get());
 		this.logBlock(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
@@ -166,6 +168,35 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
 
 		this.cropCrossBlock(ExtraDelightBlocks.GINGER_CROP.get(), "ginger");
+		this.simpleBlock(ExtraDelightBlocks.CANDY_BOWL.get(),
+				models().getExistingFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/candy_bowl")));
+
+		this.frostableBlock(ExtraDelightBlocks.WHITE_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
+				"white");
+		this.frostableBlock(ExtraDelightBlocks.LIGHT_GRAY_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
+				"light_grey");
+		this.frostableBlock(ExtraDelightBlocks.GRAY_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block", "grey");
+		this.frostableBlock(ExtraDelightBlocks.BROWN_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
+				"brown");
+		this.frostableBlock(ExtraDelightBlocks.BLACK_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
+				"black");
+		this.frostableBlock(ExtraDelightBlocks.RED_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block", "red");
+		this.frostableBlock(ExtraDelightBlocks.ORANGE_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
+				"orange");
+		this.frostableBlock(ExtraDelightBlocks.YELLOW_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
+				"yellow");
+		this.frostableBlock(ExtraDelightBlocks.LIME_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block", "lime");
+		this.frostableBlock(ExtraDelightBlocks.GREEN_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
+				"green");
+		this.frostableBlock(ExtraDelightBlocks.CYAN_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block", "cyan");
+		this.frostableBlock(ExtraDelightBlocks.LIGHT_BLUE_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
+				"light_blue");
+		this.frostableBlock(ExtraDelightBlocks.BLUE_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block", "blue");
+		this.frostableBlock(ExtraDelightBlocks.PURPLE_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
+				"purple");
+		this.frostableBlock(ExtraDelightBlocks.MAGENTA_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
+				"magenta");
+		this.frostableBlock(ExtraDelightBlocks.PINK_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block", "pink");
 
 		AestheticBlocks.blockModel(this);
 	}
@@ -281,6 +312,22 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
+	public void frostableBlock(FrostableBlock block, String path, String color) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(FrostableBlock.STYLE);
+
+			String suffix = FrostableBlock.Styles.values()[servings] + "_";
+
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.withExistingParent(path + "_" + suffix.toLowerCase() + color,
+									modLoc("block/double_texture"))
+							.texture("0", modLoc(path))
+							.texture("1", modLoc("block/frosting_colors/" + suffix.toLowerCase() + color)))
+					.build();
+		});
+	}
+
 	public void stewBlock(RecipeFeastBlock block, String texture) {
 		getVariantBuilder(block).forAllStates(state -> {
 			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
@@ -348,11 +395,9 @@ public class BlockModels extends BlockStateProvider {
 			int age = state.getValue(CornBottom.AGE);
 			String suffix = "_stage" + age;
 
-			return ConfiguredModel.builder()
-					.modelFile(models()
-							.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
-									mcLoc("block/cross"))
-							.texture("cross", modLoc("block/crops/" + name + "/" + name + suffix)).renderType("cutout"))
+			return ConfiguredModel.builder().modelFile(models()
+					.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix, mcLoc("block/cross"))
+					.texture("cross", modLoc("block/crops/" + name + "/" + name + suffix)).renderType("cutout"))
 					.build();
 		});
 

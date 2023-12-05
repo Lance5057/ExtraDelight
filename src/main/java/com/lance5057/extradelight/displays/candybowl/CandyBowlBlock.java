@@ -3,6 +3,7 @@ package com.lance5057.extradelight.displays.candybowl;
 import java.util.stream.IntStream;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 
 import net.minecraft.core.BlockPos;
@@ -11,10 +12,12 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -25,10 +28,14 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-public class CandyBowlBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
+public class CandyBowlBlock extends Block implements EntityBlock {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
+	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 5.0D, 12.0D);
 
 	public CandyBowlBlock(Properties pProperties) {
 		super(pProperties);
@@ -41,7 +48,11 @@ public class CandyBowlBlock extends BaseEntityBlock implements SimpleWaterlogged
 		if (!level.isClientSide) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof CandyBowlEntity ent) {
-				ent.insertItem(player.getItemInHand(hand));
+
+				if (player.getItemInHand(hand).isEmpty())
+					ent.extractItem(player, hand);
+				else if (player.getItemInHand(hand).is(ExtraDelightTags.CANDY_BOWL_VALID))
+					ent.insertItem(player.getItemInHand(hand));
 			}
 		}
 		return InteractionResult.SUCCESS;
@@ -61,6 +72,16 @@ public class CandyBowlBlock extends BaseEntityBlock implements SimpleWaterlogged
 	@Override
 	public RenderShape getRenderShape(BlockState pState) {
 		return RenderShape.MODEL;
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+		return SHAPE;
+	}
+
+	@Override
+	public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+		return SHAPE;
 	}
 
 	@Override

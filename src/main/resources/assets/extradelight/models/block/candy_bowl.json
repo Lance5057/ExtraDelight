@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "cutout",
 	"textures": {
 		"0": "extradelight:block/candy_bowl",
 		"particle": "extradelight:block/candy_bowl"

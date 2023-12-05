@@ -45,10 +45,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:candy"
-        },
-        {
-          "type": "minecraft:item",
           "name": "extradelight:caramel_candy"
         }
       ],

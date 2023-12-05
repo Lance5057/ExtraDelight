@@ -1,5 +1,6 @@
-// 1.19.2	2023-10-24T18:28:14.7327915	Tags for minecraft:item
+// 1.19.2	2023-12-03T23:51:43.0535209	Tags for minecraft:item
 4a3061524de4471a4ab72261f6d48d7924b60789 data/extradelight/tags/items/baking_trays.json
+82fd5f552cb91813165a0bd874015406afe15f2b data/extradelight/tags/items/candy_bowl_valid.json
 d66647ad5deec92ba941c7dffec33a9986028e94 data/extradelight/tags/items/corn_dim_confiscate.json
 241fbe7e67bee8a47ff80dbdccae69f91ffd0743 data/extradelight/tags/items/frying_oil.json
 319328c324306895a1e52165654ee2d625f8c303 data/extradelight/tags/items/jelly.json
@@ -20,6 +21,7 @@ a3e40d195bb00e2a4e7afc2e30c97d7c44e7bfcb data/forge/tags/items/apple/sliced.json
 d14710b6121edb04c184b88cb21ce8d106aafd32 data/forge/tags/items/beef/raw.json
 93067fb98f2e47f2880078b7ca96c7c8bf5ba887 data/forge/tags/items/bread/sliced.json
 e5705a9f78eb7df60504609b9c5142c9fb2a6bbe data/forge/tags/items/butter.json
+5ae7c497bab0f7f94f80bc9ae41f0e2859656d81 data/forge/tags/items/candy.json
 8eadad9639cd47ef0e6f44a7d23eb3d2665e37a8 data/forge/tags/items/carrot/grated.json
 d270b13f293c6940c038f56c4b90f54297ef25d3 data/forge/tags/items/cheese.json
 097caf9dbddbaefd5ed1d939219e0e8a359cc68c data/forge/tags/items/condiment.json
@@ -46,6 +48,7 @@ dac730db8e085a2bf6b01900c69ca446b767464b data/forge/tags/items/meat.json
 59f58ea6f8b85deda96c784c66ca9699db493df3 data/forge/tags/items/meat/cooked.json
 212df42b76dbfd28f47f99244d2ae386f6e543f8 data/forge/tags/items/meat/raw.json
 f2ced66709f0ddb2dec0a6ba1b2b5a2b4579f991 data/forge/tags/items/mortars.json
+56d5a085d4594a61400305db8f5b947f5f67aa1f data/forge/tags/items/offset_spatula.json
 0e6ff56f33d80847c56995ddeff2d1a16c74949d data/forge/tags/items/onion/sliced.json
 b3459e637edd1eca0b39324b66872499f21d1548 data/forge/tags/items/pestles.json
 44a543db9efa96e8eb379c1cbae69e5038d12408 data/forge/tags/items/potato/grated.json
