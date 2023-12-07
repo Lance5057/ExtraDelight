@@ -84,7 +84,7 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 		int startPlayerInvY = startY * 4 + 30;
 		for (int row = 0; row < 3; ++row) {
 			for (int column = 0; column < 9; ++column) {
-				this.addSlot(new Slot(playerInventory, 12 + (row * 9) + column, startX + (column * borderSlotSize),
+				this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, startX + (column * borderSlotSize),
 						startPlayerInvY + (row * borderSlotSize)));
 			}
 		}

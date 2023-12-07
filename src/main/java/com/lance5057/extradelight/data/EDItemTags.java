@@ -142,6 +142,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.PROCESSED_VEG);
 
 		tag(ForgeTags.COOKED_EGGS).add(ExtraDelightItems.BOILED_EGG.get(), ExtraDelightItems.SCRAMBLED_EGGS.get());
+		
+		tag(ExtraDelightTags.CACTUS).add(ExtraDelightItems.CACTUS.get());
 
 		tag(ExtraDelightTags.RICEBALL_FILLING)
 				.add(ExtraDelightItems.EGG_SALAD.get(), ExtraDelightItems.SCRAMBLED_EGGS.get(),

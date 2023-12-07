@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-19T10:01:34.2954289	Recipes
+// 1.19.2	2023-12-07T13:00:30.2168529	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 7f68d9c8875e68adbfd9db6129a8e9c2979cf290 data/extradelight/advancements/recipes/extradelight.aesthetic/acacia_dried_corn_fence.json
@@ -751,7 +751,7 @@ e26acb0d0537124cb9ecccaa7e9c6ed812a859b6 data/extradelight/recipes/apple_crisp_b
 25c71b6f5c3528c293d5593de5804d8b8a220939 data/extradelight/recipes/apple_jam.json
 2e1b44fda3c47bffd75915f8e3cb8d91bc181e27 data/extradelight/recipes/apple_pie.json
 aec72b9559ac6f4ea84300acfcff9844871bf555 data/extradelight/recipes/apple_pie_jam.json
-586586319916f26adc0f9dacbe6b5328c738bc76 data/extradelight/recipes/apple_sauce.json
+17b8387441766139bb5860f22acd597f795a0674 data/extradelight/recipes/apple_sauce.json
 af49cc05470b2c64461842204a9d2e65f309e4c5 data/extradelight/recipes/bacon1.json
 3f6cdd0637277df53aadf8cf268e6b28b07312ee data/extradelight/recipes/bacon2.json
 be51065d2acb743e8b8c14e5cd856424419d96e2 data/extradelight/recipes/bacon3.json

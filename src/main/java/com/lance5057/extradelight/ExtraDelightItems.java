@@ -713,7 +713,7 @@ public class ExtraDelightItems {
 
 	// Fish
 	public static final RegistryObject<Item> FISH_FLAKES = ITEMS.register("fish_flakes",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.BOWL)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> FISH_CAKES = ITEMS.register("fish_cakes",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.FISH_CAKES)));
 	public static final RegistryObject<Item> FISH_AND_CHIPS = ITEMS.register("fish_chips",

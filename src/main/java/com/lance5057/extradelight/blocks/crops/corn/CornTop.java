@@ -298,21 +298,21 @@ public class CornTop extends CropBlock {
 		pBuilder.add(AGE, DIMENSION, DENSE);
 	}
 
-	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
-			BlockHitResult hit) {
-		if (!state.getValue(CornTop.DIMENSION))
-			if (this.isMaxAge(state)) {
-				level.setBlock(pos, this.getStateForAge(0), 2);
-				ItemStack corn = new ItemStack(ExtraDelightItems.UNSHUCKED_CORN.get(), 4);
-				if (!player.getInventory().add(corn)) {
-					player.drop(corn, false);
-				}
-
-				return InteractionResult.SUCCESS;
-			}
-		return InteractionResult.PASS;
-	}
+//	@Override
+//	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
+//			BlockHitResult hit) {
+//		if (!state.getValue(CornTop.DIMENSION))
+//			if (this.isMaxAge(state)) {
+//				level.setBlock(pos, this.getStateForAge(0), 2);
+//				ItemStack corn = new ItemStack(ExtraDelightItems.UNSHUCKED_CORN.get(), 4);
+//				if (!player.getInventory().add(corn)) {
+//					player.drop(corn, false);
+//				}
+//
+//				return InteractionResult.SUCCESS;
+//			}
+//		return InteractionResult.PASS;
+//	}
 
 	@Override
 	public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {

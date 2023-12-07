@@ -74,6 +74,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> SLICED_APPLE = forgeTag("apple/sliced");
 	
 	public static final TagKey<Item> CORN = forgeTag("vegetable/corn");
+	
+	public static final TagKey<Item> CACTUS = forgeTag("vegetable/cactus");
 
 	// Bread
 	public static final TagKey<Item> BREAD_SLICE = forgeTag("bread/sliced");

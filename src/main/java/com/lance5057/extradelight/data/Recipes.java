@@ -1449,7 +1449,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "glazed_carrot"));
 
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.APPLE_SAUCE.get(), 3, CookingRecipes.SLOW_COOKING, 0.35F,
+				.cookingPotRecipe(ExtraDelightItems.APPLE_SAUCE.get(), 4, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.BOWL)
 				.addIngredient(Ingredient.of(Items.APPLE), 3).addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER))
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "apple_sauce"));

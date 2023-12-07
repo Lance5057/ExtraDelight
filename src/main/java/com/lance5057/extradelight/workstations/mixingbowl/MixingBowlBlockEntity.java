@@ -23,6 +23,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -262,12 +263,13 @@ public class MixingBowlBlockEntity extends BlockEntity {
 					level.playSound(player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
 				} else {
 					this.containerItem = recipe.getUsedItem().copy();
-					
+
 					ItemStack i = recipe.getResultItem().copy();
-					
+
 					i.onCraftedBy(player.level, player, 1);
-					net.minecraftforge.event.ForgeEventFactory.firePlayerCraftingEvent(player, i, new RecipeWrapper(inv));
-					
+					net.minecraftforge.event.ForgeEventFactory.firePlayerCraftingEvent(player, i,
+							new RecipeWrapper(inv));
+
 					dropContainers(inv, player);
 					clearItems(inv);
 					inv.setStackInSlot(32, i);
@@ -290,7 +292,10 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 			ItemStack r = inv.extractItem(32, 1, false);
 
-			player.addItem(r);
+			if (!player.addItem(r)) {
+				level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f, getBlockPos().getY() + 0.5f,
+						getBlockPos().getZ() + 0.5f, r, 0, 0, 0));
+			}
 
 			ItemStack h = player.getItemInHand(pHand);
 			h.setCount(h.getCount() - 1);

@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-24T18:28:14.7327915	Tags for minecraft:item
+// 1.19.2	2023-12-07T13:00:30.2548548	Tags for minecraft:item
 4a3061524de4471a4ab72261f6d48d7924b60789 data/extradelight/tags/items/baking_trays.json
 d66647ad5deec92ba941c7dffec33a9986028e94 data/extradelight/tags/items/corn_dim_confiscate.json
 241fbe7e67bee8a47ff80dbdccae69f91ffd0743 data/extradelight/tags/items/frying_oil.json
@@ -56,4 +56,5 @@ ef396669d4dcb2dde067d418235cc2d0102bffe8 data/forge/tags/items/potato/sticks.jso
 13ebe12bf46fa5dc19658973790dd69452308bb3 data/forge/tags/items/spoons.json
 e004a0a3a54e9923f91bdbf68b36a686ff2135d5 data/forge/tags/items/toast.json
 e2523e9ade5a2c2f6c9eeec9e1b681bb357a21cf data/forge/tags/items/tomato/sliced.json
+00fd5e78a0836c96b6cd9ae14b9f0d1facbfd020 data/forge/tags/items/vegetable/cactus.json
 30ada45a48d3e5b7f8d961ae85018a9ae81457ce data/forge/tags/items/vinegar.json
