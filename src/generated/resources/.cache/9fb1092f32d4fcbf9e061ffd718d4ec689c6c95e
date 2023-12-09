@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-19T10:01:34.2954289	Recipes
+// 1.19.2	2023-12-09T09:26:23.249872	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 7f68d9c8875e68adbfd9db6129a8e9c2979cf290 data/extradelight/advancements/recipes/extradelight.aesthetic/acacia_dried_corn_fence.json
@@ -838,10 +838,9 @@ ad852f0e3dcedf4f27d0224a9aadae13ce32d6e1 data/extradelight/recipes/cactus_fire.j
 c378c6e7596a7cfa841a79a75a905f082d2016ba data/extradelight/recipes/cactus_smelt.json
 6b3f8e60b405fa9eeb4d835e7f169328be524afa data/extradelight/recipes/cactus_smoke.json
 dfe04021ad1316b826731883aa5d760d5b74031a data/extradelight/recipes/cactus_soup.json
-6110bf5decdcbc999bac0092ba7c0da8a4413a36 data/extradelight/recipes/candy.json
-4ec4f9247fbe27f014eaa593a88b3cee1049aec8 data/extradelight/recipes/candy_apple.json
+2bf426042c30a335acd7756db17c3572a829ab5e data/extradelight/recipes/candy_apple.json
 e60a040dbde6533c01c9063e82283719d0c88714 data/extradelight/recipes/candy_apple_sugar.json
-f1f24fc921a88f91edb99c67f95477a3a4a361bb data/extradelight/recipes/candy_golden_apple.json
+f42e0a6041d7c40125b0b5872c22011b166ca9b0 data/extradelight/recipes/candy_golden_apple.json
 442c5b67dfaa12647f1f4bdb410ccdc304add584 data/extradelight/recipes/candy_golden_apple_sugar.json
 1e7c87cba3c1f77ae23586c95b50c67cd375e9e5 data/extradelight/recipes/caramel_apple.json
 66eee9b906a50e12439f8232876af88c718ae3bd data/extradelight/recipes/caramel_candy.json

@@ -344,4 +344,33 @@ public class ExtraDelightBlocks {
 	
 	public static final RegistryObject<CandyBowlBlock> CANDY_BOWL = BLOCKS.register("candy_bowl",
 			() -> new CandyBowlBlock(Block.Properties.copy(Blocks.GLASS)));
+	
+	public static final RegistryObject<Block> CANDY_CANE_RED_BLOCK = BLOCKS.register("candy_cane_red_block",
+			() -> new Block(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> CANDY_CANE_GREEN_BLOCK = BLOCKS.register("candy_cane_green_block",
+			() -> new Block(Block.Properties.copy(Blocks.STONE)));
+	
+	public static final RegistryObject<RecipeFeastBlock> CINNAMON_ROLLS = BLOCKS.register("cinnamon_rolls",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), true,
+					pan));
+	public static final RegistryObject<RecipeFeastBlock> MONKEY_BREAD = BLOCKS.register("monkey_bread",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), true,
+					pan));
+	public static final RegistryObject<Block> COFFEE_CAKE = ExtraDelightBlocks.BLOCKS.register("coffee_cake",
+			() -> new CakeBlock(Block.Properties.copy(Blocks.CAKE)));
+	public static final RegistryObject<RecipeFeastBlock> CHRISTMAS_PUDDING = BLOCKS.register("christmas_pudding",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), true,
+					pan));
+	public static final RegistryObject<RecipeFeastBlock> PUNCH = BLOCKS.register("punch",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.GLASS).color(MaterialColor.COLOR_PINK), true,
+					pan));
+	public static final RegistryObject<Block> MILK_TART = ExtraDelightBlocks.BLOCKS.register(
+			"milk_tart",
+			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.MILK_TART_SLICE));
+	public static final RegistryObject<RecipeFeastBlock> MINT_LAMB = BLOCKS.register("mint_lamb",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), true,
+					pan));
+	public static final RegistryObject<RecipeFeastBlock> CHARCUTERIE_BOARD = BLOCKS.register("charcuterie_board",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), true,
+					pan));
 }

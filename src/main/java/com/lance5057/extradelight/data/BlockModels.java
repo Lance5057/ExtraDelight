@@ -166,6 +166,9 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
 
 		this.cropCrossBlock(ExtraDelightBlocks.GINGER_CROP.get(), "ginger");
+		
+		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_GREEN_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_RED_BLOCK.get());
 
 		AestheticBlocks.blockModel(this);
 	}

@@ -1,4 +1,4 @@
-// 1.19.2	2023-11-28T22:43:29.0556756	Item Models: extradelight
+// 1.19.2	2023-12-09T10:01:10.35695	Item Models: extradelight
 d6cec988d96345e08c89e0c2f114a2c1312de993 assets/extradelight/models/item/acacia_dried_corn_fence.json
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
@@ -87,8 +87,11 @@ b0bd5d0a625f139072c9ee43e5758aff91dacdaa assets/extradelight/models/item/bread_s
 dc9131801c5f3b4a426aa6ab72a552b0a8731373 assets/extradelight/models/item/cactus_juice.json
 bb746d3297704458c02e237dfc39449de16380b2 assets/extradelight/models/item/cactus_salad.json
 9799d96430d18b1e8664e424b8630a4d88c48aed assets/extradelight/models/item/cactus_soup.json
-a7184748d261a572ba69655d5324ae3b640ba83b assets/extradelight/models/item/candy.json
 9fff5a4e84299775b79294fb7f3dac1165c4af68 assets/extradelight/models/item/candy_apple.json
+2686750a92b66039367bcfb73d3d7a4bb03a8626 assets/extradelight/models/item/candy_cane_green.json
+16793b061a5089b8fff996652fc34571a74a04b1 assets/extradelight/models/item/candy_cane_green_block.json
+e62cda2aed5c64a7d214685049aeb1ea546048c7 assets/extradelight/models/item/candy_cane_red.json
+a5ac4ba9e8168a2f168e09ba3aab8beacbc32230 assets/extradelight/models/item/candy_cane_red_block.json
 ddfaa5aa39fdb7aa6a2c72beb270a384f7f93b62 assets/extradelight/models/item/candy_golden_apple.json
 8049dfe4dfe23d2e29c659f955c46d19f28774e4 assets/extradelight/models/item/caramel_apple.json
 530bce40cbe713b45b73b7f2b132d5a7e6426950 assets/extradelight/models/item/caramel_candy.json

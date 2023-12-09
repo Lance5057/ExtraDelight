@@ -1,4 +1,4 @@
-// 1.19.2	2023-11-28T18:50:42.4322303	Block States: extradelight
+// 1.19.2	2023-12-09T10:01:10.3259475	Block States: extradelight
 0606f1f30088689a5452fbb7064ac01d1efe1501 assets/extradelight/blockstates/acacia_dried_corn_fence.json
 e59ff0ab2be841ce0a186208c61c6671872c7575 assets/extradelight/blockstates/acacia_knife_block.json
 b53c748ec0e40232b62085300f2468fdee1f61d9 assets/extradelight/blockstates/acacia_molded_black_wallpaper.json
@@ -50,6 +50,8 @@ ab324a3878a73a07ea6b09a2118a0f375fc31625 assets/extradelight/blockstates/birch_s
 46e300d991523459aef0312b07c108c93071c12c assets/extradelight/blockstates/birch_step_stool.json
 ae64ded7d1a2316311543042bdb5b6e3770d4e6c assets/extradelight/blockstates/birch_wreath.json
 1936af5ec1d144dd44260bb543019c5e4e879fde assets/extradelight/blockstates/butter_block.json
+40289421c027e1e055d8b138c8577b6f24b93e33 assets/extradelight/blockstates/candy_cane_green_block.json
+52740caa9b90557b2aee8cf2dec02ec7d1d3b9a1 assets/extradelight/blockstates/candy_cane_red_block.json
 7365a209ae6692a2eb129df5eecc2e6c64e2b376 assets/extradelight/blockstates/caramel_cheesecake.json
 2854b5ab7407360f333057db13bb97ee0c14103d assets/extradelight/blockstates/cheesecake.json
 3a12d426c5400cad7770877a6cd97ae47c3a9d00 assets/extradelight/blockstates/cheese_block.json
@@ -637,6 +639,8 @@ a27b32b2216959d2ffe802bcf334a6460761bda4 assets/extradelight/models/block/block.
 b82aa98bf7557fde197e63981ab5ee9d776687e8 assets/extradelight/models/block/blue_bow.json
 6b693acb8daaf6cb4849a7073e746ae7fa6774df assets/extradelight/models/block/brown_bow.json
 fa5e7c2d3a3002f9017cba809e6a09b43c98819e assets/extradelight/models/block/butter_block.json
+16188fc32f2137e33ef8d4b3867faf9393b3f48b assets/extradelight/models/block/candy_cane_green_block.json
+8c032d6713927e7e8647ee1be254a3b04376fb62 assets/extradelight/models/block/candy_cane_red_block.json
 40ca83bf5a618b9184a2db744eb36c8235274216 assets/extradelight/models/block/caramel_cheesecake.json
 01ceafca82c273fa9b27c4e8621f725a3b7e884b assets/extradelight/models/block/caramel_cheesecake_slice1.json
 d1d06be27e308fa69f050258e1c1cc11fa18c11e assets/extradelight/models/block/caramel_cheesecake_slice2.json
