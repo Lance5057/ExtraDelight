@@ -1108,6 +1108,10 @@ public class ExtraDelightItems {
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.GINGER_CROP.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
+	public static final RegistryObject<Item> MINT = ITEMS.register("mint",
+			() -> new ItemNameBlockItem(ExtraDelightBlocks.MINT_CROP.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
 	public static final RegistryObject<Item> FROSTING_WHITE = ITEMS.register("frosting_white",
 			() -> new FrostingItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<Item> FROSTING_LIGHT_GRAY = ITEMS.register("frosting_light_gray",

@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-04T03:39:50.0201721	Item Models: extradelight
+// 1.19.2	2023-12-05T16:22:04.3686472	Item Models: extradelight
 d6cec988d96345e08c89e0c2f114a2c1312de993 assets/extradelight/models/item/acacia_dried_corn_fence.json
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
@@ -431,6 +431,7 @@ e7c7993c5857938f87a808f2b93aaaf50e3b089a assets/extradelight/models/item/meatloa
 ff0915ec8355d81f008132211ae7fcb0f383336c assets/extradelight/models/item/meat_pie_block_item.json
 65b51adfcf70d1f0d0f55a9ee31d4bfac8f44376 assets/extradelight/models/item/meat_pie_slice.json
 51665cf9495bb966a7f8b33932fbfe8b710cb264 assets/extradelight/models/item/milkshake.json
+044031dde6ee58319f7408e05850bb66c4542c0f assets/extradelight/models/item/mint.json
 8fd2287b62e805d0de05e2e0bd89bcc2b66c8c6b assets/extradelight/models/item/mixing_bowl.json
 0729b1284d0ad7e2f36bcae9034b1a04eea0d954 assets/extradelight/models/item/mortar_amethyst.json
 89e94be1054a1a9725879d807b3b80845f32b9f6 assets/extradelight/models/item/mortar_andesite.json

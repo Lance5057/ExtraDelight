@@ -2,17 +2,14 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.tag.ModTags;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class EDBlockTags extends BlockTagsProvider {
 	public EDBlockTags(DataGenerator generator, String modId, ExistingFileHelper existingFileHelper) {
@@ -59,9 +56,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.LAMB_STEW.get(), ExtraDelightBlocks.RABBIT_STEW.get(),
 				ExtraDelightBlocks.CHICKEN_STEW.get(), ExtraDelightBlocks.FISH_STEW.get());
 
-//		tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_SHOVEL).add(
-//
-//		);
+//		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.MINT_CROP.get());
 
 		tag(ModTags.MINEABLE_WITH_KNIFE).add(
 				// Pies and plain cake

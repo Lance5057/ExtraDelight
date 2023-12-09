@@ -700,6 +700,7 @@ public class ItemModels extends ItemModelProvider {
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_black"));
 
 		forBlockItem(ExtraDelightItems.CANDY_BOWL_ITEM, "candy_bowl");
+		forItem(ExtraDelightItems.MINT, "mint");
 
 		AestheticBlocks.itemModel(this);
 	}

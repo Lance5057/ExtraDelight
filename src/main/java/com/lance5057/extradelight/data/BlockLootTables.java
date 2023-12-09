@@ -186,6 +186,8 @@ public class BlockLootTables extends BlockLoot {
 		crop(ExtraDelightBlocks.GINGER_CROP.get(), ExtraDelightItems.GINGER.get(),
 				ExtraDelightItems.GINGER_CUTTING.get(), lootitemcondition$builder);
 
+		this.dropSelf(ExtraDelightBlocks.MINT_CROP.get());
+
 		AestheticBlocks.loot(this);
 	}
 
