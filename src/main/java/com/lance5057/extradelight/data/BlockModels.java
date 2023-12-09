@@ -168,6 +168,7 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
 
 		this.cropCrossBlock(ExtraDelightBlocks.GINGER_CROP.get(), "ginger");
+<<<<<<< HEAD
 		this.simpleBlock(ExtraDelightBlocks.CANDY_BOWL.get(),
 				models().getExistingFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/candy_bowl")));
 
@@ -199,6 +200,11 @@ public class BlockModels extends BlockStateProvider {
 		this.frostableBlock(ExtraDelightBlocks.PINK_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block", "pink");
 		
 		this.simpleBlock(ExtraDelightBlocks.MINT_CROP.get(), models().getExistingFile(modLoc("block/mint")));
+=======
+		
+		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_GREEN_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_RED_BLOCK.get());
+>>>>>>> 7b99272ec50b4ec58645bf8e618ee6228cc11827
 
 		AestheticBlocks.blockModel(this);
 	}

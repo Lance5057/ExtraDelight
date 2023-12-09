@@ -631,7 +631,14 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(ExtraDelightItems.GINGER, "ginger");
 		forItem(ExtraDelightItems.GINGER_CUTTING, "ginger_cutting");
+<<<<<<< HEAD
 
+=======
+		forItem(ExtraDelightItems.PEELED_GINGER, "peeled_ginger");
+		forItem(ExtraDelightItems.SLICED_GINGER, "sliced_ginger");
+		forItem(ExtraDelightItems.GRATED_GINGER, "grated_ginger");
+		
+>>>>>>> 7b99272ec50b4ec58645bf8e618ee6228cc11827
 		forItem(ExtraDelightItems.FROSTING_WHITE, "frosting_white");
 		forItem(ExtraDelightItems.FROSTING_ORANGE, "frosting_orange");
 		forItem(ExtraDelightItems.FROSTING_MAGENTA, "frosting_magenta");
@@ -648,6 +655,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.FROSTING_GREEN, "frosting_green");
 		forItem(ExtraDelightItems.FROSTING_RED, "frosting_red");
 		forItem(ExtraDelightItems.FROSTING_BLACK, "frosting_black");
+<<<<<<< HEAD
 
 		forItem(ExtraDelightItems.CANDY_WHITE, "candy_white");
 		forItem(ExtraDelightItems.CANDY_ORANGE, "candy_orange");
@@ -702,6 +710,59 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CANDY_BOWL_ITEM, "candy_bowl");
 		forItem(ExtraDelightItems.MINT, "mint");
 
+=======
+		
+		forItem(ExtraDelightItems.CANDY_CANE_GREEN, "candy_cane_green");
+		forItem(ExtraDelightItems.CANDY_CANE_RED, "candy_cane_red");
+		forBlockItem(ExtraDelightItems.CANDY_CANE_GREEN_BLOCK, "candy_cane_green_block");
+		forBlockItem(ExtraDelightItems.CANDY_CANE_RED_BLOCK, "candy_cane_red_block");
+		
+		forItem(ExtraDelightItems.GINGER_BEER, "ginger_beer");
+		forItem(ExtraDelightItems.GINGER_TEA, "ginger_tea");
+		forItem(ExtraDelightItems.HORCHATA, "horchata");
+		
+		forItem(ExtraDelightItems.FRENCH_TOAST, "french_toast");
+		forItem(ExtraDelightItems.CONGEE, "congee");
+		forItem(ExtraDelightItems.LUGAW, "lugaw");
+		forItem(ExtraDelightItems.RICE_PUDDING, "rice_pudding");
+		forItem(ExtraDelightItems.MUFFIN_APPLE, "muffin_apple");
+		forItem(ExtraDelightItems.MUFFIN_CINNAMON, "muffin_cinnamon");
+		forItem(ExtraDelightItems.MUFFIN_GINGER, "muffin_ginger");
+		forItem(ExtraDelightItems.MUFFIN_SWEET_BERRY, "muffin_sweet_berry");
+		forItem(ExtraDelightItems.ROLL, "roll");
+		forItem(ExtraDelightItems.DRIED_FRUIT, "dried_fruit");
+		forItem(ExtraDelightItems.FRUIT_BREAD, "fruit_bread");
+		forItem(ExtraDelightItems.PICKLED_GINGER, "pickled_ginger");
+		forItem(ExtraDelightItems.CANDIED_GINGER, "candied_ginger");
+		forItem(ExtraDelightItems.CINNAMON_POPSICLE, "cinnamon_popsicle");
+		forItem(ExtraDelightItems.MINT_TEA, "mint_tea");
+		forItem(ExtraDelightItems.MINT_CANDY_GREEN, "mint_candy_green");
+		forItem(ExtraDelightItems.MINT_CANDY_RED, "mint_candy_red");
+		forItem(ExtraDelightItems.BEET_MINT_SALAD, "beet_mint_salad");
+		forItem(ExtraDelightItems.MINT_JELLY, "mint_jelly");
+		forItem(ExtraDelightItems.CRACKERS, "crackers");
+		forItem(ExtraDelightItems.CROQUE_MADAME, "croque_madame");
+		forItem(ExtraDelightItems.CROQUE_MONSIEUR, "croque_monsieur");
+		
+		forItem(ExtraDelightItems.CINNAMON_ROLL, "cinnamon_roll");
+		forItem(ExtraDelightItems.MONKEY_BREAD, "monkey_bread");
+		forItem(ExtraDelightItems.COFFEE_CAKE, "coffee_cake");
+		forItem(ExtraDelightItems.MINT_LAMB, "mint_lamb");
+		forItem(ExtraDelightItems.CHARCUTERIE_BOARD, "charcuterie_board");
+		forItem(ExtraDelightItems.CHRISTMAS_PUDDING, "punch");
+		forItem(ExtraDelightItems.MILK_TART_SLICE, "milk_tart_slice");
+		forItem(ExtraDelightItems.PUNCH, "punch");
+		
+		forBlockItem(ExtraDelightItems.CINNAMON_ROLLS_FEAST, "cinnamon_rolls_feast");
+		forBlockItem(ExtraDelightItems.MONKEY_BREAD_FEAST, "monkey_bread_feast");
+		forBlockItem(ExtraDelightItems.COFFEE_CAKE_FEAST, "coffee_cake_feast");
+		forBlockItem(ExtraDelightItems.MINT_LAMB_FEAST, "mint_lamb_feast");
+		forBlockItem(ExtraDelightItems.CHARCUTERIE_BOARD_FEAST, "charcuterie_board_feast");
+		forBlockItem(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST, "christmas_pudding_feast");
+		forBlockItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart_feast");
+		forBlockItem(ExtraDelightItems.PUNCH_FEAST, "punch_feast");
+		
+>>>>>>> 7b99272ec50b4ec58645bf8e618ee6228cc11827
 		AestheticBlocks.itemModel(this);
 	}
 

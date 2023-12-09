@@ -162,6 +162,7 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
 
 		this.dropSelf(ExtraDelightBlocks.CANDY_BOWL.get());
+<<<<<<< HEAD
 
 		this.dropSelf(ExtraDelightBlocks.BLACK_FROSTED_GINGERBREAD_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.BLUE_FROSTED_GINGERBREAD_BLOCK.get());
@@ -179,12 +180,26 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.RED_FROSTED_GINGERBREAD_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.WHITE_FROSTED_GINGERBREAD_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.YELLOW_FROSTED_GINGERBREAD_BLOCK.get());
+=======
+		
+		this.dropSelf(ExtraDelightBlocks.CANDY_CANE_GREEN_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.CANDY_CANE_RED_BLOCK.get());
+>>>>>>> 7b99272ec50b4ec58645bf8e618ee6228cc11827
 
 		LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.GINGER_CROP.get())
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GingerCrop.AGE, 3));
 		crop(ExtraDelightBlocks.GINGER_CROP.get(), ExtraDelightItems.GINGER.get(),
 				ExtraDelightItems.GINGER_CUTTING.get(), lootitemcondition$builder);
+		
+		this.dropOther(ExtraDelightBlocks.CINNAMON_ROLLS.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.MONKEY_BREAD.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.COFFEE_CAKE.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.MINT_LAMB.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.CHARCUTERIE_BOARD.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.MILK_TART.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.PUNCH.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), Items.AIR);
 
 		this.dropSelf(ExtraDelightBlocks.MINT_CROP.get());
 
