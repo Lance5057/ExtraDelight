@@ -162,8 +162,7 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
 
 		this.dropSelf(ExtraDelightBlocks.CANDY_BOWL.get());
-<<<<<<< HEAD
-
+		
 		this.dropSelf(ExtraDelightBlocks.BLACK_FROSTED_GINGERBREAD_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.BLUE_FROSTED_GINGERBREAD_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.BROWN_FROSTED_GINGERBREAD_BLOCK.get());
@@ -180,11 +179,10 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.RED_FROSTED_GINGERBREAD_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.WHITE_FROSTED_GINGERBREAD_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.YELLOW_FROSTED_GINGERBREAD_BLOCK.get());
-=======
 		
 		this.dropSelf(ExtraDelightBlocks.CANDY_CANE_GREEN_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.CANDY_CANE_RED_BLOCK.get());
->>>>>>> 7b99272ec50b4ec58645bf8e618ee6228cc11827
+		this.dropSelf(ExtraDelightBlocks.CANDY_CANE_BLUE_BLOCK.get());
 
 		LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.GINGER_CROP.get())

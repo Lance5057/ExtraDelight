@@ -349,8 +349,7 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<CandyBowlBlock> CANDY_BOWL = BLOCKS.register("candy_bowl",
 			() -> new CandyBowlBlock(Block.Properties.copy(Blocks.GLASS)));
-<<<<<<< HEAD
-
+	
 	public static RegistryObject<FrostableBlock> WHITE_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
 			"white_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 	public static RegistryObject<FrostableBlock> LIGHT_GRAY_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS
@@ -385,11 +384,12 @@ public class ExtraDelightBlocks {
 			"magenta_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 	public static RegistryObject<FrostableBlock> PINK_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
 			"pink_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
-=======
 	
 	public static final RegistryObject<Block> CANDY_CANE_RED_BLOCK = BLOCKS.register("candy_cane_red_block",
 			() -> new Block(Block.Properties.copy(Blocks.STONE)));
 	public static final RegistryObject<Block> CANDY_CANE_GREEN_BLOCK = BLOCKS.register("candy_cane_green_block",
+			() -> new Block(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> CANDY_CANE_BLUE_BLOCK = BLOCKS.register("candy_cane_blue_block",
 			() -> new Block(Block.Properties.copy(Blocks.STONE)));
 	
 	public static final RegistryObject<RecipeFeastBlock> CINNAMON_ROLLS = BLOCKS.register("cinnamon_rolls",
@@ -415,5 +415,4 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<RecipeFeastBlock> CHARCUTERIE_BOARD = BLOCKS.register("charcuterie_board",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), true,
 					pan));
->>>>>>> 7b99272ec50b4ec58645bf8e618ee6228cc11827
 }
