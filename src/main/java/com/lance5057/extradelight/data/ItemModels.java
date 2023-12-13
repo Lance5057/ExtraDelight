@@ -709,15 +709,15 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.MINT_CANDY_BLUE, "mint_candy_blue");
 		forItem(ExtraDelightItems.CANDY_CANE_GREEN, "candy_cane_green");
 		forItem(ExtraDelightItems.CANDY_CANE_RED, "candy_cane_red");
-		forItem(ExtraDelightItems.CANDY_CANE_RED, "candy_cane_blue");
+		forItem(ExtraDelightItems.CANDY_CANE_BLUE, "candy_cane_blue");
 		forBlockItem(ExtraDelightItems.CANDY_CANE_GREEN_BLOCK, "candy_cane_green_block");
 		forBlockItem(ExtraDelightItems.CANDY_CANE_RED_BLOCK, "candy_cane_red_block");
-		forBlockItem(ExtraDelightItems.CANDY_CANE_RED_BLOCK, "candy_cane_blue_block");
-		
+		forBlockItem(ExtraDelightItems.CANDY_CANE_BLUE_BLOCK, "candy_cane_blue_block");
+
 		forItem(ExtraDelightItems.GINGER_BEER, "ginger_beer");
 		forItem(ExtraDelightItems.GINGER_TEA, "ginger_tea");
 		forItem(ExtraDelightItems.HORCHATA, "horchata");
-		
+
 		forItem(ExtraDelightItems.FRENCH_TOAST, "french_toast");
 		forItem(ExtraDelightItems.CONGEE, "congee");
 		forItem(ExtraDelightItems.LUGAW, "lugaw");
@@ -738,16 +738,16 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CRACKERS, "crackers");
 		forItem(ExtraDelightItems.CROQUE_MADAME, "croque_madame");
 		forItem(ExtraDelightItems.CROQUE_MONSIEUR, "croque_monsieur");
-		
+
 		forItem(ExtraDelightItems.CINNAMON_ROLL, "cinnamon_roll");
 		forItem(ExtraDelightItems.MONKEY_BREAD, "monkey_bread");
 		forItem(ExtraDelightItems.COFFEE_CAKE, "coffee_cake");
 		forItem(ExtraDelightItems.MINT_LAMB, "mint_lamb");
 		forItem(ExtraDelightItems.CHARCUTERIE_BOARD, "charcuterie_board");
-		forItem(ExtraDelightItems.CHRISTMAS_PUDDING, "punch");
+		forItem(ExtraDelightItems.CHRISTMAS_PUDDING, "christmas_pudding");
 		forItem(ExtraDelightItems.MILK_TART_SLICE, "milk_tart_slice");
 		forItem(ExtraDelightItems.PUNCH, "punch");
-		
+
 		forBlockItem(ExtraDelightItems.CINNAMON_ROLLS_FEAST, "cinnamon_rolls_feast");
 		forBlockItem(ExtraDelightItems.MONKEY_BREAD_FEAST, "monkey_bread_feast");
 		forBlockItem(ExtraDelightItems.COFFEE_CAKE_FEAST, "coffee_cake_feast");
@@ -756,7 +756,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST, "christmas_pudding_feast");
 		forBlockItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart_feast");
 		forBlockItem(ExtraDelightItems.PUNCH_FEAST, "punch_feast");
-		
+
 		AestheticBlocks.itemModel(this);
 	}
 
