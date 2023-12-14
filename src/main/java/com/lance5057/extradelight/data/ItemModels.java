@@ -741,21 +741,21 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(ExtraDelightItems.CINNAMON_ROLL, "cinnamon_roll");
 		forItem(ExtraDelightItems.MONKEY_BREAD, "monkey_bread");
-		forItem(ExtraDelightItems.COFFEE_CAKE, "coffee_cake");
+		forItem(ExtraDelightItems.COFFEE_CAKE, "coffee_cake_slice");
 		forItem(ExtraDelightItems.MINT_LAMB, "mint_lamb");
 		forItem(ExtraDelightItems.CHARCUTERIE_BOARD, "charcuterie_board");
 		forItem(ExtraDelightItems.CHRISTMAS_PUDDING, "christmas_pudding");
 		forItem(ExtraDelightItems.MILK_TART_SLICE, "milk_tart_slice");
 		forItem(ExtraDelightItems.PUNCH, "punch");
 
-		forBlockItem(ExtraDelightItems.CINNAMON_ROLLS_FEAST, "cinnamon_rolls_feast");
-		forBlockItem(ExtraDelightItems.MONKEY_BREAD_FEAST, "monkey_bread_feast");
-		forBlockItem(ExtraDelightItems.COFFEE_CAKE_FEAST, "coffee_cake_feast");
+		forBlockItem(ExtraDelightItems.CINNAMON_ROLLS_FEAST, "cinnamon_rolls");
+		forBlockItem(ExtraDelightItems.MONKEY_BREAD_FEAST, "monkey_bread");
+		forItem(ExtraDelightItems.COFFEE_CAKE_FEAST, "coffee_cake");
 		forBlockItem(ExtraDelightItems.MINT_LAMB_FEAST, "mint_lamb_feast");
-		forBlockItem(ExtraDelightItems.CHARCUTERIE_BOARD_FEAST, "charcuterie_board_feast");
-		forBlockItem(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST, "christmas_pudding_feast");
-		forBlockItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart_feast");
-		forBlockItem(ExtraDelightItems.PUNCH_FEAST, "punch_feast");
+		forBlockItem(ExtraDelightItems.CHARCUTERIE_BOARD_FEAST, "charcuterie_board");
+		forBlockItem(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST, "christmas_pudding");
+		forBlockItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart");
+		forBlockItem(ExtraDelightItems.PUNCH_FEAST, "punch");
 
 		AestheticBlocks.itemModel(this);
 	}

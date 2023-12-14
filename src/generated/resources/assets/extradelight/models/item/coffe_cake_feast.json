@@ -1,3 +1,6 @@
 {
-  "parent": "extradelight:block/coffee_cake"
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "extradelight:item/coffee_cake"
+  }
 }

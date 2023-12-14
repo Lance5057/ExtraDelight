@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-13T13:18:46.4115508	Item Models: extradelight
+// 1.19.2	2023-12-14T14:55:10.3985992	Item Models: extradelight
 d6cec988d96345e08c89e0c2f114a2c1312de993 assets/extradelight/models/item/acacia_dried_corn_fence.json
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
@@ -158,8 +158,8 @@ dd2a488cb2705164f773159cfbfb999ceec358ac assets/extradelight/models/item/cinnamo
 315c2c710e11ffaf426effd1c6ad14bbb734460c assets/extradelight/models/item/cinnamon_rolls.json
 ff9614dea7d26ee2955a98ca71bab18d4424ba01 assets/extradelight/models/item/cinnamon_rolls_feast.json
 5506d8ea45a8201ce97529bbf80cef288a2f6db9 assets/extradelight/models/item/cinnamon_stick.json
-adea04d2232966881ac13831158c71b0c40b9af6 assets/extradelight/models/item/coffee_cake.json
-9ec8b95d09b36cd15f2a0a84493f1901a3b67149 assets/extradelight/models/item/coffe_cake_feast.json
+ac8997fb25956810c0608d3b77fcf06d6751a2be assets/extradelight/models/item/coffee_cake.json
+adea04d2232966881ac13831158c71b0c40b9af6 assets/extradelight/models/item/coffe_cake_feast.json
 15be1ef109d5eec8b1203813167a08ed4f35601b assets/extradelight/models/item/congee.json
 bb898cda7a7fc2f7931a30ec4755353b957a8edc assets/extradelight/models/item/cooked_cactus.json
 1d9368e48c5fc274f7555066f1927950e3f9c108 assets/extradelight/models/item/cooked_corn.json
