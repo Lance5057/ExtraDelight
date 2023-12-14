@@ -199,7 +199,7 @@ public class BlockModels extends BlockStateProvider {
 				"magenta");
 		this.frostableBlock(ExtraDelightBlocks.PINK_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block", "pink");
 		
-		this.simpleBlock(ExtraDelightBlocks.MINT_CROP.get(), models().getExistingFile(modLoc("block/mint")));
+//		this.simpleBlock(ExtraDelightBlocks.MINT_CROP.get(), models().getExistingFile(modLoc("block/mint")));
 		
 		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_GREEN_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_RED_BLOCK.get());
