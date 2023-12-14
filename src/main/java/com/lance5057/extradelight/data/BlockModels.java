@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
@@ -203,6 +204,15 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_GREEN_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_RED_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_BLUE_BLOCK.get());
+		
+		recipeFeastBlock(ExtraDelightBlocks.CINNAMON_ROLLS.get(), "cinnamon_rolls");
+		recipeFeastBlock(ExtraDelightBlocks.MONKEY_BREAD.get(), "monkey_bread");
+		this.createCakeBlock(ExtraDelightBlocks.COFFEE_CAKE.get(), "coffee");
+		recipeFeastBlock(ExtraDelightBlocks.MINT_LAMB.get(), "mint_lamb");
+		recipeFeastBlock(ExtraDelightBlocks.CHARCUTERIE_BOARD.get(), "charcuterie");
+		recipeFeastBlock(ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), "christmas_pudding");
+		pieLikeBlock(ExtraDelightBlocks.MILK_TART.get(), "milk_tart");
+		recipeFeastBlock(ExtraDelightBlocks.PUNCH.get(), "punch");
 		
 		AestheticBlocks.blockModel(this);
 	}

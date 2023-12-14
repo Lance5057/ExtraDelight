@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "cutout",
 	"parent": "block/block",
 	"textures": {
 		"0": "extradelight:block/crops/mint",

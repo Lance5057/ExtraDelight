@@ -178,8 +178,11 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.CANDY_PURPLE.get(), ExtraDelightItems.CANDY_RED.get(),
 				ExtraDelightItems.CANDY_WHITE.get(), ExtraDelightItems.CANDY_YELLOW.get());
 
-		tag(ExtraDelightTags.CANDY_BOWL_VALID).addTag(ExtraDelightTags.CANDY)
-				.add(ExtraDelightItems.CARAMEL_CANDY.get());
+		tag(ExtraDelightTags.CANDY_BOWL_VALID).addTag(ExtraDelightTags.CANDY).add(ExtraDelightItems.CARAMEL_CANDY.get(),
+				ExtraDelightItems.MINT_CANDY_BLUE.get(), ExtraDelightItems.MINT_CANDY_GREEN.get(),
+				ExtraDelightItems.MINT_CANDY_RED.get(), ExtraDelightItems.CANDY_CANE_BLUE.get(),
+				ExtraDelightItems.CANDY_CANE_RED.get(), ExtraDelightItems.CANDY_CANE_GREEN.get(),
+				ExtraDelightItems.CANDIED_GINGER.get());
 
 		tag(ExtraDelightTags.OFFSET_SPATULAS).add(ExtraDelightItems.OFFSET_SPATULA_DIAMOND.get(),
 				ExtraDelightItems.OFFSET_SPATULA_GOLD.get(), ExtraDelightItems.OFFSET_SPATULA_IRON.get(),

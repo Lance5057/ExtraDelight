@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "cutout",
 	"textures": {
 		"2": "extradelight:block/charcuterie",
 		"tray_top": "farmersdelight:block/tray_top",
