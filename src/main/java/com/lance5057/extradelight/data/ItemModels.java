@@ -717,6 +717,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.GINGER_BEER, "ginger_beer");
 		forItem(ExtraDelightItems.GINGER_TEA, "ginger_tea");
 		forItem(ExtraDelightItems.HORCHATA, "horchata");
+		forItem(ExtraDelightItems.EGGNOG, "eggnog");
 
 		forItem(ExtraDelightItems.FRENCH_TOAST, "french_toast");
 		forItem(ExtraDelightItems.CONGEE, "congee");
@@ -741,21 +742,26 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(ExtraDelightItems.CINNAMON_ROLL, "cinnamon_roll");
 		forItem(ExtraDelightItems.MONKEY_BREAD, "monkey_bread");
-		forItem(ExtraDelightItems.COFFEE_CAKE, "coffee_cake_slice");
+		forItem(ExtraDelightItems.COFFEE_CAKE_SLICE, "coffee_cake_slice");
 		forItem(ExtraDelightItems.MINT_LAMB, "mint_lamb");
 		forItem(ExtraDelightItems.CHARCUTERIE_BOARD, "charcuterie_board");
 		forItem(ExtraDelightItems.CHRISTMAS_PUDDING, "christmas_pudding");
 		forItem(ExtraDelightItems.MILK_TART_SLICE, "milk_tart_slice");
 		forItem(ExtraDelightItems.PUNCH, "punch");
 
-		forBlockItem(ExtraDelightItems.CINNAMON_ROLLS_FEAST, "cinnamon_rolls");
-		forBlockItem(ExtraDelightItems.MONKEY_BREAD_FEAST, "monkey_bread");
+		forBlockItem(ExtraDelightItems.CINNAMON_ROLLS_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_rolls_stage0"));
+		forBlockItem(ExtraDelightItems.MONKEY_BREAD_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/monkey_bread_stage0"));
 		forItem(ExtraDelightItems.COFFEE_CAKE_FEAST, "coffee_cake");
-		forBlockItem(ExtraDelightItems.MINT_LAMB_FEAST, "mint_lamb_feast");
-		forBlockItem(ExtraDelightItems.CHARCUTERIE_BOARD_FEAST, "charcuterie_board");
-		forBlockItem(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST, "christmas_pudding");
-		forBlockItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart");
-		forBlockItem(ExtraDelightItems.PUNCH_FEAST, "punch");
+		forBlockItem(ExtraDelightItems.MINT_LAMB_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/mint_lamb_stage0"));
+		forBlockItem(ExtraDelightItems.CHARCUTERIE_BOARD_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/charcuterie_stage0"));
+		forBlockItem(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/christmas_pudding_stage0"));
+		forItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart");
+		forBlockItem(ExtraDelightItems.PUNCH_FEAST, new ResourceLocation(ExtraDelight.MOD_ID, "block/punch_stage0"));
 
 		AestheticBlocks.itemModel(this);
 	}

@@ -1,3 +1,6 @@
 {
-  "parent": "extradelight:block/milk_tart"
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "extradelight:item/milk_tart"
+  }
 }

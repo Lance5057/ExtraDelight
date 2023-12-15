@@ -1322,7 +1322,7 @@ public class ExtraDelightItems {
 	public static final RegistryObject<BlockItem> MONKEY_BREAD_FEAST = ITEMS.register("monkey_bread_feast",
 			() -> new BlockItem(ExtraDelightBlocks.MONKEY_BREAD.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Item> COFFEE_CAKE = ITEMS.register("coffee_cake",
+	public static final RegistryObject<Item> COFFEE_CAKE_SLICE = ITEMS.register("coffee_cake_slice",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<BlockItem> COFFEE_CAKE_FEAST = ITEMS.register("coffe_cake_feast",
 			() -> new BlockItem(ExtraDelightBlocks.COFFEE_CAKE.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));

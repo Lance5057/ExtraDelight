@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.blocks.crops;
 
+import com.lance5057.extradelight.ExtraDelightConfig;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
@@ -26,10 +28,12 @@ public class MintCrop extends Block {
 	}
 
 	public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-		if (!pLevel.isAreaLoaded(pPos, 1))
-			return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-		if (pRandom.nextInt() % 4 == 0)
-			pLevel.setBlock(findValidSpot(pLevel, pPos), pState, 2);
+		if (ExtraDelightConfig.MINT_SPREAD.get()) {
+			if (!pLevel.isAreaLoaded(pPos, 1))
+				return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+			if (pRandom.nextInt() % ExtraDelightConfig.MINT_SPREAD_RATE.get() == 0)
+				pLevel.setBlock(findValidSpot(pLevel, pPos), pState, 2);
+		}
 	}
 
 	public BlockPos findValidSpot(ServerLevel pLevel, BlockPos pPos) {
