@@ -70,7 +70,7 @@ public class ToolOnBlockRecipe implements Recipe<Container> {
 
 	@Override
 	public ItemStack assemble(Container pContainer) {
-		return null;
+		return new ItemStack(out);
 	}
 
 	@Override
@@ -80,7 +80,7 @@ public class ToolOnBlockRecipe implements Recipe<Container> {
 
 	@Override
 	public ItemStack getResultItem() {
-		return null;
+		return new ItemStack(out);
 	}
 	
 	public Block getResultBlock()

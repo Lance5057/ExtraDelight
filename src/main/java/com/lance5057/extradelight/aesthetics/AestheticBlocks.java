@@ -408,6 +408,7 @@ public class AestheticBlocks {
 			lp.add(KNIFE_BLOCKS.get(i).get(), w + " Knife Block");
 			lp.add(CABINETS.get(i).get(), w + " Half Cabinet");
 			lp.add(DRIED_CORN_FENCE.get(i).get(), "Dried Corn " + w + " Fence");
+			lp.add(WREATHS.get(i).get(), w + " Wreath");
 
 			for (int j = 0; j < DyeColor.values().length; j++) {
 				int o = (i * DyeColor.values().length) + j;
@@ -423,6 +424,7 @@ public class AestheticBlocks {
 			w = WordUtils.capitalize(w.replace('_', ' '));
 
 			lp.add(WALLPAPER_ITEMS.get(i).get(), w + " Wallpaper");
+			lp.add(BOWS.get(i).get(), w + " Bow");
 		}
 
 		lp.add(CORN_HUSK_DOLL.get(), "Corn Husk Doll");

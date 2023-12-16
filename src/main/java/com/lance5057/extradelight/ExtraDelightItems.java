@@ -972,8 +972,8 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.ICE_CREAM)));
 	public static final RegistryObject<Item> CHOCOLATE_ICE_CREAM = ITEMS.register("chocolate_ice_cream",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
-	public static final RegistryObject<Item> GLOW_BERRY_ICE_CREAM = ITEMS.register("glow_berry_ice_cream",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
+	public static final RegistryObject<GlowberryFoodItem> GLOW_BERRY_ICE_CREAM = ITEMS.register("glow_berry_ice_cream",
+			() -> new GlowberryFoodItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
 	public static final RegistryObject<Item> SWEET_BERRY_ICE_CREAM = ITEMS.register("sweet_berry_ice_cream",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
 	public static final RegistryObject<Item> PUMPKIN_ICE_CREAM = ITEMS.register("pumpkin_ice_cream",
@@ -981,6 +981,8 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> HONEY_ICE_CREAM = ITEMS.register("honey_ice_cream",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
 	public static final RegistryObject<Item> APPLE_ICE_CREAM = ITEMS.register("apple_ice_cream",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
+	public static final RegistryObject<Item> COOKIE_DOUGH_ICE_CREAM = ITEMS.register("cookie_dough_ice_cream",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
 
 	public static final RegistryObject<MilkshakeDrinkItem> MILKSHAKE = ITEMS.register("milkshake",

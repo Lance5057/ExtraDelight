@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 4,
+  "ingredient": {
+    "item": "extradelight:cinnamon_stick"
+  },
+  "result": {
+    "item": "extradelight:ground_cinnamon"
+  }
+}
