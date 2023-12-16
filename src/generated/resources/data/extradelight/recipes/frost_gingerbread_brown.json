@@ -1,8 +1,0 @@
-{
-  "type": "extradelight:tool_on_block",
-  "blockIn": "extradelight:gingerbread_cookie_block_item",
-  "blockOut": "extradelight:gingerbread_block_brown",
-  "ingredient": {
-    "item": "extradelight:frosting_brown"
-  }
-}

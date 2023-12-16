@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-15T13:18:42.6344163	Item Models: extradelight
+// 1.19.2	2023-12-16T11:13:41.2824253	Item Models: extradelight
 d6cec988d96345e08c89e0c2f114a2c1312de993 assets/extradelight/models/item/acacia_dried_corn_fence.json
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
@@ -164,6 +164,7 @@ adea04d2232966881ac13831158c71b0c40b9af6 assets/extradelight/models/item/coffe_c
 bb898cda7a7fc2f7931a30ec4755353b957a8edc assets/extradelight/models/item/cooked_cactus.json
 1d9368e48c5fc274f7555066f1927950e3f9c108 assets/extradelight/models/item/cooked_corn.json
 05b5131d583d9905283147ead84bb128cc730b27 assets/extradelight/models/item/cooked_pasta.json
+9aa70568110653d0b208080e7fec4e31bad0fdbd assets/extradelight/models/item/cookie_dough_ice_cream.json
 3009687d5b75c0fb61f0f2ea72cbb349b6e6e717 assets/extradelight/models/item/cooking_oil.json
 4cbb4839752ff7375c22bec60597c3dd6ea8a9df assets/extradelight/models/item/cornbread.json
 78b5148ea5bb0564de8f3eea243edf3b97499cb3 assets/extradelight/models/item/cornbread_feast.json

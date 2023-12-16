@@ -7,13 +7,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:flour"
-    },
-    {
-      "tag": "forge:flour"
-    },
-    {
-      "item": "farmersdelight:pumpkin_slice"
+      "item": "extradelight:pumpkin_cookie_dough"
     }
   ],
   "recipe_book_tab": "meals",
