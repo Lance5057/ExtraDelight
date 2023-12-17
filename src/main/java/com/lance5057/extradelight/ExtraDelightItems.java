@@ -1,47 +1,23 @@
 package com.lance5057.extradelight;
 
-import java.util.List;
-
-import javax.annotation.Nullable;
-
 import com.lance5057.extradelight.armor.CorncobPipe;
 import com.lance5057.extradelight.armor.EDArmorMaterial;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.food.EDFoods;
-import com.lance5057.extradelight.items.CactusJuiceItem;
-import com.lance5057.extradelight.items.CornSilkTeaItem;
-import com.lance5057.extradelight.items.FrostingItem;
-import com.lance5057.extradelight.items.GlowberryFoodItem;
-import com.lance5057.extradelight.items.GlowberryJuiceItem;
-import com.lance5057.extradelight.items.GlowberryPopsicleItem;
-import com.lance5057.extradelight.items.MilkshakeDrinkItem;
-import com.lance5057.extradelight.items.OffsetSpatulaItem;
-import com.lance5057.extradelight.items.ShuckableCorn;
-import com.lance5057.extradelight.items.SimpleDynamicNameFood;
-
+import com.lance5057.extradelight.items.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.BowlFoodItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.FoodValues;
-import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.item.DrinkableItem;
-import vectorwing.farmersdelight.common.item.HotCocoaItem;
-import vectorwing.farmersdelight.common.item.MelonJuiceItem;
-import vectorwing.farmersdelight.common.item.MilkBottleItem;
+import vectorwing.farmersdelight.common.item.*;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class ExtraDelightItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
@@ -1355,4 +1331,6 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<BlockItem> MILK_TART_FEAST = ITEMS.register("milk_tart_feast",
 			() -> new BlockItem(ExtraDelightBlocks.MILK_TART.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<BlockItem> CINNAMON_SAPLING = ITEMS.register("cinnamon_sapling", () -> new BlockItem(ExtraDelightBlocks.CINNAMON_SAPLING.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 }

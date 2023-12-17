@@ -519,6 +519,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.RAW_CINNAMON.get(), "Raw Cinnamon");
 		this.add(ExtraDelightItems.CINNAMON_STICK.get(), "Cinnamon Stick");
 		this.add(ExtraDelightItems.GROUND_CINNAMON.get(), "Ground Cinnamon");
+		this.add(ExtraDelightItems.CINNAMON_SAPLING.get(), "Cinnamon Sapling");
 		this.add(ExtraDelightItems.ICE_CREAM.get(), "Ice Cream");
 		this.add(ExtraDelightItems.CHOCOLATE_ICE_CREAM.get(), "Chocolate Ice Cream");
 		this.add(ExtraDelightItems.GLOW_BERRY_ICE_CREAM.get(), "Glow Berry Ice Cream");
