@@ -1,10 +1,6 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.blocks.FrostableBlock;
-import com.lance5057.extradelight.blocks.JellyBlock;
-import com.lance5057.extradelight.blocks.RecipeFeastBlock;
-import com.lance5057.extradelight.blocks.StrippableLog;
-import com.lance5057.extradelight.blocks.YeastPotBlock;
+import com.lance5057.extradelight.blocks.*;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MintCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
@@ -17,16 +13,8 @@ import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.oven.OvenBlock;
-
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CakeBlock;
-import net.minecraft.world.level.block.CarpetBlock;
-import net.minecraft.world.level.block.HayBlock;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.SoundType;
+import com.lance5057.extradelight.worldgen.features.CinnamonTreeGrower;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
@@ -314,7 +302,7 @@ public class ExtraDelightBlocks {
 
 	// Winter start!
 	public static final RegistryObject<SaplingBlock> CINNAMON_SAPLING = BLOCKS.register("cinnamon_sapling",
-			() -> new SaplingBlock(null, Block.Properties.copy(Blocks.DARK_OAK_SAPLING)));
+			() -> new SaplingBlock(new CinnamonTreeGrower(), Block.Properties.copy(Blocks.DARK_OAK_SAPLING)));
 	public static final RegistryObject<RotatedPillarBlock> STRIPPED_CINNAMON_LOG = BLOCKS
 			.register("stripped_cinnamon_log", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<StrippableLog> CINNAMON_LOG = BLOCKS.register("cinnamon_log",
@@ -347,11 +335,11 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<GingerCrop> GINGER_CROP = BLOCKS.register("ginger_crop",
 			() -> new GingerCrop(Block.Properties.copy(Blocks.WHEAT)));
-	public static final RegistryObject<MintCrop> MINT_CROP = BLOCKS.register("mint_crop", () -> new MintCrop());
+	public static final RegistryObject<MintCrop> MINT_CROP = BLOCKS.register("mint_crop", MintCrop::new);
 
 	public static final RegistryObject<CandyBowlBlock> CANDY_BOWL = BLOCKS.register("candy_bowl",
 			() -> new CandyBowlBlock(Block.Properties.copy(Blocks.GLASS)));
-	
+
 	public static RegistryObject<FrostableBlock> WHITE_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
 			"white_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 	public static RegistryObject<FrostableBlock> LIGHT_GRAY_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS
@@ -386,14 +374,14 @@ public class ExtraDelightBlocks {
 			"magenta_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 	public static RegistryObject<FrostableBlock> PINK_FROSTED_GINGERBREAD_BLOCK = ExtraDelightBlocks.BLOCKS.register(
 			"pink_frosted_gingerbread_block", () -> new FrostableBlock(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
-	
+
 	public static final RegistryObject<Block> CANDY_CANE_RED_BLOCK = BLOCKS.register("candy_cane_red_block",
 			() -> new Block(Block.Properties.copy(Blocks.STONE)));
 	public static final RegistryObject<Block> CANDY_CANE_GREEN_BLOCK = BLOCKS.register("candy_cane_green_block",
 			() -> new Block(Block.Properties.copy(Blocks.STONE)));
 	public static final RegistryObject<Block> CANDY_CANE_BLUE_BLOCK = BLOCKS.register("candy_cane_blue_block",
 			() -> new Block(Block.Properties.copy(Blocks.STONE)));
-	
+
 	public static final RegistryObject<RecipeFeastBlock> CINNAMON_ROLLS = BLOCKS.register("cinnamon_rolls",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), true,
 					pan));

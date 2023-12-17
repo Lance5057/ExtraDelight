@@ -2,7 +2,6 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
@@ -22,7 +21,8 @@ public class EDBlockTags extends BlockTagsProvider {
 	}
 
 	protected void registerBlockMineableTags() {
-
+		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get());
+		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.DRYING_RACK.get(),
 				ExtraDelightBlocks.FOOD_DISPLAY.get(), ExtraDelightBlocks.DOUGH_SHAPING.get(),
 				ExtraDelightBlocks.MIXING_BOWL.get());

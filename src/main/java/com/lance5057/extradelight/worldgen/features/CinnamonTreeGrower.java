@@ -9,7 +9,7 @@ public class CinnamonTreeGrower extends AbstractTreeGrower {
 
 	@Override
 	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pLargeHive) {
-		return null;
+		return ExtraDelightTreeFeatures.CINNAMON;
 	}
 
 }

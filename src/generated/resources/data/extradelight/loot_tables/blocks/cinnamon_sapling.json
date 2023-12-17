@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "extradelight:cinnamon_sapling"
         }
       ],
       "rolls": 1.0
