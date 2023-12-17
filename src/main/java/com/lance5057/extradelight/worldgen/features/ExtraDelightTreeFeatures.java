@@ -8,14 +8,14 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 
 public class ExtraDelightTreeFeatures {
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> CINNAMON = FeatureUtils.register("cinnamon", Feature.TREE, (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(ExtraDelightBlocks.CINNAMON_LOG.get()),
-            new ForkingTrunkPlacer(5, 2, 2),
+            new BendingTrunkPlacer(3, 0, 0, 6, ConstantInt.of(1)),
             BlockStateProvider.simple(ExtraDelightBlocks.CINNAMON_LEAVES.get()),
-            new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
-            new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build());
+            new RandomSpreadFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), ConstantInt.of(2), 12),
+            new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build());
 }

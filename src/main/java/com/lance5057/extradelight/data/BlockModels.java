@@ -2,13 +2,11 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
-import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -19,6 +17,7 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
@@ -158,6 +157,7 @@ public class BlockModels extends BlockStateProvider {
 		this.logBlock(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_PLANKS.get());
+		this.simpleCross(ExtraDelightBlocks.CINNAMON_SAPLING);
 
 		this.simpleBlock(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
@@ -417,5 +417,9 @@ public class BlockModels extends BlockStateProvider {
 					.build();
 		});
 
+	}
+
+	private void simpleCross(RegistryObject<? extends Block> block) {
+		simpleBlock(block.get(), new ConfiguredModel(models().cross(block.getId().getPath(), modLoc("block/" + block.getId().getPath())).renderType("cutout")));
 	}
 }

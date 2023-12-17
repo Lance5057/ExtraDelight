@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-15T11:58:01.8852066	Block States: extradelight
+// 1.19.2	2023-12-16T22:46:13.4988909	Block States: extradelight
 0606f1f30088689a5452fbb7064ac01d1efe1501 assets/extradelight/blockstates/acacia_dried_corn_fence.json
 e59ff0ab2be841ce0a186208c61c6671872c7575 assets/extradelight/blockstates/acacia_knife_block.json
 b53c748ec0e40232b62085300f2468fdee1f61d9 assets/extradelight/blockstates/acacia_molded_black_wallpaper.json
@@ -69,6 +69,7 @@ e9699b0c143322a17ef0f96af3ec1b3085ecef4b assets/extradelight/blockstates/cinnamo
 01791f4e796a8e19a0e1bde0e415e89cdf29b5dc assets/extradelight/blockstates/cinnamon_log.json
 c4678dcfaec1abf1507436fce9886097f45f4ab3 assets/extradelight/blockstates/cinnamon_planks.json
 24af2d72ac8758c6ef310d8c8e64507ff4adb4cd assets/extradelight/blockstates/cinnamon_rolls.json
+16aec2a484fc3030763af79b6c5105732f320d5d assets/extradelight/blockstates/cinnamon_sapling.json
 1bd23ddb4a87a702dac716c1031c1d1c1d7cb7cd assets/extradelight/blockstates/coffee_cake.json
 380e0d2f16afb444ff85ec179ffa4544f6ba6109 assets/extradelight/blockstates/cooking_oil.json
 4fb8c9d6ffad8b3e41333ec2c5bea2aa5046fe82 assets/extradelight/blockstates/cornbread.json
@@ -692,6 +693,7 @@ e3fa0dafc6b9a1e1bfef74552f549e011647a0fc assets/extradelight/models/block/cinnam
 e61ed3e13d353ea0eea322b9327c445161cd0cef assets/extradelight/models/block/cinnamon_log.json
 6c591812f2695fe15ac62e5317afc1dcc2d5ca8b assets/extradelight/models/block/cinnamon_log_horizontal.json
 68e4714ecf40de7aaee17310b3863af8b46d6c85 assets/extradelight/models/block/cinnamon_planks.json
+2c86b5700b0b9c688b4878271efd1a6be5e7175a assets/extradelight/models/block/cinnamon_sapling.json
 27019f475fb5233a0ccd75f32f362bf02c2531dc assets/extradelight/models/block/coffee_cake.json
 e1448cae8363a3de35ba3287151c951872b9ca6a assets/extradelight/models/block/coffee_cake_slice1.json
 c5eb03570276a83430025a38afeb96f557b9e899 assets/extradelight/models/block/coffee_cake_slice2.json

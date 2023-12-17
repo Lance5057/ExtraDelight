@@ -3,7 +3,6 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -559,6 +558,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CINNAMON_LOG, "cinnamon_log");
 		forBlockItem(ExtraDelightItems.CINNAMON_LEAVES, "cinnamon_leaves");
 		forBlockItem(ExtraDelightItems.CINNAMON_PLANKS, "cinnamon_planks");
+		forBlockItemWithParent(ExtraDelightItems.CINNAMON_SAPLING);
 		forItem(ExtraDelightItems.CINNAMON_BARK, "cinnamon_bark");
 		forItem(ExtraDelightItems.CINNAMON_STICK, "cinnamon_stick");
 		forItem(ExtraDelightItems.GROUND_CINNAMON, "ground_cinnamon");
@@ -793,4 +793,9 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(item.getId().getPath()).parent(jellyModel).texture("1",
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/jelly_" + color));
 	}
+
+	private void forBlockItemWithParent(RegistryObject<? extends BlockItem> item) {
+		singleTexture(item.getId().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/" + item.getId().getPath()));
+	}
+
 }
