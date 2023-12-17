@@ -1,0 +1,18 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "extradelight:sugar_cookie_dough"
+    },
+    {
+      "item": "farmersdelight:pumpkin_slice"
+    }
+  ],
+  "result": {
+    "item": "extradelight:pumpkin_cookie_dough"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "item": "minecraft:air"
+  }
+}
