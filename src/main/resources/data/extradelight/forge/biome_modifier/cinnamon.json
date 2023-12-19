@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_hot/overworld",
+  "features": "extradelight:cinnamon",
+  "step": "vegetal_decoration"
+}

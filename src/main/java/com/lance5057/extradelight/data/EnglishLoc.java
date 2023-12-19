@@ -4,6 +4,7 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -37,6 +38,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.feast", "Feast Servings");
 		this.add("extradelight.jei.mortar", "Mortar");
 		this.add("extradelight.jei.doughshaping", "Dough Shaping");
+		this.add("extradelight.jei.tool_on_block", "Tool on Block");
 
 		this.add("extradelight.corn_dimension.death", "Be more careful in the cornfield next time...");
 
@@ -535,6 +537,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.HONEY_MILKSHAKE.get(), "Honey Milkshake");
 		this.add(ExtraDelightItems.PUMPKIN_MILKSHAKE.get(), "Pumpkin Milkshake");
 		this.add(ExtraDelightItems.SWEET_BERRY_MILKSHAKE.get(), "Sweet Berry Milkshake");
+		this.add(ExtraDelightItems.CHOCOLATE_MILK.get(), "Chocolate Milk");
 		this.add(ExtraDelightItems.EGGNOG.get(), "Eggnog");
 		this.add(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(), "Gingerbread Cookie Dough");
 		this.add(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get(), "Sugar Cookie Dough");
@@ -544,6 +547,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.HONEY_COOKIE_DOUGH.get(), "Honey Cookie Dough");
 		this.add(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get(), "Pumpkin Cookie Dough");
 		this.add(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get(), "Sweet Berry Cookie Dough");
+
 		this.add(ExtraDelightItems.GINGERBREAD_COOKIE.get(), "Gingerbread Cookie");
 		this.add(ExtraDelightItems.GINGERBREAD_STEVE.get(), "Gingerbread Steve");
 		this.add(ExtraDelightItems.GINGERBREAD_ALEX.get(), "Gingerbread Alex");
@@ -551,24 +555,36 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.GINGERBREAD_CREEPER.get(), "Gingerbread Creeper");
 		this.add(ExtraDelightItems.GINGERBREAD_SWORD.get(), "Gingerbread Sword");
 		this.add(ExtraDelightItems.GINGERBREAD_PICKAXE.get(), "Gingerbread Pickaxe");
+		this.add(ExtraDelightItems.GINGERBREAD_DIAMOND.get(), "Gingerbread Diamond");
+		this.add(ExtraDelightItems.GINGERBREAD_EMERALD.get(), "Gingerbread Emerald");
+
 		this.add(ExtraDelightItems.SUGAR_COOKIE_STEVE.get(), "Sugar Cookie Steve");
 		this.add(ExtraDelightItems.SUGAR_COOKIE_ALEX.get(), "Sugar Cookie Alex");
 		this.add(ExtraDelightItems.SUGAR_COOKIE_VILLAGER.get(), "Sugar Cookie Villager");
 		this.add(ExtraDelightItems.SUGAR_COOKIE_CREEPER.get(), "Sugar Cookie Creeper");
 		this.add(ExtraDelightItems.SUGAR_COOKIE_SWORD.get(), "Sugar Cookie Sword");
 		this.add(ExtraDelightItems.SUGAR_COOKIE_PICKAXE.get(), "Sugar Cookie Pickaxe");
+		this.add(ExtraDelightItems.SUGAR_COOKIE_DIAMOND.get(), "Sugar Cookie Diamond");
+		this.add(ExtraDelightItems.SUGAR_COOKIE_EMERALD.get(), "Sugar Cookie Emerald");
+
 		this.add(ExtraDelightItems.RAW_GINGERBREAD_STEVE.get(), "Raw Gingerbread Steve");
 		this.add(ExtraDelightItems.RAW_GINGERBREAD_ALEX.get(), "Raw Gingerbread Alex");
 		this.add(ExtraDelightItems.RAW_GINGERBREAD_VILLAGER.get(), "Raw Gingerbread Villager");
 		this.add(ExtraDelightItems.RAW_GINGERBREAD_CREEPER.get(), "Raw Gingerbread Creeper");
 		this.add(ExtraDelightItems.RAW_GINGERBREAD_SWORD.get(), "Raw Gingerbread Sword");
 		this.add(ExtraDelightItems.RAW_GINGERBREAD_PICKAXE.get(), "Raw Gingerbread Pickaxe");
+		this.add(ExtraDelightItems.RAW_GINGERBREAD_DIAMOND.get(), "Raw Gingerbread Diamond");
+		this.add(ExtraDelightItems.RAW_GINGERBREAD_EMERALD.get(), "Raw Gingerbread Emerald");
+
 		this.add(ExtraDelightItems.RAW_SUGAR_COOKIE_STEVE.get(), "Raw Sugar Cookie Steve");
 		this.add(ExtraDelightItems.RAW_SUGAR_COOKIE_ALEX.get(), "Raw Sugar Cookie Alex");
 		this.add(ExtraDelightItems.RAW_SUGAR_COOKIE_VILLAGER.get(), "Raw Sugar Cookie Villager");
 		this.add(ExtraDelightItems.RAW_SUGAR_COOKIE_CREEPER.get(), "Raw Sugar Cookie Creeper");
 		this.add(ExtraDelightItems.RAW_SUGAR_COOKIE_SWORD.get(), "Raw Sugar Cookie Sword");
 		this.add(ExtraDelightItems.RAW_SUGAR_COOKIE_PICKAXE.get(), "Raw Sugar Cookie Pickaxe");
+		this.add(ExtraDelightItems.RAW_SUGAR_COOKIE_DIAMOND.get(), "Raw Sugar Cookie Diamond");
+		this.add(ExtraDelightItems.RAW_SUGAR_COOKIE_EMERALD.get(), "Raw Sugar Cookie Emerald");
+
 		this.add(ExtraDelightItems.APPLE_COOKIE_BLOCK.get(), "Apple Cinnamon Cookie Block");
 		this.add(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_BLOCK.get(), "Chocolate Chip Cookie Block");
 		this.add(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), "Gingerbread Cookie Block");
@@ -704,7 +720,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.GINGERBREAD_BLOCK_RED.get(), "Red Frosted Gingerbread Block");
 		this.add(ExtraDelightItems.GINGERBREAD_BLOCK_WHITE.get(), "White Frosted Gingerbread Block");
 		this.add(ExtraDelightItems.GINGERBREAD_BLOCK_YELLOW.get(), "Yellow Frosted Gingerbread Block");
-		
+
 		this.add(ExtraDelightItems.ROLL.get(), "Bread Roll");
 
 		AestheticBlocks.EngLoc(this);

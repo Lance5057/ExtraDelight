@@ -599,6 +599,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.GINGERBREAD_STEVE, "gingerbread_steve");
 		forItem(ExtraDelightItems.GINGERBREAD_SWORD, "gingerbread_sword");
 		forItem(ExtraDelightItems.GINGERBREAD_VILLAGER, "gingerbread_villager");
+		forItem(ExtraDelightItems.GINGERBREAD_DIAMOND, "gingerbread_diamond");
+		forItem(ExtraDelightItems.GINGERBREAD_EMERALD, "gingerbread_emerald");
 
 		forItem(ExtraDelightItems.SUGAR_COOKIE_ALEX, "sugar_cookie_alex");
 		forItem(ExtraDelightItems.SUGAR_COOKIE_CREEPER, "sugar_cookie_creeper");
@@ -606,6 +608,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.SUGAR_COOKIE_STEVE, "sugar_cookie_steve");
 		forItem(ExtraDelightItems.SUGAR_COOKIE_SWORD, "sugar_cookie_sword");
 		forItem(ExtraDelightItems.SUGAR_COOKIE_VILLAGER, "sugar_cookie_villager");
+		forItem(ExtraDelightItems.SUGAR_COOKIE_DIAMOND, "sugar_cookie_diamond");
+		forItem(ExtraDelightItems.SUGAR_COOKIE_EMERALD, "sugar_cookie_emerald");
 
 		forItem(ExtraDelightItems.RAW_GINGERBREAD_ALEX, "raw_gingerbread_alex");
 		forItem(ExtraDelightItems.RAW_GINGERBREAD_CREEPER, "raw_gingerbread_creeper");
@@ -613,6 +617,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.RAW_GINGERBREAD_STEVE, "raw_gingerbread_steve");
 		forItem(ExtraDelightItems.RAW_GINGERBREAD_SWORD, "raw_gingerbread_sword");
 		forItem(ExtraDelightItems.RAW_GINGERBREAD_VILLAGER, "raw_gingerbread_villager");
+		forItem(ExtraDelightItems.RAW_GINGERBREAD_DIAMOND, "raw_gingerbread_diamond");
+		forItem(ExtraDelightItems.RAW_GINGERBREAD_EMERALD, "raw_gingerbread_emerald");
 
 		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_ALEX, "raw_sugar_cookie_alex");
 		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_CREEPER, "raw_sugar_cookie_creeper");
@@ -620,6 +626,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_STEVE, "raw_sugar_cookie_steve");
 		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_SWORD, "raw_sugar_cookie_sword");
 		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_VILLAGER, "raw_sugar_cookie_villager");
+		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_DIAMOND, "raw_sugar_cookie_diamond");
+		forItem(ExtraDelightItems.RAW_SUGAR_COOKIE_EMERALD, "raw_sugar_cookie_emerald");
 
 		forBlockItem(ExtraDelightItems.APPLE_COOKIE_BLOCK, "apple_cookie_block");
 		forBlockItem(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_BLOCK, "chocolate_chip_cookie_block");
@@ -795,7 +803,8 @@ public class ItemModels extends ItemModelProvider {
 	}
 
 	private void forBlockItemWithParent(RegistryObject<? extends BlockItem> item) {
-		singleTexture(item.getId().getPath(), mcLoc("item/generated"), "layer0", modLoc("block/" + item.getId().getPath()));
+		singleTexture(item.getId().getPath(), mcLoc("item/generated"), "layer0",
+				modLoc("block/" + item.getId().getPath()));
 	}
 
 }

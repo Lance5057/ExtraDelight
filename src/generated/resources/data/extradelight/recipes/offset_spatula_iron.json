@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " is",
+    "i  "
+  ],
+  "result": {
+    "item": "extradelight:offset_spatula_iron"
+  }
+}

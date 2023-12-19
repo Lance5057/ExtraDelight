@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.worldgen.features.ExtraDelightTreeFeatures;
 import com.lance5057.extradelight.worldgen.generation.CropGeneration;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -41,6 +42,8 @@ public class ExtraDelight {
 		ExtraDelightLoot.register(modEventBus);
 
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
+		
+		ExtraDelightTreeFeatures.register(modEventBus);
 
 		IEventBus bus = MinecraftForge.EVENT_BUS;
 		bus.addListener(ExtraDelightEvents::stopDimensionDestruction);

@@ -71,6 +71,10 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> PROCESSED_APPLE = modTag("processed/apple");
 	public static final TagKey<Item> SLICED_APPLE = forgeTag("apple/sliced");
+	
+	public static final TagKey<Item> PROCESSED_GINGER = modTag("processed/ginger");
+	public static final TagKey<Item> SLICED_GINGER = forgeTag("ginger/sliced");
+	public static final TagKey<Item> GRATED_GINGER = forgeTag("ginger/grated");
 
 	public static final TagKey<Item> CORN = forgeTag("vegetable/corn");
 

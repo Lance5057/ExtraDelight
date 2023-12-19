@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "w": {
+      "item": "minecraft:brown_wool"
+    }
+  },
+  "pattern": [
+    " w ",
+    " w ",
+    "w w"
+  ],
+  "result": {
+    "item": "extradelight:ribbon_bow_brown"
+  }
+}

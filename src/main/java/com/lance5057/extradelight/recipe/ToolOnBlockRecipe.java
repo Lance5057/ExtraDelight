@@ -21,6 +21,18 @@ public class ToolOnBlockRecipe implements Recipe<Container> {
 
 	protected final ResourceLocation id;
 	protected final Ingredient tool;
+	public Ingredient getTool() {
+		return tool;
+	}
+
+	public BlockItem getIn() {
+		return in;
+	}
+
+	public BlockItem getOut() {
+		return out;
+	}
+
 	protected final BlockItem in;
 	protected final BlockItem out;
 
@@ -90,7 +102,7 @@ public class ToolOnBlockRecipe implements Recipe<Container> {
 
 	@Override
 	public ResourceLocation getId() {
-		return null;
+		return this.id;
 	}
 
 	@Override

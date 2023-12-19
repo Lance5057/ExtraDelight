@@ -40,8 +40,9 @@ public class MintCrop extends Block {
 		int size = 5;
 		int attempts = 10;
 		for (int x = 0; x < attempts; x++) {
-			BlockPos pos = new BlockPos(pPos.getX() + pLevel.random.nextInt(size),
-					pPos.getY() + pLevel.random.nextInt(size), pPos.getZ() + pLevel.random.nextInt(size));
+			BlockPos pos = new BlockPos(pPos.getX() + pLevel.random.nextInt(size) - (size / 2),
+					pPos.getY() + pLevel.random.nextInt(size) - (size / 2),
+					pPos.getZ() + pLevel.random.nextInt(size) - (size / 2));
 
 			if (pPos != pos)
 				if (pLevel.getBlockState(pos).isAir())

@@ -1,7 +1,5 @@
 package com.lance5057.extradelight.integration.jei;
 
-import java.util.Collections;
-
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -13,20 +11,16 @@ import com.lance5057.extradelight.integration.jei.categories.FeastRecipeCategory
 import com.lance5057.extradelight.integration.jei.categories.MixingBowlRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MortarRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.OvenRecipeCategory;
+import com.lance5057.extradelight.integration.jei.categories.ToolOnBlockRecipeCatagory;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
-import mezz.jei.api.runtime.IIngredientManager;
-import mezz.jei.api.runtime.IJeiRuntime;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeManager;
 
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
@@ -44,6 +38,7 @@ public class JEIPlugin implements IModPlugin {
 				new OvenRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new DryingRackRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new DoughShapingRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new ToolOnBlockRecipeCatagory(registry.getJeiHelpers().getGuiHelper()),
 				new FeastRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
 	}
 
@@ -61,6 +56,8 @@ public class JEIPlugin implements IModPlugin {
 				.getAllRecipesFor(ExtraDelightRecipes.DOUGH_SHAPING.get()));
 		registry.addRecipes(FeastRecipeCategory.TYPE,
 				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ExtraDelightRecipes.FEAST.get()));
+		registry.addRecipes(ToolOnBlockRecipeCatagory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.TOOL_ON_BLOCK.get()));
 	}
 
 	@Override

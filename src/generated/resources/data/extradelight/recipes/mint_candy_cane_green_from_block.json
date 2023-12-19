@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extradelight:candy_cane_green_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:candy_cane_green"
+  }
+}

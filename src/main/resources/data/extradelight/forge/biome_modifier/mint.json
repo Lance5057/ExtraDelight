@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_cold/overworld",
+  "features": "extradelight:mint",
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:gingerbread_cookie_dough"
+    },
+    {
+      "item": "extradelight:gingerbread_cookie_dough"
+    },
+    {
+      "item": "extradelight:gingerbread_cookie_dough"
+    },
+    {
+      "item": "extradelight:gingerbread_cookie_dough"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 4,
+    "item": "extradelight:gingerbread_cookie_block_item"
+  }
+}

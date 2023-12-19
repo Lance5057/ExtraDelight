@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:raw_gingerbread_creeper"
+  },
+  "result": "extradelight:gingerbread_creeper"
+}
