@@ -54,20 +54,22 @@ public class MixingBowlBlock extends Block implements EntityBlock {
 			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
 			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
 
-				if (!pPlayer.getItemInHand(pHand).isEmpty()) {
+				if (!mbe.complete) {
+					if (pPlayer.isCrouching()) {
+						mbe.extractItem(pPlayer);
+						return InteractionResult.SUCCESS;
+					}
 					if (pPlayer.getItemInHand(pHand).is(ExtraDelightTags.SPOONS)) {
 						mbe.mix(pPlayer);
 						return InteractionResult.SUCCESS;
-					} else if (mbe.testContainerItem(pPlayer.getItemInHand(pHand))) {
-						mbe.scoop(pPlayer, pHand);
-						return InteractionResult.SUCCESS;
-					} else if (mbe.containerItem.isEmpty()) {
+					} else {
 						mbe.insertItem(pPlayer.getItemInHand(pHand));
 					}
 
 				} else {
-					if (pPlayer.isCrouching()) {
-						mbe.extractItem(pPlayer);
+					if (mbe.testContainerItem(pPlayer.getItemInHand(pHand))) {
+						mbe.scoop(pPlayer, pHand);
+						return InteractionResult.SUCCESS;
 					}
 				}
 
@@ -90,7 +92,7 @@ public class MixingBowlBlock extends Block implements EntityBlock {
 			BlockEntity tileentity = level.getBlockEntity(pos);
 			if (tileentity instanceof MixingBowlBlockEntity) {
 				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
-						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots()-1)
+						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots() - 1)
 								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
 
 				level.updateNeighbourForOutputSignal(pos, this);

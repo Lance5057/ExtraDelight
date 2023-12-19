@@ -137,7 +137,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.PROCESSED_TOMATO).addTag(ExtraDelightTags.PROCESSED_POTATO)
 				.addTag(ExtraDelightTags.PROCESSED_ONION);
 
-		tag(ExtraDelightTags.PROCESSED_FRUIT).addTag(ExtraDelightTags.PROCESSED_APPLE);
+		tag(ExtraDelightTags.PROCESSED_FRUIT).addTag(ExtraDelightTags.PROCESSED_APPLE).add(Items.SWEET_BERRIES,
+				Items.GLOW_BERRIES, Items.MELON_SLICE);
 		tag(ExtraDelightTags.PROCESSED_PRODUCE).addTag(ExtraDelightTags.PROCESSED_FRUIT)
 				.addTag(ExtraDelightTags.PROCESSED_VEG);
 
@@ -145,9 +146,9 @@ public class EDItemTags extends ItemTagsProvider {
 		
 		tag(ExtraDelightTags.CACTUS).add(ExtraDelightItems.CACTUS.get());
 
-		tag(ExtraDelightTags.RICEBALL_FILLING)
-				.add(ExtraDelightItems.EGG_SALAD.get(), ExtraDelightItems.SCRAMBLED_EGGS.get(),
-						ExtraDelightItems.FISH_SALAD.get(), ExtraDelightItems.BOILED_EGG.get())
+		tag(ExtraDelightTags.RICEBALL_FILLING).add(ExtraDelightItems.EGG_SALAD.get(),
+				ExtraDelightItems.SCRAMBLED_EGGS.get(), ExtraDelightItems.FISH_SALAD.get(),
+				ExtraDelightItems.BOILED_EGG.get(), ExtraDelightItems.PICKLED_GINGER.get())
 				.addTag(ExtraDelightTags.CHEESE);
 
 		tag(ExtraDelightTags.JELLY).add(ExtraDelightItems.JELLY_BLACK.get(), ExtraDelightItems.JELLY_BLUE.get(),
@@ -170,6 +171,30 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.CREAM_CORN.get(), ExtraDelightItems.DRIED_CORN_HUSK.get(),
 				ExtraDelightItems.GRILLED_CORN_ON_COB.get(), ExtraDelightItems.POPCORN.get(),
 				AestheticBlocks.CORN_HUSK_DOLL_ITEM.get());
+
+		tag(ExtraDelightTags.CANDY).add(ExtraDelightItems.CANDY_BLACK.get(), ExtraDelightItems.CANDY_BLUE.get(),
+				ExtraDelightItems.CANDY_BROWN.get(), ExtraDelightItems.CANDY_CYAN.get(),
+				ExtraDelightItems.CANDY_GREEN.get(), ExtraDelightItems.CANDY_GRAY.get(),
+				ExtraDelightItems.CANDY_LIGHT_BLUE.get(), ExtraDelightItems.CANDY_LIGHT_GRAY.get(),
+				ExtraDelightItems.CANDY_LIME.get(), ExtraDelightItems.CANDY_MAGENTA.get(),
+				ExtraDelightItems.CANDY_ORANGE.get(), ExtraDelightItems.CANDY_PINK.get(),
+				ExtraDelightItems.CANDY_PURPLE.get(), ExtraDelightItems.CANDY_RED.get(),
+				ExtraDelightItems.CANDY_WHITE.get(), ExtraDelightItems.CANDY_YELLOW.get());
+
+		tag(ExtraDelightTags.CANDY_BOWL_VALID).addTag(ExtraDelightTags.CANDY).add(ExtraDelightItems.CARAMEL_CANDY.get(),
+				ExtraDelightItems.MINT_CANDY_BLUE.get(), ExtraDelightItems.MINT_CANDY_GREEN.get(),
+				ExtraDelightItems.MINT_CANDY_RED.get(), ExtraDelightItems.CANDY_CANE_BLUE.get(),
+				ExtraDelightItems.CANDY_CANE_RED.get(), ExtraDelightItems.CANDY_CANE_GREEN.get(),
+				ExtraDelightItems.CANDIED_GINGER.get());
+
+		tag(ExtraDelightTags.OFFSET_SPATULAS).add(ExtraDelightItems.OFFSET_SPATULA_DIAMOND.get(),
+				ExtraDelightItems.OFFSET_SPATULA_GOLD.get(), ExtraDelightItems.OFFSET_SPATULA_IRON.get(),
+				ExtraDelightItems.OFFSET_SPATULA_NETHERITE.get(), ExtraDelightItems.OFFSET_SPATULA_WOOD.get());
+
+		tag(ExtraDelightTags.GRATED_GINGER).add(ExtraDelightItems.GRATED_GINGER.get());
+		tag(ExtraDelightTags.SLICED_GINGER).add(ExtraDelightItems.SLICED_GINGER.get());
+		tag(ExtraDelightTags.PROCESSED_GINGER).addTag(ExtraDelightTags.GRATED_GINGER)
+				.addTag(ExtraDelightTags.SLICED_GINGER);
 	}
 
 }

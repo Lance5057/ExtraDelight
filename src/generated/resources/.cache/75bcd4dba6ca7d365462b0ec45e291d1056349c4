@@ -1,5 +1,7 @@
-// 1.19.2	2023-09-12T16:34:46.4900016	Tags for minecraft:block
+// 1.19.2	2023-12-16T22:31:52.7883077	Tags for minecraft:block
 f00622bc167612ddfb6a2e828625e27173433c6d data/farmersdelight/tags/blocks/mineable/knife.json
 609799077e5faa431d1bf252b4615ee0090a051f data/minecraft/tags/blocks/fences.json
-cd8b73d1f0fb3d965d47026a3b65070c614ed27e data/minecraft/tags/blocks/mineable/axe.json
+6939d85d8f6246c4fdc0f9fef7b6a890a95093f2 data/minecraft/tags/blocks/leaves.json
+8e69d6652cad87ffd44f314c5e46933cf8269e0b data/minecraft/tags/blocks/logs_that_burn.json
+5a877c7cf37c0f0c5563eac29c121f8330511b6d data/minecraft/tags/blocks/mineable/axe.json
 aa86500d081851789eb745b115aa35d1a80ddb7e data/minecraft/tags/blocks/mineable/pickaxe.json

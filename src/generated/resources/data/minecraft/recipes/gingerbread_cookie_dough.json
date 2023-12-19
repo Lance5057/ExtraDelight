@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "item": "extradelight:grated_ginger"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    }
+  ],
+  "result": {
+    "item": "extradelight:gingerbread_cookie_dough"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "item": "minecraft:air"
+  }
+}

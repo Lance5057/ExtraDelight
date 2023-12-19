@@ -1,0 +1,8 @@
+{
+  "type": "extradelight:feast",
+  "block": "extradelight:cinnamon_rolls_feast",
+  "ingredient": {
+    "tag": "forge:spoons"
+  },
+  "result": "extradelight:cinnamon_rolls"
+}

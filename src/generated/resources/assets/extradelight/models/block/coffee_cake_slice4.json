@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/cake_slice4",
+  "textures": {
+    "bottom": "extradelight:block/coffee_cake_bottom",
+    "inside": "extradelight:block/coffee_cake_inner",
+    "particle": "extradelight:block/coffee_cake_top",
+    "side": "extradelight:block/coffee_cake_side",
+    "top": "extradelight:block/coffee_cake_top"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+			{ "model": "extradelight:block/mint", "y":0 },
+			{ "model": "extradelight:block/mint", "y":90 },
+			{ "model": "extradelight:block/mint", "y":180 },
+			{ "model": "extradelight:block/mint", "y":270}
+		]
+  }
+}

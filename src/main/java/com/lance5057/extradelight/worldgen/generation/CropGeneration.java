@@ -27,6 +27,10 @@ import vectorwing.farmersdelight.common.world.configuration.WildCropConfiguratio
 public class CropGeneration {
 	public static Holder<ConfiguredFeature<WildCropConfiguration, ?>> FEATURE_PATCH_WILD_CORN;
 	public static Holder<PlacedFeature> PATCH_WILD_CORN;
+	public static Holder<ConfiguredFeature<WildCropConfiguration, ?>> FEATURE_PATCH_WILD_GINGER;
+	public static Holder<PlacedFeature> PATCH_WILD_GINGER;
+	public static Holder<ConfiguredFeature<WildCropConfiguration, ?>> FEATURE_PATCH_WILD_MINT;
+	public static Holder<PlacedFeature> PATCH_WILD_MINT;
 
 	public static void registerWildCropGeneration() {
 		FEATURE_PATCH_WILD_CORN = register(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_corn"),
@@ -37,6 +41,26 @@ public class CropGeneration {
 
 		PATCH_WILD_CORN = registerPlacement(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_corn"),
 				FEATURE_PATCH_WILD_CORN, RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
+				PlacementUtils.HEIGHTMAP, BiomeFilter.biome()); // TODO config
+
+		FEATURE_PATCH_WILD_GINGER = register(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_ginger"),
+				ModBiomeFeatures.WILD_CROP.get(),
+				WildCropGeneration.wildCropConfig(ExtraDelightBlocks.WILD_GINGER.get(), Blocks.GRASS,
+						BlockPredicate.matchesBlocks(WildCropGeneration.BLOCK_BELOW, List.of(Blocks.GRASS_BLOCK,
+								Blocks.DIRT, Blocks.COARSE_DIRT, Blocks.RED_SAND, Blocks.SAND))));
+
+		PATCH_WILD_GINGER = registerPlacement(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_ginger"),
+				FEATURE_PATCH_WILD_GINGER, RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
+				PlacementUtils.HEIGHTMAP, BiomeFilter.biome()); // TODO config
+
+		FEATURE_PATCH_WILD_MINT = register(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_mint"),
+				ModBiomeFeatures.WILD_CROP.get(),
+				WildCropGeneration.wildCropConfig(ExtraDelightBlocks.MINT_CROP.get(), Blocks.GRASS,
+						BlockPredicate.matchesBlocks(WildCropGeneration.BLOCK_BELOW, List.of(Blocks.GRASS_BLOCK,
+								Blocks.DIRT, Blocks.COARSE_DIRT, Blocks.RED_SAND, Blocks.SAND))));
+
+		PATCH_WILD_MINT = registerPlacement(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_mint"),
+				FEATURE_PATCH_WILD_MINT, RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
 				PlacementUtils.HEIGHTMAP, BiomeFilter.biome()); // TODO config
 	}
 

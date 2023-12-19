@@ -15,6 +15,7 @@ import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
 import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -27,7 +28,6 @@ import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -71,8 +71,99 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		dryingRackRecipes(consumer);
 		doughShapeRecipes(consumer);
 		feastRecipes(consumer);
+		toolOnBlockRecipes(consumer);
 
 		AestheticBlocks.Recipes(consumer);
+	}
+
+	private void toolOnBlockRecipes(Consumer<FinishedRecipe> consumer) {
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_WHITE.get()), ExtraDelightItems.GINGERBREAD_BLOCK_WHITE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_WHITE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_white"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_LIGHT_GRAY.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_GRAY.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_LIGHT_GRAY.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_light_gray"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_GRAY.get()), ExtraDelightItems.GINGERBREAD_BLOCK_GRAY.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_GRAY.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_gray"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_BROWN.get()), ExtraDelightItems.GINGERBREAD_BLOCK_BROWN.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_BROWN.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_brown"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_RED.get()), ExtraDelightItems.GINGERBREAD_BLOCK_RED.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_RED.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_red"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_ORANGE.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_ORANGE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_ORANGE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_orange"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_YELLOW.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_YELLOW.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_YELLOW.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_yellow"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_LIME.get()), ExtraDelightItems.GINGERBREAD_BLOCK_LIME.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_LIME.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_lime"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_GREEN.get()), ExtraDelightItems.GINGERBREAD_BLOCK_GREEN.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_GREEN.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_green"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_CYAN.get()), ExtraDelightItems.GINGERBREAD_BLOCK_CYAN.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_CYAN.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_cyan"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_LIGHT_BLUE.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_BLUE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_LIGHT_BLUE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_light_blue"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_BLUE.get()), ExtraDelightItems.GINGERBREAD_BLOCK_BLUE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_BLUE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_blue"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_PURPLE.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_PURPLE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_PURPLE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_purple"));
+
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+						Ingredient.of(ExtraDelightItems.FROSTING_MAGENTA.get()),
+						ExtraDelightItems.GINGERBREAD_BLOCK_MAGENTA.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_MAGENTA.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_magenta"));
+
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightItems.FROSTING_PINK.get()), ExtraDelightItems.GINGERBREAD_BLOCK_PINK.get())
+				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_PINK.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "frost_gingerbread_pink"));
+
 	}
 
 	private void feastRecipes(Consumer<FinishedRecipe> consumer) {
@@ -299,6 +390,42 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.PUMPKIN_ROLL_FEAST.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.PUMPKIN_ROLL_FEAST.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "pumpkin_roll_knife"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ExtraDelightTags.SPOONS), ExtraDelightItems.CINNAMON_ROLL.get(),
+						ExtraDelightItems.CINNAMON_ROLLS_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.PUMPKIN_ROLL_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cinnamon_roll"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.MONKEY_BREAD.get(),
+						ExtraDelightItems.MONKEY_BREAD_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.MONKEY_BREAD_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "monkey_bread"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.MINT_LAMB.get(),
+						ExtraDelightItems.MINT_LAMB_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.MINT_LAMB_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mint_lamb"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.CHARCUTERIE_BOARD.get(),
+						ExtraDelightItems.CHARCUTERIE_BOARD_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.CHARCUTERIE_BOARD_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "charcuterie"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), ExtraDelightItems.CHRISTMAS_PUDDING.get(),
+						ExtraDelightItems.CHRISTMAS_PUDDING_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "christmas_pudding"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.GLASS_BOTTLE), ExtraDelightItems.PUNCH.get(),
+						ExtraDelightItems.PUNCH_FEAST.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.PUNCH_FEAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "punch"));
 	}
 
 	private void doughShapeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -309,6 +436,72 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy("has_dough", has(ModItems.WHEAT_DOUGH.get())).save(consumer);
 		DoughShapingRecipeBuilder.shape(Ingredient.of(ModItems.WHEAT_DOUGH.get()), ModItems.RAW_PASTA.get(), 1)
 				.unlockedBy("has_dough", has(ModItems.WHEAT_DOUGH.get())).save(consumer);
+
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_GINGERBREAD_ALEX.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_GINGERBREAD_CREEPER.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_GINGERBREAD_PICKAXE.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_GINGERBREAD_STEVE.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_GINGERBREAD_SWORD.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_GINGERBREAD_VILLAGER.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_GINGERBREAD_DIAMOND.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_GINGERBREAD_EMERALD.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get())).save(consumer);
+
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_SUGAR_COOKIE_ALEX.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_SUGAR_COOKIE_CREEPER.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_SUGAR_COOKIE_PICKAXE.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_SUGAR_COOKIE_STEVE.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_SUGAR_COOKIE_SWORD.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_SUGAR_COOKIE_VILLAGER.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_SUGAR_COOKIE_DIAMOND.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get())).save(consumer);
+		DoughShapingRecipeBuilder
+				.shape(Ingredient.of(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()),
+						ExtraDelightItems.RAW_SUGAR_COOKIE_EMERALD.get(), 8)
+				.unlockedBy("has_dough", has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get())).save(consumer);
 	}
 
 	private void dryingRackRecipes(Consumer<FinishedRecipe> consumer) {
@@ -339,6 +532,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						1000)
 				.unlockedBy("has_husk", has(ExtraDelightItems.CORN_HUSK.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "corn_husk"));
+
+		DryingRackRecipeBuilder
+				.drying(Ingredient.of(ExtraDelightItems.RAW_CINNAMON.get()), ExtraDelightItems.CINNAMON_STICK.get(), 10,
+						1000)
+				.unlockedBy("has_husk", has(ExtraDelightItems.RAW_CINNAMON.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "raw_cinnamon"));
+
+		DryingRackRecipeBuilder
+				.drying(Ingredient.of(ExtraDelightTags.PROCESSED_FRUIT), ExtraDelightItems.DRIED_FRUIT.get(), 10, 1000)
+				.unlockedBy("has_husk", has(ExtraDelightItems.DRIED_FRUIT.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "dried_fruit"));
 	}
 
 	private void cookingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -363,6 +567,40 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, "corn_cob");
 		vanillaCooking(Ingredient.of(Items.PUMPKIN_SEEDS), ExtraDelightItems.ROASTED_PUMPKIN_SEEDS.get(), consumer,
 				"pumpkin_seeds");
+
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_ALEX.get()),
+				ExtraDelightItems.GINGERBREAD_ALEX.get(), consumer, "gingerbread_alex");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_CREEPER.get()),
+				ExtraDelightItems.GINGERBREAD_CREEPER.get(), consumer, "gingerbread_creeper");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_PICKAXE.get()),
+				ExtraDelightItems.GINGERBREAD_PICKAXE.get(), consumer, "gingerbread_pickaxe");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_STEVE.get()),
+				ExtraDelightItems.GINGERBREAD_STEVE.get(), consumer, "gingerbread_steve");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_SWORD.get()),
+				ExtraDelightItems.GINGERBREAD_SWORD.get(), consumer, "gingerbread_sword");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_VILLAGER.get()),
+				ExtraDelightItems.GINGERBREAD_VILLAGER.get(), consumer, "gingerbread_villager");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_DIAMOND.get()),
+				ExtraDelightItems.GINGERBREAD_DIAMOND.get(), consumer, "gingerbread_diamond");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_EMERALD.get()),
+				ExtraDelightItems.GINGERBREAD_EMERALD.get(), consumer, "gingerbread_emerald");
+
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_ALEX.get()),
+				ExtraDelightItems.SUGAR_COOKIE_ALEX.get(), consumer, "sugar_cookie_alex");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_CREEPER.get()),
+				ExtraDelightItems.SUGAR_COOKIE_CREEPER.get(), consumer, "sugar_cookie_creeper");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_PICKAXE.get()),
+				ExtraDelightItems.SUGAR_COOKIE_PICKAXE.get(), consumer, "sugar_cookie_pickaxe");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_STEVE.get()),
+				ExtraDelightItems.SUGAR_COOKIE_STEVE.get(), consumer, "sugar_cookie_steve");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_SWORD.get()),
+				ExtraDelightItems.SUGAR_COOKIE_SWORD.get(), consumer, "sugar_cookie_sword");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_VILLAGER.get()),
+				ExtraDelightItems.SUGAR_COOKIE_VILLAGER.get(), consumer, "sugar_cookie_villager");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_DIAMOND.get()),
+				ExtraDelightItems.SUGAR_COOKIE_DIAMOND.get(), consumer, "sugar_cookie_diamond");
+		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_EMERALD.get()),
+				ExtraDelightItems.SUGAR_COOKIE_EMERALD.get(), consumer, "sugar_cookie_emerald");
 	}
 
 	private void vanillaCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
@@ -391,63 +629,61 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 	private void mixingbowlRecipes(Consumer<FinishedRecipe> consumer) {
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.EGG_MIX.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.EGG_MIX.get(), LONG_GRIND, Items.BOWL, 1)
 				.requires(Ingredient.of(ForgeTags.MILK)).requires(Ingredient.of(ForgeTags.EGGS))
 				.requires(Ingredient.of(ForgeTags.EGGS)).unlockedBy(getName(), has(ForgeTags.EGGS))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mixingbowl/egg_mix"));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.MAYO.get(), LONG_GRIND, Ingredient.of(Items.GLASS_BOTTLE), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.MAYO.get(), LONG_GRIND, Items.GLASS_BOTTLE, 1)
 				.requires(Ingredient.of(ForgeTags.EGGS), 2).requires(Ingredient.of(ExtraDelightTags.COOKING_OIL))
 				.requires(Ingredient.of(ExtraDelightTags.VINEGAR)).unlockedBy(getName(), has(ForgeTags.EGGS))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mixingbowl/mayo"));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CARROT_SALAD.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CARROT_SALAD.get(), LONG_GRIND, Items.BOWL, 1)
 				.requires(Ingredient.of(ExtraDelightItems.GRATED_CARROT.get()), 2)
 				.requires(Ingredient.of(ExtraDelightItems.SLICED_APPLE.get()))
 				.requires(Ingredient.of(ExtraDelightTags.MAYO))
 				.unlockedBy(getName(), has(ExtraDelightItems.GRATED_CARROT.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mixingbowl/carrot_salad"));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.EGG_SALAD.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.EGG_SALAD.get(), LONG_GRIND, Items.BOWL, 1)
 				.requires(Ingredient.of(ExtraDelightItems.BOILED_EGG.get()), 2)
 				.requires(Ingredient.of(ExtraDelightTags.MAYO))
 				.unlockedBy(getName(), has(ExtraDelightItems.BOILED_EGG.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mixingbowl/egg_salad"));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FISH_SALAD.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 2)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FISH_SALAD.get(), LONG_GRIND, Items.BOWL, 2)
 				.requires(Ingredient.of(ForgeTags.COOKED_FISHES), 2).requires(Ingredient.of(ExtraDelightTags.MAYO))
 				.unlockedBy(getName(), has(ExtraDelightItems.BOILED_EGG.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mixingbowl/fish_salad"));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.BUTTER.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.BUTTER.get(), LONG_GRIND, Items.BOWL, 1)
 				.requires(Ingredient.of(ExtraDelightItems.WHIPPED_CREAM.get()))
 				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mixingbowl/butter"));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
 				.requires(Ingredient.of(ModItems.MILK_BOTTLE.get()))
 				.unlockedBy(getName(), has(ModItems.MILK_BOTTLE.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mixingbowl/whippedcream_bottle"));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Ingredient.of(Items.BOWL), 4)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.WHIPPED_CREAM.get(), LONG_GRIND, Items.BOWL, 4)
 				.requires(Ingredient.of(Items.MILK_BUCKET)).unlockedBy(getName(), has(Items.MILK_BUCKET))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mixingbowl/whippedcream_bucket"));
 
-		MixingBowlRecipeBuilder
-				.stir(ExtraDelightItems.SEAWEED_SALAD.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 2)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.SEAWEED_SALAD.get(), STANDARD_GRIND, Items.BOWL, 2)
 				.requires(Ingredient.of(Items.KELP)).requires(Ingredient.of(Items.KELP))
 				.requires(Ingredient.of(ExtraDelightItems.GRATED_CARROT.get()))
 				.requires(Ingredient.of(ExtraDelightItems.VINEGAR.get())).unlockedBy(getName(), has(Items.KELP))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mixingbowl/seaweed_salad"));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FURIKAKE.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 4)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FURIKAKE.get(), STANDARD_GRIND, Items.BOWL, 4)
 				.requires(Ingredient.of(Items.KELP)).requires(Ingredient.of(Items.KELP))
 				.requires(Ingredient.of(ExtraDelightItems.FISH_FLAKES.get()))
 				.requires(Ingredient.of(ExtraDelightItems.FISH_FLAKES.get())).unlockedBy(getName(), has(Items.KELP))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mixingbowl/furikake"));
 
-		MixingBowlRecipeBuilder
-				.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Items.BOWL, 1)
 				.requires(ModItems.CABBAGE.get()).requires(ExtraDelightTags.PROCESSED_ONION)
 				.requires(ExtraDelightTags.PROCESSED_CARROT).requires(ExtraDelightItems.CROUTONS.get())
 				.requires(ExtraDelightItems.CHEESE.get()).requires(ExtraDelightTags.COOKING_OIL)
@@ -455,8 +691,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(ExtraDelightTags.MEAT_COOKED).unlockedBy(getName(), has(ForgeTags.CROPS_CABBAGE))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "salad_meat"));
 
-		MixingBowlRecipeBuilder
-				.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.SALAD_FEAST_ITEM.get(), STANDARD_GRIND, Items.BOWL, 1)
 				.requires(ModItems.CABBAGE.get()).requires(ExtraDelightTags.PROCESSED_ONION)
 				.requires(ExtraDelightTags.PROCESSED_CARROT).requires(ExtraDelightItems.CROUTONS.get())
 				.requires(ExtraDelightItems.CHEESE.get()).requires(ExtraDelightTags.COOKING_OIL)
@@ -464,36 +699,294 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(ExtraDelightTags.PROCESSED_VEG).unlockedBy(getName(), has(ForgeTags.CROPS_CABBAGE))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "salad_veg"));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PASTA_ALFREDO.get(), FAST_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PASTA_ALFREDO.get(), FAST_GRIND, Items.BOWL, 1)
 				.requires(ExtraDelightItems.ALFREDO_SAUCE.get()).requires(ModItems.RAW_PASTA.get())
 				.unlockedBy(getName(), has(ExtraDelightItems.ALFREDO_SAUCE.get())).save(consumer);
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CHICKEN_ALFREDO.get(), FAST_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CHICKEN_ALFREDO.get(), FAST_GRIND, Items.BOWL, 1)
 				.requires(ExtraDelightItems.ALFREDO_SAUCE.get()).requires(ModItems.RAW_PASTA.get())
 				.requires(ForgeTags.COOKED_CHICKEN).unlockedBy(getName(), has(ExtraDelightItems.ALFREDO_SAUCE.get()))
 				.save(consumer);
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PASTA_TOMATO.get(), FAST_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PASTA_TOMATO.get(), FAST_GRIND, Items.BOWL, 1)
 				.requires(ModItems.TOMATO_SAUCE.get()).requires(ModItems.RAW_PASTA.get())
 				.unlockedBy(getName(), has(ModItems.TOMATO_SAUCE.get())).save(consumer);
 
-		MixingBowlRecipeBuilder.stir(ModItems.PASTA_WITH_MEATBALLS.get(), FAST_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ModItems.PASTA_WITH_MEATBALLS.get(), FAST_GRIND, Items.BOWL, 1)
 				.requires(ModItems.TOMATO_SAUCE.get()).requires(ModItems.RAW_PASTA.get())
 				.requires(ModItems.BEEF_PATTY.get()).unlockedBy(getName(), has(ModItems.TOMATO_SAUCE.get()))
 				.save(consumer);
 
-		MixingBowlRecipeBuilder.stir(ModItems.PASTA_WITH_MUTTON_CHOP.get(), FAST_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ModItems.PASTA_WITH_MUTTON_CHOP.get(), FAST_GRIND, Items.BOWL, 1)
 				.requires(ModItems.TOMATO_SAUCE.get()).requires(ModItems.RAW_PASTA.get()).requires(Items.COOKED_MUTTON)
 				.unlockedBy(getName(), has(ModItems.TOMATO_SAUCE.get())).save(consumer);
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.BUTTERED_PASTA.get(), FAST_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.BUTTERED_PASTA.get(), FAST_GRIND, Items.BOWL, 1)
 				.requires(ExtraDelightItems.COOKED_PASTA.get()).requires(ExtraDelightTags.BUTTER)
 				.unlockedBy(getName(), has(ExtraDelightTags.BUTTER)).save(consumer);
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CACTUS_SALAD.get(), FAST_GRIND, Ingredient.of(Items.BOWL), 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CACTUS_SALAD.get(), FAST_GRIND, Items.BOWL, 1)
 				.requires(ExtraDelightItems.COOKED_CACTUS.get()).requires(ExtraDelightTags.PROCESSED_TOMATO)
 				.requires(ExtraDelightTags.PROCESSED_ONION).requires(ExtraDelightTags.CHEESE)
 				.unlockedBy(getName(), has(ExtraDelightTags.BUTTER)).save(consumer);
+
+		// Holiday
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.ICE_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER).requires(Items.ICE)
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.GLOW_BERRY_ICE_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER).requires(Items.GLOW_BERRIES, 3)
+				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CHOCOLATE_ICE_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER).requires(Items.COCOA_BEANS, 3)
+				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER).requires(Items.SWEET_BERRIES, 3)
+				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PUMPKIN_ICE_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER).requires(ModItems.PUMPKIN_SLICE.get(), 3)
+				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.HONEY_ICE_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER).requires(Items.HONEY_BOTTLE, 3)
+				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.APPLE_ICE_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER)
+				.requires(ExtraDelightTags.PROCESSED_APPLE).requires(ExtraDelightTags.PROCESSED_APPLE)
+				.requires(ExtraDelightTags.PROCESSED_APPLE).requires(Items.ICE)
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER)
+				.requires(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get()).requires(Items.ICE)
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get())
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.APPLE_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get())
+				.requires(ExtraDelightTags.PROCESSED_APPLE).requires(ExtraDelightTags.PROCESSED_APPLE)
+				.requires(ExtraDelightTags.PROCESSED_APPLE).requires(Items.ICE)
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.APPLE_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.APPLE_ICE_CREAM.get())
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, "apple_milkshake_ice_cream");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CHOCOLATE_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get()).requires(Items.COCOA_BEANS, 3)
+				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CHOCOLATE_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.CHOCOLATE_ICE_CREAM.get())
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, "chocolate_milkshake_ice_cream");
+
+		MixingBowlRecipeBuilder
+				.stir(ExtraDelightItems.GLOW_BERRY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get()).requires(Items.GLOW_BERRIES, 3)
+				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder
+				.stir(ExtraDelightItems.GLOW_BERRY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.GLOW_BERRY_ICE_CREAM.get())
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, "glow_berry_milkshake_ice_cream");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.HONEY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get()).requires(Items.HONEY_BOTTLE, 3)
+				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.HONEY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.HONEY_ICE_CREAM.get())
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, "honey_milkshake_ice_cream");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PUMPKIN_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get())
+				.requires(ModItems.PUMPKIN_SLICE.get(), 3).unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PUMPKIN_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.PUMPKIN_ICE_CREAM.get())
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, "pumpkin_milkshake_ice_cream");
+
+		MixingBowlRecipeBuilder
+				.stir(ExtraDelightItems.SWEET_BERRY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get()).requires(Items.SWEET_BERRIES, 3)
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer);
+
+		MixingBowlRecipeBuilder
+				.stir(ExtraDelightItems.SWEET_BERRY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get())
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, "sweet_berry_milkshake_ice_cream");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightTags.FLOUR).requires(ExtraDelightTags.SWEETENER).requires(ExtraDelightTags.BUTTER)
+				.requires(ForgeTags.EGGS).unlockedBy(getName(), has(ExtraDelightTags.FLOUR))
+				.save(consumer, "sugar_cookie_dough");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.APPLE_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightTags.FLOUR).requires(ExtraDelightTags.SWEETENER).requires(ExtraDelightTags.BUTTER)
+				.requires(ForgeTags.EGGS).requires(ExtraDelightTags.PROCESSED_APPLE)
+				.requires(ExtraDelightItems.GROUND_CINNAMON.get()).unlockedBy(getName(), has(ExtraDelightTags.FLOUR))
+				.save(consumer, "apple_cookie_dough");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.APPLE_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()).requires(ExtraDelightTags.PROCESSED_APPLE)
+				.requires(ExtraDelightItems.GROUND_CINNAMON.get())
+				.unlockedBy(getName(), has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()))
+				.save(consumer, "apple_cookie_dough_sugar");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightTags.FLOUR).requires(ExtraDelightTags.SWEETENER).requires(ExtraDelightTags.BUTTER)
+				.requires(ForgeTags.EGGS).requires(Items.COCOA_BEANS).unlockedBy(getName(), has(ExtraDelightTags.FLOUR))
+				.save(consumer, "chocolate_chip_cookie_dough");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()).requires(Items.COCOA_BEANS)
+				.unlockedBy(getName(), has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()))
+				.save(consumer, "chocolate_chip_cookie_dough_sugar");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightTags.FLOUR).requires(ExtraDelightTags.SWEETENER).requires(ExtraDelightTags.BUTTER)
+				.requires(ForgeTags.EGGS).requires(ExtraDelightItems.GRATED_GINGER.get())
+				.requires(ExtraDelightItems.GROUND_CINNAMON.get()).unlockedBy(getName(), has(ExtraDelightTags.FLOUR))
+				.save(consumer, "gingerbread_cookie_dough");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()).requires(ExtraDelightItems.GRATED_GINGER.get())
+				.requires(ExtraDelightItems.GROUND_CINNAMON.get())
+				.unlockedBy(getName(), has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()))
+				.save(consumer, "gingerbread_cookie_dough_sugar");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightTags.FLOUR).requires(ExtraDelightTags.SWEETENER).requires(ExtraDelightTags.BUTTER)
+				.requires(ForgeTags.EGGS).requires(Items.GLOW_BERRIES)
+				.unlockedBy(getName(), has(ExtraDelightTags.FLOUR)).save(consumer, "glow_berry_cookie_dough");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()).requires(Items.GLOW_BERRIES)
+				.unlockedBy(getName(), has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()))
+				.save(consumer, "glow_berry_cookie_dough_sugar");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.HONEY_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightTags.FLOUR).requires(ExtraDelightTags.SWEETENER).requires(ExtraDelightTags.BUTTER)
+				.requires(ForgeTags.EGGS).requires(Items.HONEY_BOTTLE)
+				.unlockedBy(getName(), has(ExtraDelightTags.FLOUR)).save(consumer, "honey_cookie_dough");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.HONEY_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()).requires(Items.HONEY_BOTTLE)
+				.unlockedBy(getName(), has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()))
+				.save(consumer, "honey_cookie_dough_sugar");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightTags.FLOUR).requires(ExtraDelightTags.SWEETENER).requires(ExtraDelightTags.BUTTER)
+				.requires(ForgeTags.EGGS).requires(ModItems.PUMPKIN_SLICE.get())
+				.unlockedBy(getName(), has(ExtraDelightTags.FLOUR)).save(consumer, "pumpkin_cookie_dough");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()).requires(ModItems.PUMPKIN_SLICE.get())
+				.unlockedBy(getName(), has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()))
+				.save(consumer, "pumpkin_cookie_dough_sugar");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightTags.FLOUR).requires(ExtraDelightTags.SWEETENER).requires(ExtraDelightTags.BUTTER)
+				.requires(ForgeTags.EGGS).requires(Items.SWEET_BERRIES)
+				.unlockedBy(getName(), has(ExtraDelightTags.FLOUR)).save(consumer, "sweet_berry_cookie_dough");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
+				.requires(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()).requires(Items.SWEET_BERRIES)
+				.unlockedBy(getName(), has(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()))
+				.save(consumer, "sweet_berry_cookie_dough_sugar");
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_BLACK.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_BLACK)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_BLUE.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_BLUE)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_BROWN.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_BROWN)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_CYAN.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_CYAN)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_GRAY.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_GRAY)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_GREEN.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_GREEN)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_LIGHT_BLUE.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_LIGHT_BLUE)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_LIGHT_GRAY.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_LIGHT_GRAY)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_LIME.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_LIME)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_MAGENTA.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_MAGENTA)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_ORANGE.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_ORANGE)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_PINK.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_PINK)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_PURPLE.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_PURPLE)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_RED.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_RED)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_WHITE.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_WHITE)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.FROSTING_YELLOW.get(), FAST_GRIND, Items.AIR, 4)
+				.requires(ExtraDelightItems.WHIPPED_CREAM.get()).requires(ExtraDelightItems.BUTTER.get())
+				.requires(Items.SUGAR).requires(Tags.Items.DYES_YELLOW)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.BEET_MINT_SALAD.get(), STANDARD_GRIND, Items.BOWL, 2)
+				.requires(Items.BEETROOT, 2).requires(ExtraDelightItems.MINT.get()).requires(ExtraDelightTags.SWEETENER)
+				.requires(ExtraDelightTags.VINEGAR).requires(ExtraDelightTags.COOKING_OIL)
+				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get())).save(consumer);
 	}
 
 	private void craftingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -732,6 +1225,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 								.hasItems(ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM.get()))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "glow_berry_cheesecake_slice"));
 
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.APPLE_CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
+				.define('f', ExtraDelightItems.APPLE_CHEESECAKE_SLICE.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.APPLE_CHEESECAKE_SLICE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "apple_cheesecake_slice"));
+
 		ShapedRecipeBuilder.shaped(ExtraDelightItems.QUICHE.get()).pattern("ff ").pattern("ff ")
 				.define('f', ExtraDelightItems.QUICHE_SLICE.get())
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.QUICHE.get()))
@@ -759,6 +1258,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern("Si ").define('g', Items.SWEET_BERRIES).define('S', Items.STICK).define('i', Items.ICE)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sweet_berry_popsicle"));
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.APPLE_POPSICLE.get()).pattern(" gg").pattern("igg").pattern("Si ")
+				.define('g', ExtraDelightTags.PROCESSED_APPLE).define('S', Items.STICK).define('i', Items.ICE)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "apple_popsicle"));
 
 		// Omelette
 		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.OMELETTE_MIX.get())
@@ -985,9 +1489,107 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		bundleItem9(Ingredient.of(ExtraDelightItems.DRIED_CORN_HUSK.get()),
 				ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get(), ExtraDelightItems.DRIED_CORN_HUSK.get(), consumer,
 				"dried_corn_husk");
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CHOCOLATE_MILK.get(), 1).requires(ModItems.MILK_BOTTLE.get())
+				.requires(Items.COCOA_BEANS).unlockedBy(getName(), has(ModItems.MILK_BOTTLE.get())).save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CHOCOLATE_MILK.get(), 4).requires(Items.MILK_BUCKET)
+				.requires(Items.COCOA_BEANS, 4).requires(Items.GLASS_BOTTLE, 4)
+				.unlockedBy(getName(), has(Items.MILK_BUCKET)).save(consumer, "chocolate_milk_bucket");
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.OFFSET_SPATULA_DIAMOND.get()).pattern(" is").pattern("i  ")
+				.define('i', Items.DIAMOND).define('s', Items.STICK).unlockedBy(getName(), has(Items.DIAMOND))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.OFFSET_SPATULA_GOLD.get()).pattern(" is").pattern("i  ")
+				.define('i', Items.GOLD_INGOT).define('s', Items.STICK).unlockedBy(getName(), has(Items.GOLD_INGOT))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.OFFSET_SPATULA_IRON.get()).pattern(" is").pattern("i  ")
+				.define('i', Items.IRON_INGOT).define('s', Items.STICK).unlockedBy(getName(), has(Items.IRON_INGOT))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.OFFSET_SPATULA_WOOD.get()).pattern(" is").pattern("i  ")
+				.define('i', ItemTags.PLANKS).define('s', Items.STICK).unlockedBy(getName(), has(ItemTags.PLANKS))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CANDY_BOWL_ITEM.get()).pattern("g g").pattern(" g ")
+				.define('g', Items.GLASS).unlockedBy(getName(), has(Items.GLASS)).save(consumer);
+
+		bundleItem4(Ingredient.of(ExtraDelightItems.MINT_CANDY_BLUE.get()), ExtraDelightItems.CANDY_CANE_BLUE.get(),
+				ExtraDelightItems.MINT_CANDY_BLUE.get(), consumer, "mint_candy_blue");
+		bundleItem4(Ingredient.of(ExtraDelightItems.MINT_CANDY_GREEN.get()), ExtraDelightItems.CANDY_CANE_GREEN.get(),
+				ExtraDelightItems.MINT_CANDY_GREEN.get(), consumer, "mint_candy_green");
+		bundleItem4(Ingredient.of(ExtraDelightItems.MINT_CANDY_RED.get()), ExtraDelightItems.CANDY_CANE_RED.get(),
+				ExtraDelightItems.MINT_CANDY_RED.get(), consumer, "mint_candy_red");
+
+		bundleItem4(Ingredient.of(ExtraDelightItems.CANDY_CANE_BLUE.get()),
+				ExtraDelightItems.CANDY_CANE_BLUE_BLOCK.get(), ExtraDelightItems.CANDY_CANE_BLUE.get(), consumer,
+				"mint_candy_cane_blue");
+		bundleItem4(Ingredient.of(ExtraDelightItems.CANDY_CANE_GREEN.get()),
+				ExtraDelightItems.CANDY_CANE_GREEN_BLOCK.get(), ExtraDelightItems.CANDY_CANE_GREEN.get(), consumer,
+				"mint_candy_cane_green");
+		bundleItem4(Ingredient.of(ExtraDelightItems.CANDY_CANE_RED.get()), ExtraDelightItems.CANDY_CANE_RED_BLOCK.get(),
+				ExtraDelightItems.CANDY_CANE_RED.get(), consumer, "mint_candy_cane_red");
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CINNAMON_POPSICLE.get()).pattern(" cm").pattern("isc")
+				.pattern("Si ").define('m', ForgeTags.MILK).define('c', ExtraDelightItems.GROUND_CINNAMON.get())
+				.define('s', Items.SUGAR).define('S', Items.STICK).define('i', Items.ICE)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "cinnamon_popsicle"));
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CROQUE_MONSIEUR.get()).pattern("bfm").pattern("tct").pattern(" h ")
+				.define('m', ForgeTags.MILK).define('b', ExtraDelightTags.BUTTER).define('f', ExtraDelightTags.FLOUR)
+				.define('t', ExtraDelightTags.TOAST).define('c', ExtraDelightTags.CHEESE)
+				.define('h', Ingredient.of(ModItems.SMOKED_HAM.get(), Items.PORKCHOP))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CROQUE_MADAME.get()).pattern("bfm").pattern("tet").pattern("c h")
+				.define('m', ForgeTags.MILK).define('b', ExtraDelightTags.BUTTER).define('f', ExtraDelightTags.FLOUR)
+				.define('t', ExtraDelightTags.TOAST).define('c', ExtraDelightTags.CHEESE)
+				.define('h', Ingredient.of(ModItems.SMOKED_HAM.get(), Items.PORKCHOP))
+				.define('e', ForgeTags.COOKED_EGGS)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CROQUE_MADAME.get())
+				.requires(ExtraDelightItems.CROQUE_MONSIEUR.get()).requires(ModItems.FRIED_EGG.get())
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "monsieur_to_madam"));
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.COFFEE_CAKE_FEAST.get())
+				.requires(ExtraDelightItems.COFFEE_CAKE_SLICE.get(), 8)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COFFEE_CAKE_SLICE.get()))
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "coffee_cake_from_slice"));
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CHARCUTERIE_BOARD_FEAST.get()).pattern("cmh").pattern("cmh")
+				.pattern(" b ").define('m', ExtraDelightTags.MEAT_COOKED).define('c', ExtraDelightItems.CRACKERS.get())
+				.define('h', ExtraDelightTags.CHEESE).define('b', Items.BOWL)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESE.get()))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.PUNCH_FEAST.get()).pattern("fff").pattern("sws").pattern(" b ")
+				.define('f', ExtraDelightTags.PROCESSED_FRUIT).define('s', ExtraDelightTags.SWEETENER)
+				.define('w', Items.WATER_BUCKET).define('b', Items.BOWL)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.WATER_BUCKET))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.MILK_TART_FEAST.get()).pattern("ss").pattern("ss")
+				.define('s', ExtraDelightItems.MILK_TART_SLICE.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_TART_SLICE.get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CINNAMON_PLANKS.get(), 4)
+				.requires(ExtraDelightItems.CINNAMON_LOG.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_LOG.get()))
+				.save(consumer);
 	}
 
-	void bundleItem9(Ingredient in, BlockItem b, Item out, Consumer<FinishedRecipe> consumer, String name) {
+	private void bundleItem9(Ingredient in, Item b, Item out, Consumer<FinishedRecipe> consumer, String name) {
 		ShapelessRecipeBuilder.shapeless(b, 1).requires(in, 9).unlockedBy(getName(), has(out)).save(consumer,
 				new ResourceLocation(ExtraDelight.MOD_ID, name + "_to_block"));
 
@@ -995,23 +1597,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new ResourceLocation(ExtraDelight.MOD_ID, name + "_from_block"));
 	}
 
-	void bundleItem4(Ingredient in, BlockItem b, Item out, Consumer<FinishedRecipe> consumer, String name) {
+	private void bundleItem4(Ingredient in, Item b, Item out, Consumer<FinishedRecipe> consumer, String name) {
 		ShapedRecipeBuilder.shaped(b, 1).pattern("xx").pattern("xx").define('x', in).unlockedBy(getName(), has(out))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, name + "_to_block"));
 
-		ShapelessRecipeBuilder.shapeless(out, 9).requires(b).unlockedBy(getName(), has(b)).save(consumer,
+		ShapelessRecipeBuilder.shapeless(out, 4).requires(b).unlockedBy(getName(), has(b)).save(consumer,
 				new ResourceLocation(ExtraDelight.MOD_ID, name + "_from_block"));
 	}
-
-//	private void tagConditional(RecipeBuilder rb, Consumer<FinishedRecipe> consumer, String id,
-//			Collection<TagKey<Item>> tags) {
-//		ConditionalRecipe.Builder b = ConditionalRecipe.builder();
-//
-//		for (TagKey<Item> t : tags)
-//			b.addCondition(not(tagEmpty(t)));
-//
-//		b.addRecipe(rb::save).build(consumer, new ResourceLocation(id));
-//	}
 
 	private void potRecipes(Consumer<FinishedRecipe> consumer) {
 		CookingPotRecipeBuilder
@@ -1041,6 +1633,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Items.SWEET_BERRIES).addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.EGGS)
 				.addIngredient(ExtraDelightTags.SWEETENER)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sweet_berry_custard"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.APPLE_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ForgeTags.MILK)
+				.addIngredient(ForgeTags.EGGS).addIngredient(ExtraDelightTags.SWEETENER)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "apple_custard"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.KETCHUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
@@ -1541,11 +2140,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		// Halloween Start!
 		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.CANDY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER)
-				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES))
-				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy"));
-
-		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.CARAMEL_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
 						Items.GLASS_BOTTLE)
 				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(ExtraDelightTags.BUTTER))
@@ -1561,7 +2155,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.CANDY_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.STICK)
-				.addIngredient(Items.APPLE).addIngredient(ExtraDelightItems.CANDY.get(), 2)
+				.addIngredient(Items.APPLE).addIngredient(ExtraDelightTags.CANDY).addIngredient(ExtraDelightTags.CANDY)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_apple"));
 
 		CookingPotRecipeBuilder
@@ -1579,7 +2173,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ExtraDelightItems.CANDY_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 						Items.STICK)
-				.addIngredient(Items.GOLDEN_APPLE).addIngredient(ExtraDelightItems.CANDY.get(), 2)
+				.addIngredient(Items.GOLDEN_APPLE).addIngredient(ExtraDelightTags.CANDY)
+				.addIngredient(ExtraDelightTags.CANDY)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_golden_apple"));
 
 		CookingPotRecipeBuilder
@@ -1658,6 +2253,186 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightItems.CROUTONS.get()).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ExtraDelightTags.PROCESSED_ONION)
 				.addIngredient(ForgeTags.EGGS).build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "stuffing"));
+
+		// Holiday
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.EGGNOG.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ModItems.MILK_BOTTLE.get()).addIngredient(ExtraDelightItems.GROUND_CINNAMON.get())
+				.addIngredient(Items.EGG).addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ForgeTags.EGGS)
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "eggnog"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_BLACK.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_BLACK))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_black"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_BLUE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_BLUE))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_blue"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_BROWN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_BROWN))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_brown"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_CYAN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_CYAN))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_cyan"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_GRAY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_GRAY))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_gray"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_GREEN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_GREEN))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_green"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_LIGHT_BLUE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_LIGHT_BLUE))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_light_blue"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_LIGHT_GRAY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_LIGHT_GRAY))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_light_gray"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_LIME.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_LIME))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_lime"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_MAGENTA.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_MAGENTA))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_magenta"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_ORANGE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_ORANGE))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_orange"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_PINK.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_PINK))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_pink"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_PURPLE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_PURPLE))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_purple"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_RED.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_RED))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_red"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_WHITE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_WHITE))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_white"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDY_YELLOW.get(), 4, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.PAPER)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_YELLOW))
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "candy_yellow"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.GINGER_BEER.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ExtraDelightTags.PROCESSED_GINGER).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightItems.YEAST.get()).build(consumer);
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.GINGER_TEA.get(), 1, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ExtraDelightTags.PROCESSED_GINGER).addIngredient(ExtraDelightTags.PROCESSED_GINGER)
+				.addIngredient(ExtraDelightTags.SWEETENER).build(consumer);
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.HORCHATA.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ForgeTags.GRAIN_RICE).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightItems.GROUND_CINNAMON.get()).addIngredient(ForgeTags.MILK).build(consumer);
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.MINT_CANDY_BLUE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, null)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_BLUE))
+				.addIngredient(ExtraDelightItems.MINT.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mint_candy_blue"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.MINT_CANDY_GREEN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, null)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_GREEN))
+				.addIngredient(ExtraDelightItems.MINT.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mint_candy_green"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.MINT_CANDY_RED.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, null)
+				.addIngredient(Items.SUGAR).addIngredient(Ingredient.of(Tags.Items.DYES_RED))
+				.addIngredient(ExtraDelightItems.MINT.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "mint_candy_red"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CONGEE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL)
+				.addIngredient(ForgeTags.GRAIN_RICE).addIngredient(ExtraDelightTags.PROCESSED_GINGER).build(consumer);
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.LUGAW.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL)
+				.addIngredient(ForgeTags.GRAIN_RICE).addIngredient(ExtraDelightTags.PROCESSED_GINGER)
+				.addIngredient(ExtraDelightTags.PROCESSED_ONION).addIngredient(ModItems.BONE_BROTH.get())
+				.addIngredient(ExtraDelightItems.BOILED_EGG.get()).addIngredient(Items.COOKED_CHICKEN).build(consumer);
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.RICE_PUDDING.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ForgeTags.GRAIN_RICE).addIngredient(ForgeTags.MILK)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightItems.GROUND_CINNAMON.get())
+				.build(consumer);
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.PICKLED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ExtraDelightTags.SLICED_GINGER).addIngredient(ExtraDelightTags.VINEGAR)
+				.addIngredient(ExtraDelightTags.SWEETENER).build(consumer);
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.CANDIED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ExtraDelightTags.PROCESSED_GINGER).addIngredient(ExtraDelightTags.SWEETENER)
+				.build(consumer);
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.MINT_TEA.get(), 1, CookingRecipes.FAST_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ExtraDelightItems.MINT.get()).addIngredient(ExtraDelightItems.MINT.get())
+				.addIngredient(ExtraDelightTags.SWEETENER).build(consumer);
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.MINT_JELLY.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+						Items.GLASS_BOTTLE)
+				.addIngredient(ExtraDelightItems.MINT.get(), 3).addIngredient(Items.SUGAR).build(consumer);
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -1674,21 +2449,21 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		// Grate
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(Tags.Items.CROPS_POTATO), Ingredient.of(ExtraDelightItems.GRATER.get()),
-						ExtraDelightItems.GRATED_POTATO.get(), 1)
+						ExtraDelightItems.GRATED_POTATO.get(), 4)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "grate_potato"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(Tags.Items.CROPS_CARROT), Ingredient.of(ExtraDelightItems.GRATER.get()),
-						ExtraDelightItems.GRATED_CARROT.get(), 1)
+						ExtraDelightItems.GRATED_CARROT.get(), 4)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "grate_carrot"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ForgeTags.BREAD), Ingredient.of(ExtraDelightItems.GRATER.get()),
-						ExtraDelightItems.BREAD_CRUMBS.get(), 2)
+						ExtraDelightItems.BREAD_CRUMBS.get(), 4)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "grate_bread"));
 
 		// Potato
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(Tags.Items.CROPS_POTATO), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-						ExtraDelightItems.SLICED_POTATO.get(), 1)
+						ExtraDelightItems.SLICED_POTATO.get(), 4)
 				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "sliced_potato"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.SLICED_POTATO.get()),
@@ -1769,9 +2544,40 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.CORN_ON_COB.get(), 1)
 				.addResult(ExtraDelightItems.CORN_HUSK.get(), 2).addResult(ExtraDelightItems.CORN_SILK.get(), 1)
 				.addResultWithChance(ExtraDelightItems.CORN_HUSK.get(), 0.75f, 1).build(consumer);
+
+		// Holidays
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_BARK.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.RAW_CINNAMON.get(), 1)
+				.addResultWithChance(ExtraDelightItems.RAW_CINNAMON.get(), 0.75f, 1).build(consumer);
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.GINGER.get()), Ingredient.of(ExtraDelightTags.SPOONS),
+						ExtraDelightItems.PEELED_GINGER.get(), 1)
+				.addResultWithChance(ExtraDelightItems.GINGER_CUTTING.get(), 0.25f, 1).build(consumer);
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.PEELED_GINGER.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.SLICED_GINGER.get(), 4)
+				.build(consumer);
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.PEELED_GINGER.get()),
+						Ingredient.of(ExtraDelightItems.GRATER.get()), ExtraDelightItems.GRATED_GINGER.get(), 4)
+				.build(consumer, "grated_ginger");
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.COFFEE_CAKE_FEAST.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.COFFEE_CAKE_SLICE.get(), 8)
+				.build(consumer);
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.MILK_TART_FEAST.get()),
+						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.MILK_TART_SLICE.get(), 4)
+				.build(consumer);
 	}
 
-	void mortarRecipes(Consumer<FinishedRecipe> consumer) {
+	private void mortarRecipes(Consumer<FinishedRecipe> consumer) {
 		// Dyes
 		MortarRecipeBuilder.grind(Ingredient.of(Items.LAPIS_LAZULI), Items.BLUE_DYE, STANDARD_GRIND, 2)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.LAPIS_LAZULI))
@@ -1868,9 +2674,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CORN_SEEDS.get()))
 				.save(consumer);
+
+		MortarRecipeBuilder
+				.grind(Ingredient.of(ExtraDelightItems.CINNAMON_STICK.get()), ExtraDelightItems.GROUND_CINNAMON.get(),
+						STANDARD_GRIND, 1)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_STICK.get()))
+				.save(consumer);
 	}
 
-	void ovenRecipes(Consumer<FinishedRecipe> consumer) {
+	private void ovenRecipes(Consumer<FinishedRecipe> consumer) {
 
 		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.HEART)))
 				.addRecipe(r -> OvenRecipeBuilder
@@ -1947,36 +2760,41 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.GLOW_BERRY_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(Items.GLOW_BERRIES)
+				.addIngredient(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get())
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.GLOW_BERRIES).build(consumer);
 
 		OvenRecipeBuilder.OvenRecipe(Items.COOKIE, 8, FAST_COOKING, MEDIUM_EXP, ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(Items.COCOA_BEANS)
+				.addIngredient(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get())
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.COCOA_BEANS).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.SUGAR_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(Items.SUGAR)
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.SUGAR).build(consumer);
+				.addIngredient(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(Items.SUGAR).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.PUMPKIN_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(ModItems.PUMPKIN_SLICE.get())
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
-				.build(consumer);
+				.addIngredient(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get()).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ModItems.SWEET_BERRY_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(Items.SWEET_BERRIES)
+				.addIngredient(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get())
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.SWEET_BERRIES).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ModItems.HONEY_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP, ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightTags.FLOUR, 2).addIngredient(Items.HONEY_BOTTLE)
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.HONEY_BOTTLE).build(consumer);
+				.addIngredient(ExtraDelightItems.HONEY_COOKIE_DOUGH.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(Items.HONEY_BOTTLE).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.APPLE_COOKIE.get(), 8, FAST_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightItems.APPLE_COOKIE_DOUGH.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(Items.APPLE).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.CHEESECAKE_ITEM.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
@@ -2022,6 +2840,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.OvenRecipe(ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.PIE_DISH.get())
 				.addIngredient(ModItems.PUMPKIN_SLICE.get(), 3).addIngredient(Ingredient.of(ForgeTags.MILK))
+				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(ForgeTags.MILK))
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.APPLE_CHEESECAKE_ITEM.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.PIE_DISH.get())
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(Ingredient.of(ForgeTags.MILK))
 				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(ForgeTags.MILK))
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
 				.build(consumer);
@@ -2345,11 +3172,232 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.SHEET.get(), "cooked_corn_cob");
 		bulkBake(ExtraDelightItems.ROASTED_PUMPKIN_SEEDS.get(), Items.PUMPKIN_SEEDS, consumer,
 				ExtraDelightItems.TRAY.get(), "cooked_pumpkin_seeds");
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.GINGERBREAD_COOKIE.get(), 8, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get())
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(), 4)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()).build(consumer);
+
+		bulkBake(ExtraDelightItems.GINGERBREAD_ALEX.get(), ExtraDelightItems.RAW_GINGERBREAD_ALEX.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "gingerbread_alex_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_CREEPER.get(), ExtraDelightItems.RAW_GINGERBREAD_CREEPER.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "gingerbread_creeper_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_PICKAXE.get(), ExtraDelightItems.RAW_GINGERBREAD_PICKAXE.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "gingerbread_pickaxe_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_STEVE.get(), ExtraDelightItems.RAW_GINGERBREAD_STEVE.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "gingerbread_steve_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_SWORD.get(), ExtraDelightItems.RAW_GINGERBREAD_SWORD.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "gingerbread_sword_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_VILLAGER.get(), ExtraDelightItems.RAW_GINGERBREAD_VILLAGER.get(),
+				consumer, ExtraDelightItems.SHEET.get(), "gingerbread_villager_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_DIAMOND.get(), ExtraDelightItems.RAW_GINGERBREAD_DIAMOND.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "gingerbread_diamond_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_EMERALD.get(), ExtraDelightItems.RAW_GINGERBREAD_EMERALD.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "gingerbread_emerald_oven", 1);
+
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_ALEX.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_ALEX.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "sugar_cookie_alex_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_CREEPER.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_CREEPER.get(),
+				consumer, ExtraDelightItems.SHEET.get(), "sugar_cookie_creeper_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_PICKAXE.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_PICKAXE.get(),
+				consumer, ExtraDelightItems.SHEET.get(), "sugar_cookie_pickaxe_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_STEVE.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_STEVE.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "sugar_cookie_steve_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_SWORD.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_SWORD.get(), consumer,
+				ExtraDelightItems.SHEET.get(), "sugar_cookie_sword_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_VILLAGER.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_VILLAGER.get(),
+				consumer, ExtraDelightItems.SHEET.get(), "sugar_cookie_villager_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_DIAMOND.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_DIAMOND.get(),
+				consumer, ExtraDelightItems.SHEET.get(), "sugar_cookie_diamond_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_EMERALD.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_EMERALD.get(),
+				consumer, ExtraDelightItems.SHEET.get(), "sugar_cookie_emerald_oven", 1);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.APPLE_COOKIE_BLOCK.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightItems.APPLE_COOKIE_DOUGH.get(), 4).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.APPLE_COOKIE_DOUGH.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_BLOCK.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), 4)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.GLOW_BERRY_COOKIE_BLOCK.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), 4)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.HONEY_COOKIE_BLOCK.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightItems.HONEY_COOKIE_DOUGH.get(), 4).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.HONEY_COOKIE_DOUGH.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.PUMPKIN_COOKIE_BLOCK.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get(), 4)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.SUGAR_COOKIE_BLOCK.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get(), 4).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.SWEET_BERRY_COOKIE_BLOCK.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get(), 4)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.FRENCH_TOAST.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.TRAY.get())
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightItems.GROUND_CINNAMON.get()).addIngredient(ForgeTags.EGGS)
+				.addIngredient(ForgeTags.MILK).addIngredient(ExtraDelightTags.BREAD_SLICE, 4)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ExtraDelightItems.BREAD_SLICE.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.MUFFIN_APPLE.get(), 6, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.MUFFIN_TIN.get())
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ForgeTags.EGGS)
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ForgeTags.MILK)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ExtraDelightItems.GINGER.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.MUFFIN_CINNAMON.get(), 6, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.MUFFIN_TIN.get())
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightItems.GROUND_CINNAMON.get()).addIngredient(ForgeTags.EGGS)
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ForgeTags.MILK)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ExtraDelightItems.GROUND_CINNAMON.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.MUFFIN_GINGER.get(), 6, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.MUFFIN_TIN.get())
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightTags.PROCESSED_GINGER).addIngredient(ForgeTags.EGGS)
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ForgeTags.MILK)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ExtraDelightItems.GINGER.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.MUFFIN_SWEET_BERRY.get(), 6, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.MUFFIN_TIN.get())
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(Items.SWEET_BERRIES).addIngredient(ForgeTags.EGGS).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(ForgeTags.MILK).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(Items.SWEET_BERRIES).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.FRUIT_BREAD.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.LOAF_PAN.get())
+				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).addIngredient(ModItems.WHEAT_DOUGH.get())
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.FRUIT_BREAD.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.LOAF_PAN.get())
+				.addIngredient(ExtraDelightItems.DRIED_FRUIT.get()).addIngredient(ModItems.WHEAT_DOUGH.get())
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
+				.build(consumer, new ResourceLocation(ExtraDelight.MOD_ID, "fruit_bread_dried"));
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.CRACKERS.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.LOAF_PAN.get())
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ExtraDelightItems.FLOUR.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.ROLL.get(), 6, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.MUFFIN_TIN.get())
+				.addIngredient(ModItems.WHEAT_DOUGH.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.CINNAMON_ROLLS_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SQUARE_PAN.get())
+				.addIngredient(ModItems.WHEAT_DOUGH.get()).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.GROUND_CINNAMON.get())
+				.addIngredient(ExtraDelightItems.FROSTING_WHITE.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.MONKEY_BREAD_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.ROUND_PAN.get())
+				.addIngredient(ModItems.WHEAT_DOUGH.get()).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.GROUND_CINNAMON.get())
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.COFFEE_CAKE_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.ROUND_PAN.get())
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightItems.GROUND_CINNAMON.get())
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ForgeTags.MILK)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ForgeTags.MILK).addIngredient(Items.EGG)
+				.addIngredient(Items.SUGAR, 2).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.MINT_LAMB_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.TRAY.get())
+				.addIngredient(Items.MUTTON, 4).addIngredient(ExtraDelightItems.MINT.get())
+				.addIngredient(ExtraDelightItems.BREAD_CRUMBS.get()).addIngredient(ExtraDelightTags.COOKING_OIL)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.MUTTON).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.ROUND_PAN.get())
+				.addIngredient(ExtraDelightItems.DRIED_FRUIT.get(), 3)
+				.addIngredient(ExtraDelightItems.BREAD_CRUMBS.get()).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(ExtraDelightItems.GROUND_CINNAMON.get()).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ForgeTags.EGGS).addIngredient(ExtraDelightTags.SWEETENER)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Items.MUTTON).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(ExtraDelightItems.MILK_TART_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.ROUND_PAN.get())
+				.addIngredient(ExtraDelightItems.GROUND_CINNAMON.get()).addIngredient(ForgeTags.MILK)
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ForgeTags.EGGS)
+				.addIngredient(ModItems.PIE_CRUST.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ModItems.PIE_CRUST.get()).build(consumer);
 	}
 
-	void bulkBake(ItemLike mainResult, ItemLike in, Consumer<FinishedRecipe> consumer, ItemLike pan, String name) {
+	private void bulkBake(ItemLike mainResult, ItemLike in, Consumer<FinishedRecipe> consumer, ItemLike pan,
+			String name) {
+		bulkBake(mainResult, in, consumer, pan, name, 1);
+	}
+
+	private void bulkBake(ItemLike mainResult, ItemLike in, Consumer<FinishedRecipe> consumer, ItemLike pan,
+			String name, int count) {
 		for (int i = 1; i < 10; i++)
-			OvenRecipeBuilder.OvenRecipe(mainResult, i, NORMAL_COOKING, MEDIUM_EXP, pan).addIngredient(in, i)
+			OvenRecipeBuilder.OvenRecipe(mainResult, i * count, NORMAL_COOKING, MEDIUM_EXP, pan).addIngredient(in, i)
 					.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedBy(name, has(in))
 					.build(consumer, "extradelight:" + name + i);
 	}

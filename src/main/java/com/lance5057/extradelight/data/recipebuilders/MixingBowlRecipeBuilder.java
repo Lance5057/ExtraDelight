@@ -36,10 +36,10 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 	@Nullable
 	private String group;
 	final int stirs;
-	final Ingredient usedItem;
+	final Item usedItem;
 	private final MixingBowlRecipe.Serializer serializer;
 
-	public MixingBowlRecipeBuilder(ItemLike pResult, int pCount, int stirs, Ingredient usedItem,
+	public MixingBowlRecipeBuilder(ItemLike pResult, int pCount, int stirs, Item usedItem,
 			MixingBowlRecipe.Serializer serializer) {
 		this.stirs = stirs;
 		this.usedItem = usedItem;
@@ -48,7 +48,7 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 		this.serializer = serializer;
 	}
 
-	public static MixingBowlRecipeBuilder stir(ItemLike pResult, int grinds, Ingredient usedItem, int count) {
+	public static MixingBowlRecipeBuilder stir(ItemLike pResult, int grinds, Item usedItem, int count) {
 		return new MixingBowlRecipeBuilder(pResult, count, grinds, usedItem,
 				ExtraDelightRecipes.MIXING_BOWL_SERIALIZER.get());
 	}
@@ -132,10 +132,10 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 		private final Advancement.Builder advancement;
 		private final ResourceLocation advancementId;
 		private final int stirs;
-		private final Ingredient usedItem;
+		private final Item usedItem;
 
 		public Result(ResourceLocation pId, Item pResult, int pCount, String pGroup, List<Ingredient> pIngredients,
-				Advancement.Builder pAdvancement, ResourceLocation pAdvancementId, int stirs, Ingredient usedItem) {
+				Advancement.Builder pAdvancement, ResourceLocation pAdvancementId, int stirs, Item usedItem) {
 			this.id = pId;
 			this.result = pResult;
 			this.count = pCount;
@@ -159,14 +159,18 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 			}
 
 			pJson.add("ingredients", jsonarray);
+			
 			JsonObject jsonobject = new JsonObject();
 			jsonobject.addProperty("item", Registry.ITEM.getKey(this.result).toString());
 			if (this.count > 1) {
 				jsonobject.addProperty("count", this.count);
 			}
+			
+			JsonObject jsonobject2 = new JsonObject();
+			jsonobject2.addProperty("item", Registry.ITEM.getKey(this.usedItem).toString());
 
 			pJson.addProperty("stirs", this.stirs);
-			pJson.add("usedItem", usedItem.toJson());
+			pJson.add("usedItem", jsonobject2);
 			pJson.add("result", jsonobject);
 		}
 

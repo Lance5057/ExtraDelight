@@ -19,6 +19,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.crafting.CraftingHelper;
 
 public class MixingBowlRecipe implements Recipe<SimpleContainer> {
 	protected final int stirs;
@@ -118,7 +119,7 @@ public class MixingBowlRecipe implements Recipe<SimpleContainer> {
 			} else {
 				ItemStack itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
 				int stirs = pJson.getAsJsonPrimitive("stirs").getAsInt();
-				ItemStack usedItem = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "usedItem"));
+				ItemStack usedItem = CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(pJson, "usedItem"), true, false);//ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "usedItem"));
 				return new MixingBowlRecipe(pRecipeId, s, nonnulllist, itemstack, stirs, usedItem);
 			}
 		}

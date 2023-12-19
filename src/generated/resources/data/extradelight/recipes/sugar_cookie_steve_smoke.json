@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:raw_sugar_cookie_steve"
+  },
+  "result": "extradelight:sugar_cookie_steve"
+}

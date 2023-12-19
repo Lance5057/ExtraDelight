@@ -22,7 +22,8 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "extradelight:grater"
+      "item": "extradelight:grater",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {

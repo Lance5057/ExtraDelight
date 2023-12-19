@@ -1,0 +1,25 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "extradelight:whipped_cream"
+    },
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:dyes/white"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:frosting_white"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "item": "minecraft:air"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "extradelight:block/sugar_cookie_block"
+  }
+}

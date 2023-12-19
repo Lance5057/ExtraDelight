@@ -10,14 +10,17 @@ import org.apache.commons.lang3.text.WordUtils;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.block.MoldingBlock;
+import com.lance5057.extradelight.aesthetics.block.RibbonBlock;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
 import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
 import com.lance5057.extradelight.displays.knife.KnifeBlock;
 import com.lance5057.extradelight.displays.spice.SpiceRackBlock;
+import com.lance5057.extradelight.displays.wreath.WreathBlock;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Registry;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -46,7 +49,6 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
@@ -93,6 +95,12 @@ public class AestheticBlocks {
 	public static final List<RegistryObject<Block>> DRIED_CORN_FENCE = new ArrayList<RegistryObject<Block>>();
 	public static final List<RegistryObject<Item>> DRIED_CORN_FENCE_ITEMS = new ArrayList<RegistryObject<Item>>();
 
+	public static final List<RegistryObject<Block>> WREATHS = new ArrayList<RegistryObject<Block>>();
+	public static final List<RegistryObject<Item>> WREATH_ITEMS = new ArrayList<RegistryObject<Item>>();
+
+	public static final List<RegistryObject<Block>> BOWS = new ArrayList<RegistryObject<Block>>();
+	public static final List<RegistryObject<Item>> BOW_ITEMS = new ArrayList<RegistryObject<Item>>();
+
 	public static Block[] getRegistryListAsBlocks(List<RegistryObject<Block>> blocks) {
 		List<Block> l = new ArrayList<Block>();
 
@@ -100,6 +108,17 @@ public class AestheticBlocks {
 			l.add(b.get());
 		}
 		Block[] a = l.toArray(Block[]::new);
+
+		return a;
+	}
+
+	public static Item[] getRegistryListAsItems(List<RegistryObject<Item>> items) {
+		List<Item> l = new ArrayList<Item>();
+
+		for (RegistryObject<Item> b : items) {
+			l.add(b.get());
+		}
+		Item[] a = l.toArray(Item[]::new);
 
 		return a;
 	}
@@ -142,6 +161,30 @@ public class AestheticBlocks {
 		}
 	}
 
+	public static void registerAllWoodHelm(String name, Supplier<? extends Block> block,
+			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
+		for (WOOD w : WOOD.values()) {
+			RegistryObject<Block> b = BLOCKS.register(w.toString() + "_" + name, block);
+			RegistryObject<Item> t = ITEMS.register(w.toString() + "_" + name,
+					() -> new HelmetBlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+
+			blocks.add(b);
+			items.add(t);
+		}
+	}
+
+	public static void registerAllColorsHelm(String name, Supplier<? extends Block> block,
+			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
+		for (DyeColor w : DyeColor.values()) {
+			RegistryObject<Block> b = BLOCKS.register(name + "_" + w.getName(), block);
+			RegistryObject<Item> t = ITEMS.register(name + "_" + w.toString(),
+					() -> new HelmetBlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+
+			blocks.add(b);
+			items.add(t);
+		}
+	}
+
 	public static void setup() {
 		registerAllWood("step_stool", StepStoolBlock::new, STEP_STOOLS, STEP_STOOL_ITEMS);
 		registerAllWood("spice_rack", SpiceRackBlock::new, SPICE_RACKS, SPICE_RACKS_ITEMS);
@@ -156,8 +199,12 @@ public class AestheticBlocks {
 				() -> new MoldingBlock(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
 				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
 
-		registerAllWood("dried_corn_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.ACACIA_FENCE)), DRIED_CORN_FENCE,
-				DRIED_CORN_FENCE_ITEMS);
+		registerAllWood("dried_corn_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.ACACIA_FENCE)),
+				DRIED_CORN_FENCE, DRIED_CORN_FENCE_ITEMS);
+
+		registerAllWoodHelm("wreath", WreathBlock::new, WREATHS, WREATH_ITEMS);
+
+		registerAllColorsHelm("ribbon_bow", () -> new RibbonBlock(), BOWS, BOW_ITEMS);
 	}
 
 	public static void loot(BlockLoot bl) {
@@ -180,6 +227,11 @@ public class AestheticBlocks {
 			bl.dropSelf(b.get());
 
 		bl.dropSelf(CORN_HUSK_DOLL.get());
+
+		for (RegistryObject<Block> b : WREATHS)
+			bl.dropSelf(b.get());
+		for (RegistryObject<Block> b : BOWS)
+			bl.dropSelf(b.get());
 	}
 
 	public static void blockModel(BlockStateProvider bsp) {
@@ -212,6 +264,22 @@ public class AestheticBlocks {
 					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.renderType("cutout"));
 
+			if (WOOD.values()[i].toString() == "crimson")
+				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
+						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
+						.texture("all", bsp.mcLoc("block/nether_wart_block"))
+						.texture("particle", bsp.mcLoc("block/nether_wart_block")).renderType("cutout"));
+			else if (WOOD.values()[i].toString() == "warped")
+				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
+						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
+						.texture("all", bsp.mcLoc("block/warped_wart_block"))
+						.texture("particle", bsp.mcLoc("block/warped_wart_block")).renderType("cutout"));
+			else
+				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
+						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
+						.texture("all", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
+						.renderType("cutout"));
+
 			String s = WOOD.values()[i].toString();
 
 			MultiPartBlockStateBuilder builder = bsp.getMultipartBuilder(DRIED_CORN_FENCE.get(i).get()).part()
@@ -231,14 +299,16 @@ public class AestheticBlocks {
 
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			bsp.simpleBlock(WALLPAPER_BLOCKS.get(i).get());
+			bsp.directionalBlock(BOWS.get(i).get(), bsp.models()
+					.withExistingParent(DyeColor.values()[i].toString() + "_bow", bsp.modLoc("block/ribbon_bow"))
+					.texture("0",
+							bsp.modLoc("block/ribbon/" + DyeColor.values()[i].toString().toLowerCase() + "_ribbon")));
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {
 			for (int c = 0; c < DyeColor.values().length; c++) {
 				int o = (i * DyeColor.values().length) + c;
 				Block b = MOLDED_WALLPAPER_BLOCKS.get(o).get();
-
-				// ExtraDelight.logger.error(b.getName().getString() + "_" + o);
 
 				bsp.getVariantBuilder(b).partialState().with(MoldingBlock.HALF, Direction.UP).modelForState()
 						.modelFile(bsp.models()
@@ -288,6 +358,19 @@ public class AestheticBlocks {
 
 			tmp.getBuilder(DRIED_CORN_FENCE.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_dried_corn_fence")));
+
+			if (WOOD.values()[i].toString() == "crimson")
+				tmp.getBuilder(WREATHS.get(i).getId().getPath())
+						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
+						.texture("all", tmp.mcLoc("block/nether_wart_block"));
+			else if (WOOD.values()[i].toString() == "warped")
+				tmp.getBuilder(WREATHS.get(i).getId().getPath())
+						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
+						.texture("all", tmp.mcLoc("block/warped_wart_block"));
+			else
+				tmp.getBuilder(WREATHS.get(i).getId().getPath())
+						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
+						.texture("all", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"));
 		}
 
 		for (int i = 0; i < DyeColor.values().length; i++) {
@@ -295,6 +378,10 @@ public class AestheticBlocks {
 					.parent(new ModelFile.UncheckedModelFile(
 							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + ForgeRegistries.BLOCKS
 									.getKey(((BlockItem) WALLPAPER_ITEMS.get(i).get()).getBlock()).getPath())));
+
+			tmp.getBuilder(BOWS.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/ribbon_bow")))
+					.texture("0", tmp.modLoc("block/ribbon/" + DyeColor.values()[i].toString() + "_ribbon"));
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {
@@ -322,6 +409,7 @@ public class AestheticBlocks {
 			lp.add(KNIFE_BLOCKS.get(i).get(), w + " Knife Block");
 			lp.add(CABINETS.get(i).get(), w + " Half Cabinet");
 			lp.add(DRIED_CORN_FENCE.get(i).get(), "Dried Corn " + w + " Fence");
+			lp.add(WREATHS.get(i).get(), w + " Wreath");
 
 			for (int j = 0; j < DyeColor.values().length; j++) {
 				int o = (i * DyeColor.values().length) + j;
@@ -337,6 +425,7 @@ public class AestheticBlocks {
 			w = WordUtils.capitalize(w.replace('_', ' '));
 
 			lp.add(WALLPAPER_ITEMS.get(i).get(), w + " Wallpaper");
+			lp.add(BOWS.get(i).get(), w + " Bow");
 		}
 
 		lp.add(CORN_HUSK_DOLL.get(), "Corn Husk Doll");
@@ -366,13 +455,16 @@ public class AestheticBlocks {
 
 		cabinetRecipes(consumer);
 
-		for (
-
-				int i = 0; i < DyeColor.values().length; i++) {
+		for (int i = 0; i < DyeColor.values().length; i++) {
 			DyeColor dye = DyeColor.values()[i];
 			ShapelessRecipeBuilder.shapeless(WALLPAPER_ITEMS.get(dye.ordinal()).get(), 4).requires(Items.PAPER, 4)
 					.requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + dye)))
 					.unlockedBy(dye + "_wallpaper", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
+					.save(consumer);
+
+			ShapedRecipeBuilder.shaped(BOW_ITEMS.get(dye.ordinal()).get(), 1).pattern(" w ").pattern(" w ")
+					.pattern("w w").define('w', Registry.ITEM.get(new ResourceLocation("minecraft", dye + "_wool")))
+					.unlockedBy(dye + "_bow", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
 					.save(consumer);
 		}
 

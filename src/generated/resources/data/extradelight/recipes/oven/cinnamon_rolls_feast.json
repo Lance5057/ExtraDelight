@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:square_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:wheat_dough"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    },
+    {
+      "item": "extradelight:frosting_white"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:cinnamon_rolls_feast"
+  }
+}

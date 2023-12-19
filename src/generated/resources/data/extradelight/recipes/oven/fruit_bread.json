@@ -1,0 +1,20 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:loaf_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/fruit"
+    },
+    {
+      "item": "farmersdelight:wheat_dough"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:fruit_bread"
+  }
+}

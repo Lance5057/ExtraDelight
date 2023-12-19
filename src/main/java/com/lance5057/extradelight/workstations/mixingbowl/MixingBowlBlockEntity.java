@@ -26,6 +26,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -39,6 +40,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 
 	private int stirs = 0;
+	public boolean complete = false;
 	public ItemStack containerItem = ItemStack.EMPTY;
 
 	public MixingBowlBlockEntity(BlockPos pPos, BlockState pState) {
@@ -174,6 +176,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 		this.stirs = nbt.getInt("stirs");
 		containerItem = ItemStack.of(nbt.getCompound("usedItem"));
+		this.complete = nbt.getBoolean("complete");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
@@ -185,6 +188,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		tag.putInt("stirs", this.stirs);
 
 		tag.put("usedItem", containerItem.serializeNBT());
+		tag.putBoolean("complete", this.complete);
 
 		return tag;
 	}
@@ -273,6 +277,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 					dropContainers(inv, player);
 					clearItems(inv);
 					inv.setStackInSlot(32, i);
+					complete = true;
 				}
 				updateInventory();
 			}
@@ -283,7 +288,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	public boolean testContainerItem(ItemStack stack) {
 		if (this.containerItem.isEmpty())
-			return false;
+			return true;
 		return this.containerItem.getItem() == stack.getItem();
 	}
 
@@ -297,10 +302,15 @@ public class MixingBowlBlockEntity extends BlockEntity {
 						getBlockPos().getZ() + 0.5f, r, 0, 0, 0));
 			}
 
-			ItemStack h = player.getItemInHand(pHand);
-			h.setCount(h.getCount() - 1);
+			if (!this.containerItem.isEmpty()) {
+				ItemStack h = player.getItemInHand(pHand);
+				h.setCount(h.getCount() - 1);
+			}
+
 			if (inv.getStackInSlot(32).isEmpty())
 				this.containerItem = ItemStack.EMPTY;
+
+			complete = false;
 		});
 
 		return InteractionResult.SUCCESS;

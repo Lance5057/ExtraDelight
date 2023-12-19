@@ -5,11 +5,9 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 
 public class ExtraDelightTags {
-	
 
 	public static TagKey<Item> forgeTag(String tag) {
 		return ItemTags.create(new ResourceLocation("forge", tag));
@@ -18,12 +16,13 @@ public class ExtraDelightTags {
 	public static TagKey<Item> modTag(String tag) {
 		return ItemTags.create(new ResourceLocation("extradelight", tag));
 	}
-
+ 
 	public static final TagKey<Block> MORTAR_BLOCK = BlockTags.create(new ResourceLocation("forge", "mortars"));
 	public static final TagKey<Item> MORTAR = ItemTags.create(new ResourceLocation("forge", "mortars"));
 	public static final TagKey<Item> PESTLES = ItemTags.create(new ResourceLocation("forge", "pestles"));
 	public static final TagKey<Item> SPOONS = ItemTags.create(new ResourceLocation("forge", "spoons"));
 	public static final TagKey<Item> TRAYS = ItemTags.create(new ResourceLocation("extradelight", "baking_trays"));
+	public static final TagKey<Item> OFFSET_SPATULAS = forgeTag("offset_spatula");
 
 	public static final TagKey<Item> MAKES_STOCK = ItemTags.create(new ResourceLocation("extradelight", "makes_stock"));
 	public static final TagKey<Item> FRYING_OIL = ItemTags.create(new ResourceLocation("extradelight", "frying_oil"));
@@ -73,6 +72,10 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> PROCESSED_APPLE = modTag("processed/apple");
 	public static final TagKey<Item> SLICED_APPLE = forgeTag("apple/sliced");
 	
+	public static final TagKey<Item> PROCESSED_GINGER = modTag("processed/ginger");
+	public static final TagKey<Item> SLICED_GINGER = forgeTag("ginger/sliced");
+	public static final TagKey<Item> GRATED_GINGER = forgeTag("ginger/grated");
+
 	public static final TagKey<Item> CORN = forgeTag("vegetable/corn");
 	
 	public static final TagKey<Item> CACTUS = forgeTag("vegetable/cactus");
@@ -242,4 +245,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> JELLY = modTag("jelly");
 
 	public static final TagKey<Item> CORN_CONFISCATE = modTag("corn_dim_confiscate");
+	public static final TagKey<Item> CANDY = forgeTag("candy");
+
+	public static final TagKey<Item> CANDY_BOWL_VALID = modTag("candy_bowl_valid");
 }

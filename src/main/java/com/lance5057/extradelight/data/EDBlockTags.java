@@ -2,17 +2,14 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.tag.ModTags;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class EDBlockTags extends BlockTagsProvider {
 	public EDBlockTags(DataGenerator generator, String modId, ExistingFileHelper existingFileHelper) {
@@ -25,10 +22,11 @@ public class EDBlockTags extends BlockTagsProvider {
 	}
 
 	protected void registerBlockMineableTags() {
-
+		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get());
+		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.DRYING_RACK.get(),
 				ExtraDelightBlocks.FOOD_DISPLAY.get(), ExtraDelightBlocks.DOUGH_SHAPING.get(),
-				ExtraDelightBlocks.MIXING_BOWL.get());
+				ExtraDelightBlocks.MIXING_BOWL.get(), ExtraDelightBlocks.CINNAMON_LOG.get());
 		AestheticBlocks.STEP_STOOLS.forEach(this::makeMineableWithAxe);
 		AestheticBlocks.SPICE_RACKS.forEach(this::makeMineableWithAxe);
 		AestheticBlocks.SPICE_RACKS_FULL.forEach(this::makeMineableWithAxe);
@@ -59,9 +57,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.LAMB_STEW.get(), ExtraDelightBlocks.RABBIT_STEW.get(),
 				ExtraDelightBlocks.CHICKEN_STEW.get(), ExtraDelightBlocks.FISH_STEW.get());
 
-//		tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_SHOVEL).add(
-//
-//		);
+//		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.MINT_CROP.get());
 
 		tag(ModTags.MINEABLE_WITH_KNIFE).add(
 				// Pies and plain cake
@@ -97,7 +93,6 @@ public class EDBlockTags extends BlockTagsProvider {
 		AestheticBlocks.MOLDED_WALLPAPER_BLOCKS.forEach(this::makeMineableWithKnife);
 		AestheticBlocks.DRIED_CORN_FENCE.forEach(this::makeMineableWithAxe);
 		AestheticBlocks.DRIED_CORN_FENCE.forEach(this::makeFence);
-
 	}
 
 	protected void makeMineableWithAxe(RegistryObject<Block> blockRegistryObject) {

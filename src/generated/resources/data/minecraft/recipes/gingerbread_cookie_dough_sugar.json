@@ -1,0 +1,21 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "extradelight:sugar_cookie_dough"
+    },
+    {
+      "item": "extradelight:grated_ginger"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    }
+  ],
+  "result": {
+    "item": "extradelight:gingerbread_cookie_dough"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "item": "minecraft:air"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:ice"
+    }
+  ],
+  "result": {
+    "item": "extradelight:honey_milkshake"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

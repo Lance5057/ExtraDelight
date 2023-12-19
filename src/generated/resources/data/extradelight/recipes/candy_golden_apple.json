@@ -10,10 +10,10 @@
       "item": "minecraft:golden_apple"
     },
     {
-      "item": "extradelight:candy"
+      "tag": "forge:candy"
     },
     {
-      "item": "extradelight:candy"
+      "tag": "forge:candy"
     }
   ],
   "result": {

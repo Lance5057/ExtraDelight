@@ -512,6 +512,74 @@ public class EDFoods {
 					4)
 			.effect(EDFoods.COMFORT_MEDIUM, 1).effect(EDFoods.NOURISHMENT_MEDIUM, 1).build();
 
+	public static final FoodProperties ICE_CREAM = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f)
+			.fast().alwaysEat().build();
+	public static final FoodProperties TOPPED_ICE_CREAM = (new FoodProperties.Builder()).nutrition(6)
+			.saturationMod(0.5f).fast().alwaysEat().build();
+	public static final FoodProperties COOKIE_DOUGH = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.0f)
+			.effect(EDFoods.HUNGER, 0.1f).build();
+
+	public static final FoodProperties FROSTING = EDFoods
+			.divideFoods("frosting", EDFoods.addFoods("", BUTTER, WHIPPED_CREAM, SUGAR).build(), 4).build();
+
+	public static final FoodProperties CANDY_CANE = EDFoods.addFoods("candy cane", SUGAR, SUGAR, SUGAR, SUGAR).build();
+
+	public static final FoodProperties FRENCH_TOAST = EDFoods.divideFoods("french toast", EDFoods.addFoods("", BUTTER,
+			SUGAR, FoodValues.FRIED_EGG, MILK, SLICED_BREAD, SLICED_BREAD, SLICED_BREAD, SLICED_BREAD).build(), 4)
+			.build();
+
+	public static final FoodProperties CONGEE = EDFoods.addFoods("congee", FoodValues.COOKED_RICE, SUGAR).build();
+
+	public static final FoodProperties LUGAW = EDFoods.addFoods("lugaw", FoodValues.COOKED_RICE, SUGAR,
+			FoodValues.ONION, FoodValues.BONE_BROTH, FoodValues.FRIED_EGG, Foods.COOKED_CHICKEN).build();
+
+	public static final FoodProperties MUFFIN = EDFoods.divideFoods("muffin",
+			EDFoods.addFoods("", BUTTER, SUGAR, SUGAR, FoodValues.FRIED_EGG, FLOUR, MILK).build(), 6).build();
+
+	public static final FoodProperties FILLED_BREAD = EDFoods.addFoods("filled bread", Foods.BREAD, Foods.APPLE)
+			.build();
+
+	public static final FoodProperties PICKLED_GINGER = EDFoods.addFoods("pickled ginger", SUGAR, VINEGAR).build();
+
+	public static final FoodProperties BEET_MINT = EDFoods
+			.addFoods("beet mint", Foods.BEETROOT, Foods.BEETROOT, SUGAR, VINEGAR, OIL).build();
+
+	public static final FoodProperties CRACKER = EDFoods
+			.divideFoods("crackers", EDFoods.addFoods("", BUTTER, FLOUR).build(), 4).build();
+
+	public static final FoodProperties CROQUE_MONSIEUR = EDFoods
+			.addFoods("croque monsieur", BUTTER, FLOUR, MILK, SLICED_BREAD, CHEESE, Foods.COOKED_PORKCHOP).build();
+
+	public static final FoodProperties CROQUE_MADAME = EDFoods
+			.addFoods("croque madame", CROQUE_MONSIEUR, FoodValues.FRIED_EGG).build();
+
+	public static final FoodProperties ROLL = EDFoods.divideFoods("roll", Foods.BREAD, 6).build();
+
+	public static final FoodProperties CINNAMON_ROLL = EDFoods
+			.divideFoods("cinnamon roll", EDFoods.addFoods("", Foods.BREAD, SUGAR, BUTTER, FROSTING).build(), 4)
+			.build();
+
+	public static final FoodProperties MONKEY_BREAD = EDFoods
+			.divideFoods("monkey bread", EDFoods.addFoods("", Foods.BREAD, SUGAR, BUTTER).build(), 4).build();
+
+	public static final FoodProperties MINT_LAMB = EDFoods
+			.divideFoods("mint lamb", EDFoods.addFoods("", Foods.COOKED_MUTTON, Foods.COOKED_MUTTON,
+					Foods.COOKED_MUTTON, Foods.COOKED_MUTTON, Foods.BREAD, OIL).build(), 4)
+			.build();
+
+	public static final FoodProperties CHARCUTERIE = EDFoods.divideFoods("charcuterie", EDFoods
+			.addFoods("", Foods.COOKED_PORKCHOP, CHEESE, CRACKER, Foods.COOKED_PORKCHOP, CHEESE, CRACKER).build(), 4)
+			.build();
+
+	public static final FoodProperties CHRISTMAS_PUDDING = EDFoods.divideFoods("christmas pudding", EDFoods
+			.addFoods("", Foods.APPLE, Foods.APPLE, Foods.APPLE, FLOUR, FLOUR, SUGAR, SUGAR, FoodValues.FRIED_EGG)
+			.build(), 4).build();
+
+	public static final FoodProperties MILK_TART = EDFoods
+			.divideFoods("milk tart", EDFoods
+					.addFoods("", MILK, FLOUR, BUTTER, SUGAR, FoodValues.FRIED_EGG, FoodValues.PIE_CRUST).build(), 4)
+			.build();
+
 	public static Builder addFoods(String name, FoodProperties... foods) {
 
 		int nut = 0;

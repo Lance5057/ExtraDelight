@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "g": {
+      "tag": "extradelight:processed/apple"
+    },
+    "i": {
+      "item": "minecraft:ice"
+    }
+  },
+  "pattern": [
+    " gg",
+    "igg",
+    "Si "
+  ],
+  "result": {
+    "item": "extradelight:apple_popsicle"
+  }
+}

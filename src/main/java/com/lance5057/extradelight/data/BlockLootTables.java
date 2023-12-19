@@ -8,8 +8,11 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+import com.lance5057.extradelight.blocks.crops.GingerCrop;
 
+import net.minecraft.advancements.critereon.EnchantmentPredicate;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Items;
@@ -21,14 +24,22 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Builder;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class BlockLootTables extends BlockLoot {
+	private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[] { 0.05F, 0.0625F, 0.083333336F, 0.1F };
+	private static final float[] NORMAL_LEAVES_STICK_CHANCES = new float[] { 0.02F, 0.022222223F, 0.025F, 0.033333335F,
+			0.1F };
+
 	@Override
 	protected void addTables() {
 		this.dropSelf(ExtraDelightBlocks.OVEN.get());
@@ -72,6 +83,7 @@ public class BlockLootTables extends BlockLoot {
 		this.add(ExtraDelightBlocks.HONEY_CHEESECAKE.get(), noDrop());
 		this.add(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get(), noDrop());
 		this.add(ExtraDelightBlocks.SWEET_BERRY_PIE.get(), noDrop());
+		this.add(ExtraDelightBlocks.APPLE_CHEESECAKE.get(), noDrop());
 
 		this.add(ExtraDelightBlocks.QUICHE.get(), noDrop());
 
@@ -144,6 +156,76 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.CORN_CRATE.get());
 		this.dropSelf(ExtraDelightBlocks.CORN_HUSK_BUNDLE.get());
 		this.dropSelf(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get());
+		this.dropSelf(ExtraDelightBlocks.CORN_COB_BUNDLE.get());
+
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_LOG.get());
+		this.dropSelf(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_PLANKS.get());
+//		this.dropSelf(ExtraDelightBlocks.CINNAMON_LEAVES.get());
+
+		this.add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), (p_124100_) -> {
+			return createLeavesDrops(p_124100_, ExtraDelightBlocks.CINNAMON_SAPLING.get(),
+					NORMAL_LEAVES_SAPLING_CHANCES);
+		});
+
+//		 createSilkTouchOrShearsDispatchTable(pLeavesBlock, applyExplosionCondition(pLeavesBlock, LootItem.lootTableItem(pSaplingBlock))
+//		.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, pChances))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+//				.when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(pLeavesBlock, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+//						.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, NORMAL_LEAVES_STICK_CHANCES))));
+//		createSelfDropDispatchTable(pBlock, HAS_SHEARS_OR_SILK_TOUCH, pAlternativeEntryBuilder);
+//		LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(pBlock).when(pConditionBuilder).otherwise(pAlternativeEntryBuilder)));
+
+		this.dropSelf(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.GINGERBREAD_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.GLOW_BERRY_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.HONEY_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.PUMPKIN_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.SUGAR_COOKIE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
+
+		this.dropSelf(ExtraDelightBlocks.CANDY_BOWL.get());
+
+		this.dropSelf(ExtraDelightBlocks.BLACK_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.BLUE_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.BROWN_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.CYAN_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.GRAY_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.GREEN_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.LIGHT_BLUE_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.LIGHT_GRAY_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.LIME_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.MAGENTA_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.ORANGE_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.PINK_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.PURPLE_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.RED_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.WHITE_FROSTED_GINGERBREAD_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.YELLOW_FROSTED_GINGERBREAD_BLOCK.get());
+
+		this.dropSelf(ExtraDelightBlocks.CANDY_CANE_GREEN_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.CANDY_CANE_RED_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.CANDY_CANE_BLUE_BLOCK.get());
+
+		LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
+				.hasBlockStateProperties(ExtraDelightBlocks.GINGER_CROP.get())
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GingerCrop.AGE, 3));
+		crop(ExtraDelightBlocks.GINGER_CROP.get(), ExtraDelightItems.GINGER.get(),
+				ExtraDelightItems.GINGER_CUTTING.get(), lootitemcondition$builder);
+
+		this.dropOther(ExtraDelightBlocks.WILD_GINGER.get(), ExtraDelightItems.GINGER.get());
+
+		this.dropOther(ExtraDelightBlocks.CINNAMON_ROLLS.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.MONKEY_BREAD.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.COFFEE_CAKE.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.MINT_LAMB.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.CHARCUTERIE_BOARD.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.MILK_TART.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.PUNCH.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), Items.AIR);
+
+		this.dropSelf(ExtraDelightBlocks.MINT_CROP.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_SAPLING.get());
 
 		LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
@@ -162,12 +244,15 @@ public class BlockLootTables extends BlockLoot {
 		return l;
 	}
 
-	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition, float amount) {
-		this.add(pCropBlock, LootTable.lootTable()
-				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(amount))
-						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)))
-				.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
-						.add(LootItem.lootTableItem(pGrownCropItem).apply(ApplyBonusCount
-								.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 1)))));
+	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition) {
+		this.add(pCropBlock,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool()
+								.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)
+										.otherwise(LootItem.lootTableItem(pSeedsItem))))
+						.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
+								.add(LootItem.lootTableItem(pGrownCropItem).apply(
+										ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE,
+												0.5714286F, 1)))));
 	}
 }

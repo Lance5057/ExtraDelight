@@ -7,13 +7,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:flour"
-    },
-    {
-      "tag": "forge:flour"
-    },
-    {
-      "item": "minecraft:honey_bottle"
+      "item": "extradelight:honey_cookie_dough"
     }
   ],
   "recipe_book_tab": "meals",

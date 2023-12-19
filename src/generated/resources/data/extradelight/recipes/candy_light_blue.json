@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:paper"
+  },
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:dyes/light_blue"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:candy_light_blue"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:grain/rice"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    }
+  ],
+  "result": {
+    "item": "extradelight:rice_pudding"
+  }
+}
