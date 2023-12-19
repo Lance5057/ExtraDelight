@@ -1,8 +1,13 @@
 package com.lance5057.extradelight;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.worldgen.features.ExtraDelightTreeFeatures;
+import com.lance5057.extradelight.worldgen.features.ExtraDelightConfiguredFeatures;
+import com.lance5057.extradelight.worldgen.features.ExtraDelightPlacedFeatures;
 import com.lance5057.extradelight.worldgen.generation.CropGeneration;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -11,8 +16,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
@@ -42,8 +45,9 @@ public class ExtraDelight {
 		ExtraDelightLoot.register(modEventBus);
 
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
-		
-		ExtraDelightTreeFeatures.register(modEventBus);
+
+		ExtraDelightConfiguredFeatures.register(modEventBus);
+		ExtraDelightPlacedFeatures.register(modEventBus);
 
 		IEventBus bus = MinecraftForge.EVENT_BUS;
 		bus.addListener(ExtraDelightEvents::stopDimensionDestruction);
