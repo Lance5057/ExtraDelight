@@ -139,6 +139,8 @@ public class BlockModels extends BlockStateProvider {
 		this.recipeFeastBlock(ExtraDelightBlocks.SALAD.get());
 
 		this.cornBlock(ExtraDelightBlocks.CORN_BOTTOM.get(), ExtraDelightBlocks.CORN_TOP.get());
+		simpleBlock(ExtraDelightBlocks.WILD_GINGER.get(), new ConfiguredModel(
+				models().cross("wild_ginger", modLoc("block/crops/ginger/ginger_stage3")).renderType("cutout")));
 
 		this.recipeFeastBlock(ExtraDelightBlocks.CORNBREAD.get());
 		pieBlock(ExtraDelightBlocks.CARAMEL_CHEESECAKE.get(), "caramel_cheesecake");
@@ -198,13 +200,13 @@ public class BlockModels extends BlockStateProvider {
 		this.frostableBlock(ExtraDelightBlocks.MAGENTA_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
 				"magenta");
 		this.frostableBlock(ExtraDelightBlocks.PINK_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block", "pink");
-		
+
 //		this.simpleBlock(ExtraDelightBlocks.MINT_CROP.get(), models().getExistingFile(modLoc("block/mint")));
-		
+
 		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_GREEN_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_RED_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_BLUE_BLOCK.get());
-		
+
 		recipeFeastBlock(ExtraDelightBlocks.CINNAMON_ROLLS.get(), "cinnamon_rolls");
 		recipeFeastBlock(ExtraDelightBlocks.MONKEY_BREAD.get(), "monkey_bread");
 		this.createCakeBlock(ExtraDelightBlocks.COFFEE_CAKE.get(), "coffee");
@@ -213,7 +215,7 @@ public class BlockModels extends BlockStateProvider {
 		recipeFeastBlock(ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), "christmas_pudding");
 		pieLikeBlock(ExtraDelightBlocks.MILK_TART.get(), "milk_tart");
 		recipeFeastBlock(ExtraDelightBlocks.PUNCH.get(), "punch");
-		
+
 		AestheticBlocks.blockModel(this);
 	}
 
@@ -420,6 +422,7 @@ public class BlockModels extends BlockStateProvider {
 	}
 
 	private void simpleCross(RegistryObject<? extends Block> block) {
-		simpleBlock(block.get(), new ConfiguredModel(models().cross(block.getId().getPath(), modLoc("block/" + block.getId().getPath())).renderType("cutout")));
+		simpleBlock(block.get(), new ConfiguredModel(models()
+				.cross(block.getId().getPath(), modLoc("block/" + block.getId().getPath())).renderType("cutout")));
 	}
 }

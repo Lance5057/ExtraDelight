@@ -335,6 +335,8 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<GingerCrop> GINGER_CROP = BLOCKS.register("ginger_crop",
 			() -> new GingerCrop(Block.Properties.copy(Blocks.WHEAT)));
+	public static final RegistryObject<Block> WILD_GINGER = BLOCKS.register("wild_ginger",
+			() -> new Block(Block.Properties.copy(Blocks.WHEAT)));
 	public static final RegistryObject<MintCrop> MINT_CROP = BLOCKS.register("mint_crop", MintCrop::new);
 
 	public static final RegistryObject<CandyBowlBlock> CANDY_BOWL = BLOCKS.register("candy_bowl",
@@ -394,10 +396,8 @@ public class ExtraDelightBlocks {
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), true,
 					pan));
 	public static final RegistryObject<RecipeFeastBlock> PUNCH = BLOCKS.register("punch",
-			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.GLASS).color(MaterialColor.COLOR_PINK), true,
-					pan));
-	public static final RegistryObject<Block> MILK_TART = ExtraDelightBlocks.BLOCKS.register(
-			"milk_tart",
+			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.GLASS).color(MaterialColor.COLOR_PINK), true, pan));
+	public static final RegistryObject<Block> MILK_TART = ExtraDelightBlocks.BLOCKS.register("milk_tart",
 			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.MILK_TART_SLICE));
 	public static final RegistryObject<RecipeFeastBlock> MINT_LAMB = BLOCKS.register("mint_lamb",
 			() -> new RecipeFeastBlock(Block.Properties.copy(Blocks.WHITE_WOOL).color(MaterialColor.COLOR_BROWN), true,

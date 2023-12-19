@@ -45,7 +45,7 @@ public class CropGeneration {
 
 		FEATURE_PATCH_WILD_GINGER = register(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_ginger"),
 				ModBiomeFeatures.WILD_CROP.get(),
-				WildCropGeneration.wildCropConfig(ExtraDelightBlocks.GINGER_CROP.get(), Blocks.GRASS,
+				WildCropGeneration.wildCropConfig(ExtraDelightBlocks.WILD_GINGER.get(), Blocks.GRASS,
 						BlockPredicate.matchesBlocks(WildCropGeneration.BLOCK_BELOW, List.of(Blocks.GRASS_BLOCK,
 								Blocks.DIRT, Blocks.COARSE_DIRT, Blocks.RED_SAND, Blocks.SAND))));
 

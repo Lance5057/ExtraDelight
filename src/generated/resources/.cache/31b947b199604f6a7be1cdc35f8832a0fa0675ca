@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-19T02:50:07.0924143	Item Models: extradelight
+// 1.19.2	2023-12-19T15:55:35.4643571	Item Models: extradelight
 d6cec988d96345e08c89e0c2f114a2c1312de993 assets/extradelight/models/item/acacia_dried_corn_fence.json
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
@@ -739,6 +739,7 @@ aa710a4c330a67cb0c2c0d951ca6bfa86336450a assets/extradelight/models/item/warped_
 677817d9bd555298659c2c3f452cfe84ef216a45 assets/extradelight/models/item/warped_step_stool.json
 7646b4aa203741f1a57722f46c5717161883170c assets/extradelight/models/item/warped_wreath.json
 2f24921a3f377363274f1ac771df100f8462d6c3 assets/extradelight/models/item/whipped_cream.json
+d685adf2e1a1dbcef39d7694628018c9b061df13 assets/extradelight/models/item/wild_ginger.json
 39654d064c01474f401aa37806ea70b3b92be3e2 assets/extradelight/models/item/wooden_spoon.json
 850cc654799ea3c51189bffd633411585e603816 assets/extradelight/models/item/yeast.json
 5b97e276c163f088e42843bb640211bad99b18d4 assets/extradelight/models/item/yeast_pot.json

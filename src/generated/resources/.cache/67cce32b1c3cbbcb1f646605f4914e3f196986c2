@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-16T22:31:52.7903096	LootTables
+// 1.19.2	2023-12-19T15:50:00.7798646	LootTables
 6f2f14764aeccabb899ed56e1d8a8f0074aa0929 data/extradelight/loot_tables/blocks/acacia_dried_corn_fence.json
 2df5ce0c265b62e0751dfbde70e812a38a2bd169 data/extradelight/loot_tables/blocks/acacia_half_cabinet.json
 7747bac4a9ea01dff06964433ec737b240944275 data/extradelight/loot_tables/blocks/acacia_knife_block.json
@@ -367,6 +367,7 @@ a5ded68593f4b9a4571ce12d0b8e844b0cc095cd data/extradelight/loot_tables/blocks/wa
 670f3f4de060a5398e36d6ad8e0a2a56cfa651c5 data/extradelight/loot_tables/blocks/warped_step_stool.json
 a4a9bc8a1145b561cc9eaea31f759546bacd96b5 data/extradelight/loot_tables/blocks/warped_wreath.json
 e49bb25b55f4061258ce103298b89c9b28a45ff7 data/extradelight/loot_tables/blocks/white_frosted_gingerbread_block.json
+c5f01fcd2b49defcbd60ff0b866e5beb2325b3f9 data/extradelight/loot_tables/blocks/wild_ginger.json
 615b13a18822f502528bd3572e827f4a617abb7f data/extradelight/loot_tables/blocks/yeast_pot.json
 cda5c91b5179fe949b7bbdd8515f3da61683141f data/extradelight/loot_tables/blocks/yellow_frosted_gingerbread_block.json
 f31a0f4eb092fce19fb01600cc8fbf37278b92a4 data/extradelight/loot_tables/chests/corn_common.json

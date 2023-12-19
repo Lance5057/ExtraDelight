@@ -722,6 +722,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.GINGERBREAD_BLOCK_YELLOW.get(), "Yellow Frosted Gingerbread Block");
 
 		this.add(ExtraDelightItems.ROLL.get(), "Bread Roll");
+		this.add(ExtraDelightItems.WILD_GINGER.get(), "Wild Ginger");
 
 		AestheticBlocks.EngLoc(this);
 	}

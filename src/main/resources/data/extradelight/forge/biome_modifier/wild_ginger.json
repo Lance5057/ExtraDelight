@@ -2,6 +2,6 @@
   "type": "farmersdelight:add_features_by_filter",
   "allowed_biomes": "#forge:is_hot/overworld",
   "denied_biomes": "#forge:is_cave",
-  "features": "extradelight:patch_wild_corn",
+  "features": "extradelight:patch_wild_ginger",
   "step": "vegetal_decoration"
 }

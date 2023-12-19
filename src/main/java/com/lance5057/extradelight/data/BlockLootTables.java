@@ -213,6 +213,8 @@ public class BlockLootTables extends BlockLoot {
 		crop(ExtraDelightBlocks.GINGER_CROP.get(), ExtraDelightItems.GINGER.get(),
 				ExtraDelightItems.GINGER_CUTTING.get(), lootitemcondition$builder);
 
+		this.dropOther(ExtraDelightBlocks.WILD_GINGER.get(), ExtraDelightItems.GINGER.get());
+
 		this.dropOther(ExtraDelightBlocks.CINNAMON_ROLLS.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.MONKEY_BREAD.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.COFFEE_CAKE.get(), Items.AIR);

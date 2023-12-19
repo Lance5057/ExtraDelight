@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -771,6 +772,7 @@ public class ItemModels extends ItemModelProvider {
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/christmas_pudding_stage0"));
 		forItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart");
 		forBlockItem(ExtraDelightItems.PUNCH_FEAST, new ResourceLocation(ExtraDelight.MOD_ID, "block/punch_stage0"));
+		forBlockItem(ExtraDelightItems.WILD_GINGER, "wild_ginger");
 
 		AestheticBlocks.itemModel(this);
 	}

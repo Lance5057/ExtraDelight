@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-16T22:46:13.4988909	Block States: extradelight
+// 1.19.2	2023-12-19T15:50:00.7878717	Block States: extradelight
 0606f1f30088689a5452fbb7064ac01d1efe1501 assets/extradelight/blockstates/acacia_dried_corn_fence.json
 e59ff0ab2be841ce0a186208c61c6671872c7575 assets/extradelight/blockstates/acacia_knife_block.json
 b53c748ec0e40232b62085300f2468fdee1f61d9 assets/extradelight/blockstates/acacia_molded_black_wallpaper.json
@@ -349,6 +349,7 @@ d88538f5ae07a8f057273a183e722b7c70073a79 assets/extradelight/blockstates/warped_
 f164b7b8a0eca2f25a4e9aeb74ef0174b70a4d11 assets/extradelight/blockstates/warped_step_stool.json
 b9b530ba2b18f89d64fabc84ae0010e188c4258d assets/extradelight/blockstates/warped_wreath.json
 3845fa7caf1744d654c86349231fb37acea8f66e assets/extradelight/blockstates/white_frosted_gingerbread_block.json
+9ddc07b4213752387337135b76db63fbab093480 assets/extradelight/blockstates/wild_ginger.json
 cffa874c1d82bb32c1ea8fa4ce730b7155a03ad2 assets/extradelight/blockstates/yeast_pot.json
 534d169015f3ea8758c9e4b2604fed1b9cbe87d8 assets/extradelight/blockstates/yellow_frosted_gingerbread_block.json
 457834dc53818475cb712db931f6106b6ceea196 assets/extradelight/models/block/acacia_dried_corn_fence.json
@@ -1129,4 +1130,5 @@ a7c0459db8d4f4581d4a4e7ae1d0a9a14595366f assets/extradelight/models/block/warped
 feae3dbf2d9969ac738d73853fe4d375daf9662e assets/extradelight/models/block/warped_step_stool.json
 06f7f802922018af07cf60cd4465c6e8dcb5c20d assets/extradelight/models/block/warped_wreath_block.json
 248bc417f14e6ccb8ed2e653df1e385ef9951a0c assets/extradelight/models/block/white_bow.json
+3f8eadbe5e9bf802cd0de888b38eb3cdcf29ff85 assets/extradelight/models/block/wild_ginger.json
 9d0b6a375a312008cdb848fc174f1a6238767c0f assets/extradelight/models/block/yellow_bow.json
