@@ -12,4 +12,4 @@ public class CinnamonTreeGrower extends AbstractTreeGrower {
 		return ExtraDelightTreeFeatures.CINNAMON.getHolder().get();
 	}
 
-}
+} 
