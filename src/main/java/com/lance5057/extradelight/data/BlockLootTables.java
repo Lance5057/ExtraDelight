@@ -227,6 +227,12 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.MINT_CROP.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_SAPLING.get());
 
+		LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
+				.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornTop.AGE, 3));
+		crop(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
+				ExtraDelightItems.CORN_SEEDS.get(), lootitemcondition$builder, 3.0f);
+
 		AestheticBlocks.loot(this);
 	}
 

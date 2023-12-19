@@ -23,6 +23,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -296,7 +297,10 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 			ItemStack r = inv.extractItem(32, 1, false);
 
-			player.addItem(r);
+			if (!player.addItem(r)) {
+				level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f, getBlockPos().getY() + 0.5f,
+						getBlockPos().getZ() + 0.5f, r, 0, 0, 0));
+			}
 
 			if (!this.containerItem.isEmpty()) {
 				ItemStack h = player.getItemInHand(pHand);
