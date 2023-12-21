@@ -1,12 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
+    "b": {
+      "item": "minecraft:bowl"
+    },
     "g": {
       "item": "minecraft:glass"
     }
   },
   "pattern": [
-    "g g",
+    "gbg",
     " g "
   ],
   "result": {

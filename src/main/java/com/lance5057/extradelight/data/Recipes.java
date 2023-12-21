@@ -1513,8 +1513,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.define('i', ItemTags.PLANKS).define('s', Items.STICK).unlockedBy(getName(), has(ItemTags.PLANKS))
 				.save(consumer);
 
-		ShapedRecipeBuilder.shaped(ExtraDelightItems.CANDY_BOWL_ITEM.get()).pattern("g g").pattern(" g ")
-				.define('g', Items.GLASS).unlockedBy(getName(), has(Items.GLASS)).save(consumer);
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CANDY_BOWL_ITEM.get()).pattern("gbg").pattern(" g ")
+				.define('g', Items.GLASS).define('b', Items.BOWL).unlockedBy(getName(), has(Items.GLASS))
+				.save(consumer);
 
 		bundleItem4(Ingredient.of(ExtraDelightItems.MINT_CANDY_BLUE.get()), ExtraDelightItems.CANDY_CANE_BLUE.get(),
 				ExtraDelightItems.MINT_CANDY_BLUE.get(), consumer, "mint_candy_blue");

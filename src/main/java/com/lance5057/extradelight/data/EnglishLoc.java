@@ -59,9 +59,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.pumpkin_milkshake", "Instant Health");
 		this.add("farmersdelight.tooltip.honey_milkshake", "Instant Health");
 		this.add("farmersdelight.tooltip.apple_milkshake", "Instant Health");
-		this.add("farmersdelight.tooltip.glow_berry_juice", "Minor Instant Health and Glow Effect");
-		this.add("farmersdelight.tooltip.sweet_berry_juice", "Minor Instant Health");
-		this.add("farmersdelight.tooltip.tomato_juice", "Minor Instant Health");
+		
 		this.add("extradelight.corn_dimension.death", "Be more careful in the cornfield next time...");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
