@@ -1000,8 +1000,8 @@ public class ExtraDelightItems {
 	public static final RegistryObject<MilkshakeDrinkItem> APPLE_MILKSHAKE = ITEMS.register("apple_milkshake",
 			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
 
-	public static final RegistryObject<MilkshakeDrinkItem> CHOCOLATE_MILK = ITEMS.register("chocolate_milk",
-			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 2f));
+	public static final RegistryObject<HotCocoaItem> CHOCOLATE_MILK = ITEMS.register("chocolate_milk",
+			() -> new HotCocoaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<HotCocoaItem> EGGNOG = ITEMS.register("eggnog",
 			() -> new HotCocoaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
@@ -1009,8 +1009,8 @@ public class ExtraDelightItems {
 			() -> new MelonJuiceItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 	public static final RegistryObject<CornSilkTeaItem> GINGER_TEA = ITEMS.register("ginger_tea",
 			() -> new CornSilkTeaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
-	public static final RegistryObject<CornSilkTeaItem> HORCHATA = ITEMS.register("horchata",
-			() -> new CornSilkTeaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<HotCocoaItem> HORCHATA = ITEMS.register("horchata",
+			() -> new HotCocoaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> GINGERBREAD_COOKIE_DOUGH = ITEMS.register("gingerbread_cookie_dough",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKIE_DOUGH)));

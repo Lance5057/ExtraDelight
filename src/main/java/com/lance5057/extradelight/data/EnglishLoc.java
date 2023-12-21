@@ -40,6 +40,26 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.doughshaping", "Dough Shaping");
 		this.add("extradelight.jei.tool_on_block", "Tool on Block");
 
+		this.add("farmersdelight.tooltip.glow_berry_juice", "Minor Instant Health, Glow");
+		this.add("farmersdelight.tooltip.sweet_berry_juice", "Minor Instant Health");
+		this.add("farmersdelight.tooltip.tomato_juice", "Minor Instant Health");
+		this.add("farmersdelight.tooltip.corn_silk_tea", "Minor Instant Health, Comfort");
+		this.add("farmersdelight.tooltip.eggnog", "Removes 1 Harmful Effect");
+		this.add("farmersdelight.tooltip.mint_tea", "Minor Instant Health, Comfort");
+		this.add("farmersdelight.tooltip.punch", "Minor Instant Health");
+		this.add("farmersdelight.tooltip.chocolate_milk", "Removes 1 Harmful Effect");
+		this.add("farmersdelight.tooltip.ginger_beer", "Minor Instant Health");
+		this.add("farmersdelight.tooltip.ginger_tea", "Minor Instant Health, Comfort");
+		this.add("farmersdelight.tooltip.horchata", "Removes 1 Harmful Effect");
+		
+		this.add("farmersdelight.tooltip.milkshake", "Minor Instant Health");
+		this.add("farmersdelight.tooltip.chocolate_milkshake", "Instant Health");
+		this.add("farmersdelight.tooltip.glow_berry_milkshake", "Instant Health, Glow");
+		this.add("farmersdelight.tooltip.sweet_berry_milkshake", "Instant Health");
+		this.add("farmersdelight.tooltip.pumpkin_milkshake", "Instant Health");
+		this.add("farmersdelight.tooltip.honey_milkshake", "Instant Health");
+		this.add("farmersdelight.tooltip.apple_milkshake", "Instant Health");
+
 		this.add("extradelight.corn_dimension.death", "Be more careful in the cornfield next time...");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
