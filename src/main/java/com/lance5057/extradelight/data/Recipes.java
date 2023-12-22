@@ -1588,6 +1588,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_LOG.get()))
 				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CINNAMON_PLANKS.get(), 4)
+				.requires(ExtraDelightItems.STRIPPED_CINNAMON_LOG.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_LOG.get()))
+				.save(consumer);
 	}
 
 	private void bundleItem9(Ingredient in, Item b, Item out, Consumer<FinishedRecipe> consumer, String name) {
@@ -2551,6 +2557,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_BARK.get()),
 						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.RAW_CINNAMON.get(), 1)
 				.addResultWithChance(ExtraDelightItems.RAW_CINNAMON.get(), 0.75f, 1).build(consumer);
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.GINGER.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+						ExtraDelightItems.GINGER_CUTTING.get(), 1)
+				.addResultWithChance(ExtraDelightItems.GINGER_CUTTING.get(), 0.75f, 1).build(consumer);
 
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.GINGER.get()), Ingredient.of(ExtraDelightTags.SPOONS),

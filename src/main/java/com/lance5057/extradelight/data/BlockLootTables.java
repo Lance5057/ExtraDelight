@@ -227,6 +227,11 @@ public class BlockLootTables extends BlockLoot {
 		crop(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
 				ExtraDelightItems.CORN_SEEDS.get(), lootitemcondition$builder2, 3.0f);
 
+		this.add(ExtraDelightBlocks.CINNAMON_DOOR.get(), createDoorTable(ExtraDelightBlocks.CINNAMON_DOOR.get()));
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_FENCE.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_STAIRS.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get());
+
 		AestheticBlocks.loot(this);
 	}
 

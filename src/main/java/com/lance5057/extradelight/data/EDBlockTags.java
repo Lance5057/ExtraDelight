@@ -93,6 +93,12 @@ public class EDBlockTags extends BlockTagsProvider {
 		AestheticBlocks.MOLDED_WALLPAPER_BLOCKS.forEach(this::makeMineableWithKnife);
 		AestheticBlocks.DRIED_CORN_FENCE.forEach(this::makeMineableWithAxe);
 		AestheticBlocks.DRIED_CORN_FENCE.forEach(this::makeFence);
+
+		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.WILD_GINGER.get());
+
+		tag(BlockTags.MINEABLE_WITH_HOE).add(ExtraDelightBlocks.CINNAMON_LEAVES.get());
+		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.CINNAMON_LOG.get(),
+				ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), ExtraDelightBlocks.CINNAMON_PLANKS.get());
 	}
 
 	protected void makeMineableWithAxe(RegistryObject<Block> blockRegistryObject) {

@@ -14,6 +14,8 @@ import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.oven.OvenBlock;
 import com.lance5057.extradelight.worldgen.features.CinnamonTreeGrower;
+
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
@@ -25,6 +27,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.PieBlock;
+import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class ExtraDelightBlocks {
@@ -310,6 +313,14 @@ public class ExtraDelightBlocks {
 					Block.Properties.copy(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> CINNAMON_PLANKS = BLOCKS.register("cinnamon_planks",
 			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> CINNAMON_FENCE = BLOCKS.register("cinnamon_fence",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> CINNAMON_STAIRS = BLOCKS.register("cinnamon_stairs",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> CINNAMON_DOOR = BLOCKS.register("cinnamon_door",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> CINNAMON_TRAPDOOR = BLOCKS.register("cinnamon_trapdoor",
+			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
 	public static final RegistryObject<LeavesBlock> CINNAMON_LEAVES = BLOCKS.register("cinnamon_leaves",
 			() -> new LeavesBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
 
@@ -336,7 +347,7 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<GingerCrop> GINGER_CROP = BLOCKS.register("ginger_crop",
 			() -> new GingerCrop(Block.Properties.copy(Blocks.WHEAT)));
 	public static final RegistryObject<Block> WILD_GINGER = BLOCKS.register("wild_ginger",
-			() -> new Block(Block.Properties.copy(Blocks.WHEAT)));
+			() -> new WildCropBlock(MobEffects.FIRE_RESISTANCE, 6, Block.Properties.copy(Blocks.TALL_GRASS)));
 	public static final RegistryObject<MintCrop> MINT_CROP = BLOCKS.register("mint_crop", MintCrop::new);
 
 	public static final RegistryObject<CandyBowlBlock> CANDY_BOWL = BLOCKS.register("candy_bowl",

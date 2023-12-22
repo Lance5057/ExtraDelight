@@ -66,7 +66,7 @@ public class AestheticBlocks {
 			ExtraDelight.MOD_ID);
 
 	public static enum WOOD {
-		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove
+		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cinnamon
 	};
 
 	public static final List<RegistryObject<Block>> STEP_STOOLS = new ArrayList<RegistryObject<Block>>();
