@@ -47,7 +47,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		super(generator);
 	}
 
+	public static final int SMOKER_COOKING = 100; // 5 seconds
+	public static final int FURNACE_COOKING = 200; // 10 seconds
 	public static final int FAST_COOKING = 400; // 20 seconds
+	public static final int CAMPFIRE_COOKING = 600; // 20 seconds
 	public static final int NORMAL_COOKING = 800; // 40 seconds
 	public static final int SLOW_COOKING = 1600; // 80 seconds
 
@@ -604,13 +607,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void vanillaCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
-		SimpleCookingRecipeBuilder.campfireCooking(of, item, MEDIUM_EXP, NORMAL_COOKING)
+		SimpleCookingRecipeBuilder.campfireCooking(of, item, MEDIUM_EXP, CAMPFIRE_COOKING)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, name + "_fire"));
-		SimpleCookingRecipeBuilder.smelting(of, item, MEDIUM_EXP, NORMAL_COOKING)
+		SimpleCookingRecipeBuilder.smelting(of, item, MEDIUM_EXP, FURNACE_COOKING)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, name + "_smelt"));
-		SimpleCookingRecipeBuilder.smoking(of, item, MEDIUM_EXP, NORMAL_COOKING)
+		SimpleCookingRecipeBuilder.smoking(of, item, MEDIUM_EXP, SMOKER_COOKING)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID, name + "_smoke"));
 	}
