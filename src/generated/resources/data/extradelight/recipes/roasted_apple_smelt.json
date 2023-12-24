@@ -1,6 +1,6 @@
 {
   "type": "minecraft:smelting",
-  "cookingtime": 800,
+  "cookingtime": 200,
   "experience": 1.0,
   "ingredient": {
     "item": "minecraft:apple"

@@ -1,25 +1,8 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "b": {
-      "item": "minecraft:bowl"
-    },
-    "f": {
-      "tag": "extradelight:processed/fruit"
-    },
-    "s": {
-      "tag": "extradelight:sweetener"
-    },
-    "w": {
-      "item": "minecraft:water_bucket"
-    }
+  "type": "extradelight:feast",
+  "block": "extradelight:punch_feast",
+  "ingredient": {
+    "item": "minecraft:glass_bottle"
   },
-  "pattern": [
-    "fff",
-    "sws",
-    " b "
-  ],
-  "result": {
-    "item": "extradelight:punch_feast"
-  }
+  "result": "extradelight:punch"
 }

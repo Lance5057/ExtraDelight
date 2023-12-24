@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "extradelight:block/cinnamon_cabinet_front",
+    "side": "extradelight:block/cinnamon_cabinet_side",
+    "top": "extradelight:block/cinnamon_cabinet_top"
+  }
+}

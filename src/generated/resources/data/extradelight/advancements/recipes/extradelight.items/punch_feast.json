@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_hotdish": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:water_bucket"
+              "extradelight:punch_feast"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "Recipes",
+      "has_hotdish",
       "has_the_recipe"
     ]
   ],

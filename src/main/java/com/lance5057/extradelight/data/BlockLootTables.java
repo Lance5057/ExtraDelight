@@ -231,6 +231,9 @@ public class BlockLootTables extends BlockLoot {
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_STAIRS.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_CABINET.get());
+		this.add(ExtraDelightBlocks.CINNAMON_SLAB.get(), createSlabItemTable(ExtraDelightBlocks.CINNAMON_SLAB.get()));
 
 		AestheticBlocks.loot(this);
 	}

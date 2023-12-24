@@ -51,7 +51,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.ginger_beer", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.ginger_tea", "Minor Instant Health, Comfort");
 		this.add("farmersdelight.tooltip.horchata", "Removes 1 Harmful Effect");
-		
+
 		this.add("farmersdelight.tooltip.milkshake", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.chocolate_milkshake", "Instant Health");
 		this.add("farmersdelight.tooltip.glow_berry_milkshake", "Instant Health, Glow");
@@ -59,7 +59,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.pumpkin_milkshake", "Instant Health");
 		this.add("farmersdelight.tooltip.honey_milkshake", "Instant Health");
 		this.add("farmersdelight.tooltip.apple_milkshake", "Instant Health");
-		
+
 		this.add("extradelight.corn_dimension.death", "Be more careful in the cornfield next time...");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
@@ -542,6 +542,14 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.CINNAMON_STICK.get(), "Cinnamon Stick");
 		this.add(ExtraDelightItems.GROUND_CINNAMON.get(), "Ground Cinnamon");
 		this.add(ExtraDelightItems.CINNAMON_SAPLING.get(), "Cinnamon Sapling");
+		this.add(ExtraDelightItems.CINNAMON_CABINET.get(), "Cinnamon Cabinet");
+		this.add(ExtraDelightItems.CINNAMON_DOOR.get(), "Cinnamon Door");
+		this.add(ExtraDelightItems.CINNAMON_FENCE.get(), "Cinnamon Fence");
+		this.add(ExtraDelightItems.CINNAMON_FENCE_GATE.get(), "Cinnamon Fence Gate");
+		this.add(ExtraDelightItems.CINNAMON_STAIRS.get(), "Cinnamon Stairs");
+		this.add(ExtraDelightItems.CINNAMON_TRAPDOOR.get(), "Cinnamon Trapdoor");
+		this.add(ExtraDelightItems.CINNAMON_SLAB.get(), "Cinnamon Slab");
+
 		this.add(ExtraDelightItems.ICE_CREAM.get(), "Ice Cream");
 		this.add(ExtraDelightItems.CHOCOLATE_ICE_CREAM.get(), "Chocolate Ice Cream");
 		this.add(ExtraDelightItems.GLOW_BERRY_ICE_CREAM.get(), "Glow Berry Ice Cream");
@@ -550,6 +558,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.HONEY_ICE_CREAM.get(), "Honey Ice Cream");
 		this.add(ExtraDelightItems.APPLE_ICE_CREAM.get(), "Apple Ice Cream");
 		this.add(ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM.get(), "Cookie Dough Ice Cream");
+		this.add(ExtraDelightItems.MINT_CHIP_ICE_CREAM.get(), "Mint Chip Ice Cream");
 		this.add(ExtraDelightItems.MILKSHAKE.get(), "Milkshake");
 		this.add(ExtraDelightItems.APPLE_MILKSHAKE.get(), "Apple Milkshake");
 		this.add(ExtraDelightItems.CHOCOLATE_MILKSHAKE.get(), "Chocolate Milkshake");

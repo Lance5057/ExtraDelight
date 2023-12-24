@@ -16,7 +16,7 @@ public class ExtraDelightTags {
 	public static TagKey<Item> modTag(String tag) {
 		return ItemTags.create(new ResourceLocation("extradelight", tag));
 	}
- 
+
 	public static final TagKey<Block> MORTAR_BLOCK = BlockTags.create(new ResourceLocation("forge", "mortars"));
 	public static final TagKey<Item> MORTAR = ItemTags.create(new ResourceLocation("forge", "mortars"));
 	public static final TagKey<Item> PESTLES = ItemTags.create(new ResourceLocation("forge", "pestles"));
@@ -47,6 +47,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> JAM_GLOW_BERRY = forgeTag("jam/glow_berry");
 	public static final TagKey<Item> JAM_GOLDEN_APPLE = forgeTag("jam/golden_apple");
 	public static final TagKey<Item> JAM_CARROT = forgeTag("jam/carrot");
+	public static final TagKey<Item> JAM_MINT = forgeTag("jam/mint");
 
 	public static final TagKey<Item> STARCH = forgeTag("food/starch");
 
@@ -71,13 +72,14 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> PROCESSED_APPLE = modTag("processed/apple");
 	public static final TagKey<Item> SLICED_APPLE = forgeTag("apple/sliced");
-	
+
+	public static final TagKey<Item> GINGER = forgeTag("ginger");
 	public static final TagKey<Item> PROCESSED_GINGER = modTag("processed/ginger");
 	public static final TagKey<Item> SLICED_GINGER = forgeTag("ginger/sliced");
 	public static final TagKey<Item> GRATED_GINGER = forgeTag("ginger/grated");
 
 	public static final TagKey<Item> CORN = forgeTag("vegetable/corn");
-	
+
 	public static final TagKey<Item> CACTUS = forgeTag("vegetable/cactus");
 
 	// Bread
@@ -248,4 +250,5 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CANDY = forgeTag("candy");
 
 	public static final TagKey<Item> CANDY_BOWL_VALID = modTag("candy_bowl_valid");
+
 }

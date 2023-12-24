@@ -7,6 +7,7 @@ import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -18,6 +19,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
@@ -160,6 +162,20 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_PLANKS.get());
 		this.simpleCross(ExtraDelightBlocks.CINNAMON_SAPLING);
+		this.stairsBlock(ExtraDelightBlocks.CINNAMON_STAIRS.get(),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
+		this.trapdoorBlockWithRenderType(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"), true, "cutout");
+		this.doorBlockWithRenderType(ExtraDelightBlocks.CINNAMON_DOOR.get(),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_door_bottom"),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_door_top"), "cutout");
+		this.fenceBlock(ExtraDelightBlocks.CINNAMON_FENCE.get(),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
+		this.fenceGateBlock(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get(),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
+		this.cabinetBlock(ExtraDelightBlocks.CINNAMON_CABINET.get(), "cinnamon");
+		this.slabBlock(ExtraDelightBlocks.CINNAMON_SLAB.get(), modLoc("block/cinnamon_planks"),
+				modLoc("block/cinnamon_planks"));
 
 		this.simpleBlock(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
@@ -424,5 +440,15 @@ public class BlockModels extends BlockStateProvider {
 	private void simpleCross(RegistryObject<? extends Block> block) {
 		simpleBlock(block.get(), new ConfiguredModel(models()
 				.cross(block.getId().getPath(), modLoc("block/" + block.getId().getPath())).renderType("cutout")));
+	}
+
+	public void cabinetBlock(Block block, String woodType) {
+		this.horizontalBlock(block, state -> {
+			String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
+			return models().orientable(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
+					new ResourceLocation(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_side"),
+					new ResourceLocation(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_front" + suffix),
+					new ResourceLocation(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_top"));
+		});
 	}
 }

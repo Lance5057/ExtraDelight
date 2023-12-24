@@ -1,6 +1,10 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.blocks.*;
+import com.lance5057.extradelight.blocks.FrostableBlock;
+import com.lance5057.extradelight.blocks.JellyBlock;
+import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.StrippableLog;
+import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MintCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
@@ -16,7 +20,21 @@ import com.lance5057.extradelight.workstations.oven.OvenBlock;
 import com.lance5057.extradelight.worldgen.features.CinnamonTreeGrower;
 
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CakeBlock;
+import net.minecraft.world.level.block.CarpetBlock;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.HayBlock;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
@@ -26,6 +44,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
@@ -313,16 +332,23 @@ public class ExtraDelightBlocks {
 					Block.Properties.copy(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> CINNAMON_PLANKS = BLOCKS.register("cinnamon_planks",
 			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
-	public static final RegistryObject<Block> CINNAMON_FENCE = BLOCKS.register("cinnamon_fence",
-			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
-	public static final RegistryObject<Block> CINNAMON_STAIRS = BLOCKS.register("cinnamon_stairs",
-			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
-	public static final RegistryObject<Block> CINNAMON_DOOR = BLOCKS.register("cinnamon_door",
-			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
-	public static final RegistryObject<Block> CINNAMON_TRAPDOOR = BLOCKS.register("cinnamon_trapdoor",
-			() -> new Block(Block.Properties.copy(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<FenceBlock> CINNAMON_FENCE = BLOCKS.register("cinnamon_fence",
+			() -> new FenceBlock(Block.Properties.copy(Blocks.ACACIA_FENCE)));
+	public static final RegistryObject<FenceGateBlock> CINNAMON_FENCE_GATE = BLOCKS.register("cinnamon_fence_gate",
+			() -> new FenceGateBlock(Block.Properties.copy(Blocks.ACACIA_FENCE_GATE)));
+	public static final RegistryObject<StairBlock> CINNAMON_STAIRS = BLOCKS.register("cinnamon_stairs",
+			() -> new StairBlock(CINNAMON_PLANKS.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.ACACIA_STAIRS)));
+	public static final RegistryObject<DoorBlock> CINNAMON_DOOR = BLOCKS.register("cinnamon_door",
+			() -> new DoorBlock(Block.Properties.copy(Blocks.ACACIA_DOOR)));
+	public static final RegistryObject<TrapDoorBlock> CINNAMON_TRAPDOOR = BLOCKS.register("cinnamon_trapdoor",
+			() -> new TrapDoorBlock(Block.Properties.copy(Blocks.ACACIA_TRAPDOOR)));
 	public static final RegistryObject<LeavesBlock> CINNAMON_LEAVES = BLOCKS.register("cinnamon_leaves",
 			() -> new LeavesBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
+	public static final RegistryObject<Block> CINNAMON_CABINET = BLOCKS.register("cinnamon_cabinet",
+			() -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)));
+	public static final RegistryObject<SlabBlock> CINNAMON_SLAB = BLOCKS.register("cinnamon_slab",
+			() -> new SlabBlock(Block.Properties.copy(Blocks.DARK_OAK_SLAB)));
 
 	public static final RegistryObject<Block> APPLE_CHEESECAKE = ExtraDelightBlocks.BLOCKS.register("apple_cheesecake",
 			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ExtraDelightItems.APPLE_CHEESECAKE_SLICE));

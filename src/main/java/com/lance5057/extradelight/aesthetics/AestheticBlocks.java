@@ -13,6 +13,7 @@ import com.lance5057.extradelight.aesthetics.block.MoldingBlock;
 import com.lance5057.extradelight.aesthetics.block.RibbonBlock;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
+import com.lance5057.extradelight.data.Recipes;
 import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
 import com.lance5057.extradelight.displays.knife.KnifeBlock;
 import com.lance5057.extradelight.displays.spice.SpiceRackBlock;
@@ -514,7 +515,7 @@ public class AestheticBlocks {
 		ShapelessRecipeBuilder.shapeless(fence).requires(DRIED_CORN_FENCE.get(name.ordinal()).get())
 				.unlockedBy(name + "_dried_corn_fence_back",
 						InventoryChangeTrigger.TriggerInstance.hasItems(DRIED_CORN_FENCE.get(name.ordinal()).get()))
-				.save(consumer, name + "_dried_corn_fence_back");
+				.save(consumer, Recipes.EDLoc(name + "_dried_corn_fence_back"));
 	}
 
 	static void cabinetRecipes(Consumer<FinishedRecipe> consumer) {

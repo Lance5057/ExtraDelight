@@ -559,6 +559,16 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CINNAMON_LOG, "cinnamon_log");
 		forBlockItem(ExtraDelightItems.CINNAMON_LEAVES, "cinnamon_leaves");
 		forBlockItem(ExtraDelightItems.CINNAMON_PLANKS, "cinnamon_planks");
+		forBlockItem(ExtraDelightItems.CINNAMON_FENCE,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_fence_inventory"));
+		forItem(ExtraDelightItems.CINNAMON_DOOR, "cinnamon_door");
+		forBlockItem(ExtraDelightItems.CINNAMON_FENCE_GATE, "cinnamon_fence_gate");
+		forBlockItem(ExtraDelightItems.CINNAMON_STAIRS, "cinnamon_stairs");
+		forBlockItem(ExtraDelightItems.CINNAMON_TRAPDOOR,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor_bottom"));
+		forBlockItem(ExtraDelightItems.CINNAMON_CABINET, "cinnamon_cabinet");
+		this.slab(ExtraDelightItems.CINNAMON_SLAB.getId().getPath(), modLoc("block/cinnamon_planks"),
+				modLoc("block/cinnamon_planks"), modLoc("block/cinnamon_planks"));
 		forBlockItemWithParent(ExtraDelightItems.CINNAMON_SAPLING);
 		forItem(ExtraDelightItems.CINNAMON_BARK, "cinnamon_bark");
 		forItem(ExtraDelightItems.CINNAMON_STICK, "cinnamon_stick");
@@ -583,6 +593,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.PUMPKIN_ICE_CREAM, "pumpkin_ice_cream");
 		forItem(ExtraDelightItems.SWEET_BERRY_ICE_CREAM, "sweet_berry_ice_cream");
 		forItem(ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM, "cookie_dough_ice_cream");
+		forItem(ExtraDelightItems.MINT_CHIP_ICE_CREAM, "mint_chip_ice_cream");
 
 		forItem(ExtraDelightItems.APPLE_COOKIE_DOUGH, "apple_cookie_dough");
 		forItem(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH, "chocolate_chip_cookie_dough");

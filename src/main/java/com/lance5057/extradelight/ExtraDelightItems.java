@@ -25,6 +25,7 @@ import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -958,6 +959,25 @@ public class ExtraDelightItems {
 	public static final RegistryObject<BlockItem> CINNAMON_LEAVES = ITEMS.register("cinnamon_leaves",
 			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_LEAVES.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CINNAMON_FENCE = ITEMS.register("cinnamon_fence",
+			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_FENCE.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CINNAMON_FENCE_GATE = ITEMS.register("cinnamon_fence_gate",
+			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CINNAMON_STAIRS = ITEMS.register("cinnamon_stairs",
+			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_STAIRS.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<DoubleHighBlockItem> CINNAMON_DOOR = ITEMS.register("cinnamon_door",
+			() -> new DoubleHighBlockItem(ExtraDelightBlocks.CINNAMON_DOOR.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CINNAMON_TRAPDOOR = ITEMS.register("cinnamon_trapdoor",
+			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CINNAMON_CABINET = ITEMS.register("cinnamon_cabinet",
+			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_CABINET.get(),
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	public static final RegistryObject<BlockItem> CINNAMON_SLAB = ITEMS.register("cinnamon_slab",
+			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_SLAB.get(), new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> CINNAMON_BARK = ITEMS.register("cinnamon_bark",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
@@ -983,6 +1003,8 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> APPLE_ICE_CREAM = ITEMS.register("apple_ice_cream",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
 	public static final RegistryObject<Item> COOKIE_DOUGH_ICE_CREAM = ITEMS.register("cookie_dough_ice_cream",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
+	public static final RegistryObject<Item> MINT_CHIP_ICE_CREAM = ITEMS.register("mint_chip_ice_cream",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
 
 	public static final RegistryObject<MilkshakeDrinkItem> MILKSHAKE = ITEMS.register("milkshake",

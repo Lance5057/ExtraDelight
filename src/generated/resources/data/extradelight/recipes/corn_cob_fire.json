@@ -1,6 +1,6 @@
 {
   "type": "minecraft:campfire_cooking",
-  "cookingtime": 800,
+  "cookingtime": 600,
   "experience": 1.0,
   "ingredient": {
     "item": "extradelight:corn_on_cob"

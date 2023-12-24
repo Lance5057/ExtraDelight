@@ -1,7 +1,12 @@
-// 1.19.2	2023-12-16T22:31:52.7883077	Tags for minecraft:block
-f00622bc167612ddfb6a2e828625e27173433c6d data/farmersdelight/tags/blocks/mineable/knife.json
-609799077e5faa431d1bf252b4615ee0090a051f data/minecraft/tags/blocks/fences.json
+// 1.19.2	2023-12-24T02:16:27.553155	Tags for minecraft:block
+bc4ad3f40ab4615cba3989bb8060d7f7f9da5f47 data/farmersdelight/tags/blocks/mineable/knife.json
+39227b9910889bdf0e8da6b8fdc0931ecd827c97 data/minecraft/tags/blocks/fences.json
+4c7db9bbadfdd25ce162fe3bf9fbc8a25b2d11a1 data/minecraft/tags/blocks/fence_gates.json
 6939d85d8f6246c4fdc0f9fef7b6a890a95093f2 data/minecraft/tags/blocks/leaves.json
 8e69d6652cad87ffd44f314c5e46933cf8269e0b data/minecraft/tags/blocks/logs_that_burn.json
-5a877c7cf37c0f0c5563eac29c121f8330511b6d data/minecraft/tags/blocks/mineable/axe.json
+f26e1aa84a94327fcaac8170095d97525ecbda07 data/minecraft/tags/blocks/mineable/axe.json
+6939d85d8f6246c4fdc0f9fef7b6a890a95093f2 data/minecraft/tags/blocks/mineable/hoe.json
 aa86500d081851789eb745b115aa35d1a80ddb7e data/minecraft/tags/blocks/mineable/pickaxe.json
+75418cb0c0db0e26130b6762cdcdd95bad1cffc0 data/minecraft/tags/blocks/slabs.json
+4c5d29c14c9764d0c31a0fa70f7dc042a1523f43 data/minecraft/tags/blocks/small_flowers.json
+d8fc557bbfa996e6304aecc9ccefb203670f522d data/minecraft/tags/blocks/stairs.json

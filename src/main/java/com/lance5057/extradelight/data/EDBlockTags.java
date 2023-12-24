@@ -98,7 +98,15 @@ public class EDBlockTags extends BlockTagsProvider {
 
 		tag(BlockTags.MINEABLE_WITH_HOE).add(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.CINNAMON_LOG.get(),
-				ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), ExtraDelightBlocks.CINNAMON_PLANKS.get());
+				ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), ExtraDelightBlocks.CINNAMON_PLANKS.get(),
+				ExtraDelightBlocks.CINNAMON_CABINET.get(), ExtraDelightBlocks.CINNAMON_DOOR.get(),
+				ExtraDelightBlocks.CINNAMON_FENCE.get(), ExtraDelightBlocks.CINNAMON_FENCE_GATE.get(),
+				ExtraDelightBlocks.CINNAMON_STAIRS.get(), ExtraDelightBlocks.CINNAMON_TRAPDOOR.get());
+
+		tag(BlockTags.FENCES).add(ExtraDelightBlocks.CINNAMON_FENCE.get());
+		tag(BlockTags.FENCE_GATES).add(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get());
+		tag(BlockTags.STAIRS).add(ExtraDelightBlocks.CINNAMON_STAIRS.get());
+		tag(BlockTags.SLABS).add(ExtraDelightBlocks.CINNAMON_SLAB.get());
 	}
 
 	protected void makeMineableWithAxe(RegistryObject<Block> blockRegistryObject) {

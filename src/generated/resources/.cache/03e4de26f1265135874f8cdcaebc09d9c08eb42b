@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-19T02:19:52.6558837	Tags for minecraft:item
+// 1.19.2	2023-12-24T01:59:00.3885182	Tags for minecraft:item
 4a3061524de4471a4ab72261f6d48d7924b60789 data/extradelight/tags/items/baking_trays.json
 f2214ad19db8c15ad31829db693b68fee5d0f806 data/extradelight/tags/items/candy_bowl_valid.json
 d66647ad5deec92ba941c7dffec33a9986028e94 data/extradelight/tags/items/corn_dim_confiscate.json
@@ -35,6 +35,7 @@ b33dde3cf95c3f821d49bc84b8c46f9fd65289e8 data/forge/tags/items/fruit/apple.json
 33221392eaadbbebce9b701da69e2f20fd46c490 data/forge/tags/items/fruit/glow_berry.json
 65a948972be54d0dc9ce5ee6eb59a29341fd6ec0 data/forge/tags/items/fruit/sweet_berry.json
 fa7d629b4518f2e177d481095a4c50befbaa384c data/forge/tags/items/gelatin.json
+4b28a1e52b5ab3678938e2c80fad08c8233e3b28 data/forge/tags/items/ginger.json
 df14958ca472b689107bd89ec623830a8b8d8315 data/forge/tags/items/ginger/grated.json
 76b164fe329d4e9aa9812be19007f82af8fe7b9e data/forge/tags/items/ginger/sliced.json
 645556c797aa579e3f36a0b3d86e17b4d5d79eb5 data/forge/tags/items/gravy.json
@@ -44,7 +45,8 @@ d0ed3c776c4a186feb51edf78732f86010fc2e0d data/forge/tags/items/jam/apple.json
 f824ffb7d51b5f9180c4c65db9fbf79657e2e3f8 data/forge/tags/items/jam/carrot.json
 9468b69a145f5d1210c1df109c2e77e465c9f8e8 data/forge/tags/items/jam/glow_berry.json
 30d913aba7c4ef7b604b043ed469d9238642fd92 data/forge/tags/items/jam/golden_apple.json
-a81eb504301bca0cce687fcd32422422a1420a30 data/forge/tags/items/jam/mundane.json
+759be2646004d45b2ec631b4ed1a223a26c6d8d9 data/forge/tags/items/jam/mint.json
+97f76e61e18d9e294945c4316dc743c8f2d26561 data/forge/tags/items/jam/mundane.json
 442e9ed3e06f57d71e7c231cffa05a3052377027 data/forge/tags/items/jam/sweet_berry.json
 5a704d1b714e86fbc2f3c4737a5c03fa0491be3b data/forge/tags/items/mayonnaise.json
 dac730db8e085a2bf6b01900c69ca446b767464b data/forge/tags/items/meat.json
