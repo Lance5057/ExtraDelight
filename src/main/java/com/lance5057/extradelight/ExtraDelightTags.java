@@ -17,6 +17,8 @@ public class ExtraDelightTags {
 		return ItemTags.create(new ResourceLocation("extradelight", tag));
 	}
 
+	public static final TagKey<Item> SALT = ItemTags.create(new ResourceLocation("salt", "can_be_salted"));
+
 	public static final TagKey<Block> MORTAR_BLOCK = BlockTags.create(new ResourceLocation("forge", "mortars"));
 	public static final TagKey<Item> MORTAR = ItemTags.create(new ResourceLocation("forge", "mortars"));
 	public static final TagKey<Item> PESTLES = ItemTags.create(new ResourceLocation("forge", "pestles"));
@@ -32,6 +34,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> SWEETENER = ItemTags.create(new ResourceLocation("extradelight", "sweetener"));
 	public static final TagKey<Item> GRAVY = forgeTag("gravy");
 
+	public static final TagKey<Item> MEALS = modTag("meals");
+	
 	public static final TagKey<Item> CONDIMENTS = forgeTag("condiment");
 	public static final TagKey<Item> MAYO = forgeTag("mayonnaise");
 
@@ -250,5 +254,5 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CANDY = forgeTag("candy");
 
 	public static final TagKey<Item> CANDY_BOWL_VALID = modTag("candy_bowl_valid");
-
+	public static final TagKey<Item> COOKIE_DOUGH = modTag("cookie_dough");
 }

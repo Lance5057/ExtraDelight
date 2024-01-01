@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-24T02:19:59.1205119	Item Models: extradelight
+// 1.19.2	2023-12-26T02:37:41.1937238	Item Models: extradelight
 d6cec988d96345e08c89e0c2f114a2c1312de993 assets/extradelight/models/item/acacia_dried_corn_fence.json
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
@@ -196,6 +196,7 @@ bb898cda7a7fc2f7931a30ec4755353b957a8edc assets/extradelight/models/item/cooked_
 1d9368e48c5fc274f7555066f1927950e3f9c108 assets/extradelight/models/item/cooked_corn.json
 05b5131d583d9905283147ead84bb128cc730b27 assets/extradelight/models/item/cooked_pasta.json
 9aa70568110653d0b208080e7fec4e31bad0fdbd assets/extradelight/models/item/cookie_dough_ice_cream.json
+63c216c620c3bad13c2dbe767531e6cc35de4f79 assets/extradelight/models/item/cookie_dough_milkshake.json
 3009687d5b75c0fb61f0f2ea72cbb349b6e6e717 assets/extradelight/models/item/cooking_oil.json
 4cbb4839752ff7375c22bec60597c3dd6ea8a9df assets/extradelight/models/item/cornbread.json
 78b5148ea5bb0564de8f3eea243edf3b97499cb3 assets/extradelight/models/item/cornbread_feast.json
@@ -502,6 +503,7 @@ c83c540bad308d14ebff1b2dc2483a7391bd961e assets/extradelight/models/item/milk_ta
 1f9f0a8aa6dcd00dc58721dd612b8f77d8475413 assets/extradelight/models/item/mint_candy_green.json
 6f7885dd0f698193b19d9b9476094a35f8ea3293 assets/extradelight/models/item/mint_candy_red.json
 c00e87cb55c644e7f03b1cbbbf74baac8e3128d7 assets/extradelight/models/item/mint_chip_ice_cream.json
+2a890ed37f0dfdcf6fc56fe76b6294ac0cbe9627 assets/extradelight/models/item/mint_chip_milkshake.json
 564107013aa20af43d5c0a00b1c1cda4ac29cce9 assets/extradelight/models/item/mint_jelly.json
 33f393cc28da5809745b3781223e876ea584c566 assets/extradelight/models/item/mint_lamb.json
 9020b4f0b24eaf9d4e69e95373f8bb136eac5109 assets/extradelight/models/item/mint_lamb_feast.json

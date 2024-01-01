@@ -15,7 +15,6 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class EDItemTags extends ItemTagsProvider {
 
@@ -198,6 +197,67 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_GINGER).addTag(ExtraDelightTags.GRATED_GINGER)
 				.addTag(ExtraDelightTags.SLICED_GINGER);
 
+		tag(ExtraDelightTags.COOKIE_DOUGH).add(ExtraDelightItems.APPLE_COOKIE_DOUGH.get(),
+				ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(),
+				ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), ExtraDelightItems.HONEY_COOKIE_DOUGH.get(),
+				ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get(), ExtraDelightItems.SUGAR_COOKIE_DOUGH.get(),
+				ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get());
+
+		tag(ExtraDelightTags.SALT).add(ExtraDelightItems.BACON_CHEESEBURGER.get(),
+				ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get(), ExtraDelightItems.BACON_EGG_SANDWICH.get(),
+				ExtraDelightItems.BAD_FOOD.get(), ExtraDelightItems.BBQ_RIBS.get(),
+				ExtraDelightItems.BEEF_STEW_RICE.get(), ExtraDelightItems.BEEF_WELLINGTON.get(),
+				ExtraDelightItems.BEET_MINT_SALAD.get(), ExtraDelightItems.BOILED_EGG.get(),
+				ExtraDelightItems.BUTTERED_PASTA.get(), ExtraDelightItems.BUTTERED_TOAST.get(),
+				ExtraDelightItems.CACTUS_EGGS.get(), ExtraDelightItems.CACTUS_SALAD.get(),
+				ExtraDelightItems.CACTUS_SOUP.get(), ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE.get(),
+				ExtraDelightItems.CARAMEL_CUSTARD.get(), ExtraDelightItems.CARAMEL_POPCORN.get(),
+				ExtraDelightItems.CARAMEL_POPSICLE.get(), ExtraDelightItems.CARROT_SALAD.get(),
+				ExtraDelightItems.CHEESE_SANDWICH.get(), ExtraDelightItems.CHEESEBURGER.get(),
+				ExtraDelightItems.CHICKEN_ALFREDO.get(), ExtraDelightItems.CHICKEN_FRIED_STEAK.get(),
+				ExtraDelightItems.CHICKEN_PARM.get(), ExtraDelightItems.CHICKEN_STEW.get(),
+				ExtraDelightItems.CHICKEN_STEW_RICE.get(), ExtraDelightItems.CONGEE.get(),
+				ExtraDelightItems.COOKED_CACTUS.get(), ExtraDelightItems.COOKED_CORN.get(),
+				ExtraDelightItems.COOKED_PASTA.get(), ExtraDelightItems.CORN_CHOWDER.get(),
+				ExtraDelightItems.CORN_FRITTERS.get(), ExtraDelightItems.CORN_PUDDING.get(),
+				ExtraDelightItems.CORNBREAD.get(), ExtraDelightItems.CROQUE_MADAME.get(),
+				ExtraDelightItems.CROQUE_MONSIEUR.get(), ExtraDelightItems.CURRY.get(),
+				ExtraDelightItems.CURRY_RICE.get(), ExtraDelightItems.DRIED_FRUIT.get(),
+				ExtraDelightItems.EGG_BASKET.get(), ExtraDelightItems.EGG_SALAD.get(),
+				ExtraDelightItems.EGG_SALAD_SANDWICH.get(), ExtraDelightItems.FISH_AND_CHIPS.get(),
+				ExtraDelightItems.FISH_CAKES.get(), ExtraDelightItems.FISH_SALAD.get(),
+				ExtraDelightItems.FISH_SALAD_SANDWICH.get(), ExtraDelightItems.FISH_SOUP.get(),
+				ExtraDelightItems.FISH_STEW_RICE.get(), ExtraDelightItems.FRENCH_FRIES.get(),
+				ExtraDelightItems.FRENCH_TOAST.get(), ExtraDelightItems.FRIED_BRAINS.get(),
+				ExtraDelightItems.FRIED_CHICKEN.get(), ExtraDelightItems.FRIED_FISH.get(),
+				ExtraDelightItems.FRIED_MUSHROOMS.get(), ExtraDelightItems.FURIKAKE_RICE.get(),
+				ExtraDelightItems.GRILLED_CHEESE.get(), ExtraDelightItems.GRILLED_CORN_ON_COB.get(),
+				ExtraDelightItems.HAGGIS.get(), ExtraDelightItems.HASH.get(), ExtraDelightItems.HASHBROWNS.get(),
+				ExtraDelightItems.HOTDISH.get(), ExtraDelightItems.JERKY.get(), ExtraDelightItems.LAMB_STEW.get(),
+				ExtraDelightItems.LAMB_STEW_RICE.get(), ExtraDelightItems.LASAGNA.get(),
+				ExtraDelightItems.LIVER_ONIONS.get(), ExtraDelightItems.LUGAW.get(),
+				ExtraDelightItems.MACARONI_CHEESE.get(), ExtraDelightItems.MASHED_POTATO_GRAVY.get(),
+				ExtraDelightItems.MEAT_LOAF.get(), ExtraDelightItems.MEAT_LOAF_SANDWICH.get(),
+				ExtraDelightItems.MEAT_PIE_SLICE.get(), ExtraDelightItems.MUSHROOM_BURGER.get(),
+				ExtraDelightItems.MUSHROOM_RISOTTO.get(), ExtraDelightItems.OMELETTE.get(),
+				ExtraDelightItems.OXTAIL_SOUP.get(), ExtraDelightItems.PASTA_ALFREDO.get(),
+				ExtraDelightItems.PASTA_TOMATO.get(), ExtraDelightItems.POPCORN.get(),
+				ExtraDelightItems.PORK_STEW.get(), ExtraDelightItems.PORK_STEW_RICE.get(),
+				ExtraDelightItems.PORK_TENDERLOIN.get(), ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get(),
+				ExtraDelightItems.POT_ROAST.get(), ExtraDelightItems.POTATO_AU_GRATIN.get(),
+				ExtraDelightItems.POTATO_CHIPS.get(), ExtraDelightItems.POTATO_SOUP.get(),
+				ExtraDelightItems.PULLED_PORK_SANDWICH.get(), ExtraDelightItems.QUICHE_SLICE.get(),
+				ExtraDelightItems.RABBIT_STEW_RICE.get(), ExtraDelightItems.RACK_LAMB.get(),
+				ExtraDelightItems.RICEBALL.get(), ExtraDelightItems.RICEBALL_FILLED.get(),
+				ExtraDelightItems.ROASTED_CARROT.get(), ExtraDelightItems.ROASTED_PUMPKIN_SEEDS.get(),
+				ExtraDelightItems.ROLL.get(), ExtraDelightItems.SALAD.get(), ExtraDelightItems.SALISBURY_STEAK.get(),
+				ExtraDelightItems.SAUSAGE_ROLL.get(), ExtraDelightItems.SCRAMBLED_EGGS.get(),
+				ExtraDelightItems.SEAWEED_CRISPS.get(), ExtraDelightItems.SEAWEED_SALAD.get(),
+				ExtraDelightItems.SLICED_APPLE.get(), ExtraDelightItems.SLICED_ONION.get(),
+				ExtraDelightItems.SLICED_TOMATO.get(), ExtraDelightItems.SOS.get(), ExtraDelightItems.STIRFRY.get(),
+				ExtraDelightItems.STUFFED_CACTUS.get(), ExtraDelightItems.STUFFED_HEART.get(),
+				ExtraDelightItems.STUFFED_MUSHROOMS.get(), ExtraDelightItems.STUFFING.get(),
+				ExtraDelightItems.SUNFLOWER_SEEDS.get(), ExtraDelightItems.TOMATO_SOUP.get());
 	}
 
 }

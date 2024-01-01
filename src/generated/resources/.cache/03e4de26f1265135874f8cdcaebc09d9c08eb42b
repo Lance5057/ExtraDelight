@@ -1,6 +1,7 @@
-// 1.19.2	2023-12-24T01:59:00.3885182	Tags for minecraft:item
+// 1.19.2	2023-12-26T03:16:44.0447732	Tags for minecraft:item
 4a3061524de4471a4ab72261f6d48d7924b60789 data/extradelight/tags/items/baking_trays.json
 f2214ad19db8c15ad31829db693b68fee5d0f806 data/extradelight/tags/items/candy_bowl_valid.json
+1dce5651cd93daa6ef5a03c98d61865a4bbea94a data/extradelight/tags/items/cookie_dough.json
 d66647ad5deec92ba941c7dffec33a9986028e94 data/extradelight/tags/items/corn_dim_confiscate.json
 241fbe7e67bee8a47ff80dbdccae69f91ffd0743 data/extradelight/tags/items/frying_oil.json
 319328c324306895a1e52165654ee2d625f8c303 data/extradelight/tags/items/jelly.json
@@ -66,3 +67,4 @@ e004a0a3a54e9923f91bdbf68b36a686ff2135d5 data/forge/tags/items/toast.json
 e2523e9ade5a2c2f6c9eeec9e1b681bb357a21cf data/forge/tags/items/tomato/sliced.json
 00fd5e78a0836c96b6cd9ae14b9f0d1facbfd020 data/forge/tags/items/vegetable/cactus.json
 30ada45a48d3e5b7f8d961ae85018a9ae81457ce data/forge/tags/items/vinegar.json
+958edf3fa873634569ad502d01e7fadfd4fe517c data/salt/tags/items/can_be_salted.json

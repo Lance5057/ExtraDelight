@@ -1021,6 +1021,10 @@ public class ExtraDelightItems {
 			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
 	public static final RegistryObject<MilkshakeDrinkItem> APPLE_MILKSHAKE = ITEMS.register("apple_milkshake",
 			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
+	public static final RegistryObject<MilkshakeDrinkItem> COOKIE_DOUGH_MILKSHAKE = ITEMS.register(
+			"cookie_dough_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
+	public static final RegistryObject<MilkshakeDrinkItem> MINT_CHIP_MILKSHAKE = ITEMS.register("mint_chip_milkshake",
+			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
 
 	public static final RegistryObject<HotCocoaItem> CHOCOLATE_MILK = ITEMS.register("chocolate_milk",
 			() -> new HotCocoaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));

@@ -770,9 +770,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, EDLoc("apple_ice_cream"));
 
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
-				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER)
-				.requires(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get()).requires(Items.ICE)
-				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, EDLoc("cookie_dough_ice_cream"));
+				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER).requires(ExtraDelightTags.COOKIE_DOUGH)
+				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK))
+				.save(consumer, EDLoc("cookie_dough_ice_cream"));
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.MINT_CHIP_ICE_CREAM.get(), LONG_GRIND, Items.BOWL, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightTags.SWEETENER).requires(Items.COCOA_BEANS)
+				.requires(ExtraDelightItems.MINT.get()).requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK))
+				.save(consumer, EDLoc("mint_chip_ice_cream"));
 
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
 				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get())
@@ -835,6 +840,26 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.stir(ExtraDelightItems.SWEET_BERRY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
 				.requires(ForgeTags.MILK).requires(ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get())
 				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, EDLoc("sweet_berry_milkshake_ice_cream"));
+
+		MixingBowlRecipeBuilder
+				.stir(ExtraDelightItems.COOKIE_DOUGH_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get())
+				.requires(ExtraDelightTags.COOKIE_DOUGH).unlockedBy(getName(), has(ForgeTags.MILK))
+				.save(consumer, EDLoc("cookie_dough_milkshake"));
+
+		MixingBowlRecipeBuilder
+				.stir(ExtraDelightItems.COOKIE_DOUGH_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM.get())
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, EDLoc("cookie_dough_milkshake_ice_cream"));
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.MINT_CHIP_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get()).requires(Items.COCOA_BEANS)
+				.requires(ExtraDelightItems.MINT.get()).unlockedBy(getName(), has(ForgeTags.MILK))
+				.save(consumer, EDLoc("mint_chip_milkshake"));
+
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.MINT_CHIP_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
+				.requires(ForgeTags.MILK).requires(ExtraDelightItems.MINT_CHIP_ICE_CREAM.get())
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, EDLoc("mint_chip_milkshake_ice_cream"));
 
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get(), STANDARD_GRIND, Items.AIR, 1)
 				.requires(ExtraDelightTags.FLOUR).requires(ExtraDelightTags.SWEETENER).requires(ExtraDelightTags.BUTTER)
@@ -1089,6 +1114,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(Ingredient.of(ExtraDelightTags.FRUIT)).requires(Ingredient.of(ExtraDelightTags.FRUIT))
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
 				.save(consumer, EDLoc("vinegar_pot"));
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.YEAST_POT.get()).requires(Items.FLOWER_POT, 1)
+				.requires(ModItems.CANVAS.get(), 1).requires(Items.POTION).requires(Items.SUGAR)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
+				.save(consumer, EDLoc("yeast_pot_potion"));
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.VINEGAR_POT.get()).requires(Items.FLOWER_POT, 1)
+				.requires(ModItems.CANVAS.get(), 1).requires(Items.POTION).requires(Items.SUGAR)
+				.requires(Ingredient.of(ExtraDelightTags.FRUIT)).requires(Ingredient.of(ExtraDelightTags.FRUIT))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
+				.save(consumer, EDLoc("vinegar_pot_potion"));
 
 		// Mortars
 		ShapedRecipeBuilder.shaped(ExtraDelightItems.MORTAR_ANDESITE.get()).pattern("s s").pattern(" s ")
@@ -1649,6 +1683,42 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_SLAB.get()))
 				.save(consumer, EDLoc("cinnamon_cabinet"));
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CINNAMON_SLAB.get(), 6).pattern("ppp")
+				.define('p', ExtraDelightItems.CINNAMON_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.save(consumer, EDLoc("cinnamon_slab"));
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CINNAMON_DOOR.get(), 3).pattern("pp ").pattern("pp ")
+				.pattern("pp ").define('p', ExtraDelightItems.CINNAMON_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.save(consumer, EDLoc("cinnamon_door"));
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CINNAMON_TRAPDOOR.get(), 2).pattern("pp ").pattern("pp ")
+				.define('p', ExtraDelightItems.CINNAMON_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.save(consumer, EDLoc("cinnamon_trapdoor"));
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CINNAMON_FENCE.get(), 3).pattern("psp").pattern("psp")
+				.define('p', ExtraDelightItems.CINNAMON_PLANKS.get()).define('s', Items.STICK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.save(consumer, EDLoc("cinnamon_fence"));
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CINNAMON_FENCE_GATE.get()).pattern("sps").pattern("sps")
+				.define('p', ExtraDelightItems.CINNAMON_PLANKS.get()).define('s', Items.STICK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.save(consumer, EDLoc("cinnamon_fence_gate"));
+
+		ShapedRecipeBuilder.shaped(ExtraDelightItems.CINNAMON_STAIRS.get(), 4).pattern("p  ").pattern("pp ")
+				.pattern("ppp").define('p', ExtraDelightItems.CINNAMON_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.save(consumer, EDLoc("cinnamon_stairs"));
 	}
 
 	private void bundleItem9(Ingredient in, Item b, Item out, Consumer<FinishedRecipe> consumer, String name) {

@@ -432,17 +432,27 @@ public class AestheticBlocks {
 		lp.add(CORN_HUSK_DOLL.get(), "Corn Husk Doll");
 	}
 
-	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove
+	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove,
+	// cinnamon
 	public static void Recipes(Consumer<FinishedRecipe> consumer) {
-		woodRecipe(consumer, Items.ACACIA_SLAB, Items.ACACIA_TRAPDOOR, Items.ACACIA_FENCE, WOOD.acacia);
-		woodRecipe(consumer, Items.BIRCH_SLAB, Items.BIRCH_TRAPDOOR, Items.BIRCH_FENCE, WOOD.birch);
-		woodRecipe(consumer, Items.CRIMSON_SLAB, Items.CRIMSON_TRAPDOOR, Items.CRIMSON_FENCE, WOOD.crimson);
-		woodRecipe(consumer, Items.DARK_OAK_SLAB, Items.DARK_OAK_TRAPDOOR, Items.DARK_OAK_FENCE, WOOD.dark_oak);
-		woodRecipe(consumer, Items.JUNGLE_SLAB, Items.JUNGLE_TRAPDOOR, Items.JUNGLE_FENCE, WOOD.jungle);
-		woodRecipe(consumer, Items.MANGROVE_SLAB, Items.MANGROVE_TRAPDOOR, Items.MANGROVE_FENCE, WOOD.mangrove);
-		woodRecipe(consumer, Items.OAK_SLAB, Items.OAK_TRAPDOOR, Items.OAK_FENCE, WOOD.oak);
-		woodRecipe(consumer, Items.SPRUCE_SLAB, Items.SPRUCE_TRAPDOOR, Items.SPRUCE_FENCE, WOOD.spruce);
-		woodRecipe(consumer, Items.WARPED_SLAB, Items.WARPED_TRAPDOOR, Items.WARPED_FENCE, WOOD.warped);
+		woodRecipe(consumer, Items.ACACIA_SLAB, Items.ACACIA_TRAPDOOR, Items.ACACIA_FENCE, Items.ACACIA_LEAVES,
+				WOOD.acacia);
+		woodRecipe(consumer, Items.BIRCH_SLAB, Items.BIRCH_TRAPDOOR, Items.BIRCH_FENCE, Items.BIRCH_LEAVES, WOOD.birch);
+		woodRecipe(consumer, Items.CRIMSON_SLAB, Items.CRIMSON_TRAPDOOR, Items.CRIMSON_FENCE, Items.NETHER_WART_BLOCK,
+				WOOD.crimson);
+		woodRecipe(consumer, Items.DARK_OAK_SLAB, Items.DARK_OAK_TRAPDOOR, Items.DARK_OAK_FENCE, Items.DARK_OAK_LEAVES,
+				WOOD.dark_oak);
+		woodRecipe(consumer, Items.JUNGLE_SLAB, Items.JUNGLE_TRAPDOOR, Items.JUNGLE_FENCE, Items.JUNGLE_LEAVES,
+				WOOD.jungle);
+		woodRecipe(consumer, Items.MANGROVE_SLAB, Items.MANGROVE_TRAPDOOR, Items.MANGROVE_FENCE, Items.MANGROVE_LEAVES,
+				WOOD.mangrove);
+		woodRecipe(consumer, Items.OAK_SLAB, Items.OAK_TRAPDOOR, Items.OAK_FENCE, Items.OAK_LEAVES, WOOD.oak);
+		woodRecipe(consumer, Items.SPRUCE_SLAB, Items.SPRUCE_TRAPDOOR, Items.SPRUCE_FENCE, Items.SPRUCE_LEAVES,
+				WOOD.spruce);
+		woodRecipe(consumer, Items.WARPED_SLAB, Items.WARPED_TRAPDOOR, Items.WARPED_FENCE, Items.WARPED_WART_BLOCK,
+				WOOD.warped);
+		woodRecipe(consumer, ExtraDelightItems.CINNAMON_SLAB.get(), ExtraDelightItems.CINNAMON_TRAPDOOR.get(),
+				ExtraDelightItems.CINNAMON_FENCE.get(), ExtraDelightItems.CINNAMON_LEAVES.get(), WOOD.cinnamon);
 
 		moldRecipe(consumer, Items.OAK_SLAB, WOOD.oak, 0);
 		moldRecipe(consumer, Items.DARK_OAK_SLAB, WOOD.dark_oak, 1 * 16);
@@ -453,6 +463,7 @@ public class AestheticBlocks {
 		moldRecipe(consumer, Items.CRIMSON_SLAB, WOOD.crimson, 6 * 16);
 		moldRecipe(consumer, Items.WARPED_SLAB, WOOD.warped, 7 * 16);
 		moldRecipe(consumer, Items.MANGROVE_SLAB, WOOD.mangrove, 8 * 16);
+		moldRecipe(consumer, ExtraDelightItems.CINNAMON_SLAB.get(), WOOD.cinnamon, 9 * 16);
 
 		cabinetRecipes(consumer);
 
@@ -486,7 +497,8 @@ public class AestheticBlocks {
 		}
 	}
 
-	static void woodRecipe(Consumer<FinishedRecipe> consumer, Item slab, Item trapdoor, Item fence, WOOD name) {
+	static void woodRecipe(Consumer<FinishedRecipe> consumer, Item slab, Item trapdoor, Item fence, Item leaves,
+			WOOD name) {
 
 		ShapedRecipeBuilder.shaped(STEP_STOOLS.get(name.ordinal()).get()).pattern(" w ").pattern("s s").pattern("s s")
 				.define('w', slab).define('s', Items.STICK)
@@ -516,6 +528,10 @@ public class AestheticBlocks {
 				.unlockedBy(name + "_dried_corn_fence_back",
 						InventoryChangeTrigger.TriggerInstance.hasItems(DRIED_CORN_FENCE.get(name.ordinal()).get()))
 				.save(consumer, Recipes.EDLoc(name + "_dried_corn_fence_back"));
+
+		ShapedRecipeBuilder.shaped(WREATHS.get(name.ordinal()).get()).pattern(" l ").pattern("l l").pattern(" l ")
+				.define('l', leaves)
+				.unlockedBy(name + "_wreath", InventoryChangeTrigger.TriggerInstance.hasItems(leaves)).save(consumer);
 	}
 
 	static void cabinetRecipes(Consumer<FinishedRecipe> consumer) {
@@ -615,5 +631,16 @@ public class AestheticBlocks {
 				.unlockedBy("jungle_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.jungle.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.jungle + "_cabinet_half_to_full");
+
+		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.cinnamon.ordinal()).get())
+				.requires(ExtraDelightItems.CINNAMON_CABINET.get())
+				.unlockedBy("cinnamon_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_CABINET.get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.cinnamon + "_cabinet_full_to_half");
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CINNAMON_CABINET.get())
+				.requires(CABINETS.get(WOOD.cinnamon.ordinal()).get())
+				.unlockedBy("cinnamon_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.cinnamon.ordinal()).get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.cinnamon + "_cabinet_half_to_full");
 	}
 }

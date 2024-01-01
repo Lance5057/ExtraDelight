@@ -582,6 +582,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.HONEY_MILKSHAKE, "honey_milkshake");
 		forItem(ExtraDelightItems.PUMPKIN_MILKSHAKE, "pumpkin_milkshake");
 		forItem(ExtraDelightItems.SWEET_BERRY_MILKSHAKE, "sweet_berry_milkshake");
+		forItem(ExtraDelightItems.COOKIE_DOUGH_MILKSHAKE, "cookie_dough_milkshake");
+		forItem(ExtraDelightItems.MINT_CHIP_MILKSHAKE, "mint_chip_milkshake");
 
 		forItem(ExtraDelightItems.CHOCOLATE_MILK, "chocolate_milk");
 

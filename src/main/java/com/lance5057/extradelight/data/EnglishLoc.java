@@ -59,6 +59,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.pumpkin_milkshake", "Instant Health");
 		this.add("farmersdelight.tooltip.honey_milkshake", "Instant Health");
 		this.add("farmersdelight.tooltip.apple_milkshake", "Instant Health");
+		this.add("farmersdelight.tooltip.cookie_dough_milkshake", "Instant Health");
+		this.add("farmersdelight.tooltip.mint_chip_milkshake", "Instant Health");
 
 		this.add("extradelight.corn_dimension.death", "Be more careful in the cornfield next time...");
 
@@ -559,6 +561,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.APPLE_ICE_CREAM.get(), "Apple Ice Cream");
 		this.add(ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM.get(), "Cookie Dough Ice Cream");
 		this.add(ExtraDelightItems.MINT_CHIP_ICE_CREAM.get(), "Mint Chip Ice Cream");
+
 		this.add(ExtraDelightItems.MILKSHAKE.get(), "Milkshake");
 		this.add(ExtraDelightItems.APPLE_MILKSHAKE.get(), "Apple Milkshake");
 		this.add(ExtraDelightItems.CHOCOLATE_MILKSHAKE.get(), "Chocolate Milkshake");
@@ -566,6 +569,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.HONEY_MILKSHAKE.get(), "Honey Milkshake");
 		this.add(ExtraDelightItems.PUMPKIN_MILKSHAKE.get(), "Pumpkin Milkshake");
 		this.add(ExtraDelightItems.SWEET_BERRY_MILKSHAKE.get(), "Sweet Berry Milkshake");
+		this.add(ExtraDelightItems.COOKIE_DOUGH_MILKSHAKE.get(), "Cookie Dough Milkshake");
+		this.add(ExtraDelightItems.MINT_CHIP_MILKSHAKE.get(), "Mint Chip Milkshake");
+
 		this.add(ExtraDelightItems.CHOCOLATE_MILK.get(), "Chocolate Milk");
 		this.add(ExtraDelightItems.EGGNOG.get(), "Eggnog");
 		this.add(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(), "Gingerbread Cookie Dough");

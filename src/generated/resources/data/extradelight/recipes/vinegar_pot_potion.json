@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:flower_pot"
+    },
+    {
+      "item": "farmersdelight:canvas"
+    },
+    {
+      "item": "minecraft:potion"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:fruit"
+    },
+    {
+      "tag": "forge:fruit"
+    }
+  ],
+  "result": {
+    "item": "extradelight:vinegar_pot"
+  }
+}
