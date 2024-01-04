@@ -1,26 +1,12 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        maven {
-            name = "Parchment"
-            url = 'https://maven.parchmentmc.org'
-        }
-		maven { url 'https://maven.blamejared.com' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath group: 'org.parchmentmc', name: 'librarian', version: '1.+'
-		classpath 'org.spongepowered:mixingradle:0.7.+'
-    }
+
+plugins {
+	id 'net.minecraftforge.gradle'
+    id 'eclipse'
+	id 'com.diffplug.eclipse.apt' version '3.42.2'
+    id 'org.spongepowered.mixin'
+    id 'org.parchmentmc.librarian.forgegradle'
+    id 'maven-publish'
 }
-apply plugin: 'net.minecraftforge.gradle'
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'maven-publish'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'org.spongepowered.mixin'
 
 version = '1.2.2'
 group = 'com.lance5057.extradelight' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -31,26 +17,14 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17) // Mojang ships Java
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
     mappings channel: 'parchment', version: '2022.11.27-1.19.2'
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
      accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
             workingDirectory project.file('run')
 
-            // Recommended logging data for a userdev environment
-            // The markers can be changed as needed.
-            // "SCAN": For mods scan.
-            // "REGISTRIES": For firing of registry events.
-            // "REGISTRYDUMP": For getting the contents of all registries.
             property 'forge.logging.markers', 'REGISTRIES'
-
-            // Recommended logging level for the console
-            // You can set various levels here.
-            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
 			property 'mixin.env.remapRefMap', 'true'
 
@@ -64,16 +38,7 @@ minecraft {
         server {
             workingDirectory project.file('run')
 
-            // Recommended logging data for a userdev environment
-            // The markers can be changed as needed.
-            // "SCAN": For mods scan.
-            // "REGISTRIES": For firing of registry events.
-            // "REGISTRYDUMP": For getting the contents of all registries.
             property 'forge.logging.markers', 'REGISTRIES'
-
-            // Recommended logging level for the console
-            // You can set various levels here.
-            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
 			property 'mixin.env.remapRefMap', 'true'
 
@@ -96,6 +61,12 @@ minecraft {
                     '--existing-mod', 'farmersdelight',
                     '--reports',
                     '--existing', sourceSets.main.resources.srcDirs[0]
+					
+			mods {
+                extradelight {
+                    source sourceSets.main
+                }
+            }
         }
     }
 }
@@ -111,6 +82,14 @@ sourceSets {
     }
 }
 
+repositories {
+    maven { url "https://maven.jaackson.me" }
+    maven { url "https://www.cursemaven.com" }
+    maven { url "https://dvs1.progwml6.com/files/maven/" }
+    maven { url "https://modmaven.k-4u.nl" }
+	maven { url "https://maven.tterrag.com/" }
+}
+
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.3'
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
@@ -121,6 +100,8 @@ dependencies {
 	compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
 	// at runtime, use the full JEI jar for Forge
 	runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
+	
+	implementation fg.deobf("com.simibubi.create:create-${mc_version}:${create_version}:slim") { transitive = false }
 	  
 	compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-76:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-76")
@@ -128,12 +109,7 @@ dependencies {
 	//implementation fg.deobf('curse.maven:patchouli-datagen-ptd-lib-585667:4399634')
 }
 
-repositories {
-    maven { url "https://maven.jaackson.me" }
-    maven { url "https://www.cursemaven.com" }
-    maven { url "https://dvs1.progwml6.com/files/maven/" }
-    maven { url "https://modmaven.k-4u.nl" }
-}
+
 
 // Example for how to get properties into the manifest for reading by the runtime..
 jar {
@@ -150,11 +126,7 @@ jar {
     }
 }
 
-// Example configuration to allow publishing using the maven-publish task
-// This is the preferred method to reobfuscate your jar file
 jar.finalizedBy('reobfJar') 
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-//publish.dependsOn('reobfJar')
 
 publishing {
     publications {

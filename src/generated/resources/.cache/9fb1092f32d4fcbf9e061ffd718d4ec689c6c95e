@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-26T03:21:25.0817123	Recipes
+// 1.19.2	2024-01-04T10:49:18.5021038	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 d608dceb3a9e24cfd1be268784253a73205863e8 data/extradelight/advancements/recipes/decorations/acacia_dried_corn_fence_back.json
@@ -1020,6 +1020,7 @@ f08230390d208019f340df4f3757448953dc58be data/extradelight/advancements/recipes/
 20dd24ec99b62de00e28b7940de83240b53a616d data/extradelight/advancements/recipes/farmersdelight/sweet_berry_pie.json
 dbbe1f4acb9fe82762d9a4e529476a599031e7e5 data/extradelight/advancements/recipes/farmersdelight/sweet_berry_pie_jam.json
 ebf7c46589d0b6e93a1fb694367948aee44256f5 data/extradelight/advancements/recipes/farmersdelight/wheat_dough.json
+63e074be87ef3286fa6313314dee0065f8003b8c data/extradelight/advancements/recipes/farmersdelight/wheat_dough_egg.json
 1fbd1858456260aa69e04575a6c0fa75e4c01dfd data/extradelight/advancements/recipes/food/beef1.json
 6b23f2558719cfbe4cbd723c0379bbc9a01acfb8 data/extradelight/advancements/recipes/food/beef2.json
 fadd9158d68348026132caaf7b7222628fd3138d data/extradelight/advancements/recipes/food/beef3.json
@@ -2418,6 +2419,7 @@ e91ae6669799cc0eb9368ea09a107df529e1fded data/extradelight/recipes/warped_step_s
 ade08afb80ad74179b56f364f243c719b0df22e3 data/extradelight/recipes/warped_wreath.json
 17ced81d4b8b35bdc78c8e7f7438a4d02936149a data/extradelight/recipes/wellington_test.json
 2c1f23ecdf771322a8cdddefc4276306c06bb891 data/extradelight/recipes/wheat_dough.json
+2b463cfbba00dd13e47e7433eafe1825143a43d8 data/extradelight/recipes/wheat_dough_egg.json
 829377bea3b5b690ebc59925481db4361c94d66d data/extradelight/recipes/wheat_seeds.json
 0c951b7e8990b43043e59d49f7dc96747e0455df data/extradelight/recipes/white_jelly_feast.json
 12c8bd12cae76f9ae4c1c7035747c2171932074f data/extradelight/recipes/wither_black.json

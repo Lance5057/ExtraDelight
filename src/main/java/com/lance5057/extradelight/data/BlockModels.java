@@ -87,6 +87,7 @@ public class BlockModels extends BlockStateProvider {
 		pieBlock(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get(), "chocolate_cheesecake");
 		pieBlock(ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get(), "pumpkin_cheesecake");
 		pieBlock(ExtraDelightBlocks.APPLE_CHEESECAKE.get(), "apple_cheesecake");
+		pieBlock(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get(), "glow_berry_cheesecake");
 
 		pieBlock(ExtraDelightBlocks.QUICHE.get(), "quiche");
 
