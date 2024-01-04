@@ -83,6 +83,7 @@ sourceSets {
 }
 
 repositories {
+	mavenLocal()
     maven { url "https://maven.jaackson.me" }
     maven { url "https://www.cursemaven.com" }
     maven { url "https://dvs1.progwml6.com/files/maven/" }
@@ -101,7 +102,7 @@ dependencies {
 	// at runtime, use the full JEI jar for Forge
 	runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
 	
-	implementation fg.deobf("com.simibubi.create:create-${mc_version}:${create_version}:slim") { transitive = false }
+	implementation fg.deobf("com.simibubi.create:create-${mc_version}:${create_version}-${create_version_build}:slim") { transitive = false }
 	  
 	compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-76:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-76")

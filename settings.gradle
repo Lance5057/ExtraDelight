@@ -27,11 +27,6 @@ pluginManagement {
             name 'Gradle Plugin Maven'
             url 'https://plugins.gradle.org/m2'
         }
-		maven { url "https://maven.jaackson.me" }
-		maven { url "https://www.cursemaven.com" }
-		maven { url "https://dvs1.progwml6.com/files/maven/" }
-		maven { url "https://modmaven.k-4u.nl" }
-		maven { url "https://maven.tterrag.com/" }
         mavenCentral()
     }
 }
