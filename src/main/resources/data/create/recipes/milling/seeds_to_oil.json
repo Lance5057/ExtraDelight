@@ -1,0 +1,25 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "type": "forge:difference",
+    "base": {
+      "tag": "forge:seeds"
+    },
+    "subtracted": [
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "extradelight:corn_seeds"
+      }
+    ]
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:cooking_oil"
+    }
+  ],
+  "processingTime": 150
+}

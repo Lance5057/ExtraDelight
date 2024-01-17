@@ -988,55 +988,67 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> GROUND_CINNAMON = ITEMS.register("ground_cinnamon",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Item> ICE_CREAM = ITEMS.register("ice_cream",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.ICE_CREAM)));
-	public static final RegistryObject<Item> CHOCOLATE_ICE_CREAM = ITEMS.register("chocolate_ice_cream",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
+	public static final RegistryObject<Item> ICE_CREAM = ITEMS.register("ice_cream", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.ICE_CREAM).craftRemainder(Items.BOWL)));
+	public static final RegistryObject<Item> CHOCOLATE_ICE_CREAM = ITEMS.register("chocolate_ice_cream", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM).craftRemainder(Items.BOWL)));
 	public static final RegistryObject<GlowberryFoodItem> GLOW_BERRY_ICE_CREAM = ITEMS.register("glow_berry_ice_cream",
-			() -> new GlowberryFoodItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
+			() -> new GlowberryFoodItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)
+					.craftRemainder(Items.BOWL)));
 	public static final RegistryObject<Item> SWEET_BERRY_ICE_CREAM = ITEMS.register("sweet_berry_ice_cream",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
-	public static final RegistryObject<Item> PUMPKIN_ICE_CREAM = ITEMS.register("pumpkin_ice_cream",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
-	public static final RegistryObject<Item> HONEY_ICE_CREAM = ITEMS.register("honey_ice_cream",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
-	public static final RegistryObject<Item> APPLE_ICE_CREAM = ITEMS.register("apple_ice_cream",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)
+					.craftRemainder(Items.BOWL)));
+	public static final RegistryObject<Item> PUMPKIN_ICE_CREAM = ITEMS.register("pumpkin_ice_cream", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM).craftRemainder(Items.BOWL)));
+	public static final RegistryObject<Item> HONEY_ICE_CREAM = ITEMS.register("honey_ice_cream", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM).craftRemainder(Items.BOWL)));
+	public static final RegistryObject<Item> APPLE_ICE_CREAM = ITEMS.register("apple_ice_cream", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM).craftRemainder(Items.BOWL)));
 	public static final RegistryObject<Item> COOKIE_DOUGH_ICE_CREAM = ITEMS.register("cookie_dough_ice_cream",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
-	public static final RegistryObject<Item> MINT_CHIP_ICE_CREAM = ITEMS.register("mint_chip_ice_cream",
-			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)));
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM)
+					.craftRemainder(Items.BOWL)));
+	public static final RegistryObject<Item> MINT_CHIP_ICE_CREAM = ITEMS.register("mint_chip_ice_cream", () -> new Item(
+			new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TOPPED_ICE_CREAM).craftRemainder(Items.BOWL)));
 
 	public static final RegistryObject<MilkshakeDrinkItem> MILKSHAKE = ITEMS.register("milkshake",
-			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 2f));
+			() -> new MilkshakeDrinkItem(
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE), 2f));
 	public static final RegistryObject<MilkshakeDrinkItem> CHOCOLATE_MILKSHAKE = ITEMS.register("chocolate_milkshake",
-			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
+			() -> new MilkshakeDrinkItem(
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE), 4f));
 	public static final RegistryObject<MilkshakeDrinkItem> GLOW_BERRY_MILKSHAKE = ITEMS.register("glow_berry_milkshake",
-			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
-	public static final RegistryObject<MilkshakeDrinkItem> SWEET_BERRY_MILKSHAKE = ITEMS.register(
-			"sweet_berry_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
+			() -> new MilkshakeDrinkItem(
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE), 4f));
+	public static final RegistryObject<MilkshakeDrinkItem> SWEET_BERRY_MILKSHAKE = ITEMS
+			.register("sweet_berry_milkshake", () -> new MilkshakeDrinkItem(
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE), 4f));
 	public static final RegistryObject<MilkshakeDrinkItem> PUMPKIN_MILKSHAKE = ITEMS.register("pumpkin_milkshake",
-			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
+			() -> new MilkshakeDrinkItem(
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE), 4f));
 	public static final RegistryObject<MilkshakeDrinkItem> HONEY_MILKSHAKE = ITEMS.register("honey_milkshake",
-			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
+			() -> new MilkshakeDrinkItem(
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE), 4f));
 	public static final RegistryObject<MilkshakeDrinkItem> APPLE_MILKSHAKE = ITEMS.register("apple_milkshake",
-			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
-	public static final RegistryObject<MilkshakeDrinkItem> COOKIE_DOUGH_MILKSHAKE = ITEMS.register(
-			"cookie_dough_milkshake", () -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
+			() -> new MilkshakeDrinkItem(
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE), 4f));
+	public static final RegistryObject<MilkshakeDrinkItem> COOKIE_DOUGH_MILKSHAKE = ITEMS
+			.register("cookie_dough_milkshake", () -> new MilkshakeDrinkItem(
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE), 4f));
 	public static final RegistryObject<MilkshakeDrinkItem> MINT_CHIP_MILKSHAKE = ITEMS.register("mint_chip_milkshake",
-			() -> new MilkshakeDrinkItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB), 4f));
+			() -> new MilkshakeDrinkItem(
+					new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE), 4f));
 
 	public static final RegistryObject<HotCocoaItem> CHOCOLATE_MILK = ITEMS.register("chocolate_milk",
-			() -> new HotCocoaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new HotCocoaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE)));
 
 	public static final RegistryObject<HotCocoaItem> EGGNOG = ITEMS.register("eggnog",
-			() -> new HotCocoaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new HotCocoaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<MelonJuiceItem> GINGER_BEER = ITEMS.register("ginger_beer",
-			() -> new MelonJuiceItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new MelonJuiceItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<CornSilkTeaItem> GINGER_TEA = ITEMS.register("ginger_tea",
-			() -> new CornSilkTeaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new CornSilkTeaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<HotCocoaItem> HORCHATA = ITEMS.register("horchata",
-			() -> new HotCocoaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+			() -> new HotCocoaItem(new Item.Properties().tab(EXTRA_DELIGHT_TAB).craftRemainder(Items.GLASS_BOTTLE)));
 
 	public static final RegistryObject<Item> GINGERBREAD_COOKIE_DOUGH = ITEMS.register("gingerbread_cookie_dough",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.COOKIE_DOUGH)));

@@ -1,0 +1,14 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat_seeds"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:wheat_flour"
+    }
+  ],
+  "processingTime": 150
+}

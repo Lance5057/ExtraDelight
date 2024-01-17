@@ -1,0 +1,20 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "extradelight:honey_ice_cream"
+    },
+    {
+      "fluidTag": "forge:milk",
+      "amount": 250
+    },
+	{
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:honey_milkshake"
+    }
+  ]
+}

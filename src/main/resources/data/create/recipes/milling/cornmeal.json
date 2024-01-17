@@ -1,0 +1,14 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "extradelight:corn_seeds"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:corn_meal"
+    }
+  ],
+  "processingTime": 150
+}

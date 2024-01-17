@@ -786,8 +786,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.APPLE_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
 				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get())
 				.requires(ExtraDelightTags.PROCESSED_APPLE).requires(ExtraDelightTags.PROCESSED_APPLE)
-				.requires(ExtraDelightTags.PROCESSED_APPLE).requires(Items.ICE)
-				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, EDLoc("apple_milkshake"));
+				.requires(ExtraDelightTags.PROCESSED_APPLE).unlockedBy(getName(), has(ForgeTags.MILK))
+				.save(consumer, EDLoc("apple_milkshake"));
 
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.APPLE_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
 				.requires(ForgeTags.MILK).requires(ExtraDelightItems.APPLE_ICE_CREAM.get())
@@ -795,8 +795,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CHOCOLATE_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
 				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get()).requires(Items.COCOA_BEANS, 3)
-				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK))
-				.save(consumer, EDLoc("chocolate_milkshake"));
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, EDLoc("chocolate_milkshake"));
 
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.CHOCOLATE_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
 				.requires(ForgeTags.MILK).requires(ExtraDelightItems.CHOCOLATE_ICE_CREAM.get())
@@ -805,8 +804,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		MixingBowlRecipeBuilder
 				.stir(ExtraDelightItems.GLOW_BERRY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
 				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get()).requires(Items.GLOW_BERRIES, 3)
-				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK))
-				.save(consumer, EDLoc("glow_berry_milkshake"));
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, EDLoc("glow_berry_milkshake"));
 
 		MixingBowlRecipeBuilder
 				.stir(ExtraDelightItems.GLOW_BERRY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
@@ -815,8 +813,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.HONEY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
 				.requires(ForgeTags.MILK).requires(ExtraDelightItems.ICE_CREAM.get()).requires(Items.HONEY_BOTTLE, 3)
-				.requires(Items.ICE).unlockedBy(getName(), has(ForgeTags.MILK))
-				.save(consumer, EDLoc("honey_milkshake"));
+				.unlockedBy(getName(), has(ForgeTags.MILK)).save(consumer, EDLoc("honey_milkshake"));
 
 		MixingBowlRecipeBuilder.stir(ExtraDelightItems.HONEY_MILKSHAKE.get(), STANDARD_GRIND, Items.GLASS_BOTTLE, 1)
 				.requires(ForgeTags.MILK).requires(ExtraDelightItems.HONEY_ICE_CREAM.get())
@@ -3498,4 +3495,5 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 					.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedBy(name, has(in))
 					.build(consumer, "extradelight:" + name + i);
 	}
+
 }

@@ -1,0 +1,19 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "extradelight:cinnamon_stick"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:ground_cinnamon"
+    },
+    {
+      "item": "extradelight:ground_cinnamon",
+      "count": 1,
+      "chance": 0.25
+    }
+  ],
+  "processingTime": 150
+}
