@@ -479,7 +479,9 @@ public class EDFoods {
 			.addFoods("apple fritters", Foods.APPLE, SUGAR, OIL, SUGAR, FLOUR, FoodValues.FRIED_EGG)
 			.effect(COMFORT_MEDIUM, 1).build();
 	public static final FoodProperties CARAMEL_SAUCE = EDFoods.addFoods("caramel sauce", SUGAR, BUTTER, MILK).build();
-	public static final FoodProperties CARAMEL_CANDY = EDFoods.divideFoods("caramel candy", CARAMEL_SAUCE, 2).build();
+	public static final FoodProperties CARAMEL_CANDY = EDFoods.divideFoods("caramel candy", CARAMEL_SAUCE, 4)
+			.alwaysEat().build();
+	public static final FoodProperties CANDY = EDFoods.divideFoods("candy", SUGAR, 4).alwaysEat().build();
 	public static final FoodProperties CANDY_APPLE = EDFoods.addFoods("candy apple", Foods.APPLE, SUGAR, SUGAR).build();
 	public static final FoodProperties CARAMEL_APPLE = EDFoods.addFoods("caramel apple", Foods.APPLE, CARAMEL_SAUCE)
 			.build();
@@ -522,7 +524,8 @@ public class EDFoods {
 	public static final FoodProperties FROSTING = EDFoods
 			.divideFoods("frosting", EDFoods.addFoods("", BUTTER, WHIPPED_CREAM, SUGAR).build(), 4).build();
 
-	public static final FoodProperties CANDY_CANE = EDFoods.addFoods("candy cane", SUGAR, SUGAR, SUGAR, SUGAR).build();
+	public static final FoodProperties CANDY_CANE = EDFoods.addFoods("candy cane", SUGAR, SUGAR, SUGAR, SUGAR)
+			.alwaysEat().build();
 
 	public static final FoodProperties FRENCH_TOAST = EDFoods.divideFoods("french toast", EDFoods.addFoods("", BUTTER,
 			SUGAR, FoodValues.FRIED_EGG, MILK, SLICED_BREAD, SLICED_BREAD, SLICED_BREAD, SLICED_BREAD).build(), 4)
@@ -553,7 +556,8 @@ public class EDFoods {
 	public static final FoodProperties CROQUE_MADAME = EDFoods
 			.addFoods("croque madame", CROQUE_MONSIEUR, FoodValues.FRIED_EGG).build();
 
-	public static final FoodProperties ROLL = EDFoods.divideFoods("roll", Foods.BREAD, 6).build();
+	public static final FoodProperties ROLL = EDFoods
+			.divideFoods("roll", EDFoods.addFoods("", Foods.BREAD, Foods.BREAD).build(), 6).build();
 
 	public static final FoodProperties CINNAMON_ROLL = EDFoods
 			.divideFoods("cinnamon roll", EDFoods.addFoods("", Foods.BREAD, SUGAR, BUTTER, FROSTING).build(), 4)
@@ -597,7 +601,7 @@ public class EDFoods {
 	}
 
 	public static Builder divideFoods(String name, FoodProperties food, int by) {
-		int nut = food.getNutrition() / by;
+		int nut = Math.max(food.getNutrition() / by, 1);
 		float sat = food.getSaturationModifier() / by;
 		Builder b = new FoodProperties.Builder();
 
