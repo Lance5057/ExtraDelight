@@ -1,0 +1,19 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "extradelight:agar_sheets"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:agar_agar"
+    },
+    {
+      "item": "extradelight:agar_agar",
+      "count": 1,
+      "chance": 0.25
+    }
+  ],
+  "processingTime": 150
+}

@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:kelp"
+    },
+	{
+      "item": "minecraft:kelp"
+    },
+	{
+      "item": "extradelight:vinegar"
+    },
+	{
+      "tag": "extradelight:processed/carrot"
+    },
+	{
+      "item": "minecraft:bowl"
+    },
+	{
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:seaweed_salad",
+	  "count": 2
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+	{
+      "item": "minecraft:sweet_berries"
+    },
+	{
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "liquid": "minecraft:milk"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:sweet_berry_custard"
+    }
+  ]
+}
