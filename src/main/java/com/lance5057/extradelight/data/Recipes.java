@@ -659,7 +659,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), has(ExtraDelightItems.BOILED_EGG.get()))
 				.save(consumer, EDLoc("mixingbowl/fish_salad"));
 
-		MixingBowlRecipeBuilder.stir(ExtraDelightItems.BUTTER.get(), LONG_GRIND, Items.BOWL, 1)
+		MixingBowlRecipeBuilder.stir(ExtraDelightItems.BUTTER.get(), LONG_GRIND, Items.AIR, 1)
 				.requires(Ingredient.of(ExtraDelightItems.WHIPPED_CREAM.get()))
 				.unlockedBy(getName(), has(ExtraDelightItems.WHIPPED_CREAM.get()))
 				.save(consumer, EDLoc("mixingbowl/butter"));

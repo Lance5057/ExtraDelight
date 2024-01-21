@@ -1,4 +1,4 @@
-// 1.19.2	2024-01-21T17:00:30.450411	Patchouli Book Provider
+// 1.19.2	2024-01-21T17:24:10.6576448	Patchouli Book Provider
 958a716047cf4cca683629000358a7fe3bd885bf data/extradelight/patchouli_books/cookbook2/book.json
 4f2e8d78ef975045a0e6c6ee2fa52b3cc9187064 data/extradelight/patchouli_books/cookbook2/en_us/categories/beverages.json
 f9515ff61703f0b5cf9f44fae9efc22ca1402347 data/extradelight/patchouli_books/cookbook2/en_us/categories/casseroles.json
@@ -13,3 +13,5 @@ bcf80a53312455fc56caf358574d6783966b3aa7 data/extradelight/patchouli_books/cookb
 d068fb131376100044064ee8c05add2f88b22b9e data/extradelight/patchouli_books/cookbook2/en_us/categories/soups.json
 8e69b32d395e5597a307f87b4d24ace23cfe113f data/extradelight/patchouli_books/cookbook2/en_us/categories/vegetables.json
 0bedef98d28ccc5da34df0b523380f9aa0c8edef data/extradelight/patchouli_books/cookbook2/en_us/entries/glow_berry_juice.json
+8de59aad4d746b8e445bb1e0b04f3d4c164f6a58 data/extradelight/patchouli_books/cookbook2/en_us/entries/sweet_berry_juice.json
+5233ddd153105df3a1e67d76510c273dca00d9fd data/extradelight/patchouli_books/cookbook2/en_us/entries/tomato_juice.json

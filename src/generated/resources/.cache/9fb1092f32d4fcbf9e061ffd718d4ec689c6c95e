@@ -1,4 +1,4 @@
-// 1.19.2	2024-01-15T20:15:59.8490857	Recipes
+// 1.19.2	2024-01-21T17:09:58.8067755	Recipes
 ad09cf71d8cc3c62c1a4788885d616f2aa49f922 data/extradelight/advancements/recipes/brewing/mortar/blaze_powder.json
 5c28d04b29001d3cf7af3ca1ae3753c854f7cce8 data/extradelight/advancements/recipes/building_blocks/sponge.json
 d608dceb3a9e24cfd1be268784253a73205863e8 data/extradelight/advancements/recipes/decorations/acacia_dried_corn_fence_back.json
@@ -1888,7 +1888,7 @@ aab78fc444f6eb1820ba0447f0a0b5166d6c9d85 data/extradelight/recipes/mint_chip_mil
 d8647e4ad6c7a872592ad842a2c5c726ca947735 data/extradelight/recipes/mint_jelly.json
 416e77cdf29600366eb3546d9f373a0c92d41b1d data/extradelight/recipes/mint_lamb_feast.json
 f8e500b6bd15e16e0430876a52b33108848d72f3 data/extradelight/recipes/mint_tea.json
-abfc7b1f8f53372589f9e89b0c4c4cced779e937 data/extradelight/recipes/mixingbowl/butter.json
+07a7b07afca447825ab41be54cf29b4fb21242ea data/extradelight/recipes/mixingbowl/butter.json
 730d1fb4c78dad765882f67c1fc4fc14815d6e37 data/extradelight/recipes/mixingbowl/carrot_salad.json
 1f207b5ddde9f28a2ce7334381cff2763dfe698e data/extradelight/recipes/mixingbowl/egg_mix.json
 ecce2a35d5d4a3a044e4bc284a81008e0a976e65 data/extradelight/recipes/mixingbowl/egg_salad.json

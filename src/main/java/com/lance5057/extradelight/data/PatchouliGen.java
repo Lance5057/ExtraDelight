@@ -2,6 +2,8 @@ package com.lance5057.extradelight.data;
 
 import java.util.function.Consumer;
 
+import com.lance5057.extradelight.ExtraDelight;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import xyz.brassgoggledcoders.patchouliprovider.BookBuilder;
@@ -14,6 +16,10 @@ public class PatchouliGen extends PatchouliBookProvider {
 	public PatchouliGen(DataGenerator gen, String modid, String locale) {
 		super(gen, modid, locale);
 		// TODO Auto-generated constructor stub
+	}
+
+	ResourceLocation modLoc(String loc) {
+		return new ResourceLocation(ExtraDelight.MOD_ID, loc);
 	}
 
 	@Override
@@ -119,8 +125,21 @@ public class PatchouliGen extends PatchouliBookProvider {
 				"extradelight:glow_berry_juice");
 		glowberry.addTextPage(
 				"A tart juice made from glowberries that maintains its glow inducing quality. It's anti-inflammatory and anti-oxidant effects will make you feel a little healthier almost instantly!");
-		glowberry.addCraftingPage(new ResourceLocation("extradelight", "glow_berry_juice"));
+		glowberry.addCraftingPage(modLoc("glow_berry_juice"));
 		glowberry.build();
+
+		EntryBuilder sweetberry = beverages.addEntry("sweet_berry_juice", "Sweet Berry Juice",
+				modLoc("sweet_berry_juice").toString());
+		sweetberry.addTextPage(
+				"A delightfully sweet juice made from sweet berries. A glass of this juice will perk you right up quickly but provides little nutritional value.");
+		sweetberry.addCraftingPage(modLoc("sweet_berry_juice"));
+		sweetberry.build();
+
+		EntryBuilder tomato = beverages.addEntry("tomato_juice", "Tomato Juice", modLoc("tomato_juice").toString());
+		tomato.addTextPage(
+				"A savory juice made of tomatos. It's jam packed full of nutrients to keep healthy even in the deepest dungeons!");
+		tomato.addCraftingPage(modLoc("tomato_juice"));
+		tomato.build();
 	}
 
 }
