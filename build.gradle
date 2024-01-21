@@ -110,6 +110,7 @@ dependencies {
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-76")
 	
 	//implementation fg.deobf('curse.maven:patchouli-datagen-ptd-lib-585667:4399634')
+	implementation fg.deobf("xyz.brassgoggledcoders:PatchouliProvider:1.19-1.0.7-Snapshot.2")
 }
 
 
