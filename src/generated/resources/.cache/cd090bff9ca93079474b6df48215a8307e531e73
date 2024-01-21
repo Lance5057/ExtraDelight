@@ -1,4 +1,4 @@
-// 1.19.2	2024-01-21T16:33:12.0549733	Patchouli Book Provider
+// 1.19.2	2024-01-21T17:00:30.450411	Patchouli Book Provider
 958a716047cf4cca683629000358a7fe3bd885bf data/extradelight/patchouli_books/cookbook2/book.json
 4f2e8d78ef975045a0e6c6ee2fa52b3cc9187064 data/extradelight/patchouli_books/cookbook2/en_us/categories/beverages.json
 f9515ff61703f0b5cf9f44fae9efc22ca1402347 data/extradelight/patchouli_books/cookbook2/en_us/categories/casseroles.json
@@ -10,5 +10,6 @@ fdf2983b81c36486157f1428010790fbbef9a0be data/extradelight/patchouli_books/cookb
 2ca5936a6164138a5bd53230b1b33dcef8da5a9a data/extradelight/patchouli_books/cookbook2/en_us/categories/pasta.json
 bcf80a53312455fc56caf358574d6783966b3aa7 data/extradelight/patchouli_books/cookbook2/en_us/categories/salads.json
 5fc38d61824d060372d4fe971dac3f22dc13d37a data/extradelight/patchouli_books/cookbook2/en_us/categories/sandwiches.json
-6af1f0bf6f21827115fe1c3013d8ab9b0e2f3e49 data/extradelight/patchouli_books/cookbook2/en_us/categories/soups.json
+d068fb131376100044064ee8c05add2f88b22b9e data/extradelight/patchouli_books/cookbook2/en_us/categories/soups.json
 8e69b32d395e5597a307f87b4d24ace23cfe113f data/extradelight/patchouli_books/cookbook2/en_us/categories/vegetables.json
+0bedef98d28ccc5da34df0b523380f9aa0c8edef data/extradelight/patchouli_books/cookbook2/en_us/entries/glow_berry_juice.json
