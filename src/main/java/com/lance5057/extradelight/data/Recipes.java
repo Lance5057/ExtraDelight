@@ -84,91 +84,95 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void toolOnBlockRecipes(Consumer<FinishedRecipe> consumer) {
-		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-				Ingredient.of(ExtraDelightItems.FROSTING_WHITE.get()), ExtraDelightItems.GINGERBREAD_BLOCK_WHITE.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_WHITE.get()))
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_WHITE),
+						ExtraDelightItems.GINGERBREAD_BLOCK_WHITE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_WHITE))
 				.save(consumer, EDLoc("frost_gingerbread_white"));
 
 		ToolOnBlockBuilder
 				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-						Ingredient.of(ExtraDelightItems.FROSTING_LIGHT_GRAY.get()),
+						Ingredient.of(ExtraDelightTags.FROSTING_LIGHT_GRAY),
 						ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_GRAY.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_LIGHT_GRAY.get()))
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_LIGHT_GRAY))
 				.save(consumer, EDLoc("frost_gingerbread_light_gray"));
 
-		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-				Ingredient.of(ExtraDelightItems.FROSTING_GRAY.get()), ExtraDelightItems.GINGERBREAD_BLOCK_GRAY.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_GRAY.get()))
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_GRAY),
+						ExtraDelightItems.GINGERBREAD_BLOCK_GRAY.get())
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_GRAY))
 				.save(consumer, EDLoc("frost_gingerbread_gray"));
 
-		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-				Ingredient.of(ExtraDelightItems.FROSTING_BROWN.get()), ExtraDelightItems.GINGERBREAD_BLOCK_BROWN.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_BROWN.get()))
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_BROWN),
+						ExtraDelightItems.GINGERBREAD_BLOCK_BROWN.get())
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_BROWN))
 				.save(consumer, EDLoc("frost_gingerbread_brown"));
 
-		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-				Ingredient.of(ExtraDelightItems.FROSTING_RED.get()), ExtraDelightItems.GINGERBREAD_BLOCK_RED.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_RED.get()))
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_RED),
+						ExtraDelightItems.GINGERBREAD_BLOCK_RED.get())
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_RED))
 				.save(consumer, EDLoc("frost_gingerbread_red"));
 
 		ToolOnBlockBuilder
-				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-						Ingredient.of(ExtraDelightItems.FROSTING_ORANGE.get()),
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_ORANGE),
 						ExtraDelightItems.GINGERBREAD_BLOCK_ORANGE.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_ORANGE.get()))
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_ORANGE))
 				.save(consumer, EDLoc("frost_gingerbread_orange"));
 
 		ToolOnBlockBuilder
-				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-						Ingredient.of(ExtraDelightItems.FROSTING_YELLOW.get()),
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_YELLOW),
 						ExtraDelightItems.GINGERBREAD_BLOCK_YELLOW.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_YELLOW.get()))
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_YELLOW))
 				.save(consumer, EDLoc("frost_gingerbread_yellow"));
 
-		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-				Ingredient.of(ExtraDelightItems.FROSTING_LIME.get()), ExtraDelightItems.GINGERBREAD_BLOCK_LIME.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_LIME.get()))
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_LIME),
+						ExtraDelightItems.GINGERBREAD_BLOCK_LIME.get())
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_LIME))
 				.save(consumer, EDLoc("frost_gingerbread_lime"));
 
-		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-				Ingredient.of(ExtraDelightItems.FROSTING_GREEN.get()), ExtraDelightItems.GINGERBREAD_BLOCK_GREEN.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_GREEN.get()))
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_GREEN),
+						ExtraDelightItems.GINGERBREAD_BLOCK_GREEN.get())
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_GREEN))
 				.save(consumer, EDLoc("frost_gingerbread_green"));
 
-		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-				Ingredient.of(ExtraDelightItems.FROSTING_CYAN.get()), ExtraDelightItems.GINGERBREAD_BLOCK_CYAN.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_CYAN.get()))
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_CYAN),
+						ExtraDelightItems.GINGERBREAD_BLOCK_CYAN.get())
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_CYAN))
 				.save(consumer, EDLoc("frost_gingerbread_cyan"));
 
 		ToolOnBlockBuilder
 				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-						Ingredient.of(ExtraDelightItems.FROSTING_LIGHT_BLUE.get()),
+						Ingredient.of(ExtraDelightTags.FROSTING_LIGHT_BLUE),
 						ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_BLUE.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_LIGHT_BLUE.get()))
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_LIGHT_BLUE))
 				.save(consumer, EDLoc("frost_gingerbread_light_blue"));
 
-		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-				Ingredient.of(ExtraDelightItems.FROSTING_BLUE.get()), ExtraDelightItems.GINGERBREAD_BLOCK_BLUE.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_BLUE.get()))
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_BLUE),
+						ExtraDelightItems.GINGERBREAD_BLOCK_BLUE.get())
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_BLUE))
 				.save(consumer, EDLoc("frost_gingerbread_blue"));
 
 		ToolOnBlockBuilder
-				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-						Ingredient.of(ExtraDelightItems.FROSTING_PURPLE.get()),
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_PURPLE),
 						ExtraDelightItems.GINGERBREAD_BLOCK_PURPLE.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_PURPLE.get()))
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_PURPLE))
 				.save(consumer, EDLoc("frost_gingerbread_purple"));
 
-		ToolOnBlockBuilder
-				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-						Ingredient.of(ExtraDelightItems.FROSTING_MAGENTA.get()),
-						ExtraDelightItems.GINGERBREAD_BLOCK_MAGENTA.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_MAGENTA.get()))
+		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
+				Ingredient.of(ExtraDelightTags.FROSTING_MAGENTA), ExtraDelightItems.GINGERBREAD_BLOCK_MAGENTA.get())
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_MAGENTA))
 				.save(consumer, EDLoc("frost_gingerbread_magenta"));
 
-		ToolOnBlockBuilder.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(),
-				Ingredient.of(ExtraDelightItems.FROSTING_PINK.get()), ExtraDelightItems.GINGERBREAD_BLOCK_PINK.get())
-				.unlockedBy("has_frosting", has(ExtraDelightItems.FROSTING_PINK.get()))
+		ToolOnBlockBuilder
+				.make(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), Ingredient.of(ExtraDelightTags.FROSTING_PINK),
+						ExtraDelightItems.GINGERBREAD_BLOCK_PINK.get())
+				.unlockedBy("has_frosting", has(ExtraDelightTags.FROSTING_PINK))
 				.save(consumer, EDLoc("frost_gingerbread_pink"));
 
 	}

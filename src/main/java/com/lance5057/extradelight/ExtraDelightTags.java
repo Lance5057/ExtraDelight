@@ -1,11 +1,15 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.food.EDFoods;
+import com.lance5057.extradelight.items.FrostingItem;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ExtraDelightTags {
 
@@ -16,6 +20,20 @@ public class ExtraDelightTags {
 	public static TagKey<Item> modTag(String tag) {
 		return ItemTags.create(new ResourceLocation("extradelight", tag));
 	}
+
+	// General Tags
+	public static final TagKey<Item> CATEGORY_BEVERAGES = modTag("category/beverages");
+	public static final TagKey<Item> CATEGORY_CASSEROLES = modTag("category/casserole");
+	public static final TagKey<Item> CATEGORY_CONDIMENTS = modTag("category/condiments");
+	public static final TagKey<Item> CATEGORY_DESERTS = modTag("category/deserts");
+	public static final TagKey<Item> CATEGORY_EGGS = modTag("category/eggs");
+	public static final TagKey<Item> CATEGORY_FISH = modTag("category/fish");
+	public static final TagKey<Item> CATEGORY_MEATS = modTag("category/meats");
+	public static final TagKey<Item> CATEGORY_PASTAS = modTag("category/pasta");
+	public static final TagKey<Item> CATEGORY_SALADS = modTag("category/salads");
+	public static final TagKey<Item> CATEGORY_SANDWICH = modTag("category/sandwich");
+	public static final TagKey<Item> CATEGORY_SOUPS = modTag("category/soups");
+	public static final TagKey<Item> CATEGORY_VEGETABLES = modTag("category/vegetables");
 
 	public static final TagKey<Item> SALT = ItemTags.create(new ResourceLocation("salt", "can_be_salted"));
 
@@ -35,8 +53,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> GRAVY = forgeTag("gravy");
 
 	public static final TagKey<Item> MEALS = modTag("meals");
-	
-	public static final TagKey<Item> CONDIMENTS = forgeTag("condiment");
+
+	public static final TagKey<Item> CONDIMENTS = forgeTag("condiments");
 	public static final TagKey<Item> MAYO = forgeTag("mayonnaise");
 
 	public static final TagKey<Item> FRUIT = forgeTag("fruit");
@@ -251,8 +269,43 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> JELLY = modTag("jelly");
 
 	public static final TagKey<Item> CORN_CONFISCATE = modTag("corn_dim_confiscate");
+
 	public static final TagKey<Item> CANDY = forgeTag("candy");
+	public static final TagKey<Item> CANDY_WHITE = forgeTag("candy/white");
+	public static final TagKey<Item> CANDY_LIGHT_GRAY = forgeTag("candy/light_gray");
+	public static final TagKey<Item> CANDY_GRAY = forgeTag("candy/gray");
+	public static final TagKey<Item> CANDY_BLACK = forgeTag("candy/black");
+	public static final TagKey<Item> CANDY_BROWN = forgeTag("candy/brown");
+	public static final TagKey<Item> CANDY_RED = forgeTag("candy/red");
+	public static final TagKey<Item> CANDY_ORANGE = forgeTag("candy/orange");
+	public static final TagKey<Item> CANDY_YELLOW = forgeTag("candy/yellow");
+	public static final TagKey<Item> CANDY_LIME = forgeTag("candy/lime");
+	public static final TagKey<Item> CANDY_GREEN = forgeTag("candy/green");
+	public static final TagKey<Item> CANDY_CYAN = forgeTag("candy/cyan");
+	public static final TagKey<Item> CANDY_LIGHT_BLUE = forgeTag("candy/light_blue");
+	public static final TagKey<Item> CANDY_BLUE = forgeTag("candy/blue");
+	public static final TagKey<Item> CANDY_PURPLE = forgeTag("candy/purple");
+	public static final TagKey<Item> CANDY_MAGENTA = forgeTag("candy/magenta");
+	public static final TagKey<Item> CANDY_PINK = forgeTag("candy/pink");
 
 	public static final TagKey<Item> CANDY_BOWL_VALID = modTag("candy_bowl_valid");
-	public static final TagKey<Item> COOKIE_DOUGH = modTag("cookie_dough");
+	public static final TagKey<Item> COOKIE_DOUGH = forgeTag("cookie_dough");
+
+	public static final TagKey<Item> FROSTING = forgeTag("frosting");
+	public static final TagKey<Item> FROSTING_WHITE = forgeTag("frosting/white");
+	public static final TagKey<Item> FROSTING_LIGHT_GRAY = forgeTag("frosting/light_gray");
+	public static final TagKey<Item> FROSTING_GRAY = forgeTag("frosting/gray");
+	public static final TagKey<Item> FROSTING_BLACK = forgeTag("frosting/black");
+	public static final TagKey<Item> FROSTING_BROWN = forgeTag("frosting/brown");
+	public static final TagKey<Item> FROSTING_RED = forgeTag("frosting/red");
+	public static final TagKey<Item> FROSTING_ORANGE = forgeTag("frosting/orange");
+	public static final TagKey<Item> FROSTING_YELLOW = forgeTag("frosting/yellow");
+	public static final TagKey<Item> FROSTING_LIME = forgeTag("frosting/lime");
+	public static final TagKey<Item> FROSTING_GREEN = forgeTag("frosting/green");
+	public static final TagKey<Item> FROSTING_CYAN = forgeTag("frosting/cyan");
+	public static final TagKey<Item> FROSTING_LIGHT_BLUE = forgeTag("frosting/light_blue");
+	public static final TagKey<Item> FROSTING_BLUE = forgeTag("frosting/blue");
+	public static final TagKey<Item> FROSTING_PURPLE = forgeTag("frosting/purple");
+	public static final TagKey<Item> FROSTING_MAGENTA = forgeTag("frosting/magenta");
+	public static final TagKey<Item> FROSTING_PINK = forgeTag("frosting/pink");
 }
