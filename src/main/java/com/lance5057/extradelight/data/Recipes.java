@@ -440,13 +440,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void doughShapeRecipes(Consumer<FinishedRecipe> consumer) {
-		DoughShapingRecipeBuilder.shape(Ingredient.of(ModItems.WHEAT_DOUGH.get()), ExtraDelightItems.MACARONI.get(), 1)
-				.unlockedBy("has_dough", has(ModItems.WHEAT_DOUGH.get())).save(consumer, EDLoc("macaroni_pasta"));
+		DoughShapingRecipeBuilder.shape(Ingredient.of(ForgeTags.DOUGH), ExtraDelightItems.MACARONI.get(), 1)
+				.unlockedBy("has_dough", has(ForgeTags.DOUGH)).save(consumer, EDLoc("macaroni_pasta"));
 		DoughShapingRecipeBuilder
-				.shape(Ingredient.of(ModItems.WHEAT_DOUGH.get()), ExtraDelightItems.LASAGNA_NOODLES.get(), 1)
-				.unlockedBy("has_dough", has(ModItems.WHEAT_DOUGH.get())).save(consumer, EDLoc("lasagna_pasta"));
-		DoughShapingRecipeBuilder.shape(Ingredient.of(ModItems.WHEAT_DOUGH.get()), ModItems.RAW_PASTA.get(), 1)
-				.unlockedBy("has_dough", has(ModItems.WHEAT_DOUGH.get())).save(consumer, EDLoc("raw_pasta"));
+				.shape(Ingredient.of(ForgeTags.DOUGH), ExtraDelightItems.LASAGNA_NOODLES.get(), 1)
+				.unlockedBy("has_dough", has(ForgeTags.DOUGH)).save(consumer, EDLoc("lasagna_pasta"));
+		DoughShapingRecipeBuilder.shape(Ingredient.of(ForgeTags.DOUGH), ModItems.RAW_PASTA.get(), 1)
+				.unlockedBy("has_dough", has(ForgeTags.DOUGH)).save(consumer, EDLoc("raw_pasta"));
 
 		DoughShapingRecipeBuilder
 				.shape(Ingredient.of(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()),
@@ -1235,7 +1235,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ShapelessRecipeBuilder.shapeless(ModItems.WHEAT_DOUGH.get(), 3).requires(ForgeTags.EGGS)
 				.requires(Ingredient.of(ExtraDelightTags.FLOUR), 3)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.EGG))
+				.unlockedBy(getName(), has(Items.EGG))
 				.save(consumer, EDLoc("wheat_dough_egg"));
 
 		// Juice
@@ -2839,7 +2839,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 								ExtraDelightItems.TRAY.get())
 						.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BEEF_ROAST)
 						.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BUTTER)
-						.addIngredient(ModItems.WHEAT_DOUGH.get()).addIngredient(ExtraDelightTags.LIVER)
+						.addIngredient(ForgeTags.DOUGH).addIngredient(ExtraDelightTags.LIVER)
 						.addIngredient(ModItems.COOKED_BACON.get()).addIngredient(Items.EGG)
 						.addIngredient(ExtraDelightTags.PROCESSED_ONION).setRecipeBookTab(OvenRecipeBookTab.MEALS)
 						.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(r))
@@ -3186,7 +3186,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		bulkBake(ModItems.COOKED_MUTTON_CHOPS.get(), ModItems.MUTTON_CHOPS.get(), consumer,
 				ExtraDelightItems.TRAY.get(), "mutton_chops");
 		bulkBake(ModItems.SMOKED_HAM.get(), ModItems.HAM.get(), consumer, ExtraDelightItems.TRAY.get(), "ham");
-		bulkBake(Items.BREAD, ModItems.WHEAT_DOUGH.get(), consumer, ExtraDelightItems.LOAF_PAN.get(), "bread");
+		bulkBake(Items.BREAD, ForgeTags.DOUGH, consumer, ExtraDelightItems.LOAF_PAN.get(), "bread");
 		bulkBake(Items.BAKED_POTATO, Items.POTATO, consumer, ExtraDelightItems.SHEET.get(), "potato");
 		bulkBake(ExtraDelightItems.ROASTED_CARROT.get(), Items.CARROT, consumer, ExtraDelightItems.SHEET.get(),
 				"carrot");
@@ -3412,15 +3412,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.FRUIT_BREAD.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.LOAF_PAN.get())
-				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).addIngredient(ModItems.WHEAT_DOUGH.get())
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
+				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).addIngredient(ForgeTags.DOUGH)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ForgeTags.DOUGH)
 				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.FRUIT_BREAD.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.LOAF_PAN.get())
-				.addIngredient(ExtraDelightItems.DRIED_FRUIT.get()).addIngredient(ModItems.WHEAT_DOUGH.get())
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
+				.addIngredient(ExtraDelightItems.DRIED_FRUIT.get()).addIngredient(ForgeTags.DOUGH)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ForgeTags.DOUGH)
 				.build(consumer, EDLoc("fruit_bread_dried"));
 
 		OvenRecipeBuilder
@@ -3433,23 +3433,23 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.ROLL.get(), 6, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.MUFFIN_TIN.get())
-				.addIngredient(ModItems.WHEAT_DOUGH.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
+				.addIngredient(ForgeTags.DOUGH).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+				.unlockedByAnyIngredient(ForgeTags.DOUGH).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.CINNAMON_ROLLS_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.SQUARE_PAN.get())
-				.addIngredient(ModItems.WHEAT_DOUGH.get()).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ForgeTags.DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.GROUND_CINNAMON.get())
 				.addIngredient(ExtraDelightItems.FROSTING_WHITE.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
+				.unlockedByAnyIngredient(ForgeTags.DOUGH).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.MONKEY_BREAD_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.ROUND_PAN.get())
-				.addIngredient(ModItems.WHEAT_DOUGH.get()).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ForgeTags.DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.GROUND_CINNAMON.get())
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Ingredient.of(ForgeTags.DOUGH))
 				.build(consumer);
 
 		OvenRecipeBuilder
