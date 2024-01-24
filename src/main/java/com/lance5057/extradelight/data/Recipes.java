@@ -442,8 +442,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	private void doughShapeRecipes(Consumer<FinishedRecipe> consumer) {
 		DoughShapingRecipeBuilder.shape(Ingredient.of(ForgeTags.DOUGH), ExtraDelightItems.MACARONI.get(), 1)
 				.unlockedBy("has_dough", has(ForgeTags.DOUGH)).save(consumer, EDLoc("macaroni_pasta"));
-		DoughShapingRecipeBuilder
-				.shape(Ingredient.of(ForgeTags.DOUGH), ExtraDelightItems.LASAGNA_NOODLES.get(), 1)
+		DoughShapingRecipeBuilder.shape(Ingredient.of(ForgeTags.DOUGH), ExtraDelightItems.LASAGNA_NOODLES.get(), 1)
 				.unlockedBy("has_dough", has(ForgeTags.DOUGH)).save(consumer, EDLoc("lasagna_pasta"));
 		DoughShapingRecipeBuilder.shape(Ingredient.of(ForgeTags.DOUGH), ModItems.RAW_PASTA.get(), 1)
 				.unlockedBy("has_dough", has(ForgeTags.DOUGH)).save(consumer, EDLoc("raw_pasta"));
@@ -1234,8 +1233,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("wheat_dough"));
 
 		ShapelessRecipeBuilder.shapeless(ModItems.WHEAT_DOUGH.get(), 3).requires(ForgeTags.EGGS)
-				.requires(Ingredient.of(ExtraDelightTags.FLOUR), 3)
-				.unlockedBy(getName(), has(Items.EGG))
+				.requires(Ingredient.of(ExtraDelightTags.FLOUR), 3).unlockedBy(getName(), has(Items.EGG))
 				.save(consumer, EDLoc("wheat_dough_egg"));
 
 		// Juice
@@ -2648,8 +2646,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		// Holidays
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_BARK.get()),
-						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.RAW_CINNAMON.get(), 1)
+						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.RAW_CINNAMON.get(), 2)
 				.addResultWithChance(ExtraDelightItems.RAW_CINNAMON.get(), 0.75f, 1)
+				.addResultWithChance(ModItems.TREE_BARK.get(), 0.75f, 1)
 				.build(consumer, EDLoc("cinnamon_bark_knife"));
 
 		CuttingBoardRecipeBuilder
@@ -2785,7 +2784,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		MortarRecipeBuilder
 				.grind(Ingredient.of(ExtraDelightItems.CINNAMON_STICK.get()), ExtraDelightItems.GROUND_CINNAMON.get(),
-						STANDARD_GRIND, 1)
+						STANDARD_GRIND, 2)
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_STICK.get()))
 				.save(consumer);
@@ -3173,36 +3172,42 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ModItems.PIE_CRUST.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedBy("apple_pie", has(Items.APPLE)).build(consumer, EDLoc("apple_pie_jam"));
 
-		bulkBake(ModItems.FRIED_EGG.get(), Items.EGG, consumer, ExtraDelightItems.TRAY.get(), "fried_egg");
-		bulkBake(ModItems.BEEF_PATTY.get(), ModItems.MINCED_BEEF.get(), consumer, ExtraDelightItems.TRAY.get(),
-				"beef_patty");
-		bulkBake(ModItems.COOKED_CHICKEN_CUTS.get(), ModItems.CHICKEN_CUTS.get(), consumer,
+		bulkBake(ModItems.FRIED_EGG.get(), Ingredient.of(Items.EGG), consumer, ExtraDelightItems.TRAY.get(),
+				"fried_egg");
+		bulkBake(ModItems.BEEF_PATTY.get(), Ingredient.of(ModItems.MINCED_BEEF.get()), consumer,
+				ExtraDelightItems.TRAY.get(), "beef_patty");
+		bulkBake(ModItems.COOKED_CHICKEN_CUTS.get(), Ingredient.of(ModItems.CHICKEN_CUTS.get()), consumer,
 				ExtraDelightItems.TRAY.get(), "chicken_cuts");
-		bulkBake(ModItems.COOKED_COD_SLICE.get(), ModItems.COD_SLICE.get(), consumer, ExtraDelightItems.TRAY.get(),
-				"cod_slice");
-		bulkBake(ModItems.COOKED_SALMON_SLICE.get(), ModItems.SALMON_SLICE.get(), consumer,
+		bulkBake(ModItems.COOKED_COD_SLICE.get(), Ingredient.of(ModItems.COD_SLICE.get()), consumer,
+				ExtraDelightItems.TRAY.get(), "cod_slice");
+		bulkBake(ModItems.COOKED_SALMON_SLICE.get(), Ingredient.of(ModItems.SALMON_SLICE.get()), consumer,
 				ExtraDelightItems.TRAY.get(), "salmon_slice");
-		bulkBake(ModItems.COOKED_BACON.get(), ModItems.BACON.get(), consumer, ExtraDelightItems.TRAY.get(), "bacon");
-		bulkBake(ModItems.COOKED_MUTTON_CHOPS.get(), ModItems.MUTTON_CHOPS.get(), consumer,
+		bulkBake(ModItems.COOKED_BACON.get(), Ingredient.of(ModItems.BACON.get()), consumer,
+				ExtraDelightItems.TRAY.get(), "bacon");
+		bulkBake(ModItems.COOKED_MUTTON_CHOPS.get(), Ingredient.of(ModItems.MUTTON_CHOPS.get()), consumer,
 				ExtraDelightItems.TRAY.get(), "mutton_chops");
-		bulkBake(ModItems.SMOKED_HAM.get(), ModItems.HAM.get(), consumer, ExtraDelightItems.TRAY.get(), "ham");
-		bulkBake(Items.BREAD, ForgeTags.DOUGH, consumer, ExtraDelightItems.LOAF_PAN.get(), "bread");
-		bulkBake(Items.BAKED_POTATO, Items.POTATO, consumer, ExtraDelightItems.SHEET.get(), "potato");
-		bulkBake(ExtraDelightItems.ROASTED_CARROT.get(), Items.CARROT, consumer, ExtraDelightItems.SHEET.get(),
-				"carrot");
-		bulkBake(ExtraDelightItems.ROASTED_APPLE.get(), Items.APPLE, consumer, ExtraDelightItems.SHEET.get(), "apple");
-		bulkBake(Items.COOKED_BEEF, Items.BEEF, consumer, ExtraDelightItems.SHEET.get(), "beef");
-		bulkBake(Items.COOKED_CHICKEN, Items.CHICKEN, consumer, ExtraDelightItems.SHEET.get(), "chicken");
-		bulkBake(Items.COOKED_COD, Items.COD, consumer, ExtraDelightItems.SHEET.get(), "cod");
-		bulkBake(Items.COOKED_MUTTON, Items.MUTTON, consumer, ExtraDelightItems.SHEET.get(), "mutton");
-		bulkBake(Items.COOKED_PORKCHOP, Items.PORKCHOP, consumer, ExtraDelightItems.SHEET.get(), "porkchop");
-		bulkBake(Items.COOKED_RABBIT, Items.RABBIT, consumer, ExtraDelightItems.SHEET.get(), "rabbit");
-		bulkBake(Items.COOKED_SALMON, Items.SALMON, consumer, ExtraDelightItems.SHEET.get(), "salmon");
-		bulkBake(ExtraDelightItems.TOAST.get(), ExtraDelightItems.BREAD_SLICE.get(), consumer,
+		bulkBake(ModItems.SMOKED_HAM.get(), Ingredient.of(ModItems.HAM.get()), consumer, ExtraDelightItems.TRAY.get(),
+				"ham");
+		bulkBake(Items.BREAD, Ingredient.of(ForgeTags.DOUGH), consumer, ExtraDelightItems.LOAF_PAN.get(), "bread");
+		bulkBake(Items.BAKED_POTATO, Ingredient.of(Items.POTATO), consumer, ExtraDelightItems.SHEET.get(), "potato");
+		bulkBake(ExtraDelightItems.ROASTED_CARROT.get(), Ingredient.of(Items.CARROT), consumer,
+				ExtraDelightItems.SHEET.get(), "carrot");
+		bulkBake(ExtraDelightItems.ROASTED_APPLE.get(), Ingredient.of(Items.APPLE), consumer,
+				ExtraDelightItems.SHEET.get(), "apple");
+		bulkBake(Items.COOKED_BEEF, Ingredient.of(Items.BEEF), consumer, ExtraDelightItems.SHEET.get(), "beef");
+		bulkBake(Items.COOKED_CHICKEN, Ingredient.of(Items.CHICKEN), consumer, ExtraDelightItems.SHEET.get(),
+				"chicken");
+		bulkBake(Items.COOKED_COD, Ingredient.of(Items.COD), consumer, ExtraDelightItems.SHEET.get(), "cod");
+		bulkBake(Items.COOKED_MUTTON, Ingredient.of(Items.MUTTON), consumer, ExtraDelightItems.SHEET.get(), "mutton");
+		bulkBake(Items.COOKED_PORKCHOP, Ingredient.of(Items.PORKCHOP), consumer, ExtraDelightItems.SHEET.get(),
+				"porkchop");
+		bulkBake(Items.COOKED_RABBIT, Ingredient.of(Items.RABBIT), consumer, ExtraDelightItems.SHEET.get(), "rabbit");
+		bulkBake(Items.COOKED_SALMON, Ingredient.of(Items.SALMON), consumer, ExtraDelightItems.SHEET.get(), "salmon");
+		bulkBake(ExtraDelightItems.TOAST.get(), Ingredient.of(ExtraDelightItems.BREAD_SLICE.get()), consumer,
 				ExtraDelightItems.SHEET.get(), "toast");
-		bulkBake(ExtraDelightItems.GRILLED_CHEESE.get(), ExtraDelightItems.CHEESE_SANDWICH.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "grilled_cheese");
-		bulkBake(ExtraDelightItems.COOKED_CACTUS.get(), ExtraDelightItems.CACTUS.get(), consumer,
+		bulkBake(ExtraDelightItems.GRILLED_CHEESE.get(), Ingredient.of(ExtraDelightItems.CHEESE_SANDWICH.get()),
+				consumer, ExtraDelightItems.SHEET.get(), "grilled_cheese");
+		bulkBake(ExtraDelightItems.COOKED_CACTUS.get(), Ingredient.of(ExtraDelightItems.CACTUS.get()), consumer,
 				ExtraDelightItems.SHEET.get(), "cooked_cactus");
 
 		// Halloween Start!
@@ -3266,9 +3271,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ModItems.PUMPKIN_SLICE.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get()).build(consumer);
 
-		bulkBake(ExtraDelightItems.GRILLED_CORN_ON_COB.get(), ExtraDelightItems.CORN_ON_COB.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "cooked_corn_cob");
-		bulkBake(ExtraDelightItems.ROASTED_PUMPKIN_SEEDS.get(), Items.PUMPKIN_SEEDS, consumer,
+		bulkBake(ExtraDelightItems.GRILLED_CORN_ON_COB.get(), Ingredient.of(ExtraDelightItems.CORN_ON_COB.get()),
+				consumer, ExtraDelightItems.SHEET.get(), "cooked_corn_cob");
+		bulkBake(ExtraDelightItems.ROASTED_PUMPKIN_SEEDS.get(), Ingredient.of(Items.PUMPKIN_SEEDS), consumer,
 				ExtraDelightItems.TRAY.get(), "cooked_pumpkin_seeds");
 
 		OvenRecipeBuilder
@@ -3285,39 +3290,54 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedByAnyIngredient(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()).build(consumer);
 
-		bulkBake(ExtraDelightItems.GINGERBREAD_ALEX.get(), ExtraDelightItems.RAW_GINGERBREAD_ALEX.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "gingerbread_alex_oven", 1);
-		bulkBake(ExtraDelightItems.GINGERBREAD_CREEPER.get(), ExtraDelightItems.RAW_GINGERBREAD_CREEPER.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "gingerbread_creeper_oven", 1);
-		bulkBake(ExtraDelightItems.GINGERBREAD_PICKAXE.get(), ExtraDelightItems.RAW_GINGERBREAD_PICKAXE.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "gingerbread_pickaxe_oven", 1);
-		bulkBake(ExtraDelightItems.GINGERBREAD_STEVE.get(), ExtraDelightItems.RAW_GINGERBREAD_STEVE.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "gingerbread_steve_oven", 1);
-		bulkBake(ExtraDelightItems.GINGERBREAD_SWORD.get(), ExtraDelightItems.RAW_GINGERBREAD_SWORD.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "gingerbread_sword_oven", 1);
-		bulkBake(ExtraDelightItems.GINGERBREAD_VILLAGER.get(), ExtraDelightItems.RAW_GINGERBREAD_VILLAGER.get(),
-				consumer, ExtraDelightItems.SHEET.get(), "gingerbread_villager_oven", 1);
-		bulkBake(ExtraDelightItems.GINGERBREAD_DIAMOND.get(), ExtraDelightItems.RAW_GINGERBREAD_DIAMOND.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "gingerbread_diamond_oven", 1);
-		bulkBake(ExtraDelightItems.GINGERBREAD_EMERALD.get(), ExtraDelightItems.RAW_GINGERBREAD_EMERALD.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "gingerbread_emerald_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_ALEX.get(), Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_ALEX.get()),
+				consumer, ExtraDelightItems.SHEET.get(), "gingerbread_alex_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_CREEPER.get(),
+				Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_CREEPER.get()), consumer, ExtraDelightItems.SHEET.get(),
+				"gingerbread_creeper_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_PICKAXE.get(),
+				Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_PICKAXE.get()), consumer, ExtraDelightItems.SHEET.get(),
+				"gingerbread_pickaxe_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_STEVE.get(),
+				Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_STEVE.get()), consumer, ExtraDelightItems.SHEET.get(),
+				"gingerbread_steve_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_SWORD.get(),
+				Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_SWORD.get()), consumer, ExtraDelightItems.SHEET.get(),
+				"gingerbread_sword_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_VILLAGER.get(),
+				Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_VILLAGER.get()), consumer,
+				ExtraDelightItems.SHEET.get(), "gingerbread_villager_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_DIAMOND.get(),
+				Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_DIAMOND.get()), consumer, ExtraDelightItems.SHEET.get(),
+				"gingerbread_diamond_oven", 1);
+		bulkBake(ExtraDelightItems.GINGERBREAD_EMERALD.get(),
+				Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_EMERALD.get()), consumer, ExtraDelightItems.SHEET.get(),
+				"gingerbread_emerald_oven", 1);
 
-		bulkBake(ExtraDelightItems.SUGAR_COOKIE_ALEX.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_ALEX.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "sugar_cookie_alex_oven", 1);
-		bulkBake(ExtraDelightItems.SUGAR_COOKIE_CREEPER.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_CREEPER.get(),
-				consumer, ExtraDelightItems.SHEET.get(), "sugar_cookie_creeper_oven", 1);
-		bulkBake(ExtraDelightItems.SUGAR_COOKIE_PICKAXE.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_PICKAXE.get(),
-				consumer, ExtraDelightItems.SHEET.get(), "sugar_cookie_pickaxe_oven", 1);
-		bulkBake(ExtraDelightItems.SUGAR_COOKIE_STEVE.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_STEVE.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "sugar_cookie_steve_oven", 1);
-		bulkBake(ExtraDelightItems.SUGAR_COOKIE_SWORD.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_SWORD.get(), consumer,
-				ExtraDelightItems.SHEET.get(), "sugar_cookie_sword_oven", 1);
-		bulkBake(ExtraDelightItems.SUGAR_COOKIE_VILLAGER.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_VILLAGER.get(),
-				consumer, ExtraDelightItems.SHEET.get(), "sugar_cookie_villager_oven", 1);
-		bulkBake(ExtraDelightItems.SUGAR_COOKIE_DIAMOND.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_DIAMOND.get(),
-				consumer, ExtraDelightItems.SHEET.get(), "sugar_cookie_diamond_oven", 1);
-		bulkBake(ExtraDelightItems.SUGAR_COOKIE_EMERALD.get(), ExtraDelightItems.RAW_SUGAR_COOKIE_EMERALD.get(),
-				consumer, ExtraDelightItems.SHEET.get(), "sugar_cookie_emerald_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_ALEX.get(),
+				Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_ALEX.get()), consumer, ExtraDelightItems.SHEET.get(),
+				"sugar_cookie_alex_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_CREEPER.get(),
+				Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_CREEPER.get()), consumer,
+				ExtraDelightItems.SHEET.get(), "sugar_cookie_creeper_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_PICKAXE.get(),
+				Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_PICKAXE.get()), consumer,
+				ExtraDelightItems.SHEET.get(), "sugar_cookie_pickaxe_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_STEVE.get(),
+				Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_STEVE.get()), consumer, ExtraDelightItems.SHEET.get(),
+				"sugar_cookie_steve_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_SWORD.get(),
+				Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_SWORD.get()), consumer, ExtraDelightItems.SHEET.get(),
+				"sugar_cookie_sword_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_VILLAGER.get(),
+				Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_VILLAGER.get()), consumer,
+				ExtraDelightItems.SHEET.get(), "sugar_cookie_villager_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_DIAMOND.get(),
+				Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_DIAMOND.get()), consumer,
+				ExtraDelightItems.SHEET.get(), "sugar_cookie_diamond_oven", 1);
+		bulkBake(ExtraDelightItems.SUGAR_COOKIE_EMERALD.get(),
+				Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_EMERALD.get()), consumer,
+				ExtraDelightItems.SHEET.get(), "sugar_cookie_emerald_oven", 1);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.APPLE_COOKIE_BLOCK.get(), 4, NORMAL_COOKING, MEDIUM_EXP,
@@ -3413,14 +3433,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.OvenRecipe(ExtraDelightItems.FRUIT_BREAD.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.LOAF_PAN.get())
 				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).addIngredient(ForgeTags.DOUGH)
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ForgeTags.DOUGH)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.FRUIT_BREAD.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.LOAF_PAN.get())
 				.addIngredient(ExtraDelightItems.DRIED_FRUIT.get()).addIngredient(ForgeTags.DOUGH)
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ForgeTags.DOUGH)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.build(consumer, EDLoc("fruit_bread_dried"));
 
 		OvenRecipeBuilder
@@ -3434,7 +3454,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.OvenRecipe(ExtraDelightItems.ROLL.get(), 6, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.MUFFIN_TIN.get())
 				.addIngredient(ForgeTags.DOUGH).setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedByAnyIngredient(ForgeTags.DOUGH).build(consumer);
+				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.CINNAMON_ROLLS_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
@@ -3442,14 +3462,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ForgeTags.DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.GROUND_CINNAMON.get())
 				.addIngredient(ExtraDelightItems.FROSTING_WHITE.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedByAnyIngredient(ForgeTags.DOUGH).build(consumer);
+				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.MONKEY_BREAD_FEAST.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
 						ExtraDelightItems.ROUND_PAN.get())
 				.addIngredient(ForgeTags.DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.GROUND_CINNAMON.get())
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(Ingredient.of(ForgeTags.DOUGH))
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
@@ -3487,16 +3507,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedByAnyIngredient(ModItems.PIE_CRUST.get()).build(consumer);
 	}
 
-	private void bulkBake(ItemLike mainResult, ItemLike in, Consumer<FinishedRecipe> consumer, ItemLike pan,
+	private void bulkBake(ItemLike mainResult, Ingredient in, Consumer<FinishedRecipe> consumer, ItemLike pan,
 			String name) {
 		bulkBake(mainResult, in, consumer, pan, name, 1);
 	}
 
-	private void bulkBake(ItemLike mainResult, ItemLike in, Consumer<FinishedRecipe> consumer, ItemLike pan,
+	private void bulkBake(ItemLike mainResult, Ingredient in, Consumer<FinishedRecipe> consumer, ItemLike pan,
 			String name, int count) {
 		for (int i = 1; i < 10; i++)
 			OvenRecipeBuilder.OvenRecipe(mainResult, i * count, NORMAL_COOKING, MEDIUM_EXP, pan).addIngredient(in, i)
-					.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedBy(name, has(in))
+					.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedBy(name, has(pan))
 					.build(consumer, "extradelight:" + name + i);
 	}
 

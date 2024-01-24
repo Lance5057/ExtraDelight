@@ -1,15 +1,11 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.food.EDFoods;
-import com.lance5057.extradelight.items.FrostingItem;
-
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ExtraDelightTags {
 
