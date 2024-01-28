@@ -48,12 +48,6 @@ public class LootModifiers extends GlobalLootModifierProvider {
 								LootTableIdCondition.builder(BuiltInLootTables.SIMPLE_DUNGEON).build(), },
 						StructureLootTables.dungeon_rot));
 
-		add("food_city",
-				new FoodLoot(
-						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(0.5f).build(),
-								LootTableIdCondition.builder(BuiltInLootTables.ANCIENT_CITY).build() },
-						StructureLootTables.dungeon_rot));
-
 		add("food_city_ice",
 				new FoodLoot(
 						new LootItemCondition[] { LootItemRandomChanceCondition.randomChance(0.5f).build(),
