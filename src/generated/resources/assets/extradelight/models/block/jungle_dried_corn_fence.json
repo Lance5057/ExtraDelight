@@ -1,6 +1,0 @@
-{
-  "parent": "extradelight:block/dried_corn_fence",
-  "textures": {
-    "1": "minecraft:block/jungle_planks"
-  }
-}

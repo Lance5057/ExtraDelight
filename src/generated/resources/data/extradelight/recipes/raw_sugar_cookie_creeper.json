@@ -1,8 +1,0 @@
-{
-  "type": "extradelight:dough_shaping",
-  "count": 8,
-  "ingredient": {
-    "item": "extradelight:sugar_cookie_dough"
-  },
-  "result": "extradelight:raw_sugar_cookie_creeper"
-}

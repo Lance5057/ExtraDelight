@@ -1,6 +1,0 @@
-{
-  "parent": "extradelight:block/knifeblock",
-  "textures": {
-    "0": "minecraft:block/crimson_planks"
-  }
-}

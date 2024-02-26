@@ -1,8 +1,0 @@
-{
-  "type": "extradelight:dough_shaping",
-  "count": 1,
-  "ingredient": {
-    "item": "farmersdelight:wheat_dough"
-  },
-  "result": "extradelight:macaroni"
-}

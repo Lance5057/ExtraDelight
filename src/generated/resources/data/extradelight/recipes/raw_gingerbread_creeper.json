@@ -1,8 +1,0 @@
-{
-  "type": "extradelight:dough_shaping",
-  "count": 8,
-  "ingredient": {
-    "item": "extradelight:gingerbread_cookie_dough"
-  },
-  "result": "extradelight:raw_gingerbread_creeper"
-}

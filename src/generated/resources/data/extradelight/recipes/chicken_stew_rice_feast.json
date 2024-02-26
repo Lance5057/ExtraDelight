@@ -1,8 +1,0 @@
-{
-  "type": "extradelight:feast",
-  "block": "extradelight:chicken_stew_feast",
-  "ingredient": {
-    "item": "farmersdelight:cooked_rice"
-  },
-  "result": "extradelight:chicken_stew_rice"
-}

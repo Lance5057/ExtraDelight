@@ -1,8 +1,0 @@
-{
-  "type": "extradelight:feast",
-  "block": "extradelight:fish_stew_feast",
-  "ingredient": {
-    "item": "minecraft:bowl"
-  },
-  "result": "farmersdelight:fish_stew"
-}

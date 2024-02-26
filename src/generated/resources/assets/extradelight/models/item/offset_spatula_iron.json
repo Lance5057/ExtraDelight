@@ -1,6 +1,0 @@
-{
-  "parent": "extradelight:item/offset_spatula",
-  "textures": {
-    "0": "extradelight:item/offset_spatula_iron"
-  }
-}

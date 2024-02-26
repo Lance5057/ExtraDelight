@@ -1,8 +1,0 @@
-{
-  "parent": "extradelight:block/molding_bottom",
-  "textures": {
-    "0": "extradelight:block/wallpaper_lime",
-    "1": "minecraft:block/acacia_planks",
-    "particle": "extradelight:block/wallpaper_lime"
-  }
-}

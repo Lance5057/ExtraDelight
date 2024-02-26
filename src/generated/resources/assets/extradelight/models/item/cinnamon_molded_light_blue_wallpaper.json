@@ -1,7 +1,0 @@
-{
-  "parent": "extradelight:block/molding_bottom",
-  "textures": {
-    "0": "extradelight:block/wallpaper_light_blue",
-    "1": "minecraft:block/cinnamon_planks"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:campfire_cooking",
-  "cookingtime": 600,
-  "experience": 1.0,
-  "ingredient": {
-    "item": "extradelight:cactus"
-  },
-  "result": "extradelight:cooked_cactus"
-}

@@ -1,9 +1,0 @@
-{
-  "parent": "extradelight:block/half_cabinet",
-  "textures": {
-    "0": "farmersdelight:block/oak_cabinet_front",
-    "1": "farmersdelight:block/oak_cabinet_side",
-    "2": "farmersdelight:block/oak_cabinet_top",
-    "particle": "farmersdelight:block/oak_cabinet_front"
-  }
-}

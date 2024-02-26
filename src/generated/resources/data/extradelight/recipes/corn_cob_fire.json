@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:campfire_cooking",
-  "cookingtime": 600,
-  "experience": 1.0,
-  "ingredient": {
-    "item": "extradelight:corn_on_cob"
-  },
-  "result": "extradelight:grilled_corn_on_cob"
-}

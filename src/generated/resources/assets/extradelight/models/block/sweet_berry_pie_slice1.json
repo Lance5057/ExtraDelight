@@ -1,8 +1,0 @@
-{
-  "parent": "extradelight:block/pie_slice1",
-  "textures": {
-    "inner": "extradelight:block/sweet_berry_pie_inner",
-    "particle": "extradelight:block/sweet_berry_pie_top",
-    "top": "extradelight:block/sweet_berry_pie_top"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "extradelight:feast",
-  "block": "extradelight:meatloaf_feast",
-  "ingredient": {
-    "tag": "forge:bread"
-  },
-  "result": "extradelight:meatloaf_sandwich"
-}

@@ -1,9 +1,0 @@
-{
-  "parent": "extradelight:block/half_cabinet",
-  "textures": {
-    "0": "farmersdelight:block/warped_cabinet_front_open",
-    "1": "farmersdelight:block/warped_cabinet_side",
-    "2": "farmersdelight:block/warped_cabinet_top",
-    "particle": "farmersdelight:block/warped_cabinet_front_open"
-  }
-}

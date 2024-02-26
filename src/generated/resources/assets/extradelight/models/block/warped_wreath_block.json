@@ -1,8 +1,0 @@
-{
-  "parent": "extradelight:block/wreath",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "all": "minecraft:block/warped_wart_block",
-    "particle": "minecraft:block/warped_wart_block"
-  }
-}
