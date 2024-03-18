@@ -4,7 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -17,7 +19,7 @@ public class ExtraDelight {
 	public static Logger logger = LogManager.getLogger();
 
 	public ExtraDelight() {
-//		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ExtraDelightConfig.spec);
+		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ExtraDelightConfig.spec);
 
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setupClient);
@@ -27,8 +29,9 @@ public class ExtraDelight {
 //		AestheticBlocks.BLOCKS.register(modEventBus);
 //		AestheticBlocks.ITEMS.register(modEventBus);
 //
-//		ExtraDelightBlocks.register(modEventBus);
-//		ExtraDelightItems.ITEMS.register(modEventBus);
+		ExtraDelightBlocks.register(modEventBus);
+		ExtraDelightItems.ITEMS.register(modEventBus);
+		ExtraDelightTabs.TABS.register(modEventBus);
 //
 //		ExtraDelightBlockEntities.TILES.register(modEventBus);
 //		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
