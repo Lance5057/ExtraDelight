@@ -17,7 +17,7 @@ import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
 public class CornMazeEvents {
 	@SubscribeEvent
 	public static void onDeath(LivingHurtEvent event) {
-		if (event.getEntity().getLevel().dimension() == ExtraDelightWorldGen.CORNFIELD)
+		if (event.getEntity().level().dimension() == ExtraDelightWorldGen.CORNFIELD)
 			if (event.getEntity() instanceof ServerPlayer p) {
 				if (p.getHealth() <= event.getAmount()) {
 					p.playSound(SoundEvents.WITCH_CELEBRATE, 1, 1);

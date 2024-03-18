@@ -201,7 +201,7 @@ public class AestheticBlocks {
 
 		registerAllWoodHelm("wreath", WreathBlock::new, WREATHS, WREATH_ITEMS);
 
-		registerAllColorsHelm("ribbon_bow", () -> new RibbonBlock(), BOWS, BOW_ITEMS);
+		registerAllColorsHelm("ribbon_bow", () -> new RibbonBlock(Properties.ofFullCopy(Blocks.BLACK_WOOL).noOcclusion().noCollission()), BOWS, BOW_ITEMS);
 	}
 
 //	public static void loot(BlockLootSubProvider bl) {

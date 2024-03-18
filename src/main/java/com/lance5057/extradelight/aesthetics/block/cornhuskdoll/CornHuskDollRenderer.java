@@ -1,8 +1,9 @@
 package com.lance5057.extradelight.aesthetics.block.cornhuskdoll;
 
+import org.joml.Quaternionf;
+
 import com.lance5057.extradelight.ExtraDelight;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Quaternion;
 
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -41,7 +42,7 @@ public class CornHuskDollRenderer implements BlockEntityRenderer<CornHuskDollBlo
 		pPoseStack.pushPose();
 		{
 			pPoseStack.translate(0.5, 0, 0.5);
-			pPoseStack.mulPose(new Quaternion(0f, -f1, 0f, true));
+			pPoseStack.mulPose(new Quaternionf().rotateXYZ(0f, -f1, 0f));
 			pPoseStack.translate(-0.5, 0, -0.5);
 			pPoseStack.scale(1, 1, 1);
 

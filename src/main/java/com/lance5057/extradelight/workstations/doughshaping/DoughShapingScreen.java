@@ -54,7 +54,7 @@ public class DoughShapingScreen extends AbstractContainerScreen<DoughShapingMenu
 	}
 
 	protected void renderBg(PoseStack pPoseStack, float pPartialTick, int pX, int pY) {
-		this.renderBackground(pPoseStack);
+		this.renderTransparentBackground(pPoseStack);
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 		RenderSystem.setShaderTexture(0, BG_LOCATION);

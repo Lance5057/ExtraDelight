@@ -8,13 +8,13 @@ import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -24,7 +24,7 @@ import vectorwing.farmersdelight.common.block.PieBlock;
 
 public class BlockModels extends BlockStateProvider {
 
-	public BlockModels(DataGenerator gen, ExistingFileHelper exFileHelper) {
+	public BlockModels(PackOutput gen, ExistingFileHelper exFileHelper) {
 		super(gen, ExtraDelight.MOD_ID, exFileHelper);
 		// TODO Auto-generated constructor stub
 	}
@@ -168,7 +168,7 @@ public class BlockModels extends BlockStateProvider {
 		this.logBlock(ExtraDelightBlocks.CINNAMON_STICK_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_PLANKS.get());
-		this.simpleCross(ExtraDelightBlocks.CINNAMON_SAPLING);
+		this.simpleCross(ExtraDelightBlocks.CINNAMON_SAPLING.get());
 		this.stairsBlock(ExtraDelightBlocks.CINNAMON_STAIRS.get(),
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
 		this.trapdoorBlockWithRenderType(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(),
@@ -269,7 +269,7 @@ public class BlockModels extends BlockStateProvider {
 			int bites = state.getValue(BlockStateProperties.BITES);
 			String suffix = bites > 0 ? "_slice" + bites : "";
 			return ConfiguredModel.builder().modelFile(models()
-					.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
+					.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix,
 							mcLoc("block/cake" + suffix))
 					.texture("particle", modLoc("block/" + prefix + "_cake_top"))
 					.texture("bottom", modLoc("block/" + prefix + "_cake_bottom"))
@@ -285,7 +285,7 @@ public class BlockModels extends BlockStateProvider {
 			String suffix = bites > 0 ? "_slice" + bites : "";
 			return ConfiguredModel.builder()
 					.modelFile(models()
-							.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
+							.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix,
 									modLoc("block/pie" + suffix))
 							.texture("particle", modLoc("block/" + prefix + "_top"))
 //					.texture("bottom", "farmersdelight:block/pie_bottom")
@@ -310,7 +310,7 @@ public class BlockModels extends BlockStateProvider {
 	}
 
 	public void feastBlock(FeastBlock block) {
-		feastBlock(block, ForgeRegistries.BLOCKS.getKey(block).getPath());
+		feastBlock(block, BuiltInRegistries.BLOCK.getKey(block).getPath());
 	}
 
 	public void feastBlock(FeastBlock block, String path) {
@@ -332,7 +332,7 @@ public class BlockModels extends BlockStateProvider {
 	}
 
 	public void recipeFeastBlock(RecipeFeastBlock block) {
-		recipeFeastBlock(block, ForgeRegistries.BLOCKS.getKey(block).getPath());
+		recipeFeastBlock(block, BuiltInRegistries.BLOCK.getKey(block).getPath());
 	}
 
 	public void recipeFeastBlock(RecipeFeastBlock block, String path) {
@@ -385,7 +385,7 @@ public class BlockModels extends BlockStateProvider {
 
 			return ConfiguredModel.builder()
 					.modelFile(models()
-							.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
+							.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix,
 									modLoc("curry_block" + suffix))
 							.texture("1", contentsTexture).texture("particle", particleTexture))
 					.rotationY(((int) state.getValue(RecipeFeastBlock.FACING).toYRot() + 180) % 360).build();
@@ -401,12 +401,12 @@ public class BlockModels extends BlockStateProvider {
 			if (dry)
 				return ConfiguredModel.builder()
 						.modelFile(models().withExistingParent(
-								ForgeRegistries.BLOCKS.getKey(bottom).getPath() + "_dimension",
+								BuiltInRegistries.BLOCK.getKey(bottom).getPath() + "_dimension",
 								modLoc("block/crops/corn/dimension_corn_bottom")))
 						.build();
 
 			return ConfiguredModel.builder()
-					.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(bottom).getPath() + suffix,
+					.modelFile(models().withExistingParent(BuiltInRegistries.BLOCK.getKey(bottom).getPath() + suffix,
 							modLoc("block/crops/corn/corn" + suffix)))
 					.build();
 		});
@@ -419,13 +419,13 @@ public class BlockModels extends BlockStateProvider {
 
 			if (dry)
 				return ConfiguredModel.builder()
-						.modelFile(
-								models().withExistingParent(ForgeRegistries.BLOCKS.getKey(top).getPath() + "_dimension",
-										modLoc("block/crops/corn/dimension_corn_top")))
+						.modelFile(models().withExistingParent(
+								BuiltInRegistries.BLOCK.getKey(top).getPath() + "_dimension",
+								modLoc("block/crops/corn/dimension_corn_top")))
 						.build();
 
 			return ConfiguredModel.builder()
-					.modelFile(models().withExistingParent(ForgeRegistries.BLOCKS.getKey(top).getPath() + suffix2,
+					.modelFile(models().withExistingParent(BuiltInRegistries.BLOCK.getKey(top).getPath() + suffix2,
 							modLoc("block/crops/corn/corn" + suffix)))
 					.build();
 		});
@@ -437,22 +437,25 @@ public class BlockModels extends BlockStateProvider {
 			String suffix = "_stage" + age;
 
 			return ConfiguredModel.builder().modelFile(models()
-					.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix, mcLoc("block/cross"))
+					.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix, mcLoc("block/cross"))
 					.texture("cross", modLoc("block/crops/" + name + "/" + name + suffix)).renderType("cutout"))
 					.build();
 		});
 
 	}
 
-	private void simpleCross(RegistryObject<? extends Block> block) {
-		simpleBlock(block.get(), new ConfiguredModel(models()
-				.cross(block.getId().getPath(), modLoc("block/" + block.getId().getPath())).renderType("cutout")));
+	private void simpleCross(Block block) {
+		simpleBlock(block,
+				new ConfiguredModel(models()
+						.cross(BuiltInRegistries.BLOCK.getKey(block).getPath(),
+								modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block).getPath()))
+						.renderType("cutout")));
 	}
 
 	public void cabinetBlock(Block block, String woodType) {
 		this.horizontalBlock(block, state -> {
 			String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
-			return models().orientable(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
+			return models().orientable(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix,
 					new ResourceLocation(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_side"),
 					new ResourceLocation(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_front" + suffix),
 					new ResourceLocation(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_top"));

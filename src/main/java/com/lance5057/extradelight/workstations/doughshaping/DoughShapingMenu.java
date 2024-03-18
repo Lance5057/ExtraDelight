@@ -8,6 +8,7 @@ import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -23,6 +24,7 @@ import net.minecraft.world.inventory.ResultContainer;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 
 public class DoughShapingMenu extends AbstractContainerMenu {
@@ -36,7 +38,7 @@ public class DoughShapingMenu extends AbstractContainerMenu {
 	/** The index of the selected recipe in the GUI. */
 	private final DataSlot selectedRecipeIndex = DataSlot.standalone();
 	private final Level level;
-	private List<DoughShapingRecipe> recipes = Lists.newArrayList();
+	private List<RecipeHolder<DoughShapingRecipe>> recipes = Lists.newArrayList();
 	/**
 	 * The {@linkplain net.minecraft.world.item.ItemStack} set in the input slot by
 	 * the player.
@@ -78,7 +80,7 @@ public class DoughShapingMenu extends AbstractContainerMenu {
 	public DoughShapingMenu(int pContainerId, Inventory pPlayerInventory, final ContainerLevelAccess pAccess) {
 		super(ExtraDelightContainers.DOUGH_SHAPING_MENU.get(), pContainerId);
 		this.access = pAccess;
-		this.level = pPlayerInventory.player.level;
+		this.level = pPlayerInventory.player.level();
 		this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
 		this.resultSlot = this.addSlot(new Slot(this.resultContainer, 1, 143, 33) {
 			/**
@@ -90,8 +92,8 @@ public class DoughShapingMenu extends AbstractContainerMenu {
 			}
 
 			public void onTake(Player p_150672_, ItemStack p_150673_) {
-				p_150673_.onCraftedBy(p_150672_.level, p_150672_, p_150673_.getCount());
-				DoughShapingMenu.this.resultContainer.awardUsedRecipes(p_150672_);
+				p_150673_.onCraftedBy(p_150672_.level(), p_150672_, p_150673_.getCount());
+				DoughShapingMenu.this.resultContainer.awardUsedRecipes(p_150672_, List.of(p_150673_));
 				ItemStack itemstack = DoughShapingMenu.this.inputSlot.remove(1);
 				if (!itemstack.isEmpty()) {
 					DoughShapingMenu.this.setupResultSlot();
@@ -130,7 +132,7 @@ public class DoughShapingMenu extends AbstractContainerMenu {
 		return this.selectedRecipeIndex.get();
 	}
 
-	public List<DoughShapingRecipe> getRecipes() {
+	public List<RecipeHolder<DoughShapingRecipe>> getRecipes() {
 		return this.recipes;
 	}
 
@@ -191,9 +193,9 @@ public class DoughShapingMenu extends AbstractContainerMenu {
 
 	void setupResultSlot() {
 		if (!this.recipes.isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
-			DoughShapingRecipe DoughShapingrecipe = this.recipes.get(this.selectedRecipeIndex.get());
+			RecipeHolder<DoughShapingRecipe> DoughShapingrecipe = this.recipes.get(this.selectedRecipeIndex.get());
 			this.resultContainer.setRecipeUsed(DoughShapingrecipe);
-			this.resultSlot.set(DoughShapingrecipe.assemble(this.container));
+			this.resultSlot.set(DoughShapingrecipe.value().assemble(this.container, this.level.registryAccess()));
 		} else {
 			this.resultSlot.set(ItemStack.EMPTY);
 		}
@@ -230,7 +232,7 @@ public class DoughShapingMenu extends AbstractContainerMenu {
 			Item item = itemstack1.getItem();
 			itemstack = itemstack1.copy();
 			if (pIndex == 1) {
-				item.onCraftedBy(itemstack1, pPlayer.level, pPlayer);
+				item.onCraftedBy(itemstack1, pPlayer.level(), pPlayer);
 				if (!this.moveItemStackTo(itemstack1, 2, 38, true)) {
 					return ItemStack.EMPTY;
 				}
