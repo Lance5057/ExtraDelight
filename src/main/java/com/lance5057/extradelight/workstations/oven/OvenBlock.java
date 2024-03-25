@@ -23,6 +23,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -61,7 +62,7 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 			Block.box(0.0D, -1.0D, 0.0D, 16.0D, 0.0D, 16.0D));
 
 	public OvenBlock() {
-		super(Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3.5F, 6.0F).sound(SoundType.STONE));
+		super(Properties.ofFullCopy(Blocks.BRICKS).requiresCorrectToolForDrops().strength(3.5F, 6.0F).sound(SoundType.STONE));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
 				.setValue(SUPPORT, OvenSupport.NONE).setValue(WATERLOGGED, false));
 	}
@@ -72,7 +73,7 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 		if (!level.isClientSide) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof OvenBlockEntity OvenEntity) {
-				NetworkHooks.openScreen((ServerPlayer) player, OvenEntity, pos);
+				player.openMenu(OvenEntity, pos);
 			}
 		}
 		return InteractionResult.SUCCESS;

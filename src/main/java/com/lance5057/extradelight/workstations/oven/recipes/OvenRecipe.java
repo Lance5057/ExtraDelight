@@ -29,7 +29,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 	private final String group;
 	private final OvenRecipeBookTab tab;
 	private final NonNullList<Ingredient> inputItems;
-	private final ItemStack output;
+	public final ItemStack output;
 	private final ItemStack container;
 	private final float experience;
 	private final int cookTime;
