@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.addons.ButchercraftAddon;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -258,6 +259,7 @@ public class BlockLootTables extends BlockLoot {
 		this.add(ExtraDelightBlocks.CINNAMON_SLAB.get(), createSlabItemTable(ExtraDelightBlocks.CINNAMON_SLAB.get()));
 
 		AestheticBlocks.loot(this);
+		ButchercraftAddon.loot(this);
 	}
 
 	@Override
@@ -265,6 +267,7 @@ public class BlockLootTables extends BlockLoot {
 		Collection<Block> l = new ArrayList<Block>();
 		l.addAll(ExtraDelightBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
 		l.addAll(AestheticBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
+		l.addAll(ButchercraftAddon.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
 		return l;
 	}
 

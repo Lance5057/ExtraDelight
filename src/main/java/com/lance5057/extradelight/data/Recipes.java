@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.addons.ButchercraftAddon;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.DoughShapingRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
@@ -89,6 +90,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		toolOnBlockRecipes(consumer);
 
 		AestheticBlocks.Recipes(consumer);
+		ButchercraftAddon.recipes(consumer);
 	}
 
 	private void toolOnBlockRecipes(Consumer<FinishedRecipe> consumer) {

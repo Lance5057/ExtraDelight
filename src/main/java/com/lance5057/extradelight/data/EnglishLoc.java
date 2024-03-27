@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.TranslatableKeys;
+import com.lance5057.extradelight.addons.ButchercraftAddon;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import net.minecraft.data.DataGenerator;
@@ -760,5 +761,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.WILD_GINGER.get(), "Wild Ginger");
 
 		AestheticBlocks.EngLoc(this);
+		ButchercraftAddon.engLoc(this);
 	}
 }

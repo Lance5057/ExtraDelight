@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.addons.ButchercraftAddon;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import net.minecraft.data.DataGenerator;
@@ -808,6 +809,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CORN_SILK_SACK, "corn_silk_sack");
 
 		AestheticBlocks.itemModel(this);
+		ButchercraftAddon.itemModel(this);
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

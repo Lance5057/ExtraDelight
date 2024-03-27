@@ -3,6 +3,7 @@ package com.lance5057.extradelight;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.lance5057.extradelight.addons.ButchercraftAddon;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightConfiguredFeatures;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightPlacedFeatures;
@@ -37,6 +38,9 @@ public class ExtraDelight {
 
 		ExtraDelightBlocks.register(modEventBus);
 		ExtraDelightItems.ITEMS.register(modEventBus);
+		
+		ButchercraftAddon.BLOCKS.register(modEventBus);
+		ButchercraftAddon.ITEMS.register(modEventBus);
 
 		ExtraDelightBlockEntities.TILES.register(modEventBus);
 		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);

@@ -1,0 +1,8 @@
+{
+  "parent": "extradelight:block/pulled_pork_block_stage0",
+  "textures": {
+    "0": "extradelight:block/bbq_chicken",
+    "1": "extradelight:block/bbq_chicken2",
+    "particle": "extradelight:block/bbq_chicken2"
+  }
+}
