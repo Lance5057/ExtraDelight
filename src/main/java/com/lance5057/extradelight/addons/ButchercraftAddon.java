@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -28,6 +29,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.FoodValues;
+import vectorwing.farmersdelight.common.block.FeastBlock;
 
 public class ButchercraftAddon {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
@@ -36,7 +38,7 @@ public class ButchercraftAddon {
 			ExtraDelight.MOD_ID);
 
 	// GOAT
-	public static final RegistryObject<Block> GOAT_STEW_BLOCK = BLOCKS.register("goat_stew_block",
+	public static final RegistryObject<RecipeFeastBlock> GOAT_STEW_BLOCK = BLOCKS.register("goat_stew_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL).strength(0.8F)
 					.sound(SoundType.LANTERN).color(MaterialColor.COLOR_BROWN), true, ExtraDelightBlocks.pot));
 
@@ -99,9 +101,9 @@ public class ButchercraftAddon {
 			() -> new BowlFoodItem(new Item.Properties().food(EDFoods.PULLED_PORK_SANDWICH).craftRemainder(Items.BOWL)
 					.stacksTo(16).tab(ExtraDelightItems.EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Block> BBQ_SHREDDED_CHICKEN_BLOCK = BLOCKS.register("bbq_shredded_chicken_block",
-			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL).strength(0.8F)
-					.sound(SoundType.LANTERN).color(MaterialColor.COLOR_BROWN), true, ExtraDelightBlocks.pot));
+	public static final RegistryObject<RecipeFeastBlock> BBQ_SHREDDED_CHICKEN_BLOCK = BLOCKS.register(
+			"bbq_chicken_block", () -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL).strength(0.8F)
+					.sound(SoundType.LANTERN).color(MaterialColor.COLOR_BROWN), false, ExtraDelightBlocks.pot));
 
 	public static final RegistryObject<BlockItem> BBQ_SHREDDED_CHICKEN_FEAST = ITEMS
 			.register("bbq_shredded_chicken_feast", () -> new BlockItem(BBQ_SHREDDED_CHICKEN_BLOCK.get(),
@@ -143,7 +145,8 @@ public class ButchercraftAddon {
 			() -> new BowlFoodItem(new Item.Properties().food(EDFoods.BEEF_STEW_RICE).craftRemainder(Items.BOWL)
 					.stacksTo(16).tab(ExtraDelightItems.EXTRA_DELIGHT_TAB)));
 
-	public static final RegistryObject<Block> MAC_CHEESE_HOT_DOG_BLOCK = BLOCKS.register("mac_cheese_hot_dog_block",
+	public static final RegistryObject<RecipeFeastBlock> MAC_CHEESE_HOT_DOG_BLOCK = BLOCKS.register(
+			"mac_cheese_hot_dog_block",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.of(Material.METAL).strength(0.8F)
 					.sound(SoundType.LANTERN).color(MaterialColor.COLOR_BROWN), true, ExtraDelightBlocks.pot));
 
@@ -162,10 +165,54 @@ public class ButchercraftAddon {
 	}
 
 	public static void blockModel(BlockStateProvider bsp) {
-		bsp.simpleBlock(BBQ_SHREDDED_CHICKEN_BLOCK.get(),
-				bsp.models().withExistingParent("bbq_chicken_block", bsp.modLoc("block/pulled_pork_block_stage0"))
-						.texture("0", bsp.mcLoc("block/bbq_chicken")).texture("1", bsp.mcLoc("block/bbq_chicken2"))
-						.texture("particle", bsp.mcLoc("block/bbq_chicken2")));
+		recipeFeastBlock(bsp, BBQ_SHREDDED_CHICKEN_BLOCK.get());
+		recipeFeastBlock(bsp, MAC_CHEESE_HOT_DOG_BLOCK.get());
+		stewBlock(bsp, GOAT_STEW_BLOCK.get(), "goat_stew");
+	}
+
+	public static void stewBlock(BlockStateProvider bsp, RecipeFeastBlock block, String texture) {
+		bsp.getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
+
+			String suffix = "_stage" + (block.getMaxServings() - servings);
+
+			ResourceLocation contentsTexture = bsp.modLoc("block/" + texture);
+			ResourceLocation particleTexture = bsp.modLoc("block/" + texture);
+
+			if (servings == 0) {
+				suffix = block.hasLeftovers ? "_leftover" : "_stage3";
+				particleTexture = bsp.modLoc("block/pan");
+			}
+
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models()
+							.withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix,
+									bsp.modLoc("curry_block" + suffix))
+							.texture("1", contentsTexture).texture("particle", particleTexture))
+					.rotationY(((int) state.getValue(RecipeFeastBlock.FACING).toYRot() + 180) % 360).build();
+		});
+	}
+
+	public static void recipeFeastBlock(BlockStateProvider bsp, RecipeFeastBlock block) {
+		recipeFeastBlock(bsp, block, ForgeRegistries.BLOCKS.getKey(block).getPath());
+	}
+
+	public static void recipeFeastBlock(BlockStateProvider bsp, RecipeFeastBlock block, String path) {
+		bsp.getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(FeastBlock.SERVINGS);
+
+			String suffix = "_stage" + (block.getMaxServings() - servings);
+
+			if (servings == 0) {
+				suffix = block.hasLeftovers ? "_leftover" : "_stage3";
+			}
+
+			return ConfiguredModel.builder()
+					.modelFile(new ModelFile.ExistingModelFile(
+							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + path + suffix),
+							bsp.models().existingFileHelper))
+					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
+		});
 	}
 
 	public static void itemModel(ItemModelProvider tmp) {
@@ -189,11 +236,10 @@ public class ButchercraftAddon {
 		forItem(tmp, OYAKODON, "oyakodon");
 		forItem(tmp, BBQ_SHREDDED_CHICKEN, "bbq_chicken_bowl");
 		forItem(tmp, BBQ_SHREDDED_CHICKEN_SANDWICH, "bbq_chicken_sandwich");
-		forBlockItem(tmp, BBQ_SHREDDED_CHICKEN_FEAST, "bbq_shredded_chicken_feast");
-		tmp.getBuilder(BBQ_SHREDDED_CHICKEN_BLOCK.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/pulled_pork_block_stage0")))
-				.texture("0", tmp.modLoc("block/bbq_chicken")).texture("1", tmp.modLoc("block/bbq_chicken2"))
-				.texture("particle", tmp.modLoc("block/bbq_chicken2"));
+//		forBlockItem(tmp, BBQ_SHREDDED_CHICKEN_FEAST, "bbq_shredded_chicken_feast");
+
+		tmp.getBuilder(BBQ_SHREDDED_CHICKEN_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/bbq_chicken_block_stage0")));
 
 		forItem(tmp, KARMINADLE, "karminadle");
 		forItem(tmp, HASENPFEFFER, "hasenpfeffer");
@@ -205,7 +251,9 @@ public class ButchercraftAddon {
 		forItem(tmp, CURRYWURST, "currywurst");
 		forItem(tmp, PASTA_ALLA_NORCINA, "pasta_alla_norcina");
 		forItem(tmp, MAC_CHEESE_HOT_DOG, "macaroni_cheese_sausage");
-		forBlockItem(tmp, MAC_CHEESE_HOT_DOG_FEAST, "mac_cheese_hot_dog_feast");
+
+		tmp.getBuilder(MAC_CHEESE_HOT_DOG_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/mac_cheese_hot_dog_block_stage0")));
 
 		forItem(tmp, SEXTUPLE_MEAT_TREAT, "sextuple_meat_treat");
 	}
@@ -221,7 +269,40 @@ public class ButchercraftAddon {
 	}
 
 	public static void engLoc(LanguageProvider lp) {
+		lp.add(GOAT_STEW_FEAST.get(), "Pot of Goat Stew");
 
+		lp.add(GOAT_STEW.get(), "Goat Stew");
+		lp.add(GOAT_STEW_RICE.get(), "Goat Stew with Rice");
+		lp.add(NASI_KEBULI.get(), "Nasi Kebuli");
+		lp.add(BHUTAN.get(), "Bhutan");
+
+		lp.add(CHICKEN_PATTY.get(), "Minced Chicken");
+		lp.add(COOKED_CHICKEN_PATTY.get(), "Chicken Patty");
+		lp.add(BREADED_CHICKEN_PATTY.get(), "Breaded Chicken Patty");
+		lp.add(CHICKEN_NUGGETS.get(), "Chicken Nuggets");
+		lp.add(CHICKEN_SALAD.get(), "Chicken Salad");
+		lp.add(CHICKEN_SALAD_SANDWICH.get(), "Chicken Salad Sandwich");
+		lp.add(CHICKEN_BOG.get(), "Chicken Bog");
+		lp.add(OYAKODON.get(), "Oyakodon");
+		lp.add(BBQ_SHREDDED_CHICKEN.get(), "Bowl of BBQ Shredded Chicken");
+		lp.add(BBQ_SHREDDED_CHICKEN_SANDWICH.get(), "BBQ Shredded Chicken Sandwich");
+
+		lp.add(BBQ_SHREDDED_CHICKEN_FEAST.get(), "BBQ Shredded Chicken");
+
+		lp.add(KARMINADLE.get(), "Karminadle");
+		lp.add(HASENPFEFFER.get(), "Hasenpfeffer");
+		lp.add(FRIED_RABBIT.get(), "Fried Rabbit");
+		lp.add(RABBIT_RAGU.get(), "Rabbit Ragu");
+
+		lp.add(BANGERS_MASH.get(), "Bangers and Mash");
+		lp.add(BRATWURST.get(), "Bratwurst");
+		lp.add(CURRYWURST.get(), "Currywurst");
+		lp.add(PASTA_ALLA_NORCINA.get(), "Pasta Alla Norcina");
+		lp.add(MAC_CHEESE_HOT_DOG.get(), "Mac and Cheese with Hotdogs");
+
+		lp.add(MAC_CHEESE_HOT_DOG_FEAST.get(), "Pot of Mac and Cheese with Hotdogs");
+
+		lp.add(SEXTUPLE_MEAT_TREAT.get(), "Sextuple Meat Treat");
 	}
 
 	public static void recipes(Consumer<FinishedRecipe> consumer) {

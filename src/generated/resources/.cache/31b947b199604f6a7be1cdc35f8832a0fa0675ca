@@ -1,4 +1,4 @@
-// 1.19.2	2024-03-27T13:53:17.9594534	Item Models: extradelight
+// 1.19.2	2024-03-28T11:51:59.7334881	Item Models: extradelight
 d6cec988d96345e08c89e0c2f114a2c1312de993 assets/extradelight/models/item/acacia_dried_corn_fence.json
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
@@ -50,8 +50,7 @@ c381b9708716edd5a5ca77346d1b2980ebd6a6ac assets/extradelight/models/item/bad_foo
 07b080703e3e5f49139a7d889e700c72470ecc2e assets/extradelight/models/item/bbq_ribs.json
 546d3a3287fb7f1a07ea7cd30cfa4ae236f78361 assets/extradelight/models/item/bbq_ribs_block_item.json
 13f8a01f9a033a57c65c37c8fd0dc76c42f2c185 assets/extradelight/models/item/bbq_shredded_chicken.json
-82b61afd6bb55a90cddf12c14d6c71a1803912ef assets/extradelight/models/item/bbq_shredded_chicken_block.json
-183317fa0009142ab26ef10fbe0240465142037c assets/extradelight/models/item/bbq_shredded_chicken_feast.json
+03b83e5f3fa03a7704b1d3968b8300fd6a378be9 assets/extradelight/models/item/bbq_shredded_chicken_feast.json
 37f0902251f4ede6c2afc185be112e29a06e5f7b assets/extradelight/models/item/bbq_shredded_chicken_sandwich.json
 00d773a0ef54b27d98078013e8d6101a7d4067c8 assets/extradelight/models/item/beef_stew_feast.json
 3474635f3b16b32cdd8b7483528e4e457985b9ef assets/extradelight/models/item/beef_stew_rice.json
@@ -500,7 +499,7 @@ e0b00204adba86c3a441f33c14dada9b52ae3f77 assets/extradelight/models/item/macaron
 a0f04c22e6a388c48ea272639ebc347e7ca52a57 assets/extradelight/models/item/macaroni_cheese.json
 ccfacccb3a24b6b3f91a4ab859f2b3e0b60043e4 assets/extradelight/models/item/macaroni_cheese_feast.json
 0c5290eff3388134e443f3378c003e100da8f071 assets/extradelight/models/item/mac_cheese_hot_dog.json
-330cde863e0f4eb167a5466a6bfccc69f773c952 assets/extradelight/models/item/mac_cheese_hot_dog_feast.json
+b2ae0bb35aab79b2abc997f77ba5340293edcb99 assets/extradelight/models/item/mac_cheese_hot_dog_feast.json
 3fe383e14e4d11fffa8716f7c9a4851581fb4683 assets/extradelight/models/item/mangrove_dried_corn_fence.json
 7f04bbf8abc60677c10afc826642f68e370bfb04 assets/extradelight/models/item/mangrove_half_cabinet.json
 cfc2e5a095a704356153f13dd46419a307d08264 assets/extradelight/models/item/mangrove_knife_block.json

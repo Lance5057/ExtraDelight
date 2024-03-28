@@ -1,4 +1,4 @@
-// 1.19.2	2024-03-27T13:09:38.3661133	LootTables
+// 1.19.2	2024-03-28T11:33:27.792364	LootTables
 6f2f14764aeccabb899ed56e1d8a8f0074aa0929 data/extradelight/loot_tables/blocks/acacia_dried_corn_fence.json
 2df5ce0c265b62e0751dfbde70e812a38a2bd169 data/extradelight/loot_tables/blocks/acacia_half_cabinet.json
 7747bac4a9ea01dff06964433ec737b240944275 data/extradelight/loot_tables/blocks/acacia_knife_block.json
@@ -26,8 +26,8 @@ e930810260badc4968bc74f2035186be0a6dde93 data/extradelight/loot_tables/blocks/ac
 2f4afebf93edbe0a8f9c7f29a200147706d33545 data/extradelight/loot_tables/blocks/apple_cookie_block.json
 01c1764ac07db3aaf53d4b71c11c229c5b981a15 data/extradelight/loot_tables/blocks/apple_crate.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/apple_crisp.json
+217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/bbq_chicken_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/bbq_ribs_block.json
-217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/bbq_shredded_chicken_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/beef_stew_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/extradelight/loot_tables/blocks/beef_wellington_block.json
 c94aff735eb037ca0894f6631526b8fca7ea98c9 data/extradelight/loot_tables/blocks/birch_dried_corn_fence.json

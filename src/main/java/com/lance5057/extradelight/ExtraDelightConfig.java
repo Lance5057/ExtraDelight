@@ -26,7 +26,7 @@ public class ExtraDelightConfig {
 		MINT_SPREAD = Builder.comment("Should mint spread?").define("shouldMintSpread", true);
 
 		MINT_SPREAD_RATE = Builder.comment("How fast should mint spread? (Higher number = Slower)")
-				.defineInRange("mintSpreadRate", 6, 1, 100);
+				.defineInRange("mintSpreadRate", 24, 1, 100);
 		Builder.pop();
 
 		spec = Builder.build();

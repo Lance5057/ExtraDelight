@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.addons.ButchercraftAddon;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
@@ -241,6 +242,7 @@ public class BlockModels extends BlockStateProvider {
 		recipeFeastBlock(ExtraDelightBlocks.PUNCH.get(), "punch");
 
 		AestheticBlocks.blockModel(this);
+		ButchercraftAddon.blockModel(this);
 	}
 
 	public void jellyBlock(FeastBlock block, String color) {
