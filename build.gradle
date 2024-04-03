@@ -95,7 +95,7 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.3.7'
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	implementation fg.deobf("curse.maven:farmersdelight-398521:4679318")
-	implementation fg.deobf("curse.maven:butchercraft-265715:5211060")
+	implementation fg.deobf("curse.maven:butchercraft-265715:5233030")
 
     // compile against the JEI API but do not include it at runtime
 	compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
