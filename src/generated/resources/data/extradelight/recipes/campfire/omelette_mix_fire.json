@@ -1,0 +1,9 @@
+{
+  "type": "extradelight:dynamic_campfire",
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:omelette_mix"
+  },
+  "result": "extradelight:omelette"
+}

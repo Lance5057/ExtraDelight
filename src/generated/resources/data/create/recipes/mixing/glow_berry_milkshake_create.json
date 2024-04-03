@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:glow_berry_milkshake"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 4,
+  "ingredient": {
+    "type": "forge:difference",
+    "base": {
+      "tag": "forge:seeds"
+    },
+    "subtracted": [
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "extradelight:corn_seeds"
+      }
+    ]
+  },
+  "result": {
+    "item": "extradelight:cooking_oil"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:cheese_sandwich"
+  },
+  "result": "extradelight:grilled_cheese"
+}

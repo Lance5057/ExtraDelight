@@ -1,0 +1,97 @@
+{
+  "structures": [
+    {
+      "structure": "extradelight:hauntedhouse",
+      "weight": 1
+    },
+    {
+      "structure": "extradelight:barn",
+      "weight": 1
+    },
+    {
+      "structure": "extradelight:camp1",
+      "weight": 5
+    },
+    {
+      "structure": "extradelight:camp2",
+      "weight": 5
+    },
+    {
+      "structure": "extradelight:doll_circle",
+      "weight": 25
+    },
+    {
+      "structure": "extradelight:doll_circle1",
+      "weight": 25
+    },
+    {
+      "structure": "extradelight:doll_circle2",
+      "weight": 25
+    },
+    {
+      "structure": "extradelight:doll_circle3",
+      "weight": 25
+    },
+    {
+      "structure": "extradelight:doll_circle4",
+      "weight": 25
+    },
+    {
+      "structure": "extradelight:fountain",
+      "weight": 5
+    },
+    {
+      "structure": "extradelight:pumpkin_pile1",
+      "weight": 100
+    },
+    {
+      "structure": "extradelight:pumpkin_patch2",
+      "weight": 100
+    },
+    {
+      "structure": "extradelight:pumpkin_patch4",
+      "weight": 100
+    },
+    {
+      "structure": "extradelight:pumpkin_patch5",
+      "weight": 100
+    },
+    {
+      "structure": "extradelight:sacrifice",
+      "weight": 1
+    },
+    {
+      "structure": "extradelight:sacrifice2",
+      "weight": 1
+    },
+    {
+      "structure": "extradelight:sign",
+      "weight": 1
+    },
+    {
+      "structure": "extradelight:table1",
+      "weight": 25
+    },
+    {
+      "structure": "extradelight:table2",
+      "weight": 25
+    },
+    {
+      "structure": "extradelight:table3",
+      "weight": 25
+    },
+    {
+      "structure": "extradelight:table4",
+      "weight": 25
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1426250756,
+    "frequency_reduction_method": "default",
+    "frequency": 1,
+    "spread_type": "linear",
+    "spacing": 15,
+    "separation": 5
+  }
+}

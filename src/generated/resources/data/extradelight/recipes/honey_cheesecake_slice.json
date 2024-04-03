@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "f": {
+      "item": "extradelight:honey_cheesecake_slice"
+    }
+  },
+  "pattern": [
+    "ff ",
+    "ff "
+  ],
+  "result": {
+    "item": "extradelight:honey_cheesecake"
+  }
+}

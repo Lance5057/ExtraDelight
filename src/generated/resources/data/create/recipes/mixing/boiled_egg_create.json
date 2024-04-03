@@ -1,0 +1,14 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:eggs"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:boiled_egg"
+    }
+  ]
+}

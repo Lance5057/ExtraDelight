@@ -1,0 +1,36 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:raw_sugar_cookie_sword"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_sword"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_sword"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_sword"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_sword"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_sword"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_sword"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 7,
+    "item": "extradelight:sugar_cookie_sword"
+  }
+}

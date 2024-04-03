@@ -1,0 +1,28 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "cutout",
+	"textures": {
+		"0": "extradelight:block/crops/corn/corn_1",
+		"particle": "extradelight:block/crops/corn/corn_1"
+	},
+	"elements": [
+		{
+			"from": [7, -1, 8],
+			"to": [9, 4, 8],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 5], "texture": "#0"},
+				"south": {"uv": [2, 0, 0, 5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 0, 7],
+			"to": [8, 5, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2.5, 8]},
+			"faces": {
+				"east": {"uv": [2, 0, 0, 5], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 5], "texture": "#0"}
+			}
+		}
+	]
+}

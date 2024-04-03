@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:meat/ribs/raw"
+    },
+    {
+      "tag": "forge:meat/ribs/raw"
+    },
+    {
+      "tag": "forge:meat/ribs/raw"
+    },
+    {
+      "tag": "forge:meat/ribs/raw"
+    },
+    {
+      "item": "extradelight:bbq_jar_item"
+    }
+  ],
+  "result": {
+    "item": "extradelight:bbq_ribs_block_item"
+  }
+}

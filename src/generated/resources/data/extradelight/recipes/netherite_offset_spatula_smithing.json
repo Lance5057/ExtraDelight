@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "base": {
+    "item": "extradelight:offset_spatula_diamond"
+  },
+  "result": {
+    "item": "extradelight:offset_spatula_netherite"
+  }
+}

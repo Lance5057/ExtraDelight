@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:raw_chicken"
+    },
+    {
+      "item": "extradelight:curry_powder"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
+      "tag": "forge:crops/onion"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:curry_feast"
+    }
+  ]
+}

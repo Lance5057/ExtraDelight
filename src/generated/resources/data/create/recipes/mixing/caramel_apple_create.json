@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "extradelight:caramel_sauce"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:caramel_apple"
+    }
+  ]
+}

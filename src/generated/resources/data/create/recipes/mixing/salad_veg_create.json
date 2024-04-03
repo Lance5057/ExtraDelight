@@ -1,0 +1,37 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:crops/cabbage"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/carrot"
+    },
+    {
+      "item": "extradelight:croutons"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:vinegar"
+    },
+    {
+      "tag": "forge:eggs/boiled"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:salad_block_item"
+    }
+  ]
+}

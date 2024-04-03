@@ -1,0 +1,8 @@
+{
+  "type": "extradelight:feast",
+  "block": "extradelight:pulled_pork_block_item",
+  "ingredient": {
+    "tag": "forge:bread/sliced"
+  },
+  "result": "extradelight:pulled_pork_sandwich"
+}

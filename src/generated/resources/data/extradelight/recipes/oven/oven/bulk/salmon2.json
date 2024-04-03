@@ -1,0 +1,21 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:salmon"
+    },
+    {
+      "item": "minecraft:salmon"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 2,
+    "item": "minecraft:cooked_salmon"
+  }
+}

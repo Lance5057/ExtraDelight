@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:ginger/sliced"
+    },
+    {
+      "tag": "forge:vinegar"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "item": "extradelight:pickled_ginger"
+    }
+  ]
+}

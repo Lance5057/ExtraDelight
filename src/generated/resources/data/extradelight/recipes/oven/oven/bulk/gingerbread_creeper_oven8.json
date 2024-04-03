@@ -1,0 +1,39 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:raw_gingerbread_creeper"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_creeper"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_creeper"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_creeper"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_creeper"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_creeper"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_creeper"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_creeper"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 8,
+    "item": "extradelight:gingerbread_creeper"
+  }
+}

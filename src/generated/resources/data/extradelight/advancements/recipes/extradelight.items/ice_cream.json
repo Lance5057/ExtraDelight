@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/ice_cream"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:ice_cream"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "ice_cream",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/ice_cream"
+    ]
+  }
+}

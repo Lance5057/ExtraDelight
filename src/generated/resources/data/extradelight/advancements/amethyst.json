@@ -1,0 +1,52 @@
+{
+  "parent": "extradelight:mortar",
+  "criteria": {
+    "amethyst_mortar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:mortar_amethyst"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "amethyst_pestle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pestle_amethyst"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.amethyst.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "extradelight:mortar_amethyst"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.amethyst.name"
+    }
+  },
+  "requirements": [
+    [
+      "amethyst_mortar"
+    ],
+    [
+      "amethyst_pestle"
+    ]
+  ]
+}

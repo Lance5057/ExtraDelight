@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:macaroni"
+    },
+    {
+      "item": "extradelight:macaroni"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:macaroni_cheese_feast"
+    }
+  ]
+}

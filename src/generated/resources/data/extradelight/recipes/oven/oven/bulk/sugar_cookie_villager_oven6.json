@@ -1,0 +1,33 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:raw_sugar_cookie_villager"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_villager"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_villager"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_villager"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_villager"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_villager"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 6,
+    "item": "extradelight:sugar_cookie_villager"
+  }
+}

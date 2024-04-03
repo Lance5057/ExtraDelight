@@ -1,0 +1,21 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:cookie_dough/sugar"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    }
+  ],
+  "result": {
+    "item": "extradelight:apple_cookie_dough"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "item": "minecraft:air"
+  }
+}

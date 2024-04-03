@@ -1,0 +1,8 @@
+{
+  "type": "extradelight:dough_shaping",
+  "count": 8,
+  "ingredient": {
+    "tag": "forge:cookie_dough/sugar"
+  },
+  "result": "extradelight:raw_sugar_cookie_pickaxe"
+}

@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:heart"
+    },
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "tag": "forge:bread/crumbs"
+    },
+    {
+      "tag": "forge:vegetables/onion"
+    },
+    {
+      "item": "minecraft:egg"
+    }
+  ],
+  "result": {
+    "item": "extradelight:stuffed_heart"
+  }
+}

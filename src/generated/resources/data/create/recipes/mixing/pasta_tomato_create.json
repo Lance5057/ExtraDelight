@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "item": "farmersdelight:raw_pasta"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:pasta_tomato"
+    }
+  ]
+}

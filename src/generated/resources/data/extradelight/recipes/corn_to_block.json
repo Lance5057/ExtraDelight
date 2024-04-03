@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extradelight:corn_on_cob"
+    },
+    {
+      "item": "extradelight:corn_on_cob"
+    },
+    {
+      "item": "extradelight:corn_on_cob"
+    },
+    {
+      "item": "extradelight:corn_on_cob"
+    },
+    {
+      "item": "extradelight:corn_on_cob"
+    },
+    {
+      "item": "extradelight:corn_on_cob"
+    },
+    {
+      "item": "extradelight:corn_on_cob"
+    },
+    {
+      "item": "extradelight:corn_on_cob"
+    },
+    {
+      "item": "extradelight:corn_on_cob"
+    }
+  ],
+  "result": {
+    "item": "extradelight:corn_crate"
+  }
+}

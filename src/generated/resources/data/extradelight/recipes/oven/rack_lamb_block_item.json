@@ -1,0 +1,41 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "tag": "forge:vegetables/onion"
+    },
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:rack_lamb_block_item"
+  }
+}

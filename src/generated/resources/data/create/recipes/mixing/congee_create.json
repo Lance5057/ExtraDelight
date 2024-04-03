@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:grain/rice"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:congee"
+    }
+  ]
+}

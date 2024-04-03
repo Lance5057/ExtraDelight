@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:apple_fritters"
+    }
+  ]
+}

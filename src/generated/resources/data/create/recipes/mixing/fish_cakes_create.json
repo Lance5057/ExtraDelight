@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:cooked_fishes"
+    },
+    {
+      "tag": "forge:crops/onion"
+    },
+    {
+      "item": "extradelight:grated_potato"
+    },
+    {
+      "item": "extradelight:breading_misanplas"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "item": "extradelight:fish_cakes"
+    }
+  ]
+}

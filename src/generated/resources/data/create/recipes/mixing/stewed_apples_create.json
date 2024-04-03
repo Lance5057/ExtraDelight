@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:stewed_apples"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:mutton_chops"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersdelight:cooked_mutton_chops"
+  }
+}

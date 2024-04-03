@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "item": "farmersdelight:raw_pasta"
+    },
+    {
+      "item": "farmersdelight:beef_patty"
+    }
+  ],
+  "results": [
+    {
+      "item": "farmersdelight:pasta_with_meatballs"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:raw_gingerbread_sword"
+  },
+  "result": "extradelight:gingerbread_sword"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:loaf_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:dough"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "minecraft:bread"
+  }
+}

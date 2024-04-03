@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "b": {
+      "item": "minecraft:bowl"
+    },
+    "c": {
+      "item": "extradelight:crackers"
+    },
+    "h": {
+      "tag": "forge:cheese"
+    },
+    "m": {
+      "tag": "forge:meat/cooked"
+    }
+  },
+  "pattern": [
+    "cmh",
+    "cmh",
+    " b "
+  ],
+  "result": {
+    "item": "extradelight:charcuterie_board_feast"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "extradelight:potato_sticks"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    }
+  ],
+  "result": {
+    "item": "extradelight:french_fries"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:kelp"
+    },
+    {
+      "item": "minecraft:kelp"
+    },
+    {
+      "tag": "forge:carrot/grated"
+    },
+    {
+      "tag": "forge:vinegar"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:seaweed_salad"
+    }
+  ]
+}

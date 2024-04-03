@@ -1,0 +1,35 @@
+{
+  "parent": "extradelight:mortar",
+  "criteria": {
+    "flour": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:flour"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.flour.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:flour"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.flour.name"
+    }
+  },
+  "requirements": [
+    [
+      "flour"
+    ]
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "parent": "extradelight:spoon",
+  "criteria": {
+    "mixingbowl": {
+      "conditions": {
+        "item": {
+          "tag": "forge:spoons"
+        },
+        "location": {
+          "block": {
+            "blocks": [
+              "extradelight:mixing_bowl"
+            ]
+          }
+        }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.mixingbowl.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:mixing_bowl"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.mixingbowl.name"
+    }
+  },
+  "requirements": [
+    [
+      "mixingbowl"
+    ]
+  ]
+}

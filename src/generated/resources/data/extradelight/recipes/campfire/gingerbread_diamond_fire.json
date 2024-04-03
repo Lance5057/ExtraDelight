@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:raw_gingerbread_diamond"
+  },
+  "result": "extradelight:gingerbread_diamond"
+}

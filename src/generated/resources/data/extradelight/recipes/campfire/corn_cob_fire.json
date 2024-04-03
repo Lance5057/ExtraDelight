@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 1.0,
+  "ingredient": {
+    "tag": "forge:crops/corn"
+  },
+  "result": "extradelight:grilled_corn_on_cob"
+}

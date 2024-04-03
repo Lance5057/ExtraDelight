@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/green"
+    },
+    {
+      "item": "minecraft:warped_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:warped_molded_green_wallpaper"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:muffin_tin"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 6,
+    "item": "extradelight:muffin_cinnamon"
+  }
+}

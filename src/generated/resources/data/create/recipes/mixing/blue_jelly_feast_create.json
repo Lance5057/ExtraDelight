@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/blue"
+    },
+    {
+      "tag": "forge:gelatin"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:jelly_blue_block_item"
+    }
+  ]
+}

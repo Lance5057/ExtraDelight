@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extradelight:acacia_half_cabinet"
+    }
+  ],
+  "result": {
+    "item": "farmersdelight:acacia_cabinet"
+  }
+}

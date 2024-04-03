@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:seaweed_crisps"
+    }
+  ]
+}

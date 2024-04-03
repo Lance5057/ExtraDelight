@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "s": {
+      "item": "minecraft:andesite"
+    }
+  },
+  "pattern": [
+    "s s",
+    " s "
+  ],
+  "result": {
+    "item": "extradelight:mortar_andesite"
+  }
+}

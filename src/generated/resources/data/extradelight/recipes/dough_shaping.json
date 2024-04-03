@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "tag": "minecraft:planks"
+    },
+    {
+      "tag": "forge:flour"
+    }
+  ],
+  "result": {
+    "item": "extradelight:dough_shaping"
+  }
+}

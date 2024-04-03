@@ -1,0 +1,27 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "tag": "forge:crops/onion"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:fish_soup"
+    }
+  ]
+}

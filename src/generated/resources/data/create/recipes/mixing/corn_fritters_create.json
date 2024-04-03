@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_corn"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:corn_fritters"
+    }
+  ]
+}

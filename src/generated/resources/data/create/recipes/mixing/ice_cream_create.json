@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "minecraft:ice"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:ice_cream"
+    }
+  ]
+}

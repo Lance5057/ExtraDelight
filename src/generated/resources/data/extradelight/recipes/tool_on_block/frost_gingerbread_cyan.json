@@ -1,0 +1,8 @@
+{
+  "type": "extradelight:tool_on_block",
+  "blockIn": "extradelight:gingerbread_cookie_block_item",
+  "blockOut": "extradelight:gingerbread_block_cyan",
+  "ingredient": {
+    "tag": "forge:frosting/cyan"
+  }
+}

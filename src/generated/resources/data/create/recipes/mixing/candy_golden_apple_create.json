@@ -1,0 +1,20 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "tag": "forge:candy"
+    },
+    {
+      "tag": "forge:candy"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:candy_golden_apple"
+    }
+  ]
+}

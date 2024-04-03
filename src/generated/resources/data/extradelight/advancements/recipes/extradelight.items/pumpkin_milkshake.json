@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/pumpkin_milkshake"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pumpkin_milkshake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pumpkin_milkshake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "pumpkin_milkshake",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/pumpkin_milkshake"
+    ]
+  }
+}

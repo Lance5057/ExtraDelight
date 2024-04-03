@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "i": {
+      "item": "minecraft:stick"
+    },
+    "s": {
+      "item": "minecraft:granite"
+    }
+  },
+  "pattern": [
+    "s  ",
+    " i "
+  ],
+  "result": {
+    "item": "extradelight:pestle_granite"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/blue"
+    },
+    {
+      "item": "minecraft:crimson_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:crimson_molded_blue_wallpaper"
+  }
+}

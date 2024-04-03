@@ -1,0 +1,9 @@
+{
+  "type": "extradelight:drying_rack",
+  "cookingtime": 1000,
+  "experience": 10.0,
+  "ingredient": {
+    "item": "minecraft:kelp"
+  },
+  "result": "minecraft:dried_kelp"
+}

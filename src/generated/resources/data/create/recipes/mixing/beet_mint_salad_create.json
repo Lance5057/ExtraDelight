@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "tag": "forge:mint"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:vinegar"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:beet_mint_salad"
+    }
+  ]
+}

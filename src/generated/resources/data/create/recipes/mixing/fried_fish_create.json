@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "item": "extradelight:breading_misanplas"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:fried_fish"
+    }
+  ]
+}

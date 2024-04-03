@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:air"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "item": "extradelight:breading_misanplas"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:fried_mushrooms"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:dyes/yellow"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "item": "extradelight:candy_yellow"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 100,
+  "experience": 0.15,
+  "ingredients": [
+    {
+      "tag": "forge:pasta/raw_pasta"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cooked_pasta"
+  }
+}

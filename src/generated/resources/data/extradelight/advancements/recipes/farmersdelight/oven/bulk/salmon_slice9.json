@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:oven/bulk/salmon_slice9"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "salmon_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:tray"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "salmon_slice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:oven/bulk/salmon_slice9"
+    ]
+  }
+}

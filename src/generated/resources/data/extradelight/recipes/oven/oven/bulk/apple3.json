@@ -1,0 +1,24 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 3,
+    "item": "extradelight:roasted_apple"
+  }
+}

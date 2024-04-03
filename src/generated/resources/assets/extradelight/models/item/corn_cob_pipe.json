@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:item/corncob_pipe",
+  "textures": {
+    "1": "extradelight:item/corncob_pipe"
+  }
+}

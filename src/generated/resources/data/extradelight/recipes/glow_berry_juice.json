@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "forge:fruit/glow_berry"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "item": "extradelight:glow_berry_juice"
+  }
+}

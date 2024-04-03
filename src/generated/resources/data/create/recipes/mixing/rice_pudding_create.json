@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:grain/rice"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:rice_pudding"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:pasta/raw_pasta"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:cooked_pasta"
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "parent": "extradelight:jelly",
+  "criteria": {
+    "jellyall_black": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_black_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_blue_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_brown": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_brown_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_cyan": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_cyan_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_green": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_green_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_grey": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_grey_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_light_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_light_blue_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_light_grey": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_light_grey_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_lime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_lime_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_magenta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_magenta_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_orange_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_pink": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_pink_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_purple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_purple_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_red": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_red_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_white": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_white_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jellyall_yellow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jelly_yellow_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.jellyall.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "extradelight:jelly_magenta"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.jellyall.name"
+    }
+  },
+  "requirements": [
+    [
+      "jellyall_white"
+    ],
+    [
+      "jellyall_orange"
+    ],
+    [
+      "jellyall_magenta"
+    ],
+    [
+      "jellyall_light_blue"
+    ],
+    [
+      "jellyall_yellow"
+    ],
+    [
+      "jellyall_lime"
+    ],
+    [
+      "jellyall_pink"
+    ],
+    [
+      "jellyall_grey"
+    ],
+    [
+      "jellyall_light_grey"
+    ],
+    [
+      "jellyall_cyan"
+    ],
+    [
+      "jellyall_purple"
+    ],
+    [
+      "jellyall_blue"
+    ],
+    [
+      "jellyall_brown"
+    ],
+    [
+      "jellyall_green"
+    ],
+    [
+      "jellyall_red"
+    ],
+    [
+      "jellyall_black"
+    ]
+  ]
+}

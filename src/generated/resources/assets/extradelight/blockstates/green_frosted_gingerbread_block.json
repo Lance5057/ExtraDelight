@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "style=0": {
+      "model": "extradelight:block/gingerbread_block_creeper_green"
+    },
+    "style=1": {
+      "model": "extradelight:block/gingerbread_block_cross_green"
+    },
+    "style=10": {
+      "model": "extradelight:block/gingerbread_block_wither_green"
+    },
+    "style=2": {
+      "model": "extradelight:block/gingerbread_block_eye_green"
+    },
+    "style=3": {
+      "model": "extradelight:block/gingerbread_block_piglin_green"
+    },
+    "style=4": {
+      "model": "extradelight:block/gingerbread_block_shingle_green"
+    },
+    "style=5": {
+      "model": "extradelight:block/gingerbread_block_skeleton_green"
+    },
+    "style=6": {
+      "model": "extradelight:block/gingerbread_block_snow_green"
+    },
+    "style=7": {
+      "model": "extradelight:block/gingerbread_block_snow_trim_green"
+    },
+    "style=8": {
+      "model": "extradelight:block/gingerbread_block_swirl_green"
+    },
+    "style=9": {
+      "model": "extradelight:block/gingerbread_block_trim_green"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "l": {
+      "item": "minecraft:acacia_leaves"
+    }
+  },
+  "pattern": [
+    " l ",
+    "l l",
+    " l "
+  ],
+  "result": {
+    "item": "extradelight:acacia_wreath"
+  }
+}

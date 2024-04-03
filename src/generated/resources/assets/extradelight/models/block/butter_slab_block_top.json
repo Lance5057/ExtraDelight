@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "extradelight:block/butter_block",
+    "side": "extradelight:block/butter_slab",
+    "top": "extradelight:block/butter_block"
+  }
+}

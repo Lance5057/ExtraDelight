@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:grain/rice"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:horchata"
+    }
+  ]
+}

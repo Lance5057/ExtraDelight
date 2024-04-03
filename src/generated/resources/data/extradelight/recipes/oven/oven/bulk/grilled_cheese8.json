@@ -1,0 +1,39 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:cheese_sandwich"
+    },
+    {
+      "item": "extradelight:cheese_sandwich"
+    },
+    {
+      "item": "extradelight:cheese_sandwich"
+    },
+    {
+      "item": "extradelight:cheese_sandwich"
+    },
+    {
+      "item": "extradelight:cheese_sandwich"
+    },
+    {
+      "item": "extradelight:cheese_sandwich"
+    },
+    {
+      "item": "extradelight:cheese_sandwich"
+    },
+    {
+      "item": "extradelight:cheese_sandwich"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 8,
+    "item": "extradelight:grilled_cheese"
+  }
+}

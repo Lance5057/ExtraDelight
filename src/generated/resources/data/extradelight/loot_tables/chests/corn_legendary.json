@@ -1,0 +1,82 @@
+{
+  "type": "minecraft:empty",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:butter_block_item"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:corn_crate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cornbread_feast"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:corn_pudding_feast"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:candy_golden_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:caramel_golden_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:dried_corn_husk_bundle"
+        }
+      ],
+      "name": "main",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 4.0,
+        "min": 2.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:caramel_candy"
+        }
+      ],
+      "name": "candy",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 10.0,
+        "min": 5.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_block"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_apple"
+        }
+      ],
+      "name": "better",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 4.0,
+        "min": 2.0
+      }
+    }
+  ]
+}

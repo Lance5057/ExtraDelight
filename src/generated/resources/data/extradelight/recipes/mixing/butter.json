@@ -1,0 +1,15 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:whipped_cream"
+    }
+  ],
+  "result": {
+    "item": "extradelight:butter"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "item": "minecraft:air"
+  }
+}

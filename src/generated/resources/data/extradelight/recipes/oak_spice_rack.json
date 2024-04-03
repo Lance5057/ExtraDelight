@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "b": {
+      "item": "minecraft:iron_bars"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "w": {
+      "item": "minecraft:oak_slab"
+    }
+  },
+  "pattern": [
+    "wsw",
+    "b b"
+  ],
+  "result": {
+    "item": "extradelight:oak_spice_rack"
+  }
+}

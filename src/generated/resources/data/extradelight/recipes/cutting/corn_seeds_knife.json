@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:corn_on_cob"
+    }
+  ],
+  "result": [
+    {
+      "item": "extradelight:corn_seeds"
+    },
+    {
+      "item": "extradelight:corn_cob"
+    },
+    {
+      "chance": 0.75,
+      "item": "extradelight:corn_seeds"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

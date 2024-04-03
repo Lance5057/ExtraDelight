@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:meat/raw"
+    },
+    {
+      "tag": "forge:meat/raw"
+    },
+    {
+      "tag": "forge:vegetables"
+    },
+    {
+      "tag": "forge:vegetables"
+    },
+    {
+      "tag": "forge:vegetables"
+    },
+    {
+      "tag": "forge:vegetables"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:stirfry_block_item"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:cooked_fishes"
+    },
+    {
+      "tag": "forge:cooked_fishes"
+    },
+    {
+      "tag": "forge:condiments/mayonnaise"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:fish_salad"
+    }
+  ]
+}

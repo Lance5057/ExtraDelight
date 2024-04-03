@@ -1,0 +1,27 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_cactus"
+    },
+    {
+      "item": "extradelight:cooked_cactus"
+    },
+    {
+      "tag": "extradelight:processed/tomato"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:cactus_soup"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "type": "extradelight:dough_shaping",
+  "count": 1,
+  "ingredient": {
+    "tag": "forge:dough"
+  },
+  "result": "farmersdelight:raw_pasta"
+}

@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/cyan"
+    },
+    {
+      "tag": "forge:gelatin"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:jelly_cyan_block_item"
+    }
+  ]
+}

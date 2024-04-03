@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "extradelight:gravy_boat_item"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:mashed_potato_gravy_block_item"
+    }
+  ]
+}

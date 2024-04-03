@@ -1,0 +1,106 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:mutton/ground/cooked"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "extradelight:oven",
+        "container": {
+          "item": "extradelight:square_pan"
+        },
+        "cookingtime": 1600,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "item": "minecraft:baked_potato"
+          },
+          {
+            "item": "farmersdelight:bone_broth"
+          },
+          {
+            "item": "minecraft:baked_potato"
+          },
+          {
+            "tag": "forge:mutton/ground/cooked"
+          },
+          {
+            "tag": "extradelight:processed/carrot"
+          },
+          {
+            "tag": "forge:mutton/ground/cooked"
+          },
+          {
+            "tag": "forge:flour"
+          },
+          {
+            "item": "farmersdelight:tomato_sauce"
+          },
+          {
+            "tag": "extradelight:processed/onion"
+          }
+        ],
+        "recipe_book_tab": "meals",
+        "result": {
+          "item": "farmersdelight:shepherds_pie_block"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:mutton/ground/cooked"
+        }
+      ],
+      "recipe": {
+        "type": "extradelight:oven",
+        "container": {
+          "item": "extradelight:square_pan"
+        },
+        "cookingtime": 1600,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "item": "minecraft:baked_potato"
+          },
+          {
+            "item": "farmersdelight:bone_broth"
+          },
+          {
+            "item": "minecraft:baked_potato"
+          },
+          {
+            "tag": "forge:cooked_mutton"
+          },
+          {
+            "tag": "forge:flour"
+          },
+          {
+            "tag": "forge:cooked_mutton"
+          },
+          {
+            "tag": "extradelight:processed/carrot"
+          },
+          {
+            "tag": "forge:butter"
+          },
+          {
+            "tag": "extradelight:processed/onion"
+          }
+        ],
+        "recipe_book_tab": "meals",
+        "result": {
+          "item": "farmersdelight:shepherds_pie_block"
+        }
+      }
+    }
+  ]
+}

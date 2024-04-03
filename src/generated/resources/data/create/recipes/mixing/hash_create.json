@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:grated_potato"
+    },
+    {
+      "item": "extradelight:grated_potato"
+    },
+    {
+      "tag": "forge:crops/onion"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    },
+    {
+      "tag": "forge:meat"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:hash_block_item"
+    }
+  ]
+}

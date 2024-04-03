@@ -1,0 +1,20 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/ginger"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:yeast"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:ginger_beer"
+    }
+  ]
+}

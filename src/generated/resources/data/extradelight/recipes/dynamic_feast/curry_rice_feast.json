@@ -1,0 +1,8 @@
+{
+  "type": "extradelight:feast",
+  "block": "extradelight:curry_feast",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "result": "extradelight:curry_rice"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:caramel_sauce"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:caramel_candy"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:mint"
+    },
+    {
+      "tag": "forge:mint"
+    },
+    {
+      "tag": "forge:mint"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:mint_jelly"
+    }
+  ]
+}

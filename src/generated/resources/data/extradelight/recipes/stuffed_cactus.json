@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:air"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_cactus"
+    },
+    {
+      "item": "extradelight:cooked_cactus"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "item": "extradelight:breading_misanplas"
+    }
+  ],
+  "result": {
+    "item": "extradelight:stuffed_cactus"
+  }
+}

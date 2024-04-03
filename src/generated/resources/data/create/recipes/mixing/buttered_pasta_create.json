@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_pasta"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:buttered_pasta"
+    }
+  ]
+}

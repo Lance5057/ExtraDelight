@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "extradelight:makes_stock"
+    },
+    {
+      "item": "minecraft:bone"
+    }
+  ],
+  "results": [
+    {
+      "item": "farmersdelight:bone_broth"
+    }
+  ]
+}

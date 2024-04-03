@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "s": {
+      "item": "extradelight:cinnamon_slab"
+    },
+    "t": {
+      "item": "extradelight:cinnamon_trapdoor"
+    }
+  },
+  "pattern": [
+    "sss",
+    "t t",
+    "sss"
+  ],
+  "result": {
+    "item": "extradelight:cinnamon_cabinet"
+  }
+}

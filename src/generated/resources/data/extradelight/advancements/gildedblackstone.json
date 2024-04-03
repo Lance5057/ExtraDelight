@@ -1,0 +1,52 @@
+{
+  "parent": "extradelight:mortar",
+  "criteria": {
+    "gildedblackstone_mortar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:mortar_gilded_blackstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gildedblackstone_pestle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pestle_gilded_blackstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.gildedblackstone.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "extradelight:mortar_gilded_blackstone"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.gildedblackstone.name"
+    }
+  },
+  "requirements": [
+    [
+      "gildedblackstone_mortar"
+    ],
+    [
+      "gildedblackstone_pestle"
+    ]
+  ]
+}

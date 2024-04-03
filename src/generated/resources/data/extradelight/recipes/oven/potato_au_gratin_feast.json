@@ -1,0 +1,35 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:square_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:potato/sliced"
+    },
+    {
+      "tag": "forge:potato/sliced"
+    },
+    {
+      "tag": "forge:potato/sliced"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:potato_au_gratin_feast"
+  }
+}

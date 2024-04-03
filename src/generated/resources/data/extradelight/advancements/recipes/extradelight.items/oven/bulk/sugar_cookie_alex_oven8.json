@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:oven/bulk/sugar_cookie_alex_oven8"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "sugar_cookie_alex_oven": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sheet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "sugar_cookie_alex_oven",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:oven/bulk/sugar_cookie_alex_oven8"
+    ]
+  }
+}

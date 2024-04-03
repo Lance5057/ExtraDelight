@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:air"
+  },
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:eggs"
+    }
+  ],
+  "result": {
+    "item": "extradelight:boiled_egg"
+  }
+}

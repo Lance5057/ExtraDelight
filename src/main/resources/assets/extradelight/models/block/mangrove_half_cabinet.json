@@ -1,0 +1,9 @@
+{
+  "parent": "extradelight:block/half_cabinet",
+  "textures": {
+    "0": "farmersdelight:block/mangrove_cabinet_front",
+    "1": "farmersdelight:block/mangrove_cabinet_side",
+    "2": "farmersdelight:block/mangrove_cabinet_top",
+    "particle": "farmersdelight:block/mangrove_cabinet_front"
+  }
+}

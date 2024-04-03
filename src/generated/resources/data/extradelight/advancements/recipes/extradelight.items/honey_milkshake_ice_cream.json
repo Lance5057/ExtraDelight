@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/honey_milkshake_ice_cream"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "honey_milkshake_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:honey_milkshake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "honey_milkshake_ice_cream",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/honey_milkshake_ice_cream"
+    ]
+  }
+}

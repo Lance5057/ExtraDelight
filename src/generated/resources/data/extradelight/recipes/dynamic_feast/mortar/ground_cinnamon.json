@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 4,
+  "ingredient": {
+    "tag": "forge:cinnamon/stick"
+  },
+  "result": {
+    "count": 2,
+    "item": "extradelight:ground_cinnamon"
+  }
+}

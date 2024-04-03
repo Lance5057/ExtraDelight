@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "tag": "forge:mint"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:mint_chip_milkshake"
+    }
+  ]
+}

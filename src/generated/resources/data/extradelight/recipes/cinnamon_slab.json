@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "p": {
+      "item": "extradelight:cinnamon_planks"
+    }
+  },
+  "pattern": [
+    "ppp"
+  ],
+  "result": {
+    "count": 6,
+    "item": "extradelight:cinnamon_slab"
+  }
+}

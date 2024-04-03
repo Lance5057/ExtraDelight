@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:oven/bulk/potato5"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sheet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "potato",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:oven/bulk/potato5"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "extradelight:block/raw_cinnamon_block_top",
+    "side": "extradelight:block/raw_cinnamon_block_sides",
+    "top": "extradelight:block/raw_cinnamon_block_top"
+  }
+}

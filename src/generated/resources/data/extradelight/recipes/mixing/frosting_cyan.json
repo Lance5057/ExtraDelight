@@ -1,0 +1,25 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:whipped_cream"
+    },
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:dyes/cyan"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:frosting_cyan"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "item": "minecraft:air"
+  }
+}

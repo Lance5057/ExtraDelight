@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:milk_tart_feast"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "extradelight:milk_tart_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

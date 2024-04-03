@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:sliced_potato"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:potato_chips"
+    }
+  ]
+}

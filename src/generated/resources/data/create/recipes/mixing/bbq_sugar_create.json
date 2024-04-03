@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:vegetables/tomato"
+    },
+    {
+      "tag": "forge:vegetables/onion"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:vinegar"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:bbq_jar_item"
+    }
+  ]
+}

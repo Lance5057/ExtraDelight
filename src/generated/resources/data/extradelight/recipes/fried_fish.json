@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "item": "extradelight:breading_misanplas"
+    }
+  ],
+  "result": {
+    "item": "extradelight:fried_fish"
+  }
+}

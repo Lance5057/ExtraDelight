@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:caramel_cheesecake_item"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "extradelight:caramel_cheescake_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:corn_seeds"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:cooked_corn"
+    }
+  ]
+}

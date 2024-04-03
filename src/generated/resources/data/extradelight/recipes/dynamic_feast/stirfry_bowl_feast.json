@@ -1,0 +1,8 @@
+{
+  "type": "extradelight:feast",
+  "block": "extradelight:stirfry_block_item",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "result": "extradelight:stirfry"
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/wheat_dough_egg"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "wheat_dough_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "farmersdelight:wheat_dough"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "wheat_dough_egg",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/wheat_dough_egg"
+    ]
+  }
+}

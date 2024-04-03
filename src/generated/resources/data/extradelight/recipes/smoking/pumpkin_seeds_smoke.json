@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "minecraft:pumpkin_seeds"
+  },
+  "result": "extradelight:roasted_pumpkin_seeds"
+}

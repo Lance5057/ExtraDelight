@@ -1,0 +1,35 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:meat_pie_block_item"
+  }
+}

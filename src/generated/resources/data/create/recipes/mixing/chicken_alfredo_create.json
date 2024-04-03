@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:alfredo_sauce"
+    },
+    {
+      "item": "farmersdelight:raw_pasta"
+    },
+    {
+      "tag": "forge:cooked_chicken"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:chicken_alfredo"
+    }
+  ]
+}

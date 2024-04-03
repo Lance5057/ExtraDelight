@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "forge:bread/sliced"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "extradelight:croutons"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

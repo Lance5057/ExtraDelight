@@ -1,0 +1,18 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_pasta"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "result": {
+    "item": "extradelight:buttered_pasta"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

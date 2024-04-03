@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/ribbon_bow",
+  "textures": {
+    "0": "extradelight:block/ribbon/gray_ribbon"
+  }
+}

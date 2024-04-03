@@ -1,0 +1,32 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:square_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "item": "extradelight:cooked_corn"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:corn_pudding_feast"
+  }
+}

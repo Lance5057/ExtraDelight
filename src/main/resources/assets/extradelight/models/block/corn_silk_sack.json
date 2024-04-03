@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "extradelight:block/corn_silk_bag_bottom",
+    "east": "extradelight:block/corn_silk_bag_side",
+    "north": "extradelight:block/corn_silk_bag_side_tied",
+    "particle": "extradelight:block/corn_silk_bag_top",
+    "south": "extradelight:block/corn_silk_bag_side_tied",
+    "up": "extradelight:block/corn_silk_bag_top",
+    "west": "extradelight:block/corn_silk_bag_side"
+  }
+}

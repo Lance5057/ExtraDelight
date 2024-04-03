@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extradelight:flour_sack"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "extradelight:flour"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extradelight:cheeseburger"
+    },
+    {
+      "tag": "forge:cooked_bacon"
+    }
+  ],
+  "result": {
+    "item": "extradelight:bacon_cheeseburger"
+  }
+}

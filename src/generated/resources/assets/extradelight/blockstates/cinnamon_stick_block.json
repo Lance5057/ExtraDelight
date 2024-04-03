@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "extradelight:block/cinnamon_stick_block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "extradelight:block/cinnamon_stick_block"
+    },
+    "axis=z": {
+      "model": "extradelight:block/cinnamon_stick_block_horizontal",
+      "x": 90
+    }
+  }
+}

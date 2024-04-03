@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "g": {
+      "item": "minecraft:glow_berries"
+    },
+    "i": {
+      "item": "minecraft:ice"
+    }
+  },
+  "pattern": [
+    " gg",
+    "igg",
+    "Si "
+  ],
+  "result": {
+    "item": "extradelight:glow_berry_popsicle"
+  }
+}

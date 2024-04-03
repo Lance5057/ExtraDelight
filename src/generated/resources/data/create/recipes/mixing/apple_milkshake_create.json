@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:apple_milkshake"
+    }
+  ]
+}
