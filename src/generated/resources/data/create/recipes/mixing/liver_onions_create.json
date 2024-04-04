@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:liver"
+    },
+    {
+      "tag": "forge:vegetables/onion"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:liver_onions"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:lasagna"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "lasagna": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lasagna_noodles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "lasagna",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:lasagna"
+    ]
+  }
+}

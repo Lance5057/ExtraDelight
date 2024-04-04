@@ -1,0 +1,35 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:loaf_pan"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:ketchup_jar_item"
+    },
+    {
+      "tag": "forge:bread/crumbs"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    },
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:meatloaf_feast"
+  }
+}

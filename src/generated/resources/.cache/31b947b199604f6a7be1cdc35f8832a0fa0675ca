@@ -1,4 +1,4 @@
-// 1.19.2	2024-03-28T11:51:59.7334881	Item Models: extradelight
+// 1.19.2	2024-04-04T13:55:54.059109	Item Models: extradelight
 d6cec988d96345e08c89e0c2f114a2c1312de993 assets/extradelight/models/item/acacia_dried_corn_fence.json
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
@@ -307,6 +307,7 @@ a8ed04f668cd6f9686fa18418d560e18e7397d16 assets/extradelight/models/item/egg_in_
 d1ae3bc0f6c78fc9dfaede65dd062df29374fe9c assets/extradelight/models/item/egg_mix.json
 d4209bf4743e3b1924b9389fc2624086d7e453c5 assets/extradelight/models/item/egg_salad.json
 f8070c7fa640f377fd8a6fdefb3c8043e184a0d1 assets/extradelight/models/item/egg_salad_sandwich.json
+78a6ed2a8668c353fa0b96b882fa1caf415dc462 assets/extradelight/models/item/empty_sandwich.json
 2d774b9659eea8bd75d9dd8617bc4c33f7bcb858 assets/extradelight/models/item/fish_cakes.json
 327a424a19b8eede1622a6d4cd84322b4bca5516 assets/extradelight/models/item/fish_chips.json
 af5e6f8506b74a7e0c647b15d830c489bc8f1782 assets/extradelight/models/item/fish_flakes.json

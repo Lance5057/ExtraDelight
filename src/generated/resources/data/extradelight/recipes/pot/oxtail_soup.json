@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:beef/oxtail"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
+      "tag": "forge:vegetables/tomato"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "extradelight:oxtail_soup"
+  }
+}

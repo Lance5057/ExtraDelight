@@ -719,6 +719,8 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SLICED_BREAD)));
 	public static final RegistryObject<Item> TOAST = ITEMS.register("toast",
 			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SLICED_BREAD)));
+	public static final RegistryObject<Item> EMPTY_SANDWICH = ITEMS.register("empty_sandwich",
+			() -> new Item(new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.TWO_BREAD)));
 	public static final RegistryObject<Item> BREAD_CRUMBS = ITEMS.register("breadcrumbs",
 			() -> new BlockItem(ExtraDelightBlocks.BREADCRUMBS.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB).food(EDFoods.SLICED_BREAD)));

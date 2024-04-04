@@ -224,6 +224,7 @@ public class ItemModels extends ItemModelProvider {
 
 		// Bread
 		forItem(ExtraDelightItems.BREAD_SLICE, "bread_slice");
+		forItem(ExtraDelightItems.EMPTY_SANDWICH, "empty_sandwich");
 		forItem(ExtraDelightItems.TOAST, "toast");
 		forItem(ExtraDelightItems.JAM_TOAST, "jam_toast");
 		forItem(ExtraDelightItems.GLOW_JAM_TOAST, "glow_jam_toast");

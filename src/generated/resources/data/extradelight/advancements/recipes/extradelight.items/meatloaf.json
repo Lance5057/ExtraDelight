@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:shepherds_pie_block"
+        "recipe": "extradelight:meatloaf"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "shepard_pie": {
+    "meatloaf": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:cooked_mutton"
+            "tag": "forge:ground_meat/raw"
           }
         ]
       },
@@ -20,13 +20,13 @@
   },
   "requirements": [
     [
-      "shepard_pie",
+      "meatloaf",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:shepherds_pie_block"
+      "extradelight:meatloaf"
     ]
   }
 }
