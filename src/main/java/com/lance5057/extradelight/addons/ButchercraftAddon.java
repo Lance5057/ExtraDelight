@@ -14,6 +14,7 @@ import com.lance5057.extradelight.food.EDFoods;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BowlFoodItem;
@@ -72,16 +73,6 @@ public class ButchercraftAddon {
 					.stacksTo(16).tab(ExtraDelightItems.EXTRA_DELIGHT_TAB)));
 
 	// CHICKEN
-	public static final RegistryObject<Item> CHICKEN_PATTY = ITEMS.register("chicken_patty", () -> new Item(
-			new Item.Properties().food(FoodValues.MINCED_BEEF).stacksTo(16).tab(ExtraDelightItems.EXTRA_DELIGHT_TAB)));
-
-	public static final RegistryObject<Item> COOKED_CHICKEN_PATTY = ITEMS.register("cooked_chicken_patty",
-			() -> new Item(new Item.Properties().food(FoodValues.BEEF_PATTY).stacksTo(16)
-					.tab(ExtraDelightItems.EXTRA_DELIGHT_TAB)));
-
-	public static final RegistryObject<Item> BREADED_CHICKEN_PATTY = ITEMS.register("breaded_chicken_patty",
-			() -> new Item(new Item.Properties().food(EDFoods.FRIED_CHICKEN).stacksTo(16)
-					.tab(ExtraDelightItems.EXTRA_DELIGHT_TAB)));
 
 	public static final RegistryObject<Item> CHICKEN_NUGGETS = ITEMS.register("chicken_nuggets", () -> new Item(
 			new Item.Properties().food(EDFoods.FRIED_CHICKEN).stacksTo(16).tab(ExtraDelightItems.EXTRA_DELIGHT_TAB)));
@@ -235,9 +226,6 @@ public class ButchercraftAddon {
 		forItem(tmp, NASI_KEBULI, "nasi_kebuli");
 		forItem(tmp, BHUTAN, "bhutan");
 
-		forItem(tmp, CHICKEN_PATTY, "chicken_patty");
-		forItem(tmp, COOKED_CHICKEN_PATTY, "cooked_chicken_patty");
-		forItem(tmp, BREADED_CHICKEN_PATTY, "breaded_chicken_patty");
 		forItem(tmp, CHICKEN_NUGGETS, "chicken_nuggets");
 		forItem(tmp, CHICKEN_SALAD, "chicken_salad");
 		forItem(tmp, CHICKEN_SALAD_SANDWICH, "chicken_salad_sandwich");
@@ -285,9 +273,6 @@ public class ButchercraftAddon {
 		lp.add(NASI_KEBULI.get(), "Nasi Kebuli");
 		lp.add(BHUTAN.get(), "Bhutan");
 
-		lp.add(CHICKEN_PATTY.get(), "Minced Chicken");
-		lp.add(COOKED_CHICKEN_PATTY.get(), "Chicken Patty");
-		lp.add(BREADED_CHICKEN_PATTY.get(), "Breaded Chicken Patty");
 		lp.add(CHICKEN_NUGGETS.get(), "Chicken Nuggets");
 		lp.add(CHICKEN_SALAD.get(), "Chicken Salad");
 		lp.add(CHICKEN_SALAD_SANDWICH.get(), "Chicken Salad Sandwich");
@@ -340,11 +325,41 @@ public class ButchercraftAddon {
 				.unlockedBy("bbq_shredded_chicken",
 						InventoryChangeTrigger.TriggerInstance.hasItems(BBQ_SHREDDED_CHICKEN_FEAST.get()))
 				.save(consumer, Recipes.EDLoc("bbq_shredded_chicken_sandwich_feast"));
-		
+
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(GOAT_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL)
 				.addIngredient(ExtraDelightTags.STEW_GOAT).addIngredient(Items.CARROT).addIngredient(Items.POTATO)
-				.addIngredient(ForgeTags.CROPS_ONION).addIngredient(ModItems.BONE_BROTH.get())
+				.addIngredient(ExtraDelightTags.PROCESSED_ONION).addIngredient(ModItems.BONE_BROTH.get())
 				.addIngredient(ExtraDelightTags.FLOUR).build(consumer, Recipes.EDLoc("pot/" + "goat_stew_bc"));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(NASI_KEBULI.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL)
+				.addIngredient(ExtraDelightTags.STEW_GOAT).addIngredient(ForgeTags.GRAIN_RICE)
+				.addIngredient(Items.MILK_BUCKET).addIngredient(ExtraDelightTags.PROCESSED_ONION)
+				.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.COOKING_OIL).build(consumer, Recipes.EDLoc("pot/" + "nasi_kebuli_bc"));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(BHUTAN.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL)
+				.addIngredient(ExtraDelightTags.SCRAP_GOAT).addIngredient(ExtraDelightTags.OFFAL)
+				.addIngredient(ExtraDelightTags.OFFAL).addIngredient(ExtraDelightTags.PROCESSED_TOMATO)
+				.addIngredient(ExtraDelightTags.PROCESSED_ONION).addIngredient(ExtraDelightTags.COOKING_OIL)
+				.addIngredient(ExtraDelightTags.COOKING_OIL).build(consumer, Recipes.EDLoc("pot/" + "bhutan_bc"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(CHICKEN_NUGGETS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL)
+				.addIngredient(ExtraDelightTags.GROUND_CHICKEN_RAW)
+				.addIngredient(ExtraDelightItems.BREADING_MISANPLAS.get())
+				.build(consumer, Recipes.EDLoc("pot/" + "chicken_nuggets_bc"));
+
+		ShapelessRecipeBuilder.shapeless(BANGERS_MASH.get()).requires(ExtraDelightItems.MASHED_POTATO_GRAVY.get())
+				.requires(Ingredient.of(ExtraDelightTags.SAUSAGE_COOKED), 2)
+				.unlockedBy("book",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MASHED_POTATO_GRAVY.get()))
+				.save(consumer, Recipes.EDLoc("bangers_mash_bc"));
+
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(BBQ_SHREDDED_CHICKEN_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL)
+				.addIngredient(ExtraDelightTags.CHICKEN_RAW).addIngredient(ExtraDelightTags.CHICKEN_RAW)
+				.addIngredient(ExtraDelightTags.CHICKEN_RAW).addIngredient(ExtraDelightItems.BBQ_SAUCE.get())
+				.build(consumer, Recipes.EDLoc("pot/" + "bbq_shredded_chicken_feast_bc"));
 	}
 }

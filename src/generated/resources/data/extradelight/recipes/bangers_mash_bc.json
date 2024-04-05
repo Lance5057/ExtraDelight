@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extradelight:mashed_potato_gravy"
+    },
+    {
+      "tag": "forge:sausage/cooked"
+    },
+    {
+      "tag": "forge:sausage/cooked"
+    }
+  ],
+  "result": {
+    "item": "extradelight:bangers_mash"
+  }
+}

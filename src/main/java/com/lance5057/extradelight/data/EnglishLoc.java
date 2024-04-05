@@ -759,6 +759,11 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.ROLL.get(), "Bread Roll");
 		this.add(ExtraDelightItems.WILD_GINGER.get(), "Wild Ginger");
+		this.add(ExtraDelightItems.EMPTY_SANDWICH.get(), "Empty Sandwich");
+		
+		this.add(ExtraDelightItems.CHICKEN_PATTY.get(), "Minced Chicken");
+		this.add(ExtraDelightItems.COOKED_CHICKEN_PATTY.get(), "Chicken Patty");
+		this.add(ExtraDelightItems.BREADED_CHICKEN_PATTY.get(), "Breaded Chicken Patty");
 
 		AestheticBlocks.EngLoc(this);
 		ButchercraftAddon.engLoc(this);

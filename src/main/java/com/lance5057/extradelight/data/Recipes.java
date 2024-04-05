@@ -615,29 +615,34 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.SUGAR_COOKIE_DIAMOND.get(), consumer, "sugar_cookie_diamond");
 		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_EMERALD.get()),
 				ExtraDelightItems.SUGAR_COOKIE_EMERALD.get(), consumer, "sugar_cookie_emerald");
+
+		vanillaCooking(Ingredient.of(ExtraDelightItems.CHICKEN_PATTY.get()),
+				ExtraDelightItems.COOKED_CHICKEN_PATTY.get(), consumer, "cooked_chicken_patty");
 	}
 
-	private void vanillaCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
+	public static void vanillaCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer,
+			String name) {
 		SimpleCookingRecipeBuilder.campfireCooking(of, item, MEDIUM_EXP, CAMPFIRE_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("campfire/" + name + "_fire"));
 		SimpleCookingRecipeBuilder.smelting(of, item, MEDIUM_EXP, FURNACE_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smelting/" + name + "_smelt"));
 		SimpleCookingRecipeBuilder.smoking(of, item, MEDIUM_EXP, SMOKER_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smoking/" + name + "_smoke"));
 	}
 
-	private void dynamicCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
+	public static void dynamicCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer,
+			String name) {
 		DynamicNameSmeltingRecipeBuilder.campfireCooking(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("campfire/" + name + "_fire"));
 		DynamicNameSmeltingRecipeBuilder.smelting(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smelting/" + name + "_smelt"));
 		DynamicNameSmeltingRecipeBuilder.smoking(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smoking/" + name + "_smoke"));
 	}
 
@@ -1784,6 +1789,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
 				.save(consumer, EDLoc("cinnamon_stairs"));
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.EMPTY_SANDWICH.get())
+				.requires(ExtraDelightItems.BREAD_SLICE.get(), 2)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BREAD_SLICE.get()))
+				.save(consumer, EDLoc("empty_sandwich"));
+
+		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CHICKEN_PATTY.get(), 2)
+				.requires(Ingredient.of(ExtraDelightTags.GROUND_CHICKEN_RAW))
+				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CHICKEN_CUTS.get()))
+				.save(consumer, Recipes.EDLoc("chicken_patty"));
 	}
 
 	private void bundleItem9(Ingredient in, Item b, Item out, Consumer<FinishedRecipe> consumer, String name) {
@@ -2460,6 +2476,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.MINT), Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"mint_jelly", consumer);
 
+		CookingPotRecipeBuilder
+				.cookingPotRecipe(ExtraDelightItems.BREADED_CHICKEN_PATTY.get(), 1, CookingRecipes.NORMAL_COOKING,
+						0.35F, Items.BOWL)
+				.addIngredient(ExtraDelightItems.CHICKEN_PATTY.get())
+				.addIngredient(ExtraDelightItems.BREADING_MISANPLAS.get())
+				.build(consumer, Recipes.EDLoc("pot/" + "breaded_chicken_patty"));
+
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -2609,6 +2632,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.MILK_TART_FEAST.get()),
 						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.MILK_TART_SLICE.get(), 4)
 				.build(consumer, EDLoc("cutting/" + "milk_tart_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ModItems.CHICKEN_CUTS.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+						ExtraDelightItems.CHICKEN_PATTY.get(), 2)
+				.addResultWithChance(Items.BONE_MEAL, 0.5f)
+				.build(consumer, Recipes.EDLoc("cutting/" + "chicken_patty"));
 	}
 
 	private void mortarRecipes(Consumer<FinishedRecipe> consumer) {
@@ -3095,6 +3124,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, ExtraDelightItems.SHEET.get(), "grilled_cheese");
 		bulkBake(ExtraDelightItems.COOKED_CACTUS.get(), Ingredient.of(ExtraDelightItems.CACTUS.get()), consumer,
 				ExtraDelightItems.SHEET.get(), "cooked_cactus");
+		bulkBake(ExtraDelightItems.COOKED_CHICKEN_PATTY.get(), Ingredient.of(ExtraDelightItems.CHICKEN_PATTY.get()),
+				consumer, ExtraDelightItems.TRAY.get(), "cooked_chicken_patty_bulk");
 
 		// Halloween Start!
 		OvenRecipeBuilder
@@ -3389,12 +3420,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedByAnyIngredient(ModItems.PIE_CRUST.get()).build(consumer);
 	}
 
-	private void bulkBake(ItemLike mainResult, Ingredient in, Consumer<FinishedRecipe> consumer, ItemLike pan,
+	public static void bulkBake(ItemLike mainResult, Ingredient in, Consumer<FinishedRecipe> consumer, ItemLike pan,
 			String name) {
 		bulkBake(mainResult, in, consumer, pan, name, 1);
 	}
 
-	private void bulkBake(ItemLike mainResult, Ingredient in, Consumer<FinishedRecipe> consumer, ItemLike pan,
+	public static void bulkBake(ItemLike mainResult, Ingredient in, Consumer<FinishedRecipe> consumer, ItemLike pan,
 			String name, int count) {
 		for (int i = 1; i < 10; i++)
 			OvenRecipeBuilder.OvenRecipe(mainResult, i * count, NORMAL_COOKING, MEDIUM_EXP, pan).addIngredient(in, i)

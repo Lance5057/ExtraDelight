@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:chicken_patty"
+  },
+  "result": "extradelight:cooked_chicken_patty"
+}

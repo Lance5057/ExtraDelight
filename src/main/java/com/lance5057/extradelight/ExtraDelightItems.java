@@ -1541,4 +1541,15 @@ public class ExtraDelightItems {
 	public static final RegistryObject<BlockItem> CINNAMON_SAPLING = ITEMS.register("cinnamon_sapling",
 			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_SAPLING.get(),
 					new Item.Properties().tab(EXTRA_DELIGHT_TAB)));
+	
+	public static final RegistryObject<Item> CHICKEN_PATTY = ITEMS.register("chicken_patty", () -> new Item(
+			new Item.Properties().food(FoodValues.MINCED_BEEF).stacksTo(16).tab(ExtraDelightItems.EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<Item> COOKED_CHICKEN_PATTY = ITEMS.register("cooked_chicken_patty",
+			() -> new Item(new Item.Properties().food(FoodValues.BEEF_PATTY).stacksTo(16)
+					.tab(ExtraDelightItems.EXTRA_DELIGHT_TAB)));
+
+	public static final RegistryObject<Item> BREADED_CHICKEN_PATTY = ITEMS.register("breaded_chicken_patty",
+			() -> new Item(new Item.Properties().food(EDFoods.FRIED_CHICKEN).stacksTo(16)
+					.tab(ExtraDelightItems.EXTRA_DELIGHT_TAB)));
 }
