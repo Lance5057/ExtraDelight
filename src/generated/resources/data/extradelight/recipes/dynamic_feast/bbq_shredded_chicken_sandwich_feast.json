@@ -1,8 +1,0 @@
-{
-  "type": "extradelight:feast",
-  "block": "extradelight:bbq_shredded_chicken_feast",
-  "ingredient": {
-    "item": "minecraft:bread"
-  },
-  "result": "extradelight:bbq_shredded_chicken_sandwich"
-}

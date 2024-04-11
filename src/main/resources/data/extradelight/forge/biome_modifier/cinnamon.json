@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#is_jungle",
-  "features": "extradelight:cinnamon_placed",
-  "step": "vegetal_decoration"
-}

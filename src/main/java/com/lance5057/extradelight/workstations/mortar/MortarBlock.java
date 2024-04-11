@@ -1,17 +1,16 @@
 package com.lance5057.extradelight.workstations.mortar;
 
-import java.util.stream.IntStream;
-
 import com.lance5057.extradelight.ExtraDelightTags;
-import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
@@ -19,12 +18,10 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public class MortarBlock extends Block implements EntityBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -36,7 +33,7 @@ public class MortarBlock extends Block implements EntityBlock {
 
 	public MortarBlock(SoundType soundType) {
 		//strength used to be (1.5f, 2.0f)
-		super(Properties.of(Material.STONE).strength(0.5F, 2.0F).sound(soundType).noOcclusion());
+		super(Properties.ofFullCopy(Blocks.STONE).strength(0.5F, 2.0F).sound(soundType).noOcclusion());
 	}
 
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -87,10 +84,8 @@ public class MortarBlock extends Block implements EntityBlock {
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity tileentity = level.getBlockEntity(pos);
-			if (tileentity instanceof MortarBlockEntity) {
-				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
-						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots())
-								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
+			if (tileentity instanceof MortarBlockEntity m) {
+				Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), m.getInsertedItem());
 
 				level.updateNeighbourForOutputSignal(pos, this);
 			}

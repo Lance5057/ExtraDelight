@@ -8,6 +8,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
@@ -72,5 +73,17 @@ public enum EDArmorMaterial implements ArmorMaterial {
 
 	public float getKnockbackResistance() {
 		return this.knockbackResistance;
+	}
+
+	@Override
+	public int getDurabilityForType(Type p_266807_) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getDefenseForType(Type p_267168_) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

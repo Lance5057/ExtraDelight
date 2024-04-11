@@ -1,14 +1,12 @@
 package com.lance5057.extradelight.workstations.oven;
 
+import javax.annotation.Nullable;
+
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
-import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.state.OvenSupport;
-import net.minecraft.ChatFormatting;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -19,12 +17,16 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -36,22 +38,18 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.NetworkHooks;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.items.ItemStackHandler;
 import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.MathUtils;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 @SuppressWarnings("deprecation")
 public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
@@ -64,7 +62,7 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 			Block.box(0.0D, -1.0D, 0.0D, 16.0D, 0.0D, 16.0D));
 
 	public OvenBlock() {
-		super(Properties.of(Material.METAL).requiresCorrectToolForDrops().strength(3.5F, 6.0F).sound(SoundType.STONE));
+		super(Properties.ofFullCopy(Blocks.BRICKS).requiresCorrectToolForDrops().strength(3.5F, 6.0F).sound(SoundType.STONE));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
 				.setValue(SUPPORT, OvenSupport.NONE).setValue(WATERLOGGED, false));
 	}
@@ -75,7 +73,7 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 		if (!level.isClientSide) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof OvenBlockEntity OvenEntity) {
-				NetworkHooks.openScreen((ServerPlayer) player, OvenEntity, pos);
+				player.openMenu(OvenEntity, pos);
 			}
 		}
 		return InteractionResult.SUCCESS;

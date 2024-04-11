@@ -1,12 +1,13 @@
 package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.data.advancement.AdvancementGenerator;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = ExtraDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -27,7 +28,7 @@ public class DataGen {
 
 		generator.addProvider(event.includeServer(), new Recipes(generator));
 		generator.addProvider(event.includeServer(), new LootModifiers(generator));
-		generator.addProvider(event.includeServer(), new Advancements(generator, helper));
+		generator.addProvider(event.includeServer(), new AdvancementGenerator(generator, helper));
 		generator.addProvider(event.includeClient(), new EnglishLoc(generator));
 
 		generator.addProvider(event.includeClient(), new PatchouliGen(generator, ExtraDelight.MOD_ID, "en_us"));

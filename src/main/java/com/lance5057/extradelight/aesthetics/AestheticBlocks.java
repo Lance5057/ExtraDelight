@@ -2,7 +2,6 @@ package com.lance5057.extradelight.aesthetics;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 import org.apache.commons.lang3.text.WordUtils;
@@ -21,18 +20,17 @@ import com.lance5057.extradelight.displays.wreath.WreathBlock;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Registry;
-import net.minecraft.data.loot.BlockLoot;
-import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -40,72 +38,70 @@ import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
-import net.minecraft.world.level.material.Material;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 public class AestheticBlocks {
-	public static final CreativeModeTab AESTHETIC_TAB = new CreativeModeTab("extradelight.aesthetic") {
-		@Override
-		public ItemStack makeIcon() {
-			return new ItemStack(SPICE_RACKS_FULL.get(0).get());
-		}
-	};
+//	public static final CreativeModeTab AESTHETIC_TAB = new CreativeModeTab("extradelight.aesthetic") {
+//		@Override
+//		public ItemStack makeIcon() {
+//			return new ItemStack(SPICE_RACKS_FULL.get(0).get());
+//		}
+//	};
 
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
-			ExtraDelight.MOD_ID);
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
-			ExtraDelight.MOD_ID);
+	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ExtraDelight.MOD_ID);
+	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraDelight.MOD_ID);
 
 	public static enum WOOD {
 		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cinnamon
 	};
 
-	public static final List<RegistryObject<Block>> STEP_STOOLS = new ArrayList<RegistryObject<Block>>();
-	public static final List<RegistryObject<Block>> SPICE_RACKS = new ArrayList<RegistryObject<Block>>();
-	public static final List<RegistryObject<Block>> SPICE_RACKS_FULL = new ArrayList<RegistryObject<Block>>();
-	public static final List<RegistryObject<Block>> KNIFE_BLOCKS = new ArrayList<RegistryObject<Block>>();
-	public static final List<RegistryObject<Block>> CABINETS = new ArrayList<RegistryObject<Block>>();
+	public static final List<DeferredBlock<Block>> STEP_STOOLS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> SPICE_RACKS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> SPICE_RACKS_FULL = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> KNIFE_BLOCKS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> CABINETS = new ArrayList<DeferredBlock<Block>>();
 
-	public static final List<RegistryObject<Block>> WALLPAPER_BLOCKS = new ArrayList<RegistryObject<Block>>();
-	public static final List<RegistryObject<Block>> MOLDED_WALLPAPER_BLOCKS = new ArrayList<RegistryObject<Block>>();
+	public static final List<DeferredBlock<Block>> WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> MOLDED_WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 
-	public static final List<RegistryObject<Item>> STEP_STOOL_ITEMS = new ArrayList<RegistryObject<Item>>();
-	public static final List<RegistryObject<Item>> SPICE_RACKS_ITEMS = new ArrayList<RegistryObject<Item>>();
-	public static final List<RegistryObject<Item>> SPICE_RACKS_FULL_ITEMS = new ArrayList<RegistryObject<Item>>();
-	public static final List<RegistryObject<Item>> KNIFE_BLOCK_ITEMS = new ArrayList<RegistryObject<Item>>();
-	public static final List<RegistryObject<Item>> CABINET_ITEMS = new ArrayList<RegistryObject<Item>>();
+	public static final List<DeferredItem<Item>> STEP_STOOL_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> SPICE_RACKS_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> SPICE_RACKS_FULL_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> KNIFE_BLOCK_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> CABINET_ITEMS = new ArrayList<DeferredItem<Item>>();
 
-	public static final List<RegistryObject<Item>> WALLPAPER_ITEMS = new ArrayList<RegistryObject<Item>>();
-	public static final List<RegistryObject<Item>> MOLDED_WALLPAPER_ITEMS = new ArrayList<RegistryObject<Item>>();
+	public static final List<DeferredItem<Item>> WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> MOLDED_WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
 
-	public static final RegistryObject<CornHuskDollBlock> CORN_HUSK_DOLL = BLOCKS.register("corn_husk_doll",
+	public static final DeferredHolder<Block, CornHuskDollBlock> CORN_HUSK_DOLL = BLOCKS.register("corn_husk_doll",
 			() -> new CornHuskDollBlock());
-	public static final RegistryObject<BlockItem> CORN_HUSK_DOLL_ITEM = ITEMS.register("corn_husk_doll",
-			() -> new BlockItem(CORN_HUSK_DOLL.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+	public static final DeferredHolder<Item, BlockItem> CORN_HUSK_DOLL_ITEM = ITEMS.register("corn_husk_doll",
+			() -> new BlockItem(CORN_HUSK_DOLL.get(), new Item.Properties()));
 
-	public static final List<RegistryObject<Block>> DRIED_CORN_FENCE = new ArrayList<RegistryObject<Block>>();
-	public static final List<RegistryObject<Item>> DRIED_CORN_FENCE_ITEMS = new ArrayList<RegistryObject<Item>>();
+	public static final List<DeferredBlock<Block>> DRIED_CORN_FENCE = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredItem<Item>> DRIED_CORN_FENCE_ITEMS = new ArrayList<DeferredItem<Item>>();
 
-	public static final List<RegistryObject<Block>> WREATHS = new ArrayList<RegistryObject<Block>>();
-	public static final List<RegistryObject<Item>> WREATH_ITEMS = new ArrayList<RegistryObject<Item>>();
+	public static final List<DeferredBlock<Block>> WREATHS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredItem<Item>> WREATH_ITEMS = new ArrayList<DeferredItem<Item>>();
 
-	public static final List<RegistryObject<Block>> BOWS = new ArrayList<RegistryObject<Block>>();
-	public static final List<RegistryObject<Item>> BOW_ITEMS = new ArrayList<RegistryObject<Item>>();
+	public static final List<DeferredBlock<Block>> BOWS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredItem<Item>> BOW_ITEMS = new ArrayList<DeferredItem<Item>>();
 
-	public static Block[] getRegistryListAsBlocks(List<RegistryObject<Block>> blocks) {
+	public static Block[] getRegistryListAsBlocks(List<DeferredBlock<Block>> blocks) {
 		List<Block> l = new ArrayList<Block>();
 
-		for (RegistryObject<Block> b : blocks) {
+		for (DeferredBlock<Block> b : blocks) {
 			l.add(b.get());
 		}
 		Block[] a = l.toArray(Block[]::new);
@@ -113,10 +109,10 @@ public class AestheticBlocks {
 		return a;
 	}
 
-	public static Item[] getRegistryListAsItems(List<RegistryObject<Item>> items) {
+	public static Item[] getRegistryListAsItems(List<DeferredItem<Item>> items) {
 		List<Item> l = new ArrayList<Item>();
 
-		for (RegistryObject<Item> b : items) {
+		for (DeferredItem<Item> b : items) {
 			l.add(b.get());
 		}
 		Item[] a = l.toArray(Item[]::new);
@@ -125,12 +121,12 @@ public class AestheticBlocks {
 	}
 
 	public static void registerMoldedWallpaper(String name, Supplier<? extends Block> block,
-			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
+			List<DeferredBlock<Block>> blocks, List<DeferredItem<Item>> items) {
 		for (WOOD w : WOOD.values()) {
 			for (DyeColor d : DyeColor.values()) {
-				RegistryObject<Block> b = BLOCKS.register(w.toString() + "_molded_" + d.getName() + "_" + name, block);
-				RegistryObject<Item> t = ITEMS.register(w.toString() + "_molded_" + d.getName() + "_" + name,
-						() -> new BlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+				DeferredBlock<Block> b = BLOCKS.register(w.toString() + "_molded_" + d.getName() + "_" + name, block);
+				DeferredItem<Item> t = ITEMS.register(w.toString() + "_molded_" + d.getName() + "_" + name,
+						() -> new BlockItem(b.get(), new Item.Properties()));
 
 				blocks.add(b);
 				items.add(t);
@@ -138,12 +134,12 @@ public class AestheticBlocks {
 		}
 	}
 
-	public static void registerAllWood(String name, Supplier<? extends Block> block, List<RegistryObject<Block>> blocks,
-			List<RegistryObject<Item>> items) {
+	public static void registerAllWood(String name, Supplier<? extends Block> block, List<DeferredBlock<Block>> blocks,
+			List<DeferredItem<Item>> items) {
 		for (WOOD w : WOOD.values()) {
-			RegistryObject<Block> b = BLOCKS.register(w.toString() + "_" + name, block);
-			RegistryObject<Item> t = ITEMS.register(w.toString() + "_" + name,
-					() -> new BlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+			DeferredBlock<Block> b = BLOCKS.register(w.toString() + "_" + name, block);
+			DeferredItem<Item> t = ITEMS.register(w.toString() + "_" + name,
+					() -> new BlockItem(b.get(), new Item.Properties()));
 
 			blocks.add(b);
 			items.add(t);
@@ -151,11 +147,11 @@ public class AestheticBlocks {
 	}
 
 	public static void registerAllColors(String name, Supplier<? extends Block> block,
-			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
+			List<DeferredBlock<Block>> blocks, List<DeferredItem<Item>> items) {
 		for (DyeColor w : DyeColor.values()) {
-			RegistryObject<Block> b = BLOCKS.register(name + "_" + w.getName(), block);
-			RegistryObject<Item> t = ITEMS.register(name + "_" + w.toString(),
-					() -> new BlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+			DeferredBlock<Block> b = BLOCKS.register(name + "_" + w.getName(), block);
+			DeferredItem<Item> t = ITEMS.register(name + "_" + w.toString(),
+					() -> new BlockItem(b.get(), new Item.Properties()));
 
 			blocks.add(b);
 			items.add(t);
@@ -163,11 +159,11 @@ public class AestheticBlocks {
 	}
 
 	public static void registerAllWoodHelm(String name, Supplier<? extends Block> block,
-			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
+			List<DeferredBlock<Block>> blocks, List<DeferredItem<Item>> items) {
 		for (WOOD w : WOOD.values()) {
-			RegistryObject<Block> b = BLOCKS.register(w.toString() + "_" + name, block);
-			RegistryObject<Item> t = ITEMS.register(w.toString() + "_" + name,
-					() -> new HelmetBlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+			DeferredBlock<Block> b = BLOCKS.register(w.toString() + "_" + name, block);
+			DeferredItem<Item> t = ITEMS.register(w.toString() + "_" + name,
+					() -> new HelmetBlockItem(b.get(), new Item.Properties()));
 
 			blocks.add(b);
 			items.add(t);
@@ -175,11 +171,11 @@ public class AestheticBlocks {
 	}
 
 	public static void registerAllColorsHelm(String name, Supplier<? extends Block> block,
-			List<RegistryObject<Block>> blocks, List<RegistryObject<Item>> items) {
+			List<DeferredBlock<Block>> blocks, List<DeferredItem<Item>> items) {
 		for (DyeColor w : DyeColor.values()) {
-			RegistryObject<Block> b = BLOCKS.register(name + "_" + w.getName(), block);
-			RegistryObject<Item> t = ITEMS.register(name + "_" + w.toString(),
-					() -> new HelmetBlockItem(b.get(), new Item.Properties().tab(AESTHETIC_TAB)));
+			DeferredBlock<Block> b = BLOCKS.register(name + "_" + w.getName(), block);
+			DeferredItem<Item> t = ITEMS.register(name + "_" + w.toString(),
+					() -> new HelmetBlockItem(b.get(), new Item.Properties()));
 
 			blocks.add(b);
 			items.add(t);
@@ -194,46 +190,46 @@ public class AestheticBlocks {
 		registerAllWood("half_cabinet", HalfCabinetBlock::new, CABINETS, CABINET_ITEMS);
 
 		registerAllColors("wallpaper",
-				() -> new Block(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
+				() -> new Block(Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
 				WALLPAPER_BLOCKS, WALLPAPER_ITEMS);
 		registerMoldedWallpaper("wallpaper",
-				() -> new MoldingBlock(Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
+				() -> new MoldingBlock(Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
 				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
 
-		registerAllWood("dried_corn_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.ACACIA_FENCE)),
+		registerAllWood("dried_corn_fence", () -> new FenceBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE)),
 				DRIED_CORN_FENCE, DRIED_CORN_FENCE_ITEMS);
 
 		registerAllWoodHelm("wreath", WreathBlock::new, WREATHS, WREATH_ITEMS);
 
-		registerAllColorsHelm("ribbon_bow", () -> new RibbonBlock(), BOWS, BOW_ITEMS);
+		registerAllColorsHelm("ribbon_bow", () -> new RibbonBlock(Properties.ofFullCopy(Blocks.BLACK_WOOL).noOcclusion().noCollission()), BOWS, BOW_ITEMS);
 	}
 
-	public static void loot(BlockLoot bl) {
-		for (RegistryObject<Block> b : STEP_STOOLS)
-			bl.dropSelf(b.get());
-		for (RegistryObject<Block> b : SPICE_RACKS)
-			bl.dropSelf(b.get());
-		for (RegistryObject<Block> b : SPICE_RACKS_FULL)
-			bl.dropSelf(b.get());
-		for (RegistryObject<Block> b : KNIFE_BLOCKS)
-			bl.dropSelf(b.get());
-		for (RegistryObject<Block> b : CABINETS)
-			bl.dropSelf(b.get());
-		for (RegistryObject<Block> b : DRIED_CORN_FENCE)
-			bl.dropSelf(b.get());
-
-		for (RegistryObject<Block> b : WALLPAPER_BLOCKS)
-			bl.dropSelf(b.get());
-		for (RegistryObject<Block> b : MOLDED_WALLPAPER_BLOCKS)
-			bl.dropSelf(b.get());
-
-		bl.dropSelf(CORN_HUSK_DOLL.get());
-
-		for (RegistryObject<Block> b : WREATHS)
-			bl.dropSelf(b.get());
-		for (RegistryObject<Block> b : BOWS)
-			bl.dropSelf(b.get());
-	}
+//	public static void loot(BlockLootSubProvider bl) {
+//		for (DeferredBlock<Block> b : STEP_STOOLS)
+//			bl..dropSelf(b.get());
+//		for (DeferredBlock<Block> b : SPICE_RACKS)
+//			bl.dropSelf(b.get());
+//		for (DeferredBlock<Block> b : SPICE_RACKS_FULL)
+//			bl.dropSelf(b.get());
+//		for (DeferredBlock<Block> b : KNIFE_BLOCKS)
+//			bl.dropSelf(b.get());
+//		for (DeferredBlock<Block> b : CABINETS)
+//			bl.dropSelf(b.get());
+//		for (DeferredBlock<Block> b : DRIED_CORN_FENCE)
+//			bl.dropSelf(b.get());
+//
+//		for (DeferredBlock<Block> b : WALLPAPER_BLOCKS)
+//			bl.dropSelf(b.get());
+//		for (DeferredBlock<Block> b : MOLDED_WALLPAPER_BLOCKS)
+//			bl.dropSelf(b.get());
+//
+//		bl.dropSelf(CORN_HUSK_DOLL.get());
+//
+//		for (DeferredBlock<Block> b : WREATHS)
+//			bl.dropSelf(b.get());
+//		for (DeferredBlock<Block> b : BOWS)
+//			bl.dropSelf(b.get());
+//	}
 
 	public static void blockModel(BlockStateProvider bsp) {
 		for (int i = 0; i < WOOD.values().length; i++) {
@@ -377,7 +373,7 @@ public class AestheticBlocks {
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			tmp.getBuilder(WALLPAPER_ITEMS.get(i).getId().getPath())
 					.parent(new ModelFile.UncheckedModelFile(
-							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + ForgeRegistries.BLOCKS
+							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + BuiltInRegistries.BLOCK
 									.getKey(((BlockItem) WALLPAPER_ITEMS.get(i).get()).getBlock()).getPath())));
 
 			tmp.getBuilder(BOWS.get(i).getId().getPath())
@@ -434,7 +430,7 @@ public class AestheticBlocks {
 
 	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove,
 	// cinnamon
-	public static void Recipes(Consumer<FinishedRecipe> consumer) {
+	public static void Recipes(RecipeOutput consumer) {
 		woodRecipe(consumer, Items.ACACIA_SLAB, Items.ACACIA_TRAPDOOR, Items.ACACIA_FENCE, Items.ACACIA_LEAVES,
 				WOOD.acacia);
 		woodRecipe(consumer, Items.BIRCH_SLAB, Items.BIRCH_TRAPDOOR, Items.BIRCH_FENCE, Items.BIRCH_LEAVES, WOOD.birch);
@@ -469,175 +465,180 @@ public class AestheticBlocks {
 
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			DyeColor dye = DyeColor.values()[i];
-			ShapelessRecipeBuilder.shapeless(WALLPAPER_ITEMS.get(dye.ordinal()).get(), 4).requires(Items.PAPER, 4)
-					.requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + dye)))
+			ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, WALLPAPER_ITEMS.get(dye.ordinal()).get(), 4)
+					.requires(Items.PAPER, 4).requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + dye)))
 					.unlockedBy(dye + "_wallpaper", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
 					.save(consumer);
 
-			ShapedRecipeBuilder.shaped(BOW_ITEMS.get(dye.ordinal()).get(), 1).pattern(" w ").pattern(" w ")
-					.pattern("w w").define('w', Registry.ITEM.get(new ResourceLocation("minecraft", dye + "_wool")))
+			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BOW_ITEMS.get(dye.ordinal()).get(), 1).pattern(" w ").pattern(" w ")
+					.pattern("w w")
+					.define('w', BuiltInRegistries.ITEM.get(new ResourceLocation("minecraft", dye + "_wool")))
 					.unlockedBy(dye + "_bow", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
 					.save(consumer);
 		}
 
-		ShapedRecipeBuilder.shaped(CORN_HUSK_DOLL.get()).pattern(" c ").pattern(" s ").pattern("ccc")
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CORN_HUSK_DOLL.get()).pattern(" c ").pattern(" s ").pattern("ccc")
 				.define('c', ExtraDelightItems.DRIED_CORN_HUSK.get()).define('s', Tags.Items.STRING)
 				.unlockedBy("corn_husk_doll",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DRIED_CORN_HUSK.get()))
 				.save(consumer);
 	}
 
-	static void moldRecipe(Consumer<FinishedRecipe> consumer, Item slab, WOOD name, int add) {
+	static void moldRecipe(RecipeOutput consumer, Item slab, WOOD name, int add) {
 		for (int j = 0; j < 16; j++) {
 			DyeColor d = DyeColor.values()[j];
 			String n = d + "_" + name + "_wallpaper";
-			ShapelessRecipeBuilder.shapeless(MOLDED_WALLPAPER_ITEMS.get(j + add).get(), 4).requires(Items.PAPER, 4)
-					.requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + d))).requires(slab)
-					.unlockedBy(n, InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER)).save(consumer);
+			ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, MOLDED_WALLPAPER_ITEMS.get(j + add).get(), 4)
+					.requires(Items.PAPER, 4).requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + d)))
+					.requires(slab).unlockedBy(n, InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
+					.save(consumer);
 		}
 	}
 
-	static void woodRecipe(Consumer<FinishedRecipe> consumer, Item slab, Item trapdoor, Item fence, Item leaves,
+	static void woodRecipe(RecipeOutput consumer, Item slab, Item trapdoor, Item fence, Item leaves,
 			WOOD name) {
 
-		ShapedRecipeBuilder.shaped(STEP_STOOLS.get(name.ordinal()).get()).pattern(" w ").pattern("s s").pattern("s s")
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, STEP_STOOLS.get(name.ordinal()).get()).pattern(" w ").pattern("s s").pattern("s s")
 				.define('w', slab).define('s', Items.STICK)
 				.unlockedBy(name + "_step_stool", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
 				.save(consumer);
 
-		ShapedRecipeBuilder.shaped(SPICE_RACKS.get(name.ordinal()).get()).pattern("wsw").pattern("b b")
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, SPICE_RACKS.get(name.ordinal()).get()).pattern("wsw").pattern("b b")
 				.define('w', slab).define('s', Items.STICK).define('b', Items.IRON_BARS)
 				.unlockedBy(name + "_spice_rack", InventoryChangeTrigger.TriggerInstance.hasItems(slab)).save(consumer);
 
-		ShapelessRecipeBuilder.shapeless(SPICE_RACKS_FULL.get(name.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, SPICE_RACKS_FULL.get(name.ordinal()).get())
 				.requires(SPICE_RACKS.get(name.ordinal()).get()).requires(Items.GLASS_BOTTLE, 4)
 				.unlockedBy(name + "_spice_rack_full", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
 				.save(consumer);
 
-		ShapedRecipeBuilder.shaped(KNIFE_BLOCKS.get(name.ordinal()).get()).pattern("wkw").define('w', slab)
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, KNIFE_BLOCKS.get(name.ordinal()).get()).pattern("wkw").define('w', slab)
 				.define('k', ForgeTags.TOOLS_KNIVES)
 				.unlockedBy(name + "_knife_block", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
 				.save(consumer);
 
-		ShapelessRecipeBuilder.shapeless(DRIED_CORN_FENCE.get(name.ordinal()).get()).requires(fence)
-				.requires(ExtraDelightItems.DRIED_CORN_HUSK.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, DRIED_CORN_FENCE.get(name.ordinal()).get())
+				.requires(fence).requires(ExtraDelightItems.DRIED_CORN_HUSK.get())
 				.unlockedBy(name + "_dried_corn_fence", InventoryChangeTrigger.TriggerInstance.hasItems(fence))
 				.save(consumer);
 
-		ShapelessRecipeBuilder.shapeless(fence).requires(DRIED_CORN_FENCE.get(name.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, fence)
+				.requires(DRIED_CORN_FENCE.get(name.ordinal()).get())
 				.unlockedBy(name + "_dried_corn_fence_back",
 						InventoryChangeTrigger.TriggerInstance.hasItems(DRIED_CORN_FENCE.get(name.ordinal()).get()))
 				.save(consumer, Recipes.EDLoc(name + "_dried_corn_fence_back"));
 
-		ShapedRecipeBuilder.shaped(WREATHS.get(name.ordinal()).get()).pattern(" l ").pattern("l l").pattern(" l ")
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, WREATHS.get(name.ordinal()).get()).pattern(" l ").pattern("l l").pattern(" l ")
 				.define('l', leaves)
 				.unlockedBy(name + "_wreath", InventoryChangeTrigger.TriggerInstance.hasItems(leaves)).save(consumer);
 	}
 
-	static void cabinetRecipes(Consumer<FinishedRecipe> consumer) {
-		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.mangrove.ordinal()).get())
+	static void cabinetRecipes(RecipeOutput consumer) {
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.mangrove.ordinal()).get())
 				.requires(ModItems.MANGROVE_CABINET.get())
 				.unlockedBy("mangrove_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MANGROVE_CABINET.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.mangrove + "_cabinet_full_to_half");
-		ShapelessRecipeBuilder.shapeless(ModItems.MANGROVE_CABINET.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModItems.MANGROVE_CABINET.get())
 				.requires(CABINETS.get(WOOD.mangrove.ordinal()).get())
 				.unlockedBy("mangrove_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.mangrove.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.mangrove + "_cabinet_half_to_full");
 
-		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.crimson.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.crimson.ordinal()).get())
 				.requires(ModItems.CRIMSON_CABINET.get())
 				.unlockedBy("crimson_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CRIMSON_CABINET.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.crimson + "_cabinet_full_to_half");
-		ShapelessRecipeBuilder.shapeless(ModItems.CRIMSON_CABINET.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModItems.CRIMSON_CABINET.get())
 				.requires(CABINETS.get(WOOD.crimson.ordinal()).get())
 				.unlockedBy("crimson_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.crimson.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.crimson + "_cabinet_half_to_full");
 
-		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.warped.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.warped.ordinal()).get())
 				.requires(ModItems.WARPED_CABINET.get())
 				.unlockedBy("warped_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.WARPED_CABINET.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.warped + "_cabinet_full_to_half");
-		ShapelessRecipeBuilder.shapeless(ModItems.WARPED_CABINET.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModItems.WARPED_CABINET.get())
 				.requires(CABINETS.get(WOOD.warped.ordinal()).get())
 				.unlockedBy("warped_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.warped.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.warped + "_cabinet_half_to_full");
 
-		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.acacia.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.acacia.ordinal()).get())
 				.requires(ModItems.ACACIA_CABINET.get())
 				.unlockedBy("acacia_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ACACIA_CABINET.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.acacia + "_cabinet_full_to_half");
-		ShapelessRecipeBuilder.shapeless(ModItems.ACACIA_CABINET.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModItems.ACACIA_CABINET.get())
 				.requires(CABINETS.get(WOOD.acacia.ordinal()).get())
 				.unlockedBy("acacia_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.acacia.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.acacia + "_cabinet_half_to_full");
 
-		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.oak.ordinal()).get()).requires(ModItems.OAK_CABINET.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.oak.ordinal()).get())
+				.requires(ModItems.OAK_CABINET.get())
 				.unlockedBy("oak_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.OAK_CABINET.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.oak + "_cabinet_full_to_half");
-		ShapelessRecipeBuilder.shapeless(ModItems.OAK_CABINET.get()).requires(CABINETS.get(WOOD.oak.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModItems.OAK_CABINET.get())
+				.requires(CABINETS.get(WOOD.oak.ordinal()).get())
 				.unlockedBy("oak_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.oak.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.oak + "_cabinet_half_to_full");
 
-		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.dark_oak.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.dark_oak.ordinal()).get())
 				.requires(ModItems.DARK_OAK_CABINET.get())
 				.unlockedBy("dark_oak_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.DARK_OAK_CABINET.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.dark_oak + "_cabinet_full_to_half");
-		ShapelessRecipeBuilder.shapeless(ModItems.DARK_OAK_CABINET.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModItems.DARK_OAK_CABINET.get())
 				.requires(CABINETS.get(WOOD.dark_oak.ordinal()).get())
 				.unlockedBy("dark_oak_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.dark_oak.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.dark_oak + "_cabinet_half_to_full");
 
-		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.spruce.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.spruce.ordinal()).get())
 				.requires(ModItems.SPRUCE_CABINET.get())
 				.unlockedBy("spruce_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPRUCE_CABINET.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.spruce + "_cabinet_full_to_half");
-		ShapelessRecipeBuilder.shapeless(ModItems.SPRUCE_CABINET.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModItems.SPRUCE_CABINET.get())
 				.requires(CABINETS.get(WOOD.spruce.ordinal()).get())
 				.unlockedBy("spruce_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.spruce.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.spruce + "_cabinet_half_to_full");
 
-		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.birch.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.birch.ordinal()).get())
 				.requires(ModItems.BIRCH_CABINET.get())
 				.unlockedBy("birch_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BIRCH_CABINET.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.birch + "_cabinet_full_to_half");
-		ShapelessRecipeBuilder.shapeless(ModItems.BIRCH_CABINET.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModItems.BIRCH_CABINET.get())
 				.requires(CABINETS.get(WOOD.birch.ordinal()).get())
 				.unlockedBy("birch_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.birch.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.birch + "_cabinet_half_to_full");
 
-		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.jungle.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.jungle.ordinal()).get())
 				.requires(ModItems.JUNGLE_CABINET.get())
 				.unlockedBy("jungle_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.JUNGLE_CABINET.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.jungle + "_cabinet_full_to_half");
-		ShapelessRecipeBuilder.shapeless(ModItems.JUNGLE_CABINET.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModItems.JUNGLE_CABINET.get())
 				.requires(CABINETS.get(WOOD.jungle.ordinal()).get())
 				.unlockedBy("jungle_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.jungle.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.jungle + "_cabinet_half_to_full");
 
-		ShapelessRecipeBuilder.shapeless(CABINETS.get(WOOD.cinnamon.ordinal()).get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.cinnamon.ordinal()).get())
 				.requires(ExtraDelightItems.CINNAMON_CABINET.get())
 				.unlockedBy("cinnamon_half_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_CABINET.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.cinnamon + "_cabinet_full_to_half");
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CINNAMON_CABINET.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ExtraDelightItems.CINNAMON_CABINET.get())
 				.requires(CABINETS.get(WOOD.cinnamon.ordinal()).get())
 				.unlockedBy("cinnamon_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.cinnamon.ordinal()).get()))

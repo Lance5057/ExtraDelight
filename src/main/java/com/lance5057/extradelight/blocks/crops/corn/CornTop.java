@@ -2,27 +2,15 @@ package com.lance5057.extradelight.blocks.crops.corn;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoField;
-import java.util.function.Function;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.ExtraDelightWorldGen;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.monster.Ravager;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
@@ -38,12 +26,9 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.portal.PortalInfo;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.util.ITeleporter;
+import net.neoforged.neoforge.common.IPlantable;
 
 public class CornTop extends CropBlock {
 	public static final int MAX_AGE = 3;
@@ -76,7 +61,7 @@ public class CornTop extends CropBlock {
 		return MAX_AGE;
 	}
 
-	protected int getAge(BlockState pState) {
+	public int getAge(BlockState pState) {
 		return pState.getValue(this.getAgeProperty());
 	}
 
@@ -84,9 +69,9 @@ public class CornTop extends CropBlock {
 		return this.defaultBlockState().setValue(this.getAgeProperty(), Integer.valueOf(pAge));
 	}
 
-	public boolean isMaxAge(BlockState pState) {
-		return pState.getValue(this.getAgeProperty()) >= this.getMaxAge();
-	}
+//	public boolean isMaxAge(BlockState pState) {
+//		return pState.getValue(this.getAgeProperty()) >= this.getMaxAge();
+//	}
 
 	@Override
 	public boolean isRandomlyTicking(BlockState pState) {
@@ -101,10 +86,10 @@ public class CornTop extends CropBlock {
 			int i = this.getAge(pState);
 			if (i < this.getMaxAge()) {
 				float f = getGrowthSpeed(this, pLevel, pPos);
-				if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(pLevel, pPos, pState,
+				if (net.neoforged.neoforge.common.CommonHooks.onCropsGrowPre(pLevel, pPos, pState,
 						pRandom.nextInt((int) (25.0F / f) + 1) == 0)) {
 					pLevel.setBlock(pPos, this.getStateForAge(i + 1), 2);
-					net.minecraftforge.common.ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
+					net.neoforged.neoforge.common.CommonHooks.onCropsGrowPost(pLevel, pPos, pState);
 				}
 			}
 		}
@@ -158,7 +143,7 @@ public class CornTop extends CropBlock {
 				float f1 = 0.0F;
 				BlockState blockstate = pLevel.getBlockState(blockpos.offset(i, 0, j));
 				if (blockstate.canSustainPlant(pLevel, blockpos.offset(i, 0, j), net.minecraft.core.Direction.UP,
-						(net.minecraftforge.common.IPlantable) pBlock)) {
+						(IPlantable) pBlock)) {
 					f1 = 1.0F;
 					if (blockstate.isFertile(pLevel, pPos.offset(i, 0, j))) {
 						f1 = 3.0F;
@@ -201,68 +186,68 @@ public class CornTop extends CropBlock {
 				&& pLevel.getBlockState(pPos.below()).getBlock() == ExtraDelightBlocks.CORN_BOTTOM.get();
 	}
 
-	public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
-		if (pEntity instanceof Ravager
-				&& net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(pLevel, pEntity)) {
-			pLevel.destroyBlock(pPos, true, pEntity);
-		}
-
-		if (pEntity instanceof Player p) {
-			boolean b = pState.getValue(CornTop.DENSE);
-			if (b) {
-				if (isHalloween()) {
-					if (p.hasEffect(MobEffects.CONFUSION)) {
-						MobEffectInstance mei = p.getEffect(MobEffects.CONFUSION);
-						if (mei.getDuration() <= 3) {
-							if (pLevel instanceof ServerLevel && !pEntity.isPassenger() && !pEntity.isVehicle()
-									&& pEntity.canChangeDimensions()) {
-								ResourceKey<Level> resourcekey = ExtraDelightWorldGen.CORNFIELD;
-								ServerLevel serverlevel = ((ServerLevel) pLevel).getServer().getLevel(resourcekey);
-								if (serverlevel == null) {
-									return;
-								}
-
-								pEntity.changeDimension(serverlevel, new ITeleporter() {
-									@Override
-									public Entity placeEntity(Entity entity, ServerLevel currentWorld,
-											ServerLevel destWorld, float yaw,
-											Function<Boolean, Entity> repositionEntity) {
-										Entity repositionedEntity = repositionEntity.apply(false);
-
-										return repositionedEntity;
-									}
-
-									@Override
-									public PortalInfo getPortalInfo(Entity entity, ServerLevel destWorld,
-											Function<ServerLevel, PortalInfo> defaultPortalInfo) {
-										return new PortalInfo(new Vec3(p.getX(), 33, p.getZ()),
-												entity.getDeltaMovement(), entity.getYRot(), entity.getXRot());
-									}
-
-									@Override
-									public boolean playTeleportSound(ServerPlayer player, ServerLevel sourceWorld,
-											ServerLevel destWorld) {
-										return false;
-									}
-								});
-							}
-						}
-					} else {
-						if (pLevel.random.nextInt(100) == 0)
-							p.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200));
-					}
-				}
-			}
-
-		}
-		if (pState.getValue(CornTop.DIMENSION)) {
-			if (pEntity.isSprinting())
-				pEntity.hurt(DamageSource.SWEET_BERRY_BUSH, 1);
-			pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
-
-		}
-		super.entityInside(pState, pLevel, pPos, pEntity);
-	}
+//	public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+//		if (pEntity instanceof Ravager
+//				&& net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(pLevel, pEntity)) {
+//			pLevel.destroyBlock(pPos, true, pEntity);
+//		}
+//
+//		if (pEntity instanceof Player p) {
+//			boolean b = pState.getValue(CornTop.DENSE);
+//			if (b) {
+//				if (isHalloween()) {
+//					if (p.hasEffect(MobEffects.CONFUSION)) {
+//						MobEffectInstance mei = p.getEffect(MobEffects.CONFUSION);
+//						if (mei.getDuration() <= 3) {
+//							if (pLevel instanceof ServerLevel && !pEntity.isPassenger() && !pEntity.isVehicle()
+//									&& pEntity.canChangeDimensions()) {
+//								ResourceKey<Level> resourcekey = ExtraDelightWorldGen.CORNFIELD;
+//								ServerLevel serverlevel = ((ServerLevel) pLevel).getServer().getLevel(resourcekey);
+//								if (serverlevel == null) {
+//									return;
+//								}
+//
+//								pEntity.changeDimension(serverlevel, new ITeleporter() {
+//									@Override
+//									public Entity placeEntity(Entity entity, ServerLevel currentWorld,
+//											ServerLevel destWorld, float yaw,
+//											Function<Boolean, Entity> repositionEntity) {
+//										Entity repositionedEntity = repositionEntity.apply(false);
+//
+//										return repositionedEntity;
+//									}
+//
+//									@Override
+//									public PortalInfo getPortalInfo(Entity entity, ServerLevel destWorld,
+//											Function<ServerLevel, PortalInfo> defaultPortalInfo) {
+//										return new PortalInfo(new Vec3(p.getX(), 33, p.getZ()),
+//												entity.getDeltaMovement(), entity.getYRot(), entity.getXRot());
+//									}
+//
+//									@Override
+//									public boolean playTeleportSound(ServerPlayer player, ServerLevel sourceWorld,
+//											ServerLevel destWorld) {
+//										return false;
+//									}
+//								});
+//							}
+//						}
+//					} else {
+//						if (pLevel.random.nextInt(100) == 0)
+//							p.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200));
+//					}
+//				}
+//			}
+//
+//		}
+//		if (pState.getValue(CornTop.DIMENSION)) {
+//			if (pEntity.isSprinting())
+//				pEntity.hurt(DamageSource.SWEET_BERRY_BUSH, 1);
+//			pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
+//
+//		}
+//		super.entityInside(pState, pLevel, pPos, pEntity);
+//	}
 
 	private static boolean isHalloween() {
 		LocalDate localdate = LocalDate.now();

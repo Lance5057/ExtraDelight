@@ -1,9 +1,0 @@
-{
-    "variants": {
-        "": [
-            { "model": "extradelight:block/flour"},
-            { "model": "extradelight:block/flour1"},
-            { "model": "extradelight:block/flour2"}
-        ]
-    }
-}

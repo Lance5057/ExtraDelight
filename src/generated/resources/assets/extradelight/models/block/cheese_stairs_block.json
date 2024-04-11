@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "extradelight:block/cheese_slab",
-    "side": "extradelight:block/cheese_slab",
-    "top": "extradelight:block/cheese_slab"
-  }
-}

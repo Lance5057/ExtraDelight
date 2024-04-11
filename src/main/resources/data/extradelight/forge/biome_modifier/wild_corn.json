@@ -1,7 +1,0 @@
-{
-  "type": "farmersdelight:add_features_by_filter",
-  "allowed_biomes": "#forge:is_plains",
-  "denied_biomes": "#forge:is_wet",
-  "features": "extradelight:patch_wild_corn",
-  "step": "vegetal_decoration"
-}

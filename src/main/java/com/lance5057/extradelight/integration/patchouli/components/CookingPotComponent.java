@@ -6,7 +6,6 @@ import java.util.function.UnaryOperator;
 import com.google.common.collect.ImmutableList;
 import com.google.gson.annotations.SerializedName;
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 

@@ -10,7 +10,7 @@ import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
+import net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
 
 public class OvenRecipeCatagories {
 	public static final Supplier<RecipeBookCategories> OVEN_SEARCH = Suppliers

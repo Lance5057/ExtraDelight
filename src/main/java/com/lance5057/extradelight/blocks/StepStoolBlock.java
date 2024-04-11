@@ -18,7 +18,6 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -29,7 +28,7 @@ public class StepStoolBlock extends Block {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
 	public StepStoolBlock() {
-		super(Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD));
+		super(Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(0.5F).sound(SoundType.WOOD));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
@@ -63,7 +62,7 @@ public class StepStoolBlock extends Block {
 
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-		return level.getBlockState(pos.below()).getMaterial().isSolid();
+		return level.getBlockState(pos.below()).isSolid();
 	}
 
 	@Override
@@ -72,7 +71,7 @@ public class StepStoolBlock extends Block {
 		if (!level.isClientSide) {
 			player.addItem(new ItemStack(this.asItem()));
 			level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
-			
+
 			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.PASS;

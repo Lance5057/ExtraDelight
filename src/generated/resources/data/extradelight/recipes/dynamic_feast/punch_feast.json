@@ -1,8 +1,0 @@
-{
-  "type": "extradelight:feast",
-  "block": "extradelight:punch_feast",
-  "ingredient": {
-    "item": "minecraft:glass_bottle"
-  },
-  "result": "extradelight:punch"
-}

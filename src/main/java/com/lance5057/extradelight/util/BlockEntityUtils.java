@@ -2,7 +2,7 @@ package com.lance5057.extradelight.util;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.IItemHandlerModifiable;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
 
 public class BlockEntityUtils {
 	public static class Inventory {
@@ -28,7 +28,7 @@ public class BlockEntityUtils {
 
 		public static void insertItem(IItemHandlerModifiable inventory, ItemStack heldItem, int inventorySize) {
 			for (int i = 0; i <= inventorySize - 1; i++) {
-				if (!inventory.insertItem(i, heldItem, true).equals(heldItem, false)) {
+				if (!ItemStack.isSameItem(inventory.insertItem(i, heldItem, true), heldItem)) {
 					final int leftover = inventory.insertItem(i, heldItem.copy(), false).getCount();
 					heldItem.setCount(leftover);
 					return;

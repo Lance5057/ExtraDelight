@@ -37,7 +37,7 @@ public class CornHuskDollBlock extends Block implements SimpleWaterloggedBlock, 
 	public static final BooleanProperty HANGING = BlockStateProperties.HANGING;
 
 	public CornHuskDollBlock() {
-		super(Block.Properties.copy(Blocks.YELLOW_WOOL));
+		super(Block.Properties.ofFullCopy(Blocks.YELLOW_WOOL));
 	}
 
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -77,8 +77,8 @@ public class CornHuskDollBlock extends Block implements SimpleWaterloggedBlock, 
 
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-		return level.getBlockState(pos.below()).getMaterial().isSolid()
-				|| level.getBlockState(pos.above()).getMaterial().isSolid();
+		return level.getBlockState(pos.below()).isSolid()
+				|| level.getBlockState(pos.above()).isSolid();
 	}
 
 	@Override

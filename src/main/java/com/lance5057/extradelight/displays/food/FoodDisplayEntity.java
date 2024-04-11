@@ -11,22 +11,21 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import net.neoforged.neoforge.items.ItemStackHandler;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
-public class FoodDisplayEntity extends BlockEntity implements MenuProvider {
+public class FoodDisplayEntity extends Block implements EntityBlock {
 
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 	private int NUM_SLOTS = 9;
@@ -106,25 +105,25 @@ public class FoodDisplayEntity extends BlockEntity implements MenuProvider {
 		return tag;
 	}
 
-	@Override
-	public void load(@Nonnull CompoundTag nbt) {
-		super.load(nbt);
-		readNBT(nbt);
-	}
-
-	@Override
-	public void saveAdditional(@Nonnull CompoundTag nbt) {
-		super.saveAdditional(nbt);
-		writeNBT(nbt);
-	}
-
-	@Override
-	public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-		return new FoodDisplayMenu(pContainerId, pPlayerInventory, this);
-	}
-
-	@Override
-	public Component getDisplayName() {
-		return TextUtils.getTranslation("screen.food_display.name");
-	}
+//	@Override
+//	public void load(@Nonnull CompoundTag nbt) {
+//		super.load(nbt);
+//		readNBT(nbt);
+//	}
+//
+//	@Override
+//	public void saveAdditional(@Nonnull CompoundTag nbt) {
+//		super.saveAdditional(nbt);
+//		writeNBT(nbt);
+//	}
+//
+//	@Override
+//	public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+//		return new FoodDisplayMenu(pContainerId, pPlayerInventory, this);
+//	}
+//
+//	@Override
+//	public Component getDisplayName() {
+//		return TextUtils.getTranslation("screen.food_display.name");
+//	}
 }

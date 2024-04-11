@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
-import com.lance5057.extradelight.addons.ButchercraftAddon;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.DoughShapingRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
@@ -37,10 +36,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
-import net.minecraftforge.common.crafting.DifferenceIngredient;
-import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
@@ -90,7 +89,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		toolOnBlockRecipes(consumer);
 
 		AestheticBlocks.Recipes(consumer);
-		ButchercraftAddon.recipes(consumer);
 	}
 
 	private void toolOnBlockRecipes(Consumer<FinishedRecipe> consumer) {
@@ -615,34 +613,29 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.SUGAR_COOKIE_DIAMOND.get(), consumer, "sugar_cookie_diamond");
 		vanillaCooking(Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_EMERALD.get()),
 				ExtraDelightItems.SUGAR_COOKIE_EMERALD.get(), consumer, "sugar_cookie_emerald");
-
-		vanillaCooking(Ingredient.of(ExtraDelightItems.CHICKEN_PATTY.get()),
-				ExtraDelightItems.COOKED_CHICKEN_PATTY.get(), consumer, "cooked_chicken_patty");
 	}
 
-	public static void vanillaCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer,
-			String name) {
+	private void vanillaCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
 		SimpleCookingRecipeBuilder.campfireCooking(of, item, MEDIUM_EXP, CAMPFIRE_COOKING)
-				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("campfire/" + name + "_fire"));
 		SimpleCookingRecipeBuilder.smelting(of, item, MEDIUM_EXP, FURNACE_COOKING)
-				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smelting/" + name + "_smelt"));
 		SimpleCookingRecipeBuilder.smoking(of, item, MEDIUM_EXP, SMOKER_COOKING)
-				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smoking/" + name + "_smoke"));
 	}
 
-	public static void dynamicCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer,
-			String name) {
+	private void dynamicCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
 		DynamicNameSmeltingRecipeBuilder.campfireCooking(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("campfire/" + name + "_fire"));
 		DynamicNameSmeltingRecipeBuilder.smelting(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smelting/" + name + "_smelt"));
 		DynamicNameSmeltingRecipeBuilder.smoking(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smoking/" + name + "_smoke"));
 	}
 
@@ -1789,17 +1782,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
 				.save(consumer, EDLoc("cinnamon_stairs"));
-
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.EMPTY_SANDWICH.get())
-				.requires(ExtraDelightItems.BREAD_SLICE.get(), 2)
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BREAD_SLICE.get()))
-				.save(consumer, EDLoc("empty_sandwich"));
-
-		ShapelessRecipeBuilder.shapeless(ExtraDelightItems.CHICKEN_PATTY.get(), 2)
-				.requires(Ingredient.of(ExtraDelightTags.GROUND_CHICKEN_RAW))
-				.unlockedBy("book", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CHICKEN_CUTS.get()))
-				.save(consumer, Recipes.EDLoc("chicken_patty"));
 	}
 
 	private void bundleItem9(Ingredient in, Item b, Item out, Consumer<FinishedRecipe> consumer, String name) {
@@ -1876,11 +1858,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						.addIngredient(ExtraDelightTags.FLOUR).build(r, EDLoc("pot/" + "beef_stew_vanilla")))
 				.build(consumer, EDLoc("pot/" + "beef_stew_test"));
 
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.SOS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
-						ExtraDelightItems.BREAD_SLICE.get())
-				.addIngredient(ExtraDelightTags.SCRAP_BEEF).addIngredient(ExtraDelightTags.FLOUR)
-				.addIngredient(ForgeTags.MILK).build(consumer, EDLoc("pot/" + "sos"));
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.STOMACH)))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.SOS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+								ExtraDelightItems.BREAD_SLICE.get())
+						.addIngredient(ExtraDelightTags.SCRAP_BEEF).addIngredient(ExtraDelightTags.FLOUR)
+						.addIngredient(ForgeTags.MILK).build(r, EDLoc("pot/" + "sos")))
+				.build(consumer, EDLoc("pot/" + "sos_test"));
 
 		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.PORK_ROAST_RAW)))
 				.addRecipe(r -> CookingPotRecipeBuilder
@@ -1898,20 +1882,36 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						.build(r, EDLoc("pot/" + "pulled_pork_feast_vanilla")))
 				.build(consumer, EDLoc("pot/" + "pulled_pork_cond"));
 
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.OXTAIL_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F,
-						Items.BOWL)
-				.addIngredient(ExtraDelightTags.OXTAIL).addIngredient(Items.CARROT)
-				.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ForgeTags.VEGETABLES_TOMATO)
-				.build(consumer, EDLoc("pot/" + "oxtail_soup"));
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.STOMACH)))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.CHEESE.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F)
+						.addIngredient(Items.MILK_BUCKET).addIngredient(ExtraDelightTags.STOMACH)
+						.build(r, EDLoc("pot/" + "cheese_stomach")))
+				.build(consumer, EDLoc("pot/" + "cheese_conditional"));
 
-		pot(ExtraDelightItems.LIVER_ONIONS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.LIVER), Ingredient.of(ForgeTags.VEGETABLES_ONION) },
-				"liver_onions", consumer);
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.OXTAIL)))
+				.addRecipe(r -> CookingPotRecipeBuilder
+						.cookingPotRecipe(ExtraDelightItems.OXTAIL_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F,
+								Items.BOWL)
+						.addIngredient(ExtraDelightTags.OXTAIL).addIngredient(Items.CARROT)
+						.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ForgeTags.VEGETABLES_TOMATO)
+						.build(r, EDLoc("pot/" + "oxtail_soup")))
+				.build(consumer, EDLoc("pot/" + "oxtail_soup_test"));
 
-		pot(ExtraDelightItems.FRIED_BRAINS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.AIR, new Ingredient[] {
-				Ingredient.of(ExtraDelightTags.BRAIN), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
-				"fried_brains", consumer);
+//		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.LIVER)))
+//				.addRecipe(
+//						r -> CookingPotRecipeBuilder
+//								.cookingPotRecipe(ExtraDelightItems.LIVER_ONIONS.get(), 1,
+//										CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL)
+//								.addIngredient(ExtraDelightTags.LIVER),
+//						Ingredient.of(ForgeTags.VEGETABLES_ONION).build(r, EDLoc("pot/" + "liver_onions")))
+//				.build(consumer, EDLoc("pot/" + "liveronions_test"));
+//
+//		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.BRAIN)))
+//				.addRecipe(r -> pot(ExtraDelightItems.FRIED_BRAINS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F),
+//						Ingredient.of(ExtraDelightTags.BRAIN), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get())
+//								.build(r, EDLoc("pot/" + "fried_brains")))
+//				.build(consumer, EDLoc("pot/" + "fried_brains_test"));
 
 		pot(ExtraDelightItems.CHOCOLATE_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(Items.COCOA_BEANS), Ingredient.of(ForgeTags.MILK),
@@ -2476,13 +2476,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.MINT), Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"mint_jelly", consumer);
 
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ExtraDelightItems.BREADED_CHICKEN_PATTY.get(), 1, CookingRecipes.NORMAL_COOKING,
-						0.35F, Items.BOWL)
-				.addIngredient(ExtraDelightItems.CHICKEN_PATTY.get())
-				.addIngredient(ExtraDelightItems.BREADING_MISANPLAS.get())
-				.build(consumer, Recipes.EDLoc("pot/" + "breaded_chicken_patty"));
-
 	}
 
 	private void knifeRecipes(Consumer<FinishedRecipe> consumer) {
@@ -2632,12 +2625,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.MILK_TART_FEAST.get()),
 						Ingredient.of(ForgeTags.TOOLS_KNIVES), ExtraDelightItems.MILK_TART_SLICE.get(), 4)
 				.build(consumer, EDLoc("cutting/" + "milk_tart_knife"));
-
-		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(ModItems.CHICKEN_CUTS.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-						ExtraDelightItems.CHICKEN_PATTY.get(), 2)
-				.addResultWithChance(Items.BONE_MEAL, 0.5f)
-				.build(consumer, Recipes.EDLoc("cutting/" + "chicken_patty"));
 	}
 
 	private void mortarRecipes(Consumer<FinishedRecipe> consumer) {
@@ -2747,57 +2734,70 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void ovenRecipes(Consumer<FinishedRecipe> consumer) {
-		OvenRecipeBuilder
-				.OvenRecipe(ExtraDelightItems.STUFFED_HEART.get(), 1, CookingRecipes.NORMAL_COOKING, SMALL_EXP,
-						ExtraDelightItems.TRAY.get())
-				.addIngredient(ExtraDelightTags.HEART).addIngredient(Tags.Items.MUSHROOMS)
-				.addIngredient(ExtraDelightTags.BREAD_CRUMBS).addIngredient(ForgeTags.VEGETABLES_ONION)
-				.addIngredient(Items.EGG).build(consumer, EDLoc("stuffed_heart"));
 
-		OvenRecipeBuilder
-				.OvenRecipe(ExtraDelightItems.POT_ROAST_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, MEDIUM_EXP,
-						ExtraDelightItems.SQUARE_PAN.get())
-				.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ExtraDelightTags.ROAST_RAW)
-				.addIngredient(ExtraDelightTags.COOKING_OIL).addIngredient(ForgeTags.CROPS_ONION)
-				.addIngredient(Items.POTATO).addIngredient(Items.CARROT).addIngredient(ForgeTags.CROPS_ONION)
-				.addIngredient(Items.POTATO).addIngredient(Items.CARROT).build(consumer, EDLoc("pot_roast_feast"));
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.HEART)))
+				.addRecipe(r -> OvenRecipeBuilder
+						.OvenRecipe(ExtraDelightItems.STUFFED_HEART.get(), 1, CookingRecipes.NORMAL_COOKING, SMALL_EXP,
+								ExtraDelightItems.TRAY.get())
+						.addIngredient(ExtraDelightTags.HEART).addIngredient(Tags.Items.MUSHROOMS)
+						.addIngredient(ExtraDelightTags.BREAD_CRUMBS).addIngredient(ForgeTags.VEGETABLES_ONION)
+						.addIngredient(Items.EGG).build(r, EDLoc("stuffed_heart")))
+				.build(consumer, EDLoc("stuffed_heart_test"));
 
-		OvenRecipeBuilder
-				.OvenRecipe(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, MEDIUM_EXP,
-						ExtraDelightItems.TRAY.get())
-				.addIngredient(ExtraDelightTags.RIBS_RAW).addIngredient(ExtraDelightTags.RIBS_RAW)
-				.addIngredient(ExtraDelightTags.RIBS_RAW).addIngredient(ExtraDelightTags.RIBS_RAW)
-				.addIngredient(ExtraDelightItems.BBQ_SAUCE.get()).build(consumer, EDLoc("bbq_ribs_feast"));
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.ROAST_RAW)))
+				.addRecipe(r -> OvenRecipeBuilder
+						.OvenRecipe(ExtraDelightItems.POT_ROAST_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING,
+								MEDIUM_EXP, ExtraDelightItems.SQUARE_PAN.get())
+						.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ExtraDelightTags.ROAST_RAW)
+						.addIngredient(ExtraDelightTags.COOKING_OIL).addIngredient(ForgeTags.CROPS_ONION)
+						.addIngredient(Items.POTATO).addIngredient(Items.CARROT).addIngredient(ForgeTags.CROPS_ONION)
+						.addIngredient(Items.POTATO).addIngredient(Items.CARROT).build(r, EDLoc("pot_roast_feast")))
+				.build(consumer, EDLoc("pot_roast_test"));
 
-		OvenRecipeBuilder
-				.OvenRecipe(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), 1, SLOW_COOKING, MEDIUM_EXP,
-						ExtraDelightItems.TRAY.get())
-				.addIngredient(ExtraDelightTags.MUTTON_RIBS).addIngredient(ExtraDelightTags.COOKING_OIL)
-				.addIngredient(ExtraDelightTags.MUTTON_RIBS).addIngredient(ExtraDelightTags.MUTTON_RIBS)
-				.addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(ExtraDelightTags.MUTTON_RIBS)
-				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.BREAD).addIngredient(Items.SWEET_BERRIES)
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.RIBS_RAW)))
+				.addRecipe(r -> OvenRecipeBuilder
+						.OvenRecipe(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING,
+								MEDIUM_EXP, ExtraDelightItems.TRAY.get())
+						.addIngredient(ExtraDelightTags.RIBS_RAW).addIngredient(ExtraDelightTags.RIBS_RAW)
+						.addIngredient(ExtraDelightTags.RIBS_RAW).addIngredient(ExtraDelightTags.RIBS_RAW)
+						.addIngredient(ExtraDelightItems.BBQ_SAUCE.get()).build(r, EDLoc("bbq_ribs_feast")))
+				.build(consumer, EDLoc("bbq_ribs_test"));
 
-		OvenRecipeBuilder
-				.OvenRecipe(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get(), 1, SLOW_COOKING, MEDIUM_EXP,
-						ExtraDelightItems.TRAY.get())
-				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BEEF_ROAST)
-				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BUTTER)
-				.addIngredient(ForgeTags.DOUGH).addIngredient(ExtraDelightTags.LIVER)
-				.addIngredient(ModItems.COOKED_BACON.get()).addIngredient(Items.EGG)
-				.addIngredient(ExtraDelightTags.PROCESSED_ONION).setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.MUTTON_RIBS)))
+				.addRecipe(r -> OvenRecipeBuilder
+						.OvenRecipe(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+								ExtraDelightItems.TRAY.get())
+						.addIngredient(ExtraDelightTags.MUTTON_RIBS).addIngredient(ExtraDelightTags.COOKING_OIL)
+						.addIngredient(ExtraDelightTags.MUTTON_RIBS).addIngredient(ExtraDelightTags.MUTTON_RIBS)
+						.addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(ExtraDelightTags.MUTTON_RIBS)
+						.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.BREAD)
+						.addIngredient(Items.SWEET_BERRIES).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+						.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(r))
+				.build(consumer, EDLoc("rack_lamb_test"));
 
-		OvenRecipeBuilder
-				.OvenRecipe(ExtraDelightItems.HAGGIS_FEAST_ITEM.get(), 1, SLOW_COOKING, MEDIUM_EXP,
-						ExtraDelightItems.TRAY.get())
-				.addIngredient(ExtraDelightTags.OFFAL).addIngredient(ExtraDelightTags.OFFAL)
-				.addIngredient(ExtraDelightTags.OFFAL).addIngredient(ExtraDelightTags.LUNG)
-				.addIngredient(ExtraDelightTags.STOMACH).addIngredient(ExtraDelightTags.SCRAP_MEAT)
-				.addIngredient(Items.WHEAT_SEEDS).addIngredient(Items.WHEAT_SEEDS).addIngredient(Items.WHEAT_SEEDS)
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.LIVER)))
+				.addRecipe(r -> OvenRecipeBuilder
+						.OvenRecipe(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+								ExtraDelightItems.TRAY.get())
+						.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BEEF_ROAST)
+						.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BUTTER)
+						.addIngredient(ForgeTags.DOUGH).addIngredient(ExtraDelightTags.LIVER)
+						.addIngredient(ModItems.COOKED_BACON.get()).addIngredient(Items.EGG)
+						.addIngredient(ExtraDelightTags.PROCESSED_ONION).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+						.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(r))
+				.build(consumer, EDLoc("wellington_test"));
+
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.LIVER)))
+				.addRecipe(r -> OvenRecipeBuilder
+						.OvenRecipe(ExtraDelightItems.HAGGIS_FEAST_ITEM.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+								ExtraDelightItems.TRAY.get())
+						.addIngredient(ExtraDelightTags.OFFAL).addIngredient(ExtraDelightTags.OFFAL)
+						.addIngredient(ExtraDelightTags.OFFAL).addIngredient(ExtraDelightTags.LUNG)
+						.addIngredient(ExtraDelightTags.STOMACH).addIngredient(ExtraDelightTags.SCRAP_MEAT)
+						.addIngredient(Items.WHEAT_SEEDS).addIngredient(Items.WHEAT_SEEDS)
+						.addIngredient(Items.WHEAT_SEEDS).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+						.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(r))
+				.build(consumer, EDLoc("haggis_test"));
 
 		OvenRecipeBuilder.OvenRecipe(Items.CAKE, 1, NORMAL_COOKING, MEDIUM_EXP, ExtraDelightItems.ROUND_PAN.get())
 				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.MILK)
@@ -2851,15 +2851,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Ingredient.of(ForgeTags.MILK)).setRecipeBookTab(OvenRecipeBookTab.MEALS)
 				.unlockedByAnyIngredient(Items.MILK_BUCKET, ModItems.MILK_BOTTLE.get()).build(consumer);
 
-//		OvenRecipeBuilder
-//				.OvenRecipe(ModItems.SHEPHERDS_PIE_BLOCK.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
-//						ExtraDelightItems.SQUARE_PAN.get())
-//				.addIngredient(Items.BAKED_POTATO).addIngredient(ForgeTags.MILK).addIngredient(Items.BAKED_POTATO)
-//				.addIngredient(ForgeTags.COOKED_MUTTON).addIngredient(ExtraDelightTags.FLOUR)
-//				.addIngredient(ForgeTags.COOKED_MUTTON).addIngredient(ExtraDelightTags.PROCESSED_VEG)
-//				.addIngredient(ExtraDelightTags.PROCESSED_VEG).addIngredient(ExtraDelightTags.PROCESSED_VEG)
-//				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedBy("shepard_pie", has(ForgeTags.COOKED_MUTTON))
-//				.build(consumer);
+		OvenRecipeBuilder
+				.OvenRecipe(ModItems.SHEPHERDS_PIE_BLOCK.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+						ExtraDelightItems.SQUARE_PAN.get())
+				.addIngredient(Items.BAKED_POTATO).addIngredient(ForgeTags.MILK).addIngredient(Items.BAKED_POTATO)
+				.addIngredient(ForgeTags.COOKED_MUTTON).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(ForgeTags.COOKED_MUTTON).addIngredient(ExtraDelightTags.PROCESSED_VEG)
+				.addIngredient(ExtraDelightTags.PROCESSED_VEG).addIngredient(ExtraDelightTags.PROCESSED_VEG)
+				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedBy("shepard_pie", has(ForgeTags.COOKED_MUTTON))
+				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
@@ -2931,32 +2931,60 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedBy("egg_basket", has(ForgeTags.EGGS))
 				.build(consumer);
 
-		OvenRecipeBuilder
-				.OvenRecipe(ExtraDelightItems.SAUSAGE_ROLL.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
-						ExtraDelightItems.SHEET.get())
-				.addIngredient(ExtraDelightTags.SAUSAGE).addIngredient(ForgeTags.DOUGH)
-				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedBy("sausage_roll", has(ExtraDelightTags.SAUSAGE_COOKED)).build(consumer);
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.SAUSAGE)))
+				.addRecipe(r -> OvenRecipeBuilder
+						.OvenRecipe(ExtraDelightItems.SAUSAGE_ROLL.get(), 1, NORMAL_COOKING, MEDIUM_EXP,
+								ExtraDelightItems.SHEET.get())
+						.addIngredient(ExtraDelightTags.SAUSAGE).addIngredient(ForgeTags.DOUGH)
+						.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+						.unlockedBy("sausage_roll", has(ExtraDelightTags.SAUSAGE)).build(r))
+				.build(consumer, EDLoc("sausage_roll_test"));
 
-		OvenRecipeBuilder
-				.OvenRecipe(ExtraDelightItems.LASAGNA_FEAST.get(), 1, SLOW_COOKING, MEDIUM_EXP,
-						ExtraDelightItems.SQUARE_PAN.get())
-				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ModItems.TOMATO_SAUCE.get())
-				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
-				.addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
-				.addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
-				.addIngredient(ExtraDelightTags.GROUND_MEAT_COOKED).addIngredient(ModItems.TOMATO_SAUCE.get())
-				.addIngredient(ExtraDelightTags.GROUND_MEAT_COOKED).setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedBy("lasagna", has(ExtraDelightItems.LASAGNA_NOODLES.get())).build(consumer, EDLoc("lasagna"));
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.GROUND_MEAT_COOKED))).addRecipe(r -> {
+			OvenRecipeBuilder
+					.OvenRecipe(ExtraDelightItems.LASAGNA_FEAST.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+							ExtraDelightItems.SQUARE_PAN.get())
+					.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ModItems.TOMATO_SAUCE.get())
+					.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
+					.addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
+					.addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
+					.addIngredient(ExtraDelightTags.GROUND_MEAT_COOKED).addIngredient(ModItems.TOMATO_SAUCE.get())
+					.addIngredient(ExtraDelightTags.GROUND_MEAT_COOKED).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+					.unlockedBy("lasagna", has(ExtraDelightItems.LASAGNA_NOODLES.get())).build(r, EDLoc("lasagna_bc"));
+		}).addCondition(tagEmpty(ExtraDelightTags.GROUND_MEAT_COOKED)).addRecipe(r -> {
+			OvenRecipeBuilder
+					.OvenRecipe(ExtraDelightItems.LASAGNA_FEAST.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+							ExtraDelightItems.SQUARE_PAN.get())
+					.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ModItems.TOMATO_SAUCE.get())
+					.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
+					.addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
+					.addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get()).addIngredient(ExtraDelightTags.MEAT_COOKED)
+					.addIngredient(ModItems.TOMATO_SAUCE.get()).addIngredient(ExtraDelightTags.MEAT_COOKED)
+					.setRecipeBookTab(OvenRecipeBookTab.MEALS)
+					.unlockedBy("lasagna", has(ExtraDelightItems.LASAGNA_NOODLES.get()))
+					.build(r, EDLoc("lasagna_vanilla"));
+		}).build(consumer, EDLoc("lasagna"));
 
-		OvenRecipeBuilder
-				.OvenRecipe(ExtraDelightItems.MEAT_LOAF_FEAST.get(), 1, SLOW_COOKING, MEDIUM_EXP,
-						ExtraDelightItems.LOAF_PAN.get())
-				.addIngredient(ExtraDelightItems.KETCHUP.get()).addIngredient(ExtraDelightTags.BREAD_CRUMBS)
-				.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
-				.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
-				.addIngredient(ExtraDelightTags.PROCESSED_ONION).setRecipeBookTab(OvenRecipeBookTab.MEALS)
-				.unlockedBy("meatloaf", has(ExtraDelightTags.GROUND_MEAT_RAW)).build(consumer, EDLoc("meatloaf"));
+		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.GROUND_MEAT_RAW))).addRecipe(r -> {
+			OvenRecipeBuilder
+					.OvenRecipe(ExtraDelightItems.MEAT_LOAF_FEAST.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+							ExtraDelightItems.LOAF_PAN.get())
+					.addIngredient(ExtraDelightItems.KETCHUP.get()).addIngredient(ExtraDelightTags.BREAD_CRUMBS)
+					.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
+					.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
+					.addIngredient(ExtraDelightTags.PROCESSED_ONION).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+					.unlockedBy("meatloaf", has(ExtraDelightTags.GROUND_MEAT_RAW)).build(r, EDLoc("meatloaf_bc"));
+		}).addCondition(tagEmpty(ExtraDelightTags.GROUND_MEAT_RAW)).addRecipe(r -> {
+			OvenRecipeBuilder
+					.OvenRecipe(ExtraDelightItems.MEAT_LOAF_FEAST.get(), 1, SLOW_COOKING, MEDIUM_EXP,
+							ExtraDelightItems.LOAF_PAN.get())
+					.addIngredient(ExtraDelightItems.KETCHUP.get()).addIngredient(ExtraDelightTags.BREAD_CRUMBS)
+					.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ModItems.BEEF_PATTY.get())
+					.addIngredient(ModItems.BEEF_PATTY.get()).addIngredient(ModItems.BEEF_PATTY.get())
+					.addIngredient(ExtraDelightTags.PROCESSED_ONION).setRecipeBookTab(OvenRecipeBookTab.MEALS)
+					.unlockedBy("meatloaf", has(ExtraDelightItems.LASAGNA_NOODLES.get()))
+					.build(r, EDLoc("meatloaf_vanilla"));
+		}).build(consumer, EDLoc("meatloaf"));
 
 		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.GROUND_MUTTON_COOKED))).addRecipe(r -> {
 			OvenRecipeBuilder
@@ -3124,8 +3152,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, ExtraDelightItems.SHEET.get(), "grilled_cheese");
 		bulkBake(ExtraDelightItems.COOKED_CACTUS.get(), Ingredient.of(ExtraDelightItems.CACTUS.get()), consumer,
 				ExtraDelightItems.SHEET.get(), "cooked_cactus");
-		bulkBake(ExtraDelightItems.COOKED_CHICKEN_PATTY.get(), Ingredient.of(ExtraDelightItems.CHICKEN_PATTY.get()),
-				consumer, ExtraDelightItems.TRAY.get(), "cooked_chicken_patty_bulk");
 
 		// Halloween Start!
 		OvenRecipeBuilder
@@ -3420,12 +3446,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedByAnyIngredient(ModItems.PIE_CRUST.get()).build(consumer);
 	}
 
-	public static void bulkBake(ItemLike mainResult, Ingredient in, Consumer<FinishedRecipe> consumer, ItemLike pan,
+	private void bulkBake(ItemLike mainResult, Ingredient in, Consumer<FinishedRecipe> consumer, ItemLike pan,
 			String name) {
 		bulkBake(mainResult, in, consumer, pan, name, 1);
 	}
 
-	public static void bulkBake(ItemLike mainResult, Ingredient in, Consumer<FinishedRecipe> consumer, ItemLike pan,
+	private void bulkBake(ItemLike mainResult, Ingredient in, Consumer<FinishedRecipe> consumer, ItemLike pan,
 			String name, int count) {
 		for (int i = 1; i < 10; i++)
 			OvenRecipeBuilder.OvenRecipe(mainResult, i * count, NORMAL_COOKING, MEDIUM_EXP, pan).addIngredient(in, i)

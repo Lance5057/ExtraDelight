@@ -8,6 +8,7 @@ import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -15,11 +16,9 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -30,7 +29,6 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public class CandyBowlBlock extends Block implements EntityBlock {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -103,19 +101,17 @@ public class CandyBowlBlock extends Block implements EntityBlock {
 		return state;
 	}
 
-	@Override
-	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity tileentity = level.getBlockEntity(pos);
-			if (tileentity instanceof FoodDisplayEntity) {
-				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
-						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots())
-								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
-
-				level.updateNeighbourForOutputSignal(pos, this);
-			}
-
-			super.onRemove(state, level, pos, newState, isMoving);
-		}
-	}
+//	@Override
+//	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+//		if (state.getBlock() != newState.getBlock()) {
+//			BlockEntity tileentity = level.getBlockEntity(pos);
+//			if (tileentity instanceof FoodDisplayEntity f) {
+//				Containers.dropContents(level, pos, null );
+//
+//				level.updateNeighbourForOutputSignal(pos, this);
+//			}
+//
+//			super.onRemove(state, level, pos, newState, isMoving);
+//		}
+//	}
 }

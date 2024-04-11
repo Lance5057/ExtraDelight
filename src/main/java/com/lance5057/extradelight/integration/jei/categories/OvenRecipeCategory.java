@@ -5,13 +5,10 @@ import java.util.List;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
-import mezz.jei.api.gui.drawable.IDrawableAnimated;
-import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
@@ -27,18 +24,12 @@ public class OvenRecipeCategory implements IRecipeCategory<OvenRecipe> {
 	private final IDrawable background;
 	private final Component localizedName;
 	private final IDrawable icon;
-	protected final IDrawable heatIndicator;
-	protected final IDrawableAnimated arrow;
 
 	public OvenRecipeCategory(IGuiHelper guiHelper) {
-		ResourceLocation backgroundImage = new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/oven.png");
-		background = guiHelper.createDrawable(backgroundImage, 29, 16,
+		background = guiHelper.createDrawable(new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 53,
 				121, 72);
 		localizedName = Component.translatable("extradelight.jei.oven");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ExtraDelightItems.OVEN.get()));
-		heatIndicator = guiHelper.createDrawable(backgroundImage, 176, 0, 17, 15);
-		arrow = guiHelper.drawableBuilder(backgroundImage, 176, 15, 24, 17)
-				.buildAnimated(200, IDrawableAnimated.StartDirection.LEFT, false);
 	}
 
 	@Override
@@ -73,12 +64,8 @@ public class OvenRecipeCategory implements IRecipeCategory<OvenRecipe> {
 
 		}
 		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 3, 47).addItemStack(pan);
-		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 35, 20).addItemStack(output);
-	}
-	
-	@Override
-	public void draw(OvenRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack matrixStack, double mouseX, double mouseY) {
-		arrow.draw(matrixStack, 60, 20);
-		heatIndicator.draw(matrixStack, 95, 42);
+		// builder.addSlot(RecipeIngredientRole.CATALYST, (int) center.x, (int)
+		// center.y).addIngredients(pestle);
+		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 35, 47).addItemStack(output);
 	}
 }

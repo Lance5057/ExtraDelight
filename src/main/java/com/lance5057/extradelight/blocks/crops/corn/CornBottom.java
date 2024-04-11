@@ -14,10 +14,7 @@ import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.monster.Ravager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -36,9 +33,9 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.common.IPlantable;
 
 public class CornBottom extends CropBlock {
 	public static final int MAX_AGE = 3;
@@ -72,7 +69,7 @@ public class CornBottom extends CropBlock {
 		return MAX_AGE;
 	}
 
-	protected int getAge(BlockState pState) {
+	public int getAge(BlockState pState) {
 		return pState.getValue(this.getAgeProperty());
 	}
 
@@ -80,9 +77,9 @@ public class CornBottom extends CropBlock {
 		return this.defaultBlockState().setValue(this.getAgeProperty(), Integer.valueOf(pAge));
 	}
 
-	public boolean isMaxAge(BlockState pState) {
-		return pState.getValue(this.getAgeProperty()) >= this.getMaxAge();
-	}
+//	public boolean isMaxAge(BlockState pState) {
+//		return pState.getValue(this.getAgeProperty()) >= this.getMaxAge();
+//	}
 
 	/**
 	 * @return whether this block needs random ticking.
@@ -103,10 +100,10 @@ public class CornBottom extends CropBlock {
 				int i = this.getAge(pState);
 				if (i < this.getMaxAge()) {
 					float f = getGrowthSpeed(this, pLevel, pPos);
-					if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(pLevel, pPos, pState,
+					if (net.neoforged.neoforge.common.CommonHooks.onCropsGrowPre(pLevel, pPos, pState,
 							pRandom.nextInt((int) (25.0F / f) + 1) == 0)) {
 						this.growCrops(pLevel, pPos, pState);
-						net.minecraftforge.common.ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
+						net.neoforged.neoforge.common.CommonHooks.onCropsGrowPost(pLevel, pPos, pState);
 					}
 				}
 			}
@@ -147,7 +144,7 @@ public class CornBottom extends CropBlock {
 				float f1 = 0.0F;
 				BlockState blockstate = pLevel.getBlockState(blockpos.offset(i, 0, j));
 				if (blockstate.canSustainPlant(pLevel, blockpos.offset(i, 0, j), net.minecraft.core.Direction.UP,
-						(net.minecraftforge.common.IPlantable) pBlock)) {
+						(IPlantable) pBlock)) {
 					f1 = 1.0F;
 					if (blockstate.isFertile(pLevel, pPos.offset(i, 0, j))) {
 						f1 = 3.0F;
@@ -193,20 +190,20 @@ public class CornBottom extends CropBlock {
 				&& super.canSurvive(pState, pLevel, pPos);
 	}
 
-	public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
-		if (pEntity instanceof Ravager
-				&& net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(pLevel, pEntity)) {
-			pLevel.destroyBlock(pPos, true, pEntity);
-		}
-		if (pState.getValue(CornTop.DIMENSION)) {
-			if (pEntity.isSprinting())
-				pEntity.hurt(DamageSource.SWEET_BERRY_BUSH, 1);
-			pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
-
-		}
-
-		super.entityInside(pState, pLevel, pPos, pEntity);
-	}
+//	public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+//		if (pEntity instanceof Ravager
+//				&& net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(pLevel, pEntity)) {
+//			pLevel.destroyBlock(pPos, true, pEntity);
+//		}
+//		if (pState.getValue(CornTop.DIMENSION)) {
+//			if (pEntity.isSprinting())
+//				pEntity.hurt(DamageSource.SWEET_BERRY_BUSH, 1);
+//			pEntity.makeStuckInBlock(pState, new Vec3((double) 0.8F, 0.75D, (double) 0.4F));
+//
+//		}
+//
+//		super.entityInside(pState, pLevel, pPos, pEntity);
+//	}
 
 	private static boolean isHalloween() {
 		LocalDate localdate = LocalDate.now();

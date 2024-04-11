@@ -75,7 +75,7 @@ public class MortarRecipeCategory implements IRecipeCategory<MortarRecipe> {
 
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
-		fontRenderer.draw(ms, "x" + recipe.getStirs(), this.getWidth() / 2 + 6 + 6, 10, 0);
+		fontRenderer.draw(ms, "x" + recipe.getGrinds(), this.getWidth() / 2 + 6 + 6, 10, 0);
 
 		RenderSystem.disableBlend();
 	}

@@ -46,7 +46,7 @@ public class FrostableBlock extends Block {
 				next = 0;
 			}
 
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < 10; i++) 
 				level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, Blocks.SNOW_BLOCK.defaultBlockState()),
 						pos.getX() + 0.5f,
 						pos.getY() + 0.5f,

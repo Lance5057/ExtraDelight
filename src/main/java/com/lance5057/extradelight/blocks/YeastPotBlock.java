@@ -19,12 +19,12 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -36,7 +36,7 @@ public class YeastPotBlock extends Block {
 	final Supplier<Item> output;
 
 	public YeastPotBlock(Supplier<Item> output, int speed) {
-		super(Properties.of(Material.STONE).strength(0.5F, 1.0F).sound(SoundType.STONE).randomTicks());
+		super(Properties.ofFullCopy(Blocks.STONE).strength(0.5F, 1.0F).sound(SoundType.STONE).randomTicks());
 		this.registerDefaultState(this.stateDefinition.any().setValue(YEASTED, false));
 		this.speed = speed;
 		this.output = output;

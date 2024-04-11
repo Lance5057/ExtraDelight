@@ -46,12 +46,12 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
 
-		t.accept(mortar_nether,
-				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 1))
-						.add(LootItem.lootTableItem(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get()))));
-		t.accept(mortar_dungeon,
-				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 1))
-						.add(LootItem.lootTableItem(ExtraDelightItems.MORTAR_AMETHYST.get()))));
+//		t.accept(mortar_nether,
+//				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 1))
+//						.add(LootItem.lootTableItem(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get()))));
+//		t.accept(mortar_dungeon,
+//				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 1))
+//						.add(LootItem.lootTableItem(ExtraDelightItems.MORTAR_AMETHYST.get()))));
 		t.accept(pestle_nether,
 				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 1))
 						.add(LootItem.lootTableItem(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.get()))));
@@ -293,7 +293,7 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 						.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 2))
 								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_SEEDS.get()))
 								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_COB.get()))
-								.add(LootItem.lootTableItem(ExtraDelightItems.UNSHUCKED_CORN.get()))
+//								.add(LootItem.lootTableItem(ExtraDelightItems.UNSHUCKED_CORN.get()))
 								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_SILK.get()))
 								.add(LootItem.lootTableItem(ExtraDelightItems.CANDY_APPLE.get()))
 								.add(LootItem.lootTableItem(ExtraDelightItems.CARAMEL_APPLE.get()))

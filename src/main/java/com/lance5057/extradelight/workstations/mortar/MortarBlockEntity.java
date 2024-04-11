@@ -3,14 +3,12 @@ package com.lance5057.extradelight.workstations.mortar;
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -22,36 +20,48 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.RecipeCraftingHolder;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.ItemStackHandler;
+import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
 
-public class MortarBlockEntity extends BlockEntity {
-	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
+public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCraftingHolder {
+//	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 
 	private int grinds = 0;
 
+	private final ItemStackHandler inventory;
+
 	public MortarBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ExtraDelightBlockEntities.MORTAR.get(), pPos, pState);
+		this.inventory = createHandler();
 	}
 
-	@Nonnull
-	@Override
-	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if (side != Direction.DOWN)
-			if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-				return handler.cast();
-			}
-		return super.getCapability(cap, side);
+//	@Nonnull
+//	@Override
+//	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+//		if (side != Direction.DOWN)
+//			if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+//				return handler.cast();
+//			}
+//		return super.getCapability(cap, side);
+//	}
+
+	@SubscribeEvent
+	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
+				(be, context) -> {
+					return be.inventory;
+				});
 	}
 
-	private IItemHandlerModifiable createHandler() {
+	private ItemStackHandler createHandler() {
 		return new ItemStackHandler(1) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
@@ -66,7 +76,7 @@ public class MortarBlockEntity extends BlockEntity {
 		};
 	}
 
-	public void extractItem(Player playerEntity, IItemHandler inventory) {
+	public void extractItem(Player playerEntity) {
 		if (!inventory.getStackInSlot(0).isEmpty()) {
 			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
 			playerEntity.addItem(itemStack);
@@ -77,10 +87,10 @@ public class MortarBlockEntity extends BlockEntity {
 		updateInventory();
 	}
 
-	public void insertItem(IItemHandler inventory, ItemStack heldItem) {
+	public void insertItem(ItemStack heldItem) {
 		if (!this.matchRecipe(heldItem).isEmpty()) {
 			if (inventory.isItemValid(0, heldItem))
-				if (!inventory.insertItem(0, heldItem, true).equals(heldItem, false)) {
+				if (!ItemStack.isSameItem(inventory.insertItem(0, heldItem, true), heldItem)) {
 					final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
 					heldItem.setCount(leftover);
 					updateInventory();
@@ -92,14 +102,14 @@ public class MortarBlockEntity extends BlockEntity {
 	}
 
 	// External extract handler
-	public void extractItem(Player playerEntity) {
-		handler.ifPresent(inventory -> this.extractItem(playerEntity, inventory));
-	}
-
-	// External insert handler
-	public void insertItem(ItemStack heldItem) {
-		handler.ifPresent(inventory -> this.insertItem(inventory, heldItem));
-	}
+//	public void extractItem(Player playerEntity) {
+//		inventory.extractItem(playerEntity, inventory);
+//	}
+//
+//	// External insert handler
+//	public void insertItem(ItemStack heldItem) {
+//		inventory.insertItem(inventory, heldItem);
+//	}
 
 	public void zeroProgress() {
 		grinds = 0;
@@ -112,7 +122,7 @@ public class MortarBlockEntity extends BlockEntity {
 	}
 
 	public ItemStack getInsertedItem() {
-		return handler.map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
+		return inventory.getStackInSlot(0);
 	}
 
 	public int getGrind() {
@@ -150,18 +160,14 @@ public class MortarBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt) {
-		final IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
-				.orElseGet(this::createHandler);
-		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
+		inventory.deserializeNBT(nbt.getCompound("inventory"));
 
 		this.grinds = nbt.getInt("Grinds");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
 
-		IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
-				.orElseGet(this::createHandler);
-		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
+		tag.put("inventory", inventory.serializeNBT());
 
 		tag.putInt("Grinds", this.grinds);
 
@@ -180,7 +186,7 @@ public class MortarBlockEntity extends BlockEntity {
 		writeNBT(nbt);
 	}
 
-	public Optional<MortarRecipe> matchRecipe(ItemStack... itemstack) {
+	public Optional<RecipeHolder<MortarRecipe>> matchRecipe(ItemStack... itemstack) {
 		if (this.level != null) {
 			return level.getRecipeManager().getRecipeFor(ExtraDelightRecipes.MORTAR.get(),
 					new SimpleContainer(itemstack), level);
@@ -190,37 +196,48 @@ public class MortarBlockEntity extends BlockEntity {
 	}
 
 	public InteractionResult grind(Player Player) {
-		handler.ifPresent(inv -> {
-			Optional<MortarRecipe> recipeOptional = matchRecipe(getInsertedItem());
-			if (recipeOptional.isPresent()) {
-				MortarRecipe recipe = recipeOptional.get();
+		Optional<RecipeHolder<MortarRecipe>> recipeOptional = matchRecipe(getInsertedItem());
+		recipeOptional.ifPresent(recipe -> {
+//			MortarRecipe recipe = recipeOptional.get();
 
-				if ((this.grinds + 1) < recipe.getStirs()) {
-					grinds++;
+			if ((this.grinds + 1) < recipe.value().getGrinds()) {
+				grinds++;
 
-					for (int i = 0; i < 1 + level.random.nextInt(4); i++)
-						level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, getInsertedItem()),
-								worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
-								worldPosition.getY() - 0.5f - level.random.nextDouble(),
-								worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
+				for (int i = 0; i < 1 + level.random.nextInt(4); i++)
+					level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, getInsertedItem()),
+							worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
+							worldPosition.getY() - 0.5f - level.random.nextDouble(),
+							worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
-					level.playSound(Player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
-				} else {
-					ItemStack in = getInsertedItem();
+				level.playSound(Player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
+			} else {
+				ItemStack in = getInsertedItem();
 
-					for (int i = 0; i < in.getCount(); i++) {
+				for (int i = 0; i < in.getCount(); i++) {
 
-						ItemStack r = recipe.getResultItem().copy();
+					ItemStack r = recipe.value().getResultItem(this.level.registryAccess()).copy();
 
-						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
-								getBlockPos().getZ(), r));
-					}
-					inv.setStackInSlot(0, ItemStack.EMPTY);
+					level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
+							getBlockPos().getZ(), r));
 				}
-				updateInventory();
+				inventory.setStackInSlot(0, ItemStack.EMPTY);
 			}
+			updateInventory();
 		});
+		
 
 		return InteractionResult.SUCCESS;
+	}
+
+	@Override
+	public void setRecipeUsed(RecipeHolder<?> p_300902_) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public RecipeHolder<?> getRecipeUsed() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

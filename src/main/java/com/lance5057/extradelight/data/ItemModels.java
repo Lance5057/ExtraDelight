@@ -2,18 +2,17 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.addons.ButchercraftAddon;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class ItemModels extends ItemModelProvider {
 
@@ -224,7 +223,6 @@ public class ItemModels extends ItemModelProvider {
 
 		// Bread
 		forItem(ExtraDelightItems.BREAD_SLICE, "bread_slice");
-		forItem(ExtraDelightItems.EMPTY_SANDWICH, "empty_sandwich");
 		forItem(ExtraDelightItems.TOAST, "toast");
 		forItem(ExtraDelightItems.JAM_TOAST, "jam_toast");
 		forItem(ExtraDelightItems.GLOW_JAM_TOAST, "glow_jam_toast");
@@ -810,7 +808,6 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CORN_SILK_SACK, "corn_silk_sack");
 
 		AestheticBlocks.itemModel(this);
-		ButchercraftAddon.itemModel(this);
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

@@ -1,9 +1,0 @@
-{
-  "values": [
-    {
-      "id": "#forge:crops/tomato",
-      "required": false
-    },
-    "extradelight:sliced_tomato"
-  ]
-}

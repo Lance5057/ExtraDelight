@@ -82,7 +82,6 @@ public class EDFoods {
 			.build();
 
 	public static final FoodProperties SLICED_BREAD = EDFoods.divideFoods("sliced bread", Foods.BREAD, 4).build();
-	public static final FoodProperties TWO_BREAD = EDFoods.divideFoods("two bread", Foods.BREAD, 2).build();
 	public static final FoodProperties BREADING = EDFoods
 			.addFoods("breading", FLOUR, OIL, FoodValues.FRIED_EGG, SLICED_BREAD).build();
 	public static final FoodProperties CHEESE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).build();

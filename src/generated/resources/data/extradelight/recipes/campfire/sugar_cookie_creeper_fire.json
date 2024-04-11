@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:campfire_cooking",
-  "cookingtime": 600,
-  "experience": 1.0,
-  "ingredient": {
-    "item": "extradelight:raw_sugar_cookie_creeper"
-  },
-  "result": "extradelight:sugar_cookie_creeper"
-}

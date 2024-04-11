@@ -1,7 +1,7 @@
 package com.lance5057.extradelight.workstations;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class BlockEntityItemHandler<T extends BlockEntity> extends ItemStackHandler {
 	final T be;

@@ -1,18 +1,16 @@
 package com.lance5057.extradelight.recipe;
 
-import com.google.gson.JsonObject;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
+import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.item.crafting.SingleItemRecipe;
 import net.minecraft.world.level.Level;
 
@@ -20,11 +18,16 @@ public class FeastRecipe extends SingleItemRecipe {
 
 	protected final BlockItem feast;
 
-	public FeastRecipe(ResourceLocation pId, String pGroup, BlockItem feast, Ingredient pIngredient,
-			ItemStack pResult) {
-		super(ExtraDelightRecipes.FEAST.get(), ExtraDelightRecipes.FEAST_SERIALIZER.get(), pId, pGroup, pIngredient,
+	public FeastRecipe(String pGroup, BlockItem feast, Ingredient pIngredient, ItemStack pResult) {
+		super(ExtraDelightRecipes.FEAST.get(), ExtraDelightRecipes.FEAST_SERIALIZER.get(), pGroup, pIngredient,
 				pResult);
 		this.feast = feast;
+	}
+	
+	public FeastRecipe(String pGroup, ItemStack feast, Ingredient pIngredient, ItemStack pResult) {
+		super(ExtraDelightRecipes.FEAST.get(), ExtraDelightRecipes.FEAST_SERIALIZER.get(), pGroup, pIngredient,
+				pResult);
+		this.feast = (BlockItem) feast.getItem();
 	}
 
 	public BlockItem getFeast() {
@@ -41,46 +44,32 @@ public class FeastRecipe extends SingleItemRecipe {
 	}
 
 	public static class Serializer implements RecipeSerializer<FeastRecipe> {
-		@Override
-		public FeastRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
-			String s = GsonHelper.getAsString(pJson, "group", "");
-			Ingredient ingredient;
-			if (GsonHelper.isArrayNode(pJson, "ingredient")) {
-				ingredient = Ingredient.fromJson(GsonHelper.getAsJsonArray(pJson, "ingredient"));
-			} else {
-				ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "ingredient"));
-			}
 
-			if (!pJson.has("result"))
-				throw new com.google.gson.JsonSyntaxException("Missing result, expected to find a string or object");
-			ItemStack itemstack;
-			if (pJson.get("result").isJsonObject())
-				itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
-			else {
-				String s1 = GsonHelper.getAsString(pJson, "result");
-				ResourceLocation resourcelocation = new ResourceLocation(s1);
-				itemstack = new ItemStack(Registry.ITEM.getOptional(resourcelocation).orElseThrow(() -> {
-					return new IllegalStateException("Item: " + s1 + " does not exist");
-				}));
-			}
+		private static final Codec<FeastRecipe> CODEC = RecordCodecBuilder.create(inst -> inst
+				.group(ExtraCodecs.strictOptionalField(Codec.STRING, "group", "").forGetter(FeastRecipe::getGroup),
+						ItemStack.SINGLE_ITEM_CODEC.fieldOf("out").forGetter(r -> new ItemStack(r.feast)),
+						Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(p_301068_ -> p_301068_.ingredient),
+						ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("result").forGetter(r -> r.result))
+				.apply(inst, FeastRecipe::new));
 
-			BlockItem g = (BlockItem) GsonHelper.getAsItem(pJson, "block");
-			return new FeastRecipe(pRecipeId, s, g, ingredient, itemstack);
-		}
-
-		public FeastRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+		public FeastRecipe fromNetwork(FriendlyByteBuf pBuffer) {
 			String s = pBuffer.readUtf();
 			Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
 			ItemStack itemstack = pBuffer.readItem();
-			BlockItem g = (BlockItem) pBuffer.readById(Registry.ITEM);
-			return new FeastRecipe(pRecipeId, s, g, ingredient, itemstack);
+			BlockItem g = (BlockItem) pBuffer.readItem().getItem();
+			return new FeastRecipe(s, g, ingredient, itemstack);
 		}
 
 		public void toNetwork(FriendlyByteBuf pBuffer, FeastRecipe pRecipe) {
 			pBuffer.writeUtf(pRecipe.group);
 			pRecipe.ingredient.toNetwork(pBuffer);
 			pBuffer.writeItem(pRecipe.result);
-			pBuffer.writeId(Registry.ITEM, pRecipe.getFeast());
+			pBuffer.writeItem(new ItemStack(pRecipe.getFeast()));
+		}
+
+		@Override
+		public Codec<FeastRecipe> codec() {
+			return CODEC;
 		}
 	}
 }

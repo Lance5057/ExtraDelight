@@ -9,7 +9,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -19,7 +18,7 @@ public class MintCrop extends Block {
 	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D);
 
 	public MintCrop() {
-		super(Properties.copy(Blocks.WHEAT).noOcclusion().noCollission().randomTicks().instabreak());
+		super(Properties.ofFullCopy(Blocks.WHEAT).noOcclusion().noCollission().randomTicks().instabreak());
 	}
 
 	@Override

@@ -5,7 +5,6 @@ import java.util.function.Supplier;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -43,7 +42,7 @@ public class JellyBlock extends FeastBlock {
 				this.bounceUp(pEntity);
 				squish(pLevel, pPos);
 			} else {
-				pEntity.causeFallDamage(pFallDistance, 0.0F, DamageSource.FALL);
+				pEntity.causeFallDamage(pFallDistance, 0.0F, pLevel.damageSources().fall());
 				this.bounceUp(pEntity);
 				squish(pLevel, pPos);
 			}

@@ -1,9 +1,0 @@
-{
-  "type": "extradelight:dynamic_smelt",
-  "cookingtime": 800,
-  "experience": 1.0,
-  "ingredient": {
-    "item": "extradelight:omelette_mix"
-  },
-  "result": "extradelight:omelette"
-}

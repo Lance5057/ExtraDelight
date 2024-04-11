@@ -9,15 +9,15 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
 
 @Mod.EventBusSubscriber(modid = ExtraDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CornMazeEvents {
 	@SubscribeEvent
 	public static void onDeath(LivingHurtEvent event) {
-		if (event.getEntity().getLevel().dimension() == ExtraDelightWorldGen.CORNFIELD)
+		if (event.getEntity().level().dimension() == ExtraDelightWorldGen.CORNFIELD)
 			if (event.getEntity() instanceof ServerPlayer p) {
 				if (p.getHealth() <= event.getAmount()) {
 					p.playSound(SoundEvents.WITCH_CELEBRATE, 1, 1);

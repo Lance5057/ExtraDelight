@@ -4,8 +4,6 @@ import java.util.function.Consumer;
 
 import javax.annotation.Nullable;
 
-import org.jetbrains.annotations.NotNull;
-
 import com.google.gson.JsonObject;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 
