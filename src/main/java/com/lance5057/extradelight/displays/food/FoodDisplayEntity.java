@@ -1,33 +1,29 @@
 package com.lance5057.extradelight.displays.food;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+
+import org.apache.http.util.TextUtils;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import vectorwing.farmersdelight.common.utility.TextUtils;
 
-public class FoodDisplayEntity extends Block implements EntityBlock {
+public class FoodDisplayEntity extends BlockEntity {
 
-	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
+//	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
+	public static final String TAG = "inv";
+
+	private final ItemStackHandler items = createHandler();
+	private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
 	private int NUM_SLOTS = 9;
 
 	public FoodDisplayEntity(BlockPos pPos, BlockState pBlockState) {
@@ -40,17 +36,11 @@ public class FoodDisplayEntity extends Block implements EntityBlock {
 		return NUM_SLOTS;
 	}
 
-	@Nonnull
-	@Override
-	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if (side != Direction.DOWN)
-			if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-				return handler.cast();
-			}
-		return super.getCapability(cap, side);
-	}
+	public IItemHandler getItemHandler() {
+        return itemHandler.get();
+    }
 
-	private IItemHandlerModifiable createHandler() {
+	private ItemStackHandler createHandler() {
 		return new ItemStackHandler(NUM_SLOTS) {
 
 			@Override
@@ -76,10 +66,6 @@ public class FoodDisplayEntity extends Block implements EntityBlock {
 
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		CompoundTag tag = new CompoundTag();
-
-		writeNBT(tag);
-
 		return ClientboundBlockEntityDataPacket.create(this);
 	}
 
@@ -87,43 +73,40 @@ public class FoodDisplayEntity extends Block implements EntityBlock {
 	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
 		CompoundTag tag = pkt.getTag();
 		// InteractionHandle your Data
-		readNBT(tag);
+		if (tag != null)
+			readNBT(tag);
 	}
 
 	void readNBT(CompoundTag nbt) {
-		final IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
-				.orElseGet(this::createHandler);
-		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
+		if (nbt.contains(TAG)) {
+			items.deserializeNBT(nbt.getCompound(TAG));
+		}
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
-
-		IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
-				.orElseGet(this::createHandler);
-		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
-
+		tag.put(TAG, items.serializeNBT());
 		return tag;
 	}
 
-//	@Override
-//	public void load(@Nonnull CompoundTag nbt) {
-//		super.load(nbt);
-//		readNBT(nbt);
-//	}
-//
-//	@Override
-//	public void saveAdditional(@Nonnull CompoundTag nbt) {
-//		super.saveAdditional(nbt);
-//		writeNBT(nbt);
-//	}
+	@Override
+	public void load(@Nonnull CompoundTag nbt) {
+		super.load(nbt);
+		readNBT(nbt);
+	}
+
+	@Override
+	public void saveAdditional(@Nonnull CompoundTag nbt) {
+		super.saveAdditional(nbt);
+		writeNBT(nbt);
+	}
 //
 //	@Override
 //	public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
 //		return new FoodDisplayMenu(pContainerId, pPlayerInventory, this);
 //	}
 //
-//	@Override
-//	public Component getDisplayName() {
-//		return TextUtils.getTranslation("screen.food_display.name");
-//	}
+
+	public String getDisplayName() {
+		return "screen.food_display.name";
+	}
 }

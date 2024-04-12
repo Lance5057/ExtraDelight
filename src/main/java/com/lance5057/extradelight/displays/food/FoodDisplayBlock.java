@@ -6,7 +6,6 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
@@ -21,6 +20,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -34,14 +34,14 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class FoodDisplayBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
+public class FoodDisplayBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final BooleanProperty ENCASED = BooleanProperty.create("encased");
-	
+
 	public FoodDisplayBlock() {
-		//strength used to be (0.5f, 6.0f)
-		//properties.of used to be Material.METAL for some reason, this makes it gray
+		// strength used to be (0.5f, 6.0f)
+		// properties.of used to be Material.METAL for some reason, this makes it gray
 		super(Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS).strength(2.5F, 6.0F).sound(SoundType.WOOD).noOcclusion());
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
 				.setValue(WATERLOGGED, false).setValue(ENCASED, false));
@@ -51,30 +51,30 @@ public class FoodDisplayBlock extends BaseEntityBlock implements SimpleWaterlogg
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
 			BlockHitResult result) {
 		if (!level.isClientSide) {
-			if(player.getItemInHand(hand).getItem() == Items.GLASS)
-			{
-				if(state.getValue(FoodDisplayBlock.ENCASED) == false)
-				{
-					//state.setValue(FoodDisplayBlock.ENCASED, true);
+			if (player.getItemInHand(hand).getItem() == Items.GLASS) {
+				if (state.getValue(FoodDisplayBlock.ENCASED) == false) {
+					// state.setValue(FoodDisplayBlock.ENCASED, true);
 					level.setBlock(pos, state.setValue(FoodDisplayBlock.ENCASED, true), 2);
-					player.getItemInHand(hand).setCount(player.getItemInHand(hand).getCount()-1);
+					player.getItemInHand(hand).setCount(player.getItemInHand(hand).getCount() - 1);
 					return InteractionResult.SUCCESS;
 				}
 			}
+
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof FoodDisplayEntity ent) {
 				MenuProvider containerProvider = new MenuProvider() {
-                    @Override
-                    public Component getDisplayName() {
-                        return Component.translatable(ent.getDisplayName().getString());
-                    }
+					@Override
+					public Component getDisplayName() {
+						return Component.translatable(ent.getDisplayName());
+					}
 
-                    @Override
-                    public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory, Player playerEntity) {
-                        return new FoodDisplayMenu(windowId, playerInventory, ent);
-                    }
-                };
-				player.openMenu(ent, pos);
+					@Override
+					public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
+							Player playerEntity) {
+						return new FoodDisplayMenu(windowId, playerInventory, ent);
+					}
+				};
+				player.openMenu(containerProvider, buf -> buf.writeBlockPos(pos));
 			}
 		}
 		return InteractionResult.SUCCESS;
@@ -128,10 +128,10 @@ public class FoodDisplayBlock extends BaseEntityBlock implements SimpleWaterlogg
 //
 //				level.updateNeighbourForOutputSignal(pos, this);
 //			}
-			
-			if(state.getValue(FoodDisplayBlock.ENCASED) == true)
+
+			if (state.getValue(FoodDisplayBlock.ENCASED) == true)
 				Block.popResource(level, pos, new ItemStack(Items.GLASS));
-			
+
 			super.onRemove(state, level, pos, newState, isMoving);
 		}
 	}

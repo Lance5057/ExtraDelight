@@ -1,34 +1,26 @@
 package com.lance5057.extradelight.displays.spice;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import vectorwing.farmersdelight.common.utility.TextUtils;
 
-public class SpiceRackEntity extends BlockEntity implements MenuProvider {
+public class SpiceRackEntity extends BlockEntity {
 
-	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
+	public static final String TAG = "inv";
+
+	private final ItemStackHandler items = createHandler();
+	private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
 	private int NUM_SLOTS = 4;
 
 	public SpiceRackEntity(BlockPos pPos, BlockState pBlockState) {
@@ -41,17 +33,21 @@ public class SpiceRackEntity extends BlockEntity implements MenuProvider {
 		return NUM_SLOTS;
 	}
 
-	@Nonnull
-	@Override
-	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if (side != Direction.DOWN)
-			if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-				return handler.cast();
-			}
-		return super.getCapability(cap, side);
+	public IItemHandler getItemHandler() {
+		return itemHandler.get();
 	}
 
-	private IItemHandlerModifiable createHandler() {
+//	@Nonnull
+//	@Override
+//	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+//		if (side != Direction.DOWN)
+//			if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+//				return handler.cast();
+//			}
+//		return super.getCapability(cap, side);
+//	}
+
+	private ItemStackHandler createHandler() {
 		return new ItemStackHandler(NUM_SLOTS) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
@@ -93,17 +89,13 @@ public class SpiceRackEntity extends BlockEntity implements MenuProvider {
 	}
 
 	void readNBT(CompoundTag nbt) {
-		final IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
-				.orElseGet(this::createHandler);
-		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
+		if (nbt.contains(TAG)) {
+			items.deserializeNBT(nbt.getCompound(TAG));
+		}
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
-
-		IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
-				.orElseGet(this::createHandler);
-		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
-
+		tag.put(TAG, items.serializeNBT());
 		return tag;
 	}
 
@@ -119,13 +111,7 @@ public class SpiceRackEntity extends BlockEntity implements MenuProvider {
 		writeNBT(nbt);
 	}
 
-	@Override
-	public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-		return new SpiceRackMenu(pContainerId, pPlayerInventory, this);
-	}
-
-	@Override
-	public Component getDisplayName() {
-		return TextUtils.getTranslation("screen.food_display.name");
+	public String getDisplayName() {
+		return "screen.spice_rack.name";
 	}
 }
