@@ -6,7 +6,6 @@ import javax.annotation.Nullable;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -28,7 +27,8 @@ public class DryingRackBlock extends Block implements EntityBlock {
 
 	public DryingRackBlock() {
 		// strength used to be (1, 1)
-		super(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.5F).sound(SoundType.WOOD).noOcclusion());
+		super(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.5F).sound(SoundType.WOOD)
+				.noOcclusion());
 		// TODO Auto-generated constructor stub
 	}
 
@@ -56,7 +56,7 @@ public class DryingRackBlock extends Block implements EntityBlock {
 				ItemStack itemstack = pPlayer.getItemInHand(pHand);
 				if (!pLevel.isClientSide) {
 					// pPlayer.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
-					pPlayer.setItemInHand(pHand, be.insertItem(itemstack));
+					be.insertItem(itemstack);
 					return InteractionResult.SUCCESS;
 				}
 
@@ -79,16 +79,16 @@ public class DryingRackBlock extends Block implements EntityBlock {
 		return pBlockEntityType == ExtraDelightBlockEntities.DRYING_RACK.get() ? DryingRackBlockEntity::tick : null;
 	}
 
-	@Override
-	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity tileentity = level.getBlockEntity(pos);
-			Containers.dropContents(level, pos, DryingRackBlockEntity.getDroppableInventory());
-
-				level.updateNeighbourForOutputSignal(pos, this);
-			}
-
-			super.onRemove(state, level, pos, newState, isMoving);
-		}
-	}
+//	@Override
+//	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+//		if (state.getBlock() != newState.getBlock()) {
+//			BlockEntity tileentity = level.getBlockEntity(pos);
+//			Containers.dropContents(level, pos, DryingRackBlockEntity.getDroppableInventory());
+//
+//				level.updateNeighbourForOutputSignal(pos, this);
+//			}
+//
+//			super.onRemove(state, level, pos, newState, isMoving);
+//		}
+//	}
 }

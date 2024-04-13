@@ -1294,8 +1294,8 @@ public class ExtraDelightItems {
 	public static final DeferredItem<BlockItem> GINGERBREAD_BLOCK_PINK = ITEMS.register("gingerbread_block_pink",
 			() -> new BlockItem(ExtraDelightBlocks.PINK_FROSTED_GINGERBREAD_BLOCK.get(), new Item.Properties()));
 
-//	public static final DeferredItem<BlockItem> CANDY_BOWL_ITEM = ITEMS.register("candy_bowl_item",
-//			() -> new BlockItem(ExtraDelightBlocks.CANDY_BOWL.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> CANDY_BOWL_ITEM = ITEMS.register("candy_bowl_item",
+			() -> new BlockItem(ExtraDelightBlocks.CANDY_BOWL.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> MINT_CANDY_RED = ITEMS.register("mint_candy_red",
 			() -> new Item(new Item.Properties().food(EDFoods.SUGAR)));

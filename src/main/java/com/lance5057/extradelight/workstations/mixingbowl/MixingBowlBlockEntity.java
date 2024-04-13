@@ -55,6 +55,10 @@ public class MixingBowlBlockEntity extends BlockEntity {
 			}
 		return super.getCapability(cap, side);
 	}
+	
+	public IItemHandlerModifiable getItemHandler() {
+		return itemHandler.get();
+	}
 
 	private IItemHandlerModifiable createHandler() {
 		return new ItemStackHandler(33) {

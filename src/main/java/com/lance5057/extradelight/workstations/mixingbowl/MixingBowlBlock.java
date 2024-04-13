@@ -1,7 +1,5 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
-import java.util.stream.IntStream;
-
 import com.lance5057.extradelight.ExtraDelightTags;
 
 import net.minecraft.core.BlockPos;
@@ -11,6 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SoundType;
@@ -20,13 +19,12 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public class MixingBowlBlock extends Block implements EntityBlock {
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 6.0D, 14.0D);
 
 	public MixingBowlBlock() {
-		super(Properties.of(Material.WOOD).strength(0.5F, 1.0F).sound(SoundType.WOOD).noOcclusion());
+		super(Properties.ofFullCopy(Blocks.ACACIA_WOOD).strength(0.5F, 1.0F).sound(SoundType.WOOD).noOcclusion());
 	}
 
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -83,22 +81,6 @@ public class MixingBowlBlock extends Block implements EntityBlock {
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
 		// TODO Auto-generated method stub
 		return new MixingBowlBlockEntity(pPos, pState);
-	}
-
-	@Override
-	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity tileentity = level.getBlockEntity(pos);
-			if (tileentity instanceof MixingBowlBlockEntity) {
-				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
-						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots() - 1)
-								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
-
-				level.updateNeighbourForOutputSignal(pos, this);
-			}
-
-			super.onRemove(state, level, pos, newState, isMoving);
-		}
 	}
 
 }

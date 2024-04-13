@@ -13,7 +13,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class WreathMenu extends AbstractContainerMenu {
@@ -27,25 +27,25 @@ public class WreathMenu extends AbstractContainerMenu {
 		super(ExtraDelightContainers.WREATH_MENU.get(), windowId);
 		this.tileEntity = tileEntity;
 //		this.data = OvenDataIn;
-		this.level = playerInventory.player.level;
+		this.level = playerInventory.player.level();
 		this.canInteractWithCallable = ContainerLevelAccess.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 
 		if (tileEntity != null) {
-			tileEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(h -> {
-				int startX = 8;
-				int startY = 8;
-				int inputStartX = 62;
-				int inputStartY = 8;
-				int borderSlotSize = 18;
+			IItemHandler h = tileEntity.getItemHandler();
+			int startX = 8;
+			int startY = 8;
+			int inputStartX = 62;
+			int inputStartY = 8;
+			int borderSlotSize = 18;
 
-				this.addSlot(new SlotItemHandler(h, 1, inputStartX + 0, inputStartY + 0));
-				this.addSlot(new SlotItemHandler(h, 0, inputStartX + 18, inputStartY + 0));
-				this.addSlot(new SlotItemHandler(h, 7, inputStartX + 36, inputStartY + 0));
-				this.addSlot(new SlotItemHandler(h, 2, inputStartX + 0, inputStartY + 18));
-				this.addSlot(new SlotItemHandler(h, 6, inputStartX + 36, inputStartY + 18));
-				this.addSlot(new SlotItemHandler(h, 3, inputStartX + 0, inputStartY + 36));
-				this.addSlot(new SlotItemHandler(h, 4, inputStartX + 18, inputStartY + 36));
-				this.addSlot(new SlotItemHandler(h, 5, inputStartX + 36, inputStartY + 36));
+			this.addSlot(new SlotItemHandler(h, 1, inputStartX + 0, inputStartY + 0));
+			this.addSlot(new SlotItemHandler(h, 0, inputStartX + 18, inputStartY + 0));
+			this.addSlot(new SlotItemHandler(h, 7, inputStartX + 36, inputStartY + 0));
+			this.addSlot(new SlotItemHandler(h, 2, inputStartX + 0, inputStartY + 18));
+			this.addSlot(new SlotItemHandler(h, 6, inputStartX + 36, inputStartY + 18));
+			this.addSlot(new SlotItemHandler(h, 3, inputStartX + 0, inputStartY + 36));
+			this.addSlot(new SlotItemHandler(h, 4, inputStartX + 18, inputStartY + 36));
+			this.addSlot(new SlotItemHandler(h, 5, inputStartX + 36, inputStartY + 36));
 
 //				for (int row = 0; row < 3; ++row) {
 //					for (int column = 0; column < 3; ++column) {
@@ -58,27 +58,26 @@ public class WreathMenu extends AbstractContainerMenu {
 //					}
 //				}
 
-				// Main Player Inventory
-				int startPlayerInvY = startY * 4 + 36;
-				for (int row = 0; row < 3; ++row) {
-					for (int column = 0; column < 9; ++column) {
-						this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column,
-								startX + (column * borderSlotSize), startPlayerInvY + (row * borderSlotSize)));
-					}
-				}
-
-				// Hotbar
+			// Main Player Inventory
+			int startPlayerInvY = startY * 4 + 36;
+			for (int row = 0; row < 3; ++row) {
 				for (int column = 0; column < 9; ++column) {
-					this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 126));
+					this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, startX + (column * borderSlotSize),
+							startPlayerInvY + (row * borderSlotSize)));
 				}
-			});
+			}
+
+			// Hotbar
+			for (int column = 0; column < 9; ++column) {
+				this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 126));
+			}
 		}
 	}
 
 	private static WreathEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
 		Objects.requireNonNull(playerInventory, "playerInventory cannot be null");
 		Objects.requireNonNull(data, "data cannot be null");
-		final BlockEntity tileAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
+		final BlockEntity tileAtPos = playerInventory.player.level().getBlockEntity(data.readBlockPos());
 		if (tileAtPos instanceof WreathEntity) {
 			return (WreathEntity) tileAtPos;
 		}

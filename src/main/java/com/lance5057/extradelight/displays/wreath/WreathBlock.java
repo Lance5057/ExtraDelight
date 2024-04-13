@@ -1,23 +1,24 @@
 package com.lance5057.extradelight.displays.wreath;
 
-import java.util.stream.IntStream;
-
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RedstoneTorchBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
@@ -33,10 +34,8 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.network.NetworkHooks;
 
-public class WreathBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
+public class WreathBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
@@ -47,8 +46,8 @@ public class WreathBlock extends BaseEntityBlock implements SimpleWaterloggedBlo
 	protected static final VoxelShape SHAPE_S = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 4.0D);
 
 	public WreathBlock() {
-		super(Properties.of(Material.WOOD).strength(2.5F, 6.0F).sound(SoundType.WOOD).noOcclusion().noCollission()
-				.lightLevel((p_50763_) -> {
+		super(Properties.ofFullCopy(Blocks.ACACIA_LEAVES).strength(2.5F, 6.0F).sound(SoundType.WOOD).noOcclusion()
+				.noCollission().lightLevel((p_50763_) -> {
 					return p_50763_.getValue(BlockStateProperties.LIT) ? 8 : 0;
 				}));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
@@ -81,7 +80,20 @@ public class WreathBlock extends BaseEntityBlock implements SimpleWaterloggedBlo
 			} else {
 				BlockEntity tileEntity = level.getBlockEntity(pos);
 				if (tileEntity instanceof WreathEntity ent) {
-					NetworkHooks.openScreen((ServerPlayer) player, ent, pos);
+					MenuProvider containerProvider = new MenuProvider() {
+						@Override
+						public Component getDisplayName() {
+							return Component.translatable(ent.getDisplayName());
+						}
+
+						@Override
+						public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
+								Player playerEntity) {
+							return new WreathMenu(windowId, playerInventory, ent);
+						}
+					};
+
+					player.openMenu(containerProvider, pos);
 				}
 			}
 		}
@@ -125,21 +137,21 @@ public class WreathBlock extends BaseEntityBlock implements SimpleWaterloggedBlo
 		return state;
 	}
 
-	@Override
-	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity tileentity = level.getBlockEntity(pos);
-			if (tileentity instanceof WreathEntity) {
-				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
-						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots())
-								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
-
-				level.updateNeighbourForOutputSignal(pos, this);
-			}
-			if (state.getValue(WreathBlock.LIT) == true)
-				Block.popResource(level, pos, new ItemStack(Items.GLOWSTONE_DUST));
-
-			super.onRemove(state, level, pos, newState, isMoving);
-		}
-	}
+//	@Override
+//	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+//		if (state.getBlock() != newState.getBlock()) {
+//			BlockEntity tileentity = level.getBlockEntity(pos);
+//			if (tileentity instanceof WreathEntity) {
+//				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
+//						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots())
+//								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
+//
+//				level.updateNeighbourForOutputSignal(pos, this);
+//			}
+//			if (state.getValue(WreathBlock.LIT) == true)
+//				Block.popResource(level, pos, new ItemStack(Items.GLOWSTONE_DUST));
+//
+//			super.onRemove(state, level, pos, newState, isMoving);
+//		}
+//	}
 }

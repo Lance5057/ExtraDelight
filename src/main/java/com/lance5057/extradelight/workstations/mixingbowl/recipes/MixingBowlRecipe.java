@@ -20,6 +20,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.crafting.CraftingHelper;
+import net.neoforged.neoforge.common.util.RecipeMatcher;
 
 public class MixingBowlRecipe implements Recipe<SimpleContainer> {
 	protected final int stirs;
@@ -78,7 +79,7 @@ public class MixingBowlRecipe implements Recipe<SimpleContainer> {
 		}
 
 		return i == this.ingredients.size() && (isSimple ? stackedcontents.canCraft(this, (IntList) null)
-				: net.minecraftforge.common.util.RecipeMatcher.findMatches(inputs, this.ingredients) != null);
+				: RecipeMatcher.findMatches(inputs, this.ingredients) != null);
 	}
 
 	/**

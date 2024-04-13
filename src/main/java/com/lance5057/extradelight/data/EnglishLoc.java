@@ -5,12 +5,12 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class EnglishLoc extends LanguageProvider {
 
-	public EnglishLoc(DataGenerator gen) {
+	public EnglishLoc(PackOutput gen) {
 		super(gen, ExtraDelight.MOD_ID, "en_us");
 
 	}
@@ -475,7 +475,7 @@ public class EnglishLoc extends LanguageProvider {
 		add(TranslatableKeys.EMPTY, "Empty");
 
 		this.add(ExtraDelightItems.CORN_SEEDS.get(), "Corn");
-		this.add(ExtraDelightItems.UNSHUCKED_CORN.get(), "Unshucked Corn");
+//		this.add(ExtraDelightItems.UNSHUCKED_CORN.get(), "Unshucked Corn");
 		this.add(ExtraDelightItems.CORN_ON_COB.get(), "Corn on the Cob");
 		this.add(ExtraDelightItems.CORN_HUSK.get(), "Corn Husk");
 		this.add(ExtraDelightItems.DRIED_CORN_HUSK.get(), "Dried Corn Husk");
@@ -490,7 +490,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.GRILLED_CORN_ON_COB.get(), "Grilled Corn on the Cob");
 		this.add(ExtraDelightItems.COOKED_CORN.get(), "Cooked Corn");
 		this.add(ExtraDelightItems.ROASTED_PUMPKIN_SEEDS.get(), "Roasted Pumpkin Seeds");
-		this.add(ExtraDelightItems.CORN_SILK_TEA.get(), "Corn Silk Tea");
+//		this.add(ExtraDelightItems.CORN_SILK_TEA.get(), "Corn Silk Tea");
 		this.add(ExtraDelightItems.STEWED_APPLES.get(), "Stewed Apples");
 		this.add(ExtraDelightItems.APPLE_FRITTERS.get(), "Apple Fritters");
 		this.add(ExtraDelightItems.CARAMEL_SAUCE.get(), "Caramel Sauce");
@@ -528,14 +528,14 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get(), "Dried Corn Husk Bundle");
 		this.add(ExtraDelightItems.CORN_COB_BUNDLE.get(), "Corn Cob Bundle");
 
-		this.add(ExtraDelightItems.CORN_COB_PIPE.get(), "Corn Cob Pipe");
+//		this.add(ExtraDelightItems.CORN_COB_PIPE.get(), "Corn Cob Pipe");
 
 		this.add(ExtraDelightItems.APPLE_CUSTARD.get(), "Apple Custard");
 		this.add(ExtraDelightItems.APPLE_CHEESECAKE_ITEM.get(), "Apple Cheesecake");
 		this.add(ExtraDelightItems.APPLE_CHEESECAKE_SLICE.get(), "Slice of Apple Cheesecake");
 		this.add(ExtraDelightItems.APPLE_COOKIE.get(), "Apple Cinnamon Cookie");
 		this.add(ExtraDelightItems.APPLE_POPSICLE.get(), "Apple Popsicle");
-		this.add(ExtraDelightItems.CINNAMON_LOG.get(), "Cinnamon Log");
+//		this.add(ExtraDelightItems.CINNAMON_LOG.get(), "Cinnamon Log");
 		this.add(ExtraDelightItems.STRIPPED_CINNAMON_LOG.get(), "Stripped Cinnamon Log");
 		this.add(ExtraDelightItems.CINNAMON_PLANKS.get(), "Cinnamon Planks");
 		this.add(ExtraDelightItems.CINNAMON_LEAVES.get(), "Cinnamon Leaves");
@@ -543,9 +543,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.RAW_CINNAMON.get(), "Raw Cinnamon");
 		this.add(ExtraDelightItems.CINNAMON_STICK.get(), "Cinnamon Stick");
 		this.add(ExtraDelightItems.GROUND_CINNAMON.get(), "Ground Cinnamon");
-		this.add(ExtraDelightItems.CINNAMON_SAPLING.get(), "Cinnamon Sapling");
+//		this.add(ExtraDelightItems.CINNAMON_SAPLING.get(), "Cinnamon Sapling");
 		this.add(ExtraDelightItems.CINNAMON_CABINET.get(), "Cinnamon Cabinet");
-		this.add(ExtraDelightItems.CINNAMON_DOOR.get(), "Cinnamon Door");
+//		this.add(ExtraDelightItems.CINNAMON_DOOR.get(), "Cinnamon Door");
 		this.add(ExtraDelightItems.CINNAMON_FENCE.get(), "Cinnamon Fence");
 		this.add(ExtraDelightItems.CINNAMON_FENCE_GATE.get(), "Cinnamon Fence Gate");
 		this.add(ExtraDelightItems.CINNAMON_STAIRS.get(), "Cinnamon Stairs");

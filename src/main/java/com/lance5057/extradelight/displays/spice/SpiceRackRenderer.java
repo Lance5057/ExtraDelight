@@ -1,22 +1,20 @@
 package com.lance5057.extradelight.displays.spice;
 
 import org.jetbrains.annotations.NotNull;
+import org.joml.Quaternionf;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Quaternion;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
 import net.neoforged.neoforge.items.IItemHandler;
 
 public class SpiceRackRenderer implements BlockEntityRenderer<SpiceRackEntity> {
@@ -34,21 +32,18 @@ public class SpiceRackRenderer implements BlockEntityRenderer<SpiceRackEntity> {
 
 		ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
 
-		LazyOptional<IItemHandler> itemInteractionHandler = pBlockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER);
+		IItemHandler r = pBlockEntity.getItemHandler();
 
-		itemInteractionHandler.ifPresent(r -> {
+		Direction dir = pBlockEntity.getBlockState().getValue(SpiceRackBlock.FACING);
 
-			Direction dir = pBlockEntity.getBlockState().getValue(SpiceRackBlock.FACING);
-
-			renderItem(0, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-					0.2f, 0.55f, 0.15f, 0, 0, 0);
-			renderItem(1, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-					0.4f, 0.55f, 0.125f, 0, 0, 0);
-			renderItem(2, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-					0.6f, 0.55f, 0.15f, 0, 0, 0);
-			renderItem(3, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-					0.8f, 0.55f, 0.125f, 0, 0, 0);
-		});
+		renderItem(0, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir, 0.2f,
+				0.55f, 0.15f, 0, 0, 0);
+		renderItem(1, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir, 0.4f,
+				0.55f, 0.125f, 0, 0, 0);
+		renderItem(2, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir, 0.6f,
+				0.55f, 0.15f, 0, 0, 0);
+		renderItem(3, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir, 0.8f,
+				0.55f, 0.125f, 0, 0, 0);
 	}
 
 	private void renderItem(int slot, SpiceRackEntity pBlockEntity, PoseStack pPoseStack,
@@ -60,16 +55,16 @@ public class SpiceRackRenderer implements BlockEntityRenderer<SpiceRackEntity> {
 		if (!item.isEmpty()) {
 			BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 			pPoseStack.pushPose();
-			float uniscale = 0.75f; 
+			float uniscale = 0.75f;
 
 			pPoseStack.translate(0.5f, 0, 0.5f);
-			pPoseStack.mulPose(new Quaternion(0, -dir.toYRot(), 0, true));
-			pPoseStack.translate(x-0.5f, y, z-0.5f);
-			pPoseStack.mulPose(new Quaternion(rx, ry, rz, true));
+			pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, -dir.toYRot(), 0));
+			pPoseStack.translate(x - 0.5f, y, z - 0.5f);
+			pPoseStack.mulPose(new Quaternionf().rotateXYZ(rx, ry, rz));
 
 			pPoseStack.scale(uniscale, uniscale, uniscale);
-			itemRenderer.render(item, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
-					pPackedLight, pPackedOverlay, bakedmodel);
+			itemRenderer.render(item, ItemDisplayContext.GROUND, false, pPoseStack, pBufferSource, pPackedLight,
+					pPackedOverlay, bakedmodel);
 			pPoseStack.popPose();
 		}
 		pPoseStack.popPose();

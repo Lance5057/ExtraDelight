@@ -6,6 +6,7 @@ import javax.annotation.Nonnull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
 
 import net.minecraft.core.BlockPos;
@@ -24,10 +25,8 @@ import net.minecraft.world.inventory.RecipeCraftingHolder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.common.util.Lazy;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
 
@@ -36,11 +35,14 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 
 	private int grinds = 0;
 
-	private final ItemStackHandler inventory;
+	public static final String TAG = "inv";
+
+	private final ItemStackHandler items = createHandler();
+	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
+	public static final int NUM_SLOTS = 1;
 
 	public MortarBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ExtraDelightBlockEntities.MORTAR.get(), pPos, pState);
-		this.inventory = createHandler();
 	}
 
 //	@Nonnull
@@ -53,12 +55,16 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 //		return super.getCapability(cap, side);
 //	}
 
-	@SubscribeEvent
-	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
-				(be, context) -> {
-					return be.inventory;
-				});
+//	@SubscribeEvent
+//	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+//		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
+//				(be, context) -> {
+//					return be.inventory;
+//				});
+//	}
+
+	public IItemHandlerModifiable getItemHandler() {
+		return itemHandler.get();
 	}
 
 	private ItemStackHandler createHandler() {
@@ -76,29 +82,14 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 		};
 	}
 
-	public void extractItem(Player playerEntity) {
-		if (!inventory.getStackInSlot(0).isEmpty()) {
-			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
-			playerEntity.addItem(itemStack);
-			updateInventory();
-			return;
-
-		}
-		updateInventory();
+	public void insertItem(ItemStack stack) {
+		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
+		this.updateInventory();
 	}
 
-	public void insertItem(ItemStack heldItem) {
-		if (!this.matchRecipe(heldItem).isEmpty()) {
-			if (inventory.isItemValid(0, heldItem))
-				if (!ItemStack.isSameItem(inventory.insertItem(0, heldItem, true), heldItem)) {
-					final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
-					heldItem.setCount(leftover);
-					updateInventory();
-					return;
-				}
-		}
-		updateInventory();
-
+	public void extractItem(Player p) {
+		BlockEntityUtils.Inventory.extractItem(p, items, NUM_SLOTS);
+		this.updateInventory();
 	}
 
 	// External extract handler
@@ -122,7 +113,7 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 	}
 
 	public ItemStack getInsertedItem() {
-		return inventory.getStackInSlot(0);
+		return items.getStackInSlot(0);
 	}
 
 	public int getGrind() {
@@ -160,14 +151,16 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 	}
 
 	void readNBT(CompoundTag nbt) {
-		inventory.deserializeNBT(nbt.getCompound("inventory"));
+		if (nbt.contains(TAG)) {
+			items.deserializeNBT(nbt.getCompound(TAG));
+		}
 
 		this.grinds = nbt.getInt("Grinds");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
 
-		tag.put("inventory", inventory.serializeNBT());
+		tag.put(TAG, items.serializeNBT());
 
 		tag.putInt("Grinds", this.grinds);
 
@@ -220,11 +213,10 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 					level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
 							getBlockPos().getZ(), r));
 				}
-				inventory.setStackInSlot(0, ItemStack.EMPTY);
+				items.setStackInSlot(0, ItemStack.EMPTY);
 			}
 			updateInventory();
 		});
-		
 
 		return InteractionResult.SUCCESS;
 	}
