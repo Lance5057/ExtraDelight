@@ -4,7 +4,6 @@ import com.lance5057.extradelight.ExtraDelightRecipes;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -15,16 +14,14 @@ import net.minecraft.world.level.Level;
 
 public class DryingRackRecipe implements Recipe<Container> {
 
-	protected final ResourceLocation id;
 	protected final String group;
 	protected final Ingredient ingredient;
 	protected final ItemStack result;
 	protected final float experience;
 	protected final int cookingTime;
 
-	public DryingRackRecipe(ResourceLocation pId, String pGroup, Ingredient pIngredient, ItemStack pResult,
-			float pExperience, int pCookingTime) {
-		this.id = pId;
+	public DryingRackRecipe(String pGroup, Ingredient pIngredient, ItemStack pResult, float pExperience,
+			int pCookingTime) {
 		this.group = pGroup;
 		this.ingredient = pIngredient;
 		this.result = pResult;
