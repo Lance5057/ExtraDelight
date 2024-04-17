@@ -55,7 +55,7 @@ public class DoughShapingRecipeCategory implements IRecipeCategory<DoughShapingR
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, DoughShapingRecipe recipe, IFocusGroup focuses) {
 		Ingredient input = recipe.getIngredients().get(0);
-		ItemStack output = recipe.getResultItem();
+		ItemStack output = recipe.getResultItem(null);
 
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 38, 1).addIngredients(input);
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 13 + 9, 1).addItemStack(output);

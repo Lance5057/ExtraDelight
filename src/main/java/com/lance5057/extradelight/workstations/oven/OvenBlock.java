@@ -24,6 +24,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -43,7 +44,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.network.NetworkHooks;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.items.ItemStackHandler;
@@ -52,7 +52,7 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.MathUtils;
 
 @SuppressWarnings("deprecation")
-public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
+public class OvenBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final EnumProperty<OvenSupport> SUPPORT = EnumProperty.create("support", OvenSupport.class);
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -128,21 +128,21 @@ public class OvenBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 		return OvenSupport.NONE;
 	}
 
-	@Override
-	public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
-		ItemStack stack = super.getCloneItemStack(level, pos, state);
-		OvenBlockEntity OvenEntity = (OvenBlockEntity) level.getBlockEntity(pos);
-		if (OvenEntity != null) {
-//			CompoundTag nbt = OvenEntity.writeMeal(new CompoundTag());
-//			if (!nbt.isEmpty()) {
-//				stack.addTagElement("BlockEntityTag", nbt);
+//	@Override
+//	public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+//		ItemStack stack = super.getCloneItemStack(level, pos, state);
+//		OvenBlockEntity OvenEntity = (OvenBlockEntity) level.getBlockEntity(pos);
+//		if (OvenEntity != null) {
+////			CompoundTag nbt = OvenEntity.writeMeal(new CompoundTag());
+////			if (!nbt.isEmpty()) {
+////				stack.addTagElement("BlockEntityTag", nbt);
+////			}
+//			if (OvenEntity.hasCustomName()) {
+//				stack.setHoverName(OvenEntity.getCustomName());
 //			}
-			if (OvenEntity.hasCustomName()) {
-				stack.setHoverName(OvenEntity.getCustomName());
-			}
-		}
-		return stack;
-	}
+//		}
+//		return stack;
+//	}
 
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {

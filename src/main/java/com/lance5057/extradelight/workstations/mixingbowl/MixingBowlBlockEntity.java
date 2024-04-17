@@ -3,16 +3,15 @@ package com.lance5057.extradelight.workstations.mixingbowl;
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -26,17 +25,19 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
+import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 
 public class MixingBowlBlockEntity extends BlockEntity {
-	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
+	public static final String TAG = "inv";
+
+	private final ItemStackHandler items = createHandler();
+	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
+	public static final int NUM_SLOTS = 33;
 
 	private int stirs = 0;
 	public boolean complete = false;
@@ -46,22 +47,22 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		super(ExtraDelightBlockEntities.MIXING_BOWL.get(), pPos, pState);
 	}
 
-	@Nonnull
-	@Override
-	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if (side != Direction.DOWN)
-			if (cap == ForgeCapabilities.ITEM_HANDLER) {
-				return handler.cast();
-			}
-		return super.getCapability(cap, side);
-	}
-	
+//	@Nonnull
+//	@Override
+//	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+//		if (side != Direction.DOWN)
+//			if (cap == ForgeCapabilities.ITEM_HANDLER) {
+//				return handler.cast();
+//			}
+//		return super.getCapability(cap, side);
+//	}
+
 	public IItemHandlerModifiable getItemHandler() {
 		return itemHandler.get();
 	}
 
-	private IItemHandlerModifiable createHandler() {
-		return new ItemStackHandler(33) {
+	private ItemStackHandler createHandler() {
+		return new ItemStackHandler(NUM_SLOTS) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				if (slot != 32)
@@ -101,27 +102,14 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		updateInventory();
 	}
 
-	public void insertItem(IItemHandlerModifiable inventory, ItemStack heldItem) {
-		for (int i = 0; i <= 31; i++) {
-			if (!inventory.insertItem(i, heldItem, true).equals(heldItem, false)) {
-				final int leftover = inventory.insertItem(i, heldItem.copy(), false).getCount();
-				heldItem.setCount(leftover);
-				updateInventory();
-				return;
-			}
-		}
-		updateInventory();
-
+	public void insertItem(ItemStack stack) {
+		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
+		this.updateInventory();
 	}
 
-	// External extract handler
-	public void extractItem(Player playerEntity) {
-		handler.ifPresent(inventory -> this.extractItem(playerEntity, inventory));
-	}
-
-	// External insert handler
-	public void insertItem(ItemStack heldItem) {
-		handler.ifPresent(inventory -> this.insertItem(inventory, heldItem));
+	public void extractItem(Player p) {
+		BlockEntityUtils.Inventory.extractItem(p, items, NUM_SLOTS);
+		this.updateInventory();
 	}
 
 	public void zeroProgress() {
@@ -173,9 +161,9 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt) {
-		final IItemHandlerModifiable itemInteractionHandler = (IItemHandlerModifiable) getCapability(
-				ForgeCapabilities.ITEM_HANDLER).orElseGet(this::createHandler);
-		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
+		if (nbt.contains(TAG)) {
+			items.deserializeNBT(nbt.getCompound(TAG));
+		}
 
 		this.stirs = nbt.getInt("stirs");
 		containerItem = ItemStack.of(nbt.getCompound("usedItem"));
@@ -184,13 +172,11 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	CompoundTag writeNBT(CompoundTag tag) {
 
-		IItemHandlerModifiable itemInteractionHandler = (IItemHandlerModifiable) getCapability(
-				ForgeCapabilities.ITEM_HANDLER).orElseGet(this::createHandler);
-		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
+		tag.put(TAG, items.serializeNBT());
 
 		tag.putInt("stirs", this.stirs);
 
-		tag.put("usedItem", containerItem.serializeNBT());
+		tag.put("usedItem", containerItem.save(new CompoundTag()));
 		tag.putBoolean("complete", this.complete);
 
 		return tag;
@@ -208,7 +194,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		writeNBT(nbt);
 	}
 
-	public Optional<MixingBowlRecipe> matchRecipe(ItemStack... itemstack) {
+	public Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe(ItemStack... itemstack) {
 		if (this.level != null) {
 			return level.getRecipeManager().getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(),
 					new SimpleContainer(itemstack), level);
@@ -217,74 +203,71 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	}
 
-	private ItemStack[] getItems(IItemHandlerModifiable inventory) {
-		int s = getLastFilledSlot(inventory);
+	private ItemStack[] getItems() {
+		int s = getLastFilledSlot(items);
 		if (s != -1) {
 			ItemStack[] stacks = new ItemStack[s + 1];
 			for (int i = 0; i < s + 1; i++) {
-				stacks[i] = inventory.getStackInSlot(i);
+				stacks[i] = items.getStackInSlot(i);
 			}
 			return stacks;
 		}
 		return new ItemStack[0];
 	}
 
-	private void clearItems(IItemHandlerModifiable inventory) {
+	private void clearItems() {
 		for (int i = 0; i < 32; i++) {
-			inventory.setStackInSlot(i, ItemStack.EMPTY);
+			items.setStackInSlot(i, ItemStack.EMPTY);
 		}
 	}
 
-	protected Optional<MixingBowlRecipe> matchRecipe() {
+	protected Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe() {
 		if (level != null) {
 
-			Optional<MixingBowlRecipe> recipe = handler.map(i -> {
-				return level.getRecipeManager().getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(),
-						new SimpleContainer(getItems(i)), level);
-			}).get();
+			Optional<RecipeHolder<MixingBowlRecipe>> recipe = level.getRecipeManager()
+					.getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(), new SimpleContainer(getItems()), level);
 
 			// setRecipe(recipe);
 			return recipe;
 		}
 		return Optional.empty();
+
 	}
 
 	public InteractionResult mix(Player player) {
-		handler.ifPresent(inv -> {
-			Optional<MixingBowlRecipe> recipeOptional = matchRecipe(getItems(inv));
-			if (recipeOptional.isPresent()) {
-				MixingBowlRecipe recipe = recipeOptional.get();
 
-				if (this.stirs < recipe.getGrinds()) {
-					stirs++;
+		Optional<RecipeHolder<MixingBowlRecipe>> recipeOptional = matchRecipe(getItems());
+		if (recipeOptional.isPresent()) {
+			MixingBowlRecipe recipe = recipeOptional.get().value();
 
-					ItemStack[] items = getItems(inv);
-					for (int i = 0; i < 1 + level.random.nextInt(4); i++)
-						level.addParticle(
-								new ItemParticleOption(ParticleTypes.ITEM,
-										items[items.length > 1 ? level.random.nextInt(items.length - 1) : 0]),
-								worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
-								worldPosition.getY() - 0.5f - level.random.nextDouble(),
-								worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
+			if (this.stirs < recipe.getStirs()) {
+				stirs++;
 
-					level.playSound(player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
-				} else {
-					this.containerItem = recipe.getUsedItem().copy();
+				ItemStack[] items = getItems();
+				for (int i = 0; i < 1 + level.random.nextInt(4); i++)
+					level.addParticle(
+							new ItemParticleOption(ParticleTypes.ITEM,
+									items[items.length > 1 ? level.random.nextInt(items.length - 1) : 0]),
+							worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
+							worldPosition.getY() - 0.5f - level.random.nextDouble(),
+							worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
-					ItemStack i = recipe.getResultItem().copy();
+				level.playSound(player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
+			} else {
+				this.containerItem = recipe.getUsedItem().copy();
 
-					i.onCraftedBy(player.level, player, 1);
-					net.minecraftforge.event.ForgeEventFactory.firePlayerCraftingEvent(player, i,
-							new RecipeWrapper(inv));
+				ItemStack i = recipe.getResultItem().copy();
 
-					dropContainers(inv, player);
-					clearItems(inv);
-					inv.setStackInSlot(32, i);
-					complete = true;
-				}
-				updateInventory();
+				i.onCraftedBy(player.level(), player, 1);
+//				NeoForgeEventFactory.firePlayerCraftingEvent(player, i, new RecipeWrapper(items));
+
+				dropContainers(items, player);
+				clearItems();
+				items.setStackInSlot(32, i);
+				complete = true;
 			}
-		});
+			updateInventory();
+		}
 
 		return InteractionResult.SUCCESS;
 	}
@@ -296,26 +279,23 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	public InteractionResult scoop(Player player, InteractionHand pHand) {
-		handler.ifPresent(inv -> {
+		ItemStack r = items.extractItem(32, 1, false);
 
-			ItemStack r = inv.extractItem(32, 1, false);
+		if (!player.addItem(r)) {
+			level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f, getBlockPos().getY() + 0.5f,
+					getBlockPos().getZ() + 0.5f, r, 0, 0, 0));
+		}
 
-			if (!player.addItem(r)) {
-				level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f, getBlockPos().getY() + 0.5f,
-						getBlockPos().getZ() + 0.5f, r, 0, 0, 0));
-			}
+		if (!this.containerItem.isEmpty()) {
+			ItemStack h = player.getItemInHand(pHand);
+			h.setCount(h.getCount() - 1);
+		}
 
-			if (!this.containerItem.isEmpty()) {
-				ItemStack h = player.getItemInHand(pHand);
-				h.setCount(h.getCount() - 1);
-			}
+		if (items.getStackInSlot(32).isEmpty()) {
+			this.containerItem = ItemStack.EMPTY;
 
-			if (inv.getStackInSlot(32).isEmpty()) {
-				this.containerItem = ItemStack.EMPTY;
-
-				complete = false;
-			}
-		});
+			complete = false;
+		}
 
 		return InteractionResult.SUCCESS;
 
