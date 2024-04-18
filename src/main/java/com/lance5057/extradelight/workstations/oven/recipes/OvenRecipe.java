@@ -34,8 +34,8 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 	private final float experience;
 	private final int cookTime;
 
-	public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab,
-			NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container, float experience, int cookTime) {
+	public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab, NonNullList<Ingredient> inputItems,
+			ItemStack output, ItemStack container, float experience, int cookTime) {
 		this.group = group;
 		this.tab = tab;
 		this.inputItems = inputItems;
@@ -59,7 +59,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 	public ItemStack getContainerOverride() {
 		return this.container;
 	}
-	
+
 	@Override
 	public String getGroup() {
 		return this.group;
@@ -109,8 +109,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 				inputs.add(itemstack);
 			}
 		}
-		return i == this.inputItems.size()
-				&& RecipeMatcher.findMatches(inputs, this.inputItems) != null
+		return i == this.inputItems.size() && RecipeMatcher.findMatches(inputs, this.inputItems) != null
 				&& inv.getItem(INPUT_SLOTS + 1).getItem() == this.container.getItem();
 	}
 
@@ -140,17 +139,19 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 
 		private static final Codec<OvenRecipe> CODEC = RecordCodecBuilder.create(inst -> inst.group(
 				ExtraCodecs.strictOptionalField(Codec.STRING, "group", "").forGetter(OvenRecipe::getGroup),
-				ExtraCodecs.strictOptionalField(OvenRecipeBookTab.CODEC, "recipe_book_tab").xmap(optional -> optional.orElse(null), Optional::of).forGetter(OvenRecipe::getRecipeBookTab),
+				ExtraCodecs.strictOptionalField(OvenRecipeBookTab.CODEC, "recipe_book_tab")
+						.xmap(optional -> optional.orElse(null), Optional::of).forGetter(OvenRecipe::getRecipeBookTab),
 				Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ingredients -> {
 					NonNullList<Ingredient> nonNullList = NonNullList.create();
 					nonNullList.addAll(ingredients);
 					return nonNullList;
 				}, ingredients -> ingredients).forGetter(OvenRecipe::getIngredients),
 				ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("result").forGetter(r -> r.output),
-				ExtraCodecs.strictOptionalField(ItemStack.ITEM_WITH_COUNT_CODEC, "container", ItemStack.EMPTY).forGetter(OvenRecipe::getContainerOverride),
+				ExtraCodecs.strictOptionalField(ItemStack.ITEM_WITH_COUNT_CODEC, "container", ItemStack.EMPTY)
+						.forGetter(OvenRecipe::getContainerOverride),
 				ExtraCodecs.strictOptionalField(Codec.FLOAT, "experience", 0.0F).forGetter(OvenRecipe::getExperience),
-				ExtraCodecs.strictOptionalField(Codec.INT, "cookingtime", 200).forGetter(OvenRecipe::getCookTime)
-		).apply(inst, OvenRecipe::new));
+				ExtraCodecs.strictOptionalField(Codec.INT, "cookingtime", 200).forGetter(OvenRecipe::getCookTime))
+				.apply(inst, OvenRecipe::new));
 
 //		@Override
 //		public OvenRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
@@ -211,8 +212,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 			ItemStack container = buffer.readItem();
 			float experienceIn = buffer.readFloat();
 			int cookTimeIn = buffer.readVarInt();
-			return new OvenRecipe(groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn,
-					cookTimeIn);
+			return new OvenRecipe(groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
 		}
 
 		@Override

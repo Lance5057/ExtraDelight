@@ -1,6 +1,5 @@
 package com.lance5057.extradelight.workstations.mixingbowl.recipes;
 
-import com.google.gson.JsonArray;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -121,27 +120,32 @@ public class MixingBowlRecipe implements Recipe<SimpleContainer> {
 		private static final Codec<MixingBowlRecipe> CODEC = RecordCodecBuilder.create(inst -> inst
 				.group(ExtraCodecs.strictOptionalField(Codec.STRING, "group", "").forGetter(MixingBowlRecipe::getGroup),
 
-						Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredient").forGetter(r -> r.ingredients),
+						Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ingredients -> {
+							NonNullList<Ingredient> nonNullList = NonNullList.create();
+							nonNullList.addAll(ingredients);
+							return nonNullList;
+						}, ingredients -> ingredients).forGetter(MixingBowlRecipe::getIngredients),
 
 						ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("result").forGetter(r -> r.result),
-						
+
 						ExtraCodecs.strictOptionalField(Codec.INT, "stirs", 100).forGetter(r -> r.stirs),
-				
+
 						ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("usedItem").forGetter(r -> r.usedItem))
 
-						//String pGroup, NonNullList<Ingredient> pIngredients, ItemStack pResult, int stirs, ItemStack usedItem
+				// String pGroup, NonNullList<Ingredient> pIngredients, ItemStack pResult, int
+				// stirs, ItemStack usedItem
 				.apply(inst, MixingBowlRecipe::new));
 
-		private static NonNullList<Ingredient> itemsFromJson(JsonArray pIngredientArray) {
-			NonNullList<Ingredient> nonnulllist = NonNullList.create();
-
-			for (int i = 0; i < pIngredientArray.size(); ++i) {
-				Ingredient ingredient = Ingredient.fromJson(pIngredientArray.get(i), true);
-				nonnulllist.add(ingredient);
-			}
-
-			return nonnulllist;
-		}
+//		private static NonNullList<Ingredient> itemsFromJson(JsonArray pIngredientArray) {
+//			NonNullList<Ingredient> nonnulllist = NonNullList.create();
+//
+//			for (int i = 0; i < pIngredientArray.size(); ++i) {
+//				Ingredient ingredient = Ingredient.fromJson(pIngredientArray.get(i), true);
+//				nonnulllist.add(ingredient);
+//			}
+//
+//			return nonnulllist;
+//		}
 
 		public MixingBowlRecipe fromNetwork(FriendlyByteBuf pBuffer) {
 			String s = pBuffer.readUtf();

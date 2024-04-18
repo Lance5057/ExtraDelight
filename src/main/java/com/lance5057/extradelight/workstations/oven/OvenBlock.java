@@ -7,7 +7,6 @@ import com.lance5057.extradelight.state.OvenSupport;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -21,7 +20,6 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
@@ -62,7 +60,8 @@ public class OvenBlock extends Block implements EntityBlock, SimpleWaterloggedBl
 			Block.box(0.0D, -1.0D, 0.0D, 16.0D, 0.0D, 16.0D));
 
 	public OvenBlock() {
-		super(Properties.ofFullCopy(Blocks.BRICKS).requiresCorrectToolForDrops().strength(3.5F, 6.0F).sound(SoundType.STONE));
+		super(Properties.ofFullCopy(Blocks.BRICKS).requiresCorrectToolForDrops().strength(3.5F, 6.0F)
+				.sound(SoundType.STONE));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
 				.setValue(SUPPORT, OvenSupport.NONE).setValue(WATERLOGGED, false));
 	}
@@ -242,10 +241,19 @@ public class OvenBlock extends Block implements EntityBlock, SimpleWaterloggedBl
 	@Nullable
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
 			BlockEntityType<T> blockEntity) {
+
 		if (level.isClientSide) {
-			return createTickerHelper(blockEntity, ExtraDelightBlockEntities.OVEN.get(),
-					OvenBlockEntity::animationTick);
+			return (lvl, pos, st, be) -> {
+				if (be instanceof OvenBlockEntity oven) {
+					OvenBlockEntity.animationTick(lvl, pos, st, oven);
+				}
+			};
+		} else {
+			return (lvl, pos, st, be) -> {
+				if (be instanceof OvenBlockEntity oven) {
+					OvenBlockEntity.cookingTick(lvl, pos, st, oven);
+				}
+			};
 		}
-		return createTickerHelper(blockEntity, ExtraDelightBlockEntities.OVEN.get(), OvenBlockEntity::cookingTick);
 	}
 }

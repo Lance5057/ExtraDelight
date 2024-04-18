@@ -1,13 +1,13 @@
 package com.lance5057.extradelight.data;
 
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -23,14 +23,14 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
-public class MiscLootTables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
+public class MiscLootTables implements LootTableSubProvider {
 
 	public static final ResourceLocation SHUCKED_CORN = new ResourceLocation(ExtraDelight.MOD_ID, "misc/shucked_corn");
 	public static final ResourceLocation CORN_TOP = new ResourceLocation(ExtraDelight.MOD_ID, "misc/corn_top");
 	public static final ResourceLocation CINNAMON_LOG = new ResourceLocation(ExtraDelight.MOD_ID, "misc/cinnamon_log");
 
 	@Override
-	public void accept(BiConsumer<ResourceLocation, Builder> t) {
+	public void generate(BiConsumer<ResourceLocation, Builder> t) {
 		t.accept(SHUCKED_CORN,
 				LootTable.lootTable().withPool(createPoolWithItem(ExtraDelightItems.CORN_HUSK.get(), 2, 3))
 						.withPool(createPoolWithItem(ExtraDelightItems.CORN_SILK.get(), 1, 2))

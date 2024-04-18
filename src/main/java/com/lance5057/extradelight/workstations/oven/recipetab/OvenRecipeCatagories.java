@@ -23,7 +23,7 @@ public class OvenRecipeCatagories {
 				ImmutableList.of(OVEN_SEARCH.get(), OVEN_MEALS.get()));
 		event.registerAggregateCategory(OVEN_SEARCH.get(), ImmutableList.of(OVEN_MEALS.get()));
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.OVEN.get(), recipe -> {
-			if (recipe instanceof OvenRecipe OVENRecipe) {
+			if (recipe.value() instanceof OvenRecipe OVENRecipe) {
 				OvenRecipeBookTab tab = OVENRecipe.getRecipeBookTab();
 				if (tab != null) {
 					return switch (tab) {

@@ -1,30 +1,36 @@
 package com.lance5057.extradelight.data;
 
+import java.util.concurrent.CompletableFuture;
+
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 public class EDItemTags extends ItemTagsProvider {
 
-	public EDItemTags(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, String modId,
+	public EDItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider,
+			CompletableFuture<TagsProvider.TagLookup<Block>> blockTagProvider,
 			@Nullable ExistingFileHelper existingFileHelper) {
-		super(pGenerator, pBlockTagsProvider, modId, existingFileHelper);
+		super(output, provider, blockTagProvider, FarmersDelight.MODID, existingFileHelper);
 	}
 
 	@Override
-	protected void addTags() {
+	protected void addTags(HolderLookup.Provider provider) {
 		tag(ExtraDelightTags.TRAYS).add(ExtraDelightItems.TRAY.get(), ExtraDelightItems.BAKING_STONE.get(),
 				ExtraDelightItems.PIE_DISH.get(), ExtraDelightItems.SQUARE_PAN.get(), ExtraDelightItems.LOAF_PAN.get(),
 				ExtraDelightItems.ROUND_PAN.get(), ExtraDelightItems.SHEET.get(), ExtraDelightItems.MUFFIN_TIN.get());
@@ -47,9 +53,10 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.IRON_SPOON.get(), ExtraDelightItems.GOLD_SPOON.get(),
 				ExtraDelightItems.DIAMOND_SPOON.get(), ExtraDelightItems.NETHERITE_SPOON.get());
 
-		tag(ExtraDelightTags.MAKES_STOCK).add(Items.BONE).addOptionalTag(new ResourceLocation("forge", "vegetables"))
+		tag(ExtraDelightTags.MAKES_STOCK).add(Items.BONE)
 				.add(Items.BEEF, Items.COOKED_BEEF, Items.PORKCHOP, Items.COOKED_PORKCHOP, Items.CHICKEN,
-						Items.COOKED_CHICKEN, Items.COD, Items.COOKED_COD, Items.SALMON, Items.COOKED_SALMON);
+						Items.COOKED_CHICKEN, Items.COD, Items.COOKED_COD, Items.SALMON, Items.COOKED_SALMON)
+				.addOptionalTag(new ResourceLocation("forge", "vegetables"));
 
 		tag(ExtraDelightTags.FRUIT_APPLE).add(Items.APPLE);
 		tag(ExtraDelightTags.FRUIT_GLOW_BERRY).add(Items.GLOW_BERRIES);
@@ -110,8 +117,9 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.TOMATO_SOUP.get(), ModItems.CHICKEN_SOUP.get(), ModItems.NOODLE_SOUP.get(),
 				ModItems.PUMPKIN_SOUP.get(), ModItems.VEGETABLE_SOUP.get(), Items.BEETROOT_SOUP, Items.MUSHROOM_STEW);
 
-		tag(ExtraDelightTags.PROCESSED_ONION).addOptionalTag(ForgeTags.CROPS_ONION.location())
-				.add(ExtraDelightItems.SLICED_ONION.get());
+		tag(ExtraDelightTags.PROCESSED_ONION).add(ExtraDelightItems.SLICED_ONION.get())
+				.addOptionalTag(ForgeTags.CROPS_ONION.location());
+
 		tag(ExtraDelightTags.SLICED_ONION).add(ExtraDelightItems.SLICED_ONION.get());
 
 		tag(ExtraDelightTags.PROCESSED_POTATO).addTag(Tags.Items.CROPS_POTATO).add(
@@ -125,8 +133,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.add(ExtraDelightItems.GRATED_CARROT.get());
 		tag(ExtraDelightTags.GRATED_CARROT).add(ExtraDelightItems.GRATED_CARROT.get());
 
-		tag(ExtraDelightTags.PROCESSED_TOMATO).addOptionalTag(ForgeTags.CROPS_TOMATO.location())
-				.add(ExtraDelightItems.SLICED_TOMATO.get());
+		tag(ExtraDelightTags.PROCESSED_TOMATO).add(ExtraDelightItems.SLICED_TOMATO.get())
+				.addOptionalTag(ForgeTags.CROPS_TOMATO.location());
 		tag(ExtraDelightTags.SLICED_TOMATO).add(ExtraDelightItems.SLICED_TOMATO.get());
 
 		tag(ExtraDelightTags.PROCESSED_APPLE).addTag(ExtraDelightTags.FRUIT_APPLE)
@@ -162,10 +170,12 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.CORN_CONFISCATE).add(ExtraDelightItems.CORN_COB.get(), ExtraDelightItems.CORN_HUSK.get(),
 				ExtraDelightItems.CORN_ON_COB.get(), ExtraDelightItems.CORN_SEEDS.get(),
-				ExtraDelightItems.CORN_SILK.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
+				ExtraDelightItems.CORN_SILK
+						.get(), /* ExtraDelightItems.UNSHUCKED_CORN.get(), */
 				ExtraDelightItems.CORN_CHOWDER.get(), ExtraDelightItems.CORN_FRITTERS.get(),
 				ExtraDelightItems.CORN_MEAL.get(), ExtraDelightItems.CORN_PUDDING.get(),
-				ExtraDelightItems.CORN_PUDDING_FEAST.get(), ExtraDelightItems.CORN_SILK_TEA.get(),
+				ExtraDelightItems.CORN_PUDDING_FEAST
+						.get(), /* ExtraDelightItems.CORN_SILK_TEA.get(), */
 				ExtraDelightItems.CORNBREAD.get(), ExtraDelightItems.CORNBREAD_FEAST.get(),
 				ExtraDelightItems.CARAMEL_POPCORN.get(), ExtraDelightItems.COOKED_CORN.get(),
 				ExtraDelightItems.CREAM_CORN.get(), ExtraDelightItems.DRIED_CORN_HUSK.get(),

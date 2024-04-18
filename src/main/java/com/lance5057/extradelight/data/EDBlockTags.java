@@ -1,23 +1,30 @@
 package com.lance5057.extradelight.data;
 
+import java.util.concurrent.CompletableFuture;
+
+import javax.annotation.Nullable;
+
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.RegistryObject;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class EDBlockTags extends BlockTagsProvider {
-	public EDBlockTags(DataGenerator generator, String modId, ExistingFileHelper existingFileHelper) {
-		super(generator, modId, existingFileHelper);
+	public EDBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+			@Nullable ExistingFileHelper existingFileHelper) {
+		super(output, lookupProvider, FarmersDelight.MODID, existingFileHelper);
 	}
 
 	@Override
-	protected void addTags() {
+	protected void addTags(HolderLookup.Provider provider) {
 		this.registerBlockMineableTags();
 	}
 
@@ -110,28 +117,28 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.SLABS).add(ExtraDelightBlocks.CINNAMON_SLAB.get());
 	}
 
-	protected void makeMineableWithAxe(RegistryObject<Block> blockRegistryObject) {
-		tag(BlockTags.MINEABLE_WITH_AXE).add(blockRegistryObject.get());
+	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {
+		tag(BlockTags.MINEABLE_WITH_AXE).add(blockDeferredBlock.get());
 	}
 
-	protected void makeMineableWithHoe(RegistryObject<Block> blockRegistryObject) {
-		tag(BlockTags.MINEABLE_WITH_HOE).add(blockRegistryObject.get());
+	protected void makeMineableWithHoe(DeferredBlock<Block> blockDeferredBlock) {
+		tag(BlockTags.MINEABLE_WITH_HOE).add(blockDeferredBlock.get());
 	}
 
-	protected void makeMineableWithPickaxe(RegistryObject<Block> blockRegistryObject) {
-		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockRegistryObject.get());
+	protected void makeMineableWithPickaxe(DeferredBlock<Block> blockDeferredBlock) {
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockDeferredBlock.get());
 	}
 
-	protected void makeMineableWithShovel(RegistryObject<Block> blockRegistryObject) {
-		tag(BlockTags.MINEABLE_WITH_AXE).add(blockRegistryObject.get());
+	protected void makeMineableWithShovel(DeferredBlock<Block> blockDeferredBlock) {
+		tag(BlockTags.MINEABLE_WITH_AXE).add(blockDeferredBlock.get());
 	}
 
-	protected void makeMineableWithKnife(RegistryObject<Block> blockRegistryObject) {
-		tag(ModTags.MINEABLE_WITH_KNIFE).add(blockRegistryObject.get());
+	protected void makeMineableWithKnife(DeferredBlock<Block> blockDeferredBlock) {
+		tag(ModTags.MINEABLE_WITH_KNIFE).add(blockDeferredBlock.get());
 	}
 
-	protected void makeFence(RegistryObject<Block> blockRegistryObject) {
-		tag(BlockTags.FENCES).add(blockRegistryObject.get());
+	protected void makeFence(DeferredBlock<Block> blockDeferredBlock) {
+		tag(BlockTags.FENCES).add(blockDeferredBlock.get());
 	}
 
 }

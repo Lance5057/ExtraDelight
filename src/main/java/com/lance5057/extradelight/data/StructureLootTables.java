@@ -1,11 +1,11 @@
 package com.lance5057.extradelight.data;
 
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -16,7 +16,7 @@ import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
-public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
+public class StructureLootTables implements LootTableSubProvider {
 	public static ResourceLocation curry_powder = new ResourceLocation(ExtraDelight.MOD_ID, "structures/curry_powder");
 	public static ResourceLocation furikake = new ResourceLocation(ExtraDelight.MOD_ID, "structures/furikake");
 	public static ResourceLocation meals = new ResourceLocation(ExtraDelight.MOD_ID, "structures/meals");
@@ -44,7 +44,7 @@ public class StructureLootTables implements Consumer<BiConsumer<ResourceLocation
 	static int LEGENDARY = 1;
 
 	@Override
-	public void accept(BiConsumer<ResourceLocation, Builder> t) {
+	public void generate(BiConsumer<ResourceLocation, Builder> t) {
 
 //		t.accept(mortar_nether,
 //				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 1))

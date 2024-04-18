@@ -4,6 +4,7 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.loot.FoodLoot;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
@@ -12,7 +13,7 @@ import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 
 public class LootModifiers extends GlobalLootModifierProvider {
 
-	public LootModifiers(DataGenerator data) {
+	public LootModifiers(PackOutput data) {
 		super(data, ExtraDelight.MOD_ID);
 	}
 

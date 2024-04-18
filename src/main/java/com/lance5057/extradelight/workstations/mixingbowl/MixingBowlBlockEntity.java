@@ -256,7 +256,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 			} else {
 				this.containerItem = recipe.getUsedItem().copy();
 
-				ItemStack i = recipe.getResultItem().copy();
+				ItemStack i = recipe.getResultItem(player.level().registryAccess()).copy();
 
 				i.onCraftedBy(player.level(), player, 1);
 //				NeoForgeEventFactory.firePlayerCraftingEvent(player, i, new RecipeWrapper(items));

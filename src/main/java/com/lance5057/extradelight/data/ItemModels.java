@@ -4,20 +4,20 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 public class ItemModels extends ItemModelProvider {
 
-	public ItemModels(DataGenerator generator, ExistingFileHelper fh) {
-		super(generator, ExtraDelight.MOD_ID, fh);
+	public ItemModels(PackOutput output, ExistingFileHelper fh) {
+		super(output, ExtraDelight.MOD_ID, fh);
 	}
 
 	@Override
@@ -125,11 +125,11 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/gilded_blackstone")); // not craftable, dungeon item
-
-		getBuilder(ExtraDelightItems.CORN_COB_PIPE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(
-						new ResourceLocation(ExtraDelight.MOD_ID, "item/corncob_pipe")))
-				.texture("1", modLoc("item/corncob_pipe")); // not craftable, dungeon item
+//
+//		getBuilder(ExtraDelightItems.CORN_COB_PIPE.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(
+//						new ResourceLocation(ExtraDelight.MOD_ID, "item/corncob_pipe")))
+//				.texture("1", modLoc("item/corncob_pipe")); // not craftable, dungeon item
 
 		forItem(ExtraDelightItems.ROUND_PAN, "round_pan");
 		forItem(ExtraDelightItems.BAKING_STONE, "baking_stone");
@@ -494,7 +494,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CORN_ON_COB, "crops/corn_on_cob");
 		forItem(ExtraDelightItems.CORN_SILK, "crops/corn_silk");
 		forItem(ExtraDelightItems.DRIED_CORN_HUSK, "crops/dried_corn_husk");
-		forItem(ExtraDelightItems.UNSHUCKED_CORN, "crops/unshucked_corn");
+//		forItem(ExtraDelightItems.UNSHUCKED_CORN, "crops/unshucked_corn");
 		forItem(ExtraDelightItems.CORN_MEAL, "cornmeal");
 
 		forItem(ExtraDelightItems.CORN_CHOWDER, "corn_chowder");
@@ -504,7 +504,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.GRILLED_CORN_ON_COB, "grilled_corn_on_cob");
 		forItem(ExtraDelightItems.COOKED_CORN, "cooked_corn");
 		forItem(ExtraDelightItems.ROASTED_PUMPKIN_SEEDS, "roasted_pumpkin_seeds");
-		forItem(ExtraDelightItems.CORN_SILK_TEA, "corn_silk_tea");
+//		forItem(ExtraDelightItems.CORN_SILK_TEA, "corn_silk_tea");
 		forItem(ExtraDelightItems.STEWED_APPLES, "stewed_apples");
 		forItem(ExtraDelightItems.APPLE_FRITTERS, "apple_fritters");
 		forItem(ExtraDelightItems.CARAMEL_SAUCE, "caramel_sauce");
@@ -556,12 +556,12 @@ public class ItemModels extends ItemModelProvider {
 
 		// Holiday
 		forBlockItem(ExtraDelightItems.STRIPPED_CINNAMON_LOG, "stripped_cinnamon_log");
-		forBlockItem(ExtraDelightItems.CINNAMON_LOG, "cinnamon_log");
+//		forBlockItem(ExtraDelightItems.CINNAMON_LOG, "cinnamon_log");
 		forBlockItem(ExtraDelightItems.CINNAMON_LEAVES, "cinnamon_leaves");
 		forBlockItem(ExtraDelightItems.CINNAMON_PLANKS, "cinnamon_planks");
 		forBlockItem(ExtraDelightItems.CINNAMON_FENCE,
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_fence_inventory"));
-		forItem(ExtraDelightItems.CINNAMON_DOOR, "cinnamon_door");
+//		forItem(ExtraDelightItems.CINNAMON_DOOR, "cinnamon_door");
 		forBlockItem(ExtraDelightItems.CINNAMON_FENCE_GATE, "cinnamon_fence_gate");
 		forBlockItem(ExtraDelightItems.CINNAMON_STAIRS, "cinnamon_stairs");
 		forBlockItem(ExtraDelightItems.CINNAMON_TRAPDOOR,
@@ -569,7 +569,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CINNAMON_CABINET, "cinnamon_cabinet");
 		this.slab(ExtraDelightItems.CINNAMON_SLAB.getId().getPath(), modLoc("block/cinnamon_planks"),
 				modLoc("block/cinnamon_planks"), modLoc("block/cinnamon_planks"));
-		forBlockItemWithParent(ExtraDelightItems.CINNAMON_SAPLING);
+//		forBlockItemWithParent(ExtraDelightItems.CINNAMON_SAPLING);
 		forItem(ExtraDelightItems.CINNAMON_BARK, "cinnamon_bark");
 		forItem(ExtraDelightItems.CINNAMON_STICK, "cinnamon_stick");
 		forItem(ExtraDelightItems.GROUND_CINNAMON, "ground_cinnamon");
@@ -786,12 +786,12 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart");
 		forBlockItem(ExtraDelightItems.PUNCH_FEAST, new ResourceLocation(ExtraDelight.MOD_ID, "block/punch_stage0"));
 		forBlockItem(ExtraDelightItems.WILD_GINGER, "wild_ginger");
-		
+
 		forBlockItem(ExtraDelightItems.CHEESE_STAIRS_BLOCK_ITEM, "cheese_stairs");
 		forBlockItem(ExtraDelightItems.CHEESE_SLAB_BLOCK_ITEM, "cheese_slab");
 		forBlockItem(ExtraDelightItems.BUTTER_STAIRS_BLOCK_ITEM, "butter_stairs");
 		forBlockItem(ExtraDelightItems.BUTTER_SLAB_BLOCK_ITEM, "butter_slab");
-		
+
 		forBlockItem(ExtraDelightItems.BREADCRUMB_SACK, "breadcrumb_sack");
 		forBlockItem(ExtraDelightItems.EGG_CRATE, "egg_crate");
 		forBlockItem(ExtraDelightItems.RAW_CINNAMON_BLOCK, "raw_cinnamon_block");
@@ -810,34 +810,34 @@ public class ItemModels extends ItemModelProvider {
 		AestheticBlocks.itemModel(this);
 	}
 
-	public void forItem(RegistryObject<? extends Item> item, String name) {
+	public void forItem(DeferredItem<? extends Item> item, String name) {
 		this.singleTexture(item.getId().getPath(), mcLoc("item/handheld"), "layer0", modLoc("item/" + name));
 	}
 
-	public void forBlockItem(RegistryObject<? extends BlockItem> item, String name) {
+	public void forBlockItem(DeferredItem<? extends BlockItem> item, String name) {
 		getBuilder(item.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID,
-						"block/" + ForgeRegistries.BLOCKS.getKey(item.get().getBlock()).getPath())));
+						"block/" + BuiltInRegistries.BLOCK.getKey(item.get().getBlock()).getPath())));
 	}
 
-	public void forBlockItem(RegistryObject<? extends BlockItem> item, ResourceLocation modelLocation) {
+	public void forBlockItem(DeferredItem<? extends BlockItem> item, ResourceLocation modelLocation) {
 		getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation));
 	}
 
-	public void forBlockItem(RegistryObject<? extends BlockItem> item, ResourceLocation modelLocation, String key,
+	public void forBlockItem(DeferredItem<? extends BlockItem> item, ResourceLocation modelLocation, String key,
 			ResourceLocation texture) {
 		getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation)).texture(key,
 				texture);
 	}
 
-	public void jellyBlock(RegistryObject<? extends BlockItem> item, String color) {
+	public void jellyBlock(DeferredItem<? extends BlockItem> item, String color) {
 		ModelFile jellyModel = new ModelFile.UncheckedModelFile(modLoc("block/jelly_block_stage0"));
 
 		getBuilder(item.getId().getPath()).parent(jellyModel).texture("1",
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/jelly_" + color));
 	}
 
-	private void forBlockItemWithParent(RegistryObject<? extends BlockItem> item) {
+	private void forBlockItemWithParent(DeferredItem<? extends BlockItem> item) {
 		singleTexture(item.getId().getPath(), mcLoc("item/generated"), "layer0",
 				modLoc("block/" + item.getId().getPath()));
 	}
