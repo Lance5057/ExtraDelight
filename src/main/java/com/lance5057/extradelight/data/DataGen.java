@@ -40,8 +40,8 @@ public class DataGen {
 		generator.addProvider(event.includeServer(),
 				new EDItemTags(output, lookupProvider, blockTags.contentsGetter(), helper));
 
-		generator.addProvider(event.includeServer(), new Recipes(generator));
-		generator.addProvider(event.includeServer(), new LootModifiers(generator));
+		generator.addProvider(event.includeServer(), new Recipes(output));
+		generator.addProvider(event.includeServer(), new LootModifiers(output));
 		generator.addProvider(event.includeServer(), new Advancements(output, lookupProvider, helper));
 		generator.addProvider(event.includeClient(), new EnglishLoc(output));
 
