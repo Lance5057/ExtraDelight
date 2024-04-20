@@ -14,6 +14,7 @@ import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -118,8 +119,8 @@ public class FeastRecipeBuilder implements RecipeBuilder {
 
 			pJson.add("ingredient", this.ingredient.toJson());
 
-			pJson.addProperty("result", ForgeRegistries.ITEMS.getKey(result).toString());
-			pJson.addProperty("block", ForgeRegistries.ITEMS.getKey(block).toString());
+			pJson.addProperty("result", BuiltInRegistries.ITEM.getKey(result).toString());
+			pJson.addProperty("block", BuiltInRegistries.ITEM.getKey(block).toString());
 		}
 
 		public RecipeSerializer<?> getType() {

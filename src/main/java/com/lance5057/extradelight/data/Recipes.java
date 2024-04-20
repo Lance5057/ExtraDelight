@@ -7,7 +7,6 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.DynamicNameSmeltingRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
@@ -526,42 +525,44 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void dryingRackRecipes(RecipeOutput consumer) {
-		DryingRackRecipeBuilder.drying(Ingredient.of(Items.WET_SPONGE), Items.SPONGE, 10, 1000)
+		DryingRackRecipeBuilder.drying(Ingredient.of(Items.WET_SPONGE), new ItemStack(Items.SPONGE), 10, 1000)
 				.unlockedBy("has_sponge", has(Items.WET_SPONGE)).save(consumer, EDLoc("sponge"));
-		DryingRackRecipeBuilder.drying(Ingredient.of(Items.KELP), Items.DRIED_KELP, 10, 1000)
+		DryingRackRecipeBuilder.drying(Ingredient.of(Items.KELP), new ItemStack(Items.DRIED_KELP), 10, 1000)
 				.unlockedBy("has_kelp", has(Items.KELP)).save(consumer, EDLoc("dried_kelp"));
 
 		DryingRackRecipeBuilder
-				.drying(Ingredient.of(ExtraDelightItems.SEAWEED_PASTE.get()), ExtraDelightItems.AGAR_SHEETS.get(), 10,
-						1000)
+				.drying(Ingredient.of(ExtraDelightItems.SEAWEED_PASTE.get()),
+						new ItemStack(ExtraDelightItems.AGAR_SHEETS.get()), 10, 1000)
 				.unlockedBy("has_paste", has(ExtraDelightItems.SEAWEED_PASTE.get()))
 				.save(consumer, EDLoc("agar_sheets"));
 
-		DryingRackRecipeBuilder
-				.drying(Ingredient.of(ForgeTags.COOKED_FISHES), ExtraDelightItems.FISH_FLAKES.get(), 10, 1000)
+		DryingRackRecipeBuilder.drying(Ingredient.of(ForgeTags.COOKED_FISHES),
+				new ItemStack(ExtraDelightItems.FISH_FLAKES.get()), 10, 1000)
 				.unlockedBy("has_fish", has(ForgeTags.COOKED_FISHES)).save(consumer, EDLoc("fish_flakes"));
 
-		DryingRackRecipeBuilder.drying(Ingredient.of(ExtraDelightTags.MEAT), ExtraDelightItems.JERKY.get(), 10, 1000)
+		DryingRackRecipeBuilder
+				.drying(Ingredient.of(ExtraDelightTags.MEAT), new ItemStack(ExtraDelightItems.JERKY.get()), 10, 1000)
 				.unlockedBy("has_meat", has(ExtraDelightTags.MEAT)).save(consumer, EDLoc("jerky"));
 
 		DryingRackRecipeBuilder
-				.drying(Ingredient.of(ExtraDelightItems.CORN_HUSK.get()), ExtraDelightItems.DRIED_CORN_HUSK.get(), 10,
-						1000)
+				.drying(Ingredient.of(ExtraDelightItems.CORN_HUSK.get()),
+						new ItemStack(ExtraDelightItems.DRIED_CORN_HUSK.get()), 10, 1000)
 				.unlockedBy("has_husk", has(ExtraDelightItems.CORN_HUSK.get())).save(consumer, EDLoc("corn_husk"));
 
 		DryingRackRecipeBuilder
-				.drying(Ingredient.of(ExtraDelightItems.RAW_CINNAMON.get()), ExtraDelightItems.CINNAMON_STICK.get(), 10,
-						1000)
+				.drying(Ingredient.of(ExtraDelightItems.RAW_CINNAMON.get()),
+						new ItemStack(ExtraDelightItems.CINNAMON_STICK.get()), 10, 1000)
 				.unlockedBy("has_husk", has(ExtraDelightItems.RAW_CINNAMON.get()))
 				.save(consumer, EDLoc("raw_cinnamon"));
 
 		DryingRackRecipeBuilder
-				.drying(Ingredient.of(ExtraDelightTags.PROCESSED_FRUIT), ExtraDelightItems.DRIED_FRUIT.get(), 10, 1000)
+				.drying(Ingredient.of(ExtraDelightTags.PROCESSED_FRUIT),
+						new ItemStack(ExtraDelightItems.DRIED_FRUIT.get()), 10, 1000)
 				.unlockedBy("has_husk", has(ExtraDelightTags.DRIED_FRUIT)).save(consumer, EDLoc("dried_fruit"));
 	}
 
 	private void cookingRecipes(RecipeOutput consumer) {
-		dynamicCooking(Ingredient.of(ExtraDelightItems.OMELETTE_MIX.get()), ExtraDelightItems.OMELETTE.get(), consumer,
+		vanillaCooking(Ingredient.of(ExtraDelightItems.OMELETTE_MIX.get()), ExtraDelightItems.OMELETTE.get(), consumer,
 				"omelette_mix");
 
 		vanillaCooking(Ingredient.of(ExtraDelightItems.EGG_MIX.get()), ExtraDelightItems.SCRAMBLED_EGGS.get(), consumer,
@@ -630,17 +631,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("smoking/" + name + "_smoke"));
 	}
 
-	private void dynamicCooking(Ingredient of, @NotNull Item item, RecipeOutput consumer, String name) {
-		DynamicNameSmeltingRecipeBuilder.campfireCooking(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
-				.save(consumer, EDLoc("campfire/" + name + "_fire"));
-		DynamicNameSmeltingRecipeBuilder.smelting(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
-				.save(consumer, EDLoc("smelting/" + name + "_smelt"));
-		DynamicNameSmeltingRecipeBuilder.smoking(of, item, MEDIUM_EXP, NORMAL_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
-				.save(consumer, EDLoc("smoking/" + name + "_smoke"));
-	}
+//	private void dynamicCooking(Ingredient of, @NotNull Item item, RecipeOutput consumer, String name) {
+//		DynamicNameSmeltingRecipeBuilder.campfireCooking(of, item, MEDIUM_EXP, NORMAL_COOKING)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+//				.save(consumer, EDLoc("campfire/" + name + "_fire"));
+//		DynamicNameSmeltingRecipeBuilder.smelting(of, item, MEDIUM_EXP, NORMAL_COOKING)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+//				.save(consumer, EDLoc("smelting/" + name + "_smelt"));
+//		DynamicNameSmeltingRecipeBuilder.smoking(of, item, MEDIUM_EXP, NORMAL_COOKING)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+//				.save(consumer, EDLoc("smoking/" + name + "_smoke"));
+//	}
 
 	private void mixingbowlRecipes(RecipeOutput consumer) {
 
