@@ -16,6 +16,9 @@
     },
     {
       "tag": "forge:eggs"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

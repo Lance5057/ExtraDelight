@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    }
+  ],
+  "result": {
+    "item": "extradelight:ground_cinnamon_block"
+  }
+}

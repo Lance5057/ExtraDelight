@@ -788,12 +788,12 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart");
 		forBlockItem(ExtraDelightItems.PUNCH_FEAST, new ResourceLocation(ExtraDelight.MOD_ID, "block/punch_stage0"));
 		forBlockItem(ExtraDelightItems.WILD_GINGER, "wild_ginger");
-		
+
 		forBlockItem(ExtraDelightItems.CHEESE_STAIRS_BLOCK_ITEM, "cheese_stairs");
 		forBlockItem(ExtraDelightItems.CHEESE_SLAB_BLOCK_ITEM, "cheese_slab");
 		forBlockItem(ExtraDelightItems.BUTTER_STAIRS_BLOCK_ITEM, "butter_stairs");
 		forBlockItem(ExtraDelightItems.BUTTER_SLAB_BLOCK_ITEM, "butter_slab");
-		
+
 		forBlockItem(ExtraDelightItems.BREADCRUMB_SACK, "breadcrumb_sack");
 		forBlockItem(ExtraDelightItems.EGG_CRATE, "egg_crate");
 		forBlockItem(ExtraDelightItems.RAW_CINNAMON_BLOCK, "raw_cinnamon_block");
@@ -808,6 +808,10 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.SWEET_BERRY_CRATE, "sweet_berry_crate");
 		forBlockItem(ExtraDelightItems.GLOW_BERRY_CRATE, "glow_berry_crate");
 		forBlockItem(ExtraDelightItems.CORN_SILK_SACK, "corn_silk_sack");
+
+		forItem(ExtraDelightItems.CHICKEN_PATTY, "chicken_patty");
+		forItem(ExtraDelightItems.COOKED_CHICKEN_PATTY, "cooked_chicken_patty");
+		forItem(ExtraDelightItems.BREADED_CHICKEN_PATTY, "breaded_chicken_patty");
 
 		AestheticBlocks.itemModel(this);
 		ButchercraftAddon.itemModel(this);

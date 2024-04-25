@@ -9,6 +9,9 @@
     },
     {
       "tag": "forge:condiments/mayonnaise"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

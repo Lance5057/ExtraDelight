@@ -19,6 +19,12 @@
     },
     {
       "tag": "forge:crops/onion"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

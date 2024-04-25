@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:sandwich_bread"
+    },
+    {
+      "item": "extradelight:chicken_salad"
+    }
+  ],
+  "result": {
+    "item": "extradelight:chicken_salad_sandwich"
+  }
+}

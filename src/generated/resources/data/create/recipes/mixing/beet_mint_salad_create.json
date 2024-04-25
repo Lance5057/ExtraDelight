@@ -18,6 +18,12 @@
     },
     {
       "tag": "forge:cooking_oil"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

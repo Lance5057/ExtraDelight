@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hotdish": {
+    "Recipes": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:pulled_pork_block_item"
+              "extradelight:egg_crate"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:dynamic_feast/pulled_pork_bread_slice_feast"
+        "recipe": "extradelight:egg_from_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_hotdish",
+      "Recipes",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:dynamic_feast/pulled_pork_bread_slice_feast"
+      "extradelight:egg_from_block"
     ]
   }
 }

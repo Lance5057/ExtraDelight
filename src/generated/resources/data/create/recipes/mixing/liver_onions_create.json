@@ -7,6 +7,9 @@
     },
     {
       "tag": "forge:vegetables/onion"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

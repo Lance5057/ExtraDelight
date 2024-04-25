@@ -316,6 +316,9 @@ public class EDItemTags extends ItemTagsProvider {
 				.add(ExtraDelightItems.FROSTING_PINK.get()).add(ExtraDelightItems.FROSTING_PURPLE.get())
 				.add(ExtraDelightItems.FROSTING_RED.get()).add(ExtraDelightItems.FROSTING_WHITE.get())
 				.add(ExtraDelightItems.FROSTING_YELLOW.get());
+
+		tag(ExtraDelightTags.SANDWICH_BREAD).addTag(ForgeTags.BREAD).add(ExtraDelightItems.EMPTY_SANDWICH.get())
+				.add(ExtraDelightItems.ROLL.get());
 	}
 
 }

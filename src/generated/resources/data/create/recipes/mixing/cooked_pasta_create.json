@@ -4,6 +4,9 @@
   "ingredients": [
     {
       "tag": "forge:pasta/raw_pasta"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

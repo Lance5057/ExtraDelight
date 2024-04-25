@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/pasta_alla_norcina_bc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pasta_alla_norcina_bc": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pasta_alla_norcina"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "pasta_alla_norcina_bc",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/pasta_alla_norcina_bc"
+    ]
+  }
+}

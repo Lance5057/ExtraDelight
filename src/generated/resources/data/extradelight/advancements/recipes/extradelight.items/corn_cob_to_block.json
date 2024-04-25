@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "extradelight:fish_salad"
+              "extradelight:corn_cob"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:fish_salad_sandwich_slice"
+        "recipe": "extradelight:corn_cob_to_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:fish_salad_sandwich_slice"
+      "extradelight:corn_cob_to_block"
     ]
   }
 }

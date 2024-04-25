@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "b": {
-      "item": "extradelight:bread_slice"
+      "tag": "forge:sandwich_bread"
     },
     "c": {
       "tag": "forge:cheese"
@@ -13,8 +13,7 @@
   },
   "pattern": [
     " b ",
-    "mc ",
-    " b "
+    "mc "
   ],
   "result": {
     "item": "extradelight:cheese_sandwich"

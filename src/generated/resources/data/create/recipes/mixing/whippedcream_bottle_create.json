@@ -3,6 +3,9 @@
   "ingredients": [
     {
       "item": "farmersdelight:milk_bottle"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

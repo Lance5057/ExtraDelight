@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "extradelight:alfredo_sauce"
+    },
+    {
+      "item": "farmersdelight:raw_pasta"
+    },
+    {
+      "tag": "forge:sausage/cooked"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:pasta_alla_norcina"
+    }
+  ]
+}

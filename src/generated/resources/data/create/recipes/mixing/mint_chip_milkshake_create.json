@@ -12,6 +12,9 @@
     },
     {
       "tag": "forge:mint"
+    },
+    {
+      "item": "minecraft:glass_bottle"
     }
   ],
   "results": [

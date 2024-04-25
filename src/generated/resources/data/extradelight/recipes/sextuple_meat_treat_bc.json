@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:beef/cubed/cooked"
+    },
+    {
+      "tag": "forge:pork/cubed/cooked"
+    },
+    {
+      "tag": "forge:mutton/cubed/cooked"
+    },
+    {
+      "tag": "forge:goat/cubed/cooked"
+    },
+    {
+      "tag": "forge:chicken/cubed/cooked"
+    },
+    {
+      "tag": "forge:rabbit/cubed/cooked"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:sextuple_meat_treat"
+  }
+}

@@ -19,6 +19,9 @@
     },
     {
       "tag": "forge:cheese"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

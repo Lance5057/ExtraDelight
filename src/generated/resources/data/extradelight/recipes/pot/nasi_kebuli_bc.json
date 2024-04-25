@@ -13,7 +13,7 @@
       "tag": "forge:grain/rice"
     },
     {
-      "item": "minecraft:milk_bucket"
+      "tag": "forge:milk"
     },
     {
       "tag": "extradelight:processed/onion"
@@ -23,9 +23,6 @@
     },
     {
       "tag": "forge:butter"
-    },
-    {
-      "tag": "forge:cooking_oil"
     }
   ],
   "result": {

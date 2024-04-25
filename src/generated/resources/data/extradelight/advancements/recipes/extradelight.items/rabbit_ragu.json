@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/rabbit_ragu"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "rabbit_ragu": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:rabbit_ragu"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "rabbit_ragu",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/rabbit_ragu"
+    ]
+  }
+}

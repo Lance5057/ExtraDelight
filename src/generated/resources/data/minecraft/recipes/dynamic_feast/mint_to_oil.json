@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 4,
+  "ingredient": {
+    "tag": "forge:mint"
+  },
+  "result": {
+    "item": "extradelight:cooking_oil"
+  }
+}

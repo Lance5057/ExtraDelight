@@ -19,6 +19,9 @@
     },
     {
       "tag": "forge:flour"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

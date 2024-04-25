@@ -585,6 +585,33 @@ public class EDFoods {
 					.addFoods("", MILK, FLOUR, BUTTER, SUGAR, FoodValues.FRIED_EGG, FoodValues.PIE_CRUST).build(), 4)
 			.build();
 
+	public static final FoodProperties NASI_KEBULI = EDFoods
+			.divideFoods("nasi kebuli", EDFoods.addFoods("", FoodValues.BEEF_PATTY, FoodValues.COOKED_RICE, BUTTER,
+					MILK, FoodValues.ONION, FoodValues.BONE_BROTH).build(), 2)
+			.build();
+
+	public static final FoodProperties BHUTAN = EDFoods
+			.divideFoods("bhutan",
+					EDFoods.addFoods("", FoodValues.BEEF_PATTY, FoodValues.TOMATO, FoodValues.ONION, OIL).build(), 2)
+			.build();
+
+	public static final FoodProperties OYAKODON = EDFoods
+			.divideFoods("oyakodon",
+					EDFoods.addFoods("", Foods.COOKED_CHICKEN, FoodValues.FRIED_EGG, FoodValues.COOKED_RICE).build(), 2)
+			.build();
+
+	public static final FoodProperties KARMINADLE = EDFoods.addFoods("karminadle", Foods.COOKED_RABBIT, Foods.BREAD, BREADING)
+			.build();
+	
+	public static final FoodProperties BANGERS_MASH = EDFoods.addFoods("bangers n mash", FoodValues.BEEF_PATTY, Foods.BAKED_POTATO)
+			.build();
+	
+	public static final FoodProperties PASTA_ALLA_NORCINA = EDFoods.addFoods("pasta alla norcina", PASTA_ALFREDO, FoodValues.BEEF_PATTY)
+			.build();
+	
+	public static final FoodProperties MAC_CHEESE_HOT_DOG = EDFoods.addFoods("mac_cheese_hot_dog", MACARONI_CHEESE_SERVING, FoodValues.BEEF_PATTY)
+			.build();
+
 	public static Builder addFoods(String name, FoodProperties... foods) {
 
 		int nut = 0;

@@ -4,6 +4,12 @@
   "ingredients": [
     {
       "item": "extradelight:caramel_sauce"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
     }
   ],
   "results": [

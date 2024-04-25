@@ -27,6 +27,9 @@
     },
     {
       "tag": "forge:meat/cooked"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

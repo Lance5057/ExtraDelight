@@ -4,6 +4,9 @@
   "ingredients": [
     {
       "item": "extradelight:corn_seeds"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

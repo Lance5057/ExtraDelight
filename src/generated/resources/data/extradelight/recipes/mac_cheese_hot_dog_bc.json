@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:sausage/cooked"
+    },
+    {
+      "tag": "forge:sausage/cooked"
+    },
+    {
+      "item": "extradelight:macaroni_cheese_feast"
+    }
+  ],
+  "result": {
+    "item": "extradelight:mac_cheese_hot_dog_feast"
+  }
+}

@@ -5,7 +5,7 @@
       "item": "extradelight:fish_salad"
     },
     {
-      "item": "minecraft:bread"
+      "tag": "forge:sandwich_bread"
     }
   ],
   "result": {

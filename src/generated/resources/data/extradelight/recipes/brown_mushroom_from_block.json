@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "extradelight:brown_mushroom_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:brown_mushroom"
+  }
+}

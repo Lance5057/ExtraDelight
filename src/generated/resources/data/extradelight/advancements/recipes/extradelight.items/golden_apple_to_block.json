@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_meatloaf": {
+    "Recipes": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:meatloaf_feast"
+              "minecraft:golden_apple"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:dynamic_feast/meatloaf_sandwich_slice_feast"
+        "recipe": "extradelight:golden_apple_to_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_meatloaf",
+      "Recipes",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:dynamic_feast/meatloaf_sandwich_slice_feast"
+      "extradelight:golden_apple_to_block"
     ]
   }
 }

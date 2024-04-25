@@ -760,10 +760,27 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.ROLL.get(), "Bread Roll");
 		this.add(ExtraDelightItems.WILD_GINGER.get(), "Wild Ginger");
 		this.add(ExtraDelightItems.EMPTY_SANDWICH.get(), "Empty Sandwich");
-		
+
 		this.add(ExtraDelightItems.CHICKEN_PATTY.get(), "Minced Chicken");
 		this.add(ExtraDelightItems.COOKED_CHICKEN_PATTY.get(), "Chicken Patty");
 		this.add(ExtraDelightItems.BREADED_CHICKEN_PATTY.get(), "Breaded Chicken Patty");
+
+		this.add(ExtraDelightItems.APPLE_CRATE.get(), "Apple Crate");
+		this.add(ExtraDelightItems.BROWN_MUSHROOM_CRATE.get(), "Brown Mushroom Crate");
+		this.add(ExtraDelightItems.EGG_CRATE.get(), "Egg Crate");
+		this.add(ExtraDelightItems.GINGER_CRATE.get(), "Ginger Crate");
+		this.add(ExtraDelightItems.GLOW_BERRY_CRATE.get(), "Glow Berry Crate");
+		this.add(ExtraDelightItems.GOLDEN_APPLE_CRATE.get(), "Golden Apple Crate");
+		this.add(ExtraDelightItems.RED_MUSHROOM_CRATE.get(), "Red Mushroom Crate");
+		this.add(ExtraDelightItems.SWEET_BERRY_CRATE.get(), "Sweet Berry Crate");
+
+		this.add(ExtraDelightItems.BREADCRUMB_SACK.get(), "Breadcrumb Sack");
+		this.add(ExtraDelightItems.CORN_SILK_SACK.get(), "Corn Silk Sack");
+		this.add(ExtraDelightItems.MINT_SACK.get(), "Mint Sack");
+		this.add(ExtraDelightItems.GROUND_CINNAMON_BLOCK_ITEM.get(), "Ground Cinnamon Sack");
+
+		this.add(ExtraDelightItems.CINNAMON_STICK_BLOCK.get(), "Cinnamon Stick Bundle");
+		this.add(ExtraDelightItems.RAW_CINNAMON_BLOCK.get(), "Raw Cinnamon Bundle");
 
 		AestheticBlocks.EngLoc(this);
 		ButchercraftAddon.engLoc(this);

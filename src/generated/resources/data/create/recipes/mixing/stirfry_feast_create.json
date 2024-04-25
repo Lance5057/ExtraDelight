@@ -19,6 +19,9 @@
     },
     {
       "tag": "forge:vegetables"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

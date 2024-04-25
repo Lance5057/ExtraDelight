@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:sausage/cooked"
+    },
+    {
+      "item": "extradelight:bread_slice"
+    },
+    {
+      "tag": "forge:condiments"
+    }
+  ],
+  "result": {
+    "item": "extradelight:bratwurst"
+  }
+}

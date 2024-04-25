@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:condiments/mayonnaise"
+    },
+    {
+      "tag": "forge:chicken/cubed/cooked"
+    },
+    {
+      "tag": "forge:chicken/cubed/cooked"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:chicken_salad"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-// 1.19.2	2024-04-05T12:41:52.6311332	Item Models: extradelight
+// 1.19.2	2024-04-08T02:08:03.548991	Item Models: extradelight
 d6cec988d96345e08c89e0c2f114a2c1312de993 assets/extradelight/models/item/acacia_dried_corn_fence.json
 4bf64edfcd751533c8584d2c371f8508f81271b3 assets/extradelight/models/item/acacia_half_cabinet.json
 df69bdbccbe82b033dbc65c49b353415bde11bca assets/extradelight/models/item/acacia_knife_block.json
@@ -85,6 +85,7 @@ e99c49455d00b7115c36910806e813d9ee000e9e assets/extradelight/models/item/birch_w
 e5b6dc30cf341508f869f9d9055260064e75f983 assets/extradelight/models/item/bratwurst.json
 7803020e824e3665aa35ac9348f5292acfd30d61 assets/extradelight/models/item/breadcrumbs.json
 636be018f3e24710d6856cdcd934daf1739e6ac1 assets/extradelight/models/item/breadcrumb_sack.json
+45be33abdd56da10794865a4ddb706ccca7dfd6a assets/extradelight/models/item/breaded_chicken_patty.json
 9d4ead90a180df4994cfad24c5827579100152e8 assets/extradelight/models/item/breading_misanplas.json
 b0bd5d0a625f139072c9ee43e5758aff91dacdaa assets/extradelight/models/item/bread_slice.json
 049d6be92b4274e3c1a711d31548c130b2d19077 assets/extradelight/models/item/brown_mushroom_crate.json
@@ -152,6 +153,7 @@ becf63078239d293461f3e5f79ad3abe668e34f7 assets/extradelight/models/item/cheese_
 b42804b8f5afc18b90d6b50803a4dd071f224dd1 assets/extradelight/models/item/chicken_fried_steak.json
 9be3e797957ddb7f9622e6eb10cf97289f082cfb assets/extradelight/models/item/chicken_nuggets.json
 5d5fb30b7a149500bcd8c0937071a58db76a9076 assets/extradelight/models/item/chicken_parm.json
+525b844f9de6d649b47b82caa0cd6108c37fd19d assets/extradelight/models/item/chicken_patty.json
 52578394b91ef67c43838af44491e7a789efb6c8 assets/extradelight/models/item/chicken_salad.json
 5444a5c2ddc9c93eb82260d81a91f4954a55343e assets/extradelight/models/item/chicken_salad_sandwich.json
 291743211c1edd044a8b20219b1fcee7f6710179 assets/extradelight/models/item/chicken_stew.json
@@ -211,6 +213,7 @@ ac8997fb25956810c0608d3b77fcf06d6751a2be assets/extradelight/models/item/coffee_
 adea04d2232966881ac13831158c71b0c40b9af6 assets/extradelight/models/item/coffe_cake_feast.json
 15be1ef109d5eec8b1203813167a08ed4f35601b assets/extradelight/models/item/congee.json
 bb898cda7a7fc2f7931a30ec4755353b957a8edc assets/extradelight/models/item/cooked_cactus.json
+3454951f8ee52efb9d080356dde290cd7cb2afd6 assets/extradelight/models/item/cooked_chicken_patty.json
 1d9368e48c5fc274f7555066f1927950e3f9c108 assets/extradelight/models/item/cooked_corn.json
 05b5131d583d9905283147ead84bb128cc730b27 assets/extradelight/models/item/cooked_pasta.json
 9aa70568110653d0b208080e7fec4e31bad0fdbd assets/extradelight/models/item/cookie_dough_ice_cream.json

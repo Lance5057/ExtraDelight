@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:sausage/cooked"
+    },
+    {
+      "item": "extradelight:curry_powder"
+    },
+    {
+      "item": "extradelight:ketchup_jar_item"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:currywurst"
+    }
+  ]
+}

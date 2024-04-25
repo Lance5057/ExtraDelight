@@ -3,7 +3,8 @@
   "ingredients": [
     {
       "tag": "forge:whipped_cream"
-    }
+    },
+    []
   ],
   "results": [
     {
