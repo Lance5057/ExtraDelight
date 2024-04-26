@@ -12,6 +12,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import mezz.jei.library.util.RecipeUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -56,7 +57,7 @@ public class FeastRecipeCategory implements IRecipeCategory<FeastRecipe> {
 	public void setRecipe(IRecipeLayoutBuilder builder, FeastRecipe recipe, IFocusGroup focuses) {
 		Ingredient input = recipe.getIngredients().get(0);
 		ItemStack feast = recipe.getFeastStack();
-		ItemStack output = recipe.getResultItem();	
+		ItemStack output = RecipeUtil.getResultItem(recipe);	
 
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 38, 1).addIngredients(input);
 		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 - 8, 1).addItemStack(feast);

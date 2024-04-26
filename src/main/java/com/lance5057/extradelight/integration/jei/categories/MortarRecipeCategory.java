@@ -5,7 +5,6 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -16,8 +15,10 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import mezz.jei.library.util.RecipeUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -62,7 +63,7 @@ public class MortarRecipeCategory implements IRecipeCategory<MortarRecipe> {
 	public void setRecipe(IRecipeLayoutBuilder builder, MortarRecipe recipe, IFocusGroup focuses) {
 		Ingredient input = recipe.getIngredients().get(0);
 		Ingredient pestle = Ingredient.of(ExtraDelightTags.PESTLES);
-		ItemStack output = recipe.getResultItem();
+		ItemStack output = RecipeUtil.getResultItem(recipe);
 
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 39 + 6, 26).addIngredients(input);
 		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 - 13 + 6, 3).addIngredients(pestle);
@@ -70,12 +71,12 @@ public class MortarRecipeCategory implements IRecipeCategory<MortarRecipe> {
 	}
 
 	@Override
-	public void draw(MortarRecipe recipe, IRecipeSlotsView slotsView, PoseStack ms, double mouseX, double mouseY) {
+	public void draw(MortarRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
 		RenderSystem.enableBlend();
 
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
-		fontRenderer.draw(ms, "x" + recipe.getGrinds(), this.getWidth() / 2 + 6 + 6, 10, 0);
+		guiGraphics.drawString(fontRenderer, "x" + recipe.getGrinds(), this.getWidth() / 2 + 6 + 6, 10, 0);
 
 		RenderSystem.disableBlend();
 	}

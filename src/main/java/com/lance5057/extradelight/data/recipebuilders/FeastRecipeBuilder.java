@@ -5,35 +5,40 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 
+import com.lance5057.extradelight.recipe.FeastRecipe;
+
 import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementRequirements;
+import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.Criterion;
+import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 
 public class FeastRecipeBuilder implements RecipeBuilder {
-	private final Item result;
+	private final ItemStack result;
 	private final Ingredient ingredient;
 	private final BlockItem block;
-	private final Advancement.Builder advancement = Advancement.Builder.advancement();
+//	private final Advancement.Builder advancement = Advancement.Builder.advancement();
 	@Nullable
 	private String group;
 //	private final FeastRecipe.Serializer serializer;
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 
-	private FeastRecipeBuilder(ItemLike pResult, Ingredient pIngredient, BlockItem block) {
-		this.result = pResult.asItem();
+	private FeastRecipeBuilder(ItemStack pResult, Ingredient pIngredient, BlockItem block) {
+		this.result = pResult;
 		this.ingredient = pIngredient;
 		this.block = block;
 //		this.serializer = serializer;
 
 	}
 
-	public static FeastRecipeBuilder feast(Ingredient pIngredient, ItemLike pResult, BlockItem block) {
+	public static FeastRecipeBuilder feast(Ingredient pIngredient, ItemStack pResult, BlockItem block) {
 		return new FeastRecipeBuilder(pResult, pIngredient, block);
 	}
 
@@ -49,7 +54,7 @@ public class FeastRecipeBuilder implements RecipeBuilder {
 	}
 
 	public Item getResult() {
-		return this.result;
+		return this.result.getItem();
 	}
 
 //	@Override
@@ -59,7 +64,7 @@ public class FeastRecipeBuilder implements RecipeBuilder {
 //	}
 
 	@Override
-	public void save(RecipeOutput output, ResourceLocation pRecipeId) {
+	public void save(RecipeOutput output, ResourceLocation id) {
 //		ResourceLocation saveID = new ResourceLocation(pRecipeId.getNamespace(), "dynamic_feast/" + pRecipeId.getPath());
 //		this.ensureValid(saveID);
 //		this.advancement.parent(new ResourceLocation("recipes/root"))
@@ -71,6 +76,17 @@ public class FeastRecipeBuilder implements RecipeBuilder {
 //						"recipes/" + result.getItemCategory().getRecipeFolderName() + "/"
 //								 + pRecipeId.getPath()),
 //				this.serializer));
+
+		ResourceLocation recipeId = id.withPrefix("feast/");
+		Advancement.Builder advancementBuilder = output.advancement()
+				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
+				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);
+		this.criteria.forEach(advancementBuilder::addCriterion);
+
+//		public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab, NonNullList<Ingredient> inputItems,
+//				ItemStack output, ItemStack container, float experience, int cookTime) {
+		FeastRecipe recipe = new FeastRecipe("", this.block, this.ingredient, this.result);
+		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/feast/")));
 	}
 
 	/**

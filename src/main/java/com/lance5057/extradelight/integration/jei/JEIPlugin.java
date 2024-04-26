@@ -21,6 +21,7 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
@@ -44,20 +45,20 @@ public class JEIPlugin implements IModPlugin {
 
 	@Override
 	public void registerRecipes(@NotNull IRecipeRegistration registry) {
-		registry.addRecipes(MortarRecipeCategory.TYPE,
-				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ExtraDelightRecipes.MORTAR.get()));
+		registry.addRecipes(MortarRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.MORTAR.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(MixingBowlRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
-				.getAllRecipesFor(ExtraDelightRecipes.MIXING_BOWL.get()));
-		registry.addRecipes(OvenRecipeCategory.TYPE,
-				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ExtraDelightRecipes.OVEN.get()));
+				.getAllRecipesFor(ExtraDelightRecipes.MIXING_BOWL.get()).stream().map(RecipeHolder::value).toList());
+		registry.addRecipes(OvenRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.OVEN.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(DryingRackRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
-				.getAllRecipesFor(ExtraDelightRecipes.DRYING_RACK.get()));
+				.getAllRecipesFor(ExtraDelightRecipes.DRYING_RACK.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(DoughShapingRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
-				.getAllRecipesFor(ExtraDelightRecipes.DOUGH_SHAPING.get()));
-		registry.addRecipes(FeastRecipeCategory.TYPE,
-				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ExtraDelightRecipes.FEAST.get()));
+				.getAllRecipesFor(ExtraDelightRecipes.DOUGH_SHAPING.get()).stream().map(RecipeHolder::value).toList());
+		registry.addRecipes(FeastRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.FEAST.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(ToolOnBlockRecipeCatagory.TYPE, Minecraft.getInstance().level.getRecipeManager()
-				.getAllRecipesFor(ExtraDelightRecipes.TOOL_ON_BLOCK.get()));
+				.getAllRecipesFor(ExtraDelightRecipes.TOOL_ON_BLOCK.get()).stream().map(RecipeHolder::value).toList());
 	}
 
 	@Override

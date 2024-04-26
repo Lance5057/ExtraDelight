@@ -18,8 +18,10 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import mezz.jei.library.util.RecipeUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -66,7 +68,7 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 		List<Ingredient> input = recipe.getIngredients();
 		Ingredient pestle = Ingredient.of(ExtraDelightTags.SPOONS);
 		ItemStack used = recipe.getUsedItem();
-		ItemStack output = recipe.getResultItem();
+		ItemStack output = RecipeUtil.getResultItem(recipe);
 
 		float angle = -90;
 		Vec2 center = new Vec2(42, 34);
@@ -87,12 +89,12 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 	}
 
 	@Override
-	public void draw(MixingBowlRecipe recipe, IRecipeSlotsView slotsView, PoseStack ms, double mouseX, double mouseY) {
+	public void draw(MixingBowlRecipe recipe,IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
 		RenderSystem.enableBlend();
 
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
-		fontRenderer.draw(ms, "x" + recipe.getStirs(), this.getWidth() / 2 + 30, 90, 0);
+		guiGraphics.drawString(fontRenderer, "x" + recipe.getStirs(), this.getWidth() / 2 + 30, 90, 0);
 
 		RenderSystem.disableBlend();
 	}
