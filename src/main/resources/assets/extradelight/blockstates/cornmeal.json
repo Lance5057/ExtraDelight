@@ -1,0 +1,18 @@
+{
+    "variants": {
+        "": [
+            { "model": "extradelight:block/cornmeal"},
+			{"model": "extradelight:block/cornmeal", "y":90},
+			{"model": "extradelight:block/cornmeal", "y":180},
+			{"model": "extradelight:block/cornmeal", "y":270},
+            { "model": "extradelight:block/cornmeal1"},
+			{"model": "extradelight:block/cornmeal1", "y":90},
+			{"model": "extradelight:block/cornmeal1", "y":180},
+			{"model": "extradelight:block/cornmeal1", "y":270},
+            { "model": "extradelight:block/cornmeal2"},
+			{"model": "extradelight:block/cornmeal2", "y":90},
+			{"model": "extradelight:block/cornmeal2", "y":180},
+			{"model": "extradelight:block/cornmeal2", "y":270}
+        ]
+    }
+}

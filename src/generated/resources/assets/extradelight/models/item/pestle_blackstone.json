@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:item/pestle",
+  "textures": {
+    "0": "minecraft:block/blackstone"
+  }
+}

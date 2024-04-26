@@ -14,7 +14,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import mezz.jei.library.util.RecipeUtil;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -57,7 +57,7 @@ public class OvenRecipeCategory implements IRecipeCategory<OvenRecipe> {
 	public void setRecipe(IRecipeLayoutBuilder builder, OvenRecipe recipe, IFocusGroup focuses) {
 		List<Ingredient> input = recipe.getIngredients();
 		ItemStack pan = recipe.getOutputContainer();
-		ItemStack output = RecipeUtil.getResultItem(recipe);
+		ItemStack output = recipe.getResultItem(Minecraft.getInstance().level.registryAccess());
 
 		for (int i = 0; i < input.size(); i++) {
 			builder.addSlot(RecipeIngredientRole.INPUT, 1 + (i % 3 * 18), 1 + (i / 3 * 18))

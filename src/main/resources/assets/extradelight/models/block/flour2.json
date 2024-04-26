@@ -1,0 +1,20 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/thin_block",
+	"render_type": "translucent",
+	"textures": {
+		"3": "extradelight:block/flour_dust3",
+		"particle": "extradelight:block/flour_dust2"
+	},
+	"elements": [
+		{
+			"name": "flour",
+			"from": [0, 0, 0],
+			"to": [16, 0.1, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#3"}
+			}
+		}
+	]
+}

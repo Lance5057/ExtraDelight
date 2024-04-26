@@ -7,7 +7,6 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -18,7 +17,6 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import mezz.jei.library.util.RecipeUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -68,7 +66,7 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 		List<Ingredient> input = recipe.getIngredients();
 		Ingredient pestle = Ingredient.of(ExtraDelightTags.SPOONS);
 		ItemStack used = recipe.getUsedItem();
-		ItemStack output = RecipeUtil.getResultItem(recipe);
+		ItemStack output = recipe.getResultItem(Minecraft.getInstance().level.registryAccess());
 
 		float angle = -90;
 		Vec2 center = new Vec2(42, 34);

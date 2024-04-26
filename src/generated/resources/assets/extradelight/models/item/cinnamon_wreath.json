@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/wreath",
+  "textures": {
+    "all": "minecraft:block/cinnamon_leaves"
+  }
+}

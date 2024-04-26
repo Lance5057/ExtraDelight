@@ -1,0 +1,8 @@
+{
+  "parent": "extradelight:block/molding_top",
+  "textures": {
+    "0": "extradelight:block/wallpaper_cyan",
+    "1": "minecraft:block/warped_planks",
+    "particle": "extradelight:block/wallpaper_cyan"
+  }
+}

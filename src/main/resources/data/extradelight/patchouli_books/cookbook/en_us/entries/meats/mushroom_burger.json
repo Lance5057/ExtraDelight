@@ -1,0 +1,29 @@
+{
+    "name": "Mushroom and Swiss Burger",
+    "icon": "extradelight:mushroom_burger",
+    "category": "extradelight:meats",
+	"sortnum": 1,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "This is a test entry, but it should show up!"
+        },
+		{
+            "type": "patchouli:crafting",
+			"recipe": "extradelight:mushroom_burger"
+        },
+		{
+            "type": "patchouli:text",
+			"title": "BBQ Sauce",
+            "text": "$(br) Time: 30min $(br) Ingredients: 3 $(br2)$(l) Ingredients - $()$(br)$(li) 1 lb lingonberries$(li) 5 cups water$(li) 1 cups sugar $(br2)"
+        },
+		{
+            "type": "patchouli:text",
+            "text": "$(li)Wash or defrost berries. Place berries in saucepan with water. Bring to a low boil over medium-high heat; simmer until berries begin to pop (about 15 minutes). $(li)Remove saucepan from burner and drain berries in a cheese cloth-lined sieve or juice bag over a large, glass bowl. Crush the cooked berries with a potato masher to release the additional juice."
+        },
+		{
+            "type": "patchouli:text",
+            "text": "$(li) Sweeten to taste with up to 1 cup sugar; return to saucepan and heat for 2-3 minutes until sugar is dissolved. Remove from burner, cool, and refrigerate."
+        }
+    ]
+}

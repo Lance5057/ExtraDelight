@@ -5,7 +5,6 @@ import java.util.function.Supplier;
 import com.lance5057.extradelight.worldgen.features.CornMazeFeature;
 import com.lance5057.extradelight.worldgen.features.CornMazeRail;
 
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -14,7 +13,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class ExtraDelightWorldGen {
 	public static final ResourceKey<Level> CORNFIELD = ResourceKey.create(Registries.DIMENSION,

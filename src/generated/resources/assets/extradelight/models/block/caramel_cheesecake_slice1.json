@@ -1,0 +1,8 @@
+{
+  "parent": "extradelight:block/pie_slice1",
+  "textures": {
+    "inner": "extradelight:block/caramel_cheesecake_inner",
+    "particle": "extradelight:block/caramel_cheesecake_top",
+    "top": "extradelight:block/caramel_cheesecake_top"
+  }
+}

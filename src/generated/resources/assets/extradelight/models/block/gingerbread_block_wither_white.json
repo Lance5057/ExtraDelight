@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/double_texture",
+  "textures": {
+    "0": "extradelight:block/gingerbread_block",
+    "1": "extradelight:block/frosting_colors/wither_white"
+  }
+}

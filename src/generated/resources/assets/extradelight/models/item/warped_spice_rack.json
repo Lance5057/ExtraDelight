@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/spicerack",
+  "textures": {
+    "0": "minecraft:block/warped_planks",
+    "2": "extradelight:block/warped_ornate"
+  }
+}

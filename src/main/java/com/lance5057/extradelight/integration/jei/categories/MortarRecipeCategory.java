@@ -15,7 +15,6 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import mezz.jei.library.util.RecipeUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -63,7 +62,7 @@ public class MortarRecipeCategory implements IRecipeCategory<MortarRecipe> {
 	public void setRecipe(IRecipeLayoutBuilder builder, MortarRecipe recipe, IFocusGroup focuses) {
 		Ingredient input = recipe.getIngredients().get(0);
 		Ingredient pestle = Ingredient.of(ExtraDelightTags.PESTLES);
-		ItemStack output = RecipeUtil.getResultItem(recipe);
+		ItemStack output = recipe.getResultItem(Minecraft.getInstance().level.registryAccess());
 
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 39 + 6, 26).addIngredients(input);
 		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 - 13 + 6, 3).addIngredients(pestle);

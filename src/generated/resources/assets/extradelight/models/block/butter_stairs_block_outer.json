@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "extradelight:block/butter_slab",
+    "side": "extradelight:block/butter_slab",
+    "top": "extradelight:block/butter_slab"
+  }
+}

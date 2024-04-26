@@ -1,0 +1,18 @@
+{
+    "name": "Butchercraft",
+    "icon": "farmersdelight:iron_knife",
+    "category": "extradelight:meats",
+	"sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Have you noticed a few meals missing recipes? Consider adding Butchercraft! It expands on meat and animal products giving more options for recipes."
+        },
+		{
+            "type": "patchouli:link",
+			"text": "Click the button below to be taken to CurseForge.",
+			"url": "https://www.curseforge.com/minecraft/mc-mods/butchercraft",
+			"link_text": "Butchercraft"
+        }
+    ]
+}

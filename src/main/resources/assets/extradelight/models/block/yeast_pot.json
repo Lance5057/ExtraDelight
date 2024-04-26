@@ -1,0 +1,62 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block", "render_type": "cutout",
+	"textures": {
+		"0": "extradelight:block/yeastpot",
+		"particle": "extradelight:block/yeastpot"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 6, 11],
+			"faces": {
+				"north": {"uv": [9, 8, 15, 14], "texture": "#0"},
+				"east": {"uv": [9, 8, 15, 14], "texture": "#0"},
+				"south": {"uv": [9, 8, 15, 14], "texture": "#0"},
+				"west": {"uv": [9, 8, 15, 14], "texture": "#0"},
+				"up": {"uv": [1, 1, 7, 7], "texture": "#0"},
+				"down": {"uv": [1, 9, 7, 15], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"name": "fringe",
+			"from": [5, 4.2064, 1.50071],
+			"to": [11, 4.2064, 4.50071],
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, 4.7064, 5.00071]},
+			"faces": {
+				"up": {"uv": [9, 3, 15, 0], "texture": "#0"},
+				"down": {"uv": [9, 0, 15, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "fringe",
+			"from": [5, 1.43863, 12.05995],
+			"to": [11, 4.43863, 12.05995],
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, 2.93863, 12.05995]},
+			"faces": {
+				"north": {"uv": [9, 3, 15, 0], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [9, 0, 15, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "fringe",
+			"from": [3.93934, 1.43934, 5],
+			"to": [3.93934, 4.43934, 11],
+			"rotation": {"angle": -45, "axis": "z", "origin": [3.93934, 2.93934, 8]},
+			"faces": {
+				"east": {"uv": [9, 3, 15, 0], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [9, 0, 15, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "fringe",
+			"from": [12.05995, 1.43863, 5],
+			"to": [12.05995, 4.43863, 11],
+			"rotation": {"angle": 45, "axis": "z", "origin": [12.05995, 2.93863, 8]},
+			"faces": {
+				"east": {"uv": [9, 3, 15, 0], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [9, 0, 15, 3], "texture": "#0"}
+			}
+		}
+	]
+}

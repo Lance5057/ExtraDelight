@@ -12,6 +12,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -55,7 +56,7 @@ public class DoughShapingRecipeCategory implements IRecipeCategory<DoughShapingR
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, DoughShapingRecipe recipe, IFocusGroup focuses) {
 		Ingredient input = recipe.getIngredients().get(0);
-		ItemStack output = recipe.getResultItem(null);
+		ItemStack output = recipe.getResultItem(Minecraft.getInstance().level.registryAccess());
 
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 38, 1).addIngredients(input);
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 13 + 9, 1).addItemStack(output);

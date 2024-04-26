@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "extradelight:block/sugar_bag_bottom",
+    "east": "extradelight:block/sugar_bag_side",
+    "north": "extradelight:block/sugar_bag_side_tied",
+    "particle": "extradelight:block/sugar_bag_top",
+    "south": "extradelight:block/sugar_bag_side_tied",
+    "up": "extradelight:block/sugar_bag_top",
+    "west": "extradelight:block/sugar_bag_side"
+  }
+}

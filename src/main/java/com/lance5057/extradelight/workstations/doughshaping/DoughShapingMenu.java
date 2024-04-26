@@ -8,7 +8,6 @@ import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;

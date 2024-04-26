@@ -12,7 +12,6 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import mezz.jei.library.util.RecipeUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -57,7 +56,7 @@ public class DryingRackRecipeCategory implements IRecipeCategory<DryingRackRecip
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, DryingRackRecipe recipe, IFocusGroup focuses) {
 		Ingredient input = recipe.getInput();
-		ItemStack output = RecipeUtil.getResultItem(recipe);
+		ItemStack output = recipe.getResultItem(Minecraft.getInstance().level.registryAccess());
 
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 38, 22).addIngredients(input);
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 13 + 9, 22).addItemStack(output);

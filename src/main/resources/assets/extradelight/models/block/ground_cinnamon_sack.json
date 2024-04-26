@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "extradelight:block/cinnamon_bag_bottom",
+    "east": "extradelight:block/cinnamon_bag_side",
+    "north": "extradelight:block/cinnamon_bag_side_tied",
+    "particle": "extradelight:block/cinnamon_bag_top",
+    "south": "extradelight:block/cinnamon_bag_side_tied",
+    "up": "extradelight:block/cinnamon_bag_top",
+    "west": "extradelight:block/cinnamon_bag_side"
+  }
+}

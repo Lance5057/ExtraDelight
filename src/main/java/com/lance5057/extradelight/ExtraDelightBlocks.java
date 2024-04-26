@@ -62,7 +62,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ExtraDelight.MOD_ID);
 
 	public static void register(IEventBus modEventBus) {
-		AestheticBlocks.BLOCKS.register(modEventBus);
+//		AestheticBlocks.BLOCKS.register(modEventBus);
 		BLOCKS.register(modEventBus);
 	}
 

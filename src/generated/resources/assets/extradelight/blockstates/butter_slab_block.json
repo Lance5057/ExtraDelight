@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "extradelight:block/butter_slab_block"
+    },
+    "type=double": {
+      "model": "extradelight:block/butter_block"
+    },
+    "type=top": {
+      "model": "extradelight:block/butter_slab_block_top"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"1": "extradelight:block/half_tray_top",
+		"particle": "extradelight:block/mint_lamb"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 0],
+			"to": [12, 1, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 1], "texture": "#1"},
+				"east": {"uv": [0, 0, 1, 16], "rotation": 90, "texture": "#1"},
+				"south": {"uv": [0, 0, 8, 1], "texture": "#1"},
+				"west": {"uv": [0, 0, 1, 16], "rotation": 90, "texture": "#1"},
+				"up": {"uv": [0, 0, 8, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 8, 16], "texture": "#1"}
+			}
+		}
+	]
+}

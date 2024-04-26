@@ -3,6 +3,8 @@ package com.lance5057.extradelight;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
@@ -25,18 +27,18 @@ public class ExtraDelight {
 		modEventBus.addListener(this::setupClient);
 		modEventBus.addListener(this::setupCommon);
 
-//		AestheticBlocks.setup();
-//		AestheticBlocks.BLOCKS.register(modEventBus);
-//		AestheticBlocks.ITEMS.register(modEventBus);
+		AestheticBlocks.setup();
+		AestheticBlocks.BLOCKS.register(modEventBus);
+		AestheticBlocks.ITEMS.register(modEventBus);
 //
 		ExtraDelightBlocks.register(modEventBus);
 		ExtraDelightItems.ITEMS.register(modEventBus);
 		ExtraDelightTabs.TABS.register(modEventBus);
-//
-//		ExtraDelightBlockEntities.TILES.register(modEventBus);
-//		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
-//		ExtraDelightRecipes.RECIPE_SERIALIZERS.register(modEventBus);
-//		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
+
+		ExtraDelightBlockEntities.TILES.register(modEventBus);
+		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
+		ExtraDelightRecipes.RECIPE_SERIALIZERS.register(modEventBus);
+		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
 //		ExtraDelightLoot.register(modEventBus);
 //
 //		ExtraDelightWorldGen.FEATURES.register(modEventBus);

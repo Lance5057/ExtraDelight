@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/spicerack_filled",
+  "textures": {
+    "0": "minecraft:block/cinnamon_planks",
+    "2": "extradelight:block/cinnamon_ornate"
+  }
+}

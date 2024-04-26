@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "vertical_direction=down": {
+      "model": "extradelight:block/block.extradelight.birch_molded_cyan_wallpaper_bottom"
+    },
+    "vertical_direction=up": {
+      "model": "extradelight:block/block.extradelight.birch_molded_cyan_wallpaper_top"
+    }
+  }
+}
