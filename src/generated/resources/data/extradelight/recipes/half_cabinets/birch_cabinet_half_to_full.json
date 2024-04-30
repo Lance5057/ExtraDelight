@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:birch_half_cabinet"
+    }
+  ],
+  "result": {
+    "item": "farmersdelight:birch_cabinet"
+  }
+}

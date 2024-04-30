@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "out": "extradelight:pot_roast_block_item",
+  "result": {
+    "item": "extradelight:potroast"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 8,
+  "ingredient": {
+    "item": "extradelight:agar_sheets"
+  },
+  "result": {
+    "item": "extradelight:agar_agar"
+  }
+}

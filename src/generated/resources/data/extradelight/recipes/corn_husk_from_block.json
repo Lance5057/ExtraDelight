@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:corn_husk_bundle"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "extradelight:corn_husk"
+  }
+}

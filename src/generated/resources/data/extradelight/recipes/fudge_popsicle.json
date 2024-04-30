@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "i": {
+      "item": "minecraft:ice"
+    },
+    "m": {
+      "tag": "forge:milk"
+    },
+    "s": {
+      "tag": "extradelight:sweetener"
+    }
+  },
+  "pattern": [
+    " cm",
+    "isc",
+    "Si "
+  ],
+  "result": {
+    "item": "extradelight:fudge_popsicle"
+  }
+}

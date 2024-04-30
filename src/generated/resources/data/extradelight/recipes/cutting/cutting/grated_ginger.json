@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:peeled_ginger"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "extradelight:grated_ginger"
+    }
+  ],
+  "tool": {
+    "item": "extradelight:grater"
+  }
+}

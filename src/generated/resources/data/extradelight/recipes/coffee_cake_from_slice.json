@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:coffee_cake_slice"
+    },
+    {
+      "item": "extradelight:coffee_cake_slice"
+    },
+    {
+      "item": "extradelight:coffee_cake_slice"
+    },
+    {
+      "item": "extradelight:coffee_cake_slice"
+    },
+    {
+      "item": "extradelight:coffee_cake_slice"
+    },
+    {
+      "item": "extradelight:coffee_cake_slice"
+    },
+    {
+      "item": "extradelight:coffee_cake_slice"
+    },
+    {
+      "item": "extradelight:coffee_cake_slice"
+    }
+  ],
+  "result": {
+    "item": "extradelight:coffe_cake_feast"
+  }
+}

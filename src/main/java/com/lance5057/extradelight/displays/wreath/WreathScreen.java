@@ -19,7 +19,7 @@ public class WreathScreen extends AbstractContainerScreen<WreathMenu> {
 
 	@Override
 	protected void renderBg(GuiGraphics pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {
-		this.renderBackground(pPoseStack, pMouseX, pMouseY, pPartialTick);
+//		this.renderBackground(pPoseStack, pMouseX, pMouseY, pPartialTick);
 		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 		if (this.minecraft == null)
 			return;

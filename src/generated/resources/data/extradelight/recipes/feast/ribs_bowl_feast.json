@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "out": "extradelight:bbq_ribs_block_item",
+  "result": {
+    "item": "extradelight:bbq_ribs"
+  }
+}

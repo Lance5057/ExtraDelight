@@ -1,7 +1,11 @@
 package com.lance5057.extradelight.data;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+
+import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -12,6 +16,7 @@ import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
@@ -38,7 +43,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 	protected BlockLootTables() {
 		super(Set.of(), FeatureFlags.REGISTRY.allFlags());
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -211,6 +215,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_PLANKS.get());
 
+		this.dropOther(ExtraDelightBlocks.CINNAMON_LEAVES.get(), Items.AIR);
 //		this.add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), (p_124100_) -> {
 //			return createLeavesDrops(p_124100_, ExtraDelightBlocks.CINNAMON_SAPLING.get(),
 //					NORMAL_LEAVES_SAPLING_CHANCES);
@@ -273,7 +278,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), Items.AIR);
 
 		this.dropSelf(ExtraDelightBlocks.MINT_CROP.get());
-//		this.dropSelf(ExtraDelightBlocks.CINNAMON_SAPLING.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_SAPLING.get());
 
 		LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
@@ -293,8 +298,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 	}
 
 	@Override
-	protected Iterable<Block> getKnownBlocks() {
-		return generatedLootTables;
+	protected @NotNull Iterable<Block> getKnownBlocks() {
+		Collection<Block> l = new ArrayList<Block>();
+		l.addAll(ExtraDelightBlocks.BLOCKS.getEntries().stream().map(r -> r.get()).toList());
+		l.addAll(AestheticBlocks.BLOCKS.getEntries().stream().map(r -> r.get()).toList());
+//		l.addAll(ButchercraftAddon.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
+		return l;
 	}
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition,

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:acacia_molded_cyan_wallpaper"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "extradelight:blocks/acacia_molded_cyan_wallpaper"
+}

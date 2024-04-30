@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:iron_bars"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "w": {
+      "item": "minecraft:crimson_slab"
+    }
+  },
+  "pattern": [
+    "wsw",
+    "b b"
+  ],
+  "result": {
+    "item": "extradelight:crimson_spice_rack"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "out": "extradelight:fish_stew_feast",
+  "result": {
+    "item": "extradelight:fish_stew_rice"
+  }
+}

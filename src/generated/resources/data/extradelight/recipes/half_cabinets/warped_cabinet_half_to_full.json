@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:warped_half_cabinet"
+    }
+  ],
+  "result": {
+    "item": "farmersdelight:warped_cabinet"
+  }
+}

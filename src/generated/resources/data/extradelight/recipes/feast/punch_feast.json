@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "out": "extradelight:punch_feast",
+  "result": {
+    "item": "extradelight:punch"
+  }
+}

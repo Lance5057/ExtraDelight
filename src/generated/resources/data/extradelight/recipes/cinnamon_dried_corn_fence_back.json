@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:cinnamon_dried_corn_fence"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cinnamon_fence"
+  }
+}

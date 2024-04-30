@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:empty",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cactus_juice"
+        }
+      ],
+      "name": "main",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 5.0,
+        "min": 0.0
+      }
+    }
+  ],
+  "random_sequence": "extradelight:structures/cactus_juice"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "item": "minecraft:stick"
+    },
+    "s": {
+      "item": "minecraft:diorite"
+    }
+  },
+  "pattern": [
+    "s  ",
+    " i "
+  ],
+  "result": {
+    "item": "extradelight:pestle_diorite"
+  }
+}

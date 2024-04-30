@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:oak_knife_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "oak_knife_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:oak_slab"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "oak_knife_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:oak_knife_block"
+    ]
+  }
+}

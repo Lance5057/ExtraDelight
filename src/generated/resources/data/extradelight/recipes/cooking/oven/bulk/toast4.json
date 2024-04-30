@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:bread_slice"
+    },
+    {
+      "item": "extradelight:bread_slice"
+    },
+    {
+      "item": "extradelight:bread_slice"
+    },
+    {
+      "item": "extradelight:bread_slice"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 4,
+    "item": "extradelight:toast"
+  }
+}

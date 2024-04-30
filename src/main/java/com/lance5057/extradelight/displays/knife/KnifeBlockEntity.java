@@ -25,7 +25,7 @@ public class KnifeBlockEntity extends BlockEntity {
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
-	private int NUM_SLOTS = 4;
+	public static final int NUM_SLOTS = 4;
 
 	public KnifeBlockEntity(BlockPos pPos, BlockState pBlockState) {
 

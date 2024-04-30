@@ -1,0 +1,83 @@
+{
+  "type": "minecraft:empty",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:butter"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:corn_crate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:cornbread_feast"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:corn_pudding_feast"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:dried_corn_husk_bundle"
+        }
+      ],
+      "name": "main",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 1.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:caramel_candy"
+        }
+      ],
+      "name": "candy",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 8.0,
+        "min": 4.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:golden_knife"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:cooking_pot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cornflower"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cake"
+        }
+      ],
+      "name": "better",
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 1.0
+      }
+    }
+  ],
+  "random_sequence": "extradelight:chests/corn_rare"
+}

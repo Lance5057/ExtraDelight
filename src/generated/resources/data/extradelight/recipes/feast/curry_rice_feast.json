@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "out": "extradelight:curry_feast",
+  "result": {
+    "item": "extradelight:curry_rice"
+  }
+}

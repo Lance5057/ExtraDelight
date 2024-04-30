@@ -20,7 +20,7 @@ public class WreathEntity extends BlockEntity {
 //	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
-	private int NUM_SLOTS = 8;
+	public static final int NUM_SLOTS = 8;
 
 	public WreathEntity(BlockPos pPos, BlockState pBlockState) {
 

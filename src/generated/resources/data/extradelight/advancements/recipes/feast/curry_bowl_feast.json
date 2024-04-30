@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pork_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:curry_feast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/curry_bowl_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pork_stew"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/curry_bowl_feast"
+    ]
+  }
+}

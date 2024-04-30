@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "gingerbread_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:gingerbread_cookie_dough"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/gingerbread_cookie_dough"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "gingerbread_cookie_dough"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/gingerbread_cookie_dough"
+    ]
+  }
+}

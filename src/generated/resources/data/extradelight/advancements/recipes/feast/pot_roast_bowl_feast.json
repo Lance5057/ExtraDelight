@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hotdish": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pot_roast_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/pot_roast_bowl_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hotdish"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/pot_roast_bowl_feast"
+    ]
+  }
+}

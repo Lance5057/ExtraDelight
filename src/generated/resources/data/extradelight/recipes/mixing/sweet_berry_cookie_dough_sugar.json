@@ -1,0 +1,15 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:cookie_dough/sugar"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "result": {
+    "item": "extradelight:sweet_berry_cookie_dough"
+  },
+  "stirs": 4
+}

@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "out": "extradelight:apple_crisp_feast",
+  "result": {
+    "item": "extradelight:apple_crisp"
+  }
+}

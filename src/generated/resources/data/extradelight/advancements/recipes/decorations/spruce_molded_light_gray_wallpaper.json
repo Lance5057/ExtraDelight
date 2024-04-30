@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:spruce_molded_light_gray_wallpaper"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "light_gray_spruce_wallpaper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:paper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "light_gray_spruce_wallpaper"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:spruce_molded_light_gray_wallpaper"
+    ]
+  }
+}

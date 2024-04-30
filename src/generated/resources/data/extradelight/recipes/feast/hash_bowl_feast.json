@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "out": "extradelight:hash_block_item",
+  "result": {
+    "item": "extradelight:hash"
+  }
+}

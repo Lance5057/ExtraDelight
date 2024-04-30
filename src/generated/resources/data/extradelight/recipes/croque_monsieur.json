@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:butter"
+    },
+    "c": {
+      "tag": "forge:cheese"
+    },
+    "f": {
+      "tag": "forge:flour"
+    },
+    "h": [
+      {
+        "item": "farmersdelight:smoked_ham"
+      },
+      {
+        "item": "minecraft:porkchop"
+      }
+    ],
+    "m": {
+      "tag": "forge:milk"
+    },
+    "t": {
+      "tag": "forge:toast"
+    }
+  },
+  "pattern": [
+    "bfm",
+    "tct",
+    " h "
+  ],
+  "result": {
+    "item": "extradelight:croque_monsieur"
+  }
+}

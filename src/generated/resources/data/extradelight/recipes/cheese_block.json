@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cheese_block_item"
+  }
+}

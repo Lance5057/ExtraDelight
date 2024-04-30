@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/pasta_alfredo"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pasta_alfredo": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pasta_alfredo"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "pasta_alfredo"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/pasta_alfredo"
+    ]
+  }
+}

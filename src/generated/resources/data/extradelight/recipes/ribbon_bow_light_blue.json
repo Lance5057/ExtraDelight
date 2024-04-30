@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "w": {
+      "item": "minecraft:light_blue_wool"
+    }
+  },
+  "pattern": [
+    " w ",
+    " w ",
+    "w w"
+  ],
+  "result": {
+    "item": "extradelight:ribbon_bow_light_blue"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_meatloaf": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:meatloaf_feast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/meatloaf_sandwich_slice_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_meatloaf"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/meatloaf_sandwich_slice_feast"
+    ]
+  }
+}

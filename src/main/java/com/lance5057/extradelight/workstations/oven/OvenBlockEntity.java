@@ -58,8 +58,8 @@ public class OvenBlockEntity extends SyncedBlockEntity
 	public static final int INVENTORY_SIZE = OUTPUT_SLOT + 1;
 	protected final ContainerData OvenData;
 	private final ItemStackHandler inventory;
-	private final IItemHandler inputHandler;
-	private final IItemHandler outputHandler;
+	public final IItemHandler inputHandler;
+	public final IItemHandler outputHandler;
 	private final Object2IntOpenHashMap<ResourceLocation> usedRecipeTracker;
 	private int cookTime;
 	private int cookTimeTotal;
@@ -342,8 +342,6 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			return false;
 		}
 
-		inventory.getStackInSlot(CONTAINER_SLOT).hurtAndBreak(1, null, r -> {
-		});
 		cookTime = 0;
 		mealContainerStack = recipe.value().getOutputContainer();
 		ItemStack resultStack = recipe.value().getResultItem(this.level.registryAccess());

@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:drying_rack",
+  "cookingtime": 1000,
+  "experience": 10.0,
+  "ingredient": {
+    "item": "extradelight:corn_husk"
+  },
+  "result": {
+    "item": "extradelight:dried_corn_husk"
+  }
+}

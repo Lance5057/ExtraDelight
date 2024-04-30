@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "out": "extradelight:mint_lamb_feast",
+  "result": {
+    "item": "extradelight:mint_lamb"
+  }
+}

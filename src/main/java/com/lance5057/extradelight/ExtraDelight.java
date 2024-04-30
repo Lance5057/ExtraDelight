@@ -20,12 +20,13 @@ public class ExtraDelight {
 
 	public static Logger logger = LogManager.getLogger();
 
-	public ExtraDelight() {
+	public ExtraDelight(IEventBus modEventBus) {
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ExtraDelightConfig.spec);
 
-		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+//		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setupClient);
 		modEventBus.addListener(this::setupCommon);
+		modEventBus.addListener(ExtraDelightCapabilities::registerCapabilities);
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);
@@ -52,10 +53,10 @@ public class ExtraDelight {
 
 	public void setupClient(FMLClientSetupEvent event) {
 
-		// event.enqueueWork(() -> {
-//		ExtraDelightClientEvents.setTERenderers();
-//		ExtraDelightContainers.registerClient(event);
-		// });
+		event.enqueueWork(() -> {
+			ExtraDelightClientEvents.setTERenderers();
+			ExtraDelightContainers.registerClient(event);
+		});
 	}
 
 	public void setupCommon(FMLCommonSetupEvent event) {

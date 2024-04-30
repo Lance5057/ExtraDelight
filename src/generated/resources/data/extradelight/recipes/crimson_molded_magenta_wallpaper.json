@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/magenta"
+    },
+    {
+      "item": "minecraft:crimson_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:crimson_molded_magenta_wallpaper"
+  }
+}

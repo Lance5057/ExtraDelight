@@ -1,0 +1,9 @@
+{
+  "values": [
+    "extradelight:sliced_onion",
+    {
+      "id": "#forge:crops/onion",
+      "required": false
+    }
+  ]
+}

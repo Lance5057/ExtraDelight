@@ -101,11 +101,8 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancementBuilder::addCriterion);
-
-//		public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab, NonNullList<Ingredient> inputItems,
-//				ItemStack output, ItemStack container, float experience, int cookTime) {
 		MixingBowlRecipe recipe = new MixingBowlRecipe("", this.ingredients, this.result, this.stirs, this.usedItem);
-		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/drying/")));
+		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/mixing/")));
 	}
 
 	/**

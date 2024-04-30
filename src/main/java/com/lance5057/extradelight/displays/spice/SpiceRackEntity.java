@@ -21,7 +21,7 @@ public class SpiceRackEntity extends BlockEntity {
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
-	private int NUM_SLOTS = 4;
+	public static final int NUM_SLOTS = 4;
 
 	public SpiceRackEntity(BlockPos pPos, BlockState pBlockState) {
 

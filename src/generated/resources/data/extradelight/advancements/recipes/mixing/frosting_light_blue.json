@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "frosting_light_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_light_blue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/frosting_light_blue"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "frosting_light_blue"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/frosting_light_blue"
+    ]
+  }
+}

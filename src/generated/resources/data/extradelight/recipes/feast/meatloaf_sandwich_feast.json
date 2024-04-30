@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "tag": "forge:bread"
+  },
+  "out": "extradelight:meatloaf_feast",
+  "result": {
+    "item": "extradelight:meatloaf_sandwich"
+  }
+}

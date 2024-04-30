@@ -1,0 +1,8 @@
+{
+  "type": "extradelight:tool_on_block",
+  "in": "extradelight:gingerbread_cookie_block_item",
+  "ingredient": {
+    "tag": "forge:frosting/red"
+  },
+  "out": "extradelight:gingerbread_block_red"
+}

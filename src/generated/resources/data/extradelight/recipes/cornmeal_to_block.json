@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:corn/meal"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cornmeal_sack"
+  }
+}

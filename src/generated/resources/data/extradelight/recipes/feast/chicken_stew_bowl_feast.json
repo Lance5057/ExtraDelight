@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "out": "extradelight:chicken_stew_feast",
+  "result": {
+    "item": "extradelight:chicken_stew"
+  }
+}

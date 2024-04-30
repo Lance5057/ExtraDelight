@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:birch_dried_corn_fence"
+    }
+  ],
+  "result": {
+    "item": "minecraft:birch_fence"
+  }
+}

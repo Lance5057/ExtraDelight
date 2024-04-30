@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/yellow"
+    },
+    {
+      "item": "extradelight:cinnamon_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:cinnamon_molded_yellow_wallpaper"
+  }
+}

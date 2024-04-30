@@ -21,7 +21,7 @@ public class FoodDisplayEntity extends BlockEntity {
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
-	private int NUM_SLOTS = 9;
+	public static final int NUM_SLOTS = 9;
 
 	public FoodDisplayEntity(BlockPos pPos, BlockState pBlockState) {
 

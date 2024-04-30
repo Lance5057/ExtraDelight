@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:popcorn"
+    },
+    {
+      "item": "extradelight:caramel_sauce"
+    }
+  ],
+  "result": {
+    "item": "extradelight:caramel_popcorn"
+  }
+}

@@ -28,11 +28,11 @@ public class BlockEntityUtils {
 
 		public static void insertItem(IItemHandlerModifiable inventory, ItemStack heldItem, int inventorySize) {
 			for (int i = 0; i <= inventorySize - 1; i++) {
-				if (!ItemStack.isSameItem(inventory.insertItem(i, heldItem, true), heldItem)) {
+//				if (!ItemStack.isSameItem(inventory.insertItem(i, heldItem, true), heldItem)) {
 					final int leftover = inventory.insertItem(i, heldItem.copy(), false).getCount();
 					heldItem.setCount(leftover);
 					return;
-				}
+//				}
 			}
 
 		}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:wallpaper_pink"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pink_wallpaper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:paper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "pink_wallpaper"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:wallpaper_pink"
+    ]
+  }
+}

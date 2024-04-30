@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:butter_block_item"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "extradelight:butter"
+  }
+}

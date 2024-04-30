@@ -130,7 +130,7 @@ public class MixingBowlRecipe implements Recipe<SimpleContainer> {
 
 						ExtraCodecs.strictOptionalField(Codec.INT, "stirs", 100).forGetter(r -> r.stirs),
 
-						ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("usedItem").forGetter(r -> r.usedItem))
+						ItemStack.ITEM_WITH_COUNT_CODEC.optionalFieldOf("usedItem", ItemStack.EMPTY).forGetter(r -> r.usedItem))
 
 				// String pGroup, NonNullList<Ingredient> pIngredients, ItemStack pResult, int
 				// stirs, ItemStack usedItem

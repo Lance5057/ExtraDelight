@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "k": {
+      "tag": "forge:tools/knives"
+    },
+    "w": {
+      "item": "minecraft:mangrove_slab"
+    }
+  },
+  "pattern": [
+    "wkw"
+  ],
+  "result": {
+    "item": "extradelight:mangrove_knife_block"
+  }
+}

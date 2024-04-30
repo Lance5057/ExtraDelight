@@ -1,0 +1,21 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:raw_gingerbread_pickaxe"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_pickaxe"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 2,
+    "item": "extradelight:gingerbread_pickaxe"
+  }
+}

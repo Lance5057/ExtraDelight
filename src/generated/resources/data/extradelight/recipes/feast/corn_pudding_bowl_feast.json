@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "out": "extradelight:corn_pudding_feast",
+  "result": {
+    "item": "extradelight:corn_pudding"
+  }
+}

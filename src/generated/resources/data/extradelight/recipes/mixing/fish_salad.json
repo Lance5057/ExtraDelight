@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:cooked_fishes"
+    },
+    {
+      "tag": "forge:cooked_fishes"
+    },
+    {
+      "tag": "forge:condiments/mayonnaise"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "extradelight:fish_salad"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

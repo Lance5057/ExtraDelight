@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:warped_molded_magenta_wallpaper"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "magenta_warped_wallpaper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:paper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "magenta_warped_wallpaper"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:warped_molded_magenta_wallpaper"
+    ]
+  }
+}

@@ -18,6 +18,7 @@ import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.oven.OvenBlock;
+import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
 
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
@@ -30,6 +31,7 @@ import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.HayBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
@@ -103,7 +105,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
 	public static final DeferredBlock<Block> COOKING_OIL = BLOCKS.register("cooking_oil",
-			() -> new CarpetBlock(Properties.ofFullCopy(Blocks.WATER).strength(0.1F, 0.0F).sound(SoundType.SLIME_BLOCK)
+			() -> new CarpetBlock(Properties.ofFullCopy(Blocks.YELLOW_CARPET).strength(0.1F, 0.0F).sound(SoundType.SLIME_BLOCK)
 					.noOcclusion().friction(0.98f)));
 	public static final DeferredBlock<Block> BREADCRUMBS = BLOCKS.register("breadcrumbs", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
@@ -356,8 +358,8 @@ public class ExtraDelightBlocks {
 			() -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.COLOR_RED)));
 
 	// Winter start!
-//	public static final DeferredBlock<SaplingBlock> CINNAMON_SAPLING = BLOCKS.register("cinnamon_sapling",
-//			() -> new SaplingBlock(new CinnamonTreeGrower(), Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
+	public static final DeferredBlock<SaplingBlock> CINNAMON_SAPLING = BLOCKS.register("cinnamon_sapling",
+			() -> new SaplingBlock(ExtraDelightTreeGrowers.CINNAMON, Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
 	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_CINNAMON_LOG = BLOCKS.register(
 			"stripped_cinnamon_log", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
 	public static final DeferredBlock<StrippableLog> CINNAMON_LOG = BLOCKS.register("cinnamon_log",

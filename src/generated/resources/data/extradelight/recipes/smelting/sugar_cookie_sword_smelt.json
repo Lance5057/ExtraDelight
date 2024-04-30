@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:raw_sugar_cookie_sword"
+  },
+  "result": "extradelight:sugar_cookie_sword"
+}

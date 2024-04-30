@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:raw_gingerbread_steve"
+  },
+  "result": "extradelight:gingerbread_steve"
+}

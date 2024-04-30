@@ -23,7 +23,7 @@ public class CandyBowlEntity extends BlockEntity {
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
-	private int NUM_SLOTS = 9;
+	public final static int NUM_SLOTS = 9;
 
 	public CandyBowlEntity(BlockPos pPos, BlockState pBlockState) {
 		super(ExtraDelightBlockEntities.CANDY_BOWL.get(), pPos, pBlockState);
