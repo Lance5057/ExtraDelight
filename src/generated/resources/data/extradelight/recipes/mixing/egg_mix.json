@@ -2,24 +2,20 @@
   "type": "extradelight:mixing_bowl",
   "ingredients": [
     {
-      "tag": "forge:flour"
+      "tag": "forge:milk"
     },
     {
-      "tag": "forge:flour"
+      "tag": "forge:eggs"
     },
     {
-      "tag": "forge:flour"
-    },
-    {
-      "item": "minecraft:water_bucket"
+      "tag": "forge:eggs"
     }
   ],
   "result": {
-    "count": 3,
-    "item": "farmersdelight:wheat_dough"
+    "item": "extradelight:egg_mix"
   },
   "stirs": 8,
   "usedItem": {
-    "item": "minecraft:air"
+    "item": "minecraft:bowl"
   }
 }

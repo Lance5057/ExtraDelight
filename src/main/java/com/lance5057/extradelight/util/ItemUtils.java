@@ -1,11 +1,11 @@
 package com.lance5057.extradelight.util;
 
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
 public class ItemUtils {
 
@@ -18,16 +18,29 @@ public class ItemUtils {
 				itementity1.makeFakeItem();
 			}
 
-			p.level.playSound((Player) null, p.getX(), p.getY(), p.getZ(),
-					SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F,
-					((p.getRandom().nextFloat() - p.getRandom().nextFloat()) * 0.7F + 1.0F)
-							* 2.0F);
+			p.level.playSound((Player) null, p.getX(), p.getY(), p.getZ(), SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS,
+					0.2F, ((p.getRandom().nextFloat() - p.getRandom().nextFloat()) * 0.7F + 1.0F) * 2.0F);
 			p.containerMenu.broadcastChanges();
 		} else {
 			ItemEntity itementity = p.drop(itemstack, false);
 			if (itementity != null) {
 				itementity.setNoPickUpDelay();
 				itementity.setOwner(p.getUUID());
+			}
+		}
+	}
+
+	public static void hurtAndBreak(ItemStack stack, Level level, int pAmount) {
+		if (!level.isClientSide) {
+			if (stack.isDamageableItem()) {
+				pAmount = stack.getItem().damageItem(stack, pAmount, null, a -> {
+				});
+				if (stack.hurt(pAmount, level.getRandom(), null)) {
+					stack.shrink(1);
+
+					stack.setDamageValue(0);
+				}
+
 			}
 		}
 	}
