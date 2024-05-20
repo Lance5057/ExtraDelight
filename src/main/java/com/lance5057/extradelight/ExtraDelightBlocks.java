@@ -1,10 +1,10 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.StrippableLog;
+import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MintCrop;
@@ -105,8 +105,8 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
 	public static final DeferredBlock<Block> COOKING_OIL = BLOCKS.register("cooking_oil",
-			() -> new CarpetBlock(Properties.ofFullCopy(Blocks.YELLOW_CARPET).strength(0.1F, 0.0F).sound(SoundType.SLIME_BLOCK)
-					.noOcclusion().friction(0.98f)));
+			() -> new CarpetBlock(Properties.ofFullCopy(Blocks.YELLOW_CARPET).strength(0.1F, 0.0F)
+					.sound(SoundType.SLIME_BLOCK).noOcclusion().friction(0.98f)));
 	public static final DeferredBlock<Block> BREADCRUMBS = BLOCKS.register("breadcrumbs", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
 	public static final DeferredBlock<Block> CORNMEAL = BLOCKS.register("cornmeal", () -> new CarpetBlock(
@@ -359,7 +359,8 @@ public class ExtraDelightBlocks {
 
 	// Winter start!
 	public static final DeferredBlock<SaplingBlock> CINNAMON_SAPLING = BLOCKS.register("cinnamon_sapling",
-			() -> new SaplingBlock(ExtraDelightTreeGrowers.CINNAMON, Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
+			() -> new SaplingBlock(ExtraDelightTreeGrowers.CINNAMON,
+					Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
 	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_CINNAMON_LOG = BLOCKS.register(
 			"stripped_cinnamon_log", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
 	public static final DeferredBlock<StrippableLog> CINNAMON_LOG = BLOCKS.register("cinnamon_log",
@@ -515,4 +516,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<RecipeFeastBlock> CHARCUTERIE_BOARD = BLOCKS.register("charcuterie_board",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, pan));
+
+	public static final DeferredBlock<TapBlock> TAP = BLOCKS.register("tap",
+			() -> new TapBlock(Block.Properties.ofFullCopy(Blocks.STONE)));
 }

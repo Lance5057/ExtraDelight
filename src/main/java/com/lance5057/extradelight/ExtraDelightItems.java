@@ -1399,4 +1399,7 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<BlockItem> CINNAMON_SAPLING = ITEMS.register("cinnamon_sapling",
 			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_SAPLING.get(), new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> TAP = ITEMS.register("well",
+			() -> new BlockItem(ExtraDelightBlocks.TAP.get(), new Item.Properties()));
 }

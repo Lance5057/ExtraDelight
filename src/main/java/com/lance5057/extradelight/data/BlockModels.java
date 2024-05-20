@@ -5,9 +5,11 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -238,6 +240,7 @@ public class BlockModels extends BlockStateProvider {
 		recipeFeastBlock(ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), "christmas_pudding");
 		pieLikeBlock(ExtraDelightBlocks.MILK_TART.get(), "milk_tart");
 		recipeFeastBlock(ExtraDelightBlocks.PUNCH.get(), "punch");
+		tapBlock(ExtraDelightBlocks.TAP.get());
 
 		AestheticBlocks.blockModel(this);
 	}
@@ -276,6 +279,25 @@ public class BlockModels extends BlockStateProvider {
 					.texture("side", modLoc("block/" + prefix + "_cake_side"))
 					.texture("top", modLoc("block/" + prefix + "_cake_top"))
 					.texture("inside", modLoc("block/" + prefix + "_cake_inner"))).build();
+		});
+	}
+
+	public void tapBlock(TapBlock block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			Direction dir = state.getValue(TapBlock.FACING);
+			boolean ground = state.getValue(TapBlock.GROUND);
+			if (ground)
+				return ConfiguredModel.builder()
+						.modelFile(models().withExistingParent(
+								BuiltInRegistries.BLOCK.getKey(block).getPath() + "_" + dir + "_down",
+								modLoc("block/tap_down")))
+						.rotationY(((int) state.getValue(TapBlock.FACING).toYRot() + 180) % 360).build();
+			else
+				return ConfiguredModel.builder()
+						.modelFile(models().withExistingParent(
+								BuiltInRegistries.BLOCK.getKey(block).getPath() + "_" + dir + "_up",
+								modLoc("block/tap")))
+						.rotationY(((int) state.getValue(TapBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}
 

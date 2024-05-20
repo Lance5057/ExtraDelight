@@ -806,6 +806,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.SWEET_BERRY_CRATE, "sweet_berry_crate");
 		forBlockItem(ExtraDelightItems.GLOW_BERRY_CRATE, "glow_berry_crate");
 		forBlockItem(ExtraDelightItems.CORN_SILK_SACK, "corn_silk_sack");
+		forBlockItem(ExtraDelightItems.TAP, "tap");
 
 		AestheticBlocks.itemModel(this);
 	}
