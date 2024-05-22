@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:well"
+          "name": "extradelight:tap"
         }
       ],
       "rolls": 1.0

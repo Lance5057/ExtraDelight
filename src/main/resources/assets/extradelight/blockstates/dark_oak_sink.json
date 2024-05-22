@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "extradelight:block/dark_oak_sink_cabinet",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "extradelight:block/dark_oak_sink_cabinet"
+    },
+    "facing=south": {
+      "model": "extradelight:block/dark_oak_sink_cabinet",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extradelight:block/dark_oak_sink_cabinet",
+      "y": 270
+    }
+  }
+}

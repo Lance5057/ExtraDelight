@@ -4,6 +4,7 @@ import com.lance5057.extradelight.blocks.entities.TapBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +18,6 @@ import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.Hopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -25,7 +25,6 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -145,24 +144,28 @@ public class TapBlock extends Block implements EntityBlock {
 						FluidActionResult far = FluidUtil.tryFillContainer(stack, be.getFluidHandler(),
 								Integer.MAX_VALUE, pPlayer, true);
 						if (far.isSuccess()) {
-							if (!pPlayer.isCreative()) {
-								stack.shrink(1);
-								pPlayer.setItemInHand(pHand, stack);
-								pPlayer.getInventory().placeItemBackInInventory(far.getResult());
-							}
+							stack.shrink(1);
+							pPlayer.setItemInHand(pHand, stack);
+							pPlayer.getInventory().placeItemBackInInventory(far.getResult());
+
 						}
 					} else {
 						FluidActionResult far = FluidUtil.tryEmptyContainer(stack, be.getFluidHandler(),
 								Integer.MAX_VALUE, pPlayer, true);
 						if (far.isSuccess()) {
-							if (!pPlayer.isCreative()) {
-								stack.shrink(1);
-								pPlayer.setItemInHand(pHand, stack);
-								pPlayer.getInventory().placeItemBackInInventory(far.getResult());
-							}
+							stack.shrink(1);
+							pPlayer.setItemInHand(pHand, stack);
+							pPlayer.getInventory().placeItemBackInInventory(far.getResult());
+
 						}
 					}
 				}
+				Direction dir = pState.getValue(FACING).getOpposite();
+
+				float x = pPos.getX() + (0.5f + (0.3f * dir.getNormal().getX()));
+				float z = pPos.getZ() + (0.5f + (0.3f * dir.getNormal().getZ()));
+
+				pLevel.addParticle(ParticleTypes.DRIPPING_WATER, x, pPos.getY() + 0.25f, z, 0, 0, 0);
 				return InteractionResult.SUCCESS;
 			}
 		}

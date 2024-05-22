@@ -12,6 +12,7 @@ import com.lance5057.extradelight.aesthetics.block.MoldingBlock;
 import com.lance5057.extradelight.aesthetics.block.RibbonBlock;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
+import com.lance5057.extradelight.blocks.sink.SinkCabinetBlock;
 import com.lance5057.extradelight.data.Recipes;
 import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
 import com.lance5057.extradelight.displays.knife.KnifeBlock;
@@ -62,7 +63,7 @@ public class AestheticBlocks {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraDelight.MOD_ID);
 
 	public static enum WOOD {
-		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cinnamon
+		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cinnamon, cherry, bamboo
 	};
 
 	public static final List<DeferredBlock<Block>> STEP_STOOLS = new ArrayList<DeferredBlock<Block>>();
@@ -96,6 +97,9 @@ public class AestheticBlocks {
 
 	public static final List<DeferredBlock<Block>> BOWS = new ArrayList<DeferredBlock<Block>>();
 	public static final List<DeferredItem<Item>> BOW_ITEMS = new ArrayList<DeferredItem<Item>>();
+
+	public static final List<DeferredBlock<Block>> SINKS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredItem<Item>> SINK_ITEMS = new ArrayList<DeferredItem<Item>>();
 
 	public static Block[] getRegistryListAsBlocks(List<DeferredBlock<Block>> blocks) {
 		List<Block> l = new ArrayList<Block>();
@@ -187,12 +191,14 @@ public class AestheticBlocks {
 		registerAllWood("spice_rack_full", SpiceRackBlock::new, SPICE_RACKS_FULL, SPICE_RACKS_FULL_ITEMS);
 		registerAllWood("knife_block", KnifeBlock::new, KNIFE_BLOCKS, KNIFE_BLOCK_ITEMS);
 		registerAllWood("half_cabinet", HalfCabinetBlock::new, CABINETS, CABINET_ITEMS);
+		registerAllWood("sink", SinkCabinetBlock::new, SINKS, SINK_ITEMS);
 
 		registerAllColors("wallpaper",
 				() -> new Block(Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
 				WALLPAPER_BLOCKS, WALLPAPER_ITEMS);
 		registerMoldedWallpaper("wallpaper",
-				() -> new MoldingBlock(Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
+				() -> new MoldingBlock(
+						Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
 				MOLDED_WALLPAPER_BLOCKS, MOLDED_WALLPAPER_ITEMS);
 
 		registerAllWood("dried_corn_fence", () -> new FenceBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE)),
@@ -200,7 +206,9 @@ public class AestheticBlocks {
 
 		registerAllWoodHelm("wreath", WreathBlock::new, WREATHS, WREATH_ITEMS);
 
-		registerAllColorsHelm("ribbon_bow", () -> new RibbonBlock(Properties.ofFullCopy(Blocks.BLACK_WOOL).noOcclusion().noCollission()), BOWS, BOW_ITEMS);
+		registerAllColorsHelm("ribbon_bow",
+				() -> new RibbonBlock(Properties.ofFullCopy(Blocks.BLACK_WOOL).noOcclusion().noCollission()), BOWS,
+				BOW_ITEMS);
 	}
 
 //	public static void loot(BlockLootSubProvider bl) {
@@ -260,6 +268,17 @@ public class AestheticBlocks {
 					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.renderType("cutout"));
 
+//			bsp.horizontalBlock(SINKS.get(i).get(),
+//					bsp.models()
+//							.withExistingParent(WOOD.values()[i].toString() + "_knife_block",
+//									bsp.modLoc("block/sink_cabinet_bare"))
+//							.texture("1", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_cabinet_front"))
+//							.texture("2", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_cabinet_side"))
+//							.texture("3", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_cabinet_top"))
+//							.texture("4", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+//							.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+//							.renderType("cutout"));
+
 			if (WOOD.values()[i].toString() == "crimson")
 				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
 						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
@@ -270,6 +289,11 @@ public class AestheticBlocks {
 						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
 						.texture("all", bsp.mcLoc("block/warped_wart_block"))
 						.texture("particle", bsp.mcLoc("block/warped_wart_block")).renderType("cutout"));
+			else if (WOOD.values()[i].toString() == "bamboo")
+				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
+						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
+						.texture("all", bsp.mcLoc("block/bamboo_large_leaves"))
+						.texture("particle", bsp.mcLoc("block/bamboo_large_leaves")).renderType("cutout"));
 			else
 				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
 						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
@@ -352,6 +376,9 @@ public class AestheticBlocks {
 			tmp.getBuilder(CABINETS.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_half_cabinet")));
 
+			tmp.getBuilder(SINKS.get(i).getId().getPath()).parent(
+					new ModelFile.UncheckedModelFile(tmp.modLoc("block/" + WOOD.values()[i].toString() + "_sink_cabinet")));
+
 			tmp.getBuilder(DRIED_CORN_FENCE.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_dried_corn_fence")));
 
@@ -363,6 +390,10 @@ public class AestheticBlocks {
 				tmp.getBuilder(WREATHS.get(i).getId().getPath())
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
 						.texture("all", tmp.mcLoc("block/warped_wart_block"));
+			else if (WOOD.values()[i].toString() == "bamboo")
+				tmp.getBuilder(WREATHS.get(i).getId().getPath())
+						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
+						.texture("all", tmp.mcLoc("block/bamboo_large_leaves"));
 			else
 				tmp.getBuilder(WREATHS.get(i).getId().getPath())
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
@@ -403,6 +434,7 @@ public class AestheticBlocks {
 			lp.add(SPICE_RACKS.get(i).get(), w + " Spice Rack");
 			lp.add(SPICE_RACKS_FULL.get(i).get(), w + " Spice Rack");
 			lp.add(KNIFE_BLOCKS.get(i).get(), w + " Knife Block");
+			lp.add(SINKS.get(i).get(), w + " Sink");
 			lp.add(CABINETS.get(i).get(), w + " Half Cabinet");
 			lp.add(DRIED_CORN_FENCE.get(i).get(), "Dried Corn " + w + " Fence");
 			lp.add(WREATHS.get(i).get(), w + " Wreath");
@@ -469,15 +501,15 @@ public class AestheticBlocks {
 					.unlockedBy(dye + "_wallpaper", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
 					.save(consumer);
 
-			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BOW_ITEMS.get(dye.ordinal()).get(), 1).pattern(" w ").pattern(" w ")
-					.pattern("w w")
+			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BOW_ITEMS.get(dye.ordinal()).get(), 1).pattern(" w ")
+					.pattern(" w ").pattern("w w")
 					.define('w', BuiltInRegistries.ITEM.get(new ResourceLocation("minecraft", dye + "_wool")))
 					.unlockedBy(dye + "_bow", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
 					.save(consumer);
 		}
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CORN_HUSK_DOLL.get()).pattern(" c ").pattern(" s ").pattern("ccc")
-				.define('c', ExtraDelightItems.DRIED_CORN_HUSK.get()).define('s', Tags.Items.STRING)
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CORN_HUSK_DOLL.get()).pattern(" c ").pattern(" s ")
+				.pattern("ccc").define('c', ExtraDelightItems.DRIED_CORN_HUSK.get()).define('s', Tags.Items.STRING)
 				.unlockedBy("corn_husk_doll",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DRIED_CORN_HUSK.get()))
 				.save(consumer);
@@ -494,16 +526,15 @@ public class AestheticBlocks {
 		}
 	}
 
-	static void woodRecipe(RecipeOutput consumer, Item slab, Item trapdoor, Item fence, Item leaves,
-			WOOD name) {
+	static void woodRecipe(RecipeOutput consumer, Item slab, Item trapdoor, Item fence, Item leaves, WOOD name) {
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, STEP_STOOLS.get(name.ordinal()).get()).pattern(" w ").pattern("s s").pattern("s s")
-				.define('w', slab).define('s', Items.STICK)
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, STEP_STOOLS.get(name.ordinal()).get()).pattern(" w ")
+				.pattern("s s").pattern("s s").define('w', slab).define('s', Items.STICK)
 				.unlockedBy(name + "_step_stool", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
 				.save(consumer);
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, SPICE_RACKS.get(name.ordinal()).get()).pattern("wsw").pattern("b b")
-				.define('w', slab).define('s', Items.STICK).define('b', Items.IRON_BARS)
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, SPICE_RACKS.get(name.ordinal()).get()).pattern("wsw")
+				.pattern("b b").define('w', slab).define('s', Items.STICK).define('b', Items.IRON_BARS)
 				.unlockedBy(name + "_spice_rack", InventoryChangeTrigger.TriggerInstance.hasItems(slab)).save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, SPICE_RACKS_FULL.get(name.ordinal()).get())
@@ -511,8 +542,8 @@ public class AestheticBlocks {
 				.unlockedBy(name + "_spice_rack_full", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
 				.save(consumer);
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, KNIFE_BLOCKS.get(name.ordinal()).get()).pattern("wkw").define('w', slab)
-				.define('k', ForgeTags.TOOLS_KNIVES)
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, KNIFE_BLOCKS.get(name.ordinal()).get()).pattern("wkw")
+				.define('w', slab).define('k', ForgeTags.TOOLS_KNIVES)
 				.unlockedBy(name + "_knife_block", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
 				.save(consumer);
 
@@ -527,8 +558,8 @@ public class AestheticBlocks {
 						InventoryChangeTrigger.TriggerInstance.hasItems(DRIED_CORN_FENCE.get(name.ordinal()).get()))
 				.save(consumer, Recipes.EDLoc(name + "_dried_corn_fence_back"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, WREATHS.get(name.ordinal()).get()).pattern(" l ").pattern("l l").pattern(" l ")
-				.define('l', leaves)
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, WREATHS.get(name.ordinal()).get()).pattern(" l ")
+				.pattern("l l").pattern(" l ").define('l', leaves)
 				.unlockedBy(name + "_wreath", InventoryChangeTrigger.TriggerInstance.hasItems(leaves)).save(consumer);
 	}
 

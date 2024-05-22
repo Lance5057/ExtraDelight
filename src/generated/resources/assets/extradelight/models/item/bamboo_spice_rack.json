@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/spicerack",
+  "textures": {
+    "0": "minecraft:block/bamboo_planks",
+    "2": "extradelight:block/bamboo_ornate"
+  }
+}

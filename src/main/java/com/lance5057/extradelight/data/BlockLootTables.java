@@ -64,6 +64,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 			dropSelf(b.get());
 		for (DeferredBlock<Block> b : AestheticBlocks.MOLDED_WALLPAPER_BLOCKS)
 			dropSelf(b.get());
+		for (DeferredBlock<Block> b : AestheticBlocks.SINKS)
+			dropSelf(b.get());
 
 		dropSelf(AestheticBlocks.CORN_HUSK_DOLL.get());
 
@@ -293,7 +295,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_CABINET.get());
 		this.add(ExtraDelightBlocks.CINNAMON_SLAB.get(), createSlabItemTable(ExtraDelightBlocks.CINNAMON_SLAB.get()));
-		
+
 		this.dropSelf(ExtraDelightBlocks.TAP.get());
 
 //		AestheticBlocks.loot(this);

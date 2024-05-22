@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "extradelight:block/cherry_spice_rack",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "extradelight:block/cherry_spice_rack",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "extradelight:block/cherry_spice_rack"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "extradelight:block/cherry_spice_rack"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "extradelight:block/cherry_spice_rack",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "extradelight:block/cherry_spice_rack",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "extradelight:block/cherry_spice_rack",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "extradelight:block/cherry_spice_rack",
+      "y": 270
+    }
+  }
+}

@@ -21,7 +21,7 @@ public class TapBlockEntity extends BlockEntity {
 	private final Lazy<IFluidHandler> fluidHandler = Lazy.of(() -> water);
 
 	public TapBlockEntity(BlockPos pPos, BlockState pState) {
-		super(ExtraDelightBlockEntities.WELL.get(), pPos, pState);
+		super(ExtraDelightBlockEntities.TAP.get(), pPos, pState);
 	}
 
 	public IFluidHandler getFluidHandler() {

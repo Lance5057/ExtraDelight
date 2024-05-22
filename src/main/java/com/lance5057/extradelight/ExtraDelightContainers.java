@@ -2,6 +2,8 @@ package com.lance5057.extradelight;
 
 import java.util.function.Supplier;
 
+import com.lance5057.extradelight.blocks.sink.SinkCabinetMenu;
+import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.displays.food.FoodDisplayMenu;
 import com.lance5057.extradelight.displays.food.FoodDisplayScreen;
 import com.lance5057.extradelight.displays.knife.KnifeBlockMenu;
@@ -42,6 +44,8 @@ public class ExtraDelightContainers {
 			.register("dough_shaping", () -> IMenuTypeExtension.create(DoughShapingMenu::new));
 	public static final Supplier<MenuType<WreathMenu>> WREATH_MENU = MENU_TYPES
 			.register("wreath", () -> IMenuTypeExtension.create(WreathMenu::new));
+	public static final Supplier<MenuType<SinkCabinetMenu>> SINK_MENU = MENU_TYPES
+			.register("sink", () -> IMenuTypeExtension.create(SinkCabinetMenu::new));
 
 	public static void register(IEventBus modBus) {
 		MENU_TYPES.register(modBus);
@@ -54,5 +58,6 @@ public class ExtraDelightContainers {
 		MenuScreens.register(SPICE_RACK_MENU.get(), SpiceRackScreen::new);
 		MenuScreens.register(DOUGH_SHAPING_MENU.get(), DoughShapingScreen::new);
 		MenuScreens.register(WREATH_MENU.get(), WreathScreen::new);
+		MenuScreens.register(SINK_MENU.get(), SinkCabinetScreen::new);
 	}
 }

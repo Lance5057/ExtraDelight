@@ -1,0 +1,8 @@
+{
+  "parent": "extradelight:block/molding_top",
+  "textures": {
+    "0": "extradelight:block/wallpaper_magenta",
+    "1": "minecraft:block/bamboo_planks",
+    "particle": "extradelight:block/wallpaper_magenta"
+  }
+}

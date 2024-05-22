@@ -1,0 +1,12 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "extradelight:block/sink_cabinet_bare",
+	"textures": {
+		"0": "extradelight:block/tap",
+		"1": "farmersdelight:block/acacia_cabinet_front",
+		"2": "farmersdelight:block/acacia_cabinet_side",
+		"3": "farmersdelight:block/acacia_cabinet_top",
+		"4": "block/acacia_planks",
+		"particle": "extradelight:block/tap"
+	}
+}

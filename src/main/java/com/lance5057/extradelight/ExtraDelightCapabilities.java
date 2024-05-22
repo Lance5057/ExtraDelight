@@ -32,7 +32,7 @@ public class ExtraDelightCapabilities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.WREATH.get(),
 				(o, d) -> o.getItemHandler());
 
-		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.WELL.get(),
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.TAP.get(),
 				(o, d) -> o.getFluidHandler());
 	}
 }

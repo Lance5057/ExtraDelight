@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/spicerack_filled",
+  "textures": {
+    "0": "minecraft:block/cherry_planks",
+    "2": "extradelight:block/cherry_ornate"
+  }
+}

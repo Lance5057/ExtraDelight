@@ -10,6 +10,7 @@ import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MintCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+import com.lance5057.extradelight.blocks.sink.SinkCabinetBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
 import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
@@ -519,4 +520,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<TapBlock> TAP = BLOCKS.register("tap",
 			() -> new TapBlock(Block.Properties.ofFullCopy(Blocks.STONE)));
+
+//	public static final DeferredBlock<SinkCabinetBlock> SINK = BLOCKS.register("sink",
+//			() -> new SinkCabinetBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).dynamicShape()));
 }
