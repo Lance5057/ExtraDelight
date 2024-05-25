@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlockEntity;
+import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlockEntity;
 import com.lance5057.extradelight.blocks.entities.TapBlockEntity;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlockEntity;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlEntity;
@@ -55,6 +56,13 @@ public class ExtraDelightBlockEntities {
 			.register("sink_block", () -> BlockEntityType.Builder
 					.of(SinkCabinetBlockEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SINKS))
 					.build(null));
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CounterCabinetBlockEntity>> COUNTER_CABINET_BLOCK = TILES
+			.register("counter_cabinet_block",
+					() -> BlockEntityType.Builder
+							.of(CounterCabinetBlockEntity::new,
+									AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.COUNTER_CABINETS))
+							.build(null));
 
 //	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<HalfCabinetEntity>> HALF_CABINET = TILES.register("half_cabinet",
 //			() -> BlockEntityType.Builder

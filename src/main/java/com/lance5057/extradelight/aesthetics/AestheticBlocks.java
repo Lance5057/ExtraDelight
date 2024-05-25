@@ -12,6 +12,7 @@ import com.lance5057.extradelight.aesthetics.block.MoldingBlock;
 import com.lance5057.extradelight.aesthetics.block.RibbonBlock;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
+import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlock;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlock;
 import com.lance5057.extradelight.data.Recipes;
 import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
@@ -71,6 +72,7 @@ public class AestheticBlocks {
 	public static final List<DeferredBlock<Block>> SPICE_RACKS_FULL = new ArrayList<DeferredBlock<Block>>();
 	public static final List<DeferredBlock<Block>> KNIFE_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 	public static final List<DeferredBlock<Block>> CABINETS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> COUNTER_CABINETS = new ArrayList<DeferredBlock<Block>>();
 
 	public static final List<DeferredBlock<Block>> WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 	public static final List<DeferredBlock<Block>> MOLDED_WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
@@ -80,6 +82,7 @@ public class AestheticBlocks {
 	public static final List<DeferredItem<Item>> SPICE_RACKS_FULL_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> KNIFE_BLOCK_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> CABINET_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> COUNTER_CABINET_ITEMS = new ArrayList<DeferredItem<Item>>();
 
 	public static final List<DeferredItem<Item>> WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> MOLDED_WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
@@ -192,6 +195,7 @@ public class AestheticBlocks {
 		registerAllWood("knife_block", KnifeBlock::new, KNIFE_BLOCKS, KNIFE_BLOCK_ITEMS);
 		registerAllWood("half_cabinet", HalfCabinetBlock::new, CABINETS, CABINET_ITEMS);
 		registerAllWood("sink", SinkCabinetBlock::new, SINKS, SINK_ITEMS);
+		registerAllWood("counter_cabinet", CounterCabinetBlock::new, COUNTER_CABINETS, COUNTER_CABINET_ITEMS);
 
 		registerAllColors("wallpaper",
 				() -> new Block(Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
@@ -376,8 +380,8 @@ public class AestheticBlocks {
 			tmp.getBuilder(CABINETS.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_half_cabinet")));
 
-			tmp.getBuilder(SINKS.get(i).getId().getPath()).parent(
-					new ModelFile.UncheckedModelFile(tmp.modLoc("block/" + WOOD.values()[i].toString() + "_sink_cabinet")));
+			tmp.getBuilder(SINKS.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_sink_cabinet")));
 
 			tmp.getBuilder(DRIED_CORN_FENCE.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_dried_corn_fence")));
