@@ -34,7 +34,7 @@ public class CounterCabinetMenu extends AbstractContainerMenu {
 			// Ingredient Slots - 2 Rows x 3 Columns
 			int startX = 8;
 			int startY = 8;
-			int inputStartX = 11;
+			int inputStartX = 8;
 			int inputStartY = 8;
 			int borderSlotSize = 18;
 			for (int row = 0; row < 3; ++row) {
@@ -44,7 +44,7 @@ public class CounterCabinetMenu extends AbstractContainerMenu {
 				}
 			}
 
-//			this.addSlot(new HideableSlot(tileEntity.getItemHandler(), 27, inputStartX, inputStartY, true));
+			this.addSlot(new HideableSlot(tileEntity.getItemHandler(), 27, 80, 36, true).setActive(false));
 
 //			inputStartX = 113;
 //			for (int row = 0; row < 3; ++row) {
@@ -133,4 +133,10 @@ public class CounterCabinetMenu extends AbstractContainerMenu {
 		}, true);
 	}
 
+	public void switchTabs() {
+		this.slots.forEach(s -> {
+			if (s instanceof HideableSlot h)
+				h.toggleActive();
+		});
+	}
 }

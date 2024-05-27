@@ -19,6 +19,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
@@ -42,7 +43,7 @@ public class CounterCabinetBlock extends BaseEntityBlock {
 	public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
 	public CounterCabinetBlock() {
-		this(Properties.ofFullCopy(Blocks.DARK_OAK_WOOD));
+		this(Properties.ofFullCopy(Blocks.DARK_OAK_WOOD).noOcclusion());
 	}
 
 	public CounterCabinetBlock(Properties properties) {
@@ -131,6 +132,11 @@ public class CounterCabinetBlock extends BaseEntityBlock {
 	public RenderShape getRenderShape(BlockState state) {
 		return RenderShape.MODEL;
 	}
+	
+	@Override
+	public boolean useShapeForLightOcclusion(BlockState pState) {
+		return true;
+	}
 
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -141,4 +147,9 @@ public class CounterCabinetBlock extends BaseEntityBlock {
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
 	}
+	
+	@Override
+    public boolean propagatesSkylightDown(BlockState p_309084_, BlockGetter p_309133_, BlockPos p_309097_) {
+        return true;
+    }
 }

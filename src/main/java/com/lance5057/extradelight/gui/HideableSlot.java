@@ -12,8 +12,13 @@ public class HideableSlot extends SlotItemHandler {
 		active = startShown;
 	}
 
-	public void setActive(boolean active) {
+	public HideableSlot setActive(boolean active) {
 		this.active = active;
+		return this;
+	}
+
+	public void toggleActive() {
+		active = !active;
 	}
 
 	@Override

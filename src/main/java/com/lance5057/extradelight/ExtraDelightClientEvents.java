@@ -4,6 +4,8 @@ import java.util.Map;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRenderer;
+import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetRenderer;
+import com.lance5057.extradelight.blocks.countercabinet.CounterTopModel;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
 import com.lance5057.extradelight.displays.knife.KnifeBlockRenderer;
@@ -28,6 +30,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
@@ -50,6 +53,8 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.CORN_HUSK_DOLL.get(), CornHuskDollRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.WREATH.get(), WreathRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.CANDY_BOWL.get(), CandyBowlRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.COUNTER_CABINET_BLOCK.get(),
+				CounterCabinetRenderer::new);
 	}
 
 	@SubscribeEvent
@@ -113,4 +118,12 @@ public class ExtraDelightClientEvents {
 //		for (RegistryObject<Item> b : AestheticBlocks.WREATH_ITEMS)
 		event.register(itemBlockColourHandler, AestheticBlocks.getRegistryListAsItems(AestheticBlocks.WREATH_ITEMS));
 	}
+
+	@SubscribeEvent
+	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(CounterTopModel.LAYER, CounterTopModel::createBodyLayer);
+	}
+	
+	
+
 }
