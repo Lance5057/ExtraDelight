@@ -1,5 +1,6 @@
 package com.lance5057.extradelight.blocks.crops;
 
+import com.lance5057.extradelight.ExtraDelightItems;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.BlockPos;
@@ -47,7 +48,7 @@ public class CoffeeBush extends BushBlock implements BonemealableBlock {
 
 	@Override
 	public ItemStack getCloneItemStack(LevelReader p_304655_, BlockPos p_57257_, BlockState p_57258_) {
-		return new ItemStack(Items.SWEET_BERRIES);
+		return new ItemStack(ExtraDelightItems.COFFEE_CHERRIES.get());
 	}
 
 	@Override
@@ -85,13 +86,13 @@ public class CoffeeBush extends BushBlock implements BonemealableBlock {
 		boolean flag = i == 3;
 		if (!flag && p_57278_.getItemInHand(p_57279_).is(Items.BONE_MEAL)) {
 			return InteractionResult.PASS;
-		} else if (i > 1) {
+		} else if (i > 2) {
 			int j = 1 + p_57276_.random.nextInt(2);
-			popResource(p_57276_, p_57277_, new ItemStack(Items.SWEET_BERRIES, j + (flag ? 1 : 0)));
+			popResource(p_57276_, p_57277_, new ItemStack(ExtraDelightItems.COFFEE_CHERRIES.get(), j + 1));
 			p_57276_.playSound(null, p_57277_, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F,
 					0.8F + p_57276_.random.nextFloat() * 0.4F);
 			BlockState blockstate = p_57275_.setValue(AGE, Integer.valueOf(1));
-			p_57276_.setBlock(p_57277_, blockstate, 2);
+			p_57276_.setBlock(p_57277_, blockstate, 3);
 			p_57276_.gameEvent(GameEvent.BLOCK_CHANGE, p_57277_, GameEvent.Context.of(p_57278_, blockstate));
 			return InteractionResult.sidedSuccess(p_57276_.isClientSide);
 		} else {

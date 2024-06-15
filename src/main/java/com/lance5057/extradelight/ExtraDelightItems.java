@@ -1402,4 +1402,12 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<BlockItem> TAP = ITEMS.register("tap",
 			() -> new BlockItem(ExtraDelightBlocks.TAP.get(), new Item.Properties()));
+
+	public static final DeferredItem<Item> COFFEE_CHERRIES = ITEMS.register("coffee_cherries",
+			() -> new ItemNameBlockItem(ExtraDelightBlocks.COFFEE_BUSH.get(),
+					new Item.Properties().food(Foods.SWEET_BERRIES)));
+	public static final DeferredItem<Item> GREEN_COFFEE = ITEMS.register("green_coffee",
+			() -> new Item(new Item.Properties().food(Foods.SWEET_BERRIES)));
+	public static final DeferredItem<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
+			() -> new Item(new Item.Properties().food(Foods.SWEET_BERRIES)));
 }

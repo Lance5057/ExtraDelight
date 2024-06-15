@@ -10,26 +10,30 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Builder;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
@@ -65,6 +69,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		for (DeferredBlock<Block> b : AestheticBlocks.MOLDED_WALLPAPER_BLOCKS)
 			dropSelf(b.get());
 		for (DeferredBlock<Block> b : AestheticBlocks.SINKS)
+			dropSelf(b.get());
+		for (DeferredBlock<Block> b : AestheticBlocks.COUNTER_CABINETS)
 			dropSelf(b.get());
 
 		dropSelf(AestheticBlocks.CORN_HUSK_DOLL.get());
@@ -297,6 +303,23 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(ExtraDelightBlocks.CINNAMON_SLAB.get(), createSlabItemTable(ExtraDelightBlocks.CINNAMON_SLAB.get()));
 
 		this.dropSelf(ExtraDelightBlocks.TAP.get());
+
+		this.add(ExtraDelightBlocks.COFFEE_BUSH.get(),
+				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable().withPool(LootPool.lootPool()
+						.when(LootItemBlockStatePropertyCondition
+								.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get()).setProperties(
+										StatePropertiesPredicate.Builder.properties().hasProperty(CoffeeBush.AGE, 3)))
+						.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
+						.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))
+						.withPool(LootPool.lootPool()
+								.when(LootItemBlockStatePropertyCondition
+										.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get())
+										.setProperties(StatePropertiesPredicate.Builder.properties()
+												.hasProperty(CoffeeBush.AGE, 2)))
+								.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+								.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
 
 //		AestheticBlocks.loot(this);
 	}

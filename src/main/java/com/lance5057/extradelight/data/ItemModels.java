@@ -808,6 +808,10 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CORN_SILK_SACK, "corn_silk_sack");
 		forBlockItem(ExtraDelightItems.TAP, "tap");
 
+		forItem(ExtraDelightItems.COFFEE_BEANS, "crops/coffee/coffee_beans");
+		forItem(ExtraDelightItems.GREEN_COFFEE, "crops/coffee/green_coffee");
+		forItem(ExtraDelightItems.COFFEE_CHERRIES, "crops/coffee/coffee_cherries");
+
 		AestheticBlocks.itemModel(this);
 	}
 

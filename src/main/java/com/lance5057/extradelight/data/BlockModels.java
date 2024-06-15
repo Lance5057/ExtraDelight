@@ -6,6 +6,7 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
+import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
@@ -14,6 +15,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
@@ -241,8 +243,22 @@ public class BlockModels extends BlockStateProvider {
 		pieLikeBlock(ExtraDelightBlocks.MILK_TART.get(), "milk_tart");
 		recipeFeastBlock(ExtraDelightBlocks.PUNCH.get(), "punch");
 		tapBlock(ExtraDelightBlocks.TAP.get());
+		coffeeBushBlock(ExtraDelightBlocks.COFFEE_BUSH.get());
 
 		AestheticBlocks.blockModel(this);
+	}
+
+	public void coffeeBushBlock(CoffeeBush block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int age = state.getValue(CoffeeBush.AGE);
+
+			String suffix = "_stage" + age;
+
+			ModelFile model = models().withExistingParent("coffee_plant" + suffix,
+					modLoc("block/crops/coffee/coffee_plant" + suffix));
+
+			return ConfiguredModel.builder().modelFile(model).build();
+		});
 	}
 
 	public void jellyBlock(FeastBlock block, String color) {
