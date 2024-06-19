@@ -33,6 +33,7 @@ public class ExtraDelight {
 		AestheticBlocks.ITEMS.register(modEventBus);
 //
 		ExtraDelightBlocks.register(modEventBus);
+		ExtraDelightFluids.register(modEventBus);
 		ExtraDelightItems.ITEMS.register(modEventBus);
 		ExtraDelightTabs.TABS.register(modEventBus);
 

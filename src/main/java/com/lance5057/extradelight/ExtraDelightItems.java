@@ -20,6 +20,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BowlFoodItem;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -1410,4 +1411,11 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().food(Foods.SWEET_BERRIES)));
 	public static final DeferredItem<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
 			() -> new Item(new Item.Properties().food(Foods.SWEET_BERRIES)));
+
+	// Fluids
+	public static final DeferredItem<Item> OIL_FLUID_BUCKET = ITEMS.register("oil_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.OIL_FLUID,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+	public static final DeferredItem<Item> OIL_FLUID_BOTTLE = ITEMS.register("oil_fluid_bottle",
+			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
 }
