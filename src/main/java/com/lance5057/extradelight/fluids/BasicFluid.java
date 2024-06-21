@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.joml.Vector3f;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -28,10 +29,10 @@ public class BasicFluid extends FluidType {
 	public BasicFluid(String name, int tint, Properties properties) {
 		super(properties);
 
-		STILL = new ResourceLocation("block/"+name+"_still");
-		FLOW = new ResourceLocation("block/"+name+"_flow");
-		OVERLAY = new ResourceLocation("block/"+name+"_still");
-		VIEW_OVERLAY = new ResourceLocation("textures/block/"+name+"_still.png");
+		STILL = new ResourceLocation(ExtraDelight.MOD_ID, "block/"+name+"_still");
+		FLOW = new ResourceLocation(ExtraDelight.MOD_ID, "block/"+name+"_flow");
+		OVERLAY = new ResourceLocation(ExtraDelight.MOD_ID, "block/"+name+"_still");
+		VIEW_OVERLAY = new ResourceLocation(ExtraDelight.MOD_ID, "textures/block/"+name+"_still.png");
 		
 		this.tint = tint;
 	}

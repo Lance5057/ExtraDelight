@@ -5,6 +5,7 @@ import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.StrippableLog;
 import com.lance5057.extradelight.blocks.TapBlock;
+import com.lance5057.extradelight.blocks.VinegarFluidBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
@@ -533,5 +534,13 @@ public class ExtraDelightBlocks {
 	// Fluids
 	public static final DeferredBlock<LiquidBlock> COOKING_OIL_FLUID_BLOCK = BLOCKS.register("cooking_oil_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.OIL_FLUID,
+					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
+
+	public static final DeferredBlock<VinegarFluidBlock> VINEGAR_FLUID_BLOCK = BLOCKS.register("vinegar_fluid_block",
+			() -> new VinegarFluidBlock(ExtraDelightFluids.VINEGAR_FLUID,
+					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
+
+	public static final DeferredBlock<LiquidBlock> GRAVY_FLUID_BLOCK = BLOCKS.register("gravy_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.GRAVY_FLUID,
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
 }
