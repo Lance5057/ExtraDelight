@@ -17,7 +17,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlace
 public class ExtraDelightTreeFeatures {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CINNAMON = FeatureUtils.createKey("extradelight:cinnamon");
 
-	private static TreeConfiguration.TreeConfigurationBuilder createCinnamonTree() {
+	public static TreeConfiguration.TreeConfigurationBuilder createCinnamonTree() {
 		return new TreeConfiguration.TreeConfigurationBuilder(
 				BlockStateProvider.simple(ExtraDelightBlocks.CINNAMON_LOG.get()),
 				new BendingTrunkPlacer(2, 0, 0, 6, ConstantInt.of(1)),
