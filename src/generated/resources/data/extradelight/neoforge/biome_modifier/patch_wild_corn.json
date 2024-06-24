@@ -1,0 +1,33 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#forge:is_plains",
+  "features": {
+    "feature": {
+      "type": "extradelight:wild_corn",
+      "config": {
+        "max_count": 5,
+        "min_count": 2,
+        "tries": 128,
+        "xz_spread": 2,
+        "y_spread": 5
+      }
+    },
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 20
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "WORLD_SURFACE_WG"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "step": "vegetal_decoration"
+}

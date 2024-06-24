@@ -181,10 +181,10 @@ public class CornBottom extends CropBlock {
 	}
 
 	public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-		if (pLevel instanceof WorldGenRegion)
+		if (pLevel instanceof WorldGenRegion) {
 			if (pLevel.getBlockState(pPos.below()).getBlock() == Blocks.GRASS_BLOCK)
 				return true;
-		if (pState.getValue(CornBottom.DIMENSION))
+		} else if (pState.getValue(CornBottom.DIMENSION))
 			return true;
 		return (pLevel.getRawBrightness(pPos, 0) >= 8 || pLevel.canSeeSky(pPos))
 				&& super.canSurvive(pState, pLevel, pPos);

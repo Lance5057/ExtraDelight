@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModLoadingContext;
@@ -11,7 +12,6 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
@@ -42,10 +42,10 @@ public class ExtraDelight {
 		ExtraDelightRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
 //		ExtraDelightLoot.register(modEventBus);
-//
-//		ExtraDelightWorldGen.FEATURES.register(modEventBus);
-//
-//		ExtraDelightConfiguredFeatures.register(modEventBus);
+
+		ExtraDelightWorldGen.FEATURES.register(modEventBus);
+
+		ExtraDelightFeatures.FEATURES.register(modEventBus);
 //		ExtraDelightPlacedFeatures.register(modEventBus);
 //
 //		IEventBus bus = MinecraftForge.EVENT_BUS;

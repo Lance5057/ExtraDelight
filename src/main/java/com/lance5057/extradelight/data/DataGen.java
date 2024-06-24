@@ -63,6 +63,8 @@ public class DataGen {
 						event.getLookupProvider().thenApply(r -> constructRegistries(r, BUILDER)),
 						Set.of(ExtraDelight.MOD_ID)));
 
+		generator.addProvider(event.includeServer(), new EDBiomeModifiers(output, lookupProvider));
+
 //		generator.addProvider(event.includeClient(), new PatchouliGen(generator, ExtraDelight.MOD_ID, "en_us"));
 	}
 
