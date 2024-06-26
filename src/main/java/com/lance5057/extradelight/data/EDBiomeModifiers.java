@@ -89,7 +89,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
 
-				context.register(biomeModifier(new ResourceLocation(ExtraDelight.MOD_ID, "patch_cinnamon_tree")),
+				context.register(biomeModifier(new ResourceLocation(ExtraDelight.MOD_ID, "cinnamon_tree")),
 						new BiomeModifiers.AddFeaturesBiomeModifier(jungle, cinnamonTreeHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
 			});
