@@ -20,7 +20,7 @@ public class ExtraDelightTreeFeatures {
 	public static TreeConfiguration.TreeConfigurationBuilder createCinnamonTree() {
 		return new TreeConfiguration.TreeConfigurationBuilder(
 				BlockStateProvider.simple(ExtraDelightBlocks.CINNAMON_LOG.get()),
-				new BendingTrunkPlacer(2, 0, 0, 6, ConstantInt.of(1)),
+				new BendingTrunkPlacer(2, 0, 10, 6, ConstantInt.of(1)),
 				BlockStateProvider.simple(ExtraDelightBlocks.CINNAMON_LEAVES.get()),
 				new RandomSpreadFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), ConstantInt.of(2), 12),
 				new TwoLayersFeatureSize(1, 0, 2));

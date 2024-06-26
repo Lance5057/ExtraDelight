@@ -43,7 +43,7 @@
           "base_height": 2,
           "bend_length": 1,
           "height_rand_a": 0,
-          "height_rand_b": 0,
+          "height_rand_b": 10,
           "min_height_for_leaves": 6
         },
         "trunk_provider": {
