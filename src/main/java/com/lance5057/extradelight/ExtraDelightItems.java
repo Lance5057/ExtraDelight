@@ -1414,7 +1414,7 @@ public class ExtraDelightItems {
 
 	// Fluids
 	public static final DeferredItem<Item> OIL_FLUID_BUCKET = ITEMS.register("oil_fluid_bucket",
-			() -> new BucketItem(ExtraDelightFluids.OIL_FLUID,
+			() -> new BucketItem(ExtraDelightFluids.oil.FLUID,
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 	public static final DeferredItem<Item> OIL_FLUID_BOTTLE = ITEMS.register("oil_fluid_bottle",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
@@ -1424,9 +1424,9 @@ public class ExtraDelightItems {
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 	public static final DeferredItem<Item> VINEGAR_FLUID_BOTTLE = ITEMS.register("vinegar_fluid_bottle",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
-	
+
 	public static final DeferredItem<Item> GRAVY_FLUID_BUCKET = ITEMS.register("gravy_fluid_bucket",
-			() -> new BucketItem(ExtraDelightFluids.VINEGAR_FLUID,
+			() -> new BucketItem(ExtraDelightFluids.GRAVY_FLUID,
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 	public static final DeferredItem<Item> GRAVY_FLUID_BOTTLE = ITEMS.register("gravy_fluid_bottle",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));

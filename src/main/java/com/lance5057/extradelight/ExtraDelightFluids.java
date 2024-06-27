@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.fluids.BasicFluid;
+import com.lance5057.extradelight.fluids.FluidRegistration;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.Fluid;
@@ -19,22 +20,28 @@ public class ExtraDelightFluids {
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID,
 			ExtraDelight.MOD_ID);
 
-	// Oil
-	private static BaseFlowingFluid.Properties oil() {
-		return new BaseFlowingFluid.Properties(OIL_TYPE, OIL_FLUID, OIL_FLUID_FLOWING)
-				.block(ExtraDelightBlocks.COOKING_OIL_FLUID_BLOCK).bucket(ExtraDelightItems.OIL_FLUID_BUCKET);
-	}
+//	// Oil
+//	private static BaseFlowingFluid.Properties oil() {
+//		return new BaseFlowingFluid.Properties(OIL_TYPE, OIL_FLUID, OIL_FLUID_FLOWING)
+//				.block(ExtraDelightBlocks.COOKING_OIL_FLUID_BLOCK).bucket(ExtraDelightItems.OIL_FLUID_BUCKET);
+//	}
+//
+//	public static final DeferredHolder<FluidType, BasicFluid> OIL_TYPE = FLUID_TYPES.register("oil_fluid",
+//			() -> new BasicFluid(0xd3b945, BasicFluid.Properties.create().supportsBoating(true).canHydrate(false)
+//					.density(1800).viscosity(5000).canExtinguish(true)) {
+//
+//			});
+//
+//	public static final DeferredHolder<Fluid, Source> OIL_FLUID = FLUIDS.register("oil_fluid",
+//			() -> new BaseFlowingFluid.Source(oil()));
+//	public static final DeferredHolder<Fluid, Flowing> OIL_FLUID_FLOWING = FLUIDS.register("oil_fluid_flowing",
+//			() -> new BaseFlowingFluid.Flowing(oil()));
 
-	public static final DeferredHolder<FluidType, FluidType> OIL_TYPE = FLUID_TYPES.register("oil_fluid",
-			() -> new BasicFluid(0xd3b945, FluidType.Properties.create().supportsBoating(true).canHydrate(false)
-					.density(1800).viscosity(5000).canExtinguish(true)) {
-
-			});
-
-	public static final DeferredHolder<Fluid, Source> OIL_FLUID = FLUIDS.register("oil_fluid",
-			() -> new BaseFlowingFluid.Source(oil()));
-	public static final DeferredHolder<Fluid, Flowing> OIL_FLUID_FLOWING = FLUIDS.register("oil_fluid_flowing",
-			() -> new BaseFlowingFluid.Flowing(oil()));
+	public static FluidRegistration oil = new FluidRegistration("oil",
+			() -> new BasicFluid(0xd3b945,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(1800).viscosity(5000)
+							.canExtinguish(true)),
+			ExtraDelightBlocks.COOKING_OIL_FLUID_BLOCK, ExtraDelightItems.OIL_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	// Vinegar
 	private static BaseFlowingFluid.Properties vinegar() {
@@ -42,9 +49,9 @@ public class ExtraDelightFluids {
 				.block(ExtraDelightBlocks.VINEGAR_FLUID_BLOCK).bucket(ExtraDelightItems.VINEGAR_FLUID_BUCKET);
 	}
 
-	public static final DeferredHolder<FluidType, FluidType> VINEGAR_TYPE = FLUID_TYPES.register("vinegar_fluid",
+	public static final DeferredHolder<FluidType, BasicFluid> VINEGAR_TYPE = FLUID_TYPES.register("vinegar_fluid",
 			() -> new BasicFluid(0xedeac9,
-					FluidType.Properties.create().supportsBoating(true).canHydrate(false).canExtinguish(true)) {
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canExtinguish(true)) {
 
 			});
 
@@ -59,9 +66,9 @@ public class ExtraDelightFluids {
 				.block(ExtraDelightBlocks.GRAVY_FLUID_BLOCK).bucket(ExtraDelightItems.GRAVY_FLUID_BUCKET);
 	}
 
-	public static final DeferredHolder<FluidType, FluidType> GRAVY_TYPE = FLUID_TYPES.register("gravy_fluid",
-			() -> new BasicFluid("gravy", 0, FluidType.Properties.create().supportsBoating(true).canHydrate(false)
-					.density(3000).viscosity(6000).temperature(600)) {
+	public static final DeferredHolder<FluidType, BasicFluid> GRAVY_TYPE = FLUID_TYPES.register("gravy_fluid",
+			() -> new BasicFluid("gravy", 0xffffff, BasicFluid.Properties.create().supportsBoating(true)
+					.canHydrate(false).density(3000).viscosity(6000).temperature(600)) {
 
 			});
 

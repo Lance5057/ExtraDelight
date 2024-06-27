@@ -1,0 +1,12 @@
+{
+  "sources": [
+		{
+		  "type": "minecraft:single",
+		  "resource": "extradelight:liquid/gravy_still"
+		},
+		{
+		  "type": "minecraft:single",
+		  "resource": "extradelight:liquid/gravy_flow"
+		}
+	]
+}

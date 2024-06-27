@@ -29,10 +29,10 @@ public class BasicFluid extends FluidType {
 	public BasicFluid(String name, int tint, Properties properties) {
 		super(properties);
 
-		STILL = new ResourceLocation(ExtraDelight.MOD_ID, "block/"+name+"_still");
-		FLOW = new ResourceLocation(ExtraDelight.MOD_ID, "block/"+name+"_flow");
-		OVERLAY = new ResourceLocation(ExtraDelight.MOD_ID, "block/"+name+"_still");
-		VIEW_OVERLAY = new ResourceLocation(ExtraDelight.MOD_ID, "textures/block/"+name+"_still.png");
+		STILL = new ResourceLocation(ExtraDelight.MOD_ID, "liquid/"+name+"_still");
+		FLOW = new ResourceLocation(ExtraDelight.MOD_ID, "liquid/"+name+"_flow");
+		OVERLAY = new ResourceLocation(ExtraDelight.MOD_ID, "liquid/"+name+"_still");
+		VIEW_OVERLAY = new ResourceLocation(ExtraDelight.MOD_ID, "textures/liquid/"+name+"_still.png");
 		
 		this.tint = tint;
 	}
