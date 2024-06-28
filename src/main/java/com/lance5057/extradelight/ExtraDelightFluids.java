@@ -6,11 +6,7 @@ import com.lance5057.extradelight.fluids.FluidRegistration;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.fluids.BaseFlowingFluid;
-import net.neoforged.neoforge.fluids.BaseFlowingFluid.Flowing;
-import net.neoforged.neoforge.fluids.BaseFlowingFluid.Source;
 import net.neoforged.neoforge.fluids.FluidType;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
@@ -20,62 +16,69 @@ public class ExtraDelightFluids {
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID,
 			ExtraDelight.MOD_ID);
 
-//	// Oil
-//	private static BaseFlowingFluid.Properties oil() {
-//		return new BaseFlowingFluid.Properties(OIL_TYPE, OIL_FLUID, OIL_FLUID_FLOWING)
-//				.block(ExtraDelightBlocks.COOKING_OIL_FLUID_BLOCK).bucket(ExtraDelightItems.OIL_FLUID_BUCKET);
-//	}
-//
-//	public static final DeferredHolder<FluidType, BasicFluid> OIL_TYPE = FLUID_TYPES.register("oil_fluid",
-//			() -> new BasicFluid(0xd3b945, BasicFluid.Properties.create().supportsBoating(true).canHydrate(false)
-//					.density(1800).viscosity(5000).canExtinguish(true)) {
-//
-//			});
-//
-//	public static final DeferredHolder<Fluid, Source> OIL_FLUID = FLUIDS.register("oil_fluid",
-//			() -> new BaseFlowingFluid.Source(oil()));
-//	public static final DeferredHolder<Fluid, Flowing> OIL_FLUID_FLOWING = FLUIDS.register("oil_fluid_flowing",
-//			() -> new BaseFlowingFluid.Flowing(oil()));
-
-	public static FluidRegistration oil = new FluidRegistration("oil",
+	public static FluidRegistration OIL = new FluidRegistration("oil",
 			() -> new BasicFluid(0xd3b945,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(1800).viscosity(5000)
 							.canExtinguish(true)),
 			ExtraDelightBlocks.COOKING_OIL_FLUID_BLOCK, ExtraDelightItems.OIL_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
-	// Vinegar
-	private static BaseFlowingFluid.Properties vinegar() {
-		return new BaseFlowingFluid.Properties(VINEGAR_TYPE, VINEGAR_FLUID, VINEGAR_FLUID_FLOWING)
-				.block(ExtraDelightBlocks.VINEGAR_FLUID_BLOCK).bucket(ExtraDelightItems.VINEGAR_FLUID_BUCKET);
-	}
-
-	public static final DeferredHolder<FluidType, BasicFluid> VINEGAR_TYPE = FLUID_TYPES.register("vinegar_fluid",
+	public static FluidRegistration VINEGAR = new FluidRegistration("vinegar",
 			() -> new BasicFluid(0xedeac9,
-					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canExtinguish(true)) {
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canExtinguish(true)),
+			ExtraDelightBlocks.VINEGAR_FLUID_BLOCK, ExtraDelightItems.VINEGAR_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
-			});
+	public static FluidRegistration GRAVY = new FluidRegistration("gravy",
+			() -> new BasicFluid("gravy", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
+							.temperature(600).motionScale(0.5f)),
+			ExtraDelightBlocks.GRAVY_FLUID_BLOCK, ExtraDelightItems.GRAVY_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
-	public static final DeferredHolder<Fluid, Source> VINEGAR_FLUID = FLUIDS.register("vinegar_fluid",
-			() -> new BaseFlowingFluid.Source(vinegar()));
-	public static final DeferredHolder<Fluid, Flowing> VINEGAR_FLUID_FLOWING = FLUIDS.register("vinegar_fluid_flowing",
-			() -> new BaseFlowingFluid.Flowing(vinegar()));
+	public static FluidRegistration GLOW_BERRY_JUICE = new FluidRegistration("glow_berry_juice",
+			() -> new BasicFluid(0xff9401, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			ExtraDelightBlocks.GLOW_BERRY_JUICE_FLUID_BLOCK, ExtraDelightItems.GLOW_BERRY_JUICE_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
 
-	// Gravy
-	private static BaseFlowingFluid.Properties gravy() {
-		return new BaseFlowingFluid.Properties(GRAVY_TYPE, GRAVY_FLUID, GRAVY_FLUID_FLOWING)
-				.block(ExtraDelightBlocks.GRAVY_FLUID_BLOCK).bucket(ExtraDelightItems.GRAVY_FLUID_BUCKET);
-	}
+	public static FluidRegistration SWEET_BERRY_JUICE = new FluidRegistration("sweet_berry_juice",
+			() -> new BasicFluid(0xbc0303, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			ExtraDelightBlocks.SWEET_BERRY_JUICE_FLUID_BLOCK, ExtraDelightItems.SWEET_BERRY_JUICE_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
 
-	public static final DeferredHolder<FluidType, BasicFluid> GRAVY_TYPE = FLUID_TYPES.register("gravy_fluid",
-			() -> new BasicFluid("gravy", 0xffffff, BasicFluid.Properties.create().supportsBoating(true)
-					.canHydrate(false).density(3000).viscosity(6000).temperature(600)) {
+	public static FluidRegistration TOMATO_JUICE = new FluidRegistration("tomato_juice",
+			() -> new BasicFluid(0xb32b00, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			ExtraDelightBlocks.TOMATO_JUICE_FLUID_BLOCK, ExtraDelightItems.TOMATO_JUICE_FLUID_BUCKET, FLUID_TYPES,
+			FLUIDS);
 
-			});
+	public static FluidRegistration CACTUS_JUICE = new FluidRegistration("cactus_juice",
+			() -> new BasicFluid(0x527d26, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			ExtraDelightBlocks.CACTUS_JUICE_FLUID_BLOCK, ExtraDelightItems.CACTUS_JUICE_FLUID_BUCKET, FLUID_TYPES,
+			FLUIDS);
 
-	public static final DeferredHolder<Fluid, Source> GRAVY_FLUID = FLUIDS.register("gravy_fluid",
-			() -> new BaseFlowingFluid.Source(gravy()));
-	public static final DeferredHolder<Fluid, Flowing> GRAVY_FLUID_FLOWING = FLUIDS.register("gravy_fluid_flowing",
-			() -> new BaseFlowingFluid.Flowing(gravy()));
+	public static FluidRegistration APPLE_CIDER = new FluidRegistration("apple_cider",
+			() -> new BasicFluid(0xc68a47, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			ExtraDelightBlocks.APPLE_CIDER_FLUID_BLOCK, ExtraDelightItems.APPLE_CIDER_FLUID_BUCKET, FLUID_TYPES,
+			FLUIDS);
+
+	public static FluidRegistration HOT_COCOA = new FluidRegistration("hot_cocoa",
+			() -> new BasicFluid(0x8f563b,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).temperature(1300)),
+			ExtraDelightBlocks.HOT_COCOA_FLUID_BLOCK, ExtraDelightItems.HOT_COCOA_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration MELON_JUICE = new FluidRegistration("melon_juice",
+			() -> new BasicFluid(0xe24334, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			ExtraDelightBlocks.MELON_JUICE_FLUID_BLOCK, ExtraDelightItems.MELON_JUICE_FLUID_BUCKET, FLUID_TYPES,
+			FLUIDS);
+
+	public static FluidRegistration CUSTARD = new FluidRegistration("custard",
+			() -> new BasicFluid("custard", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
+							.density(6000).motionScale(0.1)),
+			ExtraDelightBlocks.CUSTARD_FLUID_BLOCK, ExtraDelightItems.CUSTARD_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration EGG_MIX = new FluidRegistration("egg_mix",
+			() -> new BasicFluid("egg_mix", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
+							.motionScale(0.75f)),
+			ExtraDelightBlocks.EGG_MIX_FLUID_BLOCK, ExtraDelightItems.EGG_MIX_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	public static void register(IEventBus modBus) {
 		FLUID_TYPES.register(modBus);

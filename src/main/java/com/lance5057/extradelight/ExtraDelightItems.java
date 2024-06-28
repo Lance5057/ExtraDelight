@@ -1414,20 +1414,56 @@ public class ExtraDelightItems {
 
 	// Fluids
 	public static final DeferredItem<Item> OIL_FLUID_BUCKET = ITEMS.register("oil_fluid_bucket",
-			() -> new BucketItem(ExtraDelightFluids.oil.FLUID,
+			() -> new BucketItem(ExtraDelightFluids.OIL.FLUID,
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 	public static final DeferredItem<Item> OIL_FLUID_BOTTLE = ITEMS.register("oil_fluid_bottle",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
 
 	public static final DeferredItem<Item> VINEGAR_FLUID_BUCKET = ITEMS.register("vinegar_fluid_bucket",
-			() -> new BucketItem(ExtraDelightFluids.VINEGAR_FLUID,
+			() -> new BucketItem(ExtraDelightFluids.VINEGAR.FLUID,
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 	public static final DeferredItem<Item> VINEGAR_FLUID_BOTTLE = ITEMS.register("vinegar_fluid_bottle",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
 
 	public static final DeferredItem<Item> GRAVY_FLUID_BUCKET = ITEMS.register("gravy_fluid_bucket",
-			() -> new BucketItem(ExtraDelightFluids.GRAVY_FLUID,
+			() -> new BucketItem(ExtraDelightFluids.GRAVY.FLUID,
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 	public static final DeferredItem<Item> GRAVY_FLUID_BOTTLE = ITEMS.register("gravy_fluid_bottle",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+
+	public static final DeferredItem<Item> GLOW_BERRY_JUICE_FLUID_BUCKET = ITEMS.register("glow_berry_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+	public static final DeferredItem<Item> SWEET_BERRY_JUICE_FLUID_BUCKET = ITEMS.register("sweet_berry_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.SWEET_BERRY_JUICE.FLUID,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+	public static final DeferredItem<Item> TOMATO_JUICE_FLUID_BUCKET = ITEMS.register("tomato_juice_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.TOMATO_JUICE.FLUID,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+	public static final DeferredItem<Item> CACTUS_JUICE_FLUID_BUCKET = ITEMS.register("cactus_juice_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.CACTUS_JUICE.FLUID,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+	public static final DeferredItem<Item> APPLE_CIDER_FLUID_BUCKET = ITEMS.register("apple_cider_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.APPLE_CIDER.FLUID,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+	public static final DeferredItem<Item> HOT_COCOA_FLUID_BUCKET = ITEMS.register("hot_cocoa_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.HOT_COCOA.FLUID,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+	public static final DeferredItem<Item> MELON_JUICE_FLUID_BUCKET = ITEMS.register("melon_juice_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.MELON_JUICE.FLUID,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+	public static final DeferredItem<Item> CUSTARD_FLUID_BUCKET = ITEMS.register("custard_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.CUSTARD.FLUID,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+	public static final DeferredItem<Item> EGG_MIX_FLUID_BUCKET = ITEMS.register("egg_mix_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.EGG_MIX.FLUID,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 }
