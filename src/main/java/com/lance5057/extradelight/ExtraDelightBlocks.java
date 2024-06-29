@@ -534,7 +534,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<Block> SERVING_POT_BLOCK = BLOCKS.register("serving_pot_block",
 			() -> new GlazedTerracottaBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-	public static final DeferredBlock<Block> SERVING_TRAY_BLOCK = BLOCKS.register("serving_tray_block",
+	public static final DeferredBlock<Block> SERVING_PAN_BLOCK = BLOCKS.register("serving_pan_block",
 			() -> new Block(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 	public static final DeferredBlock<Block> SERVING_BOWL_BLOCK = BLOCKS.register("serving_bowl_block",
 			() -> new Block(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
