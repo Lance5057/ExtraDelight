@@ -662,8 +662,6 @@ public class AdvancementGenerator implements AdvancementProvider.AdvancementGene
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BREADING_MISANPLAS.get()))
 				.addCriterion("BUTTER", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BUTTER.get()))
 				.addCriterion("CACTUS", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CACTUS.get()))
-				.addCriterion("CARROT_JAM",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CARROT_JAM.get()))
 				.addCriterion("CHEESE", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESE.get()))
 				.addCriterion("COOKING_OIL",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COOKING_OIL.get()))
@@ -700,7 +698,7 @@ public class AdvancementGenerator implements AdvancementProvider.AdvancementGene
 				.addCriterion("SUNFLOWER_SEEDS",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SUNFLOWER_SEEDS.get()))
 				.addCriterion("SWEET_BERRY_JAM",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SWEET_BERRY_JAM.get()))
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.JAM.get()))
 				.addCriterion("WHIPPED_CREAM",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHIPPED_CREAM.get()))
 				.addCriterion("YEAST", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.YEAST.get()))

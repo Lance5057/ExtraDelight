@@ -80,6 +80,70 @@ public class ExtraDelightFluids {
 							.motionScale(0.75f)),
 			ExtraDelightBlocks.EGG_MIX_FLUID_BLOCK, ExtraDelightItems.EGG_MIX_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
+	public static FluidRegistration BBQ = new FluidRegistration("bbq",
+			() -> new BasicFluid("bbq", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
+							.motionScale(0.5f)),
+			ExtraDelightBlocks.BBQ_FLUID_BLOCK, ExtraDelightItems.BBQ_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration KETCHUP = new FluidRegistration("ketchup",
+			() -> new BasicFluid("ketchup", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
+							.motionScale(0.5f)),
+			ExtraDelightBlocks.KETCHUP_FLUID_BLOCK, ExtraDelightItems.KETCHUP_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration MAYO = new FluidRegistration("mayo",
+			() -> new BasicFluid("mayo", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
+							.motionScale(0.5f)),
+			ExtraDelightBlocks.MAYO_FLUID_BLOCK, ExtraDelightItems.MAYO_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration BROTH = new FluidRegistration("broth",
+			() -> new BasicFluid(0xc4b136, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			ExtraDelightBlocks.BROTH_FLUID_BLOCK, ExtraDelightItems.BROTH_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration CARAMEL_SAUCE = new FluidRegistration("caramel_sauce",
+			() -> new BasicFluid("caramel_sauce", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
+							.density(6000).motionScale(0.1)),
+			ExtraDelightBlocks.CARAMEL_SAUCE_FLUID_BLOCK, ExtraDelightItems.CARAMEL_SAUCE_FLUID_BUCKET, FLUID_TYPES,
+			FLUIDS);
+
+	public static FluidRegistration MILKSHAKE = new FluidRegistration("milkshake",
+			() -> new BasicFluid("milkshake", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
+							.density(6000).motionScale(0.1)),
+			ExtraDelightBlocks.MILKSHAKE_FLUID_BLOCK, ExtraDelightItems.MILKSHAKE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration WHIPPED_CREAM = new FluidRegistration("whipped_cream",
+			() -> new BasicFluid("whipped_cream", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000).density(600)
+							.motionScale(0.1)),
+			ExtraDelightBlocks.WHIPPED_CREAM_FLUID_BLOCK, ExtraDelightItems.WHIPPED_CREAM_FLUID_BUCKET, FLUID_TYPES,
+			FLUIDS);
+
+	public static FluidRegistration JAM = new FluidRegistration("jam",
+			() -> new BasicFluid("jam", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
+							.density(6000).motionScale(0.1)),
+			ExtraDelightBlocks.JAM_FLUID_BLOCK, ExtraDelightItems.JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration GOLDEN_JAM = new FluidRegistration("golden_jam",
+			() -> new BasicFluid("golden_jam", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
+							.density(6000).motionScale(0.1)),
+			ExtraDelightBlocks.GOLDEN_JAM_FLUID_BLOCK, ExtraDelightItems.GOLDEN_JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration GLOW_JAM = new FluidRegistration("glow_jam",
+			() -> new BasicFluid("glow_jam", 0xffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
+							.density(6000).motionScale(0.1)),
+			ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK, ExtraDelightItems.GLOW_JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration TEA = new FluidRegistration("tea",
+			() -> new BasicFluid(0x562d0f, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			ExtraDelightBlocks.TEA_FLUID_BLOCK, ExtraDelightItems.TEA_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
 	public static void register(IEventBus modBus) {
 		FLUID_TYPES.register(modBus);
 		FLUIDS.register(modBus);

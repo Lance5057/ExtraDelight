@@ -77,8 +77,7 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.JAM_APPLE).add(ExtraDelightItems.APPLE_JAM.get());
 		tag(ExtraDelightTags.JAM_GLOW_BERRY).add(ExtraDelightItems.GLOW_BERRY_JAM.get());
-		tag(ExtraDelightTags.JAM_SWEET_BERRY).add(ExtraDelightItems.SWEET_BERRY_JAM.get());
-		tag(ExtraDelightTags.JAM_CARROT).add(ExtraDelightItems.CARROT_JAM.get());
+		tag(ExtraDelightTags.JAM_SWEET_BERRY).add(ExtraDelightItems.JAM.get());
 		tag(ExtraDelightTags.JAM_GOLDEN_APPLE).add(ExtraDelightItems.GOLDEN_APPLE_JAM.get());
 		tag(ExtraDelightTags.JAM_MINT).add(ExtraDelightItems.MINT_JELLY.get());
 

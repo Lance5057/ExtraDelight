@@ -241,10 +241,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.EGG_BASKET.get(), "Egg in a Basket");
 		this.add(ExtraDelightItems.EGG_SALAD.get(), "Egg Salad");
 		this.add(ExtraDelightItems.APPLE_JAM.get(), "Apple Butter");
-		this.add(ExtraDelightItems.CARROT_JAM.get(), "Carrot Jam");
 		this.add(ExtraDelightItems.GLOW_BERRY_JAM.get(), "Glow Berry Jam");
 		this.add(ExtraDelightItems.GOLDEN_APPLE_JAM.get(), "Golden Jam");
-		this.add(ExtraDelightItems.SWEET_BERRY_JAM.get(), "Sweet Berry Jam");
+		this.add(ExtraDelightItems.JAM.get(), "Sweet Berry Jam");
 		this.add(ExtraDelightItems.BREAD_SLICE.get(), "Slice of Bread");
 		this.add(ExtraDelightItems.TOAST.get(), "Toast");
 		this.add(ExtraDelightItems.JAM_TOAST.get(), "Jam on Bread");
@@ -694,7 +693,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.PICKLED_GINGER.get(), "Pickled Ginger");
 		this.add(ExtraDelightItems.CANDIED_GINGER.get(), "Candied Ginger");
 		this.add(ExtraDelightItems.CINNAMON_POPSICLE.get(), "Cinnamon Swirl Creampop");
-		this.add(ExtraDelightItems.MINT_TEA.get(), "Mint Tea");
+//		this.add(ExtraDelightItems.MINT_TEA.get(), "Mint Tea");
 		this.add(ExtraDelightItems.BEET_MINT_SALAD.get(), "Beet Mint Salad");
 		this.add(ExtraDelightItems.MINT_JELLY.get(), "Mint Jelly");
 		this.add(ExtraDelightItems.CRACKERS.get(), "Crackers");
@@ -737,7 +736,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.PEELED_GINGER.get(), "Peeled Ginger");
 		this.add(ExtraDelightItems.SLICED_GINGER.get(), "Sliced Ginger");
 		this.add(ExtraDelightItems.GRATED_GINGER.get(), "Grated Ginger");
-		this.add(ExtraDelightItems.GINGER_TEA.get(), "Ginger Tea");
+//		this.add(ExtraDelightItems.GINGER_TEA.get(), "Ginger Tea");
 
 		this.add(ExtraDelightItems.GINGERBREAD_BLOCK_BLACK.get(), "Black Frosted Gingerbread Block");
 		this.add(ExtraDelightItems.GINGERBREAD_BLOCK_BLUE.get(), "Blue Frosted Gingerbread Block");

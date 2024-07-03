@@ -259,7 +259,6 @@ public class StructureLootTables implements LootTableSubProvider {
 
 				.add(LootItem.lootTableItem(ExtraDelightItems.ALFREDO_SAUCE.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.APPLE_JAM.get()).setWeight(UNCOMMON))
-				.add(LootItem.lootTableItem(ExtraDelightItems.CARROT_JAM.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.CHEESE.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.COOKED_PASTA.get()).setWeight(COMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.COOKING_OIL.get()).setWeight(COMMON))

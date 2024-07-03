@@ -23,7 +23,6 @@ import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.oven.OvenBlock;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
-import com.mojang.serialization.MapCodec;
 
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
@@ -35,7 +34,6 @@ import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.GlazedTerracottaBlock;
 import net.minecraft.world.level.block.HayBlock;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -594,5 +592,51 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<LiquidBlock> EGG_MIX_FLUID_BLOCK = BLOCKS.register("egg_mix_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.EGG_MIX.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
+					.noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> BBQ_FLUID_BLOCK = BLOCKS.register("bbq_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.BBQ.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
+					.noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> KETCHUP_FLUID_BLOCK = BLOCKS.register("ketchup_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.KETCHUP.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
+					.noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> MAYO_FLUID_BLOCK = BLOCKS.register("mayo_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.MAYO.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
+					.noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> BROTH_FLUID_BLOCK = BLOCKS.register("broth_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.BROTH.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
+					.noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> CARAMEL_SAUCE_FLUID_BLOCK = BLOCKS.register(
+			"caramel_sauce_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.CARAMEL_SAUCE.FLUID, BlockBehaviour.Properties
+					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> MILKSHAKE_FLUID_BLOCK = BLOCKS.register("milkshake_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.MILKSHAKE.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
+					.noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> WHIPPED_CREAM_FLUID_BLOCK = BLOCKS.register(
+			"whipped_cream_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.WHIPPED_CREAM.FLUID, BlockBehaviour.Properties
+					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> JAM_FLUID_BLOCK = BLOCKS.register("jam_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.JAM.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
+					.noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> GOLDEN_JAM_FLUID_BLOCK = BLOCKS.register("golden_jam_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.GOLDEN_JAM.FLUID, BlockBehaviour.Properties
+					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> GLOW_JAM_FLUID_BLOCK = BLOCKS.register("glow_jam_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.GLOW_JAM.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
+					.noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<LiquidBlock> TEA_FLUID_BLOCK = BLOCKS.register("tea_fluid_block",
+			() -> new HotFluidBlock(ExtraDelightFluids.TEA.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
 					.noCollission().strength(100.0F).noLootTable().liquid()));
 }

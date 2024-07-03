@@ -231,9 +231,8 @@ public class ItemModels extends ItemModelProvider {
 
 		// Jam
 		forItem(ExtraDelightItems.APPLE_JAM, "apple_jam");
-		forItem(ExtraDelightItems.CARROT_JAM, "carrot_jam");
 		forItem(ExtraDelightItems.GLOW_BERRY_JAM, "glow_berry_jam");
-		forItem(ExtraDelightItems.SWEET_BERRY_JAM, "sweet_berry_jam");
+		forItem(ExtraDelightItems.JAM, "sweet_berry_jam");
 		forItem(ExtraDelightItems.GOLDEN_APPLE_JAM, "golden_apple_jam");
 
 		// Potato
@@ -738,7 +737,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CANDY_CANE_BLUE_BLOCK, "candy_cane_blue_block");
 
 		forItem(ExtraDelightItems.GINGER_BEER, "ginger_beer");
-		forItem(ExtraDelightItems.GINGER_TEA, "ginger_tea");
+//		forItem(ExtraDelightItems.GINGER_TEA, "ginger_tea");
 		forItem(ExtraDelightItems.HORCHATA, "horchata");
 		forItem(ExtraDelightItems.EGGNOG, "eggnog");
 
@@ -756,7 +755,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.PICKLED_GINGER, "pickled_ginger");
 		forItem(ExtraDelightItems.CANDIED_GINGER, "ginger_candy");
 		forItem(ExtraDelightItems.CINNAMON_POPSICLE, "cinnamon_popsicle");
-		forItem(ExtraDelightItems.MINT_TEA, "mint_tea");
+//		forItem(ExtraDelightItems.MINT_TEA, "mint_tea");
 		forItem(ExtraDelightItems.BEET_MINT_SALAD, "beet_mint_salad");
 		forItem(ExtraDelightItems.MINT_JELLY, "mint_jelly");
 		forItem(ExtraDelightItems.CRACKERS, "crackers");
