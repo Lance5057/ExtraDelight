@@ -811,6 +811,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.GREEN_COFFEE, "crops/coffee/green_coffee");
 		forItem(ExtraDelightItems.COFFEE_CHERRIES, "crops/coffee/coffee_cherries");
 
+		forBlockItem(ExtraDelightItems.KEG, "keg");
+
 		AestheticBlocks.itemModel(this);
 	}
 

@@ -14,6 +14,7 @@ import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.blocks.fluids.GlowBerryFluidBlock;
 import com.lance5057.extradelight.blocks.fluids.HotFluidBlock;
 import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
+import com.lance5057.extradelight.blocks.keg.KegBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
 import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
@@ -639,4 +640,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<LiquidBlock> TEA_FLUID_BLOCK = BLOCKS.register("tea_fluid_block",
 			() -> new HotFluidBlock(ExtraDelightFluids.TEA.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
 					.noCollission().strength(100.0F).noLootTable().liquid()));
+
+	public static final DeferredBlock<KegBlock> KEG = BLOCKS.register("keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
 }

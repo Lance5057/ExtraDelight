@@ -30,10 +30,6 @@ import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 //import net.minecraftforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -1502,16 +1498,19 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> JAM_FLUID_BUCKET = ITEMS.register("jam_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.JAM.FLUID,
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-	
+
 	public static final DeferredItem<Item> GOLDEN_JAM_FLUID_BUCKET = ITEMS.register("golden_jam_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.GOLDEN_JAM.FLUID,
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-	
+
 	public static final DeferredItem<Item> GLOW_JAM_FLUID_BUCKET = ITEMS.register("glow_jam_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.GLOW_JAM.FLUID,
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-	
+
 	public static final DeferredItem<Item> TEA_FLUID_BUCKET = ITEMS.register("tea_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.TEA.FLUID,
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+	public static final DeferredItem<BlockItem> KEG = ITEMS.register("keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.KEG.get(), new Item.Properties()));
 }

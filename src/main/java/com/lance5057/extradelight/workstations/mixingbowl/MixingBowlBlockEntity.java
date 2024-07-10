@@ -29,15 +29,20 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.Lazy;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class MixingBowlBlockEntity extends BlockEntity {
-	public static final String TAG = "inv";
+	public static final String INV_TAG = "inv";
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
 	public static final int NUM_SLOTS = 33;
+	
+	public static final String FLUID_TAG = "tank";
+	
+	private final FluidTank fluids = createFluidHandler();
 
 	private int stirs = 0;
 	public boolean complete = false;
@@ -47,15 +52,10 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		super(ExtraDelightBlockEntities.MIXING_BOWL.get(), pPos, pState);
 	}
 
-//	@Nonnull
-//	@Override
-//	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-//		if (side != Direction.DOWN)
-//			if (cap == ForgeCapabilities.ITEM_HANDLER) {
-//				return handler.cast();
-//			}
-//		return super.getCapability(cap, side);
-//	}
+	private FluidTank createFluidHandler() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	public IItemHandlerModifiable getItemHandler() {
 		return itemHandler.get();
@@ -161,8 +161,8 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt) {
-		if (nbt.contains(TAG)) {
-			items.deserializeNBT(nbt.getCompound(TAG));
+		if (nbt.contains(INV_TAG)) {
+			items.deserializeNBT(nbt.getCompound(INV_TAG));
 		}
 
 		this.stirs = nbt.getInt("stirs");
@@ -172,7 +172,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	CompoundTag writeNBT(CompoundTag tag) {
 
-		tag.put(TAG, items.serializeNBT());
+		tag.put(INV_TAG, items.serializeNBT());
 
 		tag.putInt("stirs", this.stirs);
 

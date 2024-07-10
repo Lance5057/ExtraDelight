@@ -902,11 +902,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "extradelight:carrot_jam",
-          "weight": 50
-        },
-        {
-          "type": "minecraft:item",
           "name": "extradelight:cheese",
           "weight": 50
         },

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "extradelight:block/keg_vertical",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "extradelight:block/keg_vertical"
+    },
+    "axis=z": {
+      "model": "extradelight:block/keg_vertical",
+      "x": 90
+    }
+  }
+}

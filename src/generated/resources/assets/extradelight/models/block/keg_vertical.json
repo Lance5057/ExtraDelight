@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "extradelight:block/keg_bottom",
+    "front": "extradelight:block/keg_side",
+    "side": "extradelight:block/keg_side",
+    "top": "extradelight:block/keg_top"
+  }
+}

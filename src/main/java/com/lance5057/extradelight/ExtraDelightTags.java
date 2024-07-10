@@ -64,7 +64,6 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> JAM_SWEET_BERRY = forgeTag("jam/sweet_berry");
 	public static final TagKey<Item> JAM_GLOW_BERRY = forgeTag("jam/glow_berry");
 	public static final TagKey<Item> JAM_GOLDEN_APPLE = forgeTag("jam/golden_apple");
-	public static final TagKey<Item> JAM_CARROT = forgeTag("jam/carrot");
 	public static final TagKey<Item> JAM_MINT = forgeTag("jam/mint");
 
 	public static final TagKey<Item> STARCH = forgeTag("food/starch");

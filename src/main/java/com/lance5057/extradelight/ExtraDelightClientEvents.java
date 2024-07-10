@@ -6,6 +6,7 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterTopModel;
+import com.lance5057.extradelight.blocks.keg.KegRenderer;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
 import com.lance5057.extradelight.displays.knife.KnifeBlockRenderer;
@@ -55,6 +56,8 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.CANDY_BOWL.get(), CandyBowlRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.COUNTER_CABINET_BLOCK.get(),
 				CounterCabinetRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.KEG.get(),
+				KegRenderer::new);
 	}
 
 	@SubscribeEvent

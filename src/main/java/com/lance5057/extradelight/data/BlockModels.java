@@ -15,7 +15,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
@@ -244,6 +243,12 @@ public class BlockModels extends BlockStateProvider {
 		recipeFeastBlock(ExtraDelightBlocks.PUNCH.get(), "punch");
 		tapBlock(ExtraDelightBlocks.TAP.get());
 		coffeeBushBlock(ExtraDelightBlocks.COFFEE_BUSH.get());
+
+		this.axisBlock(ExtraDelightBlocks.KEG.get(),
+				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
+						modLoc("block/keg_bottom"), modLoc("block/keg_top")),
+				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
+						modLoc("block/keg_bottom"), modLoc("block/keg_top")));
 
 		AestheticBlocks.blockModel(this);
 	}

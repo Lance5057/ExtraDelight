@@ -21,9 +21,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -320,6 +318,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 								.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
 								.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
+
+		this.dropSelf(ExtraDelightBlocks.KEG.get());
+
+		this.dropSelf(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.SERVING_PAN_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.SERVING_POT_BLOCK.get());
 
 //		AestheticBlocks.loot(this);
 	}
