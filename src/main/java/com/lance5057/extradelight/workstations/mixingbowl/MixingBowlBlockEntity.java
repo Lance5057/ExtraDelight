@@ -320,7 +320,9 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	private void dropContainers(@NotNull IItemHandlerModifiable inv, Player player) {
 		for (int i = 0; i < 32; i++) {
-			player.addItem(inv.getStackInSlot(i).getCraftingRemainingItem());
+			if (!player.addItem(inv.getStackInSlot(i).getCraftingRemainingItem()))
+				level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
+						getBlockPos().getZ(), inv.getStackInSlot(i).getCraftingRemainingItem()));
 
 		}
 	}
