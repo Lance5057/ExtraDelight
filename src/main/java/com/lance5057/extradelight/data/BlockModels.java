@@ -10,6 +10,7 @@ import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -248,7 +249,7 @@ public class BlockModels extends BlockStateProvider {
 				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
 						modLoc("block/keg_bottom"), modLoc("block/keg_top")),
 				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
-						modLoc("block/keg_bottom"), modLoc("block/keg_top")));
+						modLoc("block/keg_bottom"), modLoc("block/keg_top")).renderType("cutout"));
 
 		AestheticBlocks.blockModel(this);
 	}

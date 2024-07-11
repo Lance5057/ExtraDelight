@@ -1,5 +1,6 @@
 {
   "parent": "minecraft:block/orientable_with_bottom",
+  "render_type": "minecraft:cutout",
   "textures": {
     "bottom": "extradelight:block/keg_bottom",
     "front": "extradelight:block/keg_side",
