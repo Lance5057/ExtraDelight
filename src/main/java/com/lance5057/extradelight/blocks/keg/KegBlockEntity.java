@@ -41,6 +41,11 @@ public class KegBlockEntity extends BlockEntity {
 
 		return tank;
 	}
+	
+	public float getFullness()
+	{
+		return (float)tank.getFluidAmount()/(float)tank.getCapacity();
+	}
 
 	public boolean use(Player player, InteractionHand hand) {
 		return FluidUtil.interactWithFluidHandler(player, hand, tank);
