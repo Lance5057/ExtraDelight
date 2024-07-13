@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.blocks.countercabinet;
+package com.lance5057.extradelight.blocks.sink;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,7 @@ import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
+import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlock;
 import com.lance5057.extradelight.util.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -30,13 +31,13 @@ import net.neoforged.neoforge.client.model.data.ModelData;
 import net.neoforged.neoforge.client.model.renderable.BakedModelRenderable.Context;
 import net.neoforged.neoforge.client.model.renderable.ITextureRenderTypeLookup;
 
-public class CounterCabinetRenderer implements BlockEntityRenderer<CounterCabinetBlockEntity> {
+public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity> {
 
-	public CounterCabinetRenderer(BlockEntityRendererProvider.Context p_173621_) {
+	public SinkRenderer(BlockEntityRendererProvider.Context p_173621_) {
 	}
 
 	@Override
-	public void render(CounterCabinetBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack,
+	public void render(SinkCabinetBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack,
 			MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
 		if (!pBlockEntity.hasLevel()) {
 			return;
@@ -65,16 +66,10 @@ public class CounterCabinetRenderer implements BlockEntityRenderer<CounterCabine
 				this.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
 						pPackedOverlay, pPartialTick, new Context(ModelData.EMPTY), pBlockEntity.getBlockPos(),
 						copiedQuads);
-//						this.counterTopModel.render(pPoseStack, vertexconsumer, pPackedOverlay, pPackedLight, 1.0F, 1.0F,
-//								1.0F, 1.0F);
+
 				pPoseStack.popPose();
 			}
 		}
-
-//		if (!ItemStack.isSameItem(item, stackCache)) {
-//			copiedQuads.clear();
-//			stackCache = item;
-//		}
 	}
 
 	public void render(PoseStack poseStack, MultiBufferSource bufferSource,
@@ -84,7 +79,7 @@ public class CounterCabinetRenderer implements BlockEntityRenderer<CounterCabine
 		float f = Mth.sqrt(1 * 1 + 2 * 2);
 		float f1 = Mth.sqrt(1 * 1 + 3 * 3 + 2 * 2);
 		poseStack.pushPose();
-//		poseStack.translate(0, -1.05, 0);
+//			poseStack.translate(0, -1.05, 0);
 		poseStack.translate(-0.001F, 0.001F, -0.001F);
 		float scale = 1.002f;
 		poseStack.scale(scale, scale, scale);
@@ -338,4 +333,5 @@ public class CounterCabinetRenderer implements BlockEntityRenderer<CounterCabine
 
 		}
 	}
+
 }

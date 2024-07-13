@@ -3,6 +3,7 @@ package com.lance5057.extradelight.blocks.sink;
 import java.util.Objects;
 
 import com.lance5057.extradelight.ExtraDelightContainers;
+import com.lance5057.extradelight.gui.HideableSlot;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -39,18 +40,20 @@ public class SinkCabinetMenu extends AbstractContainerMenu {
 			int borderSlotSize = 18;
 			for (int row = 0; row < 3; ++row) {
 				for (int column = 0; column < 3; ++column) {
-					this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), (row * 3) + column,
-							inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize)));
+					this.addSlot(new HideableSlot(tileEntity.getItemHandler(), (row * 3) + column,
+							inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize), true));
 				}
 			}
 
 			inputStartX = 113;
 			for (int row = 0; row < 3; ++row) {
 				for (int column = 0; column < 3; ++column) {
-					this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), 9 + (row * 3) + column,
-							inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize)));
+					this.addSlot(new HideableSlot(tileEntity.getItemHandler(), 9 + (row * 3) + column,
+							inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize), true));
 				}
 			}
+
+			this.addSlot(new HideableSlot(tileEntity.getItemHandler(), 18, 80, 36, true).setActive(false));
 
 			// Main Player Inventory
 			int startPlayerInvY = startY * 4 + 36;
@@ -128,6 +131,13 @@ public class SinkCabinetMenu extends AbstractContainerMenu {
 					: pPlayer.distanceToSqr((double) p_38917_.getX() + 0.5D, (double) p_38917_.getY() + 0.5D,
 							(double) p_38917_.getZ() + 0.5D) <= 64.0D;
 		}, true);
+	}
+
+	public void switchTabs() {
+		this.slots.forEach(s -> {
+			if (s instanceof HideableSlot h)
+				h.toggleActive();
+		});
 	}
 
 }

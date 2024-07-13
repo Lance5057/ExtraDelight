@@ -30,10 +30,9 @@ public class CounterCabinetScreen extends AbstractContainerScreen<CounterCabinet
 	@Override
 	public void init() {
 		super.init();
-		this.addRenderableWidget(
-				new ImageButton(this.leftPos-24, this.topPos, 24, 24, TAB_BUTTON, (button) -> {
-					this.switchTabs();
-				}));
+		this.addRenderableWidget(new ImageButton(this.leftPos - 24, this.topPos, 24, 24, TAB_BUTTON, (button) -> {
+			this.switchTabs();
+		}));
 	}
 
 	@Override

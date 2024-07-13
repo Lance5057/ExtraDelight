@@ -33,7 +33,7 @@ public class SinkCabinetBlockEntity extends BlockEntity {
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
-	public final static int NUM_SLOTS = 18;
+	public final static int NUM_SLOTS = 19;
 
 	public SinkCabinetBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ExtraDelightBlockEntities.SINK_BLOCK.get(), pPos, pState);

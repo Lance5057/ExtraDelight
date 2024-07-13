@@ -19,6 +19,8 @@ import net.minecraft.world.inventory.InventoryMenu;
 public class RenderUtil {
 	public static int WHITE = 0xFFFFFFFF;
 
+	public static Vector4f ZERO4 = new Vector4f(0, 0, 0, 0);
+
 	public static Vector4f getUV(ResourceLocation rc) {
 		TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(rc);
 		return getUVFromSprite(sprite);
@@ -32,7 +34,8 @@ public class RenderUtil {
 		float uUnit = (sprite.getU0() - sprite.getU1()) / 16;
 		float vUnit = (sprite.getV0() - sprite.getV1()) / 16;
 
-		return new Vector4f(sprite.getU0() + (vUnit * x), sprite.getU1() + (uUnit * y), sprite.getV0() + (vUnit * z), sprite.getV1() + (vUnit * w));
+		return new Vector4f(sprite.getU0() + (vUnit * x), sprite.getU1() + (uUnit * y), sprite.getV0() + (vUnit * z),
+				sprite.getV1() + (vUnit * w));
 	}
 
 	public static void buildPlane(Vector3f pos1, Vector3f pos2, Vector3f pos3, Vector3f pos4,
