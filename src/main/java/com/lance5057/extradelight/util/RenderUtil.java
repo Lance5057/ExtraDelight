@@ -30,12 +30,18 @@ public class RenderUtil {
 		return new Vector4f(sprite.getU0(), sprite.getU1(), sprite.getV0(), sprite.getV1());
 	}
 
-	public static Vector4f getUVFromSprite(TextureAtlasSprite sprite, float x, float y, float z, float w) {
-		float uUnit = (sprite.getU0() - sprite.getU1()) / 16;
-		float vUnit = (sprite.getV0() - sprite.getV1()) / 16;
+	public static Vector4f getUVFromSprite(TextureAtlasSprite sprite, float offsetX, float offsetY, float width,
+			float height) {
+		float uUnit = (sprite.getU1() - sprite.getU0()) / 16;
+		float vUnit = (sprite.getV1() - sprite.getV0()) / 16;
 
-		return new Vector4f(sprite.getU0() + (vUnit * x), sprite.getU1() + (uUnit * y), sprite.getV0() + (vUnit * z),
-				sprite.getV1() + (vUnit * w));
+		float start0 = sprite.getU0() + (uUnit * offsetX);
+		float start1 = sprite.getV0() + (vUnit * offsetY);
+
+		float end0 = ((uUnit * width)) + start0;
+		float end1 = ((vUnit * height)) + start1;
+
+		return new Vector4f(start0, end0, start1, end1);
 	}
 
 	public static void buildPlane(Vector3f pos1, Vector3f pos2, Vector3f pos3, Vector3f pos4,
@@ -93,38 +99,46 @@ public class RenderUtil {
 	public static void buildCube(Vector3f start, Vector3f size, VertexConsumer vertexConsumer, Matrix4f mat,
 			Matrix3f matrix3f, int tint, int overlay, PoseStack ps, Vector4f uvUp, Vector4f uvDown, Vector4f uvNorth,
 			Vector4f uvSouth, Vector4f uvEast, Vector4f uvWest) {
-		RenderUtil.buildPlane(new Vector3f(start.x, start.y + size.y, start.z),
-				new Vector3f(start.x, start.y + size.y, start.z + size.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint, uvDown,
-				Direction.UP.getNormal(), overlay, ps);
+		if (uvDown != null)
+			RenderUtil.buildPlane(new Vector3f(start.x, start.y + size.y, start.z),
+					new Vector3f(start.x, start.y + size.y, start.z + size.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint,
+					uvDown, Direction.UP.getNormal(), overlay, ps);
 
-		RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y, start.z + size.z),
-				new Vector3f(start.x + size.x, start.y, start.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z), vertexConsumer, mat, matrix3f, tint,
-				uvEast, Direction.EAST.getNormal(), overlay, ps);
+		if (uvEast != null)
+			RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y, start.z + size.z),
+					new Vector3f(start.x + size.x, start.y, start.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z), vertexConsumer, mat, matrix3f,
+					tint, uvEast, Direction.EAST.getNormal(), overlay, ps);
 
-		RenderUtil.buildPlane(new Vector3f(start.x, start.y, start.z), new Vector3f(start.x, start.y, start.z + size.z),
-				new Vector3f(start.x, start.y + size.y, start.z + size.z),
-				new Vector3f(start.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint, uvWest,
-				Direction.WEST.getNormal(), overlay, ps);
+		if (uvWest != null)
+			RenderUtil.buildPlane(new Vector3f(start.x, start.y, start.z),
+					new Vector3f(start.x, start.y, start.z + size.z),
+					new Vector3f(start.x, start.y + size.y, start.z + size.z),
+					new Vector3f(start.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint, uvWest,
+					Direction.WEST.getNormal(), overlay, ps);
 
-		RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y, start.z), new Vector3f(start.x, start.y, start.z),
-				new Vector3f(start.x, start.y + size.y, start.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint, uvNorth,
-				Direction.NORTH.getNormal(), overlay, ps);
+		if (uvNorth != null)
+			RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y, start.z),
+					new Vector3f(start.x, start.y, start.z), new Vector3f(start.x, start.y + size.y, start.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint,
+					uvNorth, Direction.NORTH.getNormal(), overlay, ps);
 
-		RenderUtil.buildPlane(new Vector3f(start.x, start.y, start.z + size.z),
-				new Vector3f(start.x + size.x, start.y, start.z + size.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z),
-				new Vector3f(start.x, start.y + size.y, start.z + size.z), vertexConsumer, mat, matrix3f, tint, uvSouth,
-				Direction.SOUTH.getNormal(), overlay, ps);
+		if (uvSouth != null)
+			RenderUtil.buildPlane(new Vector3f(start.x, start.y, start.z + size.z),
+					new Vector3f(start.x + size.x, start.y, start.z + size.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z),
+					new Vector3f(start.x, start.y + size.y, start.z + size.z), vertexConsumer, mat, matrix3f, tint,
+					uvSouth, Direction.SOUTH.getNormal(), overlay, ps);
 
-		RenderUtil.buildPlane(new Vector3f(start.x, start.y, start.z), new Vector3f(start.x + size.x, start.y, start.z),
-				new Vector3f(start.x + size.x, start.y, start.z + size.z),
-				new Vector3f(start.x, start.y, start.z + size.z), vertexConsumer, mat, matrix3f, tint, uvUp,
-				Direction.DOWN.getNormal(), overlay, ps);
+		if (uvUp != null)
+			RenderUtil.buildPlane(new Vector3f(start.x, start.y, start.z),
+					new Vector3f(start.x + size.x, start.y, start.z),
+					new Vector3f(start.x + size.x, start.y, start.z + size.z),
+					new Vector3f(start.x, start.y, start.z + size.z), vertexConsumer, mat, matrix3f, tint, uvUp,
+					Direction.DOWN.getNormal(), overlay, ps);
 	}
 
 	public static void buildInvertedCube(Vector3f start, Vector3f size, VertexConsumer vertexConsumer, Matrix4f mat,
@@ -167,38 +181,41 @@ public class RenderUtil {
 	public static void buildInvertedCubePillar(Vector3f start, Vector3f size, VertexConsumer vertexConsumer,
 			Matrix4f mat, Matrix3f matrix3f, int tint, Vector4f uvSides, Vector4f uvTop, Vector4f uvBottom, int overlay,
 			PoseStack ps) {
-		RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z),
-				new Vector3f(start.x, start.y + size.y, start.z + size.z),
-				new Vector3f(start.x, start.y + size.y, start.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint, uvTop,
-				Direction.DOWN.getNormal(), overlay, ps);
+		if (uvTop != null)
+			RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z),
+					new Vector3f(start.x, start.y + size.y, start.z + size.z),
+					new Vector3f(start.x, start.y + size.y, start.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint,
+					uvTop, Direction.DOWN.getNormal(), overlay, ps);
+		if (uvSides != null) {
+			RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y, start.z),
+					new Vector3f(start.x + size.x, start.y, start.z + size.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint,
+					uvSides, Direction.EAST.getNormal(), overlay, ps);
 
-		RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y, start.z),
-				new Vector3f(start.x + size.x, start.y, start.z + size.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint, uvSides,
-				Direction.EAST.getNormal(), overlay, ps);
+			RenderUtil.buildPlane(new Vector3f(start.x, start.y, start.z + size.z),
+					new Vector3f(start.x, start.y, start.z), new Vector3f(start.x, start.y + size.y, start.z),
+					new Vector3f(start.x, start.y + size.y, start.z + size.z), vertexConsumer, mat, matrix3f, tint,
+					uvSides, Direction.WEST.getNormal(), overlay, ps);
 
-		RenderUtil.buildPlane(new Vector3f(start.x, start.y, start.z + size.z), new Vector3f(start.x, start.y, start.z),
-				new Vector3f(start.x, start.y + size.y, start.z),
-				new Vector3f(start.x, start.y + size.y, start.z + size.z), vertexConsumer, mat, matrix3f, tint, uvSides,
-				Direction.WEST.getNormal(), overlay, ps);
+			RenderUtil.buildPlane(new Vector3f(start.x, start.y, start.z),
+					new Vector3f(start.x + size.x, start.y, start.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z),
+					new Vector3f(start.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint, uvSides,
+					Direction.NORTH.getNormal(), overlay, ps);
 
-		RenderUtil.buildPlane(new Vector3f(start.x, start.y, start.z), new Vector3f(start.x + size.x, start.y, start.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z),
-				new Vector3f(start.x, start.y + size.y, start.z), vertexConsumer, mat, matrix3f, tint, uvSides,
-				Direction.NORTH.getNormal(), overlay, ps);
+			RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y, start.z + size.z),
+					new Vector3f(start.x, start.y, start.z + size.z),
+					new Vector3f(start.x, start.y + size.y, start.z + size.z),
+					new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z),
 
-		RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y, start.z + size.z),
-				new Vector3f(start.x, start.y, start.z + size.z),
-				new Vector3f(start.x, start.y + size.y, start.z + size.z),
-				new Vector3f(start.x + size.x, start.y + size.y, start.z + size.z),
-
-				vertexConsumer, mat, matrix3f, tint, uvSides, Direction.SOUTH.getNormal(), overlay, ps);
-
-		RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y, start.z + size.z),
-				new Vector3f(start.x + size.x, start.y, start.z), new Vector3f(start.x, start.y, start.z),
-				new Vector3f(start.x, start.y, start.z + size.z), vertexConsumer, mat, matrix3f, tint, uvBottom,
-				Direction.DOWN.getNormal(), overlay, ps);
+					vertexConsumer, mat, matrix3f, tint, uvSides, Direction.SOUTH.getNormal(), overlay, ps);
+		}
+		if (uvBottom != null)
+			RenderUtil.buildPlane(new Vector3f(start.x + size.x, start.y, start.z + size.z),
+					new Vector3f(start.x + size.x, start.y, start.z), new Vector3f(start.x, start.y, start.z),
+					new Vector3f(start.x, start.y, start.z + size.z), vertexConsumer, mat, matrix3f, tint, uvBottom,
+					Direction.UP.getNormal(), overlay, ps);
 	}
 }

@@ -101,39 +101,35 @@ public class CounterCabinetRenderer implements BlockEntityRenderer<CounterCabine
 			Vector4f uvSouth = RenderUtil.ZERO4;
 			Vector4f uvEast = RenderUtil.ZERO4;
 			Vector4f uvWest = RenderUtil.ZERO4;
-
-			if (copiedQuads.get(0) != null)
-				uvTop = RenderUtil.getUVFromSprite(copiedQuads.get(0).getSprite(), 0, 0, 0, 0);
+			
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
-				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 0, 0, 0);
+				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 0, 16, 16);
 			if (copiedQuads.size() > 2 && copiedQuads.get(2) != null)
-				uvNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 0, 0, 0, 14);
+				uvNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 0, 0, 16, 2);
 			if (copiedQuads.size() > 3 && copiedQuads.get(3) != null)
-				uvSouth = RenderUtil.getUVFromSprite(copiedQuads.get(3).getSprite(), 0, 0, 0, 14);
+				uvSouth = RenderUtil.getUVFromSprite(copiedQuads.get(3).getSprite(), 0, 0, 16, 2);
 			if (copiedQuads.size() > 4 && copiedQuads.get(4) != null)
-				uvEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 0, 0, 0, 14);
+				uvEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 0, 0, 16, 2);
 			if (copiedQuads.size() > 5 && copiedQuads.get(5) != null)
-				uvWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 0, 0, 0, 14);
+				uvWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 0, 0, 16, 2);
 
 			RenderUtil.buildCube(new Vector3f(0, 14f / 16f, 0), new Vector3f(1, 2f / 16f, 1), vertexconsumer, matrix4f,
-					matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, uvTop, uvBottom, uvNorth, uvSouth,
+					matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null, uvBottom, uvNorth, uvSouth,
 					uvEast, uvWest);
 
-			if (copiedQuads.get(0) != null)
-				uvTop = RenderUtil.getUVFromSprite(copiedQuads.get(0).getSprite(), 0, 0, 0, 0);
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
-				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), -14, 0, 0, 0);
+				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 0, 2, 16);
 			if (copiedQuads.size() > 2 && copiedQuads.get(2) != null)
-				uvNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 0, 0, 0, 14);
+				uvNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 0, 0, 16, 2);
 			if (copiedQuads.size() > 3 && copiedQuads.get(3) != null)
-				uvSouth = RenderUtil.getUVFromSprite(copiedQuads.get(3).getSprite(), 0, 0, 0, 14);
+				uvSouth = RenderUtil.getUVFromSprite(copiedQuads.get(3).getSprite(), 0, 0, 16, 2);
 			if (copiedQuads.size() > 4 && copiedQuads.get(4) != null)
-				uvEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 0, -0, 0, 14);
+				uvEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 0, 0, 2, 2);
 			if (copiedQuads.size() > 5 && copiedQuads.get(5) != null)
-				uvWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 0, -0, 0, 14);
+				uvWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 0, 0, 2, 2);
 
 			RenderUtil.buildCube(new Vector3f(0, 1, 14f / 16f), new Vector3f(1, 2f / 16f, 2f / 16f), vertexconsumer,
-					matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, uvTop, uvBottom,
+					matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null, uvBottom,
 					uvNorth, uvSouth, uvEast, uvWest);
 
 		}
@@ -141,201 +137,4 @@ public class CounterCabinetRenderer implements BlockEntityRenderer<CounterCabine
 		poseStack.popPose();
 	}
 
-	private void drawTop(BlockPos pos, float h, float w, float l, int lightmap, VertexConsumer vertexconsumer,
-			Matrix4f matrix4f, Matrix3f matrix3f, PoseStack poseStack, List<BakedQuad> copiedQuads) {
-
-	}
-
-	private void drawLip(BlockPos pos, float h, float w, float l, int lightmap, VertexConsumer vertexconsumer,
-			Matrix4f matrix4f, Matrix3f matrix3f, PoseStack poseStack, List<BakedQuad> copiedQuads) {
-		if (copiedQuads.get(0) != null) {
-			float u0 = copiedQuads.get(0).getSprite().getU0();
-			float u1 = copiedQuads.get(0).getSprite().getU1();
-			float v0 = copiedQuads.get(0).getSprite().getV0();
-			float v1 = copiedQuads.get(0).getSprite().getV1();
-
-			float uUnit = (u1 - u0) / 16;
-			float vUnit = (v1 - v0) / 16;
-
-			// Down
-
-			vertexconsumer.vertex(matrix4f, -1, 0, 0).color(255, 255, 255, 255).uv(u0, v0 + vUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
-							Direction.DOWN.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 0, 0).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
-							Direction.DOWN.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 0, 1).color(255, 255, 255, 255).uv(u1, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
-							Direction.DOWN.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -1, 0, 1).color(255, 255, 255, 255).uv(u1, v0 + vUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
-							Direction.DOWN.getNormal().getZ())
-					.endVertex();
-
-			// Up
-			if (copiedQuads.get(1) != null) {
-				u0 = copiedQuads.get(1).getSprite().getU0();
-				u1 = copiedQuads.get(1).getSprite().getU1();
-				v0 = copiedQuads.get(1).getSprite().getV0();
-				v1 = copiedQuads.get(1).getSprite().getV1();
-			}
-
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 0).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.UP.getNormal().getX(), Direction.UP.getNormal().getY(),
-							Direction.UP.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 0).color(255, 255, 255, 255).uv(u0, v0 + vUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.UP.getNormal().getX(), Direction.UP.getNormal().getY(),
-							Direction.UP.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 1).color(255, 255, 255, 255).uv(u1, v0 + vUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.UP.getNormal().getX(), Direction.UP.getNormal().getY(),
-							Direction.UP.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 1).color(255, 255, 255, 255).uv(u1, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.UP.getNormal().getX(), Direction.UP.getNormal().getY(),
-							Direction.UP.getNormal().getZ())
-					.endVertex();
-
-			// North
-			if (copiedQuads.get(2) != null) {
-				u0 = copiedQuads.get(2).getSprite().getU0();
-				u1 = copiedQuads.get(2).getSprite().getU1();
-				v0 = copiedQuads.get(2).getSprite().getV0();
-				v1 = copiedQuads.get(2).getSprite().getV1();
-			}
-
-			vertexconsumer.vertex(matrix4f, -14f / 16f, 0, 1).color(255, 255, 255, 255).uv(u0, v1)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -14f / 16f, 0, 0).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -14f / 16f, 4f / 16f, 0).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -14f / 16f, 4f / 16f, 1).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v1)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
-
-			// South
-			if (copiedQuads.get(3) != null) {
-				u0 = copiedQuads.get(3).getSprite().getU0();
-				u1 = copiedQuads.get(3).getSprite().getU1();
-				v0 = copiedQuads.get(3).getSprite().getV0();
-				v1 = copiedQuads.get(3).getSprite().getV1();
-			}
-
-			vertexconsumer.vertex(matrix4f, -1, 0, 0).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -1, 0, 1).color(255, 255, 255, 255).uv(u0, v1)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 1).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v1)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 0).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
-
-			// left
-			if (copiedQuads.get(4) != null) {
-				u0 = copiedQuads.get(4).getSprite().getU0();
-				u1 = copiedQuads.get(4).getSprite().getU1();
-				v0 = copiedQuads.get(4).getSprite().getV0();
-				v1 = copiedQuads.get(4).getSprite().getV1();
-			}
-
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 0, 0).color(255, 255, 255, 255).uv(u0, v0 + uUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
-							Direction.WEST.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1, 0, 0).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
-							Direction.WEST.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 0).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
-							Direction.WEST.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 0).color(255, 255, 255, 255)
-					.uv(u0 + uUnit * 4, v0 + uUnit * 2).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
-							Direction.WEST.getNormal().getZ())
-					.endVertex();
-
-			// right
-			if (copiedQuads.get(5) != null) {
-				u0 = copiedQuads.get(5).getSprite().getU0();
-				u1 = copiedQuads.get(5).getSprite().getU1();
-				v0 = copiedQuads.get(5).getSprite().getV0();
-				v1 = copiedQuads.get(5).getSprite().getV1();
-			}
-			vertexconsumer.vertex(matrix4f, -1, 0, 1).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
-							Direction.EAST.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 0, 1).color(255, 255, 255, 255).uv(u0, v0 + uUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
-							Direction.EAST.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 1).color(255, 255, 255, 255)
-					.uv(u0 + uUnit * 4, v0 + uUnit * 2).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
-							Direction.EAST.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 1).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
-							Direction.EAST.getNormal().getZ())
-					.endVertex();
-
-		}
-	}
 }
