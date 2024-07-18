@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.blocks.FrostableBlock;
+import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.StrippableLog;
@@ -26,6 +27,8 @@ import com.lance5057.extradelight.workstations.oven.OvenBlock;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
 
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
@@ -52,6 +55,7 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 //import vectorwing.farmersdelight.common.block.CabinetBlock;
@@ -531,12 +535,29 @@ public class ExtraDelightBlocks {
 //	public static final DeferredBlock<SinkCabinetBlock> SINK = BLOCKS.register("sink",
 //			() -> new SinkCabinetBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).dynamicShape()));
 
+	public static final DeferredBlock<Block> SHEET_BLOCK = BLOCKS.register("sheet",
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 1.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 1.0D, 15.0D)));
+	public static final DeferredBlock<Block> TRAY_BLOCK = BLOCKS.register("tray",
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
+	public static final DeferredBlock<Block> LOAF_PAN_BLOCK = BLOCKS.register("loaf_pan",
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+					Block.box(4.0D, 0.0D, 2.0D, 12.0D, 4.0D, 14.0D), Block.box(2.0D, 0.0D, 4.0D, 14.0D, 4.0D, 12.0D)));
+	public static final DeferredBlock<Block> PIE_DISH_BLOCK = BLOCKS.register("pie_dish",
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+	public static final DeferredBlock<Block> SQUARE_PAN_BLOCK = BLOCKS.register("square_pan",
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+	public static final DeferredBlock<Block> BAKING_STONE_BLOCK = BLOCKS.register("baking_stone",
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+	public static final DeferredBlock<Block> MUFFIN_TIN_BLOCK = BLOCKS.register("muffin_tin",
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 	public static final DeferredBlock<Block> SERVING_POT_BLOCK = BLOCKS.register("serving_pot_block",
-			() -> new GlazedTerracottaBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 	public static final DeferredBlock<Block> SERVING_PAN_BLOCK = BLOCKS.register("serving_pan_block",
-			() -> new Block(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 	public static final DeferredBlock<Block> SERVING_BOWL_BLOCK = BLOCKS.register("serving_bowl_block",
-			() -> new Block(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 
 	public static final DeferredBlock<CoffeeBush> COFFEE_BUSH = ExtraDelightBlocks.BLOCKS.register("coffee_bush",
 			() -> new CoffeeBush(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().noCollission()

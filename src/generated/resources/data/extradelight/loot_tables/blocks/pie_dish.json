@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:serving_bowl"
+          "name": "extradelight:pie_dish"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/serving_bowl_block"
+  "random_sequence": "extradelight:blocks/pie_dish"
 }

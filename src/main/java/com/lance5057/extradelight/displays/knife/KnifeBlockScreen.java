@@ -19,7 +19,7 @@ public class KnifeBlockScreen extends AbstractContainerScreen<KnifeBlockMenu> {
 
 	@Override
 	protected void renderBg(GuiGraphics pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {
-		this.renderBackground(pPoseStack, pMouseY, pMouseY, pPartialTick);
+//		this.renderBackground(pPoseStack, pMouseY, pMouseY, pPartialTick);
 		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 		if (this.minecraft == null)
 			return;

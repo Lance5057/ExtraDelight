@@ -1,7 +1,7 @@
 {
   "type": "extradelight:oven",
   "container": {
-    "item": "extradelight:round_pan"
+    "item": "extradelight:square_pan"
   },
   "cookingtime": 800,
   "experience": 1.0,

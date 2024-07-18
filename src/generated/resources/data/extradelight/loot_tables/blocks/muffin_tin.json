@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:serving_bowl"
+          "name": "extradelight:muffin_tin"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/serving_bowl_block"
+  "random_sequence": "extradelight:blocks/muffin_tin"
 }

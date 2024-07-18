@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Quaternionf;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -37,13 +38,13 @@ public class KnifeBlockRenderer implements BlockEntityRenderer<KnifeBlockEntity>
 		Direction dir = pBlockEntity.getBlockState().getValue(KnifeBlock.FACING);
 
 		renderItem(0, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-				0.33f, 0.65f, 0.65f, -90, -90, 90);
+				0.33f, 0.65f, 0.35f, 0, 1.570796f, 3.141593f);
 		renderItem(1, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir, 0.5f,
-				0.65f, 0.65f, -90, -90, 90);
+				0.65f, 0.35f, 0, 1.570796f, 3.141593f);
 		renderItem(2, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-				0.67f, 0.65f, 0.65f, -90, -90, 90);
+				0.67f, 0.65f, 0.35f, 0, 1.570796f, 3.141593f);
 		renderItem(3, pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, r, dir,
-				0.33f, 0.33f, 0.85f, 45, 0, -135);
+				0.33f, 0.35f, 0.125f, -1.570796f+0.7853982f, 0, 3.141593f+0.7853982f);
 
 	}
 
@@ -58,7 +59,7 @@ public class KnifeBlockRenderer implements BlockEntityRenderer<KnifeBlockEntity>
 			pPoseStack.pushPose();
 
 			pPoseStack.translate(0.5f, 0, 0.5f);
-			pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, -dir.toYRot(), 0));
+			pPoseStack.mulPose(Axis.YP.rotationDegrees(-dir.getClockWise().toYRot() - 90));
 			pPoseStack.translate(x - 0.5f, y, z - 0.5f);
 			pPoseStack.mulPose(new Quaternionf().rotateXYZ(rx, ry, rz));
 			float uniscale = 1f;

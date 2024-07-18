@@ -131,13 +131,12 @@ public class ItemModels extends ItemModelProvider {
 //						new ResourceLocation(ExtraDelight.MOD_ID, "item/corncob_pipe")))
 //				.texture("1", modLoc("item/corncob_pipe")); // not craftable, dungeon item
 
-		forItem(ExtraDelightItems.ROUND_PAN, "round_pan");
 		forItem(ExtraDelightItems.BAKING_STONE, "baking_stone");
 		forItem(ExtraDelightItems.LOAF_PAN, "loaf_pan");
 		forItem(ExtraDelightItems.MUFFIN_TIN, "muffin_tin");
 		forItem(ExtraDelightItems.PIE_DISH, "pie_dish");
 		forItem(ExtraDelightItems.SHEET, "sheet");
-		forItem(ExtraDelightItems.SQUARE_PAN, "square_pan");
+		forItem(ExtraDelightItems.SERVING_PAN, "square_pan");
 		forItem(ExtraDelightItems.TRAY, "tray");
 
 		forItem(ExtraDelightItems.WOODEN_SPOON, "wooden_spoon");

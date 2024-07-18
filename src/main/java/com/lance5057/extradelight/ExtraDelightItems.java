@@ -109,18 +109,26 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> PESTLE_GILDED_BLACKSTONE = ITEMS.register("pestle_gilded_blackstone",
 			() -> new Item(new Item.Properties().durability(35)));
 
-	public static final DeferredItem<Item> SHEET = ITEMS.register("sheet", () -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> TRAY = ITEMS.register("tray", () -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> LOAF_PAN = ITEMS.register("loaf_pan", () -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> PIE_DISH = ITEMS.register("pie_dish", () -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> ROUND_PAN = ITEMS.register("round_pan",
-			() -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> SQUARE_PAN = ITEMS.register("square_pan",
-			() -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> BAKING_STONE = ITEMS.register("baking_stone",
-			() -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> MUFFIN_TIN = ITEMS.register("muffin_tin",
-			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<BlockItem> SHEET = ITEMS.register("sheet",
+			() -> new BlockItem(ExtraDelightBlocks.SHEET_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> TRAY = ITEMS.register("tray",
+			() -> new BlockItem(ExtraDelightBlocks.TRAY_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> LOAF_PAN = ITEMS.register("loaf_pan", 
+			() -> new BlockItem(ExtraDelightBlocks.LOAF_PAN_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> PIE_DISH = ITEMS.register("pie_dish",
+			() -> new BlockItem(ExtraDelightBlocks.PIE_DISH_BLOCK.get(), new Item.Properties())); 
+	public static final DeferredItem<BlockItem> SQUARE_PAN = ITEMS.register("square_pan",
+			() -> new BlockItem(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> BAKING_STONE = ITEMS.register("baking_stone",
+			() -> new BlockItem(ExtraDelightBlocks.BAKING_STONE_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> MUFFIN_TIN = ITEMS.register("muffin_tin",
+			() -> new BlockItem(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> SERVING_POT = ITEMS.register("serving_pot",
+			() -> new BlockItem(ExtraDelightBlocks.SERVING_POT_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> SERVING_PAN = ITEMS.register("serving_pan",
+			() -> new BlockItem(ExtraDelightBlocks.SERVING_PAN_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> SERVING_BOWL = ITEMS.register("serving_bowl",
+			() -> new BlockItem(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> GRATER = ITEMS.register("grater",
 			() -> new Item(new Item.Properties().durability(250)));

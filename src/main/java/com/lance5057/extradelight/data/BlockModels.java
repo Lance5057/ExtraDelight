@@ -10,7 +10,6 @@ import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -250,6 +249,27 @@ public class BlockModels extends BlockStateProvider {
 						modLoc("block/keg_bottom"), modLoc("block/keg_top")),
 				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
 						modLoc("block/keg_bottom"), modLoc("block/keg_top")).renderType("cutout"));
+
+		this.horizontalBlock(ExtraDelightBlocks.SHEET_BLOCK.get(),
+				this.models().getExistingFile(this.modLoc("block/sheet")));
+		this.horizontalBlock(ExtraDelightBlocks.TRAY_BLOCK.get(),
+				this.models().getExistingFile(this.modLoc("block/tray")));
+		this.horizontalBlock(ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
+				this.models().getExistingFile(this.modLoc("block/loafpan")));
+		this.simpleBlock(ExtraDelightBlocks.PIE_DISH_BLOCK.get(),
+				this.models().getExistingFile(this.modLoc("block/piepan")));
+		this.simpleBlock(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(),
+				this.models().getExistingFile(this.modLoc("block/cake_pan")));
+		this.simpleBlock(ExtraDelightBlocks.BAKING_STONE_BLOCK.get(),
+				this.models().getExistingFile(this.modLoc("block/baking_stone")));
+		this.horizontalBlock(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(),
+				this.models().getExistingFile(this.modLoc("block/muffin_tray")));
+		this.horizontalBlock(ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
+				this.models().getExistingFile(this.modLoc("block/serving_pot")));
+		this.simpleBlock(ExtraDelightBlocks.SERVING_PAN_BLOCK.get(),
+				this.models().getExistingFile(this.modLoc("block/serving_pan")));
+		this.simpleBlock(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get(),
+				this.models().getExistingFile(this.modLoc("block/serving_bowl")));
 
 		AestheticBlocks.blockModel(this);
 	}

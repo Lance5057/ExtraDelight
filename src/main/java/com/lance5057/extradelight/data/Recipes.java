@@ -39,7 +39,6 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
-import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
 public class Recipes extends RecipeProvider implements IConditionBuilder {
 	public Recipes(PackOutput generator) {
@@ -936,44 +935,38 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 				}, consumer, "apple_cookie_dough_sugar");
 
-		mixing(new ItemStack(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), 1), STANDARD_GRIND,
-				ItemStack.EMPTY,
+		mixing(new ItemStack(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
 						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ForgeTags.EGGS),
 						Ingredient.of(Items.COCOA_BEANS) },
 				consumer, "chocolate_chip_cookie_dough");
 
-		mixing(new ItemStack(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), 1), STANDARD_GRIND,
-				ItemStack.EMPTY,
+		mixing(new ItemStack(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.SUGAR_COOKIE_DOUGH), Ingredient.of(Items.COCOA_BEANS)
 
 				}, consumer, "chocolate_chip_cookie_dough_sugar");
 
-		mixing(new ItemStack(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(), 1), STANDARD_GRIND,
-				ItemStack.EMPTY,
+		mixing(new ItemStack(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
 						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ForgeTags.EGGS),
 						Ingredient.of(ExtraDelightItems.GRATED_GINGER.get()),
 						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON) },
 				consumer, "gingerbread_cookie_dough");
 
-		mixing(new ItemStack(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(), 1), STANDARD_GRIND,
-				ItemStack.EMPTY,
+		mixing(new ItemStack(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.SUGAR_COOKIE_DOUGH),
 						Ingredient.of(ExtraDelightItems.GRATED_GINGER.get()),
 						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON)
 
 				}, consumer, "gingerbread_cookie_dough_sugar");
 
-		mixing(new ItemStack(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), 1), STANDARD_GRIND,
-				ItemStack.EMPTY,
+		mixing(new ItemStack(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
 						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ForgeTags.EGGS),
 						Ingredient.of(Items.GLOW_BERRIES) },
 				consumer, "glow_berry_cookie_dough");
 
-		mixing(new ItemStack(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), 1), STANDARD_GRIND,
-				ItemStack.EMPTY,
+		mixing(new ItemStack(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.SUGAR_COOKIE_DOUGH), Ingredient.of(Items.GLOW_BERRIES)
 
 				}, consumer, "glow_berry_cookie_dough_sugar");
@@ -1001,15 +994,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 				}, consumer, "pumpkin_cookie_dough_sugar");
 
-		mixing(new ItemStack(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get(), 1), STANDARD_GRIND,
-				ItemStack.EMPTY,
+		mixing(new ItemStack(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
 						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ForgeTags.EGGS),
 						Ingredient.of(Items.SWEET_BERRIES) },
 				consumer, "sweet_berry_cookie_dough");
 
-		mixing(new ItemStack(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get(), 1), STANDARD_GRIND,
-				ItemStack.EMPTY, new Ingredient[] { Ingredient.of(ExtraDelightTags.SUGAR_COOKIE_DOUGH),
+		mixing(new ItemStack(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SUGAR_COOKIE_DOUGH),
 						Ingredient.of(Items.SWEET_BERRIES)
 
 				}, consumer, "sweet_berry_cookie_dough_sugar");
@@ -1184,7 +1176,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
 				.save(consumer, EDLoc("pie_dish"));
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.ROUND_PAN.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.SERVING_PAN.get())
 				.requires(Items.HEAVY_WEIGHTED_PRESSURE_PLATE, 1).requires(Items.IRON_NUGGET, 4)
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
@@ -1194,11 +1186,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
 				.save(consumer, EDLoc("muffin_tin"));
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.SQUARE_PAN.get())
-				.requires(Items.HEAVY_WEIGHTED_PRESSURE_PLATE, 1).requires(Items.IRON_NUGGET, 8)
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
-				.save(consumer, EDLoc("square_pan"));
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BAKING_STONE.get())
 				.requires(Items.STONE_PRESSURE_PLATE, 1)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.STONE_PRESSURE_PLATE))
@@ -2756,7 +2743,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(Items.CAKE, 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.ROUND_PAN.get()))
+						new ItemStack(ExtraDelightItems.SERVING_PAN.get()))
 				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(ForgeTags.MILK).addIngredient(ForgeTags.MILK)
 				.addIngredient(ForgeTags.MILK).addIngredient(Items.EGG).addIngredient(ExtraDelightTags.SWEETENER, 2)
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS)
@@ -3127,7 +3114,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CORNBREAD_FEAST.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.ROUND_PAN.get()))
+						new ItemStack(ExtraDelightItems.SERVING_PAN.get()))
 				.addIngredient(ExtraDelightTags.CORN_MEAL).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightItems.BUTTER.get())
 				.addIngredient(ExtraDelightItems.EGG_MIX.get()).setRecipeBookTab(OvenRecipeBookTab.MEALS)
@@ -3368,7 +3355,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.MONKEY_BREAD_FEAST.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.ROUND_PAN.get()))
+						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()))
 				.addIngredient(ForgeTags.DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
 				.setRecipeBookTab(OvenRecipeBookTab.MEALS).unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
@@ -3376,7 +3363,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.COFFEE_CAKE_FEAST.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.ROUND_PAN.get()))
+						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()))
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ForgeTags.MILK)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ForgeTags.MILK).addIngredient(Items.EGG)
@@ -3392,7 +3379,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST.get(), 1), NORMAL_COOKING,
-						MEDIUM_EXP, new ItemStack(ExtraDelightItems.ROUND_PAN.get()))
+						MEDIUM_EXP, new ItemStack(ExtraDelightItems.SQUARE_PAN.get()))
 				.addIngredient(ExtraDelightTags.DRIED_FRUIT, 3).addIngredient(ExtraDelightTags.BREAD_CRUMBS)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ForgeTags.EGGS)
@@ -3401,7 +3388,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.MILK_TART_FEAST.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.ROUND_PAN.get()))
+						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()))
 				.addIngredient(ExtraDelightTags.GROUND_CINNAMON).addIngredient(ForgeTags.MILK)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ForgeTags.EGGS)
@@ -3424,9 +3411,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 	private void pot(ItemLike output, int count, int speed, float xp, ItemLike container, Ingredient[] itemsIn,
 			String rc, RecipeOutput consumer) {
-		
+
 //		cookingPotRecipe(ItemLike mainResult, int count, int cookingTime, float experience)
-		
+
 		CookingPotRecipeBuilder b = CookingPotRecipeBuilder.cookingPotRecipe(output, count, speed, xp, container);
 		for (Ingredient i : itemsIn)
 			b.addIngredient(i);

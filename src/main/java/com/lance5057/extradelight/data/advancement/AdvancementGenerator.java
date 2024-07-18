@@ -149,10 +149,8 @@ public class AdvancementGenerator implements AdvancementProvider.AdvancementGene
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BAKING_STONE.get()))
 				.addCriterion("loaf_pan",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LOAF_PAN.get()))
-				.addCriterion("square_pan",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SQUARE_PAN.get()))
-				.addCriterion("round_pan",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.ROUND_PAN.get()))
+				.addCriterion("pan",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SERVING_PAN.get()))
 				.addCriterion("pie_dish",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PIE_DISH.get()))
 				.addCriterion("muffin_tin",

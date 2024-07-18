@@ -32,8 +32,8 @@ public class EDItemTags extends ItemTagsProvider {
 	@Override
 	protected void addTags(HolderLookup.Provider provider) {
 		tag(ExtraDelightTags.TRAYS).add(ExtraDelightItems.TRAY.get(), ExtraDelightItems.BAKING_STONE.get(),
-				ExtraDelightItems.PIE_DISH.get(), ExtraDelightItems.SQUARE_PAN.get(), ExtraDelightItems.LOAF_PAN.get(),
-				ExtraDelightItems.ROUND_PAN.get(), ExtraDelightItems.SHEET.get(), ExtraDelightItems.MUFFIN_TIN.get());
+				ExtraDelightItems.PIE_DISH.get(), ExtraDelightItems.SERVING_PAN.get(), ExtraDelightItems.LOAF_PAN.get(),
+				ExtraDelightItems.SHEET.get(), ExtraDelightItems.MUFFIN_TIN.get());
 
 		tag(ExtraDelightTags.MORTAR).add(ExtraDelightItems.MORTAR_AMETHYST.get(),
 				ExtraDelightItems.MORTAR_ANDESITE.get(), ExtraDelightItems.MORTAR_BASALT.get(),
@@ -81,8 +81,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.JAM_GOLDEN_APPLE).add(ExtraDelightItems.GOLDEN_APPLE_JAM.get());
 		tag(ExtraDelightTags.JAM_MINT).add(ExtraDelightItems.MINT_JELLY.get());
 
-		tag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_APPLE)
-				.addTag(ExtraDelightTags.JAM_SWEET_BERRY).addTag(ExtraDelightTags.JAM_MINT);
+		tag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_APPLE).addTag(ExtraDelightTags.JAM_SWEET_BERRY)
+				.addTag(ExtraDelightTags.JAM_MINT);
 		tag(ExtraDelightTags.JAM).addTag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_GOLDEN_APPLE)
 				.addTag(ExtraDelightTags.JAM_GLOW_BERRY);
 
@@ -169,12 +169,10 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.CORN_CONFISCATE).add(ExtraDelightItems.CORN_COB.get(), ExtraDelightItems.CORN_HUSK.get(),
 				ExtraDelightItems.CORN_ON_COB.get(), ExtraDelightItems.CORN_SEEDS.get(),
-				ExtraDelightItems.CORN_SILK
-						.get(), /* ExtraDelightItems.UNSHUCKED_CORN.get(), */
+				ExtraDelightItems.CORN_SILK.get(), /* ExtraDelightItems.UNSHUCKED_CORN.get(), */
 				ExtraDelightItems.CORN_CHOWDER.get(), ExtraDelightItems.CORN_FRITTERS.get(),
 				ExtraDelightItems.CORN_MEAL.get(), ExtraDelightItems.CORN_PUDDING.get(),
-				ExtraDelightItems.CORN_PUDDING_FEAST
-						.get(), /* ExtraDelightItems.CORN_SILK_TEA.get(), */
+				ExtraDelightItems.CORN_PUDDING_FEAST.get(), /* ExtraDelightItems.CORN_SILK_TEA.get(), */
 				ExtraDelightItems.CORNBREAD.get(), ExtraDelightItems.CORNBREAD_FEAST.get(),
 				ExtraDelightItems.CARAMEL_POPCORN.get(), ExtraDelightItems.COOKED_CORN.get(),
 				ExtraDelightItems.CREAM_CORN.get(), ExtraDelightItems.DRIED_CORN_HUSK.get(),

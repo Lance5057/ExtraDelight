@@ -321,9 +321,16 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropSelf(ExtraDelightBlocks.KEG.get());
 
-		this.dropSelf(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.SERVING_PAN_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.SHEET_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.TRAY_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.LOAF_PAN_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.PIE_DISH_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.BAKING_STONE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.SERVING_POT_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.SERVING_PAN_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get());
 
 //		AestheticBlocks.loot(this);
 	}
