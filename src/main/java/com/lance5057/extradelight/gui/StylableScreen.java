@@ -32,6 +32,11 @@ public class StylableScreen extends Screen {
 	}
 
 	@Override
+	public void renderBackground(GuiGraphics p_283688_, int p_296369_, int p_296477_, float p_294317_) {
+
+	}
+
+	@Override
 	public void render(GuiGraphics p_281735_, int p_282517_, int p_282840_, float p_282389_) {
 		super.render(p_281735_, p_282517_, p_282840_, p_282389_);
 	}
