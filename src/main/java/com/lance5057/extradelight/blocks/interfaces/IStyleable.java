@@ -9,7 +9,7 @@ public interface IStyleable {
 
 	public int getCurrentStyle(BlockState state);
 
-	public void nextStyle(Level level, BlockPos pos,BlockState state);
+	public BlockState nextStyle(Level level, BlockPos pos,BlockState state);
 
 	public void setStyle(int style);
 	

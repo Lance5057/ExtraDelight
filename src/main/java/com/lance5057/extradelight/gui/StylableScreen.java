@@ -1,39 +1,22 @@
 package com.lance5057.extradelight.gui;
 
-import com.lance5057.extradelight.blocks.interfaces.IStyleable;
-
-import net.minecraft.client.GameNarrator;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.PageButton;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Inventory;
 
-public class StylableScreen extends Screen {
-	BlockState state;
-	BlockPos pos;
-	Level level;
+public class StylableScreen extends AbstractContainerScreen<StyleableMenu> {
 
 	private PageButton forwardButton;
 
-	public StylableScreen(BlockState state, BlockPos pos, Level level) {
-		super(GameNarrator.NO_TITLE);
-
-		this.state = state;
-		this.pos = pos;
-		this.level = level;
+	public StylableScreen(StyleableMenu p_99310_, Inventory p_99311_, Component p_99312_) {
+		super(p_99310_, p_99311_, p_99312_);
 	}
 
 	@Override
 	protected void init() {
-		this.forwardButton = this
-				.addRenderableWidget(new PageButton(116, 159, true, p_98144_ -> this.nextStyle(), true));
-	}
-
-	@Override
-	public void renderBackground(GuiGraphics p_283688_, int p_296369_, int p_296477_, float p_294317_) {
-
+		this.forwardButton = this.addRenderableWidget(new PageButton(116, 159, true, p_98144_ -> style(), true));
 	}
 
 	@Override
@@ -41,9 +24,13 @@ public class StylableScreen extends Screen {
 		super.render(p_281735_, p_282517_, p_282840_, p_282389_);
 	}
 
-	void nextStyle() {
-		if (state.getBlock() instanceof IStyleable s) {
-			s.nextStyle(level, pos, state);
-		}
+	@Override
+	protected void renderBg(GuiGraphics p_283065_, float p_97788_, int p_97789_, int p_97790_) {
+		// TODO Auto-generated method stub
+
+	}
+
+	void style() {
+		this.minecraft.gameMode.handleInventoryButtonClick(this.menu.containerId, 0);
 	}
 }

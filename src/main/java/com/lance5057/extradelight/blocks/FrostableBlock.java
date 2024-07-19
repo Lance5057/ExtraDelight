@@ -64,7 +64,7 @@ public class FrostableBlock extends Block implements IStyleable {
 	}
 
 	@Override
-	public void nextStyle(Level level, BlockPos pos, BlockState state) {
+	public BlockState nextStyle(Level level, BlockPos pos, BlockState state) {
 		int next = state.getValue(STYLE) + 1;
 		if (state.getValue(STYLE) >= numStyles()) {
 			next = 0;
@@ -75,8 +75,9 @@ public class FrostableBlock extends Block implements IStyleable {
 					pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, 0, 0, 0);
 		level.playSound(null, pos, SoundEvents.SLIME_BLOCK_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
 
-		level.setBlock(pos, state.setValue(STYLE, next), 3);
-
+		BlockState nextState = state.setValue(STYLE, next);
+		level.setBlock(pos, nextState, 3);
+		return nextState;
 	}
 
 	@Override

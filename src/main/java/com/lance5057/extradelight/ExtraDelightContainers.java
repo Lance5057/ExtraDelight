@@ -14,6 +14,8 @@ import com.lance5057.extradelight.displays.spice.SpiceRackMenu;
 import com.lance5057.extradelight.displays.spice.SpiceRackScreen;
 import com.lance5057.extradelight.displays.wreath.WreathMenu;
 import com.lance5057.extradelight.displays.wreath.WreathScreen;
+import com.lance5057.extradelight.gui.StylableScreen;
+import com.lance5057.extradelight.gui.StyleableMenu;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingMenu;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.oven.OvenMenu;
@@ -50,6 +52,8 @@ public class ExtraDelightContainers {
 			() -> IMenuTypeExtension.create(SinkCabinetMenu::new));
 	public static final Supplier<MenuType<CounterCabinetMenu>> COUNTER_CABINET_MENU = MENU_TYPES
 			.register("counter_cabinet", () -> IMenuTypeExtension.create(CounterCabinetMenu::new));
+	public static final Supplier<MenuType<StyleableMenu>> STYLE_MENU = MENU_TYPES.register("style",
+			() -> IMenuTypeExtension.create(StyleableMenu::new));
 
 	public static void register(IEventBus modBus) {
 		MENU_TYPES.register(modBus);
@@ -64,5 +68,6 @@ public class ExtraDelightContainers {
 		MenuScreens.register(WREATH_MENU.get(), WreathScreen::new);
 		MenuScreens.register(SINK_MENU.get(), SinkCabinetScreen::new);
 		MenuScreens.register(COUNTER_CABINET_MENU.get(), CounterCabinetScreen::new);
+		MenuScreens.register(STYLE_MENU.get(), StylableScreen::new);
 	}
 }
