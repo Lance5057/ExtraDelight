@@ -17,16 +17,17 @@ public class OffsetSpatulaItem extends TieredItem {
 
 	@Override
 	public InteractionResult useOn(UseOnContext pContext) {
-		if (pContext.getLevel().getBlockState(pContext.getClickedPos()).getBlock() instanceof IStyleable s) {
-			if (pContext.getPlayer().isCrouching()) {
-				Minecraft.getInstance()
-						.setScreen(new StylableScreen(pContext.getLevel().getBlockState(pContext.getClickedPos()),
-								pContext.getClickedPos(), pContext.getLevel()));
+		if (pContext.getLevel().isClientSide())
+			if (pContext.getLevel().getBlockState(pContext.getClickedPos()).getBlock() instanceof IStyleable s) {
+				if (pContext.getPlayer().isCrouching()) {
+					Minecraft.getInstance()
+							.setScreen(new StylableScreen(pContext.getLevel().getBlockState(pContext.getClickedPos()),
+									pContext.getClickedPos(), pContext.getLevel()));
 
-			} else
-				s.nextStyle(pContext.getLevel(), pContext.getClickedPos(),
-						pContext.getLevel().getBlockState(pContext.getClickedPos()));
-		}
+				} else
+					s.nextStyle(pContext.getLevel(), pContext.getClickedPos(),
+							pContext.getLevel().getBlockState(pContext.getClickedPos()));
+			}
 		return InteractionResult.PASS;
 
 	}
