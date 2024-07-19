@@ -43,33 +43,33 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 			return;
 		}
 
-		ItemStack item = pBlockEntity.getItemHandler().getStackInSlot(18);
-		List<BakedQuad> copiedQuads = new ArrayList<BakedQuad>();
-
-		if (item != null && !item.isEmpty()) {
-			if (item.getItem() instanceof BlockItem b) {
-
-				for (Direction d : Direction.values()) {
-					List<BakedQuad> q = Minecraft.getInstance().getBlockRenderer()
-							.getBlockModel(b.getBlock().defaultBlockState()).getQuads(b.getBlock().defaultBlockState(),
-									d, pBlockEntity.getLevel().random, ModelData.EMPTY, RenderType.cutout());
-					if (!q.isEmpty()) {
-						copiedQuads.add(q.get(0));
-					}
-				}
-				pPoseStack.pushPose();
-				float f = pBlockEntity.getBlockState().getValue(CounterCabinetBlock.FACING).getClockWise().toYRot();
-
-				pPoseStack.translate(0.5f, 0, 0.5f);
-				pPoseStack.mulPose(Axis.YP.rotationDegrees(-f - 90));
-				pPoseStack.translate(-0.5f, 0, -0.5f);
-				this.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
-						pPackedOverlay, pPartialTick, new Context(ModelData.EMPTY), pBlockEntity.getBlockPos(),
-						copiedQuads);
-
-				pPoseStack.popPose();
-			}
-		}
+//		ItemStack item = pBlockEntity.getItemHandler().getStackInSlot(18);
+//		List<BakedQuad> copiedQuads = new ArrayList<BakedQuad>();
+//
+//		if (item != null && !item.isEmpty()) {
+//			if (item.getItem() instanceof BlockItem b) {
+//
+//				for (Direction d : Direction.values()) {
+//					List<BakedQuad> q = Minecraft.getInstance().getBlockRenderer()
+//							.getBlockModel(b.getBlock().defaultBlockState()).getQuads(b.getBlock().defaultBlockState(),
+//									d, pBlockEntity.getLevel().random, ModelData.EMPTY, RenderType.cutout());
+//					if (!q.isEmpty()) {
+//						copiedQuads.add(q.get(0));
+//					}
+//				}
+//				pPoseStack.pushPose();
+//				float f = pBlockEntity.getBlockState().getValue(CounterCabinetBlock.FACING).getClockWise().toYRot();
+//
+//				pPoseStack.translate(0.5f, 0, 0.5f);
+//				pPoseStack.mulPose(Axis.YP.rotationDegrees(-f - 90));
+//				pPoseStack.translate(-0.5f, 0, -0.5f);
+//				this.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
+//						pPackedOverlay, pPartialTick, new Context(ModelData.EMPTY), pBlockEntity.getBlockPos(),
+//						copiedQuads);
+//
+//				pPoseStack.popPose();
+//			}
+//		}
 	}
 
 	public void render(PoseStack poseStack, MultiBufferSource bufferSource,
