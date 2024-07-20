@@ -811,6 +811,20 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.COFFEE_CHERRIES, "crops/coffee/coffee_cherries");
 
 		forBlockItem(ExtraDelightItems.KEG, "keg");
+		
+		forBlockItem(ExtraDelightItems.STRIPPED_FRUIT_LOG, "stripped_fruit_log");
+//		forBlockItem(ExtraDelightItems.FRUIT_LOG, "fruit_log");
+		forBlockItem(ExtraDelightItems.FRUIT_PLANKS, "fruit_planks");
+		forBlockItem(ExtraDelightItems.FRUIT_FENCE,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_fence_inventory"));
+//		forItem(ExtraDelightItems.FRUIT_DOOR, "fruit_door");
+		forBlockItem(ExtraDelightItems.FRUIT_FENCE_GATE, "fruit_fence_gate");
+		forBlockItem(ExtraDelightItems.FRUIT_STAIRS, "fruit_stairs");
+		forBlockItem(ExtraDelightItems.FRUIT_TRAPDOOR,
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_trapdoor_bottom"));
+		forBlockItem(ExtraDelightItems.FRUIT_CABINET, "fruit_cabinet");
+		this.slab(ExtraDelightItems.FRUIT_SLAB.getId().getPath(), modLoc("block/fruit_planks"),
+				modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
 
 		AestheticBlocks.itemModel(this);
 	}

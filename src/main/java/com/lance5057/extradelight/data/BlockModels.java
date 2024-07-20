@@ -270,6 +270,25 @@ public class BlockModels extends BlockStateProvider {
 				this.models().getExistingFile(this.modLoc("block/serving_pan")));
 		this.simpleBlock(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get(),
 				this.models().getExistingFile(this.modLoc("block/serving_bowl")));
+		
+		this.logBlock(ExtraDelightBlocks.FRUIT_LOG.get());
+		this.logBlock(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
+		this.simpleBlock(ExtraDelightBlocks.FRUIT_PLANKS.get());
+//		this.simpleCross(ExtraDelightBlocks.FRUIT_SAPLING.get());
+		this.stairsBlock(ExtraDelightBlocks.FRUIT_STAIRS.get(),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_planks"));
+		this.trapdoorBlockWithRenderType(ExtraDelightBlocks.FRUIT_TRAPDOOR.get(),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_trapdoor"), true, "cutout");
+		this.doorBlockWithRenderType(ExtraDelightBlocks.FRUIT_DOOR.get(),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_door_bottom"),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_door_top"), "cutout");
+		this.fenceBlock(ExtraDelightBlocks.FRUIT_FENCE.get(),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_planks"));
+		this.fenceGateBlock(ExtraDelightBlocks.FRUIT_FENCE_GATE.get(),
+				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_planks"));
+		this.cabinetBlock(ExtraDelightBlocks.FRUIT_CABINET.get(), "fruit");
+		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"),
+				modLoc("block/fruit_planks"));
 
 		AestheticBlocks.blockModel(this);
 	}

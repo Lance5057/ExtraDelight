@@ -332,7 +332,16 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.SERVING_PAN_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get());
 
-//		AestheticBlocks.loot(this);
+		this.dropSelf(ExtraDelightBlocks.FRUIT_LOG.get());
+		this.dropSelf(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_PLANKS.get());
+		this.add(ExtraDelightBlocks.FRUIT_DOOR.get(), createDoorTable(ExtraDelightBlocks.FRUIT_DOOR.get()));
+		this.dropSelf(ExtraDelightBlocks.FRUIT_FENCE.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_STAIRS.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_TRAPDOOR.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_FENCE_GATE.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_CABINET.get());
+		this.add(ExtraDelightBlocks.FRUIT_SLAB.get(), createSlabItemTable(ExtraDelightBlocks.FRUIT_SLAB.get()));
 	}
 
 	@Override

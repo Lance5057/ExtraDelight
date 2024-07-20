@@ -64,7 +64,7 @@ public class AestheticBlocks {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraDelight.MOD_ID);
 
 	public static enum WOOD {
-		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cinnamon, cherry, bamboo
+		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cinnamon, cherry, bamboo, fruit
 	};
 
 	public static final List<DeferredBlock<Block>> STEP_STOOLS = new ArrayList<DeferredBlock<Block>>();
@@ -298,7 +298,7 @@ public class AestheticBlocks {
 						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
 						.texture("all", bsp.mcLoc("block/bamboo_large_leaves"))
 						.texture("particle", bsp.mcLoc("block/bamboo_large_leaves")).renderType("cutout"));
-			else
+			else if (WOOD.values()[i].toString() != "fruit")
 				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
 						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
 						.texture("all", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
@@ -398,7 +398,7 @@ public class AestheticBlocks {
 				tmp.getBuilder(WREATHS.get(i).getId().getPath())
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
 						.texture("all", tmp.mcLoc("block/bamboo_large_leaves"));
-			else
+			else if (WOOD.values()[i].toString() != "fruit")
 				tmp.getBuilder(WREATHS.get(i).getId().getPath())
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
 						.texture("all", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"));

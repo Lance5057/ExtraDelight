@@ -21,6 +21,7 @@ import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.BucketItem;
+import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -113,10 +114,10 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.SHEET_BLOCK.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> TRAY = ITEMS.register("tray",
 			() -> new BlockItem(ExtraDelightBlocks.TRAY_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<BlockItem> LOAF_PAN = ITEMS.register("loaf_pan", 
+	public static final DeferredItem<BlockItem> LOAF_PAN = ITEMS.register("loaf_pan",
 			() -> new BlockItem(ExtraDelightBlocks.LOAF_PAN_BLOCK.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> PIE_DISH = ITEMS.register("pie_dish",
-			() -> new BlockItem(ExtraDelightBlocks.PIE_DISH_BLOCK.get(), new Item.Properties())); 
+			() -> new BlockItem(ExtraDelightBlocks.PIE_DISH_BLOCK.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> SQUARE_PAN = ITEMS.register("square_pan",
 			() -> new BlockItem(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> BAKING_STONE = ITEMS.register("baking_stone",
@@ -957,12 +958,8 @@ public class ExtraDelightItems {
 					return 300;
 				}
 			});
-//	public static final DeferredItem<DoubleHighBlockItem> CINNAMON_DOOR = ITEMS.register("cinnamon_door",
-//			() -> new DoubleHighBlockItem(ExtraDelightBlocks.CINNAMON_DOOR.get(), new Item.Properties()) {
-//				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-//					return 200;
-//				}
-//			});
+	public static final DeferredItem<DoubleHighBlockItem> CINNAMON_DOOR = ITEMS.register("cinnamon_door",
+			() -> new DoubleHighBlockItem(ExtraDelightBlocks.CINNAMON_DOOR.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> CINNAMON_TRAPDOOR = ITEMS.register("cinnamon_trapdoor",
 			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(), new Item.Properties()) {
 				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
@@ -1521,4 +1518,61 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<BlockItem> KEG = ITEMS.register("keg_item",
 			() -> new BlockItem(ExtraDelightBlocks.KEG.get(), new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> FRUIT_LOG = ITEMS.register("fruit_log",
+			() -> new BlockItem(ExtraDelightBlocks.FRUIT_LOG.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	public static final DeferredItem<BlockItem> STRIPPED_FRUIT_LOG = ITEMS.register("stripped_fruit_log",
+			() -> new BlockItem(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	public static final DeferredItem<DoubleHighBlockItem> FRUIT_DOOR = ITEMS.register("fruit_door",
+			() -> new DoubleHighBlockItem(ExtraDelightBlocks.FRUIT_DOOR.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> FRUIT_PLANKS = ITEMS.register("fruit_planks",
+			() -> new BlockItem(ExtraDelightBlocks.FRUIT_PLANKS.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	public static final DeferredItem<BlockItem> FRUIT_FENCE = ITEMS.register("fruit_fence",
+			() -> new BlockItem(ExtraDelightBlocks.FRUIT_FENCE.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	public static final DeferredItem<BlockItem> FRUIT_FENCE_GATE = ITEMS.register("fruit_fence_gate",
+			() -> new BlockItem(ExtraDelightBlocks.FRUIT_FENCE_GATE.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	public static final DeferredItem<BlockItem> FRUIT_STAIRS = ITEMS.register("fruit_stairs",
+			() -> new BlockItem(ExtraDelightBlocks.FRUIT_STAIRS.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	public static final DeferredItem<BlockItem> FRUIT_TRAPDOOR = ITEMS.register("fruit_trapdoor",
+			() -> new BlockItem(ExtraDelightBlocks.FRUIT_TRAPDOOR.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	public static final DeferredItem<BlockItem> FRUIT_CABINET = ITEMS.register("fruit_cabinet",
+			() -> new BlockItem(ExtraDelightBlocks.FRUIT_CABINET.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	public static final DeferredItem<BlockItem> FRUIT_SLAB = ITEMS.register("fruit_slab",
+			() -> new BlockItem(ExtraDelightBlocks.FRUIT_SLAB.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
 }

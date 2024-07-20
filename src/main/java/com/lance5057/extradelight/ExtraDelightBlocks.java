@@ -664,4 +664,26 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<KegBlock> KEG = BLOCKS.register("keg_block",
 			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
+
+	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_FRUIT_LOG = BLOCKS.register("stripped_fruit_log",
+			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
+	public static final DeferredBlock<RotatedPillarBlock> FRUIT_LOG = BLOCKS.register("fruit_log",
+			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
+	public static final DeferredBlock<Block> FRUIT_PLANKS = BLOCKS.register("fruit_planks",
+			() -> new Block(Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+	public static final DeferredBlock<FenceBlock> FRUIT_FENCE = BLOCKS.register("fruit_fence",
+			() -> new FenceBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE)));
+	public static final DeferredBlock<FenceGateBlock> FRUIT_FENCE_GATE = BLOCKS.register("fruit_fence_gate",
+			() -> new FenceGateBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE_GATE)));
+	public static final DeferredBlock<StairBlock> FRUIT_STAIRS = BLOCKS.register("fruit_stairs",
+			() -> new StairBlock(() -> FRUIT_PLANKS.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(Blocks.ACACIA_STAIRS)));
+	public static final DeferredBlock<DoorBlock> FRUIT_DOOR = BLOCKS.register("fruit_door",
+			() -> new DoorBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_DOOR)));
+	public static final DeferredBlock<TrapDoorBlock> FRUIT_TRAPDOOR = BLOCKS.register("fruit_trapdoor",
+			() -> new TrapDoorBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_TRAPDOOR)));
+	public static final DeferredBlock<Block> FRUIT_CABINET = BLOCKS.register("fruit_cabinet",
+			() -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
+	public static final DeferredBlock<SlabBlock> FRUIT_SLAB = BLOCKS.register("fruit_slab",
+			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.DARK_OAK_SLAB)));
 }

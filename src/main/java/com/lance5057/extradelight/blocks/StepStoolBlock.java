@@ -69,10 +69,12 @@ public class StepStoolBlock extends Block {
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
 			BlockHitResult result) {
 		if (!level.isClientSide) {
-			player.addItem(new ItemStack(this.asItem()));
-			level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
+			if (player.getItemInHand(hand).isEmpty()) {
+				player.addItem(new ItemStack(this.asItem()));
+				level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
 
-			return InteractionResult.SUCCESS;
+				return InteractionResult.SUCCESS;
+			}
 		}
 		return InteractionResult.PASS;
 	}

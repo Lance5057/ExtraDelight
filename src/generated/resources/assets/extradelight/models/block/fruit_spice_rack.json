@@ -1,0 +1,9 @@
+{
+  "parent": "extradelight:block/spicerack",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "minecraft:block/fruit_planks",
+    "2": "extradelight:block/fruit_ornate",
+    "particle": "minecraft:block/fruit_planks"
+  }
+}
