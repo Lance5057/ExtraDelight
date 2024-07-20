@@ -25,7 +25,8 @@ public class OffsetSpatulaItem extends TieredItem {
 				if (!pContext.getLevel().isClientSide())
 					pContext.getPlayer().openMenu(new SimpleMenuProvider((p_57074_, p_57075_, p_57076_) -> {
 						return new StyleableMenu(p_57074_, p_57075_,
-								ContainerLevelAccess.create(pContext.getLevel(), pContext.getClickedPos()));
+								ContainerLevelAccess.create(pContext.getLevel(), pContext.getClickedPos()),
+								pContext.getClickedPos());
 					}, CommonComponents.EMPTY));
 
 //					ClientHelper.openStyleMenu(pContext.getLevel(), pContext.getClickedPos(),
