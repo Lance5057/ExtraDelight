@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 
 import net.neoforged.bus.api.IEventBus;
@@ -27,6 +28,7 @@ public class ExtraDelight {
 		modEventBus.addListener(this::setupClient);
 		modEventBus.addListener(this::setupCommon);
 		modEventBus.addListener(ExtraDelightCapabilities::registerCapabilities);
+		modEventBus.addListener(NetworkHandler::setupPackets);
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);

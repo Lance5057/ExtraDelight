@@ -9,9 +9,13 @@ public interface IStyleable {
 
 	public int getCurrentStyle(BlockState state);
 
-	public BlockState nextStyle(Level level, BlockPos pos,BlockState state);
+	public void setNextStyle(Level level, BlockPos pos, BlockState state);
+
+	public void setPrevStyle(Level level, BlockPos pos, BlockState state);
+
+	public BlockState getState(int i);
 
 	public void setStyle(int style);
-	
+
 	public boolean isPatreonStyle(int style);
 }

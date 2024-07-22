@@ -55,7 +55,7 @@ public class FrostableBlock extends Block implements IStyleable {
 
 	@Override
 	public int numStyles() {
-		return 10;
+		return 11;
 	}
 
 	@Override
@@ -64,9 +64,9 @@ public class FrostableBlock extends Block implements IStyleable {
 	}
 
 	@Override
-	public BlockState nextStyle(Level level, BlockPos pos, BlockState state) {
+	public void setNextStyle(Level level, BlockPos pos, BlockState state) {
 		int next = state.getValue(STYLE) + 1;
-		if (state.getValue(STYLE) >= numStyles()) {
+		if (state.getValue(STYLE) >= numStyles()-1) {
 			next = 0;
 		}
 
@@ -77,7 +77,6 @@ public class FrostableBlock extends Block implements IStyleable {
 
 		BlockState nextState = state.setValue(STYLE, next);
 		level.setBlock(pos, nextState, 3);
-		return nextState;
 	}
 
 	@Override
@@ -90,5 +89,26 @@ public class FrostableBlock extends Block implements IStyleable {
 	public boolean isPatreonStyle(int style) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void setPrevStyle(Level level, BlockPos pos, BlockState state) {
+		int next = state.getValue(STYLE) - 1;
+		if (next < 0) {
+			next = this.numStyles() - 1;
+		}
+
+		for (int i = 0; i < 10; i++)
+			level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, Blocks.SNOW_BLOCK.defaultBlockState()),
+					pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, 0, 0, 0);
+		level.playSound(null, pos, SoundEvents.SLIME_BLOCK_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+
+		BlockState nextState = state.setValue(STYLE, next);
+		level.setBlock(pos, nextState, 3);
+	}
+
+	@Override
+	public BlockState getState(int i) {
+		return this.defaultBlockState().setValue(STYLE, i);
 	}
 }

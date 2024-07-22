@@ -1,6 +1,6 @@
 package com.lance5057.extradelight.util;
 
-import com.lance5057.extradelight.gui.StylableScreen;
+import com.lance5057.extradelight.gui.StyleableScreen;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;

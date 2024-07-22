@@ -33,7 +33,7 @@ public class OffsetSpatulaItem extends TieredItem {
 //							pContext.getLevel().getBlockState(pContext.getClickedPos()));
 
 			} else
-				s.nextStyle(pContext.getLevel(), pContext.getClickedPos(),
+				s.setNextStyle(pContext.getLevel(), pContext.getClickedPos(),
 						pContext.getLevel().getBlockState(pContext.getClickedPos()));
 		}
 		return InteractionResult.PASS;
