@@ -342,6 +342,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.FRUIT_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.FRUIT_CABINET.get());
 		this.add(ExtraDelightBlocks.FRUIT_SLAB.get(), createSlabItemTable(ExtraDelightBlocks.FRUIT_SLAB.get()));
+		this.dropOther(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), Items.AIR);
 	}
 
 	@Override

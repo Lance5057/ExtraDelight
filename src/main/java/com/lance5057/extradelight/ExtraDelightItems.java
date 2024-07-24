@@ -1575,4 +1575,8 @@ public class ExtraDelightItems {
 					return 300;
 				}
 			});
+
+	public static final DeferredItem<Item> HAZELNUT = ITEMS.register("hazelnut", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<BlockItem> HAZELNUT_LEAVES = ITEMS.register("hazelnut_leaves",
+			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), new Item.Properties()));
 }

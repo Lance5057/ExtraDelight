@@ -11,7 +11,6 @@ import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -23,11 +22,13 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 public class FruitLeafBlock extends Block {
 
@@ -35,13 +36,14 @@ public class FruitLeafBlock extends Block {
 	public static final IntegerProperty DISTANCE = BlockStateProperties.DISTANCE;
 	public static final int MAX_AGE = 3;
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
+	public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
 
-	private final Item fruit;
+	private final DeferredItem<Item> fruit;
 
-	public FruitLeafBlock(Properties p_49795_, Item fruit) {
+	public FruitLeafBlock(Properties p_49795_, DeferredItem<Item> fruit) {
 		super(p_49795_);
-		this.registerDefaultState(
-				this.stateDefinition.any().setValue(AGE, Integer.valueOf(0)).setValue(DISTANCE, Integer.valueOf(7)));
+		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0))
+				.setValue(DISTANCE, Integer.valueOf(7)).setValue(PERSISTENT, false));
 		this.fruit = fruit;
 	}
 
@@ -52,7 +54,7 @@ public class FruitLeafBlock extends Block {
 
 	@Override
 	public boolean isRandomlyTicking(BlockState p_54449_) {
-		return p_54449_.getValue(DISTANCE) == 7 || p_54449_.getValue(AGE) < 3;
+		return !p_54449_.getValue(PERSISTENT) && p_54449_.getValue(DISTANCE) == 7 || p_54449_.getValue(AGE) < 3;
 	}
 
 	@Override
@@ -73,7 +75,7 @@ public class FruitLeafBlock extends Block {
 	}
 
 	protected boolean decaying(BlockState p_221386_) {
-		return p_221386_.getValue(DISTANCE) == 7;
+		return !p_221386_.getValue(PERSISTENT) && p_221386_.getValue(DISTANCE) == 7;
 	}
 
 	@Override
@@ -139,12 +141,12 @@ public class FruitLeafBlock extends Block {
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_54447_) {
-		p_54447_.add(DISTANCE, AGE);
+		p_54447_.add(DISTANCE, PERSISTENT, AGE);
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext p_54424_) {
-		BlockState blockstate = this.defaultBlockState();
+		BlockState blockstate = this.defaultBlockState().setValue(PERSISTENT, Boolean.valueOf(true));
 		return updateDistance(blockstate, p_54424_.getLevel(), p_54424_.getClickedPos());
 	}
 
@@ -153,8 +155,9 @@ public class FruitLeafBlock extends Block {
 			BlockHitResult result) {
 		if (!level.isClientSide)
 			if (state.getValue(AGE) >= FruitLeafBlock.MAX_AGE) {
-				ItemStack stack = new ItemStack(this.fruit, level.random.nextInt(4)+1);
+				ItemStack stack = new ItemStack(this.fruit.get(), level.random.nextInt(3) + 1);
 				player.getInventory().placeItemBackInInventory(stack);
+				level.setBlock(pos, state.setValue(AGE, 0), 3);
 			}
 		return InteractionResult.PASS;
 	}

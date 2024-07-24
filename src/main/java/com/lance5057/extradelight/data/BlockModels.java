@@ -4,6 +4,7 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FrostableBlock;
+import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
@@ -270,7 +271,7 @@ public class BlockModels extends BlockStateProvider {
 				this.models().getExistingFile(this.modLoc("block/serving_pan")));
 		this.simpleBlock(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get(),
 				this.models().getExistingFile(this.modLoc("block/serving_bowl")));
-		
+
 		this.logBlock(ExtraDelightBlocks.FRUIT_LOG.get());
 		this.logBlock(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
 		this.simpleBlock(ExtraDelightBlocks.FRUIT_PLANKS.get());
@@ -287,10 +288,22 @@ public class BlockModels extends BlockStateProvider {
 		this.fenceGateBlock(ExtraDelightBlocks.FRUIT_FENCE_GATE.get(),
 				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_planks"));
 		this.cabinetBlock(ExtraDelightBlocks.FRUIT_CABINET.get(), "fruit");
-		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"),
-				modLoc("block/fruit_planks"));
+		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
+		this.fruitLeafBlock(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), "hazelnut");
 
 		AestheticBlocks.blockModel(this);
+	}
+
+	public void fruitLeafBlock(FruitLeafBlock block, String name) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int age = state.getValue(FruitLeafBlock.AGE);
+
+			String suffix = "_stage" + age;
+
+			ModelFile model = models().getExistingFile(modLoc("block/crops/fruit/" + name + "/" + name + "_leaves" + suffix));
+
+			return ConfiguredModel.builder().modelFile(model).build();
+		});
 	}
 
 	public void coffeeBushBlock(CoffeeBush block) {
