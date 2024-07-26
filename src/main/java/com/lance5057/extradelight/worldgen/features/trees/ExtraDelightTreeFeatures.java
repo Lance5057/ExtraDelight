@@ -2,7 +2,7 @@ package com.lance5057.extradelight.worldgen.features.trees;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -26,7 +26,7 @@ public class ExtraDelightTreeFeatures {
 				new TwoLayersFeatureSize(1, 0, 2));
 	}
 	
-	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> p_256317_) {
+	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> p_256317_) {
 		 FeatureUtils.register(p_256317_, CINNAMON, Feature.TREE, createCinnamonTree().build());
 	}
 }

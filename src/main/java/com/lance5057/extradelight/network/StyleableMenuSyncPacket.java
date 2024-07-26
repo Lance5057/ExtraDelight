@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.network.handling.PlayPayloadContext;
 
 public record StyleableMenuSyncPacket(int containerId, BlockPos pos) implements CustomPacketPayload {
-	public static final ResourceLocation id = new ResourceLocation(ExtraDelight.MOD_ID, "style_packet");
+	public static final ResourceLocation id = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "style_packet");
 
 	public StyleableMenuSyncPacket(FriendlyByteBuf buf) {
 		this(buf.readInt(), buf.readBlockPos());

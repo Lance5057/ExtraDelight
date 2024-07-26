@@ -17,26 +17,26 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class StructureLootTables implements LootTableSubProvider {
-	public static ResourceLocation curry_powder = new ResourceLocation(ExtraDelight.MOD_ID, "structures/curry_powder");
-	public static ResourceLocation furikake = new ResourceLocation(ExtraDelight.MOD_ID, "structures/furikake");
-	public static ResourceLocation meals = new ResourceLocation(ExtraDelight.MOD_ID, "structures/meals");
-	public static ResourceLocation dungeon_rot = new ResourceLocation(ExtraDelight.MOD_ID, "structures/dungeon_rot");
+	public static ResourceLocation curry_powder = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/curry_powder");
+	public static ResourceLocation furikake = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/furikake");
+	public static ResourceLocation meals = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/meals");
+	public static ResourceLocation dungeon_rot = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/dungeon_rot");
 
-	public static ResourceLocation cactus_juice = new ResourceLocation(ExtraDelight.MOD_ID, "structures/cactus_juice");
+	public static ResourceLocation cactus_juice = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/cactus_juice");
 
-	public static ResourceLocation mortar_nether = new ResourceLocation(ExtraDelight.MOD_ID,
+	public static ResourceLocation mortar_nether = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"structures/mortar_nether");
-	public static ResourceLocation mortar_dungeon = new ResourceLocation(ExtraDelight.MOD_ID,
+	public static ResourceLocation mortar_dungeon = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"structures/mortar_dungeon");
-	public static ResourceLocation pestle_nether = new ResourceLocation(ExtraDelight.MOD_ID,
+	public static ResourceLocation pestle_nether = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"structures/pestle_nether");
-	public static ResourceLocation pestle_dungeon = new ResourceLocation(ExtraDelight.MOD_ID,
+	public static ResourceLocation pestle_dungeon = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"structures/pestle_dungeon");
 
-	public static ResourceLocation corn_common = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_common");
-	public static ResourceLocation corn_uncommon = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_uncommon");
-	public static ResourceLocation corn_rare = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_rare");
-	public static ResourceLocation corn_legendary = new ResourceLocation(ExtraDelight.MOD_ID, "chests/corn_legendary");
+	public static ResourceLocation corn_common = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_common");
+	public static ResourceLocation corn_uncommon = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_uncommon");
+	public static ResourceLocation corn_rare = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_rare");
+	public static ResourceLocation corn_legendary = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_legendary");
 
 	static int COMMON = 100;
 	static int UNCOMMON = 50;

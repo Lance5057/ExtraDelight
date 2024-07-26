@@ -3,30 +3,26 @@ package com.lance5057.extradelight.blocks.keg;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
-import org.joml.Vector4f;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.util.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidStack;
 
 public class KegRenderer implements BlockEntityRenderer<KegBlockEntity> {
 
-	final ResourceLocation kegTop = new ResourceLocation(ExtraDelight.MOD_ID, "block/keg_top");
-	final ResourceLocation kegBottom = new ResourceLocation(ExtraDelight.MOD_ID, "block/keg_bottom");
-	final ResourceLocation kegSide = new ResourceLocation(ExtraDelight.MOD_ID, "block/keg_side");
+	final ResourceLocation kegTop = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/keg_top");
+	final ResourceLocation kegBottom = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/keg_bottom");
+	final ResourceLocation kegSide = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/keg_side");
 
 	public KegRenderer(BlockEntityRendererProvider.Context p_173621_) {
 	}

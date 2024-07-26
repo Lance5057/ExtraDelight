@@ -27,7 +27,7 @@
 //	protected transient List<Ingredient> ingredients;
 //	protected transient int x, y;
 //
-//	private static final ResourceLocation OVEN_GRID = new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/patchouli.png");
+//	private static final ResourceLocation OVEN_GRID = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/patchouli.png");
 //	
 //	@Override
 //	public void build(int componentX, int componentY, int pageNum) {

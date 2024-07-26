@@ -34,7 +34,7 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 	private final IDrawable icon;
 
 	public MixingBowlRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 156, 0,
+		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 156, 0,
 				100, 100);
 		localizedName = Component.translatable("extradelight.jei.mixingbowl");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,

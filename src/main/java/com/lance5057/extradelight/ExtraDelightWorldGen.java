@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ExtraDelightWorldGen {
 	public static final ResourceKey<Level> CORNFIELD = ResourceKey.create(Registries.DIMENSION,
-			new ResourceLocation(ExtraDelight.MOD_ID, "corn_dimension"));
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "corn_dimension"));
 
 	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(BuiltInRegistries.FEATURE,
 			ExtraDelight.MOD_ID);

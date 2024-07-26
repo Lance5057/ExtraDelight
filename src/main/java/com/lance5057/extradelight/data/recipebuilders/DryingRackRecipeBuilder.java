@@ -59,13 +59,13 @@ public class DryingRackRecipeBuilder implements RecipeBuilder {
 	}
 
 	public void save(RecipeOutput output, ResourceLocation id) {
-//		ResourceLocation saveID = new ResourceLocation(pRecipeId.getNamespace(),
+//		ResourceLocation saveID = ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 //				"dynamic_feast/" + pRecipeId.getPath());
-//		this.advancement.parent(new ResourceLocation("recipes/root"))
+//		this.advancement.parent(ResourceLocation.fromNamespaceAndPath("recipes/root"))
 //				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(saveID))
 //				.rewards(AdvancementRewards.Builder.recipe(saveID)).requirements(AdvancementRequirements.Strategy.OR);
 //
-////		ResourceLocation r = new ResourceLocation(pRecipeId.getNamespace(),
+////		ResourceLocation r = ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 ////				"recipes/" + result.getItemCategory().getRecipeFolderName() + "/" + pRecipeId.getPath());
 //
 ////		pFinishedRecipeConsumer.accept(new DryingRackRecipeBuilder.Result(saveID, this.group == null ? "" : this.group,

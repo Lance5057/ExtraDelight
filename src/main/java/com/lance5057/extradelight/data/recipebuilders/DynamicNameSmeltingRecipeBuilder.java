@@ -92,7 +92,7 @@
 //		pFinishedRecipeConsumer.accept(new DynamicNameSmeltingRecipeBuilder.Result(pRecipeId,
 //				this.group == null ? "" : this.group, this.ingredient, this.result, this.experience, this.cookingTime,
 //				this.advancement,
-//				new ResourceLocation(pRecipeId.getNamespace(),
+//				ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 //						"recipes/" + this.result.getItemCategory().getRecipeFolderName() + "/" + pRecipeId.getPath()),
 //				this.serializer));
 //	}

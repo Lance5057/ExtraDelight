@@ -26,7 +26,7 @@ public class DoughShapingRecipeCategory implements IRecipeCategory<DoughShapingR
 	private final IDrawable icon;
 
 	public DoughShapingRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 238,
+		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 238,
 				78, 18);
 		localizedName = Component.translatable("extradelight.jei.doughshaping");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,

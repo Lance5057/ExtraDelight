@@ -15,7 +15,7 @@
 //
 //	@Override
 //	public void setup(IVariableProvider variables) {
-//		ResourceLocation id = new ResourceLocation(variables.get("recipe").asString());
+//		ResourceLocation id = ResourceLocation.fromNamespaceAndPath(variables.get("recipe").asString());
 //		RecipeManager manager = Minecraft.getInstance().level.getRecipeManager();
 //		recipe = manager.byKey(id).orElse(null);
 //	}

@@ -21,7 +21,7 @@ public class CorncobPipeModel extends HumanoidModel<LivingEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
-			new ResourceLocation(ExtraDelight.MOD_ID, "corncob_pipe"), "head");
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "corncob_pipe"), "head");
 //	private final ModelPart bone;
 
 	public CorncobPipeModel(ModelPart root) {

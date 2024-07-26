@@ -48,7 +48,7 @@ public class StrippableLog extends RotatedPillarBlock {
 			final LootParams pContext = new LootParams.Builder((ServerLevel) level)
 					.withParameter(LootContextParams.TOOL, player.getMainHandItem())
 					.withParameter(LootContextParams.THIS_ENTITY, player).withLuck(player.getLuck() + EnchantmentHelper
-							.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE, player.getMainHandItem()))
+							.getItemEnchantmentLevel(Enchantments.FORTUNE, player.getMainHandItem()))
 					.create(LootContextParamSets.EMPTY);
 
 			player.getServer().getLootData().getLootTable(drop).getRandomItems(pContext).forEach(itemStack -> {

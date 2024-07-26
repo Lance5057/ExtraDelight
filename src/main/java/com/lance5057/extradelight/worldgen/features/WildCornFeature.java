@@ -24,7 +24,7 @@ public class WildCornFeature extends Feature<WildConfig> {
 		// TODO Auto-generated constructor stub
 	}
 
-//	FEATURE_PATCH_WILD_CORN = register(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_corn"),
+//	FEATURE_PATCH_WILD_CORN = register(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_corn"),
 //	ModBiomeFeatures.WILD_CROP.get(),
 //	WildCropGeneration.wildCropConfig(ExtraDelightBlocks.CORN_BOTTOM.get(), Blocks.SHORT_GRASS,
 //			BlockPredicate.matchesBlocks(WildCropGeneration.BLOCK_BELOW, List.of(Blocks.GRASS_BLOCK,

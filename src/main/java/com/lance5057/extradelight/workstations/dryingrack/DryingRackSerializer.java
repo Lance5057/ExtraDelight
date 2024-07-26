@@ -27,7 +27,7 @@ public class DryingRackSerializer implements RecipeSerializer<DryingRackRecipe> 
 //			itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
 //		else {
 //			String s1 = GsonHelper.getAsString(pJson, "result");
-//			ResourceLocation resourcelocation = new ResourceLocation(s1);
+//			ResourceLocation resourcelocation = ResourceLocation.fromNamespaceAndPath(s1);
 //			itemstack = new ItemStack(Registry.ITEM.getOptional(resourcelocation).orElseThrow(() -> {
 //				return new IllegalStateException("Item: " + s1 + " does not exist");
 //			}));

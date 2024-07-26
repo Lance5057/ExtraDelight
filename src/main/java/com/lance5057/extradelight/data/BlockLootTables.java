@@ -310,7 +310,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 										StatePropertiesPredicate.Builder.properties().hasProperty(CoffeeBush.AGE, 3)))
 						.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
-						.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))
+						.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.FORTUNE)))
 						.withPool(LootPool.lootPool()
 								.when(LootItemBlockStatePropertyCondition
 										.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get())
@@ -318,7 +318,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 												.hasProperty(CoffeeBush.AGE, 2)))
 								.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
-								.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
+								.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.FORTUNE)))));
 
 		this.dropSelf(ExtraDelightBlocks.KEG.get());
 
@@ -372,7 +372,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)))
 				.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
 						.add(LootItem.lootTableItem(pGrownCropItem).apply(ApplyBonusCount
-								.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 1)))));
+								.addBonusBinomialDistributionCount(Enchantments.FORTUNE, 0.5714286F, 1)))));
 	}
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition) {
@@ -383,7 +383,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 										.otherwise(LootItem.lootTableItem(pSeedsItem))))
 						.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
 								.add(LootItem.lootTableItem(pGrownCropItem).apply(
-										ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE,
+										ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.FORTUNE,
 												0.5714286F, 1)))));
 	}
 }

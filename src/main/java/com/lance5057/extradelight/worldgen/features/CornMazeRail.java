@@ -73,10 +73,10 @@
 //
 //	void spawnStop(WorldGenLevel level, BlockPos pos) {
 //		Optional<StructureTemplate> structure = level.getServer().getStructureManager()
-//				.get(new ResourceLocation(ExtraDelight.MOD_ID, "rail_stop"));
+//				.get(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "rail_stop"));
 //
 //		if(structure.isEmpty())
-//			ExtraDelight.logger.error(new ResourceLocation(ExtraDelight.MOD_ID, "rail_stop").toString() + " not found!");
+//			ExtraDelight.logger.error(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "rail_stop").toString() + " not found!");
 //		
 //		structure.ifPresent(s -> {
 //			BlockPos pos2 = s.getZeroPositionWithTransform(pos, Mirror.NONE, Rotation.NONE);

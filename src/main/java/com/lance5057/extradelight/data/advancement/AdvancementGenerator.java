@@ -79,7 +79,7 @@ public class AdvancementGenerator implements AdvancementProvider.AdvancementGene
 				.display(ExtraDelightItems.WOODEN_SPOON.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.start.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.start.desc"),
-						new ResourceLocation("extradelight:textures/block/wallpaper_red.png"), AdvancementType.TASK,
+						ResourceLocation.fromNamespaceAndPath("extradelight:textures/block/wallpaper_red.png"), AdvancementType.TASK,
 						false, false, true)
 				.addCriterion("start", InventoryChangeTrigger.TriggerInstance.hasItems(new ItemLike[] {}))
 				.save(consumer, ExtraDelight.MOD_ID + ":start");

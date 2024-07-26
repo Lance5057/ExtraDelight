@@ -31,7 +31,7 @@ public class MortarRecipeCategory implements IRecipeCategory<MortarRecipe> {
 	private final IDrawable icon;
 
 	public MortarRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 0,
+		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 0,
 				84, 52);
 		localizedName = Component.translatable("extradelight.jei.mortar");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,

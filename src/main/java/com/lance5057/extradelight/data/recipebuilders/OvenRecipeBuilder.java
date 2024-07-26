@@ -114,16 +114,16 @@ public class OvenRecipeBuilder implements RecipeBuilder {
 	}
 
 	public void build(RecipeOutput consumerIn, String save) {
-		save(consumerIn, new ResourceLocation(save));
+		save(consumerIn, ResourceLocation.fromNamespaceAndPath(save));
 	}
 
 //	public void build(RecipeOutput consumerIn, ResourceLocation id) {
-//		ResourceLocation saveID = new ResourceLocation(id.getNamespace(), "oven/" + id.getPath());
+//		ResourceLocation saveID = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "oven/" + id.getPath());
 //		if (!advancement.getCriteria().isEmpty()) {
-//			advancement.parent(new ResourceLocation("recipes/root"))
+//			advancement.parent(ResourceLocation.fromNamespaceAndPath("recipes/root"))
 //					.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
 //					.rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-//			ResourceLocation advancementId = new ResourceLocation(id.getNamespace(),
+//			ResourceLocation advancementId = ResourceLocation.fromNamespaceAndPath(id.getNamespace(),
 //					"recipes/" + result.getItemCategory().getRecipeFolderName() + "/" + id.getPath());
 //
 //			consumerIn.accept(new OvenRecipeBuilder.Result(saveID, result, count, ingredients, cookingTime, experience,

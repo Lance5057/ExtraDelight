@@ -15,7 +15,7 @@
 //
 //	GeneratedRecipe
 //	
-//	TEMP_LAVA = create(new ResourceLocation(ExtraDelight.MOD_ID, "lava"), b -> b.require(Tags.Items.COBBLESTONE)
+//	TEMP_LAVA = create(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "lava"), b -> b.require(Tags.Items.COBBLESTONE)
 //			.output(Fluids.LAVA, 50)
 //			.requiresHeat(HeatCondition.SUPERHEATED));
 //	

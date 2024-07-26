@@ -19,7 +19,7 @@
 //	}
 //
 //	ResourceLocation modLoc(String loc) {
-//		return new ResourceLocation(ExtraDelight.MOD_ID, loc);
+//		return ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, loc);
 //	}
 //
 //	@Override

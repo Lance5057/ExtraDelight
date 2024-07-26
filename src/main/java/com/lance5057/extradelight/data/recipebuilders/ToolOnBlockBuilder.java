@@ -62,15 +62,15 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 
 	@Override
 	public void save(RecipeOutput output, ResourceLocation id) {
-//		ResourceLocation saveID = new ResourceLocation(pRecipeId.getNamespace(),
+//		ResourceLocation saveID = ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 //				"tool_on_block/" + pRecipeId.getPath());
 //		this.ensureValid(pRecipeId);
-//		this.advancement.parent(new ResourceLocation("recipes/root"))
+//		this.advancement.parent(ResourceLocation.fromNamespaceAndPath("recipes/root"))
 //				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(saveID))
 //				.rewards(AdvancementRewards.Builder.recipe(saveID)).requirements(RequirementsStrategy.OR);
 //		pFinishedRecipeConsumer.accept(new ToolOnBlockBuilder.Result(saveID, this.group == null ? "" : this.group,
 //				this.tool, this.in, this.out, this.advancement,
-//				new ResourceLocation(pRecipeId.getNamespace(),
+//				ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 //						"recipes/" + this.in.getItemCategory().getRecipeFolderName() + "/" + pRecipeId.getPath()),
 //				this.serializer));
 

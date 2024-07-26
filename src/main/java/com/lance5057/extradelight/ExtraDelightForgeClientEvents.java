@@ -5,10 +5,10 @@ import com.mojang.blaze3d.shaders.FogShape;
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ViewportEvent;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightForgeClientEvents {
 	@SubscribeEvent
 	public static void onFogDensityEvent(ViewportEvent.RenderFog event) {
@@ -30,6 +30,5 @@ public class ExtraDelightForgeClientEvents {
 			event.setGreen(f);
 		}
 	}
-	
-	
+
 }

@@ -178,16 +178,16 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_PLANKS.get());
 //		this.simpleCross(ExtraDelightBlocks.CINNAMON_SAPLING.get());
 		this.stairsBlock(ExtraDelightBlocks.CINNAMON_STAIRS.get(),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
 		this.trapdoorBlockWithRenderType(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"), true, "cutout");
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"), true, "cutout");
 		this.doorBlockWithRenderType(ExtraDelightBlocks.CINNAMON_DOOR.get(),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_door_bottom"),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_door_top"), "cutout");
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_door_bottom"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_door_top"), "cutout");
 		this.fenceBlock(ExtraDelightBlocks.CINNAMON_FENCE.get(),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
 		this.fenceGateBlock(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get(),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
 		this.cabinetBlock(ExtraDelightBlocks.CINNAMON_CABINET.get(), "cinnamon");
 		this.slabBlock(ExtraDelightBlocks.CINNAMON_SLAB.get(), modLoc("block/cinnamon_planks"),
 				modLoc("block/cinnamon_planks"));
@@ -203,7 +203,7 @@ public class BlockModels extends BlockStateProvider {
 
 		this.cropCrossBlock(ExtraDelightBlocks.GINGER_CROP.get(), "ginger", GingerCrop.AGE);
 		this.simpleBlock(ExtraDelightBlocks.CANDY_BOWL.get(),
-				models().getExistingFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/candy_bowl")));
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/candy_bowl")));
 
 		this.frostableBlock(ExtraDelightBlocks.WHITE_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
 				"white");
@@ -281,16 +281,16 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.FRUIT_PLANKS.get());
 //		this.simpleCross(ExtraDelightBlocks.FRUIT_SAPLING.get());
 		this.stairsBlock(ExtraDelightBlocks.FRUIT_STAIRS.get(),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_planks"));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
 		this.trapdoorBlockWithRenderType(ExtraDelightBlocks.FRUIT_TRAPDOOR.get(),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_trapdoor"), true, "cutout");
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_trapdoor"), true, "cutout");
 		this.doorBlockWithRenderType(ExtraDelightBlocks.FRUIT_DOOR.get(),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_door_bottom"),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_door_top"), "cutout");
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_door_bottom"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_door_top"), "cutout");
 		this.fenceBlock(ExtraDelightBlocks.FRUIT_FENCE.get(),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_planks"));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
 		this.fenceGateBlock(ExtraDelightBlocks.FRUIT_FENCE_GATE.get(),
-				new ResourceLocation(ExtraDelight.MOD_ID, "block/fruit_planks"));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
 		this.cabinetBlock(ExtraDelightBlocks.FRUIT_CABINET.get(), "fruit");
 		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
 		this.fruitLeafBlock(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), "hazelnut");
@@ -425,7 +425,7 @@ public class BlockModels extends BlockStateProvider {
 
 			return ConfiguredModel.builder()
 					.modelFile(new ModelFile.ExistingModelFile(
-							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + path + suffix),
+							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + path + suffix),
 							models().existingFileHelper))
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
@@ -447,7 +447,7 @@ public class BlockModels extends BlockStateProvider {
 
 			return ConfiguredModel.builder()
 					.modelFile(new ModelFile.ExistingModelFile(
-							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + path + suffix),
+							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + path + suffix),
 							models().existingFileHelper))
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
@@ -469,7 +469,7 @@ public class BlockModels extends BlockStateProvider {
 
 			return ConfiguredModel.builder()
 					.modelFile(new ModelFile.ExistingModelFile(
-							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + path + suffix),
+							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + path + suffix),
 							models().existingFileHelper))
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
@@ -578,9 +578,9 @@ public class BlockModels extends BlockStateProvider {
 		this.horizontalBlock(block, state -> {
 			String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
 			return models().orientable(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix,
-					new ResourceLocation(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_side"),
-					new ResourceLocation(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_front" + suffix),
-					new ResourceLocation(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_top"));
+					ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_side"),
+					ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_front" + suffix),
+					ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_top"));
 		});
 	}
 }

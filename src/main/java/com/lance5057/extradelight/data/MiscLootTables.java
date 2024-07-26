@@ -25,9 +25,9 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class MiscLootTables implements LootTableSubProvider {
 
-	public static final ResourceLocation SHUCKED_CORN = new ResourceLocation(ExtraDelight.MOD_ID, "misc/shucked_corn");
-	public static final ResourceLocation CORN_TOP = new ResourceLocation(ExtraDelight.MOD_ID, "misc/corn_top");
-	public static final ResourceLocation CINNAMON_LOG = new ResourceLocation(ExtraDelight.MOD_ID, "misc/cinnamon_log");
+	public static final ResourceLocation SHUCKED_CORN = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "misc/shucked_corn");
+	public static final ResourceLocation CORN_TOP = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "misc/corn_top");
+	public static final ResourceLocation CINNAMON_LOG = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "misc/cinnamon_log");
 
 	@Override
 	public void generate(BiConsumer<ResourceLocation, Builder> t) {
@@ -71,7 +71,7 @@ public class MiscLootTables implements LootTableSubProvider {
 								.otherwise(LootItem.lootTableItem(pSeedsItem))))
 				.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
 						.add(LootItem.lootTableItem(pSeedsItem).apply(ApplyBonusCount
-								.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))));
+								.addBonusBinomialDistributionCount(Enchantments.FORTUNE, 0.5714286F, 3))));
 	}
 
 }

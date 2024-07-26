@@ -40,7 +40,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				HolderSet.Named<Biome> plains = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_PLAINS);
 				HolderSet.Named<Biome> jungle = context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_JUNGLE);
 
-//            	PATCH_WILD_CORN = registerPlacement(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_corn"),
+//            	PATCH_WILD_CORN = registerPlacement(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_corn"),
 //            	FEATURE_PATCH_WILD_CORN, RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
 //            	PlacementUtils.HEIGHTMAP, BiomeFilter.biome()); // TODO config
 
@@ -52,7 +52,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
 
-				context.register(biomeModifier(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_corn")),
+				context.register(biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_corn")),
 						new BiomeModifiers.AddFeaturesBiomeModifier(plains, wildCornHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
 
@@ -64,7 +64,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
 
-				context.register(biomeModifier(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_coffee")),
+				context.register(biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_coffee")),
 						new BiomeModifiers.AddFeaturesBiomeModifier(jungle, wildCoffeeHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
 
@@ -76,7 +76,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
 
-				context.register(biomeModifier(new ResourceLocation(ExtraDelight.MOD_ID, "patch_wild_ginger")),
+				context.register(biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_ginger")),
 						new BiomeModifiers.AddFeaturesBiomeModifier(jungle, wildGingerHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
 				
@@ -89,7 +89,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
 
-				context.register(biomeModifier(new ResourceLocation(ExtraDelight.MOD_ID, "cinnamon_tree")),
+				context.register(biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "cinnamon_tree")),
 						new BiomeModifiers.AddFeaturesBiomeModifier(jungle, cinnamonTreeHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
 			});

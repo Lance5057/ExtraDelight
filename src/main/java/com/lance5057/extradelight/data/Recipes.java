@@ -61,11 +61,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	public static final int LONG_GRIND = 8;
 
 	public static ResourceLocation EDLoc(String texture) {
-		return new ResourceLocation(ExtraDelight.MOD_ID, texture);
+		return ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, texture);
 	}
 
 //	public static ResourceLocation CreateLoc(String texture) {
-//		return new ResourceLocation(Create.ID, texture);
+//		return ResourceLocation.fromNamespaceAndPath(Create.ID, texture);
 //	}
 
 	@Override

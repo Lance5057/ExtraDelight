@@ -2,8 +2,8 @@ package com.lance5057.extradelight.aesthetics;
 
 import org.jetbrains.annotations.Nullable;
 
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -16,7 +16,7 @@ public class HelmetBlockItem extends BlockItem {
 	}
 
 	@Override
-	public boolean canEquip(ItemStack stack, EquipmentSlot armorType, Entity entity) {
+	public boolean canEquip(ItemStack stack, EquipmentSlot armorType, LivingEntity entity) {
 		return armorType == EquipmentSlot.HEAD;
 	}
 

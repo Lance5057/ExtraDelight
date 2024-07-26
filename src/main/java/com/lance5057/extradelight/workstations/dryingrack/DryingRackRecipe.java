@@ -2,8 +2,8 @@ package com.lance5057.extradelight.workstations.dryingrack;
 
 import com.lance5057.extradelight.ExtraDelightRecipes;
 
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -45,11 +45,6 @@ public class DryingRackRecipe implements Recipe<Container> {
 	}
 
 	@Override
-	public ItemStack assemble(Container p_44001_, RegistryAccess p_267165_) {
-		return this.result.copy();
-	}
-
-	@Override
 	public boolean canCraftInDimensions(int pWidth, int pHeight) {
 		// TODO Auto-generated method stub
 		return true;
@@ -57,12 +52,6 @@ public class DryingRackRecipe implements Recipe<Container> {
 
 	public Ingredient getInput() {
 		return ingredient;
-	}
-
-	@Override
-	public ItemStack getResultItem(RegistryAccess p_267052_) {
-		// TODO Auto-generated method stub
-		return result;
 	}
 
 	public int getCookingTime() {
@@ -73,6 +62,17 @@ public class DryingRackRecipe implements Recipe<Container> {
 	public RecipeType<?> getType() {
 		// TODO Auto-generated method stub
 		return ExtraDelightRecipes.DRYING_RACK.get();
+	}
+
+	@Override
+	public ItemStack assemble(Container input, Provider registries) {
+		return this.result.copy();
+	}
+
+	@Override
+	public ItemStack getResultItem(Provider registries) {
+		// TODO Auto-generated method stub
+		return result;
 	}
 
 }

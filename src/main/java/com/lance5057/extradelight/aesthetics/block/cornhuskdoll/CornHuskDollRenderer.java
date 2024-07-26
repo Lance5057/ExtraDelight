@@ -18,8 +18,8 @@ import net.neoforged.neoforge.client.model.renderable.IRenderable;
 
 public class CornHuskDollRenderer implements BlockEntityRenderer<CornHuskDollBlockEntity> {
 
-	final ResourceLocation model_down = new ResourceLocation(ExtraDelight.MOD_ID, "extra/corn_husk_doll");
-	final ResourceLocation model_up = new ResourceLocation(ExtraDelight.MOD_ID, "extra/corn_husk_doll_hang");
+	final ResourceLocation model_down = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll");
+	final ResourceLocation model_up = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll_hang");
 
 	public CornHuskDollRenderer(BlockEntityRendererProvider.Context cxt) {
 

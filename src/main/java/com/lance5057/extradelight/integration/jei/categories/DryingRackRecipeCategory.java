@@ -26,7 +26,7 @@ public class DryingRackRecipeCategory implements IRecipeCategory<DryingRackRecip
 	private final IDrawable icon;
 
 	public DryingRackRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 125,
+		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 125,
 				85, 47);
 		localizedName = Component.translatable("extradelight.jei.dryingrack");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,

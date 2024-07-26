@@ -26,7 +26,7 @@ public class ToolOnBlockRecipeCatagory implements IRecipeCategory<ToolOnBlockRec
 	private final IDrawable icon;
 
 	public ToolOnBlockRecipeCatagory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 220,
+		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 220,
 				64, 18);
 		localizedName = Component.translatable("extradelight.jei.tool_on_block");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,

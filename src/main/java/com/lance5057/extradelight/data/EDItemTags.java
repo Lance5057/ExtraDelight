@@ -56,7 +56,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.MAKES_STOCK).add(Items.BONE)
 				.add(Items.BEEF, Items.COOKED_BEEF, Items.PORKCHOP, Items.COOKED_PORKCHOP, Items.CHICKEN,
 						Items.COOKED_CHICKEN, Items.COD, Items.COOKED_COD, Items.SALMON, Items.COOKED_SALMON)
-				.addOptionalTag(new ResourceLocation("forge", "vegetables"));
+				.addOptionalTag(ResourceLocation.fromNamespaceAndPath("forge", "vegetables"));
 
 		tag(ExtraDelightTags.FRUIT_APPLE).add(Items.APPLE);
 		tag(ExtraDelightTags.FRUIT_GLOW_BERRY).add(Items.GLOW_BERRIES);

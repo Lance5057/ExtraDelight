@@ -19,12 +19,12 @@ import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class DoughShapingScreen extends AbstractContainerScreen<DoughShapingMenu> {
-	 private static final ResourceLocation SCROLLER_SPRITE = new ResourceLocation("container/stonecutter/scroller");
-	    private static final ResourceLocation SCROLLER_DISABLED_SPRITE = new ResourceLocation("container/stonecutter/scroller_disabled");
-	    private static final ResourceLocation RECIPE_SELECTED_SPRITE = new ResourceLocation("container/stonecutter/recipe_selected");
-	    private static final ResourceLocation RECIPE_HIGHLIGHTED_SPRITE = new ResourceLocation("container/stonecutter/recipe_highlighted");
-	    private static final ResourceLocation RECIPE_SPRITE = new ResourceLocation("container/stonecutter/recipe");
-	    private static final ResourceLocation BG_LOCATION = new ResourceLocation("textures/gui/container/stonecutter.png");
+	 private static final ResourceLocation SCROLLER_SPRITE = ResourceLocation.fromNamespaceAndPath("container/stonecutter/scroller");
+	    private static final ResourceLocation SCROLLER_DISABLED_SPRITE = ResourceLocation.fromNamespaceAndPath("container/stonecutter/scroller_disabled");
+	    private static final ResourceLocation RECIPE_SELECTED_SPRITE = ResourceLocation.fromNamespaceAndPath("container/stonecutter/recipe_selected");
+	    private static final ResourceLocation RECIPE_HIGHLIGHTED_SPRITE = ResourceLocation.fromNamespaceAndPath("container/stonecutter/recipe_highlighted");
+	    private static final ResourceLocation RECIPE_SPRITE = ResourceLocation.fromNamespaceAndPath("container/stonecutter/recipe");
+	    private static final ResourceLocation BG_LOCATION = ResourceLocation.fromNamespaceAndPath("textures/gui/container/stonecutter.png");
 	    private static final int SCROLLER_WIDTH = 12;
 	    private static final int SCROLLER_HEIGHT = 15;
 	    private static final int RECIPES_COLUMNS = 4;

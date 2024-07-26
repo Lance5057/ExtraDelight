@@ -10,11 +10,11 @@ import net.minecraft.world.level.block.Block;
 public class ExtraDelightTags {
 
 	public static TagKey<Item> forgeTag(String tag) {
-		return ItemTags.create(new ResourceLocation("forge", tag));
+		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", tag));
 	}
 
 	public static TagKey<Item> modTag(String tag) {
-		return ItemTags.create(new ResourceLocation("extradelight", tag));
+		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("extradelight", tag));
 	}
 
 	// General Tags
@@ -31,21 +31,27 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CATEGORY_SOUPS = modTag("category/soups");
 	public static final TagKey<Item> CATEGORY_VEGETABLES = modTag("category/vegetables");
 
-	public static final TagKey<Item> SALT = ItemTags.create(new ResourceLocation("salt", "can_be_salted"));
+	public static final TagKey<Item> SALT = ItemTags
+			.create(ResourceLocation.fromNamespaceAndPath("salt", "can_be_salted"));
 
-	public static final TagKey<Block> MORTAR_BLOCK = BlockTags.create(new ResourceLocation("forge", "mortars"));
+	public static final TagKey<Block> MORTAR_BLOCK = BlockTags
+			.create(ResourceLocation.fromNamespaceAndPath("forge", "mortars"));
 	public static final TagKey<Item> MORTAR = forgeTag("mortars");
 	public static final TagKey<Item> PESTLES = forgeTag("pestles");
 	public static final TagKey<Item> SPOONS = forgeTag("spoons");
-	public static final TagKey<Item> TRAYS = ItemTags.create(new ResourceLocation("extradelight", "baking_trays"));
+	public static final TagKey<Item> TRAYS = ItemTags
+			.create(ResourceLocation.fromNamespaceAndPath("extradelight", "baking_trays"));
 	public static final TagKey<Item> OFFSET_SPATULAS = forgeTag("offset_spatula");
 
-	public static final TagKey<Item> MAKES_STOCK = ItemTags.create(new ResourceLocation("extradelight", "makes_stock"));
-	public static final TagKey<Item> FRYING_OIL = ItemTags.create(new ResourceLocation("extradelight", "frying_oil"));
+	public static final TagKey<Item> MAKES_STOCK = ItemTags
+			.create(ResourceLocation.fromNamespaceAndPath("extradelight", "makes_stock"));
+	public static final TagKey<Item> FRYING_OIL = ItemTags
+			.create(ResourceLocation.fromNamespaceAndPath("extradelight", "frying_oil"));
 	public static final TagKey<Item> COOKING_OIL = forgeTag("cooking_oil");
 	public static final TagKey<Item> VINEGAR = forgeTag("vinegar");
 	public static final TagKey<Item> FLOUR = forgeTag("flour");
-	public static final TagKey<Item> SWEETENER = ItemTags.create(new ResourceLocation("extradelight", "sweetener"));
+	public static final TagKey<Item> SWEETENER = ItemTags
+			.create(ResourceLocation.fromNamespaceAndPath("extradelight", "sweetener"));
 	public static final TagKey<Item> GRAVY = forgeTag("gravy");
 
 	public static final TagKey<Item> MEALS = modTag("meals");

@@ -19,10 +19,10 @@ import vectorwing.farmersdelight.common.utility.TextUtils;
 
 public class OvenRecipeBookComponent extends RecipeBookComponent {
 	protected static final WidgetSprites RECIPE_BOOK_BUTTONS = new WidgetSprites(
-			new ResourceLocation(FarmersDelight.MODID, "recipe_book/cooking_pot_enabled"),
-			new ResourceLocation(FarmersDelight.MODID, "recipe_book/cooking_pot_disabled"),
-			new ResourceLocation(FarmersDelight.MODID, "recipe_book/cooking_pot_enabled_highlighted"),
-			new ResourceLocation(FarmersDelight.MODID, "recipe_book/cooking_pot_disabled_highlighted"));
+			ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "recipe_book/cooking_pot_enabled"),
+			ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "recipe_book/cooking_pot_disabled"),
+			ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "recipe_book/cooking_pot_enabled_highlighted"),
+			ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "recipe_book/cooking_pot_disabled_highlighted"));
 
 	@Override
 	protected void initFilterButtonTextures() {

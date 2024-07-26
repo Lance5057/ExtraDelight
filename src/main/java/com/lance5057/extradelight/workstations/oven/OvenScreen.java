@@ -30,9 +30,9 @@ import vectorwing.farmersdelight.common.utility.TextUtils;
 
 @ParametersAreNonnullByDefault
 public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements RecipeUpdateListener {
-	private static final WidgetSprites RECIPE_BUTTON = new WidgetSprites(new ResourceLocation("recipe_book/button"),
-			new ResourceLocation("recipe_book/button"));
-	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(ExtraDelight.MOD_ID,
+	private static final WidgetSprites RECIPE_BUTTON = new WidgetSprites(ResourceLocation.fromNamespaceAndPath("recipe_book/button"),
+			ResourceLocation.fromNamespaceAndPath("recipe_book/button"));
+	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"textures/gui/oven.png");
 	private static final Rectangle HEAT_ICON = new Rectangle(47, 55, 17, 15);
 	private static final Rectangle PROGRESS_ARROW = new Rectangle(89, 25, 10, 17);

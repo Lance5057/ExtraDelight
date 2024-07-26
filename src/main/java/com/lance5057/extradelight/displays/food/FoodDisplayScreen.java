@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class FoodDisplayScreen extends AbstractContainerScreen<FoodDisplayMenu> {
-	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(ExtraDelight.MOD_ID,
+	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"textures/gui/display.png");
 
 	public FoodDisplayScreen(FoodDisplayMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

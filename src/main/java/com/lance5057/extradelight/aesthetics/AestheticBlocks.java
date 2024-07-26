@@ -354,7 +354,7 @@ public class AestheticBlocks {
 		}
 
 		bsp.simpleBlock(CORN_HUSK_DOLL.get(),
-				bsp.models().getExistingFile(new ResourceLocation("minecraft", "block/air")));
+				bsp.models().getExistingFile(ResourceLocation.fromNamespaceAndPath("minecraft", "block/air")));
 	}
 
 	public static void itemModel(ItemModelProvider tmp) {
@@ -407,7 +407,7 @@ public class AestheticBlocks {
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			tmp.getBuilder(WALLPAPER_ITEMS.get(i).getId().getPath())
 					.parent(new ModelFile.UncheckedModelFile(
-							new ResourceLocation(ExtraDelight.MOD_ID, "block/" + BuiltInRegistries.BLOCK
+							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + BuiltInRegistries.BLOCK
 									.getKey(((BlockItem) WALLPAPER_ITEMS.get(i).get()).getBlock()).getPath())));
 
 			tmp.getBuilder(BOWS.get(i).getId().getPath())
@@ -501,19 +501,19 @@ public class AestheticBlocks {
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			DyeColor dye = DyeColor.values()[i];
 			ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, WALLPAPER_ITEMS.get(dye.ordinal()).get(), 4)
-					.requires(Items.PAPER, 4).requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + dye)))
+					.requires(Items.PAPER, 4).requires(ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "dyes/" + dye)))
 					.unlockedBy(dye + "_wallpaper", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
 					.save(consumer);
 
 			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BOW_ITEMS.get(dye.ordinal()).get(), 1).pattern(" w ")
 					.pattern(" w ").pattern("w w")
-					.define('w', BuiltInRegistries.ITEM.get(new ResourceLocation("minecraft", dye + "_wool")))
+					.define('w', BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("minecraft", dye + "_wool")))
 					.unlockedBy(dye + "_bow", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
 					.save(consumer);
 		}
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CORN_HUSK_DOLL.get()).pattern(" c ").pattern(" s ")
-				.pattern("ccc").define('c', ExtraDelightItems.DRIED_CORN_HUSK.get()).define('s', Tags.Items.STRING)
+				.pattern("ccc").define('c', ExtraDelightItems.DRIED_CORN_HUSK.get()).define('s', Tags.Items.STRINGS)
 				.unlockedBy("corn_husk_doll",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DRIED_CORN_HUSK.get()))
 				.save(consumer);
@@ -524,7 +524,7 @@ public class AestheticBlocks {
 			DyeColor d = DyeColor.values()[j];
 			String n = d + "_" + name + "_wallpaper";
 			ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, MOLDED_WALLPAPER_ITEMS.get(j + add).get(), 4)
-					.requires(Items.PAPER, 4).requires(ItemTags.create(new ResourceLocation("forge", "dyes/" + d)))
+					.requires(Items.PAPER, 4).requires(ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "dyes/" + d)))
 					.requires(slab).unlockedBy(n, InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
 					.save(consumer);
 		}

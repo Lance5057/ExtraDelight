@@ -27,7 +27,7 @@
 //	protected transient List<Ingredient> ingredients;
 //	protected transient int x, y;
 //
-//	private static final ResourceLocation POT_GRID = new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/patchouli.png");
+//	private static final ResourceLocation POT_GRID = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/patchouli.png");
 //	
 //	@Override
 //	public void onVariablesAvailable(UnaryOperator<IVariable> lookup) {

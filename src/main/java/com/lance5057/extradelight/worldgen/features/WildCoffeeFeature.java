@@ -40,8 +40,7 @@ public class WildCoffeeFeature extends Feature<WildConfig> {
 					randomsource.nextInt(k) - randomsource.nextInt(k),
 					randomsource.nextInt(j) - randomsource.nextInt(j));
 			if ((worldgenlevel.isEmptyBlock(pos) || worldgenlevel.getBlockState(pos).is(BlockTags.SNOW))
-					&& ExtraDelightBlocks.COFFEE_BUSH.get().canSurvive(worldgenlevel.getBlockState(pos), worldgenlevel,
-							pos)) {
+					&& ExtraDelightBlocks.COFFEE_BUSH.get().defaultBlockState().canSurvive(worldgenlevel, pos)) {
 				spawn(worldgenlevel, randomsource, pos);
 				++generated;
 			}
@@ -57,7 +56,8 @@ public class WildCoffeeFeature extends Feature<WildConfig> {
 	}
 
 	private void spawn(LevelAccessor worldIn, RandomSource rand, BlockPos generatingPos) {
-		worldIn.setBlock(generatingPos, ExtraDelightBlocks.COFFEE_BUSH.get().defaultBlockState().setValue(CoffeeBush.AGE, 3), 2);
+		worldIn.setBlock(generatingPos,
+				ExtraDelightBlocks.COFFEE_BUSH.get().defaultBlockState().setValue(CoffeeBush.AGE, 3), 2);
 	}
 
 }

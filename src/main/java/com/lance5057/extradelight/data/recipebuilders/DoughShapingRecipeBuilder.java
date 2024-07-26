@@ -63,13 +63,13 @@
 //
 //	@Override
 //	public void save(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ResourceLocation pRecipeId) {
-//		ResourceLocation saveID = new ResourceLocation(pRecipeId.getNamespace(), "dynamic_feast/" + pRecipeId.getPath());
-//		this.advancement.parent(new ResourceLocation("recipes/root"))
+//		ResourceLocation saveID = ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(), "dynamic_feast/" + pRecipeId.getPath());
+//		this.advancement.parent(ResourceLocation.fromNamespaceAndPath("recipes/root"))
 //				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(pRecipeId))
 //				.rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(RequirementsStrategy.OR);
 //		pFinishedRecipeConsumer.accept(new DoughShapingRecipeBuilder.Result(saveID,
 //				this.group == null ? "" : this.group, this.ingredient, this.result, count, this.advancement,
-//						new ResourceLocation(pRecipeId.getNamespace(),
+//						ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 //								"recipes/" + result.getItemCategory().getRecipeFolderName() + "/" + pRecipeId.getPath()),
 //				this.serializer));
 //	}

@@ -1,8 +1,5 @@
 package com.lance5057.extradelight.gui;
 
-import org.joml.Matrix4f;
-import org.joml.Vector4f;
-
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
 import com.mojang.blaze3d.platform.Lighting;
@@ -28,18 +25,18 @@ public class StyleableScreen extends AbstractContainerScreen<StyleableMenu> {
 
 	private BlockPos pos = BlockPos.ZERO;
 
-	private static ResourceLocation BACKGROUND = new ResourceLocation(ExtraDelight.MOD_ID,
+	private static ResourceLocation BACKGROUND = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"textures/gui/styleable.png");
 
-	private static final ResourceLocation SCROLLER_SPRITE = new ResourceLocation("container/stonecutter/scroller");
-	private static final ResourceLocation SCROLLER_DISABLED_SPRITE = new ResourceLocation(
+	private static final ResourceLocation SCROLLER_SPRITE = ResourceLocation.fromNamespaceAndPath("container/stonecutter/scroller");
+	private static final ResourceLocation SCROLLER_DISABLED_SPRITE = ResourceLocation.fromNamespaceAndPath(
 			"container/stonecutter/scroller_disabled");
-	private static final ResourceLocation RECIPE_SELECTED_SPRITE = new ResourceLocation(
+	private static final ResourceLocation RECIPE_SELECTED_SPRITE = ResourceLocation.fromNamespaceAndPath(
 			"container/stonecutter/recipe_selected");
-	private static final ResourceLocation RECIPE_HIGHLIGHTED_SPRITE = new ResourceLocation(
+	private static final ResourceLocation RECIPE_HIGHLIGHTED_SPRITE = ResourceLocation.fromNamespaceAndPath(
 			"container/stonecutter/recipe_highlighted");
-	private static final ResourceLocation RECIPE_SPRITE = new ResourceLocation("container/stonecutter/recipe");
-	private static final ResourceLocation BG_LOCATION = new ResourceLocation("textures/gui/container/stonecutter.png");
+	private static final ResourceLocation RECIPE_SPRITE = ResourceLocation.fromNamespaceAndPath("container/stonecutter/recipe");
+	private static final ResourceLocation BG_LOCATION = ResourceLocation.fromNamespaceAndPath("textures/gui/container/stonecutter.png");
 
 	private float scrollOffs;
 	private boolean scrolling;

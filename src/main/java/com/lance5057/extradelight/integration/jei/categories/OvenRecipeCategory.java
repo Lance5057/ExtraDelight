@@ -27,7 +27,7 @@ public class OvenRecipeCategory implements IRecipeCategory<OvenRecipe> {
 	private final IDrawable icon;
 
 	public OvenRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 53,
+		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 53,
 				121, 72);
 		localizedName = Component.translatable("extradelight.jei.oven");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ExtraDelightItems.OVEN.get()));

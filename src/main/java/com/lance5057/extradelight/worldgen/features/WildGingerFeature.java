@@ -39,8 +39,7 @@ public class WildGingerFeature extends Feature<WildConfig> {
 					randomsource.nextInt(k) - randomsource.nextInt(k),
 					randomsource.nextInt(j) - randomsource.nextInt(j));
 			if ((worldgenlevel.isEmptyBlock(pos) || worldgenlevel.getBlockState(pos).is(BlockTags.SNOW))
-					&& ExtraDelightBlocks.WILD_GINGER.get().canSurvive(worldgenlevel.getBlockState(pos), worldgenlevel,
-							pos)) {
+					&& ExtraDelightBlocks.WILD_GINGER.get().defaultBlockState().canSurvive(worldgenlevel, pos)) {
 				spawn(worldgenlevel, randomsource, pos);
 				++generated;
 			}

@@ -213,7 +213,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		}
 		CompoundTag compoundRecipes = compound.getCompound("RecipesUsed");
 		for (String key : compoundRecipes.getAllKeys()) {
-			usedRecipeTracker.put(new ResourceLocation(key), compoundRecipes.getInt(key));
+			usedRecipeTracker.put(ResourceLocation.fromNamespaceAndPath(key), compoundRecipes.getInt(key));
 		}
 	}
 

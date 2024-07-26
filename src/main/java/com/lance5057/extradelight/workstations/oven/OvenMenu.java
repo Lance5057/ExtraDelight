@@ -34,7 +34,7 @@ import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 import vectorwing.farmersdelight.FarmersDelight;
 
 public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
-	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = new ResourceLocation(FarmersDelight.MODID,
+	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID,
 			"item/empty_container_slot_bowl");
 
 	public final OvenBlockEntity tileEntity;

@@ -29,10 +29,10 @@ public class BasicFluid extends FluidType {
 	public BasicFluid(String name, int tint, Properties properties) {
 		super(properties);
 
-		STILL = new ResourceLocation(ExtraDelight.MOD_ID, "liquid/"+name+"_still");
-		FLOW = new ResourceLocation(ExtraDelight.MOD_ID, "liquid/"+name+"_flow");
-		OVERLAY = new ResourceLocation(ExtraDelight.MOD_ID, "liquid/"+name+"_still");
-		VIEW_OVERLAY = new ResourceLocation(ExtraDelight.MOD_ID, "textures/liquid/"+name+"_still.png");
+		STILL = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "liquid/"+name+"_still");
+		FLOW = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "liquid/"+name+"_flow");
+		OVERLAY = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "liquid/"+name+"_still");
+		VIEW_OVERLAY = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/liquid/"+name+"_still.png");
 		
 		this.tint = tint;
 	}
@@ -40,10 +40,10 @@ public class BasicFluid extends FluidType {
 	public BasicFluid(int tint, Properties properties) {
 		super(properties);
 
-		STILL = new ResourceLocation("block/water_still");
-		FLOW = new ResourceLocation("block/water_flow");
-		OVERLAY = new ResourceLocation("block/water_still");
-		VIEW_OVERLAY = new ResourceLocation("textures/block/water_still.png");
+		STILL = ResourceLocation.fromNamespaceAndPath("block/water_still");
+		FLOW = ResourceLocation.fromNamespaceAndPath("block/water_flow");
+		OVERLAY = ResourceLocation.fromNamespaceAndPath("block/water_still");
+		VIEW_OVERLAY = ResourceLocation.fromNamespaceAndPath("textures/block/water_still.png");
 		
 		this.tint = tint;
 	}
