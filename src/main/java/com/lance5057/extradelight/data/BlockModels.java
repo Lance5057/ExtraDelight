@@ -3,11 +3,14 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
+import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
+import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
@@ -18,6 +21,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -197,7 +201,7 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.SUGAR_COOKIE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
 
-		this.cropCrossBlock(ExtraDelightBlocks.GINGER_CROP.get(), "ginger");
+		this.cropCrossBlock(ExtraDelightBlocks.GINGER_CROP.get(), "ginger", GingerCrop.AGE);
 		this.simpleBlock(ExtraDelightBlocks.CANDY_BOWL.get(),
 				models().getExistingFile(new ResourceLocation(ExtraDelight.MOD_ID, "block/candy_bowl")));
 
@@ -290,8 +294,29 @@ public class BlockModels extends BlockStateProvider {
 		this.cabinetBlock(ExtraDelightBlocks.FRUIT_CABINET.get(), "fruit");
 		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
 		this.fruitLeafBlock(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), "hazelnut");
+		this.cropCrossBlock(ExtraDelightBlocks.CHILI_CROP.get(), "chili", ChiliCrop.AGE);
+
+		styleBlock(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
+				"block/cosmetics/chocolate/dark_chocolate");
+		styleBlock(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
+				"block/cosmetics/chocolate/milk_chocolate");
+		styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
+				"block/cosmetics/chocolate/white_chocolate");
 
 		AestheticBlocks.blockModel(this);
+	}
+
+	public void styleBlock(Block style, IntegerProperty count, String path) {
+		getVariantBuilder(style).forAllStates(state -> {
+			int servings = state.getValue(count);
+
+			String suffix = "_style" + servings;
+
+			return ConfiguredModel.builder()
+					.modelFile(models().withExistingParent(path + suffix.toLowerCase(), mcLoc("block/cube_all"))
+							.texture("all", modLoc(path + suffix.toLowerCase())))
+					.build();
+		});
 	}
 
 	public void fruitLeafBlock(FruitLeafBlock block, String name) {
@@ -300,7 +325,8 @@ public class BlockModels extends BlockStateProvider {
 
 			String suffix = "_stage" + age;
 
-			ModelFile model = models().getExistingFile(modLoc("block/crops/fruit/" + name + "/" + name + "_leaves" + suffix));
+			ModelFile model = models()
+					.getExistingFile(modLoc("block/crops/fruit/" + name + "/" + name + "_leaves" + suffix));
 
 			return ConfiguredModel.builder().modelFile(model).build();
 		});
@@ -527,10 +553,10 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	public void cropCrossBlock(CropBlock block, String name) {
+	public void cropCrossBlock(CropBlock block, String name, IntegerProperty age) {
 		getVariantBuilder(block).forAllStates(state -> {
-			int age = state.getValue(CornBottom.AGE);
-			String suffix = "_stage" + age;
+			int a = state.getValue(age);
+			String suffix = "_stage" + a;
 
 			return ConfiguredModel.builder().modelFile(models()
 					.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix, mcLoc("block/cross"))

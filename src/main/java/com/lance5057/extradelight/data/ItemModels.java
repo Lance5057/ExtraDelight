@@ -811,7 +811,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.COFFEE_CHERRIES, "crops/coffee/coffee_cherries");
 
 		forBlockItem(ExtraDelightItems.KEG, "keg");
-		
+
 		forBlockItem(ExtraDelightItems.STRIPPED_FRUIT_LOG, "stripped_fruit_log");
 //		forBlockItem(ExtraDelightItems.FRUIT_LOG, "fruit_log");
 		forBlockItem(ExtraDelightItems.FRUIT_PLANKS, "fruit_planks");
@@ -826,11 +826,21 @@ public class ItemModels extends ItemModelProvider {
 		this.slab(ExtraDelightItems.FRUIT_SLAB.getId().getPath(), modLoc("block/fruit_planks"),
 				modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
 
+		forItem(ExtraDelightItems.CHILI_SEEDS, "crops/chili/chili_seeds");
+		forItem(ExtraDelightItems.CHILI, "crops/chili/chili_pepper");
+
+		forItemModel(ExtraDelightItems.JAR, "blocks/jar");
+
 		AestheticBlocks.itemModel(this);
 	}
 
 	public void forItem(DeferredItem<? extends Item> item, String name) {
 		this.singleTexture(item.getId().getPath(), mcLoc("item/handheld"), "layer0", modLoc("item/" + name));
+	}
+
+	public void forItemModel(DeferredItem<? extends Item> item, String path) {
+		getBuilder(item.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(ExtraDelight.MOD_ID, path)));
 	}
 
 	public void forBlockItem(DeferredItem<? extends BlockItem> item, String name) {

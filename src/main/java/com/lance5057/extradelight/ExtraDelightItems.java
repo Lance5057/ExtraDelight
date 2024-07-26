@@ -1579,4 +1579,17 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> HAZELNUT = ITEMS.register("hazelnut", () -> new Item(new Item.Properties()));
 	public static final DeferredItem<BlockItem> HAZELNUT_LEAVES = ITEMS.register("hazelnut_leaves",
 			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), new Item.Properties()));
+
+	public static final DeferredItem<Item> CHILI_SEEDS = ITEMS.register("chili_seeds",
+			() -> new ItemNameBlockItem(ExtraDelightBlocks.CHILI_CROP.get(), new Item.Properties()));
+	public static final DeferredItem<Item> CHILI = ITEMS.register("chili", () -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> MILK_CHOCOLATE_BLOCK = ITEMS.register("milk_chocolate_block",
+			() -> new BlockItem(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> DARK_CHOCOLATE_BLOCK = ITEMS.register("dark_chocolate_block",
+			() -> new BlockItem(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> WHITE_CHOCOLATE_BLOCK = ITEMS.register("white_chocolate_block",
+			() -> new BlockItem(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), new Item.Properties()));
+	
+	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new Item(new Item.Properties()));
 }

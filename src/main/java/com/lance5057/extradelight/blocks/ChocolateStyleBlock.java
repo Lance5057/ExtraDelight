@@ -14,14 +14,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
-public class FrostableBlock extends Block implements IStyleable {
-	public static enum Styles {
-		CREEPER, CROSS, EYE, PIGLIN, SHINGLE, SKELETON, SNOW, SNOW_TRIM, SWIRL, TRIM, WITHER
-	};
+public class ChocolateStyleBlock extends Block implements IStyleable {
+	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, 3);
 
-	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, 10);
-
-	public FrostableBlock(Properties pProperties) {
+	public ChocolateStyleBlock(Properties pProperties) {
 		super(pProperties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(STYLE, 0));
 	}
@@ -32,7 +28,7 @@ public class FrostableBlock extends Block implements IStyleable {
 
 	@Override
 	public int numStyles() {
-		return 11;
+		return 4;
 	}
 
 	@Override
