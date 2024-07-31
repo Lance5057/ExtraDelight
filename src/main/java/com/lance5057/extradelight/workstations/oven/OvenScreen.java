@@ -30,8 +30,8 @@ import vectorwing.farmersdelight.common.utility.TextUtils;
 
 @ParametersAreNonnullByDefault
 public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements RecipeUpdateListener {
-	private static final WidgetSprites RECIPE_BUTTON = new WidgetSprites(ResourceLocation.fromNamespaceAndPath("recipe_book/button"),
-			ResourceLocation.fromNamespaceAndPath("recipe_book/button"));
+	private static final WidgetSprites RECIPE_BUTTON = new WidgetSprites(ResourceLocation.withDefaultNamespace("recipe_book/button"),
+			ResourceLocation.withDefaultNamespace("recipe_book/button"));
 	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"textures/gui/oven.png");
 	private static final Rectangle HEAT_ICON = new Rectangle(47, 55, 17, 15);
@@ -103,7 +103,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 
 				ItemStack mealStack = this.hoveredSlot.getItem();
 				tooltip.add(((MutableComponent) mealStack.getItem().getDescription())
-						.withStyle(mealStack.getRarity().color));
+						.withStyle(mealStack.getRarity().getStyleModifier()));
 
 				ItemStack containerStack = this.menu.tileEntity.getContainer();
 				String container = !containerStack.isEmpty() ? containerStack.getItem().getDescription().getString()

@@ -8,11 +8,12 @@ import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
@@ -21,8 +22,8 @@ public class ExtraDelight {
 
 	public static Logger logger = LogManager.getLogger();
 
-	public ExtraDelight(IEventBus modEventBus) {
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ExtraDelightConfig.spec);
+	public ExtraDelight(IEventBus modEventBus, ModContainer modContainer) {
+		modContainer.registerConfig(ModConfig.Type.COMMON, ExtraDelightConfig.spec);
 
 //		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setupClient);
@@ -58,7 +59,7 @@ public class ExtraDelight {
 
 		event.enqueueWork(() -> {
 			ExtraDelightClientEvents.setTERenderers();
-			ExtraDelightContainers.registerClient(event);
+			NeoForge.EVENT_BUS.register(ExtraDelightContainers.class);
 		});
 	}
 

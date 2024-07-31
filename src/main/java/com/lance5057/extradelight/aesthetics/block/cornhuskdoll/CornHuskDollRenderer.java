@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -18,8 +19,10 @@ import net.neoforged.neoforge.client.model.renderable.IRenderable;
 
 public class CornHuskDollRenderer implements BlockEntityRenderer<CornHuskDollBlockEntity> {
 
-	final ResourceLocation model_down = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll");
-	final ResourceLocation model_up = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll_hang");
+	final ModelResourceLocation model_down = ModelResourceLocation
+			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll"));
+	final ModelResourceLocation model_up = ModelResourceLocation
+			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll_hang"));
 
 	public CornHuskDollRenderer(BlockEntityRendererProvider.Context cxt) {
 

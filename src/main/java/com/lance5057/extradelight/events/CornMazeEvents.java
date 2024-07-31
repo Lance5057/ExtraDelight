@@ -1,6 +1,5 @@
 package com.lance5057.extradelight.events;
 
-import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.ExtraDelightWorldGen;
 
@@ -11,12 +10,12 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 
-@Mod.EventBusSubscriber(modid = ExtraDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod("extradelight")
 public class CornMazeEvents {
 	@SubscribeEvent
-	public static void onDeath(LivingHurtEvent event) {
+	public static void onDeath(LivingIncomingDamageEvent event) {
 		if (event.getEntity().level().dimension() == ExtraDelightWorldGen.CORNFIELD)
 			if (event.getEntity() instanceof ServerPlayer p) {
 				if (p.getHealth() <= event.getAmount()) {

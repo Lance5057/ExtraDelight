@@ -6,6 +6,7 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 import com.lance5057.extradelight.workstations.oven.slots.OvenResultSlot;
 import com.mojang.datafixers.util.Pair;
 
@@ -22,7 +23,6 @@ import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -33,7 +33,7 @@ import net.neoforged.neoforge.items.SlotItemHandler;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 import vectorwing.farmersdelight.FarmersDelight;
 
-public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
+public class OvenMenu extends RecipeBookMenu<RecipeWrapper, OvenRecipe> {
 	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID,
 			"item/empty_container_slot_bowl");
 
@@ -182,11 +182,6 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 	}
 
 	@Override
-	public boolean recipeMatches(RecipeHolder<? extends Recipe<RecipeWrapper>> recipe) {
-		return recipe.value().matches(new RecipeWrapper(inventory), level);
-	}
-
-	@Override
 	public int getResultSlotIndex() {
 		return 11;
 	}
@@ -214,5 +209,10 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper> {
 	@Override
 	public boolean shouldMoveToInventory(int slot) {
 		return slot < (getGridWidth() * getGridHeight());
+	}
+
+	@Override
+	public boolean recipeMatches(RecipeHolder<OvenRecipe> recipe) {
+		return recipe.value().matches(new RecipeWrapper(inventory), level);
 	}
 }

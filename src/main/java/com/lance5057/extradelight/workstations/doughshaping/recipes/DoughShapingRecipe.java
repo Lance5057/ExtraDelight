@@ -6,12 +6,15 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.SingleItemRecipe;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 
 public class DoughShapingRecipe extends SingleItemRecipe {
@@ -23,8 +26,8 @@ public class DoughShapingRecipe extends SingleItemRecipe {
 	/**
 	 * Used to check if a recipe matches current crafting inventory
 	 */
-	public boolean matches(Container pInv, Level pLevel) {
-		return this.ingredient.test(pInv.getItem(0));
+	public boolean matches(SingleRecipeInput input, Level level) {
+		return this.ingredient.test(input.item());
 	}
 
 	public ItemStack getToastSymbol() {
@@ -54,7 +57,7 @@ public class DoughShapingRecipe extends SingleItemRecipe {
 
 						Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(p_301068_ -> p_301068_.ingredient),
 
-						ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("result").forGetter(r -> r.result))
+						ItemStack.CODEC.fieldOf("result").forGetter(r -> r.result))
 				.apply(inst, DoughShapingRecipe::new));
 
 		public DoughShapingRecipe fromNetwork(FriendlyByteBuf pBuffer) {
@@ -73,6 +76,11 @@ public class DoughShapingRecipe extends SingleItemRecipe {
 		@Override
 		public Codec<DoughShapingRecipe> codec() {
 			return CODEC;
+		}
+
+		@Override
+		public StreamCodec<RegistryFriendlyByteBuf, DoughShapingRecipe> streamCodec() {
+			return STREAM_CODEC;
 		}
 	}
 }

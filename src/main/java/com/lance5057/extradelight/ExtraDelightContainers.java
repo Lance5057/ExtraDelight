@@ -21,11 +21,11 @@ import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.oven.OvenMenu;
 import com.lance5057.extradelight.workstations.oven.OvenScreen;
 
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -59,15 +59,16 @@ public class ExtraDelightContainers {
 		MENU_TYPES.register(modBus);
 	}
 
-	public static void registerClient(FMLClientSetupEvent event) {
-		MenuScreens.register(OVEN_MENU.get(), OvenScreen::new);
-		MenuScreens.register(FOOD_DISPLAY_MENU.get(), FoodDisplayScreen::new);
-		MenuScreens.register(KNIFE_BLOCK_MENU.get(), KnifeBlockScreen::new);
-		MenuScreens.register(SPICE_RACK_MENU.get(), SpiceRackScreen::new);
-		MenuScreens.register(DOUGH_SHAPING_MENU.get(), DoughShapingScreen::new);
-		MenuScreens.register(WREATH_MENU.get(), WreathScreen::new);
-		MenuScreens.register(SINK_MENU.get(), SinkCabinetScreen::new);
-		MenuScreens.register(COUNTER_CABINET_MENU.get(), CounterCabinetScreen::new);
-		MenuScreens.register(STYLE_MENU.get(), StyleableScreen::new);
+	@SubscribeEvent
+	public static void registerClient(RegisterMenuScreensEvent event) {
+		event.register(OVEN_MENU.get(), OvenScreen::new);
+		event.register(FOOD_DISPLAY_MENU.get(), FoodDisplayScreen::new);
+		event.register(KNIFE_BLOCK_MENU.get(), KnifeBlockScreen::new);
+		event.register(SPICE_RACK_MENU.get(), SpiceRackScreen::new);
+		event.register(DOUGH_SHAPING_MENU.get(), DoughShapingScreen::new);
+		event.register(WREATH_MENU.get(), WreathScreen::new);
+		event.register(SINK_MENU.get(), SinkCabinetScreen::new);
+		event.register(COUNTER_CABINET_MENU.get(), CounterCabinetScreen::new);
+		event.register(STYLE_MENU.get(), StyleableScreen::new);
 	}
 }

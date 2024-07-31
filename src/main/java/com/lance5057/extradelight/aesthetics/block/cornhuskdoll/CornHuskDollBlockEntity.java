@@ -7,6 +7,7 @@ import com.lance5057.extradelight.ExtraDelightWorldGen;
 import com.lance5057.extradelight.util.MathUtil;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -75,8 +76,8 @@ public class CornHuskDollBlockEntity extends BlockEntity {
 	}
 
 	@Override
-	public CompoundTag getUpdateTag() {
-		CompoundTag nbt = super.getUpdateTag();
+	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+		CompoundTag nbt = super.getUpdateTag(registries);
 
 		writeNBT(nbt);
 
@@ -84,12 +85,12 @@ public class CornHuskDollBlockEntity extends BlockEntity {
 	}
 
 	@Override
-	public void handleUpdateTag(CompoundTag tag) {
+	public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
 		readNBT(tag);
 	}
 
 	@Override
-	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
+	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
 		CompoundTag tag = pkt.getTag();
 		// InteractionHandle your Data
 		readNBT(tag);
@@ -108,14 +109,14 @@ public class CornHuskDollBlockEntity extends BlockEntity {
 	}
 
 	@Override
-	public void load(@Nonnull CompoundTag nbt) {
-		super.load(nbt);
+	public void loadAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+		super.loadAdditional(nbt, registries);
 		readNBT(nbt);
 	}
 
 	@Override
-	public void saveAdditional(@Nonnull CompoundTag nbt) {
-		super.saveAdditional(nbt);
+	public void saveAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+		super.saveAdditional(nbt, registries);
 		writeNBT(nbt);
 	}
 }

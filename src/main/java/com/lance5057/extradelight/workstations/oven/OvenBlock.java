@@ -11,11 +11,8 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -67,8 +64,7 @@ public class OvenBlock extends Block implements EntityBlock, SimpleWaterloggedBl
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
-			BlockHitResult result) {
+	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
 		if (!level.isClientSide) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof OvenBlockEntity OvenEntity) {
@@ -184,16 +180,16 @@ public class OvenBlock extends Block implements EntityBlock, SimpleWaterloggedBl
 		builder.add(FACING, SUPPORT, WATERLOGGED);
 	}
 
-	@Override
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer,
-			ItemStack stack) {
-		if (stack.hasCustomHoverName()) {
-			BlockEntity tileEntity = level.getBlockEntity(pos);
-			if (tileEntity instanceof OvenBlockEntity) {
-				((OvenBlockEntity) tileEntity).setCustomName(stack.getHoverName());
-			}
-		}
-	}
+//	@Override
+//	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer,
+//			ItemStack stack) {
+//		if (stack.hasCustomHoverName()) {
+//			BlockEntity tileEntity = level.getBlockEntity(pos);
+//			if (tileEntity instanceof OvenBlockEntity) {
+//				((OvenBlockEntity) tileEntity).setCustomName(stack.getHoverName());
+//			}
+//		}
+//	}
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
