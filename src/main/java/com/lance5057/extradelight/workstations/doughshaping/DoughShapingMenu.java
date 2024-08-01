@@ -24,6 +24,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 
 public class DoughShapingMenu extends AbstractContainerMenu {
@@ -65,9 +66,14 @@ public class DoughShapingMenu extends AbstractContainerMenu {
 			DoughShapingMenu.this.slotUpdateListener.run();
 		}
 	};
+
+	private static SingleRecipeInput createRecipeInput(Container container) {
+		return new SingleRecipeInput(container.getItem(0));
+	}
+
 	/** The inventory that stores the output of the crafting recipe. */
 	final ResultContainer resultContainer = new ResultContainer();
-	
+
 	public DoughShapingMenu(final int windowId, final Inventory playerInventory, final FriendlyByteBuf data) {
 		this(windowId, playerInventory);
 	}
@@ -185,16 +191,22 @@ public class DoughShapingMenu extends AbstractContainerMenu {
 		this.resultSlot.set(ItemStack.EMPTY);
 		if (!pStack.isEmpty()) {
 			this.recipes = this.level.getRecipeManager().getRecipesFor(ExtraDelightRecipes.DOUGH_SHAPING.get(),
-					pContainer, this.level);
+					createRecipeInput(pContainer), this.level);
 		}
 
 	}
 
 	void setupResultSlot() {
 		if (!this.recipes.isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
-			RecipeHolder<DoughShapingRecipe> DoughShapingrecipe = this.recipes.get(this.selectedRecipeIndex.get());
-			this.resultContainer.setRecipeUsed(DoughShapingrecipe);
-			this.resultSlot.set(DoughShapingrecipe.value().assemble(this.container, this.level.registryAccess()));
+			RecipeHolder<DoughShapingRecipe> recipeholder = this.recipes.get(this.selectedRecipeIndex.get());
+			ItemStack itemstack = recipeholder.value().assemble(createRecipeInput(this.container),
+					this.level.registryAccess());
+			if (itemstack.isItemEnabled(this.level.enabledFeatures())) {
+				this.resultContainer.setRecipeUsed(recipeholder);
+				this.resultSlot.set(itemstack);
+			} else {
+				this.resultSlot.set(ItemStack.EMPTY);
+			}
 		} else {
 			this.resultSlot.set(ItemStack.EMPTY);
 		}
@@ -241,8 +253,8 @@ public class DoughShapingMenu extends AbstractContainerMenu {
 				if (!this.moveItemStackTo(itemstack1, 2, 38, false)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (this.level.getRecipeManager()
-					.getRecipeFor(ExtraDelightRecipes.DOUGH_SHAPING.get(), new SimpleContainer(itemstack1), this.level).isPresent()) {
+			} else if (this.level.getRecipeManager().getRecipeFor(ExtraDelightRecipes.DOUGH_SHAPING.get(),
+					new SingleRecipeInput(itemstack1), this.level).isPresent()) {
 				if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
 					return ItemStack.EMPTY;
 				}

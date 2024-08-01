@@ -15,8 +15,9 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 
-public class ToolOnBlockRecipe implements Recipe<Container> {
+public class ToolOnBlockRecipe implements Recipe<RecipeWrapper> {
 
 	protected final Ingredient tool;
 

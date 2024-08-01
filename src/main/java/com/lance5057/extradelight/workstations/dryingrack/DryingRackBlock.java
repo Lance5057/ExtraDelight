@@ -7,7 +7,7 @@ import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -39,8 +39,8 @@ public class DryingRackBlock extends Block implements EntityBlock {
 
 	@Nonnull
 	@Override
-	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
-			BlockHitResult pHit) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
+			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
 		BlockEntity blockentity = pLevel.getBlockEntity(pPos);
 		if (blockentity instanceof DryingRackBlockEntity) {
 			DryingRackBlockEntity be = (DryingRackBlockEntity) blockentity;
@@ -48,23 +48,23 @@ public class DryingRackBlock extends Block implements EntityBlock {
 			if (pPlayer.isCrouching()) {
 				if (!pLevel.isClientSide) {
 					be.extractItem(pPlayer);
-					return InteractionResult.SUCCESS;
+					return ItemInteractionResult.SUCCESS;
 				}
-				return InteractionResult.CONSUME;
+				return ItemInteractionResult.CONSUME;
 			} else {
 
 				ItemStack itemstack = pPlayer.getItemInHand(pHand);
 				if (!pLevel.isClientSide) {
 					// pPlayer.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
 					be.insertItem(itemstack);
-					return InteractionResult.SUCCESS;
+					return ItemInteractionResult.SUCCESS;
 				}
 
-				return InteractionResult.CONSUME;
+				return ItemInteractionResult.CONSUME;
 			}
 		}
 
-		return InteractionResult.PASS;
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 
 	@Override

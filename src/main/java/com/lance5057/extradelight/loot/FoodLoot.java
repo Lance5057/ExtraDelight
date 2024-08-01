@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import com.google.common.base.Suppliers;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -18,7 +18,7 @@ import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
 
 public class FoodLoot extends LootModifier {
-	public static final Supplier<Codec<FoodLoot>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(
+	public static final Supplier<MapCodec<FoodLoot>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(
 			inst -> codecStart(inst).and(ResourceLocation.CODEC.fieldOf("loot_table").forGetter(m -> m.lootTableID))
 					.apply(inst, FoodLoot::new)));
 
@@ -41,7 +41,7 @@ public class FoodLoot extends LootModifier {
 	}
 
 	@Override
-	public Codec<? extends IGlobalLootModifier> codec() {
+	public MapCodec<? extends IGlobalLootModifier> codec() {
 		return CODEC.get();
 	}
 }

@@ -2,7 +2,10 @@ package com.lance5057.extradelight.workstations.doughshaping.recipes;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.workstations.dryingrack.DryingRackRecipe;
+import com.lance5057.extradelight.workstations.dryingrack.DryingRackSerializer;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.network.FriendlyByteBuf;
@@ -35,48 +38,36 @@ public class DoughShapingRecipe extends SingleItemRecipe {
 	}
 
 	public static class Serializer implements RecipeSerializer<DoughShapingRecipe> {
-//		@Override
-//		public DoughShapingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
-//			String s = GsonHelper.getAsString(pJson, "group", "");
-//			Ingredient ingredient;
-//			if (GsonHelper.isArrayNode(pJson, "ingredient")) {
-//				ingredient = Ingredient.fromJson(GsonHelper.getAsJsonArray(pJson, "ingredient"));
-//			} else {
-//				ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "ingredient"));
-//			}
-//
-//			String s1 = GsonHelper.getAsString(pJson, "result");
-//			int i = GsonHelper.getAsInt(pJson, "count");
-//			ItemStack itemstack = new ItemStack(Registry.ITEM.get(ResourceLocation.fromNamespaceAndPath(s1)), i);
-//			return new DoughShapingRecipe(pRecipeId, s1, ingredient, itemstack);
-//		}
+		private static final MapCodec<DoughShapingRecipe> CODEC = RecordCodecBuilder
+				.mapCodec(inst -> inst
+						.group(Codec.STRING.optionalFieldOf("group", "").forGetter(DoughShapingRecipe::getGroup),
 
-		private static final Codec<DoughShapingRecipe> CODEC = RecordCodecBuilder.create(inst -> inst
-				.group(ExtraCodecs.strictOptionalField(Codec.STRING, "group", "")
-						.forGetter(DoughShapingRecipe::getGroup),
+								Ingredient.CODEC_NONEMPTY.fieldOf("ingredient")
+										.forGetter(p_301068_ -> p_301068_.ingredient),
 
-						Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(p_301068_ -> p_301068_.ingredient),
+								ItemStack.CODEC.fieldOf("result").forGetter(r -> r.result))
+						.apply(inst, DoughShapingRecipe::new));
 
-						ItemStack.CODEC.fieldOf("result").forGetter(r -> r.result))
-				.apply(inst, DoughShapingRecipe::new));
-
-		public DoughShapingRecipe fromNetwork(FriendlyByteBuf pBuffer) {
+		public static DoughShapingRecipe fromNetwork(RegistryFriendlyByteBuf pBuffer) {
 			String s = pBuffer.readUtf();
-			Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
-			ItemStack itemstack = pBuffer.readItem();
+			Ingredient ingredient = Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer);
+			ItemStack itemstack = ItemStack.STREAM_CODEC.decode(pBuffer);
 			return new DoughShapingRecipe(s, ingredient, itemstack);
 		}
 
-		public void toNetwork(FriendlyByteBuf pBuffer, DoughShapingRecipe pRecipe) {
+		public static void toNetwork(RegistryFriendlyByteBuf pBuffer, DoughShapingRecipe pRecipe) {
 			pBuffer.writeUtf(pRecipe.group);
-			pRecipe.ingredient.toNetwork(pBuffer);
-			pBuffer.writeItem(pRecipe.result);
+			Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, pRecipe.ingredient);
+			ItemStack.STREAM_CODEC.encode(pBuffer, pRecipe.result);
 		}
 
 		@Override
-		public Codec<DoughShapingRecipe> codec() {
+		public MapCodec<DoughShapingRecipe> codec() {
 			return CODEC;
 		}
+
+		public static final StreamCodec<RegistryFriendlyByteBuf, DoughShapingRecipe> STREAM_CODEC = StreamCodec
+				.of(DoughShapingRecipe.Serializer::toNetwork, DoughShapingRecipe.Serializer::fromNetwork);
 
 		@Override
 		public StreamCodec<RegistryFriendlyByteBuf, DoughShapingRecipe> streamCodec() {

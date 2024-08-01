@@ -34,7 +34,8 @@ public class ExtraDelight {
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);
 		AestheticBlocks.ITEMS.register(modEventBus);
-//
+
+		ExtraDelightComponents.COMPONENTS.register(modEventBus);
 		ExtraDelightBlocks.register(modEventBus);
 		ExtraDelightFluids.register(modEventBus);
 		ExtraDelightItems.ITEMS.register(modEventBus);

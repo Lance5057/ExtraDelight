@@ -28,15 +28,15 @@ public class StyleableScreen extends AbstractContainerScreen<StyleableMenu> {
 	private static ResourceLocation BACKGROUND = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"textures/gui/styleable.png");
 
-	private static final ResourceLocation SCROLLER_SPRITE = ResourceLocation.fromNamespaceAndPath("container/stonecutter/scroller");
-	private static final ResourceLocation SCROLLER_DISABLED_SPRITE = ResourceLocation.fromNamespaceAndPath(
+	private static final ResourceLocation SCROLLER_SPRITE = ResourceLocation.withDefaultNamespace("container/stonecutter/scroller");
+	private static final ResourceLocation SCROLLER_DISABLED_SPRITE = ResourceLocation.withDefaultNamespace(
 			"container/stonecutter/scroller_disabled");
-	private static final ResourceLocation RECIPE_SELECTED_SPRITE = ResourceLocation.fromNamespaceAndPath(
+	private static final ResourceLocation RECIPE_SELECTED_SPRITE = ResourceLocation.withDefaultNamespace(
 			"container/stonecutter/recipe_selected");
-	private static final ResourceLocation RECIPE_HIGHLIGHTED_SPRITE = ResourceLocation.fromNamespaceAndPath(
+	private static final ResourceLocation RECIPE_HIGHLIGHTED_SPRITE = ResourceLocation.withDefaultNamespace(
 			"container/stonecutter/recipe_highlighted");
-	private static final ResourceLocation RECIPE_SPRITE = ResourceLocation.fromNamespaceAndPath("container/stonecutter/recipe");
-	private static final ResourceLocation BG_LOCATION = ResourceLocation.fromNamespaceAndPath("textures/gui/container/stonecutter.png");
+	private static final ResourceLocation RECIPE_SPRITE = ResourceLocation.withDefaultNamespace("container/stonecutter/recipe");
+	private static final ResourceLocation BG_LOCATION = ResourceLocation.withDefaultNamespace("textures/gui/container/stonecutter.png");
 
 	private float scrollOffs;
 	private boolean scrolling;

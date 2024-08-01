@@ -114,7 +114,7 @@ public class OvenRecipeBuilder implements RecipeBuilder {
 	}
 
 	public void build(RecipeOutput consumerIn, String save) {
-		save(consumerIn, ResourceLocation.fromNamespaceAndPath(save));
+		save(consumerIn, ResourceLocation.parse(save));
 	}
 
 //	public void build(RecipeOutput consumerIn, ResourceLocation id) {

@@ -8,12 +8,13 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.util.ExtraCodecs;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -76,7 +77,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public ItemStack getResultItem(RegistryAccess p_267052_) {
+	public ItemStack getResultItem(Provider registries) {
 		return this.output;
 	}
 
@@ -85,7 +86,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public ItemStack assemble(RecipeWrapper inv, RegistryAccess p_267165_) {
+	public ItemStack assemble(RecipeWrapper input, Provider registries) {
 		return this.output.copy();
 	}
 
@@ -137,103 +138,67 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 		public Serializer() {
 		}
 
-		private static final Codec<OvenRecipe> CODEC = RecordCodecBuilder.create(inst -> inst.group(
-				ExtraCodecs.strictOptionalField(Codec.STRING, "group", "").forGetter(OvenRecipe::getGroup),
-				ExtraCodecs.strictOptionalField(OvenRecipeBookTab.CODEC, "recipe_book_tab")
+		private static final MapCodec<OvenRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
+				Codec.STRING.optionalFieldOf("group", "").forGetter(OvenRecipe::getGroup),
+				OvenRecipeBookTab.CODEC.optionalFieldOf("recipe_book_tab")
 						.xmap(optional -> optional.orElse(null), Optional::of).forGetter(OvenRecipe::getRecipeBookTab),
 				Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ingredients -> {
 					NonNullList<Ingredient> nonNullList = NonNullList.create();
 					nonNullList.addAll(ingredients);
 					return nonNullList;
 				}, ingredients -> ingredients).forGetter(OvenRecipe::getIngredients),
-				ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("result").forGetter(r -> r.output),
-				ExtraCodecs.strictOptionalField(ItemStack.ITEM_WITH_COUNT_CODEC, "container", ItemStack.EMPTY)
+				ItemStack.CODEC.fieldOf("result").forGetter(r -> r.output),
+				ItemStack.CODEC.lenientOptionalFieldOf("container", ItemStack.EMPTY)
 						.forGetter(OvenRecipe::getContainerOverride),
-				ExtraCodecs.strictOptionalField(Codec.FLOAT, "experience", 0.0F).forGetter(OvenRecipe::getExperience),
-				ExtraCodecs.strictOptionalField(Codec.INT, "cookingtime", 200).forGetter(OvenRecipe::getCookTime))
+				Codec.FLOAT.optionalFieldOf("experience", 0.0F).forGetter(OvenRecipe::getExperience),
+				Codec.INT.lenientOptionalFieldOf("cookingtime", 200).forGetter(OvenRecipe::getCookTime))
 				.apply(inst, OvenRecipe::new));
 
-//		@Override
-//		public OvenRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
-//			final String groupIn = GsonHelper.getAsString(json, "group", "");
-//			final NonNullList<Ingredient> inputItemsIn = readIngredients(
-//					GsonHelper.getAsJsonArray(json, "ingredients"));
-//			if (inputItemsIn.isEmpty()) {
-//				throw new JsonParseException("No ingredients for cooking recipe");
-//			} else if (inputItemsIn.size() > OvenRecipe.INPUT_SLOTS) {
-//				throw new JsonParseException(
-//						"Too many ingredients for cooking recipe! The max is " + OvenRecipe.INPUT_SLOTS);
-//			} else {
-//				final String tabKeyIn = GsonHelper.getAsString(json, "recipe_book_tab", null);
-//				final OvenRecipeBookTab tabIn = OvenRecipeBookTab.findByName(tabKeyIn);
-//				if (tabKeyIn != null && tabIn == null) {
-//					ExtraDelight.logger.warn(
-//							"Optional field 'recipe_book_tab' does not match any valid tab. If defined, must be one of the following: "
-//									+ EnumSet.allOf(OvenRecipeBookTab.class));
-//				}
-//				final ItemStack outputIn = CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "result"),
-//						true);
-//				ItemStack container = GsonHelper.isValidNode(json, "container")
-//						? CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "container"), true)
-//						: ItemStack.EMPTY;
-//				final float experienceIn = GsonHelper.getAsFloat(json, "experience", 0.0F);
-//				final int cookTimeIn = GsonHelper.getAsInt(json, "cookingtime", 200);
-//				return new OvenRecipe(recipeId, groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn,
-//						cookTimeIn);
-//			}
-//		}
-
-//		private static NonNullList<Ingredient> readIngredients(JsonArray ingredientArray) {
-//			NonNullList<Ingredient> nonnulllist = NonNullList.create();
-//
-//			for (int i = 0; i < ingredientArray.size(); ++i) {
-//				Ingredient ingredient = Ingredient.fromJson(ingredientArray.get(i));
-//				if (!ingredient.isEmpty()) {
-//					nonnulllist.add(ingredient);
-//				}
-//			}
-//
-//			return nonnulllist;
-//		}
-
-		@Nullable
-		@Override
-		public OvenRecipe fromNetwork(FriendlyByteBuf buffer) {
+		public static OvenRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
 			String groupIn = buffer.readUtf();
 			OvenRecipeBookTab tabIn = OvenRecipeBookTab.findByName(buffer.readUtf());
 			int i = buffer.readVarInt();
 			NonNullList<Ingredient> inputItemsIn = NonNullList.withSize(i, Ingredient.EMPTY);
 
 			for (int j = 0; j < inputItemsIn.size(); ++j) {
-				inputItemsIn.set(j, Ingredient.fromNetwork(buffer));
+				inputItemsIn.set(j, Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
 			}
 
-			ItemStack outputIn = buffer.readItem();
-			ItemStack container = buffer.readItem();
+			ItemStack outputIn = ItemStack.STREAM_CODEC.decode(buffer);
+			ItemStack container = ItemStack.STREAM_CODEC.decode(buffer);
 			float experienceIn = buffer.readFloat();
 			int cookTimeIn = buffer.readVarInt();
 			return new OvenRecipe(groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
 		}
 
-		@Override
-		public void toNetwork(FriendlyByteBuf buffer, OvenRecipe recipe) {
+		public static void toNetwork(RegistryFriendlyByteBuf buffer, OvenRecipe recipe) {
 			buffer.writeUtf(recipe.group);
 			buffer.writeUtf(recipe.tab != null ? recipe.tab.toString() : "");
 			buffer.writeVarInt(recipe.inputItems.size());
 
 			for (Ingredient ingredient : recipe.inputItems) {
-				ingredient.toNetwork(buffer);
+				Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, ingredient);
 			}
 
-			buffer.writeItem(recipe.output);
-			buffer.writeItem(recipe.container);
+			ItemStack.STREAM_CODEC.encode(buffer, recipe.output);
+			ItemStack.STREAM_CODEC.encode(buffer, recipe.container);
 			buffer.writeFloat(recipe.experience);
 			buffer.writeVarInt(recipe.cookTime);
 		}
 
 		@Override
-		public Codec<OvenRecipe> codec() {
+		public MapCodec<OvenRecipe> codec() {
 			return CODEC;
 		}
+
+		public static final StreamCodec<RegistryFriendlyByteBuf, OvenRecipe> STREAM_CODEC = StreamCodec
+				.of(OvenRecipe.Serializer::toNetwork, OvenRecipe.Serializer::fromNetwork);
+
+		@Override
+		public StreamCodec<RegistryFriendlyByteBuf, OvenRecipe> streamCodec() {
+			return STREAM_CODEC;
+		}
+
 	}
+
 }

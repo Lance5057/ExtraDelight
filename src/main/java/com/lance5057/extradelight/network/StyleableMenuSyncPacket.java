@@ -43,4 +43,10 @@ public record StyleableMenuSyncPacket(int containerId, BlockPos pos) implements 
 			});
 		}
 	}
+
+	@Override
+	public Type<? extends CustomPacketPayload> type() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

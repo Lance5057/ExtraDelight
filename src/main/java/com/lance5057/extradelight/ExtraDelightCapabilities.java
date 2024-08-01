@@ -36,7 +36,7 @@ public class ExtraDelightCapabilities {
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.TAP.get(),
 				(o, d) -> o.getFluidHandler());
 
-		event.registerItem(Capabilities.FluidHandler.ITEM, (i, c) -> new FluidHandlerItemStack(i, 1000),
+		event.registerItem(Capabilities.FluidHandler.ITEM, (i, c) -> new FluidHandlerItemStack(ExtraDelightComponents.FLUID, i, 1000),
 				ExtraDelightItems.JAR.get());
 	}
 }

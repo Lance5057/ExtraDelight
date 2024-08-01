@@ -35,74 +35,80 @@ public class EDFoods {
 	public static final Supplier<MobEffectInstance> DOLPHIN_BRIEF = () -> new MobEffectInstance(
 			MobEffects.DOLPHINS_GRACE, FoodValues.BRIEF_DURATION, 0);
 
-	public static final Supplier<MobEffectInstance> COMFORT_BRIEF = () -> new MobEffectInstance(
-			ModEffects.COMFORT.get(), FoodValues.BRIEF_DURATION, 0);
-	public static final Supplier<MobEffectInstance> COMFORT_MEDIUM = () -> new MobEffectInstance(
-			ModEffects.COMFORT.get(), FoodValues.MEDIUM_DURATION, 0);
-	public static final Supplier<MobEffectInstance> COMFORT_LONG = () -> new MobEffectInstance(ModEffects.COMFORT.get(),
+	public static final Supplier<MobEffectInstance> COMFORT_BRIEF = () -> new MobEffectInstance(ModEffects.COMFORT,
+			FoodValues.BRIEF_DURATION, 0);
+	public static final Supplier<MobEffectInstance> COMFORT_MEDIUM = () -> new MobEffectInstance(ModEffects.COMFORT,
+			FoodValues.MEDIUM_DURATION, 0);
+	public static final Supplier<MobEffectInstance> COMFORT_LONG = () -> new MobEffectInstance(ModEffects.COMFORT,
 			FoodValues.LONG_DURATION, 0);
 
 	public static final Supplier<MobEffectInstance> NOURISHMENT_BRIEF = () -> new MobEffectInstance(
-			ModEffects.NOURISHMENT.get(), FoodValues.BRIEF_DURATION, 0);
+			ModEffects.NOURISHMENT, FoodValues.BRIEF_DURATION, 0);
 	public static final Supplier<MobEffectInstance> NOURISHMENT_MEDIUM = () -> new MobEffectInstance(
-			ModEffects.NOURISHMENT.get(), FoodValues.MEDIUM_DURATION, 0);
+			ModEffects.NOURISHMENT, FoodValues.MEDIUM_DURATION, 0);
 	public static final Supplier<MobEffectInstance> NOURISHMENT_LONG = () -> new MobEffectInstance(
-			ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0);
+			ModEffects.NOURISHMENT, FoodValues.LONG_DURATION, 0);
 
 	public static final Supplier<MobEffectInstance> GLOW_SHORT = () -> new MobEffectInstance(MobEffects.GLOWING,
 			FoodValues.SHORT_DURATION, 0);
 
 	public static final Supplier<MobEffectInstance> PAIN = () -> new MobEffectInstance(MobEffects.HARM, 1, 0);
 
-	public static final FoodProperties NOTFOOD = new FoodProperties.Builder().nutrition(0).saturationMod(0f).alwaysEat()
-			.build();
+	public static final FoodProperties NOTFOOD = new FoodProperties.Builder().nutrition(0).saturationModifier(0f)
+			.alwaysEdible().build();
 
-	public static final FoodProperties CUSTARD = new FoodProperties.Builder().nutrition(7).saturationMod(0.6f)
-			.alwaysEat().build();
-	public static final FoodProperties WHIPPED_CREAM = new FoodProperties.Builder().nutrition(0).saturationMod(0.1f)
+	public static final FoodProperties CUSTARD = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6f)
+			.alwaysEdible().build();
+	public static final FoodProperties WHIPPED_CREAM = new FoodProperties.Builder().nutrition(0)
+			.saturationModifier(0.1f).build();
+	public static final FoodProperties EDIBLE_SEEDS = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f)
 			.build();
-	public static final FoodProperties EDIBLE_SEEDS = new FoodProperties.Builder().nutrition(1).saturationMod(0.1f)
+	public static final FoodProperties SUGAR = new FoodProperties.Builder().nutrition(0).saturationModifier(0.1f)
 			.build();
-	public static final FoodProperties SUGAR = new FoodProperties.Builder().nutrition(0).saturationMod(0.1f).build();
-	public static final FoodProperties OIL = new FoodProperties.Builder().nutrition(1).saturationMod(0.2f).build();
-	public static final FoodProperties VINEGAR = new FoodProperties.Builder().nutrition(1).saturationMod(0.0f).build();
-	public static final FoodProperties MILK = new FoodProperties.Builder().nutrition(2).saturationMod(0.1f).build();
-	public static final FoodProperties MUSHROOM = new FoodProperties.Builder().nutrition(3).saturationMod(0.4f).build();
-	public static final FoodProperties FLOUR = new FoodProperties.Builder().nutrition(1).saturationMod(0.2f).build();
+	public static final FoodProperties OIL = new FoodProperties.Builder().nutrition(1).saturationModifier(0.2f).build();
+	public static final FoodProperties VINEGAR = new FoodProperties.Builder().nutrition(1).saturationModifier(0.0f)
+			.build();
+	public static final FoodProperties MILK = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f)
+			.build();
+	public static final FoodProperties MUSHROOM = new FoodProperties.Builder().nutrition(3).saturationModifier(0.4f)
+			.build();
+	public static final FoodProperties FLOUR = new FoodProperties.Builder().nutrition(1).saturationModifier(0.2f)
+			.build();
 	public static final FoodProperties SLICED_ONION = EDFoods.divideFoods("sliced onion", FoodValues.ONION, 4).build();
 	public static final FoodProperties SLICED_TOMATO = EDFoods.divideFoods("sliced tomato", FoodValues.TOMATO, 4)
 			.build();
-	public static final FoodProperties BADFOOD = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2f)
+	public static final FoodProperties BADFOOD = (new FoodProperties.Builder()).nutrition(4).saturationModifier(0.2f)
 			.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 120, 0), 0.8F).build();
 
 	// Basic Cooked Items
-	public static final FoodProperties COOKED_CARROT = new FoodProperties.Builder().nutrition(5).saturationMod(0.5f)
-			.build();
-	public static final FoodProperties COOKED_APPLE = new FoodProperties.Builder().nutrition(6).saturationMod(0.5f)
+	public static final FoodProperties COOKED_CARROT = new FoodProperties.Builder().nutrition(5)
+			.saturationModifier(0.5f).build();
+	public static final FoodProperties COOKED_APPLE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.5f)
 			.build();
 
 	public static final FoodProperties SLICED_BREAD = EDFoods.divideFoods("sliced bread", Foods.BREAD, 4).build();
 	public static final FoodProperties BREADING = EDFoods
 			.addFoods("breading", FLOUR, OIL, FoodValues.FRIED_EGG, SLICED_BREAD).build();
-	public static final FoodProperties CHEESE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).build();
-	public static final FoodProperties BUTTER = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.5F)
+	public static final FoodProperties CHEESE = (new FoodProperties.Builder()).nutrition(4).saturationModifier(0.4F)
+			.build();
+	public static final FoodProperties BUTTER = (new FoodProperties.Builder()).nutrition(2).saturationModifier(0.5F)
 			.effect(HUNGER, 0.3F).build();
 
 	// BC basics
-	public static final FoodProperties COOKED_SAUSAGE = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F)
-			.meat().build();
-	public static final FoodProperties COOKED_BRAIN = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2F)
-			.meat().build();
-	public static final FoodProperties COOKED_HEART = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F)
-			.meat().build();
-	public static final FoodProperties COOKED_LIVER = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.4F)
-			.meat().build();
-	public static final FoodProperties COOKED_LUNG = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.4F)
-			.meat().build();
-	public static final FoodProperties COOKED_STOMACH = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2F)
-			.meat().build();
-	public static final FoodProperties COOKED_TRIPE = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F)
-			.meat().build();
+	public static final FoodProperties COOKED_SAUSAGE = (new FoodProperties.Builder()).nutrition(6)
+			.saturationModifier(0.2F).build();
+	public static final FoodProperties COOKED_BRAIN = (new FoodProperties.Builder()).nutrition(4)
+			.saturationModifier(0.2F).build();
+	public static final FoodProperties COOKED_HEART = (new FoodProperties.Builder()).nutrition(6)
+			.saturationModifier(0.2F).build();
+	public static final FoodProperties COOKED_LIVER = (new FoodProperties.Builder()).nutrition(6)
+			.saturationModifier(0.4F).build();
+	public static final FoodProperties COOKED_LUNG = (new FoodProperties.Builder()).nutrition(8)
+			.saturationModifier(0.4F).build();
+	public static final FoodProperties COOKED_STOMACH = (new FoodProperties.Builder()).nutrition(4)
+			.saturationModifier(0.2F).build();
+	public static final FoodProperties COOKED_TRIPE = (new FoodProperties.Builder()).nutrition(6)
+			.saturationModifier(0.2F).build();
 
 	// Condiments
 	public static final FoodProperties MAYO = EDFoods
@@ -442,7 +448,7 @@ public class EDFoods {
 	public static final FoodProperties SEAWEED_SALAD = EDFoods
 			.addFoods("seaweed salad", Foods.DRIED_KELP, Foods.DRIED_KELP, Foods.CARROT, VINEGAR).build();
 
-	public static final FoodProperties CACTUS = new FoodProperties.Builder().nutrition(2).saturationMod(0.2f)
+	public static final FoodProperties CACTUS = new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f)
 			.effect(PAIN, 1).build();
 	public static final FoodProperties COOKED_CACTUS = EDFoods.cookFood("cooked cactus", CACTUS).build();
 	public static final FoodProperties CACTUS_EGGS = EDFoods.addFoods("cactus eggs", COOKED_CACTUS, SCRAMBLED_EGGS)
@@ -459,9 +465,9 @@ public class EDFoods {
 			.addFoods("stuffed cactus", COOKED_CACTUS, BREADING, CHEESE).effect(COMFORT_MEDIUM, 1).build();
 
 	// Halloween Start!
-	public static final FoodProperties COOKED_CORN = new FoodProperties.Builder().nutrition(2).saturationMod(0.2f)
+	public static final FoodProperties COOKED_CORN = new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f)
 			.build();
-	public static final FoodProperties GRILLED_CORN = new FoodProperties.Builder().nutrition(3).saturationMod(0.2f)
+	public static final FoodProperties GRILLED_CORN = new FoodProperties.Builder().nutrition(3).saturationModifier(0.2f)
 			.build();
 
 	public static final FoodProperties CORN_CHOWDER = EDFoods
@@ -480,8 +486,8 @@ public class EDFoods {
 			.effect(COMFORT_MEDIUM, 1).build();
 	public static final FoodProperties CARAMEL_SAUCE = EDFoods.addFoods("caramel sauce", SUGAR, BUTTER, MILK).build();
 	public static final FoodProperties CARAMEL_CANDY = EDFoods.divideFoods("caramel candy", CARAMEL_SAUCE, 4)
-			.alwaysEat().build();
-	public static final FoodProperties CANDY = EDFoods.divideFoods("candy", SUGAR, 4).alwaysEat().build();
+			.alwaysEdible().build();
+	public static final FoodProperties CANDY = EDFoods.divideFoods("candy", SUGAR, 4).alwaysEdible().build();
 	public static final FoodProperties CANDY_APPLE = EDFoods.addFoods("candy apple", Foods.APPLE, SUGAR, SUGAR).build();
 	public static final FoodProperties CARAMEL_APPLE = EDFoods.addFoods("caramel apple", Foods.APPLE, CARAMEL_SAUCE)
 			.build();
@@ -514,18 +520,18 @@ public class EDFoods {
 					4)
 			.effect(EDFoods.COMFORT_MEDIUM, 1).effect(EDFoods.NOURISHMENT_MEDIUM, 1).build();
 
-	public static final FoodProperties ICE_CREAM = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f)
-			.fast().alwaysEat().build();
+	public static final FoodProperties ICE_CREAM = (new FoodProperties.Builder()).nutrition(4).saturationModifier(0.3f)
+			.fast().alwaysEdible().build();
 	public static final FoodProperties TOPPED_ICE_CREAM = (new FoodProperties.Builder()).nutrition(6)
-			.saturationMod(0.5f).fast().alwaysEat().build();
-	public static final FoodProperties COOKIE_DOUGH = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.0f)
-			.effect(EDFoods.HUNGER, 0.1f).build();
+			.saturationModifier(0.5f).fast().alwaysEdible().build();
+	public static final FoodProperties COOKIE_DOUGH = (new FoodProperties.Builder()).nutrition(1)
+			.saturationModifier(0.0f).effect(EDFoods.HUNGER, 0.1f).build();
 
 	public static final FoodProperties FROSTING = EDFoods
 			.divideFoods("frosting", EDFoods.addFoods("", BUTTER, WHIPPED_CREAM, SUGAR).build(), 4).build();
 
 	public static final FoodProperties CANDY_CANE = EDFoods.addFoods("candy cane", SUGAR, SUGAR, SUGAR, SUGAR)
-			.alwaysEat().build();
+			.alwaysEdible().build();
 
 	public static final FoodProperties FRENCH_TOAST = EDFoods.divideFoods("french toast", EDFoods.addFoods("", BUTTER,
 			SUGAR, FoodValues.FRIED_EGG, MILK, SLICED_BREAD, SLICED_BREAD, SLICED_BREAD, SLICED_BREAD).build(), 4)
@@ -591,30 +597,30 @@ public class EDFoods {
 		Builder b = new FoodProperties.Builder();
 
 		for (int i = 0; i < foods.length; i++) {
-			nut += foods[i].getNutrition();
-			sat += foods[i].getSaturationModifier();
+			nut += foods[i].nutrition();
+			sat += foods[i].saturation();
 		}
 
 		if (name != "")
 			ExtraDelight.logger.debug(name + ": " + nut + "," + sat);
-		return b.nutrition(nut).saturationMod(sat);
+		return b.nutrition(nut).saturationModifier(sat);
 	}
 
 	public static Builder divideFoods(String name, FoodProperties food, int by) {
-		int nut = Math.max(food.getNutrition() / by, 1);
-		float sat = food.getSaturationModifier() / by;
+		int nut = Math.max(food.nutrition() / by, 1);
+		float sat = food.saturation() / by;
 		Builder b = new FoodProperties.Builder();
 
 		if (name != "")
 			ExtraDelight.logger.debug(name + ": " + nut + "," + sat);
-		return b.nutrition(nut).saturationMod(sat);
+		return b.nutrition(nut).saturationModifier(sat);
 	}
 
 	public static Builder cookFood(String name, FoodProperties food) {
 		if (name != "")
 			ExtraDelight.logger
-					.debug(name + ": " + (food.getNutrition() + 4) + "," + (food.getSaturationModifier() + 0.5f));
-		return new FoodProperties.Builder().nutrition(food.getNutrition() + 4)
-				.saturationMod(food.getSaturationModifier() + 0.5f);
+					.debug(name + ": " + (food.nutrition() + 4) + "," + (food.saturation() + 0.5f));
+		return new FoodProperties.Builder().nutrition(food.nutrition() + 4)
+				.saturationModifier(food.saturation() + 0.5f);
 	}
 }

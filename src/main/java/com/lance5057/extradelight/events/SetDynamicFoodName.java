@@ -12,10 +12,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
-@Mod.EventBusSubscriber(modid = ExtraDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(modid = ExtraDelight.MOD_ID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
 public class SetDynamicFoodName {
 	@SubscribeEvent
 	public static void onCrafting(PlayerEvent.ItemCraftedEvent event) {
@@ -28,7 +28,8 @@ public class SetDynamicFoodName {
 		Container craftMatrix = event.getInventory();
 
 		for (int i = 0; i < craftMatrix.getContainerSize(); i++) {
-			if (craftMatrix.getItem(i).isEmpty()) continue;
+			if (craftMatrix.getItem(i).isEmpty())
+				continue;
 
 			ingredients.add(craftMatrix.getItem(i).getItem());
 		}

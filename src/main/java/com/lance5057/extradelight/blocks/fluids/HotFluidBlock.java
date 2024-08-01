@@ -1,7 +1,5 @@
 package com.lance5057.extradelight.blocks.fluids;
 
-import java.util.function.Supplier;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
@@ -11,7 +9,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 
 public class HotFluidBlock extends LiquidBlock {
 
-	public HotFluidBlock(Supplier<? extends FlowingFluid> fluid, Properties p_54695_) {
+	public HotFluidBlock(FlowingFluid fluid, Properties p_54695_) {
 		super(fluid, p_54695_);
 	}
 
@@ -20,7 +18,7 @@ public class HotFluidBlock extends LiquidBlock {
 		if (!p_49263_.fireImmune()) {
 			p_49263_.setRemainingFireTicks(p_49263_.getRemainingFireTicks() + 1);
 			if (p_49263_.getRemainingFireTicks() == 0) {
-				p_49263_.setSecondsOnFire(8);
+				p_49263_.setRemainingFireTicks(8);
 			}
 		}
 

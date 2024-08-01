@@ -8,6 +8,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -48,7 +49,7 @@ public class FoodDisplayBlock extends Block implements EntityBlock, SimpleWaterl
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
+	public ItemInteractionResult useItemOn(ItemStack stack,BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
 			BlockHitResult result) {
 		if (!level.isClientSide) {
 			if (player.getItemInHand(hand).getItem() == Items.GLASS) {
@@ -56,7 +57,7 @@ public class FoodDisplayBlock extends Block implements EntityBlock, SimpleWaterl
 					// state.setValue(FoodDisplayBlock.ENCASED, true);
 					level.setBlock(pos, state.setValue(FoodDisplayBlock.ENCASED, true), 2);
 					player.getItemInHand(hand).setCount(player.getItemInHand(hand).getCount() - 1);
-					return InteractionResult.SUCCESS;
+					return ItemInteractionResult.SUCCESS;
 				}
 			}
 
@@ -77,7 +78,7 @@ public class FoodDisplayBlock extends Block implements EntityBlock, SimpleWaterl
 				player.openMenu(containerProvider, buf -> buf.writeBlockPos(pos));
 			}
 		}
-		return InteractionResult.SUCCESS;
+		return ItemInteractionResult.SUCCESS;
 	}
 
 	@Override

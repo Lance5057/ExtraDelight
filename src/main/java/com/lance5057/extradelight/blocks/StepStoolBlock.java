@@ -3,7 +3,8 @@ package com.lance5057.extradelight.blocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -66,16 +67,17 @@ public class StepStoolBlock extends Block {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
-			BlockHitResult result) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
+			InteractionHand hand, BlockHitResult result) {
 		if (!level.isClientSide) {
-			if (player.getItemInHand(hand).isEmpty()) {
-				player.addItem(new ItemStack(this.asItem()));
-				level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
+			ItemStack r = new ItemStack(this.asItem());
+			if (!player.addItem(r))
+				level.addFreshEntity(
+						new ItemEntity(level, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, r, 0, 0, 0));
+			level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
 
-				return InteractionResult.SUCCESS;
-			}
+			return ItemInteractionResult.SUCCESS;
 		}
-		return InteractionResult.PASS;
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 }
