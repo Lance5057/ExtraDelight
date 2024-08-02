@@ -1,7 +1,8 @@
 {
-  "parent": "extradelight:block/double_texture",
+  "parent": "extradelight:block/grass_like",
   "textures": {
     "0": "extradelight:block/gingerbread_block",
-    "1": "extradelight:block/frosting_colors/snow_trim_red"
+    "1": "extradelight:block/frosting_colors/full_red",
+    "2": "extradelight:block/frosting_colors/snow_trim_red"
   }
 }

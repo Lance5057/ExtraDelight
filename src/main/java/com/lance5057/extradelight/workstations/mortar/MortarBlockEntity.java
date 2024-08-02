@@ -26,6 +26,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.Lazy;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
@@ -40,6 +42,23 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
 	public static final int NUM_SLOTS = 1;
+
+	public static final String FLUID_TAG = "fluid";
+	private final FluidTank tank = createFluidHandler();
+
+	private FluidTank createFluidHandler() {
+		FluidTank tank = new FluidTank(FluidType.BUCKET_VOLUME) {
+			@Override
+			protected void onContentsChanged() {
+				MortarBlockEntity.this.requestModelDataUpdate();
+				MortarBlockEntity.this.getLevel().sendBlockUpdated(MortarBlockEntity.this.getBlockPos(),
+						MortarBlockEntity.this.getBlockState(), MortarBlockEntity.this.getBlockState(), 3);
+				MortarBlockEntity.this.setChanged();
+			}
+		};
+
+		return tank;
+	}
 
 	public MortarBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ExtraDelightBlockEntities.MORTAR.get(), pPos, pState);

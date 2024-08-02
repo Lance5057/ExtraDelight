@@ -15,7 +15,7 @@ public interface IStyleable {
 
 	public BlockState getState(int i);
 
-	public void setStyle(int style);
+	public void setStyle(Level level, BlockPos pos, BlockState state, int style);
 
 	public boolean isPatreonStyle(int style);
 }

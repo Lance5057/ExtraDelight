@@ -293,6 +293,7 @@ public class BlockModels extends BlockStateProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
 		this.cabinetBlock(ExtraDelightBlocks.FRUIT_CABINET.get(), "fruit");
 		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
+
 		this.fruitLeafBlock(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), "hazelnut");
 		this.cropCrossBlock(ExtraDelightBlocks.CHILI_CROP.get(), "chili", ChiliCrop.AGE);
 
@@ -301,7 +302,7 @@ public class BlockModels extends BlockStateProvider {
 		styleBlock(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
 				"block/cosmetics/chocolate/milk_chocolate");
 		styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
-				"block/cosmetics/chocolate/white_chocolate");
+
 
 		AestheticBlocks.blockModel(this);
 	}
@@ -481,12 +482,22 @@ public class BlockModels extends BlockStateProvider {
 
 			String suffix = FrostableBlock.Styles.values()[servings] + "_";
 
+			if (servings != 7)
+				return ConfiguredModel.builder()
+						.modelFile(models()
+								.withExistingParent(path + "_" + suffix.toLowerCase() + color,
+										modLoc("block/double_texture"))
+								.texture("0", modLoc(path))
+								.texture("1", modLoc("block/frosting_colors/" + suffix.toLowerCase() + color)))
+						.build();
+			
 			return ConfiguredModel.builder()
 					.modelFile(models()
 							.withExistingParent(path + "_" + suffix.toLowerCase() + color,
-									modLoc("block/double_texture"))
+									modLoc("block/grass_like"))
 							.texture("0", modLoc(path))
-							.texture("1", modLoc("block/frosting_colors/" + suffix.toLowerCase() + color)))
+							.texture("1", modLoc("block/frosting_colors/full_" + color))
+							.texture("2", modLoc("block/frosting_colors/" + suffix.toLowerCase() + color)))
 					.build();
 		});
 	}

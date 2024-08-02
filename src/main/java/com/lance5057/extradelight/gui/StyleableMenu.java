@@ -59,6 +59,9 @@ public class StyleableMenu extends AbstractContainerMenu {
 				case 1:
 					s.setPrevStyle(level, pos, state);
 					break;
+				default:
+					s.setStyle(level, pos, state, p_39466_ - 2);
+					break;
 				}
 			}
 		});

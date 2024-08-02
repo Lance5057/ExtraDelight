@@ -57,9 +57,9 @@ public class FrostableBlock extends Block implements IStyleable {
 	}
 
 	@Override
-	public void setStyle(int style) {
-		// TODO Auto-generated method stub
-
+	public void setStyle(Level level, BlockPos pos, BlockState state, int style) {
+		BlockState nextState = state.setValue(STYLE, style);
+		level.setBlock(pos, nextState, 3);
 	}
 
 	@Override
