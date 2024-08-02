@@ -83,90 +83,91 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 		Matrix3f matrix3f = posestack$pose.normal();
 
 		if (copiedQuads != null && !copiedQuads.isEmpty()) {
-			Vector4f uvTop = RenderUtil.ZERO4;
-			Vector4f uvBottom = RenderUtil.ZERO4;
-			Vector4f uvNorth = RenderUtil.ZERO4;
-			Vector4f uvSouth = RenderUtil.ZERO4;
-			Vector4f uvEast = RenderUtil.ZERO4;
-			Vector4f uvWest = RenderUtil.ZERO4;
+			Vector4f setUVTop = RenderUtil.ZERO4;
+			Vector4f setUVBottom = RenderUtil.ZERO4;
+			Vector4f setUVNorth = RenderUtil.ZERO4;
+			Vector4f setUVSouth = RenderUtil.ZERO4;
+			Vector4f setUVEast = RenderUtil.ZERO4;
+			Vector4f setUVWest = RenderUtil.ZERO4;
 
 			// Basin
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
-				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 1, 1, 15, 15);
+				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 1, 1, 15, 15);
 			if (copiedQuads.size() > 2 && copiedQuads.get(4) != null)
-				uvEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 2, 2, 12, 5);
+				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 2, 2, 12, 5);
 
 			RenderUtil.buildInvertedCubePillar(new Vector3f(1.02f / 16f, 12f / 16f, 1.02F / 16f),
 					new Vector3f(13.96f / 16f, 4f / 16f, 12.8f / 16f), vertexconsumer, matrix4f, matrix3f,
-					RenderUtil.WHITE, uvEast, null, uvBottom, OverlayTexture.NO_OVERLAY, poseStack);
+					RenderUtil.WHITE, setUVEast, null, setUVBottom, OverlayTexture.NO_OVERLAY, poseStack);
 
 			// Back
 //			if (copiedQuads.get(0) != null)
-//				uvTop = RenderUtil.getUVFromSprite(copiedQuads.get(0).getSprite(), 0, 0, 0, 0);
+//				setUVTop = RenderUtil.getsetUVFromSprite(copiedQuads.get(0).getSprite(), 0, 0, 0, 0);
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
-				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 0, 2, 16);
+				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 0, 2, 16);
 			if (copiedQuads.size() > 2 && copiedQuads.get(2) != null)
-				uvNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 0, 0, 16, 4);
+				setUVNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 0, 0, 16, 4);
 			if (copiedQuads.size() > 3 && copiedQuads.get(3) != null)
-				uvSouth = RenderUtil.getUVFromSprite(copiedQuads.get(3).getSprite(), 0, 0, 16, 4);
+				setUVSouth = RenderUtil.getUVFromSprite(copiedQuads.get(3).getSprite(), 0, 0, 16, 4);
 			if (copiedQuads.size() > 4 && copiedQuads.get(4) != null)
-				uvEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 0, -0, 2, 4);
+				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 0, -0, 2, 4);
 			if (copiedQuads.size() > 5 && copiedQuads.get(5) != null)
-				uvWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 0, -0, 2, 4);
+				setUVWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 0, -0, 2, 4);
 
 			RenderUtil.buildCube(new Vector3f(0, 14f / 16f, 14f / 16f), new Vector3f(1, 4f / 16f, 2f / 16f),
 					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null,
-					uvBottom, uvNorth, uvSouth, uvEast, uvWest);
+					setUVBottom, setUVNorth, setUVSouth, setUVEast, setUVWest);
 
 //			if (copiedQuads.get(0) != null)
-//				uvTop = RenderUtil.getUVFromSprite(copiedQuads.get(0).getSprite(), 0, 0, 8, 2);
+//				setUVTop = RenderUtil.getsetUVFromSprite(copiedQuads.get(0).getSprite(), 0, 0, 8, 2);
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
-				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 4, 2, 8);
+				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 4, 2, 8);
 			if (copiedQuads.size() > 2 && copiedQuads.get(2) != null)
-				uvNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 4, 0, 8, 2);
+				setUVNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 4, 0, 8, 2);
 			if (copiedQuads.size() > 3 && copiedQuads.get(3) != null)
-				uvSouth = RenderUtil.getUVFromSprite(copiedQuads.get(3).getSprite(), 4, 0, 8, 2);
+				setUVSouth = RenderUtil.getUVFromSprite(copiedQuads.get(3).getSprite(), 4, 0, 8, 2);
 			if (copiedQuads.size() > 4 && copiedQuads.get(4) != null)
-				uvEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 4, 0, 2, 2);
+				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 4, 0, 2, 2);
 			if (copiedQuads.size() > 5 && copiedQuads.get(5) != null)
-				uvWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 4, 0, 2, 2);
+				setUVWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 4, 0, 2, 2);
 
 			RenderUtil.buildCube(new Vector3f(4f / 16f, 18f / 16f, 14f / 16f),
 					new Vector3f(8f / 16f, 2f / 16f, 2f / 16f), vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE,
-					OverlayTexture.NO_OVERLAY, poseStack, null, uvBottom, uvNorth, uvSouth, uvEast, uvWest);
+					OverlayTexture.NO_OVERLAY, poseStack, null, setUVBottom, setUVNorth, setUVSouth, setUVEast,
+					setUVWest);
 
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
-				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 15, 15, 1);
+				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 15, 15, 1);
 			if (copiedQuads.size() > 2 && copiedQuads.get(2) != null)
-				uvNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 4, 0, 8, 2);
+				setUVNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 4, 0, 8, 2);
 			if (copiedQuads.size() > 5 && copiedQuads.get(5) != null)
-				uvWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 1, 0, 15, 2);
+				setUVWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 1, 0, 15, 2);
 
 			RenderUtil.buildCube(new Vector3f(0, 14f / 16f, 0), new Vector3f(1f / 16f, 2f / 16f, 14F / 16F),
 					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null,
-					uvBottom, uvNorth, null, null, uvWest);
+					setUVBottom, setUVNorth, null, null, setUVWest);
 
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
-				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 0, 15, 1);
+				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 0, 15, 1);
 			if (copiedQuads.size() > 2 && copiedQuads.get(2) != null)
-				uvNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 4, 0, 1, 2);
+				setUVNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 4, 0, 1, 2);
 			if (copiedQuads.size() > 4 && copiedQuads.get(4) != null)
-				uvEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 1, 0, 15, 2);
+				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 1, 0, 15, 2);
 
 			RenderUtil.buildCube(new Vector3f(15f / 16f, 14f / 16f, 0), new Vector3f(1f / 16f, 2f / 16f, 14F / 16F),
 					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null,
-					uvBottom, uvNorth, null, uvEast, null);
-			
+					setUVBottom, setUVNorth, null, setUVEast, null);
+
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
-				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 15, 0, 1, 14);
+				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 15, 0, 1, 14);
 			if (copiedQuads.size() > 2 && copiedQuads.get(2) != null)
-				uvNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 1, 0, 14, 2);
+				setUVNorth = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 1, 0, 14, 2);
 			if (copiedQuads.size() > 4 && copiedQuads.get(4) != null)
-				uvEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 4, 0, 2, 2);
+				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 4, 0, 2, 2);
 
 			RenderUtil.buildCube(new Vector3f(1f / 16f, 14f / 16f, 0), new Vector3f(14f / 16f, 2f / 16f, 1F / 16F),
 					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null,
-					uvBottom, uvNorth, null, null, null);
+					setUVBottom, setUVNorth, null, null, null);
 
 		}
 
@@ -191,29 +192,25 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 
 			// Down
 
-			vertexconsumer.vertex(matrix4f, -1, 0, 0).color(255, 255, 255, 255).uv(u0, v0 + vUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
-							Direction.DOWN.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1, 0, 0).setColor(255, 255, 255, 255).setUv(u0, v0 + vUnit * 2)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
+							Direction.DOWN.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 0, 0).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
-							Direction.DOWN.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1 + 2f / 16f, 0, 0).setColor(255, 255, 255, 255).setUv(u0, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
+							Direction.DOWN.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 0, 1).color(255, 255, 255, 255).uv(u1, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
-							Direction.DOWN.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1 + 2f / 16f, 0, 1).setColor(255, 255, 255, 255).setUv(u1, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
+							Direction.DOWN.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -1, 0, 1).color(255, 255, 255, 255).uv(u1, v0 + vUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
-							Direction.DOWN.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1, 0, 1).setColor(255, 255, 255, 255).setUv(u1, v0 + vUnit * 2)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.DOWN.getNormal().getX(), Direction.DOWN.getNormal().getY(),
+							Direction.DOWN.getNormal().getZ());
 
 			// Up
 			if (copiedQuads.get(1) != null) {
@@ -223,28 +220,19 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 				v1 = copiedQuads.get(1).getSprite().getV1();
 			}
 
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 0).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.UP.getNormal().getX(), Direction.UP.getNormal().getY(),
-							Direction.UP.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 0).color(255, 255, 255, 255).uv(u0, v0 + vUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.UP.getNormal().getX(), Direction.UP.getNormal().getY(),
-							Direction.UP.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 0).setColor(255, 255, 255, 255).setUv(u0, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap).setNormal(Direction.UP.getNormal().getX(),
+							Direction.UP.getNormal().getY(), Direction.UP.getNormal().getZ());
+			vertexconsumer.addVertex(matrix4f, -1, 4f / 16f, 0).setColor(255, 255, 255, 255).setUv(u0, v0 + vUnit * 2)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap).setNormal(Direction.UP.getNormal().getX(),
+							Direction.UP.getNormal().getY(), Direction.UP.getNormal().getZ());
+			vertexconsumer.addVertex(matrix4f, -1, 4f / 16f, 1).setColor(255, 255, 255, 255).setUv(u1, v0 + vUnit * 2)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap).setNormal(Direction.UP.getNormal().getX(),
+							Direction.UP.getNormal().getY(), Direction.UP.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 1).color(255, 255, 255, 255).uv(u1, v0 + vUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.UP.getNormal().getX(), Direction.UP.getNormal().getY(),
-							Direction.UP.getNormal().getZ())
-					.endVertex();
-
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 1).color(255, 255, 255, 255).uv(u1, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.UP.getNormal().getX(), Direction.UP.getNormal().getY(),
-							Direction.UP.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 1).setColor(255, 255, 255, 255).setUv(u1, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap).setNormal(Direction.UP.getNormal().getX(),
+							Direction.UP.getNormal().getY(), Direction.UP.getNormal().getZ());
 
 			// North
 			if (copiedQuads.get(2) != null) {
@@ -254,29 +242,25 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 				v1 = copiedQuads.get(2).getSprite().getV1();
 			}
 
-			vertexconsumer.vertex(matrix4f, -14f / 16f, 0, 1).color(255, 255, 255, 255).uv(u0, v1)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -14f / 16f, 0, 1).setColor(255, 255, 255, 255).setUv(u0, v1)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
+							Direction.NORTH.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -14f / 16f, 0, 0).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -14f / 16f, 0, 0).setColor(255, 255, 255, 255).setUv(u0, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
+							Direction.NORTH.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -14f / 16f, 4f / 16f, 0).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -14f / 16f, 4f / 16f, 0).setColor(255, 255, 255, 255)
+					.setUv(u0 + uUnit * 4, v0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
+							Direction.NORTH.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -14f / 16f, 4f / 16f, 1).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v1)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -14f / 16f, 4f / 16f, 1).setColor(255, 255, 255, 255)
+					.setUv(u0 + uUnit * 4, v1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.NORTH.getNormal().getX(), Direction.NORTH.getNormal().getY(),
+							Direction.NORTH.getNormal().getZ());
 
 			// South
 			if (copiedQuads.get(3) != null) {
@@ -286,29 +270,25 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 				v1 = copiedQuads.get(3).getSprite().getV1();
 			}
 
-			vertexconsumer.vertex(matrix4f, -1, 0, 0).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1, 0, 0).setColor(255, 255, 255, 255).setUv(u0, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
+							Direction.NORTH.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -1, 0, 1).color(255, 255, 255, 255).uv(u0, v1)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1, 0, 1).setColor(255, 255, 255, 255).setUv(u0, v1)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
+							Direction.NORTH.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 1).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v1)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1, 4f / 16f, 1).setColor(255, 255, 255, 255).setUv(u0 + uUnit * 4, v1)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
+							Direction.NORTH.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 0).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
-							Direction.NORTH.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1, 4f / 16f, 0).setColor(255, 255, 255, 255).setUv(u0 + uUnit * 4, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.NORTH.getNormal().getX(), Direction.SOUTH.getNormal().getY(),
+							Direction.NORTH.getNormal().getZ());
 
 			// left
 			if (copiedQuads.get(4) != null) {
@@ -318,26 +298,22 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 				v1 = copiedQuads.get(4).getSprite().getV1();
 			}
 
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 0, 0).color(255, 255, 255, 255).uv(u0, v0 + uUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
-							Direction.WEST.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1, 0, 0).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
-							Direction.WEST.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 0).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
-							Direction.WEST.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 0).color(255, 255, 255, 255)
-					.uv(u0 + uUnit * 4, v0 + uUnit * 2).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
-							Direction.WEST.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1 + 2f / 16f, 0, 0).setColor(255, 255, 255, 255)
+					.setUv(u0, v0 + uUnit * 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
+							Direction.WEST.getNormal().getZ());
+			vertexconsumer.addVertex(matrix4f, -1, 0, 0).setColor(255, 255, 255, 255).setUv(u0, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
+							Direction.WEST.getNormal().getZ());
+			vertexconsumer.addVertex(matrix4f, -1, 4f / 16f, 0).setColor(255, 255, 255, 255).setUv(u0 + uUnit * 4, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
+							Direction.WEST.getNormal().getZ());
+			vertexconsumer.addVertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 0).setColor(255, 255, 255, 255)
+					.setUv(u0 + uUnit * 4, v0 + uUnit * 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.WEST.getNormal().getX(), Direction.WEST.getNormal().getY(),
+							Direction.WEST.getNormal().getZ());
 
 			// right
 			if (copiedQuads.get(5) != null) {
@@ -346,27 +322,23 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 				v0 = copiedQuads.get(5).getSprite().getV0();
 				v1 = copiedQuads.get(5).getSprite().getV1();
 			}
-			vertexconsumer.vertex(matrix4f, -1, 0, 1).color(255, 255, 255, 255).uv(u0, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
-							Direction.EAST.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 0, 1).color(255, 255, 255, 255).uv(u0, v0 + uUnit * 2)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
-							Direction.EAST.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1, 0, 1).setColor(255, 255, 255, 255).setUv(u0, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
+							Direction.EAST.getNormal().getZ());
+			vertexconsumer.addVertex(matrix4f, -1 + 2f / 16f, 0, 1).setColor(255, 255, 255, 255)
+					.setUv(u0, v0 + uUnit * 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
+							Direction.EAST.getNormal().getZ());
 
-			vertexconsumer.vertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 1).color(255, 255, 255, 255)
-					.uv(u0 + uUnit * 4, v0 + uUnit * 2).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
-							Direction.EAST.getNormal().getZ())
-					.endVertex();
-			vertexconsumer.vertex(matrix4f, -1, 4f / 16f, 1).color(255, 255, 255, 255).uv(u0 + uUnit * 4, v0)
-					.overlayCoords(OverlayTexture.NO_OVERLAY).uv2(lightmap)
-					.normal(matrix3f, Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
-							Direction.EAST.getNormal().getZ())
-					.endVertex();
+			vertexconsumer.addVertex(matrix4f, -1 + 2f / 16f, 4f / 16f, 1).setColor(255, 255, 255, 255)
+					.setUv(u0 + uUnit * 4, v0 + uUnit * 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
+							Direction.EAST.getNormal().getZ());
+			vertexconsumer.addVertex(matrix4f, -1, 4f / 16f, 1).setColor(255, 255, 255, 255).setUv(u0 + uUnit * 4, v0)
+					.setOverlay(OverlayTexture.NO_OVERLAY).setLight(lightmap)
+					.setNormal(Direction.EAST.getNormal().getX(), Direction.EAST.getNormal().getY(),
+							Direction.EAST.getNormal().getZ());
 
 		}
 	}

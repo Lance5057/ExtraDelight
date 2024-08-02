@@ -18,8 +18,9 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.util.RecipeMatcher;
+import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 
-public class MixingBowlRecipe implements Recipe<SimpleContainer> {
+public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 	protected final int stirs;
 	final ItemStack usedItem;
 

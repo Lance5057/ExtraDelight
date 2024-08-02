@@ -1,7 +1,5 @@
 package com.lance5057.extradelight.blocks.fluids;
 
-import java.util.function.Supplier;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,7 +10,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 
 public class VinegarFluidBlock extends LiquidBlock {
 
-	public VinegarFluidBlock(Supplier<? extends FlowingFluid> fluid, Properties p_54695_) {
+	public VinegarFluidBlock(FlowingFluid fluid, Properties p_54695_) {
 		super(fluid, p_54695_);
 		// TODO Auto-generated constructor stub
 	}

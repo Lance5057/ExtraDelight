@@ -12,6 +12,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -47,19 +48,20 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 	public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
 	public HalfCabinetBlock() {
-		super(Block.Properties.ofFullCopy(Blocks.BARREL).noOcclusion()); //Copy barrel properties like a normal cabinet
+		super(Block.Properties.ofFullCopy(Blocks.BARREL).noOcclusion()); // Copy barrel properties like a normal cabinet
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, false));
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
+			InteractionHand hand, BlockHitResult hit) {
 		if (!level.isClientSide) {
 			BlockEntity tile = level.getBlockEntity(pos);
 			if (tile instanceof CabinetBlockEntity) {
 				player.openMenu((CabinetBlockEntity) tile);
 			}
 		}
-		return InteractionResult.SUCCESS;
+		return ItemInteractionResult.SUCCESS;
 	}
 
 	@Override
@@ -88,7 +90,8 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer,
+			ItemStack stack) {
 		if (stack.hasCustomHoverName()) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof CabinetBlockEntity) {
@@ -123,7 +126,7 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 	public RenderShape getRenderShape(BlockState state) {
 		return RenderShape.MODEL;
 	}
-	
+
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
 		Direction d = pState.getValue(FACING);
 
@@ -135,7 +138,7 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 			return SHAPE_S;
 		return SHAPE_N;
 	}
-	
+
 	public boolean useShapeForLightOcclusion(BlockState pState) {
 		return true;
 	}

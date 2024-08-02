@@ -4,15 +4,15 @@ import com.lance5057.extradelight.ExtraDelightRecipes;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.NonNullList;
-import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 
-public class DryingRackRecipe implements Recipe<Container> {
+public class DryingRackRecipe implements Recipe<SingleRecipeInput> {
 
 	protected final String group;
 	protected final Ingredient ingredient;
@@ -40,7 +40,7 @@ public class DryingRackRecipe implements Recipe<Container> {
 	}
 
 	@Override
-	public boolean matches(Container pContainer, Level pLevel) {
+	public boolean matches(SingleRecipeInput pContainer, Level pLevel) {
 		return ingredient.test(pContainer.getItem(0));
 	}
 
@@ -65,7 +65,7 @@ public class DryingRackRecipe implements Recipe<Container> {
 	}
 
 	@Override
-	public ItemStack assemble(Container input, Provider registries) {
+	public ItemStack assemble(SingleRecipeInput input, Provider registries) {
 		return this.result.copy();
 	}
 

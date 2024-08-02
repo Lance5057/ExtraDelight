@@ -7,6 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -123,19 +124,17 @@ public class TapBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public boolean isPathfindable(BlockState p_54057_, BlockGetter p_54058_, BlockPos p_54059_,
-			PathComputationType p_54060_) {
+	public boolean isPathfindable(BlockState p_54057_, PathComputationType p_54060_) {
 		return false;
 	}
 
 	@Override
-	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pHit) {
 
 		BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
 		if (tileEntity instanceof TapBlockEntity be) {
 
-			ItemStack stack = pPlayer.getItemInHand(pHand);
 			IFluidHandlerItem handlerItem = FluidUtil.getFluidHandler(stack).orElse(null);
 			if (handlerItem != null) {
 				if (!pLevel.isClientSide) {
@@ -166,10 +165,10 @@ public class TapBlock extends Block implements EntityBlock {
 				float z = pPos.getZ() + (0.5f + (0.3f * dir.getNormal().getZ()));
 
 				pLevel.addParticle(ParticleTypes.DRIPPING_WATER, x, pPos.getY() + 0.25f, z, 0, 0, 0);
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			}
 		}
-		return InteractionResult.PASS;
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
 	}
 

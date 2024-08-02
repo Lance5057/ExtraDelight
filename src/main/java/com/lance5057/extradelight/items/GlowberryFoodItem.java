@@ -15,9 +15,9 @@ public class GlowberryFoodItem extends Item {
 
 	@Override
 	public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-		
+
 		pLivingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 100));
-		
-		return this.isEdible() ? pLivingEntity.eat(pLevel, pStack) : pStack;
+
+		return super.finishUsingItem(pStack, pLevel, pLivingEntity);
 	}
 }

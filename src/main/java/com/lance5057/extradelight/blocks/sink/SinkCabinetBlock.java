@@ -6,7 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -53,17 +53,16 @@ public class SinkCabinetBlock extends Block implements EntityBlock {
 		Direction direction = p_54041_.getHorizontalDirection().getOpposite();
 		return this.defaultBlockState().setValue(FACING, direction);
 	}
-	
+
 	@Override
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
 		return SHAPE;
 	}
-	
+
 	@Override
 	public RenderShape getRenderShape(BlockState pState) {
 		return RenderShape.MODEL;
 	}
-
 
 	@Override
 	public BlockState rotate(BlockState p_54094_, Rotation p_54095_) {
@@ -81,13 +80,12 @@ public class SinkCabinetBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
-			BlockHitResult pHit) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
+			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
 
 		BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
 		if (tileEntity instanceof SinkCabinetBlockEntity be) {
 			if (!pLevel.isClientSide) {
-				ItemStack stack = pPlayer.getItemInHand(pHand);
 				IFluidHandlerItem handlerItem = FluidUtil.getFluidHandler(stack).orElse(null);
 				if (handlerItem != null) {
 
@@ -99,7 +97,7 @@ public class SinkCabinetBlock extends Block implements EntityBlock {
 							stack.shrink(1);
 							pPlayer.setItemInHand(pHand, stack);
 							pPlayer.getInventory().placeItemBackInInventory(far.getResult());
-							return InteractionResult.SUCCESS;
+							return ItemInteractionResult.SUCCESS;
 
 						}
 					} else {
@@ -109,7 +107,7 @@ public class SinkCabinetBlock extends Block implements EntityBlock {
 							stack.shrink(1);
 							pPlayer.setItemInHand(pHand, stack);
 							pPlayer.getInventory().placeItemBackInInventory(far.getResult());
-							return InteractionResult.SUCCESS;
+							return ItemInteractionResult.SUCCESS;
 
 						}
 					}
@@ -127,12 +125,12 @@ public class SinkCabinetBlock extends Block implements EntityBlock {
 						}
 					};
 					pPlayer.openMenu(containerProvider, buf -> buf.writeBlockPos(pPos));
-					return InteractionResult.SUCCESS;
+					return ItemInteractionResult.SUCCESS;
 				}
 			}
 
 		}
-		return InteractionResult.CONSUME;
+		return ItemInteractionResult.CONSUME;
 
 	}
 }

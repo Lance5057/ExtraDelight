@@ -430,8 +430,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> GINGER_CRATE = BLOCKS.register("ginger_crate", () -> new Block(
 			Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_BROWN)));
 	public static final DeferredBlock<Block> WILD_GINGER = BLOCKS.register("wild_ginger",
-			() -> new WildCropBlock(MobEffects.FIRE_RESISTANCE.value(), 6,
-					Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
+			() -> new WildCropBlock(MobEffects.FIRE_RESISTANCE, 6, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
 	public static final DeferredBlock<MintCrop> MINT_CROP = BLOCKS.register("mint_crop", MintCrop::new);
 	public static final DeferredBlock<Block> MINT_SACK = BLOCKS.register("mint_sack",
 			() -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN)));
@@ -569,7 +568,7 @@ public class ExtraDelightBlocks {
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
 
 	public static final DeferredBlock<VinegarFluidBlock> VINEGAR_FLUID_BLOCK = BLOCKS.register("vinegar_fluid_block",
-			() -> new VinegarFluidBlock(ExtraDelightFluids.VINEGAR.FLUID,
+			() -> new VinegarFluidBlock(ExtraDelightFluids.VINEGAR.FLUID.get(),
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
 
 	public static final DeferredBlock<LiquidBlock> GRAVY_FLUID_BLOCK = BLOCKS.register("gravy_fluid_block",
@@ -578,7 +577,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<LiquidBlock> GLOW_BERRY_JUICE_FLUID_BLOCK = BLOCKS.register(
 			"glow_berry_fluid_block",
-			() -> new GlowBerryFluidBlock(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID, BlockBehaviour.Properties
+			() -> new GlowBerryFluidBlock(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
 
 	public static final DeferredBlock<LiquidBlock> SWEET_BERRY_JUICE_FLUID_BLOCK = BLOCKS.register(
@@ -601,7 +600,7 @@ public class ExtraDelightBlocks {
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
 
 	public static final DeferredBlock<LiquidBlock> HOT_COCOA_FLUID_BLOCK = BLOCKS.register("hot_cocoa_fluid_block",
-			() -> new HotFluidBlock(ExtraDelightFluids.HOT_COCOA.FLUID, BlockBehaviour.Properties
+			() -> new HotFluidBlock(ExtraDelightFluids.HOT_COCOA.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
 
 	public static final DeferredBlock<LiquidBlock> MELON_JUICE_FLUID_BLOCK = BLOCKS.register("melon_juice_fluid_block",
@@ -659,7 +658,7 @@ public class ExtraDelightBlocks {
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
 
 	public static final DeferredBlock<LiquidBlock> TEA_FLUID_BLOCK = BLOCKS.register("tea_fluid_block",
-			() -> new HotFluidBlock(ExtraDelightFluids.TEA.FLUID, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
+			() -> new HotFluidBlock(ExtraDelightFluids.TEA.FLUID.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
 					.noCollission().strength(100.0F).noLootTable().liquid()));
 
 	public static final DeferredBlock<KegBlock> KEG = BLOCKS.register("keg_block",

@@ -11,6 +11,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -102,18 +103,18 @@ public class RecipeFeastBlock extends Block {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
-			BlockHitResult hit) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
+			InteractionHand hand, BlockHitResult hit) {
 		if (level.isClientSide) {
 			if (this.takeServing(level, pos, state, player, hand).consumesAction()) {
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			}
 		}
 
 		return this.takeServing(level, pos, state, player, hand);
 	}
 
-	protected InteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player,
+	protected ItemInteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player,
 			InteractionHand hand) {
 
 		int servings = state.getValue(getServingsProperty());
@@ -121,7 +122,7 @@ public class RecipeFeastBlock extends Block {
 		if (servings == 0) {
 			level.playSound(null, pos, SoundEvents.WOOD_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 			level.destroyBlock(pos, true);
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		}
 
 		ItemStack heldStack = player.getItemInHand(hand);
@@ -145,11 +146,11 @@ public class RecipeFeastBlock extends Block {
 					level.removeBlock(pos, false);
 				}
 				level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			}
 		}
 
-		return InteractionResult.PASS;
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 
 	@Override
@@ -185,7 +186,7 @@ public class RecipeFeastBlock extends Block {
 	}
 
 	@Override
-	public boolean isPathfindable(BlockState state, BlockGetter level, BlockPos pos, PathComputationType type) {
+	public boolean isPathfindable(BlockState state, PathComputationType type) {
 		return false;
 	}
 }

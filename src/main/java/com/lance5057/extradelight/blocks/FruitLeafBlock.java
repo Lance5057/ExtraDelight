@@ -11,6 +11,7 @@ import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -66,11 +67,11 @@ public class FruitLeafBlock extends Block {
 
 		int i = p_222563_.getValue(AGE);
 		if (i < 3 && p_222564_.getRawBrightness(p_222565_.above(), 0) >= 9 && net.neoforged.neoforge.common.CommonHooks
-				.onCropsGrowPre(p_222564_, p_222565_, p_222563_, p_222566_.nextInt(5) == 0)) {
+				.canCropGrow(p_222564_, p_222565_, p_222563_, p_222566_.nextInt(5) == 0)) {
 			BlockState blockstate = p_222563_.setValue(AGE, Integer.valueOf(i + 1));
 			p_222564_.setBlock(p_222565_, blockstate, 2);
 			p_222564_.gameEvent(GameEvent.BLOCK_CHANGE, p_222565_, GameEvent.Context.of(blockstate));
-			net.neoforged.neoforge.common.CommonHooks.onCropsGrowPost(p_222564_, p_222565_, p_222563_);
+			net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(p_222564_, p_222565_, p_222563_);
 		}
 	}
 
@@ -151,14 +152,14 @@ public class FruitLeafBlock extends Block {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
-			BlockHitResult result) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
+			InteractionHand hand, BlockHitResult result) {
 		if (!level.isClientSide)
 			if (state.getValue(AGE) >= FruitLeafBlock.MAX_AGE) {
-				ItemStack stack = new ItemStack(this.fruit.get(), level.random.nextInt(3) + 1);
-				player.getInventory().placeItemBackInInventory(stack);
+				ItemStack fruit = new ItemStack(this.fruit.get(), level.random.nextInt(3) + 1);
+				player.getInventory().placeItemBackInInventory(fruit);
 				level.setBlock(pos, state.setValue(AGE, 0), 3);
 			}
-		return InteractionResult.PASS;
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 }
