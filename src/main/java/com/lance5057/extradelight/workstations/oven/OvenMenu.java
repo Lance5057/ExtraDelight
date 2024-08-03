@@ -4,7 +4,6 @@ import java.util.Objects;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
-import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 import com.lance5057.extradelight.workstations.oven.slots.OvenResultSlot;
@@ -203,7 +202,7 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper, OvenRecipe> {
 
 	@Override
 	public RecipeBookType getRecipeBookType() {
-		return ExtraDelightRecipes.RECIPE_TYPE_OVEN;
+		return RecipeBookType.valueOf("EXTRADELIGHT_COOKING");
 	}
 
 	@Override

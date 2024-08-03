@@ -5,6 +5,7 @@ import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 
 import net.minecraft.client.RecipeBookCategories;
+import net.minecraft.world.inventory.RecipeBookType;
 import net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
 
 public class OvenRecipeCatagories {
@@ -15,7 +16,7 @@ public class OvenRecipeCatagories {
 	public static final RecipeBookCategories OVEN_MEALS = RecipeBookCategories.valueOf("OVEN_MEALS");
 
 	public static void init(RegisterRecipeBookCategoriesEvent event) {
-		event.registerBookCategories(ExtraDelightRecipes.RECIPE_TYPE_OVEN, ImmutableList.of(OVEN_SEARCH, OVEN_MEALS));
+		event.registerBookCategories(RecipeBookType.valueOf("EXTRADELIGHT_COOKING"), ImmutableList.of(OVEN_SEARCH, OVEN_MEALS));
 		event.registerAggregateCategory(OVEN_SEARCH, ImmutableList.of(OVEN_MEALS));
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.OVEN.get(), recipe -> {
 			if (recipe.value() instanceof OvenRecipe OVENRecipe) {

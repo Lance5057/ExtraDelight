@@ -15,6 +15,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.NestedLootTable;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
@@ -297,7 +298,7 @@ public class StructureLootTables implements LootTableSubProvider {
 		t.accept(dungeon_rot,
 				LootTable.lootTable()
 						.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 15))
-								.add(LootTableReference.lootTableReference(StructureLootTables.meals).setWeight(1))
+								.add(NestedLootTable.lootTableReference(StructureLootTables.meals).setWeight(1))
 								.add(LootItem.lootTableItem(ExtraDelightItems.BAD_FOOD.get()).setWeight(20))));
 
 		t.accept(cactus_juice,

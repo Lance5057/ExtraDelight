@@ -82,5 +82,5 @@ public class ExtraDelightRecipes {
 	public static final Supplier<RecipeSerializer<?>> TOOL_ON_BLOCK_SERIALIZER = RECIPE_SERIALIZERS
 			.register("tool_on_block", ToolOnBlockRecipe.Serializer::new);
 
-	public static final RecipeBookType RECIPE_TYPE_OVEN = RecipeBookType.create("OVEN");
+//	public static final RecipeBookType RECIPE_TYPE_OVEN = RecipeBookType.create("OVEN");
 }
