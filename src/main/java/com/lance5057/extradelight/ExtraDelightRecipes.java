@@ -2,9 +2,6 @@ package com.lance5057.extradelight;
 
 import java.util.function.Supplier;
 
-import com.lance5057.extradelight.recipe.DynamicNameCampfireRecipe;
-import com.lance5057.extradelight.recipe.DynamicNameCookingRecipe;
-import com.lance5057.extradelight.recipe.DynamicNameSmeltingRecipe;
 import com.lance5057.extradelight.recipe.FeastRecipe;
 import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
@@ -70,12 +67,12 @@ public class ExtraDelightRecipes {
 	public static final Supplier<RecipeSerializer<?>> MIXING_BOWL_SERIALIZER = RECIPE_SERIALIZERS
 			.register("mixing_bowl", MixingBowlRecipe.Serializer::new);
 
-	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SMELT_SERIALIZER = RECIPE_SERIALIZERS
-			.register("dynamic_smelt", DynamicNameSmeltingRecipe.Serializer::new);
-	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SMOKE_SERIALIZER = RECIPE_SERIALIZERS
-			.register("dynamic_smoke", DynamicNameCookingRecipe.Serializer::new);
-	public static final Supplier<RecipeSerializer<?>> DYNAMIC_CAMPFIRE_SERIALIZER = RECIPE_SERIALIZERS
-			.register("dynamic_campfire", DynamicNameCampfireRecipe.Serializer::new);
+//	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SMELT_SERIALIZER = RECIPE_SERIALIZERS
+//			.register("dynamic_smelt", DynamicNameSmeltingRecipe.Serializer::new);
+//	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SMOKE_SERIALIZER = RECIPE_SERIALIZERS
+//			.register("dynamic_smoke", DynamicNameCookingRecipe.Serializer::new);
+//	public static final Supplier<RecipeSerializer<?>> DYNAMIC_CAMPFIRE_SERIALIZER = RECIPE_SERIALIZERS
+//			.register("dynamic_campfire", DynamicNameCampfireRecipe.Serializer::new);
 
 	public static final Supplier<RecipeSerializer<?>> DRYING_RACK_SERIALIZER = RECIPE_SERIALIZERS
 			.register("drying_rack", DryingRackSerializer::new);

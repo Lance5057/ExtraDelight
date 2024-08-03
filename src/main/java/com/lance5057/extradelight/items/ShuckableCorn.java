@@ -4,7 +4,7 @@ import com.lance5057.extradelight.util.ItemUtils;
 
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -15,20 +15,21 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 
 public class ShuckableCorn extends Item {
 
-	private final ResourceLocation table;
+	private final ResourceKey<LootTable> table;
 
-	public ShuckableCorn(ResourceLocation t, Properties pProperties) {
+	public ShuckableCorn(ResourceKey<LootTable> t, Properties pProperties) {
 		super(pProperties);
 		table = t;
 	}
 
-	public ResourceLocation getNextItem() {
+	public ResourceKey<LootTable> getNextItem() {
 		return table;
 	}
 
@@ -72,10 +73,9 @@ public class ShuckableCorn extends Item {
 			for (int i = 0; i < c; ++i) {
 				if (pLevel != null && !pLevel.isClientSide()) {
 					final LootParams pContext = new LootParams.Builder((ServerLevel) pLevel)
-							.withParameter(LootContextParams.THIS_ENTITY, p)
-							.create(LootContextParamSets.EMPTY);
-					
-					p.getServer().getLootData().getLootTable(table).getRandomItems(pContext)
+							.withParameter(LootContextParams.THIS_ENTITY, p).create(LootContextParamSets.EMPTY);
+
+					p.getServer().reloadableRegistries().getLootTable(table).getRandomItems(pContext)
 							.forEach(itemStack -> ItemUtils.giveOrDrop(itemStack, p));
 				}
 			}

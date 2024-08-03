@@ -1,12 +1,12 @@
 package com.lance5057.extradelight.recipe;
 
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.Container;
+import net.minecraft.core.HolderLookup.Provider;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -49,54 +49,6 @@ public class ToolOnBlockRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public boolean matches(Container pContainer, Level pLevel) {
-		if (tool.test(pContainer.getItem(0)))
-			return this.in == pContainer.getItem(1).getItem();
-		return false;
-	}
-
-	public static class Serializer implements RecipeSerializer<ToolOnBlockRecipe> {
-//		@Override
-//		public ToolOnBlockRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
-//			Ingredient ingredient;
-//			if (GsonHelper.isArrayNode(pJson, "ingredient")) {
-//				ingredient = Ingredient.fromJson(GsonHelper.getAsJsonArray(pJson, "ingredient"));
-//			} else {
-//				ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "ingredient"));
-//			}
-//
-//			BlockItem bIn = (BlockItem) GsonHelper.getAsItem(pJson, "blockIn");
-//			BlockItem bOut = (BlockItem) GsonHelper.getAsItem(pJson, "blockOut");
-//
-//			return new ToolOnBlockRecipe(pRecipeId, bIn, ingredient, bOut);
-//		}
-
-		private static final Codec<ToolOnBlockRecipe> CODEC = RecordCodecBuilder.create(inst -> inst
-				.group(ItemStack.SINGLE_ITEM_CODEC.fieldOf("in").forGetter(r -> new ItemStack(r.in)),
-						Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(p_301068_ -> p_301068_.tool),
-						ItemStack.SINGLE_ITEM_CODEC.fieldOf("out").forGetter(r -> new ItemStack(r.out)))
-				.apply(inst, ToolOnBlockRecipe::new));
-
-		public ToolOnBlockRecipe fromNetwork(FriendlyByteBuf pBuffer) {
-			Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
-			BlockItem bIn = (BlockItem) pBuffer.readItem().getItem();
-			BlockItem bOut = (BlockItem) pBuffer.readItem().getItem();
-			return new ToolOnBlockRecipe(bIn, ingredient, bOut);
-		}
-
-		public void toNetwork(FriendlyByteBuf pBuffer, ToolOnBlockRecipe pRecipe) {
-			pRecipe.tool.toNetwork(pBuffer);
-			pBuffer.writeItem(new ItemStack(pRecipe.in));
-			pBuffer.writeItem(new ItemStack(pRecipe.out));
-		}
-
-		@Override
-		public Codec<ToolOnBlockRecipe> codec() {
-			return CODEC;
-		}
-	}
-
-	@Override
 	public boolean canCraftInDimensions(int pWidth, int pHeight) {
 		return true;
 	}
@@ -116,12 +68,59 @@ public class ToolOnBlockRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public ItemStack assemble(Container p_44001_, RegistryAccess p_267165_) {
+	public boolean matches(RecipeWrapper input, Level level) {
+		if (tool.test(input.getItem(0)))
+			return this.in == input.getItem(1).getItem();
+		return false;
+	}
+
+	@Override
+	public ItemStack assemble(RecipeWrapper input, Provider registries) {
+		// TODO Auto-generated method stub
 		return new ItemStack(out);
 	}
 
 	@Override
-	public ItemStack getResultItem(RegistryAccess p_267052_) {
+	public ItemStack getResultItem(Provider registries) {
+		// TODO Auto-generated method stub
 		return new ItemStack(out);
 	}
+
+	public static class Serializer implements RecipeSerializer<ToolOnBlockRecipe> {
+		private static final MapCodec<ToolOnBlockRecipe> CODEC = RecordCodecBuilder
+				.mapCodec(
+						inst -> inst
+								.group(ItemStack.SINGLE_ITEM_CODEC.fieldOf("in").forGetter(r -> new ItemStack(r.in)),
+										Ingredient.CODEC_NONEMPTY.fieldOf("ingredient")
+												.forGetter(p_301068_ -> p_301068_.tool),
+										ItemStack.SINGLE_ITEM_CODEC.fieldOf("out").forGetter(r -> new ItemStack(r.out)))
+								.apply(inst, ToolOnBlockRecipe::new));
+
+		public static ToolOnBlockRecipe fromNetwork(RegistryFriendlyByteBuf pBuffer) {
+			Ingredient ingredient = Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer);
+			BlockItem bIn = (BlockItem) ItemStack.STREAM_CODEC.decode(pBuffer).getItem();
+			BlockItem bOut = (BlockItem) ItemStack.STREAM_CODEC.decode(pBuffer).getItem();
+			return new ToolOnBlockRecipe(bIn, ingredient, bOut);
+		}
+
+		public static void toNetwork(RegistryFriendlyByteBuf pBuffer, ToolOnBlockRecipe pRecipe) {
+			Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, pRecipe.tool);
+			ItemStack.STREAM_CODEC.encode(pBuffer, new ItemStack(pRecipe.in));
+			ItemStack.STREAM_CODEC.encode(pBuffer, new ItemStack(pRecipe.out));
+		}
+
+		@Override
+		public MapCodec<ToolOnBlockRecipe> codec() {
+			return CODEC;
+		}
+
+		public static final StreamCodec<RegistryFriendlyByteBuf, ToolOnBlockRecipe> STREAM_CODEC = StreamCodec
+				.of(ToolOnBlockRecipe.Serializer::toNetwork, ToolOnBlockRecipe.Serializer::fromNetwork);
+
+		@Override
+		public StreamCodec<RegistryFriendlyByteBuf, ToolOnBlockRecipe> streamCodec() {
+			return STREAM_CODEC;
+		}
+	}
+
 }

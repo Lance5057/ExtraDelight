@@ -5,46 +5,63 @@ import java.util.function.BiConsumer;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class StructureLootTables implements LootTableSubProvider {
-	public static ResourceLocation curry_powder = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/curry_powder");
-	public static ResourceLocation furikake = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/furikake");
-	public static ResourceLocation meals = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/meals");
-	public static ResourceLocation dungeon_rot = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/dungeon_rot");
+	protected final HolderLookup.Provider registries;
 
-	public static ResourceLocation cactus_juice = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/cactus_juice");
+	public static ResourceKey<LootTable> curry_powder = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/curry_powder"));
+	public static ResourceKey<LootTable> furikake = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/furikake"));
+	public static ResourceKey<LootTable> meals = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/meals"));
+	public static ResourceKey<LootTable> dungeon_rot = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/dungeon_rot"));
 
-	public static ResourceLocation mortar_nether = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-			"structures/mortar_nether");
-	public static ResourceLocation mortar_dungeon = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-			"structures/mortar_dungeon");
-	public static ResourceLocation pestle_nether = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-			"structures/pestle_nether");
-	public static ResourceLocation pestle_dungeon = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-			"structures/pestle_dungeon");
+	public static ResourceKey<LootTable> cactus_juice = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/cactus_juice"));
 
-	public static ResourceLocation corn_common = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_common");
-	public static ResourceLocation corn_uncommon = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_uncommon");
-	public static ResourceLocation corn_rare = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_rare");
-	public static ResourceLocation corn_legendary = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_legendary");
+	public static ResourceKey<LootTable> mortar_nether = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/mortar_nether"));
+	public static ResourceKey<LootTable> mortar_dungeon = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/mortar_dungeon"));
+	public static ResourceKey<LootTable> pestle_nether = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/pestle_nether"));
+	public static ResourceKey<LootTable> pestle_dungeon = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structures/pestle_dungeon"));
+
+	public static ResourceKey<LootTable> corn_common = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_common"));
+	public static ResourceKey<LootTable> corn_uncommon = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_uncommon"));
+	public static ResourceKey<LootTable> corn_rare = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_rare"));
+	public static ResourceKey<LootTable> corn_legendary = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chests/corn_legendary"));
 
 	static int COMMON = 100;
 	static int UNCOMMON = 50;
 	static int RARE = 10;
 	static int LEGENDARY = 1;
 
+	protected StructureLootTables(HolderLookup.Provider provider) {
+		registries = provider;
+	}
+
 	@Override
-	public void generate(BiConsumer<ResourceLocation, Builder> t) {
+	public void generate(BiConsumer<ResourceKey<LootTable>, Builder> t) {
 
 //		t.accept(mortar_nether,
 //				LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 1))
@@ -292,7 +309,7 @@ public class StructureLootTables implements LootTableSubProvider {
 						.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 2))
 								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_SEEDS.get()))
 								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_COB.get()))
-//								.add(LootItem.lootTableItem(ExtraDelightItems.UNSHUCKED_CORN.get()))
+								.add(LootItem.lootTableItem(ExtraDelightItems.UNSHUCKED_CORN.get()))
 								.add(LootItem.lootTableItem(ExtraDelightItems.CORN_SILK.get()))
 								.add(LootItem.lootTableItem(ExtraDelightItems.CANDY_APPLE.get()))
 								.add(LootItem.lootTableItem(ExtraDelightItems.CARAMEL_APPLE.get()))

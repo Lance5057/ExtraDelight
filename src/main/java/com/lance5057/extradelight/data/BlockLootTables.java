@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,6 +17,7 @@ import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
@@ -44,8 +46,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 	private static final float[] NORMAL_LEAVES_STICK_CHANCES = new float[] { 0.02F, 0.022222223F, 0.025F, 0.033333335F,
 			0.1F };
 
-	protected BlockLootTables() {
-		super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+	protected BlockLootTables(HolderLookup.Provider provider) {
+		super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags(), provider);
 	}
 
 	@Override
@@ -310,7 +312,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 										StatePropertiesPredicate.Builder.properties().hasProperty(CoffeeBush.AGE, 3)))
 						.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
-						.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.FORTUNE)))
+						.apply(ApplyBonusCount
+								.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))
 						.withPool(LootPool.lootPool()
 								.when(LootItemBlockStatePropertyCondition
 										.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get())
@@ -318,7 +321,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 												.hasProperty(CoffeeBush.AGE, 2)))
 								.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
-								.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.FORTUNE)))));
+								.apply(ApplyBonusCount
+										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
 
 		this.dropSelf(ExtraDelightBlocks.KEG.get());
 
@@ -350,7 +354,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ChiliCrop.AGE, 7));
 		crop(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightItems.CHILI.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 				chiliBuilder);
-		
+
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get());
@@ -367,23 +371,25 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition,
 			float amount) {
-		this.add(pCropBlock, LootTable.lootTable()
-				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(amount))
-						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)))
-				.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
-						.add(LootItem.lootTableItem(pGrownCropItem).apply(ApplyBonusCount
-								.addBonusBinomialDistributionCount(Enchantments.FORTUNE, 0.5714286F, 1)))));
+		this.add(pCropBlock,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(amount))
+								.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)))
+						.withPool(
+								LootPool.lootPool().when(pDropGrownCropCondition)
+										.add(LootItem.lootTableItem(pGrownCropItem)
+												.apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+														this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F,
+														1)))));
 	}
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition) {
-		this.add(pCropBlock,
-				LootTable.lootTable()
-						.withPool(LootPool.lootPool()
-								.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)
-										.otherwise(LootItem.lootTableItem(pSeedsItem))))
-						.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
-								.add(LootItem.lootTableItem(pGrownCropItem).apply(
-										ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.FORTUNE,
-												0.5714286F, 1)))));
+		this.add(pCropBlock, LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)
+								.otherwise(LootItem.lootTableItem(pSeedsItem))))
+				.withPool(LootPool.lootPool().when(pDropGrownCropCondition).add(
+						LootItem.lootTableItem(pGrownCropItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+								this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F, 1)))));
 	}
 }

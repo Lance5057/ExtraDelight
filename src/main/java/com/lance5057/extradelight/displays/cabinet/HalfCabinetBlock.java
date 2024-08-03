@@ -18,12 +18,15 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -40,13 +43,17 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 	protected static final VoxelShape SHAPE_W = Block.box(8.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 	protected static final VoxelShape SHAPE_S = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 8.0D);
 
-	public static final MapCodec<CabinetBlock> CODEC = simpleCodec(CabinetBlock::new);
+	public static final MapCodec<HalfCabinetBlock> CODEC = simpleCodec(HalfCabinetBlock::new);
 
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
+	public HalfCabinetBlock() {
+		this((Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(0.5F).sound(SoundType.WOOD)));
+	}
+	
 	public HalfCabinetBlock(Properties properties) {
-		super(properties);
+		super(Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(0.5F).sound(SoundType.WOOD));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, false));
 	}
 

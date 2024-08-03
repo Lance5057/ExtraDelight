@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.CactusJuiceItem;
 import com.lance5057.extradelight.items.CornSilkTeaItem;
@@ -13,7 +14,7 @@ import com.lance5057.extradelight.items.GlowberryJuiceItem;
 import com.lance5057.extradelight.items.GlowberryPopsicleItem;
 import com.lance5057.extradelight.items.MilkshakeDrinkItem;
 import com.lance5057.extradelight.items.OffsetSpatulaItem;
-import com.lance5057.extradelight.items.SimpleDynamicNameFood;
+import com.lance5057.extradelight.items.ShuckableCorn;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -317,12 +318,10 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().food(EDFoods.SCRAMBLED_EGGS).craftRemainder(Items.BOWL)));
 
 	public static final DeferredItem<Item> OMELETTE_MIX = ITEMS.register("omelette_mix",
-			() -> new SimpleDynamicNameFood(ExtraDelightItems.EGG_MIX.get(),
-					new Item.Properties().craftRemainder(Items.BOWL)));
+			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL)));
 
 	public static final DeferredItem<Item> OMELETTE = ITEMS.register("omelette",
-			() -> new SimpleDynamicNameFood(ExtraDelightItems.OMELETTE_MIX.get(),
-					new Item.Properties().food(EDFoods.OMELETTE)));
+			() -> new Item(new Item.Properties().food(EDFoods.OMELETTE)));
 
 	public static final DeferredItem<Item> BOILED_EGG = ITEMS.register("boiled_egg",
 			() -> new Item(new Item.Properties().food(FoodValues.FRIED_EGG)));
@@ -762,8 +761,8 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> CORN_SEEDS = ITEMS.register("corn_seeds",
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.CORN_BOTTOM.get(), new Item.Properties()));
 
-//	public static final DeferredItem<Item> UNSHUCKED_CORN = ITEMS.register("unshucked_corn",
-//			() -> new ShuckableCorn(MiscLootTables.SHUCKED_CORN, new Item.Properties()));
+	public static final DeferredItem<Item> UNSHUCKED_CORN = ITEMS.register("unshucked_corn",
+			() -> new ShuckableCorn(MiscLootTables.SHUCKED_CORN, new Item.Properties()));
 	public static final DeferredItem<Item> CORN_ON_COB = ITEMS.register("corn_on_cob",
 			() -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> CORN_HUSK = ITEMS.register("corn_husk",

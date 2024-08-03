@@ -1,5 +1,6 @@
 package com.lance5057.extradelight.loot;
 
+import java.util.Optional;
 import java.util.function.Supplier;
 
 import org.antlr.v4.runtime.misc.NotNull;
@@ -9,6 +10,9 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.core.Holder.Reference;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -22,18 +26,17 @@ public class FoodLoot extends LootModifier {
 			inst -> codecStart(inst).and(ResourceLocation.CODEC.fieldOf("loot_table").forGetter(m -> m.lootTableID))
 					.apply(inst, FoodLoot::new)));
 
-	private final ResourceLocation lootTableID;
+	private final ResourceKey<LootTable> lootTableID;
 
-	public FoodLoot(final LootItemCondition[] conditions, final ResourceLocation lootTableID) {
+	public FoodLoot(final LootItemCondition[] conditions, final ResourceKey<LootTable> mortar_dungeon) {
 		super(conditions);
-		this.lootTableID = lootTableID;
+		this.lootTableID = mortar_dungeon;
 	}
 
 	@Override
-	@NotNull
 	protected ObjectArrayList<ItemStack> doApply(final ObjectArrayList<ItemStack> generatedLoot,
 			final LootContext context) {
-		LootTable extraTable = context.getResolver().getLootTable(lootTableID);
+		Optional<Reference<LootTable>> extraTable = context.getResolver().get(Registries.LOOT_TABLE, lootTableID);
 
 		extraTable.getRandomItemsRaw(context, generatedLoot::add);
 
