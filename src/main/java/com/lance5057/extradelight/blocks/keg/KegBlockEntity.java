@@ -5,6 +5,7 @@ import javax.annotation.Nonnull;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -51,55 +52,55 @@ public class KegBlockEntity extends BlockEntity {
 	}
 
 	@Override
-	public CompoundTag getUpdateTag() {
-		CompoundTag nbt = super.getUpdateTag();
+	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+		CompoundTag nbt = super.getUpdateTag(registries);
 
-		writeNBT(nbt);
+		writeNBT(nbt, registries);
 
 		return nbt;
 	}
 
 	@Override
-	public void handleUpdateTag(CompoundTag tag) {
-		readNBT(tag);
+	public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
+		readNBT(tag, registries);
 	}
 
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
 		CompoundTag tag = new CompoundTag();
 
-		writeNBT(tag);
+		writeNBT(tag, null);
 
 		return ClientboundBlockEntityDataPacket.create(this);
 	}
 
 	@Override
-	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
+	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
 		CompoundTag tag = pkt.getTag();
 		// InteractionHandle your Data
-		readNBT(tag);
+		readNBT(tag, registries);
 	}
 
-	void readNBT(CompoundTag nbt) {
-			tank.readFromNBT(nbt);
+	void readNBT(CompoundTag nbt, HolderLookup.Provider registries) {
+			tank.readFromNBT(registries, nbt);
 	}
 
-	CompoundTag writeNBT(CompoundTag tag) {
+	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
 
-		tank.writeToNBT(tag);
+		tank.writeToNBT(registries, tag);
 
 		return tag;
 	}
 
 	@Override
-	public void load(@Nonnull CompoundTag nbt) {
-		super.load(nbt);
-		readNBT(nbt);
+	public void loadAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+		super.loadAdditional(nbt, registries);
+		readNBT(nbt, registries);
 	}
 
 	@Override
-	public void saveAdditional(@Nonnull CompoundTag nbt) {
-		super.saveAdditional(nbt);
-		writeNBT(nbt);
+	public void saveAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+		super.saveAdditional(nbt, registries);
+		writeNBT(nbt, registries);
 	}
 }

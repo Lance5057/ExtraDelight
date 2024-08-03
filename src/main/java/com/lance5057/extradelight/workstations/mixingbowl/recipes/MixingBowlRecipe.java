@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -47,16 +48,14 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 		return this.ingredients;
 	}
 
-	/**
-	 * Used to check if a recipe matches current crafting inventory
-	 */
-	public boolean matches(SimpleContainer pInv, Level pLevel) {
+	@Override
+	public boolean matches(RecipeWrapper input, Level level) {
 		StackedContents stackedcontents = new StackedContents();
 		java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
 		int i = 0;
 
-		for (int j = 0; j < pInv.getContainerSize(); ++j) {
-			ItemStack itemstack = pInv.getItem(j);
+		for (int j = 0; j < input.size(); ++j) {
+			ItemStack itemstack = input.getItem(j);
 			if (!itemstack.isEmpty()) {
 				++i;
 				if (isSimple)
@@ -68,11 +67,6 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 
 		return i == this.ingredients.size() && (isSimple ? stackedcontents.canCraft(this, (IntList) null)
 				: RecipeMatcher.findMatches(inputs, this.ingredients) != null);
-	}
-
-	@Override
-	public ItemStack getResultItem(RegistryAccess p_267052_) {
-		return this.result;
 	}
 
 	/**
@@ -101,25 +95,19 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 		return this.usedItem;
 	}
 
+	@Override
+	public ItemStack assemble(RecipeWrapper input, Provider registries) {
+		return this.result.copy();
+	}
+
+	@Override
+	public ItemStack getResultItem(Provider registries) {
+		return this.result;
+	}
+
 	public static class Serializer implements RecipeSerializer<MixingBowlRecipe> {
-
-//		public MixingBowlRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
-//			String s = GsonHelper.getAsString(pJson, "group", "");
-//			NonNullList<Ingredient> nonnulllist = itemsFromJson(GsonHelper.getAsJsonArray(pJson, "ingredients"));
-//			if (nonnulllist.isEmpty()) {
-//				throw new JsonParseException("No ingredients for shapeless recipe");
-//			} else if (nonnulllist.size() > 32) {
-//				throw new JsonParseException("Too many ingredients for shapeless recipe. The maximum is 32");
-//			} else {
-//				ItemStack itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
-//				int stirs = pJson.getAsJsonPrimitive("stirs").getAsInt();
-//				ItemStack usedItem = CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(pJson, "usedItem"), true, false);//ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "usedItem"));
-//				return new MixingBowlRecipe(pRecipeId, s, nonnulllist, itemstack, stirs, usedItem);
-//			}
-//		}
-
-		private static final Codec<MixingBowlRecipe> CODEC = RecordCodecBuilder.create(inst -> inst
-				.group(ExtraCodecs.strictOptionalField(Codec.STRING, "group", "").forGetter(MixingBowlRecipe::getGroup),
+		private static final Codec<MixingBowlRecipe> CODEC = RecordCodecBuilder.create(
+				inst -> inst.group(Codec.STRING.optionalFieldOf("group", "").forGetter(MixingBowlRecipe::getGroup),
 
 						Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ingredients -> {
 							NonNullList<Ingredient> nonNullList = NonNullList.create();
@@ -127,26 +115,12 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 							return nonNullList;
 						}, ingredients -> ingredients).forGetter(MixingBowlRecipe::getIngredients),
 
-						ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("result").forGetter(r -> r.result),
+						ItemStack.CODEC.fieldOf("result").forGetter(r -> r.result),
 
-						ExtraCodecs.strictOptionalField(Codec.INT, "stirs", 100).forGetter(r -> r.stirs),
+						Codec.INT.optionalFieldOf("stirs", 100).forGetter(r -> r.stirs),
 
-						ItemStack.ITEM_WITH_COUNT_CODEC.optionalFieldOf("usedItem", ItemStack.EMPTY).forGetter(r -> r.usedItem))
-
-				// String pGroup, NonNullList<Ingredient> pIngredients, ItemStack pResult, int
-				// stirs, ItemStack usedItem
-				.apply(inst, MixingBowlRecipe::new));
-
-//		private static NonNullList<Ingredient> itemsFromJson(JsonArray pIngredientArray) {
-//			NonNullList<Ingredient> nonnulllist = NonNullList.create();
-//
-//			for (int i = 0; i < pIngredientArray.size(); ++i) {
-//				Ingredient ingredient = Ingredient.fromJson(pIngredientArray.get(i), true);
-//				nonnulllist.add(ingredient);
-//			}
-//
-//			return nonnulllist;
-//		}
+						ItemStack.CODEC.optionalFieldOf("usedItem", ItemStack.EMPTY).forGetter(r -> r.usedItem))
+						.apply(inst, MixingBowlRecipe::new));
 
 		public MixingBowlRecipe fromNetwork(FriendlyByteBuf pBuffer) {
 			String s = pBuffer.readUtf();
@@ -189,4 +163,5 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 		// TODO Auto-generated method stub
 		return ExtraDelightRecipes.MIXING_BOWL.get();
 	}
+
 }

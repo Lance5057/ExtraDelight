@@ -53,12 +53,6 @@ public class ChocolateStyleBlock extends Block implements IStyleable {
 	}
 
 	@Override
-	public void setStyle(int style) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public boolean isPatreonStyle(int style) {
 		// TODO Auto-generated method stub
 		return false;
@@ -83,5 +77,11 @@ public class ChocolateStyleBlock extends Block implements IStyleable {
 	@Override
 	public BlockState getState(int i) {
 		return this.defaultBlockState().setValue(STYLE, i);
+	}
+
+	@Override
+	public void setStyle(Level level, BlockPos pos, BlockState state, int style) {
+		// TODO Auto-generated method stub
+		
 	}
 }

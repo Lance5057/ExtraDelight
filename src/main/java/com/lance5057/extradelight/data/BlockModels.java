@@ -302,7 +302,7 @@ public class BlockModels extends BlockStateProvider {
 		styleBlock(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
 				"block/cosmetics/chocolate/milk_chocolate");
 		styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
-
+				"block/cosmetics/chocolate/white_chocolate");
 
 		AestheticBlocks.blockModel(this);
 	}

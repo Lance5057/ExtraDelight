@@ -2,8 +2,6 @@ package com.lance5057.extradelight.items;
 
 import java.util.List;
 
-import javax.annotation.Nullable;
-
 import com.lance5057.extradelight.ExtraDelight;
 
 import net.minecraft.ChatFormatting;
@@ -11,6 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -24,8 +23,8 @@ public class CactusJuiceItem extends DrinkableItem {
 	@Override
 	public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
 		consumer.heal(2.0F);
-		
-		if(consumer.isOnFire())
+
+		if (consumer.isOnFire())
 			consumer.setRemainingFireTicks(0);
 
 		int r = level.random.nextInt(10);
@@ -47,9 +46,9 @@ public class CactusJuiceItem extends DrinkableItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
-			TooltipFlag pIsAdvanced) {
-		pTooltipComponents.add(
+	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
+			TooltipFlag tooltipFlag) {
+		tooltipComponents.add(
 				Component.literal("").append(Component.translatable(ExtraDelight.MOD_ID + ".cactus_juice.hovertext"))
 						.withStyle(ChatFormatting.GREEN));
 	}

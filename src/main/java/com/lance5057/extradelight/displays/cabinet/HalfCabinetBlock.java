@@ -10,19 +10,14 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Rotation;
@@ -35,6 +30,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.entity.CabinetBlockEntity;
 import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
@@ -44,24 +40,31 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 	protected static final VoxelShape SHAPE_W = Block.box(8.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 	protected static final VoxelShape SHAPE_S = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 8.0D);
 
+	public static final MapCodec<CabinetBlock> CODEC = simpleCodec(CabinetBlock::new);
+
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
-	public HalfCabinetBlock() {
-		super(Block.Properties.ofFullCopy(Blocks.BARREL).noOcclusion()); // Copy barrel properties like a normal cabinet
+	public HalfCabinetBlock(Properties properties) {
+		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, false));
 	}
 
 	@Override
-	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
-			InteractionHand hand, BlockHitResult hit) {
+	protected MapCodec<? extends BaseEntityBlock> codec() {
+		return CODEC;
+	}
+
+	@Override
+	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
+			BlockHitResult hit) {
 		if (!level.isClientSide) {
 			BlockEntity tile = level.getBlockEntity(pos);
 			if (tile instanceof CabinetBlockEntity) {
 				player.openMenu((CabinetBlockEntity) tile);
 			}
 		}
-		return ItemInteractionResult.SUCCESS;
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override
@@ -87,17 +90,6 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
-	}
-
-	@Override
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer,
-			ItemStack stack) {
-		if (stack.hasCustomHoverName()) {
-			BlockEntity tileEntity = level.getBlockEntity(pos);
-			if (tileEntity instanceof CabinetBlockEntity) {
-				((CabinetBlockEntity) tileEntity).setCustomName(stack.getHoverName());
-			}
-		}
 	}
 
 	@Override
@@ -127,22 +119,6 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 		return RenderShape.MODEL;
 	}
 
-	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-		Direction d = pState.getValue(FACING);
-
-		if (d == Direction.EAST)
-			return SHAPE_E;
-		if (d == Direction.WEST)
-			return SHAPE_W;
-		if (d == Direction.SOUTH)
-			return SHAPE_S;
-		return SHAPE_N;
-	}
-
-	public boolean useShapeForLightOcclusion(BlockState pState) {
-		return true;
-	}
-
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
@@ -153,9 +129,15 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
 	}
 
-	@Override
-	protected MapCodec<? extends BaseEntityBlock> codec() {
-		// TODO Auto-generated method stub
-		return null;
+	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+		Direction d = pState.getValue(FACING);
+
+		if (d == Direction.EAST)
+			return SHAPE_E;
+		if (d == Direction.WEST)
+			return SHAPE_W;
+		if (d == Direction.SOUTH)
+			return SHAPE_S;
+		return SHAPE_N;
 	}
 }
