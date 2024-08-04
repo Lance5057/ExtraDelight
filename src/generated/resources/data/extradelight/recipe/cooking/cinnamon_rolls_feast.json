@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:square_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/dough"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "item": "extradelight:frosting_white"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:cinnamon_rolls_feast"
+  }
+}

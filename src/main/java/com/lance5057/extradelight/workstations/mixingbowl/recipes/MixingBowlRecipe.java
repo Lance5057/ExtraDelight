@@ -140,9 +140,9 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 				nonnulllist.set(j, Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer));
 			}
 
-			ItemStack itemstack = ItemStack.STREAM_CODEC.decode(pBuffer);
+			ItemStack itemstack = ItemStack.OPTIONAL_STREAM_CODEC.decode(pBuffer);
 			int stirs = pBuffer.readVarInt();
-			ItemStack usedItem = ItemStack.STREAM_CODEC.decode(pBuffer);
+			ItemStack usedItem = ItemStack.OPTIONAL_STREAM_CODEC.decode(pBuffer);
 			return new MixingBowlRecipe(s, nonnulllist, itemstack, stirs, usedItem);
 		}
 
@@ -154,9 +154,9 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 				Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, ingredient);
 			}
 
-			ItemStack.STREAM_CODEC.encode(pBuffer, pRecipe.result);
+			ItemStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.result);
 			pBuffer.writeVarInt(pRecipe.getStirs());
-			ItemStack.STREAM_CODEC.encode(pBuffer, pRecipe.getUsedItem());
+			ItemStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.getUsedItem());
 
 		}
 

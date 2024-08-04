@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:food_loot",
+  "conditions": [
+    {
+      "chance": 1.5,
+      "condition": "minecraft:random_chance"
+    },
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/shipwreck_treasure"
+    }
+  ],
+  "loot_table": "extradelight:structures/curry_powder"
+}

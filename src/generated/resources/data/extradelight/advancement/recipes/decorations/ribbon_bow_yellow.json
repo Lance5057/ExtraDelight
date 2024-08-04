@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:ribbon_bow_yellow"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "yellow_bow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:white_wool"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "yellow_bow"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:ribbon_bow_yellow"
+    ]
+  }
+}

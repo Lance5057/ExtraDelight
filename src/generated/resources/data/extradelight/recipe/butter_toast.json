@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:bread/sliced"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:buttered_toast"
+  }
+}

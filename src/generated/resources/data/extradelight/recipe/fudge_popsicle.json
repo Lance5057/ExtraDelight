@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "i": {
+      "item": "minecraft:ice"
+    },
+    "m": {
+      "tag": "c:foods/milk"
+    },
+    "s": {
+      "tag": "extradelight:sweetener"
+    }
+  },
+  "pattern": [
+    " cm",
+    "isc",
+    "Si "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:fudge_popsicle"
+  }
+}

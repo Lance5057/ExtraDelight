@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "w": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "w w",
+    "w w",
+    " w "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:mixing_bowl"
+  }
+}

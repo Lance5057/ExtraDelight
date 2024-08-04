@@ -1,12 +1,7 @@
 package com.lance5057.extradelight.workstations.oven.recipes;
 
-import java.util.Optional;
-
-import javax.annotation.Nullable;
-
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -28,17 +23,18 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 	public static final int INPUT_SLOTS = 9;
 
 	private final String group;
-	private final OvenRecipeBookTab tab;
+//	private final OvenRecipeBookTab tab;
 	private final NonNullList<Ingredient> inputItems;
 	public final ItemStack output;
 	private final ItemStack container;
 	private final float experience;
 	private final int cookTime;
 
-	public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab, NonNullList<Ingredient> inputItems,
+	public OvenRecipe(String group,
+			/* @Nullable OvenRecipeBookTab tab, */ NonNullList<Ingredient> inputItems,
 			ItemStack output, ItemStack container, float experience, int cookTime) {
 		this.group = group;
-		this.tab = tab;
+//		this.tab = tab;
 		this.inputItems = inputItems;
 		this.output = output;
 
@@ -66,10 +62,10 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 		return this.group;
 	}
 
-	@Nullable
-	public OvenRecipeBookTab getRecipeBookTab() {
-		return this.tab;
-	}
+//	@Nullable
+//	public OvenRecipeBookTab getRecipeBookTab() {
+//		return this.tab;
+//	}
 
 	@Override
 	public NonNullList<Ingredient> getIngredients() {
@@ -140,8 +136,8 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 
 		private static final MapCodec<OvenRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
 				Codec.STRING.optionalFieldOf("group", "").forGetter(OvenRecipe::getGroup),
-				OvenRecipeBookTab.CODEC.optionalFieldOf("recipe_book_tab")
-						.xmap(optional -> optional.orElse(null), Optional::of).forGetter(OvenRecipe::getRecipeBookTab),
+//				OvenRecipeBookTab.CODEC.optionalFieldOf("recipe_book_tab")
+//						.xmap(optional -> optional.orElse(null), Optional::of).forGetter(OvenRecipe::getRecipeBookTab),
 				Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ingredients -> {
 					NonNullList<Ingredient> nonNullList = NonNullList.create();
 					nonNullList.addAll(ingredients);
@@ -156,7 +152,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 
 		public static OvenRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
 			String groupIn = buffer.readUtf();
-			OvenRecipeBookTab tabIn = OvenRecipeBookTab.findByName(buffer.readUtf());
+//			OvenRecipeBookTab tabIn = OvenRecipeBookTab.findByName(buffer.readUtf());
 			int i = buffer.readVarInt();
 			NonNullList<Ingredient> inputItemsIn = NonNullList.withSize(i, Ingredient.EMPTY);
 
@@ -168,12 +164,12 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 			ItemStack container = ItemStack.STREAM_CODEC.decode(buffer);
 			float experienceIn = buffer.readFloat();
 			int cookTimeIn = buffer.readVarInt();
-			return new OvenRecipe(groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+			return new OvenRecipe(groupIn, /* tabIn, */ inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
 		}
 
 		public static void toNetwork(RegistryFriendlyByteBuf buffer, OvenRecipe recipe) {
 			buffer.writeUtf(recipe.group);
-			buffer.writeUtf(recipe.tab != null ? recipe.tab.toString() : "");
+//			buffer.writeUtf(recipe.tab != null ? recipe.tab.toString() : "");
 			buffer.writeVarInt(recipe.inputItems.size());
 
 			for (Ingredient ingredient : recipe.inputItems) {

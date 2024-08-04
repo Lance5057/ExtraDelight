@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/bulk/mutton_chops8"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "mutton_chops": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:tray"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "mutton_chops"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/bulk/mutton_chops8"
+    ]
+  }
+}

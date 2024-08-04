@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:food_loot",
+  "conditions": [
+    {
+      "chance": 0.25,
+      "condition": "minecraft:random_chance"
+    },
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/village/village_desert_house"
+    }
+  ],
+  "loot_table": "extradelight:structures/curry_powder"
+}

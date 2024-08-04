@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:bowl"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    }
+  },
+  "pattern": [
+    "gbg",
+    " g "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:candy_bowl_item"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:jungle_molded_purple_wallpaper"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "purple_jungle_wallpaper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:paper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "purple_jungle_wallpaper"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:jungle_molded_purple_wallpaper"
+    ]
+  }
+}

@@ -1,5 +1,8 @@
 package com.lance5057.extradelight.loot;
 
+import java.util.function.Supplier;
+
+import com.google.common.base.Suppliers;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
@@ -18,10 +21,10 @@ public class FoodLoot extends LootModifier {
 //			inst -> codecStart(inst).and(ResourceKey ResourceLocation.CODEC.fieldOf("loot_table").forGetter(m -> m.lootTableID))
 //					.apply(inst, FoodLoot::new)));
 
-	public static final MapCodec<FoodLoot> CODEC = RecordCodecBuilder.mapCodec(instance -> instance
+	public static final Supplier<MapCodec<FoodLoot>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(instance -> instance
 			.group(IGlobalLootModifier.LOOT_CONDITIONS_CODEC.fieldOf("conditions").forGetter(glm -> glm.conditions),
 					ResourceKey.codec(Registries.LOOT_TABLE).fieldOf("loot_table").forGetter(FoodLoot::lootTableID))
-			.apply(instance, FoodLoot::new));
+			.apply(instance, FoodLoot::new)));
 
 	private final ResourceKey<LootTable> lootTableID;
 
@@ -50,6 +53,6 @@ public class FoodLoot extends LootModifier {
 
 	@Override
 	public MapCodec<? extends IGlobalLootModifier> codec() {
-		return CODEC;
+		return CODEC.get();
 	}
 }

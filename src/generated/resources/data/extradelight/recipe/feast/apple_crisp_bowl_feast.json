@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "id": "extradelight:apple_crisp_feast"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:apple_crisp"
+  }
+}

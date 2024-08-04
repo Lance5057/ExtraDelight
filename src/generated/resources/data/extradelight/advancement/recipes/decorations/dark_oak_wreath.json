@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "dark_oak_wreath": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:dark_oak_leaves"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:dark_oak_wreath"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "dark_oak_wreath"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:dark_oak_wreath"
+    ]
+  }
+}

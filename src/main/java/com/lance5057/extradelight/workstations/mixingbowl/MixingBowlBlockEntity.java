@@ -177,7 +177,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 		tag.putInt("stirs", this.stirs);
 
-		tag.put("usedItem", containerItem.save(registries));
+		tag.put("usedItem", containerItem.saveOptional(registries));
 		tag.putBoolean("complete", this.complete);
 
 		return tag;

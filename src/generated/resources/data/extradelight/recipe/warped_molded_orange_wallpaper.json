@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/orange"
+    },
+    {
+      "item": "minecraft:warped_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:warped_molded_orange_wallpaper"
+  }
+}

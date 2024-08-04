@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:cactus"
+    },
+    {
+      "item": "extradelight:cactus"
+    },
+    {
+      "item": "extradelight:cactus"
+    },
+    {
+      "item": "extradelight:cactus"
+    },
+    {
+      "item": "extradelight:cactus"
+    },
+    {
+      "item": "extradelight:cactus"
+    },
+    {
+      "item": "extradelight:cactus"
+    },
+    {
+      "item": "extradelight:cactus"
+    },
+    {
+      "item": "extradelight:cactus"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "extradelight:cooked_cactus"
+  }
+}

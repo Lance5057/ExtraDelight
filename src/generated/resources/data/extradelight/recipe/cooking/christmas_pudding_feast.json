@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:square_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:fruit/dried"
+    },
+    {
+      "tag": "forge:fruit/dried"
+    },
+    {
+      "tag": "forge:fruit/dried"
+    },
+    {
+      "tag": "forge:bread/crumbs"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:christmas_pudding_feast"
+  }
+}

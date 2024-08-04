@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "beet_mint_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:beet_mint_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/beet_mint_salad"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "beet_mint_salad"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/beet_mint_salad"
+    ]
+  }
+}

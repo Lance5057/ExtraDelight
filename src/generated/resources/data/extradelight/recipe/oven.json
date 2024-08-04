@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bricks"
+    },
+    "b": {
+      "item": "minecraft:brick"
+    },
+    "f": {
+      "item": "minecraft:furnace"
+    },
+    "t": {
+      "item": "minecraft:terracotta"
+    }
+  },
+  "pattern": [
+    "bBb",
+    "BfB",
+    "BtB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:oven"
+  }
+}

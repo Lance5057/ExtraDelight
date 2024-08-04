@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:food_loot",
+  "conditions": [
+    {
+      "chance": 0.1,
+      "condition": "minecraft:random_chance"
+    },
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/bastion_other"
+    }
+  ],
+  "loot_table": "extradelight:structures/pestle_nether"
+}

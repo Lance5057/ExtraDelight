@@ -7,7 +7,6 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
-import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.advancements.Advancement;
@@ -31,7 +30,7 @@ import net.minecraft.world.level.ItemLike;
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class OvenRecipeBuilder implements RecipeBuilder {
-	private OvenRecipeBookTab tab;
+//	private OvenRecipeBookTab tab;
 	private final NonNullList<Ingredient> ingredients = NonNullList.create();
 	private final Item result;
 	private final ItemStack resultStack;
@@ -47,7 +46,7 @@ public class OvenRecipeBuilder implements RecipeBuilder {
 		this.cookingTime = cookingTime;
 		this.experience = experience;
 		this.container = container;
-		this.tab = null;
+//		this.tab = null;
 	}
 
 	public static OvenRecipeBuilder OvenRecipe(ItemStack mainResult, int cookingTime, float experience,
@@ -103,10 +102,10 @@ public class OvenRecipeBuilder implements RecipeBuilder {
 		return this;
 	}
 
-	public OvenRecipeBuilder setRecipeBookTab(OvenRecipeBookTab tab) {
-		this.tab = tab;
-		return this;
-	}
+//	public OvenRecipeBuilder setRecipeBookTab(OvenRecipeBookTab tab) {
+//		this.tab = tab;
+//		return this;
+//	}
 
 	public void build(RecipeOutput consumer) {
 		ResourceLocation location = BuiltInRegistries.ITEM.getKey(result);
@@ -154,7 +153,8 @@ public class OvenRecipeBuilder implements RecipeBuilder {
 
 //		public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab, NonNullList<Ingredient> inputItems,
 //				ItemStack output, ItemStack container, float experience, int cookTime) {
-		OvenRecipe recipe = new OvenRecipe("", this.tab, this.ingredients, this.resultStack, this.container,
+		OvenRecipe recipe = new OvenRecipe("",
+				/* this.tab, */ this.ingredients, this.resultStack, this.container,
 				this.experience, this.cookingTime);
 		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/cooking/")));
 	}

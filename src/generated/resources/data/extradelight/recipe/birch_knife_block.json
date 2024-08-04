@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "k": {
+      "tag": "c:tools/knife"
+    },
+    "w": {
+      "item": "minecraft:birch_slab"
+    }
+  },
+  "pattern": [
+    "wkw"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:birch_knife_block"
+  }
+}

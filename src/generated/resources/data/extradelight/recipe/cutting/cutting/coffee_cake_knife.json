@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:coffe_cake_feast"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 8,
+        "id": "extradelight:coffee_cake_slice"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

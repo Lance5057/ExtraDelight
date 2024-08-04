@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "w": {
+      "tag": "c:stones"
+    }
+  },
+  "pattern": [
+    "  w",
+    " s ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:stone_spoon"
+  }
+}

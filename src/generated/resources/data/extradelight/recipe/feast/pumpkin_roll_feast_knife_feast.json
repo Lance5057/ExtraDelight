@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "tag": "c:tools/knife"
+  },
+  "out": {
+    "id": "extradelight:pumpkin_roll_feast"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:pumpkin_roll"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "out": {
+    "id": "extradelight:lamb_stew_feast"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:lamb_stew_rice"
+  }
+}

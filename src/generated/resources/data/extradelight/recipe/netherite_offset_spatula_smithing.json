@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  },
+  "base": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:offset_spatula_netherite"
+  },
+  "template": {
+    "item": "extradelight:offset_spatula_diamond"
+  }
+}

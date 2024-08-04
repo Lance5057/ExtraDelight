@@ -460,7 +460,7 @@ public class BlockModels extends BlockStateProvider {
 
 	public void recipeFeastBlock(RecipeFeastBlock block, String path) {
 		getVariantBuilder(block).forAllStates(state -> {
-			int servings = state.getValue(FeastBlock.SERVINGS);
+			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
 
 			String suffix = "_stage" + (block.getMaxServings() - servings);
 
@@ -546,7 +546,7 @@ public class BlockModels extends BlockStateProvider {
 
 		getVariantBuilder(top).forAllStates(state -> {
 			int age = state.getValue(CornTop.AGE);
-			boolean dry = state.getValue(CornBottom.DIMENSION);
+			boolean dry = state.getValue(CornTop.DIMENSION);
 			String suffix = "_stage" + (age + 4);
 			String suffix2 = "_stage" + age;
 

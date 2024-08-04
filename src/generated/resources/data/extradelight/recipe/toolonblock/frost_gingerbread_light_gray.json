@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:tool_on_block",
+  "in": {
+    "id": "extradelight:gingerbread_cookie_block_item"
+  },
+  "ingredient": {
+    "tag": "forge:frosting/light_gray"
+  },
+  "out": {
+    "id": "extradelight:gingerbread_block_light_gray"
+  }
+}

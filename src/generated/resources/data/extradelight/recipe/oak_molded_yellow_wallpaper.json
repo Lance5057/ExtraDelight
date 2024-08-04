@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/yellow"
+    },
+    {
+      "item": "minecraft:oak_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:oak_molded_yellow_wallpaper"
+  }
+}

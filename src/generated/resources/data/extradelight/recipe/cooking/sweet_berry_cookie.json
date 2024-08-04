@@ -1,0 +1,18 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:cookie_dough/sweet_berry"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "farmersdelight:sweet_berry_cookie"
+  }
+}

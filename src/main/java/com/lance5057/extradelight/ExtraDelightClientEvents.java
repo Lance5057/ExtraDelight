@@ -6,17 +6,25 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRenderer;
 import com.lance5057.extradelight.armor.models.CorncobPipeModel;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetRenderer;
+import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetScreen;
 import com.lance5057.extradelight.blocks.keg.KegRenderer;
+import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkRenderer;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
+import com.lance5057.extradelight.displays.food.FoodDisplayScreen;
 import com.lance5057.extradelight.displays.knife.KnifeBlockRenderer;
+import com.lance5057.extradelight.displays.knife.KnifeBlockScreen;
 import com.lance5057.extradelight.displays.spice.SpiceRackRenderer;
+import com.lance5057.extradelight.displays.spice.SpiceRackScreen;
 import com.lance5057.extradelight.displays.wreath.WreathRenderer;
+import com.lance5057.extradelight.displays.wreath.WreathScreen;
+import com.lance5057.extradelight.gui.StyleableScreen;
+import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlRenderer;
 import com.lance5057.extradelight.workstations.mortar.MortarRenderer;
-import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeCatagories;
+import com.lance5057.extradelight.workstations.oven.OvenScreen;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
@@ -38,7 +46,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
-import net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
@@ -48,9 +56,22 @@ public class ExtraDelightClientEvents {
 				.create(CorncobPipeModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
 	}
 
+//	@SubscribeEvent
+//	public static void onRegisterRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
+//		OvenRecipeCatagories.init(event);
+//	}
+
 	@SubscribeEvent
-	public static void onRegisterRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
-		OvenRecipeCatagories.init(event);
+	public static void registerClient(RegisterMenuScreensEvent event) {
+		event.register(ExtraDelightContainers.OVEN_MENU.get(), OvenScreen::new);
+		event.register(ExtraDelightContainers.FOOD_DISPLAY_MENU.get(), FoodDisplayScreen::new);
+		event.register(ExtraDelightContainers.KNIFE_BLOCK_MENU.get(), KnifeBlockScreen::new);
+		event.register(ExtraDelightContainers.SPICE_RACK_MENU.get(), SpiceRackScreen::new);
+		event.register(ExtraDelightContainers.DOUGH_SHAPING_MENU.get(), DoughShapingScreen::new);
+		event.register(ExtraDelightContainers.WREATH_MENU.get(), WreathScreen::new);
+		event.register(ExtraDelightContainers.SINK_MENU.get(), SinkCabinetScreen::new);
+		event.register(ExtraDelightContainers.COUNTER_CABINET_MENU.get(), CounterCabinetScreen::new);
+		event.register(ExtraDelightContainers.STYLE_MENU.get(), StyleableScreen::new);
 	}
 
 	public static void setTERenderers() {

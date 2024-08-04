@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:raw_gingerbread_villager"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_villager"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_villager"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_villager"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:gingerbread_villager"
+  }
+}

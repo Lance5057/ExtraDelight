@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "tag": "forge:crops/corn"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:grilled_corn_on_cob"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:crimson_dried_corn_fence"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:crimson_fence"
+  }
+}

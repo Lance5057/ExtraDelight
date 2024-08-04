@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "c:crops/carrot"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "extradelight:grated_carrot"
+      }
+    }
+  ],
+  "tool": {
+    "item": "extradelight:grater"
+  }
+}

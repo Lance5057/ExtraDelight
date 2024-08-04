@@ -59,16 +59,4 @@ public class ExtraDelightContainers {
 		MENU_TYPES.register(modBus);
 	}
 
-	@SubscribeEvent
-	public static void registerClient(RegisterMenuScreensEvent event) {
-		event.register(OVEN_MENU.get(), OvenScreen::new);
-		event.register(FOOD_DISPLAY_MENU.get(), FoodDisplayScreen::new);
-		event.register(KNIFE_BLOCK_MENU.get(), KnifeBlockScreen::new);
-		event.register(SPICE_RACK_MENU.get(), SpiceRackScreen::new);
-		event.register(DOUGH_SHAPING_MENU.get(), DoughShapingScreen::new);
-		event.register(WREATH_MENU.get(), WreathScreen::new);
-		event.register(SINK_MENU.get(), SinkCabinetScreen::new);
-		event.register(COUNTER_CABINET_MENU.get(), CounterCabinetScreen::new);
-		event.register(STYLE_MENU.get(), StyleableScreen::new);
-	}
 }

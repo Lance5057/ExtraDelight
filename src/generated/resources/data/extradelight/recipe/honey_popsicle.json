@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "minecraft:honey_bottle"
+    },
+    "i": {
+      "item": "minecraft:ice"
+    },
+    "m": {
+      "tag": "c:foods/milk"
+    }
+  },
+  "pattern": [
+    " cm",
+    "imc",
+    "Si "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:honey_popsicle"
+  }
+}

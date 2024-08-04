@@ -57,10 +57,10 @@ public class MiscLootTables implements LootTableSubProvider {
 				LootTable.lootTable().withPool(createPoolWithItem(ExtraDelightItems.CINNAMON_BARK.get(), 1, 4))
 						.withPool(createPoolWithItem(ModItems.TREE_BARK.get(), 0, 2)));
 
-		t.accept(CORN_TOP, createCropDrops(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
-				ExtraDelightItems.CORN_SEEDS.get(),
-				LootItemBlockStatePropertyCondition.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
-						.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 3))));
+//		t.accept(CORN_TOP, createCropDrops(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
+//				ExtraDelightItems.CORN_SEEDS.get(),
+//				LootItemBlockStatePropertyCondition.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
+//						.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 3))));
 	}
 
 	@NotNull

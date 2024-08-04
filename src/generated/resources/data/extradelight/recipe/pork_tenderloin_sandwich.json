@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:condiments"
+    },
+    {
+      "tag": "c:foods/bread"
+    },
+    {
+      "item": "extradelight:pork_tenderloin"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:pork_tenderloin_sandwich"
+  }
+}

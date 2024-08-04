@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "w": {
+      "item": "minecraft:warped_slab"
+    }
+  },
+  "pattern": [
+    " w ",
+    "s s",
+    "s s"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:warped_step_stool"
+  }
+}

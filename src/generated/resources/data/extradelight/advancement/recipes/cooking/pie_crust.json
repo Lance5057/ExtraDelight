@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/pie_crust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pie_crust": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#forge:flour"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "pie_crust"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/pie_crust"
+    ]
+  }
+}

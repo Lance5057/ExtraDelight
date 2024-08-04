@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:cookie_dough/gingerbread"
+    },
+    {
+      "tag": "forge:cookie_dough/gingerbread"
+    },
+    {
+      "tag": "forge:cookie_dough/gingerbread"
+    },
+    {
+      "tag": "forge:cookie_dough/gingerbread"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:gingerbread_cookie_block_item"
+  }
+}

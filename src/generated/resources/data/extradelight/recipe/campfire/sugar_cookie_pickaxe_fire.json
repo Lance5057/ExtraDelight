@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:raw_sugar_cookie_pickaxe"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:sugar_cookie_pickaxe"
+  }
+}

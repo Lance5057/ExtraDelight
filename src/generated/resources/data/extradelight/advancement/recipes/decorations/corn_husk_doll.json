@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "corn_husk_doll": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:dried_corn_husk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:corn_husk_doll"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "corn_husk_doll"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:corn_husk_doll"
+    ]
+  }
+}

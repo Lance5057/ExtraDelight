@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "w": {
+      "item": "minecraft:dark_oak_slab"
+    }
+  },
+  "pattern": [
+    " w ",
+    "s s",
+    "s s"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:dark_oak_step_stool"
+  }
+}

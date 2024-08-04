@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:dark_oak_dried_corn_fence"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:dark_oak_fence"
+  }
+}

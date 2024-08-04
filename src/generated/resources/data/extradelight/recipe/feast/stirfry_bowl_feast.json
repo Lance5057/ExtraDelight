@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "out": {
+    "id": "extradelight:stirfry_block_item"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:stirfry"
+  }
+}

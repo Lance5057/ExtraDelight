@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:butter_block_item"
+  }
+}

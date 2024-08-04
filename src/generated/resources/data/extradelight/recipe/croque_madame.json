@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:butter"
+    },
+    "c": {
+      "tag": "forge:cheese"
+    },
+    "e": {
+      "tag": "c:foods/cooked_egg"
+    },
+    "f": {
+      "tag": "forge:flour"
+    },
+    "h": [
+      {
+        "item": "farmersdelight:smoked_ham"
+      },
+      {
+        "item": "minecraft:porkchop"
+      }
+    ],
+    "m": {
+      "tag": "c:foods/milk"
+    },
+    "t": {
+      "tag": "forge:toast"
+    }
+  },
+  "pattern": [
+    "bfm",
+    "tet",
+    "c h"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:croque_madame"
+  }
+}

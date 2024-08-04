@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/bulk/rabbit8"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "rabbit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sheet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "rabbit"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/bulk/rabbit8"
+    ]
+  }
+}

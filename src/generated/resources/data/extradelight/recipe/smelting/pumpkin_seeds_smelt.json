@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "minecraft:pumpkin_seeds"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:roasted_pumpkin_seeds"
+  }
+}

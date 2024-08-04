@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:jungle_dried_corn_fence_back"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "jungle_dried_corn_fence_back": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:jungle_dried_corn_fence"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "jungle_dried_corn_fence_back"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:jungle_dried_corn_fence_back"
+    ]
+  }
+}

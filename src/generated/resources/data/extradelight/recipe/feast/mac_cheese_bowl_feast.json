@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "id": "extradelight:macaroni_cheese_feast"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:macaroni_cheese"
+  }
+}

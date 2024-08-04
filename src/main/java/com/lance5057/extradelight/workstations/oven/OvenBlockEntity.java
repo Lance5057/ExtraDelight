@@ -210,7 +210,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		super.saveAdditional(compound, registries);
 		compound.putInt("CookTime", cookTime);
 		compound.putInt("CookTimeTotal", cookTimeTotal);
-		compound.put("Container", mealContainerStack.save(registries));
+		compound.put("Container", mealContainerStack.saveOptional(registries));
 		if (customName != null) {
 			compound.putString("CustomName", Component.Serializer.toJson(customName, registries));
 		}
@@ -223,7 +223,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 
 	private CompoundTag writeItems(CompoundTag compound, HolderLookup.Provider registries) {
 		super.saveAdditional(compound, registries);
-		compound.put("Container", mealContainerStack.save(registries));
+		compound.put("Container", mealContainerStack.saveOptional(registries));
 		compound.put("Inventory", inventory.serializeNBT(registries));
 		return compound;
 	}

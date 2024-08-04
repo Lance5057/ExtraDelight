@@ -4,21 +4,15 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.ExtraDelightConfig;
-import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookComponent;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.WidgetSprites;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
-import net.minecraft.client.gui.screens.recipebook.RecipeUpdateListener;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -29,7 +23,7 @@ import net.minecraft.world.item.ItemStack;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
 @ParametersAreNonnullByDefault
-public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements RecipeUpdateListener {
+public class OvenScreen extends AbstractContainerScreen<OvenMenu> /* implements RecipeUpdateListener */ {
 	private static final WidgetSprites RECIPE_BUTTON = new WidgetSprites(ResourceLocation.withDefaultNamespace("recipe_book/button"),
 			ResourceLocation.withDefaultNamespace("recipe_book/button"));
 	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
@@ -37,7 +31,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 	private static final Rectangle HEAT_ICON = new Rectangle(47, 55, 17, 15);
 	private static final Rectangle PROGRESS_ARROW = new Rectangle(89, 25, 10, 17);
 
-	private final OvenRecipeBookComponent recipeBookComponent = new OvenRecipeBookComponent();
+//	private final OvenRecipeBookComponent recipeBookComponent = new OvenRecipeBookComponent();
 	private boolean widthTooNarrow;
 
 	public OvenScreen(OvenMenu screenContainer, Inventory inv, Component titleIn) {
@@ -49,43 +43,43 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 		super.init();
 		this.widthTooNarrow = this.width < 379;
 		this.titleLabelX = 28;
-		this.recipeBookComponent.init(this.width, this.height, this.minecraft, this.widthTooNarrow, this.menu);
-		this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
-		if (ExtraDelightConfig.ENABLE_RECIPE_BOOK_OVEN.get()) {
-			this.addRenderableWidget(
-					new ImageButton(this.leftPos + 5, this.height / 2 - 49, 20, 18, RECIPE_BUTTON, (button) -> {
-						this.recipeBookComponent.toggleVisibility();
-						this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
-						button.setPosition(this.leftPos + 5, this.height / 2 - 49);
-					}));
-		} else {
-			this.recipeBookComponent.hide();
-			this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
-		}
-		this.addWidget(this.recipeBookComponent);
-		this.setInitialFocus(this.recipeBookComponent);
+//		this.recipeBookComponent.init(this.width, this.height, this.minecraft, this.widthTooNarrow, this.menu);
+//		this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
+//		if (ExtraDelightConfig.ENABLE_RECIPE_BOOK_OVEN.get()) {
+//			this.addRenderableWidget(
+//					new ImageButton(this.leftPos + 5, this.height / 2 - 49, 20, 18, RECIPE_BUTTON, (button) -> {
+//						this.recipeBookComponent.toggleVisibility();
+//						this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
+//						button.setPosition(this.leftPos + 5, this.height / 2 - 49);
+//					}));
+//		} else {
+//			this.recipeBookComponent.hide();
+//			this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
+//		}
+//		this.addWidget(this.recipeBookComponent);
+//		this.setInitialFocus(this.recipeBookComponent);
 	}
 
 	@Override
 	protected void containerTick() {
 		super.containerTick();
-		this.recipeBookComponent.tick();
+//		this.recipeBookComponent.tick();
 	}
 
 	@Override
 	public void render(GuiGraphics ms, final int mouseX, final int mouseY, float partialTicks) {
-		if (this.recipeBookComponent.isVisible() && this.widthTooNarrow) {
+		if (/* this.recipeBookComponent.isVisible() && */this.widthTooNarrow) {
 			this.renderBg(ms, partialTicks, mouseX, mouseY);
-			this.recipeBookComponent.render(ms, mouseX, mouseY, partialTicks);
+//			this.recipeBookComponent.render(ms, mouseX, mouseY, partialTicks);
 		} else {
-			this.recipeBookComponent.render(ms, mouseX, mouseY, partialTicks);
+//			this.recipeBookComponent.render(ms, mouseX, mouseY, partialTicks);
 			super.render(ms, mouseX, mouseY, partialTicks);
-			this.recipeBookComponent.renderGhostRecipe(ms, this.leftPos, this.topPos, false, partialTicks);
+//			this.recipeBookComponent.renderGhostRecipe(ms, this.leftPos, this.topPos, false, partialTicks);
 		}
 
 		this.renderMealDisplayTooltip(ms, mouseX, mouseY);
 		this.renderHeatIndicatorTooltip(ms, mouseX, mouseY);
-		this.recipeBookComponent.renderTooltip(ms, this.leftPos, this.topPos, mouseX, mouseY);
+//		this.recipeBookComponent.renderTooltip(ms, this.leftPos, this.topPos, mouseX, mouseY);
 	}
 
 	private void renderHeatIndicatorTooltip(GuiGraphics ms, int mouseX, int mouseY) {
@@ -149,17 +143,17 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 
 	@Override
 	protected boolean isHovering(int x, int y, int width, int height, double mouseX, double mouseY) {
-		return (!this.widthTooNarrow || !this.recipeBookComponent.isVisible())
+		return (!this.widthTooNarrow /* || !this.recipeBookComponent.isVisible() */)
 				&& super.isHovering(x, y, width, height, mouseX, mouseY);
 	}
 
 	@Override
 	public boolean mouseClicked(double mouseX, double mouseY, int buttonId) {
-		if (this.recipeBookComponent.mouseClicked(mouseX, mouseY, buttonId)) {
-			this.setFocused(this.recipeBookComponent);
-			return true;
-		}
-		return this.widthTooNarrow && this.recipeBookComponent.isVisible()
+//		if (this.recipeBookComponent.mouseClicked(mouseX, mouseY, buttonId)) {
+//			this.setFocused(this.recipeBookComponent);
+//			return true;
+//		}
+		return this.widthTooNarrow /* && this.recipeBookComponent.isVisible() */
 				|| super.mouseClicked(mouseX, mouseY, buttonId);
 	}
 
@@ -167,24 +161,26 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> implements Rec
 	protected boolean hasClickedOutside(double mouseX, double mouseY, int x, int y, int buttonIdx) {
 		boolean flag = mouseX < (double) x || mouseY < (double) y || mouseX >= (double) (x + this.imageWidth)
 				|| mouseY >= (double) (y + this.imageHeight);
-		return flag && this.recipeBookComponent.hasClickedOutside(mouseX, mouseY, this.leftPos, this.topPos,
-				this.imageWidth, this.imageHeight, buttonIdx);
+		return flag /*
+					 * && this.recipeBookComponent.hasClickedOutside(mouseX, mouseY, this.leftPos,
+					 * this.topPos, this.imageWidth, this.imageHeight, buttonIdx)
+					 */;
 	}
 
 	@Override
 	protected void slotClicked(Slot slot, int mouseX, int mouseY, ClickType clickType) {
 		super.slotClicked(slot, mouseX, mouseY, clickType);
-		this.recipeBookComponent.slotClicked(slot);
+//		this.recipeBookComponent.slotClicked(slot);
 	}
 
-	@Override
-	public void recipesUpdated() {
-		this.recipeBookComponent.recipesUpdated();
-	}
+//	@Override
+//	public void recipesUpdated() {
+////		this.recipeBookComponent.recipesUpdated();
+//	}
 
-	@Override
-	@Nonnull
-	public RecipeBookComponent getRecipeBookComponent() {
-		return this.recipeBookComponent;
-	}
+//	@Override
+//	@Nonnull
+//	public RecipeBookComponent getRecipeBookComponent() {
+//		return this.recipeBookComponent;
+//	}
 }

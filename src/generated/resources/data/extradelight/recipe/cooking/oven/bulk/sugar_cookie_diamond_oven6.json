@@ -1,0 +1,33 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:raw_sugar_cookie_diamond"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_diamond"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_diamond"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_diamond"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_diamond"
+    },
+    {
+      "item": "extradelight:raw_sugar_cookie_diamond"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "extradelight:sugar_cookie_diamond"
+  }
+}

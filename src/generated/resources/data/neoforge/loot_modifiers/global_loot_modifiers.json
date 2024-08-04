@@ -1,4 +1,26 @@
 {
-  "entries": [],
+  "entries": [
+    "extradelight:curry_pyramid",
+    "extradelight:cactus_juice_portal",
+    "extradelight:pestle_nether",
+    "extradelight:food_city",
+    "extradelight:food_outpost",
+    "extradelight:mortar_nether",
+    "extradelight:pestle_dungeon",
+    "extradelight:food_dungeon",
+    "extradelight:curry_ship",
+    "extradelight:cactus_juice_desert",
+    "extradelight:cactus_juice_pyramid",
+    "extradelight:food_ship",
+    "extradelight:furikake_ruins_big",
+    "extradelight:curry_village",
+    "extradelight:furikake_ruins",
+    "extradelight:food_mansion2",
+    "extradelight:curry_mansion",
+    "extradelight:food_igloo",
+    "extradelight:mortar_dungeon",
+    "extradelight:food_city_ice",
+    "extradelight:food_butcher"
+  ],
   "replace": false
 }

@@ -18,7 +18,7 @@ import net.neoforged.neoforge.common.NeoForge;
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.0.0";
+	public static final String VERSION = "2.0.0_indev";
 
 	public static Logger logger = LogManager.getLogger();
 
@@ -45,7 +45,7 @@ public class ExtraDelight {
 		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
 		ExtraDelightRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
-//		ExtraDelightLoot.register(modEventBus);
+		ExtraDelightLootModifiers.LOOT_MODIFIERS.register(modEventBus);
 
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
 
@@ -60,7 +60,7 @@ public class ExtraDelight {
 
 		event.enqueueWork(() -> {
 			ExtraDelightClientEvents.setTERenderers();
-			NeoForge.EVENT_BUS.register(ExtraDelightContainers.class);
+//			NeoForge.EVENT_BUS.register(ExtraDelightContainers.class);
 		});
 	}
 

@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "id": "extradelight:potato_au_gratin_feast"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:potato_au_gratin"
+  }
+}

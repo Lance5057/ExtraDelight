@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:fried_fish"
+    },
+    {
+      "item": "extradelight:french_fries"
+    },
+    {
+      "tag": "forge:vinegar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:fish_chips"
+  }
+}

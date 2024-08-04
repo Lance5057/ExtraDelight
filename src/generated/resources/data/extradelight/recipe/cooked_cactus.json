@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:cactus/cooked"
+    },
+    {
+      "item": "extradelight:scrambled_eggs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:cactus_eggs"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "forge:fruit/sweet_berry"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:sweet_berry_juice"
+  }
+}

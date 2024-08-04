@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/meat_pie"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "meat_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:pie_crust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "meat_pie"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/meat_pie"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "tag": "c:ingots/iron"
+    },
+    "p": {
+      "item": "minecraft:heavy_weighted_pressure_plate"
+    }
+  },
+  "pattern": [
+    " p ",
+    "pip",
+    " p "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:grater"
+  }
+}

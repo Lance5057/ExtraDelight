@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:egg_sandwich"
+    },
+    {
+      "tag": "c:foods/cooked_bacon"
+    },
+    {
+      "tag": "c:foods/cooked_bacon"
+    },
+    {
+      "tag": "forge:cheese"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:bacon_egg_cheese_sandwich"
+  }
+}

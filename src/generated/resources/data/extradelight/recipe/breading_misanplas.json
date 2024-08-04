@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    },
+    {
+      "tag": "forge:bread/crumbs"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:breading_misanplas"
+  }
+}

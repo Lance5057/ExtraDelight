@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/bulk/sugar_cookie_emerald_oven6"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "sugar_cookie_emerald_oven": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sheet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "sugar_cookie_emerald_oven"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/bulk/sugar_cookie_emerald_oven6"
+    ]
+  }
+}

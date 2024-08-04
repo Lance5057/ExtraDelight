@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:dough_shaping",
+  "ingredient": {
+    "tag": "c:foods/dough"
+  },
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:raw_pasta"
+  }
+}

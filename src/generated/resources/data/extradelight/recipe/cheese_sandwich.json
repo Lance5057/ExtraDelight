@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "extradelight:bread_slice"
+    },
+    "c": {
+      "tag": "forge:cheese"
+    },
+    "m": {
+      "tag": "forge:condiments/mayonnaise"
+    }
+  },
+  "pattern": [
+    " b ",
+    "mc ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:cheese_sandwich"
+  }
+}

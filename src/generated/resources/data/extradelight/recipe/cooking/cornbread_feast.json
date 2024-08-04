@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:serving_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:cornbread_feast"
+  }
+}

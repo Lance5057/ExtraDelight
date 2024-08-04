@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "w": {
+      "item": "minecraft:green_wool"
+    }
+  },
+  "pattern": [
+    " w ",
+    " w ",
+    "w w"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:ribbon_bow_green"
+  }
+}

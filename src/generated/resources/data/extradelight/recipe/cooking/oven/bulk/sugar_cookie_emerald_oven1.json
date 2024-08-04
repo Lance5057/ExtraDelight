@@ -1,0 +1,18 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:raw_sugar_cookie_emerald"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:sugar_cookie_emerald"
+  }
+}

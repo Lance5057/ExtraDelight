@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:square_pan"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:food/starch"
+    },
+    {
+      "tag": "forge:food/starch"
+    },
+    {
+      "tag": "forge:food/starch"
+    },
+    {
+      "tag": "forge:meat/cooked"
+    },
+    {
+      "tag": "forge:soup"
+    },
+    {
+      "tag": "forge:meat/cooked"
+    },
+    {
+      "tag": "c:foods/vegetable"
+    },
+    {
+      "tag": "forge:soup"
+    },
+    {
+      "tag": "c:foods/vegetable"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:hotdish_feast"
+  }
+}

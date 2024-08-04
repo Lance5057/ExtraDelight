@@ -1,0 +1,18 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:bread_slice"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:toast"
+  }
+}

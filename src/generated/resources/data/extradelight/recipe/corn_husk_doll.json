@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "extradelight:dried_corn_husk"
+    },
+    "s": {
+      "tag": "c:strings"
+    }
+  },
+  "pattern": [
+    " c ",
+    " s ",
+    "ccc"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:corn_husk_doll"
+  }
+}

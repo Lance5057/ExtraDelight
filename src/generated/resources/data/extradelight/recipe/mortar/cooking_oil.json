@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:mortar",
+  "grinds": 4,
+  "ingredient": {
+    "type": "neoforge:difference",
+    "base": {
+      "tag": "c:seeds"
+    },
+    "subtracted": [
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "extradelight:corn_seeds"
+      }
+    ]
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:cooking_oil"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:raw_gingerbread_alex"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_alex"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_alex"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_alex"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_alex"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_alex"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_alex"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_alex"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "extradelight:gingerbread_alex"
+  }
+}

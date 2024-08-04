@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:dough_shaping",
+  "ingredient": {
+    "tag": "forge:cookie_dough/gingerbread"
+  },
+  "result": {
+    "count": 8,
+    "id": "extradelight:raw_gingerbread_sword"
+  }
+}

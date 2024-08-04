@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "extradelight:cactus"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:cooked_cactus"
+  }
+}

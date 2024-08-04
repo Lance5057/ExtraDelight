@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:hamburger"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "c:foods/cooked_bacon"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:bacon_cheeseburger"
+  }
+}

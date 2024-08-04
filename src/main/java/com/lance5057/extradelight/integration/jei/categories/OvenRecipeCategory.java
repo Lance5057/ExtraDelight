@@ -67,6 +67,6 @@ public class OvenRecipeCategory implements IRecipeCategory<OvenRecipe> {
 		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 3, 47).addItemStack(pan);
 		// builder.addSlot(RecipeIngredientRole.CATALYST, (int) center.x, (int)
 		// center.y).addIngredients(pestle);
-		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 35, 47).addItemStack(output);
+		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 35, 20).addItemStack(output);
 	}
 }

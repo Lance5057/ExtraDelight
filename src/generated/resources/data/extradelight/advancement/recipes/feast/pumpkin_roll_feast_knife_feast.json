@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hotdish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pumpkin_roll_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/pumpkin_roll_feast_knife_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hotdish"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/pumpkin_roll_feast_knife_feast"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "item": "minecraft:diamond"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " is",
+    "i  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:offset_spatula_diamond"
+  }
+}

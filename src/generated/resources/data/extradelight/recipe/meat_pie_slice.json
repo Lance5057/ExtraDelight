@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "extradelight:meat_pie_slice"
+    }
+  },
+  "pattern": [
+    "ss ",
+    "ss "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:meat_pie_block_item"
+  }
+}
