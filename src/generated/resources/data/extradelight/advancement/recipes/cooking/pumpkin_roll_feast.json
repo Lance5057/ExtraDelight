@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/pumpkin_roll_feast"
+        "recipe": "extradelight:cooking/oven/pumpkin_roll_feast"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/pumpkin_roll_feast"
+      "extradelight:cooking/oven/pumpkin_roll_feast"
     ]
   }
 }

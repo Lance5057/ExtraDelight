@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/oven/bulk/bread2"
+        "recipe": "extradelight:cooking/oven/oven/bulk/bread2"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/oven/bulk/bread2"
+      "extradelight:cooking/oven/oven/bulk/bread2"
     ]
   }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/corn_pudding_feast"
+        "recipe": "extradelight:cooking/oven/corn_pudding_feast"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/corn_pudding_feast"
+      "extradelight:cooking/oven/corn_pudding_feast"
     ]
   }
 }

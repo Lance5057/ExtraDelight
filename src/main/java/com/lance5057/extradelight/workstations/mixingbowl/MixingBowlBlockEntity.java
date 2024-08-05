@@ -40,9 +40,9 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
 	public static final int NUM_SLOTS = 33;
-	
+
 	public static final String FLUID_TAG = "tank";
-	
+
 	private final FluidTank fluids = createFluidHandler();
 
 	private int stirs = 0;
@@ -103,14 +103,25 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		updateInventory();
 	}
 
-	public void insertItem(ItemStack stack) {
-		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
+	public void insertItem(ItemStack in, int slot) {
+		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
 		this.updateInventory();
 	}
 
-	public void extractItem(Player p) {
-		BlockEntityUtils.Inventory.extractItem(p, items, NUM_SLOTS);
+	public ItemStack extractItem(ItemStack out, int slot) {
+		ItemStack stack = BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
 		this.updateInventory();
+		return stack;
+	}
+	
+	public int getNextEmptySlot() {
+		for (int i = 0; i < items.getSlots(); ++i) {
+			ItemStack slotStack = items.getStackInSlot(i);
+			if (slotStack.isEmpty()) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public void zeroProgress() {

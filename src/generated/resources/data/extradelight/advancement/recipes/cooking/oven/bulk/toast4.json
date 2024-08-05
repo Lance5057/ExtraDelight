@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/oven/bulk/toast4"
+        "recipe": "extradelight:cooking/oven/oven/bulk/toast4"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/oven/bulk/toast4"
+      "extradelight:cooking/oven/oven/bulk/toast4"
     ]
   }
 }

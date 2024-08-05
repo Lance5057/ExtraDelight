@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/pie_crust"
+        "recipe": "extradelight:cooking/oven/pie_crust"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/pie_crust"
+      "extradelight:cooking/oven/pie_crust"
     ]
   }
 }

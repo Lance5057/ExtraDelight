@@ -6,11 +6,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -39,17 +40,19 @@ public class DoughShapingBlock extends Block {
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
+	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
 		return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
 	}
 
-	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
-			BlockHitResult pHit) {
+	@Override
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
+			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
 		if (pLevel.isClientSide) {
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		} else {
 			pPlayer.openMenu(pState.getMenuProvider(pLevel, pPos));
-			return InteractionResult.CONSUME;
+			return ItemInteractionResult.CONSUME;
 		}
 	}
 

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/french_toast"
+        "recipe": "extradelight:cooking/oven/french_toast"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/french_toast"
+      "extradelight:cooking/oven/french_toast"
     ]
   }
 }

@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:foods/cooked_cod"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "item": "extradelight:grated_potato"
+    },
+    {
+      "item": "extradelight:breading_misanplas"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 3,
+    "id": "extradelight:fish_cakes"
+  }
+}

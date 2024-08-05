@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/apple_pie_jam"
+        "recipe": "extradelight:cooking/oven/apple_pie_jam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/apple_pie_jam"
+      "extradelight:cooking/oven/apple_pie_jam"
     ]
   }
 }

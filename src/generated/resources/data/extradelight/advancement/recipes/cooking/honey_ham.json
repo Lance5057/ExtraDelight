@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/honey_ham"
+        "recipe": "extradelight:cooking/oven/honey_ham"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/honey_ham"
+      "extradelight:cooking/oven/honey_ham"
     ]
   }
 }

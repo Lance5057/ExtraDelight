@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/chicken_parm"
+        "recipe": "extradelight:cooking/oven/chicken_parm"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/chicken_parm"
+      "extradelight:cooking/oven/chicken_parm"
     ]
   }
 }

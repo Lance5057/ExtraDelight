@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/cinnamon_rolls_feast"
+        "recipe": "extradelight:cooking/oven/cinnamon_rolls_feast"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/cinnamon_rolls_feast"
+      "extradelight:cooking/oven/cinnamon_rolls_feast"
     ]
   }
 }

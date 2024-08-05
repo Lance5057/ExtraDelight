@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/roast_chicken"
+        "recipe": "extradelight:cooking/oven/roast_chicken"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/roast_chicken"
+      "extradelight:cooking/oven/roast_chicken"
     ]
   }
 }

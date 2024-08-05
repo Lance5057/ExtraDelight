@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/muffin_sweet_berry"
+        "recipe": "extradelight:cooking/oven/muffin_sweet_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/muffin_sweet_berry"
+      "extradelight:cooking/oven/muffin_sweet_berry"
     ]
   }
 }

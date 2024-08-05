@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/muffin_ginger"
+        "recipe": "extradelight:cooking/oven/muffin_ginger"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/muffin_ginger"
+      "extradelight:cooking/oven/muffin_ginger"
     ]
   }
 }

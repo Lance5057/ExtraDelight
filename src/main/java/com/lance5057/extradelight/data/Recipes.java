@@ -37,10 +37,12 @@ import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
+import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
 public class Recipes extends RecipeProvider implements IConditionBuilder {
 	public Recipes(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
@@ -1865,568 +1867,570 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 	private void potRecipes(RecipeOutput consumer) {
 
-//		pot(ExtraDelightItems.CHOCOLATE_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(Items.COCOA_BEANS), Ingredient.of(CommonTags.FOODS_MILK),
-//						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"chocolate_custard", consumer);
-//
-//		pot(ExtraDelightItems.PUMPKIN_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(ModItems.PUMPKIN_SLICE.get()), Ingredient.of(CommonTags.FOODS_MILK),
-//						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"pumpkin_custard", consumer);
-//
-//		pot(ExtraDelightItems.HONEY_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(CommonTags.FOODS_MILK),
-//						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"honey_custard", consumer);
-//
-//		pot(ExtraDelightItems.SWEET_BERRY_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(CommonTags.FOODS_MILK),
-//						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"sweet_berry_custard", consumer);
-//
-//		pot(ExtraDelightItems.APPLE_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_APPLE), Ingredient.of(CommonTags.FOODS_MILK),
-//						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"apple_custard", consumer);
-//
-//		pot(ExtraDelightItems.KETCHUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(Tags.Items.FOODS_VEGETABLE_TOMATO),
-//						Ingredient.of(Tags.Items.FOODS_VEGETABLE_TOMATO), Ingredient.of(ExtraDelightTags.SWEETENER),
-//						Ingredient.of(ExtraDelightTags.VINEGAR) },
-//				"ketchup_jar", consumer);
-//
-//		pot(ExtraDelightItems.BBQ_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(Tags.Items.FOODS_VEGETABLE_TOMATO),
-//						Ingredient.of(Tags.Items.FOODS_VEGETABLE_ONION), Ingredient.of(ExtraDelightTags.SWEETENER),
-//						Ingredient.of(ExtraDelightTags.VINEGAR) },
-//				"bbq_sugar", consumer);
-//
-//		pot(ModItems.BONE_BROTH.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.MAKES_STOCK), Ingredient.of(Items.BONE) }, "stock",
-//				consumer);
-//
-//		pot(ExtraDelightItems.GRAVY.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ModItems.BONE_BROTH.get()) },
-//				"gravy_boat", consumer);
-//
-//		pot(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ModItems.MINCED_BEEF.get()), Ingredient.of(ModItems.MINCED_BEEF.get()),
-//						Ingredient.of(ModItems.MINCED_BEEF.get()), Ingredient.of(Tags.Items.FOODS_VEGETABLE_ONION),
-//						Ingredient.of(Tags.Items.MUSHROOMS), Ingredient.of(ExtraDelightItems.GRAVY.get()) },
-//				"salisbury_steak_feast", consumer);
-//
-//		pot(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Items.POTATO), Ingredient.of(Items.POTATO),
-//						Ingredient.of(Items.POTATO), Ingredient.of(ExtraDelightItems.GRAVY.get()),
-//						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(Items.MILK_BUCKET) },
-//				"mashed_potato_gravy_feast", consumer);
-//
-//		pot(ExtraDelightItems.FRENCH_FRIES.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
-//				Ingredient.of(ExtraDelightItems.POTATO_STICKS.get()), Ingredient.of(ExtraDelightTags.FRYING_OIL) },
-//				"fries", consumer);
-//
-//		pot(ExtraDelightItems.POTATO_CHIPS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
-//				Ingredient.of(ExtraDelightItems.SLICED_POTATO.get()), Ingredient.of(ExtraDelightTags.FRYING_OIL) },
-//				"chips", consumer);
-//
-//		pot(ExtraDelightItems.CHEESE.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F, null,
-//				new Ingredient[] { Ingredient.of(Items.MILK_BUCKET), Ingredient.of(ExtraDelightTags.VINEGAR) },
-//				"cheese_vinegar", consumer);
-//
-//		pot(ExtraDelightItems.RABBIT_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Items.RABBIT), Ingredient.of(Items.CARROT),
-//						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
-//						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
-//				"rabbit_stew", consumer);
-//
-//		pot(ExtraDelightItems.CHICKEN_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Items.CHICKEN), Ingredient.of(Items.CARROT),
-//						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
-//						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
-//				"chicken_stew", consumer);
-//
-//		pot(ExtraDelightItems.FISH_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(CommonTags.RAW_FISHES), Ingredient.of(Items.CARROT),
-//						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
-//						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
-//				"fish_stew", consumer);
-//
-//		pot(ExtraDelightItems.STIRFRY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.MEAT_RAW), Ingredient.of(ExtraDelightTags.MEAT_RAW),
-//						Ingredient.of(Tags.Items.FOODS_VEGETABLE), Ingredient.of(Tags.Items.FOODS_VEGETABLE),
-//						Ingredient.of(Tags.Items.FOODS_VEGETABLE), Ingredient.of(Tags.Items.FOODS_VEGETABLE) },
-//				"stirfry_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_BLACK), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"black_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_RED_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_RED), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"red_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_GREEN_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_GREEN), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"green_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_BROWN_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_BROWN), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"brown_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_BLUE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_BLUE), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"blue_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_PURPLE), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"purple_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_CYAN_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_CYAN), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"cyan_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_LIGHT_GRAY), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"light_grey_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_GREY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_GRAY), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"grey_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_PINK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_PINK), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"pink_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_LIME_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_LIME), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"lime_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_YELLOW), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"yellow_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_LIGHT_BLUE), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"light_blue_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_MAGENTA), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"magenta_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_ORANGE), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"orange_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.DYES_WHITE), Ingredient.of(ExtraDelightTags.GELATIN),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.MILK_BUCKET) },
-//				"white_jelly_feast", consumer);
-//
-//		pot(ExtraDelightItems.FRIED_FISH.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
-//				Ingredient.of(ItemTags.FISHES), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
-//				"fried_fish", consumer);
-//
-//		pot(ExtraDelightItems.CHICKEN_FRIED_STEAK.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null,
-//				new Ingredient[] { Ingredient.of(Items.BEEF), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()),
-//						Ingredient.of(ExtraDelightItems.GRAVY.get()) },
-//				"chicken_fried_steak", consumer);
-//
-//		pot(ExtraDelightItems.PORK_TENDERLOIN.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
-//				Ingredient.of(Items.PORKCHOP), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
-//				"pork_tenderloin", consumer);
-//
-//		pot(ExtraDelightItems.FRIED_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
-//				Ingredient.of(ModItems.CHICKEN_CUTS.get()), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
-//				"fried_chicken", consumer);
-//
-//		pot(ExtraDelightItems.CARROT_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.CROPS_CARROT), Ingredient.of(Tags.Items.CROPS_CARROT),
-//						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
-//						Ingredient.of(CommonTags.FOODS_MILK) },
-//				"carrot_soup", consumer);
-//
-//		pot(ExtraDelightItems.FISH_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ItemTags.FISHES), Ingredient.of(ItemTags.FISHES),
-//						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
-//						Ingredient.of(Items.DRIED_KELP) },
-//				"fish_soup", consumer);
-//
-//		pot(ExtraDelightItems.POTATO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.CROPS_POTATO), Ingredient.of(Tags.Items.CROPS_POTATO),
-//						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
-//						Ingredient.of(CommonTags.FOODS_MILK) },
-//				"potato_soup", consumer);
-//
-//		pot(ExtraDelightItems.TOMATO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(CommonTags.CROPS_TOMATO), Ingredient.of(CommonTags.CROPS_TOMATO),
-//						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
-//						Ingredient.of(CommonTags.FOODS_MILK) },
-//				"tomato_soup", consumer);
-//
-//		pot(ExtraDelightItems.BOILED_EGG.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.AIR,
-//				new Ingredient[] { Ingredient.of(Tags.Items.EGGS) }, "boiled_egg", consumer);
-//
-//		pot(ExtraDelightItems.APPLE_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(Items.APPLE), Ingredient.of(Items.APPLE),
-//						Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"apple_jam", consumer);
-//
+		pot(ExtraDelightItems.CHOCOLATE_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(Items.COCOA_BEANS), Ingredient.of(CommonTags.FOODS_MILK),
+						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"chocolate_custard", consumer);
+
+		pot(ExtraDelightItems.PUMPKIN_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ModItems.PUMPKIN_SLICE.get()), Ingredient.of(CommonTags.FOODS_MILK),
+						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"pumpkin_custard", consumer);
+
+		pot(ExtraDelightItems.HONEY_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(CommonTags.FOODS_MILK),
+						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"honey_custard", consumer);
+
+		pot(ExtraDelightItems.SWEET_BERRY_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(CommonTags.FOODS_MILK),
+						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"sweet_berry_custard", consumer);
+
+		pot(ExtraDelightItems.APPLE_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_APPLE),
+						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(Tags.Items.EGGS),
+						Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"apple_custard", consumer);
+
+		pot(ExtraDelightItems.KETCHUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_TOMATO),
+						Ingredient.of(CommonTags.FOODS_TOMATO), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightTags.VINEGAR) },
+				"ketchup_jar", consumer);
+
+		pot(ExtraDelightItems.BBQ_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_TOMATO),
+						Ingredient.of(CommonTags.FOODS_ONION), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightTags.VINEGAR) },
+				"bbq_sugar", consumer);
+
+		pot(ModItems.BONE_BROTH.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.MAKES_STOCK), Ingredient.of(Items.BONE) }, "stock",
+				consumer);
+
+		pot(ExtraDelightItems.GRAVY.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ModItems.BONE_BROTH.get()) },
+				"gravy_boat", consumer);
+
+		pot(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ModItems.MINCED_BEEF.get()), Ingredient.of(ModItems.MINCED_BEEF.get()),
+						Ingredient.of(ModItems.MINCED_BEEF.get()), Ingredient.of(CommonTags.FOODS_ONION),
+						Ingredient.of(Tags.Items.MUSHROOMS), Ingredient.of(ExtraDelightItems.GRAVY.get()) },
+				"salisbury_steak_feast", consumer);
+
+		pot(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Items.POTATO), Ingredient.of(Items.POTATO),
+						Ingredient.of(Items.POTATO), Ingredient.of(ExtraDelightItems.GRAVY.get()),
+						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(Items.MILK_BUCKET) },
+				"mashed_potato_gravy_feast", consumer);
+
+		pot(ExtraDelightItems.FRENCH_FRIES.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
+				Ingredient.of(ExtraDelightItems.POTATO_STICKS.get()), Ingredient.of(ExtraDelightTags.FRYING_OIL) },
+				"fries", consumer);
+
+		pot(ExtraDelightItems.POTATO_CHIPS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
+				Ingredient.of(ExtraDelightItems.SLICED_POTATO.get()), Ingredient.of(ExtraDelightTags.FRYING_OIL) },
+				"chips", consumer);
+
+		pot(ExtraDelightItems.CHEESE.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F, null,
+				new Ingredient[] { Ingredient.of(Items.MILK_BUCKET), Ingredient.of(ExtraDelightTags.VINEGAR) },
+				"cheese_vinegar", consumer);
+
+		pot(ExtraDelightItems.RABBIT_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Items.RABBIT), Ingredient.of(Items.CARROT),
+						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
+						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
+				"rabbit_stew", consumer);
+
+		pot(ExtraDelightItems.CHICKEN_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Items.CHICKEN), Ingredient.of(Items.CARROT),
+						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
+						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
+				"chicken_stew", consumer);
+
+		pot(ExtraDelightItems.FISH_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_SAFE_RAW_FISH), Ingredient.of(Items.CARROT),
+						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
+						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
+				"fish_stew", consumer);
+
+		pot(ExtraDelightItems.STIRFRY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.MEAT_RAW), Ingredient.of(ExtraDelightTags.MEAT_RAW),
+						Ingredient.of(Tags.Items.FOODS_VEGETABLE), Ingredient.of(Tags.Items.FOODS_VEGETABLE),
+						Ingredient.of(Tags.Items.FOODS_VEGETABLE), Ingredient.of(Tags.Items.FOODS_VEGETABLE) },
+				"stirfry_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_BLACK), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"black_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_RED_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_RED), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"red_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_GREEN_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_GREEN), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"green_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_BROWN_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_BROWN), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"brown_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_BLUE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_BLUE), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"blue_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_PURPLE), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"purple_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_CYAN_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_CYAN), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"cyan_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_LIGHT_GRAY), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"light_grey_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_GREY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_GRAY), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"grey_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_PINK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_PINK), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"pink_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_LIME_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_LIME), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"lime_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_YELLOW), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"yellow_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_LIGHT_BLUE), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"light_blue_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_MAGENTA), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"magenta_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_ORANGE), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"orange_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.DYES_WHITE), Ingredient.of(ExtraDelightTags.GELATIN),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.MILK_BUCKET) },
+				"white_jelly_feast", consumer);
+
+		pot(ExtraDelightItems.FRIED_FISH.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
+				Ingredient.of(ItemTags.FISHES), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
+				"fried_fish", consumer);
+
+		pot(ExtraDelightItems.CHICKEN_FRIED_STEAK.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null,
+				new Ingredient[] { Ingredient.of(Items.BEEF), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()),
+						Ingredient.of(ExtraDelightItems.GRAVY.get()) },
+				"chicken_fried_steak", consumer);
+
+		pot(ExtraDelightItems.PORK_TENDERLOIN.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
+				Ingredient.of(Items.PORKCHOP), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
+				"pork_tenderloin", consumer);
+
+		pot(ExtraDelightItems.FRIED_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
+				Ingredient.of(ModItems.CHICKEN_CUTS.get()), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
+				"fried_chicken", consumer);
+
+		pot(ExtraDelightItems.CARROT_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.CROPS_CARROT), Ingredient.of(Tags.Items.CROPS_CARROT),
+						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.FOODS_MILK) },
+				"carrot_soup", consumer);
+
+		pot(ExtraDelightItems.FISH_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ItemTags.FISHES), Ingredient.of(ItemTags.FISHES),
+						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(Items.DRIED_KELP) },
+				"fish_soup", consumer);
+
+		pot(ExtraDelightItems.POTATO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.CROPS_POTATO), Ingredient.of(Tags.Items.CROPS_POTATO),
+						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.FOODS_MILK) },
+				"potato_soup", consumer);
+
+		pot(ExtraDelightItems.TOMATO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(CommonTags.CROPS_TOMATO), Ingredient.of(CommonTags.CROPS_TOMATO),
+						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.FOODS_MILK) },
+				"tomato_soup", consumer);
+
+		pot(ExtraDelightItems.BOILED_EGG.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, null,
+				new Ingredient[] { Ingredient.of(Tags.Items.EGGS) }, "boiled_egg", consumer);
+
+		pot(ExtraDelightItems.APPLE_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(Items.APPLE), Ingredient.of(Items.APPLE),
+						Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"apple_jam", consumer);
+
 //		pot(ExtraDelightItems.CARROT_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
 //				new Ingredient[] { Ingredient.of(Tags.Items.CROPS_CARROT), Ingredient.of(Tags.Items.CROPS_CARROT),
 //						Ingredient.of(Tags.Items.CROPS_CARROT), Ingredient.of(ExtraDelightTags.SWEETENER) },
 //				"carrot_jam", consumer);
-//
-//		pot(ExtraDelightItems.GLOW_BERRY_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(Items.GLOW_BERRIES),
-//						Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"glow_berry_jam", consumer);
-//
-//		pot(ExtraDelightItems.GOLDEN_APPLE_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(Items.GOLDEN_APPLE),
-//						Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"golden_apple_jam", consumer);
-//
-//		pot(ExtraDelightItems.SWEET_BERRY_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Items.SWEET_BERRIES),
-//						Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"sweet_berry_jam", consumer);
-//
-//		pot(ExtraDelightItems.SEAWEED_PASTE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.AIR, new Ingredient[] {
-//				Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP) },
-//				"seaweed_paste", consumer);
-//
-//		pot(ExtraDelightItems.GLAZED_CARROT.get(), 3, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Items.CARROT), Ingredient.of(Items.CARROT),
-//						Ingredient.of(Items.CARROT), Ingredient.of(ExtraDelightItems.BUTTER.get()),
-//						Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"glazed_carrot", consumer);
-//
-//		pot(ExtraDelightItems.APPLE_SAUCE.get(), 4, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(Items.APPLE), Ingredient.of(Items.APPLE),
-//						Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"apple_sauce", consumer);
-//
-//		pot(ExtraDelightItems.HASH_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()),
-//						Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()), Ingredient.of(CommonTags.CROPS_ONION),
-//						Ingredient.of(ExtraDelightTags.FRYING_OIL), Ingredient.of(ExtraDelightTags.MEAT) },
-//				"hash", consumer);
-//
-//		pot(ExtraDelightItems.SEAWEED_CRISPS.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.AIR,
-//				new Ingredient[] { Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP),
-//						Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.FRYING_OIL) },
-//				"seaweed_crisps", consumer);
-//
-//		pot(ExtraDelightItems.MACARONI_CHEESE_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.MACARONI.get()),
-//						Ingredient.of(ExtraDelightItems.MACARONI.get()), Ingredient.of(ExtraDelightTags.BUTTER),
-//						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.CHEESE),
-//						Ingredient.of(ExtraDelightTags.CHEESE) },
-//				"macaroni_cheese", consumer);
-//
-//		pot(ExtraDelightItems.FISH_CAKES.get(), 3, CookingRecipes.NORMAL_COOKING, 0.35F, Items.AIR,
-//				new Ingredient[] { Ingredient.of(CommonTags.COOKED_FISHES), Ingredient.of(CommonTags.CROPS_ONION),
-//						Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()),
-//						Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
-//				"fish_cakes", consumer);
-//
-//		pot(ExtraDelightItems.FRIED_MUSHROOMS.get(), 3, CookingRecipes.NORMAL_COOKING, 0.35F, Items.AIR,
-//				new Ingredient[] { Ingredient.of(Tags.Items.MUSHROOMS), Ingredient.of(Tags.Items.MUSHROOMS),
-//						Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
-//				"fried_mushrooms", consumer);
-//
-//		pot(ExtraDelightItems.MUSHROOM_RISOTTO.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(Tags.Items.MUSHROOMS), Ingredient.of(ExtraDelightTags.CHEESE),
-//						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ModItems.BONE_BROTH.get()),
-//						Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(CommonTags.CROPS_ONION) },
-//				"mushroom_risotto", consumer);
-//
-//		pot(ExtraDelightItems.CURRY_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(CommonTags.RAW_CHICKEN),
-//						Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()), Ingredient.of(ModItems.BONE_BROTH.get()),
-//						Ingredient.of(CommonTags.CROPS_ONION) },
-//				"curry", consumer);
-//
-//		pot(ExtraDelightItems.ALFREDO_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(CommonTags.MILK_BOTTLE), Ingredient.of(ExtraDelightTags.CHEESE),
-//						Ingredient.of(ExtraDelightTags.BUTTER) },
-//				"alfredo_sauce", consumer);
-//
-//		pot(ExtraDelightItems.COOKED_PASTA.get(), 1, CookingRecipes.FAST_COOKING, 0.15F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(CommonTags.PASTA_RAW_PASTA) }, "cooked_pasta", consumer);
-//
-//		pot(ExtraDelightItems.CACTUS_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CACTUS.get()),
-//						Ingredient.of(ExtraDelightItems.COOKED_CACTUS.get()),
-//						Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO),
-//						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ModItems.BONE_BROTH.get()) },
-//				"cactus_soup", consumer);
-//
-//		pot(ExtraDelightItems.STUFFED_CACTUS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.AIR,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CACTUS.get()),
-//						Ingredient.of(ExtraDelightItems.COOKED_CACTUS.get()), Ingredient.of(ExtraDelightTags.CHEESE),
-//						Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
-//				"stuffed_cactus", consumer);
-//
-//		// Halloween Start!
-//
-//		pot(ExtraDelightItems.CARAMEL_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.BUTTER),
-//						Ingredient.of(CommonTags.FOODS_MILK) },
-//				"caramel_sauce", consumer);
-//
-//		pot(ExtraDelightItems.CARAMEL_CANDY.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()) }, "caramel_candy", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
-//				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(ExtraDelightTags.CANDY),
-//						Ingredient.of(ExtraDelightTags.CANDY) },
-//				"candy_apple", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
-//				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"candy_apple_sugar", consumer);
-//
-//		pot(ExtraDelightItems.CARAMEL_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
-//				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()) },
-//				"caramel_apple", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
-//				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(ExtraDelightTags.CANDY),
-//						Ingredient.of(ExtraDelightTags.CANDY) },
-//				"candy_golden_apple", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
-//				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"candy_golden_apple_sugar", consumer);
-//
-//		pot(ExtraDelightItems.CARAMEL_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
-//				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE),
-//						Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()) },
-//				"caramel_golden_apple", consumer);
-//
-//		pot(ExtraDelightItems.CORN_CHOWDER.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CORN.get()),
-//						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO), Ingredient.of(CommonTags.COOKED_BACON),
-//						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(CommonTags.FOODS_MILK),
-//						Ingredient.of(ModItems.BONE_BROTH.get()) },
-//				"corn_chowder", consumer);
-//
-//		pot(ExtraDelightItems.CREAM_CORN.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CORN.get()), Ingredient.of(CommonTags.FOODS_MILK),
-//						Ingredient.of(ExtraDelightTags.BUTTER) },
-//				"cream_corn", consumer);
-//
-//		pot(ExtraDelightItems.CORN_FRITTERS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CORN.get()),
-//						Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
-//						Ingredient.of(ExtraDelightItems.EGG_MIX.get()), Ingredient.of(ExtraDelightTags.FRYING_OIL),
-//						Ingredient.of(ExtraDelightTags.PROCESSED_ONION) },
-//				"corn_fritters", consumer);
-//
-//		pot(ExtraDelightItems.COOKED_CORN.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.CORN_SEEDS.get()) }, "corn", consumer);
-//
-////		pot(ExtraDelightItems.CORN_SILK_TEA.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.GLASS_BOTTLE,
-////				new Ingredient[] { Ingredient.of(ExtraDelightItems.CORN_SILK.get()),
-////						Ingredient.of(ExtraDelightItems.CORN_SILK.get()), Ingredient.of(ExtraDelightTags.SWEETENER) },
-////				"corn_silk_tea", consumer);
-//
-//		pot(ExtraDelightItems.STEWED_APPLES.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SLICED_APPLE),
-//						Ingredient.of(ExtraDelightTags.SLICED_APPLE), Ingredient.of(ExtraDelightTags.SWEETENER),
-//						Ingredient.of(ExtraDelightTags.BUTTER) },
-//				"stewed_apples", consumer);
-//
-//		pot(ExtraDelightItems.APPLE_FRITTERS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_APPLE),
-//						Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
-//						Ingredient.of(ExtraDelightItems.EGG_MIX.get()), Ingredient.of(ExtraDelightTags.FRYING_OIL),
-//						Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"apple_fritters", consumer);
-//
-//		pot(ExtraDelightItems.CARAMEL_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()), Ingredient.of(CommonTags.FOODS_MILK),
-//						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"caramel_custard", consumer);
-//
-//		pot(ExtraDelightItems.STUFFING_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(ExtraDelightItems.CROUTONS.get()),
-//						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ModItems.BONE_BROTH.get()),
-//						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(Tags.Items.EGGS) },
-//				"stuffing", consumer);
-//
-//		// Holiday
-//
-//		pot(ExtraDelightItems.EGGNOG.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(ModItems.MILK_BOTTLE.get()),
-//						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON), Ingredient.of(Items.EGG),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.EGGS) },
-//				"eggnog", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_BLACK.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_BLACK) },
-//				"candy_black", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_BLUE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_BLUE) },
-//				"candy_blue", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_BROWN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_BROWN) },
-//				"candy_brown", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_CYAN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_CYAN) },
-//				"candy_cyan", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_GRAY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_GRAY) },
-//				"candy_gray", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_GREEN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_GREEN) },
-//				"candy_green", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_LIGHT_BLUE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER),
-//						Ingredient.of(Tags.Items.DYES_LIGHT_BLUE) },
-//				"candy_light_blue", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_LIGHT_GRAY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER),
-//						Ingredient.of(Tags.Items.DYES_LIGHT_GRAY) },
-//				"candy_light_gray", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_LIME.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_LIME) },
-//				"candy_lime", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_MAGENTA.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_MAGENTA) },
-//				"candy_magenta", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_ORANGE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_ORANGE) },
-//				"candy_orange", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_PINK.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_PINK) },
-//				"candy_pink", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_PURPLE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_PURPLE) },
-//				"candy_purple", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_RED.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_RED) },
-//				"candy_red", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_WHITE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_WHITE) },
-//				"candy_white", consumer);
-//
-//		pot(ExtraDelightItems.CANDY_YELLOW.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_YELLOW) },
-//				"candy_yellow", consumer);
-//
-//		pot(ExtraDelightItems.GINGER_BEER.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightItems.YEAST.get()) },
-//				"ginger_beer", consumer);
-//
+
+		pot(ExtraDelightItems.GLOW_BERRY_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(Items.GLOW_BERRIES),
+						Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"glow_berry_jam", consumer);
+
+		pot(ExtraDelightItems.GOLDEN_APPLE_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(Items.GOLDEN_APPLE),
+						Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"golden_apple_jam", consumer);
+
+		pot(ExtraDelightItems.JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Items.SWEET_BERRIES),
+						Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"sweet_berry_jam", consumer);
+
+		pot(ExtraDelightItems.SEAWEED_PASTE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, null, new Ingredient[] {
+				Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP) },
+				"seaweed_paste", consumer);
+
+		pot(ExtraDelightItems.GLAZED_CARROT.get(), 3, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Items.CARROT), Ingredient.of(Items.CARROT),
+						Ingredient.of(Items.CARROT), Ingredient.of(ExtraDelightItems.BUTTER.get()),
+						Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"glazed_carrot", consumer);
+
+		pot(ExtraDelightItems.APPLE_SAUCE.get(), 4, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(Items.APPLE), Ingredient.of(Items.APPLE),
+						Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"apple_sauce", consumer);
+
+		pot(ExtraDelightItems.HASH_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()),
+						Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()), Ingredient.of(CommonTags.CROPS_ONION),
+						Ingredient.of(ExtraDelightTags.FRYING_OIL), Ingredient.of(ExtraDelightTags.MEAT) },
+				"hash", consumer);
+
+		pot(ExtraDelightItems.SEAWEED_CRISPS.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, null,
+				new Ingredient[] { Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP),
+						Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.FRYING_OIL) },
+				"seaweed_crisps", consumer);
+
+		pot(ExtraDelightItems.MACARONI_CHEESE_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.MACARONI.get()),
+						Ingredient.of(ExtraDelightItems.MACARONI.get()), Ingredient.of(ExtraDelightTags.BUTTER),
+						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.CHEESE),
+						Ingredient.of(ExtraDelightTags.CHEESE) },
+				"macaroni_cheese", consumer);
+
+		pot(ExtraDelightItems.FISH_CAKES.get(), 3, CookingRecipes.NORMAL_COOKING, 0.35F, null,
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_COOKED_COD), Ingredient.of(CommonTags.CROPS_ONION),
+						Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()),
+						Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
+				"fish_cakes", consumer);
+
+		pot(ExtraDelightItems.FRIED_MUSHROOMS.get(), 3, CookingRecipes.NORMAL_COOKING, 0.35F, null,
+				new Ingredient[] { Ingredient.of(Tags.Items.MUSHROOMS), Ingredient.of(Tags.Items.MUSHROOMS),
+						Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
+				"fried_mushrooms", consumer);
+
+		pot(ExtraDelightItems.MUSHROOM_RISOTTO.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Tags.Items.MUSHROOMS), Ingredient.of(ExtraDelightTags.CHEESE),
+						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(CommonTags.CROPS_ONION) },
+				"mushroom_risotto", consumer);
+
+		pot(ExtraDelightItems.CURRY_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_RAW_CHICKEN),
+						Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.CROPS_ONION) },
+				"curry", consumer);
+
+		pot(ExtraDelightItems.ALFREDO_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.CHEESE),
+						Ingredient.of(ExtraDelightTags.BUTTER) },
+				"alfredo_sauce", consumer);
+
+		pot(ExtraDelightItems.COOKED_PASTA.get(), 1, CookingRecipes.FAST_COOKING, 0.15F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_PASTA) }, "cooked_pasta", consumer);
+
+		pot(ExtraDelightItems.CACTUS_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CACTUS.get()),
+						Ingredient.of(ExtraDelightItems.COOKED_CACTUS.get()),
+						Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ModItems.BONE_BROTH.get()) },
+				"cactus_soup", consumer);
+
+		pot(ExtraDelightItems.STUFFED_CACTUS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CACTUS.get()),
+						Ingredient.of(ExtraDelightItems.COOKED_CACTUS.get()), Ingredient.of(ExtraDelightTags.CHEESE),
+						Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
+				"stuffed_cactus", consumer);
+
+		// Halloween Start!
+
+		pot(ExtraDelightItems.CARAMEL_SAUCE.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.BUTTER),
+						Ingredient.of(CommonTags.FOODS_MILK) },
+				"caramel_sauce", consumer);
+
+		pot(ExtraDelightItems.CARAMEL_CANDY.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()) }, "caramel_candy", consumer);
+
+		pot(ExtraDelightItems.CANDY_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
+				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(ExtraDelightTags.CANDY),
+						Ingredient.of(ExtraDelightTags.CANDY) },
+				"candy_apple", consumer);
+
+		pot(ExtraDelightItems.CANDY_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
+				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"candy_apple_sugar", consumer);
+
+		pot(ExtraDelightItems.CARAMEL_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
+				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()) },
+				"caramel_apple", consumer);
+
+		pot(ExtraDelightItems.CANDY_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
+				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(ExtraDelightTags.CANDY),
+						Ingredient.of(ExtraDelightTags.CANDY) },
+				"candy_golden_apple", consumer);
+
+		pot(ExtraDelightItems.CANDY_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
+				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"candy_golden_apple_sugar", consumer);
+
+		pot(ExtraDelightItems.CARAMEL_GOLDEN_APPLE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.STICK,
+				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE),
+						Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()) },
+				"caramel_golden_apple", consumer);
+
+		pot(ExtraDelightItems.CORN_CHOWDER.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CORN.get()),
+						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO), Ingredient.of(CommonTags.FOODS_COOKED_BACON),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(CommonTags.FOODS_MILK),
+						Ingredient.of(ModItems.BONE_BROTH.get()) },
+				"corn_chowder", consumer);
+
+		pot(ExtraDelightItems.CREAM_CORN.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CORN.get()),
+						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.BUTTER) },
+				"cream_corn", consumer);
+
+		pot(ExtraDelightItems.CORN_FRITTERS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CORN.get()),
+						Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightItems.EGG_MIX.get()), Ingredient.of(ExtraDelightTags.FRYING_OIL),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION) },
+				"corn_fritters", consumer);
+
+		pot(ExtraDelightItems.COOKED_CORN.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.CORN_SEEDS.get()) }, "corn", consumer);
+
+//		pot(ExtraDelightItems.CORN_SILK_TEA.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.GLASS_BOTTLE,
+//				new Ingredient[] { Ingredient.of(ExtraDelightItems.CORN_SILK.get()),
+//						Ingredient.of(ExtraDelightItems.CORN_SILK.get()), Ingredient.of(ExtraDelightTags.SWEETENER) },
+//				"corn_silk_tea", consumer);
+
+		pot(ExtraDelightItems.STEWED_APPLES.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SLICED_APPLE),
+						Ingredient.of(ExtraDelightTags.SLICED_APPLE), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightTags.BUTTER) },
+				"stewed_apples", consumer);
+
+		pot(ExtraDelightItems.APPLE_FRITTERS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_APPLE),
+						Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightItems.EGG_MIX.get()), Ingredient.of(ExtraDelightTags.FRYING_OIL),
+						Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"apple_fritters", consumer);
+
+		pot(ExtraDelightItems.CARAMEL_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()),
+						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(Tags.Items.EGGS),
+						Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"caramel_custard", consumer);
+
+		pot(ExtraDelightItems.STUFFING_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.CROUTONS.get()),
+						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(Tags.Items.EGGS) },
+				"stuffing", consumer);
+
+		// Holiday
+
+		pot(ExtraDelightItems.EGGNOG.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ModItems.MILK_BOTTLE.get()),
+						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON), Ingredient.of(Items.EGG),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.EGGS) },
+				"eggnog", consumer);
+
+		pot(ExtraDelightItems.CANDY_BLACK.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_BLACK) },
+				"candy_black", consumer);
+
+		pot(ExtraDelightItems.CANDY_BLUE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_BLUE) },
+				"candy_blue", consumer);
+
+		pot(ExtraDelightItems.CANDY_BROWN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_BROWN) },
+				"candy_brown", consumer);
+
+		pot(ExtraDelightItems.CANDY_CYAN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_CYAN) },
+				"candy_cyan", consumer);
+
+		pot(ExtraDelightItems.CANDY_GRAY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_GRAY) },
+				"candy_gray", consumer);
+
+		pot(ExtraDelightItems.CANDY_GREEN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_GREEN) },
+				"candy_green", consumer);
+
+		pot(ExtraDelightItems.CANDY_LIGHT_BLUE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(Tags.Items.DYES_LIGHT_BLUE) },
+				"candy_light_blue", consumer);
+
+		pot(ExtraDelightItems.CANDY_LIGHT_GRAY.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(Tags.Items.DYES_LIGHT_GRAY) },
+				"candy_light_gray", consumer);
+
+		pot(ExtraDelightItems.CANDY_LIME.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_LIME) },
+				"candy_lime", consumer);
+
+		pot(ExtraDelightItems.CANDY_MAGENTA.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_MAGENTA) },
+				"candy_magenta", consumer);
+
+		pot(ExtraDelightItems.CANDY_ORANGE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_ORANGE) },
+				"candy_orange", consumer);
+
+		pot(ExtraDelightItems.CANDY_PINK.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_PINK) },
+				"candy_pink", consumer);
+
+		pot(ExtraDelightItems.CANDY_PURPLE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_PURPLE) },
+				"candy_purple", consumer);
+
+		pot(ExtraDelightItems.CANDY_RED.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_RED) },
+				"candy_red", consumer);
+
+		pot(ExtraDelightItems.CANDY_WHITE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_WHITE) },
+				"candy_white", consumer);
+
+		pot(ExtraDelightItems.CANDY_YELLOW.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, Items.PAPER,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_YELLOW) },
+				"candy_yellow", consumer);
+
+		pot(ExtraDelightItems.GINGER_BEER.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightItems.YEAST.get()) },
+				"ginger_beer", consumer);
+
 //		pot(ExtraDelightItems.GINGER_TEA.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.GLASS_BOTTLE,
 //				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
 //						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(ExtraDelightTags.SWEETENER) },
 //				"ginger_tea", consumer);
-//
-//		pot(ExtraDelightItems.HORCHATA.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(CommonTags.GRAIN_RICE), Ingredient.of(ExtraDelightTags.SWEETENER),
-//						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON), Ingredient.of(CommonTags.FOODS_MILK) },
-//				"horchata", consumer);
-//
-//		pot(ExtraDelightItems.MINT_CANDY_BLUE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, null,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_BLUE),
-//						Ingredient.of(ExtraDelightTags.MINT) },
-//				"mint_candy_blue", consumer);
-//
-//		pot(ExtraDelightItems.MINT_CANDY_GREEN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, null,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_GREEN),
-//						Ingredient.of(ExtraDelightTags.MINT) },
-//				"mint_candy_green", consumer);
-//
-//		pot(ExtraDelightItems.MINT_CANDY_RED.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, null,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_RED),
-//						Ingredient.of(ExtraDelightTags.MINT) },
-//				"mint_candy_red", consumer);
-//
-//		pot(ExtraDelightItems.CONGEE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL, new Ingredient[] {
-//				Ingredient.of(CommonTags.GRAIN_RICE), Ingredient.of(ExtraDelightTags.PROCESSED_GINGER) }, "congee",
-//				consumer);
-//
-//		pot(ExtraDelightItems.LUGAW.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-//				new Ingredient[] { Ingredient.of(CommonTags.GRAIN_RICE),
-//						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
-//						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
-//						Ingredient.of(ExtraDelightItems.BOILED_EGG.get()), Ingredient.of(Items.COOKED_CHICKEN) },
-//				"lugaw", consumer);
-//
-//		pot(ExtraDelightItems.RICE_PUDDING.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(CommonTags.GRAIN_RICE), Ingredient.of(CommonTags.FOODS_MILK),
-//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.GROUND_CINNAMON) },
-//				"rice_pudding", consumer);
-//
-//		pot(ExtraDelightItems.PICKLED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SLICED_GINGER),
-//						Ingredient.of(ExtraDelightTags.VINEGAR), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"pickled_ginger", consumer);
-//
-//		pot(ExtraDelightItems.CANDIED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
-//						Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"candied_ginger", consumer);
-//
+
+		pot(ExtraDelightItems.HORCHATA.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON), Ingredient.of(CommonTags.FOODS_MILK) },
+				"horchata", consumer);
+
+		pot(ExtraDelightItems.MINT_CANDY_BLUE.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, null,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_BLUE),
+						Ingredient.of(ExtraDelightTags.MINT) },
+				"mint_candy_blue", consumer);
+
+		pot(ExtraDelightItems.MINT_CANDY_GREEN.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, null,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_GREEN),
+						Ingredient.of(ExtraDelightTags.MINT) },
+				"mint_candy_green", consumer);
+
+		pot(ExtraDelightItems.MINT_CANDY_RED.get(), 4, CookingRecipes.FAST_COOKING, 0.35F, null,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.DYES_RED),
+						Ingredient.of(ExtraDelightTags.MINT) },
+				"mint_candy_red", consumer);
+
+		pot(ExtraDelightItems.CONGEE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL, new Ingredient[] {
+				Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(ExtraDelightTags.PROCESSED_GINGER) }, "congee",
+				consumer);
+
+		pot(ExtraDelightItems.LUGAW.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(CommonTags.CROPS_RICE),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(ExtraDelightItems.BOILED_EGG.get()), Ingredient.of(Items.COOKED_CHICKEN) },
+				"lugaw", consumer);
+
+		pot(ExtraDelightItems.RICE_PUDDING.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(CommonTags.FOODS_MILK),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.GROUND_CINNAMON) },
+				"rice_pudding", consumer);
+
+		pot(ExtraDelightItems.PICKLED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SLICED_GINGER),
+						Ingredient.of(ExtraDelightTags.VINEGAR), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"pickled_ginger", consumer);
+
+		pot(ExtraDelightItems.CANDIED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
+						Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"candied_ginger", consumer);
+
 //		pot(ExtraDelightItems.MINT_TEA.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.GLASS_BOTTLE,
 //				new Ingredient[] { Ingredient.of(ExtraDelightTags.MINT), Ingredient.of(ExtraDelightTags.MINT),
 //						Ingredient.of(ExtraDelightTags.SWEETENER) },
 //				"mint_tea", consumer);
-//
-//		pot(ExtraDelightItems.MINT_JELLY.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
-//				new Ingredient[] { Ingredient.of(ExtraDelightTags.MINT), Ingredient.of(ExtraDelightTags.MINT),
-//						Ingredient.of(ExtraDelightTags.MINT), Ingredient.of(ExtraDelightTags.SWEETENER) },
-//				"mint_jelly", consumer);
+
+		pot(ExtraDelightItems.MINT_JELLY.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.MINT), Ingredient.of(ExtraDelightTags.MINT),
+						Ingredient.of(ExtraDelightTags.MINT), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"mint_jelly", consumer);
 
 	}
 
@@ -2763,56 +2767,53 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.SERVING_PAN.get()))
 				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(CommonTags.FOODS_MILK)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(CommonTags.FOODS_MILK).addIngredient(Items.EGG)
-				.addIngredient(ExtraDelightTags.SWEETENER, 2)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.SWEETENER, 2)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.GLOW_BERRY_COOKIE.get(), 8), FAST_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.GLOW_BERRY_COOKIE_DOUGH)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.GLOW_BERRY_COOKIE_DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.GLOW_BERRIES).build(consumer);
 
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(Items.COOKIE, 8), FAST_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.CHOCOLATE_CHIP_COOKIE_DOUGH)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+		OvenRecipeBuilder.OvenRecipe(new ItemStack(Items.COOKIE, 8), FAST_COOKING, MEDIUM_EXP,
+				new ItemStack(ExtraDelightItems.SHEET.get())).addIngredient(
+						ExtraDelightTags.CHOCOLATE_CHIP_COOKIE_DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.COCOA_BEANS).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.SUGAR_COOKIE.get(), 8), FAST_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.SUGAR_COOKIE_DOUGH)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.SUGAR_COOKIE_DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.SUGAR).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.PUMPKIN_COOKIE.get(), 8), FAST_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.PUMPKIN_COOKIE_DOUGH)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.PUMPKIN_COOKIE_DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get()).build(consumer);
 
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ModItems.SWEET_BERRY_COOKIE.get(), 8), FAST_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.SWEET_BERRY_COOKIE_DOUGH)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+		OvenRecipeBuilder.OvenRecipe(new ItemStack(ModItems.SWEET_BERRY_COOKIE.get(), 8), FAST_COOKING, MEDIUM_EXP,
+				new ItemStack(ExtraDelightItems.SHEET.get())).addIngredient(
+						ExtraDelightTags.SWEET_BERRY_COOKIE_DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.SWEET_BERRIES).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.HONEY_COOKIE.get(), 8), FAST_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.HONEY_COOKIE_DOUGH)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.HONEY_COOKIE_DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.HONEY_BOTTLE).build(consumer);
 
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.APPLE_COOKIE.get(), 8), FAST_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightItems.APPLE_COOKIE_DOUGH.get())/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+		OvenRecipeBuilder.OvenRecipe(new ItemStack(ExtraDelightItems.APPLE_COOKIE.get(), 8), FAST_COOKING, MEDIUM_EXP,
+				new ItemStack(ExtraDelightItems.SHEET.get())).addIngredient(
+						ExtraDelightItems.APPLE_COOKIE_DOUGH.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.APPLE).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CHEESECAKE_ITEM.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(Ingredient.of(CommonTags.FOODS_MILK)).addIngredient(ModItems.PIE_CRUST.get(), 1)
-				.addIngredient(Ingredient.of(CommonTags.FOODS_MILK))/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(Ingredient.of(CommonTags.FOODS_MILK))/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.MILK_BUCKET, ModItems.MILK_BOTTLE.get()).build(consumer);
 
 		OvenRecipeBuilder
@@ -2822,7 +2823,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Items.BAKED_POTATO).addIngredient(CommonTags.FOODS_COOKED_MUTTON)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(CommonTags.FOODS_COOKED_MUTTON)
 				.addIngredient(ExtraDelightTags.PROCESSED_VEG).addIngredient(ExtraDelightTags.PROCESSED_VEG)
-				.addIngredient(ExtraDelightTags.PROCESSED_VEG)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.PROCESSED_VEG)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("shepard_pie", has(CommonTags.FOODS_COOKED_MUTTON)).build(consumer);
 
 		OvenRecipeBuilder
@@ -2830,14 +2831,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						MEDIUM_EXP, new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(Items.COCOA_BEANS, 3).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
 				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(Items.COCOA_BEANS).build(consumer);
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(Items.COCOA_BEANS)
+				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM.get(), 1), NORMAL_COOKING,
 						MEDIUM_EXP, new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(Items.GLOW_BERRIES, 3).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
 				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ExtraDelightItems.CHEESE.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ExtraDelightItems.CHEESE.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
@@ -2845,7 +2847,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(Items.HONEY_BOTTLE, 3).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
 				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ExtraDelightItems.CHEESE.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ExtraDelightItems.CHEESE.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
@@ -2853,7 +2855,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						MEDIUM_EXP, new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(ModItems.PUMPKIN_SLICE.get(), 3).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
 				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
@@ -2862,37 +2864,52 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
 				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
 				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(Items.SWEET_BERRIES, 3)
-				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).addIngredient(ModItems.PIE_CRUST.get(), 1)
-				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER))/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(Ingredient.of(
+						ExtraDelightTags.SWEETENER))
+				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER))/*
+																													 * .setRecipeBookTab
+																													 * (
+																													 * OvenRecipeBookTab
+																													 * .
+																													 * MEALS)
+																													 */
 				.unlockedByAnyIngredient(Items.SWEET_BERRIES).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(Items.GLOW_BERRIES, 3)
-				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).addIngredient(ModItems.PIE_CRUST.get(), 1)
-				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER))/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(Ingredient.of(
+						ExtraDelightTags.SWEETENER))
+				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER))/*
+																													 * .setRecipeBookTab
+																													 * (
+																													 * OvenRecipeBookTab
+																													 * .
+																													 * MEALS)
+																													 */
 				.unlockedByAnyIngredient(Items.GLOW_BERRIES).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.QUICHE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(ExtraDelightItems.OMELETTE_MIX.get(), 1).addIngredient(ModItems.PIE_CRUST.get(), 1)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ExtraDelightItems.OMELETTE_MIX.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(
+						ExtraDelightItems.OMELETTE_MIX.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.EGG_BASKET.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()))
 				.addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.BREAD_SLICE)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedBy("egg_basket", has(Tags.Items.EGGS))
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedBy("egg_basket", has(Tags.Items.EGGS))
 				.build(consumer);
 
 //		ConditionalRecipe.builder().addCondition(not(tagEmpty(ExtraDelightTags.SAUSAGE)))
@@ -2982,7 +2999,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.STARCH).addIngredient(ExtraDelightTags.MEAT_COOKED)
 				.addIngredient(ExtraDelightTags.SOUP).addIngredient(ExtraDelightTags.MEAT_COOKED)
 				.addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(ExtraDelightTags.SOUP)
-				.addIngredient(Tags.Items.FOODS_VEGETABLE)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(Tags.Items.FOODS_VEGETABLE)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("hotdish", has(ExtraDelightTags.SOUP)).save(consumer, EDLoc("hotdish"));
 
 		OvenRecipeBuilder
@@ -2991,7 +3008,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(Tags.Items.MUSHROOMS)
 				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.CHEESE)
 				.addIngredient(ExtraDelightTags.BREAD_CRUMBS).addIngredient(ExtraDelightTags.BUTTER)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedBy("stuffed_mushroom", has(Tags.Items.MUSHROOMS))
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedBy("stuffed_mushroom",
+						has(Tags.Items.MUSHROOMS))
 				.save(consumer, EDLoc("stuffed_mushroom"));
 
 		OvenRecipeBuilder
@@ -3000,14 +3018,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
 				.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(Tags.Items.MUSHROOMS)
 				.addIngredient(ExtraDelightTags.PROCESSED_POTATO).addIngredient(ExtraDelightTags.PROCESSED_ONION)
-				.addIngredient(ModItems.PIE_CRUST.get())/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ModItems.PIE_CRUST.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("meat_pie", has(ModItems.PIE_CRUST.get())).save(consumer, EDLoc("meat_pie"));
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CHICKEN_PARM.get(), 2), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.TRAY.get()))
 				.addIngredient(ExtraDelightItems.FRIED_CHICKEN.get()).addIngredient(ModItems.TOMATO_SAUCE.get())
-				.addIngredient(ExtraDelightTags.CHEESE)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.CHEESE)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("chicken_parm", has(ExtraDelightItems.FRIED_CHICKEN.get()))
 				.save(consumer, EDLoc("chicken_parm"));
 
@@ -3018,7 +3036,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Tags.Items.FOODS_BREAD).addIngredient(ExtraDelightTags.PROCESSED_CARROT)
 				.addIngredient(Items.CHICKEN).addIngredient(ExtraDelightTags.PROCESSED_POTATO)
 				.addIngredient(ExtraDelightTags.PROCESSED_CARROT).addIngredient(ExtraDelightTags.BUTTER)
-				.addIngredient(ExtraDelightTags.PROCESSED_POTATO)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.PROCESSED_POTATO)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("roast_chicken", has(Items.CHICKEN)).save(consumer, EDLoc("roast_chicken"));
 
 		OvenRecipeBuilder
@@ -3028,7 +3046,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY).addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY)
 				.addIngredient(ModItems.HAM.get()).addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY)
 				.addIngredient(ModItems.COOKED_RICE.get()).addIngredient(ExtraDelightItems.BUTTER.get())
-				.addIngredient(ModItems.COOKED_RICE.get())/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ModItems.COOKED_RICE.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("honey_ham", has(ModItems.HAM.get())).save(consumer, EDLoc("honey_ham"));
 
 		OvenRecipeBuilder
@@ -3038,7 +3056,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Items.COCOA_BEANS).addIngredient(ExtraDelightItems.EGG_MIX.get())
 				.addIngredient(Items.COCOA_BEANS).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ModItems.PIE_CRUST.get())
-				.addIngredient(ExtraDelightTags.SWEETENER)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.SWEETENER)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("chocolate_pie", has(Items.COCOA_BEANS)).save(consumer, EDLoc("chocolate_pie"));
 
 		OvenRecipeBuilder
@@ -3046,7 +3064,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
-				.addIngredient(CommonTags.FOODS_MILK)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(CommonTags.FOODS_MILK)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("pie_crust", has(ExtraDelightTags.FLOUR)).save(consumer, EDLoc("pie_crust"));
 
 		OvenRecipeBuilder
@@ -3055,7 +3073,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY).addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY)
 				.addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ModItems.PIE_CRUST.get())
-				.addIngredient(CommonTags.FOODS_MILK)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(CommonTags.FOODS_MILK)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("sweet_berry", has(Items.SWEET_BERRIES)).save(consumer, EDLoc("sweet_berry_cheesecake"));
 
 		OvenRecipeBuilder
@@ -3063,7 +3081,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(ExtraDelightTags.JAM_SWEET_BERRY).addIngredient(CommonTags.FOODS_MILK)
 				.addIngredient(ModItems.PIE_CRUST.get()).addIngredient(CommonTags.FOODS_MILK)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedBy("sweet_berry", has(Items.SWEET_BERRIES))
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedBy("sweet_berry", has(Items.SWEET_BERRIES))
 				.save(consumer, EDLoc("sweet_berry_cheesecake_jam"));
 
 		OvenRecipeBuilder
@@ -3072,14 +3090,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ModItems.PIE_CRUST.get()).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
 				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ModItems.PIE_CRUST.get())
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedBy("apple_pie", has(Items.APPLE))
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedBy("apple_pie", has(Items.APPLE))
 				.save(consumer, EDLoc("apple_pie"));
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.APPLE_PIE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(ModItems.PIE_CRUST.get()).addIngredient(ExtraDelightTags.JAM_APPLE)
-				.addIngredient(ModItems.PIE_CRUST.get())/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ModItems.PIE_CRUST.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("apple_pie", has(Items.APPLE)).save(consumer, EDLoc("apple_pie_jam"));
 
 		bulkBake(ModItems.FRIED_EGG.get(), Ingredient.of(Items.EGG), consumer, ExtraDelightItems.TRAY.get(),
@@ -3127,7 +3145,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						MEDIUM_EXP, new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get(), 3)
 				.addIngredient(Ingredient.of(CommonTags.FOODS_MILK)).addIngredient(ModItems.PIE_CRUST.get(), 1)
-				.addIngredient(Ingredient.of(CommonTags.FOODS_MILK))/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(Ingredient.of(CommonTags.FOODS_MILK))/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.CARAMEL_SAUCE.get()).build(consumer);
 
 		OvenRecipeBuilder
@@ -3135,7 +3153,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.SERVING_PAN.get()))
 				.addIngredient(ExtraDelightTags.CORN_MEAL).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightItems.BUTTER.get())
-				.addIngredient(ExtraDelightItems.EGG_MIX.get())/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightItems.EGG_MIX.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.CORN_MEAL.get()).build(consumer);
 
 		OvenRecipeBuilder
@@ -3144,7 +3162,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.CORN_MEAL).addIngredient(ExtraDelightItems.COOKED_CORN.get())
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightItems.BUTTER.get())
 				.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(Ingredient.of(CommonTags.FOODS_MILK))
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ExtraDelightItems.CORN_MEAL.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(
+						ExtraDelightItems.CORN_MEAL.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
@@ -3152,7 +3171,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(ModItems.PUMPKIN_SLICE.get(), 3).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ModItems.PIE_CRUST.get()).addIngredient(ExtraDelightItems.EGG_MIX.get())
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
@@ -3161,7 +3180,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Items.WHEAT_SEEDS).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.SLICED_APPLE.get(), Items.APPLE).build(consumer);
 
 		OvenRecipeBuilder
@@ -3170,7 +3189,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(CommonTags.FOODS_MILK)
 				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ExtraDelightTags.SLICED_POTATO).addIngredient(ExtraDelightTags.SLICED_POTATO)
-				.addIngredient(ExtraDelightTags.SLICED_POTATO)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.SLICED_POTATO)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.SLICED_POTATO.get()).build(consumer);
 
 		OvenRecipeBuilder
@@ -3180,7 +3199,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ModItems.PUMPKIN_SLICE.get()).addIngredient(ExtraDelightTags.SWEETENER)
-				.addIngredient(ModItems.PUMPKIN_SLICE.get())/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ModItems.PUMPKIN_SLICE.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ModItems.PUMPKIN_SLICE.get()).build(consumer);
 
 		bulkBake(ExtraDelightItems.GRILLED_CORN_ON_COB.get(), Ingredient.of(ExtraDelightTags.CORN_ON_COB), consumer,
@@ -3188,16 +3207,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		bulkBake(ExtraDelightItems.ROASTED_PUMPKIN_SEEDS.get(), Ingredient.of(Items.PUMPKIN_SEEDS), consumer,
 				ExtraDelightItems.TRAY.get(), "cooked_pumpkin_seeds");
 
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.GINGERBREAD_COOKIE.get(), 8), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.GINGERBREAD_COOKIE_DOUGH)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+		OvenRecipeBuilder.OvenRecipe(new ItemStack(ExtraDelightItems.GINGERBREAD_COOKIE.get(), 8), NORMAL_COOKING,
+				MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get())).addIngredient(
+						ExtraDelightTags.GINGERBREAD_COOKIE_DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()).build(consumer);
 
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), 4), NORMAL_COOKING,
-						MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.GINGERBREAD_COOKIE_DOUGH, 4)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+		OvenRecipeBuilder.OvenRecipe(new ItemStack(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.get(), 4), NORMAL_COOKING,
+				MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get())).addIngredient(
+						ExtraDelightTags.GINGERBREAD_COOKIE_DOUGH, 4)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get()).build(consumer);
 
 		bulkBake(ExtraDelightItems.GINGERBREAD_ALEX.get(), Ingredient.of(ExtraDelightItems.RAW_GINGERBREAD_ALEX.get()),
@@ -3249,47 +3266,44 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				Ingredient.of(ExtraDelightItems.RAW_SUGAR_COOKIE_EMERALD.get()), consumer,
 				ExtraDelightItems.SHEET.get(), "sugar_cookie_emerald_oven", 1);
 
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.APPLE_COOKIE_BLOCK.get(), 4), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightItems.APPLE_COOKIE_DOUGH.get(), 4)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+		OvenRecipeBuilder.OvenRecipe(new ItemStack(ExtraDelightItems.APPLE_COOKIE_BLOCK.get(), 4), NORMAL_COOKING,
+				MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get())).addIngredient(
+						ExtraDelightItems.APPLE_COOKIE_DOUGH.get(), 4)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.APPLE_COOKIE_DOUGH.get()).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_BLOCK.get(), 4), NORMAL_COOKING,
 						MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get()))
 				.addIngredient(ExtraDelightTags.CHOCOLATE_CHIP_COOKIE_DOUGH, 4)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get()).build(consumer);
 
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.GLOW_BERRY_COOKIE_BLOCK.get(), 4), NORMAL_COOKING,
-						MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.GLOW_BERRY_COOKIE_DOUGH, 4)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+		OvenRecipeBuilder.OvenRecipe(new ItemStack(ExtraDelightItems.GLOW_BERRY_COOKIE_BLOCK.get(), 4), NORMAL_COOKING,
+				MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get())).addIngredient(
+						ExtraDelightTags.GLOW_BERRY_COOKIE_DOUGH, 4)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get()).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.HONEY_COOKIE_BLOCK.get(), 4), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.HONEY_COOKIE_DOUGH, 4)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.HONEY_COOKIE_DOUGH, 4)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.HONEY_COOKIE_DOUGH.get()).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.PUMPKIN_COOKIE_BLOCK.get(), 4), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.PUMPKIN_COOKIE_DOUGH, 4)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.PUMPKIN_COOKIE_DOUGH, 4)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get()).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.SUGAR_COOKIE_BLOCK.get(), 4), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.SUGAR_COOKIE_DOUGH, 4)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.SUGAR_COOKIE_DOUGH, 4)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get()).build(consumer);
 
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.SWEET_BERRY_COOKIE_BLOCK.get(), 4), NORMAL_COOKING,
-						MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get()))
-				.addIngredient(ExtraDelightTags.SWEET_BERRY_COOKIE_DOUGH, 4)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+		OvenRecipeBuilder.OvenRecipe(new ItemStack(ExtraDelightItems.SWEET_BERRY_COOKIE_BLOCK.get(), 4), NORMAL_COOKING,
+				MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get())).addIngredient(
+						ExtraDelightTags.SWEET_BERRY_COOKIE_DOUGH, 4)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get()).build(consumer);
 
 		OvenRecipeBuilder
@@ -3298,7 +3312,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.GROUND_CINNAMON).addIngredient(Tags.Items.EGGS)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.BREAD_SLICE, 4)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ExtraDelightItems.BREAD_SLICE.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(
+						ExtraDelightItems.BREAD_SLICE.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
@@ -3307,7 +3322,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(Tags.Items.EGGS)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(CommonTags.FOODS_MILK)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ExtraDelightItems.GINGER.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ExtraDelightItems.GINGER.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
@@ -3316,7 +3331,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.GROUND_CINNAMON).addIngredient(Tags.Items.EGGS)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(CommonTags.FOODS_MILK)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ExtraDelightItems.GROUND_CINNAMON.get()).build(consumer);
 
 		OvenRecipeBuilder
@@ -3325,7 +3340,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.PROCESSED_GINGER).addIngredient(Tags.Items.EGGS)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(CommonTags.FOODS_MILK)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ExtraDelightItems.GINGER.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ExtraDelightItems.GINGER.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
@@ -3333,34 +3348,34 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()))
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(Items.SWEET_BERRIES).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
-				.addIngredient(CommonTags.FOODS_MILK)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(CommonTags.FOODS_MILK)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.SWEET_BERRIES).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.FRUIT_BREAD.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.LOAF_PAN.get()))
 				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).addIngredient(CommonTags.FOODS_DOUGH)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.FRUIT_BREAD.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.LOAF_PAN.get()))
 				.addIngredient(ExtraDelightTags.DRIED_FRUIT).addIngredient(CommonTags.FOODS_DOUGH)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.save(consumer, EDLoc("fruit_bread_dried"));
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CRACKERS.get(), 4), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.LOAF_PAN.get()))
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ExtraDelightItems.FLOUR.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ExtraDelightItems.FLOUR.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.ROLL.get(), 6), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()))
-				.addIngredient(CommonTags.FOODS_DOUGH)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.OvenRecipe(new ItemStack(ExtraDelightItems.ROLL.get(),
+						6), NORMAL_COOKING, MEDIUM_EXP, new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()))
+				.addIngredient(CommonTags.FOODS_DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
 
 		OvenRecipeBuilder
@@ -3368,7 +3383,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()))
 				.addIngredient(CommonTags.FOODS_DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
-				.addIngredient(ExtraDelightItems.FROSTING_WHITE.get())/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightItems.FROSTING_WHITE.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
 
 		OvenRecipeBuilder
@@ -3376,7 +3391,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()))
 				.addIngredient(CommonTags.FOODS_DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
@@ -3385,7 +3400,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(CommonTags.FOODS_MILK)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(CommonTags.FOODS_MILK).addIngredient(Items.EGG)
-				.addIngredient(ExtraDelightTags.SWEETENER, 2)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.SWEETENER, 2)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
 
 		OvenRecipeBuilder
@@ -3393,7 +3408,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.TRAY.get()))
 				.addIngredient(Items.MUTTON, 4).addIngredient(ExtraDelightTags.MINT)
 				.addIngredient(ExtraDelightTags.BREAD_CRUMBS).addIngredient(ExtraDelightTags.COOKING_OIL)
-				/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByAnyIngredient(Items.MUTTON).build(consumer);
+				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(Items.MUTTON).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST.get(), 1), NORMAL_COOKING,
@@ -3401,7 +3416,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.DRIED_FRUIT, 3).addIngredient(ExtraDelightTags.BREAD_CRUMBS)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
-				.addIngredient(ExtraDelightTags.SWEETENER)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ExtraDelightTags.SWEETENER)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.MUTTON).build(consumer);
 
 		OvenRecipeBuilder
@@ -3410,7 +3425,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.GROUND_CINNAMON).addIngredient(CommonTags.FOODS_MILK)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
-				.addIngredient(ModItems.PIE_CRUST.get())/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/
+				.addIngredient(ModItems.PIE_CRUST.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ModItems.PIE_CRUST.get()).build(consumer);
 	}
 
@@ -3423,7 +3438,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		for (int i = 1; i < 10; i++)
 			OvenRecipeBuilder
 					.OvenRecipe(new ItemStack(mainResult, i * count), NORMAL_COOKING, MEDIUM_EXP, new ItemStack(pan))
-					.addIngredient(in, i)/*.setRecipeBookTab(OvenRecipeBookTab.MEALS)*/.unlockedByItems(name, pan)
+					.addIngredient(in, i)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByItems(name, pan)
 					.build(consumer, "extradelight:oven/bulk/" + name + i);
 	}
 
@@ -3432,10 +3447,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 //		cookingPotRecipe(ItemLike mainResult, int count, int cookingTime, float experience)
 
-		CookingPotRecipeBuilder b = CookingPotRecipeBuilder.cookingPotRecipe(output, count, speed, xp, container);
+		CookingPotRecipeBuilder b = CookingPotRecipeBuilder.cookingPotRecipe(output, count, speed, xp, container).setRecipeBookTab(CookingPotRecipeBookTab.MEALS);
 		for (Ingredient i : itemsIn)
 			b.addIngredient(i);
-		b.build(consumer);
+		b.build(consumer, rc);
 
 //		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
 //				CreateLoc(rc + "_create"));

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/stuffed_mushroom"
+        "recipe": "extradelight:cooking/oven/stuffed_mushroom"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/stuffed_mushroom"
+      "extradelight:cooking/oven/stuffed_mushroom"
     ]
   }
 }

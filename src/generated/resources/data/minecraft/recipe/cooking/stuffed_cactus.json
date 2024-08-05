@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_cactus"
+    },
+    {
+      "item": "extradelight:cooked_cactus"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "item": "extradelight:breading_misanplas"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:stuffed_cactus"
+  }
+}

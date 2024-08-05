@@ -2,11 +2,11 @@ package com.lance5057.extradelight.displays.candybowl;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.util.BlockEntityUtils;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -47,7 +47,7 @@ public class CandyBowlBlock extends Block implements EntityBlock, SimpleWaterlog
 			if (tileEntity instanceof CandyBowlEntity ent) {
 
 				if (player.getItemInHand(hand).isEmpty())
-					ent.extractItem(player, hand);
+					ent.extractItem(stack);
 				else if (player.getItemInHand(hand).is(ExtraDelightTags.CANDY_BOWL_VALID))
 					ent.insertItem(player.getItemInHand(hand));
 			}

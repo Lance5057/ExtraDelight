@@ -1,12 +1,18 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
 import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.displays.food.FoodDisplayMenu;
+import com.lance5057.extradelight.util.BlockEntityUtils;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -50,32 +56,26 @@ public class MixingBowlBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
-			BlockHitResult pHit) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
+			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
 		if (pLevel.isClientSide) {
 			return ItemInteractionResult.SUCCESS;
 		} else {
 			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
 			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
-
-				if (!mbe.complete) {
-					if (pPlayer.isCrouching()) {
-						mbe.extractItem(pPlayer);
-						return ItemInteractionResult.SUCCESS;
-					}
-					if (pPlayer.getItemInHand(pHand).is(ExtraDelightTags.SPOONS)) {
-						mbe.mix(pPlayer);
-						return ItemInteractionResult.SUCCESS;
-					} else {
-						mbe.insertItem(pPlayer.getItemInHand(pHand));
+				MenuProvider containerProvider = new MenuProvider() {
+					@Override
+					public Component getDisplayName() {
+						return Component.translatable("screen.mixing_bowl.name");
 					}
 
-				} else {
-					if (mbe.testContainerItem(pPlayer.getItemInHand(pHand))) {
-						mbe.scoop(pPlayer, pHand);
-						return ItemInteractionResult.SUCCESS;
+					@Override
+					public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
+							Player playerEntity) {
+						return new MixingBowlMenu(windowId, playerInventory, mbe);
 					}
-				}
+				};
+				pPlayer.openMenu(containerProvider, buf -> buf.writeBlockPos(pPos));
 
 			}
 			return ItemInteractionResult.CONSUME;

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/oven/bulk/sugar_cookie_steve_oven3"
+        "recipe": "extradelight:cooking/oven/oven/bulk/sugar_cookie_steve_oven3"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/oven/bulk/sugar_cookie_steve_oven3"
+      "extradelight:cooking/oven/oven/bulk/sugar_cookie_steve_oven3"
     ]
   }
 }

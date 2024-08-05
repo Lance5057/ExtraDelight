@@ -16,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/apple_crisp_feast"
+        "recipe": "extradelight:cooking/oven/apple_crisp_feast"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/apple_crisp_feast"
+      "extradelight:cooking/oven/apple_crisp_feast"
     ]
   }
 }

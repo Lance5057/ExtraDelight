@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/egg_in_the_basket"
+        "recipe": "extradelight:cooking/oven/egg_in_the_basket"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/egg_in_the_basket"
+      "extradelight:cooking/oven/egg_in_the_basket"
     ]
   }
 }

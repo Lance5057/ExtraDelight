@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/caramel_cheesecake_item"
+        "recipe": "extradelight:cooking/oven/caramel_cheesecake_item"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/caramel_cheesecake_item"
+      "extradelight:cooking/oven/caramel_cheesecake_item"
     ]
   }
 }

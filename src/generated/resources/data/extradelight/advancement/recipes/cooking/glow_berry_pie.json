@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/glow_berry_pie"
+        "recipe": "extradelight:cooking/oven/glow_berry_pie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/glow_berry_pie"
+      "extradelight:cooking/oven/glow_berry_pie"
     ]
   }
 }

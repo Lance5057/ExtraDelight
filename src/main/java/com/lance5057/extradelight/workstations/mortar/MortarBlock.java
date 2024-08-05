@@ -1,12 +1,14 @@
 package com.lance5057.extradelight.workstations.mortar;
 
 import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.util.BlockEntityUtils;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -32,30 +34,35 @@ public class MortarBlock extends Block implements EntityBlock {
 	}
 
 	public MortarBlock(SoundType soundType) {
-		//strength used to be (1.5f, 2.0f)
+		// strength used to be (1.5f, 2.0f)
 		super(Properties.ofFullCopy(Blocks.STONE).strength(0.5F, 2.0F).sound(soundType).noOcclusion());
 	}
 
+	@Override
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
 		return SHAPE;
 	}
 
+	@Override
 	public boolean useShapeForLightOcclusion(BlockState pState) {
 		return true;
 	}
 
+	@Override
 	public RenderShape getRenderShape(BlockState pState) {
 		return RenderShape.MODEL;
 	}
 
-	public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
+	@Override
+	public boolean isPathfindable(BlockState pState, PathComputationType pType) {
 		return false;
 	}
 
-	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
+	@Override
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pHit) {
 		if (pLevel.isClientSide) {
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		} else {
 			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
 			if (tileEntity instanceof MortarBlockEntity mbe) {
@@ -64,14 +71,14 @@ public class MortarBlock extends Block implements EntityBlock {
 					mbe.grind(pPlayer);
 				} else {
 					if (pPlayer.isCrouching()) {
-						mbe.extractItem(pPlayer);
+						mbe.extractItem(stack);
 					} else {
-						mbe.insertItem(pPlayer.getItemInHand(pHand));
+						mbe.insertItem(stack);
 					}
 				}
 
 			}
-			return InteractionResult.CONSUME;
+			return ItemInteractionResult.CONSUME;
 		}
 	}
 
@@ -79,7 +86,7 @@ public class MortarBlock extends Block implements EntityBlock {
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
 		return new MortarBlockEntity(pPos, pState);
 	}
-	
+
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {

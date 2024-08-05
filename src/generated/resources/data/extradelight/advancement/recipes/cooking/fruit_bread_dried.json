@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/fruit_bread_dried"
+        "recipe": "extradelight:cooking/oven/fruit_bread_dried"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/fruit_bread_dried"
+      "extradelight:cooking/oven/fruit_bread_dried"
     ]
   }
 }

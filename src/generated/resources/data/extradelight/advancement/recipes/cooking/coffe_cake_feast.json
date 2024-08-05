@@ -18,7 +18,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/coffe_cake_feast"
+        "recipe": "extradelight:cooking/oven/coffe_cake_feast"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -31,7 +31,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/coffe_cake_feast"
+      "extradelight:cooking/oven/coffe_cake_feast"
     ]
   }
 }

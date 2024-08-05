@@ -78,7 +78,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> /* implements 
 		}
 
 		this.renderMealDisplayTooltip(ms, mouseX, mouseY);
-		this.renderHeatIndicatorTooltip(ms, mouseX, mouseY);
+//		this.renderHeatIndicatorTooltip(ms, mouseX, mouseY);
 //		this.recipeBookComponent.renderTooltip(ms, this.leftPos, this.topPos, mouseX, mouseY);
 	}
 

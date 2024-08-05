@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/apple_cookie"
+        "recipe": "extradelight:cooking/oven/apple_cookie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/apple_cookie"
+      "extradelight:cooking/oven/apple_cookie"
     ]
   }
 }

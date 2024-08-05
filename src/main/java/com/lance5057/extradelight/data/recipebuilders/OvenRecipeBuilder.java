@@ -145,7 +145,7 @@ public class OvenRecipeBuilder implements RecipeBuilder {
 
 	@Override
 	public void save(RecipeOutput output, ResourceLocation id) {
-		ResourceLocation recipeId = id.withPrefix("cooking/");
+		ResourceLocation recipeId = id.withPrefix("cooking/oven/");
 		Advancement.Builder advancementBuilder = output.advancement()
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);

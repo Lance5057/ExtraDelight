@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/oven/bulk/cooked_pumpkin_seeds5"
+        "recipe": "extradelight:cooking/oven/oven/bulk/cooked_pumpkin_seeds5"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/oven/bulk/cooked_pumpkin_seeds5"
+      "extradelight:cooking/oven/oven/bulk/cooked_pumpkin_seeds5"
     ]
   }
 }

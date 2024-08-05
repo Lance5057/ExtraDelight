@@ -10,8 +10,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -44,13 +42,13 @@ public class CandyBowlEntity extends BlockEntity {
 		};
 	}
 
-	public void insertItem(ItemStack stack) {
-		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
+	public void insertItem(ItemStack in) {
+		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
 		this.updateInventory();
 	}
 
-	public void extractItem(Player p, InteractionHand h) {
-		BlockEntityUtils.Inventory.extractItem(p, items, NUM_SLOTS);
+	public void extractItem(ItemStack out) {
+		BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
 		this.updateInventory();
 	}
 

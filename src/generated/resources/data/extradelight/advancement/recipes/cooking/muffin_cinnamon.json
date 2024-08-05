@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/muffin_cinnamon"
+        "recipe": "extradelight:cooking/oven/muffin_cinnamon"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/muffin_cinnamon"
+      "extradelight:cooking/oven/muffin_cinnamon"
     ]
   }
 }

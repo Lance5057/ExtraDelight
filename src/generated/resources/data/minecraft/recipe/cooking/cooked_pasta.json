@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 100,
+  "experience": 0.15,
+  "ingredients": [
+    {
+      "tag": "c:foods/pasta"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:cooked_pasta"
+  }
+}

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/honey_cheesecake"
+        "recipe": "extradelight:cooking/oven/honey_cheesecake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/honey_cheesecake"
+      "extradelight:cooking/oven/honey_cheesecake"
     ]
   }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/oven/bulk/gingerbread_creeper_oven1"
+        "recipe": "extradelight:cooking/oven/oven/bulk/gingerbread_creeper_oven1"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/oven/bulk/gingerbread_creeper_oven1"
+      "extradelight:cooking/oven/oven/bulk/gingerbread_creeper_oven1"
     ]
   }
 }

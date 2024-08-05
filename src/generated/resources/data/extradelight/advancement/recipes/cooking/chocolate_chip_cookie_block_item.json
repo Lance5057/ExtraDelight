@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/chocolate_chip_cookie_block_item"
+        "recipe": "extradelight:cooking/oven/chocolate_chip_cookie_block_item"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/chocolate_chip_cookie_block_item"
+      "extradelight:cooking/oven/chocolate_chip_cookie_block_item"
     ]
   }
 }

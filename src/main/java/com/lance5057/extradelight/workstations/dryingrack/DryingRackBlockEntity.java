@@ -19,7 +19,6 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
@@ -140,13 +139,13 @@ public class DryingRackBlockEntity extends BlockEntity {
 //		return heldItem;
 //	}
 
-	public void insertItem(ItemStack stack) {
-		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
+	public void insertItem(ItemStack in) {
+		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
 		this.updateInventory();
 	}
 
-	public void extractItem(Player p) {
-		BlockEntityUtils.Inventory.extractItem(p, items, NUM_SLOTS);
+	public void extractItem(ItemStack out) {
+		BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
 		this.updateInventory();
 	}
 

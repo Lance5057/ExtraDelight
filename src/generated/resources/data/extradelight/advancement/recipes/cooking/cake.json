@@ -18,7 +18,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/cake"
+        "recipe": "extradelight:cooking/oven/cake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -31,7 +31,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/cake"
+      "extradelight:cooking/oven/cake"
     ]
   }
 }
