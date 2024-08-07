@@ -3,29 +3,19 @@ package com.lance5057.extradelight;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetMenu;
-import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetMenu;
-import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.displays.food.FoodDisplayMenu;
-import com.lance5057.extradelight.displays.food.FoodDisplayScreen;
 import com.lance5057.extradelight.displays.knife.KnifeBlockMenu;
-import com.lance5057.extradelight.displays.knife.KnifeBlockScreen;
 import com.lance5057.extradelight.displays.spice.SpiceRackMenu;
-import com.lance5057.extradelight.displays.spice.SpiceRackScreen;
 import com.lance5057.extradelight.displays.wreath.WreathMenu;
-import com.lance5057.extradelight.displays.wreath.WreathScreen;
 import com.lance5057.extradelight.gui.StyleableMenu;
-import com.lance5057.extradelight.gui.StyleableScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingMenu;
-import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
+import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlMenu;
 import com.lance5057.extradelight.workstations.oven.OvenMenu;
-import com.lance5057.extradelight.workstations.oven.OvenScreen;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -36,6 +26,8 @@ public class ExtraDelightContainers {
 
 	public static final Supplier<MenuType<OvenMenu>> OVEN_MENU = MENU_TYPES.register("oven",
 			() -> IMenuTypeExtension.create(OvenMenu::new));
+	public static final Supplier<MenuType<MixingBowlMenu>> MIXING_BOWL_MENU = MENU_TYPES.register("mixing_bowl",
+			() -> IMenuTypeExtension.create(MixingBowlMenu::new));
 
 	public static final Supplier<MenuType<FoodDisplayMenu>> FOOD_DISPLAY_MENU = MENU_TYPES.register("food_display",
 			() -> IMenuTypeExtension.create(FoodDisplayMenu::new));

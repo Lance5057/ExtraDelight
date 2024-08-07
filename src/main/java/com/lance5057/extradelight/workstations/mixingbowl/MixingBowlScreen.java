@@ -11,7 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class MixingBowlScreen extends AbstractContainerScreen<MixingBowlMenu> {
 	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation
-			.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/display.png");
+			.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/mixing_bowl.png");
 
 	public MixingBowlScreen(MixingBowlMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
 		super(pMenu, pPlayerInventory, pTitle);
@@ -24,8 +24,13 @@ public class MixingBowlScreen extends AbstractContainerScreen<MixingBowlMenu> {
 			return;
 
 		RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
-		graphics.blit(BACKGROUND_TEXTURE, this.leftPos, this.topPos + 60, 0, 0, 175, 89);
-		graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 54, this.topPos, 0, 191, 68, 65);
+		graphics.blit(BACKGROUND_TEXTURE, this.leftPos, this.topPos-19, 0, 0, 175, 183);
 
 	}
+	
+	@Override
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+//        guiGraphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, 4210752, false);
+        guiGraphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, 4210752, false);
+    }
 }

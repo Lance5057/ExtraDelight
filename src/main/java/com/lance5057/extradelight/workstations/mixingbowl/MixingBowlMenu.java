@@ -4,7 +4,6 @@ import java.util.Objects;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
-import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -24,7 +23,7 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 	protected final Level level;
 
 	protected MixingBowlMenu(int windowId, final Inventory playerInventory, final MixingBowlBlockEntity tileEntity) {
-		super(ExtraDelightContainers.FOOD_DISPLAY_MENU.get(), windowId);
+		super(ExtraDelightContainers.MIXING_BOWL_MENU.get(), windowId);
 		this.tileEntity = tileEntity;
 		this.level = playerInventory.player.level();
 		this.canInteractWithCallable = ContainerLevelAccess.create(tileEntity.getLevel(), tileEntity.getBlockPos());
@@ -56,6 +55,8 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 			for (int column = 0; column < 9; ++column) {
 				this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 126));
 			}
+			
+			this.addSlot(new Slot(playerInventory, MixingBowlBlockEntity.CONTAINER_SLOT, 100, 126));
 		}
 	}
 
@@ -67,7 +68,7 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 		Objects.requireNonNull(playerInventory, "playerInventory cannot be null");
 		Objects.requireNonNull(data, "data cannot be null");
 		final BlockEntity tileAtPos = playerInventory.player.level().getBlockEntity(data.readBlockPos());
-		if (tileAtPos instanceof FoodDisplayEntity) {
+		if (tileAtPos instanceof MixingBowlBlockEntity) {
 			return (MixingBowlBlockEntity) tileAtPos;
 		}
 		throw new IllegalStateException("Tile entity is not correct! " + tileAtPos);
@@ -113,7 +114,7 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 
 	@Override
 	public boolean stillValid(Player pPlayer) {
-		return stillValid(canInteractWithCallable, pPlayer, ExtraDelightBlocks.FOOD_DISPLAY.get());
+		return stillValid(canInteractWithCallable, pPlayer, ExtraDelightBlocks.MIXING_BOWL.get());
 	}
 
 }

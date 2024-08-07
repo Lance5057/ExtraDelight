@@ -28,6 +28,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
@@ -39,7 +40,11 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
-	public static final int NUM_SLOTS = 33;
+	public static final int CRAFT_SLOTS = 9;
+	public static final int CONTAINER_SLOT = 10;
+	public static final int LIQUID_IN_SLOT = 11;
+	public static final int LIQUID_OUT_SLOT = 12;
+	public static final int GHOST_SLOT = 13;
 
 	public static final String FLUID_TAG = "tank";
 
@@ -63,14 +68,26 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	private ItemStackHandler createHandler() {
-		return new ItemStackHandler(NUM_SLOTS) {
+		return new ItemStackHandler(LIQUID_OUT_SLOT) {
+//			@Override
+//			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
+//				if (slot != 32)
+//					return 1;
+//				else
+//					return 64;
+//			}
+			
 			@Override
-			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
-				if (slot != 32)
-					return 1;
-				else
-					return 64;
-			}
+		    public boolean isItemValid(int slot, ItemStack stack) {
+				if(slot == LIQUID_IN_SLOT)
+					if(stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
+						return true;
+				if(slot == LIQUID_OUT_SLOT)
+					return false;
+				if(slot == GHOST_SLOT)
+					return false;
+		        return true;
+		    }
 
 			@Override
 			protected void onContentsChanged(int slot) {
@@ -82,9 +99,9 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	public int getLastFilledSlot(IItemHandlerModifiable inventory) {
-		if (inventory.getStackInSlot(31) != ItemStack.EMPTY)
-			return 31;
-		for (int i = 0; i <= 31; i++) {
+		if (inventory.getStackInSlot(9) != ItemStack.EMPTY)
+			return 9;
+		for (int i = 0; i <= 9; i++) {
 			if (inventory.getStackInSlot(i) == ItemStack.EMPTY)
 				return i - 1;
 		}
@@ -104,12 +121,12 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	public void insertItem(ItemStack in, int slot) {
-		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
+		BlockEntityUtils.Inventory.insertItem(in, items, LIQUID_OUT_SLOT);
 		this.updateInventory();
 	}
 
 	public ItemStack extractItem(ItemStack out, int slot) {
-		ItemStack stack = BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
+		ItemStack stack = BlockEntityUtils.Inventory.extractItem(items, LIQUID_OUT_SLOT);
 		this.updateInventory();
 		return stack;
 	}
@@ -228,7 +245,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	private void clearItems() {
-		for (int i = 0; i < 32; i++) {
+		for (int i = 0; i < 9; i++) {
 			items.setStackInSlot(i, ItemStack.EMPTY);
 		}
 	}
@@ -256,13 +273,13 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				stirs++;
 
 				ItemStack[] items = getItems();
-				for (int i = 0; i < 1 + level.random.nextInt(4); i++)
-					level.addParticle(
-							new ItemParticleOption(ParticleTypes.ITEM,
-									items[items.length > 1 ? level.random.nextInt(items.length - 1) : 0]),
-							worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
-							worldPosition.getY() - 0.5f - level.random.nextDouble(),
-							worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
+//				for (int i = 0; i < 1 + level.random.nextInt(4); i++)
+//					level.addParticle(
+//							new ItemParticleOption(ParticleTypes.ITEM,
+//									items[items.length > 1 ? level.random.nextInt(items.length - 1) : 0]),
+//							worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
+//							worldPosition.getY() - 0.5f - level.random.nextDouble(),
+//							worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
 				level.playSound(player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
 			} else {
@@ -275,7 +292,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 				dropContainers(items, player);
 				clearItems();
-				items.setStackInSlot(32, i);
+				items.setStackInSlot(CONTAINER_SLOT, i);
 				complete = true;
 			}
 			updateInventory();
@@ -314,7 +331,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	private void dropContainers(@NotNull IItemHandlerModifiable inv, Player player) {
-		for (int i = 0; i < 32; i++) {
+		for (int i = 0; i < 9; i++) {
 			player.addItem(inv.getStackInSlot(i).getCraftingRemainingItem());
 
 		}

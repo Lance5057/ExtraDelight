@@ -30,14 +30,14 @@ public class MixingBowlRenderer implements BlockEntityRenderer<MixingBowlBlockEn
 		IItemHandler inv = pBlockEntity.getItemHandler();
 
 		renderCircle(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv, 0, 35,
-				0.20f, 0, 7);
-		renderCircle(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv, 23.5f,
-				25, 0.15f, 8, 15);
-		renderCircle(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv,
-				23.5f * 2, 15, 0.1f, 16, 23);
-		renderStack(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv, 24, 31);
-		renderSolid(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv);
-		renderFinish(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv);
+				0.20f, 0, 9);
+//		renderCircle(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv, 23.5f,
+//				25, 0.15f, 8, 15);
+//		renderCircle(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv,
+//				23.5f * 2, 15, 0.1f, 16, 23);
+//		renderStack(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv, 24, 31);
+//		renderSolid(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv);
+//		renderFinish(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv);
 
 		timer++;
 	}

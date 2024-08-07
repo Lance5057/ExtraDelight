@@ -23,6 +23,7 @@ import com.lance5057.extradelight.gui.StyleableScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlRenderer;
+import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlScreen;
 import com.lance5057.extradelight.workstations.mortar.MortarRenderer;
 import com.lance5057.extradelight.workstations.oven.OvenScreen;
 
@@ -72,6 +73,7 @@ public class ExtraDelightClientEvents {
 		event.register(ExtraDelightContainers.SINK_MENU.get(), SinkCabinetScreen::new);
 		event.register(ExtraDelightContainers.COUNTER_CABINET_MENU.get(), CounterCabinetScreen::new);
 		event.register(ExtraDelightContainers.STYLE_MENU.get(), StyleableScreen::new);
+		event.register(ExtraDelightContainers.MIXING_BOWL_MENU.get(), MixingBowlScreen::new);
 	}
 
 	public static void setTERenderers() {

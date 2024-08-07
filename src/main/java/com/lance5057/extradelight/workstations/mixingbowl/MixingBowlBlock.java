@@ -60,6 +60,12 @@ public class MixingBowlBlock extends Block implements EntityBlock {
 			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
 		if (pLevel.isClientSide) {
 			return ItemInteractionResult.SUCCESS;
+		} else if (stack.is(ExtraDelightTags.SPOONS)) {
+			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
+			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
+				mbe.mix(pPlayer);
+			}
+			return ItemInteractionResult.SUCCESS;
 		} else {
 			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
 			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
