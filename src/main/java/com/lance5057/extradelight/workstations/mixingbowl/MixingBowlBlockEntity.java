@@ -13,8 +13,6 @@ import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlReci
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.particles.ItemParticleOption;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -40,11 +38,11 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
-	public static final int CRAFT_SLOTS = 9;
-	public static final int CONTAINER_SLOT = 10;
-	public static final int LIQUID_IN_SLOT = 11;
-	public static final int LIQUID_OUT_SLOT = 12;
-	public static final int GHOST_SLOT = 13;
+	public static final int CRAFT_SLOTS = 8;
+	public static final int CONTAINER_SLOT = 9;
+	public static final int LIQUID_IN_SLOT = 10;
+	public static final int LIQUID_OUT_SLOT = 11;
+	public static final int GHOST_SLOT = 12;
 
 	public static final String FLUID_TAG = "tank";
 
@@ -53,6 +51,8 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	private int stirs = 0;
 	public boolean complete = false;
 	public ItemStack containerItem = ItemStack.EMPTY;
+
+	MixingBowlRecipe curRecipe;
 
 	public MixingBowlBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ExtraDelightBlockEntities.MIXING_BOWL.get(), pPos, pState);
@@ -68,7 +68,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	private ItemStackHandler createHandler() {
-		return new ItemStackHandler(LIQUID_OUT_SLOT) {
+		return new ItemStackHandler(GHOST_SLOT + 1) {
 //			@Override
 //			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 //				if (slot != 32)
@@ -76,26 +76,32 @@ public class MixingBowlBlockEntity extends BlockEntity {
 //				else
 //					return 64;
 //			}
-			
+
 			@Override
-		    public boolean isItemValid(int slot, ItemStack stack) {
-				if(slot == LIQUID_IN_SLOT)
-					if(stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
+			public boolean isItemValid(int slot, ItemStack stack) {
+				if (slot == LIQUID_IN_SLOT)
+					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
 						return true;
-				if(slot == LIQUID_OUT_SLOT)
+				if (slot == LIQUID_OUT_SLOT)
 					return false;
-				if(slot == GHOST_SLOT)
+				if (slot == GHOST_SLOT)
 					return false;
-		        return true;
-		    }
+				return true;
+			}
 
 			@Override
 			protected void onContentsChanged(int slot) {
-				zeroProgress();
-				updateInventory();
+				if (slot != GHOST_SLOT) {
+					zeroProgress();
+					updateInventory();
+				}
 			}
 
 		};
+	}
+
+	private boolean doesMealHaveContainer(ItemStack meal) {
+		return meal.hasCraftingRemainingItem();
 	}
 
 	public int getLastFilledSlot(IItemHandlerModifiable inventory) {
@@ -130,7 +136,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		this.updateInventory();
 		return stack;
 	}
-	
+
 	public int getNextEmptySlot() {
 		for (int i = 0; i < items.getSlots(); ++i) {
 			ItemStack slotStack = items.getStackInSlot(i);
@@ -146,6 +152,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	public void updateInventory() {
+		this.setupRecipe();
 		requestModelDataUpdate();
 		this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
 		this.setChanged();
@@ -154,6 +161,17 @@ public class MixingBowlBlockEntity extends BlockEntity {
 //	public ItemStack getInsertedItem() {
 //		return handler.map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
 //	}
+
+	private void setupRecipe() {
+		Optional<RecipeHolder<MixingBowlRecipe>> recipe = this.matchRecipe();
+		if (recipe.isPresent()) {
+			this.curRecipe = recipe.get().value();
+			this.items.setStackInSlot(GHOST_SLOT, curRecipe.getResultItem(this.level.registryAccess()).copy());
+		} else {
+			this.curRecipe = null;
+			this.items.setStackInSlot(GHOST_SLOT, ItemStack.EMPTY.copy());
+		}
+	}
 
 	public int getStirs() {
 		return stirs;
@@ -254,7 +272,12 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		if (level != null) {
 
 			Optional<RecipeHolder<MixingBowlRecipe>> recipe = level.getRecipeManager()
-					.getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(), new RecipeWrapper(this.items), level);
+					.getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(), new RecipeWrapper(this.items) {
+						@Override
+						public int size() {
+							return 9;
+						}
+					}, level);
 
 			// setRecipe(recipe);
 			return recipe;
@@ -265,14 +288,14 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	public InteractionResult mix(Player player) {
 
-		Optional<RecipeHolder<MixingBowlRecipe>> recipeOptional = matchRecipe();
-		if (recipeOptional.isPresent()) {
-			MixingBowlRecipe recipe = recipeOptional.get().value();
+//		Optional<RecipeHolder<MixingBowlRecipe>> recipeOptional = matchRecipe();
+		if (curRecipe != null) {
+//			MixingBowlRecipe recipe = recipeOptional.get().value();
 
-			if (this.stirs < recipe.getStirs()) {
+			if (this.stirs < curRecipe.getStirs()) {
 				stirs++;
 
-				ItemStack[] items = getItems();
+//				ItemStack[] items = getItems();
 //				for (int i = 0; i < 1 + level.random.nextInt(4); i++)
 //					level.addParticle(
 //							new ItemParticleOption(ParticleTypes.ITEM,
@@ -283,9 +306,9 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 				level.playSound(player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
 			} else {
-				this.containerItem = recipe.getUsedItem().copy();
+				this.containerItem = curRecipe.getUsedItem().copy();
 
-				ItemStack i = recipe.getResultItem(player.level().registryAccess()).copy();
+				ItemStack i = curRecipe.getResultItem(player.level().registryAccess()).copy();
 
 				i.onCraftedBy(player.level(), player, 1);
 //				NeoForgeEventFactory.firePlayerCraftingEvent(player, i, new RecipeWrapper(items));

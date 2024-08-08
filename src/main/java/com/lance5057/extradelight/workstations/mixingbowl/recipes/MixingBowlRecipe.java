@@ -1,8 +1,6 @@
 package com.lance5057.extradelight.workstations.mixingbowl.recipes;
 
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.dryingrack.DryingRackRecipe;
-import com.lance5057.extradelight.workstations.dryingrack.DryingRackSerializer;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -31,7 +29,7 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 	final String group;
 	final ItemStack result;
 	final NonNullList<Ingredient> ingredients;
-	private final boolean isSimple;
+//	private final boolean isSimple;
 
 	public MixingBowlRecipe(String pGroup, NonNullList<Ingredient> pIngredients, ItemStack pResult, int stirs,
 			ItemStack usedItem) {
@@ -40,7 +38,7 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 		this.group = pGroup;
 		this.result = pResult;
 		this.ingredients = pIngredients;
-		this.isSimple = pIngredients.stream().allMatch(Ingredient::isSimple);
+//		this.isSimple = pIngredients.stream().allMatch(Ingredient::isSimple);
 	}
 
 	public String getGroup() {
@@ -61,15 +59,14 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 			ItemStack itemstack = input.getItem(j);
 			if (!itemstack.isEmpty()) {
 				++i;
-				if (isSimple)
-					stackedcontents.accountStack(itemstack, 1);
-				else
-					inputs.add(itemstack);
+//				if (isSimple)
+//					stackedcontents.accountStack(itemstack, 1);
+//				else
+				inputs.add(itemstack);
 			}
 		}
 
-		return i == this.ingredients.size() && (isSimple ? stackedcontents.canCraft(this, (IntList) null)
-				: RecipeMatcher.findMatches(inputs, this.ingredients) != null);
+		return i == this.ingredients.size() && RecipeMatcher.findMatches(inputs, this.ingredients) != null;
 	}
 
 	/**
@@ -165,7 +162,7 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 			// TODO Auto-generated method stub
 			return CODEC;
 		}
-		
+
 		public static final StreamCodec<RegistryFriendlyByteBuf, MixingBowlRecipe> STREAM_CODEC = StreamCodec
 				.of(MixingBowlRecipe.Serializer::toNetwork, MixingBowlRecipe.Serializer::fromNetwork);
 

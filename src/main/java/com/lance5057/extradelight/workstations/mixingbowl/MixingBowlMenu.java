@@ -32,8 +32,8 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 			// Ingredient Slots - 2 Rows x 3 Columns
 			int startX = 8;
 			int startY = 8;
-			int inputStartX = 62;
-			int inputStartY = 8;
+			int inputStartX = 64;
+			int inputStartY = 5;
 			int borderSlotSize = 18;
 			for (int row = 0; row < 3; ++row) {
 				for (int column = 0; column < 3; ++column) {
@@ -42,8 +42,31 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 				}
 			}
 
+			this.addSlot(
+					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.CONTAINER_SLOT, 122, 46));
+			this.addSlot(
+					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.LIQUID_IN_SLOT, 17, -4));
+			this.addSlot(
+					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.LIQUID_OUT_SLOT, 17, 51));
+			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.GHOST_SLOT, 147, 23) {
+				@Override
+				public boolean mayPickup(Player playerIn) {
+					return false;
+				}
+
+				@Override
+				public ItemStack remove(int amount) {
+					return ItemStack.EMPTY.copy();
+				}
+
+				@Override
+				public boolean mayPlace(ItemStack stack) {
+					return false;
+				}
+			});
+
 			// Main Player Inventory
-			int startPlayerInvY = startY * 4 + 36;
+			int startPlayerInvY = startY * 4 + 51;
 			for (int row = 0; row < 3; ++row) {
 				for (int column = 0; column < 9; ++column) {
 					this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, startX + (column * borderSlotSize),
@@ -53,10 +76,9 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 
 			// Hotbar
 			for (int column = 0; column < 9; ++column) {
-				this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 126));
+				this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 141));
 			}
-			
-			this.addSlot(new Slot(playerInventory, MixingBowlBlockEntity.CONTAINER_SLOT, 100, 126));
+
 		}
 	}
 
