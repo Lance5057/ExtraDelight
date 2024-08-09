@@ -6,6 +6,7 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
+import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
@@ -202,8 +203,8 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
 
 		this.cropCrossBlock(ExtraDelightBlocks.GINGER_CROP.get(), "ginger", GingerCrop.AGE);
-		this.simpleBlock(ExtraDelightBlocks.CANDY_BOWL.get(),
-				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/candy_bowl")));
+		this.simpleBlock(ExtraDelightBlocks.CANDY_BOWL.get(), models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/candy_bowl")));
 
 		this.frostableBlock(ExtraDelightBlocks.WHITE_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block",
 				"white");
@@ -255,26 +256,15 @@ public class BlockModels extends BlockStateProvider {
 				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
 						modLoc("block/keg_bottom"), modLoc("block/keg_top")).renderType("cutout"));
 
-		this.horizontalBlock(ExtraDelightBlocks.SHEET_BLOCK.get(),
-				this.models().getExistingFile(this.modLoc("block/sheet")));
-		this.horizontalBlock(ExtraDelightBlocks.TRAY_BLOCK.get(),
-				this.models().getExistingFile(this.modLoc("block/tray")));
-		this.horizontalBlock(ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
-				this.models().getExistingFile(this.modLoc("block/loafpan")));
-		this.simpleBlock(ExtraDelightBlocks.PIE_DISH_BLOCK.get(),
-				this.models().getExistingFile(this.modLoc("block/piepan")));
-		this.simpleBlock(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(),
-				this.models().getExistingFile(this.modLoc("block/cake_pan")));
-		this.simpleBlock(ExtraDelightBlocks.BAKING_STONE_BLOCK.get(),
-				this.models().getExistingFile(this.modLoc("block/baking_stone")));
-		this.horizontalBlock(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(),
-				this.models().getExistingFile(this.modLoc("block/muffin_tray")));
-		this.horizontalBlock(ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
-				this.models().getExistingFile(this.modLoc("block/serving_pot")));
-		this.simpleBlock(ExtraDelightBlocks.SERVING_PAN_BLOCK.get(),
-				this.models().getExistingFile(this.modLoc("block/serving_pan")));
-		this.simpleBlock(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get(),
-				this.models().getExistingFile(this.modLoc("block/serving_bowl")));
+		this.panBlock(ExtraDelightBlocks.SHEET_BLOCK.get(), "block/sheet");
+		this.panBlock(ExtraDelightBlocks.TRAY_BLOCK.get(), "block/tray");
+		this.panBlock(ExtraDelightBlocks.LOAF_PAN_BLOCK.get(), "block/loafpan");
+		this.panBlock(ExtraDelightBlocks.PIE_DISH_BLOCK.get(), "block/piepan");
+		this.panBlock(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), "block/cake_pan");
+//		this.panBlock(ExtraDelightBlocks.BAKING_STONE_BLOCK.get(), "block/baking_stone");
+		this.panBlock(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), "block/muffin_tray");
+		this.panBlock(ExtraDelightBlocks.SERVING_POT_BLOCK.get(), "block/serving_pot");
+		this.panBlock(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get(), "block/serving_bowl");
 
 		this.logBlock(ExtraDelightBlocks.FRUIT_LOG.get());
 		this.logBlock(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
@@ -490,14 +480,25 @@ public class BlockModels extends BlockStateProvider {
 								.texture("0", modLoc(path))
 								.texture("1", modLoc("block/frosting_colors/" + suffix.toLowerCase() + color)))
 						.build();
-			
+
 			return ConfiguredModel.builder()
 					.modelFile(models()
-							.withExistingParent(path + "_" + suffix.toLowerCase() + color,
-									modLoc("block/grass_like"))
-							.texture("0", modLoc(path))
-							.texture("1", modLoc("block/frosting_colors/full_" + color))
+							.withExistingParent(path + "_" + suffix.toLowerCase() + color, modLoc("block/grass_like"))
+							.texture("0", modLoc(path)).texture("1", modLoc("block/frosting_colors/full_" + color))
 							.texture("2", modLoc("block/frosting_colors/" + suffix.toLowerCase() + color)))
+					.build();
+		});
+	}
+
+	public void panBlock(HorizontalPanBlock block, String base) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(HorizontalPanBlock.STYLE);
+
+			String suffix = HorizontalPanBlock.Styles.values()[servings] + "_";
+
+			return ConfiguredModel.builder()
+					.modelFile(models().withExistingParent("block/cosmetics/pans/" + base + "_" + suffix.toLowerCase(), modLoc(base)).texture("0",
+							modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan")))
 					.build();
 		});
 	}
@@ -590,7 +591,8 @@ public class BlockModels extends BlockStateProvider {
 			String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
 			return models().orientable(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix,
 					ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_side"),
-					ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_front" + suffix),
+					ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+							"block/" + woodType + "_cabinet_front" + suffix),
 					ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_top"));
 		});
 	}

@@ -1,0 +1,23 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "tag": "forge:cookie_dough"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:cookie_dough_milkshake"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
+}

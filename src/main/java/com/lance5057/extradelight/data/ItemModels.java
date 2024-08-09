@@ -136,7 +136,6 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.MUFFIN_TIN, "muffin_tin");
 		forItem(ExtraDelightItems.PIE_DISH, "pie_dish");
 		forItem(ExtraDelightItems.SHEET, "sheet");
-		forItem(ExtraDelightItems.SERVING_PAN, "square_pan");
 		forItem(ExtraDelightItems.TRAY, "tray");
 
 		forItem(ExtraDelightItems.WOODEN_SPOON, "wooden_spoon");

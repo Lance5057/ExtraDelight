@@ -18,9 +18,7 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -264,8 +262,9 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	private void clearItems() {
 		for (int i = 0; i < 9; i++) {
-			items.setStackInSlot(i, ItemStack.EMPTY);
+			items.getStackInSlot(i).shrink(1);
 		}
+		items.getStackInSlot(CONTAINER_SLOT).shrink(1);
 	}
 
 	protected Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe() {
@@ -310,12 +309,16 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 				ItemStack i = curRecipe.getResultItem(player.level().registryAccess()).copy();
 
+//				
+
 				i.onCraftedBy(player.level(), player, 1);
 //				NeoForgeEventFactory.firePlayerCraftingEvent(player, i, new RecipeWrapper(items));
-
+				BlockEntityUtils.Inventory.givePlayerItemStack(i, player, level, worldPosition);
 				dropContainers(items, player);
 				clearItems();
-				items.setStackInSlot(CONTAINER_SLOT, i);
+				this.stirs = 0;
+//				items.setStackInSlot(CONTAINER_SLOT, i);
+				this.updateInventory();
 				complete = true;
 			}
 			updateInventory();
@@ -330,32 +333,33 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		return this.containerItem.getItem() == stack.getItem();
 	}
 
-	public InteractionResult scoop(Player player, InteractionHand pHand) {
-		ItemStack r = items.extractItem(32, 1, false);
-
-		if (!player.addItem(r)) {
-			level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f, getBlockPos().getY() + 0.5f,
-					getBlockPos().getZ() + 0.5f, r, 0, 0, 0));
-		}
-
-		if (!this.containerItem.isEmpty()) {
-			ItemStack h = player.getItemInHand(pHand);
-			h.setCount(h.getCount() - 1);
-		}
-
-		if (items.getStackInSlot(32).isEmpty()) {
-			this.containerItem = ItemStack.EMPTY;
-
-			complete = false;
-		}
-
-		return InteractionResult.SUCCESS;
-
-	}
+//	public InteractionResult scoop(Player player, InteractionHand pHand) {
+//		ItemStack r = items.extractItem(32, 1, false);
+//
+//		if (!player.addItem(r)) {
+//			level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f, getBlockPos().getY() + 0.5f,
+//					getBlockPos().getZ() + 0.5f, r, 0, 0, 0));
+//		}
+//
+//		if (!this.containerItem.isEmpty()) {
+//			ItemStack h = player.getItemInHand(pHand);
+//			h.setCount(h.getCount() - 1);
+//		}
+//
+//		if (items.getStackInSlot(32).isEmpty()) {
+//			this.containerItem = ItemStack.EMPTY;
+//
+//			complete = false;
+//		}
+//
+//		return InteractionResult.SUCCESS;
+//
+//	}
 
 	private void dropContainers(@NotNull IItemHandlerModifiable inv, Player player) {
 		for (int i = 0; i < 9; i++) {
-			player.addItem(inv.getStackInSlot(i).getCraftingRemainingItem());
+			BlockEntityUtils.Inventory.givePlayerItemStack(inv.getStackInSlot(i).getCraftingRemainingItem(), player,
+					level, worldPosition);
 
 		}
 	}

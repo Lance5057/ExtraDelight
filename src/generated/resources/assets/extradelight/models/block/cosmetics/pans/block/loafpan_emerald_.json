@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/loafpan",
+  "textures": {
+    "0": "extradelight:block/cosmetics/pans/emerald_pan"
+  }
+}

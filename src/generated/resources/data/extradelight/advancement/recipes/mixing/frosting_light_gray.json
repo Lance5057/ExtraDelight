@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "frosting_light_gray": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_light_gray"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/frosting_light_gray"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "frosting_light_gray"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/frosting_light_gray"
+    ]
+  }
+}

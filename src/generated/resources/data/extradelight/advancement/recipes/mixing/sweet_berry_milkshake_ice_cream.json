@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/sweet_berry_milkshake_ice_cream"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "sweet_berry_milkshake_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sweet_berry_milkshake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "sweet_berry_milkshake_ice_cream"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/sweet_berry_milkshake_ice_cream"
+    ]
+  }
+}

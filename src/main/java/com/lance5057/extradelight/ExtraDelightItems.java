@@ -125,10 +125,8 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> SERVING_POT = ITEMS.register("serving_pot",
 			() -> new BlockItem(ExtraDelightBlocks.SERVING_POT_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<BlockItem> SERVING_PAN = ITEMS.register("serving_pan",
-			() -> new BlockItem(ExtraDelightBlocks.SERVING_PAN_BLOCK.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> SERVING_BOWL = ITEMS.register("serving_bowl",
-			() -> new BlockItem(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get(), new Item.Properties())); 
 
 	public static final DeferredItem<Item> GRATER = ITEMS.register("grater",
 			() -> new Item(new Item.Properties().durability(250)));

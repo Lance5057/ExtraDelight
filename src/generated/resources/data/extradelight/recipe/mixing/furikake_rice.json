@@ -1,0 +1,26 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "item": "minecraft:kelp"
+    },
+    {
+      "item": "minecraft:kelp"
+    },
+    {
+      "tag": "forge:fish_flakes"
+    },
+    {
+      "tag": "forge:fish_flakes"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:furikake"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
+}

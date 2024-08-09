@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:whipped_cream"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:butter"
+  },
+  "stirs": 8
+}

@@ -1,0 +1,16 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:cookie_dough/sugar"
+    },
+    {
+      "item": "farmersdelight:pumpkin_slice"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:pumpkin_cookie_dough"
+  },
+  "stirs": 4
+}

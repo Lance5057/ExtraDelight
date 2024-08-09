@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "ingredients": [
+    {
+      "tag": "forge:whipped_cream"
+    },
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:dyes/lime"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:frosting_lime"
+  },
+  "stirs": 2
+}

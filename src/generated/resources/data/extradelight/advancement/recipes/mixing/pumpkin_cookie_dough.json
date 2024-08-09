@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/pumpkin_cookie_dough"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pumpkin_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pumpkin_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "pumpkin_cookie_dough"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/pumpkin_cookie_dough"
+    ]
+  }
+}

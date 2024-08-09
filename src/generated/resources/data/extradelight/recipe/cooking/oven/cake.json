@@ -2,7 +2,7 @@
   "type": "extradelight:oven",
   "container": {
     "count": 1,
-    "id": "extradelight:serving_pan"
+    "id": "extradelight:square_pan"
   },
   "cookingtime": 800,
   "experience": 1.0,

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "apple_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:apple_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/apple_cookie_dough"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "apple_cookie_dough"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/apple_cookie_dough"
+    ]
+  }
+}

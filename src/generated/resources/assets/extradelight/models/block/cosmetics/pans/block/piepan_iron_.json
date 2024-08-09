@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/piepan",
+  "textures": {
+    "0": "extradelight:block/cosmetics/pans/iron_pan"
+  }
+}

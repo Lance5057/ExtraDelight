@@ -214,7 +214,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.PUMPKIN_COOKIE.get(), "Pumpkin Cookie");
 		this.add(ExtraDelightItems.PUMPKIN_CUSTARD.get(), "Pumpkin Custard");
 		this.add(ExtraDelightItems.SHEET.get(), "Sheet Tray");
-		this.add(ExtraDelightItems.SERVING_PAN.get(), "Square Pan");
 		this.add(ExtraDelightItems.SUGAR_COOKIE.get(), "Sugar Cookie");
 		this.add(ExtraDelightItems.SWEET_BERRY_CUSTARD.get(), "Sweet Berry Custard");
 		this.add(ExtraDelightItems.SWEET_BERRY_JUICE.get(), "Sweet Berry Juice");

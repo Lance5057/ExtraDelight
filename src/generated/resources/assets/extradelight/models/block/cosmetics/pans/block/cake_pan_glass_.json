@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/cake_pan",
+  "textures": {
+    "0": "extradelight:block/cosmetics/pans/glass_pan"
+  }
+}

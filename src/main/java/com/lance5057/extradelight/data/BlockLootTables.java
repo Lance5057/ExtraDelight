@@ -334,7 +334,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.BAKING_STONE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.SERVING_POT_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.SERVING_PAN_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get());
 
 		this.dropSelf(ExtraDelightBlocks.FRUIT_LOG.get());

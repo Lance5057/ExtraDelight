@@ -55,7 +55,7 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 		java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
 		int i = 0;
 
-		for (int j = 0; j < input.size(); ++j) {
+		for (int j = 0; j < 9; ++j) {
 			ItemStack itemstack = input.getItem(j);
 			if (!itemstack.isEmpty()) {
 				++i;
@@ -66,7 +66,8 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 			}
 		}
 
-		return i == this.ingredients.size() && RecipeMatcher.findMatches(inputs, this.ingredients) != null;
+		return i == this.ingredients.size() && RecipeMatcher.findMatches(inputs, this.ingredients) != null
+				&& ItemStack.isSameItem(usedItem, input.getItem(9));
 	}
 
 	/**

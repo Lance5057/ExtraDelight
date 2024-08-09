@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/serving_pot",
+  "textures": {
+    "0": "extradelight:block/cosmetics/pans/obsidian_pan"
+  }
+}

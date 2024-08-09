@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/tray",
+  "textures": {
+    "0": "extradelight:block/cosmetics/pans/base_pan"
+  }
+}

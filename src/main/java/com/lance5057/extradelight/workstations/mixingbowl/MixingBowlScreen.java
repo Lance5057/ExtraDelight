@@ -24,13 +24,19 @@ public class MixingBowlScreen extends AbstractContainerScreen<MixingBowlMenu> {
 			return;
 
 		RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
-		graphics.blit(BACKGROUND_TEXTURE, this.leftPos, this.topPos-19, 0, 0, 175, 183);
-
+		graphics.blit(BACKGROUND_TEXTURE, this.leftPos, this.topPos - 19, 0, 0, 175, 183);
+		if (this.menu.tileEntity.curRecipe != null)
+			graphics.drawString(this.font, this.menu.tileEntity.curRecipe.getStirs() + "", this.leftPos + 145,
+					this.topPos + 14, 4210752, false);
+		else
+			graphics.drawString(this.font, "0", this.leftPos + 145,
+					this.topPos + 14, 4210752, false);
 	}
-	
+
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 //        guiGraphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, 4210752, false);
-        guiGraphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, 4210752, false);
-    }
+		guiGraphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY,
+				4210752, false);
+	}
 }

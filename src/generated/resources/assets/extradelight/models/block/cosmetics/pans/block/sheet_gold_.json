@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/sheet",
+  "textures": {
+    "0": "extradelight:block/cosmetics/pans/gold_pan"
+  }
+}

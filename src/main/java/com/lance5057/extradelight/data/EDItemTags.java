@@ -32,8 +32,8 @@ public class EDItemTags extends ItemTagsProvider {
 	@Override
 	protected void addTags(HolderLookup.Provider provider) {
 		tag(ExtraDelightTags.TRAYS).add(ExtraDelightItems.TRAY.get(), ExtraDelightItems.BAKING_STONE.get(),
-				ExtraDelightItems.PIE_DISH.get(), ExtraDelightItems.SERVING_PAN.get(), ExtraDelightItems.LOAF_PAN.get(),
-				ExtraDelightItems.SHEET.get(), ExtraDelightItems.MUFFIN_TIN.get());
+				ExtraDelightItems.PIE_DISH.get(), ExtraDelightItems.LOAF_PAN.get(), ExtraDelightItems.SHEET.get(),
+				ExtraDelightItems.MUFFIN_TIN.get());
 
 		tag(ExtraDelightTags.MORTAR).add(ExtraDelightItems.MORTAR_AMETHYST.get(),
 				ExtraDelightItems.MORTAR_ANDESITE.get(), ExtraDelightItems.MORTAR_BASALT.get(),
@@ -149,7 +149,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_PRODUCE).addTag(ExtraDelightTags.PROCESSED_FRUIT)
 				.addTag(ExtraDelightTags.PROCESSED_VEG);
 
-		tag(CommonTags.FOODS_COOKED_EGG).add(ExtraDelightItems.BOILED_EGG.get(), ExtraDelightItems.SCRAMBLED_EGGS.get());
+		tag(CommonTags.FOODS_COOKED_EGG).add(ExtraDelightItems.BOILED_EGG.get(),
+				ExtraDelightItems.SCRAMBLED_EGGS.get());
 
 		tag(ExtraDelightTags.CACTUS).add(ExtraDelightItems.CACTUS.get());
 
