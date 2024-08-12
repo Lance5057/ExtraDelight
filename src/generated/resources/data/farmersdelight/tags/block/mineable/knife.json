@@ -7,7 +7,6 @@
     "extradelight:chocolate_cheesecake",
     "extradelight:pumpkin_cheesecake",
     "extradelight:glow_berry_cheesecake",
-    "extradelight:plain_cake",
     "extradelight:quiche",
     "extradelight:meat_pie",
     "extradelight:salisbury_steak_block",
@@ -245,22 +244,6 @@
     "extradelight:bamboo_molded_brown_wallpaper",
     "extradelight:bamboo_molded_green_wallpaper",
     "extradelight:bamboo_molded_red_wallpaper",
-    "extradelight:bamboo_molded_black_wallpaper",
-    "extradelight:fruit_molded_white_wallpaper",
-    "extradelight:fruit_molded_orange_wallpaper",
-    "extradelight:fruit_molded_magenta_wallpaper",
-    "extradelight:fruit_molded_light_blue_wallpaper",
-    "extradelight:fruit_molded_yellow_wallpaper",
-    "extradelight:fruit_molded_lime_wallpaper",
-    "extradelight:fruit_molded_pink_wallpaper",
-    "extradelight:fruit_molded_gray_wallpaper",
-    "extradelight:fruit_molded_light_gray_wallpaper",
-    "extradelight:fruit_molded_cyan_wallpaper",
-    "extradelight:fruit_molded_purple_wallpaper",
-    "extradelight:fruit_molded_blue_wallpaper",
-    "extradelight:fruit_molded_brown_wallpaper",
-    "extradelight:fruit_molded_green_wallpaper",
-    "extradelight:fruit_molded_red_wallpaper",
-    "extradelight:fruit_molded_black_wallpaper"
+    "extradelight:bamboo_molded_black_wallpaper"
   ]
 }

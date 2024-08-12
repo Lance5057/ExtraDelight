@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:bamboo_cabinet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:bamboo_counter_cabinet"
+  }
+}

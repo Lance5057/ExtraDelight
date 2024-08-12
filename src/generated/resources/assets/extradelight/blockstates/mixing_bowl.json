@@ -1,7 +1,148 @@
 {
   "variants": {
-    "": {
-      "model": "extradelight:block/mixing_bowl"
+    "style=0": {
+      "model": "extradelight:block/mixing_bowloak_planks"
+    },
+    "style=1": {
+      "model": "extradelight:block/mixing_bowlspruce_planks"
+    },
+    "style=10": {
+      "model": "extradelight:block/mixing_bowlcrimson_planks"
+    },
+    "style=11": {
+      "model": "extradelight:block/mixing_bowlglass"
+    },
+    "style=12": {
+      "model": "extradelight:block/mixing_bowlstone"
+    },
+    "style=13": {
+      "model": "extradelight:block/mixing_bowliron_block"
+    },
+    "style=14": {
+      "model": "extradelight:block/mixing_bowlgold_block"
+    },
+    "style=15": {
+      "model": "extradelight:block/mixing_bowlterracotta"
+    },
+    "style=16": {
+      "model": "extradelight:block/mixing_bowlwhite_terracotta"
+    },
+    "style=17": {
+      "model": "extradelight:block/mixing_bowllight_gray_terracotta"
+    },
+    "style=18": {
+      "model": "extradelight:block/mixing_bowlgray_terracotta"
+    },
+    "style=19": {
+      "model": "extradelight:block/mixing_bowlblack_terracotta"
+    },
+    "style=2": {
+      "model": "extradelight:block/mixing_bowlbirch_planks"
+    },
+    "style=20": {
+      "model": "extradelight:block/mixing_bowlbrown_terracotta"
+    },
+    "style=21": {
+      "model": "extradelight:block/mixing_bowlred_terracotta"
+    },
+    "style=22": {
+      "model": "extradelight:block/mixing_bowlorange_terracotta"
+    },
+    "style=23": {
+      "model": "extradelight:block/mixing_bowlyellow_terracotta"
+    },
+    "style=24": {
+      "model": "extradelight:block/mixing_bowllime_terracotta"
+    },
+    "style=25": {
+      "model": "extradelight:block/mixing_bowlgreen_terracotta"
+    },
+    "style=26": {
+      "model": "extradelight:block/mixing_bowlcyan_terracotta"
+    },
+    "style=27": {
+      "model": "extradelight:block/mixing_bowllight_blue_terracotta"
+    },
+    "style=28": {
+      "model": "extradelight:block/mixing_bowlblue_terracotta"
+    },
+    "style=29": {
+      "model": "extradelight:block/mixing_bowlmagenta_terracotta"
+    },
+    "style=3": {
+      "model": "extradelight:block/mixing_bowldark_oak_planks"
+    },
+    "style=30": {
+      "model": "extradelight:block/mixing_bowlpink_terracotta"
+    },
+    "style=31": {
+      "model": "extradelight:block/mixing_bowlpurple_terracotta"
+    },
+    "style=32": {
+      "model": "extradelight:block/mixing_bowlwhite_glazed_terracotta"
+    },
+    "style=33": {
+      "model": "extradelight:block/mixing_bowllight_gray_glazed_terracotta"
+    },
+    "style=34": {
+      "model": "extradelight:block/mixing_bowlgray_glazed_terracotta"
+    },
+    "style=35": {
+      "model": "extradelight:block/mixing_bowlblack_glazed_terracotta"
+    },
+    "style=36": {
+      "model": "extradelight:block/mixing_bowlbrown_glazed_terracotta"
+    },
+    "style=37": {
+      "model": "extradelight:block/mixing_bowlred_glazed_terracotta"
+    },
+    "style=38": {
+      "model": "extradelight:block/mixing_bowlorange_glazed_terracotta"
+    },
+    "style=39": {
+      "model": "extradelight:block/mixing_bowlyellow_glazed_terracotta"
+    },
+    "style=4": {
+      "model": "extradelight:block/mixing_bowlacacia_planks"
+    },
+    "style=40": {
+      "model": "extradelight:block/mixing_bowllime_glazed_terracotta"
+    },
+    "style=41": {
+      "model": "extradelight:block/mixing_bowlgreen_glazed_terracotta"
+    },
+    "style=42": {
+      "model": "extradelight:block/mixing_bowlcyan_glazed_terracotta"
+    },
+    "style=43": {
+      "model": "extradelight:block/mixing_bowllight_blue_glazed_terracotta"
+    },
+    "style=44": {
+      "model": "extradelight:block/mixing_bowlblue_glazed_terracotta"
+    },
+    "style=45": {
+      "model": "extradelight:block/mixing_bowlmagenta_glazed_terracotta"
+    },
+    "style=46": {
+      "model": "extradelight:block/mixing_bowlpink_glazed_terracotta"
+    },
+    "style=47": {
+      "model": "extradelight:block/mixing_bowlpurple_glazed_terracotta"
+    },
+    "style=5": {
+      "model": "extradelight:block/mixing_bowlmangrove_planks"
+    },
+    "style=6": {
+      "model": "extradelight:block/mixing_bowlbamboo_planks"
+    },
+    "style=7": {
+      "model": "extradelight:block/mixing_bowlcherry_planks"
+    },
+    "style=8": {
+      "model": "extradelight:block/mixing_bowljungle_planks"
+    },
+    "style=9": {
+      "model": "extradelight:block/mixing_bowlwarped_planks"
     }
   }
 }

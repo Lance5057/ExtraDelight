@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:apple_crate"
+  }
+}

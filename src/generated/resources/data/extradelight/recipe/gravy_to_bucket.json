@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:gravy_boat_item"
+    },
+    {
+      "item": "extradelight:gravy_boat_item"
+    },
+    {
+      "item": "extradelight:gravy_boat_item"
+    },
+    {
+      "item": "extradelight:gravy_boat_item"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:gravy_fluid_bucket"
+  }
+}

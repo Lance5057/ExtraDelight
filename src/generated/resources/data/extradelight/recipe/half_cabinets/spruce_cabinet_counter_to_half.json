@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:spruce_counter_cabinet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:spruce_half_cabinet"
+  }
+}

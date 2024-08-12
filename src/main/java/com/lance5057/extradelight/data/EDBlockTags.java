@@ -49,11 +49,11 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 				// Normal blocks
 				ExtraDelightBlocks.OVEN.get(), ExtraDelightBlocks.MORTAR_STONE.get(),
-				ExtraDelightBlocks.MORTAR_ANDESITE.get(), ExtraDelightBlocks.MORTAR_GRANITE.get(),
-				ExtraDelightBlocks.MORTAR_DIORITE.get(), ExtraDelightBlocks.MORTAR_DEEPSLATE.get(),
-				ExtraDelightBlocks.MORTAR_BLACKSTONE.get(), ExtraDelightBlocks.MORTAR_BASALT.get(),
-				ExtraDelightBlocks.MORTAR_ENDSTONE.get(), ExtraDelightBlocks.MORTAR_AMETHYST.get(),
-				ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(),
+//				ExtraDelightBlocks.MORTAR_ANDESITE.get(), ExtraDelightBlocks.MORTAR_GRANITE.get(),
+//				ExtraDelightBlocks.MORTAR_DIORITE.get(), ExtraDelightBlocks.MORTAR_DEEPSLATE.get(),
+//				ExtraDelightBlocks.MORTAR_BLACKSTONE.get(), ExtraDelightBlocks.MORTAR_BASALT.get(),
+//				ExtraDelightBlocks.MORTAR_ENDSTONE.get(), ExtraDelightBlocks.MORTAR_AMETHYST.get(),
+//				ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(),
 
 				// Feasts in pans
 				ExtraDelightBlocks.LASAGNA.get(), ExtraDelightBlocks.HOTDISH.get(),
@@ -71,11 +71,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.SWEET_BERRY_PIE.get(), ExtraDelightBlocks.GLOW_BERRY_PIE.get(),
 				ExtraDelightBlocks.CHEESECAKE.get(), ExtraDelightBlocks.HONEY_CHEESECAKE.get(),
 				ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get(), ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get(),
-				ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get(), ExtraDelightBlocks.PLAIN_CAKE.get(), // This may cause
-																										// issues as it
-																										// doesn't exist
-																										// ingame
-				ExtraDelightBlocks.QUICHE.get(), ExtraDelightBlocks.MEAT_PIE_BLOCK.get(),
+				ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get(), ExtraDelightBlocks.QUICHE.get(),
+				ExtraDelightBlocks.MEAT_PIE_BLOCK.get(),
 
 				// Feasts in bowls
 				ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(),

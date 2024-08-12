@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:mangrove_cabinet"
+    },
+    {
+      "item": "extradelight:tap"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:mangrove_sink"
+  }
+}

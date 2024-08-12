@@ -10,10 +10,9 @@ import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.Container;
-import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -33,6 +32,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.neoforge.items.IItemHandler;
 
 @SuppressWarnings("deprecation")
 public class CounterCabinetBlock extends BaseEntityBlock {
@@ -84,10 +84,15 @@ public class CounterCabinetBlock extends BaseEntityBlock {
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
-			if (tileEntity instanceof Container) {
-				Containers.dropContents(level, pos, (Container) tileEntity);
+			if (tileEntity instanceof CounterCabinetBlockEntity te) {
+				IItemHandler items = te.getItemHandler();
+				for (int i = 0; i < te.getItemHandler().getSlots(); i++) {
+					level.addFreshEntity(
+							new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+				}
 				level.updateNeighbourForOutputSignal(pos, this);
 			}
+
 			super.onRemove(state, level, pos, newState, isMoving);
 		}
 	}

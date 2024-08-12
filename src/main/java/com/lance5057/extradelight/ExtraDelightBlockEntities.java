@@ -70,14 +70,9 @@ public class ExtraDelightBlockEntities {
 //					.of(HalfCabinetEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.CABINETS))
 //					.build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MortarBlockEntity>> MORTAR = TILES.register(
-			"mortar",
-			() -> BlockEntityType.Builder.of(MortarBlockEntity::new, ExtraDelightBlocks.MORTAR_AMETHYST.get(),
-					ExtraDelightBlocks.MORTAR_ANDESITE.get(), ExtraDelightBlocks.MORTAR_BASALT.get(),
-					ExtraDelightBlocks.MORTAR_BLACKSTONE.get(), ExtraDelightBlocks.MORTAR_DEEPSLATE.get(),
-					ExtraDelightBlocks.MORTAR_DIORITE.get(), ExtraDelightBlocks.MORTAR_ENDSTONE.get(),
-					ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(), ExtraDelightBlocks.MORTAR_GRANITE.get(),
-					ExtraDelightBlocks.MORTAR_STONE.get()).build(null));
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MortarBlockEntity>> MORTAR = TILES
+			.register("mortar", () -> BlockEntityType.Builder
+					.of(MortarBlockEntity::new, ExtraDelightBlocks.MORTAR_STONE.get()).build(null));
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MixingBowlBlockEntity>> MIXING_BOWL = TILES
 			.register("mixing_bowl", () -> BlockEntityType.Builder

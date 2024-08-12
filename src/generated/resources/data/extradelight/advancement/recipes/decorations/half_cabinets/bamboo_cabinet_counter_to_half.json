@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "bamboo_cabinet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:bamboo_half_cabinet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:half_cabinets/bamboo_cabinet_counter_to_half"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "bamboo_cabinet"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:half_cabinets/bamboo_cabinet_counter_to_half"
+    ]
+  }
+}

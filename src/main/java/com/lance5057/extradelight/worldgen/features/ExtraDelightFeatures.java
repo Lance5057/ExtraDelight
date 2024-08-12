@@ -17,8 +17,8 @@ public class ExtraDelightFeatures {
 			WildCornFeature::new);
 	public static final DeferredHolder<Feature<?>, WildGingerFeature> PATCH_WILD_GINGER = FEATURES.register("wild_ginger",
 			WildGingerFeature::new);
-	public static final DeferredHolder<Feature<?>, WildCoffeeFeature> PATCH_WILD_COFFEE = FEATURES.register("wild_coffee",
-			WildCoffeeFeature::new);
+//	public static final DeferredHolder<Feature<?>, WildCoffeeFeature> PATCH_WILD_COFFEE = FEATURES.register("wild_coffee",
+//			WildCoffeeFeature::new);
 	
 	public static final DeferredHolder<Feature<?>, CinnamonTreeFeature> PATCH_CINNAMON_TREE = FEATURES.register("cinnamon_tree",
 			CinnamonTreeFeature::new);

@@ -2,12 +2,12 @@ package com.lance5057.extradelight.displays.candybowl;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightTags;
-import com.lance5057.extradelight.util.BlockEntityUtils;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -28,6 +28,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.items.IItemHandler;
 
 public class CandyBowlBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -100,17 +101,20 @@ public class CandyBowlBlock extends Block implements EntityBlock, SimpleWaterlog
 		return state;
 	}
 
-//	@Override
-//	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-//		if (state.getBlock() != newState.getBlock()) {
-//			BlockEntity tileentity = level.getBlockEntity(pos);
-//			if (tileentity instanceof FoodDisplayEntity f) {
-//				Containers.dropContents(level, pos, null );
-//
-//				level.updateNeighbourForOutputSignal(pos, this);
-//			}
-//
-//			super.onRemove(state, level, pos, newState, isMoving);
-//		}
-//	}
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity tileEntity = level.getBlockEntity(pos);
+			if (tileEntity instanceof CandyBowlEntity te) {
+				IItemHandler items = te.getItemHandler();
+				for (int i = 0; i < te.getItemHandler().getSlots(); i++) {
+					level.addFreshEntity(
+							new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+				}
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
+
+			super.onRemove(state, level, pos, newState, isMoving);
+		}
+	}
 }

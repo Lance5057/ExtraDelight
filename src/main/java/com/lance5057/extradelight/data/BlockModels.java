@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.blocks.BakingStoneBlock;
 import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
@@ -14,6 +15,8 @@ import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
+import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -42,7 +45,7 @@ public class BlockModels extends BlockStateProvider {
 	protected void registerStatesAndModels() {
 		this.horizontalBlock(ExtraDelightBlocks.DOUGH_SHAPING.get(),
 				models().getExistingFile(modLoc("block/doughforming")));
-		this.simpleBlock(ExtraDelightBlocks.MIXING_BOWL.get(), models().getExistingFile(modLoc("block/mixing_bowl")));
+		this.mixingBowlStyleBlock(ExtraDelightBlocks.MIXING_BOWL.get());
 
 		this.simpleBlock(ExtraDelightBlocks.YEAST_POT.get(), models().getExistingFile(modLoc("block/yeast_pot")));
 		this.simpleBlock(ExtraDelightBlocks.VINEGAR_POT.get(),
@@ -50,40 +53,7 @@ public class BlockModels extends BlockStateProvider {
 						.texture("0", modLoc("block/vinegarpot")).texture("particle", modLoc("block/vinegarpot")));
 		this.simpleBlock(ExtraDelightBlocks.DRYING_RACK.get(), models().getExistingFile(modLoc("block/drying_rack")));
 
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_STONE.get(),
-				models().withExistingParent("mortar_stone", modLoc("block/mortar")).texture("0", mcLoc("block/stone"))
-						.texture("particle", mcLoc("block/stone")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_ANDESITE.get(),
-				models().withExistingParent("mortar_andesite", modLoc("block/mortar"))
-						.texture("0", mcLoc("block/andesite")).texture("particle", mcLoc("block/andesite")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_GRANITE.get(),
-				models().withExistingParent("mortar_granite", modLoc("block/mortar"))
-						.texture("0", mcLoc("block/granite")).texture("particle", mcLoc("block/granite")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_DIORITE.get(),
-				models().withExistingParent("mortar_diorite", modLoc("block/mortar"))
-						.texture("0", mcLoc("block/diorite")).texture("particle", mcLoc("block/diorite")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_DEEPSLATE.get(),
-				models().withExistingParent("mortar_deepslate", modLoc("block/mortar"))
-						.texture("0", mcLoc("block/deepslate")).texture("particle", mcLoc("block/deepslate")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_BLACKSTONE.get(),
-				models().withExistingParent("mortar_blackstone", modLoc("block/mortar"))
-						.texture("0", mcLoc("block/blackstone")).texture("particle", mcLoc("block/blackstone")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_BASALT.get(),
-				models().withExistingParent("mortar_basalt", modLoc("block/mortar"))
-						.texture("0", mcLoc("block/basalt_side")).texture("particle", mcLoc("block/basalt_side")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_ENDSTONE.get(),
-				models().withExistingParent("mortar_endstone", modLoc("block/mortar"))
-						.texture("0", mcLoc("block/end_stone")).texture("particle", mcLoc("block/end_stone")));
-
-		// not craftable, dungeon items
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_AMETHYST.get(),
-				models().withExistingParent("mortar_amethyst", modLoc("block/mortar"))
-						.texture("0", mcLoc("block/amethyst_block"))
-						.texture("particle", mcLoc("block/amethyst_block")));
-		this.simpleBlock(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(),
-				models().withExistingParent("mortar_gilded_blackstone", modLoc("block/mortar"))
-						.texture("0", mcLoc("block/gilded_blackstone"))
-						.texture("particle", mcLoc("block/gilded_blackstone")));
+		this.mortarStyleBlock(ExtraDelightBlocks.MORTAR_STONE.get());
 
 		this.simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(), models()
 				.withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool", modLoc("block/cooking_oil")));
@@ -98,8 +68,6 @@ public class BlockModels extends BlockStateProvider {
 		pieBlock(ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get(), "glow_berry_cheesecake");
 
 		pieBlock(ExtraDelightBlocks.QUICHE.get(), "quiche");
-
-		createCakeBlock(ExtraDelightBlocks.PLAIN_CAKE.get(), "plain");
 
 		this.recipeFeastBlock(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get());
@@ -233,7 +201,7 @@ public class BlockModels extends BlockStateProvider {
 				"magenta");
 		this.frostableBlock(ExtraDelightBlocks.PINK_FROSTED_GINGERBREAD_BLOCK.get(), "block/gingerbread_block", "pink");
 
-//		this.simpleBlock(ExtraDelightBlocks.MINT_CROP.get(), models().getExistingFile(modLoc("block/mint")));
+		this.simpleBlock(ExtraDelightBlocks.MINT_CROP.get(), models().getExistingFile(modLoc("block/mint")));
 
 		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_GREEN_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CANDY_CANE_RED_BLOCK.get());
@@ -252,24 +220,22 @@ public class BlockModels extends BlockStateProvider {
 
 		this.axisBlock(ExtraDelightBlocks.KEG.get(),
 				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
-						modLoc("block/keg_bottom"), modLoc("block/keg_top")),
-				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
+						modLoc("block/keg_bottom"), modLoc("block/keg_top")).renderType("cutout"),
+				models().orientableWithBottom("keg_horizontal", modLoc("block/keg_side"), modLoc("block/keg_side"),
 						modLoc("block/keg_bottom"), modLoc("block/keg_top")).renderType("cutout"));
 
 		this.panBlock(ExtraDelightBlocks.SHEET_BLOCK.get(), "block/sheet");
 		this.panBlock(ExtraDelightBlocks.TRAY_BLOCK.get(), "block/tray");
-		this.panBlock(ExtraDelightBlocks.LOAF_PAN_BLOCK.get(), "block/loafpan");
-		this.panBlock(ExtraDelightBlocks.PIE_DISH_BLOCK.get(), "block/piepan");
-		this.panBlock(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), "block/cake_pan");
-//		this.panBlock(ExtraDelightBlocks.BAKING_STONE_BLOCK.get(), "block/baking_stone");
+		this.panBlock(ExtraDelightBlocks.LOAF_PAN_BLOCK.get(), "block/loaf_pan");
+		this.panBlock(ExtraDelightBlocks.PIE_DISH_BLOCK.get(), "block/pie_dish");
+		this.panBlock(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), "block/square_pan");
+		this.bakingStoneStyleBlock(ExtraDelightBlocks.BAKING_STONE_BLOCK.get());
 		this.panBlock(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), "block/muffin_tray");
 		this.panBlock(ExtraDelightBlocks.SERVING_POT_BLOCK.get(), "block/serving_pot");
-		this.panBlock(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get(), "block/serving_bowl");
 
 		this.logBlock(ExtraDelightBlocks.FRUIT_LOG.get());
 		this.logBlock(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
 		this.simpleBlock(ExtraDelightBlocks.FRUIT_PLANKS.get());
-//		this.simpleCross(ExtraDelightBlocks.FRUIT_SAPLING.get());
 		this.stairsBlock(ExtraDelightBlocks.FRUIT_STAIRS.get(),
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
 		this.trapdoorBlockWithRenderType(ExtraDelightBlocks.FRUIT_TRAPDOOR.get(),
@@ -293,8 +259,50 @@ public class BlockModels extends BlockStateProvider {
 				"block/cosmetics/chocolate/milk_chocolate");
 		styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
 				"block/cosmetics/chocolate/white_chocolate");
+		
 
 		AestheticBlocks.blockModel(this);
+	}
+
+	public void bakingStoneStyleBlock(BakingStoneBlock block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(BakingStoneBlock.STYLE);
+
+			String suffix = BakingStoneBlock.Styles.values()[servings] + "";
+
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.withExistingParent("baking_stone" + suffix.toLowerCase(), modLoc("block/baking_stone"))
+							.texture("0", mcLoc("block/" + suffix.toLowerCase())))
+					.build();
+		});
+	}
+
+	public void mixingBowlStyleBlock(Block block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(MixingBowlBlock.STYLE);
+
+			String suffix = MixingBowlBlock.Styles.values()[servings] + "";
+
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.withExistingParent("mixing_bowl" + suffix.toLowerCase(), modLoc("block/mixing_bowl"))
+							.texture("1", mcLoc("block/" + suffix.toLowerCase())))
+					.build();
+		});
+	}
+
+	public void mortarStyleBlock(Block block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(MortarBlock.STYLE);
+
+			String suffix = MortarBlock.Styles.values()[servings] + "";
+
+			return ConfiguredModel.builder()
+					.modelFile(models().withExistingParent("mortar" + suffix.toLowerCase(), modLoc("block/mortar"))
+							.texture("0", mcLoc("block/" + suffix.toLowerCase())))
+					.build();
+		});
 	}
 
 	public void styleBlock(Block style, IntegerProperty count, String path) {
@@ -496,10 +504,11 @@ public class BlockModels extends BlockStateProvider {
 
 			String suffix = HorizontalPanBlock.Styles.values()[servings] + "_";
 
-			return ConfiguredModel.builder()
-					.modelFile(models().withExistingParent("block/cosmetics/pans/" + base + "_" + suffix.toLowerCase(), modLoc(base)).texture("0",
-							modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan")))
-					.build();
+			return ConfiguredModel.builder().modelFile(models()
+					.withExistingParent("block/cosmetics/pans/" + base + "_" + suffix.toLowerCase(), modLoc(base))
+					.texture("0", modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan"))
+					.renderType("translucent"))
+					.rotationY(((int) state.getValue(HorizontalPanBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}
 

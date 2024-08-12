@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:melon_juice"
+    },
+    {
+      "item": "farmersdelight:melon_juice"
+    },
+    {
+      "item": "farmersdelight:melon_juice"
+    },
+    {
+      "item": "farmersdelight:melon_juice"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:melon_juice_fluid_bucket"
+  }
+}

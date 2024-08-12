@@ -1,100 +1,139 @@
 {
   "variants": {
     "facing=east,style=0": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_base_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_base_",
+      "y": 90
     },
     "facing=east,style=1": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_iron_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_iron_",
+      "y": 90
     },
     "facing=east,style=2": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_gold_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_gold_",
+      "y": 90
     },
     "facing=east,style=3": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_diamond_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_diamond_",
+      "y": 90
     },
     "facing=east,style=4": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_netherite_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_netherite_",
+      "y": 90
     },
     "facing=east,style=5": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_emerald_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_emerald_",
+      "y": 90
     },
     "facing=east,style=6": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_obsidian_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_obsidian_",
+      "y": 90
     },
     "facing=east,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_glass_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_glass_",
+      "y": 90
+    },
+    "facing=east,style=8": {
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_copper_",
+      "y": 90
     },
     "facing=north,style=0": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_base_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_base_"
     },
     "facing=north,style=1": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_iron_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_iron_"
     },
     "facing=north,style=2": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_gold_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_gold_"
     },
     "facing=north,style=3": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_diamond_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_diamond_"
     },
     "facing=north,style=4": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_netherite_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_netherite_"
     },
     "facing=north,style=5": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_emerald_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_emerald_"
     },
     "facing=north,style=6": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_obsidian_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_obsidian_"
     },
     "facing=north,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_glass_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_glass_"
+    },
+    "facing=north,style=8": {
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_copper_"
     },
     "facing=south,style=0": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_base_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_base_",
+      "y": 180
     },
     "facing=south,style=1": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_iron_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_iron_",
+      "y": 180
     },
     "facing=south,style=2": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_gold_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_gold_",
+      "y": 180
     },
     "facing=south,style=3": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_diamond_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_diamond_",
+      "y": 180
     },
     "facing=south,style=4": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_netherite_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_netherite_",
+      "y": 180
     },
     "facing=south,style=5": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_emerald_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_emerald_",
+      "y": 180
     },
     "facing=south,style=6": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_obsidian_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_obsidian_",
+      "y": 180
     },
     "facing=south,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_glass_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_glass_",
+      "y": 180
+    },
+    "facing=south,style=8": {
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_copper_",
+      "y": 180
     },
     "facing=west,style=0": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_base_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_base_",
+      "y": 270
     },
     "facing=west,style=1": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_iron_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_iron_",
+      "y": 270
     },
     "facing=west,style=2": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_gold_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_gold_",
+      "y": 270
     },
     "facing=west,style=3": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_diamond_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_diamond_",
+      "y": 270
     },
     "facing=west,style=4": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_netherite_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_netherite_",
+      "y": 270
     },
     "facing=west,style=5": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_emerald_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_emerald_",
+      "y": 270
     },
     "facing=west,style=6": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_obsidian_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_obsidian_",
+      "y": 270
     },
     "facing=west,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/cake_pan_glass_"
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_glass_",
+      "y": 270
+    },
+    "facing=west,style=8": {
+      "model": "extradelight:block/cosmetics/pans/block/square_pan_copper_",
+      "y": 270
     }
   }
 }

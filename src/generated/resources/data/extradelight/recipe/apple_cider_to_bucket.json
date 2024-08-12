@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:apple_cider"
+    },
+    {
+      "item": "farmersdelight:apple_cider"
+    },
+    {
+      "item": "farmersdelight:apple_cider"
+    },
+    {
+      "item": "farmersdelight:apple_cider"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:apple_cider_fluid_bucket"
+  }
+}

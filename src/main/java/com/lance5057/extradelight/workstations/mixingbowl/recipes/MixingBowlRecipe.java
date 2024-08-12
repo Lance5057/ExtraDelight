@@ -67,7 +67,7 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 		}
 
 		return i == this.ingredients.size() && RecipeMatcher.findMatches(inputs, this.ingredients) != null
-				&& ItemStack.isSameItem(usedItem, input.getItem(9));
+				&& ItemStack.isSameItem(usedItem, input.getItem(9)) && input.getItem(9).getCount() >= usedItem.getCount();
 	}
 
 	/**

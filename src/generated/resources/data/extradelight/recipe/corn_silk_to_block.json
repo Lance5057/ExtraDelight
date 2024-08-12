@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:corn_silk"
+    },
+    {
+      "item": "extradelight:corn_silk"
+    },
+    {
+      "item": "extradelight:corn_silk"
+    },
+    {
+      "item": "extradelight:corn_silk"
+    },
+    {
+      "item": "extradelight:corn_silk"
+    },
+    {
+      "item": "extradelight:corn_silk"
+    },
+    {
+      "item": "extradelight:corn_silk"
+    },
+    {
+      "item": "extradelight:corn_silk"
+    },
+    {
+      "item": "extradelight:corn_silk"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:corn_silk_sack"
+  }
+}

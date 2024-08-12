@@ -57,16 +57,16 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 								GenerationStep.Decoration.VEGETAL_DECORATION));
 
 				// Coffee
-				HolderSet.Direct<PlacedFeature> wildCoffeeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
-						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_COFFEE.get(),
-								new WildConfig(2, 5, 2, 5, 128))),
-						List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
-								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-								BiomeFilter.biome()))));
-
-				context.register(biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_coffee")),
-						new BiomeModifiers.AddFeaturesBiomeModifier(jungle, wildCoffeeHolderSet,
-								GenerationStep.Decoration.VEGETAL_DECORATION));
+//				HolderSet.Direct<PlacedFeature> wildCoffeeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
+//						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_COFFEE.get(),
+//								new WildConfig(2, 5, 2, 5, 128))),
+//						List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
+//								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+//								BiomeFilter.biome()))));
+//
+//				context.register(biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_coffee")),
+//						new BiomeModifiers.AddFeaturesBiomeModifier(jungle, wildCoffeeHolderSet,
+//								GenerationStep.Decoration.VEGETAL_DECORATION));
 
 				// Ginger
 				HolderSet.Direct<PlacedFeature> wildGingerHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(

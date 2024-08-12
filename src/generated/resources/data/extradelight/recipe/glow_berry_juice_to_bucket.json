@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:glow_berry_juice"
+    },
+    {
+      "item": "extradelight:glow_berry_juice"
+    },
+    {
+      "item": "extradelight:glow_berry_juice"
+    },
+    {
+      "item": "extradelight:glow_berry_juice"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:glow_berry_fluid_bucket"
+  }
+}

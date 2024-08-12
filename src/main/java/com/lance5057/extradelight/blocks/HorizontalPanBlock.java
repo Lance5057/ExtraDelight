@@ -26,7 +26,7 @@ public class HorizontalPanBlock extends HorizontalDirectionalBlock implements IS
 	protected VoxelShape SHAPE = Block.box(4.0D, 0.0D, 0.0D, 12.0D, 8.0D, 16.0D);
 	protected VoxelShape SHAPE2 = Block.box(0.0D, 0.0D, 4.0D, 16.0D, 8.0D, 12.0D);
 
-	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, 7);
+	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, 8);
 
 	public HorizontalPanBlock(Properties p_54120_) {
 		super(p_54120_);
@@ -71,12 +71,12 @@ public class HorizontalPanBlock extends HorizontalDirectionalBlock implements IS
 	}
 
 	public static enum Styles {
-		BASE, IRON, GOLD, DIAMOND, NETHERITE, EMERALD, OBSIDIAN, GLASS
+		BASE, IRON, GOLD, DIAMOND, NETHERITE, EMERALD, OBSIDIAN, GLASS, COPPER, AMETHYST_BLOCK
 	};
 
 	@Override
 	public int numStyles() {
-		return 8;
+		return 9;
 	}
 
 	@Override

@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"1": "extradelight:block/sheet",
+		"0": "extradelight:block/sheet",
 		"particle": "extradelight:block/sheet"
 	},
 	"elements": [

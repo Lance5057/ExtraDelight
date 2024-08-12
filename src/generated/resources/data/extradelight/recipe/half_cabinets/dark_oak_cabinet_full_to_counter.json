@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:dark_oak_cabinet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:dark_oak_counter_cabinet"
+  }
+}

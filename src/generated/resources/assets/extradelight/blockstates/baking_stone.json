@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "style=0": {
+      "model": "extradelight:block/baking_stonestone"
+    },
+    "style=1": {
+      "model": "extradelight:block/baking_stonegranite"
+    },
+    "style=10": {
+      "model": "extradelight:block/baking_stonebasalt_side"
+    },
+    "style=11": {
+      "model": "extradelight:block/baking_stoneblackstone"
+    },
+    "style=12": {
+      "model": "extradelight:block/baking_stoneend_stone"
+    },
+    "style=13": {
+      "model": "extradelight:block/baking_stonebedrock"
+    },
+    "style=14": {
+      "model": "extradelight:block/baking_stoneamethyst_block"
+    },
+    "style=15": {
+      "model": "extradelight:block/baking_stonegilded_blackstone"
+    },
+    "style=2": {
+      "model": "extradelight:block/baking_stonediorite"
+    },
+    "style=3": {
+      "model": "extradelight:block/baking_stoneandesite"
+    },
+    "style=4": {
+      "model": "extradelight:block/baking_stonedeepslate"
+    },
+    "style=5": {
+      "model": "extradelight:block/baking_stonetuff"
+    },
+    "style=6": {
+      "model": "extradelight:block/baking_stonesandstone_top"
+    },
+    "style=7": {
+      "model": "extradelight:block/baking_stonered_sandstone_top"
+    },
+    "style=8": {
+      "model": "extradelight:block/baking_stoneprismarine"
+    },
+    "style=9": {
+      "model": "extradelight:block/baking_stonenetherrack"
+    }
+  }
+}

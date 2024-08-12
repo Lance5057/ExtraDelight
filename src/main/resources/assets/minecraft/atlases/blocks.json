@@ -7,6 +7,94 @@
 		{
 		  "type": "minecraft:single",
 		  "resource": "extradelight:liquid/gravy_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/bbq_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/bbq_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/custard_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/custard_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/egg_mix_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/egg_mix_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/ketchup_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/ketchup_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/mayo_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/mayo_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/caramel_sauce_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/caramel_sauce_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/milkshake_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/milkshake_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/whipped_cream_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/whipped_cream_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/jam_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/jam_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/golden_jam_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/golden_jam_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/glow_jam_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/glow_jam_flow"
 		}
 	]
 }

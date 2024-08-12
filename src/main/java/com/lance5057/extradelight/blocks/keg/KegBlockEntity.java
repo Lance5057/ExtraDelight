@@ -67,9 +67,9 @@ public class KegBlockEntity extends BlockEntity {
 
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		CompoundTag tag = new CompoundTag();
-
-		writeNBT(tag, null);
+//		CompoundTag tag = new CompoundTag();
+//
+//		writeNBT(tag, null);
 
 		return ClientboundBlockEntityDataPacket.create(this);
 	}

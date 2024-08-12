@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cinnamon_cabinet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cinnamon_half_cabinet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:half_cabinets/cinnamon_cabinet_to_sink"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "cinnamon_cabinet"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:half_cabinets/cinnamon_cabinet_to_sink"
+    ]
+  }
+}

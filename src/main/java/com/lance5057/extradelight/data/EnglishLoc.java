@@ -183,18 +183,19 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.NETHERITE_SPOON.get(), "Netherite Spoon");
 		this.add(ExtraDelightItems.VINEGAR_POT.get(), "Vinegar Pot");
 
-		this.add(ExtraDelightItems.MORTAR_AMETHYST.get(), "Amethyst Mortar");
-		this.add(ExtraDelightItems.MORTAR_ANDESITE.get(), "Andesite Mortar");
-		this.add(ExtraDelightItems.MORTAR_BASALT.get(), "Basalt Mortar");
-		this.add(ExtraDelightItems.MORTAR_BLACKSTONE.get(), "Blackstone Mortar");
-		this.add(ExtraDelightItems.MORTAR_DEEPSLATE.get(), "Deepslate Mortar");
-		this.add(ExtraDelightItems.MORTAR_DIORITE.get(), "Diorite Mortar");
-		this.add(ExtraDelightItems.MORTAR_ENDSTONE.get(), "Endstone Mortar");
-		this.add(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(), "Gilded Blackstone Mortar");
-		this.add(ExtraDelightItems.MORTAR_GRANITE.get(), "Granite Mortar");
+//		this.add(ExtraDelightItems.MORTAR_AMETHYST.get(), "Amethyst Mortar");
+//		this.add(ExtraDelightItems.MORTAR_ANDESITE.get(), "Andesite Mortar");
+//		this.add(ExtraDelightItems.MORTAR_BASALT.get(), "Basalt Mortar");
+//		this.add(ExtraDelightItems.MORTAR_BLACKSTONE.get(), "Blackstone Mortar");
+//		this.add(ExtraDelightItems.MORTAR_DEEPSLATE.get(), "Deepslate Mortar");
+//		this.add(ExtraDelightItems.MORTAR_DIORITE.get(), "Diorite Mortar");
+//		this.add(ExtraDelightItems.MORTAR_ENDSTONE.get(), "Endstone Mortar");
+//		this.add(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(), "Gilded Blackstone Mortar");
+//		this.add(ExtraDelightItems.MORTAR_GRANITE.get(), "Granite Mortar");
 		this.add(ExtraDelightItems.MORTAR_STONE.get(), "Stone Mortar");
 
 		this.add(ExtraDelightItems.MUFFIN_TIN.get(), "Muffin Tin");
+		this.add(ExtraDelightItems.SQUARE_PAN.get(), "Square Pan");
 		this.add(ExtraDelightItems.OVEN.get(), "Oven");
 
 		this.add(ExtraDelightItems.PESTLE_AMETHYST.get(), "Amethyst Pestle");
@@ -238,7 +239,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.QUICHE_SLICE.get(), "Slice of Quiche");
 		this.add(ExtraDelightItems.EGG_BASKET.get(), "Egg in a Basket");
 		this.add(ExtraDelightItems.EGG_SALAD.get(), "Egg Salad");
-		this.add(ExtraDelightItems.APPLE_JAM.get(), "Apple Butter");
 		this.add(ExtraDelightItems.GLOW_BERRY_JAM.get(), "Glow Berry Jam");
 		this.add(ExtraDelightItems.GOLDEN_APPLE_JAM.get(), "Golden Jam");
 		this.add(ExtraDelightItems.JAM.get(), "Sweet Berry Jam");
@@ -525,14 +525,14 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get(), "Dried Corn Husk Bundle");
 		this.add(ExtraDelightItems.CORN_COB_BUNDLE.get(), "Corn Cob Bundle");
 
-//		this.add(ExtraDelightItems.CORN_COB_PIPE.get(), "Corn Cob Pipe");
+		this.add(ExtraDelightItems.CORN_COB_PIPE.get(), "Corn Cob Pipe");
 
 		this.add(ExtraDelightItems.APPLE_CUSTARD.get(), "Apple Custard");
 		this.add(ExtraDelightItems.APPLE_CHEESECAKE_ITEM.get(), "Apple Cheesecake");
 		this.add(ExtraDelightItems.APPLE_CHEESECAKE_SLICE.get(), "Slice of Apple Cheesecake");
 		this.add(ExtraDelightItems.APPLE_COOKIE.get(), "Apple Cinnamon Cookie");
 		this.add(ExtraDelightItems.APPLE_POPSICLE.get(), "Apple Popsicle");
-//		this.add(ExtraDelightItems.CINNAMON_LOG.get(), "Cinnamon Log");
+		this.add(ExtraDelightItems.CINNAMON_LOG.get(), "Cinnamon Log");
 		this.add(ExtraDelightItems.STRIPPED_CINNAMON_LOG.get(), "Stripped Cinnamon Log");
 		this.add(ExtraDelightItems.CINNAMON_PLANKS.get(), "Cinnamon Planks");
 		this.add(ExtraDelightItems.CINNAMON_LEAVES.get(), "Cinnamon Leaves");
@@ -540,14 +540,17 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.RAW_CINNAMON.get(), "Raw Cinnamon");
 		this.add(ExtraDelightItems.CINNAMON_STICK.get(), "Cinnamon Stick");
 		this.add(ExtraDelightItems.GROUND_CINNAMON.get(), "Ground Cinnamon");
-//		this.add(ExtraDelightItems.CINNAMON_SAPLING.get(), "Cinnamon Sapling");
+		this.add(ExtraDelightItems.CINNAMON_SAPLING.get(), "Cinnamon Sapling");
 		this.add(ExtraDelightItems.CINNAMON_CABINET.get(), "Cinnamon Cabinet");
-//		this.add(ExtraDelightItems.CINNAMON_DOOR.get(), "Cinnamon Door");
+		this.add(ExtraDelightItems.CINNAMON_DOOR.get(), "Cinnamon Door");
 		this.add(ExtraDelightItems.CINNAMON_FENCE.get(), "Cinnamon Fence");
 		this.add(ExtraDelightItems.CINNAMON_FENCE_GATE.get(), "Cinnamon Fence Gate");
 		this.add(ExtraDelightItems.CINNAMON_STAIRS.get(), "Cinnamon Stairs");
 		this.add(ExtraDelightItems.CINNAMON_TRAPDOOR.get(), "Cinnamon Trapdoor");
 		this.add(ExtraDelightItems.CINNAMON_SLAB.get(), "Cinnamon Slab");
+		this.add(ExtraDelightItems.RAW_CINNAMON_BLOCK.get(), "Raw Cinnamon Block");
+		this.add(ExtraDelightItems.CINNAMON_STICK_BLOCK.get(), "Cinnamon Stick Block");
+		this.add(ExtraDelightItems.GROUND_CINNAMON_BLOCK_ITEM.get(), "Ground Cinnamon Sack");
 
 		this.add(ExtraDelightItems.ICE_CREAM.get(), "Ice Cream");
 		this.add(ExtraDelightItems.CHOCOLATE_ICE_CREAM.get(), "Chocolate Ice Cream");
@@ -755,6 +758,70 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.ROLL.get(), "Bread Roll");
 		this.add(ExtraDelightItems.WILD_GINGER.get(), "Wild Ginger");
+
+		this.add(ExtraDelightItems.BREADCRUMB_SACK.get(), "Breadcrumb Sack");
+		this.add(ExtraDelightItems.EGG_CRATE.get(), "Egg Crate");
+		this.add(ExtraDelightItems.APPLE_CRATE.get(), "Apple Crate");
+		this.add(ExtraDelightItems.GOLDEN_APPLE_CRATE.get(), "Golden Apple Crate");
+		this.add(ExtraDelightItems.BROWN_MUSHROOM_CRATE.get(), "Brown Mushroom Crate");
+		this.add(ExtraDelightItems.RED_MUSHROOM_CRATE.get(), "Red Mushroom Crate");
+		this.add(ExtraDelightItems.SWEET_BERRY_CRATE.get(), "Sweet Berry Crate");
+		this.add(ExtraDelightItems.GLOW_BERRY_CRATE.get(), "Glow Berry Crate");
+		this.add(ExtraDelightItems.CORN_SILK_SACK.get(), "Corn Silk Sack");
+		this.add(ExtraDelightItems.GINGER_CRATE.get(), "Ginger Crate");
+		this.add(ExtraDelightItems.MINT_SACK.get(), "Mint Sack");
+
+		this.add(ExtraDelightItems.TAP.get(), "Tap");
+
+		this.add(ExtraDelightItems.APPLE_CIDER_FLUID_BUCKET.get(), "Apple Cider Bucket");
+		this.add(ExtraDelightItems.BBQ_FLUID_BUCKET.get(), "BBQ Sauce Bucket");
+		this.add(ExtraDelightItems.BROTH_FLUID_BUCKET.get(), "Broth Bucket");
+		this.add(ExtraDelightItems.CACTUS_JUICE_FLUID_BUCKET.get(), "Cactus Juice Bucket");
+		this.add(ExtraDelightItems.CARAMEL_SAUCE_FLUID_BUCKET.get(), "Caramel Sauce Bucket");
+//		this.add(ExtraDelightItems.CUSTARD_FLUID_BUCKET.get(), "Custard Bucket");
+		this.add(ExtraDelightItems.EGG_MIX_FLUID_BUCKET.get(), "Egg Mix Bucket");
+		this.add(ExtraDelightItems.GLOW_BERRY_JUICE_FLUID_BUCKET.get(), "Glow Berry Juice Bucket");
+		this.add(ExtraDelightItems.GLOW_JAM_FLUID_BUCKET.get(), "Glow Jam Bucket");
+		this.add(ExtraDelightItems.GOLDEN_JAM_FLUID_BUCKET.get(), "Golden Jam Bucket");
+		this.add(ExtraDelightItems.GRAVY_FLUID_BUCKET.get(), "Gravy Bucket");
+		this.add(ExtraDelightItems.HOT_COCOA_FLUID_BUCKET.get(), "Hot Cocoa Bucket");
+		this.add(ExtraDelightItems.JAM_FLUID_BUCKET.get(), "Jam Bucket");
+		this.add(ExtraDelightItems.KETCHUP_FLUID_BUCKET.get(), "Ketchup Bucket");
+		this.add(ExtraDelightItems.MAYO_FLUID_BUCKET.get(), "Mayo Bucket");
+		this.add(ExtraDelightItems.MELON_JUICE_FLUID_BUCKET.get(), "Melon Juice Bucket");
+		this.add(ExtraDelightItems.MILKSHAKE_FLUID_BUCKET.get(), "Milkshake Bucket");
+		this.add(ExtraDelightItems.OIL_FLUID_BUCKET.get(), "Cooking Oil Bucket");
+		this.add(ExtraDelightItems.SWEET_BERRY_JUICE_FLUID_BUCKET.get(), "Sweet Berry Juice Bucket");
+		this.add(ExtraDelightItems.TEA_FLUID_BUCKET.get(), "Tea Bucket");
+		this.add(ExtraDelightItems.TOMATO_JUICE_FLUID_BUCKET.get(), "Tomato Juice Bucket");
+		this.add(ExtraDelightItems.VINEGAR_FLUID_BUCKET.get(), "Vinegar Bucket");
+		this.add(ExtraDelightItems.WHIPPED_CREAM_FLUID_BUCKET.get(), "Whipped Cream Bucket");
+
+		this.add("fluid_type.extradelight.apple_cider_fluid", "Apple Cider Bucket");
+		this.add("fluid_type.extradelight.bbq_fluid", "BBQ Sauce Bucket");
+		this.add("fluid_type.extradelight.broth_fluid", "Broth Bucket");
+		this.add("fluid_type.extradelight.cactus_juice_fluid", "Cactus Juice Bucket");
+		this.add("fluid_type.extradelight.caramel_sauce_fluid", "Caramel Sauce Bucket");
+		this.add("fluid_type.extradelight.custard_fluid", "Custard Bucket");
+		this.add("fluid_type.extradelight.egg_mix_fluid", "Egg Mix Bucket");
+		this.add("fluid_type.extradelight.glow_berry_juice_fluid", "Glow Berry Juice Bucket");
+		this.add("fluid_type.extradelight.glow_jam_fluid", "Glow Jam Bucket");
+		this.add("fluid_type.extradelight.golden_jam_fluid", "Golden Jam Bucket");
+		this.add("fluid_type.extradelight.gravy_fluid", "Gravy Bucket");
+		this.add("fluid_type.extradelight.hot_cocoa_fluid", "Hot Cocoa Bucket");
+		this.add("fluid_type.extradelight.jam_fluid", "Jam Bucket");
+		this.add("fluid_type.extradelight.ketchup_fluid", "Ketchup Bucket");
+		this.add("fluid_type.extradelight.mayo_fluid", "Mayo Bucket");
+		this.add("fluid_type.extradelight.melon_juice_fluid", "Melon Juice Bucket");
+		this.add("fluid_type.extradelight.milkshake_fluid", "Milkshake Bucket");
+		this.add("fluid_type.extradelight.oil_fluid", "Cooking Oil Bucket");
+		this.add("fluid_type.extradelight.sweet_berry_juice_fluid", "Sweet Berry Juice Bucket");
+		this.add("fluid_type.extradelight.tea_fluid", "Tea Bucket");
+		this.add("fluid_type.extradelight.tomato_juice_fluid", "Tomato Juice Bucket");
+		this.add("fluid_type.extradelight.vinegar_fluid", "Vinegar Bucket");
+		this.add("fluid_type.extradelight.whipped_cream_fluid", "Whipped Cream Bucket");
+
+		this.add(ExtraDelightItems.KEG.get(), "Keg");
 
 		AestheticBlocks.EngLoc(this);
 	}

@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:ground_cinnamon"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    },
+    {
+      "item": "extradelight:ground_cinnamon"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:ground_cinnamon_block"
+  }
+}

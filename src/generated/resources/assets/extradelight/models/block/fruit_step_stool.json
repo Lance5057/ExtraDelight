@@ -1,8 +1,0 @@
-{
-  "parent": "extradelight:block/stepstool",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "0": "minecraft:block/fruit_planks",
-    "particle": "minecraft:block/fruit_planks"
-  }
-}

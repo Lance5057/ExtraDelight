@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/mortar",
+  "textures": {
+    "0": "minecraft:block/sandstone_top"
+  }
+}

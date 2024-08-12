@@ -177,31 +177,31 @@ public class AdvancementGenerator implements AdvancementProvider.AdvancementGene
 								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightTags.FLOUR).build()))
 				.save(consumer, ExtraDelight.MOD_ID + ":flour");
 
-		AdvancementHolder amethyst = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.MORTAR_AMETHYST.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.amethyst.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.amethyst.desc"), null,
-						AdvancementType.CHALLENGE, true, true, true)
-				.parent(mortar)
-				.addCriterion("amethyst_mortar",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MORTAR_AMETHYST.get()))
-				.addCriterion("amethyst_pestle",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PESTLE_AMETHYST.get()))
-				.save(consumer, ExtraDelight.MOD_ID + ":amethyst");
-
-		AdvancementHolder gildedblackstone = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.desc"), null,
-						AdvancementType.CHALLENGE, true, true, true)
-				.parent(mortar)
-				.addCriterion("gildedblackstone_mortar",
-						InventoryChangeTrigger.TriggerInstance
-								.hasItems(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get()))
-				.addCriterion("gildedblackstone_pestle",
-						InventoryChangeTrigger.TriggerInstance
-								.hasItems(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.get()))
-				.save(consumer, ExtraDelight.MOD_ID + ":gildedblackstone");
+//		AdvancementHolder amethyst = Advancement.Builder.advancement()
+//				.display(ExtraDelightItems.MORTAR_AMETHYST.get(),
+//						Component.translatable(ExtraDelight.MOD_ID + ".advancement.amethyst.name"),
+//						Component.translatable(ExtraDelight.MOD_ID + ".advancement.amethyst.desc"), null,
+//						AdvancementType.CHALLENGE, true, true, true)
+//				.parent(mortar)
+//				.addCriterion("amethyst_mortar",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MORTAR_AMETHYST.get()))
+//				.addCriterion("amethyst_pestle",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PESTLE_AMETHYST.get()))
+//				.save(consumer, ExtraDelight.MOD_ID + ":amethyst");
+//
+//		AdvancementHolder gildedblackstone = Advancement.Builder.advancement()
+//				.display(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(),
+//						Component.translatable(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.name"),
+//						Component.translatable(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.desc"), null,
+//						AdvancementType.CHALLENGE, true, true, true)
+//				.parent(mortar)
+//				.addCriterion("gildedblackstone_mortar",
+//						InventoryChangeTrigger.TriggerInstance
+//								.hasItems(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get()))
+//				.addCriterion("gildedblackstone_pestle",
+//						InventoryChangeTrigger.TriggerInstance
+//								.hasItems(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.get()))
+//				.save(consumer, ExtraDelight.MOD_ID + ":gildedblackstone");
 
 		AdvancementHolder grind = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.PESTLE_ENDSTONE.get(),
@@ -648,8 +648,6 @@ public class AdvancementGenerator implements AdvancementProvider.AdvancementGene
 				.parent(food)
 				.addCriterion("ALFREDO_SAUCE",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.ALFREDO_SAUCE.get()))
-				.addCriterion("APPLE_JAM",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.APPLE_JAM.get()))
 				.addCriterion("BREAD_CRUMBS",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BREAD_CRUMBS.get()))
 				.addCriterion("BREAD_SLICE",

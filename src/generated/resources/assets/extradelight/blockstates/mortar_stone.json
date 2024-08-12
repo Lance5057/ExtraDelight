@@ -1,7 +1,52 @@
 {
   "variants": {
-    "": {
-      "model": "extradelight:block/mortar_stone"
+    "style=0": {
+      "model": "extradelight:block/mortarstone"
+    },
+    "style=1": {
+      "model": "extradelight:block/mortargranite"
+    },
+    "style=10": {
+      "model": "extradelight:block/mortarbasalt_side"
+    },
+    "style=11": {
+      "model": "extradelight:block/mortarblackstone"
+    },
+    "style=12": {
+      "model": "extradelight:block/mortarend_stone"
+    },
+    "style=13": {
+      "model": "extradelight:block/mortarbedrock"
+    },
+    "style=14": {
+      "model": "extradelight:block/mortaramethyst_block"
+    },
+    "style=15": {
+      "model": "extradelight:block/mortargilded_blackstone"
+    },
+    "style=2": {
+      "model": "extradelight:block/mortardiorite"
+    },
+    "style=3": {
+      "model": "extradelight:block/mortarandesite"
+    },
+    "style=4": {
+      "model": "extradelight:block/mortardeepslate"
+    },
+    "style=5": {
+      "model": "extradelight:block/mortartuff"
+    },
+    "style=6": {
+      "model": "extradelight:block/mortarsandstone_top"
+    },
+    "style=7": {
+      "model": "extradelight:block/mortarred_sandstone_top"
+    },
+    "style=8": {
+      "model": "extradelight:block/mortarprismarine"
+    },
+    "style=9": {
+      "model": "extradelight:block/mortarnetherrack"
     }
   }
 }

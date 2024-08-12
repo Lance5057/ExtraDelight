@@ -13,8 +13,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class SinkCabinetScreen extends AbstractContainerScreen<SinkCabinetMenu> {
-	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-			"textures/gui/display.png");
+	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation
+			.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/display.png");
 	private static final WidgetSprites TAB_BUTTON = new WidgetSprites(
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "settings"),
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "settings"));
@@ -41,10 +41,14 @@ public class SinkCabinetScreen extends AbstractContainerScreen<SinkCabinetMenu> 
 			return;
 
 		RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
-		graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 69, this.topPos, 68, 126, 38, 65);
 		graphics.blit(BACKGROUND_TEXTURE, this.leftPos, this.topPos + 60, 0, 0, 175, 89);
-		graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 3, this.topPos, 0, 191, 68, 65);
-		graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 105, this.topPos, 0, 191, 68, 65);
+		if (tab) {
+			graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 69, this.topPos, 68, 126, 38, 65);
+			
+			graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 3, this.topPos, 0, 191, 68, 65);
+			graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 105, this.topPos, 0, 191, 68, 65);
+		} else
+			graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 72, this.topPos + 28, 0, 90, 32, 32);
 
 	}
 

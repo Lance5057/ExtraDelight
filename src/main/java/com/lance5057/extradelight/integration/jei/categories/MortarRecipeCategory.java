@@ -35,7 +35,7 @@ public class MortarRecipeCategory implements IRecipeCategory<MortarRecipe> {
 				84, 52);
 		localizedName = Component.translatable("extradelight.jei.mortar");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
-				new ItemStack(ExtraDelightItems.MORTAR_AMETHYST.get()));
+				new ItemStack(ExtraDelightItems.MORTAR_STONE.get()));
 	}
 
 	@Override

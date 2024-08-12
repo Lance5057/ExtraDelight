@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "Recipes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:bbq_jar_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:bbq_to_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "Recipes"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:bbq_to_bucket"
+    ]
+  }
+}

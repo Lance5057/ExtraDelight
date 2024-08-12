@@ -106,16 +106,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.CORNMEAL.get());
 
 		this.dropSelf(ExtraDelightBlocks.MORTAR_STONE.get());
-		this.dropSelf(ExtraDelightBlocks.MORTAR_ANDESITE.get());
-		this.dropSelf(ExtraDelightBlocks.MORTAR_GRANITE.get());
-		this.dropSelf(ExtraDelightBlocks.MORTAR_DIORITE.get());
-		this.dropSelf(ExtraDelightBlocks.MORTAR_DEEPSLATE.get());
-		this.dropSelf(ExtraDelightBlocks.MORTAR_BLACKSTONE.get());
-		this.dropSelf(ExtraDelightBlocks.MORTAR_BASALT.get());
-		this.dropSelf(ExtraDelightBlocks.MORTAR_ENDSTONE.get());
-
-		this.dropSelf(ExtraDelightBlocks.MORTAR_AMETHYST.get()); // not craftable, dungeon item
-		this.dropSelf(ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get()); // not craftable, dungeon item
 
 		this.add(ExtraDelightBlocks.CHEESECAKE.get(), noDrop());
 		this.add(ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get(), noDrop());
@@ -127,8 +117,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(ExtraDelightBlocks.APPLE_CHEESECAKE.get(), noDrop());
 
 		this.add(ExtraDelightBlocks.QUICHE.get(), noDrop());
-
-		this.add(ExtraDelightBlocks.PLAIN_CAKE.get(), noDrop());
 
 		this.dropOther(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(), Items.BOWL);
@@ -224,18 +212,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_PLANKS.get());
 
-		this.dropOther(ExtraDelightBlocks.CINNAMON_LEAVES.get(), Items.AIR);
-//		this.add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), (p_124100_) -> {
-//			return createLeavesDrops(p_124100_, ExtraDelightBlocks.CINNAMON_SAPLING.get(),
-//					NORMAL_LEAVES_SAPLING_CHANCES);
-//		});
-
-//		 createSilkTouchOrShearsDispatchTable(pLeavesBlock, applyExplosionCondition(pLeavesBlock, LootItem.lootTableItem(pSaplingBlock))
-//		.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, pChances))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-//				.when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(pLeavesBlock, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-//						.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, NORMAL_LEAVES_STICK_CHANCES))));
-//		createSelfDropDispatchTable(pBlock, HAS_SHEARS_OR_SILK_TOUCH, pAlternativeEntryBuilder);
-//		LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(pBlock).when(pConditionBuilder).otherwise(pAlternativeEntryBuilder)));
+		this.add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), (p_124100_) -> {
+			return createLeavesDrops(p_124100_, ExtraDelightBlocks.CINNAMON_SAPLING.get(),
+					NORMAL_LEAVES_SAPLING_CHANCES);
+		});
 
 		this.dropSelf(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
@@ -292,8 +272,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornTop.AGE, 3));
-//		crop(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
-//				ExtraDelightItems.CORN_SEEDS.get(), lootitemcondition$builder2, 3.0f);
 
 		this.add(ExtraDelightBlocks.CINNAMON_DOOR.get(), createDoorTable(ExtraDelightBlocks.CINNAMON_DOOR.get()));
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_FENCE.get());
@@ -334,7 +312,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.BAKING_STONE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.SERVING_POT_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.SERVING_BOWL_BLOCK.get());
 
 		this.dropSelf(ExtraDelightBlocks.FRUIT_LOG.get());
 		this.dropSelf(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());

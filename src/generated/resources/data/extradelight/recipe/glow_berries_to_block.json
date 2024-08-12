@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:glow_berry_crate"
+  }
+}

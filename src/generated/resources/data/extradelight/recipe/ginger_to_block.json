@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:ginger"
+    },
+    {
+      "tag": "forge:ginger"
+    },
+    {
+      "tag": "forge:ginger"
+    },
+    {
+      "tag": "forge:ginger"
+    },
+    {
+      "tag": "forge:ginger"
+    },
+    {
+      "tag": "forge:ginger"
+    },
+    {
+      "tag": "forge:ginger"
+    },
+    {
+      "tag": "forge:ginger"
+    },
+    {
+      "tag": "forge:ginger"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:ginger_crate"
+  }
+}

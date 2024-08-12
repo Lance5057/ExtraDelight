@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "extradelight:item/tray"
-  }
+  "parent": "extradelight:block/tray"
 }

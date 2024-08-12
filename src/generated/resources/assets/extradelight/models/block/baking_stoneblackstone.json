@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/baking_stone",
+  "textures": {
+    "0": "minecraft:block/blackstone"
+  }
+}

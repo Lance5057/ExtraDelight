@@ -1,16 +1,20 @@
 package com.lance5057.extradelight.blocks.sink;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
+import org.joml.Quaternionf;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
+import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlock;
 import com.lance5057.extradelight.util.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.BakedQuad;
@@ -21,6 +25,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
 import net.minecraft.world.inventory.InventoryMenu;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.client.model.data.ModelData;
 import net.neoforged.neoforge.client.model.renderable.BakedModelRenderable.Context;
 import net.neoforged.neoforge.client.model.renderable.ITextureRenderTypeLookup;
 
@@ -36,33 +43,33 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 			return;
 		}
 
-//		ItemStack item = pBlockEntity.getItemHandler().getStackInSlot(18);
-//		List<BakedQuad> copiedQuads = new ArrayList<BakedQuad>();
-//
-//		if (item != null && !item.isEmpty()) {
-//			if (item.getItem() instanceof BlockItem b) {
-//
-//				for (Direction d : Direction.values()) {
-//					List<BakedQuad> q = Minecraft.getInstance().getBlockRenderer()
-//							.getBlockModel(b.getBlock().defaultBlockState()).getQuads(b.getBlock().defaultBlockState(),
-//									d, pBlockEntity.getLevel().random, ModelData.EMPTY, RenderType.cutout());
-//					if (!q.isEmpty()) {
-//						copiedQuads.add(q.get(0));
-//					}
-//				}
-//				pPoseStack.pushPose();
-//				float f = pBlockEntity.getBlockState().getValue(CounterCabinetBlock.FACING).getClockWise().toYRot();
-//
-//				pPoseStack.translate(0.5f, 0, 0.5f);
-//				pPoseStack.mulPose(Axis.YP.rotationDegrees(-f - 90));
-//				pPoseStack.translate(-0.5f, 0, -0.5f);
-//				this.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
-//						pPackedOverlay, pPartialTick, new Context(ModelData.EMPTY), pBlockEntity.getBlockPos(),
-//						copiedQuads);
-//
-//				pPoseStack.popPose();
-//			}
-//		}
+		ItemStack item = pBlockEntity.getItemHandler().getStackInSlot(18);
+		List<BakedQuad> copiedQuads = new ArrayList<BakedQuad>();
+
+		if (item != null && !item.isEmpty()) {
+			if (item.getItem() instanceof BlockItem b) {
+
+				for (Direction d : Direction.values()) {
+					List<BakedQuad> q = Minecraft.getInstance().getBlockRenderer()
+							.getBlockModel(b.getBlock().defaultBlockState()).getQuads(b.getBlock().defaultBlockState(),
+									d, pBlockEntity.getLevel().random, ModelData.EMPTY, RenderType.cutout());
+					if (!q.isEmpty()) {
+						copiedQuads.add(q.get(0));
+					}
+				}
+				pPoseStack.pushPose();
+				float f = pBlockEntity.getBlockState().getValue(CounterCabinetBlock.FACING).getClockWise().toYRot();
+
+				pPoseStack.translate(0.5f, 0, 0.5f);
+				pPoseStack.mulPose(new Quaternionf().fromAxisAngleDeg(0, 1, 0, -f - 90));
+				pPoseStack.translate(-0.5f, 0, -0.5f);
+				this.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
+						pPackedOverlay, pPartialTick, new Context(ModelData.EMPTY), pBlockEntity.getBlockPos(),
+						copiedQuads);
+
+				pPoseStack.popPose();
+			}
+		}
 	}
 
 	public void render(PoseStack poseStack, MultiBufferSource bufferSource,

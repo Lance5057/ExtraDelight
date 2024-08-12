@@ -8,6 +8,7 @@ import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -22,6 +23,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.neoforge.items.IItemHandler;
 
 public class DryingRackBlock extends Block implements EntityBlock {
 
@@ -79,16 +81,20 @@ public class DryingRackBlock extends Block implements EntityBlock {
 		return pBlockEntityType == ExtraDelightBlockEntities.DRYING_RACK.get() ? DryingRackBlockEntity::tick : null;
 	}
 
-//	@Override
-//	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-//		if (state.getBlock() != newState.getBlock()) {
-//			BlockEntity tileentity = level.getBlockEntity(pos);
-//			Containers.dropContents(level, pos, DryingRackBlockEntity.getDroppableInventory());
-//
-//				level.updateNeighbourForOutputSignal(pos, this);
-//			}
-//
-//			super.onRemove(state, level, pos, newState, isMoving);
-//		}
-//	}
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity tileEntity = level.getBlockEntity(pos);
+			if (tileEntity instanceof DryingRackBlockEntity te) {
+				IItemHandler items = te.getItemHandler();
+				for (int i = 0; i < te.getItemHandler().getSlots(); i++) {
+					level.addFreshEntity(
+							new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+				}
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
+
+			super.onRemove(state, level, pos, newState, isMoving);
+		}
+	}
 }

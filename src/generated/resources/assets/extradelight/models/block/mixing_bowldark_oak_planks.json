@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/mixing_bowl",
+  "textures": {
+    "1": "minecraft:block/dark_oak_planks"
+  }
+}

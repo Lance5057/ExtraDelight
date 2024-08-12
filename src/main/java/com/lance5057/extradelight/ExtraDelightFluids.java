@@ -68,11 +68,11 @@ public class ExtraDelightFluids {
 			ExtraDelightBlocks.MELON_JUICE_FLUID_BLOCK, ExtraDelightItems.MELON_JUICE_FLUID_BUCKET, FLUID_TYPES,
 			FLUIDS);
 
-	public static FluidRegistration CUSTARD = new FluidRegistration("custard",
-			() -> new BasicFluid("custard", 0xffffffff,
-					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
-							.density(6000).motionScale(0.1)),
-			ExtraDelightBlocks.CUSTARD_FLUID_BLOCK, ExtraDelightItems.CUSTARD_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+//	public static FluidRegistration CUSTARD = new FluidRegistration("custard",
+//			() -> new BasicFluid("custard", 0xffffffff,
+//					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
+//							.density(6000).motionScale(0.1)),
+//			ExtraDelightBlocks.CUSTARD_FLUID_BLOCK, ExtraDelightItems.CUSTARD_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	public static FluidRegistration EGG_MIX = new FluidRegistration("egg_mix",
 			() -> new BasicFluid("egg_mix", 0xffffffff,

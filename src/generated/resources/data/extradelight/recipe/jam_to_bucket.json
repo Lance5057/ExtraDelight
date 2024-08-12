@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:jam"
+    },
+    {
+      "item": "extradelight:jam"
+    },
+    {
+      "item": "extradelight:jam"
+    },
+    {
+      "item": "extradelight:jam"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:jam_fluid_bucket"
+  }
+}

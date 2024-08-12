@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:vinegar"
+    },
+    {
+      "item": "extradelight:vinegar"
+    },
+    {
+      "item": "extradelight:vinegar"
+    },
+    {
+      "item": "extradelight:vinegar"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:vinegar_fluid_bucket"
+  }
+}

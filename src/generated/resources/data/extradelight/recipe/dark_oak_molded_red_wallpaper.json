@@ -15,7 +15,7 @@
       "item": "minecraft:paper"
     },
     {
-      "tag": "forge:dyes/red"
+      "tag": "c:dyes/red"
     },
     {
       "item": "minecraft:dark_oak_slab"

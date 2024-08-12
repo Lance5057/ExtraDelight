@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.armor.EDArmorMaterial;
 import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 
@@ -18,7 +19,7 @@ import net.neoforged.neoforge.common.NeoForge;
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.0.0_indev";
+	public static final String VERSION = "2.0.1";
 
 	public static Logger logger = LogManager.getLogger();
 
@@ -46,7 +47,7 @@ public class ExtraDelight {
 		ExtraDelightRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
 		ExtraDelightLootModifiers.LOOT_MODIFIERS.register(modEventBus);
-
+		EDArmorMaterial.register(modEventBus);
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
 
 		ExtraDelightFeatures.FEATURES.register(modEventBus);

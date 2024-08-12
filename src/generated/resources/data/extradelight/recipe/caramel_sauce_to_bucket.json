@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:caramel_sauce"
+    },
+    {
+      "item": "extradelight:caramel_sauce"
+    },
+    {
+      "item": "extradelight:caramel_sauce"
+    },
+    {
+      "item": "extradelight:caramel_sauce"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:caramel_sauce_fluid_bucket"
+  }
+}

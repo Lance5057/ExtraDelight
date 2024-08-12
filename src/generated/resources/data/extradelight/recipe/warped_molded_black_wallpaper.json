@@ -15,7 +15,7 @@
       "item": "minecraft:paper"
     },
     {
-      "tag": "forge:dyes/black"
+      "tag": "c:dyes/black"
     },
     {
       "item": "minecraft:warped_slab"

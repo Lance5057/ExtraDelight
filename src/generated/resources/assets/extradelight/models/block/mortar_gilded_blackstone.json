@@ -1,7 +1,0 @@
-{
-  "parent": "extradelight:block/mortar",
-  "textures": {
-    "0": "minecraft:block/gilded_blackstone",
-    "particle": "minecraft:block/gilded_blackstone"
-  }
-}

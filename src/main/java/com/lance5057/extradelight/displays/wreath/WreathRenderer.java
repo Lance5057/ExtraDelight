@@ -47,21 +47,20 @@ public class WreathRenderer implements BlockEntityRenderer<WreathEntity> {
 			if (!item.isEmpty()) {
 				BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 				pPoseStack.pushPose();
-//					pPoseStack.mulPose(new Quaternion( 0, 0, i * 45,true));
-				pPoseStack.translate(0.5f, 0.4f, 0.5f);
-//					pPoseStack.translate( -0.25f, 0.25, 0.25);
 
-				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, -dir.toYRot(), 0));
-//					if(i % 2 == 0)
-//						pPoseStack.translate(0, 0.05, 0.05);
+				pPoseStack.translate(0.5f, 0, 0.5f);
+				pPoseStack.mulPose(new Quaternionf().fromAxisAngleDeg(0, 1, 0, -dir.toYRot()));
+				pPoseStack.translate(-0.5f, 0, -0.5f);
+				pPoseStack.translate(0.5f, 0.5f, 0.15f);
 
-				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, 0, i * 45));
+				pPoseStack.mulPose(new Quaternionf().fromAxisAngleDeg(0, 0, 1, i * 45));
+//				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, 0, i * 45));
 				float uniscale = 0.5f;
 
-				pPoseStack.translate(0f, 0.35f, -0.3f);
+				pPoseStack.translate(0f, 0.35f, 0.05f);
 
 				pPoseStack.scale(uniscale, uniscale, uniscale);
-				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, 0, i * -45));
+				pPoseStack.mulPose(new Quaternionf().fromAxisAngleDeg(0, 0, 1, i * -45));
 				itemRenderer.render(item, ItemDisplayContext.GROUND, false, pPoseStack, pBufferSource, pPackedLight,
 						pPackedOverlay, bakedmodel);
 				pPoseStack.popPose();

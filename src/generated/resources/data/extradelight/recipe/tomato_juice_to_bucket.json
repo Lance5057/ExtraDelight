@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:tomato_juice"
+    },
+    {
+      "item": "extradelight:tomato_juice"
+    },
+    {
+      "item": "extradelight:tomato_juice"
+    },
+    {
+      "item": "extradelight:tomato_juice"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:tomato_juice_fluid_bucket"
+  }
+}

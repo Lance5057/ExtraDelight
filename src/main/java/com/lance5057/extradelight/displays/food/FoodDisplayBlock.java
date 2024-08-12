@@ -1,15 +1,16 @@
 package com.lance5057.extradelight.displays.food;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.blocks.sink.SinkCabinetBlockEntity;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -34,6 +35,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.neoforge.items.IItemHandler;
 
 public class FoodDisplayBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -49,8 +51,8 @@ public class FoodDisplayBlock extends Block implements EntityBlock, SimpleWaterl
 	}
 
 	@Override
-	public ItemInteractionResult useItemOn(ItemStack stack,BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
-			BlockHitResult result) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
+			InteractionHand hand, BlockHitResult result) {
 		if (!level.isClientSide) {
 			if (player.getItemInHand(hand).getItem() == Items.GLASS) {
 				if (state.getValue(FoodDisplayBlock.ENCASED) == false) {
@@ -121,14 +123,15 @@ public class FoodDisplayBlock extends Block implements EntityBlock, SimpleWaterl
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {
-//			BlockEntity tileentity = level.getBlockEntity(pos);
-//			if (tileentity instanceof FoodDisplayEntity) {
-//				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
-//						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots())
-//								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
-//
-//				level.updateNeighbourForOutputSignal(pos, this);
-//			}
+			BlockEntity tileEntity = level.getBlockEntity(pos);
+			if (tileEntity instanceof FoodDisplayEntity te) {
+				IItemHandler items = te.getItemHandler();
+				for (int i = 0; i < te.getItemHandler().getSlots(); i++) {
+					level.addFreshEntity(
+							new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+				}
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
 
 			if (state.getValue(FoodDisplayBlock.ENCASED) == true)
 				Block.popResource(level, pos, new ItemStack(Items.GLASS));

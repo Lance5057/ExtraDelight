@@ -22,121 +22,102 @@ public class ItemModels extends ItemModelProvider {
 
 	@Override
 	protected void registerModels() {
-		getBuilder(ExtraDelightItems.OVEN.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/oven")));
-		getBuilder(ExtraDelightItems.FOOD_DISPLAY.getId().getPath()).parent(
-				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/food_display")));
-		getBuilder(ExtraDelightItems.DOUGH_SHAPING.getId().getPath()).parent(
-				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/doughforming")));
-		getBuilder(ExtraDelightItems.MIXING_BOWL.getId().getPath()).parent(
-				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/mixing_bowl")));
-		getBuilder(ExtraDelightItems.YEAST_POT.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/yeast_pot")));
+		getBuilder(ExtraDelightItems.OVEN.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/oven")));
+		getBuilder(ExtraDelightItems.FOOD_DISPLAY.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/food_display")));
+		getBuilder(ExtraDelightItems.DOUGH_SHAPING.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/doughforming")));
+		getBuilder(ExtraDelightItems.MIXING_BOWL.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/mixing_bowl")));
+		getBuilder(ExtraDelightItems.YEAST_POT.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/yeast_pot")));
 		getBuilder(ExtraDelightItems.VINEGAR_POT.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/yeast_pot")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/yeast_pot")))
 				.texture("0", modLoc("block/vinegarpot"));
-		getBuilder(ExtraDelightItems.GRATER.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/grater")));
+		getBuilder(ExtraDelightItems.GRATER.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/grater")));
 
-		getBuilder(ExtraDelightItems.OFFSET_SPATULA_DIAMOND.getId().getPath())
-				.parent(new ModelFile.ExistingModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
+		getBuilder(ExtraDelightItems.OFFSET_SPATULA_DIAMOND.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
 				.texture("0", modLoc("item/offset_spatula_diamond"));
-		getBuilder(ExtraDelightItems.OFFSET_SPATULA_GOLD.getId().getPath())
-				.parent(new ModelFile.ExistingModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
+		getBuilder(ExtraDelightItems.OFFSET_SPATULA_GOLD.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
 				.texture("0", modLoc("item/offset_spatula_gold"));
-		getBuilder(ExtraDelightItems.OFFSET_SPATULA_IRON.getId().getPath())
-				.parent(new ModelFile.ExistingModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
+		getBuilder(ExtraDelightItems.OFFSET_SPATULA_IRON.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
 				.texture("0", modLoc("item/offset_spatula_iron"));
-		getBuilder(ExtraDelightItems.OFFSET_SPATULA_NETHERITE.getId().getPath())
-				.parent(new ModelFile.ExistingModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
+		getBuilder(ExtraDelightItems.OFFSET_SPATULA_NETHERITE.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
 				.texture("0", modLoc("item/offset_spatula_netherite"));
-		getBuilder(ExtraDelightItems.OFFSET_SPATULA_WOOD.getId().getPath())
-				.parent(new ModelFile.ExistingModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
+		getBuilder(ExtraDelightItems.OFFSET_SPATULA_WOOD.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/offset_spatula"), existingFileHelper))
 				.texture("0", modLoc("item/offset_spatula_wood"));
 
-		getBuilder(ExtraDelightItems.DRYING_RACK.getId().getPath()).parent(
-				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/drying_rack")));
+		getBuilder(ExtraDelightItems.DRYING_RACK.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/drying_rack")));
 
 		getBuilder(ExtraDelightItems.MORTAR_STONE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
 				.texture("0", mcLoc("block/stone"));
-		getBuilder(ExtraDelightItems.MORTAR_ANDESITE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
-				.texture("0", mcLoc("block/andesite"));
-		getBuilder(ExtraDelightItems.MORTAR_GRANITE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
-				.texture("0", mcLoc("block/granite"));
-		getBuilder(ExtraDelightItems.MORTAR_DIORITE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
-				.texture("0", mcLoc("block/diorite"));
-		getBuilder(ExtraDelightItems.MORTAR_DEEPSLATE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
-				.texture("0", mcLoc("block/deepslate"));
-		getBuilder(ExtraDelightItems.MORTAR_BLACKSTONE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
-				.texture("0", mcLoc("block/blackstone"));
-		getBuilder(ExtraDelightItems.MORTAR_BASALT.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
-				.texture("0", mcLoc("block/basalt_top"));
-		getBuilder(ExtraDelightItems.MORTAR_ENDSTONE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
-				.texture("0", mcLoc("block/end_stone"));
-
-		getBuilder(ExtraDelightItems.MORTAR_AMETHYST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
-				.texture("0", mcLoc("block/amethyst_block")); // not craftable, dungeon item
-		getBuilder(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
-				.texture("0", mcLoc("block/gilded_blackstone")); // not craftable, dungeon item
 
 		getBuilder(ExtraDelightItems.PESTLE_STONE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/stone"));
 		getBuilder(ExtraDelightItems.PESTLE_ANDESITE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/andesite"));
 		getBuilder(ExtraDelightItems.PESTLE_GRANITE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/granite"));
 		getBuilder(ExtraDelightItems.PESTLE_DIORITE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/diorite"));
 		getBuilder(ExtraDelightItems.PESTLE_DEEPSLATE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/deepslate"));
 		getBuilder(ExtraDelightItems.PESTLE_BLACKSTONE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/blackstone"));
 		getBuilder(ExtraDelightItems.PESTLE_BASALT.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/basalt_top"));
 		getBuilder(ExtraDelightItems.PESTLE_ENDSTONE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/end_stone"));
 
 		getBuilder(ExtraDelightItems.PESTLE_AMETHYST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/amethyst_block")); // not craftable, dungeon item
 		getBuilder(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/pestle")))
 				.texture("0", mcLoc("block/gilded_blackstone")); // not craftable, dungeon item
-//
-//		getBuilder(ExtraDelightItems.CORN_COB_PIPE.getId().getPath())
-//				.parent(new ModelFile.UncheckedModelFile(
-//						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/corncob_pipe")))
-//				.texture("1", modLoc("item/corncob_pipe")); // not craftable, dungeon item
 
-		forItem(ExtraDelightItems.BAKING_STONE, "baking_stone");
-		forItem(ExtraDelightItems.LOAF_PAN, "loaf_pan");
-		forItem(ExtraDelightItems.MUFFIN_TIN, "muffin_tin");
-		forItem(ExtraDelightItems.PIE_DISH, "pie_dish");
-		forItem(ExtraDelightItems.SHEET, "sheet");
-		forItem(ExtraDelightItems.TRAY, "tray");
+		getBuilder(ExtraDelightItems.CORN_COB_PIPE.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/corncob_pipe")))
+				.texture("1", modLoc("item/corncob_pipe")); // not craftable, dungeon item
+
+		forBlockItem(ExtraDelightItems.BAKING_STONE, "baking_stone");
+		forBlockItem(ExtraDelightItems.LOAF_PAN, "loafpan");
+		forBlockItem(ExtraDelightItems.MUFFIN_TIN, "muffin_tray");
+		forBlockItem(ExtraDelightItems.PIE_DISH, "piepan");
+		forBlockItem(ExtraDelightItems.SHEET, "sheet");
+		forBlockItem(ExtraDelightItems.TRAY, "tray");
+		forBlockItem(ExtraDelightItems.SQUARE_PAN, "square_pan");
+		forBlockItem(ExtraDelightItems.SERVING_POT, "serving_pot");
 
 		forItem(ExtraDelightItems.WOODEN_SPOON, "wooden_spoon");
 		forItem(ExtraDelightItems.DIAMOND_SPOON, "diamond_spoon");
@@ -200,8 +181,6 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.APPLE_POPSICLE, "apple_popsicle");
 
 		forItem(ExtraDelightItems.WHIPPED_CREAM, "whipped_cream");
-//
-//		forItem(ExtraDelightItems.PLAIN_CAKE, "plain_cake");
 
 		// Eggs
 		forItem(ExtraDelightItems.EGG_MIX, "egg_mix");
@@ -228,7 +207,6 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.EGG_BASKET, "egg_in_the_basket");
 
 		// Jam
-		forItem(ExtraDelightItems.APPLE_JAM, "apple_jam");
 		forItem(ExtraDelightItems.GLOW_BERRY_JAM, "glow_berry_jam");
 		forItem(ExtraDelightItems.JAM, "sweet_berry_jam");
 		forItem(ExtraDelightItems.GOLDEN_APPLE_JAM, "golden_apple_jam");
@@ -259,7 +237,6 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.TOMATO_SOUP, "tomato_soup");
 
 		// Sandwiches
-//		forItem(ExtraDelightItems.DYNAMIC_SANDWICH, "sandwich");
 		forItem(ExtraDelightItems.EGG_SALAD_SANDWICH, "egg_salad_sandwich");
 
 		// Feasts
@@ -491,7 +468,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CORN_ON_COB, "crops/corn_on_cob");
 		forItem(ExtraDelightItems.CORN_SILK, "crops/corn_silk");
 		forItem(ExtraDelightItems.DRIED_CORN_HUSK, "crops/dried_corn_husk");
-//		forItem(ExtraDelightItems.UNSHUCKED_CORN, "crops/unshucked_corn");
+		forItem(ExtraDelightItems.UNSHUCKED_CORN, "crops/unshucked_corn");
 		forItem(ExtraDelightItems.CORN_MEAL, "cornmeal");
 
 		forItem(ExtraDelightItems.CORN_CHOWDER, "corn_chowder");
@@ -501,7 +478,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.GRILLED_CORN_ON_COB, "grilled_corn_on_cob");
 		forItem(ExtraDelightItems.COOKED_CORN, "cooked_corn");
 		forItem(ExtraDelightItems.ROASTED_PUMPKIN_SEEDS, "roasted_pumpkin_seeds");
-//		forItem(ExtraDelightItems.CORN_SILK_TEA, "corn_silk_tea");
+		forItem(ExtraDelightItems.TEA, "mint_tea");
 		forItem(ExtraDelightItems.STEWED_APPLES, "stewed_apples");
 		forItem(ExtraDelightItems.APPLE_FRITTERS, "apple_fritters");
 		forItem(ExtraDelightItems.CARAMEL_SAUCE, "caramel_sauce");
@@ -517,7 +494,6 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CARAMEL_POPSICLE, "caramel_popsicle");
 		forItem(ExtraDelightItems.PUMPKIN_PIE_ITEM, "pumpkin_pie");
 		forItem(ExtraDelightItems.PUMPKIN_PIE_SLICE, "pumpkin_pie_slice");
-//		forItem(ExtraDelightItems.CANDY, "candy");
 
 		forItem(ExtraDelightItems.CORNBREAD, "cornbread");
 		forBlockItem(ExtraDelightItems.CORNBREAD_FEAST,
@@ -553,12 +529,12 @@ public class ItemModels extends ItemModelProvider {
 
 		// Holiday
 		forBlockItem(ExtraDelightItems.STRIPPED_CINNAMON_LOG, "stripped_cinnamon_log");
-//		forBlockItem(ExtraDelightItems.CINNAMON_LOG, "cinnamon_log");
+		forBlockItem(ExtraDelightItems.CINNAMON_LOG, "cinnamon_log");
 		forBlockItem(ExtraDelightItems.CINNAMON_LEAVES, "cinnamon_leaves");
 		forBlockItem(ExtraDelightItems.CINNAMON_PLANKS, "cinnamon_planks");
 		forBlockItem(ExtraDelightItems.CINNAMON_FENCE,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_fence_inventory"));
-//		forItem(ExtraDelightItems.CINNAMON_DOOR, "cinnamon_door");
+		forItem(ExtraDelightItems.CINNAMON_DOOR, "cinnamon_door");
 		forBlockItem(ExtraDelightItems.CINNAMON_FENCE_GATE, "cinnamon_fence_gate");
 		forBlockItem(ExtraDelightItems.CINNAMON_STAIRS, "cinnamon_stairs");
 		forBlockItem(ExtraDelightItems.CINNAMON_TRAPDOOR,
@@ -566,7 +542,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CINNAMON_CABINET, "cinnamon_cabinet");
 		this.slab(ExtraDelightItems.CINNAMON_SLAB.getId().getPath(), modLoc("block/cinnamon_planks"),
 				modLoc("block/cinnamon_planks"), modLoc("block/cinnamon_planks"));
-//		forBlockItemWithParent(ExtraDelightItems.CINNAMON_SAPLING);
+		forBlockItemWithParent(ExtraDelightItems.CINNAMON_SAPLING);
 		forItem(ExtraDelightItems.CINNAMON_BARK, "cinnamon_bark");
 		forItem(ExtraDelightItems.CINNAMON_STICK, "cinnamon_stick");
 		forItem(ExtraDelightItems.GROUND_CINNAMON, "ground_cinnamon");
@@ -694,8 +670,8 @@ public class ItemModels extends ItemModelProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_orange"));
 		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_MAGENTA,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_magenta"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_BLUE,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_light_blue"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_BLUE, ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_light_blue"));
 		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_YELLOW,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_yellow"));
 		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIME,
@@ -704,8 +680,8 @@ public class ItemModels extends ItemModelProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_pink"));
 		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_GRAY,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_grey"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_GRAY,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_light_grey"));
+		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_GRAY, ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_light_grey"));
 		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_CYAN,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_cyan"));
 		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_PURPLE,
@@ -781,7 +757,8 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/christmas_pudding_stage0"));
 		forItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart");
-		forBlockItem(ExtraDelightItems.PUNCH_FEAST, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/punch_stage0"));
+		forBlockItem(ExtraDelightItems.PUNCH_FEAST,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/punch_stage0"));
 		forBlockItem(ExtraDelightItems.WILD_GINGER, "wild_ginger");
 
 		forBlockItem(ExtraDelightItems.CHEESE_STAIRS_BLOCK_ITEM, "cheese_stairs");
@@ -805,30 +782,53 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CORN_SILK_SACK, "corn_silk_sack");
 		forBlockItem(ExtraDelightItems.TAP, "tap");
 
-		forItem(ExtraDelightItems.COFFEE_BEANS, "crops/coffee/coffee_beans");
-		forItem(ExtraDelightItems.GREEN_COFFEE, "crops/coffee/green_coffee");
-		forItem(ExtraDelightItems.COFFEE_CHERRIES, "crops/coffee/coffee_cherries");
+//		forItem(ExtraDelightItems.COFFEE_BEANS, "crops/coffee/coffee_beans");
+//		forItem(ExtraDelightItems.GREEN_COFFEE, "crops/coffee/green_coffee");
+//		forItem(ExtraDelightItems.COFFEE_CHERRIES, "crops/coffee/coffee_cherries");
 
-		forBlockItem(ExtraDelightItems.KEG, "keg");
+		forBlockItem(ExtraDelightItems.KEG, modLoc("block/keg_vertical"));
 
-		forBlockItem(ExtraDelightItems.STRIPPED_FRUIT_LOG, "stripped_fruit_log");
+//		forBlockItem(ExtraDelightItems.STRIPPED_FRUIT_LOG, "stripped_fruit_log");
 //		forBlockItem(ExtraDelightItems.FRUIT_LOG, "fruit_log");
-		forBlockItem(ExtraDelightItems.FRUIT_PLANKS, "fruit_planks");
-		forBlockItem(ExtraDelightItems.FRUIT_FENCE,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_fence_inventory"));
+//		forBlockItem(ExtraDelightItems.FRUIT_PLANKS, "fruit_planks");
+//		forBlockItem(ExtraDelightItems.FRUIT_FENCE,
+//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_fence_inventory"));
 //		forItem(ExtraDelightItems.FRUIT_DOOR, "fruit_door");
-		forBlockItem(ExtraDelightItems.FRUIT_FENCE_GATE, "fruit_fence_gate");
-		forBlockItem(ExtraDelightItems.FRUIT_STAIRS, "fruit_stairs");
-		forBlockItem(ExtraDelightItems.FRUIT_TRAPDOOR,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_trapdoor_bottom"));
-		forBlockItem(ExtraDelightItems.FRUIT_CABINET, "fruit_cabinet");
-		this.slab(ExtraDelightItems.FRUIT_SLAB.getId().getPath(), modLoc("block/fruit_planks"),
-				modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
-
-		forItem(ExtraDelightItems.CHILI_SEEDS, "crops/chili/chili_seeds");
-		forItem(ExtraDelightItems.CHILI, "crops/chili/chili_pepper");
-
-		forItemModel(ExtraDelightItems.JAR, "blocks/jar");
+//		forBlockItem(ExtraDelightItems.FRUIT_FENCE_GATE, "fruit_fence_gate");
+//		forBlockItem(ExtraDelightItems.FRUIT_STAIRS, "fruit_stairs");
+//		forBlockItem(ExtraDelightItems.FRUIT_TRAPDOOR,
+//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_trapdoor_bottom"));
+//		forBlockItem(ExtraDelightItems.FRUIT_CABINET, "fruit_cabinet");
+//		this.slab(ExtraDelightItems.FRUIT_SLAB.getId().getPath(), modLoc("block/fruit_planks"),
+//				modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
+//
+//		forItem(ExtraDelightItems.CHILI_SEEDS, "crops/chili/chili_seeds");
+//		forItem(ExtraDelightItems.CHILI, "crops/chili/chili_pepper");
+//
+//		forItemModel(ExtraDelightItems.JAR, "blocks/jar");
+		forItem(ExtraDelightItems.APPLE_CIDER_FLUID_BUCKET, "apple_cider_bucket");
+		forItem(ExtraDelightItems.BBQ_FLUID_BUCKET, "bbq_bucket");
+		forItem(ExtraDelightItems.BROTH_FLUID_BUCKET, "broth_bucket");
+		forItem(ExtraDelightItems.CACTUS_JUICE_FLUID_BUCKET, "cactus_juice_bucket");
+		forItem(ExtraDelightItems.CARAMEL_SAUCE_FLUID_BUCKET, "caramel_sauce_bucket");
+//		forItem(ExtraDelightItems.CUSTARD_FLUID_BUCKET, "custard_bucket");
+		forItem(ExtraDelightItems.EGG_MIX_FLUID_BUCKET, "egg_mix_bucket");
+		forItem(ExtraDelightItems.GLOW_BERRY_JUICE_FLUID_BUCKET, "glow_berry_juice_bucket");
+		forItem(ExtraDelightItems.GLOW_JAM_FLUID_BUCKET, "glow_jam_bucket");
+		forItem(ExtraDelightItems.GOLDEN_JAM_FLUID_BUCKET, "golden_jam_bucket");
+		forItem(ExtraDelightItems.GRAVY_FLUID_BUCKET, "gravy_bucket");
+		forItem(ExtraDelightItems.HOT_COCOA_FLUID_BUCKET, "hot_cocoa_bucket");
+		forItem(ExtraDelightItems.JAM_FLUID_BUCKET, "jam_bucket");
+		forItem(ExtraDelightItems.KETCHUP_FLUID_BUCKET, "ketchup_bucket");
+		forItem(ExtraDelightItems.MAYO_FLUID_BUCKET, "mayo_bucket");
+		forItem(ExtraDelightItems.MELON_JUICE_FLUID_BUCKET, "melon_juice_bucket");
+		forItem(ExtraDelightItems.MILKSHAKE_FLUID_BUCKET, "milkshake_bucket");
+		forItem(ExtraDelightItems.OIL_FLUID_BUCKET, "oil_bucket");
+		forItem(ExtraDelightItems.SWEET_BERRY_JUICE_FLUID_BUCKET, "sweet_berry_juice_bucket");
+		forItem(ExtraDelightItems.TEA_FLUID_BUCKET, "tea_bucket");
+		forItem(ExtraDelightItems.TOMATO_JUICE_FLUID_BUCKET, "tomato_juice_bucket");
+		forItem(ExtraDelightItems.VINEGAR_FLUID_BUCKET, "vinegar_bucket");
+		forItem(ExtraDelightItems.WHIPPED_CREAM_FLUID_BUCKET, "whipped_cream_bucket");
 
 		AestheticBlocks.itemModel(this);
 	}
@@ -838,8 +838,8 @@ public class ItemModels extends ItemModelProvider {
 	}
 
 	public void forItemModel(DeferredItem<? extends Item> item, String path) {
-		getBuilder(item.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, path)));
+		getBuilder(item.getId().getPath()).parent(
+				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, path)));
 	}
 
 	public void forBlockItem(DeferredItem<? extends BlockItem> item, String name) {

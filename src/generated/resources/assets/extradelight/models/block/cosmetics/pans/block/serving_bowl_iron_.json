@@ -1,6 +1,0 @@
-{
-  "parent": "extradelight:block/serving_bowl",
-  "textures": {
-    "0": "extradelight:block/cosmetics/pans/iron_pan"
-  }
-}

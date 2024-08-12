@@ -1225,34 +1225,34 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("vinegar_pot_potion"));
 
 		// Mortars
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_ANDESITE.get()).pattern("s s")
-				.pattern(" s ").define('s', Items.ANDESITE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ANDESITE))
-				.save(consumer, EDLoc("mortar_andesite"));
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_BASALT.get()).pattern("s s")
-				.pattern(" s ").define('s', Items.BASALT)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BASALT))
-				.save(consumer, EDLoc("mortar_basalt"));
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_BLACKSTONE.get()).pattern("s s")
-				.pattern(" s ").define('s', Items.BLACKSTONE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLACKSTONE))
-				.save(consumer, EDLoc("mortar_blackstone"));
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_DEEPSLATE.get()).pattern("s s")
-				.pattern(" s ").define('s', Items.DEEPSLATE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.DEEPSLATE))
-				.save(consumer, EDLoc("mortar_deepslate"));
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_DIORITE.get()).pattern("s s")
-				.pattern(" s ").define('s', Items.DIORITE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.DIORITE))
-				.save(consumer, EDLoc("mortar_diorite"));
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_ENDSTONE.get()).pattern("s s")
-				.pattern(" s ").define('s', Items.END_STONE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.END_STONE))
-				.save(consumer, EDLoc("mortar_endstone"));
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_GRANITE.get()).pattern("s s")
-				.pattern(" s ").define('s', Items.GRANITE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GRANITE))
-				.save(consumer, EDLoc("mortar_granite"));
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_ANDESITE.get()).pattern("s s")
+//				.pattern(" s ").define('s', Items.ANDESITE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ANDESITE))
+//				.save(consumer, EDLoc("mortar_andesite"));
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_BASALT.get()).pattern("s s")
+//				.pattern(" s ").define('s', Items.BASALT)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BASALT))
+//				.save(consumer, EDLoc("mortar_basalt"));
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_BLACKSTONE.get()).pattern("s s")
+//				.pattern(" s ").define('s', Items.BLACKSTONE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLACKSTONE))
+//				.save(consumer, EDLoc("mortar_blackstone"));
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_DEEPSLATE.get()).pattern("s s")
+//				.pattern(" s ").define('s', Items.DEEPSLATE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.DEEPSLATE))
+//				.save(consumer, EDLoc("mortar_deepslate"));
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_DIORITE.get()).pattern("s s")
+//				.pattern(" s ").define('s', Items.DIORITE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.DIORITE))
+//				.save(consumer, EDLoc("mortar_diorite"));
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_ENDSTONE.get()).pattern("s s")
+//				.pattern(" s ").define('s', Items.END_STONE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.END_STONE))
+//				.save(consumer, EDLoc("mortar_endstone"));
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_GRANITE.get()).pattern("s s")
+//				.pattern(" s ").define('s', Items.GRANITE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GRANITE))
+//				.save(consumer, EDLoc("mortar_granite"));
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_STONE.get()).pattern("s s")
 				.pattern(" s ").define('s', Items.STONE)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.STONE))
@@ -1687,6 +1687,29 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		bundleItem9(Ingredient.of(ExtraDelightItems.DRIED_CORN_HUSK.get()),
 				ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get(), ExtraDelightItems.DRIED_CORN_HUSK.get(), consumer,
 				"dried_corn_husk");
+		bundleItem9(Ingredient.of(ExtraDelightTags.GINGER), ExtraDelightItems.GINGER_CRATE.get(),
+				ExtraDelightItems.GINGER.get(), consumer, "ginger");
+		bundleItem9(Ingredient.of(Tags.Items.EGGS), ExtraDelightItems.EGG_CRATE.get(), Items.EGG, consumer, "egg");
+		bundleItem9(Ingredient.of(Items.APPLE), ExtraDelightItems.APPLE_CRATE.get(), Items.APPLE, consumer, "apple");
+		bundleItem9(Ingredient.of(Items.GOLDEN_APPLE), ExtraDelightItems.GOLDEN_APPLE_CRATE.get(), Items.GOLDEN_APPLE,
+				consumer, "golden_apple");
+		bundleItem9(Ingredient.of(Items.BROWN_MUSHROOM), ExtraDelightItems.BROWN_MUSHROOM_CRATE.get(),
+				Items.BROWN_MUSHROOM, consumer, "brown_mushroom");
+		bundleItem9(Ingredient.of(Items.RED_MUSHROOM), ExtraDelightItems.RED_MUSHROOM_CRATE.get(), Items.RED_MUSHROOM,
+				consumer, "red_mushroom");
+		bundleItem9(Ingredient.of(Items.SWEET_BERRIES), ExtraDelightItems.SWEET_BERRY_CRATE.get(), Items.SWEET_BERRIES,
+				consumer, "sweet_berries");
+		bundleItem9(Ingredient.of(Items.GLOW_BERRIES), ExtraDelightItems.GLOW_BERRY_CRATE.get(), Items.GLOW_BERRIES,
+				consumer, "glow_berries");
+		bundleItem9(Ingredient.of(ExtraDelightItems.CORN_SILK), ExtraDelightItems.CORN_SILK_SACK.get(),
+				ExtraDelightItems.CORN_SILK.get(), consumer, "corn_silk");
+		bundleItem9(Ingredient.of(ExtraDelightItems.GROUND_CINNAMON),
+				ExtraDelightItems.GROUND_CINNAMON_BLOCK_ITEM.get(), ExtraDelightItems.GROUND_CINNAMON.get(), consumer,
+				"ground_cinnamon");
+		bundleItem9(Ingredient.of(ExtraDelightItems.BREAD_CRUMBS), ExtraDelightItems.BREADCRUMB_SACK.get(),
+				ExtraDelightItems.BREAD_CRUMBS.get(), consumer, "breadcrumbs");
+		bundleItem9(Ingredient.of(ExtraDelightItems.MINT), ExtraDelightItems.MINT_SACK.get(),
+				ExtraDelightItems.MINT.get(), consumer, "mint");
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CHOCOLATE_MILK.get(), 1)
 				.requires(ModItems.MILK_BOTTLE.get()).requires(Items.COCOA_BEANS)
@@ -1793,17 +1816,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_TART_SLICE.get()))
 				.save(consumer, EDLoc("milk_tart"));
 
-//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_PLANKS.get(), 4)
-//				.requires(ExtraDelightItems.CINNAMON_LOG.get())
-//				.unlockedBy(getName(),
-//						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_LOG.get()))
-//				.save(consumer, EDLoc("cinnamon_planks"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_PLANKS.get(), 4)
+				.requires(ExtraDelightItems.CINNAMON_LOG.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_LOG.get()))
+				.save(consumer, EDLoc("cinnamon_planks"));
 
-//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_PLANKS.get(), 4)
-//				.requires(ExtraDelightItems.STRIPPED_CINNAMON_LOG.get())
-//				.unlockedBy(getName(),
-//						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_LOG.get()))
-//				.save(consumer, EDLoc("cinnamon_planks_stripped"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_PLANKS.get(), 4)
+				.requires(ExtraDelightItems.STRIPPED_CINNAMON_LOG.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_LOG.get()))
+				.save(consumer, EDLoc("cinnamon_planks_stripped"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_CABINET.get()).pattern("sss")
 				.pattern("t t").pattern("sss").define('s', ExtraDelightItems.CINNAMON_SLAB.get())
@@ -1818,11 +1841,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
 				.save(consumer, EDLoc("cinnamon_slab"));
 
-//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_DOOR.get(), 3).pattern("pp ")
-//				.pattern("pp ").pattern("pp ").define('p', ExtraDelightItems.CINNAMON_PLANKS.get())
-//				.unlockedBy(getName(),
-//						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
-//				.save(consumer, EDLoc("cinnamon_door"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_DOOR.get(), 3).pattern("pp ")
+				.pattern("pp ").pattern("pp ").define('p', ExtraDelightItems.CINNAMON_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.save(consumer, EDLoc("cinnamon_door"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_TRAPDOOR.get(), 2).pattern("pp ")
 				.pattern("pp ").define('p', ExtraDelightItems.CINNAMON_PLANKS.get())
@@ -1847,6 +1870,75 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
 				.save(consumer, EDLoc("cinnamon_stairs"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.TAP.get(), 1).pattern(" l ").pattern("bcb")
+				.define('l', Items.LEVER).define('b', Items.WATER_BUCKET).define('c', Items.COPPER_INGOT)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.save(consumer, EDLoc("tap"));
+
+		this.bucket("apple_cider", consumer, ExtraDelightItems.APPLE_CIDER_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ModItems.APPLE_CIDER.get());
+		this.bucket("bbq", consumer, ExtraDelightItems.BBQ_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.BBQ_SAUCE.get());
+		this.bucket("broth", consumer, ExtraDelightItems.BROTH_FLUID_BUCKET.get(), Items.BOWL,
+				ModItems.BONE_BROTH.get());
+		this.bucket("cactus_juice", consumer, ExtraDelightItems.CACTUS_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.CACTUS_JUICE.get());
+		this.bucket("caramel_sauce", consumer, ExtraDelightItems.CARAMEL_SAUCE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.CARAMEL_SAUCE.get());
+		this.bucket("egg_mix", consumer, ExtraDelightItems.EGG_MIX_FLUID_BUCKET.get(), Items.BOWL,
+				ExtraDelightItems.EGG_MIX.get());
+		this.bucket("glow_berry_juice", consumer, ExtraDelightItems.GLOW_BERRY_JUICE_FLUID_BUCKET.get(),
+				Items.GLASS_BOTTLE, ExtraDelightItems.GLOW_BERRY_JUICE.get());
+		this.bucket("glow_berry_jam", consumer, ExtraDelightItems.GLOW_JAM_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.GLOW_BERRY_JAM.get());
+		this.bucket("golden_jam", consumer, ExtraDelightItems.GOLDEN_JAM_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.GOLDEN_APPLE_JAM.get());
+		this.bucket("gravy", consumer, ExtraDelightItems.GRAVY_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.GRAVY.get());
+		this.bucket("hot_cocoa", consumer, ExtraDelightItems.HOT_COCOA_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ModItems.HOT_COCOA.get());
+		this.bucket("jam", consumer, ExtraDelightItems.JAM_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.JAM.get());
+		this.bucket("ketchup", consumer, ExtraDelightItems.KETCHUP_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.KETCHUP.get());
+		this.bucket("mayo", consumer, ExtraDelightItems.MAYO_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.MAYO.get());
+		this.bucket("melon_juice", consumer, ExtraDelightItems.MELON_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ModItems.MELON_JUICE.get());
+		this.bucket("milkshake", consumer, ExtraDelightItems.MILKSHAKE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.MILKSHAKE.get());
+		this.bucket("oil", consumer, ExtraDelightItems.OIL_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.COOKING_OIL.get());
+		this.bucket("sweet_berry_juice", consumer, ExtraDelightItems.SWEET_BERRY_JUICE_FLUID_BUCKET.get(),
+				Items.GLASS_BOTTLE, ExtraDelightItems.SWEET_BERRY_JUICE.get());
+		this.bucket("tea", consumer, ExtraDelightItems.TEA_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.TEA.get());
+		this.bucket("tomato_juice", consumer, ExtraDelightItems.TOMATO_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.TOMATO_JUICE.get());
+		this.bucket("vinegar", consumer, ExtraDelightItems.VINEGAR_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.VINEGAR.get());
+		this.bucket("whipped_cream", consumer, ExtraDelightItems.WHIPPED_CREAM_FLUID_BUCKET.get(), Items.BOWL,
+				ExtraDelightItems.WHIPPED_CREAM.get());
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.KEG.get(), 1).requires(Items.GLASS, 1)
+				.requires(Items.BARREL, 1)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BARREL))
+				.save(consumer, EDLoc("keg"));
+
+	}
+
+	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
+			ItemLike fullItem) {
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, fullBucket, 1).requires(fullItem, 4)
+				.requires(Items.BUCKET, 1)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(fullItem))
+				.save(consumer, EDLoc(name + "_to_bucket"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, fullItem, 4).requires(fullBucket, 1)
+				.requires(emptyItem, 4).unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(fullItem))
+				.save(consumer, EDLoc(name + "_from_bucket"));
 	}
 
 	private void bundleItem9(Ingredient in, Item b, Item out, RecipeOutput consumer, String name) {
@@ -2098,11 +2190,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		pot(ExtraDelightItems.BOILED_EGG.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, null,
 				new Ingredient[] { Ingredient.of(Tags.Items.EGGS) }, "boiled_egg", consumer);
-
-		pot(ExtraDelightItems.APPLE_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(Items.APPLE), Ingredient.of(Items.APPLE), Ingredient.of(Items.APPLE),
-						Ingredient.of(ExtraDelightTags.SWEETENER) },
-				"apple_jam", consumer);
 
 //		pot(ExtraDelightItems.CARROT_JAM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
 //				new Ingredient[] { Ingredient.of(Tags.Items.CROPS_CARROT), Ingredient.of(Tags.Items.CROPS_CARROT),

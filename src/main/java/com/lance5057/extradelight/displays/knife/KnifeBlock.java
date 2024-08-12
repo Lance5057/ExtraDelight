@@ -7,9 +7,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -37,6 +37,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.items.IItemHandler;
 
 public class KnifeBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
@@ -112,21 +113,22 @@ public class KnifeBlock extends Block implements EntityBlock, SimpleWaterloggedB
 		return state;
 	}
 
-//	@Override
-//	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-//		if (state.getBlock() != newState.getBlock()) {
-//			BlockEntity tileentity = level.getBlockEntity(pos);
-//			if (tileentity instanceof KnifeBlockEntity) {
-//				tileentity.getCapability(ForgeCapabilities.ITEM_HANDLER)
-//						.ifPresent(itemInteractionHandler -> IntStream.range(0, itemInteractionHandler.getSlots())
-//								.forEach(i -> Block.popResource(level, pos, itemInteractionHandler.getStackInSlot(i))));
-//
-//				level.updateNeighbourForOutputSignal(pos, this);
-//			}
-//
-//			super.onRemove(state, level, pos, newState, isMoving);
-//		}
-//	}
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity tileEntity = level.getBlockEntity(pos);
+			if (tileEntity instanceof KnifeBlockEntity te) {
+				IItemHandler items = te.getItemHandler();
+				for (int i = 0; i < te.getItemHandler().getSlots(); i++) {
+					level.addFreshEntity(
+							new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+				}
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
+
+			super.onRemove(state, level, pos, newState, isMoving);
+		}
+	}
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {

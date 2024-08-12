@@ -75,16 +75,16 @@ public class JEIPlugin implements IModPlugin {
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.PESTLE_GRANITE.get()), MortarRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.PESTLE_STONE.get()), MortarRecipeCategory.TYPE);
 
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_AMETHYST.get()), MortarRecipeCategory.TYPE);
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_ANDESITE.get()), MortarRecipeCategory.TYPE);
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_BASALT.get()), MortarRecipeCategory.TYPE);
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_BLACKSTONE.get()), MortarRecipeCategory.TYPE);
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_DEEPSLATE.get()), MortarRecipeCategory.TYPE);
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_DIORITE.get()), MortarRecipeCategory.TYPE);
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_ENDSTONE.get()), MortarRecipeCategory.TYPE);
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get()),
-				MortarRecipeCategory.TYPE);
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_GRANITE.get()), MortarRecipeCategory.TYPE);
+//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_AMETHYST.get()), MortarRecipeCategory.TYPE);
+//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_ANDESITE.get()), MortarRecipeCategory.TYPE);
+//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_BASALT.get()), MortarRecipeCategory.TYPE);
+//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_BLACKSTONE.get()), MortarRecipeCategory.TYPE);
+//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_DEEPSLATE.get()), MortarRecipeCategory.TYPE);
+//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_DIORITE.get()), MortarRecipeCategory.TYPE);
+//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_ENDSTONE.get()), MortarRecipeCategory.TYPE);
+//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get()),
+//				MortarRecipeCategory.TYPE);
+//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_GRANITE.get()), MortarRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_STONE.get()), MortarRecipeCategory.TYPE);
 
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.WOODEN_SPOON.get()), MixingBowlRecipeCategory.TYPE);

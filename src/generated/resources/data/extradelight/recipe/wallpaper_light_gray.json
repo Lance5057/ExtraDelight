@@ -15,7 +15,7 @@
       "item": "minecraft:paper"
     },
     {
-      "tag": "forge:dyes/light_gray"
+      "tag": "c:dyes/light_gray"
     }
   ],
   "result": {

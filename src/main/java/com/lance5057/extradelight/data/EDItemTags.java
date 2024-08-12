@@ -35,12 +35,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.PIE_DISH.get(), ExtraDelightItems.LOAF_PAN.get(), ExtraDelightItems.SHEET.get(),
 				ExtraDelightItems.MUFFIN_TIN.get());
 
-		tag(ExtraDelightTags.MORTAR).add(ExtraDelightItems.MORTAR_AMETHYST.get(),
-				ExtraDelightItems.MORTAR_ANDESITE.get(), ExtraDelightItems.MORTAR_BASALT.get(),
-				ExtraDelightItems.MORTAR_BLACKSTONE.get(), ExtraDelightItems.MORTAR_DEEPSLATE.get(),
-				ExtraDelightItems.MORTAR_DIORITE.get(), ExtraDelightItems.MORTAR_ENDSTONE.get(),
-				ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(), ExtraDelightItems.MORTAR_GRANITE.get(),
-				ExtraDelightItems.MORTAR_STONE.get());
+		tag(ExtraDelightTags.MORTAR).add(ExtraDelightItems.MORTAR_STONE.get());
 
 		tag(ExtraDelightTags.PESTLES).add(ExtraDelightItems.PESTLE_AMETHYST.get(),
 				ExtraDelightItems.PESTLE_ANDESITE.get(), ExtraDelightItems.PESTLE_BASALT.get(),
@@ -75,13 +70,12 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.FLOUR).add(ExtraDelightItems.FLOUR.get());
 
-		tag(ExtraDelightTags.JAM_APPLE).add(ExtraDelightItems.APPLE_JAM.get());
 		tag(ExtraDelightTags.JAM_GLOW_BERRY).add(ExtraDelightItems.GLOW_BERRY_JAM.get());
 		tag(ExtraDelightTags.JAM_SWEET_BERRY).add(ExtraDelightItems.JAM.get());
 		tag(ExtraDelightTags.JAM_GOLDEN_APPLE).add(ExtraDelightItems.GOLDEN_APPLE_JAM.get());
 		tag(ExtraDelightTags.JAM_MINT).add(ExtraDelightItems.MINT_JELLY.get());
 
-		tag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_APPLE).addTag(ExtraDelightTags.JAM_SWEET_BERRY)
+		tag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_SWEET_BERRY)
 				.addTag(ExtraDelightTags.JAM_MINT);
 		tag(ExtraDelightTags.JAM).addTag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_GOLDEN_APPLE)
 				.addTag(ExtraDelightTags.JAM_GLOW_BERRY);

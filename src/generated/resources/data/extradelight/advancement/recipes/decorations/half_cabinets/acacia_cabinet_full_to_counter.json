@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "acacia_half_cabinet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:acacia_cabinet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:half_cabinets/acacia_cabinet_full_to_counter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "acacia_half_cabinet"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:half_cabinets/acacia_cabinet_full_to_counter"
+    ]
+  }
+}
