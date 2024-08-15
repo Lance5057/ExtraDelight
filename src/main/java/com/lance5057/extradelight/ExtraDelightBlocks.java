@@ -531,7 +531,7 @@ public class ExtraDelightBlocks {
 			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
 					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D),
 					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D)));
-	
+
 	public static final DeferredBlock<CoffeeBush> COFFEE_BUSH = ExtraDelightBlocks.BLOCKS.register("coffee_bush",
 			() -> new CoffeeBush(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().noCollission()
 					.sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
