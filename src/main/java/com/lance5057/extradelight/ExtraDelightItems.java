@@ -1527,4 +1527,7 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new Item(new Item.Properties()));
+	
+	public static final DeferredItem<BlockItem> MELTING_POT = ITEMS.register("melting_pot",
+			() -> new BlockItem(ExtraDelightBlocks.MELTING_POT.get(), new Item.Properties()));
 }

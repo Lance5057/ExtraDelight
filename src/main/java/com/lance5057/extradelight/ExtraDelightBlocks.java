@@ -25,6 +25,7 @@ import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
 import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
+import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.oven.OvenBlock;
@@ -667,4 +668,7 @@ public class ExtraDelightBlocks {
 			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
 	public static final DeferredBlock<Block> WHITE_CHOCOLATE_BLOCK = BLOCKS.register("white_chocolate_block",
 			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
+	
+	public static final DeferredBlock<Block> MELTING_POT = BLOCKS.register("melting_pot",
+			() -> new MeltingPotBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 }

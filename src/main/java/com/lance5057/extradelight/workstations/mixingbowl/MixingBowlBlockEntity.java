@@ -156,10 +156,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		this.setChanged();
 	}
 
-//	public ItemStack getInsertedItem() {
-//		return handler.map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
-//	}
-
 	private void setupRecipe() {
 		Optional<RecipeHolder<MixingBowlRecipe>> recipe = this.matchRecipe();
 		if (recipe.isPresent()) {
@@ -332,29 +328,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 			return true;
 		return this.containerItem.getItem() == stack.getItem();
 	}
-
-//	public InteractionResult scoop(Player player, InteractionHand pHand) {
-//		ItemStack r = items.extractItem(32, 1, false);
-//
-//		if (!player.addItem(r)) {
-//			level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f, getBlockPos().getY() + 0.5f,
-//					getBlockPos().getZ() + 0.5f, r, 0, 0, 0));
-//		}
-//
-//		if (!this.containerItem.isEmpty()) {
-//			ItemStack h = player.getItemInHand(pHand);
-//			h.setCount(h.getCount() - 1);
-//		}
-//
-//		if (items.getStackInSlot(32).isEmpty()) {
-//			this.containerItem = ItemStack.EMPTY;
-//
-//			complete = false;
-//		}
-//
-//		return InteractionResult.SUCCESS;
-//
-//	}
 
 	private void dropContainers(@NotNull IItemHandlerModifiable inv, Player player) {
 		for (int i = 0; i < 9; i++) {
