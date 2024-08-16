@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.blocks.crops.ChiliCrop;
+import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
@@ -310,27 +312,27 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.SERVING_POT_BLOCK.get());
 
-//		this.dropSelf(ExtraDelightBlocks.FRUIT_LOG.get());
-//		this.dropSelf(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
-//		this.dropSelf(ExtraDelightBlocks.FRUIT_PLANKS.get());
-//		this.add(ExtraDelightBlocks.FRUIT_DOOR.get(), createDoorTable(ExtraDelightBlocks.FRUIT_DOOR.get()));
-//		this.dropSelf(ExtraDelightBlocks.FRUIT_FENCE.get());
-//		this.dropSelf(ExtraDelightBlocks.FRUIT_STAIRS.get());
-//		this.dropSelf(ExtraDelightBlocks.FRUIT_TRAPDOOR.get());
-//		this.dropSelf(ExtraDelightBlocks.FRUIT_FENCE_GATE.get());
-//		this.dropSelf(ExtraDelightBlocks.FRUIT_CABINET.get());
-//		this.add(ExtraDelightBlocks.FRUIT_SLAB.get(), createSlabItemTable(ExtraDelightBlocks.FRUIT_SLAB.get()));
-//		this.dropOther(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), Items.AIR);
-//
-//		LootItemCondition.Builder chiliBuilder = LootItemBlockStatePropertyCondition
-//				.hasBlockStateProperties(ExtraDelightBlocks.CHILI_CROP.get())
-//				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ChiliCrop.AGE, 7));
-//		crop(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightItems.CHILI.get(), ExtraDelightItems.CHILI_SEEDS.get(),
-//				chiliBuilder);
-//
-//		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get());
-//		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get());
-//		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_LOG.get());
+		this.dropSelf(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_PLANKS.get());
+		this.add(ExtraDelightBlocks.FRUIT_DOOR.get(), createDoorTable(ExtraDelightBlocks.FRUIT_DOOR.get()));
+		this.dropSelf(ExtraDelightBlocks.FRUIT_FENCE.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_STAIRS.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_TRAPDOOR.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_FENCE_GATE.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_CABINET.get());
+		this.add(ExtraDelightBlocks.FRUIT_SLAB.get(), createSlabItemTable(ExtraDelightBlocks.FRUIT_SLAB.get()));
+		this.dropOther(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), Items.AIR);
+
+		LootItemCondition.Builder chiliBuilder = LootItemBlockStatePropertyCondition
+				.hasBlockStateProperties(ExtraDelightBlocks.CHILI_CROP.get())
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ChiliCrop.AGE, 7));
+		crop(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightItems.CHILI.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				chiliBuilder);
+
+		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get());
 	}
 
 	@Override

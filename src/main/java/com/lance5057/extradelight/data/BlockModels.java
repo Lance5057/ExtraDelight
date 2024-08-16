@@ -4,11 +4,14 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.BakingStoneBlock;
+import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
+import com.lance5057.extradelight.blocks.crops.ChiliCrop;
+import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -228,32 +231,32 @@ public class BlockModels extends BlockStateProvider {
 		this.panBlock(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), "block/muffin_tray");
 		this.panBlock(ExtraDelightBlocks.SERVING_POT_BLOCK.get(), "block/serving_pot");
 
-//		this.logBlock(ExtraDelightBlocks.FRUIT_LOG.get());
-//		this.logBlock(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
-//		this.simpleBlock(ExtraDelightBlocks.FRUIT_PLANKS.get());
-//		this.stairsBlock(ExtraDelightBlocks.FRUIT_STAIRS.get(),
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
-//		this.trapdoorBlockWithRenderType(ExtraDelightBlocks.FRUIT_TRAPDOOR.get(),
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_trapdoor"), true, "cutout");
-//		this.doorBlockWithRenderType(ExtraDelightBlocks.FRUIT_DOOR.get(),
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_door_bottom"),
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_door_top"), "cutout");
-//		this.fenceBlock(ExtraDelightBlocks.FRUIT_FENCE.get(),
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
-//		this.fenceGateBlock(ExtraDelightBlocks.FRUIT_FENCE_GATE.get(),
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
-//		this.cabinetBlock(ExtraDelightBlocks.FRUIT_CABINET.get(), "fruit");
-//		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
-//
-//		this.fruitLeafBlock(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), "hazelnut");
-//		this.cropCrossBlock(ExtraDelightBlocks.CHILI_CROP.get(), "chili", ChiliCrop.AGE);
-//
-//		styleBlock(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
-//				"block/cosmetics/chocolate/dark_chocolate");
-//		styleBlock(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
-//				"block/cosmetics/chocolate/milk_chocolate");
-//		styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
-//				"block/cosmetics/chocolate/white_chocolate");
+		this.logBlock(ExtraDelightBlocks.FRUIT_LOG.get());
+		this.logBlock(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
+		this.simpleBlock(ExtraDelightBlocks.FRUIT_PLANKS.get());
+		this.stairsBlock(ExtraDelightBlocks.FRUIT_STAIRS.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
+		this.trapdoorBlockWithRenderType(ExtraDelightBlocks.FRUIT_TRAPDOOR.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_trapdoor"), true, "cutout");
+		this.doorBlockWithRenderType(ExtraDelightBlocks.FRUIT_DOOR.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_door_bottom"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_door_top"), "cutout");
+		this.fenceBlock(ExtraDelightBlocks.FRUIT_FENCE.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
+		this.fenceGateBlock(ExtraDelightBlocks.FRUIT_FENCE_GATE.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
+		this.cabinetBlock(ExtraDelightBlocks.FRUIT_CABINET.get(), "fruit");
+		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
+
+		this.fruitLeafBlock(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), "hazelnut");
+		this.cropCrossBlock(ExtraDelightBlocks.CHILI_CROP.get(), "chili", ChiliCrop.AGE);
+
+		styleBlock(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
+				"block/cosmetics/chocolate/dark_chocolate");
+		styleBlock(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
+				"block/cosmetics/chocolate/milk_chocolate");
+		styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
+				"block/cosmetics/chocolate/white_chocolate");
 		
 
 		AestheticBlocks.blockModel(this);
