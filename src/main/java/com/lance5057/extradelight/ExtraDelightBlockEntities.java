@@ -12,6 +12,7 @@ import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 import com.lance5057.extradelight.displays.spice.SpiceRackEntity;
 import com.lance5057.extradelight.displays.wreath.WreathEntity;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlockEntity;
+import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlockEntity;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;
 import com.lance5057.extradelight.workstations.oven.OvenBlockEntity;
@@ -95,4 +96,7 @@ public class ExtraDelightBlockEntities {
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KegBlockEntity>> KEG = TILES.register("keg",
 			() -> BlockEntityType.Builder.of(KegBlockEntity::new, ExtraDelightBlocks.KEG.get()).build(null));
+	
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MeltingPotBlockEntity>> MELTING_POT = TILES.register("melting_pot",
+			() -> BlockEntityType.Builder.of(MeltingPotBlockEntity::new, ExtraDelightBlocks.KEG.get()).build(null));
 }

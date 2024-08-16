@@ -1,6 +1,6 @@
 {
   "type": "extradelight:feast",
-  "ingredient": {
+  "container": {
     "tag": "forge:bread/sliced"
   },
   "out": {

@@ -1,16 +1,13 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.blocks.BakingStoneBlock;
-import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
 import com.lance5057.extradelight.blocks.FrostableBlock;
-import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.StrippableLog;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
-import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MintCrop;
@@ -634,37 +631,37 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<KegBlock> KEG = BLOCKS.register("keg_block",
 			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
 
-	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_FRUIT_LOG = BLOCKS.register("stripped_fruit_log",
-			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
-	public static final DeferredBlock<RotatedPillarBlock> FRUIT_LOG = BLOCKS.register("fruit_log",
-			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
-	public static final DeferredBlock<Block> FRUIT_PLANKS = BLOCKS.register("fruit_planks",
-			() -> new Block(Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
-	public static final DeferredBlock<FenceBlock> FRUIT_FENCE = BLOCKS.register("fruit_fence",
-			() -> new FenceBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE)));
-	public static final DeferredBlock<FenceGateBlock> FRUIT_FENCE_GATE = BLOCKS.register("fruit_fence_gate",
-			() -> new FenceGateBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE_GATE)));
-	public static final DeferredBlock<StairBlock> FRUIT_STAIRS = BLOCKS.register("fruit_stairs",
-			() -> new StairBlock(FRUIT_PLANKS.get().defaultBlockState(),
-					Block.Properties.ofFullCopy(Blocks.ACACIA_STAIRS)));
-	public static final DeferredBlock<DoorBlock> FRUIT_DOOR = BLOCKS.register("fruit_door",
-			() -> new DoorBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_DOOR)));
-	public static final DeferredBlock<TrapDoorBlock> FRUIT_TRAPDOOR = BLOCKS.register("fruit_trapdoor",
-			() -> new TrapDoorBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_TRAPDOOR)));
-	public static final DeferredBlock<Block> FRUIT_CABINET = BLOCKS.register("fruit_cabinet",
-			() -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
-	public static final DeferredBlock<SlabBlock> FRUIT_SLAB = BLOCKS.register("fruit_slab",
-			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.DARK_OAK_SLAB)));
-
-	public static final DeferredBlock<FruitLeafBlock> HAZELNUT_LEAVES = BLOCKS.register("hazelnut_leaves",
-			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), ExtraDelightItems.HAZELNUT));
-	public static final DeferredBlock<ChiliCrop> CHILI_CROP = BLOCKS.register("chili_crop",
-			() -> new ChiliCrop(Block.Properties.ofFullCopy(Blocks.WHEAT)));
-
-	public static final DeferredBlock<Block> MILK_CHOCOLATE_BLOCK = BLOCKS.register("milk_chocolate_block",
-			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
-	public static final DeferredBlock<Block> DARK_CHOCOLATE_BLOCK = BLOCKS.register("dark_chocolate_block",
-			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
-	public static final DeferredBlock<Block> WHITE_CHOCOLATE_BLOCK = BLOCKS.register("white_chocolate_block",
-			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
+//	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_FRUIT_LOG = BLOCKS.register("stripped_fruit_log",
+//			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
+//	public static final DeferredBlock<RotatedPillarBlock> FRUIT_LOG = BLOCKS.register("fruit_log",
+//			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
+//	public static final DeferredBlock<Block> FRUIT_PLANKS = BLOCKS.register("fruit_planks",
+//			() -> new Block(Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+//	public static final DeferredBlock<FenceBlock> FRUIT_FENCE = BLOCKS.register("fruit_fence", 
+//			() -> new FenceBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE)));
+//	public static final DeferredBlock<FenceGateBlock> FRUIT_FENCE_GATE = BLOCKS.register("fruit_fence_gate",
+//			() -> new FenceGateBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE_GATE)));
+//	public static final DeferredBlock<StairBlock> FRUIT_STAIRS = BLOCKS.register("fruit_stairs",
+//			() -> new StairBlock(FRUIT_PLANKS.get().defaultBlockState(),
+//					Block.Properties.ofFullCopy(Blocks.ACACIA_STAIRS)));
+//	public static final DeferredBlock<DoorBlock> FRUIT_DOOR = BLOCKS.register("fruit_door",
+//			() -> new DoorBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_DOOR)));
+//	public static final DeferredBlock<TrapDoorBlock> FRUIT_TRAPDOOR = BLOCKS.register("fruit_trapdoor",
+//			() -> new TrapDoorBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_TRAPDOOR)));
+//	public static final DeferredBlock<Block> FRUIT_CABINET = BLOCKS.register("fruit_cabinet",
+//			() -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
+//	public static final DeferredBlock<SlabBlock> FRUIT_SLAB = BLOCKS.register("fruit_slab",
+//			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.DARK_OAK_SLAB)));
+//
+//	public static final DeferredBlock<FruitLeafBlock> HAZELNUT_LEAVES = BLOCKS.register("hazelnut_leaves",
+//			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), ExtraDelightItems.HAZELNUT));
+//	public static final DeferredBlock<ChiliCrop> CHILI_CROP = BLOCKS.register("chili_crop",
+//			() -> new ChiliCrop(Block.Properties.ofFullCopy(Blocks.WHEAT)));
+//
+//	public static final DeferredBlock<Block> MILK_CHOCOLATE_BLOCK = BLOCKS.register("milk_chocolate_block",
+//			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
+//	public static final DeferredBlock<Block> DARK_CHOCOLATE_BLOCK = BLOCKS.register("dark_chocolate_block",
+//			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
+//	public static final DeferredBlock<Block> WHITE_CHOCOLATE_BLOCK = BLOCKS.register("white_chocolate_block",
+//			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
 }

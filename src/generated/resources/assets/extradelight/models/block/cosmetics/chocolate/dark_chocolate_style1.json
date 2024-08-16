@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "extradelight:block/cosmetics/chocolate/dark_chocolate_style1"
-  }
-}

@@ -2,6 +2,8 @@ package com.lance5057.extradelight.workstations.meltingpot;
 
 import javax.annotation.Nonnull;
 
+import com.lance5057.extradelight.ExtraDelightBlockEntities;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -9,7 +11,6 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -24,8 +25,8 @@ public class MeltingPotBlockEntity extends BlockEntity {
 
 	private final FluidTank fluids = createFluidHandler();
 
-	public MeltingPotBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState blockState) {
-		super(type, pos, blockState);
+	public MeltingPotBlockEntity(BlockPos pos, BlockState blockState) {
+		super(ExtraDelightBlockEntities.MELTING_POT.get(), pos, blockState);
 	}
 
 	private ItemStackHandler createHandler() {

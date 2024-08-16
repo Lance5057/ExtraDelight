@@ -1,6 +1,6 @@
 {
   "type": "extradelight:feast",
-  "ingredient": {
+  "container": {
     "item": "minecraft:bowl"
   },
   "out": {
