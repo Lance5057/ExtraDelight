@@ -14,6 +14,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class MeltingPotMenu extends AbstractContainerMenu {
 	public final MeltingPotBlockEntity tileEntity;
@@ -27,7 +28,30 @@ public class MeltingPotMenu extends AbstractContainerMenu {
 		this.canInteractWithCallable = ContainerLevelAccess.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 
 		if (tileEntity != null) {
+			int startX = 8;
+			int startY = 8;
+			int inputStartX = 64;
+			int inputStartY = 5;
+			int borderSlotSize = 18;
 
+			this.addSlot(
+					new SlotItemHandler(tileEntity.getItemHandler(), MeltingPotBlockEntity.INPUT_SLOT, 46, 23));
+			this.addSlot(
+					new SlotItemHandler(tileEntity.getItemHandler(), MeltingPotBlockEntity.BUCKET_SLOT, 115, 50));
+			
+			// Main Player Inventory
+			int startPlayerInvY = startY * 4 + 51;
+			for (int row = 0; row < 3; ++row) {
+				for (int column = 0; column < 9; ++column) {
+					this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, startX + (column * borderSlotSize),
+							startPlayerInvY + (row * borderSlotSize)));
+				}
+			}
+
+			// Hotbar
+			for (int column = 0; column < 9; ++column) {
+				this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 141));
+			}
 		}
 	}
 

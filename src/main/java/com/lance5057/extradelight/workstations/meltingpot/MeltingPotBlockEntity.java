@@ -20,17 +20,24 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class MeltingPotBlockEntity extends BlockEntity {
 
-	private final ItemStackHandler items = createHandler();
+	private final ItemStackHandler items = createItemHandler();
 	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
+	
+	public static final int INPUT_SLOT = 0;
+	public static final int BUCKET_SLOT = 1;
 
 	private final FluidTank fluids = createFluidHandler();
 
 	public MeltingPotBlockEntity(BlockPos pos, BlockState blockState) {
 		super(ExtraDelightBlockEntities.MELTING_POT.get(), pos, blockState);
 	}
+	
+	public IItemHandlerModifiable getItemHandler() {
+		return itemHandler.get();
+	}
 
-	private ItemStackHandler createHandler() {
-		return new ItemStackHandler(1) {
+	private ItemStackHandler createItemHandler() {
+		return new ItemStackHandler(2) {
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
 				return true;

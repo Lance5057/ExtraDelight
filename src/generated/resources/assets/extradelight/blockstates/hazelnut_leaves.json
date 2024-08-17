@@ -1,0 +1,172 @@
+{
+  "variants": {
+    "age=0,distance=1,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=1,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=2,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=2,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=3,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=3,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=4,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=4,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=5,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=5,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=6,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=6,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=7,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=0,distance=7,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage0"
+    },
+    "age=1,distance=1,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=1,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=2,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=2,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=3,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=3,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=4,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=4,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=5,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=5,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=6,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=6,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=7,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=1,distance=7,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage1"
+    },
+    "age=2,distance=1,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=1,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=2,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=2,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=3,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=3,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=4,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=4,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=5,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=5,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=6,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=6,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=7,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=2,distance=7,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage2"
+    },
+    "age=3,distance=1,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=1,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=2,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=2,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=3,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=3,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=4,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=4,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=5,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=5,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=6,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=6,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=7,persistent=false": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    },
+    "age=3,distance=7,persistent=true": {
+      "model": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_stage3"
+    }
+  }
+}

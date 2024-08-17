@@ -333,6 +333,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get());
+
+		this.dropSelf(ExtraDelightBlocks.MELTING_POT.get());
 	}
 
 	@Override

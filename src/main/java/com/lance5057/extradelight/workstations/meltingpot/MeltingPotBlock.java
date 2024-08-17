@@ -38,7 +38,7 @@ public class MeltingPotBlock extends Block implements EntityBlock {
 			MenuProvider containerProvider = new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.translatable("screen.mixing_bowl.name");
+					return Component.translatable("screen.melting_pot.name");
 				}
 
 				@Override
