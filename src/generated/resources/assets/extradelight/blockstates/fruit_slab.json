@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "extradelight:block/fruit_slab"
+    },
+    "type=double": {
+      "model": "extradelight:block/fruit_planks"
+    },
+    "type=top": {
+      "model": "extradelight:block/fruit_slab_top"
+    }
+  }
+}

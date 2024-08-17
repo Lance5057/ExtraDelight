@@ -8,6 +8,7 @@ import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.integration.jei.categories.DoughShapingRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.DryingRackRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.FeastRecipeCategory;
+import com.lance5057.extradelight.integration.jei.categories.MeltingPotRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MixingBowlRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MortarRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.OvenRecipeCategory;
@@ -40,7 +41,8 @@ public class JEIPlugin implements IModPlugin {
 				new DryingRackRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new DoughShapingRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new ToolOnBlockRecipeCatagory(registry.getJeiHelpers().getGuiHelper()),
-				new FeastRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
+				new FeastRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new MeltingPotRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
 	}
 
 	@Override
@@ -59,6 +61,8 @@ public class JEIPlugin implements IModPlugin {
 				.getAllRecipesFor(ExtraDelightRecipes.FEAST.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(ToolOnBlockRecipeCatagory.TYPE, Minecraft.getInstance().level.getRecipeManager()
 				.getAllRecipesFor(ExtraDelightRecipes.TOOL_ON_BLOCK.get()).stream().map(RecipeHolder::value).toList());
+		registry.addRecipes(MeltingPotRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.MELTING_POT.get()).stream().map(RecipeHolder::value).toList());
 	}
 
 	@Override
@@ -75,16 +79,6 @@ public class JEIPlugin implements IModPlugin {
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.PESTLE_GRANITE.get()), MortarRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.PESTLE_STONE.get()), MortarRecipeCategory.TYPE);
 
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_AMETHYST.get()), MortarRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_ANDESITE.get()), MortarRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_BASALT.get()), MortarRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_BLACKSTONE.get()), MortarRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_DEEPSLATE.get()), MortarRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_DIORITE.get()), MortarRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_ENDSTONE.get()), MortarRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get()),
-//				MortarRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_GRANITE.get()), MortarRecipeCategory.TYPE);
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MORTAR_STONE.get()), MortarRecipeCategory.TYPE);
 
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.WOODEN_SPOON.get()), MixingBowlRecipeCategory.TYPE);
@@ -97,19 +91,14 @@ public class JEIPlugin implements IModPlugin {
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MIXING_BOWL.get()), MixingBowlRecipeCategory.TYPE);
 
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.OVEN.get()), OvenRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.BAKING_STONE.get()), OvenRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.LOAF_PAN.get()), OvenRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.ROUND_PAN.get()), OvenRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), OvenRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.SHEET.get()), OvenRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.TRAY.get()), OvenRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.PIE_DISH.get()), OvenRecipeCategory.TYPE);
-//		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), OvenRecipeCategory.TYPE);
 
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.DRYING_RACK.get()), DryingRackRecipeCategory.TYPE);
 
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.DOUGH_SHAPING.get()),
 				DoughShapingRecipeCategory.TYPE);
+
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MELTING_POT.getDelegate()),
+				MeltingPotRecipeCategory.TYPE);
 	}
 
 }

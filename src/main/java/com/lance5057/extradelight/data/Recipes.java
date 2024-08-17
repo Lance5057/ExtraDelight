@@ -10,6 +10,7 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
@@ -34,9 +35,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
+import net.neoforged.neoforge.fluids.FluidStack;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
@@ -85,8 +88,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		doughShapeRecipes(consumer);
 		feastRecipes(consumer);
 		toolOnBlockRecipes(consumer);
+		meltingRecipes(consumer);
 
 		AestheticBlocks.Recipes(consumer);
+	}
+
+	private void meltingRecipes(RecipeOutput consumer) {
+		MeltingPotRecipeBuilder.melt(Ingredient.of(Items.ICE), FAST_COOKING, new FluidStack(Fluids.WATER, 1000))
+				.save(consumer, EDLoc("test"));
 	}
 
 	private void toolOnBlockRecipes(RecipeOutput consumer) {

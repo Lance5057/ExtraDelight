@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:melting_pot",
+  "cooktime": 400,
+  "ingredient": {
+    "item": "minecraft:ice"
+  },
+  "result": {
+    "amount": 1000,
+    "id": "minecraft:water"
+  }
+}
