@@ -82,10 +82,10 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> /* implements 
 //		this.recipeBookComponent.renderTooltip(ms, this.leftPos, this.topPos, mouseX, mouseY);
 	}
 
-	private void renderHeatIndicatorTooltip(GuiGraphics ms, int mouseX, int mouseY) {
+	private void renderHeatIndicatorTooltip(GuiGraphics gui, int mouseX, int mouseY) {
 		if (this.isHovering(HEAT_ICON.x, HEAT_ICON.y, HEAT_ICON.width, HEAT_ICON.height, mouseX, mouseY)) {
 			String key = "container.cooking_pot." + (this.menu.isHeated() ? "heated" : "not_heated");
-			ms.renderTooltip(this.font, TextUtils.getTranslation(key, menu), mouseX, mouseY);
+			gui.renderTooltip(this.font, TextUtils.getTranslation(key), mouseX, mouseY);
 		}
 	}
 

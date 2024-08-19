@@ -34,6 +34,11 @@ public class ExtraDelightCapabilities {
 
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.TAP.get(),
 				(o, d) -> o.getFluidHandler());
+		
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MELTING_POT.get(),
+				(o, d) -> o.getFluidTank());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MELTING_POT.get(),
+				(o, d) -> o.getItemHandler());
 
 //		event.registerItem(Capabilities.FluidHandler.ITEM, (i, c) -> new FluidHandlerItemStack(ExtraDelightComponents.FLUID, i, 1000),
 //				ExtraDelightItems.JAR.get());

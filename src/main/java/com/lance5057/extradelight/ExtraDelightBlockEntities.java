@@ -96,7 +96,8 @@ public class ExtraDelightBlockEntities {
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KegBlockEntity>> KEG = TILES.register("keg",
 			() -> BlockEntityType.Builder.of(KegBlockEntity::new, ExtraDelightBlocks.KEG.get()).build(null));
-	
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MeltingPotBlockEntity>> MELTING_POT = TILES.register("melting_pot",
-			() -> BlockEntityType.Builder.of(MeltingPotBlockEntity::new, ExtraDelightBlocks.KEG.get()).build(null));
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MeltingPotBlockEntity>> MELTING_POT = TILES
+			.register("melting_pot", () -> BlockEntityType.Builder
+					.of(MeltingPotBlockEntity::new, ExtraDelightBlocks.MELTING_POT.get()).build(null));
 }
