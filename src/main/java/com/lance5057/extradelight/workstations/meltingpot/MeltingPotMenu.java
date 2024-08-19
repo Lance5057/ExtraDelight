@@ -14,6 +14,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class MeltingPotMenu extends AbstractContainerMenu {
@@ -37,7 +38,9 @@ public class MeltingPotMenu extends AbstractContainerMenu {
 			this.addSlot(
 					new SlotItemHandler(tileEntity.getItemHandler(), MeltingPotBlockEntity.INPUT_SLOT, 46, 23));
 			this.addSlot(
-					new SlotItemHandler(tileEntity.getItemHandler(), MeltingPotBlockEntity.BUCKET_SLOT, 115, 50));
+					new SlotItemHandler(tileEntity.getItemHandler(), MeltingPotBlockEntity.BUCKET_SLOT, 114, 26));
+			this.addSlot(
+					new SlotItemHandler(tileEntity.getItemHandler(), MeltingPotBlockEntity.BUCKET_SLOT_OUT, 114, 50));
 			
 			// Main Player Inventory
 			int startPlayerInvY = startY * 4 + 51;
@@ -59,9 +62,14 @@ public class MeltingPotMenu extends AbstractContainerMenu {
 		this(windowId, playerInventory, getTileEntity(playerInventory, data));
 	}
 
+	public FluidTank getFluidTank()
+	{
+		return this.tileEntity.getFluidTank();
+	}
+	
 	@Override
 	public ItemStack quickMoveStack(Player player, int index) {
-		int indexOutput = 9;
+		int indexOutput = 2;
 		int startPlayerInv = indexOutput;
 		int endPlayerInv = startPlayerInv + 36;
 

@@ -13,11 +13,12 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 
-public class MeltingPotRecipe implements Recipe<RecipeWrapper> {
+public class MeltingPotRecipe implements Recipe<SingleRecipeInput> {
 
 	public Ingredient input;
 	public int cooktime;
@@ -30,12 +31,12 @@ public class MeltingPotRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public boolean matches(RecipeWrapper input, Level level) {
-		return this.input.test(input.getItem(cooktime));
+	public boolean matches(SingleRecipeInput input, Level level) {
+		return this.input.test(input.item());
 	}
 
 	@Override
-	public ItemStack assemble(RecipeWrapper input, Provider registries) {
+	public ItemStack assemble(SingleRecipeInput input, Provider registries) {
 		return ItemStack.EMPTY;
 	}
 

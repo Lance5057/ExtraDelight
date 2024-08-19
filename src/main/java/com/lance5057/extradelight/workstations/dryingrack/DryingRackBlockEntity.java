@@ -30,7 +30,7 @@ import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class DryingRackBlockEntity extends BlockEntity {
-	public static final String TAG = "inv";
+	public static final String ITEM_TAG = "inv";
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
@@ -268,8 +268,8 @@ public class DryingRackBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt, HolderLookup.Provider registries) {
-		if (nbt.contains(TAG)) {
-			items.deserializeNBT(registries, nbt.getCompound(TAG));
+		if (nbt.contains(ITEM_TAG)) {
+			items.deserializeNBT(registries, nbt.getCompound(ITEM_TAG));
 		}
 
 		this.cookingProgress = nbt.getIntArray("CookingTimes");
@@ -282,7 +282,7 @@ public class DryingRackBlockEntity extends BlockEntity {
 
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
 
-		tag.put(TAG, items.serializeNBT(registries));
+		tag.put(ITEM_TAG, items.serializeNBT(registries));
 
 		tag.putIntArray("CookingTimes", this.cookingProgress);
 		tag.putIntArray("CookingTotalTimes", this.cookingTime);
