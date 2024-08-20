@@ -6,4 +6,6 @@ public class TranslatableKeys {
     public static final String SINGLE_SERVING = ExtraDelight.MOD_ID + ".tooltip.oven.single_serving";
     public static final String MANY_SERVINGS = ExtraDelight.MOD_ID + ".tooltip.oven.many_servings";
     public static final String EMPTY = ExtraDelight.MOD_ID + ".tooltip.oven.empty";
+    public static final String CHILLER_SERVED_ON = ExtraDelight.MOD_ID + ".container.chiller.served_on";
+    public static final String CHILLER_CONTAINER = ExtraDelight.MOD_ID + ".container.chiller";
 }

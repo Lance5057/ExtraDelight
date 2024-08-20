@@ -31,6 +31,9 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CATEGORY_SOUPS = modTag("category/soups");
 	public static final TagKey<Item> CATEGORY_VEGETABLES = modTag("category/vegetables");
 
+	public static final TagKey<Block> COLD_SOURCES = BlockTags
+			.create(ResourceLocation.fromNamespaceAndPath("forge", "cold_sources"));
+
 	public static final TagKey<Item> SALT = ItemTags
 			.create(ResourceLocation.fromNamespaceAndPath("salt", "can_be_salted"));
 

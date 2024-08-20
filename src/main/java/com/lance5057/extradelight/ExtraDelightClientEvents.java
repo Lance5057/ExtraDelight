@@ -20,6 +20,7 @@ import com.lance5057.extradelight.displays.spice.SpiceRackScreen;
 import com.lance5057.extradelight.displays.wreath.WreathRenderer;
 import com.lance5057.extradelight.displays.wreath.WreathScreen;
 import com.lance5057.extradelight.gui.StyleableScreen;
+import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotScreen;
@@ -76,6 +77,7 @@ public class ExtraDelightClientEvents {
 		event.register(ExtraDelightContainers.STYLE_MENU.get(), StyleableScreen::new);
 		event.register(ExtraDelightContainers.MIXING_BOWL_MENU.get(), MixingBowlScreen::new);
 		event.register(ExtraDelightContainers.MELTING_POT_MENU.get(), MeltingPotScreen::new);
+		event.register(ExtraDelightContainers.CHILLER_MENU.get(), ChillerScreen::new);
 	}
 
 	public static void setTERenderers() {

@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 
 import com.lance5057.extradelight.recipe.FeastRecipe;
 import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
+import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackSerializer;
@@ -39,6 +40,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("tool_on_block"));
 	public static final Supplier<RecipeType<MeltingPotRecipe>> MELTING_POT = RECIPE_TYPES.register("melting_pot",
 			() -> registerRecipeType("melting_pot"));
+	public static final Supplier<RecipeType<ChillerRecipe>> CHILLER = RECIPE_TYPES.register("chiller",
+			() -> registerRecipeType("chiller"));
 
 	// Dynamic Names
 	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES

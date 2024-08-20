@@ -9,6 +9,7 @@ import com.lance5057.extradelight.displays.knife.KnifeBlockMenu;
 import com.lance5057.extradelight.displays.spice.SpiceRackMenu;
 import com.lance5057.extradelight.displays.wreath.WreathMenu;
 import com.lance5057.extradelight.gui.StyleableMenu;
+import com.lance5057.extradelight.workstations.chiller.ChillerMenu;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingMenu;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotMenu;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlMenu;
@@ -50,6 +51,8 @@ public class ExtraDelightContainers {
 	
 	public static final Supplier<MenuType<MeltingPotMenu>> MELTING_POT_MENU = MENU_TYPES.register("melting_pot",
 			() -> IMenuTypeExtension.create(MeltingPotMenu::new));
+	public static final Supplier<MenuType<ChillerMenu>> CHILLER_MENU = MENU_TYPES.register("chiller",
+			() -> IMenuTypeExtension.create(ChillerMenu::new));
 
 	public static void register(IEventBus modBus) {
 		MENU_TYPES.register(modBus);
