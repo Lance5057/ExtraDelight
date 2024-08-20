@@ -6,8 +6,6 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.workstations.chiller.slots.ChillerResultSlot;
-import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlockEntity;
-import com.mojang.datafixers.util.Pair;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -16,7 +14,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.RecipeBookMenu;
 import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.inventory.SimpleContainerData;
@@ -30,10 +27,9 @@ import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
-import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 import vectorwing.farmersdelight.FarmersDelight;
 
-public class ChillerMenu extends RecipeBookMenu<RecipeWrapper, ChillerRecipe> {
+public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRecipe> {
 	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = ResourceLocation
 			.fromNamespaceAndPath(FarmersDelight.MODID, "item/empty_container_slot_bowl");
 
@@ -69,12 +65,7 @@ public class ChillerMenu extends RecipeBookMenu<RecipeWrapper, ChillerRecipe> {
 		// this.addSlot(new ChillerMealSlot(inventory, 9, 124, 26+10));
 
 		// Bowl Input
-		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.CONTAINER_SLOT, 103, 61 + 7) {
-			@OnlyIn(Dist.CLIENT)
-			public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
-				return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BOWL);
-			}
-		});
+		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.CONTAINER_SLOT, 106, 61 + 7));
 
 		// Bowl Output
 		this.addSlot(new ChillerResultSlot(playerInventory.player, tileEntity, inventory,
@@ -221,6 +212,6 @@ public class ChillerMenu extends RecipeBookMenu<RecipeWrapper, ChillerRecipe> {
 
 	@Override
 	public boolean recipeMatches(RecipeHolder<ChillerRecipe> recipe) {
-		return recipe.value().matches(new RecipeWrapper(inventory), level);
+		return recipe.value().matches(new ChillerRecipeWrapper(inventory, this.getFluidTank().getFluid()), level);
 	}
 }

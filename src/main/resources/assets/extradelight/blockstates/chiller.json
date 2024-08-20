@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "extradelight:block/chiller",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "extradelight:block/chiller"
+    },
+    "facing=south": {
+      "model": "extradelight:block/chiller",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extradelight:block/chiller",
+      "y": 270
+    }
+  }
+}

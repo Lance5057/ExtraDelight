@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:chiller",
+  "cookingtime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 1000,
+    "id": "extradelight:bbq_fluid"
+  },
+  "ingredients": [],
+  "result": {
+    "count": 1,
+    "id": "extradelight:milk_chocolate_block"
+  }
+}
