@@ -16,6 +16,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
 public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
@@ -36,7 +37,7 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 		super.init();
 		this.widthTooNarrow = this.width < 379;
 		this.titleLabelX = 28;
-		addRenderableOnly(new FluidStackWidget(this.leftPos + 90, this.topPos - 5, 16, 71, menu::getFluidTank));
+		addRenderableOnly(new FluidStackWidget(this.leftPos + 43, this.topPos + 13, 16, 71, menu::getFluidTank));
 	}
 
 	@Override
@@ -46,19 +47,16 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 
 	@Override
 	public void render(GuiGraphics ms, final int mouseX, final int mouseY, float partialTicks) {
-		if (this.widthTooNarrow) {
-			this.renderBg(ms, partialTicks, mouseX, mouseY);
-		} else {
-			super.render(ms, mouseX, mouseY, partialTicks);
-		}
+		super.render(ms, mouseX, mouseY, partialTicks);
 
 		this.renderMealDisplayTooltip(ms, mouseX, mouseY);
+		this.renderHeatIndicatorTooltip(ms, mouseX, mouseY);
 	}
 
 	private void renderHeatIndicatorTooltip(GuiGraphics gui, int mouseX, int mouseY) {
-		if (this.isHovering(HEAT_ICON.x, HEAT_ICON.y, HEAT_ICON.width, HEAT_ICON.height, mouseX, mouseY)) {
-			String key = "container.cooking_pot." + (this.menu.isHeated() ? "heated" : "not_heated");
-			gui.renderTooltip(this.font, TextUtils.getTranslation(key), mouseX, mouseY);
+		if (this.isHovering(135, 64, HEAT_ICON.width, HEAT_ICON.height, mouseX, mouseY)) {
+			String key = "container.chiller." + (this.menu.isHeated() ? "chilled" : "not_chilled");
+			gui.renderTooltip(this.font, Component.translatable(ExtraDelight.MOD_ID + "." + key), mouseX, mouseY);
 		}
 	}
 
@@ -110,7 +108,7 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 
 		// Render progress arrow
 		int l = this.menu.getCookProgressionScaled();
-		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 101, this.topPos + 42, PROGRESS_ARROW.x, PROGRESS_ARROW.y, l + 1,
+		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 104, this.topPos + 42, PROGRESS_ARROW.x, PROGRESS_ARROW.y, l + 1,
 				PROGRESS_ARROW.height + 7);
 	}
 

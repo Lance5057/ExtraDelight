@@ -5,9 +5,11 @@ import java.util.concurrent.CompletableFuture;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
@@ -89,8 +91,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		feastRecipes(consumer);
 		toolOnBlockRecipes(consumer);
 		meltingRecipes(consumer);
+		chillingRecipes(consumer);
 
 		AestheticBlocks.Recipes(consumer);
+	}
+
+	private void chillingRecipes(RecipeOutput consumer) {
+		ChillerRecipeBuilder.chill(ExtraDelightItems.MILK_CHOCOLATE_BLOCK.toStack(), FAST_COOKING, SMALL_EXP,
+				ItemStack.EMPTY, new FluidStack(ExtraDelightFluids.BBQ.FLUID.get(), 1000)).build(consumer);
+		;
 	}
 
 	private void meltingRecipes(RecipeOutput consumer) {

@@ -48,9 +48,7 @@ public class ChillerBlock extends Block implements EntityBlock {
 //	public static final EnumProperty<ChillerSupport> SUPPORT = EnumProperty.create("support", ChillerSupport.class);
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D);
-	protected static final VoxelShape SHAPE_WITH_TRAY = Shapes.or(SHAPE,
-			Block.box(0.0D, -1.0D, 0.0D, 16.0D, 0.0D, 16.0D));
+	protected static final VoxelShape SHAPE = Block.box(0.0D, 1.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
 	public ChillerBlock() {
 		super(Properties.ofFullCopy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops().strength(3.5F, 6.0F)

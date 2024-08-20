@@ -21,7 +21,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -34,9 +36,13 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.RecipeCraftingHolder;
+import net.minecraft.world.item.BucketItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.RecipeManager.CachedCheck;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -45,15 +51,17 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.FluidUtil;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
 import vectorwing.farmersdelight.common.item.component.ItemStackWrapper;
 import vectorwing.farmersdelight.common.registry.ModDataComponents;
-import vectorwing.farmersdelight.common.registry.ModParticleTypes;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 public class ChillerBlockEntity extends SyncedBlockEntity
@@ -75,7 +83,7 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 	private Component customName;
 	private ResourceLocation lastRecipeID;
 	private boolean checkNewRecipe;
-	private final RecipeManager.CachedCheck<RecipeWrapper, ChillerRecipe> quickCheck;
+	private final CachedCheck<ChillerRecipeWrapper, ChillerRecipe> quickCheck;
 
 	private final FluidTank fluids = createFluidHandler();
 
@@ -86,7 +94,7 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 				ChillerBlockEntity.this.requestModelDataUpdate();
 				ChillerBlockEntity.this.getLevel().sendBlockUpdated(ChillerBlockEntity.this.getBlockPos(),
 						ChillerBlockEntity.this.getBlockState(), ChillerBlockEntity.this.getBlockState(),
-						Block.UPDATE_CLIENTS);
+						Block.UPDATE_ALL);
 				ChillerBlockEntity.this.setChanged();
 			}
 		};
@@ -141,7 +149,7 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 
 		if (isHeated && Chiller.hasInput()) {
 			Optional<RecipeHolder<ChillerRecipe>> recipe = Chiller
-					.getMatchingRecipe(new RecipeWrapper(Chiller.inventory));
+					.getMatchingRecipe(new ChillerRecipeWrapper(Chiller.inventory, Chiller.fluids.getFluid()));
 			if (recipe.isPresent() && Chiller.canCook(recipe.get().value())) {
 				didInventoryChange = Chiller.processCooking(recipe.get(), Chiller);
 			} else {
@@ -162,8 +170,61 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 			}
 		}
 
+		fillInternal(Chiller);
+		drainInternal(Chiller);
+
 		if (didInventoryChange) {
 			Chiller.inventoryChanged();
+		}
+	}
+
+	private static void fillInternal(ChillerBlockEntity Chiller) {
+		ItemStack inputItem = Chiller.inventory.getStackInSlot(FLUID_IN);
+		if (!inputItem.isEmpty()) {
+			if (inputItem.getItem() instanceof BucketItem filledBucket) {
+				int filled = Chiller.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
+						IFluidHandler.FluidAction.SIMULATE);
+				if (filled == FluidType.BUCKET_VOLUME) {
+					Chiller.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
+							IFluidHandler.FluidAction.EXECUTE);
+					inputItem.shrink(1);
+					Chiller.inventory.setStackInSlot(FLUID_IN, Items.BUCKET.getDefaultInstance());
+				}
+			} else {
+				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
+				int filled = FluidUtil.tryFluidTransfer(Chiller.getFluidTank(), fluidHandlerItem,
+						Chiller.getFluidTank().getFluidAmount(), true).getAmount();
+				if (filled > 0) {
+					Chiller.inventory.setStackInSlot(FLUID_IN, fluidHandlerItem.getContainer());
+
+				}
+			}
+		}
+	}
+
+	private static void drainInternal(ChillerBlockEntity Chiller) {
+		ItemStack inputItem = Chiller.inventory.getStackInSlot(FLUID_OUT);
+		if (!inputItem.isEmpty()) {
+			if (inputItem.getItem() == Items.BUCKET) {
+				if (!Chiller.getFluidTank().getFluid().isEmpty()) {
+					FluidStack stack = Chiller.getFluidTank().drain(FluidType.BUCKET_VOLUME,
+							IFluidHandler.FluidAction.SIMULATE);
+					if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
+						Chiller.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
+						inputItem.shrink(1);
+						Chiller.inventory.setStackInSlot(FLUID_OUT, stack.getFluid().getBucket().getDefaultInstance());
+					}
+				}
+			} else {
+				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
+				if (fluidHandlerItem != null && Chiller.inventory.getStackInSlot(FLUID_OUT).isEmpty()) {
+					int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, Chiller.getFluidTank(),
+							Chiller.getFluidTank().getFluidAmount(), true).getAmount();
+					if (filled > 0) {
+						Chiller.inventory.setStackInSlot(FLUID_OUT, fluidHandlerItem.getContainer());
+					}
+				}
+			}
 		}
 	}
 
@@ -174,14 +235,14 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 				double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.6D - 0.3D);
 				double y = (double) pos.getY() + 0.1D;
 				double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.6D - 0.3D);
-				level.addParticle(ParticleTypes.FLAME, x, y, z, 0.0D, 0.0D, 0.0D);
+				level.addParticle(ParticleTypes.SNOWFLAKE, x, y, z, 0.0D, 0.0D, 0.0D);
 			}
 			if (random.nextFloat() < 0.05F) {
 				double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
 				double y = (double) pos.getY() + 0.5D;
 				double z = (double) pos.getZ() + 0.5D + (random.nextDouble() * 0.4D - 0.2D);
 				double motionY = random.nextBoolean() ? 0.015D : 0.005D;
-				level.addParticle(ModParticleTypes.STEAM.get(), x, y, z, 0.0D, motionY, 0.0D);
+				level.addParticle(ParticleTypes.DRIPPING_WATER, x, y, z, 0.0D, motionY, 0.0D);
 			}
 		}
 
@@ -198,6 +259,33 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 	}
 
 	@Override
+	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+		CompoundTag nbt = super.getUpdateTag(registries);
+
+		writeItems(nbt, registries);
+		this.fluids.writeToNBT(registries, nbt);
+
+		return nbt;
+	}
+
+	@Override
+	public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
+		this.fluids.readFromNBT(registries, tag);
+	}
+
+	@Override
+	public ClientboundBlockEntityDataPacket getUpdatePacket() {
+		return ClientboundBlockEntityDataPacket.create(this);
+	}
+
+	@Override
+	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
+		CompoundTag tag = pkt.getTag();
+		// InteractionHandle your Data
+		this.fluids.readFromNBT(registries, tag);
+	}
+
+	@Override
 	public void loadAdditional(CompoundTag compound, HolderLookup.Provider registries) {
 		super.loadAdditional(compound, registries);
 		inventory.deserializeNBT(registries, compound.getCompound("Inventory"));
@@ -211,6 +299,7 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 		for (String key : compoundRecipes.getAllKeys()) {
 			usedRecipeTracker.put(ResourceLocation.parse(key), compoundRecipes.getInt(key));
 		}
+		this.fluids.readFromNBT(registries, compound);
 	}
 
 	@Override
@@ -227,6 +316,7 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 		usedRecipeTracker
 				.forEach((recipeId, craftedAmount) -> compoundRecipes.putInt(recipeId.toString(), craftedAmount));
 		compound.put("RecipesUsed", compoundRecipes);
+		this.fluids.writeToNBT(registries, compound);
 	}
 
 	private CompoundTag writeItems(CompoundTag compound, HolderLookup.Provider registries) {
@@ -252,7 +342,7 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 		return compound;
 	}
 
-	private Optional<RecipeHolder<ChillerRecipe>> getMatchingRecipe(RecipeWrapper inventoryWrapper) {
+	private Optional<RecipeHolder<ChillerRecipe>> getMatchingRecipe(ChillerRecipeWrapper inventoryWrapper) {
 		if (level == null)
 			return Optional.empty();
 		return hasInput() ? quickCheck.getRecipeFor(inventoryWrapper, this.level) : Optional.empty();
@@ -494,11 +584,6 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 		super.setRemoved();
 	}
 
-	@Override
-	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-		return writeItems(new CompoundTag(), registries);
-	}
-
 	private ItemStackHandler createHandler() {
 		return new ItemStackHandler(INVENTORY_SIZE) {
 			@Override
@@ -527,6 +612,13 @@ public class ChillerBlockEntity extends SyncedBlockEntity
 					return false;
 				}
 				return true;
+			}
+
+			@Override
+			public int getSlotLimit(int slot) {
+				if (slot == FLUID_IN || slot == FLUID_OUT)
+					return 1;
+				return Item.ABSOLUTE_MAX_STACK_SIZE;
 			}
 		};
 	}

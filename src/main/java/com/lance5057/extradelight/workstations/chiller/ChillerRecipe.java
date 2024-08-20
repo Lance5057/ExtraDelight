@@ -17,23 +17,24 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.util.RecipeMatcher;
-import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
+import net.neoforged.neoforge.fluids.FluidStack;
 
-public class ChillerRecipe implements Recipe<RecipeWrapper> {
+public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 	public static final int INPUT_SLOTS = 9;
 
 	private final String group;
 //	private final ChillerRecipeBookTab tab;
 	private final NonNullList<Ingredient> inputItems;
+	private final FluidStack fluid;
 	public final ItemStack output;
 	private final ItemStack container;
 	private final float experience;
 	private final int cookTime;
 
-	public ChillerRecipe(String group, NonNullList<Ingredient> inputItems, ItemStack output, ItemStack container,
-			float experience, int cookTime) {
+	public ChillerRecipe(String group, NonNullList<Ingredient> inputItems, FluidStack inputFluid, ItemStack output,
+			ItemStack container, float experience, int cookTime) {
 		this.group = group;
-//		this.tab = tab;
+		this.fluid = inputFluid;
 		this.inputItems = inputItems;
 		this.output = output;
 
@@ -76,7 +77,7 @@ public class ChillerRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public ItemStack assemble(RecipeWrapper input, Provider registries) {
+	public ItemStack assemble(ChillerRecipeWrapper input, Provider registries) {
 		return this.output.copy();
 	}
 
@@ -89,7 +90,7 @@ public class ChillerRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public boolean matches(RecipeWrapper inv, Level level) {
+	public boolean matches(ChillerRecipeWrapper inv, Level level) {
 		java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
 		int i = 0;
 
@@ -111,7 +112,7 @@ public class ChillerRecipe implements Recipe<RecipeWrapper> {
 
 	@Override
 	public RecipeSerializer<?> getSerializer() {
-		return ExtraDelightRecipes.OVEN_SERIALIZER.get();
+		return ExtraDelightRecipes.CHILLER_SERIALIZER.get();
 	}
 
 	@Override
@@ -124,6 +125,10 @@ public class ChillerRecipe implements Recipe<RecipeWrapper> {
 		return new ItemStack(ExtraDelightItems.OVEN.get());
 	}
 
+	public FluidStack getFluid() {
+		return fluid;
+	}
+
 	public static class Serializer implements RecipeSerializer<ChillerRecipe> {
 		public Serializer() {
 		}
@@ -132,16 +137,19 @@ public class ChillerRecipe implements Recipe<RecipeWrapper> {
 				inst -> inst.group(Codec.STRING.optionalFieldOf("group", "").forGetter(ChillerRecipe::getGroup),
 //				ChillerRecipeBookTab.CODEC.optionalFieldOf("recipe_book_tab")
 //						.xmap(optional -> optional.orElse(null), Optional::of).forGetter(ChillerRecipe::getRecipeBookTab),
-						Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ingredients -> {
+						Ingredient.LIST_CODEC.fieldOf("ingredients").xmap(ingredients -> {
 							NonNullList<Ingredient> nonNullList = NonNullList.create();
 							nonNullList.addAll(ingredients);
 							return nonNullList;
 						}, ingredients -> ingredients).forGetter(ChillerRecipe::getIngredients),
+						FluidStack.CODEC.fieldOf("fluid").forGetter(r -> r.fluid),
 						ItemStack.CODEC.fieldOf("result").forGetter(r -> r.output),
+
 						ItemStack.CODEC.lenientOptionalFieldOf("container", ItemStack.EMPTY)
 								.forGetter(ChillerRecipe::getContainerOverride),
 						Codec.FLOAT.optionalFieldOf("experience", 0.0F).forGetter(ChillerRecipe::getExperience),
 						Codec.INT.lenientOptionalFieldOf("cookingtime", 200).forGetter(ChillerRecipe::getCookTime))
+
 						.apply(inst, ChillerRecipe::new));
 
 		public static ChillerRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
@@ -153,12 +161,14 @@ public class ChillerRecipe implements Recipe<RecipeWrapper> {
 			for (int j = 0; j < inputItemsIn.size(); ++j) {
 				inputItemsIn.set(j, Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
 			}
+			FluidStack fluid = FluidStack.STREAM_CODEC.decode(buffer);
 
 			ItemStack outputIn = ItemStack.STREAM_CODEC.decode(buffer);
-			ItemStack container = ItemStack.STREAM_CODEC.decode(buffer);
+			ItemStack container = ItemStack.OPTIONAL_STREAM_CODEC.decode(buffer);
 			float experienceIn = buffer.readFloat();
 			int cookTimeIn = buffer.readVarInt();
-			return new ChillerRecipe(groupIn, /* tabIn, */ inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+			return new ChillerRecipe(groupIn, /* tabIn, */ inputItemsIn, fluid, outputIn, container, experienceIn,
+					cookTimeIn);
 		}
 
 		public static void toNetwork(RegistryFriendlyByteBuf buffer, ChillerRecipe recipe) {
@@ -171,7 +181,7 @@ public class ChillerRecipe implements Recipe<RecipeWrapper> {
 			}
 
 			ItemStack.STREAM_CODEC.encode(buffer, recipe.output);
-			ItemStack.STREAM_CODEC.encode(buffer, recipe.container);
+			ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, recipe.container);
 			buffer.writeFloat(recipe.experience);
 			buffer.writeVarInt(recipe.cookTime);
 		}
