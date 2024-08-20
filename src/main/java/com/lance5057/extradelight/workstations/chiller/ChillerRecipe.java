@@ -180,6 +180,8 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 				Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, ingredient);
 			}
 
+			FluidStack.STREAM_CODEC.encode(buffer, recipe.fluid);
+
 			ItemStack.STREAM_CODEC.encode(buffer, recipe.output);
 			ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, recipe.container);
 			buffer.writeFloat(recipe.experience);
