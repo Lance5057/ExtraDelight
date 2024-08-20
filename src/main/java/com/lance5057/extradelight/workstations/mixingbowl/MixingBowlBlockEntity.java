@@ -124,16 +124,16 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		updateInventory();
 	}
 
-	public void insertItem(ItemStack in, int slot) {
-		BlockEntityUtils.Inventory.insertItem(in, items, LIQUID_OUT_SLOT);
-		this.updateInventory();
-	}
-
-	public ItemStack extractItem(ItemStack out, int slot) {
-		ItemStack stack = BlockEntityUtils.Inventory.extractItem(items, LIQUID_OUT_SLOT);
-		this.updateInventory();
-		return stack;
-	}
+//	public void insertItem(ItemStack in, int slot) {
+//		BlockEntityUtils.Inventory.insertItem(in, items, LIQUID_OUT_SLOT);
+//		this.updateInventory();
+//	}
+//
+//	public ItemStack extractItem(ItemStack out, int slot) {
+//		ItemStack stack = BlockEntityUtils.Inventory.extractItem(items, LIQUID_OUT_SLOT);
+//		this.updateInventory();
+//		return stack;
+//	}
 
 	public int getNextEmptySlot() {
 		for (int i = 0; i < items.getSlots(); ++i) {

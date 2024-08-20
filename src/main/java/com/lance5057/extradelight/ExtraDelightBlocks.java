@@ -23,6 +23,7 @@ import com.lance5057.extradelight.blocks.keg.KegBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
 import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
+import com.lance5057.extradelight.workstations.chiller.ChillerBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlock;
@@ -670,4 +671,6 @@ public class ExtraDelightBlocks {
 	
 	public static final DeferredBlock<Block> MELTING_POT = BLOCKS.register("melting_pot",
 			() -> new MeltingPotBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+	public static final DeferredBlock<Block> CHILLER = BLOCKS.register("chiller",
+			() -> new ChillerBlock());
 }

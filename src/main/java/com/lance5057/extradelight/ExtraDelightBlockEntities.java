@@ -11,6 +11,7 @@ import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 import com.lance5057.extradelight.displays.spice.SpiceRackEntity;
 import com.lance5057.extradelight.displays.wreath.WreathEntity;
+import com.lance5057.extradelight.workstations.chiller.ChillerBlockEntity;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlockEntity;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlockEntity;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
@@ -100,4 +101,8 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MeltingPotBlockEntity>> MELTING_POT = TILES
 			.register("melting_pot", () -> BlockEntityType.Builder
 					.of(MeltingPotBlockEntity::new, ExtraDelightBlocks.MELTING_POT.get()).build(null));
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ChillerBlockEntity>> CHILLER = TILES
+			.register("chiller", () -> BlockEntityType.Builder
+					.of(ChillerBlockEntity::new, ExtraDelightBlocks.CHILLER.get()).build(null));
 }

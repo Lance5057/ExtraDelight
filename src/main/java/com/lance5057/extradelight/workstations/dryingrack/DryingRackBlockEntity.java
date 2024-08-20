@@ -19,6 +19,7 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
@@ -81,18 +82,18 @@ public class DryingRackBlockEntity extends BlockEntity {
 				return stack;
 			}
 
-			@Override
-			@NotNull
-			public ItemStack extractItem(int slot, int amount, boolean simulate) {
-				if (this.getBlockEntity().cookingProgress[slot] >= this.getBlockEntity().cookingTime[slot]) {
-					if (this.getBlockEntity().results[slot].isEmpty()) {
-						this.getBlockEntity().cookingTime[slot] = 0;
-						return super.extractItem(slot, amount, simulate);
-					}
-
-				}
-				return ItemStack.EMPTY;
-			}
+//			@Override
+//			@NotNull
+//			public ItemStack extractItem(int slot, int amount, boolean simulate) {
+//				if (this.getBlockEntity().cookingProgress[slot] >= this.getBlockEntity().cookingTime[slot]) {
+//					if (this.getBlockEntity().results[slot].isEmpty()) {
+//						this.getBlockEntity().cookingTime[slot] = 0;
+//						return super.extractItem(slot, amount, simulate);
+//					}
+//
+//				}
+//				return ItemStack.EMPTY;
+//			}
 
 			@Override
 			public boolean isItemValid(int slot, @NotNull ItemStack stack) {
@@ -140,12 +141,14 @@ public class DryingRackBlockEntity extends BlockEntity {
 //	}
 
 	public void insertItem(ItemStack in) {
-		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
+		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS, 1);
 		this.updateInventory();
 	}
 
-	public void extractItem(ItemStack out) {
-		BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
+	public void extractItem(Player player, Level level, BlockPos pos) {
+		ItemStack stack = BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
+		if (!stack.isEmpty())
+			BlockEntityUtils.Inventory.givePlayerItemStack(stack, player, level, pos);
 		this.updateInventory();
 	}
 

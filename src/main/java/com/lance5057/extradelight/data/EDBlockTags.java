@@ -5,12 +5,14 @@ import java.util.concurrent.CompletableFuture;
 import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -112,6 +114,8 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.FENCE_GATES).add(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get());
 		tag(BlockTags.STAIRS).add(ExtraDelightBlocks.CINNAMON_STAIRS.get());
 		tag(BlockTags.SLABS).add(ExtraDelightBlocks.CINNAMON_SLAB.get());
+		tag(ExtraDelightTags.COLD_SOURCES).add(Blocks.ICE, Blocks.BLUE_ICE, Blocks.FROSTED_ICE, Blocks.PACKED_ICE,
+				Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW_CAULDRON);
 	}
 
 	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {

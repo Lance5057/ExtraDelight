@@ -60,16 +60,6 @@ public class SinkCabinetBlockEntity extends BlockEntity {
 		return new ItemStackHandler(NUM_SLOTS);
 	}
 
-	public void insertItem(ItemStack in) {
-		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
-		this.updateInventory();
-	}
-
-	public void extractItem(ItemStack out) {
-		BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
-		this.updateInventory();
-	}
-
 	public void updateInventory() {
 		requestModelDataUpdate();
 		this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);

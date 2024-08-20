@@ -24,8 +24,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.RecipeCraftingHolder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.SingleItemRecipe;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -103,25 +103,17 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 		};
 	}
 
-	public void insertItem(ItemStack in) {
-		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
+	public void insertItem(ItemStack in, int amount) {
+		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS, amount);
 		this.updateInventory();
 	}
 
-	public void extractItem(ItemStack out) {
-		BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
+	public void extractItem(Player player, Level level, BlockPos pos) {
+		ItemStack stack = BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
+		if (!stack.isEmpty())
+			BlockEntityUtils.Inventory.givePlayerItemStack(stack, player, level, pos);
 		this.updateInventory();
 	}
-
-	// External extract handler
-//	public void extractItem(Player playerEntity) {
-//		inventory.extractItem(playerEntity, inventory);
-//	}
-//
-//	// External insert handler
-//	public void insertItem(ItemStack heldItem) {
-//		inventory.insertItem(inventory, heldItem);
-//	}
 
 	public void zeroProgress() {
 		grinds = 0;

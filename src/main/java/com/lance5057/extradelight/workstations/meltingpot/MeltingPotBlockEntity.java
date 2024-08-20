@@ -1,7 +1,5 @@
 package com.lance5057.extradelight.workstations.meltingpot;
 
-import java.util.Optional;
-
 import javax.annotation.Nonnull;
 
 import org.jetbrains.annotations.NotNull;
