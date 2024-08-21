@@ -78,22 +78,6 @@ public class MeltingPotBlockEntity extends BlockEntity implements HeatableBlockE
 			@Override
 			@NotNull
 			public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
-//				if (slot == 0) {
-//					if (!getStackInSlot(slot).isEmpty()) {
-//						return super.insertItem(slot, stack, simulate);
-//					} else {
-//						Optional<RecipeHolder<MeltingPotRecipe>> r = MeltingPotBlockEntity.this.matchRecipe(stack);
-//						if (r.isPresent()) {
-//							if (getStackInSlot(slot) == ItemStack.EMPTY) {
-//								MeltingPotBlockEntity.this.cookingTime = r.get().value().cooktime;
-//								MeltingPotBlockEntity.this.cookingProgress = 0;
-//								MeltingPotBlockEntity.this.result = r.get().value().result;
-//								MeltingPotBlockEntity.this.updateInventory();
-//								return super.insertItem(slot, stack, simulate);
-//							}
-//						}
-//					}
-//				}
 				if (slot == 1)
 					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
 						return super.insertItem(slot, stack, simulate);

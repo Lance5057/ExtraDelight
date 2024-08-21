@@ -6,12 +6,12 @@ import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.Containers;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -32,14 +32,9 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.utility.MathUtils;
 
 public class ChillerBlock extends Block implements EntityBlock {
@@ -60,13 +55,26 @@ public class ChillerBlock extends Block implements EntityBlock {
 	@Override
 	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
 			BlockHitResult hitResult) {
-		if (!level.isClientSide) {
-			BlockEntity tileEntity = level.getBlockEntity(pos);
-			if (tileEntity instanceof ChillerBlockEntity ChillerEntity) {
-				player.openMenu(ChillerEntity, pos);
-			}
+		if (level.isClientSide) {
+			return InteractionResult.SUCCESS;
 		}
-		return InteractionResult.SUCCESS;
+		BlockEntity tileEntity = level.getBlockEntity(pos);
+		if (tileEntity instanceof ChillerBlockEntity mbe) {
+			MenuProvider containerProvider = new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return Component.translatable("screen.melting_pot.name");
+				}
+
+				@Override
+				public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory, Player playerEntity) {
+					return new ChillerMenu(windowId, playerInventory, mbe);
+				}
+			};
+			player.openMenu(containerProvider, buf -> buf.writeBlockPos(pos));
+
+		}
+		return InteractionResult.CONSUME;
 	}
 
 	@Override
@@ -120,8 +128,7 @@ public class ChillerBlock extends Block implements EntityBlock {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof ChillerBlockEntity ChillerEntity) {
-				Containers.dropContents(level, pos, ChillerEntity.getDroppableInventory());
-				ChillerEntity.getUsedRecipesAndPopExperience(level, Vec3.atCenterOf(pos));
+//				Containers.dropContents(level, pos, ChillerEntity.);
 				level.updateNeighbourForOutputSignal(pos, this);
 			}
 
@@ -133,23 +140,6 @@ public class ChillerBlock extends Block implements EntityBlock {
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
 		builder.add(FACING, WATERLOGGED);
-	}
-
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-		BlockEntity tileEntity = level.getBlockEntity(pos);
-		if (tileEntity instanceof ChillerBlockEntity ChillerEntity && ChillerEntity.isHeated()) {
-			SoundEvent boilSound = !ChillerEntity.getMeal().isEmpty() ? ModSounds.BLOCK_COOKING_POT_BOIL_SOUP.get()
-					: ModSounds.BLOCK_COOKING_POT_BOIL.get();
-			double x = (double) pos.getX() + 0.5D;
-			double y = pos.getY();
-			double z = (double) pos.getZ() + 0.5D;
-			if (random.nextInt(10) == 0) {
-				level.playLocalSound(x, y, z, boilSound, SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.2F + 0.9F,
-						false);
-			}
-		}
 	}
 
 	@Override
@@ -179,22 +169,12 @@ public class ChillerBlock extends Block implements EntityBlock {
 	}
 
 	@Nullable
-	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
-			BlockEntityType<T> blockEntity) {
-
-		if (level.isClientSide) {
-			return (lvl, pos, st, be) -> {
-				if (be instanceof ChillerBlockEntity Chiller) {
-					ChillerBlockEntity.animationTick(lvl, pos, st, Chiller);
-				}
-			};
-		} else {
-			return (lvl, pos, st, be) -> {
-				if (be instanceof ChillerBlockEntity Chiller) {
-					ChillerBlockEntity.cookingTick(lvl, pos, st, Chiller);
-				}
-			};
-		}
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState,
+			BlockEntityType<T> pBlockEntityType) {
+		if (!pLevel.isClientSide())
+			return pBlockEntityType == ExtraDelightBlockEntities.CHILLER.get() ? ChillerBlockEntity::tick : null;
+		return null;
 	}
 
 }
