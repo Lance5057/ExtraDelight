@@ -5,7 +5,6 @@ import java.util.Objects;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightTags;
-import com.lance5057.extradelight.workstations.chiller.slots.ChillerResultSlot;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -35,16 +34,13 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 
 	public final ChillerBlockEntity tileEntity;
 	public final ItemStackHandler inventory;
-	private final ContainerData ChillerData;
 	private final ContainerLevelAccess canInteractWithCallable;
 	protected final Level level;
 
-	public ChillerMenu(final int windowId, final Inventory playerInventory, final ChillerBlockEntity tileEntity,
-			ContainerData ChillerDataIn) {
+	public ChillerMenu(final int windowId, final Inventory playerInventory, final ChillerBlockEntity tileEntity) {
 		super(ExtraDelightContainers.CHILLER_MENU.get(), windowId);
 		this.tileEntity = tileEntity;
 		this.inventory = tileEntity.getInventory();
-		this.ChillerData = ChillerDataIn;
 		this.level = playerInventory.player.level();
 		this.canInteractWithCallable = ContainerLevelAccess.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 
@@ -68,8 +64,7 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.CONTAINER_SLOT, 106, 61 + 7));
 
 		// Bowl Output
-		this.addSlot(new ChillerResultSlot(playerInventory.player, tileEntity, inventory,
-				ChillerBlockEntity.MEAL_DISPLAY_SLOT, 135, 42));
+		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.MEAL_DISPLAY_SLOT, 135, 42));
 
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.FLUID_IN, 19, 13));
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.FLUID_OUT, 19, 68));
@@ -87,8 +82,6 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 		for (int column = 0; column < 9; ++column) {
 			this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 160));
 		}
-
-		this.addDataSlots(ChillerDataIn);
 	}
 
 	public FluidTank getFluidTank() {
@@ -106,7 +99,7 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 	}
 
 	public ChillerMenu(final int windowId, final Inventory playerInventory, final FriendlyByteBuf data) {
-		this(windowId, playerInventory, getTileEntity(playerInventory, data), new SimpleContainerData(4));
+		this(windowId, playerInventory, getTileEntity(playerInventory, data));
 	}
 
 	@Override
@@ -152,18 +145,6 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 			slot.onTake(playerIn, itemstack1);
 		}
 		return itemstack;
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public int getCookProgressionScaled() {
-		int i = this.ChillerData.get(0);
-		int j = this.ChillerData.get(1);
-		return j != 0 && i != 0 ? i * 24 / j : 0;
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public boolean isHeated() {
-		return tileEntity.isHeated();
 	}
 
 	@Override

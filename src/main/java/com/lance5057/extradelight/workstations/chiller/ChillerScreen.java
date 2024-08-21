@@ -1,23 +1,16 @@
 package com.lance5057.extradelight.workstations.chiller;
 
 import java.awt.Rectangle;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.gui.widgets.FluidStackWidget;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.item.ItemStack;
-import vectorwing.farmersdelight.FarmersDelight;
-import vectorwing.farmersdelight.common.utility.TextUtils;
 
 public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 
@@ -49,39 +42,6 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 	public void render(GuiGraphics ms, final int mouseX, final int mouseY, float partialTicks) {
 		super.render(ms, mouseX, mouseY, partialTicks);
 
-		this.renderMealDisplayTooltip(ms, mouseX, mouseY);
-		this.renderHeatIndicatorTooltip(ms, mouseX, mouseY);
-	}
-
-	private void renderHeatIndicatorTooltip(GuiGraphics gui, int mouseX, int mouseY) {
-		if (this.isHovering(135, 64, HEAT_ICON.width, HEAT_ICON.height, mouseX, mouseY)) {
-			String key = "container.chiller." + (this.menu.isHeated() ? "chilled" : "not_chilled");
-			gui.renderTooltip(this.font, Component.translatable(ExtraDelight.MOD_ID + "." + key), mouseX, mouseY);
-		}
-	}
-
-	protected void renderMealDisplayTooltip(GuiGraphics ms, int mouseX, int mouseY) {
-		if (this.minecraft != null && this.minecraft.player != null && this.menu.getCarried().isEmpty()
-				&& this.hoveredSlot != null && this.hoveredSlot.hasItem()) {
-			if (this.hoveredSlot.index == 6) {
-				List<Component> tooltip = new ArrayList<>();
-
-				ItemStack mealStack = this.hoveredSlot.getItem();
-				tooltip.add(((MutableComponent) mealStack.getItem().getDescription())
-						.withStyle(mealStack.getRarity().getStyleModifier()));
-
-				ItemStack containerStack = this.menu.tileEntity.getContainer();
-				String container = !containerStack.isEmpty() ? containerStack.getItem().getDescription().getString()
-						: "";
-
-				tooltip.add(TextUtils.getTranslation("container.cooking_pot.served_on", container)
-						.withStyle(ChatFormatting.GRAY));
-
-				ms.renderComponentTooltip(font, tooltip, mouseX, mouseY);
-			} else {
-				ms.renderTooltip(font, this.hoveredSlot.getItem(), mouseX, mouseY);
-			}
-		}
 	}
 
 	@Override
@@ -100,16 +60,10 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 		RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
 		ms.blit(BACKGROUND_TEXTURE, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight + 16);
 
-		// Render heat icon
-		if (this.menu.isHeated()) {
-			ms.blit(BACKGROUND_TEXTURE, this.leftPos + 135, this.topPos + 64, HEAT_ICON.x, HEAT_ICON.y, HEAT_ICON.width,
-					HEAT_ICON.height);
-		}
-
 		// Render progress arrow
-		int l = this.menu.getCookProgressionScaled();
-		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 104, this.topPos + 42, PROGRESS_ARROW.x, PROGRESS_ARROW.y, l + 1,
-				PROGRESS_ARROW.height + 7);
+//		int l = this.menu.getCookProgressionScaled();
+//		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 104, this.topPos + 42, PROGRESS_ARROW.x, PROGRESS_ARROW.y, l + 1,
+//				PROGRESS_ARROW.height + 7);
 	}
 
 	@Override
