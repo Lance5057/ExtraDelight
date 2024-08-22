@@ -28,12 +28,13 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class ChillerBlockEntity extends BlockEntity {
-	public static final int MEAL_DISPLAY_SLOT = 4;
+	public static final int INGREDIENT_SLOTS = 4;
 	public static final int CONTAINER_SLOT = 5;
 	public static final int OUTPUT_SLOT = 6;
 	public static final int FLUID_IN = 7;
@@ -44,6 +45,7 @@ public class ChillerBlockEntity extends BlockEntity {
 	private final ItemStackHandler inventory;
 	private int cookTime;
 	private int cookTimeTotal;
+	private int chilltime;
 	private ResourceLocation lastRecipeID;
 	private boolean checkNewRecipe;
 	private final CachedCheck<ChillerRecipeWrapper, ChillerRecipe> quickCheck;
@@ -106,6 +108,7 @@ public class ChillerBlockEntity extends BlockEntity {
 							IFluidHandler.FluidAction.EXECUTE);
 					inputItem.shrink(1);
 					Chiller.inventory.setStackInSlot(FLUID_IN, Items.BUCKET.getDefaultInstance());
+
 				}
 			} else {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
@@ -116,6 +119,7 @@ public class ChillerBlockEntity extends BlockEntity {
 
 				}
 			}
+			this.updateInventory();
 		}
 	}
 
@@ -142,6 +146,7 @@ public class ChillerBlockEntity extends BlockEntity {
 					}
 				}
 			}
+			this.updateInventory();
 		}
 	}
 
@@ -177,6 +182,51 @@ public class ChillerBlockEntity extends BlockEntity {
 		chiller.drainInternal(chiller);
 		chiller.fillInternal(chiller);
 		chiller.drainDripTray(chiller);
+
+		RecipeHolder<ChillerRecipe> recipeholder = chiller.quickCheck
+				.getRecipeFor(new ChillerRecipeWrapper(chiller.inventory, chiller.fluid.getFluid()), level)
+				.orElse(null);
+
+		if (recipeholder != null) {
+			chiller.cookTimeTotal = recipeholder.value().getCookTime();
+
+			if (chiller.cookTime >= chiller.cookTimeTotal) {
+				subtractItems(chiller);
+				chiller.fluid.drain(recipeholder.value().getFluid(), FluidAction.EXECUTE);
+
+				ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
+				ItemStack test = chiller.inventory.insertItem(OUTPUT_SLOT, result, true);
+				if (test.isEmpty()) {
+					chiller.inventory.insertItem(OUTPUT_SLOT, result, false);
+					chiller.cookTime = 0;
+				}
+			} else {
+				if (testChillTime(chiller))
+					chiller.cookTime++;
+			}
+		} else {
+			chiller.cookTime = 0;
+			chiller.cookTimeTotal = 0;
+		}
+	}
+
+	private static boolean testChillTime(ChillerBlockEntity chiller) {
+		if(chiller.chilltime <= 0)
+		{
+			if(!chiller.inventory.getStackInSlot(ICE).isEmpty())
+			{
+				chiller.inventory.getStackInSlot(ICE).shrink(1);
+			}
+		}
+		return false;
+	}
+
+	private static void subtractItems(ChillerBlockEntity chiller) {
+		ItemStackHandler i = chiller.inventory;
+
+		i.getStackInSlot(CONTAINER_SLOT).shrink(1);
+		for (int j = 0; j < 4; j++)
+			i.getStackInSlot(j).shrink(1);
 	}
 
 	@Override

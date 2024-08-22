@@ -20,7 +20,7 @@ import net.neoforged.neoforge.common.util.RecipeMatcher;
 import net.neoforged.neoforge.fluids.FluidStack;
 
 public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
-	public static final int INPUT_SLOTS = 9;
+	public static final int INPUT_SLOTS = 4;
 
 	private final String group;
 //	private final ChillerRecipeBookTab tab;
@@ -101,7 +101,9 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 				inputs.add(itemstack);
 			}
 		}
-		return i == this.inputItems.size() && RecipeMatcher.findMatches(inputs, this.inputItems) != null
+		
+		int [] matches = RecipeMatcher.findMatches(inputs, this.inputItems);
+		return i == this.inputItems.size() && matches != null
 				&& inv.getItem(INPUT_SLOTS + 1).getItem() == this.container.getItem();
 	}
 
@@ -117,12 +119,12 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 
 	@Override
 	public RecipeType<?> getType() {
-		return ExtraDelightRecipes.OVEN.get();
+		return ExtraDelightRecipes.CHILLER.get();
 	}
 
 	@Override
 	public ItemStack getToastSymbol() {
-		return new ItemStack(ExtraDelightItems.OVEN.get());
+		return new ItemStack(ExtraDelightItems.CHILLER.get());
 	}
 
 	public FluidStack getFluid() {
