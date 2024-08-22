@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:chilling/chiller/milk_chocolate_block"
+        "recipe": "extradelight:chilling/milk_chocolate_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -15,7 +15,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:chilling/chiller/milk_chocolate_block"
+      "extradelight:chilling/milk_chocolate_block"
     ]
   }
 }

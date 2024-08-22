@@ -1,16 +1,15 @@
-//package com.lance5057.extradelight;
-//
-//import net.minecraft.sounds.SoundEvents;
-//import net.minecraft.sounds.SoundSource;
-//import net.minecraft.world.effect.MobEffectInstance;
-//import net.minecraft.world.effect.MobEffects;
-//import net.neoforged.bus.api.SubscribeEvent;
-//import net.neoforged.fml.common.Mod;
-//import net.neoforged.neoforge.event.level.BlockEvent;
-//
-//@Mod.EventBusSubscriber(modid = ExtraDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-//public class ExtraDelightEvents {
-//
+package com.lance5057.extradelight;
+
+import com.lance5057.extradelight.items.components.ChillComponent;
+
+import net.minecraft.world.item.Items;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
+
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID)
+public class ExtraDelightEvents {
+
 //	@SubscribeEvent
 //	public static void stopDimensionDestruction(BlockEvent.BreakEvent event) {
 //		if (!event.getPlayer().isCreative())
@@ -26,4 +25,10 @@
 //				}
 //			}
 //	}
-//}
+
+	@SubscribeEvent
+	public static void modifyComponents(ModifyDefaultComponentsEvent event) {
+		// Sets the component on melon seeds
+		event.modify(Items.ICE, builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(1000)));
+	}
+}

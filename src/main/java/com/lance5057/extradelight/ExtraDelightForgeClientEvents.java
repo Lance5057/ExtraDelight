@@ -1,15 +1,19 @@
-//package com.lance5057.extradelight;
-//
-//import com.mojang.blaze3d.shaders.FogShape;
-//
-//import net.minecraft.client.Minecraft;
-//import net.neoforged.api.distmarker.Dist;
-//import net.neoforged.bus.api.SubscribeEvent;
-//import net.neoforged.fml.common.EventBusSubscriber;
-//import net.neoforged.neoforge.client.event.ViewportEvent;
-//
-//@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
-//public class ExtraDelightForgeClientEvents {
+package com.lance5057.extradelight;
+
+import java.util.List;
+
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.Item.TooltipContext;
+import net.minecraft.world.item.component.TooltipProvider;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
+
+@EventBusSubscriber(modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
+public class ExtraDelightForgeClientEvents {
 //	@SubscribeEvent
 //	public static void onFogDensityEvent(ViewportEvent.RenderFog event) {
 //		if (Minecraft.getInstance().player.level().dimension() == ExtraDelightWorldGen.CORNFIELD) {
@@ -30,5 +34,21 @@
 //			event.setGreen(f);
 //		}
 //	}
-//
-//}
+
+	@SubscribeEvent
+	public static void registerComponentToolTips(ItemTooltipEvent event) {
+		ItemStack stack = event.getItemStack();
+		TooltipContext ctx = event.getContext();
+		List<Component> tooltip = event.getToolTip();
+		TooltipFlag flag = event.getFlags();
+		
+		TooltipProvider tooltipProvider = stack.get(ExtraDelightComponents.CHILL.get());
+		
+		if(tooltipProvider != null)
+		{
+			tooltipProvider.addToTooltip(ctx, i -> {
+				tooltip.add(i);
+			}, flag);
+		}
+	}
+}
