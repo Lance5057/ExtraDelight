@@ -16,8 +16,8 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 
 	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation
 			.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/chiller.png");
-	private static final Rectangle HEAT_ICON = new Rectangle(176, 34, 16, 16);
-	private static final Rectangle PROGRESS_ARROW = new Rectangle(176, 9, 22, 25);
+	private static final Rectangle HEAT_ICON = new Rectangle(176, 16, 12, 12);
+	private static final Rectangle PROGRESS_ARROW = new Rectangle(176, 0, 16, 22);
 
 	private boolean widthTooNarrow;
 
@@ -28,20 +28,16 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 	@Override
 	public void init() {
 		super.init();
-		this.widthTooNarrow = this.width < 379;
 		this.titleLabelX = 28;
 		addRenderableOnly(new FluidStackWidget(this.leftPos + 43, this.topPos + 13, 16, 71, menu::getFluidTank));
+		addRenderableOnly(new FluidStackWidget(this.leftPos + 126, this.topPos + 73, 16, 11, menu::getDripTray));
 	}
-
+	
 	@Override
-	protected void containerTick() {
-		super.containerTick();
-	}
+	public void render(GuiGraphics gui, final int mouseX, final int mouseY, float partialTicks) {
+		super.render(gui, mouseX, mouseY, partialTicks);
 
-	@Override
-	public void render(GuiGraphics ms, final int mouseX, final int mouseY, float partialTicks) {
-		super.render(ms, mouseX, mouseY, partialTicks);
-
+		this.renderTooltip(gui, mouseX, mouseY);
 	}
 
 	@Override
@@ -60,27 +56,11 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 		RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
 		ms.blit(BACKGROUND_TEXTURE, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight + 16);
 
-		// Render progress arrow
-//		int l = this.menu.getCookProgressionScaled();
-//		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 104, this.topPos + 42, PROGRESS_ARROW.x, PROGRESS_ARROW.y, l + 1,
-//				PROGRESS_ARROW.height + 7);
-	}
-
-	@Override
-	protected boolean isHovering(int x, int y, int width, int height, double mouseX, double mouseY) {
-		return (!this.widthTooNarrow) && super.isHovering(x, y, width, height, mouseX, mouseY);
-	}
-
-	@Override
-	public boolean mouseClicked(double mouseX, double mouseY, int buttonId) {
-		return this.widthTooNarrow || super.mouseClicked(mouseX, mouseY, buttonId);
-	}
-
-	@Override
-	protected boolean hasClickedOutside(double mouseX, double mouseY, int x, int y, int buttonIdx) {
-		boolean flag = mouseX < (double) x || mouseY < (double) y || mouseX >= (double) (x + this.imageWidth)
-				|| mouseY >= (double) (y + this.imageHeight);
-		return flag;
+//		 Render progress arrow
+		int l = this.menu.tileEntity.getCookTimeTotal();
+		int m = this.menu.tileEntity.getCookTime();
+		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 105, this.topPos +  2, PROGRESS_ARROW.x, PROGRESS_ARROW.y,
+				m != 0 && l != 0 ? m * 24 / l : 0 + 1, PROGRESS_ARROW.height + 7);
 	}
 
 }

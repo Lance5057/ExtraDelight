@@ -57,15 +57,17 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 		// this.addSlot(new ChillerMealSlot(inventory, 9, 124, 26+10));
 
 		// Bowl Input
-		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.CONTAINER_SLOT, 106, 61 + 7));
+		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.CONTAINER_SLOT, 73, 61 + 7));
 
 		// Bowl Output
-		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.OUTPUT_SLOT, 135, 42));
+		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.OUTPUT_SLOT, 126, 42));
 
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.FLUID_IN, 19, 13));
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.FLUID_OUT, 19, 68));
 
-		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.DRIP_TRAY_OUT, 19, 88));
+		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.DRIP_TRAY_OUT, 150, 68));
+		
+		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.ICE, 126, 10));
 
 		// Main Player Inventory
 		int startPlayerInvY = startY * 4 + 30;
@@ -84,6 +86,10 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 
 	public FluidTank getFluidTank() {
 		return this.tileEntity.getFluidTank();
+	}
+	
+	public FluidTank getDripTray() {
+		return this.tileEntity.getDripTray();
 	}
 
 	private static ChillerBlockEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) {

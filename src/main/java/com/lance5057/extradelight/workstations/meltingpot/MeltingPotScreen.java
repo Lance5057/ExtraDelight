@@ -35,7 +35,7 @@ public class MeltingPotScreen extends AbstractContainerScreen<MeltingPotMenu> {
 	public void render(GuiGraphics gui, final int mouseX, final int mouseY, float partialTicks) {
 		super.render(gui, mouseX, mouseY, partialTicks);
 
-//		this.renderHeatIndicatorTooltip(gui, mouseX, mouseY);
+		this.renderTooltip(gui, mouseX, mouseY);
 	}
 
 	@Override
