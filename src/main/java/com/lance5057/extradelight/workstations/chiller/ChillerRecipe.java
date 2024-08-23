@@ -104,7 +104,7 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 		
 		int [] matches = RecipeMatcher.findMatches(inputs, this.inputItems);
 		return i == this.inputItems.size() && matches != null
-				&& inv.getItem(INPUT_SLOTS + 1).getItem() == this.container.getItem();
+				&& inv.getItem(INPUT_SLOTS + 1).getItem() == this.container.getItem() && this.fluid.containsFluid(inv.tank);
 	}
 
 	@Override

@@ -30,5 +30,6 @@ public class ExtraDelightEvents {
 	public static void modifyComponents(ModifyDefaultComponentsEvent event) {
 		// Sets the component on melon seeds
 		event.modify(Items.ICE, builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(1000)));
+		event.modify(Items.SNOWBALL, builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(250)));
 	}
 }

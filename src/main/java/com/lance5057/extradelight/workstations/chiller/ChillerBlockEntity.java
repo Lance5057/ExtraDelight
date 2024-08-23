@@ -2,8 +2,12 @@ package com.lance5057.extradelight.workstations.chiller;
 
 import java.util.Optional;
 
+import javax.annotation.Nonnull;
+
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.items.components.ChillComponent;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -22,6 +26,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -42,13 +47,25 @@ public class ChillerBlockEntity extends BlockEntity {
 	public static final int DRIP_TRAY_OUT = 9;
 	public static final int ICE = 10;
 	public static final int INVENTORY_SIZE = ICE + 1;
-	private final ItemStackHandler inventory;
+	public static final String ITEM_TAG = "inv";
+	private final ItemStackHandler inventory = createHandler();
 	private int cookTime;
+
+	public int getCookTime() {
+		return cookTime;
+	}
+
 	private int cookTimeTotal;
+
+	public int getCookTimeTotal() {
+		return cookTimeTotal;
+	}
+
 	private int chilltime;
 	private ResourceLocation lastRecipeID;
 	private boolean checkNewRecipe;
-	private final CachedCheck<ChillerRecipeWrapper, ChillerRecipe> quickCheck;
+	private final CachedCheck<ChillerRecipeWrapper, ChillerRecipe> quickCheck = RecipeManager
+			.createCheck(ExtraDelightRecipes.CHILLER.get());
 
 	private final FluidTank fluid = createFluidHandler();
 	private final FluidTank dripTray = createDripFluidHandler();
@@ -93,8 +110,6 @@ public class ChillerBlockEntity extends BlockEntity {
 
 	public ChillerBlockEntity(BlockPos pos, BlockState state) {
 		super(ExtraDelightBlockEntities.CHILLER.get(), pos, state);
-		this.inventory = createHandler();
-		this.quickCheck = RecipeManager.createCheck(ExtraDelightRecipes.CHILLER.get());
 	}
 
 	private void fillInternal(ChillerBlockEntity Chiller) {
@@ -119,7 +134,6 @@ public class ChillerBlockEntity extends BlockEntity {
 
 				}
 			}
-			this.updateInventory();
 		}
 	}
 
@@ -146,7 +160,6 @@ public class ChillerBlockEntity extends BlockEntity {
 					}
 				}
 			}
-			this.updateInventory();
 		}
 	}
 
@@ -183,6 +196,11 @@ public class ChillerBlockEntity extends BlockEntity {
 		chiller.fillInternal(chiller);
 		chiller.drainDripTray(chiller);
 
+		if (chiller.chilltime > 0) {
+			chiller.chilltime--;
+			chiller.dripTray.fill(new FluidStack(Fluids.WATER, 1), FluidAction.EXECUTE);
+		}
+
 		RecipeHolder<ChillerRecipe> recipeholder = chiller.quickCheck
 				.getRecipeFor(new ChillerRecipeWrapper(chiller.inventory, chiller.fluid.getFluid()), level)
 				.orElse(null);
@@ -201,23 +219,32 @@ public class ChillerBlockEntity extends BlockEntity {
 					chiller.cookTime = 0;
 				}
 			} else {
-				if (testChillTime(chiller))
+				if (testChillTime(chiller)) {
 					chiller.cookTime++;
+				}
 			}
 		} else {
 			chiller.cookTime = 0;
 			chiller.cookTimeTotal = 0;
 		}
+		chiller.updateInventory();
 	}
 
 	private static boolean testChillTime(ChillerBlockEntity chiller) {
-		if(chiller.chilltime <= 0)
-		{
-			if(!chiller.inventory.getStackInSlot(ICE).isEmpty())
-			{
-				chiller.inventory.getStackInSlot(ICE).shrink(1);
-			}
-		}
+		if (chiller.dripTray.getFluidAmount() < 1000)
+			if (chiller.chilltime <= 0) {
+				if (!chiller.inventory.getStackInSlot(ICE).isEmpty()) {
+					ItemStack ice = chiller.inventory.getStackInSlot(ICE);
+
+					ChillComponent time = ice.get(ExtraDelightComponents.CHILL.get());
+					chiller.chilltime = time.time();
+
+					ice.shrink(1);
+					return true;
+				} else
+					return false;
+			} else
+				return true;
 		return false;
 	}
 
@@ -233,15 +260,14 @@ public class ChillerBlockEntity extends BlockEntity {
 	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
 		CompoundTag nbt = super.getUpdateTag(registries);
 
-		nbt.put("items", this.inventory.serializeNBT(registries));
-		this.fluid.writeToNBT(registries, nbt);
+		writeNBT(nbt, registries);
 
 		return nbt;
 	}
 
 	@Override
 	public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
-		this.fluid.readFromNBT(registries, tag);
+		readNBT(tag, registries);
 	}
 
 	@Override
@@ -253,25 +279,42 @@ public class ChillerBlockEntity extends BlockEntity {
 	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
 		CompoundTag tag = pkt.getTag();
 		// InteractionHandle your Data
-		this.fluid.readFromNBT(registries, tag);
+		readNBT(tag, registries);
+	}
+
+	void readNBT(CompoundTag nbt, HolderLookup.Provider registries) {
+		fluid.readFromNBT(registries, nbt.getCompound("tank"));
+		this.dripTray.readFromNBT(registries, nbt.getCompound("driptray"));
+		if (nbt.contains(ITEM_TAG)) {
+			inventory.deserializeNBT(registries, nbt.getCompound(ITEM_TAG));
+		}
+
+		this.cookTime = nbt.getInt("cooktime");
+		this.cookTimeTotal = nbt.getInt("cookprogress");
+	}
+
+	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
+
+		tag.put("tank", fluid.writeToNBT(registries, new CompoundTag()));
+		tag.put("driptray", this.dripTray.writeToNBT(registries, new CompoundTag()));
+		tag.put(ITEM_TAG, inventory.serializeNBT(registries));
+
+		tag.putInt("cooktime", this.cookTime);
+		tag.putInt("cookprogress", cookTimeTotal);
+
+		return tag;
 	}
 
 	@Override
-	public void loadAdditional(CompoundTag compound, HolderLookup.Provider registries) {
-		super.loadAdditional(compound, registries);
-		inventory.deserializeNBT(registries, compound.getCompound("Inventory"));
-		cookTime = compound.getInt("CookTime");
-		cookTimeTotal = compound.getInt("CookTimeTotal");
-		this.fluid.readFromNBT(registries, compound);
+	public void loadAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+		super.loadAdditional(nbt, registries);
+		readNBT(nbt, registries);
 	}
 
 	@Override
-	public void saveAdditional(CompoundTag compound, HolderLookup.Provider registries) {
-		super.saveAdditional(compound, registries);
-		compound.putInt("CookTime", cookTime);
-		compound.putInt("CookTimeTotal", cookTimeTotal);
-		compound.put("Inventory", inventory.serializeNBT(registries));
-		this.fluid.writeToNBT(registries, compound);
+	public void saveAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+		super.saveAdditional(nbt, registries);
+		writeNBT(nbt, registries);
 	}
 
 	private Optional<RecipeHolder<ChillerRecipe>> getMatchingRecipe(ChillerRecipeWrapper inventoryWrapper) {
@@ -306,6 +349,9 @@ public class ChillerBlockEntity extends BlockEntity {
 								&& !stack.is(Tags.Items.BUCKETS))
 							return true;
 					return false;
+				} else if (slot == ICE) {
+					if (!stack.has(ExtraDelightComponents.CHILL))
+						return false;
 				}
 				return true;
 			}
@@ -322,7 +368,7 @@ public class ChillerBlockEntity extends BlockEntity {
 	public void updateInventory() {
 		requestModelDataUpdate();
 		this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(),
-				Block.UPDATE_CLIENTS);
+				Block.UPDATE_ALL);
 		this.setChanged();
 	}
 
