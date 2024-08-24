@@ -33,31 +33,38 @@ public class CandyBowlRenderer implements BlockEntityRenderer<CandyBowlEntity> {
 
 		this.renderItem(pBlockEntity, itemRenderer, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay,
 				itemInteractionHandler.getStackInSlot(0), -0.1f, 0, -0.025f, new Quaternionf().rotateXYZ(0, 0, 0),
-				new Quaternionf().rotateXYZ(25, 0, 0));
+				new Quaternionf().rotateXYZ((float) Math.toRadians(25), 0, 0));
 		this.renderItem(pBlockEntity, itemRenderer, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay,
-				itemInteractionHandler.getStackInSlot(1), 0.1f, 0, -0.025f, new Quaternionf().rotateXYZ(0, 90, 0),
-				new Quaternionf().rotateXYZ(25, 0, 0));
+				itemInteractionHandler.getStackInSlot(1), 0.1f, 0, -0.025f,
+				new Quaternionf().rotateXYZ(0, (float) Math.toRadians(90), 0),
+				new Quaternionf().rotateXYZ((float) Math.toRadians(25), 0, 0));
 		this.renderItem(pBlockEntity, itemRenderer, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay,
-				itemInteractionHandler.getStackInSlot(2), 0.1f, 0, 0.125f, new Quaternionf().rotateXYZ(0, 180, 0),
-				new Quaternionf().rotateXYZ(25, 0, 0));
+				itemInteractionHandler.getStackInSlot(2), 0.1f, 0, 0.125f,
+				new Quaternionf().rotateXYZ(0, (float) Math.toRadians(180), 0),
+				new Quaternionf().rotateXYZ((float) Math.toRadians(25), 0, 0));
 		this.renderItem(pBlockEntity, itemRenderer, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay,
-				itemInteractionHandler.getStackInSlot(3), -0.1f, 0, 0.125f, new Quaternionf().rotateXYZ(0, 270, 0),
-				new Quaternionf().rotateXYZ(25, 0, 0));
+				itemInteractionHandler.getStackInSlot(3), -0.1f, 0, 0.125f,
+				new Quaternionf().rotateXYZ(0, (float) Math.toRadians(270), 0),
+				new Quaternionf().rotateXYZ((float) Math.toRadians(25), 0, 0));
 		this.renderItem(pBlockEntity, itemRenderer, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay,
-				itemInteractionHandler.getStackInSlot(4), -0.05f, 0.1f, -0.1f, new Quaternionf().rotateXYZ(0, 45, 0),
-				new Quaternionf().rotateXYZ(35, 0, 0));
+				itemInteractionHandler.getStackInSlot(4), -0.05f, 0.1f, -0.1f,
+				new Quaternionf().rotateXYZ(0, (float) Math.toRadians(45), 0),
+				new Quaternionf().rotateXYZ((float) Math.toRadians(35), 0, 0));
 		this.renderItem(pBlockEntity, itemRenderer, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay,
-				itemInteractionHandler.getStackInSlot(5), 0.1f, 0.1f, 0.0f, new Quaternionf().rotateXYZ(0, 135, 0),
-				new Quaternionf().rotateXYZ(35, 0, 0));
+				itemInteractionHandler.getStackInSlot(5), 0.1f, 0.1f, 0.0f,
+				new Quaternionf().rotateXYZ(0, (float) Math.toRadians(135), 0),
+				new Quaternionf().rotateXYZ((float) Math.toRadians(35), 0, 0));
 		this.renderItem(pBlockEntity, itemRenderer, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay,
-				itemInteractionHandler.getStackInSlot(6), 0.05f, 0.1f, 0.1f, new Quaternionf().rotateXYZ(0, 215, 0),
-				new Quaternionf().rotateXYZ(35, 0, 0));
+				itemInteractionHandler.getStackInSlot(6), 0.05f, 0.1f, 0.1f,
+				new Quaternionf().rotateXYZ(0, (float) Math.toRadians(215), 0),
+				new Quaternionf().rotateXYZ((float) Math.toRadians(35), 0, 0));
 		this.renderItem(pBlockEntity, itemRenderer, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay,
-				itemInteractionHandler.getStackInSlot(7), -0.1f, 0.1f, 0.0f, new Quaternionf().rotateXYZ(0, 305, 0),
-				new Quaternionf().rotateXYZ(35, 0, 0));
+				itemInteractionHandler.getStackInSlot(7), -0.1f, 0.1f, 0.0f,
+				new Quaternionf().rotateXYZ(0, (float) Math.toRadians(305), 0),
+				new Quaternionf().rotateXYZ((float) Math.toRadians(35), 0, 0));
 		this.renderItem(pBlockEntity, itemRenderer, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay,
 				itemInteractionHandler.getStackInSlot(8), -0.1f, 0.25f, -0.2f, new Quaternionf().rotateXYZ(0, 0, 0),
-				new Quaternionf().rotateXYZ(90, 0, 0));
+				new Quaternionf().rotateXYZ((float) Math.toRadians(90), 0, 0));
 
 	}
 

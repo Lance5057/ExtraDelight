@@ -29,5 +29,10 @@ public class WreathScreen extends AbstractContainerScreen<WreathMenu> {
 		pPoseStack.blit(BACKGROUND_TEXTURE, this.leftPos + 54, this.topPos, 0, 126, 68, 65);
 
 	}
+	
+	@Override
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+
+    }
 
 }

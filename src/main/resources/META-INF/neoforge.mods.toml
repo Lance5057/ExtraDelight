@@ -3,7 +3,7 @@ loaderVersion="47" #mandatory
 license="CC BY-NC-SA 4.0 Deed "
 [[mods]] #mandatory
 modId="extradelight" #mandatory
-version="2.0.2" #mandatory
+version="2.0.3" #mandatory
 displayName="Extra Delight" #mandatory
 authors="Alan199921, DivineAspect, Skysom, FreneticScribbler, Lanse505, Belathus, RoyalJelly, ParadigmOne" #optional
 

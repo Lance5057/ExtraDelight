@@ -58,9 +58,10 @@ public class SpiceRackRenderer implements BlockEntityRenderer<SpiceRackEntity> {
 			float uniscale = 0.75f;
 
 			pPoseStack.translate(0.5f, 0, 0.5f);
-			pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, -dir.toYRot(), 0));
+			pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, (float) Math.toRadians(-dir.toYRot()), 0));
 			pPoseStack.translate(x - 0.5f, y, z - 0.5f);
-			pPoseStack.mulPose(new Quaternionf().rotateXYZ(rx, ry, rz));
+			pPoseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(rx), (float) Math.toRadians(ry),
+					(float) Math.toRadians(rz)));
 
 			pPoseStack.scale(uniscale, uniscale, uniscale);
 			itemRenderer.render(item, ItemDisplayContext.GROUND, false, pPoseStack, pBufferSource, pPackedLight,

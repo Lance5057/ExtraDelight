@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
@@ -28,12 +27,10 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Builder;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
@@ -173,7 +170,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.SALAD.get(), Items.BOWL);
 
 		this.dropOther(ExtraDelightBlocks.CORN_BOTTOM.get(), ExtraDelightItems.CORN_SEEDS.get());
-		this.dropOther(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.CORN_SEEDS.get());
+//		this.dropOther(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.CORN_SEEDS.get());
+		LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
+				.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornTop.AGE, 3));
+		crop(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
+				ExtraDelightItems.CORN_SEEDS.get(), lootitemcondition$builder2, 3.0f);
 
 		this.dropOther(ExtraDelightBlocks.CORNBREAD.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.CARAMEL_CHEESECAKE.get(), Items.AIR);
@@ -268,10 +270,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.MINT_CROP.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_SAPLING.get());
 
-		LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
-				.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
-				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornTop.AGE, 3));
-
 		this.add(ExtraDelightBlocks.CINNAMON_DOOR.get(), createDoorTable(ExtraDelightBlocks.CINNAMON_DOOR.get()));
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_STAIRS.get());
@@ -282,24 +280,24 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropSelf(ExtraDelightBlocks.TAP.get());
 
-		this.add(ExtraDelightBlocks.COFFEE_BUSH.get(),
-				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable().withPool(LootPool.lootPool()
-						.when(LootItemBlockStatePropertyCondition
-								.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get()).setProperties(
-										StatePropertiesPredicate.Builder.properties().hasProperty(CoffeeBush.AGE, 3)))
-						.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
-						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
-						.apply(ApplyBonusCount
-								.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))
-						.withPool(LootPool.lootPool()
-								.when(LootItemBlockStatePropertyCondition
-										.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get())
-										.setProperties(StatePropertiesPredicate.Builder.properties()
-												.hasProperty(CoffeeBush.AGE, 2)))
-								.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
-								.apply(ApplyBonusCount
-										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
+//		this.add(ExtraDelightBlocks.COFFEE_BUSH.get(),
+//				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable().withPool(LootPool.lootPool()
+//						.when(LootItemBlockStatePropertyCondition
+//								.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get()).setProperties(
+//										StatePropertiesPredicate.Builder.properties().hasProperty(CoffeeBush.AGE, 3)))
+//						.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
+//						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
+//						.apply(ApplyBonusCount
+//								.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))
+//						.withPool(LootPool.lootPool()
+//								.when(LootItemBlockStatePropertyCondition
+//										.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get())
+//										.setProperties(StatePropertiesPredicate.Builder.properties()
+//												.hasProperty(CoffeeBush.AGE, 2)))
+//								.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
+//								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+//								.apply(ApplyBonusCount
+//										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
 
 		this.dropSelf(ExtraDelightBlocks.KEG.get());
 

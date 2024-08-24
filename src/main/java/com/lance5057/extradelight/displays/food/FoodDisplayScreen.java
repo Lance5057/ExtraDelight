@@ -28,5 +28,10 @@ public class FoodDisplayScreen extends AbstractContainerScreen<FoodDisplayMenu> 
 		graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 54, this.topPos, 0, 191, 68, 65);
 
 	}
+	
+	@Override
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+
+    }
 
 }

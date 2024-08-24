@@ -29,5 +29,10 @@ public class SpiceRackScreen extends AbstractContainerScreen<SpiceRackMenu> {
 		pPoseStack.blit(BACKGROUND_TEXTURE, this.leftPos + 45, this.topPos + 36, 136, 227, 86, 29);
 
 	}
+	
+	@Override
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+
+    }
 
 }

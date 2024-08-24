@@ -55,13 +55,13 @@ public class FoodDisplayRenderer implements BlockEntityRenderer<FoodDisplayEntit
 				BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 				pPoseStack.pushPose();
 				pPoseStack.translate(0.5f, 0, 0.5f);
-				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, -dir.toYRot(), 0));
+				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, (float) Math.toRadians(-dir.toYRot()), 0));
 				pPoseStack.translate(xoff - 0.28f, yoff + 0.45, zoff - 0.4);
 
 				if (i % 2 == 0)
 					pPoseStack.translate(0, 0.05, 0.05);
 
-				pPoseStack.mulPose(new Quaternionf().rotateXYZ(-45, 0, 0));
+				pPoseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(-45), 0, 0));
 				float uniscale = 0.65f;
 				pPoseStack.scale(uniscale, uniscale, uniscale);
 				itemRenderer.render(item, ItemDisplayContext.GROUND, false, pPoseStack, pBufferSource, pPackedLight,
