@@ -17,7 +17,7 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation
 			.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/chiller.png");
 	private static final Rectangle HEAT_ICON = new Rectangle(176, 16, 12, 12);
-	private static final Rectangle PROGRESS_ARROW = new Rectangle(176, 0, 16, 22);
+	private static final Rectangle PROGRESS_ARROW = new Rectangle(176, 0, 22, 16);
 
 	private boolean widthTooNarrow;
 
@@ -59,8 +59,8 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 //		 Render progress arrow
 		int l = this.menu.tileEntity.getCookTimeTotal();
 		int m = this.menu.tileEntity.getCookTime();
-		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 105, this.topPos +  2, PROGRESS_ARROW.x, PROGRESS_ARROW.y,
-				m != 0 && l != 0 ? m * 24 / l : 0 + 1, PROGRESS_ARROW.height + 7);
+		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 101, this.topPos +  42, PROGRESS_ARROW.x, PROGRESS_ARROW.y,
+				m != 0 && l != 0 ? m * 24 / l : 0 + 1, PROGRESS_ARROW.height);
 	}
 
 }
