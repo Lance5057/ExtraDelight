@@ -4,6 +4,7 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlockEntity;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlockEntity;
 import com.lance5057.extradelight.blocks.entities.TapBlockEntity;
+import com.lance5057.extradelight.blocks.funnel.FunnelBlockEntity;
 import com.lance5057.extradelight.blocks.keg.KegBlockEntity;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlockEntity;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlEntity;
@@ -105,4 +106,8 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ChillerBlockEntity>> CHILLER = TILES
 			.register("chiller", () -> BlockEntityType.Builder
 					.of(ChillerBlockEntity::new, ExtraDelightBlocks.CHILLER.get()).build(null));
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FunnelBlockEntity>> FUNNEL = TILES.register(
+			"funnel",
+			() -> BlockEntityType.Builder.of(FunnelBlockEntity::new, ExtraDelightBlocks.FUNNEL.get()).build(null));
 }

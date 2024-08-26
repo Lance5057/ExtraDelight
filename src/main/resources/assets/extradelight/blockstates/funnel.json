@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "extradelight:block/funnel"
+    },
+    "facing=east": {
+      "model": "extradelight:block/funnel_side",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "extradelight:block/funnel_side"
+    },
+    "facing=south": {
+      "model": "extradelight:block/funnel_side",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extradelight:block/funnel_side",
+      "y": 270
+    }
+  }
+}

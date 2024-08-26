@@ -242,7 +242,7 @@ public class ChillerBlockEntity extends BlockEntity {
 					ice.shrink(1);
 					return true;
 				} else
-					return true;
+					return false;
 			} else
 				return true;
 		return false;
