@@ -19,6 +19,7 @@ import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.blocks.fluids.GlowBerryFluidBlock;
 import com.lance5057.extradelight.blocks.fluids.HotFluidBlock;
 import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
+import com.lance5057.extradelight.blocks.funnel.FunnelBlock;
 import com.lance5057.extradelight.blocks.keg.KegBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
@@ -668,9 +669,11 @@ public class ExtraDelightBlocks {
 			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
 	public static final DeferredBlock<Block> WHITE_CHOCOLATE_BLOCK = BLOCKS.register("white_chocolate_block",
 			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
-	
+
 	public static final DeferredBlock<Block> MELTING_POT = BLOCKS.register("melting_pot",
 			() -> new MeltingPotBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-	public static final DeferredBlock<Block> CHILLER = BLOCKS.register("chiller",
-			() -> new ChillerBlock());
+	public static final DeferredBlock<Block> CHILLER = BLOCKS.register("chiller", () -> new ChillerBlock());
+	public static final DeferredBlock<Block> FUNNEL = BLOCKS.register("funnel",
+			() -> new FunnelBlock(Block.Properties.ofFullCopy(Blocks.COPPER_BLOCK)));
+
 }

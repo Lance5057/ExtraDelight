@@ -63,7 +63,7 @@ public class ChillerBlock extends Block implements EntityBlock {
 			MenuProvider containerProvider = new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.translatable("screen.melting_pot.name");
+					return Component.translatable("screen.chiller.name");
 				}
 
 				@Override

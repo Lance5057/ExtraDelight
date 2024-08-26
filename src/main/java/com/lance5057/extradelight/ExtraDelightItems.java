@@ -1533,4 +1533,7 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.CHILLER.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> BAR_MOLD = ITEMS.register("bar_mold", () -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> FUNNEL = ITEMS.register("funnel",
+			() -> new BlockItem(ExtraDelightBlocks.FUNNEL.get(), new Item.Properties()));
 }

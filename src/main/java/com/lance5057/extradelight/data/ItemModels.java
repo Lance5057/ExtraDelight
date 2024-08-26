@@ -829,7 +829,9 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.TOMATO_JUICE_FLUID_BUCKET, "tomato_juice_bucket");
 		forItem(ExtraDelightItems.VINEGAR_FLUID_BUCKET, "vinegar_bucket");
 		forItem(ExtraDelightItems.WHIPPED_CREAM_FLUID_BUCKET, "whipped_cream_bucket");
-		
+
+		forItem(ExtraDelightItems.FUNNEL, "funnel");
+
 		getBuilder(ExtraDelightItems.MELTING_POT.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/melting_pot")));
 
