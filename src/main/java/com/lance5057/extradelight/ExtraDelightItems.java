@@ -32,7 +32,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.ItemContainerContents;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -1541,53 +1541,37 @@ public class ExtraDelightItems {
 
 //	public static final DeferredItem<BlockItem> CHOCOLATE_BOX = ITEMS.register("chocolate_box", () -> new BlockItem(
 //			ExtraDelightBlocks.CHOCOLATE_BOX.get(),
-//			new Item.Properties().stacksTo(1).component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+//			new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> WHITE_CHOCOLATE_BOX = ITEMS.register("white_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1).component(DataComponents.BLOCK_ENTITY_DATA, CustomData.of(null))));
 	public static final DeferredItem<BlockItem> ORANGE_CHOCOLATE_BOX = ITEMS.register("orange_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> MAGENTA_CHOCOLATE_BOX = ITEMS.register("magenta_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> LIGHT_BLUE_CHOCOLATE_BOX = ITEMS.register("light_blue_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> YELLOW_CHOCOLATE_BOX = ITEMS.register("yellow_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> LIME_CHOCOLATE_BOX = ITEMS.register("lime_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> PINK_CHOCOLATE_BOX = ITEMS.register("pink_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> GRAY_CHOCOLATE_BOX = ITEMS.register("gray_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> LIGHT_GRAY_CHOCOLATE_BOX = ITEMS.register("light_gray_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> CYAN_CHOCOLATE_BOX = ITEMS.register("cyan_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> BLUE_CHOCOLATE_BOX = ITEMS.register("blue_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> BROWN_CHOCOLATE_BOX = ITEMS.register("brown_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> GREEN_CHOCOLATE_BOX = ITEMS.register("green_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> RED_CHOCOLATE_BOX = ITEMS.register("red_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> BLACK_CHOCOLATE_BOX = ITEMS.register("black_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> PURPLE_CHOCOLATE_BOX = ITEMS.register("purple_chocolate_box",
-			() -> new BlockItem(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
-					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+			() -> new BlockItem(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)));
 }

@@ -9,6 +9,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -38,7 +39,8 @@ public class ChocolateBoxBlockEntity extends BlockEntity {
 			protected void onContentsChanged(int slot) {
 				ChocolateBoxBlockEntity.this.requestModelDataUpdate();
 				ChocolateBoxBlockEntity.this.getLevel().sendBlockUpdated(ChocolateBoxBlockEntity.this.getBlockPos(),
-						ChocolateBoxBlockEntity.this.getBlockState(), ChocolateBoxBlockEntity.this.getBlockState(), Block.UPDATE_CLIENTS);
+						ChocolateBoxBlockEntity.this.getBlockState(), ChocolateBoxBlockEntity.this.getBlockState(),
+						Block.UPDATE_CLIENTS);
 				ChocolateBoxBlockEntity.this.setChanged();
 			}
 		};

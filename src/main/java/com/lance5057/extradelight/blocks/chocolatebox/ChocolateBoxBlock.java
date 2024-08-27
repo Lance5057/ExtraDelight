@@ -1,10 +1,7 @@
 package com.lance5057.extradelight.blocks.chocolatebox;
 
-import java.util.List;
-
 import javax.annotation.Nullable;
 
-import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.util.BlockEntityUtils;
@@ -16,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
@@ -23,10 +21,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -34,11 +30,13 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class ChocolateBoxBlock extends Block implements EntityBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -147,44 +145,65 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 		return InteractionResult.PASS;
 	}
 
-	@Override
-	protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
-		BlockEntity blockentity = params.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
-		if (blockentity instanceof ChocolateBoxBlockEntity box) {
-			params = params.withDynamicDrop(CONTENTS, p_56219_ -> {
-				for (int i = 0; i < ChocolateBoxBlockEntity.NUM_SLOTS; i++) {
-					p_56219_.accept(box.getItems().getStackInSlot(i));
-				}
-			});
-		}
+//	@Override
+//	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+////		BlockEntity blockentity = level.getBlockEntity(pos);
+////		if (blockentity instanceof ChocolateBoxBlockEntity be) {
+////			if (!level.isClientSide) {
+////				ItemStack itemstack = getColoredItemStack(this.getColor());
+////				itemstack.applyComponents(blockentity.collectComponents());
+////
+////				if (!state.getValue(ChocolateBoxBlock.OPEN)) {
+////					IItemHandler handler = itemstack.getCapability(Capabilities.ItemHandler.ITEM);
+////					if (handler instanceof IItemHandlerModifiable mod)
+////						for (int i = 0; i < ChocolateBoxBlockEntity.NUM_SLOTS; i++) {
+////							mod.setStackInSlot(i, be.getItems().getStackInSlot(i));
+////						}
+////				}
+////
+////				ItemEntity itementity = new ItemEntity(level, (double) pos.getX() + 0.5, (double) pos.getY() + 0.5,
+////						(double) pos.getZ() + 0.5, itemstack);
+////				itementity.setDefaultPickUpDelay();
+////				level.addFreshEntity(itementity);
+////			}
+////		}
+//
+//		return super.playerWillDestroy(level, pos, state, player);
+//	}
+//
+//	@Override
+//	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+//		if (state.getBlock() != newState.getBlock()) {
+//			BlockEntity tileEntity = level.getBlockEntity(pos);
+//			if (tileEntity instanceof ChocolateBoxBlockEntity te) {
+//				if (state.getValue(ChocolateBoxBlock.OPEN)) {
+//					IItemHandler items = te.getItems();
+//					for (int i = 0; i < te.getItems().getSlots(); i++) {
+//						level.addFreshEntity(
+//								new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+//					}
+//				}
+//				level.updateNeighbourForOutputSignal(pos, this);
+//			}
+//
+//			super.onRemove(state, level, pos, newState, isMoving);
+//		}
+//	}
 
-		return super.getDrops(state, params);
-	}
-
-	@Override
-	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-		BlockEntity blockentity = level.getBlockEntity(pos);
-		if (blockentity instanceof ChocolateBoxBlockEntity) {
-			if (!level.isClientSide && player.isCreative()) {
-				ItemStack itemstack = getColoredItemStack(this.getColor());
-				itemstack.applyComponents(blockentity.collectComponents());
-				ItemEntity itementity = new ItemEntity(level, (double) pos.getX() + 0.5, (double) pos.getY() + 0.5,
-						(double) pos.getZ() + 0.5, itemstack);
-				itementity.setDefaultPickUpDelay();
-				level.addFreshEntity(itementity);
-			}
-		}
-
-		return super.playerWillDestroy(level, pos, state, player);
-	}
-
-	@Override
-	public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
-		ItemStack itemstack = super.getCloneItemStack(level, pos, state);
-		level.getBlockEntity(pos, ExtraDelightBlockEntities.CHOCOLATE_BOX.get())
-				.ifPresent(p_323411_ -> p_323411_.saveToItem(itemstack, level.registryAccess()));
-		return itemstack;
-	}
+//	@Override
+//	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer,
+//			ItemStack stack) {
+//		BlockEntity blockentity = level.getBlockEntity(pos);
+//		if (blockentity instanceof ChocolateBoxBlockEntity be) {
+//			IItemHandler handler = stack.getCapability(Capabilities.ItemHandler.ITEM);
+//			IItemHandler entityHandler = be.getItems();
+//
+//			if (entityHandler instanceof ItemStackHandler item)
+//				for (int i = 0; i < ChocolateBoxBlockEntity.NUM_SLOTS; i++) {
+//					item.setStackInSlot(i, handler.getStackInSlot(i));
+//				}
+//		}
+//	}
 
 	@Nullable
 	public static DyeColor getColorFromItem(Item item) {
@@ -229,6 +248,5 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 	public static ItemStack getColoredItemStack(@Nullable DyeColor color) {
 		return new ItemStack(getBlockByColor(color));
 	}
-	
-	
+
 }
