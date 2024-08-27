@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlockEntity;
+import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlockEntity;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlockEntity;
 import com.lance5057.extradelight.blocks.entities.TapBlockEntity;
 import com.lance5057.extradelight.blocks.funnel.FunnelBlockEntity;
@@ -110,4 +111,16 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FunnelBlockEntity>> FUNNEL = TILES.register(
 			"funnel",
 			() -> BlockEntityType.Builder.of(FunnelBlockEntity::new, ExtraDelightBlocks.FUNNEL.get()).build(null));
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ChocolateBoxBlockEntity>> CHOCOLATE_BOX = TILES
+			.register("chocolate_box", () -> BlockEntityType.Builder.of(ChocolateBoxBlockEntity::new,
+					ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(),
+					ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(), ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get(),
+					ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get(), ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get(),
+					ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get(), ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get(),
+					ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get(), ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get(),
+					ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get(), ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get(),
+					ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(), ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(),
+					ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get())
+					.build(null));
 }

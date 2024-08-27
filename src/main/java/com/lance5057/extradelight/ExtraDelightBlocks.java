@@ -10,6 +10,7 @@ import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.StrippableLog;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
+import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
@@ -34,6 +35,7 @@ import com.lance5057.extradelight.workstations.oven.OvenBlock;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
 
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
@@ -676,5 +678,38 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> CHILLER = BLOCKS.register("chiller", () -> new ChillerBlock());
 	public static final DeferredBlock<Block> FUNNEL = BLOCKS.register("funnel",
 			() -> new FunnelBlock(Block.Properties.ofFullCopy(Blocks.COPPER_BLOCK)));
+
+	public static final DeferredBlock<ChocolateBoxBlock> WHITE_CHOCOLATE_BOX = BLOCKS.register("white_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.WHITE, Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> ORANGE_CHOCOLATE_BOX = BLOCKS.register("orange_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.ORANGE, Block.Properties.ofFullCopy(Blocks.ORANGE_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> MAGENTA_CHOCOLATE_BOX = BLOCKS.register("magenta_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.MAGENTA, Block.Properties.ofFullCopy(Blocks.MAGENTA_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> LIGHT_BLUE_CHOCOLATE_BOX = BLOCKS.register("light_blue_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.LIGHT_BLUE, Block.Properties.ofFullCopy(Blocks.LIGHT_BLUE_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> YELLOW_CHOCOLATE_BOX = BLOCKS.register("yellow_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.YELLOW, Block.Properties.ofFullCopy(Blocks.YELLOW_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> LIME_CHOCOLATE_BOX = BLOCKS.register("lime_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.LIME, Block.Properties.ofFullCopy(Blocks.LIME_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> PINK_CHOCOLATE_BOX = BLOCKS.register("pink_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.PINK, Block.Properties.ofFullCopy(Blocks.PINK_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> GRAY_CHOCOLATE_BOX = BLOCKS.register("gray_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.GRAY, Block.Properties.ofFullCopy(Blocks.GRAY_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> LIGHT_GRAY_CHOCOLATE_BOX = BLOCKS.register("light_gray_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.LIGHT_GRAY, Block.Properties.ofFullCopy(Blocks.LIGHT_GRAY_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> CYAN_CHOCOLATE_BOX = BLOCKS.register("cyan_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.CYAN, Block.Properties.ofFullCopy(Blocks.CYAN_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> BLUE_CHOCOLATE_BOX = BLOCKS.register("blue_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.BLUE, Block.Properties.ofFullCopy(Blocks.BLUE_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> BROWN_CHOCOLATE_BOX = BLOCKS.register("brown_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.BROWN, Block.Properties.ofFullCopy(Blocks.BROWN_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> GREEN_CHOCOLATE_BOX = BLOCKS.register("green_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.GREEN, Block.Properties.ofFullCopy(Blocks.GREEN_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> RED_CHOCOLATE_BOX = BLOCKS.register("red_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.RED, Block.Properties.ofFullCopy(Blocks.RED_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> BLACK_CHOCOLATE_BOX = BLOCKS.register("black_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.BLACK, Block.Properties.ofFullCopy(Blocks.BLACK_WOOL)));
+	public static final DeferredBlock<ChocolateBoxBlock> PURPLE_CHOCOLATE_BOX = BLOCKS.register("purple_chocolate_box",
+			() -> new ChocolateBoxBlock(DyeColor.PURPLE, Block.Properties.ofFullCopy(Blocks.PURPLE_WOOL)));
 
 }

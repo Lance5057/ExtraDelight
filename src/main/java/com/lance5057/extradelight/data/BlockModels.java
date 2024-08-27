@@ -10,6 +10,7 @@ import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
+import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
@@ -22,6 +23,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -258,7 +260,58 @@ public class BlockModels extends BlockStateProvider {
 		styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
 				"block/cosmetics/chocolate/white_chocolate");
 
+//		this.chocolateBox(ExtraDelightBlocks.CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get());
+		this.chocolateBox(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get());
+
 		AestheticBlocks.blockModel(this);
+	}
+
+	public void chocolateBox(ChocolateBoxBlock block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			boolean open = state.getValue(ChocolateBoxBlock.OPEN);
+
+			if (open)
+				return ConfiguredModel.builder()
+						.modelFile(models()
+								.withExistingParent(block.getColor() + "_chocolate_box", modLoc("block/chocolate_box_open"))
+								.texture("0", mcLoc("block/" + block.getColor() + "_glazed_terracotta"))
+								.texture("1", modLoc("block/ribbon/" + getOppositeColor(block.getColor()) + "_ribbon"))
+								.texture("2", mcLoc("block/" + getOppositeColor(block.getColor()) + "_wool"))
+								.renderType("cutout"))
+
+						.rotationY(((int) state.getValue(ChocolateBoxBlock.FACING).toYRot() + 180) % 360).build();
+
+			return ConfiguredModel.builder().modelFile(models()
+					.withExistingParent(block.getColor() + "_chocolate_box_open", modLoc("block/chocolate_box"))
+					.texture("0", mcLoc("block/" + block.getColor() + "_glazed_terracotta"))
+					.texture("1", modLoc("block/ribbon/" + getOppositeColor(block.getColor()) + "_ribbon"))
+					.renderType("cutout"))
+					.rotationY(((int) state.getValue(ChocolateBoxBlock.FACING).toYRot() + 180) % 360).build();
+		});
+	}
+
+	public DyeColor getOppositeColor(DyeColor dye) {
+		int i = dye.getId();
+		int out = i + 8;
+		if (out > 15)
+			out = Math.abs(out - 15);
+		return DyeColor.byId(out);
+
 	}
 
 	public void bakingStoneStyleBlock(BakingStoneBlock block) {
