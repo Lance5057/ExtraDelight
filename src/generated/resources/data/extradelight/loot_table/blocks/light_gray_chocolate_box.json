@@ -15,10 +15,7 @@
             {
               "function": "minecraft:copy_components",
               "include": [
-                "minecraft:custom_name",
-                "minecraft:container",
-                "minecraft:lock",
-                "minecraft:container_loot"
+                "extradelight:itemstack_handler"
               ],
               "source": "block_entity"
             }
