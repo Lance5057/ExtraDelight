@@ -24,6 +24,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -337,6 +338,24 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.MELTING_POT.get());
 		this.dropSelf(ExtraDelightBlocks.CHILLER.get());
 		this.dropSelf(ExtraDelightBlocks.FUNNEL.get());
+
+//		this.add(Blocks.BLACK_SHULKER_BOX, p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), p_248609_ -> this.createShulkerBoxDrop(p_248609_));
 	}
 
 	@Override
