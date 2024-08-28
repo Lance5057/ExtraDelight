@@ -12,7 +12,10 @@ import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
+<<<<<<< HEAD
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
+=======
+>>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -147,7 +150,7 @@ public class BlockModels extends BlockStateProvider {
 		this.logBlock(ExtraDelightBlocks.CINNAMON_STICK_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_PLANKS.get());
-//		this.simpleCross(ExtraDelightBlocks.CINNAMON_SAPLING.get());
+		this.simpleCross(ExtraDelightBlocks.CINNAMON_SAPLING.get());
 		this.stairsBlock(ExtraDelightBlocks.CINNAMON_STAIRS.get(),
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
 		this.trapdoorBlockWithRenderType(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(),
@@ -216,7 +219,7 @@ public class BlockModels extends BlockStateProvider {
 		pieLikeBlock(ExtraDelightBlocks.MILK_TART.get(), "milk_tart");
 		recipeFeastBlock(ExtraDelightBlocks.PUNCH.get(), "punch");
 		tapBlock(ExtraDelightBlocks.TAP.get());
-		coffeeBushBlock(ExtraDelightBlocks.COFFEE_BUSH.get());
+//		coffeeBushBlock(ExtraDelightBlocks.COFFEE_BUSH.get());
 
 		this.axisBlock(ExtraDelightBlocks.KEG.get(),
 				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
@@ -288,7 +291,11 @@ public class BlockModels extends BlockStateProvider {
 			if (open)
 				return ConfiguredModel.builder()
 						.modelFile(models()
+<<<<<<< HEAD
 								.withExistingParent(block.getColor() + "_chocolate_box", modLoc("block/chocolate_box_open"))
+=======
+								.withExistingParent(block.getColor() + "_chocolate_box_open", modLoc("block/chocolate_box_open"))
+>>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 								.texture("0", mcLoc("block/" + block.getColor() + "_glazed_terracotta"))
 								.texture("1", modLoc("block/ribbon/" + getOppositeColor(block.getColor()) + "_ribbon"))
 								.texture("2", mcLoc("block/" + getOppositeColor(block.getColor()) + "_wool"))
@@ -297,7 +304,11 @@ public class BlockModels extends BlockStateProvider {
 						.rotationY(((int) state.getValue(ChocolateBoxBlock.FACING).toYRot() + 180) % 360).build();
 
 			return ConfiguredModel.builder().modelFile(models()
+<<<<<<< HEAD
 					.withExistingParent(block.getColor() + "_chocolate_box_open", modLoc("block/chocolate_box"))
+=======
+					.withExistingParent(block.getColor() + "_chocolate_box", modLoc("block/chocolate_box"))
+>>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 					.texture("0", mcLoc("block/" + block.getColor() + "_glazed_terracotta"))
 					.texture("1", modLoc("block/ribbon/" + getOppositeColor(block.getColor()) + "_ribbon"))
 					.renderType("cutout"))
@@ -381,18 +392,18 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	public void coffeeBushBlock(CoffeeBush block) {
-		getVariantBuilder(block).forAllStates(state -> {
-			int age = state.getValue(CoffeeBush.AGE);
-
-			String suffix = "_stage" + age;
-
-			ModelFile model = models().withExistingParent("coffee_plant" + suffix,
-					modLoc("block/crops/coffee/coffee_plant" + suffix));
-
-			return ConfiguredModel.builder().modelFile(model).build();
-		});
-	}
+//	public void coffeeBushBlock(CoffeeBush block) {
+//		getVariantBuilder(block).forAllStates(state -> {
+//			int age = state.getValue(CoffeeBush.AGE);
+//
+//			String suffix = "_stage" + age;
+//
+//			ModelFile model = models().withExistingParent("coffee_plant" + suffix,
+//					modLoc("block/crops/coffee/coffee_plant" + suffix));
+//
+//			return ConfiguredModel.builder().modelFile(model).build();
+//		});
+//	}
 
 	public void jellyBlock(FeastBlock block, String color) {
 		getVariantBuilder(block).forAllStates(state -> {

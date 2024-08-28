@@ -14,12 +14,11 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.common.NeoForge;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.0.2";
+	public static final String VERSION = "2.0.3";
 
 	public static Logger logger = LogManager.getLogger();
 

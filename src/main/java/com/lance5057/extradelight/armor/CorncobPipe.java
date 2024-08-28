@@ -2,8 +2,6 @@ package com.lance5057.extradelight.armor;
 
 import java.util.function.Consumer;
 
-import org.antlr.v4.runtime.misc.NotNull;
-
 import com.lance5057.extradelight.armor.models.CorncobPipeModel;
 
 import net.minecraft.client.Minecraft;

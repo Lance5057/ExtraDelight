@@ -13,12 +13,16 @@ import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
+<<<<<<< HEAD
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
+=======
+>>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
@@ -31,12 +35,14 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
+<<<<<<< HEAD
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+=======
+>>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Builder;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
@@ -176,7 +182,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.SALAD.get(), Items.BOWL);
 
 		this.dropOther(ExtraDelightBlocks.CORN_BOTTOM.get(), ExtraDelightItems.CORN_SEEDS.get());
-		this.dropOther(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.CORN_SEEDS.get());
+//		this.dropOther(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.CORN_SEEDS.get());
+		LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
+				.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornTop.AGE, 3));
+		crop(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
+				ExtraDelightItems.CORN_SEEDS.get(), lootitemcondition$builder2, 3.0f);
 
 		this.dropOther(ExtraDelightBlocks.CORNBREAD.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.CARAMEL_CHEESECAKE.get(), Items.AIR);
@@ -271,10 +282,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.MINT_CROP.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_SAPLING.get());
 
-		LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
-				.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
-				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornTop.AGE, 3));
-
 		this.add(ExtraDelightBlocks.CINNAMON_DOOR.get(), createDoorTable(ExtraDelightBlocks.CINNAMON_DOOR.get()));
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_STAIRS.get());
@@ -285,24 +292,24 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropSelf(ExtraDelightBlocks.TAP.get());
 
-		this.add(ExtraDelightBlocks.COFFEE_BUSH.get(),
-				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable().withPool(LootPool.lootPool()
-						.when(LootItemBlockStatePropertyCondition
-								.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get()).setProperties(
-										StatePropertiesPredicate.Builder.properties().hasProperty(CoffeeBush.AGE, 3)))
-						.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
-						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
-						.apply(ApplyBonusCount
-								.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))
-						.withPool(LootPool.lootPool()
-								.when(LootItemBlockStatePropertyCondition
-										.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get())
-										.setProperties(StatePropertiesPredicate.Builder.properties()
-												.hasProperty(CoffeeBush.AGE, 2)))
-								.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
-								.apply(ApplyBonusCount
-										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
+//		this.add(ExtraDelightBlocks.COFFEE_BUSH.get(),
+//				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable().withPool(LootPool.lootPool()
+//						.when(LootItemBlockStatePropertyCondition
+//								.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get()).setProperties(
+//										StatePropertiesPredicate.Builder.properties().hasProperty(CoffeeBush.AGE, 3)))
+//						.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
+//						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
+//						.apply(ApplyBonusCount
+//								.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))
+//						.withPool(LootPool.lootPool()
+//								.when(LootItemBlockStatePropertyCondition
+//										.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get())
+//										.setProperties(StatePropertiesPredicate.Builder.properties()
+//												.hasProperty(CoffeeBush.AGE, 2)))
+//								.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
+//								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+//								.apply(ApplyBonusCount
+//										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
 
 		this.dropSelf(ExtraDelightBlocks.KEG.get());
 
@@ -369,7 +376,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 								.add(LootItem.lootTableItem(block)
 										.apply(CopyComponentsFunction
 												.copyComponents(CopyComponentsFunction.Source.BLOCK_ENTITY)
+<<<<<<< HEAD
 												.include(ExtraDelightComponents.ITEMSTACK_HANDLER.get())))));
+=======
+												.include(DataComponents.CONTAINER)))));
+>>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 	}
 
 	@Override

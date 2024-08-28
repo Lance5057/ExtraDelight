@@ -30,4 +30,8 @@ public class KnifeBlockScreen extends AbstractContainerScreen<KnifeBlockMenu> {
 
 	}
 
+	@Override
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+
+    }
 }

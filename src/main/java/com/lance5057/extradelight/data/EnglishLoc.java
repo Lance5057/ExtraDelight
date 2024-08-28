@@ -17,7 +17,7 @@ public class EnglishLoc extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
-		this.add("itemGroup.extradelight.items", "Extra Delight");
+		this.add("itemGroup.extradelight.tab", "Extra Delight");
 		this.add("itemGroup.extradelight.aesthetic", "Extra Delight Aesthetic");
 
 		this.add("farmersdelight.tooltip.oven.empty", "");
@@ -55,6 +55,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.ginger_beer", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.ginger_tea", "Minor Instant Health, Comfort");
 		this.add("farmersdelight.tooltip.horchata", "Removes 1 Harmful Effect");
+		this.add("farmersdelight.tooltip.tea", "Minor Instant Health, Removes 1 Harmful Effect");
 
 		this.add("farmersdelight.tooltip.milkshake", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.chocolate_milkshake", "Instant Health");
@@ -287,7 +288,12 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.LASAGNA_NOODLES.get(), "Lasagna Noodles");
 
 		this.add(ExtraDelightItems.CHEESE_BLOCK_ITEM.get(), "Block of Cheese");
+		this.add(ExtraDelightItems.CHEESE_SLAB_BLOCK_ITEM.get(), "Slab of Cheese");
+		this.add(ExtraDelightItems.CHEESE_STAIRS_BLOCK_ITEM.get(), "Cheese Stairs");
+
 		this.add(ExtraDelightItems.BUTTER_BLOCK_ITEM.get(), "Block of Butter");
+		this.add(ExtraDelightItems.BUTTER_SLAB_BLOCK_ITEM.get(), "Slab of Butter");
+		this.add(ExtraDelightItems.BUTTER_STAIRS_BLOCK_ITEM.get(), "Butter Stairs");
 
 		this.add(ExtraDelightItems.POTATO_SOUP.get(), "Potato Soup");
 		this.add(ExtraDelightItems.TOMATO_SOUP.get(), "Tomato Soup");
@@ -476,7 +482,7 @@ public class EnglishLoc extends LanguageProvider {
 		add(TranslatableKeys.EMPTY, "Empty");
 
 		this.add(ExtraDelightItems.CORN_SEEDS.get(), "Corn");
-//		this.add(ExtraDelightItems.UNSHUCKED_CORN.get(), "Unshucked Corn");
+		this.add(ExtraDelightItems.UNSHUCKED_CORN.get(), "Unshucked Corn");
 		this.add(ExtraDelightItems.CORN_ON_COB.get(), "Corn on the Cob");
 		this.add(ExtraDelightItems.CORN_HUSK.get(), "Corn Husk");
 		this.add(ExtraDelightItems.DRIED_CORN_HUSK.get(), "Dried Corn Husk");
@@ -800,6 +806,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.TOMATO_JUICE_FLUID_BUCKET.get(), "Tomato Juice Bucket");
 		this.add(ExtraDelightItems.VINEGAR_FLUID_BUCKET.get(), "Vinegar Bucket");
 		this.add(ExtraDelightItems.WHIPPED_CREAM_FLUID_BUCKET.get(), "Whipped Cream Bucket");
+		this.add(ExtraDelightItems.TEA.get(), "Tea");
 
 		this.add("fluid_type.extradelight.apple_cider_fluid", "Apple Cider Bucket");
 		this.add("fluid_type.extradelight.bbq_fluid", "BBQ Sauce Bucket");

@@ -103,6 +103,7 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 				if (tileEntity instanceof ChocolateBoxBlockEntity ent) {
 					if (stack.is(ExtraDelightTags.CANDY)) {
 
+<<<<<<< HEAD
 						int slot = BlockEntityUtils.Inventory.getLastEmptySlot(ent.getItems(), 8);
 						if (slot != -1) {
 							ent.getItems().insertItem(slot, stack, false);
@@ -116,6 +117,20 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 							BlockEntityUtils.Inventory.givePlayerItemStack(ent.getItems().extractItem(slot, 1, false),
 									player, level, pos);
 						return ItemInteractionResult.SUCCESS;
+=======
+						BlockEntityUtils.Inventory.insertItem(stack, ent.getItems(), 8, 1);
+//							ent.getItems().insertItem(slot, stack, false);
+
+						return ItemInteractionResult.SUCCESS;
+					} else {
+						if (state.getValue(ChocolateBoxBlock.OPEN)) {
+							int slot = BlockEntityUtils.Inventory.getLastFilledSlot(ent.getItems(), 8);
+							if (slot != -1)
+								BlockEntityUtils.Inventory.givePlayerItemStack(
+										ent.getItems().extractItem(slot, 1, false), player, level, pos);
+							return ItemInteractionResult.SUCCESS;
+						}
+>>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 					}
 				}
 			}
@@ -131,6 +146,7 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 			level.setBlock(pos, state.setValue(ChocolateBoxBlock.OPEN, !state.getValue(OPEN)), Block.UPDATE_CLIENTS);
 			return InteractionResult.SUCCESS;
 		} else {
+<<<<<<< HEAD
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof ChocolateBoxBlockEntity ent) {
 				int slot = BlockEntityUtils.Inventory.getLastFilledSlot(ent.getItems(), 8);
@@ -138,6 +154,17 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 					BlockEntityUtils.Inventory.givePlayerItemStack(ent.getItems().extractItem(slot, 1, false), player,
 							level, pos);
 				return InteractionResult.SUCCESS;
+=======
+			if (state.getValue(ChocolateBoxBlock.OPEN)) {
+				BlockEntity tileEntity = level.getBlockEntity(pos);
+				if (tileEntity instanceof ChocolateBoxBlockEntity ent) {
+					int slot = BlockEntityUtils.Inventory.getLastFilledSlot(ent.getItems(), 8);
+					if (slot != -1)
+						BlockEntityUtils.Inventory.givePlayerItemStack(ent.getItems().extractItem(slot, 1, false),
+								player, level, pos);
+					return InteractionResult.SUCCESS;
+				}
+>>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 			}
 		}
 		return InteractionResult.PASS;

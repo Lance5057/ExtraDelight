@@ -16,7 +16,10 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.fluids.FluidStack;
+<<<<<<< HEAD
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
+=======
+>>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 
 public class MeltingPotRecipe implements Recipe<SingleRecipeInput> {
 

@@ -17,5 +17,6 @@ public class CornSilkTeaItem extends DrinkableItem {
 	public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
 		consumer.heal(2.0F);
 		consumer.addEffect(new MobEffectInstance(ModEffects.COMFORT, FoodValues.SHORT_DURATION));
+
 	}
 }

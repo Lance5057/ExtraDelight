@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.displays.food;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
-import com.lance5057.extradelight.blocks.sink.SinkCabinetBlockEntity;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.BlockPos;

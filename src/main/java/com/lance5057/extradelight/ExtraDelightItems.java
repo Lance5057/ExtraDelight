@@ -19,6 +19,7 @@ import com.lance5057.extradelight.items.OffsetSpatulaItem;
 import com.lance5057.extradelight.items.ShuckableCorn;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
@@ -328,9 +329,9 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> JAM = ITEMS.register("jam",
 			() -> new Item(new Item.Properties().food(EDFoods.JAM).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final DeferredItem<Item> GLOW_BERRY_JAM = ITEMS.register("glow_berry_jam",
-			() -> new Item(new Item.Properties().food(EDFoods.GLOW_BERRY_JAM).craftRemainder(Items.GLASS_BOTTLE)));
+			() -> new Item(new Item.Properties().food(EDFoods.GLOW_JAM).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final DeferredItem<Item> GOLDEN_APPLE_JAM = ITEMS.register("golden_apple_jam",
-			() -> new Item(new Item.Properties().food(EDFoods.GOLDEN_APPLE_JAM).craftRemainder(Items.GLASS_BOTTLE)));
+			() -> new Item(new Item.Properties().food(EDFoods.GOLDEN_JAM).craftRemainder(Items.GLASS_BOTTLE)));
 
 	// Bread
 
@@ -490,65 +491,65 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().food(EDFoods.GRILLED_CHEESE).stacksTo(16)));
 
 	public static final DeferredItem<Item> HASH = ITEMS.register("hash",
-			() -> new Item(new Item.Properties().food(EDFoods.HASH_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.HASH).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> POT_ROAST = ITEMS.register("potroast",
 			() -> new Item(new Item.Properties().food(EDFoods.POT_ROAST).craftRemainder(Items.BOWL).stacksTo(16)));
 
 	public static final DeferredItem<BlockItem> MEAT_LOAF_FEAST = ITEMS.register("meatloaf_feast",
 			() -> new BlockItem(ExtraDelightBlocks.MEATLOAF_FEAST.get(), new Item.Properties().stacksTo(1)));
-	public static final DeferredItem<Item> MEAT_LOAF = ITEMS.register("meatloaf", () -> new Item(
-			new Item.Properties().food(EDFoods.MEAT_LOAF_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+	public static final DeferredItem<Item> MEAT_LOAF = ITEMS.register("meatloaf",
+			() -> new Item(new Item.Properties().food(EDFoods.MEAT_LOAF).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> MEAT_LOAF_SANDWICH = ITEMS.register("meatloaf_sandwich", () -> new Item(
 			new Item.Properties().food(EDFoods.MEAT_LOAF_SANDWICH).craftRemainder(Items.BOWL).stacksTo(16)));
 
 	public static final DeferredItem<Item> BBQ_RIBS = ITEMS.register("bbq_ribs",
 			() -> new Item(new Item.Properties().food(EDFoods.BBQ_RIBS).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> MEAT_PIE_SLICE = ITEMS.register("meat_pie_slice",
-			() -> new Item(new Item.Properties().food(EDFoods.MEAT_PIE_SLICE).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.MEAT_PIE).stacksTo(16)));
 	public static final DeferredItem<Item> PULLED_PORK_SANDWICH = ITEMS.register("pulled_pork_sandwich", () -> new Item(
 			new Item.Properties().food(EDFoods.PULLED_PORK_SANDWICH).craftRemainder(Items.BREAD).stacksTo(16)));
 
 	public static final DeferredItem<Item> RACK_LAMB = ITEMS.register("rack_lamb",
 			() -> new Item(new Item.Properties().food(EDFoods.RACK_LAMB).craftRemainder(Items.BOWL).stacksTo(16)));
-	public static final DeferredItem<Item> STIRFRY = ITEMS.register("stirfry", () -> new Item(
-			new Item.Properties().food(EDFoods.STIRFRY_AND_RICE).craftRemainder(Items.BOWL).stacksTo(16)));
+	public static final DeferredItem<Item> STIRFRY = ITEMS.register("stirfry",
+			() -> new Item(new Item.Properties().food(EDFoods.STIRFRY_RICE).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> BEEF_WELLINGTON = ITEMS.register("beef_wellington",
 			() -> new Item(new Item.Properties().food(EDFoods.WELLINGTON).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> HAGGIS = ITEMS.register("haggis",
 			() -> new Item(new Item.Properties().food(EDFoods.HAGGIS).craftRemainder(Items.BOWL).stacksTo(16)));
 
 	public static final DeferredItem<Item> JELLY_WHITE = ITEMS.register("jelly_white",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_ORANGE = ITEMS.register("jelly_orange",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_MAGENTA = ITEMS.register("jelly_magenta",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_LIGHT_BLUE = ITEMS.register("jelly_light_blue",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_YELLOW = ITEMS.register("jelly_yellow",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_LIME = ITEMS.register("jelly_lime",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_PINK = ITEMS.register("jelly_pink",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_GREY = ITEMS.register("jelly_grey",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_LIGHT_GREY = ITEMS.register("jelly_light_grey",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_CYAN = ITEMS.register("jelly_cyan",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_PURPLE = ITEMS.register("jelly_purple",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_BLUE = ITEMS.register("jelly_blue",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_BROWN = ITEMS.register("jelly_brown",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_GREEN = ITEMS.register("jelly_green",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_RED = ITEMS.register("jelly_red",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 	public static final DeferredItem<Item> JELLY_BLACK = ITEMS.register("jelly_black",
-			() -> new Item(new Item.Properties().food(EDFoods.JELLY_SERVING).craftRemainder(Items.BOWL).stacksTo(16)));
+			() -> new Item(new Item.Properties().food(EDFoods.JELLY).craftRemainder(Items.BOWL).stacksTo(16)));
 
 	public static final DeferredItem<BlockItem> HASH_FEAST_ITEM = ITEMS.register("hash_block_item",
 			() -> new BlockItem(ExtraDelightBlocks.HASH_FEAST.get(), new Item.Properties()));
@@ -627,12 +628,12 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties()));
 
 	public static final DeferredItem<Item> MACARONI_CHEESE = ITEMS.register("macaroni_cheese",
-			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.MACARONI_CHEESE_SERVING)));
+			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.MACARONI_AND_CHEESE)));
 	public static final DeferredItem<BlockItem> MACARONI_CHEESE_FEAST = ITEMS.register("macaroni_cheese_feast",
 			() -> new BlockItem(ExtraDelightBlocks.MACARONI_CHEESE.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> LASAGNA = ITEMS.register("lasanga",
-			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.LASAGNA_SERVING)));
+			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.LASAGNA)));
 	public static final DeferredItem<BlockItem> LASAGNA_FEAST = ITEMS.register("lasanga_feast",
 			() -> new BlockItem(ExtraDelightBlocks.LASAGNA.get(), new Item.Properties()));
 
@@ -1354,13 +1355,13 @@ public class ExtraDelightItems {
 	public static final DeferredItem<BlockItem> TAP = ITEMS.register("tap",
 			() -> new BlockItem(ExtraDelightBlocks.TAP.get(), new Item.Properties()));
 
-	public static final DeferredItem<Item> COFFEE_CHERRIES = ITEMS.register("coffee_cherries",
-			() -> new ItemNameBlockItem(ExtraDelightBlocks.COFFEE_BUSH.get(),
-					new Item.Properties().food(Foods.SWEET_BERRIES)));
-	public static final DeferredItem<Item> GREEN_COFFEE = ITEMS.register("green_coffee",
-			() -> new Item(new Item.Properties().food(Foods.SWEET_BERRIES)));
-	public static final DeferredItem<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
-			() -> new Item(new Item.Properties().food(Foods.SWEET_BERRIES)));
+//	public static final DeferredItem<Item> COFFEE_CHERRIES = ITEMS.register("coffee_cherries",
+//			() -> new ItemNameBlockItem(ExtraDelightBlocks.COFFEE_BUSH.get(),
+//					new Item.Properties().food(Foods.SWEET_BERRIES)));
+//	public static final DeferredItem<Item> GREEN_COFFEE = ITEMS.register("green_coffee",
+//			() -> new Item(new Item.Properties().food(Foods.SWEET_BERRIES)));
+//	public static final DeferredItem<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
+//			() -> new Item(new Item.Properties().food(Foods.SWEET_BERRIES)));
 
 	// Fluids
 	public static final DeferredItem<Item> OIL_FLUID_BUCKET = ITEMS.register("oil_fluid_bucket",
@@ -1538,6 +1539,7 @@ public class ExtraDelightItems {
 	public static final DeferredItem<BlockItem> FUNNEL = ITEMS.register("funnel",
 			() -> new BlockItem(ExtraDelightBlocks.FUNNEL.get(), new Item.Properties()));
 
+<<<<<<< HEAD
 //	public static final DeferredItem<BlockItem> CHOCOLATE_BOX = ITEMS.register("chocolate_box", () -> new BlockItem(
 //			ExtraDelightBlocks.CHOCOLATE_BOX.get(),
 //			new Item.Properties().stacksTo(1)));
@@ -1588,4 +1590,54 @@ public class ExtraDelightItems {
 	public static final DeferredItem<BlockItem> PURPLE_CHOCOLATE_BOX = ITEMS.register("purple_chocolate_box",
 			() -> new BlockItem(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
 					.component(ExtraDelightComponents.ITEMSTACK_HANDLER, ItemContainerContents.EMPTY)));
+=======
+	public static final DeferredItem<BlockItem> WHITE_CHOCOLATE_BOX = ITEMS.register("white_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> ORANGE_CHOCOLATE_BOX = ITEMS.register("orange_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> MAGENTA_CHOCOLATE_BOX = ITEMS.register("magenta_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> LIGHT_BLUE_CHOCOLATE_BOX = ITEMS.register("light_blue_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> YELLOW_CHOCOLATE_BOX = ITEMS.register("yellow_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> LIME_CHOCOLATE_BOX = ITEMS.register("lime_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> PINK_CHOCOLATE_BOX = ITEMS.register("pink_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> GRAY_CHOCOLATE_BOX = ITEMS.register("gray_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> LIGHT_GRAY_CHOCOLATE_BOX = ITEMS.register("light_gray_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> CYAN_CHOCOLATE_BOX = ITEMS.register("cyan_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> BLUE_CHOCOLATE_BOX = ITEMS.register("blue_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> BROWN_CHOCOLATE_BOX = ITEMS.register("brown_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> GREEN_CHOCOLATE_BOX = ITEMS.register("green_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> RED_CHOCOLATE_BOX = ITEMS.register("red_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> BLACK_CHOCOLATE_BOX = ITEMS.register("black_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+	public static final DeferredItem<BlockItem> PURPLE_CHOCOLATE_BOX = ITEMS.register("purple_chocolate_box",
+			() -> new BlockItem(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
+					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
+>>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 }

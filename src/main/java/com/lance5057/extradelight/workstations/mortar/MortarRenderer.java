@@ -35,8 +35,9 @@ public class MortarRenderer implements BlockEntityRenderer<MortarBlockEntity> {
 				pPoseStack.pushPose();
 
 				pPoseStack.translate(0.5f, 0.15f, 0.5f);
-				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, (90 * i) + (45 * g), 0));
-				pPoseStack.mulPose(new Quaternionf().rotateXYZ(45, 0, 45));
+				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, (float) Math.toRadians((90 * i) + (45 * g)), 0));
+				pPoseStack.mulPose(
+						new Quaternionf().rotateXYZ((float) Math.toRadians(45), 0, (float) Math.toRadians(45)));
 				pPoseStack.translate(0.15f, 0, 0);
 
 				float scale = 1 / (1 + g);

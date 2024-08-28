@@ -4,7 +4,6 @@ import javax.annotation.Nonnull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.capabilities.WellFluidCapability;
-import com.lance5057.extradelight.util.BlockEntityUtils;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
