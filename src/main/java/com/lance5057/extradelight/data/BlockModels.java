@@ -12,7 +12,6 @@ import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -288,7 +287,7 @@ public class BlockModels extends BlockStateProvider {
 			if (open)
 				return ConfiguredModel.builder()
 						.modelFile(models()
-								.withExistingParent(block.getColor() + "_chocolate_box", modLoc("block/chocolate_box_open"))
+								.withExistingParent(block.getColor() + "_chocolate_box_open", modLoc("block/chocolate_box_open"))
 								.texture("0", mcLoc("block/" + block.getColor() + "_glazed_terracotta"))
 								.texture("1", modLoc("block/ribbon/" + getOppositeColor(block.getColor()) + "_ribbon"))
 								.texture("2", mcLoc("block/" + getOppositeColor(block.getColor()) + "_wool"))
@@ -297,7 +296,7 @@ public class BlockModels extends BlockStateProvider {
 						.rotationY(((int) state.getValue(ChocolateBoxBlock.FACING).toYRot() + 180) % 360).build();
 
 			return ConfiguredModel.builder().modelFile(models()
-					.withExistingParent(block.getColor() + "_chocolate_box_open", modLoc("block/chocolate_box"))
+					.withExistingParent(block.getColor() + "_chocolate_box", modLoc("block/chocolate_box"))
 					.texture("0", mcLoc("block/" + block.getColor() + "_glazed_terracotta"))
 					.texture("1", modLoc("block/ribbon/" + getOppositeColor(block.getColor()) + "_ribbon"))
 					.renderType("cutout"))

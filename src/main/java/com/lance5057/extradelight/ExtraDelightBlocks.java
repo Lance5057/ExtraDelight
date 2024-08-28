@@ -12,7 +12,6 @@ import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MintCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;

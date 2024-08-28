@@ -5,7 +5,6 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;

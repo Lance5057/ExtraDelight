@@ -1539,9 +1539,6 @@ public class ExtraDelightItems {
 	public static final DeferredItem<BlockItem> FUNNEL = ITEMS.register("funnel",
 			() -> new BlockItem(ExtraDelightBlocks.FUNNEL.get(), new Item.Properties()));
 
-//	public static final DeferredItem<BlockItem> CHOCOLATE_BOX = ITEMS.register("chocolate_box", () -> new BlockItem(
-//			ExtraDelightBlocks.CHOCOLATE_BOX.get(),
-//			new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<BlockItem> WHITE_CHOCOLATE_BOX = ITEMS.register("white_chocolate_box",
 			() -> new BlockItem(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
 					.component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));

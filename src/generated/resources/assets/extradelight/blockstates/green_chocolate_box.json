@@ -1,33 +1,33 @@
 {
   "variants": {
     "facing=east,open=false": {
-      "model": "extradelight:block/green_chocolate_box_open",
+      "model": "extradelight:block/green_chocolate_box",
       "y": 90
     },
     "facing=east,open=true": {
-      "model": "extradelight:block/green_chocolate_box",
+      "model": "extradelight:block/green_chocolate_box_open",
       "y": 90
     },
     "facing=north,open=false": {
-      "model": "extradelight:block/green_chocolate_box_open"
-    },
-    "facing=north,open=true": {
       "model": "extradelight:block/green_chocolate_box"
     },
+    "facing=north,open=true": {
+      "model": "extradelight:block/green_chocolate_box_open"
+    },
     "facing=south,open=false": {
-      "model": "extradelight:block/green_chocolate_box_open",
+      "model": "extradelight:block/green_chocolate_box",
       "y": 180
     },
     "facing=south,open=true": {
-      "model": "extradelight:block/green_chocolate_box",
+      "model": "extradelight:block/green_chocolate_box_open",
       "y": 180
     },
     "facing=west,open=false": {
-      "model": "extradelight:block/green_chocolate_box_open",
+      "model": "extradelight:block/green_chocolate_box",
       "y": 270
     },
     "facing=west,open=true": {
-      "model": "extradelight:block/green_chocolate_box",
+      "model": "extradelight:block/green_chocolate_box_open",
       "y": 270
     }
   }

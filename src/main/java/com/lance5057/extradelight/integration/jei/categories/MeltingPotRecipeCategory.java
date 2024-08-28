@@ -16,7 +16,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.phys.Vec2;
 
 public class MeltingPotRecipeCategory implements IRecipeCategory<MeltingPotRecipe> {
 	public static final RecipeType<MeltingPotRecipe> TYPE = RecipeType.create(ExtraDelight.MOD_ID, "MeltingPot",

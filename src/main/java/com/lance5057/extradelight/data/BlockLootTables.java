@@ -9,11 +9,9 @@ import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
-import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
@@ -32,7 +30,6 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Builder;

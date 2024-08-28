@@ -835,6 +835,39 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(ExtraDelightItems.MELTING_POT.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/melting_pot")));
 
+		this.forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.ORANGE_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/orange_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.MAGENTA_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/magenta_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.LIGHT_BLUE_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/light_blue_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.YELLOW_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/yellow_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.LIME_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/lime_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.PINK_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pink_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.GRAY_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gray_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.LIGHT_GRAY_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/light_gray_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.CYAN_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cyan_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.BLUE_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blue_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.BROWN_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/brown_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.GREEN_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/green_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.RED_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/red_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.BLACK_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/black_chocolate_box"));
+		this.forBlockItem(ExtraDelightItems.PURPLE_CHOCOLATE_BOX,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/purple_chocolate_box"));
+
 		AestheticBlocks.itemModel(this);
 	}
 

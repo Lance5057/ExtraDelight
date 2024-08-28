@@ -1,8 +1,9 @@
 {
-  "parent": "extradelight:block/chocolate_box",
+  "parent": "extradelight:block/chocolate_box_open",
   "render_type": "minecraft:cutout",
   "textures": {
     "0": "minecraft:block/green_glazed_terracotta",
-    "1": "extradelight:block/ribbon/pink_ribbon"
+    "1": "extradelight:block/ribbon/pink_ribbon",
+    "2": "minecraft:block/pink_wool"
   }
 }
