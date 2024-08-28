@@ -2,7 +2,6 @@ package com.lance5057.extradelight.blocks.chocolatebox;
 
 import javax.annotation.Nullable;
 
-import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.mojang.serialization.MapCodec;
@@ -13,11 +12,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -33,10 +29,6 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
-import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class ChocolateBoxBlock extends Block implements EntityBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -107,9 +99,10 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 						Block.UPDATE_CLIENTS);
 				return ItemInteractionResult.SUCCESS;
 			} else {
-				if (stack.is(ExtraDelightTags.CANDY)) {
-					BlockEntity tileEntity = level.getBlockEntity(pos);
-					if (tileEntity instanceof ChocolateBoxBlockEntity ent) {
+				BlockEntity tileEntity = level.getBlockEntity(pos);
+				if (tileEntity instanceof ChocolateBoxBlockEntity ent) {
+					if (stack.is(ExtraDelightTags.CANDY)) {
+
 						int slot = BlockEntityUtils.Inventory.getLastEmptySlot(ent.getItems(), 8);
 						if (slot != -1) {
 							ent.getItems().insertItem(slot, stack, false);
@@ -117,8 +110,13 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 						}
 
 						return ItemInteractionResult.SUCCESS;
+					} else {
+						int slot = BlockEntityUtils.Inventory.getLastFilledSlot(ent.getItems(), 8);
+						if (slot != -1)
+							BlockEntityUtils.Inventory.givePlayerItemStack(ent.getItems().extractItem(slot, 1, false),
+									player, level, pos);
+						return ItemInteractionResult.SUCCESS;
 					}
-
 				}
 			}
 			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
@@ -204,49 +202,49 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 //				}
 //		}
 //	}
-
-	@Nullable
-	public static DyeColor getColorFromItem(Item item) {
-		return getColorFromBlock(Block.byItem(item));
-	}
-
-	@Nullable
-	public static DyeColor getColorFromBlock(Block block) {
-		return block instanceof ChocolateBoxBlock ? ((ChocolateBoxBlock) block).getColor() : null;
-	}
-
-	public static Block getBlockByColor(@Nullable DyeColor color) {
-		if (color == null) {
-			return ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get();
-		} else {
-			return switch (color) {
-			case WHITE -> ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get();
-			case ORANGE -> ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get();
-			case MAGENTA -> ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get();
-			case LIGHT_BLUE -> ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get();
-			case YELLOW -> ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get();
-			case LIME -> ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get();
-			case PINK -> ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get();
-			case GRAY -> ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get();
-			case LIGHT_GRAY -> ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get();
-			case CYAN -> ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get();
-			case BLUE -> ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get();
-			case BROWN -> ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get();
-			case GREEN -> ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get();
-			case RED -> ExtraDelightBlocks.RED_CHOCOLATE_BOX.get();
-			case BLACK -> ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get();
-			case PURPLE -> ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get();
-			};
-		}
-	}
-
+//
+//	@Nullable
+//	public static DyeColor getColorFromItem(Item item) {
+//		return getColorFromBlock(Block.byItem(item));
+//	}
+//
+//	@Nullable
+//	public static DyeColor getColorFromBlock(Block block) {
+//		return block instanceof ChocolateBoxBlock ? ((ChocolateBoxBlock) block).getColor() : null;
+//	}
+//
+//	public static Block getBlockByColor(@Nullable DyeColor color) {
+//		if (color == null) {
+//			return ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get();
+//		} else {
+//			return switch (color) {
+//			case WHITE -> ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get();
+//			case ORANGE -> ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get();
+//			case MAGENTA -> ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get();
+//			case LIGHT_BLUE -> ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get();
+//			case YELLOW -> ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get();
+//			case LIME -> ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get();
+//			case PINK -> ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get();
+//			case GRAY -> ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get();
+//			case LIGHT_GRAY -> ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get();
+//			case CYAN -> ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get();
+//			case BLUE -> ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get();
+//			case BROWN -> ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get();
+//			case GREEN -> ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get();
+//			case RED -> ExtraDelightBlocks.RED_CHOCOLATE_BOX.get();
+//			case BLACK -> ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get();
+//			case PURPLE -> ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get();
+//			};
+//		}
+//	}
+//
 	@Nullable
 	public DyeColor getColor() {
 		return this.color;
 	}
-
-	public static ItemStack getColoredItemStack(@Nullable DyeColor color) {
-		return new ItemStack(getBlockByColor(color));
-	}
+//
+//	public static ItemStack getColoredItemStack(@Nullable DyeColor color) {
+//		return new ItemStack(getBlockByColor(color));
+//	}
 
 }
