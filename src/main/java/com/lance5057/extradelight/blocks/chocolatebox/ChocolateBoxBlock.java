@@ -103,11 +103,10 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 				if (tileEntity instanceof ChocolateBoxBlockEntity ent) {
 					if (stack.is(ExtraDelightTags.CANDY)) {
 
-						int slot = BlockEntityUtils.Inventory.getLastEmptySlot(ent.getItems(), 8);
-						if (slot != -1) {
-							ent.getItems().insertItem(slot, stack, false);
-//							stack.shrink(1);
-						}
+						
+							BlockEntityUtils.Inventory.insertItem(stack, ent.getItems(), 8, 1);
+//							ent.getItems().insertItem(slot, stack, false);
+						
 
 						return ItemInteractionResult.SUCCESS;
 					} else {

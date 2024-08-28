@@ -31,7 +31,7 @@ public class BlockEntityUtils {
 			return -1;
 		}
 
-		public static ItemStack extractItem(IItemHandlerModifiable inventory, int inventorySize) {
+		public static ItemStack extractItem(IItemHandler inventory, int inventorySize) {
 			int i = getLastFilledSlot(inventory, inventorySize);
 			if (i != -1) {
 				return inventory.extractItem(i, 1, false);
@@ -39,7 +39,7 @@ public class BlockEntityUtils {
 			return ItemStack.EMPTY;
 		}
 
-		public static void insertItem(ItemStack heldItem, IItemHandlerModifiable inventory, int inventorySize, int amount) {
+		public static void insertItem(ItemStack heldItem, IItemHandler inventory, int inventorySize, int amount) {
 			int slot = getLastEmptySlot(inventory, inventorySize);
 			if (slot != -1) {
 				inventory.insertItem(slot, heldItem, false);

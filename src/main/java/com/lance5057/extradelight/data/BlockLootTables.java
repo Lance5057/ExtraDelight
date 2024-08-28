@@ -19,6 +19,7 @@ import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
@@ -369,7 +370,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 								.add(LootItem.lootTableItem(block)
 										.apply(CopyComponentsFunction
 												.copyComponents(CopyComponentsFunction.Source.BLOCK_ENTITY)
-												.include(ExtraDelightComponents.ITEMSTACK_HANDLER.get())))));
+												.include(DataComponents.CONTAINER)))));
 	}
 
 	@Override
