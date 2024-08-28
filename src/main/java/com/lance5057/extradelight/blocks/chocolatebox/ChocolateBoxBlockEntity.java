@@ -6,19 +6,21 @@ import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class ChocolateBoxBlockEntity extends BlockEntity {
 	public static final String TAG = "inv";
-	private final ItemStackHandler items = createHandler();
+	private final ChocolateBoxItemStackHandler items = createHandler();
 	private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
 	public final static int NUM_SLOTS = 8;
 
@@ -26,8 +28,8 @@ public class ChocolateBoxBlockEntity extends BlockEntity {
 		super(ExtraDelightBlockEntities.CHOCOLATE_BOX.get(), pos, blockState);
 	}
 
-	private ItemStackHandler createHandler() {
-		return new ItemStackHandler(NUM_SLOTS) {
+	private ChocolateBoxItemStackHandler createHandler() {
+		return new ChocolateBoxItemStackHandler(NUM_SLOTS) {
 
 			@Override
 			public int getSlotLimit(int slot) {
@@ -43,6 +45,18 @@ public class ChocolateBoxBlockEntity extends BlockEntity {
 				ChocolateBoxBlockEntity.this.setChanged();
 			}
 		};
+	}
+
+	@Override
+	protected void collectImplicitComponents(DataComponentMap.Builder builder) {
+		super.collectImplicitComponents(builder);
+		builder.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(items.getStacks()));
+	}
+
+	@Override
+	protected void applyImplicitComponents(DataComponentInput input) {
+		super.applyImplicitComponents(input);
+		input.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyInto(items.getStacks());
 	}
 
 	public IItemHandler getItems() {
