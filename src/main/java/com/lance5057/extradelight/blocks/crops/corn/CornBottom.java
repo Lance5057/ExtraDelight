@@ -121,7 +121,7 @@ public class CornBottom extends CropBlock {
 		if (i == this.getMaxAge()) {
 			if (!checkAboveCorn(pLevel, pPos)) {
 				if (checkAboveAir(pLevel, pPos)) {
-					pLevel.setBlock(pPos.above(), ExtraDelightBlocks.CORN_TOP.get().getStateForAge(0), 2);
+					pLevel.setBlock(pPos.above(), ExtraDelightBlocks.CORN_TOP.get().getStateForAge(0), Block.UPDATE_ALL);
 				}
 			}
 		}

@@ -782,9 +782,9 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CORN_SILK_SACK, "corn_silk_sack");
 		forBlockItem(ExtraDelightItems.TAP, "tap");
 
-//		forItem(ExtraDelightItems.COFFEE_BEANS, "crops/coffee/coffee_beans");
-//		forItem(ExtraDelightItems.GREEN_COFFEE, "crops/coffee/green_coffee");
-//		forItem(ExtraDelightItems.COFFEE_CHERRIES, "crops/coffee/coffee_cherries");
+		forItem(ExtraDelightItems.COFFEE_BEANS, "crops/coffee/coffee_beans");
+		forItem(ExtraDelightItems.GREEN_COFFEE, "crops/coffee/green_coffee");
+		forItem(ExtraDelightItems.COFFEE_CHERRIES, "crops/coffee/coffee_cherries");
 
 		forBlockItem(ExtraDelightItems.KEG, modLoc("block/keg_vertical"));
 
@@ -877,11 +877,55 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_STAIRS,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_stairs"));
 		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_DOOR, "blood_chocolate_door");
-		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_TRAPDOOR, ResourceLocation
-				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_trapdoor_bottom"));
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_TRAPDOOR,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_trapdoor_bottom"));
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_SLAB, modLoc("block/blood_chocolate_slab"));
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_PILLAR, ResourceLocation
 				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/blood_chocolate_pillar"));
+
+		forItem(ExtraDelightItems.ROASTED_COCOA_BEANS, "roasted_cocoa_beans");
+		forItem(ExtraDelightItems.COCOA_SOLIDS, "cocoa_solids");
+
+		forItem(ExtraDelightItems.WHITE_CHOCOLATE_BAR, "white_chocolate_bar");
+		forItem(ExtraDelightItems.MILK_CHOCOLATE_BAR, "milk_chocolate_bar");
+		forItem(ExtraDelightItems.DARK_CHOCOLATE_BAR, "dark_chocolate_bar");
+		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_BAR, "blood_chocolate_bar");
+
+		forItem(ExtraDelightItems.WHITE_CHOCOLATE_CHIPS, "white_chocolate_bar");
+		forItem(ExtraDelightItems.MILK_CHOCOLATE_CHIPS, "milk_chocolate_bar");
+		forItem(ExtraDelightItems.DARK_CHOCOLATE_CHIPS, "dark_chocolate_bar");
+		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_CHIPS, "blood_chocolate_bar");
+
+		forItem(ExtraDelightItems.WHITE_CHOCOLATE_FILLED_BAR, "white_chocolate_filled_bar");
+		forItem(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR, "milk_chocolate_filled_bar");
+		forItem(ExtraDelightItems.DARK_CHOCOLATE_FILLED_BAR, "dark_chocolate_filled_bar");
+		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_FILLED_BAR, "blood_chocolate_filled_bar");
+
+		forItem(ExtraDelightItems.WHITE_CHOCOLATE_TRUFFLE, "white_chocolate_truffle");
+		forItem(ExtraDelightItems.MILK_CHOCOLATE_TRUFFLE, "milk_chocolate_truffle");
+		forItem(ExtraDelightItems.DARK_CHOCOLATE_TRUFFLE, "dark_chocolate_truffle");
+		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_TRUFFLE, "blood_chocolate_truffle");
+
+		forItem(ExtraDelightItems.MARSHMALLOW, "marshmallow");
+		forItem(ExtraDelightItems.CHILI_POWDER, "chili_powder");
+		forItem(ExtraDelightItems.PEANUT_BUTTER_CUP, "peanut_butter_cup");
+		forItem(ExtraDelightItems.MALLOW_CUP, "mallow_cup");
+		forItem(ExtraDelightItems.XOCOLATI, "xocolati");
+		forItem(ExtraDelightItems.GOURMET_HOT_CHOCOLATE, "gourmet_hot_chocolate");
+		forItem(ExtraDelightItems.LAVA_CAKE, "lava_cake");
+		forItem(ExtraDelightItems.COFFEE_JELLY, "coffee_jelly");
+		forItem(ExtraDelightItems.TOFFEE, "toffee");
+		forItem(ExtraDelightItems.GRAHAM_CRACKER, "graham_cracker");
+		forItem(ExtraDelightItems.SMORE, "smore");
+		forItem(ExtraDelightItems.PEPPERMINT_BARK, "peppermint_bark");
+		forItem(ExtraDelightItems.DIRT_CAKE, "dirt_cake");
+		forItem(ExtraDelightItems.EASTER_EGG, "easter_egg");
+		forItem(ExtraDelightItems.TRAIL_MIX, "trail_mix");
+		forItem(ExtraDelightItems.NOUGAT, "nougat");
+		forItem(ExtraDelightItems.GUMMIES, "gummies");
+		forItem(ExtraDelightItems.PEANUT_BRITTLE, "peanut_brittle");
+		forItem(ExtraDelightItems.BUTTERSCOTCH, "butterscotch");
+		forItem(ExtraDelightItems.FLUFFER_NUTTER, "fluffer_nutter");
 
 		AestheticBlocks.itemModel(this);
 	}

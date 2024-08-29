@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_fence_gate_open",
-  "textures": {
-    "texture": "extradelight:block/cosmetics/chocolate/blood_chocolate_style0"
-  }
-}

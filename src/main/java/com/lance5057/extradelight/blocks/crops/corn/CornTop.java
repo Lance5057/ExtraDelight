@@ -87,7 +87,7 @@ public class CornTop extends CropBlock {
 				float f = CropBlock.getGrowthSpeed(pState, pLevel, pPos);
 				if (net.neoforged.neoforge.common.CommonHooks.canCropGrow(pLevel, pPos, pState,
 						pRandom.nextInt((int) (25.0F / f) + 1) == 0)) {
-					pLevel.setBlock(pPos, this.getStateForAge(i + 1), 2);
+					pLevel.setBlock(pPos, this.getStateForAge(i + 1), Block.UPDATE_ALL);
 					net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(pLevel, pPos, pState);
 				}
 			}
@@ -104,7 +104,7 @@ public class CornTop extends CropBlock {
 			if (isMaxAge(pState)) {
 				if (checkSides(pLevel, pCurrentPos.east()) && checkSides(pLevel, pCurrentPos.north())
 						&& checkSides(pLevel, pCurrentPos.west()) && checkSides(pLevel, pCurrentPos.south())) {
-					pLevel.setBlock(pCurrentPos, s.setValue(CornTop.DENSE, true), 4);
+					pLevel.setBlock(pCurrentPos, s.setValue(CornTop.DENSE, true), Block.UPDATE_ALL);
 				}
 			}
 

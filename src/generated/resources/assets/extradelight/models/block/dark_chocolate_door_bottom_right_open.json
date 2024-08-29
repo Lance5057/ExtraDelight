@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_right_open",
-  "textures": {
-    "bottom": "extradelight:block/cosmetics/chocolate/dark_chocolate_door_bottom",
-    "top": "extradelight:block/cosmetics/chocolate/dark_chocolate_door_top"
-  }
-}
