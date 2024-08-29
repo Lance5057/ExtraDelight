@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "extradelight:block/dark_chocolate_pillar_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "extradelight:block/dark_chocolate_pillar"
+    },
+    "axis=z": {
+      "model": "extradelight:block/dark_chocolate_pillar_horizontal",
+      "x": 90
+    }
+  }
+}

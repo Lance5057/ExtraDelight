@@ -1700,7 +1700,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> MALLOW_CUP = ITEMS.register("mallow_cup",
 			() -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> XOCOLATI = ITEMS.register("xocolati", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> XOCOLATL = ITEMS.register("xocolati", () -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> GOURMET_HOT_CHOCOLATE = ITEMS.register("gourmet_hot_chocolate",
 			() -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> LAVA_CAKE = ITEMS.register("lava_cake",

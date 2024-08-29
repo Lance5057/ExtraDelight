@@ -891,10 +891,10 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.DARK_CHOCOLATE_BAR, "dark_chocolate_bar");
 		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_BAR, "blood_chocolate_bar");
 
-		forItem(ExtraDelightItems.WHITE_CHOCOLATE_CHIPS, "white_chocolate_bar");
-		forItem(ExtraDelightItems.MILK_CHOCOLATE_CHIPS, "milk_chocolate_bar");
-		forItem(ExtraDelightItems.DARK_CHOCOLATE_CHIPS, "dark_chocolate_bar");
-		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_CHIPS, "blood_chocolate_bar");
+		forItem(ExtraDelightItems.WHITE_CHOCOLATE_CHIPS, "white_chocolate_chips");
+		forItem(ExtraDelightItems.MILK_CHOCOLATE_CHIPS, "milk_chocolate_chips");
+		forItem(ExtraDelightItems.DARK_CHOCOLATE_CHIPS, "dark_chocolate_chips");
+		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_CHIPS, "blood_chocolate_chips");
 
 		forItem(ExtraDelightItems.WHITE_CHOCOLATE_FILLED_BAR, "white_chocolate_filled_bar");
 		forItem(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR, "milk_chocolate_filled_bar");
@@ -910,22 +910,22 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CHILI_POWDER, "chili_powder");
 		forItem(ExtraDelightItems.PEANUT_BUTTER_CUP, "peanut_butter_cup");
 		forItem(ExtraDelightItems.MALLOW_CUP, "mallow_cup");
-		forItem(ExtraDelightItems.XOCOLATI, "xocolati");
+		forItem(ExtraDelightItems.XOCOLATL, "xocolatl");
 		forItem(ExtraDelightItems.GOURMET_HOT_CHOCOLATE, "gourmet_hot_chocolate");
 		forItem(ExtraDelightItems.LAVA_CAKE, "lava_cake");
 		forItem(ExtraDelightItems.COFFEE_JELLY, "coffee_jelly");
 		forItem(ExtraDelightItems.TOFFEE, "toffee");
 		forItem(ExtraDelightItems.GRAHAM_CRACKER, "graham_cracker");
-		forItem(ExtraDelightItems.SMORE, "smore");
-		forItem(ExtraDelightItems.PEPPERMINT_BARK, "peppermint_bark");
-		forItem(ExtraDelightItems.DIRT_CAKE, "dirt_cake");
-		forItem(ExtraDelightItems.EASTER_EGG, "easter_egg");
-		forItem(ExtraDelightItems.TRAIL_MIX, "trail_mix");
-		forItem(ExtraDelightItems.NOUGAT, "nougat");
-		forItem(ExtraDelightItems.GUMMIES, "gummies");
-		forItem(ExtraDelightItems.PEANUT_BRITTLE, "peanut_brittle");
-		forItem(ExtraDelightItems.BUTTERSCOTCH, "butterscotch");
-		forItem(ExtraDelightItems.FLUFFER_NUTTER, "fluffer_nutter");
+//		forItem(ExtraDelightItems.SMORE, "smore");
+//		forItem(ExtraDelightItems.PEPPERMINT_BARK, "peppermint_bark");
+//		forItem(ExtraDelightItems.DIRT_CAKE, "dirt_cake");
+//		forItem(ExtraDelightItems.EASTER_EGG, "easter_egg");
+//		forItem(ExtraDelightItems.TRAIL_MIX, "trail_mix");
+//		forItem(ExtraDelightItems.NOUGAT, "nougat");
+//		forItem(ExtraDelightItems.GUMMIES, "gummies");
+//		forItem(ExtraDelightItems.PEANUT_BRITTLE, "peanut_brittle");
+//		forItem(ExtraDelightItems.BUTTERSCOTCH, "butterscotch");
+//		forItem(ExtraDelightItems.FLUFFER_NUTTER, "fluffer_nutter");
 
 		AestheticBlocks.itemModel(this);
 	}
