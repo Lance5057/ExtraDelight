@@ -3,15 +3,9 @@ package com.lance5057.extradelight;
 import java.util.List;
 
 import net.minecraft.network.chat.Component;
-<<<<<<< HEAD
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.Item.TooltipContext;
-=======
 import net.minecraft.world.item.Item.TooltipContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
->>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 import net.minecraft.world.item.component.TooltipProvider;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;

@@ -12,10 +12,6 @@ import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
-<<<<<<< HEAD
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
-=======
->>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MintCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
@@ -670,10 +666,83 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<Block> MILK_CHOCOLATE_BLOCK = BLOCKS.register("milk_chocolate_block",
 			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
+	public static final DeferredBlock<FenceBlock> MILK_CHOCOLATE_FENCE = BLOCKS.register("milk_chocolate_fence",
+			() -> new FenceBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE)));
+	public static final DeferredBlock<FenceGateBlock> MILK_CHOCOLATE_FENCE_GATE = BLOCKS.register(
+			"milk_chocolate_fence_gate",
+			() -> new FenceGateBlock(WoodType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE_GATE)));
+	public static final DeferredBlock<StairBlock> MILK_CHOCOLATE_STAIRS = BLOCKS.register("milk_chocolate_stairs",
+			() -> new StairBlock(MILK_CHOCOLATE_BLOCK.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(Blocks.ACACIA_STAIRS)));
+	public static final DeferredBlock<DoorBlock> MILK_CHOCOLATE_DOOR = BLOCKS.register("milk_chocolate_door",
+			() -> new DoorBlock(BlockSetType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_DOOR)));
+	public static final DeferredBlock<TrapDoorBlock> MILK_CHOCOLATE_TRAPDOOR = BLOCKS.register(
+			"milk_chocolate_trapdoor",
+			() -> new TrapDoorBlock(BlockSetType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_TRAPDOOR)));
+	public static final DeferredBlock<SlabBlock> MILK_CHOCOLATE_SLAB = BLOCKS.register("milk_chocolate_slab",
+			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_SLAB)));
+	public static final DeferredBlock<RotatedPillarBlock> MILK_CHOCOLATE_PILLAR = BLOCKS.register(
+			"milk_chocolate_pillar", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
+
 	public static final DeferredBlock<Block> DARK_CHOCOLATE_BLOCK = BLOCKS.register("dark_chocolate_block",
 			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
+	public static final DeferredBlock<FenceBlock> DARK_CHOCOLATE_FENCE = BLOCKS.register("dark_chocolate_fence",
+			() -> new FenceBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE)));
+	public static final DeferredBlock<FenceGateBlock> DARK_CHOCOLATE_FENCE_GATE = BLOCKS.register(
+			"dark_chocolate_fence_gate",
+			() -> new FenceGateBlock(WoodType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE_GATE)));
+	public static final DeferredBlock<StairBlock> DARK_CHOCOLATE_STAIRS = BLOCKS.register("dark_chocolate_stairs",
+			() -> new StairBlock(DARK_CHOCOLATE_BLOCK.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(Blocks.ACACIA_STAIRS)));
+	public static final DeferredBlock<DoorBlock> DARK_CHOCOLATE_DOOR = BLOCKS.register("dark_chocolate_door",
+			() -> new DoorBlock(BlockSetType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_DOOR)));
+	public static final DeferredBlock<TrapDoorBlock> DARK_CHOCOLATE_TRAPDOOR = BLOCKS.register(
+			"dark_chocolate_trapdoor",
+			() -> new TrapDoorBlock(BlockSetType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_TRAPDOOR)));
+	public static final DeferredBlock<SlabBlock> DARK_CHOCOLATE_SLAB = BLOCKS.register("dark_chocolate_slab",
+			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_SLAB)));
+	public static final DeferredBlock<RotatedPillarBlock> DARK_CHOCOLATE_PILLAR = BLOCKS.register(
+			"dark_chocolate_pillar", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
+
 	public static final DeferredBlock<Block> WHITE_CHOCOLATE_BLOCK = BLOCKS.register("white_chocolate_block",
 			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
+	public static final DeferredBlock<FenceBlock> WHITE_CHOCOLATE_FENCE = BLOCKS.register("white_chocolate_fence",
+			() -> new FenceBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE)));
+	public static final DeferredBlock<FenceGateBlock> WHITE_CHOCOLATE_FENCE_GATE = BLOCKS.register(
+			"white_chocolate_fence_gate",
+			() -> new FenceGateBlock(WoodType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE_GATE)));
+	public static final DeferredBlock<StairBlock> WHITE_CHOCOLATE_STAIRS = BLOCKS.register("white_chocolate_stairs",
+			() -> new StairBlock(WHITE_CHOCOLATE_BLOCK.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(Blocks.ACACIA_STAIRS)));
+	public static final DeferredBlock<DoorBlock> WHITE_CHOCOLATE_DOOR = BLOCKS.register("white_chocolate_door",
+			() -> new DoorBlock(BlockSetType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_DOOR)));
+	public static final DeferredBlock<TrapDoorBlock> WHITE_CHOCOLATE_TRAPDOOR = BLOCKS.register(
+			"white_chocolate_trapdoor",
+			() -> new TrapDoorBlock(BlockSetType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_TRAPDOOR)));
+	public static final DeferredBlock<SlabBlock> WHITE_CHOCOLATE_SLAB = BLOCKS.register("white_chocolate_slab",
+			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_SLAB)));
+	public static final DeferredBlock<RotatedPillarBlock> WHITE_CHOCOLATE_PILLAR = BLOCKS.register(
+			"white_chocolate_pillar", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
+
+	public static final DeferredBlock<Block> BLOOD_CHOCOLATE_BLOCK = BLOCKS.register("blood_chocolate_block",
+			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));
+	public static final DeferredBlock<FenceBlock> BLOOD_CHOCOLATE_FENCE = BLOCKS.register("blood_chocolate_fence",
+			() -> new FenceBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE)));
+	public static final DeferredBlock<FenceGateBlock> BLOOD_CHOCOLATE_FENCE_GATE = BLOCKS.register(
+			"blood_chocolate_fence_gate",
+			() -> new FenceGateBlock(WoodType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_FENCE_GATE)));
+	public static final DeferredBlock<StairBlock> BLOOD_CHOCOLATE_STAIRS = BLOCKS.register("blood_chocolate_stairs",
+			() -> new StairBlock(BLOOD_CHOCOLATE_BLOCK.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(Blocks.ACACIA_STAIRS)));
+	public static final DeferredBlock<DoorBlock> BLOOD_CHOCOLATE_DOOR = BLOCKS.register("blood_chocolate_door",
+			() -> new DoorBlock(BlockSetType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_DOOR)));
+	public static final DeferredBlock<TrapDoorBlock> BLOOD_CHOCOLATE_TRAPDOOR = BLOCKS.register(
+			"blood_chocolate_trapdoor",
+			() -> new TrapDoorBlock(BlockSetType.ACACIA, Block.Properties.ofFullCopy(Blocks.ACACIA_TRAPDOOR)));
+	public static final DeferredBlock<SlabBlock> BLOOD_CHOCOLATE_SLAB = BLOCKS.register("blood_chocolate_slab",
+			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_SLAB)));
+	public static final DeferredBlock<RotatedPillarBlock> BLOOD_CHOCOLATE_PILLAR = BLOCKS.register(
+			"blood_chocolate_pillar", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
 
 	public static final DeferredBlock<Block> MELTING_POT = BLOCKS.register("melting_pot",
 			() -> new MeltingPotBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
@@ -685,9 +754,11 @@ public class ExtraDelightBlocks {
 			() -> new ChocolateBoxBlock(DyeColor.WHITE, Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
 	public static final DeferredBlock<ChocolateBoxBlock> ORANGE_CHOCOLATE_BOX = BLOCKS.register("orange_chocolate_box",
 			() -> new ChocolateBoxBlock(DyeColor.ORANGE, Block.Properties.ofFullCopy(Blocks.ORANGE_WOOL)));
-	public static final DeferredBlock<ChocolateBoxBlock> MAGENTA_CHOCOLATE_BOX = BLOCKS.register("magenta_chocolate_box",
+	public static final DeferredBlock<ChocolateBoxBlock> MAGENTA_CHOCOLATE_BOX = BLOCKS.register(
+			"magenta_chocolate_box",
 			() -> new ChocolateBoxBlock(DyeColor.MAGENTA, Block.Properties.ofFullCopy(Blocks.MAGENTA_WOOL)));
-	public static final DeferredBlock<ChocolateBoxBlock> LIGHT_BLUE_CHOCOLATE_BOX = BLOCKS.register("light_blue_chocolate_box",
+	public static final DeferredBlock<ChocolateBoxBlock> LIGHT_BLUE_CHOCOLATE_BOX = BLOCKS.register(
+			"light_blue_chocolate_box",
 			() -> new ChocolateBoxBlock(DyeColor.LIGHT_BLUE, Block.Properties.ofFullCopy(Blocks.LIGHT_BLUE_WOOL)));
 	public static final DeferredBlock<ChocolateBoxBlock> YELLOW_CHOCOLATE_BOX = BLOCKS.register("yellow_chocolate_box",
 			() -> new ChocolateBoxBlock(DyeColor.YELLOW, Block.Properties.ofFullCopy(Blocks.YELLOW_WOOL)));
@@ -697,7 +768,8 @@ public class ExtraDelightBlocks {
 			() -> new ChocolateBoxBlock(DyeColor.PINK, Block.Properties.ofFullCopy(Blocks.PINK_WOOL)));
 	public static final DeferredBlock<ChocolateBoxBlock> GRAY_CHOCOLATE_BOX = BLOCKS.register("gray_chocolate_box",
 			() -> new ChocolateBoxBlock(DyeColor.GRAY, Block.Properties.ofFullCopy(Blocks.GRAY_WOOL)));
-	public static final DeferredBlock<ChocolateBoxBlock> LIGHT_GRAY_CHOCOLATE_BOX = BLOCKS.register("light_gray_chocolate_box",
+	public static final DeferredBlock<ChocolateBoxBlock> LIGHT_GRAY_CHOCOLATE_BOX = BLOCKS.register(
+			"light_gray_chocolate_box",
 			() -> new ChocolateBoxBlock(DyeColor.LIGHT_GRAY, Block.Properties.ofFullCopy(Blocks.LIGHT_GRAY_WOOL)));
 	public static final DeferredBlock<ChocolateBoxBlock> CYAN_CHOCOLATE_BOX = BLOCKS.register("cyan_chocolate_box",
 			() -> new ChocolateBoxBlock(DyeColor.CYAN, Block.Properties.ofFullCopy(Blocks.CYAN_WOOL)));

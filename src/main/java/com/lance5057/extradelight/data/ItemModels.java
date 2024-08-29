@@ -788,22 +788,22 @@ public class ItemModels extends ItemModelProvider {
 
 		forBlockItem(ExtraDelightItems.KEG, modLoc("block/keg_vertical"));
 
-//		forBlockItem(ExtraDelightItems.STRIPPED_FRUIT_LOG, "stripped_fruit_log");
-//		forBlockItem(ExtraDelightItems.FRUIT_LOG, "fruit_log");
-//		forBlockItem(ExtraDelightItems.FRUIT_PLANKS, "fruit_planks");
-//		forBlockItem(ExtraDelightItems.FRUIT_FENCE,
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_fence_inventory"));
-//		forItem(ExtraDelightItems.FRUIT_DOOR, "fruit_door");
-//		forBlockItem(ExtraDelightItems.FRUIT_FENCE_GATE, "fruit_fence_gate");
-//		forBlockItem(ExtraDelightItems.FRUIT_STAIRS, "fruit_stairs");
-//		forBlockItem(ExtraDelightItems.FRUIT_TRAPDOOR,
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_trapdoor_bottom"));
-//		forBlockItem(ExtraDelightItems.FRUIT_CABINET, "fruit_cabinet");
-//		this.slab(ExtraDelightItems.FRUIT_SLAB.getId().getPath(), modLoc("block/fruit_planks"),
-//				modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
-//
-//		forItem(ExtraDelightItems.CHILI_SEEDS, "crops/chili/chili_seeds");
-//		forItem(ExtraDelightItems.CHILI, "crops/chili/chili_pepper");
+		forBlockItem(ExtraDelightItems.STRIPPED_FRUIT_LOG, "stripped_fruit_log");
+		forBlockItem(ExtraDelightItems.FRUIT_LOG, "fruit_log");
+		forBlockItem(ExtraDelightItems.FRUIT_PLANKS, "fruit_planks");
+		forBlockItem(ExtraDelightItems.FRUIT_FENCE,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_fence_inventory"));
+		forItem(ExtraDelightItems.FRUIT_DOOR, "fruit_door");
+		forBlockItem(ExtraDelightItems.FRUIT_FENCE_GATE, "fruit_fence_gate");
+		forBlockItem(ExtraDelightItems.FRUIT_STAIRS, "fruit_stairs");
+		forBlockItem(ExtraDelightItems.FRUIT_TRAPDOOR,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_trapdoor_bottom"));
+		forBlockItem(ExtraDelightItems.FRUIT_CABINET, "fruit_cabinet");
+		this.slab(ExtraDelightItems.FRUIT_SLAB.getId().getPath(), modLoc("block/fruit_planks"),
+				modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
+
+		forItem(ExtraDelightItems.CHILI_SEEDS, "crops/chili/chili_seeds");
+		forItem(ExtraDelightItems.CHILI, "crops/chili/chili_pepper");
 //
 //		forItemModel(ExtraDelightItems.JAR, "blocks/jar");
 		forItem(ExtraDelightItems.APPLE_CIDER_FLUID_BUCKET, "apple_cider_bucket");
@@ -867,6 +867,21 @@ public class ItemModels extends ItemModelProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/black_chocolate_box"));
 		this.forBlockItem(ExtraDelightItems.PURPLE_CHOCOLATE_BOX,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/purple_chocolate_box"));
+
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+				"block/cosmetics/chocolate/blood_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+				"block/cosmetics/chocolate/blood_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE_GATE, ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/blood_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_STAIRS,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_stairs"));
+		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_DOOR, "blood_chocolate_door");
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_TRAPDOOR, ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_trapdoor_bottom"));
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_SLAB, modLoc("block/blood_chocolate_slab"));
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_PILLAR, ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/blood_chocolate_pillar"));
 
 		AestheticBlocks.itemModel(this);
 	}

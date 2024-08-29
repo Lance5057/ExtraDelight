@@ -11,6 +11,12 @@
     },
     "style=3": {
       "model": "extradelight:block/cosmetics/chocolate/white_chocolate_style3"
+    },
+    "style=4": {
+      "model": "extradelight:block/cosmetics/chocolate/white_chocolate_style4"
+    },
+    "style=5": {
+      "model": "extradelight:block/cosmetics/chocolate/white_chocolate_style5"
     }
   }
 }

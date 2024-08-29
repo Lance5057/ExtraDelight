@@ -15,7 +15,7 @@
             {
               "function": "minecraft:copy_components",
               "include": [
-                "extradelight:itemstack_handler"
+                "minecraft:container"
               ],
               "source": "block_entity"
             }

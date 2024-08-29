@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 public class ChocolateStyleBlock extends Block implements IStyleable {
-	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, 3);
+	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, 5);
 
 	public ChocolateStyleBlock(Properties pProperties) {
 		super(pProperties);
@@ -28,7 +28,7 @@ public class ChocolateStyleBlock extends Block implements IStyleable {
 
 	@Override
 	public int numStyles() {
-		return 4;
+		return 6;
 	}
 
 	@Override
@@ -81,7 +81,7 @@ public class ChocolateStyleBlock extends Block implements IStyleable {
 
 	@Override
 	public void setStyle(Level level, BlockPos pos, BlockState state, int style) {
-		// TODO Auto-generated method stub
-		
+		BlockState nextState = state.setValue(STYLE, style);
+		level.setBlock(pos, nextState, 3);
 	}
 }

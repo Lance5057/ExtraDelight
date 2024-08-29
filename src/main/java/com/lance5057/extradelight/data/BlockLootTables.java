@@ -9,14 +9,9 @@ import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
-import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
-<<<<<<< HEAD
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
-=======
->>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
@@ -35,10 +30,6 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
-<<<<<<< HEAD
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-=======
->>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Builder;
@@ -341,8 +332,44 @@ public class BlockLootTables extends BlockLootSubProvider {
 				chiliBuilder);
 
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get());
+		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE_GATE.get());
+		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_STAIRS.get());
+		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_DOOR.get());
+		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_TRAPDOOR.get());
+		this.add(ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(),
+				createSlabItemTable(ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get()));
+		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_PILLAR.get());
+
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_FENCE.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_FENCE_GATE.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_STAIRS.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_DOOR.get());
+		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_TRAPDOOR.get());
+		this.add(ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(),
+				createSlabItemTable(ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get()));
+		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_PILLAR.get());
+
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE.get());
+		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE_GATE.get());
+		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_STAIRS.get());
+		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get());
+		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get());
+		this.add(ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get(),
+				createSlabItemTable(ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get()));
+		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_PILLAR.get());
+
+		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE.get());
+		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE_GATE.get());
+		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get());
+		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_DOOR.get());
+		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_TRAPDOOR.get());
+		this.add(ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(),
+				createSlabItemTable(ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get()));
+		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_PILLAR.get());
 
 		this.dropSelf(ExtraDelightBlocks.MELTING_POT.get());
 		this.dropSelf(ExtraDelightBlocks.CHILLER.get());
@@ -376,11 +403,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 								.add(LootItem.lootTableItem(block)
 										.apply(CopyComponentsFunction
 												.copyComponents(CopyComponentsFunction.Source.BLOCK_ENTITY)
-<<<<<<< HEAD
-												.include(ExtraDelightComponents.ITEMSTACK_HANDLER.get())))));
-=======
 												.include(DataComponents.CONTAINER)))));
->>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 	}
 
 	@Override

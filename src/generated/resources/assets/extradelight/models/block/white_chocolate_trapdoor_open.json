@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_trapdoor_open",
+  "textures": {
+    "texture": "extradelight:block/cosmetics/chocolate/white_chocolate_trapdoor"
+  }
+}

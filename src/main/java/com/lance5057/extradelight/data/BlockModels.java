@@ -12,10 +12,6 @@ import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
-<<<<<<< HEAD
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
-=======
->>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -258,10 +254,110 @@ public class BlockModels extends BlockStateProvider {
 
 		styleBlock(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
 				"block/cosmetics/chocolate/dark_chocolate");
+		this.fenceBlock(ExtraDelightBlocks.DARK_CHOCOLATE_FENCE.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/dark_chocolate_style0"));
+		this.fenceGateBlock(ExtraDelightBlocks.DARK_CHOCOLATE_FENCE_GATE.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/dark_chocolate_style0"));
+		this.stairsBlock(ExtraDelightBlocks.DARK_CHOCOLATE_STAIRS.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/dark_chocolate_style1"));
+		this.doorBlock(ExtraDelightBlocks.DARK_CHOCOLATE_DOOR.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/dark_chocolate_door_bottom"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/dark_chocolate_door_top"));
+		this.trapdoorBlock(ExtraDelightBlocks.DARK_CHOCOLATE_TRAPDOOR.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/dark_chocolate_trapdoor"), false);
+		this.slabBlock(ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(), modLoc("block/dark_chocolate_slab_double"),
+				modLoc("block/cosmetics/chocolate/dark_chocolate_slab"),
+				modLoc("block/cosmetics/chocolate/dark_chocolate_style0"),
+				modLoc("block/cosmetics/chocolate/dark_chocolate_style0"));
+		this.axisBlock(ExtraDelightBlocks.DARK_CHOCOLATE_PILLAR.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/dark_chocolate_pillar"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/dark_chocolate_style0"));
+
 		styleBlock(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
 				"block/cosmetics/chocolate/milk_chocolate");
+		this.fenceBlock(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/milk_chocolate_style0"));
+		this.fenceGateBlock(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE_GATE.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/milk_chocolate_style0"));
+		this.stairsBlock(ExtraDelightBlocks.MILK_CHOCOLATE_STAIRS.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/milk_chocolate_style1"));
+		this.doorBlock(ExtraDelightBlocks.MILK_CHOCOLATE_DOOR.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/milk_chocolate_door_bottom"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/milk_chocolate_door_top"));
+		this.trapdoorBlock(ExtraDelightBlocks.MILK_CHOCOLATE_TRAPDOOR.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/milk_chocolate_trapdoor"), false);
+		this.slabBlock(ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(), modLoc("block/milk_chocolate_slab_double"),
+				modLoc("block/cosmetics/chocolate/milk_chocolate_slab"),
+				modLoc("block/cosmetics/chocolate/milk_chocolate_style0"),
+				modLoc("block/cosmetics/chocolate/milk_chocolate_style0"));
+		this.axisBlock(ExtraDelightBlocks.MILK_CHOCOLATE_PILLAR.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/milk_chocolate_pillar"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/milk_chocolate_style0"));
+
 		styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
 				"block/cosmetics/chocolate/white_chocolate");
+		this.fenceBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/white_chocolate_style0"));
+		this.fenceGateBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE_GATE.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/white_chocolate_style0"));
+		this.stairsBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_STAIRS.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/white_chocolate_style1"));
+		this.doorBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/white_chocolate_door_bottom"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/white_chocolate_door_top"));
+		this.trapdoorBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get(), ResourceLocation.fromNamespaceAndPath(
+				ExtraDelight.MOD_ID, "block/cosmetics/chocolate/white_chocolate_trapdoor"), false);
+		this.slabBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get(), modLoc("block/white_chocolate_slab_double"),
+				modLoc("block/cosmetics/chocolate/white_chocolate_slab"),
+				modLoc("block/cosmetics/chocolate/white_chocolate_style0"),
+				modLoc("block/cosmetics/chocolate/white_chocolate_style0"));
+		this.axisBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_PILLAR.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/white_chocolate_pillar"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/white_chocolate_style0"));
+
+		styleBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
+				"block/cosmetics/chocolate/blood_chocolate");
+		this.fenceBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/blood_chocolate_style0"));
+		this.fenceGateBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE_GATE.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/blood_chocolate_style0"));
+		this.stairsBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get(), ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/blood_chocolate_style1"));
+		this.doorBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_DOOR.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/blood_chocolate_door_bottom"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/blood_chocolate_door_top"));
+		this.trapdoorBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_TRAPDOOR.get(), ResourceLocation.fromNamespaceAndPath(
+				ExtraDelight.MOD_ID, "block/cosmetics/chocolate/blood_chocolate_trapdoor"), false);
+		this.slabBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(), modLoc("block/blood_chocolate_slab_double"),
+				modLoc("block/cosmetics/chocolate/blood_chocolate_slab"),
+				modLoc("block/cosmetics/chocolate/blood_chocolate_style0"),
+				modLoc("block/cosmetics/chocolate/blood_chocolate_style0"));
+		this.axisBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_PILLAR.get(),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/blood_chocolate_pillar"),
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						"block/cosmetics/chocolate/blood_chocolate_style0"));
+
+//		styleBlock(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
+//				"block/cosmetics/chocolate/milk_chocolate");
+//		styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
+//				"block/cosmetics/chocolate/white_chocolate");
+//		styleBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
+//				"block/cosmetics/chocolate/blood_chocolate");
 
 //		this.chocolateBox(ExtraDelightBlocks.CHOCOLATE_BOX.get());
 		this.chocolateBox(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get());
@@ -291,11 +387,8 @@ public class BlockModels extends BlockStateProvider {
 			if (open)
 				return ConfiguredModel.builder()
 						.modelFile(models()
-<<<<<<< HEAD
-								.withExistingParent(block.getColor() + "_chocolate_box", modLoc("block/chocolate_box_open"))
-=======
-								.withExistingParent(block.getColor() + "_chocolate_box_open", modLoc("block/chocolate_box_open"))
->>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
+								.withExistingParent(block.getColor() + "_chocolate_box_open",
+										modLoc("block/chocolate_box_open"))
 								.texture("0", mcLoc("block/" + block.getColor() + "_glazed_terracotta"))
 								.texture("1", modLoc("block/ribbon/" + getOppositeColor(block.getColor()) + "_ribbon"))
 								.texture("2", mcLoc("block/" + getOppositeColor(block.getColor()) + "_wool"))
@@ -304,11 +397,8 @@ public class BlockModels extends BlockStateProvider {
 						.rotationY(((int) state.getValue(ChocolateBoxBlock.FACING).toYRot() + 180) % 360).build();
 
 			return ConfiguredModel.builder().modelFile(models()
-<<<<<<< HEAD
-					.withExistingParent(block.getColor() + "_chocolate_box_open", modLoc("block/chocolate_box"))
-=======
+
 					.withExistingParent(block.getColor() + "_chocolate_box", modLoc("block/chocolate_box"))
->>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 					.texture("0", mcLoc("block/" + block.getColor() + "_glazed_terracotta"))
 					.texture("1", modLoc("block/ribbon/" + getOppositeColor(block.getColor()) + "_ribbon"))
 					.renderType("cutout"))

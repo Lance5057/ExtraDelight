@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "extradelight:block/cosmetics/chocolate/white_chocolate_style0"
+  }
+}

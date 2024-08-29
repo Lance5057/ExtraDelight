@@ -6,10 +6,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.items.IItemHandler;
-<<<<<<< HEAD
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
-=======
->>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 
 public class BlockEntityUtils {
 	public static class Inventory {
@@ -23,7 +19,7 @@ public class BlockEntityUtils {
 			}
 			return -1;
 		}
-		
+
 		public static int getLastEmptySlot(IItemHandler iItemHandler, int inventorySize) {
 			for (int i = 0; i < iItemHandler.getSlots(); ++i) {
 				ItemStack slotStack = iItemHandler.getStackInSlot(i);
@@ -42,11 +38,7 @@ public class BlockEntityUtils {
 			return ItemStack.EMPTY;
 		}
 
-<<<<<<< HEAD
-		public static void insertItem(ItemStack heldItem, IItemHandlerModifiable inventory, int inventorySize, int amount) {
-=======
 		public static void insertItem(ItemStack heldItem, IItemHandler inventory, int inventorySize, int amount) {
->>>>>>> c4286f8806fe5bd7571ff248729167ad29d68ac0
 			int slot = getLastEmptySlot(inventory, inventorySize);
 			if (slot != -1) {
 				inventory.insertItem(slot, heldItem, false);

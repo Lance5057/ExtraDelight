@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "extradelight:block/cosmetics/chocolate/dark_chocolate_style0"
+  }
+}
