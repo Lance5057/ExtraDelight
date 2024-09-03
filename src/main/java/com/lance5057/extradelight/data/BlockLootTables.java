@@ -402,6 +402,18 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
 		this.add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
 
+		this.dropOther(ExtraDelightBlocks.BROWNIES.get(), ExtraDelightItems.TRAY);
+		this.dropOther(ExtraDelightBlocks.BLONDIES.get(), ExtraDelightItems.TRAY);
+		this.dropOther(ExtraDelightBlocks.CHOCOLATE_CAKE.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.FUDGE.get(), ExtraDelightItems.TRAY);
+		this.dropOther(ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.CRISP_RICE_TREATS.get(), ExtraDelightItems.TRAY);
+		this.dropOther(ExtraDelightBlocks.SCOTCHAROOS.get(), ExtraDelightItems.TRAY);
+		this.dropOther(ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.BLOOD_CHOCOLATE_FONDUE.get(), Items.BUCKET);
+		this.dropOther(ExtraDelightBlocks.DARK_CHOCOLATE_FONDUE.get(), Items.BUCKET);
+		this.dropOther(ExtraDelightBlocks.MILK_CHOCOLATE_FONDUE.get(), Items.BUCKET);
+		this.dropOther(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), Items.BUCKET);
 	}
 
 	protected LootTable.Builder createChocolateBoxDrop(Block block) {

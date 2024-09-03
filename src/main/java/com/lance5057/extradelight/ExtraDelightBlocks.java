@@ -786,4 +786,42 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<ChocolateBoxBlock> PURPLE_CHOCOLATE_BOX = BLOCKS.register("purple_chocolate_box",
 			() -> new ChocolateBoxBlock(DyeColor.PURPLE, Block.Properties.ofFullCopy(Blocks.PURPLE_WOOL)));
 
+	public static final DeferredBlock<RecipeFeastBlock> BROWNIES = BLOCKS.register("brownies",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
+					true, pan));
+	public static final DeferredBlock<RecipeFeastBlock> BLONDIES = BLOCKS.register("blondies",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.YELLOW_WOOL).mapColor(MapColor.COLOR_YELLOW),
+					true, pan));
+	public static final DeferredBlock<Block> CHOCOLATE_CAKE = ExtraDelightBlocks.BLOCKS.register("chocolate_cake",
+			() -> new CakeBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
+	public static final DeferredBlock<RecipeFeastBlock> FUDGE = BLOCKS.register("fudge",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
+					true, pan));
+	public static final DeferredBlock<RecipeFeastBlock> STICKY_TOFFEE_PUDDING = BLOCKS.register("sticky_toffee_pudding",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
+					true, pan));
+	public static final DeferredBlock<RecipeFeastBlock> CRISP_RICE_TREATS = BLOCKS.register("crisp_rice_treats",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.YELLOW_WOOL).mapColor(MapColor.COLOR_YELLOW),
+					true, pan));
+	public static final DeferredBlock<RecipeFeastBlock> SCOTCHAROOS = BLOCKS.register("scotcharoos",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
+					true, pan));
+	public static final DeferredBlock<RecipeFeastBlock> BLACK_FOREST_TRIFLE = BLOCKS.register("black_forest_trifle",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
+					true, pan));
+
+	public static final DeferredBlock<RecipeFeastBlock> MILK_CHOCOLATE_FONDUE = BLOCKS.register("milk_chocolate_fondue",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
+					true, pot));
+	public static final DeferredBlock<RecipeFeastBlock> DARK_CHOCOLATE_FONDUE = BLOCKS.register("dark_chocolate_fondue",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
+					true, pot));
+	public static final DeferredBlock<RecipeFeastBlock> WHITE_CHOCOLATE_FONDUE = BLOCKS.register(
+			"white_chocolate_fondue",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
+					true, pot));
+	public static final DeferredBlock<RecipeFeastBlock> BLOOD_CHOCOLATE_FONDUE = BLOCKS.register(
+			"blood_chocolate_fondue",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
+					true, pot));
 }
