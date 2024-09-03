@@ -3,14 +3,18 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "block": "extradelight:sheet",
+              "function": "minecraft:copy_state",
+              "properties": [
+                "style"
+              ]
+            }
+          ],
           "name": "extradelight:sheet"
         }
       ],

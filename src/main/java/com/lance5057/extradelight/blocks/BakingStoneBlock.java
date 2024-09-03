@@ -20,7 +20,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BakingStoneBlock extends Block implements IStyleable {
 	public static final MapCodec<BakingStoneBlock> CODEC = simpleCodec(BakingStoneBlock::new);
-	protected VoxelShape SHAPE = Block.box(4.0D, 0.0D, 0.0D, 12.0D, 8.0D, 16.0D);
+	protected VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 1.0D, 15.0D);
 
 	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length-1);
 

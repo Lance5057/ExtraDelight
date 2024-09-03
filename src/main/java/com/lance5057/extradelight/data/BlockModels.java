@@ -376,6 +376,7 @@ public class BlockModels extends BlockStateProvider {
 		this.chocolateBox(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get());
 		this.chocolateBox(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get());
 		this.chocolateBox(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get());
+		
 
 		AestheticBlocks.blockModel(this);
 	}

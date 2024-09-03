@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -29,6 +30,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.CopyBlockState;
 import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -304,7 +306,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropSelf(ExtraDelightBlocks.KEG.get());
 
-		this.dropSelf(ExtraDelightBlocks.SHEET_BLOCK.get());
+		this.add(ExtraDelightBlocks.SHEET_BLOCK.get(), LootTable.lootTable()
+				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+						.add(LootItem.lootTableItem(ExtraDelightBlocks.SHEET_BLOCK.get()).apply(CopyBlockState
+								.copyState(ExtraDelightBlocks.SHEET_BLOCK.get()).copy(HorizontalPanBlock.STYLE)))));
+
+//		this.dropSelf(ExtraDelightBlocks.SHEET_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.TRAY_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.LOAF_PAN_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.PIE_DISH_BLOCK.get());
@@ -394,6 +401,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
 		this.add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
 		this.add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
+
 	}
 
 	protected LootTable.Builder createChocolateBoxDrop(Block block) {
