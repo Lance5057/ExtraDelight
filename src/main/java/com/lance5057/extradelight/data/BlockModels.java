@@ -352,14 +352,6 @@ public class BlockModels extends BlockStateProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 						"block/cosmetics/chocolate/blood_chocolate_style0"));
 
-//		styleBlock(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
-//				"block/cosmetics/chocolate/milk_chocolate");
-//		styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
-//				"block/cosmetics/chocolate/white_chocolate");
-//		styleBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
-//				"block/cosmetics/chocolate/blood_chocolate");
-
-//		this.chocolateBox(ExtraDelightBlocks.CHOCOLATE_BOX.get());
 		this.chocolateBox(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get());
 		this.chocolateBox(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get());
 		this.chocolateBox(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get());
@@ -376,6 +368,7 @@ public class BlockModels extends BlockStateProvider {
 		this.chocolateBox(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get());
 		this.chocolateBox(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get());
 		this.chocolateBox(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get());
+		
 		
 
 		AestheticBlocks.blockModel(this);

@@ -27,7 +27,7 @@ public class MallowRootCrop extends BushBlock implements BonemealableBlock, Liqu
 			Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D), Block.box(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D),
 			Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D) };
 
-	protected MallowRootCrop(Properties properties) {
+	public MallowRootCrop(Properties properties) {
 		super(properties);
 		// TODO Auto-generated constructor stub
 	}
