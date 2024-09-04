@@ -682,6 +682,9 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<FruitLeafBlock> HAZELNUT_LEAVES = BLOCKS.register("hazelnut_leaves",
 			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
 					ExtraDelightItems.HAZELNUTS_IN_SHELL));
+	public static final DeferredBlock<SaplingBlock> HAZELNUT_SAPLING = BLOCKS.register("hazelnut_sapling",
+			() -> new SaplingBlock(ExtraDelightTreeGrowers.HAZELNUT,
+					Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
 
 	public static final DeferredBlock<Block> MILK_CHOCOLATE_BLOCK = BLOCKS.register("milk_chocolate_block",
 			() -> new ChocolateStyleBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_WOOD)));

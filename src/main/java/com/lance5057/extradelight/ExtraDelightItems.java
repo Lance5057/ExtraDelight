@@ -1511,7 +1511,7 @@ public class ExtraDelightItems {
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.CHILI_CROP.get(), new Item.Properties()));
 	public static final DeferredItem<Item> CHILI = ITEMS.register("chili", () -> new Item(new Item.Properties()));
 
-	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new Item(new Item.Properties()));
+//	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new Item(new Item.Properties()));
 
 	public static final DeferredItem<BlockItem> MELTING_POT = ITEMS.register("melting_pot",
 			() -> new BlockItem(ExtraDelightBlocks.MELTING_POT.get(), new Item.Properties()));
@@ -1853,9 +1853,6 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> ROASTED_HAZELNUTS = ITEMS.register("roasted_hazelnuts",
 			() -> new Item(new Item.Properties()));
 
-//	public static final DeferredItem<BlockItem> COFFEE_BUSH_BLOCK = ITEMS.register("coffee_bush_block",
-//			() -> new BlockItem(ExtraDelightBlocks.COFFEE_BUSH.get(), new Item.Properties()));
-
 	public static final DeferredItem<BlockItem> PEANUT_CROP_BLOCK = ITEMS.register("peanut_crop_block",
 			() -> new BlockItem(ExtraDelightBlocks.PEANUT_CROP.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> WILD_PEANUT_BLOCK = ITEMS.register("wild_peanut_block",
@@ -1870,5 +1867,13 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> WILD_MALLOW_ROOT_BLOCK = ITEMS.register("wild_mallow_root_block",
 			() -> new BlockItem(ExtraDelightBlocks.WILD_MALLOW_ROOT.get(), new Item.Properties()));
+	public static final DeferredItem<Item> MALLOW_ROOT = ITEMS.register("mallow_root",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> PEANUT_BUTTER_JELLY = ITEMS.register("peanut_butter_jelly",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> HAZELNUT_SAPLING = ITEMS.register("hazelnut_sapling",
+			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_SAPLING.get(), new Item.Properties()));
 
 }

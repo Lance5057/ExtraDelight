@@ -31,7 +31,8 @@ public class EDBlockTags extends BlockTagsProvider {
 	}
 
 	protected void registerBlockMineableTags() {
-		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get());
+		tag(BlockTags.LOGS).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.FRUIT_LOG.get());
+		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.FRUIT_LOG.get());
 		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.DRYING_RACK.get(),
 				ExtraDelightBlocks.FOOD_DISPLAY.get(), ExtraDelightBlocks.DOUGH_SHAPING.get(),

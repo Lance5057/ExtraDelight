@@ -13,13 +13,15 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 public class ExtraDelightTreeFeatures {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CINNAMON = ResourceKey.create(
-			Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "cinnamon"));// FeatureUtils.createKey("extradelight:cinnamon");
+			Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "cinnamon"));
 
 	public static TreeConfiguration.TreeConfigurationBuilder createCinnamonTree() {
 		return new TreeConfiguration.TreeConfigurationBuilder(
@@ -30,7 +32,20 @@ public class ExtraDelightTreeFeatures {
 				new TwoLayersFeatureSize(1, 0, 2));
 	}
 
+	public static final ResourceKey<ConfiguredFeature<?, ?>> HAZELNUT = ResourceKey.create(
+			Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "hazelnut"));
+
+	public static TreeConfiguration.TreeConfigurationBuilder createHazelnutTree() {
+		return new TreeConfiguration.TreeConfigurationBuilder(
+				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()),
+				new StraightTrunkPlacer(2, 0, 5),
+				BlockStateProvider.simple(ExtraDelightBlocks.HAZELNUT_LEAVES.get()),
+				new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
+				new TwoLayersFeatureSize(1, 0, 4));
+	}
+
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> p_256317_) {
 		FeatureUtils.register(p_256317_, CINNAMON, Feature.TREE, createCinnamonTree().build());
+		FeatureUtils.register(p_256317_, HAZELNUT, Feature.TREE, createHazelnutTree().build());
 	}
 }
