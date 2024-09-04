@@ -30,20 +30,24 @@ public class BlockEntityUtils {
 			return -1;
 		}
 
-		public static ItemStack extractItem(IItemHandler inventory, int inventorySize) {
+		public static void extractItem(Player playerEntity, IItemHandler inventory, int inventorySize) {
 			int i = getLastFilledSlot(inventory, inventorySize);
 			if (i != -1) {
-				return inventory.extractItem(i, 1, false);
+				ItemStack itemStack = inventory.extractItem(i, 1, false);
+				playerEntity.addItem(itemStack);
+				return;
 			}
-			return ItemStack.EMPTY;
 		}
 
-		public static void insertItem(ItemStack heldItem, IItemHandler inventory, int inventorySize, int amount) {
-			int slot = getLastEmptySlot(inventory, inventorySize);
-			if (slot != -1) {
-				inventory.insertItem(slot, heldItem, false);
-				heldItem.shrink(amount);
+		public static void insertItem(IItemHandler inventory, ItemStack heldItem, int inventorySize) {
+			for (int i = 0; i <= inventorySize - 1; i++) {
+				if (!ItemStack.matches(heldItem, inventory.insertItem(i, heldItem, true))) {
+					final int leftover = inventory.insertItem(i, heldItem.copy(), false).getCount();
+					heldItem.setCount(leftover);
+					return;
+				}
 			}
+
 		}
 
 		public static void givePlayerItemStack(ItemStack stack, Player player, Level level, BlockPos pos) {

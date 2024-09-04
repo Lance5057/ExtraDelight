@@ -49,7 +49,7 @@ public class DryingRackBlock extends Block implements EntityBlock {
 
 			if (pPlayer.isCrouching()) {
 				if (!pLevel.isClientSide) {
-					be.extractItem(pPlayer, pLevel, pPos);
+					be.extractItem(pPlayer);
 					return ItemInteractionResult.SUCCESS;
 				}
 				return ItemInteractionResult.CONSUME;
@@ -57,7 +57,6 @@ public class DryingRackBlock extends Block implements EntityBlock {
 
 				ItemStack itemstack = pPlayer.getItemInHand(pHand);
 				if (!pLevel.isClientSide) {
-					// pPlayer.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
 					be.insertItem(itemstack);
 					return ItemInteractionResult.SUCCESS;
 				}

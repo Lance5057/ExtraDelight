@@ -90,12 +90,9 @@ public class MortarBlock extends Block implements EntityBlock, IStyleable {
 					mbe.grind(pPlayer);
 				} else {
 					if (pPlayer.isCrouching()) {
-						mbe.extractItem(pPlayer, pLevel, pPos);
+						mbe.extractItem(pPlayer);
 					} else {
-						if (stack.getCount() > 4)
-							mbe.insertItem(stack, 4);
-						else
-							mbe.insertItem(stack, stack.getCount());
+							mbe.insertItem(stack);
 					}
 				}
 

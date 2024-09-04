@@ -48,7 +48,7 @@ public class CandyBowlBlock extends Block implements EntityBlock, SimpleWaterlog
 			if (tileEntity instanceof CandyBowlEntity ent) {
 
 				if (player.getItemInHand(hand).isEmpty())
-					ent.extractItem(stack);
+					ent.extractItem(player);
 				else if (player.getItemInHand(hand).is(ExtraDelightTags.CANDY_BOWL_VALID))
 					ent.insertItem(player.getItemInHand(hand));
 			}
