@@ -19,6 +19,7 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
@@ -84,14 +85,8 @@ public class DryingRackBlockEntity extends BlockEntity {
 			@Override
 			@NotNull
 			public ItemStack extractItem(int slot, int amount, boolean simulate) {
-				if (this.getBlockEntity().cookingProgress[slot] >= this.getBlockEntity().cookingTime[slot]) {
-					if (this.getBlockEntity().results[slot].isEmpty()) {
-						this.getBlockEntity().cookingTime[slot] = 0;
-						return super.extractItem(slot, amount, simulate);
-					}
-
-				}
-				return ItemStack.EMPTY;
+				this.getBlockEntity().cookingTime[slot] = 0;
+				return super.extractItem(slot, amount, simulate);
 			}
 
 			@Override
@@ -106,46 +101,13 @@ public class DryingRackBlockEntity extends BlockEntity {
 		};
 	}
 
-//	public void extractItem(Player playerEntity) {
-//		ItemStackHandler inventory = this.items;
-//		for (int i = NUM_SLOTS - 1; i >= 0; i--) {
-//			if (!inventory.getStackInSlot(i).isEmpty()) {
-//				ItemStack itemStack = inventory.getStackInSlot(i).copy();
-//				playerEntity.addItem(itemStack);
-//				inventory.setStackInSlot(i, ItemStack.EMPTY);
-//				updateInventory();
-//				this.cookingProgress[i] = 0;
-//				this.cookingTime[i] = 0;
-//
-//				return;
-//
-//			}
-//		}
-//		updateInventory();
-//	}
-
-//	public ItemStack insertItem(ItemStack heldItem) {
-//		ItemStackHandler inventory = this.items;
-//		for (int i = 0; i < NUM_SLOTS; i++) {
-//			if (inventory.isItemValid(i, heldItem))
-//				if (!ItemStack.isSameItemSameTags(inventory.insertItem(i, heldItem, true), heldItem)) {
-//					heldItem = inventory.insertItem(i, heldItem.copy(), false);
-//
-//					updateInventory();
-//					return heldItem;
-//				}
-//		}
-//		updateInventory();
-//		return heldItem;
-//	}
-
-	public void insertItem(ItemStack in) {
-		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
+	public void insertItem(ItemStack stack) {
+		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
 		this.updateInventory();
 	}
 
-	public void extractItem(ItemStack out) {
-		BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
+	public void extractItem(Player p) {
+		BlockEntityUtils.Inventory.extractItem(p, items, NUM_SLOTS);
 		this.updateInventory();
 	}
 

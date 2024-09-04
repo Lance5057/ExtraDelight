@@ -103,13 +103,13 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 		};
 	}
 
-	public void insertItem(ItemStack in) {
-		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
+	public void insertItem(ItemStack stack) {
+		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
 		this.updateInventory();
 	}
 
-	public void extractItem(ItemStack out) {
-		BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
+	public void extractItem(Player p) {
+		BlockEntityUtils.Inventory.extractItem(p, items, NUM_SLOTS);
 		this.updateInventory();
 	}
 

@@ -4,7 +4,6 @@ import javax.annotation.Nonnull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.capabilities.WellFluidCapability;
-import com.lance5057.extradelight.util.BlockEntityUtils;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -60,15 +59,15 @@ public class SinkCabinetBlockEntity extends BlockEntity {
 		return new ItemStackHandler(NUM_SLOTS);
 	}
 
-	public void insertItem(ItemStack in) {
-		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
-		this.updateInventory();
-	}
-
-	public void extractItem(ItemStack out) {
-		BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
-		this.updateInventory();
-	}
+//	public void insertItem(ItemStack in) {
+//		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS);
+//		this.updateInventory();
+//	}
+//
+//	public void extractItem(ItemStack out) {
+//		BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
+//		this.updateInventory();
+//	}
 
 	public void updateInventory() {
 		requestModelDataUpdate();
