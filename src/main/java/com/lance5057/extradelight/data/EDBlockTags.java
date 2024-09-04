@@ -31,7 +31,8 @@ public class EDBlockTags extends BlockTagsProvider {
 	}
 
 	protected void registerBlockMineableTags() {
-		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get());
+		tag(BlockTags.LOGS).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.FRUIT_LOG.get());
+		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.FRUIT_LOG.get());
 		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.DRYING_RACK.get(),
 				ExtraDelightBlocks.FOOD_DISPLAY.get(), ExtraDelightBlocks.DOUGH_SHAPING.get(),
@@ -51,11 +52,6 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 				// Normal blocks
 				ExtraDelightBlocks.OVEN.get(), ExtraDelightBlocks.MORTAR_STONE.get(),
-//				ExtraDelightBlocks.MORTAR_ANDESITE.get(), ExtraDelightBlocks.MORTAR_GRANITE.get(),
-//				ExtraDelightBlocks.MORTAR_DIORITE.get(), ExtraDelightBlocks.MORTAR_DEEPSLATE.get(),
-//				ExtraDelightBlocks.MORTAR_BLACKSTONE.get(), ExtraDelightBlocks.MORTAR_BASALT.get(),
-//				ExtraDelightBlocks.MORTAR_ENDSTONE.get(), ExtraDelightBlocks.MORTAR_AMETHYST.get(),
-//				ExtraDelightBlocks.MORTAR_GILDED_BLACKSTONE.get(),
 
 				// Feasts in pans
 				ExtraDelightBlocks.LASAGNA.get(), ExtraDelightBlocks.HOTDISH.get(),
@@ -64,7 +60,12 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.MACARONI_CHEESE.get(), ExtraDelightBlocks.CURRY.get(),
 				ExtraDelightBlocks.BEEF_STEW.get(), ExtraDelightBlocks.PORK_STEW.get(),
 				ExtraDelightBlocks.LAMB_STEW.get(), ExtraDelightBlocks.RABBIT_STEW.get(),
-				ExtraDelightBlocks.CHICKEN_STEW.get(), ExtraDelightBlocks.FISH_STEW.get());
+				ExtraDelightBlocks.CHICKEN_STEW.get(), ExtraDelightBlocks.FISH_STEW.get(),
+
+				ExtraDelightBlocks.SHEET_BLOCK.get(), ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
+				ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
+				ExtraDelightBlocks.PIE_DISH_BLOCK.get(), ExtraDelightBlocks.TRAY_BLOCK.get(),
+				ExtraDelightBlocks.BAKING_STONE_BLOCK.get());
 
 //		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.MINT_CROP.get());
 

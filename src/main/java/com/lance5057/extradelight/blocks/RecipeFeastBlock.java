@@ -43,16 +43,6 @@ public class RecipeFeastBlock extends Block {
 
 	protected final VoxelShape[] SHAPES;
 
-	/**
-	 * This block provides up to 4 servings of food to players who interact with it.
-	 * If a leftover item is specified, the block lingers at 0 servings, and is
-	 * destroyed on right-click.
-	 *
-	 * @param properties   Block properties.
-	 * @param servingItem  The meal to be served.
-	 * @param hasLeftovers Whether the block remains when out of servings. If false,
-	 *                     the block vanishes once it runs out.
-	 */
 	public RecipeFeastBlock(Properties properties, boolean hasLeftovers, VoxelShape... shapes) {
 		super(properties);
 		SHAPES = shapes;

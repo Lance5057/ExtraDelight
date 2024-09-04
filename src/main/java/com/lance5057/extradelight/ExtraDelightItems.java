@@ -1355,14 +1355,6 @@ public class ExtraDelightItems {
 	public static final DeferredItem<BlockItem> TAP = ITEMS.register("tap",
 			() -> new BlockItem(ExtraDelightBlocks.TAP.get(), new Item.Properties()));
 
-//	public static final DeferredItem<Item> COFFEE_CHERRIES = ITEMS.register("coffee_cherries",
-//			() -> new ItemNameBlockItem(ExtraDelightBlocks.COFFEE_BUSH.get(),
-//					new Item.Properties().food(Foods.SWEET_BERRIES)));
-//	public static final DeferredItem<Item> GREEN_COFFEE = ITEMS.register("green_coffee",
-//			() -> new Item(new Item.Properties().food(Foods.SWEET_BERRIES)));
-//	public static final DeferredItem<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
-//			() -> new Item(new Item.Properties().food(Foods.SWEET_BERRIES)));
-
 	// Fluids
 	public static final DeferredItem<Item> OIL_FLUID_BUCKET = ITEMS.register("oil_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.OIL.FLUID.get(),
@@ -1512,7 +1504,6 @@ public class ExtraDelightItems {
 				}
 			});
 
-	public static final DeferredItem<Item> HAZELNUT = ITEMS.register("hazelnut", () -> new Item(new Item.Properties()));
 	public static final DeferredItem<BlockItem> HAZELNUT_LEAVES = ITEMS.register("hazelnut_leaves",
 			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), new Item.Properties()));
 
@@ -1520,7 +1511,7 @@ public class ExtraDelightItems {
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.CHILI_CROP.get(), new Item.Properties()));
 	public static final DeferredItem<Item> CHILI = ITEMS.register("chili", () -> new Item(new Item.Properties()));
 
-	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new Item(new Item.Properties()));
+//	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new Item(new Item.Properties()));
 
 	public static final DeferredItem<BlockItem> MELTING_POT = ITEMS.register("melting_pot",
 			() -> new BlockItem(ExtraDelightBlocks.MELTING_POT.get(), new Item.Properties()));
@@ -1733,5 +1724,156 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
 			() -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> COFFEE_CHERRIES = ITEMS.register("coffee_cherries",
+			() -> new ItemNameBlockItem(ExtraDelightBlocks.COFFEE_BUSH.get(), new Item.Properties()));
+	public static final DeferredItem<Item> COFFEE = ITEMS.register("coffee", () -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> BROWNIES_BLOCK = ITEMS.register("brownies_block",
+			() -> new BlockItem(ExtraDelightBlocks.BROWNIES.get(), new Item.Properties()));
+	public static final DeferredItem<Item> BROWNIE = ITEMS.register("brownie", () -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> BLONDIES_BLOCK = ITEMS.register("blondies_block",
+			() -> new BlockItem(ExtraDelightBlocks.BLONDIES.get(), new Item.Properties()));
+	public static final DeferredItem<Item> BLONDIE = ITEMS.register("blondies", () -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> CHOCOLATE_CAKE_BLOCK = ITEMS.register("chocolate_cake_block",
+			() -> new BlockItem(ExtraDelightBlocks.BLONDIES.get(), new Item.Properties()));
+	public static final DeferredItem<Item> CHOCOLATE_CAKE = ITEMS.register("chocolate_cake",
 			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> FUDGE_BLOCK = ITEMS.register("fudge_block",
+			() -> new BlockItem(ExtraDelightBlocks.BLONDIES.get(), new Item.Properties()));
+	public static final DeferredItem<Item> FUDGE_SLICE = ITEMS.register("fudge", () -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> STICKY_TOFFEE_PUDDING_BLOCK = ITEMS.register(
+			"sticky_toffee_pudding_block",
+			() -> new BlockItem(ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(), new Item.Properties()));
+	public static final DeferredItem<Item> STICKY_TOFFEE_PUDDING_SLICE = ITEMS.register("sticky_toffee_pudding_slice",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> CRISP_RICE_TREATS_BLOCK = ITEMS.register("crisp_rice_treats_block",
+			() -> new BlockItem(ExtraDelightBlocks.CRISP_RICE_TREATS.get(), new Item.Properties()));
+	public static final DeferredItem<Item> CRISP_RICE_TREAT = ITEMS.register("crisp_rice_treat",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> SCOTCHAROO_BLOCK = ITEMS.register("scotcharoo_block",
+			() -> new BlockItem(ExtraDelightBlocks.SCOTCHAROOS.get(), new Item.Properties()));
+	public static final DeferredItem<Item> SCOTCHAROO = ITEMS.register("scotcharoo",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> BLACK_FOREST_TRIFLE_BLOCK = ITEMS.register("black_forest_trifle_block",
+			() -> new BlockItem(ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> BLACK_FOREST_TRIFLE = ITEMS.register("black_forest_trifle",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> BLOOD_CHOCOLATE_FONDUE_BLOCK = ITEMS.register(
+			"blood_chocolate_fondue_block",
+			() -> new BlockItem(ExtraDelightBlocks.BLOOD_CHOCOLATE_FONDUE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> BLOOD_CHOCOLATE_DIPPED_SWEET_BERRY = ITEMS
+			.register("blood_chocolate_dipped_sweet_berry", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> BLOOD_CHOCOLATE_DIPPED_GLOW_BERRY = ITEMS
+			.register("blood_chocolate_dipped_glow_berry", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE = ITEMS
+			.register("blood_chocolate_dipped_apple_slice", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> BLOOD_CHOCOLATE_DIPPED_MARSHMALLOW = ITEMS
+			.register("blood_chocolate_dipped_marshmallow", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> BLOOD_CHOCOLATE_DIPPED_GRAHAM_CRACKER = ITEMS
+			.register("blood_chocolate_dipped_graham_cracker", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> BLOOD_CHOCOLATE_DIPPED_BACON = ITEMS.register("blood_chocolate_dipped_bacon",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN = ITEMS
+			.register("blood_chocolate_dipped_coffee_bean", () -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> DARK_CHOCOLATE_FONDUE_BLOCK = ITEMS.register(
+			"dark_chocolate_fondue_block",
+			() -> new BlockItem(ExtraDelightBlocks.DARK_CHOCOLATE_FONDUE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> DARK_CHOCOLATE_DIPPED_SWEET_BERRY = ITEMS
+			.register("dark_chocolate_dipped_sweet_berry", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> DARK_CHOCOLATE_DIPPED_GLOW_BERRY = ITEMS
+			.register("dark_chocolate_dipped_glow_berry", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> DARK_CHOCOLATE_DIPPED_APPLE_SLICE = ITEMS
+			.register("dark_chocolate_dipped_apple_slice", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> DARK_CHOCOLATE_DIPPED_MARSHMALLOW = ITEMS
+			.register("dark_chocolate_dipped_marshmallow", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> DARK_CHOCOLATE_DIPPED_GRAHAM_CRACKER = ITEMS
+			.register("dark_chocolate_dipped_graham_cracker", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> DARK_CHOCOLATE_DIPPED_BACON = ITEMS.register("dark_chocolate_dipped_bacon",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> DARK_CHOCOLATE_DIPPED_COFFEE_BEAN = ITEMS
+			.register("dark_chocolate_dipped_coffee_bean", () -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> MILK_CHOCOLATE_FONDUE_BLOCK = ITEMS.register(
+			"milk_chocolate_fondue_block",
+			() -> new BlockItem(ExtraDelightBlocks.MILK_CHOCOLATE_FONDUE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> MILK_CHOCOLATE_DIPPED_SWEET_BERRY = ITEMS
+			.register("milk_chocolate_dipped_sweet_berry", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> MILK_CHOCOLATE_DIPPED_GLOW_BERRY = ITEMS
+			.register("milk_chocolate_dipped_glow_berry", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> MILK_CHOCOLATE_DIPPED_APPLE_SLICE = ITEMS
+			.register("milk_chocolate_dipped_apple_slice", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> MILK_CHOCOLATE_DIPPED_MARSHMALLOW = ITEMS
+			.register("milk_chocolate_dipped_marshmallow", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> MILK_CHOCOLATE_DIPPED_GRAHAM_CRACKER = ITEMS
+			.register("milk_chocolate_dipped_graham_cracker", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> MILK_CHOCOLATE_DIPPED_BACON = ITEMS.register("milk_chocolate_dipped_bacon",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> MILK_CHOCOLATE_DIPPED_COFFEE_BEAN = ITEMS
+			.register("milk_chocolate_dipped_coffee_bean", () -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> WHITE_CHOCOLATE_FONDUE_BLOCK = ITEMS.register(
+			"white_chocolate_fondue_block",
+			() -> new BlockItem(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> WHITE_CHOCOLATE_DIPPED_SWEET_BERRY = ITEMS
+			.register("white_chocolate_dipped_sweet_berry", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> WHITE_CHOCOLATE_DIPPED_GLOW_BERRY = ITEMS
+			.register("white_chocolate_dipped_glow_berry", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> WHITE_CHOCOLATE_DIPPED_APPLE_SLICE = ITEMS
+			.register("white_chocolate_dipped_apple_slice", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> WHITE_CHOCOLATE_DIPPED_MARSHMALLOW = ITEMS
+			.register("white_chocolate_dipped_marshmallow", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> WHITE_CHOCOLATE_DIPPED_GRAHAM_CRACKER = ITEMS
+			.register("white_chocolate_dipped_graham_cracker", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> WHITE_CHOCOLATE_DIPPED_BACON = ITEMS.register("white_chocolate_dipped_bacon",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> WHITE_CHOCOLATE_DIPPED_COFFEE_BEAN = ITEMS
+			.register("white_chocolate_dipped_coffee_bean", () -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> DRIED_CHILI = ITEMS.register("dried_chili",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> PEANUTS_IN_SHELL = ITEMS.register("peanuts_in_shell",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> PEANUTS = ITEMS.register("peanuts", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> ROASTED_PEANUTS = ITEMS.register("roasted_peanuts",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> HAZELNUTS_IN_SHELL = ITEMS.register("hazelnuts_in_shell",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> HAZELNUTS = ITEMS.register("hazelnuts",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> ROASTED_HAZELNUTS = ITEMS.register("roasted_hazelnuts",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> PEANUT_CROP_BLOCK = ITEMS.register("peanut_crop_block",
+			() -> new BlockItem(ExtraDelightBlocks.PEANUT_CROP.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> WILD_PEANUT_BLOCK = ITEMS.register("wild_peanut_block",
+			() -> new BlockItem(ExtraDelightBlocks.WILD_PEANUT.get(), new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> CHILI_CROP_BLOCK = ITEMS.register("chili_crop_block",
+			() -> new BlockItem(ExtraDelightBlocks.CHILI_CROP.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> WILD_CHILI_BLOCK = ITEMS.register("wild_chili_block",
+			() -> new BlockItem(ExtraDelightBlocks.WILD_CHILI.get(), new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> MALLOW_ROOT_CROP_BLOCK = ITEMS.register("mallow_root_crop_block",
+			() -> new BlockItem(ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> WILD_MALLOW_ROOT_BLOCK = ITEMS.register("wild_mallow_root_block",
+			() -> new BlockItem(ExtraDelightBlocks.WILD_MALLOW_ROOT.get(), new Item.Properties()));
+	public static final DeferredItem<Item> MALLOW_ROOT = ITEMS.register("mallow_root",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> PEANUT_BUTTER_JELLY = ITEMS.register("peanut_butter_jelly",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> HAZELNUT_SAPLING = ITEMS.register("hazelnut_sapling",
+			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_SAPLING.get(), new Item.Properties()));
+
 }

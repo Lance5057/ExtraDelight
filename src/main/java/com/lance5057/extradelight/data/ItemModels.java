@@ -923,9 +923,10 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.TRAIL_MIX, "trail_mix");
 		forItem(ExtraDelightItems.NOUGAT, "nougat");
 		forItem(ExtraDelightItems.GUMMIES, "gummies");
-//		forItem(ExtraDelightItems.PEANUT_BRITTLE, "peanut_brittle");
-//		forItem(ExtraDelightItems.BUTTERSCOTCH, "butterscotch");
-//		forItem(ExtraDelightItems.FLUFFER_NUTTER, "fluffer_nutter");
+		forItem(ExtraDelightItems.PEANUT_BRITTLE, "peanut_brittle");
+		forItem(ExtraDelightItems.BUTTERSCOTCH, "butterscotch");
+		forItem(ExtraDelightItems.FLUFFER_NUTTER, "fluffer_nutter");
+		forItem(ExtraDelightItems.PEANUT_BUTTER_JELLY, "peanut_butter_jelly");
 
 		AestheticBlocks.itemModel(this);
 	}
