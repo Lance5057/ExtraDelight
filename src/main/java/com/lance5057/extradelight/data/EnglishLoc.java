@@ -1026,13 +1026,10 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.HAZELNUTS.get(), "Hazelnuts");
 		this.add(ExtraDelightItems.ROASTED_HAZELNUTS.get(), "Roasted Hazelnuts");
 
-		this.add(ExtraDelightItems.PEANUT_CROP_BLOCK.get(), "Peanuts");
 		this.add(ExtraDelightItems.WILD_PEANUT_BLOCK.get(), "Wild Peanuts");
 
-		this.add(ExtraDelightItems.CHILI_CROP_BLOCK.get(), "Chilis");
 		this.add(ExtraDelightItems.WILD_CHILI_BLOCK.get(), "Wild Chilis");
 
-		this.add(ExtraDelightItems.MALLOW_ROOT_CROP_BLOCK.get(), "Mallow");
 		this.add(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK.get(), "Wild Mallow");
 		this.add(ExtraDelightItems.MALLOW_ROOT.get(), "Mallow Root");
 
