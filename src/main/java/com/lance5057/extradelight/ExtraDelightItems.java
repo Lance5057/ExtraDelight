@@ -1733,7 +1733,7 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<BlockItem> BLONDIES_BLOCK = ITEMS.register("blondies_block",
 			() -> new BlockItem(ExtraDelightBlocks.BLONDIES.get(), new Item.Properties()));
-	public static final DeferredItem<Item> BLONDIE = ITEMS.register("blondies", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> BLONDIE = ITEMS.register("blondie", () -> new Item(new Item.Properties()));
 
 	public static final DeferredItem<BlockItem> CHOCOLATE_CAKE_BLOCK = ITEMS.register("chocolate_cake_block",
 			() -> new BlockItem(ExtraDelightBlocks.BLONDIES.get(), new Item.Properties()));

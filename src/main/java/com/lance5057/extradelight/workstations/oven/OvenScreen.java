@@ -32,7 +32,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> /* implements 
 	private static final Rectangle PROGRESS_ARROW = new Rectangle(89, 25, 10, 17);
 
 //	private final OvenRecipeBookComponent recipeBookComponent = new OvenRecipeBookComponent();
-	private boolean widthTooNarrow;
+//	private boolean widthTooNarrow;
 
 	public OvenScreen(OvenMenu screenContainer, Inventory inv, Component titleIn) {
 		super(screenContainer, inv, titleIn);
@@ -41,7 +41,7 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> /* implements 
 	@Override
 	public void init() {
 		super.init();
-		this.widthTooNarrow = this.width < 379;
+//		this.widthTooNarrow = this.width < 379;
 		this.titleLabelX = 28;
 //		this.recipeBookComponent.init(this.width, this.height, this.minecraft, this.widthTooNarrow, this.menu);
 //		this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
@@ -68,14 +68,14 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> /* implements 
 
 	@Override
 	public void render(GuiGraphics ms, final int mouseX, final int mouseY, float partialTicks) {
-		if (/* this.recipeBookComponent.isVisible() && */this.widthTooNarrow) {
+//		if (/* this.recipeBookComponent.isVisible() && */this.widthTooNarrow) {
 			this.renderBg(ms, partialTicks, mouseX, mouseY);
 //			this.recipeBookComponent.render(ms, mouseX, mouseY, partialTicks);
-		} else {
-//			this.recipeBookComponent.render(ms, mouseX, mouseY, partialTicks);
+//		} else {
+////			this.recipeBookComponent.render(ms, mouseX, mouseY, partialTicks);
 			super.render(ms, mouseX, mouseY, partialTicks);
-//			this.recipeBookComponent.renderGhostRecipe(ms, this.leftPos, this.topPos, false, partialTicks);
-		}
+////			this.recipeBookComponent.renderGhostRecipe(ms, this.leftPos, this.topPos, false, partialTicks);
+//		}
 
 		this.renderMealDisplayTooltip(ms, mouseX, mouseY);
 //		this.renderHeatIndicatorTooltip(ms, mouseX, mouseY);
@@ -141,21 +141,21 @@ public class OvenScreen extends AbstractContainerScreen<OvenMenu> /* implements 
 				l + 1, PROGRESS_ARROW.height + 7);
 	}
 
-	@Override
-	protected boolean isHovering(int x, int y, int width, int height, double mouseX, double mouseY) {
-		return (!this.widthTooNarrow /* || !this.recipeBookComponent.isVisible() */)
-				&& super.isHovering(x, y, width, height, mouseX, mouseY);
-	}
+//	@Override
+//	protected boolean isHovering(int x, int y, int width, int height, double mouseX, double mouseY) {
+//		return (!this.widthTooNarrow /* || !this.recipeBookComponent.isVisible() */)
+//				&& super.isHovering(x, y, width, height, mouseX, mouseY);
+//	}
 
-	@Override
-	public boolean mouseClicked(double mouseX, double mouseY, int buttonId) {
-//		if (this.recipeBookComponent.mouseClicked(mouseX, mouseY, buttonId)) {
-//			this.setFocused(this.recipeBookComponent);
-//			return true;
-//		}
-		return this.widthTooNarrow /* && this.recipeBookComponent.isVisible() */
-				|| super.mouseClicked(mouseX, mouseY, buttonId);
-	}
+//	@Override
+//	public boolean mouseClicked(double mouseX, double mouseY, int buttonId) {
+////		if (this.recipeBookComponent.mouseClicked(mouseX, mouseY, buttonId)) {
+////			this.setFocused(this.recipeBookComponent);
+////			return true;
+////		}
+//		return this.widthTooNarrow /* && this.recipeBookComponent.isVisible() */
+//				|| super.mouseClicked(mouseX, mouseY, buttonId);
+//	}
 
 	@Override
 	protected boolean hasClickedOutside(double mouseX, double mouseY, int x, int y, int buttonIdx) {
