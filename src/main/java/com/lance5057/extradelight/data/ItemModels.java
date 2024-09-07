@@ -936,8 +936,8 @@ public class ItemModels extends ItemModelProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blondies_stage0"));
 		forItem(ExtraDelightItems.BLONDIE, "blondie");
 
-		forBlockItem(ExtraDelightItems.CHOCOLATE_CAKE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_cake"));
+		forItem(ExtraDelightItems.CHOCOLATE_CAKE_BLOCK, "chocolate_cake");
+		forItem(ExtraDelightItems.CHOCOLATE_CAKE, "chocolate_cake_slice");
 		forBlockItem(ExtraDelightItems.FUDGE_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fudge_stage0"));
 		forBlockItem(ExtraDelightItems.STICKY_TOFFEE_PUDDING_BLOCK,
@@ -949,13 +949,13 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/black_forest_trifle_stage0"));
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_fondue_stage0"));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_fondue_pot_stage0"));
 		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_FONDUE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/milk_chocolate_fondue_stage0"));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/milk_chocolate_fondue_pot_stage0"));
 		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_FONDUE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_fondue_stage0"));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_fondue_pot_stage0"));
 		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_fondue_stage0"));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_fondue_pot_stage0"));
 
 		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE, "blood_chocolate_apple_slices");
 		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_BACON, "blood_chocolate_bacon");

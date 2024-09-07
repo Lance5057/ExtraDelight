@@ -1736,12 +1736,12 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> BLONDIE = ITEMS.register("blondie", () -> new Item(new Item.Properties()));
 
 	public static final DeferredItem<BlockItem> CHOCOLATE_CAKE_BLOCK = ITEMS.register("chocolate_cake_block",
-			() -> new BlockItem(ExtraDelightBlocks.BLONDIES.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.CHOCOLATE_CAKE.get(), new Item.Properties()));
 	public static final DeferredItem<Item> CHOCOLATE_CAKE = ITEMS.register("chocolate_cake",
 			() -> new Item(new Item.Properties()));
 
 	public static final DeferredItem<BlockItem> FUDGE_BLOCK = ITEMS.register("fudge_block",
-			() -> new BlockItem(ExtraDelightBlocks.BLONDIES.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.FUDGE.get(), new Item.Properties()));
 	public static final DeferredItem<Item> FUDGE_SLICE = ITEMS.register("fudge", () -> new Item(new Item.Properties()));
 
 	public static final DeferredItem<BlockItem> STICKY_TOFFEE_PUDDING_BLOCK = ITEMS.register(

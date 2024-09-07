@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/fondue_pot_stage1",
+  "textures": {
+    "5": "extradelight:block/cosmetics/chocolate/dark_chocolate_style0"
+  }
+}
