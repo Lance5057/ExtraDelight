@@ -12,6 +12,7 @@ import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
+import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -368,8 +369,15 @@ public class BlockModels extends BlockStateProvider {
 		this.chocolateBox(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get());
 		this.chocolateBox(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get());
 		this.chocolateBox(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get());
+
+		this.recipeFeastBlock(ExtraDelightBlocks.BROWNIES.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.BLONDIES.get());
+		this.createCakeBlock(ExtraDelightBlocks.CHOCOLATE_CAKE.get(), "chocolate");
 		
-		
+		this.fondueBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_FONDUE.get(), "blood");
+		this.fondueBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), "white");
+		this.fondueBlock(ExtraDelightBlocks.DARK_CHOCOLATE_FONDUE.get(), "dark");
+		this.fondueBlock(ExtraDelightBlocks.MILK_CHOCOLATE_FONDUE.get(), "milk");
 
 		AestheticBlocks.blockModel(this);
 	}
@@ -476,18 +484,18 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-//	public void coffeeBushBlock(CoffeeBush block) {
-//		getVariantBuilder(block).forAllStates(state -> {
-//			int age = state.getValue(CoffeeBush.AGE);
-//
-//			String suffix = "_stage" + age;
-//
-//			ModelFile model = models().withExistingParent("coffee_plant" + suffix,
-//					modLoc("block/crops/coffee/coffee_plant" + suffix));
-//
-//			return ConfiguredModel.builder().modelFile(model).build();
-//		});
-//	}
+	public void coffeeBushBlock(CoffeeBush block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int age = state.getValue(CoffeeBush.AGE);
+
+			String suffix = "_stage" + age;
+
+			ModelFile model = models().withExistingParent("coffee_plant" + suffix,
+					modLoc("block/crops/coffee/coffee_plant" + suffix));
+
+			return ConfiguredModel.builder().modelFile(model).build();
+		});
+	}
 
 	public void jellyBlock(FeastBlock block, String color) {
 		getVariantBuilder(block).forAllStates(state -> {
@@ -603,7 +611,7 @@ public class BlockModels extends BlockStateProvider {
 
 	public void recipeFeastBlock(RecipeFeastBlock block, String path) {
 		getVariantBuilder(block).forAllStates(state -> {
-			int servings = state.getValue(block.SERVINGS);
+			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
 
 			String suffix = "_stage" + (block.getMaxServings() - servings);
 
@@ -615,6 +623,25 @@ public class BlockModels extends BlockStateProvider {
 					.modelFile(new ModelFile.ExistingModelFile(
 							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + path + suffix),
 							models().existingFileHelper))
+					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
+		});
+	}
+
+	public void fondueBlock(RecipeFeastBlock block, String pre) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
+
+			String suffix = "_stage" + (block.getMaxServings() - servings);
+
+			if (servings == 0) {
+				suffix = block.hasLeftovers ? "_leftover" : "_stage3";
+			}
+
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.withExistingParent(pre + "_chocolate_fondue_pot" + suffix,
+									this.modLoc("block/fondue_pot" + suffix))
+							.texture("5", this.modLoc("block/cosmetics/chocolate/" + pre + "_chocolate_style0")))
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}

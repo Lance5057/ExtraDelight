@@ -18,7 +18,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.0.3";
+	public static final String VERSION = "2.0.4";
 
 	public static Logger logger = LogManager.getLogger();
 

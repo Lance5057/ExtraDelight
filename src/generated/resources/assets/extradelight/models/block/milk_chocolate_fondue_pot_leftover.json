@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/fondue_pot_leftover",
+  "textures": {
+    "5": "extradelight:block/cosmetics/chocolate/milk_chocolate_style0"
+  }
+}

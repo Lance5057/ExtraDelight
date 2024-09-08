@@ -25,7 +25,6 @@ import net.minecraft.world.inventory.RecipeCraftingHolder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -103,15 +102,13 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 		};
 	}
 
-	public void insertItem(ItemStack in, int amount) {
-		BlockEntityUtils.Inventory.insertItem(in, items, NUM_SLOTS, amount);
+	public void insertItem(ItemStack stack) {
+		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
 		this.updateInventory();
 	}
 
-	public void extractItem(Player player, Level level, BlockPos pos) {
-		ItemStack stack = BlockEntityUtils.Inventory.extractItem(items, NUM_SLOTS);
-		if (!stack.isEmpty())
-			BlockEntityUtils.Inventory.givePlayerItemStack(stack, player, level, pos);
+	public void extractItem(Player p) {
+		BlockEntityUtils.Inventory.extractItem(p, items, NUM_SLOTS);
 		this.updateInventory();
 	}
 
