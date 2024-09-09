@@ -967,7 +967,7 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(ExtraDelightItems.MILK_CHOCOLATE_DIPPED_APPLE_SLICE, "milk_chocolate_apple_slices");
 		forItem(ExtraDelightItems.MILK_CHOCOLATE_DIPPED_BACON, "milk_chocolate_bacon");
-//		forItem(ExtraDelightItems.MILK_CHOCOLATE_DIPPED_COFFEE_BEAN, "milk_chocolate_coffee_beans");
+		forItem(ExtraDelightItems.MILK_CHOCOLATE_DIPPED_COFFEE_BEAN, "milk_chocolate_coffee_beans");
 		forItem(ExtraDelightItems.MILK_CHOCOLATE_DIPPED_GLOW_BERRY, "milk_chocolate_glow_berries");
 		forItem(ExtraDelightItems.MILK_CHOCOLATE_DIPPED_GRAHAM_CRACKER, "milk_chocolate_graham_cracker");
 		forItem(ExtraDelightItems.MILK_CHOCOLATE_DIPPED_MARSHMALLOW, "milk_chocolate_marshmallow");
@@ -988,6 +988,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_GRAHAM_CRACKER, "white_chocolate_graham_cracker");
 		forItem(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_MARSHMALLOW, "white_chocolate_marshmallow");
 		forItem(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_SWEET_BERRY, "white_chocolate_sweet_berries");
+		
+		forItem(ExtraDelightItems.FUDGE_SLICE, "fudge");
 
 		AestheticBlocks.itemModel(this);
 	}
