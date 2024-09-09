@@ -847,11 +847,10 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.FRUIT_CABINET.get(), "Fruit Cabinet");
 		this.add(ExtraDelightItems.FRUIT_SLAB.get(), "Fruit Slab");
 
-		this.add(ExtraDelightItems.HAZELNUT.get(), "Hazelnut");
 		this.add(ExtraDelightItems.HAZELNUT_LEAVES.get(), "Hazelnut Leaves");
 		this.add(ExtraDelightItems.CHILI_SEEDS.get(), "Chili Seeds");
 		this.add(ExtraDelightItems.CHILI.get(), "Chili");
-		this.add(ExtraDelightItems.JAR.get(), "Jar");
+	//	this.add(ExtraDelightItems.JAR.get(), "Jar");
 		this.add(ExtraDelightItems.MELTING_POT.get(), "Melting Pot");
 		this.add(ExtraDelightItems.CHILLER.get(), "Chiller");
 		this.add(ExtraDelightItems.BAR_MOLD.get(), "Bar Mold");
@@ -864,7 +863,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.YELLOW_CHOCOLATE_BOX.get(), "Yellow Chocolate Box");
 		this.add(ExtraDelightItems.LIME_CHOCOLATE_BOX.get(), "Lime Chocolate Box");
 		this.add(ExtraDelightItems.PINK_CHOCOLATE_BOX.get(), "Pink Chocolate Box");
-		this.add(ExtraDelightItems.GRAY_CHOCOLATE_BOX.get(), Gray Chocolate Box");
+		this.add(ExtraDelightItems.GRAY_CHOCOLATE_BOX.get(), "Gray Chocolate Box");
 		this.add(ExtraDelightItems.LIGHT_GRAY_CHOCOLATE_BOX.get(), "Light Gray Chocolate Box");
 		this.add(ExtraDelightItems.CYAN_CHOCOLATE_BOX.get(), "Cyan Chocolate Box");
 		this.add(ExtraDelightItems.BLUE_CHOCOLATE_BOX.get(), "Blue Chocolate Box");
@@ -957,10 +956,10 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.COFFEE.get(), "Coffee");
 
 		this.add(ExtraDelightItems.BROWNIES_BLOCK.get(), "Brownies");
-		this.add(ExtraDelightItems.BROWNIES.get(), "Brownie");
+		this.add(ExtraDelightItems.BROWNIE.get(), "Brownie");
 		
 		this.add(ExtraDelightItems.BLONDIES_BLOCK.get(), "Blondies");
-		this.add(ExtraDelightItems.BLONDIES.get(), "Blondie");
+		this.add(ExtraDelightItems.BLONDIE.get(), "Blondie");
 		
 		this.add(ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get(), "Chocolate Cake");
 		this.add(ExtraDelightItems.CHOCOLATE_CAKE.get(), "Slice of Chocolate Cake");
