@@ -373,6 +373,9 @@ public class BlockModels extends BlockStateProvider {
 		this.recipeFeastBlock(ExtraDelightBlocks.BROWNIES.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.BLONDIES.get());
 		this.createCakeBlock(ExtraDelightBlocks.CHOCOLATE_CAKE.get(), "chocolate");
+		this.recipeFeastBlock(ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.CRISP_RICE_TREATS.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.SCOTCHAROOS.get());
 		
 		this.fondueBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_FONDUE.get(), "blood");
 		this.fondueBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), "white");

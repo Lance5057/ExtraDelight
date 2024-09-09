@@ -4,8 +4,8 @@
 	"render_type": "cutout",
 	"textures": {
 		"0": "extradelight:block/cake_plate",
-		"1": "extradelight:block/christmas_pudding",
-		"2": "extradelight:block/christmas_pudding_top",
+		"1": "extradelight:block/sticky_toffee_pudding",
+		"2": "extradelight:block/sticky_toffee_pudding_top",
 		"particle": "extradelight:block/cake_plate"
 	},
 	"elements": [

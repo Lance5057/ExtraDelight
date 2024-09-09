@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.integration.jei;
 
+import java.util.List;
+
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -16,6 +18,7 @@ import com.lance5057.extradelight.integration.jei.categories.ToolOnBlockRecipeCa
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -32,6 +35,7 @@ public class JEIPlugin implements IModPlugin {
 	public ResourceLocation getPluginUid() {
 		return ID;
 	}
+	
 
 	@Override
 	public void registerCategories(IRecipeCategoryRegistration registry) {
@@ -63,6 +67,9 @@ public class JEIPlugin implements IModPlugin {
 				.getAllRecipesFor(ExtraDelightRecipes.TOOL_ON_BLOCK.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(MeltingPotRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
 				.getAllRecipesFor(ExtraDelightRecipes.MELTING_POT.get()).stream().map(RecipeHolder::value).toList());
+		
+		List<ItemStack> hide =  List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
+		registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hide);
 	}
 
 	@Override
