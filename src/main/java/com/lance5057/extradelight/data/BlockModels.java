@@ -14,6 +14,7 @@ import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
+import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
@@ -381,6 +382,8 @@ public class BlockModels extends BlockStateProvider {
 		this.fondueBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), "white");
 		this.fondueBlock(ExtraDelightBlocks.DARK_CHOCOLATE_FONDUE.get(), "dark");
 		this.fondueBlock(ExtraDelightBlocks.MILK_CHOCOLATE_FONDUE.get(), "milk");
+		
+		this.cropCrossBlock(ExtraDelightBlocks.PEANUT_CROP.get(), "peanut", PeanutCrop.AGE);
 
 		AestheticBlocks.blockModel(this);
 	}

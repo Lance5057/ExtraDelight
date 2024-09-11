@@ -995,6 +995,16 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_SWEET_BERRY, "white_chocolate_sweet_berries");
 
 		forItem(ExtraDelightItems.DRIED_CHILI, "crops/chili/dried_chili");
+		forItem(ExtraDelightItems.PEANUTS_IN_SHELL, "crops/peanuts/peanuts_in_shell");
+		forItem(ExtraDelightItems.PEANUTS, "crops/peanuts/peanuts");
+		forItem(ExtraDelightItems.ROASTED_PEANUTS, "crops/peanuts/roasted_peanuts");
+		
+		forItem(ExtraDelightItems.HAZELNUTS_IN_SHELL, "crops/fruit/hazelnut/hazelnut_in_shell");
+		forItem(ExtraDelightItems.HAZELNUTS, "crops/fruit/hazelnut/hazelnut");
+		forItem(ExtraDelightItems.ROASTED_HAZELNUTS, "crops/fruit/hazelnut/roasted_hazelnut");
+		
+		forItem(ExtraDelightItems.MALLOW_ROOT, "crops/mallow/mallow_root");
+		forBlockItem(ExtraDelightItems.WILD_PEANUT_BLOCK, "crops/peanut/wild_peanut");
 
 		AestheticBlocks.itemModel(this);
 	}

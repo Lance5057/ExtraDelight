@@ -1841,7 +1841,7 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties()));
 
 	public static final DeferredItem<Item> PEANUTS_IN_SHELL = ITEMS.register("peanuts_in_shell",
-			() -> new Item(new Item.Properties()));
+			() -> new ItemNameBlockItem(ExtraDelightBlocks.PEANUT_CROP.get(), new Item.Properties()));
 	public static final DeferredItem<Item> PEANUTS = ITEMS.register("peanuts", () -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> ROASTED_PEANUTS = ITEMS.register("roasted_peanuts",
 			() -> new Item(new Item.Properties()));
@@ -1853,18 +1853,12 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> ROASTED_HAZELNUTS = ITEMS.register("roasted_hazelnuts",
 			() -> new Item(new Item.Properties()));
 
-	public static final DeferredItem<BlockItem> PEANUT_CROP_BLOCK = ITEMS.register("peanut_crop_block",
-			() -> new BlockItem(ExtraDelightBlocks.PEANUT_CROP.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> WILD_PEANUT_BLOCK = ITEMS.register("wild_peanut_block",
 			() -> new BlockItem(ExtraDelightBlocks.WILD_PEANUT.get(), new Item.Properties()));
 
-	public static final DeferredItem<BlockItem> CHILI_CROP_BLOCK = ITEMS.register("chili_crop_block",
-			() -> new BlockItem(ExtraDelightBlocks.CHILI_CROP.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> WILD_CHILI_BLOCK = ITEMS.register("wild_chili_block",
 			() -> new BlockItem(ExtraDelightBlocks.WILD_CHILI.get(), new Item.Properties()));
 
-	public static final DeferredItem<BlockItem> MALLOW_ROOT_CROP_BLOCK = ITEMS.register("mallow_root_crop_block",
-			() -> new BlockItem(ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> WILD_MALLOW_ROOT_BLOCK = ITEMS.register("wild_mallow_root_block",
 			() -> new BlockItem(ExtraDelightBlocks.WILD_MALLOW_ROOT.get(), new Item.Properties()));
 	public static final DeferredItem<Item> MALLOW_ROOT = ITEMS.register("mallow_root",
