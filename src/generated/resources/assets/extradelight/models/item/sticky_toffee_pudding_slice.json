@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "extradelight:item/sticky_toffee_pudding"
+  }
+}

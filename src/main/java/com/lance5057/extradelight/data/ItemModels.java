@@ -940,14 +940,19 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CHOCOLATE_CAKE, "chocolate_cake_slice");
 		forBlockItem(ExtraDelightItems.FUDGE_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fudge_stage0"));
+		forItem(ExtraDelightItems.FUDGE_SLICE, "fudge");
 		forBlockItem(ExtraDelightItems.STICKY_TOFFEE_PUDDING_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/sticky_toffee_pudding_stage0"));
+		forItem(ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE, "sticky_toffee_pudding");
 		forBlockItem(ExtraDelightItems.CRISP_RICE_TREATS_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/crisp_rice_treats_stage0"));
+		forItem(ExtraDelightItems.CRISP_RICE_TREAT, "crisp_rice_treat");
 		forBlockItem(ExtraDelightItems.SCOTCHAROO_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/scotcharoos_stage0"));
+		forItem(ExtraDelightItems.SCOTCHAROO, "scotcharoo");
 		forBlockItem(ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/black_forest_trifle_stage0"));
+		forItem(ExtraDelightItems.BLACK_FOREST_TRIFLE, "black_forest_trifle");
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_fondue_pot_stage0"));
 		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_FONDUE_BLOCK,
@@ -988,8 +993,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_GRAHAM_CRACKER, "white_chocolate_graham_cracker");
 		forItem(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_MARSHMALLOW, "white_chocolate_marshmallow");
 		forItem(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_SWEET_BERRY, "white_chocolate_sweet_berries");
-		
-		forItem(ExtraDelightItems.FUDGE_SLICE, "fudge");
+
+		forItem(ExtraDelightItems.DRIED_CHILI, "crops/chili/dried_chili");
 
 		AestheticBlocks.itemModel(this);
 	}
