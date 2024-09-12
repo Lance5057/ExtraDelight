@@ -538,6 +538,9 @@ public class ExtraDelightBlocks {
 			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
 					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D),
 					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D)));
+	public static final DeferredBlock<HorizontalPanBlock> BAR_MOLD = BLOCKS.register("bar_mold",
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
 
 	public static final DeferredBlock<CoffeeBush> COFFEE_BUSH = ExtraDelightBlocks.BLOCKS.register("coffee_bush",
 			() -> new CoffeeBush(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().noCollission()

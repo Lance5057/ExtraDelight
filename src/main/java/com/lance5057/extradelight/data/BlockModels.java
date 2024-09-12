@@ -14,6 +14,7 @@ import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
+import com.lance5057.extradelight.blocks.crops.MallowRootCrop;
 import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -233,6 +234,7 @@ public class BlockModels extends BlockStateProvider {
 		this.bakingStoneStyleBlock(ExtraDelightBlocks.BAKING_STONE_BLOCK.get());
 		this.panBlock(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), "block/muffin_tray");
 		this.panBlock(ExtraDelightBlocks.SERVING_POT_BLOCK.get(), "block/serving_pot");
+		this.panBlock(ExtraDelightBlocks.BAR_MOLD.get(), "block/bar_mold");
 
 		this.logBlock(ExtraDelightBlocks.FRUIT_LOG.get());
 		this.logBlock(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
@@ -252,7 +254,6 @@ public class BlockModels extends BlockStateProvider {
 		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
 
 		this.fruitLeafBlock(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), "hazelnut");
-		this.cropCrossBlock(ExtraDelightBlocks.CHILI_CROP.get(), "chili", ChiliCrop.AGE);
 
 		styleBlock(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE,
 				"block/cosmetics/chocolate/dark_chocolate");
@@ -377,13 +378,25 @@ public class BlockModels extends BlockStateProvider {
 		this.recipeFeastBlock(ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.CRISP_RICE_TREATS.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.SCOTCHAROOS.get());
-		
+
 		this.fondueBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_FONDUE.get(), "blood");
 		this.fondueBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), "white");
 		this.fondueBlock(ExtraDelightBlocks.DARK_CHOCOLATE_FONDUE.get(), "dark");
 		this.fondueBlock(ExtraDelightBlocks.MILK_CHOCOLATE_FONDUE.get(), "milk");
-		
+
 		this.cropCrossBlock(ExtraDelightBlocks.PEANUT_CROP.get(), "peanut", PeanutCrop.AGE);
+		simpleBlock(ExtraDelightBlocks.WILD_PEANUT.get(), new ConfiguredModel(
+				models().cross("wild_peanut", modLoc("block/crops/peanut/wild_peanut")).renderType("cutout")));
+
+		this.cropCrossBlock(ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), "marshmallow", MallowRootCrop.AGE);
+		simpleBlock(ExtraDelightBlocks.WILD_MALLOW_ROOT.get(), new ConfiguredModel(models()
+				.cross("wild_mallow_root", modLoc("block/crops/marshmallow/wild_marshmallow")).renderType("cutout")));
+
+		this.cropCrossBlock(ExtraDelightBlocks.CHILI_CROP.get(), "chili", ChiliCrop.AGE);
+		simpleBlock(ExtraDelightBlocks.WILD_CHILI.get(), new ConfiguredModel(
+				models().cross("wild_chili", modLoc("block/crops/chili/wild_chili")).renderType("cutout")));
+
+		this.simpleCross(ExtraDelightBlocks.HAZELNUT_SAPLING.get(), "crops/fruit/hazelnut/hazelnut_sapling");
 
 		AestheticBlocks.blockModel(this);
 	}
@@ -644,9 +657,8 @@ public class BlockModels extends BlockStateProvider {
 			}
 
 			return ConfiguredModel.builder()
-					.modelFile(models()
-							.withExistingParent(pre + "_chocolate_fondue_pot" + suffix,
-									this.modLoc("block/fondue_pot" + suffix))
+					.modelFile(models().withExistingParent(pre + "_chocolate_fondue_pot" + suffix,
+							this.modLoc("block/fondue_pot" + suffix))
 							.texture("5", this.modLoc("block/cosmetics/chocolate/" + pre + "_chocolate_style0")))
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
@@ -771,6 +783,11 @@ public class BlockModels extends BlockStateProvider {
 						.cross(BuiltInRegistries.BLOCK.getKey(block).getPath(),
 								modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block).getPath()))
 						.renderType("cutout")));
+	}
+
+	private void simpleCross(Block block, String path) {
+		simpleBlock(block, new ConfiguredModel(models()
+				.cross(BuiltInRegistries.BLOCK.getKey(block).getPath(), modLoc("block/" + path)).renderType("cutout")));
 	}
 
 	public void cabinetBlock(Block block, String woodType) {

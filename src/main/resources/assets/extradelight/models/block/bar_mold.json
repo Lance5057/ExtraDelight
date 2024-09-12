@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "block/blcok",
+	"parent": "block/block",
 	"textures": {
 		"0": "extradelight:block/bar_mold",
 		"particle": "extradelight:block/bar_mold"

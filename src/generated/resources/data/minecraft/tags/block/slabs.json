@@ -1,5 +1,10 @@
 {
   "values": [
-    "extradelight:cinnamon_slab"
+    "extradelight:cinnamon_slab",
+    "extradelight:blood_chocolate_slab",
+    "extradelight:dark_chocolate_slab",
+    "extradelight:fruit_slab",
+    "extradelight:milk_chocolate_slab",
+    "extradelight:white_chocolate_slab"
   ]
 }

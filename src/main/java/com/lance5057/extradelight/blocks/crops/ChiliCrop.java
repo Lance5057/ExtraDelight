@@ -20,7 +20,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class ChiliCrop extends CropBlock {
 
-	public static final int MAX_AGE = 7;
+	public static final int MAX_AGE = 6;
 	public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 6);
 	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
 	        Block.box(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),

@@ -34,7 +34,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.neoforged.neoforge.items.IItemHandler;
 
-@SuppressWarnings("deprecation")
+@SuppressWarnings("deprecation") 
 public class CounterCabinetBlock extends BaseEntityBlock {
 	public static final MapCodec<CounterCabinetBlock> CODEC = simpleCodec(CounterCabinetBlock::new);
 

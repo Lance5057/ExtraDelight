@@ -111,10 +111,21 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CINNAMON_STAIRS.get(), ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(),
 				ExtraDelightBlocks.CINNAMON_SLAB.get());
 
-		tag(BlockTags.FENCES).add(ExtraDelightBlocks.CINNAMON_FENCE.get());
-		tag(BlockTags.FENCE_GATES).add(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get());
-		tag(BlockTags.STAIRS).add(ExtraDelightBlocks.CINNAMON_STAIRS.get());
-		tag(BlockTags.SLABS).add(ExtraDelightBlocks.CINNAMON_SLAB.get());
+		tag(BlockTags.FENCES).add(ExtraDelightBlocks.CINNAMON_FENCE.get(),
+				ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.DARK_CHOCOLATE_FENCE.get(),
+				ExtraDelightBlocks.FRUIT_FENCE.get(), ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get(),
+				ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE.get());
+		tag(BlockTags.FENCE_GATES).add(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get(),
+				ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE_GATE.get(), ExtraDelightBlocks.DARK_CHOCOLATE_FENCE_GATE.get(),
+				ExtraDelightBlocks.FRUIT_FENCE_GATE.get(), ExtraDelightBlocks.MILK_CHOCOLATE_FENCE_GATE.get(),
+				ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE_GATE.get());
+		tag(BlockTags.STAIRS).add(ExtraDelightBlocks.CINNAMON_STAIRS.get(),
+				ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get(), ExtraDelightBlocks.DARK_CHOCOLATE_STAIRS.get(),
+				ExtraDelightBlocks.FRUIT_STAIRS.get(), ExtraDelightBlocks.MILK_CHOCOLATE_STAIRS.get(),
+				ExtraDelightBlocks.WHITE_CHOCOLATE_STAIRS.get());
+		tag(BlockTags.SLABS).add(ExtraDelightBlocks.CINNAMON_SLAB.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(), ExtraDelightBlocks.FRUIT_SLAB.get(),
+				ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get());
 		tag(ExtraDelightTags.COLD_SOURCES).add(Blocks.ICE, Blocks.BLUE_ICE, Blocks.FROSTED_ICE, Blocks.PACKED_ICE,
 				Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW_CAULDRON);
 	}

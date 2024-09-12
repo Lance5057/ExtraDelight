@@ -759,7 +759,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.MILK_TART_FEAST, "milk_tart");
 		forBlockItem(ExtraDelightItems.PUNCH_FEAST,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/punch_stage0"));
-		forBlockItem(ExtraDelightItems.WILD_GINGER, "wild_ginger");
+		forBlockItemFlat(ExtraDelightItems.WILD_GINGER, "crops/ginger/wild_ginger");
 
 		forBlockItem(ExtraDelightItems.CHEESE_STAIRS_BLOCK_ITEM, "cheese_stairs");
 		forBlockItem(ExtraDelightItems.CHEESE_SLAB_BLOCK_ITEM, "cheese_slab");
@@ -880,8 +880,53 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_TRAPDOOR,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_trapdoor_bottom"));
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_SLAB, modLoc("block/blood_chocolate_slab"));
-		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_PILLAR, ResourceLocation
-				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/blood_chocolate_pillar"));
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_PILLAR,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_pillar"));
+
+		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+				"block/cosmetics/chocolate/dark_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_FENCE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+				"block/cosmetics/chocolate/dark_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_FENCE_GATE, ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/dark_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_STAIRS,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_stairs"));
+		forItem(ExtraDelightItems.DARK_CHOCOLATE_DOOR, "dark_chocolate_door");
+		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_TRAPDOOR,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_trapdoor_bottom"));
+		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_SLAB, modLoc("block/dark_chocolate_slab"));
+		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_PILLAR,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_pillar"));
+
+		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+				"block/cosmetics/chocolate/milk_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_FENCE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+				"block/cosmetics/chocolate/milk_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_FENCE_GATE, ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/milk_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_STAIRS,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/milk_chocolate_stairs"));
+		forItem(ExtraDelightItems.MILK_CHOCOLATE_DOOR, "milk_chocolate_door");
+		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_TRAPDOOR,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/milk_chocolate_trapdoor_bottom"));
+		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_SLAB, modLoc("block/milk_chocolate_slab"));
+		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_PILLAR,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/milk_chocolate_pillar"));
+
+		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+				"block/cosmetics/chocolate/white_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_FENCE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+				"block/cosmetics/chocolate/white_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_FENCE_GATE, ResourceLocation
+				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/white_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_STAIRS,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_stairs"));
+		forItem(ExtraDelightItems.WHITE_CHOCOLATE_DOOR, "white_chocolate_door");
+		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_TRAPDOOR,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_trapdoor_bottom"));
+		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_SLAB, modLoc("block/white_chocolate_slab"));
+		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_PILLAR,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_pillar"));
 
 		forItem(ExtraDelightItems.ROASTED_COCOA_BEANS, "roasted_cocoa_beans");
 		forItem(ExtraDelightItems.COCOA_SOLIDS, "cocoa_solids");
@@ -998,13 +1043,21 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.PEANUTS_IN_SHELL, "crops/peanuts/peanuts_in_shell");
 		forItem(ExtraDelightItems.PEANUTS, "crops/peanuts/peanuts");
 		forItem(ExtraDelightItems.ROASTED_PEANUTS, "crops/peanuts/roasted_peanuts");
-		
+
 		forItem(ExtraDelightItems.HAZELNUTS_IN_SHELL, "crops/fruit/hazelnut/hazelnut_in_shell");
 		forItem(ExtraDelightItems.HAZELNUTS, "crops/fruit/hazelnut/hazelnut");
 		forItem(ExtraDelightItems.ROASTED_HAZELNUTS, "crops/fruit/hazelnut/roasted_hazelnut");
-		
+
 		forItem(ExtraDelightItems.MALLOW_ROOT, "crops/mallow/mallow_root");
-		forBlockItem(ExtraDelightItems.WILD_PEANUT_BLOCK, "crops/peanut/wild_peanut");
+		forBlockItemFlat(ExtraDelightItems.WILD_PEANUT_BLOCK, "crops/peanut/wild_peanut");
+		forBlockItemFlat(ExtraDelightItems.WILD_CHILI_BLOCK, "crops/chili/wild_chili");
+		forBlockItemFlat(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK, "crops/marshmallow/wild_marshmallow");
+
+		forBlockItem(ExtraDelightItems.HAZELNUT_LEAVES, "crops/fruit/hazelnut/hazelnut_leaves_stage0");
+
+		forBlockItem(ExtraDelightItems.CHILLER, "chiller");
+		forBlockItem(ExtraDelightItems.BAR_MOLD, "bar_mold");
+		forBlockItemFlat(ExtraDelightItems.HAZELNUT_SAPLING, "crops/fruit/hazelnut/hazelnut_sapling");
 
 		AestheticBlocks.itemModel(this);
 	}
@@ -1016,6 +1069,10 @@ public class ItemModels extends ItemModelProvider {
 	public void forItemModel(DeferredItem<? extends Item> item, String path) {
 		getBuilder(item.getId().getPath()).parent(
 				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, path)));
+	}
+
+	public void forBlockItemFlat(DeferredItem<? extends Item> item, String name) {
+		this.singleTexture(item.getId().getPath(), mcLoc("item/handheld"), "layer0", modLoc("block/" + name));
 	}
 
 	public void forBlockItem(DeferredItem<? extends BlockItem> item, String name) {
