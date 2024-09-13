@@ -464,6 +464,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), Items.BUCKET);
 
 		this.dropSelf(ExtraDelightBlocks.HAZELNUT_SAPLING.get());
+
+		this.dropSelf(ExtraDelightBlocks.JAR.get());
 	}
 
 	protected LootTable.Builder createChocolateBoxDrop(Block block) {

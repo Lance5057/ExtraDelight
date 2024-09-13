@@ -1871,4 +1871,6 @@ public class ExtraDelightItems {
 	public static final DeferredItem<BlockItem> HAZELNUT_SAPLING = ITEMS.register("hazelnut_sapling",
 			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_SAPLING.get(), new Item.Properties()));
 
+	public static final DeferredItem<BlockItem> JAR = ITEMS.register("jar",
+			() -> new BlockItem(ExtraDelightBlocks.JAR.get(), new Item.Properties()));
 }

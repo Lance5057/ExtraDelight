@@ -23,6 +23,7 @@ import com.lance5057.extradelight.blocks.fluids.GlowBerryFluidBlock;
 import com.lance5057.extradelight.blocks.fluids.HotFluidBlock;
 import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
 import com.lance5057.extradelight.blocks.funnel.FunnelBlock;
+import com.lance5057.extradelight.blocks.jar.JarBlock;
 import com.lance5057.extradelight.blocks.keg.KegBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
@@ -659,6 +660,8 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<KegBlock> KEG = BLOCKS.register("keg_block",
 			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
+	public static final DeferredBlock<JarBlock> JAR = BLOCKS.register("jar_block",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
 
 	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_FRUIT_LOG = BLOCKS.register("stripped_fruit_log",
 			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
@@ -821,7 +824,7 @@ public class ExtraDelightBlocks {
 			() -> new CakeBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
 	public static final DeferredBlock<RecipeFeastBlock> FUDGE = BLOCKS.register("fudge",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
-					true, pan));
+					false, pan));
 	public static final DeferredBlock<RecipeFeastBlock> STICKY_TOFFEE_PUDDING = BLOCKS.register("sticky_toffee_pudding",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, pan));

@@ -378,6 +378,8 @@ public class BlockModels extends BlockStateProvider {
 		this.recipeFeastBlock(ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.CRISP_RICE_TREATS.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.SCOTCHAROOS.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.FUDGE.get());
+		this.recipeFeastBlock(ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get());
 
 		this.fondueBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_FONDUE.get(), "blood");
 		this.fondueBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), "white");
@@ -397,6 +399,9 @@ public class BlockModels extends BlockStateProvider {
 				models().cross("wild_chili", modLoc("block/crops/chili/wild_chili")).renderType("cutout")));
 
 		this.simpleCross(ExtraDelightBlocks.HAZELNUT_SAPLING.get(), "crops/fruit/hazelnut/hazelnut_sapling");
+
+		this.simpleBlock(ExtraDelightBlocks.JAR.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/jar")));
 
 		AestheticBlocks.blockModel(this);
 	}
