@@ -6,6 +6,7 @@ import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlockEntity;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlockEntity;
 import com.lance5057.extradelight.blocks.entities.TapBlockEntity;
 import com.lance5057.extradelight.blocks.funnel.FunnelBlockEntity;
+import com.lance5057.extradelight.blocks.jar.JarBlockEntity;
 import com.lance5057.extradelight.blocks.keg.KegBlockEntity;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlockEntity;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlEntity;
@@ -123,4 +124,7 @@ public class ExtraDelightBlockEntities {
 					ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(), ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(),
 					ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get())
 					.build(null));
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JarBlockEntity>> JAR = TILES.register("jar",
+			() -> BlockEntityType.Builder.of(JarBlockEntity::new, ExtraDelightBlocks.JAR.get()).build(null));
 }

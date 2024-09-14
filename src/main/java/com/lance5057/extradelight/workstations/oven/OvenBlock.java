@@ -64,7 +64,8 @@ public class OvenBlock extends Block implements EntityBlock, SimpleWaterloggedBl
 	}
 
 	@Override
-	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
+			BlockHitResult hitResult) {
 		if (!level.isClientSide) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof OvenBlockEntity OvenEntity) {

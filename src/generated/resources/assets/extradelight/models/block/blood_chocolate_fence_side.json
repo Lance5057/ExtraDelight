@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/fence_side",
+  "parent": "extradelight:block/chocolate_fence_side",
   "textures": {
     "texture": "extradelight:block/cosmetics/chocolate/blood_chocolate_style0"
   }

@@ -3,9 +3,9 @@
 	"parent": "block/block",
 	"render_type": "cutout",
 	"textures": {
-		"0": "extradelight:block/crops/fruit/hazelnut_leaves",
-		"1": "extradelight:block/crops/fruit/hazelnut_crop",
-		"particle": "extradelight:block/crops/fruit/hazelnut_leaves"
+		"0": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_budding",
+		"1": "extradelight:block/crops/fruit/hazelnut/hazelnut_crop",
+		"particle": "extradelight:block/crops/fruit/hazelnut/hazelnut_budding"
 	},
 	"elements": [
 		{

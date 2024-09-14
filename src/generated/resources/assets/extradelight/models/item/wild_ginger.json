@@ -1,3 +1,6 @@
 {
-  "parent": "extradelight:block/wild_ginger"
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "extradelight:block/crops/ginger/wild_ginger"
+  }
 }

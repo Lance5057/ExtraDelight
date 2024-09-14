@@ -52,6 +52,8 @@ public class ExtraDelightCapabilities {
 
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.KEG.get(),
 				(o, d) -> o.getTank());
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.JAR.get(),
+				(o, d) -> o.getTank());
 
 		event.registerItem(Capabilities.ItemHandler.ITEM,
 				(stack, context) -> new ComponentItemHandler(stack, ExtraDelightComponents.ITEMSTACK_HANDLER.get(), 8),
