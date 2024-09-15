@@ -9,6 +9,7 @@ import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
@@ -465,7 +466,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropSelf(ExtraDelightBlocks.HAZELNUT_SAPLING.get());
 
-		this.dropSelf(ExtraDelightBlocks.JAR.get());
+		this.add(ExtraDelightBlocks.JAR.get(), p_248609_ -> this.createJarDrop(p_248609_));
 	}
 
 	protected LootTable.Builder createChocolateBoxDrop(Block block) {
@@ -476,6 +477,16 @@ public class BlockLootTables extends BlockLootSubProvider {
 										.apply(CopyComponentsFunction
 												.copyComponents(CopyComponentsFunction.Source.BLOCK_ENTITY)
 												.include(DataComponents.CONTAINER)))));
+	}
+
+	protected LootTable.Builder createJarDrop(Block block) {
+		return LootTable.lootTable()
+				.withPool(this.applyExplosionCondition(block,
+						LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+								.add(LootItem.lootTableItem(block)
+										.apply(CopyComponentsFunction
+												.copyComponents(CopyComponentsFunction.Source.BLOCK_ENTITY)
+												.include(ExtraDelightComponents.FLUID.get())))));
 	}
 
 	@Override

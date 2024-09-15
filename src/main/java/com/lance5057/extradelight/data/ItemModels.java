@@ -1059,7 +1059,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.BAR_MOLD, "bar_mold");
 		forBlockItemFlat(ExtraDelightItems.HAZELNUT_SAPLING, "crops/fruit/hazelnut/hazelnut_sapling");
 		
-		forBlockItem(ExtraDelightItems.JAR, "jar");
+//		forBlockItem(ExtraDelightItems.JAR, "jar");
 
 		AestheticBlocks.itemModel(this);
 	}

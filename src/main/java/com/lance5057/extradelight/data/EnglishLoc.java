@@ -22,7 +22,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add("farmersdelight.tooltip.oven.empty", "");
 		this.add("container.doughshaper", "Dough Shaping");
-		
+
 		this.add("extradelight.container.chiller", "Chiller");
 		this.add("extradelight.container.chiller.chilled", "Chilled");
 		this.add("extradelight.container.chiller.not_chilled", "Not Chilled");
@@ -808,29 +808,29 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.WHIPPED_CREAM_FLUID_BUCKET.get(), "Whipped Cream Bucket");
 		this.add(ExtraDelightItems.TEA.get(), "Tea");
 
-		this.add("fluid_type.extradelight.apple_cider_fluid", "Apple Cider Bucket");
-		this.add("fluid_type.extradelight.bbq_fluid", "BBQ Sauce Bucket");
-		this.add("fluid_type.extradelight.broth_fluid", "Broth Bucket");
-		this.add("fluid_type.extradelight.cactus_juice_fluid", "Cactus Juice Bucket");
-		this.add("fluid_type.extradelight.caramel_sauce_fluid", "Caramel Sauce Bucket");
-		this.add("fluid_type.extradelight.custard_fluid", "Custard Bucket");
-		this.add("fluid_type.extradelight.egg_mix_fluid", "Egg Mix Bucket");
-		this.add("fluid_type.extradelight.glow_berry_juice_fluid", "Glow Berry Juice Bucket");
-		this.add("fluid_type.extradelight.glow_jam_fluid", "Glow Jam Bucket");
-		this.add("fluid_type.extradelight.golden_jam_fluid", "Golden Jam Bucket");
-		this.add("fluid_type.extradelight.gravy_fluid", "Gravy Bucket");
-		this.add("fluid_type.extradelight.hot_cocoa_fluid", "Hot Cocoa Bucket");
-		this.add("fluid_type.extradelight.jam_fluid", "Jam Bucket");
-		this.add("fluid_type.extradelight.ketchup_fluid", "Ketchup Bucket");
-		this.add("fluid_type.extradelight.mayo_fluid", "Mayo Bucket");
-		this.add("fluid_type.extradelight.melon_juice_fluid", "Melon Juice Bucket");
-		this.add("fluid_type.extradelight.milkshake_fluid", "Milkshake Bucket");
-		this.add("fluid_type.extradelight.oil_fluid", "Cooking Oil Bucket");
-		this.add("fluid_type.extradelight.sweet_berry_juice_fluid", "Sweet Berry Juice Bucket");
-		this.add("fluid_type.extradelight.tea_fluid", "Tea Bucket");
-		this.add("fluid_type.extradelight.tomato_juice_fluid", "Tomato Juice Bucket");
-		this.add("fluid_type.extradelight.vinegar_fluid", "Vinegar Bucket");
-		this.add("fluid_type.extradelight.whipped_cream_fluid", "Whipped Cream Bucket");
+		this.add("fluid_type.extradelight.apple_cider_fluid", "Apple Cider");
+		this.add("fluid_type.extradelight.bbq_fluid", "BBQ Sauce");
+		this.add("fluid_type.extradelight.broth_fluid", "Broth");
+		this.add("fluid_type.extradelight.cactus_juice_fluid", "Cactus Juice");
+		this.add("fluid_type.extradelight.caramel_sauce_fluid", "Caramel Sauce");
+		this.add("fluid_type.extradelight.custard_fluid", "Custard");
+		this.add("fluid_type.extradelight.egg_mix_fluid", "Egg Mix");
+		this.add("fluid_type.extradelight.glow_berry_juice_fluid", "Glow Berry Juice");
+		this.add("fluid_type.extradelight.glow_jam_fluid", "Glow Jam");
+		this.add("fluid_type.extradelight.golden_jam_fluid", "Golden Jam");
+		this.add("fluid_type.extradelight.gravy_fluid", "Gravy");
+		this.add("fluid_type.extradelight.hot_cocoa_fluid", "Hot Cocoa");
+		this.add("fluid_type.extradelight.jam_fluid", "Jam");
+		this.add("fluid_type.extradelight.ketchup_fluid", "Ketchup");
+		this.add("fluid_type.extradelight.mayo_fluid", "Mayo");
+		this.add("fluid_type.extradelight.melon_juice_fluid", "Melon Juice");
+		this.add("fluid_type.extradelight.milkshake_fluid", "Milkshake");
+		this.add("fluid_type.extradelight.oil_fluid", "Cooking Oil");
+		this.add("fluid_type.extradelight.sweet_berry_juice_fluid", "Sweet Berry Juice");
+		this.add("fluid_type.extradelight.tea_fluid", "Tea");
+		this.add("fluid_type.extradelight.tomato_juice_fluid", "Tomato Juice");
+		this.add("fluid_type.extradelight.vinegar_fluid", "Vinegar");
+		this.add("fluid_type.extradelight.whipped_cream_fluid", "Whipped Cream");
 
 		this.add(ExtraDelightItems.KEG.get(), "Keg");
 
