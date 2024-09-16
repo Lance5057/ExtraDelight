@@ -27,7 +27,7 @@ public class MeltingPotRecipeCategory implements IRecipeCategory<MeltingPotRecip
 	public MeltingPotRecipeCategory(IGuiHelper guiHelper) {
 		background = guiHelper.createDrawable(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 156, 0, 100, 100);
-		localizedName = Component.translatable("extradelight.jei.MeltingPot");
+		localizedName = Component.translatable("extradelight.jei.meltingpot");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ExtraDelightItems.MIXING_BOWL.get()));
 	}

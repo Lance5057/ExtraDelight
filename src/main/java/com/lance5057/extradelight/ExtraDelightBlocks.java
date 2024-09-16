@@ -660,7 +660,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<KegBlock> KEG = BLOCKS.register("keg_block",
 			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
-	public static final DeferredBlock<JarBlock> JAR = BLOCKS.register("jar_block",
+	public static final DeferredBlock<JarBlock> JAR = BLOCKS.register("jar",
 			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
 
 	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_FRUIT_LOG = BLOCKS.register("stripped_fruit_log",

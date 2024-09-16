@@ -17,6 +17,7 @@ import com.lance5057.extradelight.items.GlowberryPopsicleItem;
 import com.lance5057.extradelight.items.MilkshakeDrinkItem;
 import com.lance5057.extradelight.items.OffsetSpatulaItem;
 import com.lance5057.extradelight.items.ShuckableCorn;
+import com.lance5057.extradelight.items.jar.JarItem;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
@@ -34,6 +35,7 @@ import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.neoforged.neoforge.fluids.SimpleFluidContent;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.FoodValues;
@@ -1871,6 +1873,7 @@ public class ExtraDelightItems {
 	public static final DeferredItem<BlockItem> HAZELNUT_SAPLING = ITEMS.register("hazelnut_sapling",
 			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_SAPLING.get(), new Item.Properties()));
 
-	public static final DeferredItem<BlockItem> JAR = ITEMS.register("jar",
-			() -> new BlockItem(ExtraDelightBlocks.JAR.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> JAR = ITEMS.register("jar", () -> new JarItem(
+			ExtraDelightBlocks.JAR.get(),
+			new Item.Properties().component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1)));
 }

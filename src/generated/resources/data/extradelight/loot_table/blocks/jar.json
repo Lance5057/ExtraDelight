@@ -11,11 +11,20 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_components",
+              "include": [
+                "extradelight:fluid"
+              ],
+              "source": "block_entity"
+            }
+          ],
           "name": "extradelight:jar"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/jar_block"
+  "random_sequence": "extradelight:blocks/jar"
 }

@@ -3,9 +3,11 @@ package com.lance5057.extradelight.blocks.jar;
 import javax.annotation.Nonnull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightComponents;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -15,6 +17,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.FluidUtil;
+import net.neoforged.neoforge.fluids.SimpleFluidContent;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 
 public class JarBlockEntity extends BlockEntity {
@@ -41,6 +44,18 @@ public class JarBlockEntity extends BlockEntity {
 		};
 
 		return tank;
+	}
+
+	@Override
+	protected void collectImplicitComponents(DataComponentMap.Builder builder) {
+		super.collectImplicitComponents(builder);
+		builder.set(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.copyOf(tank.getFluid()));
+	}
+
+	@Override
+	protected void applyImplicitComponents(DataComponentInput input) {
+		super.applyImplicitComponents(input);
+		tank.setFluid(input.getOrDefault(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).copy());
 	}
 
 	public float getFullness() {
