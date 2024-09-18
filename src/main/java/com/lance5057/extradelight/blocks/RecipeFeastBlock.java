@@ -1,19 +1,26 @@
 package com.lance5057.extradelight.blocks;
 
+import java.util.List;
 import java.util.Optional;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.recipe.FeastRecipe;
 import com.lance5057.extradelight.recipe.SimpleRecipeWrapper;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.BlockGetter;
@@ -177,5 +184,12 @@ public class RecipeFeastBlock extends Block {
 	@Override
 	public boolean isPathfindable(BlockState state, PathComputationType type) {
 		return false;
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
+			TooltipFlag tooltipFlag) {
+		MutableComponent textEmpty = Component.translatable(ExtraDelight.MOD_ID + ".tooltip.feast");
+		tooltipComponents.add(textEmpty.withStyle(ChatFormatting.BLUE));
 	}
 }
