@@ -179,7 +179,7 @@ public class ChillerBlockEntity extends BlockEntity {
 				}
 			} else {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
-				if (fluidHandlerItem != null && Chiller.inventory.getStackInSlot(DRIP_TRAY_OUT).isEmpty()) {
+				if (fluidHandlerItem != null) {
 					int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, Chiller.getDripTray(),
 							Chiller.getDripTray().getFluidAmount(), true).getAmount();
 					if (filled > 0) {
@@ -358,7 +358,7 @@ public class ChillerBlockEntity extends BlockEntity {
 
 			@Override
 			public int getSlotLimit(int slot) {
-				if (slot == FLUID_IN || slot == FLUID_OUT)
+				if (slot == FLUID_IN || slot == FLUID_OUT || slot == DRIP_TRAY_OUT)
 					return 1;
 				return Item.ABSOLUTE_MAX_STACK_SIZE;
 			}
