@@ -1,5 +1,9 @@
 {
   "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 250,
+    "id": "extradelight:oil_fluid"
+  },
   "grinds": 4,
   "ingredient": {
     "type": "neoforge:difference",
@@ -17,6 +21,6 @@
   },
   "result": {
     "count": 1,
-    "id": "extradelight:cooking_oil"
+    "id": "minecraft:bone_meal"
   }
 }

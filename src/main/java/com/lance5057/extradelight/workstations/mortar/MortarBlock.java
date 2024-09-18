@@ -30,6 +30,9 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.fluids.FluidUtil;
+import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.items.IItemHandler;
 
 public class MortarBlock extends Block implements EntityBlock, IStyleable {
@@ -89,10 +92,15 @@ public class MortarBlock extends Block implements EntityBlock, IStyleable {
 				if (pPlayer.getItemInHand(pHand).is(ExtraDelightTags.PESTLES)) {
 					mbe.grind(pPlayer);
 				} else {
-					if (pPlayer.isCrouching()) {
-						mbe.extractItem(pPlayer);
+					IFluidHandlerItem f = stack.getCapability(Capabilities.FluidHandler.ITEM);
+					if (f != null) {
+						FluidUtil.interactWithFluidHandler(pPlayer, pHand, mbe.getFluidTank());
 					} else {
+						if (pPlayer.isCrouching()) {
+							mbe.extractItem(pPlayer);
+						} else {
 							mbe.insertItem(stack);
+						}
 					}
 				}
 
