@@ -1,5 +1,6 @@
 {
   "type": "extradelight:mortar",
+  "fluidOut": {},
   "grinds": 4,
   "ingredient": {
     "item": "minecraft:pink_tulip"

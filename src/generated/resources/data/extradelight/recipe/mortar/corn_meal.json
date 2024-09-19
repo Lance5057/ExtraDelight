@@ -1,5 +1,6 @@
 {
   "type": "extradelight:mortar",
+  "fluidOut": {},
   "grinds": 4,
   "ingredient": {
     "tag": "forge:seeds/corn"

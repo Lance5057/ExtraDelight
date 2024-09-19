@@ -56,53 +56,36 @@ public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 			ps.pushPose();
 
 			if (displayContext == ItemDisplayContext.GUI) {
-				
+
 				ps.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(30), (float) Math.toRadians(225), 0));
 				ps.translate(0, 1f, -1.7f);
-				bm.render(ps, mbs, texture -> RenderType.CUTOUT, packedLight, overlay, 0, ModelData.EMPTY);
-
-				VertexConsumer vertexConsumer = mbs.getBuffer(Sheets.translucentCullBlockSheet());
-				Matrix4f mat = ps.last().pose();
-				Matrix3f matrix3f = ps.last().normal();
-
-				SimpleFluidContent f = stack.get(ExtraDelightComponents.FLUID.get());
-				if (f != null && !f.isEmpty()) {
-					ps.pushPose();
-
-					FluidStack fluidStack = f.copy();
-					Fluid fluid = fluidStack.getFluid();
-					IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid);
-
-					RenderUtil.buildCubeAll(new Vector3f(5.5f / 16f, 0.5f / 16f, 5.5f / 16f),
-							new Vector3f(5f / 16f, ((float) f.getAmount() / 1000f) * (6f / 16f), 5f / 16f),
-							vertexConsumer, mat, matrix3f, fluidTypeExtensions.getTintColor(fluidStack),
-							RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), overlay, ps);
-					ps.popPose();
-
-				}
+			} else if (displayContext == ItemDisplayContext.FIRST_PERSON_LEFT_HAND
+					|| displayContext == ItemDisplayContext.FIRST_PERSON_RIGHT_HAND) {
+				ps.translate(0, 0.35, -0.17f);
 			} else {
 				ps.translate(0, 0.15, -0.17f);
-				bm.render(ps, mbs, texture -> RenderType.CUTOUT, packedLight, overlay, 0, ModelData.EMPTY);
 
-				VertexConsumer vertexConsumer = mbs.getBuffer(Sheets.translucentCullBlockSheet());
-				Matrix4f mat = ps.last().pose();
-				Matrix3f matrix3f = ps.last().normal();
+			}
 
-				SimpleFluidContent f = stack.get(ExtraDelightComponents.FLUID.get());
-				if (f != null && !f.isEmpty()) {
-					ps.pushPose();
+			bm.render(ps, mbs, texture -> RenderType.CUTOUT, packedLight, overlay, 0, ModelData.EMPTY);
 
-					FluidStack fluidStack = f.copy();
-					Fluid fluid = fluidStack.getFluid();
-					IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid);
+			VertexConsumer vertexConsumer = mbs.getBuffer(Sheets.translucentCullBlockSheet());
+			Matrix4f mat = ps.last().pose();
+			Matrix3f matrix3f = ps.last().normal();
 
-					RenderUtil.buildCubeAll(new Vector3f(5.5f / 16f, 0.5f / 16f, 5.5f / 16f),
-							new Vector3f(5f / 16f, ((float) f.getAmount() / 1000f) * (6f / 16f), 5f / 16f),
-							vertexConsumer, mat, matrix3f, fluidTypeExtensions.getTintColor(fluidStack),
-							RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), overlay, ps);
-					ps.popPose();
+			SimpleFluidContent f = stack.get(ExtraDelightComponents.FLUID.get());
+			if (f != null && !f.isEmpty()) {
+//				ps.pushPose();
 
-				}
+				FluidStack fluidStack = f.copy();
+				Fluid fluid = fluidStack.getFluid();
+				IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid);
+
+				RenderUtil.buildCubeAll(new Vector3f(5.5f / 16f, 0.5f / 16f, 5.5f / 16f),
+						new Vector3f(5f / 16f, ((float) f.getAmount() / 1000f) * (6f / 16f), 5f / 16f), vertexConsumer,
+						mat, matrix3f, fluidTypeExtensions.getTintColor(fluidStack),
+						RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), overlay, ps);
+//				ps.popPose();
 			}
 			ps.popPose();
 		}

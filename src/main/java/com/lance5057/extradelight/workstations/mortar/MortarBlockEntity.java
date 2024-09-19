@@ -28,6 +28,7 @@ import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
@@ -38,7 +39,7 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 
 	private int grinds = 0;
 
-	public static final String TAG = "inv";
+	public static final String INV_TAG = "inv";
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
@@ -61,30 +62,20 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 		return tank;
 	}
 
+	public float getFullness() {
+		return (float) tank.getFluidAmount() / (float) tank.getCapacity();
+	}
+
 	public MortarBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ExtraDelightBlockEntities.MORTAR.get(), pPos, pState);
 	}
 
-//	@Nonnull
-//	@Override
-//	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-//		if (side != Direction.DOWN)
-//			if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-//				return handler.cast();
-//			}
-//		return super.getCapability(cap, side);
-//	}
-
-//	@SubscribeEvent
-//	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-//		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
-//				(be, context) -> {
-//					return be.inventory;
-//				});
-//	}
-
 	public IItemHandlerModifiable getItemHandler() {
 		return itemHandler.get();
+	}
+
+	public FluidTank getFluidTank() {
+		return tank;
 	}
 
 	private ItemStackHandler createHandler() {
@@ -161,17 +152,18 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 	}
 
 	void readNBT(CompoundTag nbt, HolderLookup.Provider registries) {
-		if (nbt.contains(TAG)) {
-			items.deserializeNBT(registries, nbt.getCompound(TAG));
+		if (nbt.contains(INV_TAG)) {
+			items.deserializeNBT(registries, nbt.getCompound(INV_TAG));
 		}
+		tank.readFromNBT(registries, nbt);
 
 		this.grinds = nbt.getInt("Grinds");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
 
-		tag.put(TAG, items.serializeNBT(registries));
-
+		tag.put(INV_TAG, items.serializeNBT(registries));
+		tank.writeToNBT(registries, tag);
 		tag.putInt("Grinds", this.grinds);
 
 		return tag;
@@ -200,32 +192,35 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 
 	public InteractionResult grind(Player Player) {
 		Optional<RecipeHolder<MortarRecipe>> recipeOptional = matchRecipe(getInsertedItem());
-		recipeOptional.ifPresent(recipe -> {
-//			MortarRecipe recipe = recipeOptional.get();
+		recipeOptional.ifPresent(r -> {
+			MortarRecipe recipe = r.value();
+			if (tank.fill(recipe.getFluid(), FluidAction.SIMULATE) == recipe.getFluid().getAmount()) {
 
-			if ((this.grinds + 1) < recipe.value().getGrinds()) {
-				grinds++;
+				if ((this.grinds + 1) < recipe.getGrinds()) {
+					grinds++;
 
-				for (int i = 0; i < 1 + level.random.nextInt(4); i++)
-					level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, getInsertedItem()),
-							worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
-							worldPosition.getY() - 0.5f - level.random.nextDouble(),
-							worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
+					for (int i = 0; i < 1 + level.random.nextInt(4); i++)
+						level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, getInsertedItem()),
+								worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
+								worldPosition.getY() - 0.5f - level.random.nextDouble(),
+								worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
-				level.playSound(Player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
-			} else {
-				ItemStack in = getInsertedItem();
+					level.playSound(Player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
+				} else {
+					ItemStack in = getInsertedItem();
 
-				for (int i = 0; i < in.getCount(); i++) {
+					for (int i = 0; i < in.getCount(); i++) {
 
-					ItemStack r = recipe.value().getResultItem(this.level.registryAccess()).copy();
+						ItemStack it = recipe.getResultItem(this.level.registryAccess()).copy();
 
-					level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
-							getBlockPos().getZ(), r));
+						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
+								getBlockPos().getZ(), it));
+					}
+					items.setStackInSlot(0, ItemStack.EMPTY);
+					tank.fill(recipe.getFluid(), FluidAction.EXECUTE);
 				}
-				items.setStackInSlot(0, ItemStack.EMPTY);
+				updateInventory();
 			}
-			updateInventory();
 		});
 
 		return InteractionResult.SUCCESS;

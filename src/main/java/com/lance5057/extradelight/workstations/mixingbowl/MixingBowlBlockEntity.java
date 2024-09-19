@@ -20,12 +20,20 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.util.Lazy;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.FluidUtil;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
@@ -57,8 +65,73 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	private FluidTank createFluidHandler() {
-		// TODO Auto-generated method stub
-		return null;
+		FluidTank tank = new FluidTank(FluidType.BUCKET_VOLUME * 6) {
+			@Override
+			protected void onContentsChanged() {
+				MixingBowlBlockEntity.this.requestModelDataUpdate();
+				MixingBowlBlockEntity.this.getLevel().sendBlockUpdated(MixingBowlBlockEntity.this.getBlockPos(),
+						MixingBowlBlockEntity.this.getBlockState(), MixingBowlBlockEntity.this.getBlockState(),
+						Block.UPDATE_ALL);
+				MixingBowlBlockEntity.this.setChanged();
+			}
+		};
+
+		return tank;
+	}
+
+	public FluidTank getFluidTank() {
+		return fluids;
+	}
+
+	private void fillInternal(MixingBowlBlockEntity bowl) {
+		ItemStack inputItem = bowl.items.getStackInSlot(LIQUID_IN_SLOT);
+		if (!inputItem.isEmpty()) {
+			if (inputItem.getItem() instanceof BucketItem filledBucket) {
+				int filled = bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
+						IFluidHandler.FluidAction.SIMULATE);
+				if (filled == FluidType.BUCKET_VOLUME) {
+					bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
+							IFluidHandler.FluidAction.EXECUTE);
+					inputItem.shrink(1);
+					bowl.items.setStackInSlot(LIQUID_IN_SLOT, Items.BUCKET.getDefaultInstance());
+
+				}
+			} else {
+				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
+				int filled = FluidUtil.tryFluidTransfer(bowl.getFluidTank(), fluidHandlerItem,
+						bowl.getFluidTank().getFluidAmount(), true).getAmount();
+				if (filled > 0) {
+					bowl.items.setStackInSlot(LIQUID_IN_SLOT, fluidHandlerItem.getContainer());
+
+				}
+			}
+		}
+	}
+
+	private void drainInternal(MixingBowlBlockEntity bowl) {
+		ItemStack inputItem = bowl.items.getStackInSlot(LIQUID_OUT_SLOT);
+		if (!inputItem.isEmpty()) {
+			if (inputItem.getItem() == Items.BUCKET) {
+				if (!bowl.getFluidTank().getFluid().isEmpty()) {
+					FluidStack stack = bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME,
+							IFluidHandler.FluidAction.SIMULATE);
+					if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
+						bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
+						inputItem.shrink(1);
+						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, stack.getFluid().getBucket().getDefaultInstance());
+					}
+				}
+			} else {
+				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
+				if (fluidHandlerItem != null && bowl.items.getStackInSlot(LIQUID_OUT_SLOT).isEmpty()) {
+					int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
+							bowl.getFluidTank().getFluidAmount(), true).getAmount();
+					if (filled > 0) {
+						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, fluidHandlerItem.getContainer());
+					}
+				}
+			}
+		}
 	}
 
 	public IItemHandlerModifiable getItemHandler() {
