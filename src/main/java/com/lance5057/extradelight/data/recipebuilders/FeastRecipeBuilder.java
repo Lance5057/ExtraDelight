@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.recipe.FeastRecipe;
 
 import net.minecraft.advancements.Advancement;
@@ -38,8 +39,13 @@ public class FeastRecipeBuilder implements RecipeBuilder {
 
 	}
 
-	public static FeastRecipeBuilder feast(Ingredient pIngredient, ItemStack pResult, BlockItem block) {
-		return new FeastRecipeBuilder(pResult, pIngredient, block);
+	public static FeastRecipeBuilder feast(Ingredient pIngredient, ItemStack pResult, Item block) {
+		if (block instanceof BlockItem b1) {
+			return new FeastRecipeBuilder(pResult, pIngredient, b1);
+		} else {
+			ExtraDelight.logger.error("FeastRecipeBuilder Invalid! " + block.toString() + " is not a BlockItem!");
+			return null;
+		}
 	}
 
 	@Override

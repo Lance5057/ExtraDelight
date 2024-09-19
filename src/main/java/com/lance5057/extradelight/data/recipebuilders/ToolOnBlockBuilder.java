@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
 
 import net.minecraft.advancements.Advancement;
@@ -36,8 +37,18 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 //		this.serializer = serializer;
 	}
 
-	public static ToolOnBlockBuilder make(BlockItem pResult, Ingredient pIngredient, BlockItem block) {
-		return new ToolOnBlockBuilder(pResult, block, pIngredient);
+	public static ToolOnBlockBuilder make(Item pResult, Ingredient pIngredient, Item block) {
+		if (pResult instanceof BlockItem b1) {
+			if (block instanceof BlockItem b2) {
+				return new ToolOnBlockBuilder(b1, b2, pIngredient);
+			} else {
+				ExtraDelight.logger.error("ToolOnBlockRecipe Invalid! " + block.toString() + " is not a BlockItem!");
+				return null;
+			}
+		} else {
+			ExtraDelight.logger.error("ToolOnBlockRecipe Invalid! " + pResult.toString() + " is not a BlockItem!");
+			return null;
+		}
 	}
 
 	public ToolOnBlockBuilder unlockedBy(String criterionName, Criterion<?> criterionTrigger) {

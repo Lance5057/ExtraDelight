@@ -850,7 +850,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.HAZELNUT_LEAVES.get(), "Hazelnut Leaves");
 		this.add(ExtraDelightItems.CHILI_SEEDS.get(), "Chili Seeds");
 		this.add(ExtraDelightItems.CHILI.get(), "Chili");
-	//	this.add(ExtraDelightItems.JAR.get(), "Jar");
+		this.add(ExtraDelightItems.JAR.get(), "Jar");
 		this.add(ExtraDelightItems.MELTING_POT.get(), "Melting Pot");
 		this.add(ExtraDelightItems.CHILLER.get(), "Chiller");
 		this.add(ExtraDelightItems.BAR_MOLD.get(), "Bar Mold");
@@ -873,7 +873,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(), "Black Chocolate Box");
 		this.add(ExtraDelightItems.PURPLE_CHOCOLATE_BOX.get(), "Purple Chocolate Box");
 
-		this.add(ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get(), "Milk Chocolate");
+		this.add(ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get(), "Milk Chocolate Block");
 		this.add(ExtraDelightItems.MILK_CHOCOLATE_FENCE.get(), "Milk Chocolate Fence");
 		this.add(ExtraDelightItems.MILK_CHOCOLATE_FENCE_GATE.get(), "Milk Chocolate Fence Gate");
 		this.add(ExtraDelightItems.MILK_CHOCOLATE_STAIRS.get(), "Milk Chocolate Stairs");
@@ -882,7 +882,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MILK_CHOCOLATE_SLAB.get(), "Milk Chocolate Slab");
 		this.add(ExtraDelightItems.MILK_CHOCOLATE_PILLAR.get(), "Milk Chocolate Pillar");
 
-		this.add(ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get(), "Dark Chocolate");
+		this.add(ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get(), "Dark Chocolate Block");
 		this.add(ExtraDelightItems.DARK_CHOCOLATE_FENCE.get(), "Dark Chocolate Fence");
 		this.add(ExtraDelightItems.DARK_CHOCOLATE_FENCE_GATE.get(), "Dark Chocolate Fence Gate");
 		this.add(ExtraDelightItems.DARK_CHOCOLATE_STAIRS.get(), "Dark Chocolate Stairs");
@@ -891,7 +891,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.DARK_CHOCOLATE_SLAB.get(), "Dark Chocolate Slab");
 		this.add(ExtraDelightItems.DARK_CHOCOLATE_PILLAR.get(), "Dark Chocolate Pillar");
 
-		this.add(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get(), "White Chocolate");
+		this.add(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get(), "White Chocolate Block");
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_FENCE.get(), "White Chocolate Fence");
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_FENCE_GATE.get(), "White Chocolate Fence Gate");
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_STAIRS.get(), "White Chocolate Stairs");
@@ -900,7 +900,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_SLAB.get(), "White Chocolate Slab");
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_PILLAR.get(), "White Chocolate Pillar");
 
-		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get(), "Blood Chocolate");
+		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get(), "Blood Chocolate Block");
 		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE.get(), "Blood Chocolate Fence");
 		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE_GATE.get(), "Blood Chocolate Fence Gate");
 		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_STAIRS.get(), "Blood Chocolate Stairs");

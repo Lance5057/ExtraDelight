@@ -1,7 +1,6 @@
 package com.lance5057.extradelight;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Set;
 
 import com.lance5057.extradelight.items.components.ChillComponent;
 
@@ -13,8 +12,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
-import vectorwing.farmersdelight.common.registry.ModItems;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID)
 public class ExtraDelightEvents {
@@ -44,22 +42,18 @@ public class ExtraDelightEvents {
 	}
 
 	public static void addToolTip(ItemTooltipEvent event) {
-		if (feasts.contains(event.getItemStack().getItem())) {
+		if (feasts.stream().anyMatch(s -> event.getItemStack().is(s))) {
 			event.getToolTip()
 					.add(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.feast").withStyle(ChatFormatting.BLUE));
 		}
 
-		if (butchercraft.contains(event.getItemStack().getItem())) {
+		if (butchercraft.stream().anyMatch(s -> event.getItemStack().is(s))) {
 			event.getToolTip().add(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.butchercraft")
 					.withStyle(ChatFormatting.RED));
 		}
 	}
 
-	static List<Item> feasts = Arrays.asList(
-			ModItems.STUFFED_PUMPKIN_BLOCK.get()
-			);
+	static Set<DeferredItem<Item>> feasts = Set.of(ExtraDelightItems.APPLE_CRISP_FEAST);
 
-	static List<Item> butchercraft = Arrays.asList(
-			ExtraDelightItems.STUFFED_HEART.get()
-			);
+	static Set<DeferredItem<Item>> butchercraft = Set.of(ExtraDelightItems.STUFFED_HEART);
 }

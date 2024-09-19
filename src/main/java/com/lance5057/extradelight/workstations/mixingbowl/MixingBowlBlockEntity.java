@@ -52,7 +52,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	public static final String FLUID_TAG = "tank";
 
-	private final FluidTank fluids = createFluidHandler();
+	private final MixingBowlTank fluids = createFluidHandler();
 
 	private int stirs = 0;
 	public boolean complete = false;
@@ -64,8 +64,8 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		super(ExtraDelightBlockEntities.MIXING_BOWL.get(), pPos, pState);
 	}
 
-	private FluidTank createFluidHandler() {
-		FluidTank tank = new FluidTank(FluidType.BUCKET_VOLUME * 6) {
+	private MixingBowlTank createFluidHandler() {
+		MixingBowlTank tank = new MixingBowlTank(FluidType.BUCKET_VOLUME) {
 			@Override
 			protected void onContentsChanged() {
 				MixingBowlBlockEntity.this.requestModelDataUpdate();
