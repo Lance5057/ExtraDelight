@@ -63,7 +63,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	public CompoundTag writeToNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
 		for (int i = 0; i < this.getTanks(); i++)
 			if (!fluid[i].isEmpty()) {
-				nbt.put("Fluid"+i, fluid[i].save(lookupProvider));
+				nbt.put("Fluid" + i, fluid[i].save(lookupProvider));
 			}
 
 		return nbt;
@@ -91,33 +91,42 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 
 	@Override
 	public int fill(FluidStack resource, FluidAction action) {
+		for (int i = 0; i < this.getTanks(); i++) {
+			int fill = doFill(resource, action, i);
+			if (fill != 0)
+				return fill;
+		}
+		return 0;
+	}
+
+	private int doFill(FluidStack resource, FluidAction action, int tank) {
 		if (resource.isEmpty() || !isFluidValid(resource)) {
 			return 0;
 		}
 		if (action.simulate()) {
-			if (fluid.isEmpty()) {
+			if (fluid[tank].isEmpty()) {
 				return Math.min(capacity, resource.getAmount());
 			}
-			if (!FluidStack.isSameFluidSameComponents(fluid, resource)) {
+			if (!FluidStack.isSameFluidSameComponents(fluid[tank], resource)) {
 				return 0;
 			}
-			return Math.min(capacity - fluid.getAmount(), resource.getAmount());
+			return Math.min(capacity - fluid[tank].getAmount(), resource.getAmount());
 		}
-		if (fluid.isEmpty()) {
-			fluid = resource.copyWithAmount(Math.min(capacity, resource.getAmount()));
+		if (fluid[tank].isEmpty()) {
+			fluid[tank] = resource.copyWithAmount(Math.min(capacity, resource.getAmount()));
 			onContentsChanged();
-			return fluid.getAmount();
+			return fluid[tank].getAmount();
 		}
-		if (!FluidStack.isSameFluidSameComponents(fluid, resource)) {
+		if (!FluidStack.isSameFluidSameComponents(fluid[tank], resource)) {
 			return 0;
 		}
-		int filled = capacity - fluid.getAmount();
+		int filled = capacity - fluid[tank].getAmount();
 
 		if (resource.getAmount() < filled) {
-			fluid.grow(resource.getAmount());
+			fluid[tank].grow(resource.getAmount());
 			filled = resource.getAmount();
 		} else {
-			fluid.setAmount(capacity);
+			fluid[tank].setAmount(capacity);
 		}
 		if (filled > 0)
 			onContentsChanged();
@@ -134,6 +143,13 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 
 	@Override
 	public FluidStack drain(int maxDrain, FluidAction action) {
+		for (int i = 0; i < this.getTanks(); i++) {
+			return doDrain(maxDrain, action, i);
+		}
+		return FluidStack.EMPTY;
+	}
+
+	private FluidStack doDrain(int maxDrain, FluidAction action, int tank) {
 		int drained = maxDrain;
 		if (fluid.getAmount() < drained) {
 			drained = fluid.getAmount();
