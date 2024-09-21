@@ -34,7 +34,6 @@ import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
-import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
@@ -79,11 +78,11 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		return tank;
 	}
 
-	public FluidTank getFluidTank() {
+	public MixingBowlTank getFluidTank() {
 		return fluids;
 	}
 
-	private void fillInternal(MixingBowlBlockEntity bowl) {
+	public static void fillInternal(MixingBowlBlockEntity bowl) {
 		ItemStack inputItem = bowl.items.getStackInSlot(LIQUID_IN_SLOT);
 		if (!inputItem.isEmpty()) {
 			if (inputItem.getItem() instanceof BucketItem filledBucket) {
@@ -108,18 +107,16 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		}
 	}
 
-	private void drainInternal(MixingBowlBlockEntity bowl) {
+	public static void drainInternal(MixingBowlBlockEntity bowl) {
 		ItemStack inputItem = bowl.items.getStackInSlot(LIQUID_OUT_SLOT);
 		if (!inputItem.isEmpty()) {
 			if (inputItem.getItem() == Items.BUCKET) {
-				if (!bowl.getFluidTank().getFluid().isEmpty()) {
-					FluidStack stack = bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME,
-							IFluidHandler.FluidAction.SIMULATE);
-					if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
-						bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
-						inputItem.shrink(1);
-						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, stack.getFluid().getBucket().getDefaultInstance());
-					}
+				FluidStack stack = bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME,
+						IFluidHandler.FluidAction.SIMULATE);
+				if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
+					bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
+					inputItem.shrink(1);
+					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, stack.getFluid().getBucket().getDefaultInstance());
 				}
 			} else {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
@@ -154,7 +151,8 @@ public class MixingBowlBlockEntity extends BlockEntity {
 					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
 						return true;
 				if (slot == LIQUID_OUT_SLOT)
-					return false;
+					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
+						return true;
 				if (slot == GHOST_SLOT)
 					return false;
 				return true;
@@ -166,6 +164,11 @@ public class MixingBowlBlockEntity extends BlockEntity {
 					zeroProgress();
 					updateInventory();
 				}
+
+				if (slot == LIQUID_IN_SLOT)
+					MixingBowlBlockEntity.fillInternal(MixingBowlBlockEntity.this);
+				if (slot == LIQUID_OUT_SLOT)
+					MixingBowlBlockEntity.drainInternal(MixingBowlBlockEntity.this);
 			}
 
 		};
