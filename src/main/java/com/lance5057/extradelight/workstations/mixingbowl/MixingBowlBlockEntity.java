@@ -270,7 +270,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		if (nbt.contains(INV_TAG)) {
 			items.deserializeNBT(registries, nbt.getCompound(INV_TAG));
 		}
-
+		this.getFluidTank().readFromNBT(registries, nbt);
 		this.stirs = nbt.getInt("stirs");
 		ItemStack.parse(registries, nbt.getCompound("usedItem")).ifPresent(i -> containerItem = i);
 		this.complete = nbt.getBoolean("complete");
@@ -279,7 +279,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
 
 		tag.put(INV_TAG, items.serializeNBT(registries));
-
+		this.getFluidTank().writeToNBT(registries, tag);
 		tag.putInt("stirs", this.stirs);
 
 		tag.put("usedItem", containerItem.saveOptional(registries));

@@ -172,6 +172,8 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	public FluidStack getFluid() {
 		return null;
 	}
+	
+	
 
 	@Override
 	public int getFluidAmount() {
@@ -183,15 +185,15 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		return 0;
 	}
 
-//	public void setFluid(FluidStack stack) {
-//		this.fluid = stack;
-//	}
-//
-//	public boolean isEmpty() {
-//		return fluid.isEmpty();
-//	}
-//
-//	public int getSpace() {
-//		return Math.max(0, capacity - fluid.getAmount());
-//	}
+	public void setFluid(FluidStack stack, int tank) {
+		this.fluid[tank] = stack;
+	}
+
+	public boolean isEmpty(int tank) {
+		return fluid[tank].isEmpty();
+	}
+
+	public int getSpace(int tank) {
+		return Math.max(0, capacity - fluid[tank].getAmount());
+	}
 }

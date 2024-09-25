@@ -1,6 +1,8 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.gui.widgets.FluidStackWidget;
+import com.lance5057.extradelight.gui.widgets.MixingBowlFluidWidget;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,6 +17,20 @@ public class MixingBowlScreen extends AbstractContainerScreen<MixingBowlMenu> {
 
 	public MixingBowlScreen(MixingBowlMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
 		super(pMenu, pPlayerInventory, pTitle);
+		
+	}
+	
+	@Override
+	public void init() {
+		super.init();
+		addRenderableOnly(new MixingBowlFluidWidget(this.leftPos + 41, this.topPos - 4, 16, 71, menu::getFluidTank));
+	}
+	
+	@Override
+	public void render(GuiGraphics gui, final int mouseX, final int mouseY, float partialTicks) {
+		super.render(gui, mouseX, mouseY, partialTicks);
+
+		this.renderTooltip(gui, mouseX, mouseY);
 	}
 
 	@Override

@@ -14,6 +14,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class MixingBowlMenu extends AbstractContainerMenu {
@@ -84,6 +85,11 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 
 	public MixingBowlMenu(final int windowId, final Inventory playerInventory, final FriendlyByteBuf data) {
 		this(windowId, playerInventory, getTileEntity(playerInventory, data));
+	}
+	
+	public MixingBowlTank getFluidTank()
+	{
+		return this.tileEntity.getFluidTank();
 	}
 
 	private static MixingBowlBlockEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
