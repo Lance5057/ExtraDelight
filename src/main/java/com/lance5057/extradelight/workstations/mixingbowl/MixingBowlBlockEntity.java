@@ -120,12 +120,10 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				}
 			} else {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
-				if (fluidHandlerItem != null && bowl.items.getStackInSlot(LIQUID_OUT_SLOT).isEmpty()) {
-					int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
-							bowl.getFluidTank().getFluidAmount(), true).getAmount();
-					if (filled > 0) {
-						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, fluidHandlerItem.getContainer());
-					}
+				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
+						bowl.getFluidTank().getFluidAmount(), true).getAmount();
+				if (filled > 0) {
+					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, fluidHandlerItem.getContainer());
 				}
 			}
 		}

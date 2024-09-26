@@ -1,7 +1,8 @@
 package com.lance5057.extradelight.gui.widgets;
 
-import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlTank;
@@ -17,6 +18,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FastColor;
+import net.minecraft.util.FormattedCharSequence;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidStack;
 
@@ -90,20 +92,38 @@ public class MixingBowlFluidWidget extends AbstractWidget {
 		if (isHovered(mouseX, mouseY)) {
 			Minecraft minecraft = Minecraft.getInstance();
 			MixingBowlTank fluidTank = this.getFluid.get();
-			guiGraphics.renderTooltip(minecraft.font,
-					Arrays.asList(getFluid.get().getFluid(5).getDisplayName().getVisualOrderText(),
-							Component.literal(" - " + getFluid.get().getFluidAmount(0) + "mB").withColor(0x999999).getVisualOrderText(),
-							getFluid.get().getFluid(4).getDisplayName().getVisualOrderText(),
-							Component.literal(" - " + getFluid.get().getFluidAmount(1) + "mB").withColor(0x999999).getVisualOrderText(),
-							getFluid.get().getFluid(3).getDisplayName().getVisualOrderText(),
-							Component.literal(" - " + getFluid.get().getFluidAmount(2) + "mB").withColor(0x999999).getVisualOrderText(),
-							getFluid.get().getFluid(2).getDisplayName().getVisualOrderText(),
-							Component.literal(" - " + getFluid.get().getFluidAmount(3) + "mB").withColor(0x999999).getVisualOrderText(),
-							getFluid.get().getFluid(1).getDisplayName().getVisualOrderText(),
-							Component.literal(" - " + getFluid.get().getFluidAmount(4) + "mB").withColor(0x999999).getVisualOrderText(),
-							getFluid.get().getFluid(0).getDisplayName().getVisualOrderText(),
-							Component.literal(" - " + getFluid.get().getFluidAmount(5) + "mB").withColor(0x999999).getVisualOrderText()),
-					mouseX, mouseY);
+			List<FormattedCharSequence> list = new ArrayList<FormattedCharSequence>();
+			if (!getFluid.get().isEmpty(5)) {
+				list.add(getFluid.get().getFluid(5).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(5) + "mB").withColor(0x999999)
+						.getVisualOrderText());
+			}
+			if (!getFluid.get().isEmpty(4)) {
+				list.add(getFluid.get().getFluid(4).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(4) + "mB").withColor(0x999999)
+						.getVisualOrderText());
+			}
+			if (!getFluid.get().isEmpty(3)) {
+				list.add(getFluid.get().getFluid(3).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(3) + "mB").withColor(0x999999)
+						.getVisualOrderText());
+			}
+			if (!getFluid.get().isEmpty(2)) {
+				list.add(getFluid.get().getFluid(2).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(2) + "mB").withColor(0x999999)
+						.getVisualOrderText());
+			}
+			if (!getFluid.get().isEmpty(1)) {
+				list.add(getFluid.get().getFluid(1).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(1) + "mB").withColor(0x999999)
+						.getVisualOrderText());
+			}
+			if (!getFluid.get().isEmpty(0)) {
+				list.add(getFluid.get().getFluid(0).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(0) + "mB").withColor(0x999999)
+						.getVisualOrderText());
+			}
+			guiGraphics.renderTooltip(minecraft.font, list, mouseX, mouseY);
 		}
 	}
 

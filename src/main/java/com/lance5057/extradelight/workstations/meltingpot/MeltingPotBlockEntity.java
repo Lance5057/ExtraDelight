@@ -100,7 +100,12 @@ public class MeltingPotBlockEntity extends BlockEntity implements HeatableBlockE
 		RecipeHolder<MeltingPotRecipe> recipeholder;
 		if (!itemstack.isEmpty()) {
 			recipeholder = pBlockEntity.quickCheck.getRecipeFor(new SingleRecipeInput(itemstack), level).orElse(null);
-			pBlockEntity.cookingTime = recipeholder.value().cooktime;
+			if (recipeholder != null)
+				pBlockEntity.cookingTime = recipeholder.value().cooktime;
+			else {
+				pBlockEntity.cookingTime = 0;
+				pBlockEntity.cookingProgress = 0;
+			}
 		} else {
 			recipeholder = null;
 			pBlockEntity.cookingTime = 0;

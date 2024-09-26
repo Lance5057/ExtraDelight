@@ -147,7 +147,9 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	@Override
 	public FluidStack drain(int maxDrain, FluidAction action) {
 		for (int i = 0; i < this.getTanks(); i++) {
-			return doDrain(maxDrain, action, i);
+			FluidStack s = doDrain(maxDrain, action, i);
+			if (!s.isEmpty())
+				return s;
 		}
 		return FluidStack.EMPTY;
 	}
@@ -172,12 +174,10 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	public FluidStack getFluid() {
 		return null;
 	}
-	
-	
 
 	@Override
 	public int getFluidAmount() {
-		return 0;
+		return 1000;
 	}
 
 	@Override
