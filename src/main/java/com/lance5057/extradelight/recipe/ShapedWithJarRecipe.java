@@ -1,16 +1,25 @@
 package com.lance5057.extradelight.recipe;
 
+import java.util.List;
+
+import com.lance5057.extradelight.ExtraDelightItems;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.MapCodec;
+
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CraftingInput;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.item.crafting.ShapedRecipePattern;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
-import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 
 public class ShapedWithJarRecipe extends ShapedRecipe {
 
@@ -30,24 +39,57 @@ public class ShapedWithJarRecipe extends ShapedRecipe {
 
 	@Override
 	public boolean matches(CraftingInput input, Level level) {
-		boolean flag = this.pattern.matches(input);
-		boolean flag2 = true;
+		if (!this.pattern.matches(input))
+			return false;
 
-		for (FluidStack f : fluids) {
-			for (ItemStack i : input.items()) {
-				testFluid(i, f);
-			}
-		}
+		List<ItemStack> jars = gatherJars(input);
+		if (jars.size() != fluids.size())
+			return false;
 
-		return flag && flag2;
+		if (!testJars(jars))
+			return false;
+
+		return true;
 	}
 
-	boolean testFluid(ItemStack stack, FluidStack fluid) {
-		IFluidHandlerItem f = stack.getCapability(Capabilities.FluidHandler.ITEM);
-		if (f != null) {
-			if (FluidStack.matches(f.drain(fluid, FluidAction.SIMULATE), fluid))
-				return true;
+	private List<ItemStack> gatherJars(CraftingInput input) {
+		return input.items().stream().filter(j -> j.is(ExtraDelightItems.JAR.get())).toList();
+	}
+
+	private boolean testJars(List<ItemStack> jars) {
+		List<FluidStack> jarFluids = jars.stream()
+				.map(j -> j.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0)).toList();
+
+		return jarFluids.containsAll(fluids);
+	}
+
+	@Override
+	public ItemStack assemble(CraftingInput input, HolderLookup.Provider registries) {
+		List<ItemStack> jars = gatherJars(input);
+
+		for (FluidStack f : fluids) {
+			ItemStack i = jars.stream()
+					.filter(j -> j.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0) == f).findFirst()
+					.get();
+			i.getCapability(Capabilities.FluidHandler.ITEM).drain(f, FluidAction.EXECUTE);
 		}
-		return false;
+
+		return this.getResultItem(registries).copy();
+	}
+
+	public static class Serializer implements RecipeSerializer<ShapedWithJarRecipe> {
+		public static final MapCodec<ShapedWithJarRecipe> CODEC = ShapedRecipe.Serializer.CODEC.flatComap(s -> {
+			return DataResult.success(null)
+		});
+		
+		@Override
+		public MapCodec<ShapedWithJarRecipe> codec() {
+			return CODEC.xmap(null, null);
+		}
+
+		@Override
+		public StreamCodec<RegistryFriendlyByteBuf, ShapedWithJarRecipe> streamCodec() {
+			return STREAM_CODEC;
+		}
 	}
 }
