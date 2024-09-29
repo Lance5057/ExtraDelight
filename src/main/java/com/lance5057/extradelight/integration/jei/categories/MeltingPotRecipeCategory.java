@@ -18,7 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public class MeltingPotRecipeCategory implements IRecipeCategory<MeltingPotRecipe> {
-	public static final RecipeType<MeltingPotRecipe> TYPE = RecipeType.create(ExtraDelight.MOD_ID, "MeltingPot",
+	public static final RecipeType<MeltingPotRecipe> TYPE = RecipeType.create(ExtraDelight.MOD_ID, "meltingpot",
 			MeltingPotRecipe.class);
 	private final IDrawable background;
 	private final Component localizedName;
