@@ -14,6 +14,7 @@ import com.lance5057.extradelight.integration.jei.categories.MeltingPotRecipeCat
 import com.lance5057.extradelight.integration.jei.categories.MixingBowlRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MortarRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.OvenRecipeCategory;
+import com.lance5057.extradelight.integration.jei.categories.ShapedWithJarRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.ToolOnBlockRecipeCatagory;
 
 import mezz.jei.api.IModPlugin;
@@ -35,7 +36,6 @@ public class JEIPlugin implements IModPlugin {
 	public ResourceLocation getPluginUid() {
 		return ID;
 	}
-	
 
 	@Override
 	public void registerCategories(IRecipeCategoryRegistration registry) {
@@ -46,7 +46,8 @@ public class JEIPlugin implements IModPlugin {
 				new DoughShapingRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new ToolOnBlockRecipeCatagory(registry.getJeiHelpers().getGuiHelper()),
 				new FeastRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
-				new MeltingPotRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
+				new MeltingPotRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new ShapedWithJarRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
 	}
 
 	@Override
@@ -67,8 +68,10 @@ public class JEIPlugin implements IModPlugin {
 				.getAllRecipesFor(ExtraDelightRecipes.TOOL_ON_BLOCK.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(MeltingPotRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
 				.getAllRecipesFor(ExtraDelightRecipes.MELTING_POT.get()).stream().map(RecipeHolder::value).toList());
-		
-		List<ItemStack> hide =  List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
+		registry.addRecipes(ShapedWithJarRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.SHAPED_JAR.get()).stream().map(RecipeHolder::value).toList());
+
+		List<ItemStack> hide = List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
 		registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hide);
 	}
 

@@ -3,6 +3,7 @@ package com.lance5057.extradelight;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.recipe.FeastRecipe;
+import com.lance5057.extradelight.recipe.ShapedWithJarRecipe;
 import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
 import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
@@ -42,6 +43,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("melting_pot"));
 	public static final Supplier<RecipeType<ChillerRecipe>> CHILLER = RECIPE_TYPES.register("chiller",
 			() -> registerRecipeType("chiller"));
+	public static final Supplier<RecipeType<ShapedWithJarRecipe>> SHAPED_JAR = RECIPE_TYPES.register("shaped_jar",
+			() -> registerRecipeType("shaped_jar"));
 
 	// Dynamic Names
 	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES
@@ -90,5 +93,6 @@ public class ExtraDelightRecipes {
 			.register("tool_on_block", ToolOnBlockRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> CHILLER_SERIALIZER = RECIPE_SERIALIZERS.register("chiller",
 			ChillerRecipe.Serializer::new);
-//	public static final RecipeBookType RECIPE_TYPE_OVEN = RecipeBookType.create("OVEN");
+	public static final Supplier<RecipeSerializer<?>> SHAPED_JAR_SERIALIZER = RECIPE_SERIALIZERS.register("shaped_jar",
+			ShapedWithJarRecipe.Serializer::new);
 }

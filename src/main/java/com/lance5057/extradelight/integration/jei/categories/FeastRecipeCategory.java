@@ -55,7 +55,7 @@ public class FeastRecipeCategory implements IRecipeCategory<FeastRecipe> {
 
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, FeastRecipe recipe, IFocusGroup focuses) {
-		Ingredient input = recipe.getIngredients().get(0);
+		Ingredient input = recipe.getContainer();
 		ItemStack feast = recipe.getFeastStack();
 		ItemStack output = recipe.getResultItem(Minecraft.getInstance().level.registryAccess());
 

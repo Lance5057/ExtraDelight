@@ -16,6 +16,7 @@ import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.ShapedWithJarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 
@@ -1167,6 +1168,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 //				.unlockedBy(getName(),
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CORN_COB.get()))
 //				.save(consumer, EDLoc("corn_cob_pipe"));
+
+		ShapedWithJarRecipeBuilder.shaped(RecipeCategory.FOOD, Items.DIAMOND, 1, new FluidStack(Fluids.WATER, 100))
+				.pattern("jc").define('j', ExtraDelightItems.JAR.get()).define('c', Items.COAL)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FURNACE)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.OVEN.get()).pattern("bBb").pattern("BfB")
 				.pattern("BtB").define('b', Items.BRICK).define('B', Items.BRICKS).define('f', Items.FURNACE)

@@ -22,6 +22,10 @@ public class FeastRecipe implements Recipe<SimpleRecipeWrapper> {
 	protected final Ingredient container;
 	protected final ItemStack result;
 
+	public Ingredient getContainer() {
+		return container;
+	}
+
 	public FeastRecipe(String pGroup, BlockItem feast, Ingredient pIngredient, ItemStack pResult) {
 		this.group = pGroup;
 		this.feast = feast;
