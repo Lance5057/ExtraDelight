@@ -73,6 +73,11 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.feast", "Feast Block");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.serving", "Feast Serving");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.butchercraft", "Requires Butchercraft");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.spatula", "Right click to style! Shift + Right click for the menu");
+
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.name", "Extra Delight");
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.desc", "Feeling a little extra.");
@@ -199,7 +204,7 @@ public class EnglishLoc extends LanguageProvider {
 //		this.add(ExtraDelightItems.MORTAR_ENDSTONE.get(), "Endstone Mortar");
 //		this.add(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(), "Gilded Blackstone Mortar");
 //		this.add(ExtraDelightItems.MORTAR_GRANITE.get(), "Granite Mortar");
-		this.add(ExtraDelightItems.MORTAR_STONE.get(), "Stone Mortar");
+		this.add(ExtraDelightItems.MORTAR_STONE.get(), "Mortar");
 
 		this.add(ExtraDelightItems.MUFFIN_TIN.get(), "Muffin Tin");
 		this.add(ExtraDelightItems.SQUARE_PAN.get(), "Square Pan");
