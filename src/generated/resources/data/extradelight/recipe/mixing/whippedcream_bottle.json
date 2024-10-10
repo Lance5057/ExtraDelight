@@ -1,5 +1,6 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
       "item": "farmersdelight:milk_bottle"

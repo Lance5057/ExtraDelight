@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/wheat_dough_water"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "wheat_dough_water": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#forge:flour"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "wheat_dough_water"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/wheat_dough_water"
+    ]
+  }
+}

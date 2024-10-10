@@ -1,6 +1,11 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "fluids": [
+    {
+      "amount": 1000,
+      "id": "minecraft:water"
+    }
+  ],
   "ingredients": [
     {
       "tag": "forge:flour"

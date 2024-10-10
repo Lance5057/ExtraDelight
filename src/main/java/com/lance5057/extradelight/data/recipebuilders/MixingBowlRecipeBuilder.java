@@ -21,10 +21,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.fluids.FluidStack;
 
 public class MixingBowlRecipeBuilder implements RecipeBuilder {
 	private final ItemStack result;
 	private final NonNullList<Ingredient> ingredients = NonNullList.create();
+	private final NonNullList<FluidStack> fluids = NonNullList.create();
 	@Nullable
 	private String group;
 	final int stirs;
@@ -63,6 +65,11 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 		return this;
 	}
 
+	public MixingBowlRecipeBuilder requires(FluidStack stack) {
+		this.fluids.add(stack);
+		return this;
+	}
+
 	public MixingBowlRecipeBuilder requires(TagKey<Item> pTag) {
 		return this.requires(Ingredient.of(pTag));
 	}
@@ -85,12 +92,16 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 
 	@Override
 	public void save(RecipeOutput output, ResourceLocation id) {
+		if (this.ingredients.size() > 9)
+			throw new IllegalStateException("Mixing Bowl Recipe " + id + " has more than 9 ingredients!");
+
 		ResourceLocation recipeId = id.withPrefix("mixing/");
 		Advancement.Builder advancementBuilder = output.advancement()
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancementBuilder::addCriterion);
-		MixingBowlRecipe recipe = new MixingBowlRecipe("", this.ingredients, this.result, this.stirs, this.usedItem);
+		MixingBowlRecipe recipe = new MixingBowlRecipe("", this.ingredients, this.fluids, this.result, this.stirs,
+				this.usedItem);
 		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/mixing/")));
 	}
 

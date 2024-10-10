@@ -63,11 +63,6 @@ public class ExtraDelightClientEvents {
 				.create(CorncobPipeModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
 	}
 
-//	@SubscribeEvent
-//	public static void onRegisterRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
-//		OvenRecipeCatagories.init(event);
-//	}
-
 	@SubscribeEvent
 	public static void registerClient(RegisterMenuScreensEvent event) {
 		event.register(ExtraDelightContainers.OVEN_MENU.get(), OvenScreen::new);
