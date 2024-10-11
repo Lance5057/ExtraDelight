@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
 
 import net.minecraft.core.HolderLookup;
@@ -195,5 +197,13 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 
 	public int getSpace(int tank) {
 		return Math.max(0, capacity - fluid[tank].getAmount());
+	}
+
+	public List<FluidStack> getAsList() {
+		List<FluidStack> l = new ArrayList<FluidStack>();
+		for(int i = 0; i < this.getTanks(); i++)
+			if(!this.getFluid(i).isEmpty())
+				l.add(getFluid(i));
+		return l;
 	}
 }

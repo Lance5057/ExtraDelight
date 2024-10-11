@@ -1,5 +1,6 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
@@ -10,6 +11,7 @@ import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
+import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipeWrapper;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -33,10 +35,10 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 
 public class MixingBowlBlockEntity extends BlockEntity {
 	public static final String INV_TAG = "inv";
@@ -330,7 +332,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		if (level != null) {
 
 			Optional<RecipeHolder<MixingBowlRecipe>> recipe = level.getRecipeManager()
-					.getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(), new RecipeWrapper(this.items) {
+					.getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(), new MixingBowlRecipeWrapper(this.items, this.fluids) {
 						@Override
 						public int size() {
 							return 9;
@@ -375,6 +377,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				BlockEntityUtils.Inventory.givePlayerItemStack(i, player, level, worldPosition);
 				dropContainers(items, player);
 				clearItems();
+				removeFluids(curRecipe.getFluids());
 				this.stirs = 0;
 //				items.setStackInSlot(CONTAINER_SLOT, i);
 				this.updateInventory();
@@ -384,6 +387,13 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		}
 
 		return InteractionResult.SUCCESS;
+	}
+
+	private void removeFluids(List<FluidStack> fluids2) {
+		for(int i = 0; i < fluids2.size(); i++)
+		{
+			fluids.drain(fluids2.get(i), FluidAction.EXECUTE);
+		}
 	}
 
 	public boolean testContainerItem(ItemStack stack) {

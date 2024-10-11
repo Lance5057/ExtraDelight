@@ -672,9 +672,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 //	}
 
 	private void mixingbowlRecipes(RecipeOutput consumer) {
-		MixingBowlRecipeBuilder
-				.stir(new ItemStack(ModItems.WHEAT_DOUGH.get(), 3), LONG_GRIND, new ItemStack(Items.BOWL))
-				.requires(new FluidStack(Fluids.WATER, 1000)).requires(Ingredient.of(ExtraDelightTags.FLOUR))
+		MixingBowlRecipeBuilder.stir(new ItemStack(ModItems.WHEAT_DOUGH.get(), 3), LONG_GRIND, ItemStack.EMPTY)
+				.requires(new FluidStack(Fluids.WATER, 100)).requires(Ingredient.of(ExtraDelightTags.FLOUR))
 				.requires(Ingredient.of(ExtraDelightTags.FLOUR)).requires(Ingredient.of(ExtraDelightTags.FLOUR))
 				.unlockedBy("wheat_dough_water", has(ExtraDelightTags.FLOUR))
 				.save(consumer, EDLoc("wheat_dough_water"));

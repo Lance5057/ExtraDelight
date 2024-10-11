@@ -22,9 +22,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.util.RecipeMatcher;
 import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 
-public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
+public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 	protected final int stirs;
 	final ItemStack usedItem;
 
@@ -58,7 +57,7 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public boolean matches(RecipeWrapper input, Level level) {
+	public boolean matches(MixingBowlRecipeWrapper input, Level level) {
 		StackedContents stackedcontents = new StackedContents();
 		java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
 		int i = 0;
@@ -75,19 +74,19 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 		}
 
 		return i == this.ingredients.size() && RecipeMatcher.findMatches(inputs, this.ingredients) != null
-				&& matchFluids(input) && ItemStack.isSameItem(usedItem, input.getItem(9))
+				&& matchFluids(input.getTank().getAsList()) && ItemStack.isSameItem(usedItem, input.getItem(9))
 				&& input.getItem(9).getCount() >= usedItem.getCount();
 	}
 
 	boolean matchFluids(List<FluidStack> f) {
-		if (this.fluids.size() != f.size())
+		if (this.fluids.size() >= f.size())
 			return false;
 
-		for (int i = 0; i < f.size(); i++) {
+		for (int i = 0; i < fluids.size(); i++) {
 			boolean flag = true;
 			for (int j = 0; j < f.size(); j++) {
-				FluidStack f1 = f.get(i);
-				FluidStack f2 = fluids.get(j);
+				FluidStack f1 = fluids.get(i);
+				FluidStack f2 = f.get(j);
 
 				if (FluidStack.isSameFluid(f1, f2)) {
 					flag = false;
@@ -129,7 +128,7 @@ public class MixingBowlRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public ItemStack assemble(RecipeWrapper input, Provider registries) {
+	public ItemStack assemble(MixingBowlRecipeWrapper input, Provider registries) {
 		return this.result.copy();
 	}
 

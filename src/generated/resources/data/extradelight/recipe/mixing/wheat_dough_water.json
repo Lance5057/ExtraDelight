@@ -21,9 +21,5 @@
     "count": 3,
     "id": "farmersdelight:wheat_dough"
   },
-  "stirs": 8,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  }
+  "stirs": 8
 }
