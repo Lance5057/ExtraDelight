@@ -138,7 +138,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	@Override
 	public FluidStack drain(FluidStack resource, FluidAction action) {
 		for (int i = 0; i < this.getTanks(); i++) {
-			if (!resource.isEmpty() || FluidStack.isSameFluidSameComponents(resource, fluid[i])) {
+			if (!resource.isEmpty() && FluidStack.isSameFluidSameComponents(resource, fluid[i])) {
 				return doDrain(resource.getAmount(), action, i);
 			}
 
