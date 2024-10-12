@@ -2,8 +2,28 @@
   "type": "extradelight:mixing_bowl",
   "fluids": [
     {
-      "amount": 1000,
+      "amount": 100,
       "id": "minecraft:water"
+    },
+    {
+      "amount": 100,
+      "id": "extradelight:mayo_fluid"
+    },
+    {
+      "amount": 100,
+      "id": "extradelight:apple_cider_fluid"
+    },
+    {
+      "amount": 100,
+      "id": "extradelight:bbq_fluid"
+    },
+    {
+      "amount": 100,
+      "id": "extradelight:ketchup_fluid"
+    },
+    {
+      "amount": 100,
+      "id": "extradelight:jam_fluid"
     }
   ],
   "ingredients": [

@@ -673,8 +673,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 	private void mixingbowlRecipes(RecipeOutput consumer) {
 		MixingBowlRecipeBuilder.stir(new ItemStack(ModItems.WHEAT_DOUGH.get(), 3), LONG_GRIND, ItemStack.EMPTY)
-				.requires(new FluidStack(Fluids.WATER, 100)).requires(Ingredient.of(ExtraDelightTags.FLOUR))
+				.requires(new FluidStack(Fluids.WATER, 100))
+				.requires(new FluidStack(ExtraDelightFluids.MAYO.FLUID, 100))
+				.requires(new FluidStack(ExtraDelightFluids.APPLE_CIDER.FLUID, 100))
+				.requires(new FluidStack(ExtraDelightFluids.BBQ.FLUID, 100))
+				.requires(new FluidStack(ExtraDelightFluids.KETCHUP.FLUID, 100))
+				.requires(new FluidStack(ExtraDelightFluids.JAM.FLUID, 100))
 				.requires(Ingredient.of(ExtraDelightTags.FLOUR)).requires(Ingredient.of(ExtraDelightTags.FLOUR))
+				.requires(Ingredient.of(ExtraDelightTags.FLOUR))
 				.unlockedBy("wheat_dough_water", has(ExtraDelightTags.FLOUR))
 				.save(consumer, EDLoc("wheat_dough_water"));
 

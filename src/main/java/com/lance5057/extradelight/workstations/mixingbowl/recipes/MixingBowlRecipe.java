@@ -79,26 +79,26 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 	}
 
 	boolean matchFluids(List<FluidStack> f) {
-		if (this.fluids.size() >= f.size())
-			return false;
+//		if (this.fluids.size() < f.size())
+//			return false;
 
+		int count = 0;
 		for (int i = 0; i < fluids.size(); i++) {
-			boolean flag = true;
 			for (int j = 0; j < f.size(); j++) {
 				FluidStack f1 = fluids.get(i);
 				FluidStack f2 = f.get(j);
 
 				if (FluidStack.isSameFluid(f1, f2)) {
-					flag = false;
-					if (!f1.containsFluid(f2))
-						return false;
+					if (f2.containsFluid(f1)) {
+						count++;
+					}
 				}
 			}
-			if (flag)
-				return false;
 		}
 
-		return true;
+		if (count == fluids.size())
+			return true;
+		return false;
 	}
 
 	/**

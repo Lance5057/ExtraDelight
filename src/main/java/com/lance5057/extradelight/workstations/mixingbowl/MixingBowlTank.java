@@ -138,21 +138,21 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	@Override
 	public FluidStack drain(FluidStack resource, FluidAction action) {
 		for (int i = 0; i < this.getTanks(); i++) {
-			if (resource.isEmpty() || !FluidStack.isSameFluidSameComponents(resource, fluid[i])) {
-				return FluidStack.EMPTY;
+			if (!resource.isEmpty() || FluidStack.isSameFluidSameComponents(resource, fluid[i])) {
+				return doDrain(resource.getAmount(), action, i);
 			}
-			return drain(resource.getAmount(), action);
+
 		}
 		return FluidStack.EMPTY;
 	}
 
 	@Override
 	public FluidStack drain(int maxDrain, FluidAction action) {
-		for (int i = 0; i < this.getTanks(); i++) {
-			FluidStack s = doDrain(maxDrain, action, i);
-			if (!s.isEmpty())
-				return s;
-		}
+//		for (int i = 0; i < this.getTanks(); i++) {
+//			FluidStack s = doDrain(maxDrain, action, i);
+//			if (!s.isEmpty())
+//				return s;
+//		}
 		return FluidStack.EMPTY;
 	}
 
@@ -201,8 +201,8 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 
 	public List<FluidStack> getAsList() {
 		List<FluidStack> l = new ArrayList<FluidStack>();
-		for(int i = 0; i < this.getTanks(); i++)
-			if(!this.getFluid(i).isEmpty())
+		for (int i = 0; i < this.getTanks(); i++)
+			if (!this.getFluid(i).isEmpty())
 				l.add(getFluid(i));
 		return l;
 	}
