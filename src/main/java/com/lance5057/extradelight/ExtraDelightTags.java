@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Block;
 public class ExtraDelightTags {
 
 	public static TagKey<Item> forgeTag(String tag) {
-		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", tag));
+		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", tag));
 	}
 
 	public static TagKey<Item> modTag(String tag) {
