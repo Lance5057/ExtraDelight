@@ -50,30 +50,31 @@ public class DataGen {
 		generator.addProvider(event.includeServer(), new Advancements(output, lookupProvider, helper));
 		generator.addProvider(event.includeClient(), new EnglishLoc(output));
 
-		generator.addProvider(event.includeServer(),
-				new DatapackBuiltinEntriesProvider(output,
-						event.getLookupProvider().thenApply(r -> constructRegistries(r, BUILDER)),
-						Set.of(ExtraDelight.MOD_ID)));
+//		generator.addProvider(event.includeServer(),
+//				new DatapackBuiltinEntriesProvider(output,
+//						event.getLookupProvider().thenApply(r -> constructRegistries(r, BUILDER)),
+//						Set.of(ExtraDelight.MOD_ID)));
 
 		generator.addProvider(event.includeServer(), new EDBiomeModifiers(output, lookupProvider));
-
+		generator.addProvider(event.includeServer(), EDRegistries.provider(output, lookupProvider));
+		
 //		generator.addProvider(event.includeClient(), new PatchouliGen(generator, ExtraDelight.MOD_ID, "en_us"));
 	}
 
-	private static RegistrySetBuilder.PatchedRegistries constructRegistries(HolderLookup.Provider original,
-			RegistrySetBuilder datapackEntriesBuilder) {
-		Cloner.Factory clonerFactory = new Cloner.Factory();
-		var builderKeys = new HashSet<>(datapackEntriesBuilder.getEntryKeys());
-		RegistryDataLoader.WORLDGEN_REGISTRIES.stream().forEach(data -> {
-			// Add keys for missing registries
-			if (!builderKeys.contains(data.key()))
-				datapackEntriesBuilder.add(data.key(), context -> {
-				});
-
-			data.runWithArguments(clonerFactory::addCodec);
-		});
-
-		return datapackEntriesBuilder.buildPatch(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY),
-				original, clonerFactory);
-	}
+//	private static RegistrySetBuilder.PatchedRegistries constructRegistries(HolderLookup.Provider original,
+//			RegistrySetBuilder datapackEntriesBuilder) {
+//		Cloner.Factory clonerFactory = new Cloner.Factory();
+//		var builderKeys = new HashSet<>(datapackEntriesBuilder.getEntryKeys());
+//		RegistryDataLoader.WORLDGEN_REGISTRIES.stream().forEach(data -> {
+//			// Add keys for missing registries
+//			if (!builderKeys.contains(data.key()))
+//				datapackEntriesBuilder.add(data.key(), context -> {
+//				});
+//
+//			data.runWithArguments(clonerFactory::addCodec);
+//		});
+//
+//		return datapackEntriesBuilder.buildPatch(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY),
+//				original, clonerFactory);
+//	}
 }

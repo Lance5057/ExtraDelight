@@ -50,10 +50,6 @@ public class ExtraDelight {
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
 
 		ExtraDelightFeatures.FEATURES.register(modEventBus);
-//		ExtraDelightPlacedFeatures.register(modEventBus);
-//
-//		IEventBus bus = MinecraftForge.EVENT_BUS;
-//		bus.addListener(ExtraDelightEvents::stopDimensionDestruction);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {

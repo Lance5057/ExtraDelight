@@ -1,0 +1,15 @@
+{
+  "type": "extradelight:corn_maze_feature",
+  "config": {
+    "to_place": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "extradelight:corn_bottom",
+        "Properties": {
+          "age": "0",
+          "dimension": "false"
+        }
+      }
+    }
+  }
+}

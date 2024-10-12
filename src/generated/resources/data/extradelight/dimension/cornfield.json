@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:corn",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "extradelight:cornfield"
+    },
+    "settings": "extradelight:cornfield"
+  }
+}
