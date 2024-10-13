@@ -989,6 +989,8 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.STICKY_TOFFEE_PUDDING_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/sticky_toffee_pudding_stage0"));
 		forItem(ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE, "sticky_toffee_pudding");
+		forItem(ExtraDelightItems.CRISP_RICE, "crisp_rice");
+		forItem(ExtraDelightItems.CRISP_RICE_CEREAL, "crisp_rice_cereal");
 		forBlockItem(ExtraDelightItems.CRISP_RICE_TREATS_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/crisp_rice_treats_stage0"));
 		forItem(ExtraDelightItems.CRISP_RICE_TREAT, "crisp_rice_treat");
@@ -1006,6 +1008,9 @@ public class ItemModels extends ItemModelProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_fondue_pot_stage0"));
 		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_fondue_pot_stage0"));
+
+		forItem(ExtraDelightItems.CORN_FLAKES, "corn_flakes");
+		forItem(ExtraDelightItems.CORN_FLAKES_CEREAL, "corn_flake_cereal");
 
 		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE, "blood_chocolate_apple_slices");
 		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_BACON, "blood_chocolate_bacon");
@@ -1076,10 +1081,10 @@ public class ItemModels extends ItemModelProvider {
 	}
 
 	public void forBlockItem(DeferredItem<Item> item, String name) {
-		if(item.get() instanceof BlockItem b)
-		getBuilder(item.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-						"block/" + BuiltInRegistries.BLOCK.getKey(b.getBlock()).getPath())));
+		if (item.get() instanceof BlockItem b)
+			getBuilder(item.getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+							"block/" + BuiltInRegistries.BLOCK.getKey(b.getBlock()).getPath())));
 	}
 
 	public void forBlockItem(DeferredItem<Item> item, ResourceLocation modelLocation) {

@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:jam/glow_berry"
+      "tag": "c:jam/glow_berry"
     },
     {
-      "tag": "forge:bread/sliced"
+      "tag": "c:bread/sliced"
     }
   ],
   "result": {

@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#forge:jam/golden_apple"
+            "items": "#c:jam/golden_apple"
           }
         ]
       },

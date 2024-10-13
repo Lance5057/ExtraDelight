@@ -8,7 +8,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:corn/meal"
+      "tag": "c:corn/meal"
     },
     {
       "item": "extradelight:cooked_corn"

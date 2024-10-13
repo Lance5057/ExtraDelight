@@ -1,7 +1,7 @@
 {
   "type": "extradelight:feast",
   "container": {
-    "tag": "forge:spoons"
+    "tag": "c:spoons"
   },
   "out": {
     "id": "extradelight:cinnamon_rolls_feast"

@@ -15,16 +15,16 @@
       "item": "extradelight:croutons"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     },
     {
-      "tag": "forge:cooking_oil"
+      "tag": "c:cooking_oil"
     },
     {
-      "tag": "forge:vinegar"
+      "tag": "c:vinegar"
     },
     {
-      "tag": "forge:eggs/boiled"
+      "tag": "c:eggs/boiled"
     },
     {
       "tag": "extradelight:processed/vegetable"

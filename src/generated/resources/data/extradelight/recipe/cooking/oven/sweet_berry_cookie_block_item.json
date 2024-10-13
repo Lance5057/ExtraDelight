@@ -8,16 +8,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:cookie_dough/sweet_berry"
+      "tag": "c:cookie_dough/sweet_berry"
     },
     {
-      "tag": "forge:cookie_dough/sweet_berry"
+      "tag": "c:cookie_dough/sweet_berry"
     },
     {
-      "tag": "forge:cookie_dough/sweet_berry"
+      "tag": "c:cookie_dough/sweet_berry"
     },
     {
-      "tag": "forge:cookie_dough/sweet_berry"
+      "tag": "c:cookie_dough/sweet_berry"
     }
   ],
   "result": {

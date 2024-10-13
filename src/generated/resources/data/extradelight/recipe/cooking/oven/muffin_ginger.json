@@ -8,7 +8,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     },
     {
       "tag": "extradelight:sweetener"
@@ -20,7 +20,7 @@
       "tag": "c:eggs"
     },
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
       "tag": "c:foods/milk"

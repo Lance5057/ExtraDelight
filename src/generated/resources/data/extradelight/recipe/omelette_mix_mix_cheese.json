@@ -9,10 +9,10 @@
       "tag": "c:foods/vegetable"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     },
     {
-      "tag": "forge:meat"
+      "tag": "c:meat"
     }
   ],
   "result": {

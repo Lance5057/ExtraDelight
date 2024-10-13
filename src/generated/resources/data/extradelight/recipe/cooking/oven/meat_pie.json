@@ -8,13 +8,13 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:ground_meat/raw"
+      "tag": "c:ground_meat/raw"
     },
     {
-      "tag": "forge:ground_meat/raw"
+      "tag": "c:ground_meat/raw"
     },
     {
-      "tag": "forge:ground_meat/raw"
+      "tag": "c:ground_meat/raw"
     },
     {
       "tag": "c:mushrooms"

@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "tag": "forge:bread/sliced"
+      "tag": "c:bread/sliced"
     }
   ],
   "result": [

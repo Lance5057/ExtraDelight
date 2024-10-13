@@ -9,16 +9,16 @@
       "item": "minecraft:beetroot"
     },
     {
-      "tag": "forge:mint"
+      "tag": "c:mint"
     },
     {
       "tag": "extradelight:sweetener"
     },
     {
-      "tag": "forge:vinegar"
+      "tag": "c:vinegar"
     },
     {
-      "tag": "forge:cooking_oil"
+      "tag": "c:cooking_oil"
     }
   ],
   "result": {

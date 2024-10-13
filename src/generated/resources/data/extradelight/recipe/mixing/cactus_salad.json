@@ -3,7 +3,7 @@
   "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:cactus/cooked"
+      "tag": "c:cactus/cooked"
     },
     {
       "tag": "extradelight:processed/tomato"
@@ -12,7 +12,7 @@
       "tag": "extradelight:processed/onion"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     }
   ],
   "result": {

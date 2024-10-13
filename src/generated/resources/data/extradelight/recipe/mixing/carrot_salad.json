@@ -3,16 +3,16 @@
   "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:carrot/grated"
+      "tag": "c:carrot/grated"
     },
     {
-      "tag": "forge:carrot/grated"
+      "tag": "c:carrot/grated"
     },
     {
       "tag": "extradelight:processed/apple"
     },
     {
-      "tag": "forge:condiments/mayonnaise"
+      "tag": "c:condiments/mayonnaise"
     }
   ],
   "result": {

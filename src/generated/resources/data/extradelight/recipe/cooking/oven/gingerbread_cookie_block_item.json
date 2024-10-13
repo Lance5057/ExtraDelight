@@ -8,16 +8,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:cookie_dough/gingerbread"
+      "tag": "c:cookie_dough/gingerbread"
     },
     {
-      "tag": "forge:cookie_dough/gingerbread"
+      "tag": "c:cookie_dough/gingerbread"
     },
     {
-      "tag": "forge:cookie_dough/gingerbread"
+      "tag": "c:cookie_dough/gingerbread"
     },
     {
-      "tag": "forge:cookie_dough/gingerbread"
+      "tag": "c:cookie_dough/gingerbread"
     }
   ],
   "result": {

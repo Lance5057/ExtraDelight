@@ -13,16 +13,16 @@
       "item": "extradelight:macaroni"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     },
     {
       "tag": "c:foods/milk"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     }
   ],
   "recipe_book_tab": "meals",

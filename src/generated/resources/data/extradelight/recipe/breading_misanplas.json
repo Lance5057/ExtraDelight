@@ -3,13 +3,13 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
       "item": "extradelight:egg_mix"
     },
     {
-      "tag": "forge:bread/crumbs"
+      "tag": "c:bread/crumbs"
     },
     {
       "tag": "extradelight:frying_oil"

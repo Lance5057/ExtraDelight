@@ -1,5 +1,6 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.BakingStoneBlock;
 import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
 import com.lance5057.extradelight.blocks.FrostableBlock;
@@ -46,6 +47,7 @@ import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.HayBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -84,8 +86,47 @@ public class ExtraDelightBlocks {
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ExtraDelight.MOD_ID);
 
 	public static void register(IEventBus modEventBus) {
-//		AestheticBlocks.BLOCKS.register(modEventBus);
 		BLOCKS.register(modEventBus);
+
+	}
+
+	public static void setup() {
+		FireBlock fire = (FireBlock) Blocks.FIRE;
+
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_DOOR.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_FENCE.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_LEAVES.get(), 30, 60);
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_LOG.get(), 5, 5);
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_PLANKS.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_SLAB.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_STAIRS.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_STICK_BLOCK.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.RAW_CINNAMON_BLOCK.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), 5, 5);
+
+		for (int i = 0; i < AestheticBlocks.DRIED_CORN_FENCE.size(); i++)
+			fire.setFlammable(AestheticBlocks.DRIED_CORN_FENCE.get(i).get(), 5, 5);
+		
+		for (int i = 0; i < AestheticBlocks.WREATHS.size(); i++)
+			fire.setFlammable(AestheticBlocks.WREATHS.get(i).get(), 5, 5);
+
+		fire.setFlammable(ExtraDelightBlocks.FRUIT_DOOR.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.FRUIT_FENCE.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.FRUIT_FENCE_GATE.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.FRUIT_LOG.get(), 5, 5);
+		fire.setFlammable(ExtraDelightBlocks.FRUIT_PLANKS.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.FRUIT_SLAB.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.FRUIT_STAIRS.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.FRUIT_TRAPDOOR.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(), 5, 5);
+
+		fire.setFlammable(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), 30, 60);
+		fire.setFlammable(ExtraDelightBlocks.CORN_HUSK_BUNDLE.get(), 30, 60);
+		fire.setFlammable(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get(), 300, 600);
+
+		fire.setFlammable(ExtraDelightBlocks.MINT_CROP.get(), 1000, 1000);
 	}
 
 	public static final DeferredBlock<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);

@@ -3,7 +3,7 @@
   "fluidOut": {},
   "grinds": 4,
   "ingredient": {
-    "tag": "forge:cinnamon/stick"
+    "tag": "c:cinnamon/stick"
   },
   "result": {
     "count": 2,

@@ -4,7 +4,7 @@
     "id": "extradelight:gingerbread_cookie_block_item"
   },
   "ingredient": {
-    "tag": "forge:frosting/white"
+    "tag": "c:frosting/white"
   },
   "out": {
     "id": "extradelight:gingerbread_block_white"

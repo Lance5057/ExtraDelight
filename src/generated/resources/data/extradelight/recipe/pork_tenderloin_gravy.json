@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:gravy"
+      "tag": "c:gravy"
     },
     {
       "tag": "c:foods/bread"

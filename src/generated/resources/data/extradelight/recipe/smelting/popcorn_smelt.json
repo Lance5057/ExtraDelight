@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 1.0,
   "ingredient": {
-    "tag": "forge:seeds/corn"
+    "tag": "c:seeds/corn"
   },
   "result": {
     "count": 1,

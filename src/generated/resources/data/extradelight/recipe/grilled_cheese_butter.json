@@ -6,10 +6,10 @@
       "item": "extradelight:bread_slice"
     },
     "c": {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     },
     "m": {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     }
   },
   "pattern": [

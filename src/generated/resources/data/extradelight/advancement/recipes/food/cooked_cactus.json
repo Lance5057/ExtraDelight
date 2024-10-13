@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#forge:cactus/cooked"
+            "items": "#c:cactus/cooked"
           }
         ]
       },

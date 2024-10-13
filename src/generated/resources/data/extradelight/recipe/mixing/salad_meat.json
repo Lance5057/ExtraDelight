@@ -12,22 +12,22 @@
       "tag": "extradelight:processed/carrot"
     },
     {
-      "tag": "forge:croutons"
+      "tag": "c:croutons"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     },
     {
-      "tag": "forge:cooking_oil"
+      "tag": "c:cooking_oil"
     },
     {
-      "tag": "forge:vinegar"
+      "tag": "c:vinegar"
     },
     {
-      "tag": "forge:eggs/boiled"
+      "tag": "c:eggs/boiled"
     },
     {
-      "tag": "forge:meat/cooked"
+      "tag": "c:meat/cooked"
     }
   ],
   "result": {

@@ -17,13 +17,13 @@
       "tag": "c:mushrooms"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     },
     {
-      "tag": "forge:bread/crumbs"
+      "tag": "c:bread/crumbs"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     }
   ],
   "result": {

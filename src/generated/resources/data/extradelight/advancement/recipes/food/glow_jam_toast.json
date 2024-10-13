@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#forge:jam/glow_berry"
+            "items": "#c:jam/glow_berry"
           }
         ]
       },

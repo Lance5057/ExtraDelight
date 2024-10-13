@@ -3,7 +3,7 @@
   "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:whipped_cream"
+      "tag": "c:whipped_cream"
     }
   ],
   "result": {

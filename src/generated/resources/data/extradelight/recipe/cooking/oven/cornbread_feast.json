@@ -8,10 +8,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:corn/meal"
+      "tag": "c:corn/meal"
     },
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
       "tag": "extradelight:sweetener"
