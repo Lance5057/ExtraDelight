@@ -1,14 +1,23 @@
 package com.lance5057.extradelight.items;
 
+import java.util.List;
+
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
 import com.lance5057.extradelight.gui.StyleableMenu;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 
 public class OffsetSpatulaItem extends TieredItem {
@@ -38,5 +47,11 @@ public class OffsetSpatulaItem extends TieredItem {
 		}
 		return InteractionResult.PASS;
 
+	}
+	@Override
+	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
+								TooltipFlag tooltipFlag) {
+		MutableComponent textEmpty = Component.translatable(ExtraDelight.MOD_ID + ".tooltip.spatula");
+		tooltipComponents.add(textEmpty.withStyle(ChatFormatting.AQUA));
 	}
 }
