@@ -46,40 +46,6 @@ import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 public class ExtraDelightItems {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraDelight.MOD_ID);
 
-	public static void setup() {
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.CORN_COB.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.CORN_HUSK.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.CORN_ON_COB.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.CORN_SEEDS.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.CORN_SILK.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.CORN_COB.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.DRIED_CORN_HUSK.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.UNSHUCKED_CORN.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.BAD_FOOD.get(), 1f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.CACTUS.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.SLICED_APPLE.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.SLICED_GINGER.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.SLICED_ONION.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.SLICED_POTATO.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.SLICED_TOMATO.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.BREAD_SLICE.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.GINGER.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.MINT.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.COFFEE_CHERRIES.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.HAZELNUTS.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.HAZELNUTS_IN_SHELL.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.MARSHMALLOW.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.MALLOW_ROOT.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.PEANUTS_IN_SHELL.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.PEANUTS.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.CHILI.get(), 0.2f);
-
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.WILD_CHILI_BLOCK.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.WILD_GINGER.get(), 0.2f);
-		ComposterBlock.COMPOSTABLES.put(ExtraDelightItems.WILD_PEANUT_BLOCK.get(), 0.2f);
-	}
-
 	// Helper methods
 	public static Item.Properties stack16FoodItem(FoodProperties food) {
 		return new Item.Properties().food(food).stacksTo(16);
