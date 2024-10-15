@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:cooking_pot"
+    },
+    {
+      "item": "farmersdelight:cooking_pot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:melting_pot"
+  }
+}

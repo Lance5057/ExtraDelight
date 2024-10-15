@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:chocolate/milk/bar"
+    },
+    {
+      "tag": "c:chocolate/milk/bar"
+    },
+    {
+      "tag": "c:chocolate/milk/bar"
+    },
+    {
+      "tag": "c:chocolate/milk/bar"
+    },
+    {
+      "tag": "c:chocolate/milk/bar"
+    },
+    {
+      "tag": "c:chocolate/milk/bar"
+    },
+    {
+      "tag": "c:chocolate/milk/bar"
+    },
+    {
+      "tag": "c:chocolate/milk/bar"
+    },
+    {
+      "tag": "c:chocolate/milk/bar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:milk_chocolate_block"
+  }
+}

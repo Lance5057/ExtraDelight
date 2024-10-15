@@ -490,6 +490,8 @@ public class AestheticBlocks {
 				WOOD.warped);
 		woodRecipe(consumer, ExtraDelightItems.CINNAMON_SLAB.get(), ExtraDelightItems.CINNAMON_TRAPDOOR.get(),
 				ExtraDelightItems.CINNAMON_FENCE.get(), ExtraDelightItems.CINNAMON_LEAVES.get(), WOOD.cinnamon);
+		woodRecipe(consumer, ExtraDelightItems.FRUIT_SLAB.get(), ExtraDelightItems.FRUIT_TRAPDOOR.get(),
+				ExtraDelightItems.FRUIT_FENCE.get(), WOOD.fruit);
 
 		moldRecipe(consumer, Items.OAK_SLAB, WOOD.oak, 0);
 		moldRecipe(consumer, Items.DARK_OAK_SLAB, WOOD.dark_oak, 1 * 16);
@@ -501,6 +503,7 @@ public class AestheticBlocks {
 		moldRecipe(consumer, Items.WARPED_SLAB, WOOD.warped, 7 * 16);
 		moldRecipe(consumer, Items.MANGROVE_SLAB, WOOD.mangrove, 8 * 16);
 		moldRecipe(consumer, ExtraDelightItems.CINNAMON_SLAB.get(), WOOD.cinnamon, 9 * 16);
+		moldRecipe(consumer, ExtraDelightItems.FRUIT_SLAB.get(), WOOD.fruit, 10 * 16);
 
 		cabinetRecipes(consumer);
 
@@ -574,6 +577,39 @@ public class AestheticBlocks {
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, WREATHS.get(name.ordinal()).get()).pattern(" l ")
 				.pattern("l l").pattern(" l ").define('l', leaves)
 				.unlockedBy(name + "_wreath", InventoryChangeTrigger.TriggerInstance.hasItems(leaves)).save(consumer);
+	}
+
+	static void woodRecipe(RecipeOutput consumer, Item slab, Item trapdoor, Item fence, WOOD name) {
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, STEP_STOOLS.get(name.ordinal()).get()).pattern(" w ")
+				.pattern("s s").pattern("s s").define('w', slab).define('s', Items.STICK)
+				.unlockedBy(name + "_step_stool", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, SPICE_RACKS.get(name.ordinal()).get()).pattern("wsw")
+				.pattern("b b").define('w', slab).define('s', Items.STICK).define('b', Items.IRON_BARS)
+				.unlockedBy(name + "_spice_rack", InventoryChangeTrigger.TriggerInstance.hasItems(slab)).save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, SPICE_RACKS_FULL.get(name.ordinal()).get())
+				.requires(SPICE_RACKS.get(name.ordinal()).get()).requires(Items.GLASS_BOTTLE, 4)
+				.unlockedBy(name + "_spice_rack_full", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, KNIFE_BLOCKS.get(name.ordinal()).get()).pattern("wkw")
+				.define('w', slab).define('k', CommonTags.TOOLS_KNIFE)
+				.unlockedBy(name + "_knife_block", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, DRIED_CORN_FENCE.get(name.ordinal()).get())
+				.requires(fence).requires(ExtraDelightItems.DRIED_CORN_HUSK.get())
+				.unlockedBy(name + "_dried_corn_fence", InventoryChangeTrigger.TriggerInstance.hasItems(fence))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, fence)
+				.requires(DRIED_CORN_FENCE.get(name.ordinal()).get())
+				.unlockedBy(name + "_dried_corn_fence_back",
+						InventoryChangeTrigger.TriggerInstance.hasItems(DRIED_CORN_FENCE.get(name.ordinal()).get()))
+				.save(consumer, Recipes.EDLoc(name + "_dried_corn_fence_back"));
 	}
 
 	static void cabinetRecipes(RecipeOutput consumer) {
@@ -879,5 +915,30 @@ public class AestheticBlocks {
 				.unlockedBy("bamboo_cabinet",
 						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.bamboo.ordinal()).get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.bamboo + "_cabinet_to_sink");
+
+		// Fruit
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, COUNTER_CABINETS.get(WOOD.fruit.ordinal()).get())
+				.requires(ExtraDelightItems.FRUIT_CABINET.get())
+				.unlockedBy("fruit_half_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_CABINET.get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.fruit + "_cabinet_full_to_counter");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ExtraDelightItems.FRUIT_CABINET.get())
+				.requires(CABINETS.get(WOOD.fruit.ordinal()).get())
+				.unlockedBy("fruit_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.fruit.ordinal()).get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.fruit + "_cabinet_half_to_full");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CABINETS.get(WOOD.fruit.ordinal()).get())
+				.requires(COUNTER_CABINETS.get(WOOD.fruit.ordinal()).get())
+				.unlockedBy("fruit_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.fruit.ordinal()).get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.fruit + "_cabinet_counter_to_half");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, SINKS.get(WOOD.fruit.ordinal()).get())
+				.requires(ExtraDelightItems.FRUIT_CABINET.get()).requires(ExtraDelightItems.TAP.get())
+				.unlockedBy("fruit_cabinet",
+						InventoryChangeTrigger.TriggerInstance.hasItems(CABINETS.get(WOOD.fruit.ordinal()).get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":half_cabinets/" + WOOD.fruit + "_cabinet_to_sink");
 	}
 }

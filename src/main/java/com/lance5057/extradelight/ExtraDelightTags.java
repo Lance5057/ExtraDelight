@@ -373,4 +373,6 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> BLOOD_CHOCOLATE_TRUFFLE = neoforgeItemTag("chocolate/blood/truffle");
 	public static final TagKey<Item> DARK_CHOCOLATE_TRUFFLE = neoforgeItemTag("chocolate/dark/truffle");
 	public static final TagKey<Item> MILK_CHOCOLATE_TRUFFLE = neoforgeItemTag("chocolate/milk/truffle");
+	
+	public static final TagKey<Item> RIBBON = neoforgeItemTag("ribbon");
 }

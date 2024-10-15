@@ -33,6 +33,7 @@ import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -46,6 +47,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
@@ -1905,6 +1907,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
 				.save(consumer, EDLoc("cinnamon_stairs"));
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_PRESSURE_PLATE.get(), 1)
+				.pattern("pp").define('p', ExtraDelightItems.CINNAMON_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.save(consumer, EDLoc("cinnamon_pressure_plate"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_BUTTON.get(), 1)
+				.requires(ExtraDelightItems.CINNAMON_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.save(consumer, EDLoc("cinnamon_button"));
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.TAP.get(), 1).pattern(" l ").pattern("bcb")
 				.define('l', Items.LEVER).define('b', Items.WATER_BUCKET).define('c', Items.COPPER_INGOT)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.COPPER_INGOT))
@@ -2019,6 +2033,193 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
 				.save(consumer, EDLoc("fruit_stairs"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_PRESSURE_PLATE.get(), 1).pattern("pp")
+				.define('p', ExtraDelightItems.FRUIT_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
+				.save(consumer, EDLoc("fruit_pressure_plate"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_BUTTON.get(), 1)
+				.requires(ExtraDelightItems.FRUIT_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
+				.save(consumer, EDLoc("fruit_button"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CHILI_SEEDS.get(), 1)
+				.requires(ExtraDelightItems.CHILI.get())
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHILI.get()))
+				.save(consumer, EDLoc("chili_seeds"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.MELTING_POT.get(), 1)
+				.requires(ModItems.COOKING_POT.get(), 2)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHILI.get()))
+				.save(consumer, EDLoc("melting_pot"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHILLER.get(), 1).pattern("i").pattern("c")
+				.pattern("k").define('c', ModTags.CABINETS).define('i', Items.IRON_BLOCK)
+				.define('k', ExtraDelightItems.KEG)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.KEG.get()))
+				.save(consumer, EDLoc("chiller"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.SQUARE_PAN.get(), 1)
+				.requires(Items.HEAVY_WEIGHTED_PRESSURE_PLATE).requires(Items.IRON_NUGGET, 4)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
+				.save(consumer, EDLoc("square_pan"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.SERVING_POT.get(), 1)
+				.requires(Items.HEAVY_WEIGHTED_PRESSURE_PLATE).requires(Items.IRON_NUGGET, 5)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
+				.save(consumer, EDLoc("serving_pot"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BAR_MOLD.get(), 1)
+				.requires(Items.HEAVY_WEIGHTED_PRESSURE_PLATE).requires(Items.IRON_NUGGET, 7)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
+				.save(consumer, EDLoc("bar_mold"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_WHITE)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.WHITE.getId())))
+				.save(consumer, EDLoc("white_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_BLACK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.BLACK.getId())))
+				.save(consumer, EDLoc("black_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BLUE_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_BLUE)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.BLUE.getId())))
+				.save(consumer, EDLoc("blue_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BROWN_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_BROWN)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.BROWN.getId())))
+				.save(consumer, EDLoc("brown_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CYAN_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_CYAN)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.CYAN.getId())))
+				.save(consumer, EDLoc("cyan_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GRAY_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_GRAY)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.GRAY.getId())))
+				.save(consumer, EDLoc("gray_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GREEN_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_GREEN)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.GREEN.getId())))
+				.save(consumer, EDLoc("green_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.LIGHT_BLUE_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_LIGHT_BLUE)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.LIGHT_BLUE.getId())))
+				.save(consumer, EDLoc("light_blue_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.LIGHT_GRAY_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_LIGHT_GRAY)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.LIGHT_GRAY.getId())))
+				.save(consumer, EDLoc("light_gray_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.LIME_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_LIME)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.LIME.getId())))
+				.save(consumer, EDLoc("lime_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.MAGENTA_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_MAGENTA)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.MAGENTA.getId())))
+				.save(consumer, EDLoc("magenta_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.ORANGE_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_ORANGE)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.ORANGE.getId())))
+				.save(consumer, EDLoc("orange_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.PINK_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_PINK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.PINK.getId())))
+				.save(consumer, EDLoc("pink_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.PURPLE_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_PURPLE)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.PURPLE.getId())))
+				.save(consumer, EDLoc("purple_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.RED_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_RED)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.RED.getId())))
+				.save(consumer, EDLoc("red_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.YELLOW_CHOCOLATE_BOX.get(), 1)
+				.requires(ExtraDelightTags.RIBBON).requires(Items.PAPER).requires(Tags.Items.CHESTS)
+				.requires(Tags.Items.DYES_YELLOW)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.YELLOW.getId())))
+				.save(consumer, EDLoc("yellow_chocolate_box"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get(), 1)
+				.requires(Ingredient.of(ExtraDelightTags.MILK_CHOCOLATE_BAR), 9)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BAR))
+				.save(consumer, EDLoc("milk_chocolate_block"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MILK_CHOCOLATE_FENCE.get(), 3).pattern("bsb")
+				.pattern("bsb").define('b', ExtraDelightTags.MILK_CHOCOLATE_BLOCK)
+				.define('s', ExtraDelightTags.MILK_CHOCOLATE_BAR)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("milk_chocolate_fence"));
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,

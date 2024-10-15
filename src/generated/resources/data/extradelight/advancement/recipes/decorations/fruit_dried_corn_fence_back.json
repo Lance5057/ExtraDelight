@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "fruit_dried_corn_fence_back": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fruit_dried_corn_fence"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:fruit_dried_corn_fence_back"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "fruit_dried_corn_fence_back"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:fruit_dried_corn_fence_back"
+    ]
+  }
+}
