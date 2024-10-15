@@ -64,7 +64,7 @@ public class AestheticBlocks {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraDelight.MOD_ID);
 
 	public static enum WOOD {
-		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cinnamon, cherry, bamboo/* , fruit */
+		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cinnamon, cherry, bamboo, fruit
 	};
 
 	public static final List<DeferredBlock<Block>> STEP_STOOLS = new ArrayList<DeferredBlock<Block>>();
@@ -534,11 +534,10 @@ public class AestheticBlocks {
 			String n = d + "_" + name + "_wallpaper";
 			ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, MOLDED_WALLPAPER_ITEMS.get(j + add).get(), 4)
 					.requires(Items.PAPER, 4)
-					.requires(ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "dyes/" + d)))
-					.requires(slab).unlockedBy(n, InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
-					.save(consumer);
+					.requires(ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "dyes/" + d))).requires(slab)
+					.unlockedBy(n, InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER)).save(consumer);
 		}
-	}                                                                                                                                  
+	}
 
 	static void woodRecipe(RecipeOutput consumer, Item slab, Item trapdoor, Item fence, Item leaves, WOOD name) {
 

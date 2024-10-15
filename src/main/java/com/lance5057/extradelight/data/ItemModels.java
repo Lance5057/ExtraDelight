@@ -547,6 +547,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.CINNAMON_STICK, "cinnamon_stick");
 		forItem(ExtraDelightItems.GROUND_CINNAMON, "ground_cinnamon");
 		forItem(ExtraDelightItems.RAW_CINNAMON, "raw_cinnamon");
+		this.buttonInventory(ExtraDelightItems.CINNAMON_BUTTON.getId().getPath(), modLoc("block/cinnamon_planks"));
+		forBlockItem(ExtraDelightItems.CINNAMON_PRESSURE_PLATE, "cinnamon_pressure_plate");
 
 		forItem(ExtraDelightItems.MILKSHAKE, "milkshake");
 		forItem(ExtraDelightItems.APPLE_MILKSHAKE, "apple_milkshake");
@@ -801,6 +803,8 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.FRUIT_CABINET, "fruit_cabinet");
 		this.slab(ExtraDelightItems.FRUIT_SLAB.getId().getPath(), modLoc("block/fruit_planks"),
 				modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
+		this.buttonInventory(ExtraDelightItems.FRUIT_BUTTON.getId().getPath(), modLoc("block/fruit_planks"));
+		forBlockItem(ExtraDelightItems.FRUIT_PRESSURE_PLATE, "fruit_pressure_plate");
 
 		forItem(ExtraDelightItems.CHILI_SEEDS, "crops/chili/chili_seeds");
 		forItem(ExtraDelightItems.CHILI, "crops/chili/chili_pepper");
@@ -1058,7 +1062,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItemFlat(ExtraDelightItems.WILD_CHILI_BLOCK, "crops/chili/wild_chili");
 		forBlockItemFlat(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK, "crops/marshmallow/wild_marshmallow");
 
-		forBlockItem(ExtraDelightItems.HAZELNUT_LEAVES, "crops/fruit/hazelnut/hazelnut_leaves_stage0");
+		forBlockItem(ExtraDelightItems.HAZELNUT_LEAVES, modLoc("block/crops/fruit/hazelnut/hazelnut_leaves_stage0"));
 
 		forBlockItem(ExtraDelightItems.CHILLER, "chiller");
 		forBlockItem(ExtraDelightItems.BAR_MOLD, "bar_mold");

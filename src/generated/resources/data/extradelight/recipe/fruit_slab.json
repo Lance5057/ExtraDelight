@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": {
+      "item": "extradelight:fruit_planks"
+    }
+  },
+  "pattern": [
+    "ppp"
+  ],
+  "result": {
+    "count": 6,
+    "id": "extradelight:fruit_slab"
+  }
+}

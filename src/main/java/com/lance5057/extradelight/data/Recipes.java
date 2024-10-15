@@ -41,7 +41,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
-import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
@@ -1908,8 +1907,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.TAP.get(), 1).pattern(" l ").pattern("bcb")
 				.define('l', Items.LEVER).define('b', Items.WATER_BUCKET).define('c', Items.COPPER_INGOT)
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.COPPER_INGOT))
 				.save(consumer, EDLoc("tap"));
 
 		this.bucket("apple_cider", consumer, ExtraDelightItems.APPLE_CIDER_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
@@ -1962,6 +1960,65 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BARREL))
 				.save(consumer, EDLoc("keg"));
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.FUNNEL.get(), 1).pattern("c c").pattern("ckc")
+				.pattern(" c ").define('k', ExtraDelightItems.KEG.get()).define('c', Items.COPPER_INGOT)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.KEG.get()))
+				.save(consumer, EDLoc("funnel"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_PLANKS.get(), 4)
+				.requires(ExtraDelightItems.FRUIT_LOG.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_LOG.get()))
+				.save(consumer, EDLoc("fruit_planks"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_PLANKS.get(), 4)
+				.requires(ExtraDelightItems.STRIPPED_FRUIT_LOG.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_LOG.get()))
+				.save(consumer, EDLoc("fruit_planks_stripped"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_CABINET.get()).pattern("sss")
+				.pattern("t t").pattern("sss").define('s', ExtraDelightItems.FRUIT_SLAB.get())
+				.define('t', ExtraDelightItems.FRUIT_TRAPDOOR.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_SLAB.get()))
+				.save(consumer, EDLoc("fruit_cabinet"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_SLAB.get(), 6).pattern("ppp")
+				.define('p', ExtraDelightItems.FRUIT_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
+				.save(consumer, EDLoc("fruit_slab"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_DOOR.get(), 3).pattern("pp ")
+				.pattern("pp ").pattern("pp ").define('p', ExtraDelightItems.FRUIT_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
+				.save(consumer, EDLoc("fruit_door"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_TRAPDOOR.get(), 2).pattern("pp ")
+				.pattern("pp ").define('p', ExtraDelightItems.FRUIT_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
+				.save(consumer, EDLoc("fruit_trapdoor"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_FENCE.get(), 3).pattern("psp")
+				.pattern("psp").define('p', ExtraDelightItems.FRUIT_PLANKS.get()).define('s', Items.STICK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
+				.save(consumer, EDLoc("fruit_fence"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_FENCE_GATE.get()).pattern("sps")
+				.pattern("sps").define('p', ExtraDelightItems.FRUIT_PLANKS.get()).define('s', Items.STICK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
+				.save(consumer, EDLoc("fruit_fence_gate"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_STAIRS.get(), 4).pattern("p  ")
+				.pattern("pp ").pattern("ppp").define('p', ExtraDelightItems.FRUIT_PLANKS.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
+				.save(consumer, EDLoc("fruit_stairs"));
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "minecraft:copper_ingot"
+    },
+    "k": {
+      "item": "extradelight:keg_item"
+    }
+  },
+  "pattern": [
+    "c c",
+    "ckc",
+    " c "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:funnel"
+  }
+}

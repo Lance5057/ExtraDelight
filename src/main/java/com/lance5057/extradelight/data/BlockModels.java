@@ -165,6 +165,8 @@ public class BlockModels extends BlockStateProvider {
 		this.cabinetBlock(ExtraDelightBlocks.CINNAMON_CABINET.get(), "cinnamon");
 		this.slabBlock(ExtraDelightBlocks.CINNAMON_SLAB.get(), modLoc("block/cinnamon_planks"),
 				modLoc("block/cinnamon_planks"));
+		this.buttonBlock(ExtraDelightBlocks.CINNAMON_BUTTON.get(), modLoc("block/cinnamon_planks"));
+		this.pressurePlateBlock(ExtraDelightBlocks.CINNAMON_PRESSURE_PLATE.get(), modLoc("block/cinnamon_planks"));
 
 		this.simpleBlock(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
@@ -253,6 +255,10 @@ public class BlockModels extends BlockStateProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
 		this.cabinetBlock(ExtraDelightBlocks.FRUIT_CABINET.get(), "fruit");
 		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
+		this.buttonBlock(ExtraDelightBlocks.FRUIT_BUTTON.get(), modLoc("block/fruit_planks"));
+		this.pressurePlateBlock(ExtraDelightBlocks.FRUIT_PRESSURE_PLATE.get(), modLoc("block/fruit_planks"));
+		this.signBlock(ExtraDelightBlocks.FRUIT_STANDING_SIGN.get(), ExtraDelightBlocks.FRUIT_WALL_SIGN.get(),
+				modLoc("block/fruit_planks"));
 
 		this.fruitLeafBlock(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), "hazelnut");
 

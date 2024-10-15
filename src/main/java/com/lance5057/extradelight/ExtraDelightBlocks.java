@@ -42,8 +42,10 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.CarpetBlock;
+import net.minecraft.world.level.block.CeilingHangingSignBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -51,12 +53,17 @@ import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.HayBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SignBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.WallHangingSignBlock;
+import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -108,7 +115,7 @@ public class ExtraDelightBlocks {
 
 		for (int i = 0; i < AestheticBlocks.DRIED_CORN_FENCE.size(); i++)
 			fire.setFlammable(AestheticBlocks.DRIED_CORN_FENCE.get(i).get(), 5, 5);
-		
+
 		for (int i = 0; i < AestheticBlocks.WREATHS.size(); i++)
 			fire.setFlammable(AestheticBlocks.WREATHS.get(i).get(), 5, 5);
 
@@ -421,6 +428,23 @@ public class ExtraDelightBlocks {
 			() -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
 	public static final DeferredBlock<SlabBlock> CINNAMON_SLAB = BLOCKS.register("cinnamon_slab",
 			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.DARK_OAK_SLAB)));
+	public static final DeferredBlock<PressurePlateBlock> CINNAMON_PRESSURE_PLATE = BLOCKS.register(
+			"cinnamon_pressure_plate",
+			() -> new PressurePlateBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+	public static final DeferredBlock<ButtonBlock> CINNAMON_BUTTON = BLOCKS.register("cinnamon_button",
+			() -> new ButtonBlock(BlockSetType.OAK, 30, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+
+//	public static final DeferredBlock<SignBlock> CINNAMON_CEILING_HANGING_SIGN = BLOCKS.register(
+//			"cinnamon_ceiling_hanging_sign",
+//			() -> new CeilingHangingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+//	public static final DeferredBlock<SignBlock> CINNAMON_WALL_HANGING_SIGN = BLOCKS.register(
+//			"cinnamon_wall_hanging_sign",
+//			() -> new WallHangingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+	public static final DeferredBlock<SignBlock> CINNAMON_STANDING_SIGN = BLOCKS.register("cinnamon_standing_sign",
+			() -> new StandingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+	public static final DeferredBlock<SignBlock> CINNAMON_WALL_SIGN = BLOCKS.register("cinnamon_wall_sign",
+			() -> new WallSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+
 	public static final DeferredBlock<RotatedPillarBlock> CINNAMON_STICK_BLOCK = BLOCKS.register("cinnamon_stick_block",
 			() -> new RotatedPillarBlock(
 					Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.COLOR_BROWN)));
@@ -725,6 +749,21 @@ public class ExtraDelightBlocks {
 			() -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
 	public static final DeferredBlock<SlabBlock> FRUIT_SLAB = BLOCKS.register("fruit_slab",
 			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.DARK_OAK_SLAB)));
+	public static final DeferredBlock<PressurePlateBlock> FRUIT_PRESSURE_PLATE = BLOCKS.register("fruit_pressure_plate",
+			() -> new PressurePlateBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+	public static final DeferredBlock<ButtonBlock> FRUIT_BUTTON = BLOCKS.register("fruit_button",
+			() -> new ButtonBlock(BlockSetType.OAK, 30, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+
+//	public static final DeferredBlock<CeilingHangingSignBlock> FRUIT_CEILING_HANGING_SIGN = BLOCKS.register(
+//			"fruit_ceiling_hanging_sign",
+//			() -> new CeilingHangingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+//	public static final DeferredBlock<WallHangingSignBlock> FRUIT_WALL_HANGING_SIGN = BLOCKS.register(
+//			"fruit_wall_hanging_sign",
+//			() -> new WallHangingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+	public static final DeferredBlock<StandingSignBlock> FRUIT_STANDING_SIGN = BLOCKS.register("fruit_standing_sign",
+			() -> new StandingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+	public static final DeferredBlock<WallSignBlock> FRUIT_WALL_SIGN = BLOCKS.register("fruit_wall_sign",
+			() -> new WallSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 
 	public static final DeferredBlock<FruitLeafBlock> HAZELNUT_LEAVES = BLOCKS.register("hazelnut_leaves",
 			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
