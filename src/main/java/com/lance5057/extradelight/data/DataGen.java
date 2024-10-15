@@ -1,24 +1,17 @@
 package com.lance5057.extradelight.data;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreePlacement;
 
-import net.minecraft.core.Cloner;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.RegistryDataLoader;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import vectorwing.farmersdelight.data.Advancements;
@@ -57,7 +50,9 @@ public class DataGen {
 
 		generator.addProvider(event.includeServer(), new EDBiomeModifiers(output, lookupProvider));
 		generator.addProvider(event.includeServer(), EDRegistries.provider(output, lookupProvider));
-		
+
+		generator.addProvider(event.includeServer(), new DataMapGen(output, lookupProvider));
+
 //		generator.addProvider(event.includeClient(), new PatchouliGen(generator, ExtraDelight.MOD_ID, "en_us"));
 	}
 

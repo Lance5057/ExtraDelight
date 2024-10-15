@@ -41,6 +41,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
@@ -3255,12 +3256,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedBy("apple_pie", has(Items.APPLE))
 				.save(consumer, EDLoc("apple_pie"));
 
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ModItems.APPLE_PIE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
-				.addIngredient(ModItems.PIE_CRUST.get()).addIngredient(ExtraDelightTags.JAM_APPLE)
-				.addIngredient(ModItems.PIE_CRUST.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
-				.unlockedBy("apple_pie", has(Items.APPLE)).save(consumer, EDLoc("apple_pie_jam"));
+//		OvenRecipeBuilder
+//				.OvenRecipe(new ItemStack(ModItems.APPLE_PIE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
+//						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
+//				.addIngredient(ModItems.PIE_CRUST.get()).addIngredient(ExtraDelightTags.JAM_APPLE)
+//				.addIngredient(ModItems.PIE_CRUST.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
+//				.unlockedBy("apple_pie", has(Items.APPLE)).save(consumer, EDLoc("apple_pie_jam"));
 
 		bulkBake(ModItems.FRIED_EGG.get(), Ingredient.of(Items.EGG), consumer, ExtraDelightItems.TRAY.get(),
 				"fried_egg");
