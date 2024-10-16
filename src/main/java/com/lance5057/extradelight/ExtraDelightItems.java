@@ -1016,9 +1016,6 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> HONEY_MILKSHAKE = ITEMS.register("honey_milkshake",
 			() -> new MilkshakeDrinkItem(new Item.Properties(), 4f));
 	public static final DeferredItem<Item> APPLE_MILKSHAKE = ITEMS.register("apple_milkshake",
-			() -> new MilkshakeDrinkItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 4f));
-	public static final DeferredItem<Item> COOKIE_DOUGH_MILKSHAKE = ITEMS.register("cookie_dough_milkshake",
-			() -> new MilkshakeDrinkItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 4f));
 			() -> new MilkshakeDrinkItem(new Item.Properties(), 4f));
 	public static final DeferredItem<Item> COOKIE_DOUGH_MILKSHAKE = ITEMS.register("cookie_dough_milkshake",
 			() -> new MilkshakeDrinkItem(new Item.Properties(), 4f));
