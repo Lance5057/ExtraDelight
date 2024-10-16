@@ -14,6 +14,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidType;
 
@@ -23,6 +24,7 @@ public class BasicFluid extends FluidType {
 	private final ResourceLocation FLOW;
 	private final ResourceLocation OVERLAY;
 	private final ResourceLocation VIEW_OVERLAY;
+	
 
 	final int tint;
 

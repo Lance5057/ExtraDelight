@@ -144,6 +144,67 @@ public class ExtraDelightFluids {
 			() -> new BasicFluid(0xff562d0f, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
 			ExtraDelightBlocks.TEA_FLUID_BLOCK, ExtraDelightItems.TEA_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
+	public static FluidRegistration COCOA_BUTTER = new FluidRegistration("cocoa_butter",
+			() -> new BasicFluid("cocoa_butter", 0xfffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000)
+							.viscosity(6000)),
+			ExtraDelightBlocks.COCOA_BUTTER_FLUID_BLOCK, ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET, FLUID_TYPES,
+			FLUIDS);
+
+	public static FluidRegistration WHITE_CHOCOLATE_SYRUP = new FluidRegistration("white_chocolate_syrup",
+			() -> new BasicFluid("white_chocolate_syrup", 0xffffd598,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000)
+							.viscosity(6000)),
+			ExtraDelightBlocks.WHITE_CHOCOLATE_SYRUP_FLUID_BLOCK, ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration DARK_CHOCOLATE_SYRUP = new FluidRegistration("dark_chocolate_syrup",
+			() -> new BasicFluid("dark_chocolate_syrup", 0xff432618,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000)
+							.viscosity(6000)),
+			ExtraDelightBlocks.DARK_CHOCOLATE_SYRUP_FLUID_BLOCK, ExtraDelightItems.DARK_CHOCOLATE_SYRUP_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration MILK_CHOCOLATE_SYRUP = new FluidRegistration("milk_chocolate_syrup",
+			() -> new BasicFluid("milk_chocolate_syrup", 0xff6e4a38,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000)
+							.viscosity(6000)),
+			ExtraDelightBlocks.MILK_CHOCOLATE_SYRUP_FLUID_BLOCK, ExtraDelightItems.MILK_CHOCOLATE_SYRUP_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration BLOOD_CHOCOLATE_SYRUP = new FluidRegistration("blood_chocolate_syrup",
+			() -> new BasicFluid("blood_chocolate_syrup", 0xff772222,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000)
+							.viscosity(6000)),
+			ExtraDelightBlocks.BLOOD_CHOCOLATE_SYRUP_FLUID_BLOCK, ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration COFFEE = new FluidRegistration("coffee",
+			() -> new BasicFluid(0xff924823,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).temperature(1300)),
+			ExtraDelightBlocks.COFFEE_FLUID_BLOCK, ExtraDelightItems.COFFEE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration PEANUT_BUTTER = new FluidRegistration("peanut_butter",
+			() -> new BasicFluid("peanut_butter", 0xffffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canSwim(false).viscosity(3000)
+							.density(6000)),
+			ExtraDelightBlocks.PEANUT_BUTTER_FLUID_BLOCK, ExtraDelightItems.PEANUT_BUTTER_FLUID_BUCKET, FLUID_TYPES,
+			FLUIDS, 4);
+
+	public static FluidRegistration MARSHMALLOW_FLUFF = new FluidRegistration("marshmallow_fluff",
+			() -> new BasicFluid("marshmallow_fluff", 0xffffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canSwim(false).viscosity(3000)
+					.density(6000)),
+			ExtraDelightBlocks.MARSHMALLOW_FLUFF_FLUID_BLOCK, ExtraDelightItems.MARSHMALLOW_FLUFF_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration HAZELNUT_SPREAD = new FluidRegistration("hazelnut_spread",
+			() -> new BasicFluid("hazelnut_spread", 0xffffffff,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canSwim(false).viscosity(3000)
+					.density(6000)),
+			ExtraDelightBlocks.HAZELNUT_SPREAD_FLUID_BLOCK, ExtraDelightItems.HAZELNUT_SPREAD_FLUID_BUCKET, FLUID_TYPES,
+			FLUIDS);
+
 	public static void register(IEventBus modBus) {
 		FLUID_TYPES.register(modBus);
 		FLUIDS.register(modBus);

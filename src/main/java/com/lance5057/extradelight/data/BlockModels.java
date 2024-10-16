@@ -29,6 +29,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
@@ -404,7 +405,47 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.JAR.get(),
 				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/jar")));
 
+		this.fluid(ExtraDelightBlocks.APPLE_CIDER_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.BBQ_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.BLOOD_CHOCOLATE_SYRUP_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.BROTH_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.CACTUS_JUICE_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.CARAMEL_SAUCE_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.COCOA_BUTTER_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.COFFEE_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.COOKING_OIL_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.DARK_CHOCOLATE_SYRUP_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.EGG_MIX_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.GLOW_BERRY_JUICE_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.GOLDEN_JAM_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.GRAVY_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.HAZELNUT_SPREAD_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.HOT_COCOA_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.JAM_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.KETCHUP_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.MARSHMALLOW_FLUFF_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.MAYO_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.MELON_JUICE_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.MILK_CHOCOLATE_SYRUP_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.MILKSHAKE_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.PEANUT_BUTTER_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.SWEET_BERRY_JUICE_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.TEA_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.TOMATO_JUICE_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.VINEGAR_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.WHIPPED_CREAM_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.WHITE_CHOCOLATE_SYRUP_FLUID_BLOCK.get());
+		
 		AestheticBlocks.blockModel(this);
+	}
+
+	void fluid(LiquidBlock block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			return ConfiguredModel.builder().modelFile(
+					models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath(), mcLoc("block/water")))
+					.build();
+		});
 	}
 
 	public void chocolateBox(ChocolateBoxBlock block) {

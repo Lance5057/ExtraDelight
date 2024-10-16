@@ -95,6 +95,72 @@
 		{
 			"type": "minecraft:single",
 			"resource": "extradelight:liquid/glow_jam_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/peanut_butter_flow"
+		}
+		,
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/peanut_butter_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/hazelnut_spread_flow"
+		}
+		,
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/hazelnut_spread_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/marshmallow_fluff_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/marshmallow_fluff_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/dark_chocolate_syrup_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/dark_chocolate_syrup_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/milk_chocolate_syrup_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/milk_chocolate_syrup_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/blood_chocolate_syrup_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/blood_chocolate_syrup_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/white_chocolate_syrup_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/white_chocolate_syrup_still"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/cocoa_butter_flow"
+		},
+		{
+			"type": "minecraft:single",
+			"resource": "extradelight:liquid/cocoa_butter_still"
 		}
 	]
 }
