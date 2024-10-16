@@ -7,16 +7,16 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "tag": "forge:apple/sliced"
+      "tag": "c:apple/sliced"
     },
     {
-      "tag": "forge:apple/sliced"
+      "tag": "c:apple/sliced"
     },
     {
       "tag": "extradelight:sweetener"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     }
   ],
   "recipe_book_tab": "meals",

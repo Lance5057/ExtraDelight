@@ -84,7 +84,7 @@ public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 				RenderUtil.buildCubeAll(new Vector3f(5.5f / 16f, 0.5f / 16f, 5.5f / 16f),
 						new Vector3f(5f / 16f, ((float) f.getAmount() / 1000f) * (6f / 16f), 5f / 16f), vertexConsumer,
 						mat, matrix3f, fluidTypeExtensions.getTintColor(fluidStack),
-						RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), overlay, ps);
+						RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), packedLight, overlay, ps);
 //				ps.popPose();
 			}
 			ps.popPose();

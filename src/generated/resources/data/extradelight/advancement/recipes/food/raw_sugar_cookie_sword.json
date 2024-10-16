@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#forge:cookie_dough/sugar"
+            "items": "#c:cookie_dough/sugar"
           }
         ]
       },

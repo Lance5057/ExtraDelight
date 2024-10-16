@@ -61,6 +61,6 @@ public class ExtraDelight {
 	}
 
 	public void setupCommon(FMLCommonSetupEvent event) {
-//		event.enqueueWork(CropGeneration::registerWildCropGeneration);
+		ExtraDelightBlocks.setup();
 	}
 }

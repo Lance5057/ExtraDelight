@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "Recipes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:milk_chocolate_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:milk_chocolate_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "Recipes"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:milk_chocolate_door"
+    ]
+  }
+}

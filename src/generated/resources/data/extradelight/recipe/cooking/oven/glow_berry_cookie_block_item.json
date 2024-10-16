@@ -8,16 +8,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:cookie_dough/glow_berry"
+      "tag": "c:cookie_dough/glow_berry"
     },
     {
-      "tag": "forge:cookie_dough/glow_berry"
+      "tag": "c:cookie_dough/glow_berry"
     },
     {
-      "tag": "forge:cookie_dough/glow_berry"
+      "tag": "c:cookie_dough/glow_berry"
     },
     {
-      "tag": "forge:cookie_dough/glow_berry"
+      "tag": "c:cookie_dough/glow_berry"
     }
   ],
   "result": {

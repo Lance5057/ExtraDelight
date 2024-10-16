@@ -1,6 +1,6 @@
 {
   "values": [
-    "#forge:ginger/grated",
-    "#forge:ginger/sliced"
+    "#c:ginger/grated",
+    "#c:ginger/sliced"
   ]
 }

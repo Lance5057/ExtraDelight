@@ -154,8 +154,27 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleCross(ExtraDelightBlocks.CINNAMON_SAPLING.get());
 		this.stairsBlock(ExtraDelightBlocks.CINNAMON_STAIRS.get(),
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_planks"));
-		this.trapdoorBlockWithRenderType(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(),
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"), true, "cutout");
+		this.trapdoorBlock(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(), this.models()
+				.withExistingParent("cinnamon_trapdoor_bottom",
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_bottom"))
+				.texture("texture",
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+				.renderType("cutout"),
+				this.models()
+						.withExistingParent("cinnamon_trapdoor_top",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/chocolate_trapdoor_top"))
+						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+						.renderType("cutout"),
+				this.models()
+						.withExistingParent("cinnamon_trapdoor_open",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/chocolate_trapdoor_open"))
+						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+						.renderType("cutout"),
+				true);
 		this.doorBlockWithRenderType(ExtraDelightBlocks.CINNAMON_DOOR.get(),
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_door_bottom"),
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_door_top"), "cutout");
@@ -166,6 +185,8 @@ public class BlockModels extends BlockStateProvider {
 		this.cabinetBlock(ExtraDelightBlocks.CINNAMON_CABINET.get(), "cinnamon");
 		this.slabBlock(ExtraDelightBlocks.CINNAMON_SLAB.get(), modLoc("block/cinnamon_planks"),
 				modLoc("block/cinnamon_planks"));
+		this.buttonBlock(ExtraDelightBlocks.CINNAMON_BUTTON.get(), modLoc("block/cinnamon_planks"));
+		this.pressurePlateBlock(ExtraDelightBlocks.CINNAMON_PRESSURE_PLATE.get(), modLoc("block/cinnamon_planks"));
 
 		this.simpleBlock(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
@@ -254,6 +275,10 @@ public class BlockModels extends BlockStateProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_planks"));
 		this.cabinetBlock(ExtraDelightBlocks.FRUIT_CABINET.get(), "fruit");
 		this.slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
+		this.buttonBlock(ExtraDelightBlocks.FRUIT_BUTTON.get(), modLoc("block/fruit_planks"));
+		this.pressurePlateBlock(ExtraDelightBlocks.FRUIT_PRESSURE_PLATE.get(), modLoc("block/fruit_planks"));
+		this.signBlock(ExtraDelightBlocks.FRUIT_STANDING_SIGN.get(), ExtraDelightBlocks.FRUIT_WALL_SIGN.get(),
+				modLoc("block/fruit_planks"));
 
 		this.fruitLeafBlock(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), "hazelnut");
 
@@ -270,8 +295,26 @@ public class BlockModels extends BlockStateProvider {
 						"block/cosmetics/chocolate/dark_chocolate_door_bottom"),
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 						"block/cosmetics/chocolate/dark_chocolate_door_top"));
-		this.trapdoorBlock(ExtraDelightBlocks.DARK_CHOCOLATE_TRAPDOOR.get(), ResourceLocation
-				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/dark_chocolate_trapdoor"), false);
+		this.trapdoorBlock(ExtraDelightBlocks.DARK_CHOCOLATE_TRAPDOOR.get(), this.models()
+				.withExistingParent("dark_chocolate_trapdoor_bottom",
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_bottom"))
+				.texture("texture",
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
+				this.models()
+						.withExistingParent("dark_chocolate_trapdoor_top",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/chocolate_trapdoor_top"))
+						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
+				this.models()
+						.withExistingParent("dark_chocolate_trapdoor_open",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/chocolate_trapdoor_open"))
+						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
+				true);
 		this.slabBlock(ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(), modLoc("block/dark_chocolate_slab_double"),
 				modLoc("block/cosmetics/chocolate/dark_chocolate_slab"),
 				modLoc("block/cosmetics/chocolate/dark_chocolate_style0"),
@@ -295,8 +338,26 @@ public class BlockModels extends BlockStateProvider {
 						"block/cosmetics/chocolate/milk_chocolate_door_bottom"),
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 						"block/cosmetics/chocolate/milk_chocolate_door_top"));
-		this.trapdoorBlock(ExtraDelightBlocks.MILK_CHOCOLATE_TRAPDOOR.get(), ResourceLocation
-				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/milk_chocolate_trapdoor"), false);
+		this.trapdoorBlock(ExtraDelightBlocks.MILK_CHOCOLATE_TRAPDOOR.get(), this.models()
+				.withExistingParent("milk_chocolate_trapdoor_bottom",
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_bottom"))
+				.texture("texture",
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
+				this.models()
+						.withExistingParent("milk_chocolate_trapdoor_top",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/chocolate_trapdoor_top"))
+						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
+				this.models()
+						.withExistingParent("milk_chocolate_trapdoor_open",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/chocolate_trapdoor_open"))
+						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
+				true);
 		this.slabBlock(ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(), modLoc("block/milk_chocolate_slab_double"),
 				modLoc("block/cosmetics/chocolate/milk_chocolate_slab"),
 				modLoc("block/cosmetics/chocolate/milk_chocolate_style0"),
@@ -320,8 +381,26 @@ public class BlockModels extends BlockStateProvider {
 						"block/cosmetics/chocolate/white_chocolate_door_bottom"),
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 						"block/cosmetics/chocolate/white_chocolate_door_top"));
-		this.trapdoorBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get(), ResourceLocation.fromNamespaceAndPath(
-				ExtraDelight.MOD_ID, "block/cosmetics/chocolate/white_chocolate_trapdoor"), false);
+		this.trapdoorBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get(), this.models()
+				.withExistingParent("white_chocolate_trapdoor_bottom",
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_bottom"))
+				.texture("texture",
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/white_chocolate_trapdoor")),
+				this.models()
+						.withExistingParent("white_chocolate_trapdoor_top",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/chocolate_trapdoor_top"))
+						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/white_chocolate_trapdoor")),
+				this.models()
+						.withExistingParent("white_chocolate_trapdoor_open",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/chocolate_trapdoor_open"))
+						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/white_chocolate_trapdoor")),
+				true);
 		this.slabBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get(), modLoc("block/white_chocolate_slab_double"),
 				modLoc("block/cosmetics/chocolate/white_chocolate_slab"),
 				modLoc("block/cosmetics/chocolate/white_chocolate_style0"),
@@ -345,8 +424,26 @@ public class BlockModels extends BlockStateProvider {
 						"block/cosmetics/chocolate/blood_chocolate_door_bottom"),
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 						"block/cosmetics/chocolate/blood_chocolate_door_top"));
-		this.trapdoorBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_TRAPDOOR.get(), ResourceLocation.fromNamespaceAndPath(
-				ExtraDelight.MOD_ID, "block/cosmetics/chocolate/blood_chocolate_trapdoor"), false);
+		this.trapdoorBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_TRAPDOOR.get(), this.models()
+				.withExistingParent("blood_chocolate_trapdoor_bottom",
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_bottom"))
+				.texture("texture",
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
+				this.models()
+						.withExistingParent("blood_chocolate_trapdoor_top",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/chocolate_trapdoor_top"))
+						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
+				this.models()
+						.withExistingParent("blood_chocolate_trapdoor_open",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/chocolate_trapdoor_open"))
+						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
+				true);
 		this.slabBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(), modLoc("block/blood_chocolate_slab_double"),
 				modLoc("block/cosmetics/chocolate/blood_chocolate_slab"),
 				modLoc("block/cosmetics/chocolate/blood_chocolate_style0"),

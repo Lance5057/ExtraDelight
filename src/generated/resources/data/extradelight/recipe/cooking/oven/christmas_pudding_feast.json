@@ -8,22 +8,22 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:fruit/dried"
+      "tag": "c:fruit/dried"
     },
     {
-      "tag": "forge:fruit/dried"
+      "tag": "c:fruit/dried"
     },
     {
-      "tag": "forge:fruit/dried"
+      "tag": "c:fruit/dried"
     },
     {
-      "tag": "forge:bread/crumbs"
+      "tag": "c:bread/crumbs"
     },
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
-      "tag": "forge:cinnamon/ground"
+      "tag": "c:cinnamon/ground"
     },
     {
       "tag": "extradelight:sweetener"

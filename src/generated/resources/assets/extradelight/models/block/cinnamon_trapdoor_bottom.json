@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/template_orientable_trapdoor_bottom",
+  "parent": "extradelight:block/chocolate_trapdoor_bottom",
   "render_type": "minecraft:cutout",
   "textures": {
     "texture": "extradelight:block/cinnamon_trapdoor"

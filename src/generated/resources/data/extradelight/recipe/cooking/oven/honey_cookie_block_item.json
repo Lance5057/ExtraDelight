@@ -8,16 +8,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:cookie_dough/honey"
+      "tag": "c:cookie_dough/honey"
     },
     {
-      "tag": "forge:cookie_dough/honey"
+      "tag": "c:cookie_dough/honey"
     },
     {
-      "tag": "forge:cookie_dough/honey"
+      "tag": "c:cookie_dough/honey"
     },
     {
-      "tag": "forge:cookie_dough/honey"
+      "tag": "c:cookie_dough/honey"
     }
   ],
   "result": {

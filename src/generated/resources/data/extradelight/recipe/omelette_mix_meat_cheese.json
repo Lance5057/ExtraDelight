@@ -6,13 +6,13 @@
       "item": "extradelight:egg_mix"
     },
     {
-      "tag": "forge:meat"
+      "tag": "c:meat"
     },
     {
-      "tag": "forge:meat"
+      "tag": "c:meat"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     }
   ],
   "result": {

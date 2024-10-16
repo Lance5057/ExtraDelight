@@ -1,0 +1,91 @@
+{
+  "values": {
+    "extradelight:bad_food": {
+      "chance": 1.0
+    },
+    "extradelight:bread_slice": {
+      "chance": 0.2
+    },
+    "extradelight:cactus": {
+      "chance": 0.2
+    },
+    "extradelight:chili": {
+      "chance": 0.2
+    },
+    "extradelight:coffee_cherries": {
+      "chance": 0.2
+    },
+    "extradelight:corn_cob": {
+      "chance": 0.2
+    },
+    "extradelight:corn_husk": {
+      "chance": 0.2
+    },
+    "extradelight:corn_on_cob": {
+      "chance": 0.2
+    },
+    "extradelight:corn_seeds": {
+      "chance": 0.2
+    },
+    "extradelight:corn_silk": {
+      "chance": 0.2
+    },
+    "extradelight:dried_corn_husk": {
+      "chance": 0.2
+    },
+    "extradelight:ginger": {
+      "chance": 0.2
+    },
+    "extradelight:hazelnuts": {
+      "chance": 0.2
+    },
+    "extradelight:hazelnuts_in_shell": {
+      "chance": 0.2
+    },
+    "extradelight:mallow_root": {
+      "chance": 0.2
+    },
+    "extradelight:marshmallow": {
+      "chance": 0.2
+    },
+    "extradelight:mint": {
+      "chance": 0.2
+    },
+    "extradelight:peanuts": {
+      "chance": 0.2
+    },
+    "extradelight:peanuts_in_shell": {
+      "chance": 0.2
+    },
+    "extradelight:sliced_apple": {
+      "chance": 0.2
+    },
+    "extradelight:sliced_ginger": {
+      "chance": 0.2
+    },
+    "extradelight:sliced_onion": {
+      "chance": 0.2
+    },
+    "extradelight:sliced_potato": {
+      "chance": 0.2
+    },
+    "extradelight:sliced_tomato": {
+      "chance": 0.2
+    },
+    "extradelight:unshucked_corn": {
+      "chance": 0.2
+    },
+    "extradelight:wild_chili_block": {
+      "chance": 0.2
+    },
+    "extradelight:wild_ginger": {
+      "chance": 0.2
+    },
+    "extradelight:wild_mallow_root_block": {
+      "chance": 0.2
+    },
+    "extradelight:wild_peanut_block": {
+      "chance": 0.2
+    }
+  }
+}

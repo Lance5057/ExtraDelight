@@ -85,7 +85,7 @@ configurations {
 dependencies {
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
-	implementation "curse.maven:farmersdelight-398521:5566383"
+	implementation "curse.maven:farmersdelight-398521:5772720"
 
 	 // compile against the JEI API but do not include it at runtime
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"

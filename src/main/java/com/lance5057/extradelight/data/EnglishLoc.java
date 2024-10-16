@@ -73,6 +73,11 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.feast", "Feast Block");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.serving", "Feast Serving");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.butchercraft", "Requires Butchercraft");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.spatula", "Right click to style! Shift + Right click for the menu");
+
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.name", "Extra Delight");
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.desc", "Feeling a little extra.");
@@ -199,7 +204,7 @@ public class EnglishLoc extends LanguageProvider {
 //		this.add(ExtraDelightItems.MORTAR_ENDSTONE.get(), "Endstone Mortar");
 //		this.add(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(), "Gilded Blackstone Mortar");
 //		this.add(ExtraDelightItems.MORTAR_GRANITE.get(), "Granite Mortar");
-		this.add(ExtraDelightItems.MORTAR_STONE.get(), "Stone Mortar");
+		this.add(ExtraDelightItems.MORTAR_STONE.get(), "Mortar");
 
 		this.add(ExtraDelightItems.MUFFIN_TIN.get(), "Muffin Tin");
 		this.add(ExtraDelightItems.SQUARE_PAN.get(), "Square Pan");
@@ -957,25 +962,30 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.BROWNIES_BLOCK.get(), "Brownies");
 		this.add(ExtraDelightItems.BROWNIE.get(), "Brownie");
-		
+
 		this.add(ExtraDelightItems.BLONDIES_BLOCK.get(), "Blondies");
 		this.add(ExtraDelightItems.BLONDIE.get(), "Blondie");
-		
+
 		this.add(ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get(), "Chocolate Cake");
 		this.add(ExtraDelightItems.CHOCOLATE_CAKE.get(), "Slice of Chocolate Cake");
-		
+
 		this.add(ExtraDelightItems.FUDGE_BLOCK.get(), "Fudge");
 		this.add(ExtraDelightItems.FUDGE_SLICE.get(), "Piece of Fudge");
-		
+
 		this.add(ExtraDelightItems.STICKY_TOFFEE_PUDDING_BLOCK.get(), "Sticky Toffee Pudding");
 		this.add(ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE.get(), "Slice of Sticky Toffee Pudding");
-		
-		this.add(ExtraDelightItems.CRISP_RICE_TREATS_BLOCK.get(), "Crisp Rice Treats");
-		this.add(ExtraDelightItems.CRISP_RICE_TREAT.get(), "Crisp Rice Treat");
-		
+
+		this.add(ExtraDelightItems.CRISP_RICE.get(), "Puffed Rice");
+		this.add(ExtraDelightItems.CRISP_RICE_CEREAL.get(), "Puffed Rice Cereal");
+		this.add(ExtraDelightItems.CRISP_RICE_TREATS_BLOCK.get(), "Puffed Rice Treats");
+		this.add(ExtraDelightItems.CRISP_RICE_TREAT.get(), "Puffed Rice Treat");
+
+		this.add(ExtraDelightItems.CORN_FLAKES.get(), "Corn Flakes");
+		this.add(ExtraDelightItems.CORN_FLAKES_CEREAL.get(), "Corn Flakes Cereal");
+
 		this.add(ExtraDelightItems.SCOTCHAROO_BLOCK.get(), "Scotcharoos");
 		this.add(ExtraDelightItems.SCOTCHAROO.get(), "Scotcharoo");
-		
+
 		this.add(ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK.get(), "Black Forest Trifle");
 		this.add(ExtraDelightItems.BLACK_FOREST_TRIFLE.get(), "Bowl of Black Forest Trifle");
 
@@ -984,7 +994,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_GLOW_BERRY.get(), "Blood Chocolate-Dipped Glow Berry");
 		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE.get(), "Blood Chocolate-Dipped Apple Slice");
 		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_MARSHMALLOW.get(), "Blood Chocolate-Dipped Marshmallow");
-		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_GRAHAM_CRACKER.get(), "Blood Chocolate-Dipped Graham Cracker");
+		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_GRAHAM_CRACKER.get(),
+				"Blood Chocolate-Dipped Graham Cracker");
 		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_BACON.get(), "Blood Chocolate-Dipped Bacon");
 		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN.get(), "Blood Chocolate-Dipped Coffee Bean");
 
@@ -1011,7 +1022,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_GLOW_BERRY.get(), "White Chocolate-Dipped Glow Berry");
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_APPLE_SLICE.get(), "White Chocolate-Dipped Apple Slice");
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_MARSHMALLOW.get(), "White Chocolate-Dipped Marshmallow");
-		this.add(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_GRAHAM_CRACKER.get(), "White Chocolate-Dipped Graham Cracker");
+		this.add(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_GRAHAM_CRACKER.get(),
+				"White Chocolate-Dipped Graham Cracker");
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_BACON.get(), "White Chocolate-Dipped Bacon");
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_COFFEE_BEAN.get(), "White Chocolate-Dipped Coffee Bean");
 
@@ -1035,7 +1047,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.PEANUT_BUTTER_JELLY.get(), "PBJ");
 
 		this.add(ExtraDelightItems.HAZELNUT_SAPLING.get(), "Hazelnut Sapling");
-		
+
 		AestheticBlocks.EngLoc(this);
 	}
 }

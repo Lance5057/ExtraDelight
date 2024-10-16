@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": {
+      "item": "extradelight:cinnamon_planks"
+    }
+  },
+  "pattern": [
+    "pp"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:cinnamon_pressure_plate"
+  }
+}

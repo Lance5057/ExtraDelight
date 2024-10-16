@@ -105,7 +105,7 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 
 			RenderUtil.buildInvertedCubePillar(new Vector3f(1.02f / 16f, 12f / 16f, 1.02F / 16f),
 					new Vector3f(13.96f / 16f, 4f / 16f, 12.8f / 16f), vertexconsumer, matrix4f, matrix3f,
-					RenderUtil.WHITE, setUVEast, null, setUVBottom, OverlayTexture.NO_OVERLAY, poseStack);
+					RenderUtil.WHITE, lightmap, setUVEast, null, setUVBottom, OverlayTexture.NO_OVERLAY, poseStack);
 
 			// Back
 //			if (copiedQuads.get(0) != null)
@@ -122,8 +122,8 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 				setUVWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 0, -0, 2, 4);
 
 			RenderUtil.buildCube(new Vector3f(0, 14f / 16f, 14f / 16f), new Vector3f(1, 4f / 16f, 2f / 16f),
-					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null,
-					setUVBottom, setUVNorth, setUVSouth, setUVEast, setUVWest);
+					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, lightmap, OverlayTexture.NO_OVERLAY,
+					poseStack, null, setUVBottom, setUVNorth, setUVSouth, setUVEast, setUVWest);
 
 //			if (copiedQuads.get(0) != null)
 //				setUVTop = RenderUtil.getsetUVFromSprite(copiedQuads.get(0).getSprite(), 0, 0, 8, 2);
@@ -140,8 +140,8 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 
 			RenderUtil.buildCube(new Vector3f(4f / 16f, 18f / 16f, 14f / 16f),
 					new Vector3f(8f / 16f, 2f / 16f, 2f / 16f), vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE,
-					OverlayTexture.NO_OVERLAY, poseStack, null, setUVBottom, setUVNorth, setUVSouth, setUVEast,
-					setUVWest);
+					lightmap, OverlayTexture.NO_OVERLAY, poseStack, null, setUVBottom, setUVNorth, setUVSouth,
+					setUVEast, setUVWest);
 
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
 				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 15, 15, 1);
@@ -151,8 +151,8 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 				setUVWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 1, 0, 15, 2);
 
 			RenderUtil.buildCube(new Vector3f(0, 14f / 16f, 0), new Vector3f(1f / 16f, 2f / 16f, 14F / 16F),
-					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null,
-					setUVBottom, setUVNorth, null, null, setUVWest);
+					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, lightmap, OverlayTexture.NO_OVERLAY,
+					poseStack, null, setUVBottom, setUVNorth, null, null, setUVWest);
 
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
 				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 0, 15, 1);
@@ -162,8 +162,8 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 1, 0, 15, 2);
 
 			RenderUtil.buildCube(new Vector3f(15f / 16f, 14f / 16f, 0), new Vector3f(1f / 16f, 2f / 16f, 14F / 16F),
-					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null,
-					setUVBottom, setUVNorth, null, setUVEast, null);
+					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, lightmap, OverlayTexture.NO_OVERLAY,
+					poseStack, null, setUVBottom, setUVNorth, null, setUVEast, null);
 
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
 				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 15, 0, 1, 14);
@@ -173,8 +173,8 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 4, 0, 2, 2);
 
 			RenderUtil.buildCube(new Vector3f(1f / 16f, 14f / 16f, 0), new Vector3f(14f / 16f, 2f / 16f, 1F / 16F),
-					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null,
-					setUVBottom, setUVNorth, null, null, null);
+					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, lightmap, OverlayTexture.NO_OVERLAY,
+					poseStack, null, setUVBottom, setUVNorth, null, null, null);
 
 		}
 

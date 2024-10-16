@@ -8,22 +8,22 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:fruit/sweet_berry"
+      "tag": "c:fruit/sweet_berry"
     },
     {
       "item": "minecraft:honey_bottle"
     },
     {
-      "tag": "forge:fruit/sweet_berry"
+      "tag": "c:fruit/sweet_berry"
     },
     {
-      "tag": "forge:fruit/sweet_berry"
+      "tag": "c:fruit/sweet_berry"
     },
     {
       "item": "farmersdelight:ham"
     },
     {
-      "tag": "forge:fruit/sweet_berry"
+      "tag": "c:fruit/sweet_berry"
     },
     {
       "item": "farmersdelight:cooked_rice"

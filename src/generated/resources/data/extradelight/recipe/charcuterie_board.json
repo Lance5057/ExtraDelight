@@ -9,10 +9,10 @@
       "item": "extradelight:crackers"
     },
     "h": {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     },
     "m": {
-      "tag": "forge:meat/cooked"
+      "tag": "c:meat/cooked"
     }
   },
   "pattern": [

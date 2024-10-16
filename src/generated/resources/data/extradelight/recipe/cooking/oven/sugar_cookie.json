@@ -8,7 +8,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:cookie_dough/sugar"
+      "tag": "c:cookie_dough/sugar"
     }
   ],
   "result": {

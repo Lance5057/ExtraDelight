@@ -3,7 +3,7 @@
   "fluidOut": {},
   "grinds": 4,
   "ingredient": {
-    "tag": "forge:seeds/corn"
+    "tag": "c:seeds/corn"
   },
   "result": {
     "count": 1,

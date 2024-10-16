@@ -3,13 +3,13 @@
   "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:cookie_dough/sugar"
+      "tag": "c:cookie_dough/sugar"
     },
     {
       "item": "extradelight:grated_ginger"
     },
     {
-      "tag": "forge:cinnamon/ground"
+      "tag": "c:cinnamon/ground"
     }
   ],
   "result": {

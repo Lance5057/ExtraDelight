@@ -8,28 +8,28 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     }
   ],
   "result": {

@@ -223,6 +223,13 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_LOG.get());
 		this.dropSelf(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_PLANKS.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_BUTTON.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_PRESSURE_PLATE.get());
+		
+//		this.dropSelf(ExtraDelightBlocks.CINNAMON_CEILING_HANGING_SIGN.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_STANDING_SIGN.get());
+//		this.dropSelf(ExtraDelightBlocks.CINNAMON_WALL_HANGING_SIGN.get());
+		this.dropSelf(ExtraDelightBlocks.CINNAMON_WALL_SIGN.get());
 
 		this.add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), (p_124100_) -> {
 			return createLeavesDrops(p_124100_, ExtraDelightBlocks.CINNAMON_SAPLING.get(),
@@ -380,7 +387,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.FRUIT_CABINET.get());
 		this.add(ExtraDelightBlocks.FRUIT_SLAB.get(), createSlabItemTable(ExtraDelightBlocks.FRUIT_SLAB.get()));
 		this.dropOther(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), Items.AIR);
+		this.dropSelf(ExtraDelightBlocks.FRUIT_BUTTON.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_PRESSURE_PLATE.get());
 
+//		this.dropSelf(ExtraDelightBlocks.FRUIT_CEILING_HANGING_SIGN.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_STANDING_SIGN.get());
+//		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_HANGING_SIGN.get());
+		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_SIGN.get());
+		
 		LootItemCondition.Builder chiliBuilder = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.CHILI_CROP.get())
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ChiliCrop.AGE, 7));

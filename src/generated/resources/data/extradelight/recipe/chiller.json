@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "tag": "farmersdelight:cabinets"
+    },
+    "i": {
+      "item": "minecraft:iron_block"
+    },
+    "k": {
+      "item": "extradelight:keg_item"
+    }
+  },
+  "pattern": [
+    "i",
+    "c",
+    "k"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:chiller"
+  }
+}

@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:cactus/cooked"
+      "tag": "c:cactus/cooked"
     },
     {
       "item": "extradelight:scrambled_eggs"

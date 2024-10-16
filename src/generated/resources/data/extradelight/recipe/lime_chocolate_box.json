@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ribbon"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "c:chests"
+    },
+    {
+      "tag": "c:dyes/lime"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:lime_chocolate_box"
+  }
+}

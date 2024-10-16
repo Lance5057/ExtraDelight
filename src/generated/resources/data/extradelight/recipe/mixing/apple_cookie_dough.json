@@ -3,13 +3,13 @@
   "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
       "tag": "extradelight:sweetener"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     },
     {
       "tag": "c:eggs"
@@ -18,7 +18,7 @@
       "tag": "extradelight:processed/apple"
     },
     {
-      "tag": "forge:cinnamon/ground"
+      "tag": "c:cinnamon/ground"
     }
   ],
   "result": {

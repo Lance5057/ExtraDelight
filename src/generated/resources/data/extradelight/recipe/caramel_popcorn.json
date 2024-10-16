@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:popcorn"
+      "tag": "c:popcorn"
     },
     {
       "item": "extradelight:caramel_sauce"

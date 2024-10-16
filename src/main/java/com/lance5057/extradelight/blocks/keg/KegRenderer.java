@@ -9,6 +9,7 @@ import com.lance5057.extradelight.util.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -37,7 +38,7 @@ public class KegRenderer implements BlockEntityRenderer<KegBlockEntity> {
 		ps.pushPose();
 
 		RenderUtil.buildInvertedCubePillar(new Vector3f(0, 0, 0), new Vector3f(1, 1, 1), vertexConsumer, mat, matrix3f,
-				0xffffffff, RenderUtil.getUV(kegSide), RenderUtil.getUV(kegTop), RenderUtil.getUV(kegBottom), overlay,
+				0xffffffff, LightTexture.FULL_SKY, RenderUtil.getUV(kegSide), RenderUtil.getUV(kegTop), RenderUtil.getUV(kegBottom), overlay,
 				ps);
 
 		ps.popPose();
@@ -52,7 +53,7 @@ public class KegRenderer implements BlockEntityRenderer<KegBlockEntity> {
 			RenderUtil.buildCubeAll(new Vector3f(1f / 16f, 1f / 16f, 1f / 16f),
 					new Vector3f(14f / 16f, tank.getFullness() * (14f / 16f), 14f / 16f), vertexConsumer, mat, matrix3f,
 					fluidTypeExtensions.getTintColor(fluidStack),
-					RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), overlay, ps);
+					RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), LightTexture.FULL_SKY, overlay, ps);
 			ps.popPose();
 
 		}

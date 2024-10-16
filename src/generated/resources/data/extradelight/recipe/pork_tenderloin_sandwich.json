@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:condiments"
+      "tag": "c:condiments"
     },
     {
       "tag": "c:foods/bread"

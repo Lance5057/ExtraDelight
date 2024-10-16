@@ -11,7 +11,7 @@
       "item": "minecraft:wheat_seeds"
     },
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
       "tag": "extradelight:sweetener"
@@ -20,7 +20,7 @@
       "tag": "extradelight:processed/apple"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     },
     {
       "tag": "extradelight:processed/apple"

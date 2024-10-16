@@ -1,7 +1,7 @@
 {
   "type": "extradelight:feast",
   "container": {
-    "tag": "forge:bread/sliced"
+    "tag": "c:bread/sliced"
   },
   "out": {
     "id": "extradelight:pulled_pork_block_item"

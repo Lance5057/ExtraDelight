@@ -8,25 +8,25 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
       "tag": "c:foods/milk"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     },
     {
-      "tag": "forge:potato/sliced"
+      "tag": "c:potato/sliced"
     },
     {
-      "tag": "forge:potato/sliced"
+      "tag": "c:potato/sliced"
     },
     {
-      "tag": "forge:potato/sliced"
+      "tag": "c:potato/sliced"
     }
   ],
   "result": {

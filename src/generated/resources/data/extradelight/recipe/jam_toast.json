@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:jam"
+      "tag": "c:jam"
     },
     {
-      "tag": "forge:bread/sliced"
+      "tag": "c:bread/sliced"
     }
   ],
   "result": {

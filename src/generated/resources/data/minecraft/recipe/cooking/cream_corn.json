@@ -13,7 +13,7 @@
       "tag": "c:foods/milk"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     }
   ],
   "recipe_book_tab": "meals",

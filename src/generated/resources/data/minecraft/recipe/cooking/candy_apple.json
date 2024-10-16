@@ -11,10 +11,10 @@
       "item": "minecraft:apple"
     },
     {
-      "tag": "forge:candy"
+      "tag": "c:candy"
     },
     {
-      "tag": "forge:candy"
+      "tag": "c:candy"
     }
   ],
   "recipe_book_tab": "meals",

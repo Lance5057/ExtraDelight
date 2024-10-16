@@ -8,13 +8,13 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
       "item": "minecraft:glow_berries"

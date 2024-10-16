@@ -9,10 +9,10 @@
       "item": "minecraft:kelp"
     },
     {
-      "tag": "forge:fish_flakes"
+      "tag": "c:fish_flakes"
     },
     {
-      "tag": "forge:fish_flakes"
+      "tag": "c:fish_flakes"
     }
   ],
   "result": {

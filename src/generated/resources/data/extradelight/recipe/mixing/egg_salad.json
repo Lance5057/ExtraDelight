@@ -3,13 +3,13 @@
   "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:eggs/boiled"
+      "tag": "c:eggs/boiled"
     },
     {
-      "tag": "forge:eggs/boiled"
+      "tag": "c:eggs/boiled"
     },
     {
-      "tag": "forge:condiments/mayonnaise"
+      "tag": "c:condiments/mayonnaise"
     }
   ],
   "result": {

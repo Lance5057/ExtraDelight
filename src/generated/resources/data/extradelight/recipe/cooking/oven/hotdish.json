@@ -8,28 +8,28 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:food/starch"
+      "tag": "c:food/starch"
     },
     {
-      "tag": "forge:food/starch"
+      "tag": "c:food/starch"
     },
     {
-      "tag": "forge:food/starch"
+      "tag": "c:food/starch"
     },
     {
-      "tag": "forge:meat/cooked"
+      "tag": "c:meat/cooked"
     },
     {
-      "tag": "forge:soup"
+      "tag": "c:soup"
     },
     {
-      "tag": "forge:meat/cooked"
+      "tag": "c:meat/cooked"
     },
     {
       "tag": "c:foods/vegetable"
     },
     {
-      "tag": "forge:soup"
+      "tag": "c:soup"
     },
     {
       "tag": "c:foods/vegetable"

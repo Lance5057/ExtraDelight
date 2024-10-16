@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:jam/golden_apple"
+      "tag": "c:jam/golden_apple"
     },
     {
-      "tag": "forge:bread/sliced"
+      "tag": "c:bread/sliced"
     }
   ],
   "result": {

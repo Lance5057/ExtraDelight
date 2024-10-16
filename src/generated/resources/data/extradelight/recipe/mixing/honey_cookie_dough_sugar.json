@@ -3,7 +3,7 @@
   "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:cookie_dough/sugar"
+      "tag": "c:cookie_dough/sugar"
     },
     {
       "item": "minecraft:honey_bottle"

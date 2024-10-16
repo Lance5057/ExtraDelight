@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:fruit_half_cabinet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:fruit_cabinet"
+  }
+}

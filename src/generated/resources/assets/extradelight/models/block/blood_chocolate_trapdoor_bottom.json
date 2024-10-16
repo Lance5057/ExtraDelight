@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/template_trapdoor_bottom",
+  "parent": "extradelight:block/chocolate_trapdoor_bottom",
   "textures": {
     "texture": "extradelight:block/cosmetics/chocolate/blood_chocolate_trapdoor"
   }

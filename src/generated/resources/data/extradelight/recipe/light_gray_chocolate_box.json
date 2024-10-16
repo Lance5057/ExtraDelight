@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ribbon"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "c:chests"
+    },
+    {
+      "tag": "c:dyes/light_gray"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:light_gray_chocolate_box"
+  }
+}

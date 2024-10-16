@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#forge:bread/crumbs"
+            "items": "#c:bread/crumbs"
           }
         ]
       },

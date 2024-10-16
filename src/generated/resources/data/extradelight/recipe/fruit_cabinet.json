@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "extradelight:fruit_slab"
+    },
+    "t": {
+      "item": "extradelight:fruit_trapdoor"
+    }
+  },
+  "pattern": [
+    "sss",
+    "t t",
+    "sss"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:fruit_cabinet"
+  }
+}
