@@ -74,7 +74,7 @@ public class MortarRenderer implements BlockEntityRenderer<MortarBlockEntity> {
 			RenderUtil.buildCubeAll(new Vector3f(5f / 16f, 2.8F / 16f, 5f / 16f),
 					new Vector3f(6f / 16f, pBlockEntity.getFullness() * (3f / 16f), 6f / 16f), vertexConsumer, mat,
 					matrix3f, fluidTypeExtensions.getTintColor(fluidStack),
-					RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), pPackedOverlay, pPoseStack);
+					RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), pPackedLight, pPackedOverlay, pPoseStack);
 			pPoseStack.popPose();
 
 		}

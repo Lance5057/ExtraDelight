@@ -40,7 +40,7 @@ public class FunnelRenderer implements BlockEntityRenderer<FunnelBlockEntity> {
 					new Vector3f(15f / 16f, 14f / 16f, 1f / 16f), vertexConsumer, mat, matrix3f,
 					fluidTypeExtensions.getTintColor(fluidStack),
 					RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), Direction.UP.getNormal(), packedOverlay,
-					poseStack);
+					packedLight, poseStack);
 			poseStack.popPose();
 		}
 

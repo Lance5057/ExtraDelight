@@ -101,7 +101,7 @@ public class CounterCabinetRenderer implements BlockEntityRenderer<CounterCabine
 			Vector4f uvSouth = RenderUtil.ZERO4;
 			Vector4f uvEast = RenderUtil.ZERO4;
 			Vector4f uvWest = RenderUtil.ZERO4;
-			
+
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
 				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 0, 16, 16);
 			if (copiedQuads.size() > 2 && copiedQuads.get(2) != null)
@@ -114,8 +114,8 @@ public class CounterCabinetRenderer implements BlockEntityRenderer<CounterCabine
 				uvWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 0, 0, 16, 2);
 
 			RenderUtil.buildCube(new Vector3f(0, 14f / 16f, 0), new Vector3f(1, 2f / 16f, 1), vertexconsumer, matrix4f,
-					matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null, uvBottom, uvNorth, uvSouth,
-					uvEast, uvWest);
+					matrix3f, RenderUtil.WHITE, lightmap, OverlayTexture.NO_OVERLAY, poseStack, null, uvBottom, uvNorth,
+					uvSouth, uvEast, uvWest);
 
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
 				uvBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 0, 2, 16);
@@ -129,8 +129,8 @@ public class CounterCabinetRenderer implements BlockEntityRenderer<CounterCabine
 				uvWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 0, 0, 2, 2);
 
 			RenderUtil.buildCube(new Vector3f(0, 1, 14f / 16f), new Vector3f(1, 2f / 16f, 2f / 16f), vertexconsumer,
-					matrix4f, matrix3f, RenderUtil.WHITE, OverlayTexture.NO_OVERLAY, poseStack, null, uvBottom,
-					uvNorth, uvSouth, uvEast, uvWest);
+					matrix4f, matrix3f, RenderUtil.WHITE, lightmap, OverlayTexture.NO_OVERLAY, poseStack, null,
+					uvBottom, uvNorth, uvSouth, uvEast, uvWest);
 
 		}
 

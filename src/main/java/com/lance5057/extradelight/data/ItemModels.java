@@ -874,10 +874,9 @@ public class ItemModels extends ItemModelProvider {
 
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 				"block/cosmetics/chocolate/blood_chocolate_style0"));
-		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-				"block/cosmetics/chocolate/blood_chocolate_style0"));
-		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE_GATE, ResourceLocation
-				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/blood_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_fence_inventory"));
+		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE_GATE, "blood_chocolate_fence");
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_STAIRS,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_stairs"));
 		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_DOOR, "blood_chocolate_door");
@@ -889,10 +888,9 @@ public class ItemModels extends ItemModelProvider {
 
 		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 				"block/cosmetics/chocolate/dark_chocolate_style0"));
-		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_FENCE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-				"block/cosmetics/chocolate/dark_chocolate_style0"));
-		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_FENCE_GATE, ResourceLocation
-				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/dark_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_FENCE,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_fence_inventory"));
+		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_FENCE_GATE, "dark_chocolate_fence");
 		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_STAIRS,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_stairs"));
 		forItem(ExtraDelightItems.DARK_CHOCOLATE_DOOR, "dark_chocolate_door");
@@ -904,10 +902,9 @@ public class ItemModels extends ItemModelProvider {
 
 		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 				"block/cosmetics/chocolate/milk_chocolate_style0"));
-		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_FENCE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-				"block/cosmetics/chocolate/milk_chocolate_style0"));
-		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_FENCE_GATE, ResourceLocation
-				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/milk_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_FENCE,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/milk_chocolate_fence_inventory"));
+		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_FENCE_GATE, "milk_chocolate_fence_gate");
 		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_STAIRS,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/milk_chocolate_stairs"));
 		forItem(ExtraDelightItems.MILK_CHOCOLATE_DOOR, "milk_chocolate_door");
@@ -919,10 +916,9 @@ public class ItemModels extends ItemModelProvider {
 
 		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 				"block/cosmetics/chocolate/white_chocolate_style0"));
-		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_FENCE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-				"block/cosmetics/chocolate/white_chocolate_style0"));
-		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_FENCE_GATE, ResourceLocation
-				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cosmetics/chocolate/white_chocolate_style0"));
+		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_FENCE,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_fence_inventory"));
+		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_FENCE_GATE, "white_chocolate_fence_gate");
 		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_STAIRS,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_stairs"));
 		forItem(ExtraDelightItems.WHITE_CHOCOLATE_DOOR, "white_chocolate_door");

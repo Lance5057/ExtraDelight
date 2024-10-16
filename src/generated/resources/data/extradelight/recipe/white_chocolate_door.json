@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "c:block/white_chocolate"
+    }
+  },
+  "pattern": [
+    "bb",
+    "bb",
+    "bb"
+  ],
+  "result": {
+    "count": 3,
+    "id": "extradelight:white_chocolate_door"
+  }
+}

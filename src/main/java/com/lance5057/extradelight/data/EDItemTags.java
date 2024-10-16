@@ -323,6 +323,30 @@ public class EDItemTags extends ItemTagsProvider {
 			tag(ExtraDelightTags.RIBBON).add(AestheticBlocks.BOW_ITEMS.get(i).get());
 
 		tag(ItemTags.PLANKS).add(ExtraDelightItems.CINNAMON_PLANKS.get(), ExtraDelightItems.FRUIT_PLANKS.get());
+
+		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BAR.get());
+		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR_FILLED).add(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get());
+		tag(ExtraDelightTags.MILK_CHOCOLATE_BLOCK).add(ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get());
+		tag(ExtraDelightTags.MILK_CHOCOLATE_CHIPS).add(ExtraDelightItems.MILK_CHOCOLATE_CHIPS.get());
+		tag(ExtraDelightTags.MILK_CHOCOLATE_TRUFFLE).add(ExtraDelightItems.MILK_CHOCOLATE_TRUFFLE.get());
+		
+		tag(ExtraDelightTags.DARK_CHOCOLATE_BAR).add(ExtraDelightItems.DARK_CHOCOLATE_BAR.get());
+		tag(ExtraDelightTags.DARK_CHOCOLATE_BAR_FILLED).add(ExtraDelightItems.DARK_CHOCOLATE_FILLED_BAR.get());
+		tag(ExtraDelightTags.DARK_CHOCOLATE_BLOCK).add(ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get());
+		tag(ExtraDelightTags.DARK_CHOCOLATE_CHIPS).add(ExtraDelightItems.DARK_CHOCOLATE_CHIPS.get());
+		tag(ExtraDelightTags.DARK_CHOCOLATE_TRUFFLE).add(ExtraDelightItems.DARK_CHOCOLATE_TRUFFLE.get());
+		
+		tag(ExtraDelightTags.BLOOD_CHOCOLATE_BAR).add(ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get());
+		tag(ExtraDelightTags.BLOOD_CHOCOLATE_BAR_FILLED).add(ExtraDelightItems.BLOOD_CHOCOLATE_FILLED_BAR.get());
+		tag(ExtraDelightTags.BLOOD_CHOCOLATE_BLOCK).add(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get());
+		tag(ExtraDelightTags.BLOOD_CHOCOLATE_CHIPS).add(ExtraDelightItems.BLOOD_CHOCOLATE_CHIPS.get());
+		tag(ExtraDelightTags.BLOOD_CHOCOLATE_TRUFFLE).add(ExtraDelightItems.BLOOD_CHOCOLATE_TRUFFLE.get());
+		
+		tag(ExtraDelightTags.WHITE_CHOCOLATE_BAR).add(ExtraDelightItems.WHITE_CHOCOLATE_BAR.get());
+		tag(ExtraDelightTags.WHITE_CHOCOLATE_BAR_FILLED).add(ExtraDelightItems.WHITE_CHOCOLATE_FILLED_BAR.get());
+		tag(ExtraDelightTags.WHITE_CHOCOLATE_BLOCK).add(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get());
+		tag(ExtraDelightTags.WHITE_CHOCOLATE_CHIPS).add(ExtraDelightItems.WHITE_CHOCOLATE_CHIPS.get());
+		tag(ExtraDelightTags.WHITE_CHOCOLATE_TRUFFLE).add(ExtraDelightItems.WHITE_CHOCOLATE_TRUFFLE.get());
 	}
 
 }

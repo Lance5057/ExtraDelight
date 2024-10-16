@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "c:chocolate/dark/bar"
+    },
+    "s": {
+      "tag": "c:block/dark_chocolate"
+    }
+  },
+  "pattern": [
+    "bsb",
+    "bsb"
+  ],
+  "result": {
+    "count": 3,
+    "id": "extradelight:dark_chocolate_fence_gate"
+  }
+}

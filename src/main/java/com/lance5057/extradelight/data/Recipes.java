@@ -2220,6 +2220,193 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BLOCK))
 				.save(consumer, EDLoc("milk_chocolate_fence"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MILK_CHOCOLATE_FENCE_GATE.get(), 3)
+				.pattern("bsb").pattern("bsb").define('s', ExtraDelightTags.MILK_CHOCOLATE_BLOCK)
+				.define('b', ExtraDelightTags.MILK_CHOCOLATE_BAR)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("milk_chocolate_fence_gate"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MILK_CHOCOLATE_STAIRS.get(), 4).pattern("b  ")
+				.pattern("bb ").pattern("bbb").define('b', ExtraDelightTags.MILK_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("milk_chocolate_stairs"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MILK_CHOCOLATE_DOOR.get(), 3).pattern("bb")
+				.pattern("bb").pattern("bb").define('b', ExtraDelightTags.MILK_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("milk_chocolate_door"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MILK_CHOCOLATE_TRAPDOOR.get(), 2)
+				.pattern("bbb").pattern("bbb").define('b', ExtraDelightTags.MILK_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("milk_chocolate_trapdoor"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MILK_CHOCOLATE_SLAB.get(), 6).pattern("bbb")
+				.define('b', ExtraDelightTags.MILK_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("milk_chocolate_slab"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MILK_CHOCOLATE_PILLAR.get(), 3).pattern("b")
+				.pattern("b").pattern("b").define('b', ExtraDelightTags.MILK_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("milk_chocolate_pillar"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get(), 1)
+				.requires(Ingredient.of(ExtraDelightTags.BLOOD_CHOCOLATE_BAR), 9)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BAR))
+				.save(consumer, EDLoc("blood_chocolate_block"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLOOD_CHOCOLATE_FENCE.get(), 3).pattern("bsb")
+				.pattern("bsb").define('b', ExtraDelightTags.BLOOD_CHOCOLATE_BLOCK)
+				.define('s', ExtraDelightTags.BLOOD_CHOCOLATE_BAR)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("blood_chocolate_fence"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLOOD_CHOCOLATE_FENCE_GATE.get(), 3)
+				.pattern("bsb").pattern("bsb").define('s', ExtraDelightTags.BLOOD_CHOCOLATE_BLOCK)
+				.define('b', ExtraDelightTags.BLOOD_CHOCOLATE_BAR)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("blood_chocolate_fence_gate"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLOOD_CHOCOLATE_STAIRS.get(), 4)
+				.pattern("b  ").pattern("bb ").pattern("bbb").define('b', ExtraDelightTags.BLOOD_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("blood_chocolate_stairs"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLOOD_CHOCOLATE_DOOR.get(), 3).pattern("bb")
+				.pattern("bb").pattern("bb").define('b', ExtraDelightTags.BLOOD_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("blood_chocolate_door"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLOOD_CHOCOLATE_TRAPDOOR.get(), 2)
+				.pattern("bbb").pattern("bbb").define('b', ExtraDelightTags.BLOOD_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("blood_chocolate_trapdoor"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLOOD_CHOCOLATE_SLAB.get(), 6).pattern("bbb")
+				.define('b', ExtraDelightTags.BLOOD_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("blood_chocolate_slab"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLOOD_CHOCOLATE_PILLAR.get(), 3).pattern("b")
+				.pattern("b").pattern("b").define('b', ExtraDelightTags.BLOOD_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("blood_chocolate_pillar"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get(), 1)
+				.requires(Ingredient.of(ExtraDelightTags.WHITE_CHOCOLATE_BAR), 9)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_BAR))
+				.save(consumer, EDLoc("white_chocolate_block"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_FENCE.get(), 3).pattern("bsb")
+				.pattern("bsb").define('b', ExtraDelightTags.WHITE_CHOCOLATE_BLOCK)
+				.define('s', ExtraDelightTags.WHITE_CHOCOLATE_BAR)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("white_chocolate_fence"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_FENCE_GATE.get(), 3)
+				.pattern("bsb").pattern("bsb").define('s', ExtraDelightTags.WHITE_CHOCOLATE_BLOCK)
+				.define('b', ExtraDelightTags.WHITE_CHOCOLATE_BAR)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("white_chocolate_fence_gate"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_STAIRS.get(), 4)
+				.pattern("b  ").pattern("bb ").pattern("bbb").define('b', ExtraDelightTags.WHITE_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("white_chocolate_stairs"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_DOOR.get(), 3).pattern("bb")
+				.pattern("bb").pattern("bb").define('b', ExtraDelightTags.WHITE_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("white_chocolate_door"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_TRAPDOOR.get(), 2)
+				.pattern("bbb").pattern("bbb").define('b', ExtraDelightTags.WHITE_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("white_chocolate_trapdoor"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_SLAB.get(), 6).pattern("bbb")
+				.define('b', ExtraDelightTags.WHITE_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("white_chocolate_slab"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_PILLAR.get(), 3).pattern("b")
+				.pattern("b").pattern("b").define('b', ExtraDelightTags.WHITE_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("white_chocolate_pillar"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get(), 1)
+				.requires(Ingredient.of(ExtraDelightTags.DARK_CHOCOLATE_BAR), 9)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_BAR))
+				.save(consumer, EDLoc("dark_chocolate_block"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DARK_CHOCOLATE_FENCE.get(), 3).pattern("bsb")
+				.pattern("bsb").define('b', ExtraDelightTags.DARK_CHOCOLATE_BLOCK)
+				.define('s', ExtraDelightTags.DARK_CHOCOLATE_BAR)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("dark_chocolate_fence"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DARK_CHOCOLATE_FENCE_GATE.get(), 3)
+				.pattern("bsb").pattern("bsb").define('s', ExtraDelightTags.DARK_CHOCOLATE_BLOCK)
+				.define('b', ExtraDelightTags.DARK_CHOCOLATE_BAR)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("dark_chocolate_fence_gate"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DARK_CHOCOLATE_STAIRS.get(), 4).pattern("b  ")
+				.pattern("bb ").pattern("bbb").define('b', ExtraDelightTags.DARK_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("dark_chocolate_stairs"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DARK_CHOCOLATE_DOOR.get(), 3).pattern("bb")
+				.pattern("bb").pattern("bb").define('b', ExtraDelightTags.DARK_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("dark_chocolate_door"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DARK_CHOCOLATE_TRAPDOOR.get(), 2)
+				.pattern("bbb").pattern("bbb").define('b', ExtraDelightTags.DARK_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("dark_chocolate_trapdoor"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DARK_CHOCOLATE_SLAB.get(), 6).pattern("bbb")
+				.define('b', ExtraDelightTags.DARK_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("dark_chocolate_slab"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DARK_CHOCOLATE_PILLAR.get(), 3).pattern("b")
+				.pattern("b").pattern("b").define('b', ExtraDelightTags.DARK_CHOCOLATE_BLOCK)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_BLOCK))
+				.save(consumer, EDLoc("dark_chocolate_pillar"));
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
