@@ -1068,6 +1068,27 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.BAR_MOLD, "bar_mold");
 		forBlockItemFlat(ExtraDelightItems.HAZELNUT_SAPLING, "crops/fruit/hazelnut/hazelnut_sapling");
 
+		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET, "blood_chocolate_syrup_bucket");
+		forItem(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_FLUID_BUCKET, "dark_chocolate_syrup_bucket");
+		forItem(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET, "white_chocolate_syrup_bucket");
+		forItem(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_FLUID_BUCKET, "milk_chocolate_syrup_bucket");
+		forItem(ExtraDelightItems.COFFEE_FLUID_BUCKET, "coffee_bucket");
+		forItem(ExtraDelightItems.PEANUT_BUTTER_FLUID_BUCKET, "peanut_butter_bucket");
+		forItem(ExtraDelightItems.MARSHMALLOW_FLUFF_FLUID_BUCKET, "marshmallow_fluff_bucket");
+		forItem(ExtraDelightItems.HAZELNUT_SPREAD_FLUID_BUCKET, "milk_chocolate_syrup_bucket");
+		forItem(ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET, "cocoa_butter_bucket");
+
+		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE, "blood_chocolate_syrup_bottle");
+		forItem(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE, "dark_chocolate_syrup_bottle");
+		forItem(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE, "white_chocolate_syrup_bottle");
+		forItem(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE, "milk_chocolate_syrup_bottle");
+		forItem(ExtraDelightItems.PEANUT_BUTTER_BOTTLE, "peanut_butter_bottle");
+		forItem(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE, "marshmallow_fluff_bottle");
+		forItem(ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE, "hazelnut_spread_bottle");
+		forItem(ExtraDelightItems.COCOA_BUTTER_BOTTLE, "cocoa_butter_bottle");
+
+		forItem(ExtraDelightItems.ICE_CREAM_SUNDAE, "ice_cream_sundae");
+
 		AestheticBlocks.itemModel(this);
 	}
 

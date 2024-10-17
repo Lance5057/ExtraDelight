@@ -4,7 +4,6 @@ import static vectorwing.farmersdelight.common.registry.ModItems.bowlFoodItem;
 import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 
@@ -1912,43 +1911,70 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new JarItem(ExtraDelightBlocks.JAR.get(),
 			new Item.Properties().component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1)));
 
-	public static final Supplier<? extends Item> COCOA_BUTTER_FLUID_BUCKET = ITEMS.register("cocoa_butter_fluid_bucket",
+	public static final DeferredItem<Item> COCOA_BUTTER_FLUID_BUCKET = ITEMS.register("cocoa_butter_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.COCOA_BUTTER.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final Supplier<? extends Item> WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET = ITEMS.register(
+	public static final DeferredItem<Item> WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET = ITEMS.register(
 			"white_chocolate_syrup_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final Supplier<? extends Item> DARK_CHOCOLATE_SYRUP_FLUID_BUCKET = ITEMS.register(
+	public static final DeferredItem<Item> DARK_CHOCOLATE_SYRUP_FLUID_BUCKET = ITEMS.register(
 			"dark_chocolate_syrup_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final Supplier<? extends Item> MILK_CHOCOLATE_SYRUP_FLUID_BUCKET = ITEMS.register(
+	public static final DeferredItem<Item> MILK_CHOCOLATE_SYRUP_FLUID_BUCKET = ITEMS.register(
 			"milk_chocolate_syrup_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final Supplier<? extends Item> BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET = ITEMS.register(
+	public static final DeferredItem<Item> BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET = ITEMS.register(
 			"blood_chocolate_syrup_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final Supplier<? extends Item> COFFEE_FLUID_BUCKET = ITEMS.register("coffee_fluid_bucket",
+	public static final DeferredItem<Item> COFFEE_FLUID_BUCKET = ITEMS.register("coffee_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.COFFEE.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final Supplier<? extends Item> PEANUT_BUTTER_FLUID_BUCKET = ITEMS
-			.register("peanut_butter_fluid_bucket", () -> new BucketItem(ExtraDelightFluids.PEANUT_BUTTER.FLUID.get(),
+	public static final DeferredItem<Item> PEANUT_BUTTER_FLUID_BUCKET = ITEMS.register("peanut_butter_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.PEANUT_BUTTER.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final Supplier<? extends Item> MARSHMALLOW_FLUFF_FLUID_BUCKET = ITEMS.register(
+	public static final DeferredItem<Item> MARSHMALLOW_FLUFF_FLUID_BUCKET = ITEMS.register(
 			"marshmallow_fluff_fluid_bucket", () -> new BucketItem(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final Supplier<? extends Item> HAZELNUT_SPREAD_FLUID_BUCKET = ITEMS.register(
-			"hazelnut_spread_fluid_bucket", () -> new BucketItem(ExtraDelightFluids.HAZELNUT_SPREAD.FLUID.get(),
+	public static final DeferredItem<Item> HAZELNUT_SPREAD_FLUID_BUCKET = ITEMS.register("hazelnut_spread_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.HAZELNUT_SPREAD.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+	public static final DeferredItem<Item> COCOA_BUTTER_BOTTLE = ITEMS.register("cocoa_butter_bottle",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> WHITE_CHOCOLATE_SYRUP_BOTTLE = ITEMS.register("white_chocolate_syrup_bottle",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> DARK_CHOCOLATE_SYRUP_BOTTLE = ITEMS.register("dark_chocolate_syrup_bottle",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> MILK_CHOCOLATE_SYRUP_BOTTLE = ITEMS.register("milk_chocolate_syrup_bottle",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> BLOOD_CHOCOLATE_SYRUP_BOTTLE = ITEMS.register("blood_chocolate_syrup_bottle",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> PEANUT_BUTTER_BOTTLE = ITEMS.register("peanut_butter_bottle",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> MARSHMALLOW_FLUFF_BOTTLE = ITEMS.register("marshmallow_fluff_bottle",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> HAZELNUT_SPREAD_BOTTLE = ITEMS.register("hazelnut_spread_bottle",
+			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> ICE_CREAM_SUNDAE = ITEMS.register("ice_cream_sundae",
+			() -> new Item(new Item.Properties()));
 }
