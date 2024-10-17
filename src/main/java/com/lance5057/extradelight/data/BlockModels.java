@@ -147,6 +147,10 @@ public class BlockModels extends BlockStateProvider {
 		this.axisBlock(ExtraDelightBlocks.CORN_COB_BUNDLE.get());
 
 		this.logBlock(ExtraDelightBlocks.CINNAMON_LOG.get());
+		this.axisBlock(ExtraDelightBlocks.CINNAMON_WOOD.get(), modLoc("block/cinnamon_log"),
+				modLoc("block/cinnamon_log"));
+		this.axisBlock(ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(), modLoc("block/stripped_cinnamon_log"),
+				modLoc("block/stripped_cinnamon_log"));
 		this.logBlock(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get());
 		this.logBlock(ExtraDelightBlocks.CINNAMON_STICK_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.CINNAMON_LEAVES.get());
@@ -260,6 +264,9 @@ public class BlockModels extends BlockStateProvider {
 		this.panBlock(ExtraDelightBlocks.BAR_MOLD.get(), "block/bar_mold");
 
 		this.logBlock(ExtraDelightBlocks.FRUIT_LOG.get());
+		this.axisBlock(ExtraDelightBlocks.FRUIT_WOOD.get(), modLoc("block/fruit_log"), modLoc("block/fruit_log"));
+		this.axisBlock(ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get(), modLoc("block/stripped_fruit_log"),
+				modLoc("block/stripped_fruit_log"));
 		this.logBlock(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get());
 		this.simpleBlock(ExtraDelightBlocks.FRUIT_PLANKS.get());
 		this.stairsBlock(ExtraDelightBlocks.FRUIT_STAIRS.get(),
@@ -533,7 +540,7 @@ public class BlockModels extends BlockStateProvider {
 		this.fluid(ExtraDelightBlocks.VINEGAR_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.WHIPPED_CREAM_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.WHITE_CHOCOLATE_SYRUP_FLUID_BLOCK.get());
-		
+
 		AestheticBlocks.blockModel(this);
 	}
 

@@ -529,6 +529,8 @@ public class ItemModels extends ItemModelProvider {
 
 		// Holiday
 		forBlockItem(ExtraDelightItems.STRIPPED_CINNAMON_LOG, "stripped_cinnamon_log");
+		forBlockItem(ExtraDelightItems.CINNAMON_WOOD, "cinnamon_wood");
+		forBlockItem(ExtraDelightItems.STRIPPED_CINNAMON_WOOD, "stripped_cinnamon_wood");
 		forBlockItem(ExtraDelightItems.CINNAMON_LOG, "cinnamon_log");
 		forBlockItem(ExtraDelightItems.CINNAMON_LEAVES, "cinnamon_leaves");
 		forBlockItem(ExtraDelightItems.CINNAMON_PLANKS, "cinnamon_planks");
@@ -792,6 +794,8 @@ public class ItemModels extends ItemModelProvider {
 
 		forBlockItem(ExtraDelightItems.STRIPPED_FRUIT_LOG, "stripped_fruit_log");
 		forBlockItem(ExtraDelightItems.FRUIT_LOG, "fruit_log");
+		forBlockItem(ExtraDelightItems.FRUIT_WOOD, "fruit_wood");
+		forBlockItem(ExtraDelightItems.STRIPPED_FRUIT_WOOD, "stripped_fruit_wood");
 		forBlockItem(ExtraDelightItems.FRUIT_PLANKS, "fruit_planks");
 		forBlockItem(ExtraDelightItems.FRUIT_FENCE,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fruit_fence_inventory"));

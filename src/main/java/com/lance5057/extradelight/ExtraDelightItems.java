@@ -33,7 +33,6 @@ import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.DoubleHighBlockItem;
-import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -870,8 +869,20 @@ public class ExtraDelightItems {
 					return 300;
 				}
 			});
+	public static final DeferredItem<Item> CINNAMON_WOOD = ITEMS.register("cinnamon_wood",
+			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_WOOD.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
 	public static final DeferredItem<Item> STRIPPED_CINNAMON_LOG = ITEMS.register("stripped_cinnamon_log",
 			() -> new BlockItem(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	public static final DeferredItem<Item> STRIPPED_CINNAMON_WOOD = ITEMS.register("strippedcinnamon_wood",
+			() -> new BlockItem(ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(), new Item.Properties()) {
 				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
 					return 300;
 				}
@@ -1443,8 +1454,20 @@ public class ExtraDelightItems {
 					return 300;
 				}
 			});
+	public static final DeferredItem<Item> FRUIT_WOOD = ITEMS.register("fruit_wood",
+			() -> new BlockItem(ExtraDelightBlocks.FRUIT_WOOD.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
 	public static final DeferredItem<Item> STRIPPED_FRUIT_LOG = ITEMS.register("stripped_fruit_log",
 			() -> new BlockItem(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(), new Item.Properties()) {
+				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	public static final DeferredItem<Item> STRIPPED_FRUIT_WOOD = ITEMS.register("stripped_fruit_wood",
+			() -> new BlockItem(ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get(), new Item.Properties()) {
 				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
 					return 300;
 				}
