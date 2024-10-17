@@ -492,6 +492,8 @@ public class AestheticBlocks {
 				ExtraDelightItems.CINNAMON_FENCE.get(), ExtraDelightItems.CINNAMON_LEAVES.get(), WOOD.cinnamon);
 		woodRecipe(consumer, ExtraDelightItems.FRUIT_SLAB.get(), ExtraDelightItems.FRUIT_TRAPDOOR.get(),
 				ExtraDelightItems.FRUIT_FENCE.get(), WOOD.fruit);
+		woodRecipe(consumer, Items.CHERRY_SLAB, Items.CHERRY_TRAPDOOR, Items.CHERRY_FENCE, WOOD.cherry);
+		woodRecipe(consumer, Items.BAMBOO_SLAB, Items.BAMBOO_TRAPDOOR, Items.BAMBOO_FENCE, WOOD.bamboo);
 
 		moldRecipe(consumer, Items.OAK_SLAB, WOOD.oak, 0);
 		moldRecipe(consumer, Items.DARK_OAK_SLAB, WOOD.dark_oak, 1 * 16);
@@ -503,7 +505,9 @@ public class AestheticBlocks {
 		moldRecipe(consumer, Items.WARPED_SLAB, WOOD.warped, 7 * 16);
 		moldRecipe(consumer, Items.MANGROVE_SLAB, WOOD.mangrove, 8 * 16);
 		moldRecipe(consumer, ExtraDelightItems.CINNAMON_SLAB.get(), WOOD.cinnamon, 9 * 16);
-		moldRecipe(consumer, ExtraDelightItems.FRUIT_SLAB.get(), WOOD.fruit, 10 * 16);
+		moldRecipe(consumer, Items.CHERRY_SLAB, WOOD.cherry, 10 * 16);
+		moldRecipe(consumer, Items.BAMBOO_SLAB, WOOD.bamboo, 11 * 16);
+		moldRecipe(consumer, ExtraDelightItems.FRUIT_SLAB.get(), WOOD.fruit, 12 * 16);
 
 		cabinetRecipes(consumer);
 

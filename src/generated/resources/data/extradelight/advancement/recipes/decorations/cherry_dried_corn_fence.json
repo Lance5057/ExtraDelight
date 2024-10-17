@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cherry_dried_corn_fence": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cherry_fence"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cherry_dried_corn_fence"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "cherry_dried_corn_fence"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cherry_dried_corn_fence"
+    ]
+  }
+}

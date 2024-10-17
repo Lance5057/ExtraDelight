@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "black_fruit_wallpaper": {
+    "black_cherry_wallpaper": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "black_fruit_wallpaper"
+      "black_cherry_wallpaper"
     ]
   ],
   "rewards": {

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "c:dyes/light_blue"
+    },
+    {
+      "item": "minecraft:bamboo_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:bamboo_molded_light_blue_wallpaper"
+  }
+}

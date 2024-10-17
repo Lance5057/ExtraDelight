@@ -7,7 +7,7 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "light_blue_fruit_wallpaper": {
+    "light_blue_cherry_wallpaper": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "light_blue_fruit_wallpaper"
+      "light_blue_cherry_wallpaper"
     ]
   ],
   "rewards": {

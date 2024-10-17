@@ -7,7 +7,7 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "lime_fruit_wallpaper": {
+    "lime_cherry_wallpaper": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "lime_fruit_wallpaper"
+      "lime_cherry_wallpaper"
     ]
   ],
   "rewards": {

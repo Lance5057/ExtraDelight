@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "bamboo_spice_rack_full": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bamboo_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:bamboo_spice_rack_full"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "bamboo_spice_rack_full"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:bamboo_spice_rack_full"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cherry_knife_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cherry_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cherry_knife_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "cherry_knife_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cherry_knife_block"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "green_bamboo_wallpaper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:paper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:bamboo_molded_green_wallpaper"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "green_bamboo_wallpaper"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:bamboo_molded_green_wallpaper"
+    ]
+  }
+}
