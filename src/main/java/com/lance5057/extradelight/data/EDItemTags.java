@@ -2,6 +2,8 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import net.minecraft.tags.BlockTags;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -105,10 +107,11 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STARCH).add(ModItems.RICE.get(), ExtraDelightItems.POTATO_STICKS.get(),
 				ExtraDelightItems.GRATED_POTATO.get(), ExtraDelightItems.SLICED_POTATO.get());
 
-		tag(ExtraDelightTags.SOUP).add(ExtraDelightItems.CARROT_SOUP.get(), ExtraDelightItems.FISH_SOUP.get(),
-				ExtraDelightItems.OXTAIL_SOUP.get(), ExtraDelightItems.POTATO_SOUP.get(),
-				ExtraDelightItems.TOMATO_SOUP.get(), ModItems.CHICKEN_SOUP.get(), ModItems.NOODLE_SOUP.get(),
-				ModItems.PUMPKIN_SOUP.get(), ModItems.VEGETABLE_SOUP.get(), Items.BEETROOT_SOUP, Items.MUSHROOM_STEW);
+		tag(ExtraDelightTags.SOUP).add(ExtraDelightItems.CARROT_SOUP.get(), ExtraDelightItems.CACTUS_SOUP.get(),
+				ExtraDelightItems.FISH_SOUP.get(), ExtraDelightItems.OXTAIL_SOUP.get(),
+				ExtraDelightItems.POTATO_SOUP.get(), ExtraDelightItems.TOMATO_SOUP.get(),ModItems.CHICKEN_SOUP.get(),
+				ModItems.NOODLE_SOUP.get(), ModItems.PUMPKIN_SOUP.get(), ModItems.VEGETABLE_SOUP.get(),
+				Items.BEETROOT_SOUP, Items.MUSHROOM_STEW);
 
 		tag(ExtraDelightTags.PROCESSED_ONION).add(ExtraDelightItems.SLICED_ONION.get())
 				.addOptionalTag(CommonTags.CROPS_ONION.location());
@@ -323,6 +326,39 @@ public class EDItemTags extends ItemTagsProvider {
 			tag(ExtraDelightTags.RIBBON).add(AestheticBlocks.BOW_ITEMS.get(i).get());
 
 		tag(ItemTags.PLANKS).add(ExtraDelightItems.CINNAMON_PLANKS.get(), ExtraDelightItems.FRUIT_PLANKS.get());
+		tag(ItemTags.FENCES).add(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_FENCE.get(), ExtraDelightItems.MILK_CHOCOLATE_FENCE.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_FENCE.get());
+		tag(ItemTags.WOODEN_FENCES).add(ExtraDelightItems.CINNAMON_FENCE.get(), ExtraDelightItems.FRUIT_FENCE.get());
+		tag(ItemTags.FENCE_GATES).add(ExtraDelightItems.CINNAMON_FENCE_GATE.get(),
+				ExtraDelightItems.BLOOD_CHOCOLATE_FENCE_GATE.get(), ExtraDelightItems.DARK_CHOCOLATE_FENCE_GATE.get(),
+				ExtraDelightItems.FRUIT_FENCE_GATE.get(), ExtraDelightItems.MILK_CHOCOLATE_FENCE_GATE.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_FENCE_GATE.get());
+		tag(ItemTags.STAIRS).add(ExtraDelightItems.BLOOD_CHOCOLATE_STAIRS.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_STAIRS.get(), ExtraDelightItems.MILK_CHOCOLATE_STAIRS.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_STAIRS.get());
+		tag(ItemTags.WOODEN_STAIRS).add(ExtraDelightItems.CINNAMON_STAIRS.get(),
+				ExtraDelightItems.FRUIT_STAIRS.get());
+		tag(ItemTags.SLABS).add(ExtraDelightItems.BLOOD_CHOCOLATE_SLAB.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_SLAB.get(), ExtraDelightItems.MILK_CHOCOLATE_SLAB.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_SLAB.get());
+		tag(ItemTags.WOODEN_SLABS).add(ExtraDelightItems.CINNAMON_SLAB.get(), ExtraDelightItems.FRUIT_SLAB.get());
+		tag(ItemTags.TRAPDOORS).add(ExtraDelightItems.BLOOD_CHOCOLATE_TRAPDOOR.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_TRAPDOOR.get(), ExtraDelightItems.MILK_CHOCOLATE_TRAPDOOR.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_TRAPDOOR.get());
+		tag(ItemTags.WOODEN_TRAPDOORS).add(ExtraDelightItems.CINNAMON_TRAPDOOR.get(),
+				ExtraDelightItems.FRUIT_TRAPDOOR.get());
+		tag(ItemTags.WOODEN_PRESSURE_PLATES).add(ExtraDelightItems.CINNAMON_PRESSURE_PLATE.get(),
+				ExtraDelightItems.FRUIT_PRESSURE_PLATE.get());
+		tag(ItemTags.WOODEN_BUTTONS).add(ExtraDelightItems.CINNAMON_BUTTON.get(),
+				ExtraDelightItems.FRUIT_BUTTON.get());
+		tag(ItemTags.DOORS).add(ExtraDelightItems.BLOOD_CHOCOLATE_DOOR.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_DOOR.get(), ExtraDelightItems.MILK_CHOCOLATE_DOOR.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_DOOR.get());
+		tag(ItemTags.WOODEN_DOORS).add(ExtraDelightItems.CINNAMON_DOOR.get(),
+				ExtraDelightItems.FRUIT_DOOR.get());
+		tag(ItemTags.SAPLINGS).add(ExtraDelightItems.CINNAMON_SAPLING.get(),
+				ExtraDelightItems.HAZELNUT_SAPLING.get());
 
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BAR.get());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR_FILLED).add(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get());

@@ -18,11 +18,17 @@
     },
     {
       "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "count": 1,
+    "count": 2,
     "id": "extradelight:jam"
   }
 }

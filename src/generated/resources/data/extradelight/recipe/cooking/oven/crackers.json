@@ -2,7 +2,7 @@
   "type": "extradelight:oven",
   "container": {
     "count": 1,
-    "id": "extradelight:loaf_pan"
+    "id": "extradelight:sheet"
   },
   "cookingtime": 800,
   "experience": 1.0,

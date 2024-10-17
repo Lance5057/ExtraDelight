@@ -316,6 +316,24 @@
     "extradelight:cinnamon_fence_gate",
     "extradelight:cinnamon_stairs",
     "extradelight:cinnamon_trapdoor",
-    "extradelight:cinnamon_slab"
+    "extradelight:cinnamon_slab",
+    "extradelight:cinnamon_wood",
+    "extradelight:stripped_cinnamon_wood",
+    "extradelight:cinnamon_pressure_plate",
+    "extradelight:cinnamon_button",
+    "extradelight:fruit_log",
+    "extradelight:stripped_fruit_log",
+    "extradelight:fruit_planks",
+    "extradelight:fruit_cabinet",
+    "extradelight:fruit_door",
+    "extradelight:fruit_fence",
+    "extradelight:fruit_fence_gate",
+    "extradelight:fruit_stairs",
+    "extradelight:fruit_trapdoor",
+    "extradelight:fruit_slab",
+    "extradelight:fruit_wood",
+    "extradelight:stripped_fruit_wood",
+    "extradelight:fruit_pressure_plate",
+    "extradelight:fruit_button"
   ]
 }

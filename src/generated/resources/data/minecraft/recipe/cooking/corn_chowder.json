@@ -13,7 +13,15 @@
       "tag": "extradelight:processed/potato"
     },
     {
-      "tag": "c:foods/cooked_bacon"
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:foods/cooked_bacon"
+        },
+        {
+          "tag": "c:foods/raw_bacon"
+        }
+      ]
     },
     {
       "tag": "extradelight:processed/onion"

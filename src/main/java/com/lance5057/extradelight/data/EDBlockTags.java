@@ -33,7 +33,7 @@ public class EDBlockTags extends BlockTagsProvider {
 	protected void registerBlockMineableTags() {
 		tag(BlockTags.LOGS).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.FRUIT_LOG.get());
 		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.FRUIT_LOG.get());
-		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get());
+		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), ExtraDelightBlocks.HAZELNUT_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.DRYING_RACK.get(),
 				ExtraDelightBlocks.FOOD_DISPLAY.get(), ExtraDelightBlocks.DOUGH_SHAPING.get(),
 				ExtraDelightBlocks.MIXING_BOWL.get(), ExtraDelightBlocks.CINNAMON_LOG.get());
@@ -65,7 +65,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.SHEET_BLOCK.get(), ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
 				ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
 				ExtraDelightBlocks.PIE_DISH_BLOCK.get(), ExtraDelightBlocks.TRAY_BLOCK.get(),
-				ExtraDelightBlocks.BAKING_STONE_BLOCK.get());
+				ExtraDelightBlocks.BAKING_STONE_BLOCK.get(), ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get());
 
 //		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.MINT_CROP.get());
 
@@ -103,32 +103,62 @@ public class EDBlockTags extends BlockTagsProvider {
 
 		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.WILD_GINGER.get());
 
-		tag(BlockTags.MINEABLE_WITH_HOE).add(ExtraDelightBlocks.CINNAMON_LEAVES.get());
+		tag(BlockTags.MINEABLE_WITH_HOE).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(),
+				ExtraDelightBlocks.HAZELNUT_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.CINNAMON_LOG.get(),
 				ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), ExtraDelightBlocks.CINNAMON_PLANKS.get(),
 				ExtraDelightBlocks.CINNAMON_CABINET.get(), ExtraDelightBlocks.CINNAMON_DOOR.get(),
 				ExtraDelightBlocks.CINNAMON_FENCE.get(), ExtraDelightBlocks.CINNAMON_FENCE_GATE.get(),
 				ExtraDelightBlocks.CINNAMON_STAIRS.get(), ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(),
-				ExtraDelightBlocks.CINNAMON_SLAB.get());
+				ExtraDelightBlocks.CINNAMON_SLAB.get(), ExtraDelightBlocks.CINNAMON_WOOD.get(),
+				ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(), ExtraDelightBlocks.CINNAMON_PRESSURE_PLATE.get(),
+				ExtraDelightBlocks.CINNAMON_BUTTON.get(), ExtraDelightBlocks.FRUIT_LOG.get(),
+				ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(), ExtraDelightBlocks.FRUIT_PLANKS.get(),
+				ExtraDelightBlocks.FRUIT_CABINET.get(), ExtraDelightBlocks.FRUIT_DOOR.get(),
+				ExtraDelightBlocks.FRUIT_FENCE.get(), ExtraDelightBlocks.FRUIT_FENCE_GATE.get(),
+				ExtraDelightBlocks.FRUIT_STAIRS.get(), ExtraDelightBlocks.FRUIT_TRAPDOOR.get(),
+				ExtraDelightBlocks.FRUIT_SLAB.get(), ExtraDelightBlocks.FRUIT_WOOD.get(),
+				ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get(), ExtraDelightBlocks.FRUIT_PRESSURE_PLATE.get(),
+				ExtraDelightBlocks.FRUIT_BUTTON.get());
 
-		tag(BlockTags.FENCES).add(ExtraDelightBlocks.CINNAMON_FENCE.get(),
-				ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.DARK_CHOCOLATE_FENCE.get(),
-				ExtraDelightBlocks.FRUIT_FENCE.get(), ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get(),
+		tag(BlockTags.PLANKS).add(ExtraDelightBlocks.CINNAMON_PLANKS.get(), ExtraDelightBlocks.FRUIT_PLANKS.get());
+		tag(BlockTags.FENCES).add(ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE.get());
+		tag(BlockTags.WOODEN_FENCES).add(ExtraDelightBlocks.CINNAMON_FENCE.get(), ExtraDelightBlocks.FRUIT_FENCE.get());
 		tag(BlockTags.FENCE_GATES).add(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get(),
 				ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE_GATE.get(), ExtraDelightBlocks.DARK_CHOCOLATE_FENCE_GATE.get(),
 				ExtraDelightBlocks.FRUIT_FENCE_GATE.get(), ExtraDelightBlocks.MILK_CHOCOLATE_FENCE_GATE.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE_GATE.get());
-		tag(BlockTags.STAIRS).add(ExtraDelightBlocks.CINNAMON_STAIRS.get(),
-				ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get(), ExtraDelightBlocks.DARK_CHOCOLATE_STAIRS.get(),
-				ExtraDelightBlocks.FRUIT_STAIRS.get(), ExtraDelightBlocks.MILK_CHOCOLATE_STAIRS.get(),
+		tag(BlockTags.STAIRS).add(ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_STAIRS.get(), ExtraDelightBlocks.MILK_CHOCOLATE_STAIRS.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_STAIRS.get());
-		tag(BlockTags.SLABS).add(ExtraDelightBlocks.CINNAMON_SLAB.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(),
-				ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(), ExtraDelightBlocks.FRUIT_SLAB.get(),
-				ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get());
+		tag(BlockTags.WOODEN_STAIRS).add(ExtraDelightBlocks.CINNAMON_STAIRS.get(),
+				ExtraDelightBlocks.FRUIT_STAIRS.get());
+		tag(BlockTags.SLABS).add(ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(), ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(),
+				ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get());
+		tag(BlockTags.WOODEN_SLABS).add(ExtraDelightBlocks.CINNAMON_SLAB.get(), ExtraDelightBlocks.FRUIT_SLAB.get());
+		tag(BlockTags.TRAPDOORS).add(ExtraDelightBlocks.BLOOD_CHOCOLATE_TRAPDOOR.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_TRAPDOOR.get(), ExtraDelightBlocks.MILK_CHOCOLATE_TRAPDOOR.get(),
+				ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get());
+		tag(BlockTags.WOODEN_TRAPDOORS).add(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(),
+				ExtraDelightBlocks.FRUIT_TRAPDOOR.get());
+		tag(BlockTags.WOODEN_PRESSURE_PLATES).add(ExtraDelightBlocks.CINNAMON_PRESSURE_PLATE.get(),
+				ExtraDelightBlocks.FRUIT_PRESSURE_PLATE.get());
+		tag(BlockTags.WOODEN_BUTTONS).add(ExtraDelightBlocks.CINNAMON_BUTTON.get(),
+				ExtraDelightBlocks.FRUIT_BUTTON.get());
+		tag(BlockTags.DOORS).add(ExtraDelightBlocks.BLOOD_CHOCOLATE_DOOR.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.MILK_CHOCOLATE_DOOR.get(),
+				ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get());
+		tag(BlockTags.WOODEN_DOORS).add(ExtraDelightBlocks.CINNAMON_DOOR.get(),
+				ExtraDelightBlocks.FRUIT_DOOR.get());
+		tag(BlockTags.SAPLINGS).add(ExtraDelightBlocks.CINNAMON_SAPLING.get(),
+				ExtraDelightBlocks.HAZELNUT_SAPLING.get());
+
 		tag(ExtraDelightTags.COLD_SOURCES).add(Blocks.ICE, Blocks.BLUE_ICE, Blocks.FROSTED_ICE, Blocks.PACKED_ICE,
-				Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW_CAULDRON);
-	}
+					Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW_CAULDRON);
+		}
 
 	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {
 		tag(BlockTags.MINEABLE_WITH_AXE).add(blockDeferredBlock.get());

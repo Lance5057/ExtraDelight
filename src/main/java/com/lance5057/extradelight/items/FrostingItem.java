@@ -1,9 +1,18 @@
 package com.lance5057.extradelight.items;
 
+import com.lance5057.extradelight.ExtraDelight;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.state.BlockState;
+import vectorwing.farmersdelight.common.utility.TextUtils;
+
+import java.util.List;
 
 public class FrostingItem extends Item {
 
@@ -48,4 +57,9 @@ public class FrostingItem extends Item {
 //
 //		return InteractionResult.PASS;
 //	}
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip,
+								TooltipFlag isAdvanced) {
+		TextUtils.addFoodEffectTooltip(stack, tooltip::add, 1.0F, context.tickRate());
+	}
 }

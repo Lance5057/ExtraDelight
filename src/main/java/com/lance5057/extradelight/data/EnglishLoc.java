@@ -253,7 +253,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.EGG_SALAD.get(), "Egg Salad");
 		this.add(ExtraDelightItems.GLOW_BERRY_JAM.get(), "Glow Berry Jam");
 		this.add(ExtraDelightItems.GOLDEN_APPLE_JAM.get(), "Golden Jam");
-		this.add(ExtraDelightItems.JAM.get(), "Sweet Berry Jam");
+		this.add(ExtraDelightItems.JAM.get(), "Jam");
 		this.add(ExtraDelightItems.BREAD_SLICE.get(), "Slice of Bread");
 		this.add(ExtraDelightItems.TOAST.get(), "Toast");
 		this.add(ExtraDelightItems.JAM_TOAST.get(), "Jam on Bread");
@@ -1047,6 +1047,16 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.PEANUT_BUTTER_JELLY.get(), "PBJ");
 
 		this.add(ExtraDelightItems.HAZELNUT_SAPLING.get(), "Hazelnut Sapling");
+
+		this.add(ExtraDelightItems.CINNAMON_WOOD.get(), "Cinnamon Wood");
+		this.add(ExtraDelightItems.STRIPPED_CINNAMON_WOOD.get(), "Stripped Cinnamon Wood");
+		this.add(ExtraDelightItems.CINNAMON_PRESSURE_PLATE.get(), "Cinnamon Pressure Plate");
+		this.add(ExtraDelightItems.CINNAMON_BUTTON.get(), "Cinnamon Button");
+		this.add(ExtraDelightItems.FRUIT_WOOD.get(), "Fruit Wood");
+		this.add(ExtraDelightItems.STRIPPED_FRUIT_WOOD.get(), "Stripped Fruit Wood");
+		this.add(ExtraDelightItems.FRUIT_PRESSURE_PLATE.get(), "Fruit Pressure Plate");
+		this.add(ExtraDelightItems.FRUIT_BUTTON.get(), "Fruit Button");
+
 
 		AestheticBlocks.EngLoc(this);
 	}
