@@ -228,11 +228,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_BUTTON.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_PRESSURE_PLATE.get());
 
-//		this.dropSelf(ExtraDelightBlocks.CINNAMON_CEILING_HANGING_SIGN.get());
-		this.dropSelf(ExtraDelightBlocks.CINNAMON_STANDING_SIGN.get());
-//		this.dropSelf(ExtraDelightBlocks.CINNAMON_WALL_HANGING_SIGN.get());
-		this.dropSelf(ExtraDelightBlocks.CINNAMON_WALL_SIGN.get());
-
 		this.add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), (p_124100_) -> {
 			return createLeavesDrops(p_124100_, ExtraDelightBlocks.CINNAMON_SAPLING.get(),
 					NORMAL_LEAVES_SAPLING_CHANCES);
@@ -483,6 +478,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), Items.BUCKET);
 
 		this.dropSelf(ExtraDelightBlocks.HAZELNUT_SAPLING.get());
+
+		this.dropSelf(ExtraDelightBlocks.MARSHMALLOW_BLOCK.get());
 
 		this.add(ExtraDelightBlocks.JAR.get(), p_248609_ -> this.createJarDrop(p_248609_));
 	}

@@ -78,7 +78,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".tooltip.butchercraft", "Requires Butchercraft");
 		this.add(ExtraDelight.MOD_ID + ".tooltip.spatula", "Right click to style! Shift + Right click for the menu");
 
-
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.name", "Extra Delight");
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.desc", "Feeling a little extra.");
 
@@ -1057,6 +1056,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.FRUIT_PRESSURE_PLATE.get(), "Fruit Pressure Plate");
 		this.add(ExtraDelightItems.FRUIT_BUTTON.get(), "Fruit Button");
 
+		this.add(ExtraDelightItems.MARSHMALLOW_BLOCK.get(), "Marshmallow Block");
 
 		AestheticBlocks.EngLoc(this);
 	}

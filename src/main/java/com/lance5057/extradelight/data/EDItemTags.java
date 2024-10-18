@@ -383,6 +383,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.WHITE_CHOCOLATE_BLOCK).add(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get());
 		tag(ExtraDelightTags.WHITE_CHOCOLATE_CHIPS).add(ExtraDelightItems.WHITE_CHOCOLATE_CHIPS.get());
 		tag(ExtraDelightTags.WHITE_CHOCOLATE_TRUFFLE).add(ExtraDelightItems.WHITE_CHOCOLATE_TRUFFLE.get());
+		
+		tag(ExtraDelightTags.COCOA_SOLIDS).add(ExtraDelightItems.COCOA_SOLIDS.get());
+		tag(ExtraDelightTags.ROASTED_COCOA_BEANS).add(ExtraDelightItems.ROASTED_COCOA_BEANS.get());
 	}
 
 }

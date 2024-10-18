@@ -1528,9 +1528,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.JAM_TOAST.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAM),
-						Ingredient.of(ExtraDelightItems.GLOW_BERRY_JAM.get(), ExtraDelightItems.GOLDEN_APPLE_JAM.get())
-				)).requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE)).unlockedBy(getName(),
-						has(ExtraDelightTags.JAM)).save(consumer, EDLoc("jam_toast"));
+						Ingredient.of(ExtraDelightItems.GLOW_BERRY_JAM.get(),
+								ExtraDelightItems.GOLDEN_APPLE_JAM.get())))
+				.requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE)).unlockedBy(getName(), has(ExtraDelightTags.JAM))
+				.save(consumer, EDLoc("jam_toast"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GLOW_JAM_TOAST.get())
 				.requires(Ingredient.of(ExtraDelightTags.JAM_GLOW_BERRY))
@@ -1595,13 +1596,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("pork_tenderloin_sandwich"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get()).pattern(" b ")
-				.pattern("cm ").pattern(" b ").define('c', ExtraDelightTags.CONDIMENTS).define('m', ExtraDelightItems.PORK_TENDERLOIN.get())
-				.define('b', ExtraDelightItems.BREAD_SLICE.get()).unlockedBy(getName(), has(ExtraDelightItems.PORK_TENDERLOIN.get()))
+				.pattern("cm ").pattern(" b ").define('c', ExtraDelightTags.CONDIMENTS)
+				.define('m', ExtraDelightItems.PORK_TENDERLOIN.get()).define('b', ExtraDelightItems.BREAD_SLICE.get())
+				.unlockedBy(getName(), has(ExtraDelightItems.PORK_TENDERLOIN.get()))
 				.save(consumer, EDLoc("pork_tenderloin_sandwich_bread_slice"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get()).pattern(" b ")
-				.pattern("cm ").pattern(" b ").define('c', ExtraDelightTags.GRAVY).define('m', ExtraDelightItems.PORK_TENDERLOIN.get())
-				.define('b', ExtraDelightItems.BREAD_SLICE.get()).unlockedBy(getName(), has(ExtraDelightItems.PORK_TENDERLOIN.get()))
+				.pattern("cm ").pattern(" b ").define('c', ExtraDelightTags.GRAVY)
+				.define('m', ExtraDelightItems.PORK_TENDERLOIN.get()).define('b', ExtraDelightItems.BREAD_SLICE.get())
+				.unlockedBy(getName(), has(ExtraDelightItems.PORK_TENDERLOIN.get()))
 				.save(consumer, EDLoc("pork_tenderloin_sandwich_bread_slice_gravy"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get(), 1)
@@ -1877,8 +1880,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_LOG.get()))
 				.save(consumer, EDLoc("cinnamon_wood"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.STRIPPED_CINNAMON_WOOD.get(), 3).pattern("ff ")
-				.pattern("ff ").define('f', ExtraDelightItems.STRIPPED_CINNAMON_LOG.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.STRIPPED_CINNAMON_WOOD.get(), 3)
+				.pattern("ff ").pattern("ff ").define('f', ExtraDelightItems.STRIPPED_CINNAMON_LOG.get())
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STRIPPED_CINNAMON_LOG.get()))
 				.save(consumer, EDLoc("stripped_cinnamon_wood"));
@@ -2716,19 +2719,19 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ExtraDelightItems.GLOW_BERRY_JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(Items.GLOW_BERRIES),
 						Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(ExtraDelightTags.SWEETENER),
-						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER)},
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"glow_berry_jam", consumer);
 
 		pot(ExtraDelightItems.GOLDEN_APPLE_JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(Items.GOLDEN_APPLE),
 						Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(ExtraDelightTags.SWEETENER),
-						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER)},
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"golden_apple_jam", consumer);
 
 		pot(ExtraDelightItems.JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Items.SWEET_BERRIES),
 						Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(ExtraDelightTags.SWEETENER),
-						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER)},
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"sweet_berry_jam", consumer);
 
 		pot(ExtraDelightItems.SEAWEED_PASTE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, null, new Ingredient[] {
@@ -2847,8 +2850,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		pot(ExtraDelightItems.CORN_CHOWDER.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CORN.get()),
-						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO), CompoundIngredient.of(
-								Ingredient.of(CommonTags.FOODS_COOKED_BACON), Ingredient.of(CommonTags.FOODS_RAW_BACON)),
+						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO),
+						CompoundIngredient.of(Ingredient.of(CommonTags.FOODS_COOKED_BACON),
+								Ingredient.of(CommonTags.FOODS_RAW_BACON)),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(CommonTags.FOODS_MILK),
 						Ingredient.of(ModItems.BONE_BROTH.get()) },
 				"corn_chowder", consumer);
@@ -3343,6 +3347,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.GROUND_CINNAMON.get(), 2), FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_STICK.get()))
+				.save(consumer);
+
+		MortarRecipeBuilder
+				.grind(Ingredient.of(ExtraDelightTags.ROASTED_COCOA_BEANS),
+						new ItemStack(ExtraDelightItems.COCOA_SOLIDS.get(), 1),
+						new FluidStack(ExtraDelightFluids.COCOA_BUTTER.FLUID, 50), STANDARD_GRIND)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.ROASTED_COCOA_BEANS.get()))
 				.save(consumer);
 	}
 

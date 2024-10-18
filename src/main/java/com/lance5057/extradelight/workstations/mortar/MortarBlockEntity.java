@@ -27,6 +27,7 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.Lazy;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
@@ -194,7 +195,8 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 		Optional<RecipeHolder<MortarRecipe>> recipeOptional = matchRecipe(getInsertedItem());
 		recipeOptional.ifPresent(r -> {
 			MortarRecipe recipe = r.value();
-			if (tank.fill(recipe.getFluid(), FluidAction.SIMULATE) == recipe.getFluid().getAmount()) {
+			if (FluidStack.isSameFluid(recipe.getFluid(), tank.getFluid())
+					&& tank.fill(recipe.getFluid(), FluidAction.SIMULATE) == recipe.getFluid().getAmount()) {
 
 				if ((this.grinds + 1) < recipe.getGrinds()) {
 					grinds++;
@@ -215,9 +217,10 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 
 						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
 								getBlockPos().getZ(), it));
+						tank.fill(recipe.getFluid(), FluidAction.EXECUTE);
 					}
 					items.setStackInSlot(0, ItemStack.EMPTY);
-					tank.fill(recipe.getFluid(), FluidAction.EXECUTE);
+
 				}
 				updateInventory();
 			}

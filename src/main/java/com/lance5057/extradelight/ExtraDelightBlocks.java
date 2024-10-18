@@ -1,7 +1,5 @@
 package com.lance5057.extradelight;
 
-import java.util.function.Supplier;
-
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.BakingStoneBlock;
 import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
@@ -57,7 +55,6 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.SignBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
@@ -437,17 +434,6 @@ public class ExtraDelightBlocks {
 			() -> new PressurePlateBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 	public static final DeferredBlock<ButtonBlock> CINNAMON_BUTTON = BLOCKS.register("cinnamon_button",
 			() -> new ButtonBlock(BlockSetType.OAK, 30, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
-
-//	public static final DeferredBlock<SignBlock> CINNAMON_CEILING_HANGING_SIGN = BLOCKS.register(
-//			"cinnamon_ceiling_hanging_sign",
-//			() -> new CeilingHangingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
-//	public static final DeferredBlock<SignBlock> CINNAMON_WALL_HANGING_SIGN = BLOCKS.register(
-//			"cinnamon_wall_hanging_sign",
-//			() -> new WallHangingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
-	public static final DeferredBlock<SignBlock> CINNAMON_STANDING_SIGN = BLOCKS.register("cinnamon_standing_sign",
-			() -> new StandingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
-	public static final DeferredBlock<SignBlock> CINNAMON_WALL_SIGN = BLOCKS.register("cinnamon_wall_sign",
-			() -> new WallSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 
 	public static final DeferredBlock<RotatedPillarBlock> CINNAMON_STICK_BLOCK = BLOCKS.register("cinnamon_stick_block",
 			() -> new RotatedPillarBlock(
@@ -941,41 +927,43 @@ public class ExtraDelightBlocks {
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, pot));
 
-	public static final Supplier<? extends LiquidBlock> COCOA_BUTTER_FLUID_BLOCK = BLOCKS.register(
+	public static final DeferredBlock<LiquidBlock> COCOA_BUTTER_FLUID_BLOCK = BLOCKS.register(
 			"cocoa_butter_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.COCOA_BUTTER.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
-	public static final Supplier<? extends LiquidBlock> WHITE_CHOCOLATE_SYRUP_FLUID_BLOCK = BLOCKS.register(
+	public static final DeferredBlock<LiquidBlock> WHITE_CHOCOLATE_SYRUP_FLUID_BLOCK = BLOCKS.register(
 			"white_chocolate_syrup_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
-	public static final Supplier<? extends LiquidBlock> DARK_CHOCOLATE_SYRUP_FLUID_BLOCK = BLOCKS.register(
+	public static final DeferredBlock<LiquidBlock> DARK_CHOCOLATE_SYRUP_FLUID_BLOCK = BLOCKS.register(
 			"dark_chocolate_syrup_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
-	public static final Supplier<? extends LiquidBlock> MILK_CHOCOLATE_SYRUP_FLUID_BLOCK = BLOCKS.register(
+	public static final DeferredBlock<LiquidBlock> MILK_CHOCOLATE_SYRUP_FLUID_BLOCK = BLOCKS.register(
 			"milk_chocolate_syrup_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
-	public static final Supplier<? extends LiquidBlock> BLOOD_CHOCOLATE_SYRUP_FLUID_BLOCK = BLOCKS.register(
+	public static final DeferredBlock<LiquidBlock> BLOOD_CHOCOLATE_SYRUP_FLUID_BLOCK = BLOCKS.register(
 			"blood_chocolate_syrup_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
 
-	public static final Supplier<? extends LiquidBlock> COFFEE_FLUID_BLOCK = BLOCKS.register("coffee_fluid_block",
+	public static final DeferredBlock<LiquidBlock> COFFEE_FLUID_BLOCK = BLOCKS.register("coffee_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.COFFEE.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
-	public static final Supplier<? extends LiquidBlock> PEANUT_BUTTER_FLUID_BLOCK = BLOCKS.register(
+	public static final DeferredBlock<LiquidBlock> PEANUT_BUTTER_FLUID_BLOCK = BLOCKS.register(
 			"peanut_butter_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.PEANUT_BUTTER.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
-	public static final Supplier<? extends LiquidBlock> MARSHMALLOW_FLUFF_FLUID_BLOCK = BLOCKS.register(
+	public static final DeferredBlock<LiquidBlock> MARSHMALLOW_FLUFF_FLUID_BLOCK = BLOCKS.register(
 			"marshmallow_fluff_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
-	public static final Supplier<? extends LiquidBlock> HAZELNUT_SPREAD_FLUID_BLOCK = BLOCKS.register(
+	public static final DeferredBlock<LiquidBlock> HAZELNUT_SPREAD_FLUID_BLOCK = BLOCKS.register(
 			"hazelnut_spread_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.HAZELNUT_SPREAD.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
 
+	public static final DeferredBlock<Block> MARSHMALLOW_BLOCK = BLOCKS.register("marshmallow_block",
+			() -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
 }

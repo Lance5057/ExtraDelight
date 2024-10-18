@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:cinnamon_sign"
+          "name": "extradelight:marshmallow_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/cinnamon_wall_sign"
+  "random_sequence": "extradelight:blocks/marshmallow_block"
 }

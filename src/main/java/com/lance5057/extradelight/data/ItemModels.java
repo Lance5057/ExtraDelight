@@ -812,14 +812,12 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(ExtraDelightItems.CHILI_SEEDS, "crops/chili/chili_seeds");
 		forItem(ExtraDelightItems.CHILI, "crops/chili/chili_pepper");
-//
-//		forItemModel(ExtraDelightItems.JAR, "blocks/jar");
+
 		forItem(ExtraDelightItems.APPLE_CIDER_FLUID_BUCKET, "apple_cider_bucket");
 		forItem(ExtraDelightItems.BBQ_FLUID_BUCKET, "bbq_bucket");
 		forItem(ExtraDelightItems.BROTH_FLUID_BUCKET, "broth_bucket");
 		forItem(ExtraDelightItems.CACTUS_JUICE_FLUID_BUCKET, "cactus_juice_bucket");
 		forItem(ExtraDelightItems.CARAMEL_SAUCE_FLUID_BUCKET, "caramel_sauce_bucket");
-//		forItem(ExtraDelightItems.CUSTARD_FLUID_BUCKET, "custard_bucket");
 		forItem(ExtraDelightItems.EGG_MIX_FLUID_BUCKET, "egg_mix_bucket");
 		forItem(ExtraDelightItems.GLOW_BERRY_JUICE_FLUID_BUCKET, "glow_berry_juice_bucket");
 		forItem(ExtraDelightItems.GLOW_JAM_FLUID_BUCKET, "glow_jam_bucket");
@@ -1088,6 +1086,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.COCOA_BUTTER_BOTTLE, "cocoa_butter_bottle");
 
 		forItem(ExtraDelightItems.ICE_CREAM_SUNDAE, "ice_cream_sundae");
+		forBlockItem(ExtraDelightItems.MARSHMALLOW_BLOCK, "marshmallow_block");
 
 		AestheticBlocks.itemModel(this);
 	}

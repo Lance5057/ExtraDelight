@@ -947,18 +947,6 @@ public class ExtraDelightItems {
 				}
 			});
 
-	public static final DeferredItem<SignItem> CINNAMON_SIGN = ITEMS.register("cinnamon_sign",
-			() -> new SignItem(new Item.Properties().stacksTo(16), ExtraDelightBlocks.CINNAMON_STANDING_SIGN.get(),
-					ExtraDelightBlocks.CINNAMON_WALL_SIGN.get()) {
-				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-					return 300;
-				}
-			});
-
-//	public static final DeferredItem<HangingSignItem> CINNAMON_HANGING_SIGN = ITEMS.register("cinnamon_hanging_sign",
-//			() -> new HangingSignItem(ExtraDelightBlocks.CINNAMON_WALL_HANGING_SIGN.get(),
-//					ExtraDelightBlocks.CINNAMON_CEILING_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
-
 	public static final DeferredItem<Item> CINNAMON_BARK = ITEMS.register("cinnamon_bark",
 			() -> new Item(new Item.Properties()) {
 				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
@@ -1530,22 +1518,12 @@ public class ExtraDelightItems {
 				}
 			});
 
-	public static final DeferredItem<SignItem> FRUIT_SIGN = ITEMS.register("fruit_sign",
-			() -> new SignItem(new Item.Properties().stacksTo(16), ExtraDelightBlocks.FRUIT_STANDING_SIGN.get(),
-					ExtraDelightBlocks.FRUIT_WALL_SIGN.get()));
-
-//	public static final DeferredItem<HangingSignItem> FRUIT_HANGING_SIGN = ITEMS.register("fruit_hanging_sign",
-//			() -> new HangingSignItem(ExtraDelightBlocks.FRUIT_WALL_HANGING_SIGN.get(),
-//					ExtraDelightBlocks.FRUIT_CEILING_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
-
 	public static final DeferredItem<Item> HAZELNUT_LEAVES = ITEMS.register("hazelnut_leaves",
 			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> CHILI_SEEDS = ITEMS.register("chili_seeds",
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.CHILI_CROP.get(), new Item.Properties()));
 	public static final DeferredItem<Item> CHILI = ITEMS.register("chili", () -> new Item(new Item.Properties()));
-
-//	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new Item(new Item.Properties()));
 
 	public static final DeferredItem<Item> MELTING_POT = ITEMS.register("melting_pot",
 			() -> new BlockItem(ExtraDelightBlocks.MELTING_POT.get(), new Item.Properties()));
@@ -1977,4 +1955,7 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<Item> ICE_CREAM_SUNDAE = ITEMS.register("ice_cream_sundae",
 			() -> new Item(new Item.Properties()));
+
+	public static final DeferredItem<Item> MARSHMALLOW_BLOCK = ITEMS.register("marshmallow_block",
+			() -> new BlockItem(ExtraDelightBlocks.MARSHMALLOW_BLOCK.get(), new Item.Properties()));
 }

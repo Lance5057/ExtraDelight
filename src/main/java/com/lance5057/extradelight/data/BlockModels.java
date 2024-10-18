@@ -540,6 +540,8 @@ public class BlockModels extends BlockStateProvider {
 		this.fluid(ExtraDelightBlocks.VINEGAR_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.WHIPPED_CREAM_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.WHITE_CHOCOLATE_SYRUP_FLUID_BLOCK.get());
+		
+		this.simpleBlock(ExtraDelightBlocks.MARSHMALLOW_BLOCK.get());
 
 		AestheticBlocks.blockModel(this);
 	}
