@@ -24,13 +24,16 @@ public class DataMapGen extends DataMapProvider {
 		Builder<Compostable, Item> compostables = this.builder(NeoForgeDataMaps.COMPOSTABLES);
 
 		compostables.add(ExtraDelightItems.CORN_COB.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(ExtraDelightItems.CORN_COB_BUNDLE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false);
 		compostables.add(ExtraDelightItems.CORN_HUSK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(ExtraDelightItems.CORN_HUSK_BUNDLE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false);
 		compostables.add(ExtraDelightItems.CORN_ON_COB.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.CORN_SEEDS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.CORN_SILK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.CORN_COB.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.DRIED_CORN_HUSK.asItem().builtInRegistryHolder(), new Compostable(0.2f),
 				false);
+		compostables.add(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.asItem().builtInRegistryHolder(),
+				new Compostable(0.85f), false);
 		compostables.add(ExtraDelightItems.UNSHUCKED_CORN.asItem().builtInRegistryHolder(), new Compostable(0.2f),
 				false);
 		compostables.add(ExtraDelightItems.BAD_FOOD.asItem().builtInRegistryHolder(), new Compostable(1f), false);
@@ -48,6 +51,11 @@ public class DataMapGen extends DataMapProvider {
 		compostables.add(ExtraDelightItems.MINT.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.COFFEE_CHERRIES.asItem().builtInRegistryHolder(), new Compostable(0.2f),
 				false);
+		compostables.add(ExtraDelightItems.CINNAMON_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(ExtraDelightItems.CINNAMON_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(ExtraDelightItems.CINNAMON_BARK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(ExtraDelightItems.HAZELNUT_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(ExtraDelightItems.HAZELNUT_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.HAZELNUTS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.HAZELNUTS_IN_SHELL.asItem().builtInRegistryHolder(), new Compostable(0.2f),
 				false);

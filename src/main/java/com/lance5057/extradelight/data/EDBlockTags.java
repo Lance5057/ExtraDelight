@@ -65,7 +65,26 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.SHEET_BLOCK.get(), ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
 				ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
 				ExtraDelightBlocks.PIE_DISH_BLOCK.get(), ExtraDelightBlocks.TRAY_BLOCK.get(),
-				ExtraDelightBlocks.BAKING_STONE_BLOCK.get(), ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get());
+				ExtraDelightBlocks.BAKING_STONE_BLOCK.get(), ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(),
+
+				// Chocolate
+				ExtraDelightBlocks.BLOOD_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get(),
+				ExtraDelightBlocks.BLOOD_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE_GATE.get(),
+				ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(),
+				ExtraDelightBlocks.BLOOD_CHOCOLATE_TRAPDOOR.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.DARK_CHOCOLATE_STAIRS.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.DARK_CHOCOLATE_FENCE_GATE.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_TRAPDOOR.get(),
+				ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.MILK_CHOCOLATE_STAIRS.get(),
+				ExtraDelightBlocks.MILK_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.MILK_CHOCOLATE_FENCE_GATE.get(),
+				ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(),
+				ExtraDelightBlocks.MILK_CHOCOLATE_TRAPDOOR.get(),
+				ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_STAIRS.get(),
+				ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE_GATE.get(),
+				ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get(),
+				ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get()
+		);
 
 //		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.MINT_CROP.get());
 
@@ -173,7 +192,7 @@ public class EDBlockTags extends BlockTagsProvider {
 	}
 
 	protected void makeMineableWithShovel(DeferredBlock<Block> blockDeferredBlock) {
-		tag(BlockTags.MINEABLE_WITH_AXE).add(blockDeferredBlock.get());
+		tag(BlockTags.MINEABLE_WITH_SHOVEL).add(blockDeferredBlock.get());
 	}
 
 	protected void makeMineableWithKnife(DeferredBlock<Block> blockDeferredBlock) {
@@ -181,7 +200,7 @@ public class EDBlockTags extends BlockTagsProvider {
 	}
 
 	protected void makeFence(DeferredBlock<Block> blockDeferredBlock) {
-		tag(BlockTags.FENCES).add(blockDeferredBlock.get());
+		tag(BlockTags.WOODEN_FENCES).add(blockDeferredBlock.get());
 	}
 
 }
