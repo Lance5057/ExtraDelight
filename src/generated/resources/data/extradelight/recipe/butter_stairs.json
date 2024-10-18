@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": {
+      "item": "extradelight:butter_block_item"
+    }
+  },
+  "pattern": [
+    "p  ",
+    "pp ",
+    "ppp"
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:butter_stairs_block_item"
+  }
+}

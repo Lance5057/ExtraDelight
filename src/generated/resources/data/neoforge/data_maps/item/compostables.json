@@ -12,14 +12,29 @@
     "extradelight:chili": {
       "chance": 0.2
     },
+    "extradelight:cinnamon_bark": {
+      "chance": 0.2
+    },
+    "extradelight:cinnamon_leaves": {
+      "chance": 0.2
+    },
+    "extradelight:cinnamon_sapling": {
+      "chance": 0.2
+    },
     "extradelight:coffee_cherries": {
       "chance": 0.2
     },
     "extradelight:corn_cob": {
       "chance": 0.2
     },
+    "extradelight:corn_cob_bundle": {
+      "chance": 0.85
+    },
     "extradelight:corn_husk": {
       "chance": 0.2
+    },
+    "extradelight:corn_husk_bundle": {
+      "chance": 0.85
     },
     "extradelight:corn_on_cob": {
       "chance": 0.2
@@ -33,7 +48,16 @@
     "extradelight:dried_corn_husk": {
       "chance": 0.2
     },
+    "extradelight:dried_corn_husk_bundle": {
+      "chance": 0.85
+    },
     "extradelight:ginger": {
+      "chance": 0.2
+    },
+    "extradelight:hazelnut_leaves": {
+      "chance": 0.2
+    },
+    "extradelight:hazelnut_sapling": {
       "chance": 0.2
     },
     "extradelight:hazelnuts": {

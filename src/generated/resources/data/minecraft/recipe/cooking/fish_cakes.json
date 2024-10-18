@@ -3,7 +3,7 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "tag": "c:foods/cooked_cod"
+      "tag": "c:foods/cooked_fish"
     },
     {
       "tag": "c:crops/onion"

@@ -1917,16 +1917,16 @@ public class ExtraDelightItems {
 			() -> new BucketItem(ExtraDelightFluids.COFFEE.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final DeferredItem<Item> PEANUT_BUTTER_FLUID_BUCKET = ITEMS.register("peanut_butter_fluid_bucket",
-			() -> new BucketItem(ExtraDelightFluids.PEANUT_BUTTER.FLUID.get(),
+	public static final DeferredItem<Item> NUT_BUTTER_FLUID_BUCKET = ITEMS.register("peanut_butter_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.NUT_BUTTER.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
 	public static final DeferredItem<Item> MARSHMALLOW_FLUFF_FLUID_BUCKET = ITEMS.register(
 			"marshmallow_fluff_fluid_bucket", () -> new BucketItem(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final DeferredItem<Item> HAZELNUT_SPREAD_FLUID_BUCKET = ITEMS.register("hazelnut_spread_fluid_bucket",
-			() -> new BucketItem(ExtraDelightFluids.HAZELNUT_SPREAD.FLUID.get(),
+	public static final DeferredItem<Item> COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET = ITEMS.register("cocoa_nut_butter_spread_fluid_bucket",
+			() -> new BucketItem(ExtraDelightFluids.COCOA_NUT_BUTTER_SPREAD.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
 	public static final DeferredItem<Item> COCOA_BUTTER_BOTTLE = ITEMS.register("cocoa_butter_bottle",

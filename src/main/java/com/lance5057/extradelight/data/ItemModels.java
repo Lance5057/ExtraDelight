@@ -1071,9 +1071,9 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET, "white_chocolate_syrup_bucket");
 		forItem(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_FLUID_BUCKET, "milk_chocolate_syrup_bucket");
 		forItem(ExtraDelightItems.COFFEE_FLUID_BUCKET, "coffee_bucket");
-		forItem(ExtraDelightItems.PEANUT_BUTTER_FLUID_BUCKET, "peanut_butter_bucket");
+		forItem(ExtraDelightItems.NUT_BUTTER_FLUID_BUCKET, "peanut_butter_bucket");
 		forItem(ExtraDelightItems.MARSHMALLOW_FLUFF_FLUID_BUCKET, "marshmallow_fluff_bucket");
-		forItem(ExtraDelightItems.HAZELNUT_SPREAD_FLUID_BUCKET, "milk_chocolate_syrup_bucket");
+		forItem(ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET, "milk_chocolate_syrup_bucket");
 		forItem(ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET, "cocoa_butter_bucket");
 
 		forItem(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE, "blood_chocolate_syrup_bottle");

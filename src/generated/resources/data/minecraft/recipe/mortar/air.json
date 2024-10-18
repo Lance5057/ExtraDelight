@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 250,
+    "id": "extradelight:nut_butter_fluid"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "tag": "c:nuts/cooked"
+  },
+  "result": {}
+}

@@ -770,7 +770,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		mixing(new ItemStack(ExtraDelightItems.CHICKEN_ALFREDO.get(), 1), FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.ALFREDO_SAUCE),
-						Ingredient.of(ExtraDelightItems.COOKED_PASTA.get()), Ingredient.of(CommonTags.FOODS_COOKED_CHICKEN) },
+						Ingredient.of(ExtraDelightItems.COOKED_PASTA.get()),
+						Ingredient.of(CommonTags.FOODS_COOKED_CHICKEN) },
 				consumer, "chicken_alfredo");
 
 		mixing(new ItemStack(ExtraDelightItems.PASTA_TOMATO.get(), 1), FAST_GRIND, new ItemStack(Items.BOWL),
@@ -1563,14 +1564,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(Ingredient.of(ExtraDelightTags.CHEESE), 9).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
 				.save(consumer, EDLoc("cheese_block"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHEESE_SLAB_BLOCK_ITEM.get(), 6).pattern("ppp")
-				.define('p', ExtraDelightItems.CHEESE_BLOCK_ITEM.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHEESE_SLAB_BLOCK_ITEM.get(), 6)
+				.pattern("ppp").define('p', ExtraDelightItems.CHEESE_BLOCK_ITEM.get())
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESE_BLOCK_ITEM.get()))
 				.save(consumer, EDLoc("cheese_slab"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHEESE_STAIRS_BLOCK_ITEM.get(), 4).pattern("p  ")
-				.pattern("pp ").pattern("ppp").define('p', ExtraDelightItems.CHEESE_BLOCK_ITEM.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHEESE_STAIRS_BLOCK_ITEM.get(), 4)
+				.pattern("p  ").pattern("pp ").pattern("ppp").define('p', ExtraDelightItems.CHEESE_BLOCK_ITEM.get())
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESE_BLOCK_ITEM.get()))
 				.save(consumer, EDLoc("cheese_stairs"));
@@ -1579,14 +1580,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(Ingredient.of(ExtraDelightTags.BUTTER), 9).unlockedBy(getName(), has(ExtraDelightTags.BUTTER))
 				.save(consumer, EDLoc("butter_block"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BUTTER_SLAB_BLOCK_ITEM.get(), 6).pattern("ppp")
-				.define('p', ExtraDelightItems.BUTTER_BLOCK_ITEM.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BUTTER_SLAB_BLOCK_ITEM.get(), 6)
+				.pattern("ppp").define('p', ExtraDelightItems.BUTTER_BLOCK_ITEM.get())
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BUTTER_BLOCK_ITEM.get()))
 				.save(consumer, EDLoc("butters_slab"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BUTTER_STAIRS_BLOCK_ITEM.get(), 4).pattern("p  ")
-				.pattern("pp ").pattern("ppp").define('p', ExtraDelightItems.BUTTER_BLOCK_ITEM.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BUTTER_STAIRS_BLOCK_ITEM.get(), 4)
+				.pattern("p  ").pattern("pp ").pattern("ppp").define('p', ExtraDelightItems.BUTTER_BLOCK_ITEM.get())
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BUTTER_BLOCK_ITEM.get()))
 				.save(consumer, EDLoc("butter_stairs"));
@@ -1787,12 +1788,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		bundleItem9(Ingredient.of(ExtraDelightItems.GROUND_CINNAMON),
 				ExtraDelightItems.GROUND_CINNAMON_BLOCK_ITEM.get(), ExtraDelightItems.GROUND_CINNAMON.get(), consumer,
 				"ground_cinnamon");
-		bundleItem9(Ingredient.of(ExtraDelightItems.RAW_CINNAMON),
-				ExtraDelightItems.RAW_CINNAMON_BLOCK.get(), ExtraDelightItems.RAW_CINNAMON.get(), consumer,
-				"raw_cinnamon");
-		bundleItem9(Ingredient.of(ExtraDelightItems.CINNAMON_STICK),
-				ExtraDelightItems.CINNAMON_STICK_BLOCK.get(), ExtraDelightItems.CINNAMON_STICK.get(), consumer,
-				"cinnamon_stick");
+		bundleItem9(Ingredient.of(ExtraDelightItems.RAW_CINNAMON), ExtraDelightItems.RAW_CINNAMON_BLOCK.get(),
+				ExtraDelightItems.RAW_CINNAMON.get(), consumer, "raw_cinnamon");
+		bundleItem9(Ingredient.of(ExtraDelightItems.CINNAMON_STICK), ExtraDelightItems.CINNAMON_STICK_BLOCK.get(),
+				ExtraDelightItems.CINNAMON_STICK.get(), consumer, "cinnamon_stick");
 		bundleItem9(Ingredient.of(ExtraDelightItems.BREAD_CRUMBS), ExtraDelightItems.BREADCRUMB_SACK.get(),
 				ExtraDelightItems.BREAD_CRUMBS.get(), consumer, "breadcrumbs");
 		bundleItem9(Ingredient.of(ExtraDelightItems.MINT), ExtraDelightItems.MINT_SACK.get(),
@@ -3045,11 +3044,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(ExtraDelightTags.PROCESSED_GINGER) }, "congee",
 				consumer);
 
-		pot(ExtraDelightItems.LUGAW.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(CommonTags.CROPS_RICE),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
-						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
-						Ingredient.of(ExtraDelightItems.BOILED_EGG.get()), Ingredient.of(CommonTags.FOODS_COOKED_CHICKEN) },
+		pot(ExtraDelightItems.LUGAW.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL, new Ingredient[] {
+				Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
+				Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+				Ingredient.of(ExtraDelightItems.BOILED_EGG.get()), Ingredient.of(CommonTags.FOODS_COOKED_CHICKEN) },
 				"lugaw", consumer);
 
 		pot(ExtraDelightItems.RICE_PUDDING.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
@@ -3233,71 +3231,79 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, EDLoc("cutting/" + "milk_tart_knife"));
 
 		// Wood and Salvaging
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_LOG.get()),
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_LOG.get()),
 						new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(),
 						ExtraDelightItems.STRIPPED_CINNAMON_LOG.get())
-				.addResult(ExtraDelightItems.CINNAMON_BARK.get())
-				.addSound(SoundEvents.AXE_STRIP).build(consumer, EDLoc("cutting/" + "strip_cinnamon_log"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_WOOD.get()),
+				.addResult(ExtraDelightItems.CINNAMON_BARK.get()).addSound(SoundEvents.AXE_STRIP)
+				.build(consumer, EDLoc("cutting/" + "strip_cinnamon_log"));
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_WOOD.get()),
 						new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(),
 						ExtraDelightItems.STRIPPED_CINNAMON_WOOD.get())
-				.addResult(ExtraDelightItems.CINNAMON_BARK.get())
-				.addSound(SoundEvents.AXE_STRIP).build(consumer, EDLoc("cutting/" + "strip_cinnamon_wood"));
+				.addResult(ExtraDelightItems.CINNAMON_BARK.get()).addSound(SoundEvents.AXE_STRIP)
+				.build(consumer, EDLoc("cutting/" + "strip_cinnamon_wood"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_DOOR.get()),
-						new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(),
-						ExtraDelightItems.CINNAMON_PLANKS.get())
+				new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), ExtraDelightItems.CINNAMON_PLANKS.get())
 				.build(consumer, EDLoc("cutting/" + "cinnamon_door_to_plank"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_TRAPDOOR.get()),
-						new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(),
-						ExtraDelightItems.CINNAMON_PLANKS.get())
+				new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), ExtraDelightItems.CINNAMON_PLANKS.get())
 				.build(consumer, EDLoc("cutting/" + "cinnamon_trapdoor_to_plank"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.FRUIT_LOG.get()),
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.FRUIT_LOG.get()),
 						new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(),
 						ExtraDelightItems.STRIPPED_FRUIT_LOG.get())
-				.addResult(ModItems.TREE_BARK.get())
-				.addSound(SoundEvents.AXE_STRIP).build(consumer, EDLoc("cutting/" + "strip_fruit_log"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.FRUIT_WOOD.get()),
+				.addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP)
+				.build(consumer, EDLoc("cutting/" + "strip_fruit_log"));
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.FRUIT_WOOD.get()),
 						new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(),
 						ExtraDelightItems.STRIPPED_FRUIT_WOOD.get())
-				.addResult(ModItems.TREE_BARK.get())
-				.addSound(SoundEvents.AXE_STRIP).build(consumer, EDLoc("cutting/" + "strip_fruit_wood"));
+				.addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP)
+				.build(consumer, EDLoc("cutting/" + "strip_fruit_wood"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.FRUIT_DOOR.get()),
-						new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(),
-						ExtraDelightItems.FRUIT_PLANKS.get())
+				new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), ExtraDelightItems.FRUIT_PLANKS.get())
 				.build(consumer, EDLoc("cutting/" + "fruit_door_to_plank"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.FRUIT_TRAPDOOR.get()),
-						new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(),
-						ExtraDelightItems.FRUIT_PLANKS.get())
+				new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), ExtraDelightItems.FRUIT_PLANKS.get())
 				.build(consumer, EDLoc("cutting/" + "fruit_trapdoor_to_plank"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_DOOR.get()),
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_DOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get())
 				.build(consumer, EDLoc("cutting/" + "blood_chocolate_door_to_plank"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_TRAPDOOR.get()),
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_TRAPDOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get())
 				.build(consumer, EDLoc("cutting/" + "blood_chocolate_trapdoor_to_plank"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_DOOR.get()),
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_DOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get())
 				.build(consumer, EDLoc("cutting/" + "dark_chocolate_door_to_plank"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_TRAPDOOR.get()),
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_TRAPDOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get())
 				.build(consumer, EDLoc("cutting/" + "dark_chocolate_trapdoor_to_plank"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_DOOR.get()),
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_DOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get())
 				.build(consumer, EDLoc("cutting/" + "milk_chocolate_door_to_plank"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_TRAPDOOR.get()),
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_TRAPDOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get())
 				.build(consumer, EDLoc("cutting/" + "milk_chocolate_trapdoor_to_plank"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_DOOR.get()),
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_DOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get())
 				.build(consumer, EDLoc("cutting/" + "white_chocolate_door_to_plank"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_TRAPDOOR.get()),
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_TRAPDOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get())
 				.build(consumer, EDLoc("cutting/" + "white_chocolate_trapdoor_to_plank"));
@@ -3426,7 +3432,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.WHEAT_SEEDS), new ItemStack(ExtraDelightItems.FLOUR.get(), 1),
-						FluidStack.EMPTY, STANDARD_GRIND)
+						new FluidStack(ExtraDelightFluids.OIL.FLUID, 100), STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL)).save(consumer);
 
 		MortarRecipeBuilder
@@ -3446,7 +3452,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		MortarRecipeBuilder
 				.grind(Ingredient.of(ExtraDelightTags.CORN_KERNELS),
-						new ItemStack(ExtraDelightItems.CORN_MEAL.get(), 1), FluidStack.EMPTY, STANDARD_GRIND)
+						new ItemStack(ExtraDelightItems.CORN_MEAL.get(), 1),
+						new FluidStack(ExtraDelightFluids.OIL.FLUID, 100), STANDARD_GRIND)
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CORN_SEEDS.get()))
 				.save(consumer);
@@ -3464,6 +3471,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new FluidStack(ExtraDelightFluids.COCOA_BUTTER.FLUID, 50), STANDARD_GRIND)
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.ROASTED_COCOA_BEANS.get()))
+				.save(consumer);
+
+		MortarRecipeBuilder
+				.grind(Ingredient.of(ExtraDelightTags.ROASTED_NUTS), ItemStack.EMPTY,
+						new FluidStack(ExtraDelightFluids.NUT_BUTTER.FLUID, 250), STANDARD_GRIND)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.ROASTED_PEANUTS.get()))
 				.save(consumer);
 	}
 

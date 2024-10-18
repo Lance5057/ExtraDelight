@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:blood_chocolate_door"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "extradelight:blood_chocolate_block"
+      }
+    }
+  ],
+  "tool": {
+    "type": "farmersdelight:item_ability",
+    "action": "pickaxe_dig"
+  }
+}

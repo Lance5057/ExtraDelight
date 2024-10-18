@@ -524,7 +524,7 @@ public class BlockModels extends BlockStateProvider {
 		this.fluid(ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.GOLDEN_JAM_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.GRAVY_FLUID_BLOCK.get());
-		this.fluid(ExtraDelightBlocks.HAZELNUT_SPREAD_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.COCOA_NUT_BUTTER_SPREAD_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.HOT_COCOA_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.JAM_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.KETCHUP_FLUID_BLOCK.get());
@@ -533,7 +533,7 @@ public class BlockModels extends BlockStateProvider {
 		this.fluid(ExtraDelightBlocks.MELON_JUICE_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.MILK_CHOCOLATE_SYRUP_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.MILKSHAKE_FLUID_BLOCK.get());
-		this.fluid(ExtraDelightBlocks.PEANUT_BUTTER_FLUID_BLOCK.get());
+		this.fluid(ExtraDelightBlocks.NUT_BUTTER_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.SWEET_BERRY_JUICE_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.TEA_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.TOMATO_JUICE_FLUID_BLOCK.get());

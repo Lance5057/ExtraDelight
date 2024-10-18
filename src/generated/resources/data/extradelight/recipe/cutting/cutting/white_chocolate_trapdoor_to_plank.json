@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:white_chocolate_trapdoor"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "extradelight:white_chocolate_block"
+      }
+    }
+  ],
+  "tool": {
+    "type": "farmersdelight:item_ability",
+    "action": "pickaxe_dig"
+  }
+}

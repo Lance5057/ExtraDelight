@@ -1,6 +1,9 @@
 {
   "type": "extradelight:mortar",
-  "fluidOut": {},
+  "fluidOut": {
+    "amount": 100,
+    "id": "extradelight:oil_fluid"
+  },
   "grinds": 4,
   "ingredient": {
     "tag": "c:seeds/corn"

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:cinnamon_stick_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "extradelight:cinnamon_stick"
+  }
+}

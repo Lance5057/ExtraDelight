@@ -6,7 +6,7 @@
       "item": "extradelight:croque_monsieur"
     },
     {
-      "item": "farmersdelight:fried_egg"
+      "tag": "c:foods/cooked_egg"
     }
   ],
   "result": {

@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:cinnamon_wood"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "extradelight:strippedcinnamon_wood"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "extradelight:cinnamon_bark"
+      }
+    }
+  ],
+  "sound": {
+    "sound_id": "minecraft:item.axe.strip"
+  },
+  "tool": {
+    "type": "farmersdelight:item_ability",
+    "action": "axe_strip"
+  }
+}

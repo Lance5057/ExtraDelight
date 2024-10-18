@@ -23,7 +23,7 @@
       "tag": "c:crops/rice"
     },
     {
-      "tag": "c:crops/onion"
+      "tag": "extradelight:processed/onion"
     }
   ],
   "recipe_book_tab": "meals",

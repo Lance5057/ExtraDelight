@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": {
+      "item": "extradelight:cheese_block_item"
+    }
+  },
+  "pattern": [
+    "ppp"
+  ],
+  "result": {
+    "count": 6,
+    "id": "extradelight:cheese_slab_block_item"
+  }
+}

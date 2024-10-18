@@ -951,17 +951,16 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<LiquidBlock> COFFEE_FLUID_BLOCK = BLOCKS.register("coffee_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.COFFEE.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
-	public static final DeferredBlock<LiquidBlock> PEANUT_BUTTER_FLUID_BLOCK = BLOCKS.register(
-			"peanut_butter_fluid_block",
-			() -> new LiquidBlock(ExtraDelightFluids.PEANUT_BUTTER.FLUID.get(), BlockBehaviour.Properties
+	public static final DeferredBlock<LiquidBlock> NUT_BUTTER_FLUID_BLOCK = BLOCKS.register("peanut_butter_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.NUT_BUTTER.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
 	public static final DeferredBlock<LiquidBlock> MARSHMALLOW_FLUFF_FLUID_BLOCK = BLOCKS.register(
 			"marshmallow_fluff_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
-	public static final DeferredBlock<LiquidBlock> HAZELNUT_SPREAD_FLUID_BLOCK = BLOCKS.register(
-			"hazelnut_spread_fluid_block",
-			() -> new LiquidBlock(ExtraDelightFluids.HAZELNUT_SPREAD.FLUID.get(), BlockBehaviour.Properties
+	public static final DeferredBlock<LiquidBlock> COCOA_NUT_BUTTER_SPREAD_FLUID_BLOCK = BLOCKS.register(
+			"cocoa_nut_butter_spread_fluid_block",
+			() -> new LiquidBlock(ExtraDelightFluids.COCOA_NUT_BUTTER_SPREAD.FLUID.get(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
 
 	public static final DeferredBlock<Block> MARSHMALLOW_BLOCK = BLOCKS.register("marshmallow_block",

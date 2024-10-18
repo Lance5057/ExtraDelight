@@ -23,7 +23,7 @@
       "item": "extradelight:boiled_egg"
     },
     {
-      "item": "minecraft:cooked_chicken"
+      "tag": "c:foods/cooked_chicken"
     }
   ],
   "recipe_book_tab": "meals",
