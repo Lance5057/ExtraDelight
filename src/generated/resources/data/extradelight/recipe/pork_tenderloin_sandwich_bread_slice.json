@@ -5,9 +5,14 @@
     "b": {
       "item": "extradelight:bread_slice"
     },
-    "c": {
-      "tag": "c:condiments"
-    },
+    "c": [
+      {
+        "tag": "c:condiments"
+      },
+      {
+        "tag": "c:gravy"
+      }
+    ],
     "m": {
       "item": "extradelight:pork_tenderloin"
     }

@@ -2,9 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "c:gravy"
-    },
+    [
+      {
+        "tag": "c:condiments"
+      },
+      {
+        "tag": "c:gravy"
+      }
+    ],
     {
       "tag": "c:foods/bread"
     },
