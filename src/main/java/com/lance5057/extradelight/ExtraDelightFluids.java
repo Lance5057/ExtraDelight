@@ -145,7 +145,7 @@ public class ExtraDelightFluids {
 			ExtraDelightBlocks.TEA_FLUID_BLOCK, ExtraDelightItems.TEA_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	public static FluidRegistration COCOA_BUTTER = new FluidRegistration("cocoa_butter",
-			() -> new BasicFluid("cocoa_butter", 0xffffffff,
+			() -> new BasicFluid("cocoa_butter", 0xfffffff,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000)
 							.viscosity(6000)),
 			ExtraDelightBlocks.COCOA_BUTTER_FLUID_BLOCK, ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET, FLUID_TYPES,
