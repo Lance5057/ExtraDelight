@@ -2,9 +2,6 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
-import net.minecraft.sounds.SoundEvents;
-import net.neoforged.neoforge.common.ItemAbilities;
-import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -35,6 +32,7 @@ import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -43,8 +41,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluids;
+import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
@@ -1617,27 +1617,19 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), has(ExtraDelightItems.MEAT_PIE_SLICE.get()))
 				.save(consumer, EDLoc("meat_pie_slice"));
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get(), 1)
-				.requires(Ingredient.of(ExtraDelightTags.CONDIMENTS)).requires(Ingredient.of(Tags.Items.FOODS_BREAD))
-				.requires(ExtraDelightItems.PORK_TENDERLOIN.get())
-				.unlockedBy(getName(), has(ExtraDelightItems.PORK_TENDERLOIN.get()))
-				.save(consumer, EDLoc("pork_tenderloin_sandwich"));
-
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get()).pattern(" b ")
-				.pattern("cm ").pattern(" b ").define('c', ExtraDelightTags.CONDIMENTS)
+				.pattern("cm ").pattern(" b ")
+				.define('c',
+						CompoundIngredient.of(Ingredient.of(ExtraDelightTags.CONDIMENTS),
+								Ingredient.of(ExtraDelightTags.GRAVY)))
 				.define('m', ExtraDelightItems.PORK_TENDERLOIN.get()).define('b', ExtraDelightItems.BREAD_SLICE.get())
 				.unlockedBy(getName(), has(ExtraDelightItems.PORK_TENDERLOIN.get()))
 				.save(consumer, EDLoc("pork_tenderloin_sandwich_bread_slice"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get()).pattern(" b ")
-				.pattern("cm ").pattern(" b ").define('c', ExtraDelightTags.GRAVY)
-				.define('m', ExtraDelightItems.PORK_TENDERLOIN.get()).define('b', ExtraDelightItems.BREAD_SLICE.get())
-				.unlockedBy(getName(), has(ExtraDelightItems.PORK_TENDERLOIN.get()))
-				.save(consumer, EDLoc("pork_tenderloin_sandwich_bread_slice_gravy"));
-
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get(), 1)
-				.requires(Ingredient.of(ExtraDelightTags.GRAVY)).requires(Ingredient.of(Tags.Items.FOODS_BREAD))
-				.requires(ExtraDelightItems.PORK_TENDERLOIN.get())
+				.requires(CompoundIngredient.of(Ingredient.of(ExtraDelightTags.CONDIMENTS),
+						Ingredient.of(ExtraDelightTags.GRAVY)))
+				.requires(Ingredient.of(Tags.Items.FOODS_BREAD)).requires(ExtraDelightItems.PORK_TENDERLOIN.get())
 				.unlockedBy(getName(), has(ExtraDelightItems.PORK_TENDERLOIN.get()))
 				.save(consumer, EDLoc("pork_tenderloin_gravy"));
 
