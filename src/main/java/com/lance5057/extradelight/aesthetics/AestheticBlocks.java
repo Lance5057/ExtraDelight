@@ -317,6 +317,8 @@ public class AestheticBlocks {
 			bsp.directionalBlock(BOWS.get(i).get(), bsp.models()
 					.withExistingParent(DyeColor.values()[i].toString() + "_bow", bsp.modLoc("block/ribbon_bow"))
 					.texture("0",
+							bsp.modLoc("block/ribbon/" + DyeColor.values()[i].toString().toLowerCase() + "_ribbon"))
+					.texture("particle",
 							bsp.modLoc("block/ribbon/" + DyeColor.values()[i].toString().toLowerCase() + "_ribbon")));
 		}
 

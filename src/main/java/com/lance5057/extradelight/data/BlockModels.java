@@ -850,6 +850,7 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder().modelFile(models()
 					.withExistingParent("block/cosmetics/pans/" + base + "_" + suffix.toLowerCase(), modLoc(base))
 					.texture("0", modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan"))
+							.texture("particle", modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan"))
 					.renderType("translucent"))
 					.rotationY(((int) state.getValue(HorizontalPanBlock.FACING).toYRot() + 180) % 360).build();
 		});

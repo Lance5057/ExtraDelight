@@ -67,8 +67,7 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> JAM = neoforgeItemTag("jam");
 	public static final TagKey<Item> JAM_MUNDANE = neoforgeItemTag("jam/mundane");
-	public static final TagKey<Item> JAM_APPLE = neoforgeItemTag("jam/apple");
-	public static final TagKey<Item> JAM_SWEET_BERRY = neoforgeItemTag("jam/sweet_berry");
+	public static final TagKey<Item> JAM_FRUIT = neoforgeItemTag("jam/fruit");
 	public static final TagKey<Item> JAM_GLOW_BERRY = neoforgeItemTag("jam/glow_berry");
 	public static final TagKey<Item> JAM_GOLDEN_APPLE = neoforgeItemTag("jam/golden_apple");
 	public static final TagKey<Item> JAM_MINT = neoforgeItemTag("jam/mint");
@@ -411,4 +410,6 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CHOCOLATE_TRUFFLE_FILLING = modTag("chocolate_truffle_filling");
 	public static final TagKey<Item> FUDGE = neoforgeItemTag("fudge");
 	public static final TagKey<Item> NOUGAT = neoforgeItemTag("nougat");
+
+	public static final TagKey<Item> JAMMABLE = neoforgeItemTag("jammable");
 }

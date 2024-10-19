@@ -1579,9 +1579,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("omelette_mix_meat_cheese"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.JAM_TOAST.get())
-				.requires(DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAM),
-						Ingredient.of(ExtraDelightItems.GLOW_BERRY_JAM.get(),
-								ExtraDelightItems.GOLDEN_APPLE_JAM.get())))
+				.requires(Ingredient.of(ExtraDelightTags.JAM_MUNDANE))
 				.requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE)).unlockedBy(getName(), has(ExtraDelightTags.JAM))
 				.save(consumer, EDLoc("jam_toast"));
 
@@ -1652,12 +1650,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHEESE_SANDWICH.get()).pattern(" b ")
 				.pattern("mc ").pattern(" b ").define('c', ExtraDelightTags.CHEESE).define('m', ExtraDelightTags.MAYO)
-				.define('b', ExtraDelightItems.BREAD_SLICE.get()).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
+				.define('b', ExtraDelightTags.BREAD_SLICE).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
 				.save(consumer, EDLoc("cheese_sandwich"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHEESE_SANDWICH.get()).pattern(" b ")
 				.pattern("mc ").pattern(" b ").define('c', ExtraDelightTags.CHEESE).define('m', ExtraDelightTags.BUTTER)
-				.define('b', ExtraDelightItems.BREAD_SLICE.get()).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
+				.define('b', ExtraDelightTags.BREAD_SLICE).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
 				.save(consumer, EDLoc("grilled_cheese_butter"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get()).pattern("ss ")
@@ -1670,7 +1668,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.define('c',
 						CompoundIngredient.of(Ingredient.of(ExtraDelightTags.CONDIMENTS),
 								Ingredient.of(ExtraDelightTags.GRAVY)))
-				.define('m', ExtraDelightItems.PORK_TENDERLOIN.get()).define('b', ExtraDelightItems.BREAD_SLICE.get())
+				.define('m', ExtraDelightItems.PORK_TENDERLOIN.get()).define('b', ExtraDelightTags.BREAD_SLICE)
 				.unlockedBy(getName(), has(ExtraDelightItems.PORK_TENDERLOIN.get()))
 				.save(consumer, EDLoc("pork_tenderloin_sandwich_bread_slice"));
 
@@ -1679,7 +1677,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.GRAVY)))
 				.requires(Ingredient.of(Tags.Items.FOODS_BREAD)).requires(ExtraDelightItems.PORK_TENDERLOIN.get())
 				.unlockedBy(getName(), has(ExtraDelightItems.PORK_TENDERLOIN.get()))
-				.save(consumer, EDLoc("pork_tenderloin_gravy"));
+				.save(consumer, EDLoc("pork_tenderloin_sandwich"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.FURIKAKE_RICE.get(), 1)
 				.requires(ExtraDelightItems.FURIKAKE.get()).requires(Ingredient.of(ModItems.COOKED_RICE.get()))
@@ -2803,10 +2801,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"golden_apple_jam", consumer);
 
 		pot(ExtraDelightItems.JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Items.SWEET_BERRIES),
-						Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(ExtraDelightTags.SWEETENER),
+				new Ingredient[] { DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
+						Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
+						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
+								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
+						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
+								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
+						Ingredient.of(ExtraDelightTags.SWEETENER),
 						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
-				"sweet_berry_jam", consumer);
+				"fruit_jam", consumer);
 
 		pot(ExtraDelightItems.SEAWEED_PASTE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, null, new Ingredient[] {
 				Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP) },
@@ -3311,42 +3314,42 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_DOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get())
-				.build(consumer, EDLoc("cutting/" + "blood_chocolate_door_to_plank"));
+				.build(consumer, EDLoc("cutting/" + "blood_chocolate_door_to_block"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_TRAPDOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get())
-				.build(consumer, EDLoc("cutting/" + "blood_chocolate_trapdoor_to_plank"));
+				.build(consumer, EDLoc("cutting/" + "blood_chocolate_trapdoor_to_block"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_DOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get())
-				.build(consumer, EDLoc("cutting/" + "dark_chocolate_door_to_plank"));
+				.build(consumer, EDLoc("cutting/" + "dark_chocolate_door_to_block"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_TRAPDOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get())
-				.build(consumer, EDLoc("cutting/" + "dark_chocolate_trapdoor_to_plank"));
+				.build(consumer, EDLoc("cutting/" + "dark_chocolate_trapdoor_to_block"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_DOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get())
-				.build(consumer, EDLoc("cutting/" + "milk_chocolate_door_to_plank"));
+				.build(consumer, EDLoc("cutting/" + "milk_chocolate_door_to_block"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_TRAPDOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get())
-				.build(consumer, EDLoc("cutting/" + "milk_chocolate_trapdoor_to_plank"));
+				.build(consumer, EDLoc("cutting/" + "milk_chocolate_trapdoor_to_block"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_DOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get())
-				.build(consumer, EDLoc("cutting/" + "white_chocolate_door_to_plank"));
+				.build(consumer, EDLoc("cutting/" + "white_chocolate_door_to_block"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_TRAPDOOR.get()),
 						new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(),
 						ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get())
-				.build(consumer, EDLoc("cutting/" + "white_chocolate_trapdoor_to_plank"));
+				.build(consumer, EDLoc("cutting/" + "white_chocolate_trapdoor_to_block"));
 
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightTags.BLOOD_CHOCOLATE_BAR),
@@ -3926,14 +3929,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy("sweet_berry", has(Items.SWEET_BERRIES)).save(consumer, EDLoc("sweet_berry_cheesecake"));
 
 		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ModItems.SWEET_BERRY_CHEESECAKE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
-				.addIngredient(ExtraDelightTags.JAM_SWEET_BERRY).addIngredient(CommonTags.FOODS_MILK)
-				.addIngredient(ModItems.PIE_CRUST.get()).addIngredient(CommonTags.FOODS_MILK)
-				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedBy("sweet_berry", has(Items.SWEET_BERRIES))
-				.save(consumer, EDLoc("sweet_berry_cheesecake_jam"));
-
-		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.APPLE_PIE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()))
 				.addIngredient(ModItems.PIE_CRUST.get()).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
@@ -3981,7 +3976,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"porkchop");
 		bulkBake(Items.COOKED_RABBIT, Ingredient.of(Items.RABBIT), consumer, ExtraDelightItems.SHEET.get(), "rabbit");
 		bulkBake(Items.COOKED_SALMON, Ingredient.of(Items.SALMON), consumer, ExtraDelightItems.SHEET.get(), "salmon");
-		bulkBake(ExtraDelightItems.TOAST.get(), Ingredient.of(ExtraDelightItems.BREAD_SLICE.get()), consumer,
+		bulkBake(ExtraDelightItems.TOAST.get(), Ingredient.of(ExtraDelightTags.BREAD_SLICE), consumer,
 				ExtraDelightItems.SHEET.get(), "toast");
 		bulkBake(ExtraDelightItems.GRILLED_CHEESE.get(), Ingredient.of(ExtraDelightItems.CHEESE_SANDWICH.get()),
 				consumer, ExtraDelightItems.SHEET.get(), "grilled_cheese");
