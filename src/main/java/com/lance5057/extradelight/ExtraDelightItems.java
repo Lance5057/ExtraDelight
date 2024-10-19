@@ -36,7 +36,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SignItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
@@ -1925,7 +1924,8 @@ public class ExtraDelightItems {
 			"marshmallow_fluff_fluid_bucket", () -> new BucketItem(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final DeferredItem<Item> COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET = ITEMS.register("cocoa_nut_butter_spread_fluid_bucket",
+	public static final DeferredItem<Item> COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET = ITEMS.register(
+			"cocoa_nut_butter_spread_fluid_bucket",
 			() -> new BucketItem(ExtraDelightFluids.COCOA_NUT_BUTTER_SPREAD.FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
@@ -1958,4 +1958,7 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<Item> MARSHMALLOW_BLOCK = ITEMS.register("marshmallow_block",
 			() -> new BlockItem(ExtraDelightBlocks.MARSHMALLOW_BLOCK.get(), new Item.Properties()));
+
+	public static final DeferredItem<Item> MALLOW_POWDER = ITEMS.register("mallow_powder",
+			() -> new Item(new Item.Properties()));
 }

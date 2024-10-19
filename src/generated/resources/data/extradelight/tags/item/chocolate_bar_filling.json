@@ -1,0 +1,20 @@
+{
+  "values": [
+    "#c:nuts",
+    "#c:nuts/cooked",
+    "#c:fruit",
+    "#c:chocolate/chips",
+    "#c:puffed_rice",
+    "#c:corn_flakes",
+    "#c:chill/powder",
+    "#c:toffee",
+    "#c:gummies",
+    "#c:peanut_brittle",
+    "#c:trail_mix",
+    "#c:mint",
+    "#c:candy",
+    "#extradelight:processed/fruit",
+    "#c:fruit/dried",
+    "#c:crops/chili/dried"
+  ]
+}

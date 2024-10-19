@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:chiller",
+  "container": {
+    "count": 1,
+    "id": "extradelight:bar_mold"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "id": "extradelight:milk_chocolate_syrup_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "extradelight:chocolate_bar_filling"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:milk_chocolate_filled_bar"
+  }
+}

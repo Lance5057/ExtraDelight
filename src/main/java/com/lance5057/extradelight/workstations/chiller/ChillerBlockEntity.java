@@ -251,7 +251,7 @@ public class ChillerBlockEntity extends BlockEntity {
 	private static void subtractItems(ChillerBlockEntity chiller) {
 		ItemStackHandler i = chiller.inventory;
 
-		i.getStackInSlot(CONTAINER_SLOT).shrink(1);
+//		i.getStackInSlot(CONTAINER_SLOT).shrink(1);
 		for (int j = 0; j < 4; j++)
 			i.getStackInSlot(j).shrink(1);
 	}

@@ -57,9 +57,10 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.FRUIT_APPLE).add(Items.APPLE);
 		tag(ExtraDelightTags.FRUIT_GLOW_BERRY).add(Items.GLOW_BERRIES);
 		tag(ExtraDelightTags.FRUIT_SWEET_BERRY).add(Items.SWEET_BERRIES);
+		tag(ExtraDelightTags.FRUIT_MELON).add(Items.MELON_SLICE);
 
 		tag(ExtraDelightTags.FRUIT).addTag(ExtraDelightTags.FRUIT_APPLE).addTag(ExtraDelightTags.FRUIT_GLOW_BERRY)
-				.addTag(ExtraDelightTags.FRUIT_SWEET_BERRY);
+				.addTag(ExtraDelightTags.FRUIT_SWEET_BERRY).addTag(ExtraDelightTags.FRUIT_MELON);
 
 		tag(ExtraDelightTags.COOKING_OIL).add(ExtraDelightItems.COOKING_OIL.get());
 		tag(ExtraDelightTags.FRYING_OIL).add(ExtraDelightItems.COOKING_OIL.get());
@@ -378,6 +379,22 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.WHITE_CHOCOLATE_CHIPS).add(ExtraDelightItems.WHITE_CHOCOLATE_CHIPS.get());
 		tag(ExtraDelightTags.WHITE_CHOCOLATE_TRUFFLE).add(ExtraDelightItems.WHITE_CHOCOLATE_TRUFFLE.get());
 
+		tag(ExtraDelightTags.CHOCOLATE_BAR).addTag(ExtraDelightTags.WHITE_CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.DARK_CHOCOLATE_BAR).addTag(ExtraDelightTags.MILK_CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.BLOOD_CHOCOLATE_BAR);
+		tag(ExtraDelightTags.CHOCOLATE_BAR_FILLED).addTag(ExtraDelightTags.WHITE_CHOCOLATE_BAR_FILLED)
+				.addTag(ExtraDelightTags.DARK_CHOCOLATE_BAR_FILLED).addTag(ExtraDelightTags.MILK_CHOCOLATE_BAR_FILLED)
+				.addTag(ExtraDelightTags.BLOOD_CHOCOLATE_BAR_FILLED);
+		tag(ExtraDelightTags.CHOCOLATE_BLOCK).addTag(ExtraDelightTags.WHITE_CHOCOLATE_BLOCK)
+				.addTag(ExtraDelightTags.DARK_CHOCOLATE_BLOCK).addTag(ExtraDelightTags.MILK_CHOCOLATE_BLOCK)
+				.addTag(ExtraDelightTags.BLOOD_CHOCOLATE_BLOCK);
+		tag(ExtraDelightTags.CHOCOLATE_CHIPS).addTag(ExtraDelightTags.WHITE_CHOCOLATE_CHIPS)
+				.addTag(ExtraDelightTags.DARK_CHOCOLATE_CHIPS).addTag(ExtraDelightTags.MILK_CHOCOLATE_CHIPS)
+				.addTag(ExtraDelightTags.BLOOD_CHOCOLATE_CHIPS);
+		tag(ExtraDelightTags.CHOCOLATE_TRUFFLE).addTag(ExtraDelightTags.WHITE_CHOCOLATE_TRUFFLE)
+				.addTag(ExtraDelightTags.DARK_CHOCOLATE_TRUFFLE).addTag(ExtraDelightTags.MILK_CHOCOLATE_TRUFFLE)
+				.addTag(ExtraDelightTags.BLOOD_CHOCOLATE_TRUFFLE);
+
 		tag(ExtraDelightTags.COCOA_SOLIDS).add(ExtraDelightItems.COCOA_SOLIDS.get());
 		tag(ExtraDelightTags.ROASTED_COCOA_BEANS).add(ExtraDelightItems.ROASTED_COCOA_BEANS.get());
 
@@ -388,7 +405,29 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.ROASTED_HAZELNUTS).add(ExtraDelightItems.ROASTED_HAZELNUTS.get());
 
 		tag(ExtraDelightTags.NUTS).addTag(ExtraDelightTags.HAZELNUTS).addTag(ExtraDelightTags.PEANUTS);
-		tag(ExtraDelightTags.ROASTED_NUTS).addTag(ExtraDelightTags.ROASTED_HAZELNUTS).addTag(ExtraDelightTags.ROASTED_PEANUTS);
+		tag(ExtraDelightTags.ROASTED_NUTS).addTag(ExtraDelightTags.ROASTED_HAZELNUTS)
+				.addTag(ExtraDelightTags.ROASTED_PEANUTS);
+
+		tag(ExtraDelightTags.PUFFED_RICE).add(ExtraDelightItems.CRISP_RICE.get());
+		tag(ExtraDelightTags.CORN_FLAKES).add(ExtraDelightItems.CORN_FLAKES.get());
+		tag(ExtraDelightTags.CHILI_POWDER).add(ExtraDelightItems.CHILI_POWDER.get());
+		tag(ExtraDelightTags.TOFFEE).add(ExtraDelightItems.TOFFEE.get());
+		tag(ExtraDelightTags.GUMMIES).add(ExtraDelightItems.GUMMIES.get());
+		tag(ExtraDelightTags.PEANUT_BRITTLE).add(ExtraDelightItems.PEANUT_BRITTLE.get());
+		tag(ExtraDelightTags.TRAIL_MIX).add(ExtraDelightItems.TRAIL_MIX.get());
+		tag(ExtraDelightTags.FUDGE).add(ExtraDelightItems.FUDGE_SLICE.get());
+		tag(ExtraDelightTags.NOUGAT).add(ExtraDelightItems.NOUGAT.get());
+		tag(ExtraDelightTags.DRIED_CHILI).add(ExtraDelightItems.DRIED_CHILI.get());
+		
+		tag(ExtraDelightTags.CHOCOLATE_BAR_FILLING).addTag(ExtraDelightTags.NUTS).addTag(ExtraDelightTags.ROASTED_NUTS)
+				.addTag(ExtraDelightTags.FRUIT).addTag(ExtraDelightTags.CHOCOLATE_CHIPS)
+				.addTag(ExtraDelightTags.PUFFED_RICE).addTag(ExtraDelightTags.CORN_FLAKES)
+				.addTag(ExtraDelightTags.CHILI_POWDER).addTag(ExtraDelightTags.TOFFEE).addTag(ExtraDelightTags.GUMMIES)
+				.addTag(ExtraDelightTags.PEANUT_BRITTLE).addTag(ExtraDelightTags.TRAIL_MIX)
+				.addTag(ExtraDelightTags.MINT).addTag(ExtraDelightTags.CANDY).addTag(ExtraDelightTags.PROCESSED_FRUIT)
+				.addTag(ExtraDelightTags.DRIED_FRUIT).addTag(ExtraDelightTags.DRIED_CHILI);
+		tag(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING).addTag(ExtraDelightTags.FROSTING).addTag(ExtraDelightTags.FUDGE)
+				.addTag(ExtraDelightTags.NOUGAT).addTag(ExtraDelightTags.WHIPPED_CREAM).addTag(ExtraDelightTags.JAM);
 	}
 
 }

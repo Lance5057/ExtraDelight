@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {},
+  "grinds": 4,
+  "ingredient": {
+    "tag": "c:crops/mallow_root"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:mallow_powder"
+  }
+}

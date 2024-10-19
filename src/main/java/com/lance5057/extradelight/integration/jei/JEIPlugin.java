@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.integration.jei.categories.ChillerRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.DoughShapingRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.DryingRackRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.FeastRecipeCategory;
@@ -47,6 +48,7 @@ public class JEIPlugin implements IModPlugin {
 				new ToolOnBlockRecipeCatagory(registry.getJeiHelpers().getGuiHelper()),
 				new FeastRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new MeltingPotRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new ChillerRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new ShapedWithJarRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
 	}
 
@@ -70,6 +72,8 @@ public class JEIPlugin implements IModPlugin {
 				.getAllRecipesFor(ExtraDelightRecipes.MELTING_POT.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(ShapedWithJarRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
 				.getAllRecipesFor(ExtraDelightRecipes.SHAPED_JAR.get()).stream().map(RecipeHolder::value).toList());
+		registry.addRecipes(ChillerRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.CHILLER.get()).stream().map(RecipeHolder::value).toList());
 
 		List<ItemStack> hide = List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
 		registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hide);
@@ -109,6 +113,9 @@ public class JEIPlugin implements IModPlugin {
 
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MELTING_POT.getDelegate()),
 				MeltingPotRecipeCategory.TYPE);
+		
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.CHILLER.getDelegate()),
+				ChillerRecipeCategory.TYPE);
 	}
 
 }

@@ -379,7 +379,7 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> NUTS = neoforgeItemTag("nuts");
 	public static final TagKey<Item> ROASTED_NUTS = neoforgeItemTag("nuts/cooked");
-	
+
 	public static final TagKey<Item> ROASTED_PEANUTS = neoforgeItemTag("crops/peanuts/cooked");
 	public static final TagKey<Item> PEANUTS = neoforgeItemTag("crops/peanuts");
 
@@ -388,11 +388,27 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> MALLOWROOT = neoforgeItemTag("crops/mallow_root");
 	public static final TagKey<Item> MARSHMALLOW = neoforgeItemTag("marshmallow");
-	
+
 	public static final TagKey<Item> COFFEE_BEANS = neoforgeItemTag("crops/coffee_beans");
 	public static final TagKey<Item> ROASTED_COFFEE_BEANS = neoforgeItemTag("crops/coffee_beans/cooked");
 	public static final TagKey<Item> GROUND_COFFEE_BEANS = neoforgeItemTag("crops/coffee_beans/ground");
-	
+
 	public static final TagKey<Item> PUFFED_RICE = neoforgeItemTag("puffed_rice");
 	public static final TagKey<Item> CORN_FLAKES = neoforgeItemTag("corn_flakes");
+
+	public static final TagKey<Item> CHOCOLATE_BAR_FILLING = modTag("chocolate_bar_filling");
+	public static final TagKey<Item> CHOCOLATE_BAR = neoforgeItemTag("chocolate/bar");
+	public static final TagKey<Item> CHOCOLATE_BAR_FILLED = neoforgeItemTag("chocolate/bar/filled");
+	public static final TagKey<Item> CHOCOLATE_CHIPS = neoforgeItemTag("chocolate/chips");
+	public static final TagKey<Item> CHOCOLATE_TRUFFLE = neoforgeItemTag("chocolate/truffle");
+	public static final TagKey<Item> FRUIT_MELON = neoforgeItemTag("fruit/melon");
+	public static final TagKey<Item> CHILI_POWDER = neoforgeItemTag("chill/powder");
+	public static final TagKey<Item> TOFFEE = neoforgeItemTag("toffee");
+	public static final TagKey<Item> GUMMIES = neoforgeItemTag("gummies");
+	public static final TagKey<Item> PEANUT_BRITTLE = neoforgeItemTag("peanut_brittle");
+	public static final TagKey<Item> TRAIL_MIX = neoforgeItemTag("trail_mix");
+	
+	public static final TagKey<Item> CHOCOLATE_TRUFFLE_FILLING = modTag("chocolate_truffle_filling");
+	public static final TagKey<Item> FUDGE = neoforgeItemTag("fudge");
+	public static final TagKey<Item> NOUGAT = neoforgeItemTag("nougat");
 }

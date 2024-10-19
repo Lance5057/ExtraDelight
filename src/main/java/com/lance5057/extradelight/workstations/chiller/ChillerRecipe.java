@@ -101,10 +101,11 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 				inputs.add(itemstack);
 			}
 		}
-		
-		int [] matches = RecipeMatcher.findMatches(inputs, this.inputItems);
+
+		int[] matches = RecipeMatcher.findMatches(inputs, this.inputItems);
 		return i == this.inputItems.size() && matches != null
-				&& inv.getItem(INPUT_SLOTS + 1).getItem() == this.container.getItem() && this.fluid.containsFluid(inv.tank);
+				&& ItemStack.matches(inv.getItem(INPUT_SLOTS + 1), this.container)
+				&& inv.tank.containsFluid(this.fluid);
 	}
 
 	@Override

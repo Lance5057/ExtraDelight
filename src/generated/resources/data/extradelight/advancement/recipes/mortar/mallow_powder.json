@@ -1,32 +1,32 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "extradelight:mixing/wheat_dough_water"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "wheat_dough_water": {
+    "Recipes": {
       "conditions": {
         "items": [
           {
-            "items": "#c:flour"
+            "items": "extradelight:mallow_root"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mortar/mallow_powder"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "wheat_dough_water"
+      "Recipes"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:mixing/wheat_dough_water"
+      "extradelight:mortar/mallow_powder"
     ]
   }
 }
