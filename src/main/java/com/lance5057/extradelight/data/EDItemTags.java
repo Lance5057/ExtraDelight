@@ -73,11 +73,11 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.FLOUR).add(ExtraDelightItems.FLOUR.get());
 
 		tag(ExtraDelightTags.JAM_GLOW_BERRY).add(ExtraDelightItems.GLOW_BERRY_JAM.get());
-		tag(ExtraDelightTags.JAM_SWEET_BERRY).add(ExtraDelightItems.JAM.get());
+		tag(ExtraDelightTags.JAM_FRUIT).add(ExtraDelightItems.JAM.get());
 		tag(ExtraDelightTags.JAM_GOLDEN_APPLE).add(ExtraDelightItems.GOLDEN_APPLE_JAM.get());
 		tag(ExtraDelightTags.JAM_MINT).add(ExtraDelightItems.MINT_JELLY.get());
 
-		tag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_SWEET_BERRY).addTag(ExtraDelightTags.JAM_MINT);
+		tag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_FRUIT).addTag(ExtraDelightTags.JAM_MINT);
 		tag(ExtraDelightTags.JAM).addTag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_GOLDEN_APPLE)
 				.addTag(ExtraDelightTags.JAM_GLOW_BERRY);
 
@@ -151,8 +151,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CACTUS).add(ExtraDelightItems.CACTUS.get());
 
 		tag(ExtraDelightTags.RICEBALL_FILLING).add(ExtraDelightItems.EGG_SALAD.get(),
-				ExtraDelightItems.SCRAMBLED_EGGS.get(), ExtraDelightItems.FISH_SALAD.get(),
-				ExtraDelightItems.BOILED_EGG.get(), ExtraDelightItems.PICKLED_GINGER.get())
+						ExtraDelightItems.SCRAMBLED_EGGS.get(), ExtraDelightItems.FISH_SALAD.get(),
+						ExtraDelightItems.BOILED_EGG.get(), ExtraDelightItems.PICKLED_GINGER.get())
 				.addTag(ExtraDelightTags.CHEESE);
 
 		tag(ExtraDelightTags.JELLY).add(ExtraDelightItems.JELLY_BLACK.get(), ExtraDelightItems.JELLY_BLUE.get(),
@@ -418,7 +418,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.FUDGE).add(ExtraDelightItems.FUDGE_SLICE.get());
 		tag(ExtraDelightTags.NOUGAT).add(ExtraDelightItems.NOUGAT.get());
 		tag(ExtraDelightTags.DRIED_CHILI).add(ExtraDelightItems.DRIED_CHILI.get());
-		
+
 		tag(ExtraDelightTags.CHOCOLATE_BAR_FILLING).addTag(ExtraDelightTags.NUTS).addTag(ExtraDelightTags.ROASTED_NUTS)
 				.addTag(ExtraDelightTags.FRUIT).addTag(ExtraDelightTags.CHOCOLATE_CHIPS)
 				.addTag(ExtraDelightTags.PUFFED_RICE).addTag(ExtraDelightTags.CORN_FLAKES)
@@ -428,6 +428,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.DRIED_FRUIT).addTag(ExtraDelightTags.DRIED_CHILI);
 		tag(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING).addTag(ExtraDelightTags.FROSTING).addTag(ExtraDelightTags.FUDGE)
 				.addTag(ExtraDelightTags.NOUGAT).addTag(ExtraDelightTags.WHIPPED_CREAM).addTag(ExtraDelightTags.JAM);
-	}
 
+		tag(ExtraDelightTags.JAMMABLE).addTag(Tags.Items.FOODS_FRUIT).addTag(Tags.Items.FOODS_BERRY)
+				.addTag(Tags.Items.CROPS_CARROT);
+	}
 }

@@ -206,6 +206,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MORTAR_STONE.get(), "Mortar");
 
 		this.add(ExtraDelightItems.MUFFIN_TIN.get(), "Muffin Tin");
+		this.add(ExtraDelightItems.SERVING_POT.get(), "Serving Pot");
 		this.add(ExtraDelightItems.SQUARE_PAN.get(), "Square Pan");
 		this.add(ExtraDelightItems.OVEN.get(), "Oven");
 
