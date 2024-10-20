@@ -77,6 +77,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".tooltip.serving", "Feast Serving");
 		this.add(ExtraDelight.MOD_ID + ".tooltip.butchercraft", "Requires Butchercraft");
 		this.add(ExtraDelight.MOD_ID + ".tooltip.spatula", "Right click to style! Shift + Right click for the menu");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.chill", "Chills for");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.styleable", "Can be styled with an Offset Spatula");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.name", "Extra Delight");
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.desc", "Feeling a little extra.");
@@ -1057,7 +1059,37 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.FRUIT_PRESSURE_PLATE.get(), "Fruit Pressure Plate");
 		this.add(ExtraDelightItems.FRUIT_BUTTON.get(), "Fruit Button");
 
+		this.add(ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET.get(), "Cocoa Butter Bucket");
+		this.add(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "White Chocolate Syrup Bucket");
+		this.add(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "Dark Chocolate Syrup Bucket");
+		this.add(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "Milk Chocolate Syrup Bucket");
+		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "Blood Chocolate Syrup Bucket");
+		this.add(ExtraDelightItems.COFFEE_FLUID_BUCKET.get(), "Coffee Bucket");
+		this.add(ExtraDelightItems.NUT_BUTTER_FLUID_BUCKET.get(), "Nut Butter Bucket");
+		this.add(ExtraDelightItems.MARSHMALLOW_FLUFF_FLUID_BUCKET.get(), "Marshmallow Fluff Bucket");
+		this.add(ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET.get(), "Cocoa Nut Butter Spread Bucket");
+
+		this.add("fluid_type.extradelight.cocoa_butter_fluid", "Cocoa Butter");
+		this.add("fluid_type.extradelight.white_chocolate_syrup_fluid", "White Chocolate Syrup");
+		this.add("fluid_type.extradelight.dark_chocolate_syrup_fluid", "Dark Chocolate Syrup");
+		this.add("fluid_type.extradelight.milk_chocolate_syrup_fluid", "Milk Chocolate Syrup");
+		this.add("fluid_type.extradelight.blood_chocolate_syrup_fluid", "Blood Chocolate Syrup");
+		this.add("fluid_type.extradelight.coffee_fluid", "Coffee");
+		this.add("fluid_type.extradelight.nut_butter_fluid", "Nut Butter");
+		this.add("fluid_type.extradelight.marshmallow_fluff_fluid", "Marshmallow Fluff");
+		this.add("fluid_type.extradelight.cocoa_nut_butter_spread_fluid", "Cocoa Nut Butter Spread");
+
+		this.add(ExtraDelightItems.COCOA_BUTTER_BOTTLE.get(), "Cocoa Butter");
+		this.add(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE.get(), "White Chocolate Syrup");
+		this.add(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE.get(), "Dark Chocolate Syrup");
+		this.add(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get(), "Milk Chocolate Syrup");
+		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(), "Blood Chocolate Syrup");
+		this.add(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get(), "Nut Butter");
+		this.add(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(), "Marshmallow Fluff");
+		this.add(ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get(), "Cocoa Nut Butter Spread");
+		this.add(ExtraDelightItems.ICE_CREAM_SUNDAE.get(), "Ice Cream Sundae");
 		this.add(ExtraDelightItems.MARSHMALLOW_BLOCK.get(), "Marshmallow Block");
+		this.add(ExtraDelightItems.MALLOW_POWDER.get(), "Mallow Root Powder");
 
 		AestheticBlocks.EngLoc(this);
 	}
