@@ -3094,8 +3094,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"lugaw", consumer);
 
 		pot(ExtraDelightItems.RICE_PUDDING.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(CommonTags.FOODS_MILK),
-						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.GROUND_CINNAMON) },
+				new Ingredient[] { Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(CommonTags.CROPS_RICE),
+						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON) },
 				"rice_pudding", consumer);
 
 		pot(ExtraDelightItems.PICKLED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,

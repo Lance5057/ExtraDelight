@@ -103,7 +103,6 @@ public class ExtraDelightForgeClientEvents {
 			ExtraDelightItems.PUMPKIN_PIE_ITEM,
 			ExtraDelightItems.PUMPKIN_ROLL_FEAST,
 			ExtraDelightItems.APPLE_CHEESECAKE_ITEM,
-			ExtraDelightItems.MONKEY_BREAD_FEAST,
 			ExtraDelightItems.COFFEE_CAKE_FEAST,
 			ExtraDelightItems.MILK_TART_FEAST,
 			ExtraDelightItems.CHOCOLATE_CAKE_BLOCK

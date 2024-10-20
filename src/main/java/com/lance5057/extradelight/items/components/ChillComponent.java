@@ -2,6 +2,7 @@ package com.lance5057.extradelight.items.components;
 
 import java.util.function.Consumer;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
@@ -32,7 +33,7 @@ public record ChillComponent(int time) implements TooltipProvider {
 
 	@Override
 	public void addToTooltip(TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag) {
-		tooltipAdder.accept(Component.translatable("item.extradelight.chill_tooltip").append(CommonComponents.SPACE)
+		tooltipAdder.accept(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.chill").append(CommonComponents.SPACE)
 				.append(String.valueOf(this.time)).withStyle(ChatFormatting.AQUA));
 	}
 

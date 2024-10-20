@@ -1,14 +1,21 @@
 package com.lance5057.extradelight.blocks;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
 import com.mojang.serialization.MapCodec;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -20,6 +27,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.List;
 
 public class HorizontalPanBlock extends HorizontalDirectionalBlock implements IStyleable {
 	public static final MapCodec<HorizontalPanBlock> CODEC = simpleCodec(HorizontalPanBlock::new);
@@ -131,5 +140,12 @@ public class HorizontalPanBlock extends HorizontalDirectionalBlock implements IS
 	public boolean isPatreonStyle(int style) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
+								TooltipFlag tooltipFlag) {
+		MutableComponent textEmpty = Component.translatable(ExtraDelight.MOD_ID + ".tooltip.styleable");
+		tooltipComponents.add(textEmpty.withStyle(ChatFormatting.AQUA));
 	}
 }

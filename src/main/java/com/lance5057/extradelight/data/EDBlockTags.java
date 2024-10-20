@@ -71,19 +71,19 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.BLOOD_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get(),
 				ExtraDelightBlocks.BLOOD_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE_GATE.get(),
 				ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(),
-				ExtraDelightBlocks.BLOOD_CHOCOLATE_TRAPDOOR.get(),
+				ExtraDelightBlocks.BLOOD_CHOCOLATE_TRAPDOOR.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_PILLAR.get(),
 				ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.DARK_CHOCOLATE_STAIRS.get(),
 				ExtraDelightBlocks.DARK_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.DARK_CHOCOLATE_FENCE_GATE.get(),
 				ExtraDelightBlocks.DARK_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(),
-				ExtraDelightBlocks.DARK_CHOCOLATE_TRAPDOOR.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_TRAPDOOR.get(), ExtraDelightBlocks.DARK_CHOCOLATE_PILLAR.get(),
 				ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.MILK_CHOCOLATE_STAIRS.get(),
 				ExtraDelightBlocks.MILK_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.MILK_CHOCOLATE_FENCE_GATE.get(),
 				ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(),
-				ExtraDelightBlocks.MILK_CHOCOLATE_TRAPDOOR.get(),
+				ExtraDelightBlocks.MILK_CHOCOLATE_TRAPDOOR.get(), ExtraDelightBlocks.MILK_CHOCOLATE_PILLAR.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_STAIRS.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE_GATE.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get(),
-				ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get()
+				ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_PILLAR.get()
 		);
 
 //		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.MINT_CROP.get());
@@ -94,17 +94,32 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CHEESECAKE.get(), ExtraDelightBlocks.HONEY_CHEESECAKE.get(),
 				ExtraDelightBlocks.CHOCOLATE_CHEESECAKE.get(), ExtraDelightBlocks.PUMPKIN_CHEESECAKE.get(),
 				ExtraDelightBlocks.GLOW_BERRY_CHEESECAKE.get(), ExtraDelightBlocks.QUICHE.get(),
-				ExtraDelightBlocks.MEAT_PIE_BLOCK.get(),
+				ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), ExtraDelightBlocks.CARAMEL_CHEESECAKE.get(),
+				ExtraDelightBlocks.PUMPKIN_PIE.get(), ExtraDelightBlocks.PUMPKIN_ROLL.get(),
+				ExtraDelightBlocks.APPLE_CHEESECAKE.get(), ExtraDelightBlocks.COFFEE_CAKE.get(),
+				ExtraDelightBlocks.MILK_TART.get(), ExtraDelightBlocks.CHOCOLATE_CAKE.get(),
 
 				// Feasts in bowls
 				ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(),
 				ExtraDelightBlocks.HASH_FEAST.get(), ExtraDelightBlocks.PULLED_PORK_FEAST.get(),
-				ExtraDelightBlocks.STIRFRY.get(), ExtraDelightBlocks.SALAD.get(),
+				ExtraDelightBlocks.STIRFRY.get(), ExtraDelightBlocks.SALAD.get(), ExtraDelightBlocks.PORK_STEW.get(),
+				ExtraDelightBlocks.LAMB_STEW.get(), ExtraDelightBlocks.CHICKEN_STEW.get(),
+				ExtraDelightBlocks.CURRY.get(), ExtraDelightBlocks.MACARONI_CHEESE.get(),
+				ExtraDelightBlocks.LASAGNA.get(), ExtraDelightBlocks.HOTDISH.get(), ExtraDelightBlocks.HASH_FEAST.get(),
+				ExtraDelightBlocks.CORNBREAD.get(), ExtraDelightBlocks.CORN_PUDDING.get(),
+				ExtraDelightBlocks.APPLE_CRISP.get(), ExtraDelightBlocks.STUFFING.get(),
+				ExtraDelightBlocks.POTATO_AU_GRATIN.get(), ExtraDelightBlocks.CINNAMON_ROLLS.get(),
+				ExtraDelightBlocks.PUNCH.get(), ExtraDelightBlocks.BROWNIES.get(), ExtraDelightBlocks.BLONDIES.get(),
+				ExtraDelightBlocks.FUDGE.get(), ExtraDelightBlocks.CRISP_RICE_TREATS.get(),
+				ExtraDelightBlocks.SCOTCHAROOS.get(), ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(),
 
 				// Feasts on plates
 				ExtraDelightBlocks.MEATLOAF_FEAST.get(), ExtraDelightBlocks.POT_ROAST_FEAST.get(),
 				ExtraDelightBlocks.BBQ_RIBS_FEAST.get(), ExtraDelightBlocks.RACK_LAMB.get(),
 				ExtraDelightBlocks.BEEF_WELLINGTON.get(), ExtraDelightBlocks.HAGGIS.get(),
+				ExtraDelightBlocks.MINT_LAMB.get(), ExtraDelightBlocks.CHARCUTERIE_BOARD.get(),
+				ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), ExtraDelightBlocks.MONKEY_BREAD.get(),
+				ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(),
 
 				// Jellies (also plated)
 				ExtraDelightBlocks.JELLY_WHITE.get(), ExtraDelightBlocks.JELLY_ORANGE.get(),
@@ -114,7 +129,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.JELLY_LIGHT_GREY.get(), ExtraDelightBlocks.JELLY_CYAN.get(),
 				ExtraDelightBlocks.JELLY_PURPLE.get(), ExtraDelightBlocks.JELLY_BLUE.get(),
 				ExtraDelightBlocks.JELLY_BROWN.get(), ExtraDelightBlocks.JELLY_GREEN.get(),
-				ExtraDelightBlocks.JELLY_RED.get(), ExtraDelightBlocks.JELLY_BLACK.get());
+				ExtraDelightBlocks.JELLY_RED.get(), ExtraDelightBlocks.JELLY_BLACK.get()
+		);
 		AestheticBlocks.WALLPAPER_BLOCKS.forEach(this::makeMineableWithKnife);
 		AestheticBlocks.MOLDED_WALLPAPER_BLOCKS.forEach(this::makeMineableWithKnife);
 		AestheticBlocks.DRIED_CORN_FENCE.forEach(this::makeMineableWithAxe);
@@ -123,7 +139,8 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.WILD_GINGER.get());
 
 		tag(BlockTags.MINEABLE_WITH_HOE).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(),
-				ExtraDelightBlocks.HAZELNUT_LEAVES.get());
+				ExtraDelightBlocks.HAZELNUT_LEAVES.get()
+		);
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.CINNAMON_LOG.get(),
 				ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), ExtraDelightBlocks.CINNAMON_PLANKS.get(),
 				ExtraDelightBlocks.CINNAMON_CABINET.get(), ExtraDelightBlocks.CINNAMON_DOOR.get(),

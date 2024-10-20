@@ -1,18 +1,27 @@
 package com.lance5057.extradelight.blocks;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+
+import java.util.List;
 
 public class ChocolateStyleBlock extends Block implements IStyleable {
 	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, 5);
@@ -83,5 +92,12 @@ public class ChocolateStyleBlock extends Block implements IStyleable {
 	public void setStyle(Level level, BlockPos pos, BlockState state, int style) {
 		BlockState nextState = state.setValue(STYLE, style);
 		level.setBlock(pos, nextState, 3);
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
+								TooltipFlag tooltipFlag) {
+		MutableComponent textEmpty = Component.translatable(ExtraDelight.MOD_ID + ".tooltip.styleable");
+		tooltipComponents.add(textEmpty.withStyle(ChatFormatting.AQUA));
 	}
 }
