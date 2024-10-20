@@ -29,8 +29,8 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 
 	public ChillerRecipeCategory(IGuiHelper guiHelper) {
 		background = guiHelper.createDrawable(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 156, 0, 100, 100);
-		localizedName = Component.translatable("extradelight.jei.meltingpot");
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 155, 183, 101, 73);
+		localizedName = Component.translatable("extradelight.jei.chiller");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ExtraDelightItems.MIXING_BOWL.get()));
 	}
@@ -59,14 +59,16 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 	public void setRecipe(IRecipeLayoutBuilder builder, ChillerRecipe recipe, IFocusGroup focuses) {
 
 		for (int i = 0; i < recipe.getIngredients().size(); i++) {
-			builder.addSlot(RecipeIngredientRole.INPUT, 0, 0).addIngredients(recipe.getIngredients().get(i));
+			builder.addSlot(RecipeIngredientRole.INPUT, 22, 20).addIngredients(recipe.getIngredients().get(i));
 		}
 
-		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 + 13 + 6, 8)
+		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 49, 1)
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid()))
-				.setFluidRenderer(1000, false, 16, 16);
+				.setFluidRenderer(6000, false, 16, 71);
+		
+		builder.addSlot(RecipeIngredientRole.CATALYST, 31, 56).addIngredients(Ingredient.of(recipe.getOutputContainer()));
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 0, 0).addIngredients(Ingredient.of(recipe.output));
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 84, 30).addIngredients(Ingredient.of(recipe.output));
 	}
 
 }

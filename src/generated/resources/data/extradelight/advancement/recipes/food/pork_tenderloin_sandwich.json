@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:pork_tenderloin_gravy"
+        "recipe": "extradelight:pork_tenderloin_sandwich"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:pork_tenderloin_gravy"
+      "extradelight:pork_tenderloin_sandwich"
     ]
   }
 }

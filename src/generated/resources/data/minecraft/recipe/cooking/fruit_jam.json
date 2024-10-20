@@ -1,0 +1,76 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "c:jammable"
+      },
+      "subtracted": [
+        {
+          "item": "minecraft:golden_apple"
+        },
+        {
+          "item": "minecraft:glow_berries"
+        },
+        {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ]
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "c:jammable"
+      },
+      "subtracted": [
+        {
+          "item": "minecraft:golden_apple"
+        },
+        {
+          "item": "minecraft:glow_berries"
+        },
+        {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ]
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "c:jammable"
+      },
+      "subtracted": [
+        {
+          "item": "minecraft:golden_apple"
+        },
+        {
+          "item": "minecraft:glow_berries"
+        },
+        {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ]
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 2,
+    "id": "extradelight:jam"
+  }
+}

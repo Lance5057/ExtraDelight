@@ -2,6 +2,7 @@
   "parent": "extradelight:block/square_pan",
   "render_type": "minecraft:translucent",
   "textures": {
-    "0": "extradelight:block/cosmetics/pans/glass_pan"
+    "0": "extradelight:block/cosmetics/pans/glass_pan",
+    "particle": "extradelight:block/cosmetics/pans/glass_pan"
   }
 }

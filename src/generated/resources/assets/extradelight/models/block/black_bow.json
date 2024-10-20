@@ -1,6 +1,7 @@
 {
   "parent": "extradelight:block/ribbon_bow",
   "textures": {
-    "0": "extradelight:block/ribbon/black_ribbon"
+    "0": "extradelight:block/ribbon/black_ribbon",
+    "particle": "extradelight:block/ribbon/black_ribbon"
   }
 }

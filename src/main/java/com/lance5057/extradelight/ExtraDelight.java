@@ -14,6 +14,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForgeMod;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
@@ -23,6 +24,7 @@ public class ExtraDelight {
 	public static Logger logger = LogManager.getLogger();
 
 	public ExtraDelight(IEventBus modEventBus, ModContainer modContainer) {
+		NeoForgeMod.enableMilkFluid();
 		modContainer.registerConfig(ModConfig.Type.COMMON, ExtraDelightConfig.spec);
 
 //		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

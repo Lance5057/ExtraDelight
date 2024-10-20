@@ -2,6 +2,7 @@
   "parent": "extradelight:block/tray",
   "render_type": "minecraft:translucent",
   "textures": {
-    "0": "extradelight:block/cosmetics/pans/diamond_pan"
+    "0": "extradelight:block/cosmetics/pans/diamond_pan",
+    "particle": "extradelight:block/cosmetics/pans/diamond_pan"
   }
 }

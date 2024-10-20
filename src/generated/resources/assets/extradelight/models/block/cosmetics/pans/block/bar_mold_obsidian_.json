@@ -2,6 +2,7 @@
   "parent": "extradelight:block/bar_mold",
   "render_type": "minecraft:translucent",
   "textures": {
-    "0": "extradelight:block/cosmetics/pans/obsidian_pan"
+    "0": "extradelight:block/cosmetics/pans/obsidian_pan",
+    "particle": "extradelight:block/cosmetics/pans/obsidian_pan"
   }
 }

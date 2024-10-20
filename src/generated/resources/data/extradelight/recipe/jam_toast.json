@@ -3,18 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "type": "neoforge:difference",
-      "base": {
-        "tag": "c:jam"
-      },
-      "subtracted": [
-        {
-          "item": "extradelight:glow_berry_jam"
-        },
-        {
-          "item": "extradelight:golden_apple_jam"
-        }
-      ]
+      "tag": "c:jam/mundane"
     },
     {
       "tag": "c:bread/sliced"

@@ -8,25 +8,25 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "extradelight:bread_slice"
+      "tag": "c:bread/sliced"
     },
     {
-      "item": "extradelight:bread_slice"
+      "tag": "c:bread/sliced"
     },
     {
-      "item": "extradelight:bread_slice"
+      "tag": "c:bread/sliced"
     },
     {
-      "item": "extradelight:bread_slice"
+      "tag": "c:bread/sliced"
     },
     {
-      "item": "extradelight:bread_slice"
+      "tag": "c:bread/sliced"
     },
     {
-      "item": "extradelight:bread_slice"
+      "tag": "c:bread/sliced"
     },
     {
-      "item": "extradelight:bread_slice"
+      "tag": "c:bread/sliced"
     }
   ],
   "result": {
