@@ -405,7 +405,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CHOCOLATE_CHIPS = neoforgeItemTag("chocolate/chips");
 	public static final TagKey<Item> CHOCOLATE_TRUFFLE = neoforgeItemTag("chocolate/truffle");
 	public static final TagKey<Item> FRUIT_MELON = neoforgeItemTag("fruit/melon");
-	public static final TagKey<Item> CHILI_POWDER = neoforgeItemTag("chill/powder");
+	public static final TagKey<Item> CHILI_POWDER = neoforgeItemTag("chili/powder");
 	public static final TagKey<Item> TOFFEE = neoforgeItemTag("toffee");
 	public static final TagKey<Item> GUMMIES = neoforgeItemTag("gummies");
 	public static final TagKey<Item> PEANUT_BRITTLE = neoforgeItemTag("peanut_brittle");
@@ -424,4 +424,5 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> MALLOWROOT_POWDER = neoforgeItemTag("mallowroot/powder");
 	public static final TagKey<Item> PEPPERMINT_CANDY = neoforgeItemTag("candy/peppermint");
 
+	public static final TagKey<Item> TEA_INGREDIENTS = neoforgeItemTag("tea_ingredients");
 }
