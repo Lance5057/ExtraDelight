@@ -760,9 +760,9 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> ROASTED_PUMPKIN_SEEDS = ITEMS.register("roasted_pumpkin_seeds",
 			() -> new Item(foodItem(EDFoods.EDIBLE_SEEDS)));
 	public static final DeferredItem<Item> TEA = ITEMS.register("tea",
-			() -> new CornSilkTeaItem(new Item.Properties()));
+			() -> new CornSilkTeaItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
 	public static final DeferredItem<Item> STEWED_APPLES = ITEMS.register("stewed_apples",
-			() -> new ToolTipConsumableItem(foodItem(EDFoods.STEWED_APPLES), true));
+			() -> new ToolTipConsumableItem(foodItem(EDFoods.STEWED_APPLES).craftRemainder(Items.BOWL), true));
 	public static final DeferredItem<Item> APPLE_FRITTERS = ITEMS.register("apple_fritters",
 			() -> new ToolTipConsumableItem(foodItem(EDFoods.APPLE_FRITTERS), true));
 	public static final DeferredItem<Item> CARAMEL_SAUCE = ITEMS.register("caramel_sauce",

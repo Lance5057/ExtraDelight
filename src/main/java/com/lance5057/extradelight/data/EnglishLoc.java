@@ -49,15 +49,12 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.glow_berry_juice", "Minor Instant Health, Glow");
 		this.add("farmersdelight.tooltip.sweet_berry_juice", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.tomato_juice", "Minor Instant Health");
-		this.add("farmersdelight.tooltip.corn_silk_tea", "Minor Instant Health, Comfort");
 		this.add("farmersdelight.tooltip.eggnog", "Removes 1 Harmful Effect");
-		this.add("farmersdelight.tooltip.mint_tea", "Minor Instant Health, Comfort");
 		this.add("farmersdelight.tooltip.punch", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.chocolate_milk", "Removes 1 Harmful Effect");
 		this.add("farmersdelight.tooltip.ginger_beer", "Minor Instant Health");
-		this.add("farmersdelight.tooltip.ginger_tea", "Minor Instant Health, Comfort");
 		this.add("farmersdelight.tooltip.horchata", "Removes 1 Harmful Effect");
-		this.add("farmersdelight.tooltip.tea", "Minor Instant Health, Removes 1 Harmful Effect");
+		this.add("farmersdelight.tooltip.tea", "Minor Instant Health, Comfort");
 
 		this.add("farmersdelight.tooltip.milkshake", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.chocolate_milkshake", "Instant Health");
@@ -334,7 +331,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.BEEF_STEW_FEAST.get(), "Pot of Beef Stew");
 		this.add(ExtraDelightItems.PORK_STEW_FEAST.get(), "Pot of Pork Stew");
-		this.add(ExtraDelightItems.LAMB_STEW_FEAST.get(), "Pot of Lamb Stew");
+		this.add(ExtraDelightItems.LAMB_STEW_FEAST.get(), "Pot of Mutton Stew");
 		this.add(ExtraDelightItems.RABBIT_STEW_FEAST.get(), "Pot of Rabbit Stew");
 		this.add(ExtraDelightItems.CHICKEN_STEW_FEAST.get(), "Pot of Chicken Stew");
 		this.add(ExtraDelightItems.FISH_STEW_FEAST.get(), "Pot of Fish Stew");
@@ -465,7 +462,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.BEEF_STEW_RICE.get(), "Beef Stew with Rice");
 		this.add(ExtraDelightItems.PORK_STEW_RICE.get(), "Pork Stew with Rice");
-		this.add(ExtraDelightItems.LAMB_STEW_RICE.get(), "Lamb Stew with Rice");
+		this.add(ExtraDelightItems.LAMB_STEW_RICE.get(), "Mutton Stew with Rice");
 		this.add(ExtraDelightItems.RABBIT_STEW_RICE.get(), "Rabbit Stew with Rice");
 		this.add(ExtraDelightItems.CHICKEN_STEW_RICE.get(), "Chicken Stew with Rice");
 		this.add(ExtraDelightItems.FISH_STEW_RICE.get(), "Fish Stew with Rice");
@@ -1090,6 +1087,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.ICE_CREAM_SUNDAE.get(), "Ice Cream Sundae");
 		this.add(ExtraDelightItems.MARSHMALLOW_BLOCK.get(), "Marshmallow Block");
 		this.add(ExtraDelightItems.MALLOW_POWDER.get(), "Mallow Root Powder");
+		this.add(ExtraDelightItems.GROUND_COFFEE.get(), "Ground Coffee");
 
 		AestheticBlocks.EngLoc(this);
 	}

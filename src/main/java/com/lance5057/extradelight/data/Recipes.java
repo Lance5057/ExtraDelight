@@ -3312,6 +3312,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ExtraDelightItems.CRISP_RICE.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, null,
 				new Ingredient[] { Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				"crisp_rice", consumer);
+
+		pot(ExtraDelightItems.TEA.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.TEA_INGREDIENTS),
+						Ingredient.of(ExtraDelightTags.TEA_INGREDIENTS), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"tea", consumer);
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {

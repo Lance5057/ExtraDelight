@@ -31,7 +31,7 @@ public class ExtraDelightFluids {
 			() -> new BasicFluid("gravy", 0xffffffff,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
 							.temperature(600).motionScale(0.5f)),
-			ExtraDelightBlocks.GRAVY_FLUID_BLOCK, ExtraDelightItems.GRAVY_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+			ExtraDelightBlocks.GRAVY_FLUID_BLOCK, ExtraDelightItems.GRAVY_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 1);
 
 	public static FluidRegistration GLOW_BERRY_JUICE = new FluidRegistration("glow_berry_juice",
 			() -> new BasicFluid(0xffff9401, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
@@ -78,25 +78,25 @@ public class ExtraDelightFluids {
 			() -> new BasicFluid("egg_mix", 0xffffffff,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
 							.motionScale(0.75f)),
-			ExtraDelightBlocks.EGG_MIX_FLUID_BLOCK, ExtraDelightItems.EGG_MIX_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+			ExtraDelightBlocks.EGG_MIX_FLUID_BLOCK, ExtraDelightItems.EGG_MIX_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 2);
 
 	public static FluidRegistration BBQ = new FluidRegistration("bbq",
 			() -> new BasicFluid("bbq", 0xffffffff,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
 							.motionScale(0.5f)),
-			ExtraDelightBlocks.BBQ_FLUID_BLOCK, ExtraDelightItems.BBQ_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+			ExtraDelightBlocks.BBQ_FLUID_BLOCK, ExtraDelightItems.BBQ_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 2);
 
 	public static FluidRegistration KETCHUP = new FluidRegistration("ketchup",
 			() -> new BasicFluid("ketchup", 0xffffffff,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
 							.motionScale(0.5f)),
-			ExtraDelightBlocks.KETCHUP_FLUID_BLOCK, ExtraDelightItems.KETCHUP_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+			ExtraDelightBlocks.KETCHUP_FLUID_BLOCK, ExtraDelightItems.KETCHUP_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 2);
 
 	public static FluidRegistration MAYO = new FluidRegistration("mayo",
 			() -> new BasicFluid("mayo", 0xffffffff,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
 							.motionScale(0.5f)),
-			ExtraDelightBlocks.MAYO_FLUID_BLOCK, ExtraDelightItems.MAYO_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+			ExtraDelightBlocks.MAYO_FLUID_BLOCK, ExtraDelightItems.MAYO_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
 
 	public static FluidRegistration BROTH = new FluidRegistration("broth",
 			() -> new BasicFluid(0xffc4b136, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
@@ -107,7 +107,7 @@ public class ExtraDelightFluids {
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
 							.density(6000).motionScale(0.1)),
 			ExtraDelightBlocks.CARAMEL_SAUCE_FLUID_BLOCK, ExtraDelightItems.CARAMEL_SAUCE_FLUID_BUCKET, FLUID_TYPES,
-			FLUIDS);
+			FLUIDS, 2);
 
 	public static FluidRegistration MILKSHAKE = new FluidRegistration("milkshake",
 			() -> new BasicFluid("milkshake", 0xffffffff,
@@ -117,28 +117,28 @@ public class ExtraDelightFluids {
 
 	public static FluidRegistration WHIPPED_CREAM = new FluidRegistration("whipped_cream",
 			() -> new BasicFluid("whipped_cream", 0xffffffff,
-					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000).density(600)
+					BasicFluid.Properties.create().supportsBoating(false).canHydrate(false).viscosity(12000).density(600)
 							.motionScale(0.1)),
 			ExtraDelightBlocks.WHIPPED_CREAM_FLUID_BLOCK, ExtraDelightItems.WHIPPED_CREAM_FLUID_BUCKET, FLUID_TYPES,
-			FLUIDS);
+			FLUIDS, 4);
 
 	public static FluidRegistration JAM = new FluidRegistration("jam",
 			() -> new BasicFluid("jam", 0xffffffff,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
 							.density(6000).motionScale(0.1)),
-			ExtraDelightBlocks.JAM_FLUID_BLOCK, ExtraDelightItems.JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+			ExtraDelightBlocks.JAM_FLUID_BLOCK, ExtraDelightItems.JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
 
 	public static FluidRegistration GOLDEN_JAM = new FluidRegistration("golden_jam",
 			() -> new BasicFluid("golden_jam", 0xffffffff,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
 							.density(6000).motionScale(0.1)),
-			ExtraDelightBlocks.GOLDEN_JAM_FLUID_BLOCK, ExtraDelightItems.GOLDEN_JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+			ExtraDelightBlocks.GOLDEN_JAM_FLUID_BLOCK, ExtraDelightItems.GOLDEN_JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
 
 	public static FluidRegistration GLOW_JAM = new FluidRegistration("glow_jam",
 			() -> new BasicFluid("glow_jam", 0xffffffff,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).viscosity(12000)
 							.density(6000).motionScale(0.1)),
-			ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK, ExtraDelightItems.GLOW_JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+			ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK, ExtraDelightItems.GLOW_JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
 
 	public static FluidRegistration TEA = new FluidRegistration("tea",
 			() -> new BasicFluid(0xff562d0f, BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
@@ -149,7 +149,7 @@ public class ExtraDelightFluids {
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000)
 							.viscosity(6000)),
 			ExtraDelightBlocks.COCOA_BUTTER_FLUID_BLOCK, ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET, FLUID_TYPES,
-			FLUIDS);
+			FLUIDS, 2);
 
 	public static FluidRegistration WHITE_CHOCOLATE_SYRUP = new FluidRegistration("white_chocolate_syrup",
 			() -> new BasicFluid("white_chocolate_syrup", 0xffffd598,
@@ -196,14 +196,14 @@ public class ExtraDelightFluids {
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canSwim(false)
 							.viscosity(3000).density(6000)),
 			ExtraDelightBlocks.MARSHMALLOW_FLUFF_FLUID_BLOCK, ExtraDelightItems.MARSHMALLOW_FLUFF_FLUID_BUCKET,
-			FLUID_TYPES, FLUIDS);
+			FLUID_TYPES, FLUIDS, 4);
 
 	public static FluidRegistration COCOA_NUT_BUTTER_SPREAD = new FluidRegistration("cocoa_nut_butter_spread",
 			() -> new BasicFluid("cocoa_nut_butter_spread", 0xffffffff,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canSwim(false)
 							.viscosity(3000).density(6000)),
 			ExtraDelightBlocks.COCOA_NUT_BUTTER_SPREAD_FLUID_BLOCK,
-			ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+			ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
 
 	public static void register(IEventBus modBus) {
 		FLUID_TYPES.register(modBus);
