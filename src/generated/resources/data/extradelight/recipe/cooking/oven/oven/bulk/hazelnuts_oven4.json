@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:crops/hazelnut/shelled"
+    },
+    {
+      "tag": "c:crops/hazelnut/shelled"
+    },
+    {
+      "tag": "c:crops/hazelnut/shelled"
+    },
+    {
+      "tag": "c:crops/hazelnut/shelled"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:roasted_hazelnuts"
+  }
+}

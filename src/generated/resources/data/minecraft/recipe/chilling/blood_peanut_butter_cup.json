@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:chiller",
+  "container": {
+    "count": 1,
+    "id": "extradelight:muffin_tin"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 1000,
+    "id": "extradelight:blood_chocolate_syrup_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "c:peanut_butter"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "extradelight:peanut_butter_cup"
+  }
+}

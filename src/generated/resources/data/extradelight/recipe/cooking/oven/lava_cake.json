@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:muffin_tin"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:chocolate_syrup"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "c:chocolate_syrup"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "extradelight:lava_cake"
+  }
+}

@@ -1088,6 +1088,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.ICE_CREAM_SUNDAE, "ice_cream_sundae");
 		forBlockItem(ExtraDelightItems.MARSHMALLOW_BLOCK, "marshmallow_block");
 		forItem(ExtraDelightItems.MALLOW_POWDER, "mallow_root_powder");
+		forItem(ExtraDelightItems.GROUND_COFFEE, "ground_coffee");
 
 		AestheticBlocks.itemModel(this);
 	}

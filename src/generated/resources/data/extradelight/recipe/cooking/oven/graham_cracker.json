@@ -1,0 +1,36 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:cinnamon/ground"
+    },
+    {
+      "tag": "c:chocolate_syrup"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "c:cooking_oil"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:graham_cracker"
+  }
+}

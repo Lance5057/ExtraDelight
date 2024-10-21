@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "coffee_jelly": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:coffee_jelly"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/coffee_jelly"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "coffee_jelly"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/coffee_jelly"
+    ]
+  }
+}

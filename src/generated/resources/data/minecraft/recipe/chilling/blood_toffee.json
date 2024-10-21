@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:chiller",
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "id": "extradelight:blood_chocolate_syrup_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:nuts/cooked"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:toffee"
+  }
+}

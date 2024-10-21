@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {},
+  "grinds": 4,
+  "ingredient": {
+    "tag": "c:crops/chili/dried"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:chili_powder"
+  }
+}

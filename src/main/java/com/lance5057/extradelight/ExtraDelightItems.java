@@ -1961,4 +1961,6 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<Item> MALLOW_POWDER = ITEMS.register("mallow_powder",
 			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> GROUND_COFFEE = ITEMS.register("ground_coffee",
+			() -> new Item(new Item.Properties()));
 }

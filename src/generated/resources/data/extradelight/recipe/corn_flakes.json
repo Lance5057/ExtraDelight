@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:dough_shaping",
+  "ingredient": {
+    "tag": "c:seeds/corn"
+  },
+  "result": {
+    "count": 8,
+    "id": "extradelight:corn_flakes"
+  }
+}

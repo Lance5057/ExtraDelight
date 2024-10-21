@@ -59,14 +59,20 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 	public void setRecipe(IRecipeLayoutBuilder builder, ChillerRecipe recipe, IFocusGroup focuses) {
 
 		for (int i = 0; i < recipe.getIngredients().size(); i++) {
-			builder.addSlot(RecipeIngredientRole.INPUT, 22, 20).addIngredients(recipe.getIngredients().get(i));
+			if (i < 2)
+				builder.addSlot(RecipeIngredientRole.INPUT, 22 + i % 2 * 18, 20)
+						.addIngredients(recipe.getIngredients().get(i));
+			else
+				builder.addSlot(RecipeIngredientRole.INPUT, 22 + i % 2 * 18, 38)
+						.addIngredients(recipe.getIngredients().get(i));
 		}
 
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 49, 1)
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid()))
 				.setFluidRenderer(6000, false, 16, 71);
-		
-		builder.addSlot(RecipeIngredientRole.CATALYST, 31, 56).addIngredients(Ingredient.of(recipe.getOutputContainer()));
+
+		builder.addSlot(RecipeIngredientRole.CATALYST, 31, 56)
+				.addIngredients(Ingredient.of(recipe.getOutputContainer()));
 
 		builder.addSlot(RecipeIngredientRole.OUTPUT, 84, 30).addIngredients(Ingredient.of(recipe.output));
 	}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 1.0,
+  "ingredient": {
+    "tag": "c:crops/coffee/green"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:coffee_beans"
+  }
+}

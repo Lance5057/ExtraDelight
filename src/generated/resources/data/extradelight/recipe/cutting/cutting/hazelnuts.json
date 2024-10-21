@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:hazelnuts_in_shell"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "extradelight:hazelnuts"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

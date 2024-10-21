@@ -380,17 +380,21 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> ROASTED_NUTS = neoforgeItemTag("nuts/cooked");
 
 	public static final TagKey<Item> ROASTED_PEANUTS = neoforgeItemTag("crops/peanuts/cooked");
-	public static final TagKey<Item> PEANUTS = neoforgeItemTag("crops/peanuts");
+	public static final TagKey<Item> PEANUTS = neoforgeItemTag("crops/peanuts/shelled");
+	public static final TagKey<Item> PEANUTS_IN_SHELL = neoforgeItemTag("crops/peanuts");
 
 	public static final TagKey<Item> ROASTED_HAZELNUTS = neoforgeItemTag("crops/hazelnut/cooked");
-	public static final TagKey<Item> HAZELNUTS = neoforgeItemTag("crops/hazelnut");
+	public static final TagKey<Item> HAZELNUTS = neoforgeItemTag("crops/hazelnut/shelled");
+	public static final TagKey<Item> HAZELNUTS_IN_SHELL = neoforgeItemTag("crops/hazelnut");
 
 	public static final TagKey<Item> MALLOWROOT = neoforgeItemTag("crops/mallow_root");
 	public static final TagKey<Item> MARSHMALLOW = neoforgeItemTag("marshmallow");
+	public static final TagKey<Item> MARSHMALLOW_FLUFF = neoforgeItemTag("marshmallow_fluff");
 
-	public static final TagKey<Item> COFFEE_BEANS = neoforgeItemTag("crops/coffee_beans");
-	public static final TagKey<Item> ROASTED_COFFEE_BEANS = neoforgeItemTag("crops/coffee_beans/cooked");
-	public static final TagKey<Item> GROUND_COFFEE_BEANS = neoforgeItemTag("crops/coffee_beans/ground");
+	public static final TagKey<Item> COFFEE_CHERRIES = neoforgeItemTag("crops/coffee");
+	public static final TagKey<Item> GREEN_COFFEE = neoforgeItemTag("crops/coffee/green");
+	public static final TagKey<Item> ROASTED_COFFEE_BEANS = neoforgeItemTag("crops/coffee/cooked");
+	public static final TagKey<Item> GROUND_COFFEE_BEANS = neoforgeItemTag("crops/coffee/ground");
 
 	public static final TagKey<Item> PUFFED_RICE = neoforgeItemTag("puffed_rice");
 	public static final TagKey<Item> CORN_FLAKES = neoforgeItemTag("corn_flakes");
@@ -406,10 +410,18 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> GUMMIES = neoforgeItemTag("gummies");
 	public static final TagKey<Item> PEANUT_BRITTLE = neoforgeItemTag("peanut_brittle");
 	public static final TagKey<Item> TRAIL_MIX = neoforgeItemTag("trail_mix");
-	
+
 	public static final TagKey<Item> CHOCOLATE_TRUFFLE_FILLING = modTag("chocolate_truffle_filling");
 	public static final TagKey<Item> FUDGE = neoforgeItemTag("fudge");
 	public static final TagKey<Item> NOUGAT = neoforgeItemTag("nougat");
 
 	public static final TagKey<Item> JAMMABLE = neoforgeItemTag("jammable");
+	public static final TagKey<Item> PEANUT_BUTTER = neoforgeItemTag("peanut_butter");
+	public static final TagKey<Item> CHOCOLATE_SYRUP = neoforgeItemTag("chocolate_syrup");
+	public static final TagKey<Item> COOKIE = neoforgeItemTag("cookie");
+	public static final TagKey<Item> COFFEE = neoforgeItemTag("coffee");
+	public static final TagKey<Item> GRAHAM_CRACKER = neoforgeItemTag("graham_cracker");
+	public static final TagKey<Item> MALLOWROOT_POWDER = neoforgeItemTag("mallowroot/powder");
+	public static final TagKey<Item> PEPPERMINT_CANDY = neoforgeItemTag("candy/peppermint");
+
 }

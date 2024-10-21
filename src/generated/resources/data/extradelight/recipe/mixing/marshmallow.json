@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "id": "minecraft:water"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:mallowroot/powder"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:marshmallow"
+  },
+  "stirs": 4
+}

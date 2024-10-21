@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:bread/sliced"
+    },
+    {
+      "tag": "c:peanut_butter"
+    },
+    {
+      "tag": "c:jam"
+    },
+    {
+      "tag": "c:bread/sliced"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:peanut_butter_jelly"
+  }
+}

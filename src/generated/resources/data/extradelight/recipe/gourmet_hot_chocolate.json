@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:hot_cocoa"
+    },
+    {
+      "tag": "c:whipped_cream"
+    },
+    {
+      "tag": "c:cookie"
+    },
+    {
+      "tag": "c:cinnamon/ground"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:gourmet_hot_chocolate"
+  }
+}

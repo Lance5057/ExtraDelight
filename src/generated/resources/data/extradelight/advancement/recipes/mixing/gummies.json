@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "gummies": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:gummies"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/gummies"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "gummies"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/gummies"
+    ]
+  }
+}

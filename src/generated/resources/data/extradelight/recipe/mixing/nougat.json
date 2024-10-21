@@ -1,0 +1,31 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "id": "minecraft:water"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:nuts/cooked"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:nougat"
+  },
+  "stirs": 4
+}

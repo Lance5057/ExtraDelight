@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:chocolate/chips"
+    },
+    {
+      "tag": "c:fruit/dried"
+    },
+    {
+      "tag": "c:nuts/cooked"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "id": "extradelight:trail_mix"
+  }
+}

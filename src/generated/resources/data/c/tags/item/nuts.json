@@ -1,6 +1,6 @@
 {
   "values": [
-    "#c:crops/hazelnut",
-    "#c:crops/peanuts"
+    "#c:crops/hazelnut/shelled",
+    "#c:crops/peanuts/shelled"
   ]
 }

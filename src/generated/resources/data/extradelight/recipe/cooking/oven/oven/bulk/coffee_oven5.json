@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:crops/coffee/green"
+    },
+    {
+      "tag": "c:crops/coffee/green"
+    },
+    {
+      "tag": "c:crops/coffee/green"
+    },
+    {
+      "tag": "c:crops/coffee/green"
+    },
+    {
+      "tag": "c:crops/coffee/green"
+    }
+  ],
+  "result": {
+    "count": 5,
+    "id": "extradelight:roasted_cocoa_beans"
+  }
+}

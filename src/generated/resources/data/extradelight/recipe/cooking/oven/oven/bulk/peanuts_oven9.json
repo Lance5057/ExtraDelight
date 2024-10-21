@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:crops/peanuts/shelled"
+    },
+    {
+      "tag": "c:crops/peanuts/shelled"
+    },
+    {
+      "tag": "c:crops/peanuts/shelled"
+    },
+    {
+      "tag": "c:crops/peanuts/shelled"
+    },
+    {
+      "tag": "c:crops/peanuts/shelled"
+    },
+    {
+      "tag": "c:crops/peanuts/shelled"
+    },
+    {
+      "tag": "c:crops/peanuts/shelled"
+    },
+    {
+      "tag": "c:crops/peanuts/shelled"
+    },
+    {
+      "tag": "c:crops/peanuts/shelled"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "extradelight:roasted_peanuts"
+  }
+}

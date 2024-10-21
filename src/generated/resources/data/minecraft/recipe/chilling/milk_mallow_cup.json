@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:chiller",
+  "container": {
+    "count": 1,
+    "id": "extradelight:muffin_tin"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 1000,
+    "id": "extradelight:milk_chocolate_syrup_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "c:marshmallow_fluff"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "extradelight:mallow_cup"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:drying_rack",
+  "cookingtime": 1000,
+  "experience": 10.0,
+  "ingredient": {
+    "tag": "c:crops/coffee"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:green_coffee"
+  }
+}
