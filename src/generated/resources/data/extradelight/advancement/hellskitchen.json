@@ -1,0 +1,46 @@
+{
+  "parent": "extradelight:spoon",
+  "criteria": {
+    "hellskitchen_knife": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:netherite_knife"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hellskitchen_spoon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:netherite_spoon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.hellskitchen.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:netherite_spoon"
+    },
+    "title": {
+      "translate": "extradelight.advancement.hellskitchen.name"
+    }
+  },
+  "requirements": [
+    [
+      "hellskitchen_spoon"
+    ],
+    [
+      "hellskitchen_knife"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

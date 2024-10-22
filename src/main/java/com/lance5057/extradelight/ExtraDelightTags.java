@@ -423,7 +423,7 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> JAMMABLE = neoforgeItemTag("jammable");
 	public static final TagKey<Item> PEANUT_BUTTER = neoforgeItemTag("peanut_butter");
-	public static final TagKey<Item> CHOCOLATE_SYRUP = neoforgeItemTag("chocolate_syrup");
+	public static final TagKey<Item> CHOCOLATE_SYRUP = neoforgeItemTag("liquid_chocolate");
 	public static final TagKey<Item> COOKIE = neoforgeItemTag("cookie");
 	public static final TagKey<Item> COFFEE = neoforgeItemTag("coffee");
 	public static final TagKey<Item> GRAHAM_CRACKER = neoforgeItemTag("graham_cracker");

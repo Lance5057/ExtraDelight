@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:chiller",
+  "criteria": {
+    "chocolate_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:chocolate/bar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.chocolate_bar.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:milk_chocolate_bar"
+    },
+    "title": {
+      "translate": "extradelight.advancement.chocolate_bar.name"
+    }
+  },
+  "requirements": [
+    [
+      "chocolate_bar"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

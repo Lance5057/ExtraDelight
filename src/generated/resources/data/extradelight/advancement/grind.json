@@ -1,0 +1,45 @@
+{
+  "parent": "extradelight:mortar",
+  "criteria": {
+    "grind": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "#c:mortars"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "#c:spoons"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.grind.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "extradelight:pestle_endstone"
+    },
+    "title": {
+      "translate": "extradelight.advancement.grind.name"
+    }
+  },
+  "requirements": [
+    [
+      "grind"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

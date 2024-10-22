@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "melting_pot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:melting_pot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.melting_pot.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:melting_pot"
+    },
+    "title": {
+      "translate": "extradelight.advancement.melting_pot.name"
+    }
+  },
+  "requirements": [
+    [
+      "melting_pot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

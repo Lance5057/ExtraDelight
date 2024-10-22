@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:keg",
+  "criteria": {
+    "tap": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:tap"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.tap.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:tap"
+    },
+    "title": {
+      "translate": "extradelight.advancement.tap.name"
+    }
+  },
+  "requirements": [
+    [
+      "tap"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

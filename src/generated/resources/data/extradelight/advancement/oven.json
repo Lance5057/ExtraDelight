@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "oven": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:oven"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.oven.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:oven"
+    },
+    "title": {
+      "translate": "extradelight.advancement.oven.name"
+    }
+  },
+  "requirements": [
+    [
+      "oven"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

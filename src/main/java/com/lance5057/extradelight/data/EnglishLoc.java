@@ -159,7 +159,34 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".advancement.desert.desc", "Make every available desert.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.ingredients.name", "Sous Chef");
-		this.add(ExtraDelight.MOD_ID + ".advancement.ingredients.desc", "Aquire and prepare every ingredient.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.ingredients.desc", "Acquire and prepare every ingredient.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.melting_pot.name", "Soften Up A Little");
+		this.add(ExtraDelight.MOD_ID + ".advancement.melting_pot.desc", "Make a Melting Pot.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.chiller.name", "On Ice");
+		this.add(ExtraDelight.MOD_ID + ".advancement.chiller.desc", "Make a Chiller.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.counter.name", "Upgrades, People, Upgrades!");
+		this.add(ExtraDelight.MOD_ID + ".advancement.counter.desc", "Convert a Cabinet into a Countertop Cabinet.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.fondue.name", "Take A Dip");
+		this.add(ExtraDelight.MOD_ID + ".advancement.fondue.desc", "Make Fondue.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.chocolate_bar.name", "Je T'aime Très Beaucoup");
+		this.add(ExtraDelight.MOD_ID + ".advancement.chocolate_bar.desc", "Make a Chocolate Bar.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.tap.name", "I'd Tap That");
+		this.add(ExtraDelight.MOD_ID + ".advancement.tap.desc", "Make a Tap and recieve infinite Water.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.keg.name", "Keg Stand!");
+		this.add(ExtraDelight.MOD_ID + ".advancement.keg.desc", "Make a Keg.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.sink.name", "Everything but...");
+		this.add(ExtraDelight.MOD_ID + ".advancement.sink.desc", "Make a Sink.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.funnel.name", "Small Water Slide");
+		this.add(ExtraDelight.MOD_ID + ".advancement.funnel.desc", "Make a Funnel.");
 
 		this.add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		this.add(ExtraDelightItems.CHEESECAKE_ITEM.get(), "Cheesecake");
@@ -1057,30 +1084,30 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.FRUIT_BUTTON.get(), "Fruit Button");
 
 		this.add(ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET.get(), "Cocoa Butter Bucket");
-		this.add(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "White Chocolate Syrup Bucket");
-		this.add(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "Dark Chocolate Syrup Bucket");
-		this.add(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "Milk Chocolate Syrup Bucket");
-		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "Blood Chocolate Syrup Bucket");
+		this.add(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "Liquid White Chocolate Bucket");
+		this.add(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "Liquid Dark Chocolate Bucket");
+		this.add(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "Liquid Milk Chocolate Bucket");
+		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET.get(), "Liquid Blood Chocolate Bucket");
 		this.add(ExtraDelightItems.COFFEE_FLUID_BUCKET.get(), "Coffee Bucket");
 		this.add(ExtraDelightItems.NUT_BUTTER_FLUID_BUCKET.get(), "Nut Butter Bucket");
 		this.add(ExtraDelightItems.MARSHMALLOW_FLUFF_FLUID_BUCKET.get(), "Marshmallow Fluff Bucket");
 		this.add(ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET.get(), "Cocoa Nut Butter Spread Bucket");
 
 		this.add("fluid_type.extradelight.cocoa_butter_fluid", "Cocoa Butter");
-		this.add("fluid_type.extradelight.white_chocolate_syrup_fluid", "White Chocolate Syrup");
-		this.add("fluid_type.extradelight.dark_chocolate_syrup_fluid", "Dark Chocolate Syrup");
-		this.add("fluid_type.extradelight.milk_chocolate_syrup_fluid", "Milk Chocolate Syrup");
-		this.add("fluid_type.extradelight.blood_chocolate_syrup_fluid", "Blood Chocolate Syrup");
+		this.add("fluid_type.extradelight.white_chocolate_syrup_fluid", "Liquid White Chocolate");
+		this.add("fluid_type.extradelight.dark_chocolate_syrup_fluid", "Liquid Dark Chocolate");
+		this.add("fluid_type.extradelight.milk_chocolate_syrup_fluid", "Liquid Milk Chocolate");
+		this.add("fluid_type.extradelight.blood_chocolate_syrup_fluid", "Liquid Blood Chocolate");
 		this.add("fluid_type.extradelight.coffee_fluid", "Coffee");
 		this.add("fluid_type.extradelight.nut_butter_fluid", "Nut Butter");
 		this.add("fluid_type.extradelight.marshmallow_fluff_fluid", "Marshmallow Fluff");
-		this.add("fluid_type.extradelight.cocoa_nut_butter_spread_fluid", "Cocoa Nut Butter Spread");
+		this.add("fluid_type.extradelight.cocoa_nut_butter_spread_fluid", "Chocolate Nut Butter Spread");
 
 		this.add(ExtraDelightItems.COCOA_BUTTER_BOTTLE.get(), "Cocoa Butter");
-		this.add(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE.get(), "White Chocolate Syrup");
-		this.add(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE.get(), "Dark Chocolate Syrup");
-		this.add(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get(), "Milk Chocolate Syrup");
-		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(), "Blood Chocolate Syrup");
+		this.add(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE.get(), "Liquid White Chocolate");
+		this.add(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE.get(), "Liquid Dark Chocolate");
+		this.add(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get(), "Liquid Milk Chocolate");
+		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(), "Liquid Blood Chocolate");
 		this.add(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get(), "Nut Butter");
 		this.add(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(), "Marshmallow Fluff");
 		this.add(ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get(), "Cocoa Nut Butter Spread");

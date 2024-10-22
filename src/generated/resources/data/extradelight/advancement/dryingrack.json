@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "dryingrack": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:drying_rack_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.dryingrack.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:drying_rack_item"
+    },
+    "title": {
+      "translate": "extradelight.advancement.dryingrack.name"
+    }
+  },
+  "requirements": [
+    [
+      "dryingrack"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

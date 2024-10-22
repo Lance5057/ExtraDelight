@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "grater": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grater"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.grater.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:grater"
+    },
+    "title": {
+      "translate": "extradelight.advancement.grater.name"
+    }
+  },
+  "requirements": [
+    [
+      "grater"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

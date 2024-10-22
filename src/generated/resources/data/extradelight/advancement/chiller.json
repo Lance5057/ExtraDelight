@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "chiller": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chiller"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.chiller.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:chiller"
+    },
+    "title": {
+      "translate": "extradelight.advancement.chiller.name"
+    }
+  },
+  "requirements": [
+    [
+      "chiller"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

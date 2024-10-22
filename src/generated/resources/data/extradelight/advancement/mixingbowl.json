@@ -1,0 +1,44 @@
+{
+  "parent": "extradelight:spoon",
+  "criteria": {
+    "mixingbowl": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "extradelight:mixing_bowl"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "#c:spoons"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.mixingbowl.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:mixing_bowl"
+    },
+    "title": {
+      "translate": "extradelight.advancement.mixingbowl.name"
+    }
+  },
+  "requirements": [
+    [
+      "mixingbowl"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

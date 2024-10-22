@@ -1,0 +1,56 @@
+{
+  "parent": "extradelight:doughshaping",
+  "criteria": {
+    "lasagna_noodles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lasagna_noodles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "macaroni_noodles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:macaroni"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:raw_pasta"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.noodles.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "extradelight:lasagna_noodles"
+    },
+    "title": {
+      "translate": "extradelight.advancement.noodles.name"
+    }
+  },
+  "requirements": [
+    [
+      "lasagna_noodles",
+      "macaroni_noodles",
+      "pasta"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "keg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:keg_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.keg.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:keg_item"
+    },
+    "title": {
+      "translate": "extradelight.advancement.keg.name"
+    }
+  },
+  "requirements": [
+    [
+      "keg"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

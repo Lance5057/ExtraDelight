@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "mortar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:mortars"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.mortar.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:mortar_stone"
+    },
+    "title": {
+      "translate": "extradelight.advancement.mortar.name"
+    }
+  },
+  "requirements": [
+    [
+      "mortar"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

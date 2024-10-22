@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:mortar",
+  "criteria": {
+    "flour": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:flour"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.flour.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:flour"
+    },
+    "title": {
+      "translate": "extradelight.advancement.flour.name"
+    }
+  },
+  "requirements": [
+    [
+      "flour"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

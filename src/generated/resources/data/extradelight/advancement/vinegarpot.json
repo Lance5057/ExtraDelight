@@ -1,0 +1,46 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "vinegar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:vinegar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vinegarpot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:vinegar_pot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.vinegarpot.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:yeast_pot"
+    },
+    "title": {
+      "translate": "extradelight.advancement.vinegarpot.name"
+    }
+  },
+  "requirements": [
+    [
+      "vinegarpot"
+    ],
+    [
+      "vinegar"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

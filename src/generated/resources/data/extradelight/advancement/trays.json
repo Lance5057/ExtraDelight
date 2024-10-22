@@ -1,0 +1,98 @@
+{
+  "parent": "extradelight:oven",
+  "criteria": {
+    "baking_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:baking_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "loaf_pan": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:loaf_pan"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "muffin_tin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:muffin_tin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pie_dish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pie_dish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sheet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sheet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tray": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:tray"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.trays.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:tray"
+    },
+    "title": {
+      "translate": "extradelight.advancement.trays.name"
+    }
+  },
+  "requirements": [
+    [
+      "tray"
+    ],
+    [
+      "sheet"
+    ],
+    [
+      "baking_stone"
+    ],
+    [
+      "loaf_pan"
+    ],
+    [
+      "pie_dish"
+    ],
+    [
+      "muffin_tin"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

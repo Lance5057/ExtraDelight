@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "jelly": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#extradelight:jelly"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.jelly.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:jelly_lime"
+    },
+    "title": {
+      "translate": "extradelight.advancement.jelly.name"
+    }
+  },
+  "requirements": [
+    [
+      "jelly"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

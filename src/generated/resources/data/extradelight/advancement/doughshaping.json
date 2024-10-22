@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "doughshaping": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:dough_shaping"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.doughshaping.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:dough_shaping"
+    },
+    "title": {
+      "translate": "extradelight.advancement.doughshaping.name"
+    }
+  },
+  "requirements": [
+    [
+      "doughshaping"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

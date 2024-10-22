@@ -1,0 +1,26 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "food": {
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.food.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:apple"
+    },
+    "title": {
+      "translate": "extradelight.advancement.food.name"
+    }
+  },
+  "requirements": [
+    [
+      "food"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

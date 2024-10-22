@@ -1,0 +1,46 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "yeast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:yeast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "yeastpot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:yeast_pot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.yeastpot.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:yeast_pot"
+    },
+    "title": {
+      "translate": "extradelight.advancement.yeastpot.name"
+    }
+  },
+  "requirements": [
+    [
+      "yeastpot"
+    ],
+    [
+      "yeast"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

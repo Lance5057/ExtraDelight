@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "counter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:oak_counter_cabinet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.counter.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:oak_counter_cabinet"
+    },
+    "title": {
+      "translate": "extradelight.advancement.counter.name"
+    }
+  },
+  "requirements": [
+    [
+      "counter"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

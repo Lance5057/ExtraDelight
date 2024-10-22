@@ -1,0 +1,256 @@
+{
+  "parent": "extradelight:food",
+  "criteria": {
+    "CHEESECAKE_SLICE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheesecake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "CHOCOLATE_CHEESECAKE_SLICE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chocolate_cheesecake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "CHOCOLATE_CUSTARD": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chocolate_custard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "FUDGE_POPSICLE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fudge_popsicle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "GLOW_BERRY_CHEESECAKE_SLICE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:glow_berry_cheesecake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "GLOW_BERRY_COOKIE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:glow_berry_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "GLOW_BERRY_PIE_SLICE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:glow_berry_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "GLOW_BERRY_POPSICLE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:glow_berry_popsicle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "HONEY_CHEESECAKE_SLICE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:honey_cheesecake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "HONEY_CUSTARD": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:honey_custard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "HONEY_POPSICLE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:honey_popsicle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "PUMPKIN_CHEESECAKE_SLICE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pumpkin_cheesecake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "PUMPKIN_COOKIE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pumpkin_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "PUMPKIN_CUSTARD": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pumpkin_custard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "SUGAR_COOKIE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sugar_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "SWEET_BERRY_CUSTARD": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sweet_berry_custard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "SWEET_BERRY_PIE_SLICE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sweet_berry_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "SWEET_BERRY_POPSICLE": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sweet_berry_popsicle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.desert.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "extradelight:glow_berry_pie"
+    },
+    "title": {
+      "translate": "extradelight.advancement.desert.name"
+    }
+  },
+  "requirements": [
+    [
+      "CHOCOLATE_CUSTARD"
+    ],
+    [
+      "HONEY_CUSTARD"
+    ],
+    [
+      "PUMPKIN_CUSTARD"
+    ],
+    [
+      "SWEET_BERRY_CUSTARD"
+    ],
+    [
+      "SWEET_BERRY_PIE_SLICE"
+    ],
+    [
+      "CHEESECAKE_SLICE"
+    ],
+    [
+      "CHOCOLATE_CHEESECAKE_SLICE"
+    ],
+    [
+      "GLOW_BERRY_CHEESECAKE_SLICE"
+    ],
+    [
+      "GLOW_BERRY_PIE_SLICE"
+    ],
+    [
+      "HONEY_CHEESECAKE_SLICE"
+    ],
+    [
+      "PUMPKIN_CHEESECAKE_SLICE"
+    ],
+    [
+      "GLOW_BERRY_COOKIE"
+    ],
+    [
+      "PUMPKIN_COOKIE"
+    ],
+    [
+      "SUGAR_COOKIE"
+    ],
+    [
+      "FUDGE_POPSICLE"
+    ],
+    [
+      "GLOW_BERRY_POPSICLE"
+    ],
+    [
+      "HONEY_POPSICLE"
+    ],
+    [
+      "SWEET_BERRY_POPSICLE"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

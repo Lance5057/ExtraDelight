@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:tap",
+  "criteria": {
+    "sink": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:oak_sink"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.sink.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:oak_sink"
+    },
+    "title": {
+      "translate": "extradelight.advancement.sink.name"
+    }
+  },
+  "requirements": [
+    [
+      "sink"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

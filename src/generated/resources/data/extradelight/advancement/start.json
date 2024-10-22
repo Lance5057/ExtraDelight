@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "start": {
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "extradelight:textures/block/wallpaper_red.png",
+    "description": {
+      "translate": "extradelight.advancement.start.desc"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "extradelight:wooden_spoon"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "extradelight.advancement.start.name"
+    }
+  },
+  "requirements": [
+    [
+      "start"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

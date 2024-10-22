@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:melting_pot",
+  "cooktime": 400,
+  "ingredient": {
+    "item": "extradelight:white_chocolate_bar"
+  },
+  "result": {
+    "amount": 250,
+    "id": "extradelight:white_chocolate_syrup_fluid"
+  }
+}

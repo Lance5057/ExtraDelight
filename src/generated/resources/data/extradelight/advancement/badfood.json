@@ -1,0 +1,31 @@
+{
+  "parent": "extradelight:food",
+  "criteria": {
+    "badfood": {
+      "conditions": {
+        "item": {
+          "items": "extradelight:bad_food"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.badfood.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:bad_food"
+    },
+    "title": {
+      "translate": "extradelight.advancement.badfood.name"
+    }
+  },
+  "requirements": [
+    [
+      "badfood"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

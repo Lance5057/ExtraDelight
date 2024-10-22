@@ -374,7 +374,8 @@ public class StructureLootTables implements LootTableSubProvider {
 						.withPool(LootPool.lootPool().name("better").setRolls(UniformGenerator.between(2, 4))
 								.add(LootItem.lootTableItem(Items.GOLD_BLOCK))
 								.add(LootItem.lootTableItem(Items.GOLD_INGOT))
-								.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))));
+								.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))
+								.add(LootItem.lootTableItem(ExtraDelightItems.EASTER_EGG))));
 	}
 
 }

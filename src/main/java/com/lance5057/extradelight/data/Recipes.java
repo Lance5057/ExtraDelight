@@ -259,6 +259,26 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	private void meltingRecipes(RecipeOutput consumer) {
 		MeltingPotRecipeBuilder.melt(Ingredient.of(Items.ICE), FAST_COOKING, new FluidStack(Fluids.WATER, 1000))
 				.save(consumer, EDLoc("test"));
+
+		MeltingPotRecipeBuilder
+				.melt(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_BAR), FAST_COOKING,
+						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID, 250))
+				.save(consumer, EDLoc("blood_chocolate_bar"));
+
+		MeltingPotRecipeBuilder
+				.melt(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_BAR), FAST_COOKING,
+						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID, 250))
+				.save(consumer, EDLoc("milk_chocolate_bar"));
+
+		MeltingPotRecipeBuilder
+				.melt(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_BAR), FAST_COOKING,
+						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID, 250))
+				.save(consumer, EDLoc("dark_chocolate_bar"));
+
+		MeltingPotRecipeBuilder
+				.melt(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_BAR), FAST_COOKING,
+						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID, 250))
+				.save(consumer, EDLoc("white_chocolate_bar"));
 	}
 
 	private void toolOnBlockRecipes(RecipeOutput consumer) {
@@ -4870,9 +4890,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.OvenRecipe(new ItemStack(ExtraDelightItems.GRAHAM_CRACKER.get(), 4), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.TRAY.get()))
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.SWEETENER)
-				.addIngredient(ExtraDelightTags.GROUND_CINNAMON).addIngredient(ExtraDelightTags.CHOCOLATE_SYRUP)
-				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.COOKING_OIL)
-				.addIngredient(Tags.Items.EGGS).unlockedByAnyIngredient(ExtraDelightItems.TRAY.get()).build(consumer);
+				.addIngredient(ExtraDelightTags.GROUND_CINNAMON).addIngredient(CommonTags.FOODS_MILK)
+				.addIngredient(ExtraDelightTags.COOKING_OIL).addIngredient(Tags.Items.EGGS)
+				.unlockedByAnyIngredient(ExtraDelightItems.TRAY.get()).build(consumer);
 
 		bulkBake(ExtraDelightItems.COFFEE_BEANS.get(), Ingredient.of(ExtraDelightTags.GREEN_COFFEE), consumer,
 				ExtraDelightItems.TRAY.get(), "coffee_oven", 1);
