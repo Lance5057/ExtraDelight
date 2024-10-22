@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:white_chocolate_syrup_bottle"
+    },
+    {
+      "item": "extradelight:white_chocolate_syrup_bottle"
+    },
+    {
+      "item": "extradelight:white_chocolate_syrup_bottle"
+    },
+    {
+      "item": "extradelight:white_chocolate_syrup_bottle"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:white_chocolate_syrup_fluid_bucket"
+  }
+}

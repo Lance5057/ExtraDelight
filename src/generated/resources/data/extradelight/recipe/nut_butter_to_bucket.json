@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:peanut_butter_bottle"
+    },
+    {
+      "item": "extradelight:peanut_butter_bottle"
+    },
+    {
+      "item": "extradelight:peanut_butter_bottle"
+    },
+    {
+      "item": "extradelight:peanut_butter_bottle"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:peanut_butter_fluid_bucket"
+  }
+}

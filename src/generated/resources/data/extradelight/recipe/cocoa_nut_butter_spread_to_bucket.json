@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:hazelnut_spread_bottle"
+    },
+    {
+      "item": "extradelight:hazelnut_spread_bottle"
+    },
+    {
+      "item": "extradelight:hazelnut_spread_bottle"
+    },
+    {
+      "item": "extradelight:hazelnut_spread_bottle"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:cocoa_nut_butter_spread_fluid_bucket"
+  }
+}

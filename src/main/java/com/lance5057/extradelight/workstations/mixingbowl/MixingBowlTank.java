@@ -9,6 +9,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.IFluidTank;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	protected Predicate<FluidStack> validator;
@@ -146,13 +147,23 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		return FluidStack.EMPTY;
 	}
 
+	public FluidStack drain(SizedFluidIngredient resource, FluidAction action) {
+		for (int i = 0; i < this.getTanks(); i++) {
+			if (!resource.test(fluid[i])) {
+				return doDrain(resource.amount(), action, i);
+			}
+
+		}
+		return FluidStack.EMPTY;
+	}
+
 	@Override
 	public FluidStack drain(int maxDrain, FluidAction action) {
-//		for (int i = 0; i < this.getTanks(); i++) {
-//			FluidStack s = doDrain(maxDrain, action, i);
-//			if (!s.isEmpty())
-//				return s;
-//		}
+		for (int i = 0; i < this.getTanks(); i++) {
+			FluidStack s = doDrain(maxDrain, action, i);
+			if (!s.isEmpty())
+				return s;
+		}
 		return FluidStack.EMPTY;
 	}
 

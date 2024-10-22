@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:glow_berries"
+  },
+  "out": {
+    "id": "extradelight:dark_chocolate_fondue_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:dark_chocolate_dipped_glow_berry"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "id": "extradelight:sticky_toffee_pudding_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:sticky_toffee_pudding_slice"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "blood_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:blood_chocolate_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/blood_chocolate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "blood_chocolate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/blood_chocolate"
+    ]
+  }
+}

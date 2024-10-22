@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "extradelight:sliced_apple"
+  },
+  "out": {
+    "id": "extradelight:white_chocolate_fondue_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:white_chocolate_dipped_apple_slice"
+  }
+}

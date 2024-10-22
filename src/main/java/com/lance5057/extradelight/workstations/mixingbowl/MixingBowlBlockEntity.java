@@ -37,6 +37,7 @@ import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
@@ -300,15 +301,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		writeNBT(nbt, registries);
 	}
 
-//	public Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe() {
-//		if (this.level != null) {
-//			return level.getRecipeManager().getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(),
-//					new RecipeWrapper(this.items), level);
-//		}
-//		return Optional.empty();
-//
-//	}
-
 	private ItemStack[] getItems() {
 		int s = getLastFilledSlot(items);
 		if (s != -1) {
@@ -331,8 +323,8 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	protected Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe() {
 		if (level != null) {
 
-			Optional<RecipeHolder<MixingBowlRecipe>> recipe = level.getRecipeManager()
-					.getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(), new MixingBowlRecipeWrapper(this.items, this.fluids) {
+			Optional<RecipeHolder<MixingBowlRecipe>> recipe = level.getRecipeManager().getRecipeFor(
+					ExtraDelightRecipes.MIXING_BOWL.get(), new MixingBowlRecipeWrapper(this.items, this.fluids) {
 						@Override
 						public int size() {
 							return 9;
@@ -389,10 +381,9 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		return InteractionResult.SUCCESS;
 	}
 
-	private void removeFluids(List<FluidStack> fluids2) {
-		for(int i = 0; i < fluids2.size(); i++)
-		{
-			fluids.drain(fluids2.get(i), FluidAction.EXECUTE);
+	private void removeFluids(List<SizedFluidIngredient> list) {
+		for (int i = 0; i < list.size(); i++) {
+			fluids.drain(list.get(i), FluidAction.EXECUTE);
 		}
 	}
 

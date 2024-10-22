@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:coffee"
+    },
+    {
+      "item": "extradelight:coffee"
+    },
+    {
+      "item": "extradelight:coffee"
+    },
+    {
+      "item": "extradelight:coffee"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:coffee_fluid_bucket"
+  }
+}

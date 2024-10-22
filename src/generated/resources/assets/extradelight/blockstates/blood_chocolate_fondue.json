@@ -5,18 +5,34 @@
       "y": 90
     },
     "facing=east,servings=1": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage3",
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage7",
       "y": 90
     },
     "facing=east,servings=2": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage2",
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage6",
       "y": 90
     },
     "facing=east,servings=3": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage1",
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage5",
       "y": 90
     },
     "facing=east,servings=4": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage4",
+      "y": 90
+    },
+    "facing=east,servings=5": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage3",
+      "y": 90
+    },
+    "facing=east,servings=6": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage2",
+      "y": 90
+    },
+    "facing=east,servings=7": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage1",
+      "y": 90
+    },
+    "facing=east,servings=8": {
       "model": "extradelight:block/blood_chocolate_fondue_pot_stage0",
       "y": 90
     },
@@ -24,15 +40,27 @@
       "model": "extradelight:block/blood_chocolate_fondue_pot_leftover"
     },
     "facing=north,servings=1": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage3"
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage7"
     },
     "facing=north,servings=2": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage2"
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage6"
     },
     "facing=north,servings=3": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage1"
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage5"
     },
     "facing=north,servings=4": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage4"
+    },
+    "facing=north,servings=5": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage3"
+    },
+    "facing=north,servings=6": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage2"
+    },
+    "facing=north,servings=7": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage1"
+    },
+    "facing=north,servings=8": {
       "model": "extradelight:block/blood_chocolate_fondue_pot_stage0"
     },
     "facing=south,servings=0": {
@@ -40,18 +68,34 @@
       "y": 180
     },
     "facing=south,servings=1": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage3",
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage7",
       "y": 180
     },
     "facing=south,servings=2": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage2",
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage6",
       "y": 180
     },
     "facing=south,servings=3": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage1",
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage5",
       "y": 180
     },
     "facing=south,servings=4": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage4",
+      "y": 180
+    },
+    "facing=south,servings=5": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage3",
+      "y": 180
+    },
+    "facing=south,servings=6": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage2",
+      "y": 180
+    },
+    "facing=south,servings=7": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage1",
+      "y": 180
+    },
+    "facing=south,servings=8": {
       "model": "extradelight:block/blood_chocolate_fondue_pot_stage0",
       "y": 180
     },
@@ -60,18 +104,34 @@
       "y": 270
     },
     "facing=west,servings=1": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage3",
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage7",
       "y": 270
     },
     "facing=west,servings=2": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage2",
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage6",
       "y": 270
     },
     "facing=west,servings=3": {
-      "model": "extradelight:block/blood_chocolate_fondue_pot_stage1",
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage5",
       "y": 270
     },
     "facing=west,servings=4": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage4",
+      "y": 270
+    },
+    "facing=west,servings=5": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage3",
+      "y": 270
+    },
+    "facing=west,servings=6": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage2",
+      "y": 270
+    },
+    "facing=west,servings=7": {
+      "model": "extradelight:block/blood_chocolate_fondue_pot_stage1",
+      "y": 270
+    },
+    "facing=west,servings=8": {
       "model": "extradelight:block/blood_chocolate_fondue_pot_stage0",
       "y": 270
     }

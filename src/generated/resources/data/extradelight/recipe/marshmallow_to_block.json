@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:marshmallow"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:marshmallow_block"
+  }
+}

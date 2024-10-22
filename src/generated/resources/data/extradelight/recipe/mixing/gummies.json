@@ -3,7 +3,7 @@
   "fluids": [
     {
       "amount": 100,
-      "id": "minecraft:water"
+      "fluid": "minecraft:water"
     }
   ],
   "ingredients": [

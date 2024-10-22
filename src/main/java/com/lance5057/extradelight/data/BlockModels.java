@@ -9,6 +9,7 @@ import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.RecipeFondueFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
@@ -540,7 +541,7 @@ public class BlockModels extends BlockStateProvider {
 		this.fluid(ExtraDelightBlocks.VINEGAR_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.WHIPPED_CREAM_FLUID_BLOCK.get());
 		this.fluid(ExtraDelightBlocks.WHITE_CHOCOLATE_SYRUP_FLUID_BLOCK.get());
-		
+
 		this.simpleBlock(ExtraDelightBlocks.MARSHMALLOW_BLOCK.get());
 
 		AestheticBlocks.blockModel(this);
@@ -799,20 +800,21 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	public void fondueBlock(RecipeFeastBlock block, String pre) {
+	public void fondueBlock(RecipeFondueFeastBlock block, String pre) {
 		getVariantBuilder(block).forAllStates(state -> {
-			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
+			int servings = state.getValue(RecipeFondueFeastBlock.SERVINGS);
 
 			String suffix = "_stage" + (block.getMaxServings() - servings);
 
 			if (servings == 0) {
-				suffix = block.hasLeftovers ? "_leftover" : "_stage3";
+				suffix = block.hasLeftovers ? "_leftover" : "_stage7";
 			}
 
 			return ConfiguredModel.builder()
-					.modelFile(models().withExistingParent(pre + "_chocolate_fondue_pot" + suffix,
-							this.modLoc("block/fondue_pot" + suffix))
-							.texture("5", this.modLoc("block/cosmetics/chocolate/" + pre + "_chocolate_style0")))
+					.modelFile(models()
+							.withExistingParent(pre + "_chocolate_fondue_pot" + suffix,
+									this.modLoc("block/fondue_pot" + suffix))
+							.texture("5", this.modLoc("liquid/" + pre + "_chocolate_syrup_still")))
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}
@@ -850,7 +852,7 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder().modelFile(models()
 					.withExistingParent("block/cosmetics/pans/" + base + "_" + suffix.toLowerCase(), modLoc(base))
 					.texture("0", modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan"))
-							.texture("particle", modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan"))
+					.texture("particle", modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan"))
 					.renderType("translucent"))
 					.rotationY(((int) state.getValue(HorizontalPanBlock.FACING).toYRot() + 180) % 360).build();
 		});

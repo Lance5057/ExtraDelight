@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:puffed_rice"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:butterscotch"
+    },
+    {
+      "tag": "c:chocolate_syrup"
+    },
+    {
+      "tag": "c:peanut_butter"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:scotcharoo_block"
+  }
+}

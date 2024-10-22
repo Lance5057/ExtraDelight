@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:blood_chocolate_syrup_bottle"
+    },
+    {
+      "item": "extradelight:blood_chocolate_syrup_bottle"
+    },
+    {
+      "item": "extradelight:blood_chocolate_syrup_bottle"
+    },
+    {
+      "item": "extradelight:blood_chocolate_syrup_bottle"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:blood_chocolate_syrup_fluid_bucket"
+  }
+}

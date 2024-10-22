@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:paper"
+  },
+  "out": {
+    "id": "extradelight:crisp_rice_treats_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:crisp_rice_treat"
+  }
+}

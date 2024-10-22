@@ -22,11 +22,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 public class MixingBowlRecipeBuilder implements RecipeBuilder {
 	private final ItemStack result;
 	private final NonNullList<Ingredient> ingredients = NonNullList.create();
-	private final NonNullList<FluidStack> fluids = NonNullList.create();
+	private final NonNullList<SizedFluidIngredient> fluids = NonNullList.create();
 	@Nullable
 	private String group;
 	final int stirs;
@@ -65,7 +66,7 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 		return this;
 	}
 
-	public MixingBowlRecipeBuilder requires(FluidStack stack) {
+	public MixingBowlRecipeBuilder requires(SizedFluidIngredient stack) {
 		this.fluids.add(stack);
 		return this;
 	}

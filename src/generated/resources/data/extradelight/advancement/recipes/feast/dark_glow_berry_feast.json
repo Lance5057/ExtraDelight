@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hotdish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:dark_chocolate_fondue_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/dark_glow_berry_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hotdish"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/dark_glow_berry_feast"
+    ]
+  }
+}

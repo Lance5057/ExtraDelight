@@ -14,7 +14,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidType;
 
@@ -24,23 +23,27 @@ public class BasicFluid extends FluidType {
 	private final ResourceLocation FLOW;
 	private final ResourceLocation OVERLAY;
 	private final ResourceLocation VIEW_OVERLAY;
-	
 
 	final int tint;
+	final int overlay_tint;
 
-	public BasicFluid(String name, int tint, Properties properties) {
+	float far = 24f;
+	float near = -48f;
+
+	public BasicFluid(String name, int tint, int overlay, Properties properties) {
 		super(properties);
 
 		STILL = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "liquid/" + name + "_still");
 		FLOW = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "liquid/" + name + "_flow");
 		OVERLAY = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "liquid/" + name + "_still");
 		VIEW_OVERLAY = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-				"textures/liquid/" + name + "_still.png");
+				"textures/liquid/" + name + "_overlay.png");
 
 		this.tint = tint;
+		this.overlay_tint = overlay;
 	}
 
-	public BasicFluid(int tint, Properties properties) {
+	public BasicFluid(int tint, int overlay, Properties properties) {
 		super(properties);
 
 		STILL = ResourceLocation.withDefaultNamespace("block/water_still");
@@ -49,6 +52,17 @@ public class BasicFluid extends FluidType {
 		VIEW_OVERLAY = ResourceLocation.withDefaultNamespace("textures/block/water_still.png");
 
 		this.tint = tint;
+		this.overlay_tint = overlay;
+	}
+
+	public BasicFluid setFarDistance(float d) {
+		far = d;
+		return this;
+	}
+
+	public BasicFluid setNearDistance(float d) {
+		near = d;
+		return this;
 	}
 
 	@Override
@@ -80,18 +94,30 @@ public class BasicFluid extends FluidType {
 				return tint;
 			}
 
+			public int getOverlayTint() {
+				return overlay_tint;
+			}
+
+			public float getNearFog() {
+				return near;
+			}
+
+			public float getFarFog() {
+				return far;
+			}
+
 			@Override
 			public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level,
 					int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
-				int color = this.getTintColor();
-				return new Vector3f((color >> 16 & 0xFF) / 255F, (color >> 8 & 0xFF) / 255F, (color & 0xFF) / 255F);
+				int color = this.getOverlayTint();
+				return new Vector3f((color >> 16 & 0xFF) / 255F * 0.75f, (color >> 8 & 0xFF) / 255F * 0.75f, (color & 0xFF) / 255F * 0.75f);
 			}
 
 			@Override
 			public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance,
 					float partialTick, float nearDistance, float farDistance, FogShape shape) {
-				nearDistance = -48F;
-				farDistance = 24F;
+				nearDistance = getNearFog();
+				farDistance = getFarFog();
 
 				if (farDistance > renderDistance) {
 					farDistance = renderDistance;

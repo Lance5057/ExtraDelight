@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:marshmallow_fluff_bottle"
+    },
+    {
+      "item": "extradelight:marshmallow_fluff_bottle"
+    },
+    {
+      "item": "extradelight:marshmallow_fluff_bottle"
+    },
+    {
+      "item": "extradelight:marshmallow_fluff_bottle"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:marshmallow_fluff_fluid_bucket"
+  }
+}

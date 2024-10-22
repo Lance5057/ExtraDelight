@@ -1,0 +1,31 @@
+{
+  "type": "extradelight:chiller",
+  "container": {
+    "count": 1,
+    "id": "extradelight:square_pan"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "id": "extradelight:white_chocolate_syrup_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:marshmallow_fluff"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:fudge_block"
+  }
+}

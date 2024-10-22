@@ -1,6 +1,6 @@
 {
   "parent": "extradelight:block/fondue_pot_leftover",
   "textures": {
-    "5": "extradelight:block/cosmetics/chocolate/dark_chocolate_style0"
+    "5": "extradelight:liquid/dark_chocolate_syrup_still"
   }
 }

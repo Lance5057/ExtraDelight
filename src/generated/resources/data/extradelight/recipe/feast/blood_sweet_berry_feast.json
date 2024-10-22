@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:sweet_berries"
+  },
+  "out": {
+    "id": "extradelight:blood_chocolate_fondue_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:blood_chocolate_dipped_sweet_berry"
+  }
+}

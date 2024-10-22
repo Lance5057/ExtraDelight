@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:bowl"
+    },
+    "c": {
+      "item": "extradelight:chocolate_cake_block"
+    },
+    "s": {
+      "item": "minecraft:sweet_berries"
+    },
+    "w": {
+      "tag": "c:whipped_cream"
+    }
+  },
+  "pattern": [
+    " w ",
+    "scs",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:black_forest_trifle_block"
+  }
+}

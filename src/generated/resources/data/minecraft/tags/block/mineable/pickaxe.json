@@ -27,6 +27,7 @@
     "extradelight:blood_chocolate_fence",
     "extradelight:blood_chocolate_slab",
     "extradelight:blood_chocolate_trapdoor",
+    "extradelight:blood_chocolate_pillar",
     "extradelight:dark_chocolate_block",
     "extradelight:dark_chocolate_stairs",
     "extradelight:dark_chocolate_door",
@@ -34,6 +35,7 @@
     "extradelight:dark_chocolate_fence",
     "extradelight:dark_chocolate_slab",
     "extradelight:dark_chocolate_trapdoor",
+    "extradelight:dark_chocolate_pillar",
     "extradelight:milk_chocolate_block",
     "extradelight:milk_chocolate_stairs",
     "extradelight:milk_chocolate_door",
@@ -41,12 +43,14 @@
     "extradelight:milk_chocolate_fence",
     "extradelight:milk_chocolate_slab",
     "extradelight:milk_chocolate_trapdoor",
+    "extradelight:milk_chocolate_pillar",
     "extradelight:white_chocolate_block",
     "extradelight:white_chocolate_stairs",
     "extradelight:white_chocolate_door",
     "extradelight:white_chocolate_fence_gate",
     "extradelight:white_chocolate_fence",
     "extradelight:white_chocolate_slab",
-    "extradelight:white_chocolate_trapdoor"
+    "extradelight:white_chocolate_trapdoor",
+    "extradelight:white_chocolate_pillar"
   ]
 }

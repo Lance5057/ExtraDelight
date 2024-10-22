@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/milk_chocolate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "milk_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:milk_chocolate_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "milk_chocolate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/milk_chocolate"
+    ]
+  }
+}

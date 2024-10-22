@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "extradelight:white_chocolate_syrup_fluid_bucket"
+    },
+    "c": {
+      "tag": "minecraft:candles"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "s s",
+    "sbs",
+    " c "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:white_chocolate_fondue_block"
+  }
+}

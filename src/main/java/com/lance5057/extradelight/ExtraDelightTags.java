@@ -2,10 +2,12 @@ package com.lance5057.extradelight;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 
 public class ExtraDelightTags {
 
@@ -15,6 +17,10 @@ public class ExtraDelightTags {
 
 	public static TagKey<Block> neoforgeBlockTag(String tag) {
 		return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", tag));
+	}
+
+	public static TagKey<Fluid> neoforgeFluidTag(String tag) {
+		return FluidTags.create(ResourceLocation.fromNamespaceAndPath("c", tag));
 	}
 
 	public static TagKey<Item> modTag(String tag) {
@@ -425,4 +431,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> PEPPERMINT_CANDY = neoforgeItemTag("candy/peppermint");
 
 	public static final TagKey<Item> TEA_INGREDIENTS = neoforgeItemTag("tea_ingredients");
+	public static final TagKey<Item> BUTTERSCOTCH = neoforgeItemTag("butterscotch");
+	public static final TagKey<Item> ICE_CREAM = neoforgeItemTag("ice_cream");
+	public static final TagKey<Fluid> BLOOD = neoforgeFluidTag("blood");
 }

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ice_cream"
+    },
+    {
+      "tag": "c:chocolate_syrup"
+    },
+    {
+      "tag": "c:nuts/cooked"
+    },
+    {
+      "tag": "c:foods/berry"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:ice_cream_sundae"
+  }
+}
