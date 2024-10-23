@@ -222,7 +222,7 @@ public class ExtraDelightFluids {
 	public static FluidRegistration COCOA_NUT_BUTTER_SPREAD = new FluidRegistration("cocoa_nut_butter_spread",
 			() -> new BasicFluid("cocoa_nut_butter_spread", 0xffffffff, 0x002e1b11,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canSwim(false)
-							.viscosity(3000).density(6000).motionScale(0.0023333333333333335D)),
+							.viscosity(3000).density(6000).motionScale(0.0023333333333333335D)).setNearDistance(-1000),
 			ExtraDelightBlocks.COCOA_NUT_BUTTER_SPREAD_FLUID_BLOCK,
 			ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
 

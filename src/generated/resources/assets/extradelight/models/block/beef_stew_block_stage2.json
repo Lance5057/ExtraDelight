@@ -1,5 +1,6 @@
 {
   "parent": "extradelight:block/curry_block_stage2",
+  "render_type": "minecraft:cutout",
   "textures": {
     "1": "extradelight:block/beef_stew",
     "particle": "extradelight:block/beef_stew"

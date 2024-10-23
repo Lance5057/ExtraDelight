@@ -246,7 +246,7 @@ public class BlockModels extends BlockStateProvider {
 		pieLikeBlock(ExtraDelightBlocks.MILK_TART.get(), "milk_tart");
 		recipeFeastBlock(ExtraDelightBlocks.PUNCH.get(), "punch");
 		tapBlock(ExtraDelightBlocks.TAP.get());
-//		coffeeBushBlock(ExtraDelightBlocks.COFFEE_BUSH.get());
+		coffeeBushBlock(ExtraDelightBlocks.COFFEE_BUSH.get());
 
 		this.axisBlock(ExtraDelightBlocks.KEG.get(),
 				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
@@ -876,7 +876,7 @@ public class BlockModels extends BlockStateProvider {
 					.modelFile(models()
 							.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix,
 									modLoc("curry_block" + suffix))
-							.texture("1", contentsTexture).texture("particle", particleTexture))
+							.texture("1", contentsTexture).texture("particle", particleTexture).renderType("cutout"))
 					.rotationY(((int) state.getValue(RecipeFeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}

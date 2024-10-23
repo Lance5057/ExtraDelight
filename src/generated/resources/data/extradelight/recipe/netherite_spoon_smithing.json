@@ -1,16 +1,16 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
+    "item": "minecraft:netherite_ingot"
   },
   "base": {
-    "item": "minecraft:netherite_ingot"
+    "item": "extradelight:diamond_spoon"
   },
   "result": {
     "count": 1,
     "id": "extradelight:netherite_spoon"
   },
   "template": {
-    "item": "extradelight:diamond_spoon"
+    "item": "minecraft:netherite_upgrade_smithing_template"
   }
 }

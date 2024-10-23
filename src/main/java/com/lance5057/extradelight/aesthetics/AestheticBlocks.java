@@ -167,7 +167,7 @@ public class AestheticBlocks {
 	public static void registerAllWoodHelm(String name, Supplier<? extends Block> block,
 			List<DeferredBlock<Block>> blocks, List<DeferredItem<Item>> items) {
 		for (WOOD w : WOOD.values()) {
-			if (w.toString() != "fruit") {
+			if (w.toString() != "fruit" && w.toString() != "bamboo") {
 				DeferredBlock<Block> b = BLOCKS.register(w.toString() + "_" + name, block);
 				DeferredItem<Item> t = ITEMS.register(w.toString() + "_" + name,
 						() -> new HelmetBlockItem(b.get(), new Item.Properties()));
@@ -284,12 +284,7 @@ public class AestheticBlocks {
 						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
 						.texture("all", bsp.mcLoc("block/warped_wart_block"))
 						.texture("particle", bsp.mcLoc("block/warped_wart_block")).renderType("cutout"));
-			else if (WOOD.values()[i].toString() == "bamboo")
-				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
-						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
-						.texture("all", bsp.mcLoc("block/bamboo_large_leaves"))
-						.texture("particle", bsp.mcLoc("block/bamboo_large_leaves")).renderType("cutout"));
-			else if (WOOD.values()[i].toString() != "fruit")
+			else if (WOOD.values()[i].toString() != "fruit" && WOOD.values()[i].toString() != "bamboo")
 				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
 						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
 						.texture("all", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
@@ -398,11 +393,7 @@ public class AestheticBlocks {
 				tmp.getBuilder(WREATHS.get(i).getId().getPath())
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
 						.texture("all", tmp.mcLoc("block/warped_wart_block"));
-			else if (WOOD.values()[i].toString() == "bamboo")
-				tmp.getBuilder(WREATHS.get(i).getId().getPath())
-						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
-						.texture("all", tmp.mcLoc("block/bamboo_large_leaves"));
-			else if (WOOD.values()[i].toString() != "fruit") {
+			else if (WOOD.values()[i].toString() != "fruit" && WOOD.values()[i].toString() != "bamboo") {
 				tmp.getBuilder(WREATHS.get(i).getId().getPath())
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
 						.texture("all", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"));
@@ -446,7 +437,7 @@ public class AestheticBlocks {
 			lp.add(SINKS.get(i).get(), w + " Sink");
 			lp.add(CABINETS.get(i).get(), w + " Half Cabinet");
 			lp.add(DRIED_CORN_FENCE.get(i).get(), "Dried Corn " + w + " Fence");
-			if (WOOD.values()[i].toString() != "fruit") {
+			if (WOOD.values()[i].toString() != "fruit" && WOOD.values()[i].toString() != "bamboo") {
 				lp.add(WREATHS.get(i).get(), w + " Wreath");
 				lp.add(COUNTER_CABINETS.get(i).get(), w + " Cabinet (Countertop)");
 			}
@@ -494,7 +485,8 @@ public class AestheticBlocks {
 				ExtraDelightItems.CINNAMON_FENCE.get(), ExtraDelightItems.CINNAMON_LEAVES.get(), WOOD.cinnamon);
 		woodRecipe(consumer, ExtraDelightItems.FRUIT_SLAB.get(), ExtraDelightItems.FRUIT_TRAPDOOR.get(),
 				ExtraDelightItems.FRUIT_FENCE.get(), WOOD.fruit);
-		woodRecipe(consumer, Items.CHERRY_SLAB, Items.CHERRY_TRAPDOOR, Items.CHERRY_FENCE, WOOD.cherry);
+		woodRecipe(consumer, Items.CHERRY_SLAB, Items.CHERRY_TRAPDOOR, Items.CHERRY_FENCE, Items.CHERRY_LEAVES,
+				WOOD.cherry);
 		woodRecipe(consumer, Items.BAMBOO_SLAB, Items.BAMBOO_TRAPDOOR, Items.BAMBOO_FENCE, WOOD.bamboo);
 
 		moldRecipe(consumer, Items.OAK_SLAB, WOOD.oak, 0);

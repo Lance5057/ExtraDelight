@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "extradelight:fruit_log"
+      "tag": "c:fruit_logs"
     }
   ],
   "result": {

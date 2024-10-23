@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:bamboo_wreath"
+          "name": "extradelight:golden_carrot_crate_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/bamboo_wreath"
+  "random_sequence": "extradelight:blocks/golden_carrot_crate"
 }

@@ -523,6 +523,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CORNMEAL_SACK, "cornmeal_sack");
 		forBlockItem(ExtraDelightItems.SUGAR_SACK, "sugar_sack");
 		forBlockItem(ExtraDelightItems.CORN_CRATE, "corn_crate");
+		forBlockItem(ExtraDelightItems.GOLDEN_CARROT_CRATE_BLOCK, "golden_carrot_crate");
 		forBlockItem(ExtraDelightItems.CORN_HUSK_BUNDLE, "corn_husk_bundle");
 		forBlockItem(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE, "dried_corn_husk_bundle");
 		forBlockItem(ExtraDelightItems.CORN_COB_BUNDLE, "dried_corn_husk_bundle");

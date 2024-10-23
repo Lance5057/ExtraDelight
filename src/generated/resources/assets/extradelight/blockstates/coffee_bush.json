@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "extradelight:block/coffee_plant_stage0"
+    },
+    "age=1": {
+      "model": "extradelight:block/coffee_plant_stage1"
+    },
+    "age=2": {
+      "model": "extradelight:block/coffee_plant_stage2"
+    },
+    "age=3": {
+      "model": "extradelight:block/coffee_plant_stage3"
+    }
+  }
+}

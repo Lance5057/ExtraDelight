@@ -12,6 +12,7 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
@@ -231,6 +232,17 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), (p_124100_) -> {
 			return createLeavesDrops(p_124100_, ExtraDelightBlocks.CINNAMON_SAPLING.get(),
 					NORMAL_LEAVES_SAPLING_CHANCES);
+		});
+
+		this.add(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), (p_124100_) -> {
+			return createLeavesDrops(p_124100_, ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
+					NORMAL_LEAVES_SAPLING_CHANCES)
+					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+							.when(LootItemBlockStatePropertyCondition
+									.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get())
+									.setProperties(StatePropertiesPredicate.Builder.properties()
+											.hasProperty(FruitLeafBlock.AGE, 3)))
+							.add(LootItem.lootTableItem(ExtraDelightItems.HAZELNUTS_IN_SHELL.get())));
 		});
 
 		this.dropSelf(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
@@ -480,6 +492,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.HAZELNUT_SAPLING.get());
 
 		this.dropSelf(ExtraDelightBlocks.MARSHMALLOW_BLOCK.get());
+		this.dropSelf(ExtraDelightBlocks.GOLDEN_CARROT_CRATE.get());
 
 		this.add(ExtraDelightBlocks.JAR.get(), p_248609_ -> this.createJarDrop(p_248609_));
 	}

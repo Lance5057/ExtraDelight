@@ -1839,9 +1839,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("diamond_spoon"));
 
 		SmithingTransformRecipeBuilder
-				.smithing(Ingredient.of(ExtraDelightItems.DIAMOND_SPOON.get()), Ingredient.of(Items.NETHERITE_INGOT),
-						Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), RecipeCategory.FOOD,
-						ExtraDelightItems.NETHERITE_SPOON.get())
+				.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+						Ingredient.of(ExtraDelightItems.DIAMOND_SPOON.get()), Ingredient.of(Items.NETHERITE_INGOT),
+						RecipeCategory.FOOD, ExtraDelightItems.NETHERITE_SPOON.get())
 				.unlocks("has_netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
 				.save(consumer, ExtraDelight.MOD_ID + ":netherite_spoon_smithing");
 
@@ -2182,7 +2182,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("bacon_egg_cheese_sandwich_full"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BUTTERED_TOAST.get(), 1)
-				.requires(ExtraDelightTags.BREAD_SLICE).requires(ExtraDelightTags.BUTTER)
+				.requires(ExtraDelightTags.TOAST).requires(ExtraDelightTags.BUTTER)
 				.unlockedBy(getName(), has(ExtraDelightTags.BUTTER)).save(consumer, EDLoc("butter_toast"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.RICEBALL.get(), 2)
@@ -2287,10 +2287,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern("i  ").define('i', ItemTags.PLANKS).define('s', Items.STICK)
 				.unlockedBy(getName(), has(ItemTags.PLANKS)).save(consumer, EDLoc("offset_spatula_wood"));
 
-		SmithingTransformRecipeBuilder
-				.smithing(Ingredient.of(ExtraDelightItems.OFFSET_SPATULA_DIAMOND.get()),
-						Ingredient.of(Items.NETHERITE_INGOT), Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
-						RecipeCategory.FOOD, ExtraDelightItems.OFFSET_SPATULA_NETHERITE.get())
+		SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+				Ingredient.of(ExtraDelightItems.OFFSET_SPATULA_DIAMOND.get()), Ingredient.of(Items.NETHERITE_INGOT),
+				RecipeCategory.FOOD, ExtraDelightItems.OFFSET_SPATULA_NETHERITE.get())
 				.unlocks("has_netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
 				.save(consumer, ExtraDelight.MOD_ID + ":netherite_offset_spatula_smithing");
 
@@ -3069,6 +3068,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		bundleItem9(Ingredient.of(ExtraDelightTags.MARSHMALLOW), ExtraDelightItems.MARSHMALLOW_BLOCK.get(),
 				ExtraDelightItems.MARSHMALLOW.get(), consumer, "marshmallow");
+		bundleItem9(Ingredient.of(Items.GOLDEN_CARROT), ExtraDelightItems.GOLDEN_CARROT_CRATE_BLOCK.get(),
+				Items.GOLDEN_CARROT, consumer, "golden_carrot");
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -3168,6 +3169,24 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ExtraDelightItems.CHEESE.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F, null,
 				new Ingredient[] { Ingredient.of(Items.MILK_BUCKET), Ingredient.of(ExtraDelightTags.VINEGAR) },
 				"cheese_vinegar", consumer);
+
+		pot(ExtraDelightItems.BEEF_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Items.BEEF), Ingredient.of(Items.CARROT), Ingredient.of(Items.POTATO),
+						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(ExtraDelightTags.FLOUR) },
+				"beef_stew", consumer);
+
+		pot(ExtraDelightItems.PORK_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Items.PORKCHOP), Ingredient.of(Items.CARROT),
+						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
+						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
+				"pork_stew", consumer);
+
+		pot(ExtraDelightItems.LAMB_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(Items.MUTTON), Ingredient.of(Items.CARROT),
+						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
+						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
+				"mutton_stew", consumer);
 
 		pot(ExtraDelightItems.RABBIT_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(Items.RABBIT), Ingredient.of(Items.CARROT),
@@ -3635,7 +3654,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON) },
 				"rice_pudding", consumer);
 
-		pot(ExtraDelightItems.PICKLED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
+		pot(ExtraDelightItems.PICKLED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F, null,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.SLICED_GINGER),
 						Ingredient.of(ExtraDelightTags.VINEGAR), Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"pickled_ginger", consumer);

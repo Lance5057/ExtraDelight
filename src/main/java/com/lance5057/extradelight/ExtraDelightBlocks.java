@@ -3,6 +3,7 @@ package com.lance5057.extradelight;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.BakingStoneBlock;
 import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
+import com.lance5057.extradelight.blocks.EDCabinet;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
@@ -128,6 +129,7 @@ public class ExtraDelightBlocks {
 		fire.setFlammable(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(), 5, 5);
 
 		fire.setFlammable(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), 30, 60);
+		fire.setFlammable(ExtraDelightBlocks.CORN_COB_BUNDLE.get(), 30, 60);
 		fire.setFlammable(ExtraDelightBlocks.CORN_HUSK_BUNDLE.get(), 30, 60);
 		fire.setFlammable(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get(), 300, 600);
 
@@ -370,7 +372,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<RecipeFeastBlock> POTATO_AU_GRATIN = BLOCKS.register("potato_au_gratin",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
-					false, pan));
+					true, pan));
 
 	public static final DeferredBlock<Block> FLOUR_SACK = BLOCKS.register("flour_sack",
 			() -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN)));
@@ -427,7 +429,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<LeavesBlock> CINNAMON_LEAVES = BLOCKS.register("cinnamon_leaves",
 			() -> new LeavesBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
 	public static final DeferredBlock<Block> CINNAMON_CABINET = BLOCKS.register("cinnamon_cabinet",
-			() -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
+			() -> new EDCabinet(Block.Properties.ofFullCopy(Blocks.BARREL)));
 	public static final DeferredBlock<SlabBlock> CINNAMON_SLAB = BLOCKS.register("cinnamon_slab",
 			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.DARK_OAK_SLAB)));
 	public static final DeferredBlock<PressurePlateBlock> CINNAMON_PRESSURE_PLATE = BLOCKS.register(
@@ -741,7 +743,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<TrapDoorBlock> FRUIT_TRAPDOOR = BLOCKS.register("fruit_trapdoor",
 			() -> new TrapDoorBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_TRAPDOOR)));
 	public static final DeferredBlock<Block> FRUIT_CABINET = BLOCKS.register("fruit_cabinet",
-			() -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
+			() -> new EDCabinet(Block.Properties.ofFullCopy(Blocks.BARREL)));
 	public static final DeferredBlock<SlabBlock> FRUIT_SLAB = BLOCKS.register("fruit_slab",
 			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.DARK_OAK_SLAB)));
 	public static final DeferredBlock<PressurePlateBlock> FRUIT_PRESSURE_PLATE = BLOCKS.register("fruit_pressure_plate",
@@ -964,4 +966,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<Block> MARSHMALLOW_BLOCK = BLOCKS.register("marshmallow_block",
 			() -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
+	public static final DeferredBlock<Block> GOLDEN_CARROT_CRATE = BLOCKS.register("golden_carrot_crate",
+			() -> new Block(
+					Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
 }

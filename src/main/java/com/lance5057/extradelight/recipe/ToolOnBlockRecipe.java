@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 
-public class ToolOnBlockRecipe implements Recipe<RecipeWrapper> {
+public class ToolOnBlockRecipe implements Recipe<SimpleRecipeWrapper> {
 
 	protected final Ingredient tool;
 
@@ -68,14 +68,14 @@ public class ToolOnBlockRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public boolean matches(RecipeWrapper input, Level level) {
+	public boolean matches(SimpleRecipeWrapper input, Level level) {
 		if (tool.test(input.getItem(0)))
 			return this.in == input.getItem(1).getItem();
 		return false;
 	}
 
 	@Override
-	public ItemStack assemble(RecipeWrapper input, Provider registries) {
+	public ItemStack assemble(SimpleRecipeWrapper input, Provider registries) {
 		// TODO Auto-generated method stub
 		return new ItemStack(out);
 	}

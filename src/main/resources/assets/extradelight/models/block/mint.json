@@ -5,7 +5,7 @@
 	"textures": {
 		"0": "extradelight:block/crops/mint",
 		"1": "extradelight:block/crops/mint2",
-		"particle": "extradelight:block/crops/mint"
+		"particle": "extradelight:block/crops/mint2"
 	},
 	"elements": [
 		{

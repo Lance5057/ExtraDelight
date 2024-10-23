@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "extradelight:fruit_log"
+            "items": "minecraft:golden_carrot"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:fruit_planks_stripped"
+        "recipe": "extradelight:golden_carrot_to_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:fruit_planks_stripped"
+      "extradelight:golden_carrot_to_block"
     ]
   }
 }

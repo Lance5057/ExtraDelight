@@ -15,6 +15,7 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
@@ -64,5 +65,6 @@ public class ExtraDelight {
 
 	public void setupCommon(FMLCommonSetupEvent event) {
 		ExtraDelightBlocks.setup();
+		ExtraDelightItems.setup();
 	}
 }

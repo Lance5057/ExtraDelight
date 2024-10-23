@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "cherry_wreath": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:cinnamon_log"
+            "items": "minecraft:cherry_leaves"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cinnamon_planks_stripped"
+        "recipe": "extradelight:cherry_wreath"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "Recipes"
+      "cherry_wreath"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cinnamon_planks_stripped"
+      "extradelight:cherry_wreath"
     ]
   }
 }

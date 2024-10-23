@@ -145,6 +145,8 @@ public class RecipeFeastBlock extends Block {
 				return ItemInteractionResult.SUCCESS;
 			}
 		}
+		else
+			player.displayClientMessage(Component.translatable("extradelight.block.recipefeast.use_container"), true);
 
 		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}

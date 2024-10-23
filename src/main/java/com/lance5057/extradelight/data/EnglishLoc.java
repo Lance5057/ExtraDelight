@@ -67,6 +67,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.mint_chip_milkshake", "Instant Health");
 
 		this.add("extradelight.corn_dimension.death", "Be more careful in the cornfield next time...");
+		this.add("extradelight.block.recipefeast.use_container", "I need something to put this on");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
@@ -1115,7 +1116,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MARSHMALLOW_BLOCK.get(), "Marshmallow Block");
 		this.add(ExtraDelightItems.MALLOW_POWDER.get(), "Mallow Root Powder");
 		this.add(ExtraDelightItems.GROUND_COFFEE.get(), "Ground Coffee");
-
+		this.add(ExtraDelightItems.GOLDEN_CARROT_CRATE_BLOCK.get(), "Golden Carrot Crate");
+		
 		AestheticBlocks.EngLoc(this);
 	}
 }

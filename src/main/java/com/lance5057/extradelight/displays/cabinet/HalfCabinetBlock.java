@@ -2,6 +2,7 @@ package com.lance5057.extradelight.displays.cabinet;
 
 import javax.annotation.Nullable;
 
+import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.BlockPos;
@@ -116,7 +117,7 @@ public class HalfCabinetBlock extends BaseEntityBlock {
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return ModBlockEntityTypes.CABINET.get().create(pos, state);
+		return ExtraDelightBlockEntities.HALF_CABINET.get().create(pos, state);
 	}
 
 	@Override

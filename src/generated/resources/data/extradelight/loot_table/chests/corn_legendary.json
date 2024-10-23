@@ -69,6 +69,10 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:easter_egg"
         }
       ],
       "name": "better",

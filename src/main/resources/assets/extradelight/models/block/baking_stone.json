@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"0": "block/polished_granite",
-		"particle": "block/polished_granite"
+		"0": "block/stone",
+		"particle": "block/stone"
 	},
 	"elements": [
 		{
