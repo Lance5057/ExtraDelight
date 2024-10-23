@@ -2369,7 +2369,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("milk_tart"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_PLANKS.get(), 4)
-				.requires(ExtraDelightItems.CINNAMON_LOG.get())
+				.requires(ExtraDelightTags.CINNAMON_LOGS)
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_LOG.get()))
 				.save(consumer, EDLoc("cinnamon_planks"));
@@ -2385,12 +2385,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STRIPPED_CINNAMON_LOG.get()))
 				.save(consumer, EDLoc("stripped_cinnamon_wood"));
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_PLANKS.get(), 4)
-				.requires(ExtraDelightItems.STRIPPED_CINNAMON_LOG.get())
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_LOG.get()))
-				.save(consumer, EDLoc("cinnamon_planks_stripped"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_CABINET.get()).pattern("sss")
 				.pattern("t t").pattern("sss").define('s', ExtraDelightItems.CINNAMON_SLAB.get())
@@ -2411,8 +2405,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
 				.save(consumer, EDLoc("cinnamon_door"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_TRAPDOOR.get(), 2).pattern("pp ")
-				.pattern("pp ").define('p', ExtraDelightItems.CINNAMON_PLANKS.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_TRAPDOOR.get(), 2).pattern("ppp")
+				.pattern("ppp").define('p', ExtraDelightItems.CINNAMON_PLANKS.get())
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CINNAMON_PLANKS.get()))
 				.save(consumer, EDLoc("cinnamon_trapdoor"));
@@ -2508,7 +2502,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("funnel"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_PLANKS.get(), 4)
-				.requires(ExtraDelightItems.FRUIT_LOG.get())
+				.requires(ExtraDelightTags.FRUIT_LOGS)
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_LOG.get()))
 				.save(consumer, EDLoc("fruit_planks"));
@@ -2524,12 +2518,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STRIPPED_FRUIT_LOG.get()))
 				.save(consumer, EDLoc("stripped_fruit_wood"));
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_PLANKS.get(), 4)
-				.requires(ExtraDelightItems.STRIPPED_FRUIT_LOG.get())
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_LOG.get()))
-				.save(consumer, EDLoc("fruit_planks_stripped"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_CABINET.get()).pattern("sss")
 				.pattern("t t").pattern("sss").define('s', ExtraDelightItems.FRUIT_SLAB.get())
@@ -2550,8 +2538,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
 				.save(consumer, EDLoc("fruit_door"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_TRAPDOOR.get(), 2).pattern("pp ")
-				.pattern("pp ").define('p', ExtraDelightItems.FRUIT_PLANKS.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FRUIT_TRAPDOOR.get(), 2).pattern("ppp")
+				.pattern("ppp").define('p', ExtraDelightItems.FRUIT_PLANKS.get())
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRUIT_PLANKS.get()))
 				.save(consumer, EDLoc("fruit_trapdoor"));

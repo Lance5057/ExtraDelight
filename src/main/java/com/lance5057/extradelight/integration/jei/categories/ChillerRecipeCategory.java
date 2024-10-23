@@ -32,7 +32,7 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 155, 183, 101, 73);
 		localizedName = Component.translatable("extradelight.jei.chiller");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
-				new ItemStack(ExtraDelightItems.MIXING_BOWL.get()));
+				new ItemStack(ExtraDelightItems.CHILLER.get()));
 	}
 
 	@Override

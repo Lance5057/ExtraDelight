@@ -37,14 +37,14 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.dynamicname.8", "%s, %s, %s, %s, %s, %s and %s %s");
 		this.add("extradelight.dynamicname.9", "%s, %s, %s, %s, %s, %s, %s and %s %s");
 		this.add("extradelight.jei.oven", "Oven");
-		this.add("extradelight.jei.mixingbowl", "Mixing Bowl");
-		this.add("extradelight.jei.dryingrack", "Drying Rack");
+		this.add("extradelight.jei.mixingbowl", "Mixing");
+		this.add("extradelight.jei.dryingrack", "Drying");
 		this.add("extradelight.jei.feast", "Feast Servings");
-		this.add("extradelight.jei.mortar", "Mortar");
+		this.add("extradelight.jei.mortar", "Grinding");
 		this.add("extradelight.jei.doughshaping", "Dough Shaping");
 		this.add("extradelight.jei.tool_on_block", "Tool on Block");
-		// TODO Melting Pot
-		// TODO Chiller
+		this.add("extradelight.jei.meltingpot", "Melting");
+		this.add("extradelight.jei.chiller", "Chilling");
 
 		this.add("farmersdelight.tooltip.glow_berry_juice", "Minor Instant Health, Glow");
 		this.add("farmersdelight.tooltip.sweet_berry_juice", "Minor Instant Health");
@@ -102,8 +102,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".advancement.grind.name", "Crushing Power");
 		this.add(ExtraDelight.MOD_ID + ".advancement.grind.desc", "Make or find a pestle.");
 
-		this.add(ExtraDelight.MOD_ID + ".advancement.flour.name", "A Little Less Ruffage");
-		this.add(ExtraDelight.MOD_ID + ".advancement.flour.desc", "Make some flour and make your bread less fiberous.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.flour.name", "A Little Less Roughage");
+		this.add(ExtraDelight.MOD_ID + ".advancement.flour.desc", "Make some flour and make your bread less fibrous.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.name", "Regal Purple");
 		this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.desc", "Find an Amethyst set.");
@@ -156,7 +156,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".advancement.meals.desc", "Make every available meal.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.desert.name", "There's Always Room");
-		this.add(ExtraDelight.MOD_ID + ".advancement.desert.desc", "Make every available desert.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.desert.desc", "Make every available dessert.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.ingredients.name", "Sous Chef");
 		this.add(ExtraDelight.MOD_ID + ".advancement.ingredients.desc", "Acquire and prepare every ingredient.");
@@ -177,7 +177,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".advancement.chocolate_bar.desc", "Make a Chocolate Bar.");
 		
 		this.add(ExtraDelight.MOD_ID + ".advancement.tap.name", "I'd Tap That");
-		this.add(ExtraDelight.MOD_ID + ".advancement.tap.desc", "Make a Tap and recieve infinite Water.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.tap.desc", "Make a Tap and receive infinite Water.");
 		
 		this.add(ExtraDelight.MOD_ID + ".advancement.keg.name", "Keg Stand!");
 		this.add(ExtraDelight.MOD_ID + ".advancement.keg.desc", "Make a Keg.");
@@ -348,8 +348,8 @@ public class EnglishLoc extends LanguageProvider {
 		// Feasts
 		this.add(ExtraDelightItems.SALISBURY_STEAK.get(), "Plate of Salisbury Steak");
 		this.add(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.get(), "Salisbury Steak");
-		this.add(ExtraDelightItems.MASHED_POTATO_GRAVY.get(), "Bowl of Mashed Potatos with Gravy");
-		this.add(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(), "Mashed Potatos with Gravy");
+		this.add(ExtraDelightItems.MASHED_POTATO_GRAVY.get(), "Bowl of Mashed Potatoes with Gravy");
+		this.add(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(), "Mashed Potatoes with Gravy");
 
 		this.add(ExtraDelightItems.PORK_STEW.get(), "Pork Stew");
 		this.add(ExtraDelightItems.LAMB_STEW.get(), "Mutton Stew");
@@ -900,7 +900,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.BLUE_CHOCOLATE_BOX.get(), "Blue Chocolate Box");
 		this.add(ExtraDelightItems.BROWN_CHOCOLATE_BOX.get(), "Brown Chocolate Box");
 		this.add(ExtraDelightItems.GREEN_CHOCOLATE_BOX.get(), "Green Chocolate Box");
-		this.add(ExtraDelightItems.RED_CHOCOLATE_BOX.get(), "RED Chocolate Box");
+		this.add(ExtraDelightItems.RED_CHOCOLATE_BOX.get(), "Red Chocolate Box");
 		this.add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(), "Black Chocolate Box");
 		this.add(ExtraDelightItems.PURPLE_CHOCOLATE_BOX.get(), "Purple Chocolate Box");
 
@@ -1002,12 +1002,12 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE.get(), "Slice of Sticky Toffee Pudding");
 
 		this.add(ExtraDelightItems.CRISP_RICE.get(), "Puffed Rice");
-		this.add(ExtraDelightItems.CRISP_RICE_CEREAL.get(), "Puffed Rice Cereal");
+		this.add(ExtraDelightItems.CRISP_RICE_CEREAL.get(), "Bowl of Puffed Rice");
 		this.add(ExtraDelightItems.CRISP_RICE_TREATS_BLOCK.get(), "Puffed Rice Treats");
 		this.add(ExtraDelightItems.CRISP_RICE_TREAT.get(), "Puffed Rice Treat");
 
 		this.add(ExtraDelightItems.CORN_FLAKES.get(), "Corn Flakes");
-		this.add(ExtraDelightItems.CORN_FLAKES_CEREAL.get(), "Corn Flakes Cereal");
+		this.add(ExtraDelightItems.CORN_FLAKES_CEREAL.get(), "Bowl of Corn Flakes");
 
 		this.add(ExtraDelightItems.SCOTCHAROO_BLOCK.get(), "Scotcharoos");
 		this.add(ExtraDelightItems.SCOTCHAROO.get(), "Scotcharoo");
@@ -1091,7 +1091,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.COFFEE_FLUID_BUCKET.get(), "Coffee Bucket");
 		this.add(ExtraDelightItems.NUT_BUTTER_FLUID_BUCKET.get(), "Nut Butter Bucket");
 		this.add(ExtraDelightItems.MARSHMALLOW_FLUFF_FLUID_BUCKET.get(), "Marshmallow Fluff Bucket");
-		this.add(ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET.get(), "Cocoa Nut Butter Spread Bucket");
+		this.add(ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET.get(), "Chocolate Nut Butter Spread Bucket");
 
 		this.add("fluid_type.extradelight.cocoa_butter_fluid", "Cocoa Butter");
 		this.add("fluid_type.extradelight.white_chocolate_syrup_fluid", "Liquid White Chocolate");
@@ -1110,7 +1110,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(), "Liquid Blood Chocolate");
 		this.add(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get(), "Nut Butter");
 		this.add(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(), "Marshmallow Fluff");
-		this.add(ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get(), "Cocoa Nut Butter Spread");
+		this.add(ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get(), "Chocolate Nut Butter Spread");
 		this.add(ExtraDelightItems.ICE_CREAM_SUNDAE.get(), "Ice Cream Sundae");
 		this.add(ExtraDelightItems.MARSHMALLOW_BLOCK.get(), "Marshmallow Block");
 		this.add(ExtraDelightItems.MALLOW_POWDER.get(), "Mallow Root Powder");

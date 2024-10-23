@@ -31,12 +31,18 @@ public class EDBlockTags extends BlockTagsProvider {
 	}
 
 	protected void registerBlockMineableTags() {
-		tag(BlockTags.LOGS).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.FRUIT_LOG.get());
-		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.FRUIT_LOG.get());
+		tag(BlockTags.LOGS).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(),
+				ExtraDelightBlocks.FRUIT_LOG.get(), ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(),
+				ExtraDelightBlocks.CINNAMON_WOOD.get(), ExtraDelightBlocks.FRUIT_WOOD.get(),
+				ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(), ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get());
+		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(),
+				ExtraDelightBlocks.FRUIT_LOG.get(), ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(),
+				ExtraDelightBlocks.CINNAMON_WOOD.get(), ExtraDelightBlocks.FRUIT_WOOD.get(),
+				ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(), ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get());
 		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), ExtraDelightBlocks.HAZELNUT_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.DRYING_RACK.get(),
 				ExtraDelightBlocks.FOOD_DISPLAY.get(), ExtraDelightBlocks.DOUGH_SHAPING.get(),
-				ExtraDelightBlocks.MIXING_BOWL.get(), ExtraDelightBlocks.CINNAMON_LOG.get());
+				ExtraDelightBlocks.MIXING_BOWL.get());
 		AestheticBlocks.STEP_STOOLS.forEach(this::makeMineableWithAxe);
 		AestheticBlocks.SPICE_RACKS.forEach(this::makeMineableWithAxe);
 		AestheticBlocks.SPICE_RACKS_FULL.forEach(this::makeMineableWithAxe);
@@ -66,6 +72,9 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
 				ExtraDelightBlocks.PIE_DISH_BLOCK.get(), ExtraDelightBlocks.TRAY_BLOCK.get(),
 				ExtraDelightBlocks.BAKING_STONE_BLOCK.get(), ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(),
+				ExtraDelightBlocks.KEG.get(), ExtraDelightBlocks.MELTING_POT.get(), ExtraDelightBlocks.CHILLER.get(),
+				ExtraDelightBlocks.BAR_MOLD.get(), ExtraDelightBlocks.FUNNEL.get(), ExtraDelightBlocks.JAR.get(),
+				ExtraDelightBlocks.TAP.get(),
 
 				// Chocolate
 				ExtraDelightBlocks.BLOOD_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get(),
