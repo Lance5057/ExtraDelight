@@ -2,6 +2,8 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import net.minecraft.tags.BlockTags;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -324,6 +326,20 @@ public class EDItemTags extends ItemTagsProvider {
 		for (int i = 0; i < AestheticBlocks.BOW_ITEMS.size(); i++)
 			tag(ExtraDelightTags.RIBBON).add(AestheticBlocks.BOW_ITEMS.get(i).get());
 
+		tag(ExtraDelightTags.CINNAMON_LOGS).add(ExtraDelightItems.CINNAMON_LOG.get(),
+				ExtraDelightItems.CINNAMON_WOOD.get(), ExtraDelightItems.STRIPPED_CINNAMON_LOG.get(),
+				ExtraDelightItems.STRIPPED_CINNAMON_WOOD.get());
+		tag(ExtraDelightTags.FRUIT_LOGS).add(ExtraDelightItems.FRUIT_LOG.get(), ExtraDelightItems.FRUIT_WOOD.get(),
+				ExtraDelightItems.STRIPPED_FRUIT_LOG.get(),	ExtraDelightItems.STRIPPED_FRUIT_WOOD.get());
+
+		tag(ItemTags.LOGS).add(ExtraDelightItems.CINNAMON_LOG.get(), ExtraDelightItems.STRIPPED_CINNAMON_LOG.get(),
+				ExtraDelightItems.FRUIT_LOG.get(), ExtraDelightItems.STRIPPED_FRUIT_LOG.get(),
+				ExtraDelightItems.CINNAMON_WOOD.get(), ExtraDelightItems.FRUIT_WOOD.get(),
+				ExtraDelightItems.STRIPPED_CINNAMON_WOOD.get(), ExtraDelightItems.STRIPPED_FRUIT_WOOD.get());
+		tag(ItemTags.LOGS_THAT_BURN).add(ExtraDelightItems.CINNAMON_LOG.get(), ExtraDelightItems.STRIPPED_CINNAMON_LOG.get(),
+				ExtraDelightItems.FRUIT_LOG.get(), ExtraDelightItems.STRIPPED_FRUIT_LOG.get(),
+				ExtraDelightItems.CINNAMON_WOOD.get(), ExtraDelightItems.FRUIT_WOOD.get(),
+				ExtraDelightItems.STRIPPED_CINNAMON_WOOD.get(), ExtraDelightItems.STRIPPED_FRUIT_WOOD.get());
 		tag(ItemTags.PLANKS).add(ExtraDelightItems.CINNAMON_PLANKS.get(), ExtraDelightItems.FRUIT_PLANKS.get());
 		tag(ItemTags.FENCES).add(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE.get(),
 				ExtraDelightItems.DARK_CHOCOLATE_FENCE.get(), ExtraDelightItems.MILK_CHOCOLATE_FENCE.get(),

@@ -222,6 +222,7 @@ public class ExtraDelightForgeClientEvents {
 			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE,
 			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_MARSHMALLOW,
 			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_GRAHAM_CRACKER,
+			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_BACON,
 			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN
 	);
 }

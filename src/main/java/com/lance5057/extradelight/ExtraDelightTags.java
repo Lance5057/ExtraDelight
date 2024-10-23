@@ -434,4 +434,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> BUTTERSCOTCH = neoforgeItemTag("butterscotch");
 	public static final TagKey<Item> ICE_CREAM = neoforgeItemTag("ice_cream");
 	public static final TagKey<Fluid> BLOOD = neoforgeFluidTag("blood");
+
+	public static final TagKey<Item> CINNAMON_LOGS = neoforgeItemTag("cinnamon_logs");
+	public static final TagKey<Item> FRUIT_LOGS = neoforgeItemTag("fruit_logs");
 }

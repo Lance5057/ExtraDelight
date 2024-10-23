@@ -168,7 +168,7 @@ public class ExtraDelightFluids {
 	public static FluidRegistration WHITE_CHOCOLATE_SYRUP = new FluidRegistration("white_chocolate_syrup",
 			() -> new BasicFluid("white_chocolate_syrup", 0xffffffff, 0x00ffd290,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
-							.motionScale(0.5))
+							.motionScale(0.0023333333333333335D))
 					.setNearDistance(-1000),
 			ExtraDelightBlocks.WHITE_CHOCOLATE_SYRUP_FLUID_BLOCK, ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET,
 			FLUID_TYPES, FLUIDS);

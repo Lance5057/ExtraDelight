@@ -176,7 +176,7 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.COOKING_OIL.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> GRAVY = ITEMS.register("gravy_boat_item",
-			() -> new Item(new Item.Properties()));
+			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL)));
 
 	public static final DeferredItem<Item> SLICED_ONION = ITEMS.register("sliced_onion",
 			() -> new Item(foodItem(EDFoods.SLICED_ONION)));
@@ -766,7 +766,7 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> APPLE_FRITTERS = ITEMS.register("apple_fritters",
 			() -> new ToolTipConsumableItem(foodItem(EDFoods.APPLE_FRITTERS), true));
 	public static final DeferredItem<Item> CARAMEL_SAUCE = ITEMS.register("caramel_sauce",
-			() -> new Item(foodItem(EDFoods.CARAMEL_SAUCE)));
+			() -> new Item(foodItem(EDFoods.CARAMEL_SAUCE).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final DeferredItem<Item> CARAMEL_CANDY = ITEMS.register("caramel_candy",
 			() -> new ToolTipConsumableItem(foodItem(EDFoods.CARAMEL_CANDY), true));
 	public static final DeferredItem<Item> CANDY_APPLE = ITEMS.register("candy_apple",
