@@ -48,7 +48,7 @@ public class BasicFluid extends FluidType {
 
 		STILL = ResourceLocation.withDefaultNamespace("block/water_still");
 		FLOW = ResourceLocation.withDefaultNamespace("block/water_flow");
-		OVERLAY = ResourceLocation.withDefaultNamespace("block/water_still");
+		OVERLAY = ResourceLocation.withDefaultNamespace("block/water_overlay");
 		VIEW_OVERLAY = ResourceLocation.withDefaultNamespace("textures/block/water_still.png");
 
 		this.tint = tint;

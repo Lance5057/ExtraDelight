@@ -158,7 +158,7 @@ public class FruitLeafBlock extends Block {
 			InteractionHand hand, BlockHitResult result) {
 		if (!level.isClientSide)
 			if (state.getValue(AGE) >= FruitLeafBlock.MAX_AGE) {
-				ItemStack fruit = new ItemStack(this.fruit.get(), level.random.nextInt(3) + 1);
+				ItemStack fruit = new ItemStack(this.fruit.get(), 1);
 				player.getInventory().placeItemBackInInventory(fruit);
 				level.setBlock(pos, state.setValue(AGE, 0), 3);
 			}

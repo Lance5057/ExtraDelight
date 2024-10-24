@@ -1,11 +1,10 @@
-package com.lance5057.extradelight.worldgen.features;
+package com.lance5057.extradelight.worldgen.features.crops;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.worldgen.config.WildConfig;
 
 import net.minecraft.core.BlockPos;
@@ -16,9 +15,9 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
-public class WildCoffeeFeature extends Feature<WildConfig> {
+public class WildChiliFeature extends Feature<WildConfig> {
 
-	public WildCoffeeFeature() {
+	public WildChiliFeature() {
 		super(WildConfig.CODEC);
 	}
 
@@ -40,7 +39,7 @@ public class WildCoffeeFeature extends Feature<WildConfig> {
 					randomsource.nextInt(k) - randomsource.nextInt(k),
 					randomsource.nextInt(j) - randomsource.nextInt(j));
 			if ((worldgenlevel.isEmptyBlock(pos) || worldgenlevel.getBlockState(pos).is(BlockTags.SNOW))
-					&& ExtraDelightBlocks.COFFEE_BUSH.get().defaultBlockState().canSurvive(worldgenlevel, pos)) {
+					&& ExtraDelightBlocks.WILD_CHILI.get().defaultBlockState().canSurvive(worldgenlevel, pos)) {
 				spawn(worldgenlevel, randomsource, pos);
 				++generated;
 			}
@@ -56,8 +55,7 @@ public class WildCoffeeFeature extends Feature<WildConfig> {
 	}
 
 	private void spawn(LevelAccessor worldIn, RandomSource rand, BlockPos generatingPos) {
-		worldIn.setBlock(generatingPos,
-				ExtraDelightBlocks.COFFEE_BUSH.get().defaultBlockState().setValue(CoffeeBush.AGE, 3), 2);
+		worldIn.setBlock(generatingPos, ExtraDelightBlocks.WILD_CHILI.get().defaultBlockState(), 2);
 	}
 
 }

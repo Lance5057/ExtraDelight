@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.worldgen.features;
+package com.lance5057.extradelight.worldgen.features.crops;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,9 +15,9 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
-public class WildGingerFeature extends Feature<WildConfig> {
+public class WildMallowFeature extends Feature<WildConfig> {
 
-	public WildGingerFeature() {
+	public WildMallowFeature() {
 		super(WildConfig.CODEC);
 	}
 
@@ -39,7 +39,7 @@ public class WildGingerFeature extends Feature<WildConfig> {
 					randomsource.nextInt(k) - randomsource.nextInt(k),
 					randomsource.nextInt(j) - randomsource.nextInt(j));
 			if ((worldgenlevel.isEmptyBlock(pos) || worldgenlevel.getBlockState(pos).is(BlockTags.SNOW))
-					&& ExtraDelightBlocks.WILD_GINGER.get().defaultBlockState().canSurvive(worldgenlevel, pos)) {
+					&& ExtraDelightBlocks.WILD_MALLOW_ROOT.get().defaultBlockState().canSurvive(worldgenlevel, pos)) {
 				spawn(worldgenlevel, randomsource, pos);
 				++generated;
 			}
@@ -55,7 +55,7 @@ public class WildGingerFeature extends Feature<WildConfig> {
 	}
 
 	private void spawn(LevelAccessor worldIn, RandomSource rand, BlockPos generatingPos) {
-		worldIn.setBlock(generatingPos, ExtraDelightBlocks.WILD_GINGER.get().defaultBlockState(), 2);
+		worldIn.setBlock(generatingPos, ExtraDelightBlocks.WILD_MALLOW_ROOT.get().defaultBlockState(), 2);
 	}
 
 }

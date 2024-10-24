@@ -38,7 +38,7 @@ public class ExtraDelightTreeFeatures {
 	public static TreeConfiguration.TreeConfigurationBuilder createHazelnutTree() {
 		return new TreeConfiguration.TreeConfigurationBuilder(
 				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()),
-				new StraightTrunkPlacer(3, 0, 4),
+				new StraightTrunkPlacer(2, 0, 2),
 				BlockStateProvider.simple(ExtraDelightBlocks.HAZELNUT_LEAVES.get()),
 				new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
 				new TwoLayersFeatureSize(1, 0, 4));

@@ -1,21 +1,21 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#c:is_plains",
+  "biomes": "#minecraft:is_jungle",
   "features": {
     "feature": {
-      "type": "extradelight:wild_corn",
+      "type": "extradelight:wild_peanut",
       "config": {
-        "max_count": 250,
-        "min_count": 120,
+        "max_count": 100,
+        "min_count": 10,
         "tries": 256,
-        "xz_spread": 12,
-        "y_spread": 25
+        "xz_spread": 10,
+        "y_spread": 5
       }
     },
     "placement": [
       {
         "type": "minecraft:rarity_filter",
-        "chance": 40
+        "chance": 20
       },
       {
         "type": "minecraft:in_square"
