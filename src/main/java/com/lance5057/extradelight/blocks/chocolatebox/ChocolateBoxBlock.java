@@ -15,6 +15,7 @@ import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -35,8 +36,8 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 	public static final ResourceLocation CONTENTS = ResourceLocation.withDefaultNamespace("contents");
 	public static final BooleanProperty OPEN = BooleanProperty.create("open");
 	public static final MapCodec<ChocolateBoxBlock> CODEC = simpleCodec(ChocolateBoxBlock::new);
-	protected VoxelShape SHAPE = Block.box(4.0D, 0.0D, 0.0D, 12.0D, 8.0D, 16.0D);
-	protected VoxelShape SHAPE2 = Block.box(0.0D, 0.0D, 4.0D, 16.0D, 8.0D, 12.0D);
+	protected VoxelShape SHAPE = Block.box(4.0D, 0.0D, 2.0D, 12.0D, 3.0D, 14.0D);
+	protected VoxelShape SHAPE2 = Block.box(2.0D, 0.0D, 4.0D, 14.0D, 3.0D, 12.0D);
 
 	@Nullable
 	private final DyeColor color;
@@ -147,6 +148,11 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 	@Nullable
 	public DyeColor getColor() {
 		return this.color;
+	}
+	
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 
 }

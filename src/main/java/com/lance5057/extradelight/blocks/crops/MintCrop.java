@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.common.Tags;
 
 public class MintCrop extends Block {
 	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D);
@@ -28,12 +29,13 @@ public class MintCrop extends Block {
 	}
 
 	public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-		if (ExtraDelightConfig.MINT_SPREAD.get()) {
-			if (!pLevel.isAreaLoaded(pPos, 1))
-				return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-			if (pRandom.nextInt() % ExtraDelightConfig.MINT_SPREAD_RATE.get() == 0)
-				pLevel.setBlock(findValidSpot(pState, pLevel, pPos), pState, 2);
-		}
+		if (!pLevel.getBiome(pPos).is(Tags.Biomes.IS_COLD))
+			if (ExtraDelightConfig.MINT_SPREAD.get()) {
+				if (!pLevel.isAreaLoaded(pPos, 1))
+					return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+				if (pRandom.nextInt() % ExtraDelightConfig.MINT_SPREAD_RATE.get() == 0)
+					pLevel.setBlock(findValidSpot(pState, pLevel, pPos), pState, 2);
+			}
 	}
 
 	public BlockPos findValidSpot(BlockState pState, ServerLevel pLevel, BlockPos pPos) {
@@ -69,11 +71,9 @@ public class MintCrop extends Block {
 
 	@Override
 	protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-		net.neoforged.neoforge.common.util.TriState soilDecision = level.getBlockState(pos.below())
-				.canSustainPlant(level, pos.below(), net.minecraft.core.Direction.UP, state);
-		if (!soilDecision.isDefault())
-			return soilDecision.isTrue();
-		return hasSufficientLight(level, pos) && super.canSurvive(state, level, pos);
+		if (level.getBlockState(pos.below()).is(BlockTags.DIRT))
+			return hasSufficientLight(level, pos) && super.canSurvive(state, level, pos);
+		return false;
 	}
 
 	public static boolean hasSufficientLight(LevelReader level, BlockPos pos) {

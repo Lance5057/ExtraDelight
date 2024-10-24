@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:milk_chocolate_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "extradelight:milk_chocolate_bar"
+  }
+}

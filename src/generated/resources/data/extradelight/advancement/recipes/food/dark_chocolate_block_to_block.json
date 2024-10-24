@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "extradelight:blood_chocolate_bar"
+            "items": "extradelight:dark_chocolate_bar"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:blood_chocolate_block"
+        "recipe": "extradelight:dark_chocolate_block_to_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:blood_chocolate_block"
+      "extradelight:dark_chocolate_block_to_block"
     ]
   }
 }

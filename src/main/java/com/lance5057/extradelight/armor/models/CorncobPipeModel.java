@@ -18,11 +18,8 @@ import net.minecraft.world.entity.LivingEntity;
 // Paste this class into your mod and generate all required imports
 
 public class CorncobPipeModel extends HumanoidModel<LivingEntity> {
-	// This layer location should be baked with EntityRendererProvider.Context in
-	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
-			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "corncob_pipe"), "head");
-//	private final ModelPart bone;
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "corncob_pipe"), "main");
 
 	public CorncobPipeModel(ModelPart root) {
 		super(root);
@@ -33,19 +30,19 @@ public class CorncobPipeModel extends HumanoidModel<LivingEntity> {
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
 		partdefinition.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
-		head.addOrReplaceChild("pipe",
+		partdefinition.addOrReplaceChild("head",
 				CubeListBuilder.create().texOffs(0, 0)
-						.addBox(-0.5F, -0.5F, -6.0F, 1.0F, 1.0F, 6.0F, new CubeDeformation(-0)).texOffs(0, 7)
-						.addBox(-1.0F, -2.4F, -7.0F, 2.0F, 3.0F, 2.0F, new CubeDeformation(-0)).texOffs(8, 7)
-						.addBox(-0.8F, -2.401F, -6.8F, 1.6F, 0.0F, 1.6F, new CubeDeformation(-0)),
+						.addBox(-0.5F, -0.5F, -6.0F, 1.0F, 1.0F, 6.0F, new CubeDeformation(1)).texOffs(0, 7)
+						.addBox(-1.0F, -2.4F, -7.0F, 2.0F, 3.0F, 2.0F, new CubeDeformation(1)).texOffs(8, 7)
+						.addBox(-0.8F, -2.401F, -6.8F, 1.6F, 0.0F, 1.6F, new CubeDeformation(1)),
 				PartPose.offsetAndRotation(1, -1.5f, -1, 0, (float) Math.toRadians(45), 0));
-		
+
 		return meshdefinition;
 	}
-//	@Override
-//	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay,
-//			float red, float green, float blue, float alpha) {
-//		bone.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-//	}
+	
+	@Override
+	public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+			float netHeadYaw, float headPitch) {
+
+	}
 }

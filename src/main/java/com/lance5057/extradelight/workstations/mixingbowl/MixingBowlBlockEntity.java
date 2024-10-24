@@ -151,9 +151,13 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				if (slot == LIQUID_IN_SLOT)
 					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
 						return true;
+					else
+						return false;
 				if (slot == LIQUID_OUT_SLOT)
 					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
 						return true;
+					else
+						return false;
 				if (slot == GHOST_SLOT)
 					return false;
 				return true;

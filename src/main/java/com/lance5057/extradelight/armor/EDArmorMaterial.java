@@ -17,8 +17,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class EDArmorMaterial {
 
-	private static final Map<ArmorItem.Type, Integer> ZERO = Map.of(ArmorItem.Type.HELMET, 0, ArmorItem.Type.CHESTPLATE,
-			0, ArmorItem.Type.LEGGINGS, 0, ArmorItem.Type.BOOTS, 0, ArmorItem.Type.BODY, 0);
+	private static final Map<ArmorItem.Type, Integer> ZERO = Map.of(ArmorItem.Type.HELMET, 1, ArmorItem.Type.CHESTPLATE,
+			1, ArmorItem.Type.LEGGINGS, 1, ArmorItem.Type.BOOTS, 1, ArmorItem.Type.BODY, 1);
 
 	public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister
 			.create(Registries.ARMOR_MATERIAL, ExtraDelight.MOD_ID);

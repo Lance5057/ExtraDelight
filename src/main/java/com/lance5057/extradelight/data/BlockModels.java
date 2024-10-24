@@ -670,9 +670,9 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	public void jellyBlock(FeastBlock block, String color) {
+	public void jellyBlock(RecipeFeastBlock block, String color) {
 		getVariantBuilder(block).forAllStates(state -> {
-			int servings = state.getValue(FeastBlock.SERVINGS);
+			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
 
 			String suffix = "_stage" + (block.getMaxServings() - servings);
 
@@ -688,7 +688,7 @@ public class BlockModels extends BlockStateProvider {
 					.texture("1", contentsTexture).renderType("translucent");
 
 			return ConfiguredModel.builder().modelFile(jellyModel)
-					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
+					.rotationY(((int) state.getValue(RecipeFeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}
 

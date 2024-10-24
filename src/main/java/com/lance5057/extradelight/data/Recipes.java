@@ -9,6 +9,7 @@ import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
@@ -39,7 +40,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
@@ -48,6 +52,7 @@ import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -877,6 +882,87 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK.get()))
 				.save(consumer, EDLoc("white_coffee_bean_feast"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_WHITE.get()),
+						ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_white"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_ORANGE.get()),
+						ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_orange_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_MAGENTA.get()),
+						ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_magenta_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_LIGHT_BLUE.get()),
+						ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_light_blue_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_YELLOW.get()),
+						ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_yellow_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_LIME.get()),
+						ExtraDelightItems.JELLY_LIME_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_LIME_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_lime_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_PINK.get()),
+						ExtraDelightItems.JELLY_PINK_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_PINK_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_pink_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_GREY.get()),
+						ExtraDelightItems.JELLY_GREY_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_GREY_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_grey_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_LIGHT_GREY.get()),
+						ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_light_grey_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_CYAN.get()),
+						ExtraDelightItems.JELLY_CYAN_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_CYAN_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_cyan_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_PURPLE.get()),
+						ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_purple_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_BLUE.get()),
+						ExtraDelightItems.JELLY_BLUE_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_BLUE_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_blue_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_BROWN.get()),
+						ExtraDelightItems.JELLY_BROWN_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_BROWN_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_brown_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_GREEN.get()),
+						ExtraDelightItems.JELLY_GREEN_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_GREEN_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_green_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_RED.get()),
+						ExtraDelightItems.JELLY_RED_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_RED_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_red_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.JELLY_BLACK.get()),
+						ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.get())
+				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.get()))
+				.save(consumer, EDLoc("jelly_black_block"));
 	}
 
 	private void doughShapeRecipes(RecipeOutput consumer) {
@@ -1636,7 +1722,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.SCRAP_PORK_COOKED),
 						Ingredient.of(ExtraDelightTags.SCRAP_PORK_COOKED),
 						Ingredient.of(ExtraDelightTags.SCRAP_PORK_COOKED),
-						Ingredient.of(ExtraDelightTags.SCRAP_PORK_COOKED)},
+						Ingredient.of(ExtraDelightTags.SCRAP_PORK_COOKED) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.BBQ.FLUID, 250)) },
 				consumer, "pulled_pork");
@@ -1980,9 +2066,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("omelette_mix_meat_cheese"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.JAM_TOAST.get())
-				.requires(Ingredient.of(ExtraDelightTags.JAM_MUNDANE))
-				.requires(Ingredient.of(ExtraDelightTags.TOAST)).unlockedBy(getName(), has(ExtraDelightTags.JAM))
-				.save(consumer, EDLoc("jam_toast"));
+				.requires(Ingredient.of(ExtraDelightTags.JAM_MUNDANE)).requires(Ingredient.of(ExtraDelightTags.TOAST))
+				.unlockedBy(getName(), has(ExtraDelightTags.JAM)).save(consumer, EDLoc("jam_toast"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GLOW_JAM_TOAST.get())
 				.requires(Ingredient.of(ExtraDelightTags.JAM_GLOW_BERRY))
@@ -3019,14 +3104,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.MARSHMALLOW.get(), consumer, "marshmallow");
 		bundleItem9(Ingredient.of(Items.GOLDEN_CARROT), ExtraDelightItems.GOLDEN_CARROT_CRATE_BLOCK.get(),
 				Items.GOLDEN_CARROT, consumer, "golden_carrot");
-		bundleItem9(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get()), ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get(),
-				ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get(), consumer, "blood_chocolate_block");
-		bundleItem9(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_BAR.get()), ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get(),
-				ExtraDelightItems.DARK_CHOCOLATE_BAR.get(), consumer, "dark_chocolate_block");
-		bundleItem9(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_BAR.get()), ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get(),
-				ExtraDelightItems.MILK_CHOCOLATE_BAR.get(), consumer, "milk_chocolate_block");
-		bundleItem9(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_BAR.get()), ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get(),
-				ExtraDelightItems.WHITE_CHOCOLATE_BAR.get(), consumer, "white_chocolate_block");
+		bundleItem9(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get()),
+				ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get(), ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get(), consumer,
+				"blood_chocolate_block");
+		bundleItem9(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_BAR.get()),
+				ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get(), ExtraDelightItems.DARK_CHOCOLATE_BAR.get(), consumer,
+				"dark_chocolate_block");
+		bundleItem9(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_BAR.get()),
+				ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get(), ExtraDelightItems.MILK_CHOCOLATE_BAR.get(), consumer,
+				"milk_chocolate_block");
+		bundleItem9(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_BAR.get()),
+				ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get(), ExtraDelightItems.WHITE_CHOCOLATE_BAR.get(), consumer,
+				"white_chocolate_block");
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -3677,6 +3766,25 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.BUTTERSCOTCH), Ingredient.of(ExtraDelightTags.CHOCOLATE_SYRUP),
 						Ingredient.of(ExtraDelightTags.PEANUT_BUTTER) },
 				"scotcharoos", consumer);
+
+		pot(ExtraDelightItems.SOS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, ExtraDelightItems.BREAD_SLICE.get(),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SCRAP_BEEF), Ingredient.of(ExtraDelightTags.FLOUR),
+						Ingredient.of(CommonTags.FOODS_MILK) },
+				"sos", consumer);
+
+		pot(ExtraDelightItems.OXTAIL_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.OXTAIL), Ingredient.of(Items.CARROT),
+						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO) },
+				"oxtail_soup", consumer);
+
+		pot(ExtraDelightItems.LIVER_ONIONS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.LIVER),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION) },
+				"liver_onions", consumer);
+
+		pot(ExtraDelightItems.FRIED_BRAINS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
+				Ingredient.of(ExtraDelightTags.BRAIN), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
+				"fried_brains", consumer);
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {

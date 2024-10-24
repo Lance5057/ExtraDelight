@@ -195,7 +195,7 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 		Optional<RecipeHolder<MortarRecipe>> recipeOptional = matchRecipe(getInsertedItem());
 		recipeOptional.ifPresent(r -> {
 			MortarRecipe recipe = r.value();
-			if (FluidStack.isSameFluid(recipe.getFluid(), tank.getFluid())
+			if ((tank.isEmpty() || FluidStack.isSameFluid(recipe.getFluid(), tank.getFluid()))
 					&& tank.fill(recipe.getFluid(), FluidAction.SIMULATE) == recipe.getFluid().getAmount()) {
 
 				if ((this.grinds + 1) < recipe.getGrinds()) {

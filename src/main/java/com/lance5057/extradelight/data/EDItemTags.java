@@ -93,8 +93,10 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.SWEETENER).add(Items.HONEY_BOTTLE).add(Items.SUGAR);
 		tag(ExtraDelightTags.MAYO).add(ExtraDelightItems.MAYO.get());
 
-		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get()).add(ExtraDelightItems.TOAST.get());
+		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
+		tag(ExtraDelightTags.TOAST_OR_BREAD_SLICE).addTag(ExtraDelightTags.BREAD_SLICE).addTag(ExtraDelightTags.TOAST);
+		
 		tag(ExtraDelightTags.CHEESE).add(ExtraDelightItems.CHEESE.get());
 		tag(ExtraDelightTags.GROUND_MEAT_RAW).add(ModItems.MINCED_BEEF.get());
 		tag(ExtraDelightTags.GROUND_MEAT_COOKED).add(ModItems.BEEF_PATTY.get());

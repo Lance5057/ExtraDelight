@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hotdish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:jelly_light_blue_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/jelly_light_blue_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hotdish"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/jelly_light_blue_block"
+    ]
+  }
+}

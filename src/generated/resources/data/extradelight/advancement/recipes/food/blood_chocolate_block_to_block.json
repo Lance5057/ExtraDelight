@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "Recipes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:blood_chocolate_bar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:blood_chocolate_block_to_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "Recipes"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:blood_chocolate_block_to_block"
+    ]
+  }
+}

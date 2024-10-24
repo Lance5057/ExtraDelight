@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "id": "extradelight:jelly_brown_block_item"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:jelly_brown"
+  }
+}

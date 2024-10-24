@@ -3,11 +3,17 @@ package com.lance5057.extradelight;
 import java.util.List;
 import java.util.Set;
 
+import com.lance5057.extradelight.armor.models.CorncobPipeModel;
 import com.mojang.blaze3d.shaders.FogShape;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.EntityModelSet;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.TooltipContext;
 import net.minecraft.world.item.ItemStack;
@@ -17,6 +23,8 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ViewportEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
 
@@ -225,4 +233,6 @@ public class ExtraDelightNeoForgeClientEvents {
 			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_BACON,
 			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN
 	);
+	
+	
 }

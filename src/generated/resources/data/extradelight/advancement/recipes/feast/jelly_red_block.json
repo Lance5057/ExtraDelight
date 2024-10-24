@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_hotdish": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:milk_chocolate_bar"
+            "items": "extradelight:jelly_red_block_item"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:milk_chocolate_block"
+        "recipe": "extradelight:feast/jelly_red_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "Recipes"
+      "has_hotdish"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:milk_chocolate_block"
+      "extradelight:feast/jelly_red_block"
     ]
   }
 }
