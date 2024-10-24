@@ -18,7 +18,7 @@ public class EnglishLoc extends LanguageProvider {
 	@Override
 	protected void addTranslations() {
 		this.add("itemGroup.extradelight.tab", "Extra Delight");
-		this.add("itemGroup.extradelight.aesthetic", "Extra Delight Aesthetic");
+		this.add("itemGroup.extradelight.aesthetics", "Extra Delight Aesthetic Items");
 
 		this.add("farmersdelight.tooltip.oven.empty", "");
 		this.add("container.doughshaper", "Dough Shaping");
@@ -70,6 +70,8 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add("extradelight.corn_dimension.death", "Be more careful in the cornfield next time...");
 		this.add("extradelight.block.recipefeast.use_container", "I need something to put this on");
+
+		this.add("farmersdelight.tooltip.unshucked_corn", "Pull really hard");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
