@@ -108,8 +108,10 @@ public class ExtraDelightBlocks {
 		fire.setFlammable(ExtraDelightBlocks.CINNAMON_STAIRS.get(), 5, 20);
 		fire.setFlammable(ExtraDelightBlocks.CINNAMON_STICK_BLOCK.get(), 5, 20);
 		fire.setFlammable(ExtraDelightBlocks.CINNAMON_TRAPDOOR.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.CINNAMON_WOOD.get(), 5, 5);
 		fire.setFlammable(ExtraDelightBlocks.RAW_CINNAMON_BLOCK.get(), 5, 20);
 		fire.setFlammable(ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), 5, 5);
+		fire.setFlammable(ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(), 5, 5);
 
 		for (int i = 0; i < AestheticBlocks.DRIED_CORN_FENCE.size(); i++)
 			fire.setFlammable(AestheticBlocks.DRIED_CORN_FENCE.get(i).get(), 5, 5);
@@ -125,7 +127,9 @@ public class ExtraDelightBlocks {
 		fire.setFlammable(ExtraDelightBlocks.FRUIT_SLAB.get(), 5, 20);
 		fire.setFlammable(ExtraDelightBlocks.FRUIT_STAIRS.get(), 5, 20);
 		fire.setFlammable(ExtraDelightBlocks.FRUIT_TRAPDOOR.get(), 5, 20);
+		fire.setFlammable(ExtraDelightBlocks.FRUIT_WOOD.get(), 5, 5);
 		fire.setFlammable(ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(), 5, 5);
+		fire.setFlammable(ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get(), 5, 5);
 
 		fire.setFlammable(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), 30, 60);
 		fire.setFlammable(ExtraDelightBlocks.CORN_COB_BUNDLE.get(), 30, 60);

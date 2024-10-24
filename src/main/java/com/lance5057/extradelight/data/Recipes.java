@@ -1981,17 +1981,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.JAM_TOAST.get())
 				.requires(Ingredient.of(ExtraDelightTags.JAM_MUNDANE))
-				.requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE)).unlockedBy(getName(), has(ExtraDelightTags.JAM))
+				.requires(Ingredient.of(ExtraDelightTags.TOAST)).unlockedBy(getName(), has(ExtraDelightTags.JAM))
 				.save(consumer, EDLoc("jam_toast"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GLOW_JAM_TOAST.get())
 				.requires(Ingredient.of(ExtraDelightTags.JAM_GLOW_BERRY))
-				.requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE))
+				.requires(Ingredient.of(ExtraDelightTags.TOAST))
 				.unlockedBy(getName(), has(ExtraDelightTags.JAM_GLOW_BERRY)).save(consumer, EDLoc("glow_jam_toast"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GOLDEN_JAM_TOAST.get())
 				.requires(Ingredient.of(ExtraDelightTags.JAM_GOLDEN_APPLE))
-				.requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE))
+				.requires(Ingredient.of(ExtraDelightTags.TOAST))
 				.unlockedBy(getName(), has(ExtraDelightTags.JAM_GOLDEN_APPLE))
 				.save(consumer, EDLoc("golden_jam_toast"));
 
@@ -2708,12 +2708,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 								.hasItems(AestheticBlocks.BOW_ITEMS.get(DyeColor.YELLOW.getId())))
 				.save(consumer, EDLoc("yellow_chocolate_box"));
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get(), 1)
-				.requires(Ingredient.of(ExtraDelightTags.MILK_CHOCOLATE_BAR), 9)
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BAR))
-				.save(consumer, EDLoc("milk_chocolate_block"));
-
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MILK_CHOCOLATE_FENCE.get(), 3).pattern("bsb")
 				.pattern("bsb").define('b', ExtraDelightTags.MILK_CHOCOLATE_BLOCK)
 				.define('s', ExtraDelightTags.MILK_CHOCOLATE_BAR)
@@ -2757,12 +2751,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BLOCK))
 				.save(consumer, EDLoc("milk_chocolate_pillar"));
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get(), 1)
-				.requires(Ingredient.of(ExtraDelightTags.BLOOD_CHOCOLATE_BAR), 9)
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BAR))
-				.save(consumer, EDLoc("blood_chocolate_block"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLOOD_CHOCOLATE_FENCE.get(), 3).pattern("bsb")
 				.pattern("bsb").define('b', ExtraDelightTags.BLOOD_CHOCOLATE_BLOCK)
@@ -2808,12 +2796,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK))
 				.save(consumer, EDLoc("blood_chocolate_pillar"));
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get(), 1)
-				.requires(Ingredient.of(ExtraDelightTags.WHITE_CHOCOLATE_BAR), 9)
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_BAR))
-				.save(consumer, EDLoc("white_chocolate_block"));
-
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHITE_CHOCOLATE_FENCE.get(), 3).pattern("bsb")
 				.pattern("bsb").define('b', ExtraDelightTags.WHITE_CHOCOLATE_BLOCK)
 				.define('s', ExtraDelightTags.WHITE_CHOCOLATE_BAR)
@@ -2857,12 +2839,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK))
 				.save(consumer, EDLoc("white_chocolate_pillar"));
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get(), 1)
-				.requires(Ingredient.of(ExtraDelightTags.DARK_CHOCOLATE_BAR), 9)
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_BAR))
-				.save(consumer, EDLoc("dark_chocolate_block"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DARK_CHOCOLATE_FENCE.get(), 3).pattern("bsb")
 				.pattern("bsb").define('b', ExtraDelightTags.DARK_CHOCOLATE_BLOCK)
@@ -3043,6 +3019,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.MARSHMALLOW.get(), consumer, "marshmallow");
 		bundleItem9(Ingredient.of(Items.GOLDEN_CARROT), ExtraDelightItems.GOLDEN_CARROT_CRATE_BLOCK.get(),
 				Items.GOLDEN_CARROT, consumer, "golden_carrot");
+		bundleItem9(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get()), ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get(),
+				ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get(), consumer, "blood_chocolate_block");
+		bundleItem9(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_BAR.get()), ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_BAR.get(), consumer, "dark_chocolate_block");
+		bundleItem9(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_BAR.get()), ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get(),
+				ExtraDelightItems.MILK_CHOCOLATE_BAR.get(), consumer, "milk_chocolate_block");
+		bundleItem9(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_BAR.get()), ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_BAR.get(), consumer, "white_chocolate_block");
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
