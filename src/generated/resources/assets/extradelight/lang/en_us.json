@@ -29,6 +29,7 @@
   "block.extradelight.apple_crate": "Apple Crate",
   "block.extradelight.apple_crisp": "Apple Crisp",
   "block.extradelight.baking_stone": "Baking Stone",
+  "block.extradelight.bamboo_counter_cabinet": "Bamboo Cabinet (Countertop)",
   "block.extradelight.bamboo_dried_corn_fence": "Dried Corn Bamboo Fence",
   "block.extradelight.bamboo_half_cabinet": "Bamboo Half Cabinet",
   "block.extradelight.bamboo_knife_block": "Bamboo Knife Block",
@@ -271,6 +272,7 @@
   "block.extradelight.food_display": "Food Display",
   "block.extradelight.fruit_button": "Fruit Button",
   "block.extradelight.fruit_cabinet": "Fruit Cabinet",
+  "block.extradelight.fruit_counter_cabinet": "Fruit Cabinet (Countertop)",
   "block.extradelight.fruit_door": "Fruit Door",
   "block.extradelight.fruit_dried_corn_fence": "Dried Corn Fruit Fence",
   "block.extradelight.fruit_fence": "Fruit Fence",
@@ -607,7 +609,7 @@
   "extradelight.advancement.chiller.desc": "Make a Chiller.",
   "extradelight.advancement.chiller.name": "On Ice",
   "extradelight.advancement.chocolate_bar.desc": "Make a Chocolate Bar.",
-  "extradelight.advancement.chocolate_bar.name": "Je T'aime TrÃ¨s Beaucoup",
+  "extradelight.advancement.chocolate_bar.name": "Je T'aime Très Beaucoup",
   "extradelight.advancement.counter.desc": "Convert a Cabinet into a Countertop Cabinet.",
   "extradelight.advancement.counter.name": "Upgrades, People, Upgrades!",
   "extradelight.advancement.desert.desc": "Make every available dessert.",
@@ -670,7 +672,6 @@
   "extradelight.advancement.yeastpot.name": "Micro Flatulance",
   "extradelight.block.recipefeast.use_container": "I need something to put this on",
   "extradelight.cactus_juice.hovertext": "It's the quenchiest!",
-  "extradelight.container.chiller": "Chiller",
   "extradelight.container.chiller.chilled": "Chilled",
   "extradelight.container.chiller.not_chilled": "Not Chilled",
   "extradelight.container.oven": "Baking Oven",
@@ -1259,5 +1260,7 @@
   "item.extradelight.xocolati": "Xocolatl",
   "item.extradelight.yeast": "Yeast",
   "itemGroup.extradelight.aesthetic": "Extra Delight Aesthetic",
-  "itemGroup.extradelight.tab": "Extra Delight"
+  "itemGroup.extradelight.tab": "Extra Delight",
+  "screen.chiller.name": "Chiller",
+  "screen.melting_pot.name": "Melting Pot"
 }

@@ -15,7 +15,6 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
-import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
@@ -33,6 +32,7 @@ public class ExtraDelight {
 		modEventBus.addListener(this::setupCommon);
 		modEventBus.addListener(ExtraDelightCapabilities::registerCapabilities);
 		modEventBus.addListener(NetworkHandler::setupPackets);
+		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);

@@ -1,0 +1,32 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:bbq_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:pork/scrap/cooked"
+    },
+    {
+      "tag": "c:pork/scrap/cooked"
+    },
+    {
+      "tag": "c:pork/scrap/cooked"
+    },
+    {
+      "tag": "c:pork/scrap/cooked"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:pulled_pork_block_item"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
+}

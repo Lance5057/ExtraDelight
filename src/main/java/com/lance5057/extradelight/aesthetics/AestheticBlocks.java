@@ -437,9 +437,10 @@ public class AestheticBlocks {
 			lp.add(SINKS.get(i).get(), w + " Sink");
 			lp.add(CABINETS.get(i).get(), w + " Half Cabinet");
 			lp.add(DRIED_CORN_FENCE.get(i).get(), "Dried Corn " + w + " Fence");
+			lp.add(COUNTER_CABINETS.get(i).get(), w + " Cabinet (Countertop)");
 			if (WOOD.values()[i].toString() != "fruit" && WOOD.values()[i].toString() != "bamboo") {
 				lp.add(WREATHS.get(i).get(), w + " Wreath");
-				lp.add(COUNTER_CABINETS.get(i).get(), w + " Cabinet (Countertop)");
+
 			}
 
 			for (int j = 0; j < DyeColor.values().length; j++) {

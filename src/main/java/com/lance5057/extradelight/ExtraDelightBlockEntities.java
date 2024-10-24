@@ -1,7 +1,5 @@
 package com.lance5057.extradelight;
 
-import java.util.function.Supplier;
-
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlockEntity;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlockEntity;
@@ -25,9 +23,10 @@ import com.lance5057.extradelight.workstations.oven.OvenBlockEntity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import vectorwing.farmersdelight.common.block.entity.CabinetBlockEntity;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 public class ExtraDelightBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister
@@ -131,12 +130,10 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JarBlockEntity>> JAR = TILES.register("jar",
 			() -> BlockEntityType.Builder.of(JarBlockEntity::new, ExtraDelightBlocks.JAR.get()).build(null));
 
-	public static final Supplier<BlockEntityType<CabinetBlockEntity>> CABINET = TILES.register("cabinet",
-			() -> BlockEntityType.Builder.of(CabinetBlockEntity::new, ExtraDelightBlocks.CINNAMON_CABINET.get(),
-					ExtraDelightBlocks.FRUIT_CABINET.get()).build(null));
-
-	public static final Supplier<BlockEntityType<CabinetBlockEntity>> HALF_CABINET = TILES.register("half_cabinet",
-			() -> BlockEntityType.Builder
-					.of(CabinetBlockEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.CABINETS))
-					.build(null));
+	public static void addCabinets(BlockEntityTypeAddBlocksEvent event) {
+		event.modify(ModBlockEntityTypes.CABINET.get(), ExtraDelightBlocks.CINNAMON_CABINET.get(),
+				ExtraDelightBlocks.FRUIT_CABINET.get());
+		event.modify(ModBlockEntityTypes.CABINET.get(),
+				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.CABINETS));
+	};
 }

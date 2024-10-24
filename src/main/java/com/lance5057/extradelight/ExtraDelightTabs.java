@@ -18,9 +18,15 @@ public class ExtraDelightTabs {
 			() -> CreativeModeTab.builder().title(Component.translatable("itemGroup.extradelight.tab"))
 					.icon(() -> new ItemStack(ExtraDelightItems.WOODEN_SPOON.get()))
 					.displayItems((parameters, output) -> {
-						for(DeferredHolder<Item, ? extends Item> i : ExtraDelightItems.ITEMS.getEntries())
+						for (DeferredHolder<Item, ? extends Item> i : ExtraDelightItems.ITEMS.getEntries())
 							output.accept(i.get());
-						for(DeferredHolder<Item, ? extends Item> i : AestheticBlocks.ITEMS.getEntries())
+					}).build());
+
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AESTHETICS = TABS.register("aesthetics",
+			() -> CreativeModeTab.builder().title(Component.translatable("itemGroup.extradelight.aesthetics"))
+					.icon(() -> new ItemStack(AestheticBlocks.WALLPAPER_BLOCKS.get(0).get()))
+					.displayItems((parameters, output) -> {
+						for (DeferredHolder<Item, ? extends Item> i : AestheticBlocks.ITEMS.getEntries())
 							output.accept(i.get());
 					}).build());
 }

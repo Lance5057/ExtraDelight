@@ -23,9 +23,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.oven.empty", "");
 		this.add("container.doughshaper", "Dough Shaping");
 
-		this.add("extradelight.container.chiller", "Chiller");
+		this.add("screen.chiller.name", "Chiller");
 		this.add("extradelight.container.chiller.chilled", "Chilled");
 		this.add("extradelight.container.chiller.not_chilled", "Not Chilled");
+		
+		this.add("screen.melting_pot.name", "Melting Pot");
 
 		this.add("extradelight.dynamicname.1", "%s");
 		this.add("extradelight.dynamicname.2", "%s %s");

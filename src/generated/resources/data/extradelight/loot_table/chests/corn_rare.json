@@ -69,6 +69,58 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:cake"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:chocolate_cake"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:blood_chocolate_bar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:milk_chocolate_bar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:dark_chocolate_bar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:white_chocolate_bar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:blood_chocolate_filled_bar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:milk_chocolate_filled_bar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:dark_chocolate_filled_bar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:white_chocolate_filled_bar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:blood_chocolate_truffle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:milk_chocolate_truffle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:dark_chocolate_truffle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "extradelight:white_chocolate_truffle"
         }
       ],
       "name": "better",

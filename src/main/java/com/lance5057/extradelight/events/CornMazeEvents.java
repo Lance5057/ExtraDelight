@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.events;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.ExtraDelightWorldGen;
 
@@ -10,8 +9,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -43,20 +40,17 @@ public class CornMazeEvents {
 				}
 			}
 	}
-	
+
 	@SubscribeEvent
 	public static void stopDimensionDestruction(BlockEvent.BreakEvent event) {
 		if (!event.getPlayer().isCreative())
 			if (event.getPlayer().level().dimension() == ExtraDelightWorldGen.CORNFIELD) {
-				if (event.getState().getBlock() == ExtraDelightBlocks.CORN_BOTTOM.get()
-						|| event.getState().getBlock() == ExtraDelightBlocks.CORN_TOP.get()) {
-					event.getPlayer().hurt(event.getPlayer().damageSources().magic(), 1);
-					event.getLevel().playSound(event.getPlayer(), event.getPos(), SoundEvents.WITCH_CELEBRATE,
-							SoundSource.HOSTILE, 0, 1);
-					event.setCanceled(true);
-				} else {
-					event.getPlayer().addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 200, 1));
-				}
+				event.getPlayer().hurt(event.getPlayer().damageSources().magic(), 1);
+				event.getPlayer().makeSound(SoundEvents.WITCH_CELEBRATE);
+//				.level().playLocalSound(event.getPlayer(), SoundEvents.WITCH_AMBIENT,
+//						SoundSource.NEUTRAL, 1, 1);
+				event.setCanceled(true);
+
 			}
 	}
 }

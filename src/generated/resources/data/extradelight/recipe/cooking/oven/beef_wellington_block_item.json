@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "tag": "c:beef/roast"
+    },
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:foods/dough"
+    },
+    {
+      "tag": "c:liver"
+    },
+    {
+      "tag": "c:foods/cooked_bacon"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:beef_wellington_block_item"
+  }
+}

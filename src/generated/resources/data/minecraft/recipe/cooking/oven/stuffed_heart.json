@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:heart"
+    },
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "tag": "c:bread/crumbs"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:stuffed_heart"
+  }
+}

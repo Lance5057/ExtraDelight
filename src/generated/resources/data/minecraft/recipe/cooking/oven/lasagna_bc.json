@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:oven",
+  "container": {
+    "count": 1,
+    "id": "extradelight:square_pan"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "item": "extradelight:lasagna_noodles"
+    },
+    {
+      "item": "extradelight:lasagna_noodles"
+    },
+    {
+      "item": "extradelight:lasagna_noodles"
+    },
+    {
+      "tag": "c:ground_meat/cooked"
+    },
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "tag": "c:ground_meat/cooked"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:lasanga_feast"
+  }
+}

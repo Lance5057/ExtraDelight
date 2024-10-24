@@ -3,7 +3,6 @@ package com.lance5057.extradelight;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.BakingStoneBlock;
 import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
-import com.lance5057.extradelight.blocks.EDCabinet;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
@@ -429,7 +428,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<LeavesBlock> CINNAMON_LEAVES = BLOCKS.register("cinnamon_leaves",
 			() -> new LeavesBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
 	public static final DeferredBlock<Block> CINNAMON_CABINET = BLOCKS.register("cinnamon_cabinet",
-			() -> new EDCabinet(Block.Properties.ofFullCopy(Blocks.BARREL)));
+			() -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
 	public static final DeferredBlock<SlabBlock> CINNAMON_SLAB = BLOCKS.register("cinnamon_slab",
 			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.DARK_OAK_SLAB)));
 	public static final DeferredBlock<PressurePlateBlock> CINNAMON_PRESSURE_PLATE = BLOCKS.register(
@@ -743,7 +742,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<TrapDoorBlock> FRUIT_TRAPDOOR = BLOCKS.register("fruit_trapdoor",
 			() -> new TrapDoorBlock(BlockSetType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_TRAPDOOR)));
 	public static final DeferredBlock<Block> FRUIT_CABINET = BLOCKS.register("fruit_cabinet",
-			() -> new EDCabinet(Block.Properties.ofFullCopy(Blocks.BARREL)));
+			() -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
 	public static final DeferredBlock<SlabBlock> FRUIT_SLAB = BLOCKS.register("fruit_slab",
 			() -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.DARK_OAK_SLAB)));
 	public static final DeferredBlock<PressurePlateBlock> FRUIT_PRESSURE_PLATE = BLOCKS.register("fruit_pressure_plate",
