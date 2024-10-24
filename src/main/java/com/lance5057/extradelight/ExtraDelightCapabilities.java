@@ -29,8 +29,6 @@ public class ExtraDelightCapabilities {
 				});
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.SPICE_RACK.get(),
 				(o, d) -> o.getItemHandler());
-		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.SPICE_RACK_FULL.get(),
-				(o, d) -> o.getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.WREATH.get(),
 				(o, d) -> o.getItemHandler());
 

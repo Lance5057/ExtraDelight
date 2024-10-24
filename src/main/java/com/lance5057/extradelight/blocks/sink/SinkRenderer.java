@@ -103,8 +103,8 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 			if (copiedQuads.size() > 2 && copiedQuads.get(4) != null)
 				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 2, 2, 12, 5);
 
-			RenderUtil.buildInvertedCubePillar(new Vector3f(1.02f / 16f, 12f / 16f, 1.02F / 16f),
-					new Vector3f(13.96f / 16f, 4f / 16f, 12.8f / 16f), vertexconsumer, matrix4f, matrix3f,
+			RenderUtil.buildInvertedCubePillar(new Vector3f(1.015f / 16f, 12f / 16f, 1.015F / 16f),
+					new Vector3f(13.97f / 16f, 4f / 16f, 13f / 16f), vertexconsumer, matrix4f, matrix3f,
 					RenderUtil.WHITE, lightmap, setUVEast, null, setUVBottom, OverlayTexture.NO_OVERLAY, poseStack);
 
 			// Back
@@ -143,6 +143,7 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 					lightmap, OverlayTexture.NO_OVERLAY, poseStack, null, setUVBottom, setUVNorth, setUVSouth,
 					setUVEast, setUVWest);
 
+			
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
 				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 0, 15, 15, 1);
 			if (copiedQuads.size() > 2 && copiedQuads.get(2) != null)
@@ -150,7 +151,7 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 			if (copiedQuads.size() > 5 && copiedQuads.get(5) != null)
 				setUVWest = RenderUtil.getUVFromSprite(copiedQuads.get(5).getSprite(), 1, 0, 15, 2);
 
-			RenderUtil.buildCube(new Vector3f(0, 14f / 16f, 0), new Vector3f(1f / 16f, 2f / 16f, 14F / 16F),
+			RenderUtil.buildCube(new Vector3f(0, 14f / 16f, 0), new Vector3f(1.02f / 16f, 2f / 16f, 14F / 16F),
 					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, lightmap, OverlayTexture.NO_OVERLAY,
 					poseStack, null, setUVBottom, setUVNorth, null, null, setUVWest);
 
@@ -161,7 +162,7 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 			if (copiedQuads.size() > 4 && copiedQuads.get(4) != null)
 				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 1, 0, 15, 2);
 
-			RenderUtil.buildCube(new Vector3f(15f / 16f, 14f / 16f, 0), new Vector3f(1f / 16f, 2f / 16f, 14F / 16F),
+			RenderUtil.buildCube(new Vector3f(14.98f / 16f, 14f / 16f, 0), new Vector3f(1.01f / 16f, 2f / 16f, 14F / 16F),
 					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, lightmap, OverlayTexture.NO_OVERLAY,
 					poseStack, null, setUVBottom, setUVNorth, null, setUVEast, null);
 
@@ -172,7 +173,7 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 			if (copiedQuads.size() > 4 && copiedQuads.get(4) != null)
 				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 4, 0, 2, 2);
 
-			RenderUtil.buildCube(new Vector3f(1f / 16f, 14f / 16f, 0), new Vector3f(14f / 16f, 2f / 16f, 1F / 16F),
+			RenderUtil.buildCube(new Vector3f(1f / 16f, 14f / 16f, 0), new Vector3f(14f / 16f, 2f / 16f, 1.042F / 16F),
 					vertexconsumer, matrix4f, matrix3f, RenderUtil.WHITE, lightmap, OverlayTexture.NO_OVERLAY,
 					poseStack, null, setUVBottom, setUVNorth, null, null, null);
 

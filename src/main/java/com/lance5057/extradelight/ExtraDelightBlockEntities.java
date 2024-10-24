@@ -20,6 +20,7 @@ import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlockEntity;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;
 import com.lance5057.extradelight.workstations.oven.OvenBlockEntity;
+import com.llamalad7.mixinextras.lib.apache.commons.ArrayUtils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -45,14 +46,10 @@ public class ExtraDelightBlockEntities {
 					.build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SpiceRackEntity>> SPICE_RACK = TILES
 			.register("spice_rack", () -> BlockEntityType.Builder
-					.of(SpiceRackEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS))
+					.of(SpiceRackEntity::new,
+							ArrayUtils.addAll(AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS),
+									AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS_FULL)))
 					.build(null));
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SpiceRackEntity>> SPICE_RACK_FULL = TILES
-			.register("spice_rack_full",
-					() -> BlockEntityType.Builder
-							.of(SpiceRackEntity::new,
-									AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.SPICE_RACKS_FULL))
-							.build(null));
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WreathEntity>> WREATH = TILES.register(
 			"wreath",
