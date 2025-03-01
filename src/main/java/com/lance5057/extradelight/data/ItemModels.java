@@ -1210,6 +1210,14 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CHOCOLATE_COOKIE_BLOCK, "chocolate_cookie_block");
 		forBlockItem(ExtraDelightItems.NUT_BUTTER_COOKIE_BLOCK, "nut_butter_cookie_block");
 
+		forBlockItemFlat(ExtraDelightItems.WILD_GARLIC_BLOCK, "crops/garlic/garlic_stage3");
+		forItem(ExtraDelightItems.GARLIC, "crops/garlic/garlic");
+		forItem(ExtraDelightItems.GARLIC_CLOVE, "crops/garlic/garlic_clove");
+		forItem(ExtraDelightItems.GRATED_GARLIC, "crops/garlic/grated_garlic");
+		forBlockItem(ExtraDelightItems.BRUSCHETTA_FEAST,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/bruschetta_stage0"));
+		forItem(ExtraDelightItems.BRUSCHETTA, "bruschetta");
+
 		AestheticBlocks.itemModel(this);
 	}
 

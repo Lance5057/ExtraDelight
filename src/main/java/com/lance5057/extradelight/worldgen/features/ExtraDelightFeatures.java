@@ -32,6 +32,8 @@ public class ExtraDelightFeatures {
 			.register("wild_peanut", (ResourceLocation crop) -> new WildCropFeature(ExtraDelightBlocks.WILD_PEANUT.get()));
 	public static final DeferredHolder<Feature<?>, WildCropFeature> PATCH_WILD_MINT = FEATURES
 			.register("wild_mint", (ResourceLocation crop) -> new WildCropFeature(ExtraDelightBlocks.MINT_CROP.get()));
+	public static final DeferredHolder<Feature<?>, WildCropFeature> PATCH_WILD_GARLIC = FEATURES
+			.register("wild_garlic", (ResourceLocation crop) -> new WildCropFeature(ExtraDelightBlocks.WILD_GARLIC.get()));
 
 	public static final DeferredHolder<Feature<?>, CinnamonTreeFeature> PATCH_CINNAMON_TREE = FEATURES
 			.register("cinnamon_tree", CinnamonTreeFeature::new);

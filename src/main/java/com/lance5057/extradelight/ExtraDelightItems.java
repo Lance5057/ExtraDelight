@@ -2842,6 +2842,22 @@ public class ExtraDelightItems {
 			.register("pamonha", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.PAMONHA), true))
 			.advancementMeal().finish();
 
+	public static final DeferredItem<Item> WILD_GARLIC_BLOCK = ITEMS.register("wild_garlic_block",
+			() -> new BlockItem(ExtraDelightBlocks.WILD_GARLIC.get(), new Item.Properties()));
+	public static final DeferredItem<Item> GARLIC = ITEMS.register("garlic",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> GARLIC_CLOVE = ITEMS.register("garlic_clove",
+			() -> new ItemNameBlockItem(ExtraDelightBlocks.GARLIC_CROP.get(), new Item.Properties()));
+	public static final DeferredItem<Item> GRATED_GARLIC = ITEMS.register("grated_garlic",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> BRUSCHETTA_FEAST = EDItemGenerator
+			.register("bruschetta_feast",
+					() -> new BlockItem(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> BRUSCHETTA = EDItemGenerator
+			.register("bruschetta", () -> new ToolTipConsumableItem(foodItem(EDFoods.CHARCUTERIE), true))
+			.advancementSnack().servingToolTip().finish();
+
 //	public static final DeferredItem<DynamicJam> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new DynamicJam(
 //			new Item.Properties().component(ExtraDelightComponents.DYNAMIC_FOOD.get(), DynamicItemComponent.EMPTY)));
 //	public static final DeferredItem<DynamicSandwich> DYNAMIC_TEST2 = ITEMS.register("dynamic_test2",

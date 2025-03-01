@@ -562,4 +562,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> COCOA_POWDER = neoforgeItemTag("cocoa/powder");
 	public static final TagKey<Item> NUT_BUTTER_COOKIE_DOUGH = neoforgeItemTag("cookie_dough/nut_butter");
 	public static final TagKey<Item> CHOCOLATE_COOKIE_DOUGH = neoforgeItemTag("cookie_dough/chocolate");
+
+	public static final TagKey<Item> GARLIC = neoforgeItemTag("crops/garlic");
+	public static final TagKey<Item> PROCESSED_GARLIC = modTag("processed/garlic");
 }

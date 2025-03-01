@@ -16,6 +16,7 @@ import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.BushStageFour;
+import com.lance5057.extradelight.blocks.crops.GarlicCrop;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MallowRootCrop;
 import com.lance5057.extradelight.blocks.crops.PeanutCrop;
@@ -498,6 +499,15 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropOther(ExtraDelightBlocks.BACON_EGG_PIE.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.PANFORTE.get(), Items.AIR);
+
+		LootItemCondition.Builder garlic = LootItemBlockStatePropertyCondition
+				.hasBlockStateProperties(ExtraDelightBlocks.GARLIC_CROP.get())
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCrop.AGE, 3));
+
+		crop(ExtraDelightBlocks.GARLIC_CROP.get(), ExtraDelightItems.GARLIC.get(),
+				ExtraDelightItems.GARLIC.get(), garlic);
+		this.dropOther(ExtraDelightBlocks.WILD_GARLIC.get(), ExtraDelightItems.GARLIC.get());
+		this.dropOther(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), Items.BOWL);
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {

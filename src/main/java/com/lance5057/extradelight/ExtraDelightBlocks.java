@@ -78,10 +78,6 @@ import net.neoforged.neoforge.common.ItemAbility;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
-//import vectorwing.farmersdelight.common.block.CabinetBlock;
-//import vectorwing.farmersdelight.common.block.PieBlock;
-//import vectorwing.farmersdelight.common.block.WildCropBlock;
-//import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
@@ -1150,4 +1146,12 @@ public class ExtraDelightBlocks {
 					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
 				}
 			});
+
+	public static final DeferredBlock<GarlicCrop> GARLIC_CROP = BLOCKS.register("garlic_crop",
+			() -> new GarlicCrop(Block.Properties.ofFullCopy(Blocks.WHEAT)));
+	public static final DeferredBlock<Block> WILD_GARLIC = BLOCKS.register("wild_garlic",
+			() -> new WildCropBlock(MobEffects.LEVITATION, 6, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
+	public static final DeferredBlock<RecipeFeastBlock> BRUSCHETTA_FEAST = BLOCKS.register("bruschetta_feast",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_RED),
+					true, plate, Block.box(1.0D, 1.0D, 1.0D, 15.0D, 5.0D, 15.0D)));
 }

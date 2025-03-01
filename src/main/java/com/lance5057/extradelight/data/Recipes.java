@@ -1323,6 +1323,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.get())
 				.unlockedBy("has_feast", has(ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.get()))
 				.save(consumer, EDLoc("marshmallow_slice_feast"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.PAPER), new ItemStack(ExtraDelightItems.BRUSCHETTA.get()),
+						ExtraDelightItems.BRUSCHETTA_FEAST.get())
+				.unlockedBy("has_feast", has(ExtraDelightItems.BRUSCHETTA_FEAST.get()))
+				.save(consumer, EDLoc("bruschetta_feast"));
 	}
 
 	private void doughShapeRecipes(RecipeOutput consumer) {
@@ -4364,6 +4370,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Tags.Items.FOODS_BREAD),
 				Ingredient.of(ExtraDelightItems.GRATER.get()), ExtraDelightItems.BREAD_CRUMBS.get(), 4)
 				.build(consumer, EDLoc("cutting/" + "grate_bread"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.GARLIC_CLOVE.get()),
+						Ingredient.of(ExtraDelightItems.GRATER.get()), ExtraDelightItems.GRATED_GARLIC.get(), 1)
+				.build(consumer, EDLoc("cutting/" + "grate_garlic"));
 
 		// Potato
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Tags.Items.CROPS_POTATO),
@@ -4633,6 +4642,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.BACON_EGG_PIE.get()),
 						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.BACON_EGG_PIE_SLICE.get(), 4)
 				.build(consumer, EDLoc("cutting/" + "bacon_egg_pie_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.GARLIC.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						ExtraDelightItems.GARLIC_CLOVE.get(), 3)
+				.addResultWithChance(ExtraDelightItems.GARLIC_CLOVE.get(), 0.75f, 1)
+				.build(consumer, EDLoc("cutting/" + "garlic_dividing_knife"));
 	}
 
 	private void mortarRecipes(RecipeOutput consumer) {
@@ -5682,6 +5697,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.GROUND_CINNAMON).addIngredient(Items.HONEY_BOTTLE)
 				.addIngredient(Items.SUGAR).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
 				.unlockedByAnyIngredient(ExtraDelightItems.DRIED_FRUIT).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.BRUSCHETTA_FEAST.get(), 1), CookingRecipes.NORMAL_COOKING,
+						SMALL_EXP, new ItemStack(Items.BOWL), true)
+				.addIngredient(Items.BREAD).addIngredient(ExtraDelightTags.PROCESSED_ONION)
+				.addIngredient(ExtraDelightTags.PROCESSED_TOMATO).addIngredient(ExtraDelightTags.COOKING_OIL)
+				.addIngredient(ExtraDelightTags.VINEGAR).addIngredient(ExtraDelightTags.PROCESSED_GARLIC)
+				.addIngredient(ExtraDelightTags.CHEESE).build(consumer, "bruschetta_feast");
 
 	}
 

@@ -499,7 +499,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CHILI).add(ExtraDelightItems.CHILI.get());
 
 		tag(Tags.Items.CROPS).add(ExtraDelightItems.GINGER.get(), ExtraDelightItems.MINT.get(),
-				ExtraDelightItems.CHILI.get(), ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.PEANUTS.get());
+				ExtraDelightItems.CHILI.get(), ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.PEANUTS.get(),
+				ExtraDelightItems.GARLIC.get());
 		tag(Tags.Items.TOOLS).addTag(ExtraDelightTags.SPOONS).addTag(ExtraDelightTags.PESTLES);
 		tag(Tags.Items.SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get());
 
@@ -526,5 +527,7 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.PROCESSED_CHILI).add(ExtraDelightItems.CHILI.get(), ExtraDelightItems.SLICED_CHILI.get());
 
+		tag(ExtraDelightTags.GARLIC).add(ExtraDelightItems.GARLIC.get());
+		tag(ExtraDelightTags.PROCESSED_GARLIC).add(ExtraDelightItems.GARLIC_CLOVE.get(), ExtraDelightItems.GRATED_GARLIC.get());
 	}
 }

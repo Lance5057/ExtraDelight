@@ -72,6 +72,9 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), ExtraDelightBlocks.WHITE_CHILI_FEAST.get(),
 				ExtraDelightBlocks.STUFFING.get(),
 
+				// Feasts on baking stone
+				ExtraDelightBlocks.BRUSCHETTA_FEAST.get(),
+
 				ExtraDelightBlocks.SHEET_BLOCK.get(), ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
 				ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
 				ExtraDelightBlocks.PIE_DISH_BLOCK.get(), ExtraDelightBlocks.TRAY_BLOCK.get(),
@@ -213,7 +216,8 @@ public class EDBlockTags extends BlockTagsProvider {
 
 		tag(BlockTags.BEE_GROWABLES).add(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightBlocks.CORN_BOTTOM.get(),
 				ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightBlocks.GINGER_CROP.get(),
-				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get());
+				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get(),
+				ExtraDelightBlocks.GARLIC_CROP.get());
 		}
 
 	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {
