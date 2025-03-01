@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
+      "tag": "c:meat"
+    },
+    {
+      "tag": "c:chili/powder"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:chili_con_carne_feast"
+    }
+  ]
+}

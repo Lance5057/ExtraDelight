@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:apple/sliced"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "item": "farmersdelight:bacon"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:aebleflaesk"
+    }
+  ]
+}

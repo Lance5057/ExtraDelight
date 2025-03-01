@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:alfredo_sauce"
+    },
+    {
+      "item": "extradelight:cooked_pasta"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:pasta_alfredo"
+    }
+  ]
+}

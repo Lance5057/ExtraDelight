@@ -1,0 +1,14 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:crops/coffee/ground"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:coffee"
+    }
+  ]
+}

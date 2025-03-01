@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
+      "tag": "c:bread/sliced"
+    },
+    {
+      "tag": "c:cheese"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "item": "extradelight:onion_soup"
+    }
+  ]
+}

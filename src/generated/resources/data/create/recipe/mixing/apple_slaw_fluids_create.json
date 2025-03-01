@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "farmersdelight:cabbage_leaf"
+    },
+    {
+      "item": "extradelight:sliced_apple"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:apple_slaw"
+    }
+  ]
+}

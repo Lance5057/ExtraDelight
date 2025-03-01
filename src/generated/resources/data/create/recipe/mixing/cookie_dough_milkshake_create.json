@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "tag": "c:cookie_dough"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:cookie_dough_milkshake"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:cocoa/solids"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 100,
+      "fluid": "extradelight:cocoa_butter_fluid"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 50,
+      "fluid": "minecraft:milk"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:milk_chocolate_syrup_bottle"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:whipped_cream"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:butter"
+    }
+  ]
+}

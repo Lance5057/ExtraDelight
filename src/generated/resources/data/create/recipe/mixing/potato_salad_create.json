@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:condiments/mayonnaise"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:potato_salad"
+    }
+  ]
+}

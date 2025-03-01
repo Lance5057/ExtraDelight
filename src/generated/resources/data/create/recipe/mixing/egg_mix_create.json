@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:egg_mix"
+    }
+  ]
+}

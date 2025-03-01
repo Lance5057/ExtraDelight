@@ -262,7 +262,25 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.SLICED_TOMATO.get(), ExtraDelightItems.SOS.get(), ExtraDelightItems.STIRFRY.get(),
 				ExtraDelightItems.STUFFED_CACTUS.get(), ExtraDelightItems.STUFFED_HEART.get(),
 				ExtraDelightItems.STUFFED_MUSHROOMS.get(), ExtraDelightItems.STUFFING.get(),
-				ExtraDelightItems.SUNFLOWER_SEEDS.get(), ExtraDelightItems.TOMATO_SOUP.get());
+				ExtraDelightItems.SUNFLOWER_SEEDS.get(), ExtraDelightItems.TOMATO_SOUP.get(),
+				ExtraDelightItems.CONGEE.get(), ExtraDelightItems.LUGAW.get(), ExtraDelightItems.BEET_MINT_SALAD.get(),
+				ExtraDelightItems.CRACKERS.get(), ExtraDelightItems.CROQUE_MADAME.get(),
+				ExtraDelightItems.CROQUE_MONSIEUR.get(), ExtraDelightItems.ROLL.get(),
+				ExtraDelightItems.MINT_LAMB.get(), ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get(),
+				ExtraDelightItems.BLOOD_CHOCOLATE_FILLED_BAR.get(), ExtraDelightItems.DARK_CHOCOLATE_BAR.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_FILLED_BAR.get(), ExtraDelightItems.MILK_CHOCOLATE_BAR.get(),
+				ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get(), ExtraDelightItems.WHITE_CHOCOLATE_BAR.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_FILLED_BAR.get(), ExtraDelightItems.BLOOD_CHOCOLATE_TRUFFLE.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_TRUFFLE.get(), ExtraDelightItems.MILK_CHOCOLATE_TRUFFLE.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_TRUFFLE.get(), ExtraDelightItems.PORK_AND_APPLES.get(),
+				ExtraDelightItems.APPLE_SLAW.get(), ExtraDelightItems.MULLIGATAWNY_SOUP.get(),
+				ExtraDelightItems.AEBLEFLAESK.get(), ExtraDelightItems.JALAPENO_POPPER.get(),
+				ExtraDelightItems.JALAPENO_STUFFED_POTATO.get(), ExtraDelightItems.CHILI_CHEESE_CORNBREAD_MUFFIN.get(),
+				ExtraDelightItems.CHILI_CON_CARNE.get(), ExtraDelightItems.WHITE_CHILI.get(),
+				ExtraDelightItems.HAZELNUT_SOUP.get(), ExtraDelightItems.POTATO_SALAD.get(),
+				ExtraDelightItems.ONION_SOUP.get(), ExtraDelightItems.BACON_EGG_PIE_SLICE.get(),
+				ExtraDelightItems.ONION_BHAJI.get(), ExtraDelightItems.FAT_POTATOES.get(),
+				ExtraDelightItems.CURRYWURST.get(), ExtraDelightItems.BORSCHT.get(), ExtraDelightItems.PAMONHA.get());
 
 		tag(ExtraDelightTags.CORN).add(ExtraDelightItems.CORN_ON_COB.get());
 		tag(ExtraDelightTags.CORN_ON_COB).add(ExtraDelightItems.CORN_ON_COB.get());
@@ -529,6 +547,7 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.PROCESSED_CHILI).add(ExtraDelightItems.CHILI.get(), ExtraDelightItems.SLICED_CHILI.get());
 
+<<<<<<< Updated upstream
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);
 		}
@@ -540,6 +559,11 @@ public class EDItemTags extends ItemTagsProvider {
 		for (DeferredItem<Item> i : EDItemGenerator.coldFood) {
 			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(i.get());
 		}
+=======
+		tag(ExtraDelightTags.GARLIC).add(ExtraDelightItems.GARLIC.get());
+		tag(ExtraDelightTags.PROCESSED_GARLIC).add(ExtraDelightItems.GARLIC_CLOVE.get(),
+				ExtraDelightItems.GRATED_GARLIC.get());
+>>>>>>> Stashed changes
 	}
 
 	// Tough as Nails

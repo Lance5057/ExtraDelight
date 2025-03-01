@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:carrot/grated"
+    },
+    {
+      "tag": "c:carrot/grated"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "c:condiments/mayonnaise"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:carrot_salad"
+    }
+  ]
+}

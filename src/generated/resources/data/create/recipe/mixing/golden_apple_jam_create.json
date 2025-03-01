@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:golden_apple_jam"
+    }
+  ]
+}

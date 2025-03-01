@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_corn"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    },
+    [
+      {
+        "tag": "c:foods/cooked_bacon"
+      },
+      {
+        "tag": "c:foods/raw_bacon"
+      }
+    ],
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:corn_chowder"
+    }
+  ]
+}

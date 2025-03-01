@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:cactus/cooked"
+    },
+    {
+      "tag": "extradelight:processed/tomato"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:cheese"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:cactus_salad"
+    }
+  ]
+}

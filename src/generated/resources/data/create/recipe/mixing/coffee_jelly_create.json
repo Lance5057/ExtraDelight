@@ -1,0 +1,28 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:gelatin"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:coffee"
+    },
+    {
+      "tag": "c:whipped_cream"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 100,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:coffee_jelly"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:foods/milk"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:caramel_sauce"
+    }
+  ]
+}

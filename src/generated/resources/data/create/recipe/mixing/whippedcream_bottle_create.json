@@ -1,0 +1,13 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "farmersdelight:milk_bottle"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:whipped_cream"
+    }
+  ]
+}

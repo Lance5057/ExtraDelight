@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:foods/tomato"
+    },
+    {
+      "tag": "c:foods/tomato"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:vinegar"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:ketchup_jar_item"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "c:jammable"
+      },
+      "subtracted": [
+        {
+          "item": "minecraft:golden_apple"
+        },
+        {
+          "item": "minecraft:glow_berries"
+        },
+        {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ]
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "c:jammable"
+      },
+      "subtracted": [
+        {
+          "item": "minecraft:golden_apple"
+        },
+        {
+          "item": "minecraft:glow_berries"
+        },
+        {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ]
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "c:jammable"
+      },
+      "subtracted": [
+        {
+          "item": "minecraft:golden_apple"
+        },
+        {
+          "item": "minecraft:glow_berries"
+        },
+        {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ]
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:jam"
+    }
+  ]
+}

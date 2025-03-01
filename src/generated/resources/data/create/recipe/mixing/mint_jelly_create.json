@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:mint"
+    },
+    {
+      "tag": "c:mint"
+    },
+    {
+      "tag": "c:mint"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:mint_jelly"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:cocoa/powder"
+    },
+    {
+      "tag": "c:chili/powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:xocolati"
+    }
+  ]
+}

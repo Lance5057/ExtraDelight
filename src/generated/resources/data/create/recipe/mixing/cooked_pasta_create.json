@@ -1,0 +1,14 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:foods/pasta"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:cooked_pasta"
+    }
+  ]
+}

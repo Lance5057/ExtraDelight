@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:cocoa/powder"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:chocolate_custard"
+    }
+  ]
+}

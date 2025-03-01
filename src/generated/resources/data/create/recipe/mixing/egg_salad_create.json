@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:eggs/boiled"
+    },
+    {
+      "tag": "c:eggs/boiled"
+    },
+    {
+      "tag": "c:condiments/mayonnaise"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:egg_salad"
+    }
+  ]
+}

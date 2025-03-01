@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:glow_berry_jam"
+    }
+  ]
+}

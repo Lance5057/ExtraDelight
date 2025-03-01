@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:croutons"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:stuffing_feast"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:butter"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:butterscotch"
+    }
+  ]
+}

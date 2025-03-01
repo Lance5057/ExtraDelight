@@ -1,0 +1,14 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:milk_bucket"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "item": "extradelight:whipped_cream"
+    }
+  ]
+}

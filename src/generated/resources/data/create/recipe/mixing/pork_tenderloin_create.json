@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:porkchop"
+    },
+    {
+      "item": "extradelight:breading_misanplas"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:pork_tenderloin"
+    }
+  ]
+}
