@@ -1,0 +1,36 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": true,
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/tomato"
+    },
+    {
+      "tag": "c:cooking_oil"
+    },
+    {
+      "tag": "c:vinegar"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "tag": "c:cheese"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:bruschetta_feast"
+  }
+}

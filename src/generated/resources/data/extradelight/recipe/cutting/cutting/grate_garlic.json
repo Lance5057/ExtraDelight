@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:garlic_clove"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "extradelight:grated_garlic"
+      }
+    }
+  ],
+  "tool": {
+    "item": "extradelight:grater"
+  }
+}

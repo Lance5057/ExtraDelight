@@ -22,6 +22,9 @@ repositories {
 	maven { url "https://maven.tterrag.com/" }
 	maven { url 'https://www.jitpack.io' }
 	maven { url "https://maven.ryanliptak.com/" }
+	maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
+    maven { url = "https://mvn.devos.one/snapshots" } // Registrate
+    maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven" } 
 	flatDir { dirs '../FarmersDelight/build/libs', '../Butchercraft/build/libs' }
 }
 
@@ -94,6 +97,12 @@ dependencies {
     compileOnly "mezz.jei:jei-1.21.1-neoforge-api:${jei_version}"
     // at runtime, use the full JEI jar for Forge
     localRuntime "mezz.jei:jei-1.21.1-neoforge:${jei_version}"
+    
+    compileOnly "com.simibubi.create:create-${minecraft_version}-${create_version}"
+	implementation "net.createmod.ponder:Ponder-NeoForge-${flywheel_mc_version}:${ponder_version}"
+    compileOnly "dev.engine-room.flywheel:flywheel-neoforge-api-${flywheel_mc_version}:${flywheel_version}"
+    runtimeOnly "dev.engine-room.flywheel:flywheel-neoforge-${flywheel_mc_version}:${flywheel_version}"
+    implementation "com.tterrag.registrate:Registrate:${registrate_version}"
 	
 	compileOnly "vazkii.patchouli:Patchouli:1.21-87-NEOFORGE:api"
     runtimeOnly "vazkii.patchouli:Patchouli:1.21-87-NEOFORGE"

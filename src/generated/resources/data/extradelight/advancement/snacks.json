@@ -21,6 +21,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:bruschetta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:bruschetta"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:caramel_popcorn": {
       "conditions": {
         "items": [
@@ -158,6 +168,9 @@
   "requirements": [
     [
       "extradelight:apple_chips"
+    ],
+    [
+      "extradelight:bruschetta"
     ],
     [
       "extradelight:potato_chips"

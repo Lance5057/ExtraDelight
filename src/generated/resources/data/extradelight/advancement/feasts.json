@@ -71,6 +71,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:bruschetta_feast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:bruschetta_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:caramel_cheesecake_item": {
       "conditions": {
         "items": [
@@ -833,6 +843,9 @@
     ],
     [
       "extradelight:fish_stew_feast"
+    ],
+    [
+      "extradelight:bruschetta_feast"
     ],
     [
       "extradelight:jelly_white_block_item"
