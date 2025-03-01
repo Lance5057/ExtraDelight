@@ -72,9 +72,6 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), ExtraDelightBlocks.WHITE_CHILI_FEAST.get(),
 				ExtraDelightBlocks.STUFFING.get(),
 
-				// Feasts on baking stone
-				ExtraDelightBlocks.BRUSCHETTA_FEAST.get(),
-
 				ExtraDelightBlocks.SHEET_BLOCK.get(), ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
 				ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
 				ExtraDelightBlocks.PIE_DISH_BLOCK.get(), ExtraDelightBlocks.TRAY_BLOCK.get(),
@@ -130,6 +127,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.FUDGE.get(), ExtraDelightBlocks.CRISP_RICE_TREATS.get(),
 				ExtraDelightBlocks.SCOTCHAROOS.get(), ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(),
 				ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(), ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(),
+				ExtraDelightBlocks.BRUSCHETTA_FEAST.get(),
 
 				// Feasts on plates
 				ExtraDelightBlocks.MEATLOAF_FEAST.get(), ExtraDelightBlocks.POT_ROAST_FEAST.get(),
