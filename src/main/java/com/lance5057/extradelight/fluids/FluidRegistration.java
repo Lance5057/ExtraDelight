@@ -37,9 +37,16 @@ public class FluidRegistration {
 			Supplier<? extends Item> bucket, DeferredRegister<FluidType> FLUID_TYPES, DeferredRegister<Fluid> FLUIDS, int decrease) {
 		TYPE = FLUID_TYPES.register(name + "_fluid", fluid);
 
-//		BaseFlowingFluid.Properties p = properties(block, bucket);
-
 		FLUID = FLUIDS.register(name + "_fluid", () -> new BaseFlowingFluid.Source(properties(block, bucket)));
 		FLUID_FLOWING = FLUIDS.register(name + "_fluid_flowing", () -> new BaseFlowingFluid.Flowing(properties(block, bucket).levelDecreasePerBlock(decrease)));
+	}
+	
+	public FluidRegistration(String name, Supplier<? extends FluidType> fluid, Supplier<? extends LiquidBlock> block,
+			Supplier<? extends Item> bucket, DeferredRegister<FluidType> FLUID_TYPES, DeferredRegister<Fluid> FLUIDS, int decrease, int findSlope) {
+		TYPE = FLUID_TYPES.register(name + "_fluid", fluid);
+
+		FLUID = FLUIDS.register(name + "_fluid", () -> new BaseFlowingFluid.Source(properties(block, bucket)));
+		FLUID_FLOWING = FLUIDS.register(name + "_fluid_flowing", () -> new BaseFlowingFluid.Flowing(
+				properties(block, bucket).levelDecreasePerBlock(decrease).slopeFindDistance(findSlope)));
 	}
 }
