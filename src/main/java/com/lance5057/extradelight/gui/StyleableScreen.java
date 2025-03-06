@@ -93,7 +93,7 @@ public class StyleableScreen extends AbstractContainerScreen<StyleableMenu> {
 		guiGraphics.pose().translate(0, 0.5, 0);
 		guiGraphics.pose().scale(1f, -1f, 1f);
 
-		Minecraft.getInstance().getBlockRenderer().renderSingleBlock(state, guiGraphics.pose(), buffers, 0xffffff,
+		Minecraft.getInstance().getBlockRenderer().renderSingleBlock(state, guiGraphics.pose(), buffers, 255,
 				OverlayTexture.NO_OVERLAY);
 
 		buffers.endBatch();
