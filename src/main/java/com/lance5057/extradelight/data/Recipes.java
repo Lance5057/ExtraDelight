@@ -2140,6 +2140,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		for (Ingredient i : ingredients)
 			p.require(i);
 
+		for (int i = 0; i < container.getCount(); i++)
+			p.require(container.getItem());
+
 		boolean flag = true;
 		for (SizedFluidIngredient f : sizedFluidIngredients)
 			if (f.getFluids() != null && f.getFluids().length > 0)
@@ -4378,13 +4381,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Tags.Items.FOODS_BREAD),
 				Ingredient.of(ExtraDelightItems.GRATER.get()), ExtraDelightItems.BREAD_CRUMBS.get(), 4)
 				.build(consumer, EDLoc("cutting/" + "grate_bread"));
-<<<<<<< Updated upstream
-=======
-		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(ExtraDelightItems.GARLIC_CLOVE.get()),
-						Ingredient.of(ExtraDelightItems.GRATER.get()), ExtraDelightItems.GRATED_GARLIC.get(), 1)
-				.build(consumer, EDLoc("cutting/" + "grate_garlic"));
->>>>>>> Stashed changes
 
 		// Potato
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Tags.Items.CROPS_POTATO),
@@ -5739,6 +5735,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		p.output(output, count);
 		for (Ingredient i : itemsIn)
 			p.require(i);
+
+		if (container != null)
+			p.require(container);
 
 		p.requiresHeat(HeatCondition.HEATED);
 		p.build(consumer);

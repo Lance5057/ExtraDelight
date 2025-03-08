@@ -547,7 +547,6 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.PROCESSED_CHILI).add(ExtraDelightItems.CHILI.get(), ExtraDelightItems.SLICED_CHILI.get());
 
-<<<<<<< Updated upstream
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);
 		}
@@ -559,11 +558,6 @@ public class EDItemTags extends ItemTagsProvider {
 		for (DeferredItem<Item> i : EDItemGenerator.coldFood) {
 			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(i.get());
 		}
-=======
-		tag(ExtraDelightTags.GARLIC).add(ExtraDelightItems.GARLIC.get());
-		tag(ExtraDelightTags.PROCESSED_GARLIC).add(ExtraDelightItems.GARLIC_CLOVE.get(),
-				ExtraDelightItems.GRATED_GARLIC.get());
->>>>>>> Stashed changes
 	}
 
 	// Tough as Nails

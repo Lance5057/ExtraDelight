@@ -19,6 +19,9 @@
     },
     {
       "tag": "c:foods/cooked_bacon"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

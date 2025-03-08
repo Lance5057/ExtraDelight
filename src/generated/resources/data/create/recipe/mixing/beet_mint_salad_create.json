@@ -18,6 +18,9 @@
     },
     {
       "tag": "c:cooking_oil"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

@@ -4,6 +4,9 @@
   "ingredients": [
     {
       "tag": "c:crops/coffee/ground"
+    },
+    {
+      "item": "minecraft:glass_bottle"
     }
   ],
   "results": [

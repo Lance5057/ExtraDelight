@@ -14,6 +14,9 @@
       "tag": "c:whipped_cream"
     },
     {
+      "item": "minecraft:glass_bottle"
+    },
+    {
       "type": "fluid_stack",
       "amount": 100,
       "fluid": "minecraft:water"

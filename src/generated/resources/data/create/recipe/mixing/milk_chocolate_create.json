@@ -8,6 +8,9 @@
       "tag": "c:cocoa/solids"
     },
     {
+      "item": "minecraft:glass_bottle"
+    },
+    {
       "type": "fluid_stack",
       "amount": 100,
       "fluid": "extradelight:cocoa_butter_fluid"

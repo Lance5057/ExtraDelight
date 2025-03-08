@@ -16,6 +16,9 @@
     },
     {
       "tag": "c:foods/milk"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

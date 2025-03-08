@@ -19,6 +19,9 @@
     },
     {
       "tag": "c:cheese"
+    },
+    {
+      "item": "extradelight:serving_pot"
     }
   ],
   "results": [

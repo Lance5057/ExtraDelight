@@ -3,6 +3,9 @@
   "ingredients": [
     {
       "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

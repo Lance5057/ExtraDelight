@@ -9,6 +9,9 @@
     },
     {
       "tag": "c:foods/cooked_chicken"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

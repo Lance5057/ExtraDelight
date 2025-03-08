@@ -4,6 +4,9 @@
   "ingredients": [
     {
       "tag": "c:foods/pasta"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

@@ -10,6 +10,9 @@
     },
     {
       "tag": "c:foods/milk"
+    },
+    {
+      "item": "extradelight:bread_slice"
     }
   ],
   "results": [

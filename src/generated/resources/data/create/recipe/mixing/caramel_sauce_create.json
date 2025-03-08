@@ -10,6 +10,9 @@
     },
     {
       "tag": "c:foods/milk"
+    },
+    {
+      "item": "minecraft:glass_bottle"
     }
   ],
   "results": [

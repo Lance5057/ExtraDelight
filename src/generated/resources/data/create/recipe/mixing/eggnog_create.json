@@ -16,6 +16,9 @@
     },
     {
       "tag": "c:eggs"
+    },
+    {
+      "item": "minecraft:glass_bottle"
     }
   ],
   "results": [

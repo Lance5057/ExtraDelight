@@ -19,6 +19,9 @@
     },
     {
       "tag": "c:foods/vegetable"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

@@ -12,6 +12,9 @@
     },
     {
       "tag": "c:cheese"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [

@@ -8,6 +8,9 @@
       "item": "extradelight:sliced_apple"
     },
     {
+      "item": "minecraft:bowl"
+    },
+    {
       "type": "fluid_stack",
       "amount": 250,
       "fluid": "extradelight:mayo_fluid"
