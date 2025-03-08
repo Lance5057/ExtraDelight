@@ -9,6 +9,7 @@ import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -36,7 +37,7 @@ public class MeltingPotRecipe implements Recipe<SingleRecipeInput> {
 
 	@Override
 	public ItemStack assemble(SingleRecipeInput input, Provider registries) {
-		return ItemStack.EMPTY;
+		return new ItemStack(Items.STICK); //Because other mods expect something regardless
 	}
 
 	@Override
@@ -46,7 +47,7 @@ public class MeltingPotRecipe implements Recipe<SingleRecipeInput> {
 
 	@Override
 	public ItemStack getResultItem(Provider registries) {
-		return ItemStack.EMPTY;
+		return new ItemStack(Items.STICK); //Because other mods expect something regardless
 	}
 
 	@Override

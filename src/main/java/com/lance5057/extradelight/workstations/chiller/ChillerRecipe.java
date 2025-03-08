@@ -90,7 +90,7 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 
 	@Override
 	public ItemStack getResultItem(Provider registries) {
-		return this.output;
+		return this.output.copy();
 	}
 
 	public ItemStack getOutputContainer() {
