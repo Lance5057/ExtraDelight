@@ -45,14 +45,17 @@ import vectorwing.farmersdelight.common.utility.ItemUtils;
 public class ChillerBlockEntity extends BlockEntity {
 	public static final int INGREDIENT_SLOTS = 4;
 	public static final int CONTAINER_SLOT = 5;
-	public static final int OUTPUT_SLOT = 6;
-	public static final int FLUID_IN = 7;
-	public static final int FLUID_OUT = 8;
-	public static final int DRIP_TRAY_OUT = 9;
-	public static final int ICE = 10;
+	public static final int FLUID_IN = 6;
+	public static final int FLUID_OUT = 7;
+	public static final int DRIP_TRAY_OUT = 8;
+	public static final int ICE = 9;
 	public static final int INVENTORY_SIZE = ICE + 1;
+
 	public static final String ITEM_TAG = "inv";
+
+	public static final int OUTPUT_SLOT = 0;
 	private final ItemStackHandler inventory = createHandler();
+	private final ItemStackHandler output = createOutput();
 	private int cookTime;
 
 	public int getCookTime() {
@@ -209,14 +212,14 @@ public class ChillerBlockEntity extends BlockEntity {
 
 			if (chiller.cookTime >= chiller.cookTimeTotal) {
 				ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
-				ItemStack test = chiller.inventory.insertItem(OUTPUT_SLOT, result, true);
+				ItemStack test = chiller.output.insertItem(OUTPUT_SLOT, result, true);
 				if (test.isEmpty()) {
 					dropContainers(state, chiller, level);
 					subtractItems(chiller, recipeholder.value().shouldConsumeContainer());
 
 					chiller.fluid.drain(recipeholder.value().getFluid(), FluidAction.EXECUTE);
 
-					chiller.inventory.insertItem(OUTPUT_SLOT, result, false);
+					chiller.output.insertItem(OUTPUT_SLOT, result, false);
 					chiller.cookTime = 0;
 				}
 			} else {
@@ -404,6 +407,14 @@ public class ChillerBlockEntity extends BlockEntity {
 		};
 	}
 
+	private ItemStackHandler createOutput() {
+		return new ItemStackHandler(1) {
+			public boolean isItemValid(int slot, ItemStack stack) {
+				return true;
+			}
+		};
+	}
+
 	public void updateInventory() {
 		requestModelDataUpdate();
 		this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(),
@@ -413,6 +424,10 @@ public class ChillerBlockEntity extends BlockEntity {
 
 	public int getChillDuration() {
 		return chillDuration;
+	}
+
+	public ItemStackHandler getOutput() {
+		return this.output;
 	}
 
 }

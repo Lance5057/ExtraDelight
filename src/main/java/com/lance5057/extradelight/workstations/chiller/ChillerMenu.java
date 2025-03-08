@@ -32,6 +32,7 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 
 	public final ChillerBlockEntity tileEntity;
 	public final ItemStackHandler inventory;
+	public final ItemStackHandler output;
 	private final ContainerLevelAccess canInteractWithCallable;
 	protected final Level level;
 
@@ -39,6 +40,7 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 		super(ExtraDelightContainers.CHILLER_MENU.get(), windowId);
 		this.tileEntity = tileEntity;
 		this.inventory = tileEntity.getInventory();
+		this.output = tileEntity.getOutput();
 		this.level = playerInventory.player.level();
 		this.canInteractWithCallable = ContainerLevelAccess.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 
@@ -62,7 +64,7 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.CONTAINER_SLOT, 73, 61 + 7));
 
 		// Bowl Output
-		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.OUTPUT_SLOT, 126, 42) {
+		this.addSlot(new SlotItemHandler(output, ChillerBlockEntity.OUTPUT_SLOT, 126, 42) {
 
 //			@Override
 //			public ItemStack remove(int amount) {
