@@ -2118,6 +2118,31 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new Ingredient[] { Ingredient.of(Items.BAKED_POTATO), Ingredient.of(Items.BAKED_POTATO),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.MAYO) },
 				new SizedFluidIngredient[] {}, consumer, "potato_salad");
+
+		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(Tags.Items.EGGS), Ingredient.of(Tags.Items.EGGS),
+						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ExtraDelightTags.VINEGAR),
+				Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC)},
+				new SizedFluidIngredient[] {}, consumer, "aioli_from_scratch");
+
+		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(Tags.Items.EGGS), Ingredient.of(Tags.Items.EGGS),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC)},
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)),
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
+				consumer, "aioli_from_scratch_fluids");
+
+		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), STANDARD_GRIND, new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.MAYO),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC)},
+				new SizedFluidIngredient[] {}, consumer, "aioli_cheaty");
+
+		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC)},
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.MAYO.FLUID, 250)) },
+				consumer, "aioli_cheaty_fluids");
 	}
 
 	private void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
@@ -5706,6 +5731,22 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.VINEGAR).addIngredient(ExtraDelightTags.PROCESSED_GARLIC)
 				.addIngredient(ExtraDelightTags.CHEESE).build(consumer, "bruschetta_feast");
 
+		bulkBake(ExtraDelightItems.ROASTED_GARLIC.get(), Ingredient.of(ExtraDelightItems.GARLIC_CLOVE.get()), consumer,
+				ExtraDelightItems.SHEET.get(), "roasted_garlic");
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.GARLIC_BREAD.get(), 1), FAST_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.SHEET.get()), false)
+				.addIngredient(Items.BREAD).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.PROCESSED_GARLIC)
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.CHEESY_GARLIC_BREAD.get(), 1), FAST_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.SHEET.get()), false)
+				.addIngredient(Items.BREAD).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.PROCESSED_GARLIC).addIngredient(ExtraDelightTags.CHEESE)
+				.build(consumer);
 	}
 
 	private void bulkBake(ItemLike mainResult, Ingredient in, RecipeOutput consumer, ItemLike pan, String name) {

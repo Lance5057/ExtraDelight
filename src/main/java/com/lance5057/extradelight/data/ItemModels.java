@@ -1217,6 +1217,10 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.BRUSCHETTA_FEAST,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/bruschetta_stage0"));
 		forItem(ExtraDelightItems.BRUSCHETTA, "bruschetta");
+		forItem(ExtraDelightItems.AIOLI, "aioli");
+		forItem(ExtraDelightItems.ROASTED_GARLIC, "crops/garlic/roasted_garlic");
+		forItem(ExtraDelightItems.GARLIC_BREAD, "garlic_bread");
+		forItem(ExtraDelightItems.CHEESY_GARLIC_BREAD, "cheesy_garlic_bread");
 
 		AestheticBlocks.itemModel(this);
 	}
