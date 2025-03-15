@@ -1154,4 +1154,8 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<RecipeFeastBlock> BRUSCHETTA_FEAST = BLOCKS.register("bruschetta_feast",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_RED),
 					true, plate, Block.box(1.0D, 1.0D, 1.0D, 15.0D, 5.0D, 15.0D)));
+	public static final DeferredBlock<Block> HANGING_GARLIC = BLOCKS.register("hanging_garlic", () -> new HangingBlock(
+			Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.WOOD)));
+	public static final DeferredBlock<Block> GARLIC_CRATE = BLOCKS.register("garlic_crate", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_WHITE)));
 }

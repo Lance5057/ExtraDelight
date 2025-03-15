@@ -662,7 +662,8 @@ public class ExtraDelightTags {
 		public static final TagKey<Block> STORAGE_BLOCKS_COCOA_SOLIDS = neoforgeBlockTag("storage_blocks_cocoa_solids");
 		public static final TagKey<Block> STORAGE_BLOCKS_COCOA_POWDER = neoforgeBlockTag("storage_blocks_cocoa_powder");
 		public static final TagKey<Block> STORAGE_BLOCKS_CORN_KERNELS = neoforgeBlockTag("storage_blocks_corn_kernels");
-		
+		public static final TagKey<Block> STORAGE_BLOCKS_GARLIC = neoforgeBlockTag("storage_blocks_garlic");
+
 		public static final TagKey<Item> STORAGE_BLOCKS_ITEM_FLOUR = neoforgeItemTag("storage_blocks_flour");
 		public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CORN_MEAL = neoforgeItemTag("storage_blocks_corn_meal");
 		public static final TagKey<Item> STORAGE_BLOCKS_ITEM_SUGAR = neoforgeItemTag("storage_blocks_sugar");
@@ -709,4 +710,5 @@ public class ExtraDelightTags {
 		public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COCOA_SOLIDS = neoforgeItemTag("storage_blocks_cocoa_solids");
 		public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COCOA_POWDER = neoforgeItemTag("storage_blocks_cocoa_powder");
 		public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CORN_KERNELS = neoforgeItemTag("storage_blocks_corn_kernels");
+		public static final TagKey<Item> STORAGE_BLOCKS_ITEM_GARLIC = neoforgeItemTag("storage_blocks_garlic");
 } 

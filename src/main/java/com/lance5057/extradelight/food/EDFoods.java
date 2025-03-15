@@ -276,4 +276,14 @@ public class EDFoods {
 	public static final FoodProperties CURRYWURST = new FoodProperties.Builder().nutrition(8).saturationModifier(0.18f).build();
 	public static final FoodProperties BORSCHT = new FoodProperties.Builder().nutrition(5).saturationModifier(0.13f).effect(COMFORT_MEDIUM, 1F).effect(NOURISHMENT_MEDIUM, 0F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties PAMONHA = new FoodProperties.Builder().nutrition(3).saturationModifier(0.08f).effect(NOURISHMENT_BRIEF, 1F).build();
+	public static final FoodProperties GARLIC = new FoodProperties.Builder().nutrition(1).saturationModifier(0.6f).build();
+	public static final FoodProperties GARLIC_BREAD = new FoodProperties.Builder().nutrition(4).saturationModifier(0.28f).build();
+	public static final FoodProperties CHEESY_GARLIC_BREAD = new FoodProperties.Builder().nutrition(4).saturationModifier(0.17f).build();
+	public static final FoodProperties ROASTED_GARLIC = new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).build();
+	public static final FoodProperties AIOLI = new FoodProperties.Builder().nutrition(3).saturationModifier(0.34f).usingConvertsTo(Items.GLASS_BOTTLE).build();
+	public static final FoodProperties CHICKEN_KIEV = new FoodProperties.Builder().nutrition(8).saturationModifier(0.24f).effect(COMFORT_MEDIUM, 1F).effect(NOURISHMENT_BRIEF, 0F).build();
+	public static final FoodProperties BRUSCHETTA = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).effect(COMFORT_BRIEF, 1F).effect(NOURISHMENT_MEDIUM, 0F).build();
+	public static final FoodProperties DEVILLED_SAUSAGES = new FoodProperties.Builder().nutrition(10).saturationModifier(0.22f).effect(COMFORT_MEDIUM, 1F).effect(NOURISHMENT_MEDIUM, 0F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties AGLIO_E_OLIO = new FoodProperties.Builder().nutrition(11).saturationModifier(0.42f).effect(COMFORT_MEDIUM, 1F).effect(NOURISHMENT_BRIEF, 0F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties PENNE_ALL_ARRABBIATA = new FoodProperties.Builder().nutrition(8).saturationModifier(0.4f).effect(COMFORT_BRIEF, 1F).effect(NOURISHMENT_MEDIUM, 0F).usingConvertsTo(Items.BOWL).build();
 }

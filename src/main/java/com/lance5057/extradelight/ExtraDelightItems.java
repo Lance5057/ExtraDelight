@@ -2857,31 +2857,49 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> WILD_GARLIC_BLOCK = ITEMS.register("wild_garlic_block",
 			() -> new BlockItem(ExtraDelightBlocks.WILD_GARLIC.get(), new Item.Properties()));
 	public static final DeferredItem<Item> GARLIC = ITEMS.register("garlic",
-			() -> new Item(new Item.Properties()));
+			() -> new Item(foodItem(EDFoods.GARLIC)));
+	public static final DeferredItem<Item> GARLIC_CRATE = ITEMS.register("garlic_crate",
+			() -> new BlockItem(ExtraDelightBlocks.GARLIC_CRATE.get(), new Item.Properties()));
 	public static final DeferredItem<Item> GARLIC_CLOVE = EDItemGenerator.register("garlic_clove",
-			() -> new ItemNameBlockItem(ExtraDelightBlocks.GARLIC_CROP.get(), new Item.Properties()))
+			() -> new ItemNameBlockItem(ExtraDelightBlocks.GARLIC_CROP.get(), foodItem(EDFoods.GARLIC)))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> GRATED_GARLIC = EDItemGenerator.register("grated_garlic",
-			() -> new Item(new Item.Properties())).advancementIngredients().finish();
+			() -> new Item(foodItem(EDFoods.GARLIC))).advancementIngredients().finish();
 	public static final DeferredItem<Item> BRUSCHETTA_FEAST = EDItemGenerator
 			.register("bruschetta_feast",
 					() -> new BlockItem(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> BRUSCHETTA = EDItemGenerator
-			.register("bruschetta", () -> new ToolTipConsumableItem(foodItem(EDFoods.CHARCUTERIE), true))
+			.register("bruschetta", () -> new ToolTipConsumableItem(foodItem(EDFoods.BRUSCHETTA), true))
 			.advancementSnack().servingToolTip().finish();
 	public static final DeferredItem<Item> AIOLI = EDItemGenerator
 			.register("aioli_jar_item",
-					() -> new DrinkableItem(foodItem(EDFoods.MAYO).craftRemainder(Items.GLASS_BOTTLE)))
+					() -> new DrinkableItem(foodItem(EDFoods.AIOLI).craftRemainder(Items.GLASS_BOTTLE)))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> ROASTED_GARLIC = EDItemGenerator.register("roasted_garlic",
-			() -> new Item(new Item.Properties())).advancementIngredients().finish();
+			() -> new Item(foodItem(EDFoods.ROASTED_GARLIC))).advancementIngredients().finish();
 	public static final DeferredItem<Item> GARLIC_BREAD = EDItemGenerator
-			.register("garlic_bread", () -> new ToolTipConsumableItem(foodItem(EDFoods.CHARCUTERIE), true))
+			.register("garlic_bread", () -> new Item(foodItem(EDFoods.GARLIC_BREAD)))
 			.advancementSnack().finish();
 	public static final DeferredItem<Item> CHEESY_GARLIC_BREAD = EDItemGenerator
-			.register("cheesy_garlic_bread", () -> new ToolTipConsumableItem(foodItem(EDFoods.CHARCUTERIE), true))
+			.register("cheesy_garlic_bread", () -> new Item(foodItem(EDFoods.CHEESY_GARLIC_BREAD)))
 			.advancementSnack().finish();
+	public static final DeferredItem<Item> CHICKEN_KIEV = EDItemGenerator
+			.register("chicken_kiev", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHICKEN_KIEV), true))
+			.advancementButchercraft().finish();
+	public static final DeferredItem<Item> DEVILLED_SAUSAGES = EDItemGenerator
+			.register("devilled_sausages", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.DEVILLED_SAUSAGES), true))
+			.advancementButchercraft().finish();
+	public static final DeferredItem<Item> HANGING_GARLIC = ITEMS.register("hanging_garlic",
+			() -> new BlockItem(ExtraDelightBlocks.HANGING_GARLIC.get(), new Item.Properties()));
+	public static final DeferredItem<Item> AGLIO_E_OLIO = EDItemGenerator
+			.register("aglio_e_olio", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.AGLIO_E_OLIO), true))
+			.advancementMeal().finish();
+	public static final DeferredItem<Item> PENNE = EDItemGenerator
+			.register("penne", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+	public static final DeferredItem<Item> PENNE_ALL_ARRABIATA = EDItemGenerator
+			.register("penne_all_arrabbiata", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.PENNE_ALL_ARRABBIATA), true))
+			.advancementMeal().finish();
 
 //	public static final DeferredItem<DynamicJam> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new DynamicJam(
 //			new Item.Properties().component(ExtraDelightComponents.DYNAMIC_FOOD.get(), DynamicItemComponent.EMPTY)));
