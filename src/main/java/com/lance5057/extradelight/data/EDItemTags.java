@@ -2,6 +2,8 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import net.minecraft.tags.BlockTags;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -550,7 +552,25 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.GARLIC).add(ExtraDelightItems.GARLIC.get());
 		tag(ExtraDelightTags.PROCESSED_GARLIC).add(ExtraDelightItems.GARLIC_CLOVE.get(), ExtraDelightItems.GRATED_GARLIC.get());
-		
+
+		// Dyed Tags
+		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_BLUE).add(ExtraDelightItems.BLUE_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_BROWN).add(ExtraDelightItems.BROWN_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_CYAN).add(ExtraDelightItems.CYAN_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_GRAY).add(ExtraDelightItems.GRAY_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_GREEN).add(ExtraDelightItems.GREEN_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_LIGHT_BLUE).add(ExtraDelightItems.LIGHT_BLUE_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_LIGHT_GRAY).add(ExtraDelightItems.LIGHT_GRAY_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_LIME).add(ExtraDelightItems.LIME_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_MAGENTA).add(ExtraDelightItems.MAGENTA_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_ORANGE).add(ExtraDelightItems.ORANGE_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_PINK).add(ExtraDelightItems.PINK_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_PURPLE).add(ExtraDelightItems.PURPLE_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_RED).add(ExtraDelightItems.RED_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_WHITE).add(ExtraDelightItems.WHITE_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_YELLOW).add(ExtraDelightItems.YELLOW_CHOCOLATE_BOX.get());
+
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);
 		}

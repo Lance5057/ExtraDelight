@@ -216,6 +216,26 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightBlocks.GINGER_CROP.get(),
 				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get(),
 				ExtraDelightBlocks.GARLIC_CROP.get());
+				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get());
+
+		// Dyed Tags
+		tag(Tags.Blocks.DYED_BLACK).add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_BLUE).add(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_BROWN).add(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_CYAN).add(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_GRAY).add(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_GREEN).add(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_LIGHT_BLUE).add(ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_LIGHT_GRAY).add(ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_LIME).add(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_MAGENTA).add(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_ORANGE).add(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_PINK).add(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_PURPLE).add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_RED).add(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_WHITE).add(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_YELLOW).add(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get());
+
 		}
 
 	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {
