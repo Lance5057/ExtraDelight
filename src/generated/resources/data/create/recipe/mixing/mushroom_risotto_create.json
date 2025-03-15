@@ -1,0 +1,33 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:mushroom_risotto"
+    }
+  ]
+}

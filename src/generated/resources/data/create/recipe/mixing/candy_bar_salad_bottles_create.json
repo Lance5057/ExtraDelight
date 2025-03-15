@@ -1,0 +1,31 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:whipped_cream"
+    },
+    {
+      "tag": "c:chocolate/bar"
+    },
+    {
+      "tag": "c:apple/sliced"
+    },
+    {
+      "tag": "c:foods/custard"
+    },
+    {
+      "item": "extradelight:caramel_sauce"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:candy_bar_salad"
+    }
+  ]
+}

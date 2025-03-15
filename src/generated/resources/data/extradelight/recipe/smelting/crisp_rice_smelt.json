@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "tag": "c:crops/rice"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:crisp_rice"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "c:cinnamon/ground"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:apple_cookie_dough"
+    }
+  ]
+}

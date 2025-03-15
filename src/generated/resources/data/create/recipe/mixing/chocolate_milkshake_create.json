@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "tag": "c:cocoa/powder"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:chocolate_milkshake"
+    }
+  ]
+}

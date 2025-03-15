@@ -31,6 +31,10 @@ public class ExtraDelightTags {
 		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("butchercraft", tag));
 	}
 
+	public static TagKey<Item> tanTag(String tag) {
+		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("toughasnails", tag));
+	}
+
 	// General Tags
 	public static final TagKey<Item> CATEGORY_BEVERAGES = modTag("category/beverages");
 	public static final TagKey<Item> CATEGORY_CASSEROLES = modTag("category/casserole");
@@ -565,4 +569,49 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> GARLIC = neoforgeItemTag("crops/garlic");
 	public static final TagKey<Item> PROCESSED_GARLIC = modTag("processed/garlic");
+
+	// Tough as Nails
+	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");
+	public static final TagKey<Item> HEATING_CONSUMED_ITEMS = tanTag("heating_consumed_items");
+
+	public static final TagKey<Item> ONE_THIRST_DRINKS = tanTag("thirst/1_thirst_drinks");
+	public static final TagKey<Item> TWO_THIRST_DRINKS = tanTag("thirst/2_thirst_drinks");
+	public static final TagKey<Item> THREE_THIRST_DRINKS = tanTag("thirst/3_thirst_drinks");
+	public static final TagKey<Item> FOUR_THIRST_DRINKS = tanTag("thirst/4_thirst_drinks");
+	public static final TagKey<Item> FIVE_THIRST_DRINKS = tanTag("thirst/5_thirst_drinks");
+	public static final TagKey<Item> SIX_THIRST_DRINKS = tanTag("thirst/6_thirst_drinks");
+	public static final TagKey<Item> SEVEN_THIRST_DRINKS = tanTag("thirst/7_thirst_drinks");
+	public static final TagKey<Item> EIGHT_THIRST_DRINKS = tanTag("thirst/8_thirst_drinks");
+	public static final TagKey<Item> NINE_THIRST_DRINKS = tanTag("thirst/9_thirst_drinks");
+	public static final TagKey<Item> TEN_THIRST_DRINKS = tanTag("thirst/10_thirst_drinks");
+	public static final TagKey<Item> ELEVEN_THIRST_DRINKS = tanTag("thirst/11_thirst_drinks");
+	public static final TagKey<Item> TWELVE_THIRST_DRINKS = tanTag("thirst/12_thirst_drinks");
+	public static final TagKey<Item> THIRTEEN_THIRST_DRINKS = tanTag("thirst/13_thirst_drinks");
+	public static final TagKey<Item> FOURTEEN_THIRST_DRINKS = tanTag("thirst/14_thirst_drinks");
+	public static final TagKey<Item> FIFTEEN_THIRST_DRINKS = tanTag("thirst/15_thirst_drinks");
+	public static final TagKey<Item> SIXTEEN_THIRST_DRINKS = tanTag("thirst/16_thirst_drinks");
+	public static final TagKey<Item> SEVENTEEN_THIRST_DRINKS = tanTag("thirst/17_thirst_drinks");
+	public static final TagKey<Item> EIGHTEEN_THIRST_DRINKS = tanTag("thirst/18_thirst_drinks");
+	public static final TagKey<Item> NINETEEN_THIRST_DRINKS = tanTag("thirst/19_thirst_drinks");
+	public static final TagKey<Item> TWENTY_THIRST_DRINKS = tanTag("thirst/20_thirst_drinks");
+
+	public static final TagKey<Item> TEN_HYDRATION_DRINKS = tanTag("hydration/10_hydration_drinks");
+	public static final TagKey<Item> TWENTY_HYDRATION_DRINKS = tanTag("hydration/20_hydration_drinks");
+	public static final TagKey<Item> THIRTY_HYDRATION_DRINKS = tanTag("hydration/30_hydration_drinks");
+	public static final TagKey<Item> FOURTY_HYDRATION_DRINKS = tanTag("hydration/40_hydration_drinks");
+	public static final TagKey<Item> FIFTY_HYDRATION_DRINKS = tanTag("hydration/50_hydration_drinks");
+	public static final TagKey<Item> SIXTY_HYDRATION_DRINKS = tanTag("hydration/60_hydration_drinks");
+	public static final TagKey<Item> SEVENTY_HYDRATION_DRINKS = tanTag("hydration/70_hydration_drinks");
+	public static final TagKey<Item> EIGHTY_HYDRATION_DRINKS = tanTag("hydration/80_hydration_drinks");
+	public static final TagKey<Item> NINETY_HYDRATION_DRINKS = tanTag("hydration/90_hydration_drinks");
+	public static final TagKey<Item> ONE_HUNDRED_HYDRATION_DRINKS = tanTag("hydration/100_hydration_drinks");
+
+	public static final TagKey<Item> TWENTY_FIVE_POISON_CHANCE_DRINKS = tanTag("poison_chance/25_poison_chance_drinks");
+	public static final TagKey<Item> FIFTY_POISON_CHANCE_DRINKS = tanTag("poison_chance/50_poison_chance_drinks");
+	public static final TagKey<Item> SEVENTY_FIVE_POISON_CHANCE_DRINKS = tanTag(
+			"poison_chance/75_poison_chance_drinks");
+	public static final TagKey<Item> ONE_HUNDRED_POISON_CHANCE_DRINKS = tanTag(
+			"poison_chance/100_poison_chance_drinks");
+
+	public static final TagKey<Item> DRINKS = tanTag("drinks");
 }

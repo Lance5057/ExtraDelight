@@ -1,0 +1,40 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "farmersdelight:cabbage"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/carrot"
+    },
+    {
+      "tag": "c:croutons"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "tag": "c:cooking_oil"
+    },
+    {
+      "tag": "c:vinegar"
+    },
+    {
+      "tag": "c:eggs/boiled"
+    },
+    {
+      "tag": "c:meat/cooked"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:salad_block_item"
+    }
+  ]
+}

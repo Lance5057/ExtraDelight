@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:beef"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "item": "extradelight:serving_pot"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:beef_stew_feast"
+    }
+  ]
+}

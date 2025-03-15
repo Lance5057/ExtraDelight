@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:cocoa/powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:chocolate_cookie_dough"
+    }
+  ]
+}

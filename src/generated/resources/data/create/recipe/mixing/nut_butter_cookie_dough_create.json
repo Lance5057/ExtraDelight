@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "item": "extradelight:peanut_butter_bottle"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:nut_butter_cookie_dough"
+    }
+  ]
+}

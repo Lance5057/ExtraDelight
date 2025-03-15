@@ -138,13 +138,13 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	private ItemStackHandler createHandler() {
 		return new ItemStackHandler(GHOST_SLOT + 1) {
-//			@Override
-//			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
-//				if (slot != 32)
-//					return 1;
-//				else
-//					return 64;
-//			}
+			@Override
+			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
+				if (slot == LIQUID_IN_SLOT || slot == LIQUID_OUT_SLOT)
+					return 1;
+				else
+					return 64;
+			}
 
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {

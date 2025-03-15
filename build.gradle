@@ -25,7 +25,8 @@ repositories {
 	maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
     maven { url = "https://mvn.devos.one/snapshots" } // Registrate
     maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven" } 
-	flatDir { dirs '../FarmersDelight/build/libs', '../Butchercraft/build/libs' }
+    maven { url = "https://maven.theillusivec4.top/" } 
+	//flatDir { dirs '../FarmersDelight/build/libs', '../Butchercraft/build/libs' }
 }
 
 
@@ -90,7 +91,7 @@ dependencies {
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
 	implementation "curse.maven:farmersdelight-398521:5878217"
-	implementation name: 'butchercraft-2.6.3'
+	//implementation name: 'butchercraft-2.6.3'
 
 	 // compile against the JEI API but do not include it at runtime
     compileOnly "mezz.jei:jei-1.21.1-common-api:${jei_version}"
@@ -98,11 +99,15 @@ dependencies {
     // at runtime, use the full JEI jar for Forge
     localRuntime "mezz.jei:jei-1.21.1-neoforge:${jei_version}"
     
-	// compileOnly "com.simibubi.create:create-${minecraft_version}-${create_version}"
-	// implementation "net.createmod.ponder:Ponder-NeoForge-${flywheel_mc_version}:${ponder_version}"
-	// compileOnly "dev.engine-room.flywheel:flywheel-neoforge-api-${flywheel_mc_version}:${flywheel_version}"
-	// runtimeOnly "dev.engine-room.flywheel:flywheel-neoforge-${flywheel_mc_version}:${flywheel_version}"
-	// implementation "com.tterrag.registrate:Registrate:${registrate_version}"
+
+    implementation("com.simibubi.create:create-${flywheel_mc_version}:${create_version}") { transitive = false }
+	implementation "net.createmod.ponder:Ponder-NeoForge-${flywheel_mc_version}:${ponder_version}"
+    compileOnly "dev.engine-room.flywheel:flywheel-neoforge-api-${flywheel_mc_version}:${flywheel_version}"
+    runtimeOnly "dev.engine-room.flywheel:flywheel-neoforge-${flywheel_mc_version}:${flywheel_version}"
+    implementation "com.tterrag.registrate:Registrate:${registrate_version}"
+	
+	compileOnly("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}:api")
+    runtimeOnly("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}")
 	
 	compileOnly "vazkii.patchouli:Patchouli:1.21-87-NEOFORGE:api"
     runtimeOnly "vazkii.patchouli:Patchouli:1.21-87-NEOFORGE"

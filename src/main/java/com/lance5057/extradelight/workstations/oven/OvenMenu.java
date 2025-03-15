@@ -131,7 +131,7 @@ public class OvenMenu extends RecipeBookMenu<RecipeWrapper, OvenRecipe> {
 				}
 			} else if (index > indexOutput) {
 				if (itemstack1.is(ExtraDelightTags.TRAYS)) {
-					if (!this.moveItemStackTo(itemstack1, indexContainerInput, indexContainerInput, false)) {
+					if (!this.moveItemStackTo(itemstack1, indexContainerInput, indexContainerInput+1, false)) {
 						return ItemStack.EMPTY;
 					}
 				} else if (!this.moveItemStackTo(itemstack1, 0, indexContainerInput, false)) {

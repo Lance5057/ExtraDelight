@@ -18,6 +18,10 @@ import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
+import com.simibubi.create.Create;
+import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
+import com.simibubi.create.content.processing.recipe.HeatCondition;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
@@ -81,9 +85,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		return ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, texture);
 	}
 
-//	public static ResourceLocation CreateLoc(String texture) {
-//		return ResourceLocation.fromNamespaceAndPath(Create.ID, texture);
-//	}
+	public static ResourceLocation CreateLoc(String texture) {
+		return ResourceLocation.fromNamespaceAndPath(Create.ID, texture);
+	}
 
 	@Override
 	protected void buildRecipes(RecipeOutput consumer) {
@@ -1528,6 +1532,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"roasted_peanuts");
 		vanillaCooking(Ingredient.of(ExtraDelightTags.HAZELNUTS), ExtraDelightItems.ROASTED_HAZELNUTS.get(), consumer,
 				"roasted_hazelnuts");
+		vanillaCooking(Ingredient.of(CommonTags.CROPS_RICE), ExtraDelightItems.CRISP_RICE.get(), consumer,
+				"crisp_rice");
 	}
 
 	private void vanillaCooking(Ingredient of, @NotNull Item item, RecipeOutput consumer, String name) {
@@ -2158,14 +2164,25 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		b.save(consumer, EDLoc(rc));
 
-//		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
-//				CreateLoc(rc + "_create"));
-//
-//		p.output(output, count);
-//		for (Ingredient i : ingredients)
-//			p.require(i);
-//
-//		p.build(consumer);
+		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
+				CreateLoc(rc + "_create"));
+
+		p.output(output);
+		for (Ingredient i : ingredients)
+			p.require(i);
+
+		for (int i = 0; i < container.getCount(); i++)
+			p.require(container.getItem());
+
+		boolean flag = true;
+		for (SizedFluidIngredient f : sizedFluidIngredients)
+			if (f.getFluids() != null && f.getFluids().length > 0)
+				p.require(f.getFluids()[0].getFluid(), f.amount());
+			else
+				flag = false;
+
+		if (flag)
+			p.build(consumer);
 	}
 
 	private void craftingRecipes(RecipeOutput consumer) {
@@ -4262,9 +4279,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ExtraDelightItems.COFFEE.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.GROUND_COFFEE_BEANS) }, "coffee", consumer);
 
-		pot(ExtraDelightItems.CRISP_RICE.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, null,
-				new Ingredient[] { Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
-				"crisp_rice", consumer);
+//		pot(ExtraDelightItems.CRISP_RICE.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, null,
+//				new Ingredient[] { Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
+//				"crisp_rice", consumer);
 
 		pot(ExtraDelightItems.TEA.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.TEA_INGREDIENTS),
@@ -5261,6 +5278,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, ExtraDelightItems.SHEET.get(), "grilled_cheese");
 		bulkBake(ExtraDelightItems.COOKED_CACTUS.get(), Ingredient.of(ExtraDelightItems.CACTUS.get()), consumer,
 				ExtraDelightItems.SHEET.get(), "cooked_cactus");
+		bulkBake(ExtraDelightItems.CRISP_RICE.get(), Ingredient.of(CommonTags.CROPS_RICE), consumer,
+				ExtraDelightItems.TRAY.get(), "crisp_rice");
 
 		// Halloween Start!
 		OvenRecipeBuilder
@@ -5774,14 +5793,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 			b.addIngredient(i);
 		b.build(consumer, rc);
 
-//		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
-//				CreateLoc(rc + "_create"));
-//
-//		p.output(output, count);
-//		for (Ingredient i : itemsIn)
-//			p.require(i);
-//
-//		p.requiresHeat(HeatCondition.HEATED);
-//		p.build(consumer);
+		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
+				CreateLoc(rc + "_create"));
+
+		p.output(output, count);
+		for (Ingredient i : itemsIn)
+			p.require(i);
+
+		if (container != null)
+			p.require(container);
+
+		p.requiresHeat(HeatCondition.HEATED);
+		p.build(consumer);
 	}
 }

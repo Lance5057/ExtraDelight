@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_corn"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:cream_corn"
+    }
+  ]
+}
