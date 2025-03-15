@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:chocolate/bar"
+    },
+    {
+      "tag": "c:apple/sliced"
+    },
+    {
+      "tag": "c:foods/custard"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:caramel_sauce_fluid"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:candy_bar_salad"
+    }
+  ]
+}

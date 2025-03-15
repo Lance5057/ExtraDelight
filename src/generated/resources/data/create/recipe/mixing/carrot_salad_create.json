@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:carrot/grated"
+    },
+    {
+      "tag": "c:carrot/grated"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "c:condiments/mayonnaise"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:carrot_salad"
+    }
+  ]
+}

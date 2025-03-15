@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "farmersdelight:cabbage_leaf"
+    },
+    {
+      "tag": "c:apple/sliced"
+    },
+    {
+      "tag": "c:condiments/mayonnaise"
+    },
+    {
+      "tag": "c:vinegar"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:apple_slaw"
+    }
+  ]
+}

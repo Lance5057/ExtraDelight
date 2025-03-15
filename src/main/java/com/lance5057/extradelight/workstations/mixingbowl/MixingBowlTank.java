@@ -149,7 +149,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 
 	public FluidStack drain(SizedFluidIngredient resource, FluidAction action) {
 		for (int i = 0; i < this.getTanks(); i++) {
-			if (!resource.test(fluid[i])) {
+			if (resource.test(fluid[i])) {
 				return doDrain(resource.amount(), action, i);
 			}
 

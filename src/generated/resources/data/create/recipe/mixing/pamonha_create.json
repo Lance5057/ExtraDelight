@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:seeds/corn"
+    },
+    {
+      "tag": "c:seeds/corn"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:pamonha"
+    }
+  ]
+}

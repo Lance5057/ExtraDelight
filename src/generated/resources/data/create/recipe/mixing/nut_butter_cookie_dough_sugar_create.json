@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:cookie_dough/sugar"
+    },
+    {
+      "item": "extradelight:peanut_butter_bottle"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:nut_butter_cookie_dough"
+    }
+  ]
+}

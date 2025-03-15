@@ -1,0 +1,41 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "tag": "c:foods/cabbage"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    },
+    [
+      {
+        "item": "extradelight:sliced_tomato"
+      },
+      {
+        "item": "farmersdelight:tomato_sauce"
+      },
+      {
+        "item": "farmersdelight:tomato"
+      }
+    ],
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "item": "extradelight:borscht"
+    }
+  ]
+}

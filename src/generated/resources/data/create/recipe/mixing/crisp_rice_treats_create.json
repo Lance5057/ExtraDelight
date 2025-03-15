@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:puffed_rice"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "item": "extradelight:tray"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:crisp_rice_treats_block"
+    }
+  ]
+}

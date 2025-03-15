@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.util.EDItemGenerator;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -16,10 +17,12 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
@@ -261,7 +264,25 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.SLICED_TOMATO.get(), ExtraDelightItems.SOS.get(), ExtraDelightItems.STIRFRY.get(),
 				ExtraDelightItems.STUFFED_CACTUS.get(), ExtraDelightItems.STUFFED_HEART.get(),
 				ExtraDelightItems.STUFFED_MUSHROOMS.get(), ExtraDelightItems.STUFFING.get(),
-				ExtraDelightItems.SUNFLOWER_SEEDS.get(), ExtraDelightItems.TOMATO_SOUP.get());
+				ExtraDelightItems.SUNFLOWER_SEEDS.get(), ExtraDelightItems.TOMATO_SOUP.get(),
+				ExtraDelightItems.CONGEE.get(), ExtraDelightItems.LUGAW.get(), ExtraDelightItems.BEET_MINT_SALAD.get(),
+				ExtraDelightItems.CRACKERS.get(), ExtraDelightItems.CROQUE_MADAME.get(),
+				ExtraDelightItems.CROQUE_MONSIEUR.get(), ExtraDelightItems.ROLL.get(),
+				ExtraDelightItems.MINT_LAMB.get(), ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get(),
+				ExtraDelightItems.BLOOD_CHOCOLATE_FILLED_BAR.get(), ExtraDelightItems.DARK_CHOCOLATE_BAR.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_FILLED_BAR.get(), ExtraDelightItems.MILK_CHOCOLATE_BAR.get(),
+				ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get(), ExtraDelightItems.WHITE_CHOCOLATE_BAR.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_FILLED_BAR.get(), ExtraDelightItems.BLOOD_CHOCOLATE_TRUFFLE.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_TRUFFLE.get(), ExtraDelightItems.MILK_CHOCOLATE_TRUFFLE.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_TRUFFLE.get(), ExtraDelightItems.PORK_AND_APPLES.get(),
+				ExtraDelightItems.APPLE_SLAW.get(), ExtraDelightItems.MULLIGATAWNY_SOUP.get(),
+				ExtraDelightItems.AEBLEFLAESK.get(), ExtraDelightItems.JALAPENO_POPPER.get(),
+				ExtraDelightItems.JALAPENO_STUFFED_POTATO.get(), ExtraDelightItems.CHILI_CHEESE_CORNBREAD_MUFFIN.get(),
+				ExtraDelightItems.CHILI_CON_CARNE.get(), ExtraDelightItems.WHITE_CHILI.get(),
+				ExtraDelightItems.HAZELNUT_SOUP.get(), ExtraDelightItems.POTATO_SALAD.get(),
+				ExtraDelightItems.ONION_SOUP.get(), ExtraDelightItems.BACON_EGG_PIE_SLICE.get(),
+				ExtraDelightItems.ONION_BHAJI.get(), ExtraDelightItems.FAT_POTATOES.get(),
+				ExtraDelightItems.CURRYWURST.get(), ExtraDelightItems.BORSCHT.get(), ExtraDelightItems.PAMONHA.get());
 
 		tag(ExtraDelightTags.CORN).add(ExtraDelightItems.CORN_ON_COB.get());
 		tag(ExtraDelightTags.CORN_ON_COB).add(ExtraDelightItems.CORN_ON_COB.get());
@@ -517,7 +538,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.SUNFLOWER_SEEDS.get());
 		tag(ItemTags.COW_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get());
 		tag(ItemTags.FROG_FOOD).add(ExtraDelightItems.AGAR_AGAR.get());
-		tag(ItemTags.LLAMA_FOOD).add(ExtraDelightItems.CORN_HUSK_BUNDLE.get(), ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get());
+		tag(ItemTags.LLAMA_FOOD).add(ExtraDelightItems.CORN_HUSK_BUNDLE.get(),
+				ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get());
 		tag(ItemTags.PARROT_FOOD).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 				ExtraDelightItems.HAZELNUTS.get(), ExtraDelightItems.PEANUTS.get(),
 				ExtraDelightItems.SUNFLOWER_SEEDS.get());
@@ -616,5 +638,137 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_SOLIDS).add(ExtraDelightItems.COCOA_SOLIDS_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_POWDER).add(ExtraDelightItems.COCOA_POWDER_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_KERNELS).add(ExtraDelightItems.CORN_SACK.get());
+
+    
+		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
+			parseTaNTag(d);
+		}
+
+		for (DeferredItem<Item> i : EDItemGenerator.hotFood) {
+			tag(ExtraDelightTags.HEATING_CONSUMED_ITEMS).add(i.get());
+		}
+
+		for (DeferredItem<Item> i : EDItemGenerator.coldFood) {
+			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(i.get());
+		}
 	}
+
+	// Tough as Nails
+
+	public void parseTaNTag(EDItemGenerator.Drink d) {
+		tag(ExtraDelightTags.DRINKS).add(d.item.get());
+
+		switch (d.thirst) {
+		case 1:
+			tag(ExtraDelightTags.ONE_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 2:
+			tag(ExtraDelightTags.TWO_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 3:
+			tag(ExtraDelightTags.THREE_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 4:
+			tag(ExtraDelightTags.FOUR_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 5:
+			tag(ExtraDelightTags.FIVE_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 6:
+			tag(ExtraDelightTags.SIX_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 7:
+			tag(ExtraDelightTags.SEVEN_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 8:
+			tag(ExtraDelightTags.EIGHT_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 9:
+			tag(ExtraDelightTags.NINE_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 10:
+			tag(ExtraDelightTags.TEN_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 11:
+			tag(ExtraDelightTags.ELEVEN_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 12:
+			tag(ExtraDelightTags.TWELVE_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 13:
+			tag(ExtraDelightTags.THIRTEEN_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 14:
+			tag(ExtraDelightTags.FOURTEEN_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 15:
+			tag(ExtraDelightTags.FIFTEEN_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 16:
+			tag(ExtraDelightTags.SIXTEEN_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 17:
+			tag(ExtraDelightTags.SEVENTEEN_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 18:
+			tag(ExtraDelightTags.EIGHTEEN_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 19:
+			tag(ExtraDelightTags.NINETEEN_THIRST_DRINKS).add(d.item.get());
+			break;
+		case 20:
+			tag(ExtraDelightTags.TWENTY_THIRST_DRINKS).add(d.item.get());
+			break;
+		}
+
+		switch (d.hydration) {
+		case 1:
+			tag(ExtraDelightTags.TEN_HYDRATION_DRINKS).add(d.item.get());
+			break;
+		case 2:
+			tag(ExtraDelightTags.TWENTY_HYDRATION_DRINKS).add(d.item.get());
+			break;
+		case 3:
+			tag(ExtraDelightTags.THIRTY_HYDRATION_DRINKS).add(d.item.get());
+			break;
+		case 4:
+			tag(ExtraDelightTags.FOURTY_HYDRATION_DRINKS).add(d.item.get());
+			break;
+		case 5:
+			tag(ExtraDelightTags.FIFTY_HYDRATION_DRINKS).add(d.item.get());
+			break;
+		case 6:
+			tag(ExtraDelightTags.SIXTY_HYDRATION_DRINKS).add(d.item.get());
+			break;
+		case 7:
+			tag(ExtraDelightTags.SEVENTY_HYDRATION_DRINKS).add(d.item.get());
+			break;
+		case 8:
+			tag(ExtraDelightTags.EIGHTY_HYDRATION_DRINKS).add(d.item.get());
+			break;
+		case 9:
+			tag(ExtraDelightTags.NINETY_HYDRATION_DRINKS).add(d.item.get());
+			break;
+		case 10:
+			tag(ExtraDelightTags.ONE_HUNDRED_HYDRATION_DRINKS).add(d.item.get());
+			break;
+		}
+
+		switch (d.poison) {
+		case 25:
+			tag(ExtraDelightTags.TWENTY_FIVE_POISON_CHANCE_DRINKS).add(d.item.get());
+			break;
+		case 50:
+			tag(ExtraDelightTags.FIFTY_POISON_CHANCE_DRINKS).add(d.item.get());
+			break;
+		case 75:
+			tag(ExtraDelightTags.SEVENTY_FIVE_POISON_CHANCE_DRINKS).add(d.item.get());
+			break;
+		case 100:
+			tag(ExtraDelightTags.ONE_HUNDRED_POISON_CHANCE_DRINKS).add(d.item.get());
+			break;
+		}
+
+	}
+
 }

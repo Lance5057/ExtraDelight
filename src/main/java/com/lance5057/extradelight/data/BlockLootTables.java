@@ -55,7 +55,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 	private static final float[] NORMAL_LEAVES_STICK_CHANCES = new float[] { 0.02F, 0.022222223F, 0.025F, 0.033333335F,
 			0.1F };
 
-	protected BlockLootTables(HolderLookup.Provider provider) {
+	public BlockLootTables(HolderLookup.Provider provider) {
 		super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags(), provider);
 	}
 

@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:foods/cooked_fish"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "item": "extradelight:grated_potato"
+    },
+    {
+      "item": "extradelight:breading_misanplas"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "item": "extradelight:fish_cakes"
+    }
+  ]
+}
