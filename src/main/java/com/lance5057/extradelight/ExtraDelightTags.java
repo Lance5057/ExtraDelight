@@ -598,7 +598,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> TEN_HYDRATION_DRINKS = tanTag("hydration/10_hydration_drinks");
 	public static final TagKey<Item> TWENTY_HYDRATION_DRINKS = tanTag("hydration/20_hydration_drinks");
 	public static final TagKey<Item> THIRTY_HYDRATION_DRINKS = tanTag("hydration/30_hydration_drinks");
-	public static final TagKey<Item> FOURTY_HYDRATION_DRINKS = tanTag("hydration/40_hydration_drinks");
+	public static final TagKey<Item> FORTY_HYDRATION_DRINKS = tanTag("hydration/40_hydration_drinks");
 	public static final TagKey<Item> FIFTY_HYDRATION_DRINKS = tanTag("hydration/50_hydration_drinks");
 	public static final TagKey<Item> SIXTY_HYDRATION_DRINKS = tanTag("hydration/60_hydration_drinks");
 	public static final TagKey<Item> SEVENTY_HYDRATION_DRINKS = tanTag("hydration/70_hydration_drinks");
