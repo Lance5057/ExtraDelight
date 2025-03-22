@@ -41,114 +41,12 @@
   "sea_level": 0,
   "spawn_target": [],
   "surface_rule": {
-    "type": "minecraft:sequence",
-    "sequence": [
-      {
-        "type": "minecraft:sequence",
-        "sequence": [
-          {
-            "type": "minecraft:condition",
-            "if_true": {
-              "type": "minecraft:above_preliminary_surface"
-            },
-            "then_run": {
-              "type": "minecraft:sequence",
-              "sequence": [
-                {
-                  "type": "minecraft:condition",
-                  "if_true": {
-                    "type": "minecraft:stone_depth",
-                    "add_surface_depth": false,
-                    "offset": 0,
-                    "secondary_depth_range": 0,
-                    "surface_type": "floor"
-                  },
-                  "then_run": {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:water",
-                      "add_stone_depth": false,
-                      "offset": -1,
-                      "surface_depth_multiplier": 0
-                    },
-                    "then_run": {
-                      "type": "minecraft:sequence",
-                      "sequence": [
-                        {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:biome",
-                            "biome_is": [
-                              "vampirism:vampire_forest"
-                            ]
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "vampirism:cursed_grass",
-                              "Properties": {
-                                "snowy": "false"
-                              }
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                },
-                {
-                  "type": "minecraft:condition",
-                  "if_true": {
-                    "type": "minecraft:stone_depth",
-                    "add_surface_depth": true,
-                    "offset": 0,
-                    "secondary_depth_range": 0,
-                    "surface_type": "floor"
-                  },
-                  "then_run": {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:water",
-                      "add_stone_depth": false,
-                      "offset": -1,
-                      "surface_depth_multiplier": 0
-                    },
-                    "then_run": {
-                      "type": "minecraft:sequence",
-                      "sequence": [
-                        {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:biome",
-                            "biome_is": [
-                              "vampirism:vampire_forest"
-                            ]
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "vampirism:cursed_earth"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "type": "minecraft:block",
-        "result_state": {
-          "Name": "minecraft:grass_block",
-          "Properties": {
-            "snowy": "false"
-          }
-        }
+    "type": "minecraft:block",
+    "result_state": {
+      "Name": "minecraft:grass_block",
+      "Properties": {
+        "snowy": "false"
       }
-    ]
+    }
   }
 }

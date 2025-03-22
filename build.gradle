@@ -91,7 +91,7 @@ dependencies {
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
 	implementation "curse.maven:farmersdelight-398521:5878217"
-	implementation "curse.maven:vampirism-become-a-vampire-233029:6164796"
+	//implementation "curse.maven:vampirism-become-a-vampire-233029:6164796"
 	//implementation name: 'butchercraft-2.6.3'
 
 	 // compile against the JEI API but do not include it at runtime
