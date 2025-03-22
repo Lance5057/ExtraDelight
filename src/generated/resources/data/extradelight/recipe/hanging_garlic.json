@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "extradelight:garlic"
+    },
+    "r": {
+      "item": "farmersdelight:rope"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "crc",
+    "ccc"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:hanging_garlic"
+  }
+}

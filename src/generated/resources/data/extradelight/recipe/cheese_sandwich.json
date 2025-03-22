@@ -8,9 +8,17 @@
     "c": {
       "tag": "c:cheese"
     },
-    "m": {
-      "tag": "c:condiments/mayonnaise"
-    }
+    "m": [
+      {
+        "tag": "c:condiments/mayonnaise"
+      },
+      {
+        "tag": "c:butter"
+      },
+      {
+        "item": "extradelight:aioli_jar_item"
+      }
+    ]
   },
   "pattern": [
     " b ",

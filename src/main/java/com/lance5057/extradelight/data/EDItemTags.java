@@ -2,8 +2,6 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.lance5057.extradelight.ExtraDelightBlocks;
-import net.minecraft.tags.BlockTags;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -521,7 +519,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CHILI).add(ExtraDelightItems.CHILI.get());
 
 		tag(Tags.Items.CROPS).add(ExtraDelightItems.GINGER.get(), ExtraDelightItems.MINT.get(),
-				ExtraDelightItems.CHILI.get(), ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.PEANUTS.get());
+				ExtraDelightItems.CHILI.get(), ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.PEANUTS.get(),
+				ExtraDelightItems.GARLIC.get());
 		tag(Tags.Items.TOOLS).addTag(ExtraDelightTags.SPOONS).addTag(ExtraDelightTags.PESTLES);
 		tag(Tags.Items.SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get());
 
@@ -549,6 +548,10 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.PROCESSED_CHILI).add(ExtraDelightItems.CHILI.get(), ExtraDelightItems.SLICED_CHILI.get());
 
+		tag(ExtraDelightTags.GARLIC).add(ExtraDelightItems.GARLIC.get());
+		tag(ExtraDelightTags.PROCESSED_GARLIC).add(ExtraDelightItems.GARLIC_CLOVE.get(),
+				ExtraDelightItems.GRATED_GARLIC.get());
+
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get());
 		tag(Tags.Items.DYED_BLUE).add(ExtraDelightItems.BLUE_CHOCOLATE_BOX.get());
@@ -569,29 +572,52 @@ public class EDItemTags extends ItemTagsProvider {
 
 		// Storage Blocks
 		tag(Tags.Items.STORAGE_BLOCKS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_MEAL).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SUGAR)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_ON_COB).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_HUSK)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_DRIED_CORN_HUSK).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_COB)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_MEAL)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SUGAR)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_ON_COB)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_HUSK)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_DRIED_CORN_HUSK)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_COB)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GINGER).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_EGGS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_APPLE).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GOLDEN_APPLE)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BROWN_MUSHROOM).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_RED_MUSHROOM)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SWEET_BERRIES).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GLOW_BERRIES)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_SILK).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GROUND_CINNAMON)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_RAW_CINNAMON).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CINNAMON_STICK)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BREAD_CRUMBS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MINT)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MARSHMALLOW).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GOLDEN_CARROT)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BLOOD_CHOCOLATE_BAR).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_DARK_CHOCOLATE_BAR)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MILK_CHOCOLATE_BAR).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_WHITE_CHOCOLATE_BAR)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHILI).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHILI_POWDER)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_PEANUTS_IN_SHELL).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_PEANUTS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_PEANUTS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_HAZELNUTS_IN_SHELL)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_HAZELNUTS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_HAZELNUTS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MALLOW_ROOT).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MALLOW_POWDER)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COFFEE_CHERRIES).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GREEN_COFFEE)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COFFEE_BEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GROUND_COFFEE)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_BEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_COCOA_BEANS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_SOLIDS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_POWDER)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_KERNELS);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_APPLE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GOLDEN_APPLE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BROWN_MUSHROOM)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_RED_MUSHROOM)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SWEET_BERRIES)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GLOW_BERRIES)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_SILK)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GROUND_CINNAMON)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_RAW_CINNAMON)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CINNAMON_STICK)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BREAD_CRUMBS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MINT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MARSHMALLOW)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GOLDEN_CARROT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BLOOD_CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_DARK_CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MILK_CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_WHITE_CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHILI)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHILI_POWDER)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_PEANUTS_IN_SHELL)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_PEANUTS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_PEANUTS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_HAZELNUTS_IN_SHELL)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_HAZELNUTS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_HAZELNUTS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MALLOW_ROOT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MALLOW_POWDER)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COFFEE_CHERRIES)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GREEN_COFFEE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COFFEE_BEANS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GROUND_COFFEE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_BEANS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_COCOA_BEANS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_SOLIDS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_POWDER)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_KERNELS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GARLIC);
+
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR).add(ExtraDelightItems.FLOUR_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_MEAL).add(ExtraDelightItems.CORNMEAL_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SUGAR).add(ExtraDelightItems.SUGAR_SACK.get());
@@ -608,23 +634,27 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SWEET_BERRIES).add(ExtraDelightItems.SWEET_BERRY_CRATE.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GLOW_BERRIES).add(ExtraDelightItems.GLOW_BERRY_CRATE.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_SILK).add(ExtraDelightItems.CORN_SILK_SACK.get());
-		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GROUND_CINNAMON).add(ExtraDelightItems.GROUND_CINNAMON_BLOCK_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GROUND_CINNAMON)
+				.add(ExtraDelightItems.GROUND_CINNAMON_BLOCK_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_RAW_CINNAMON).add(ExtraDelightItems.RAW_CINNAMON_BLOCK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CINNAMON_STICK).add(ExtraDelightItems.CINNAMON_STICK_BLOCK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BREAD_CRUMBS).add(ExtraDelightItems.BREADCRUMB_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MINT).add(ExtraDelightItems.MINT_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MARSHMALLOW).add(ExtraDelightItems.MARSHMALLOW_BLOCK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GOLDEN_CARROT).add(ExtraDelightItems.GOLDEN_CARROT_CRATE_BLOCK.get());
-		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BLOOD_CHOCOLATE_BAR).add(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BLOOD_CHOCOLATE_BAR)
+				.add(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_DARK_CHOCOLATE_BAR).add(ExtraDelightItems.DARK_CHOCOLATE_BLOCK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get());
-		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_WHITE_CHOCOLATE_BAR).add(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_WHITE_CHOCOLATE_BAR)
+				.add(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHILI).add(ExtraDelightItems.CHILI_CRATE.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHILI_POWDER).add(ExtraDelightItems.CHILI_POWDER_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_PEANUTS_IN_SHELL).add(ExtraDelightItems.PEANUT_IN_SHELL_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_PEANUTS).add(ExtraDelightItems.PEANUT_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_PEANUTS).add(ExtraDelightItems.ROASTED_PEANUT_SACK.get());
-		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_HAZELNUTS_IN_SHELL).add(ExtraDelightItems.HAZELNUT_IN_SHELL_SACK.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_HAZELNUTS_IN_SHELL)
+				.add(ExtraDelightItems.HAZELNUT_IN_SHELL_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_HAZELNUTS).add(ExtraDelightItems.HAZELNUT_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_HAZELNUTS).add(ExtraDelightItems.ROASTED_HAZELNUT_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_MALLOW_ROOT).add(ExtraDelightItems.MALLOW_ROOT_CRATE.get());
@@ -634,12 +664,13 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COFFEE_BEANS).add(ExtraDelightItems.COFFEE_BEAN_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GROUND_COFFEE).add(ExtraDelightItems.GROUND_COFFEE_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_BEANS).add(ExtraDelightItems.COCOA_BEAN_SACK.get());
-		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_COCOA_BEANS).add(ExtraDelightItems.ROASTED_COCOA_BEAN_SACK.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_COCOA_BEANS)
+				.add(ExtraDelightItems.ROASTED_COCOA_BEAN_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_SOLIDS).add(ExtraDelightItems.COCOA_SOLIDS_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_POWDER).add(ExtraDelightItems.COCOA_POWDER_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_KERNELS).add(ExtraDelightItems.CORN_SACK.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GARLIC).add(ExtraDelightItems.GARLIC_CRATE.get());
 
-    
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);
 		}
@@ -732,7 +763,7 @@ public class EDItemTags extends ItemTagsProvider {
 			tag(ExtraDelightTags.THIRTY_HYDRATION_DRINKS).add(d.item.get());
 			break;
 		case 4:
-			tag(ExtraDelightTags.FOURTY_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.FORTY_HYDRATION_DRINKS).add(d.item.get());
 			break;
 		case 5:
 			tag(ExtraDelightTags.FIFTY_HYDRATION_DRINKS).add(d.item.get());

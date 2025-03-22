@@ -91,6 +91,7 @@ dependencies {
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
 	implementation "curse.maven:farmersdelight-398521:5878217"
+	implementation "curse.maven:vampirism-become-a-vampire-233029:6164796"
 	//implementation name: 'butchercraft-2.6.3'
 
 	 // compile against the JEI API but do not include it at runtime
@@ -99,6 +100,7 @@ dependencies {
     // at runtime, use the full JEI jar for Forge
     localRuntime "mezz.jei:jei-1.21.1-neoforge:${jei_version}"
     
+
     implementation("com.simibubi.create:create-${flywheel_mc_version}:${create_version}") { transitive = false }
 	implementation "net.createmod.ponder:Ponder-NeoForge-${flywheel_mc_version}:${ponder_version}"
     compileOnly "dev.engine-room.flywheel:flywheel-neoforge-api-${flywheel_mc_version}:${flywheel_version}"

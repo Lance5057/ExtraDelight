@@ -11,6 +11,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:aioli_jar_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:aioli_jar_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:alfredo_sauce": {
       "conditions": {
         "items": [
@@ -531,6 +541,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:garlic_clove": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:garlic_clove"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:gingerbread_cookie_dough": {
       "conditions": {
         "items": [
@@ -576,6 +596,16 @@
         "items": [
           {
             "items": "extradelight:grated_carrot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:grated_garlic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grated_garlic"
           }
         ]
       },
@@ -821,6 +851,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:penne": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:penne"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pickled_ginger": {
       "conditions": {
         "items": [
@@ -856,6 +896,16 @@
         "items": [
           {
             "items": "extradelight:roasted_cocoa_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:roasted_garlic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roasted_garlic"
           }
         ]
       },
@@ -1087,6 +1137,9 @@
       "extradelight:frosting_light_gray"
     ],
     [
+      "extradelight:aioli_jar_item"
+    ],
+    [
       "extradelight:flour"
     ],
     [
@@ -1174,6 +1227,9 @@
       "extradelight:frosting_black"
     ],
     [
+      "extradelight:penne"
+    ],
+    [
       "extradelight:frosting_magenta"
     ],
     [
@@ -1238,6 +1294,9 @@
     ],
     [
       "extradelight:hazelnuts"
+    ],
+    [
+      "extradelight:roasted_garlic"
     ],
     [
       "extradelight:egg_mix"
@@ -1318,6 +1377,9 @@
       "extradelight:cheese"
     ],
     [
+      "extradelight:garlic_clove"
+    ],
+    [
       "extradelight:jam"
     ],
     [
@@ -1325,6 +1387,9 @@
     ],
     [
       "extradelight:mallow_powder"
+    ],
+    [
+      "extradelight:grated_garlic"
     ],
     [
       "extradelight:gravy_boat_item"

@@ -397,105 +397,105 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_RED).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "red_jelly_feast");
+				.build(consumer, "red_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_GREEN_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_GREEN).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "green_jelly_feast");
+				.build(consumer, "green_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_BROWN_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_BROWN).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "brown_jelly_feast");
+				.build(consumer, "brown_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_BLUE_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_BLUE).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "blue_jelly_feast");
+				.build(consumer, "blue_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_PURPLE).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "purple_jelly_feast");
+				.build(consumer, "purple_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_CYAN_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_CYAN).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "cyan_jelly_feast");
+				.build(consumer, "cyan_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_LIGHT_GRAY).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "light_grey_jelly_feast");
+				.build(consumer, "light_grey_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_GREY_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_GRAY).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "grey_jelly_feast");
+				.build(consumer, "grey_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_PINK_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_PINK).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "pink_jelly_feast");
+				.build(consumer, "pink_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_LIME_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_LIME).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "lime_jelly_feast");
+				.build(consumer, "lime_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_YELLOW).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "yellow_jelly_feast");
+				.build(consumer, "yellow_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_LIGHT_BLUE).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "light_blue_jelly_feast");
+				.build(consumer, "light_blue_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_MAGENTA).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "magenta_jelly_feast");
+				.build(consumer, "magenta_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_ORANGE).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "orange_jelly_feast");
+				.build(consumer, "orange_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.toStack(), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250), true)
 				.addIngredient(Tags.Items.DYES_WHITE).addIngredient(ExtraDelightTags.GELATIN)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(ExtraDelightItems.WHIPPED_CREAM).build(consumer, "white_jelly_feast");
+				.build(consumer, "white_jelly_feast");
 
 		ChillerRecipeBuilder
 				.chill(new ItemStack(ExtraDelightItems.ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
@@ -1327,6 +1327,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.get())
 				.unlockedBy("has_feast", has(ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.get()))
 				.save(consumer, EDLoc("marshmallow_slice_feast"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.PAPER), new ItemStack(ExtraDelightItems.BRUSCHETTA.get()),
+						ExtraDelightItems.BRUSCHETTA_FEAST.get())
+				.unlockedBy("has_feast", has(ExtraDelightItems.BRUSCHETTA_FEAST.get()))
+				.save(consumer, EDLoc("bruschetta_feast"));
 	}
 
 	private void doughShapeRecipes(RecipeOutput consumer) {
@@ -1403,6 +1409,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		doughshaping(Ingredient.of(ExtraDelightTags.CORN_KERNELS), RecipeCategory.FOOD,
 				ExtraDelightItems.CORN_FLAKES.get(), 1).unlockedBy("has_dough", has(ExtraDelightTags.CORN_KERNELS))
 				.save(consumer);
+
+		doughshaping(Ingredient.of(CommonTags.FOODS_DOUGH), RecipeCategory.FOOD, ExtraDelightItems.PENNE.get(), 1)
+				.unlockedBy("has_dough", has(CommonTags.FOODS_DOUGH)).save(consumer, EDLoc("penne_pasta"));
 	}
 
 	public static SingleItemRecipeBuilder doughshaping(Ingredient p_251375_, RecipeCategory p_248984_,
@@ -2118,6 +2127,37 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new Ingredient[] { Ingredient.of(Items.BAKED_POTATO), Ingredient.of(Items.BAKED_POTATO),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.MAYO) },
 				new SizedFluidIngredient[] {}, consumer, "potato_salad");
+
+		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(Tags.Items.EGGS), Ingredient.of(Tags.Items.EGGS),
+						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ExtraDelightTags.VINEGAR),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
+				new SizedFluidIngredient[] {}, consumer, "aioli_from_scratch");
+
+		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(Tags.Items.EGGS), Ingredient.of(Tags.Items.EGGS),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)),
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
+				consumer, "aioli_from_scratch_fluids");
+
+		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), STANDARD_GRIND, new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.MAYO),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
+				new SizedFluidIngredient[] {}, consumer, "aioli_cheaty");
+
+		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.MAYO.FLUID, 250)) },
+				consumer, "aioli_cheaty_fluids");
+
+		mixing(new ItemStack(ExtraDelightItems.AGLIO_E_OLIO.get(), 1), FAST_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_PASTA),
+						Ingredient.of(ExtraDelightItems.ROASTED_GARLIC), Ingredient.of(ExtraDelightTags.COOKING_OIL),
+						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.CHEESE) },
+				new SizedFluidIngredient[] {}, consumer, "aglio_e_olio_mixing");
 	}
 
 	private void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
@@ -2540,14 +2580,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("butter_block_to_item"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHEESE_SANDWICH.get()).pattern(" b ")
-				.pattern("mc ").pattern(" b ").define('c', ExtraDelightTags.CHEESE).define('m', ExtraDelightTags.MAYO)
+				.pattern("mc ").pattern(" b ").define('c', ExtraDelightTags.CHEESE)
+				.define('m',
+						CompoundIngredient.of(Ingredient.of(ExtraDelightTags.MAYO),
+								Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ExtraDelightItems.AIOLI)))
 				.define('b', ExtraDelightTags.BREAD_SLICE).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
 				.save(consumer, EDLoc("cheese_sandwich"));
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHEESE_SANDWICH.get()).pattern(" b ")
-				.pattern("mc ").pattern(" b ").define('c', ExtraDelightTags.CHEESE).define('m', ExtraDelightTags.BUTTER)
-				.define('b', ExtraDelightTags.BREAD_SLICE).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
-				.save(consumer, EDLoc("grilled_cheese_butter"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get()).pattern("ss ")
 				.pattern("ss ").define('s', ExtraDelightItems.MEAT_PIE_SLICE.get())
@@ -3709,6 +3747,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BACON_EGG_PIE.get()))
 				.save(consumer, EDLoc("bacon_egg_pie_slice"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ExtraDelightItems.HANGING_GARLIC.get()).pattern("ccc")
+				.pattern("crc").pattern("ccc").define('c', ExtraDelightItems.GARLIC.get())
+				.define('r', ModItems.ROPE.get())
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GARLIC.get()))
+				.save(consumer, EDLoc("hanging_garlic"));
+
+		bundleItem9(Ingredient.of(ExtraDelightItems.GARLIC), ExtraDelightItems.GARLIC_CRATE.get(),
+				ExtraDelightItems.GARLIC.get(), consumer, "garlic");
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -4355,6 +4402,25 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				Ingredient.of(ExtraDelightItems.SLICED_TOMATO, ModItems.TOMATO_SAUCE.get(), ModItems.TOMATO.get()) },
 				"borscht", consumer);
 
+		pot(ExtraDelightItems.DEVILLED_SAUSAGES.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.SAUSAGE_RAW),
+						Ingredient.of(ExtraDelightTags.PROCESSED_APPLE),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
+				"devilled_sausages", consumer);
+
+		pot(ExtraDelightItems.AGLIO_E_OLIO.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ModItems.RAW_PASTA.get()),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.COOKING_OIL),
+						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.CHEESE) },
+				"aglio_e_olio", consumer);
+
+		pot(ExtraDelightItems.PENNE_ALL_ARRABIATA.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ModItems.RAW_PASTA.get()),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ModItems.TOMATO_SAUCE.get()),
+						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
+				"penne_all_arrabbiata", consumer);
+
 //		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
 //				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 //				.build(consumer);
@@ -4381,6 +4447,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Tags.Items.FOODS_BREAD),
 				Ingredient.of(ExtraDelightItems.GRATER.get()), ExtraDelightItems.BREAD_CRUMBS.get(), 4)
 				.build(consumer, EDLoc("cutting/" + "grate_bread"));
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.GARLIC_CLOVE.get()),
+						Ingredient.of(ExtraDelightItems.GRATER.get()), ExtraDelightItems.GRATED_GARLIC.get(), 1)
+				.build(consumer, EDLoc("cutting/" + "grate_garlic"));
 
 		// Potato
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Tags.Items.CROPS_POTATO),
@@ -4650,6 +4720,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.BACON_EGG_PIE.get()),
 						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.BACON_EGG_PIE_SLICE.get(), 4)
 				.build(consumer, EDLoc("cutting/" + "bacon_egg_pie_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.GARLIC.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						ExtraDelightItems.GARLIC_CLOVE.get(), 3)
+				.addResultWithChance(ExtraDelightItems.GARLIC_CLOVE.get(), 0.75f, 1)
+				.build(consumer, EDLoc("cutting/" + "garlic_dividing_knife"));
 	}
 
 	private void mortarRecipes(RecipeOutput consumer) {
@@ -5702,6 +5778,36 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Items.SUGAR).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
 				.unlockedByAnyIngredient(ExtraDelightItems.DRIED_FRUIT).build(consumer);
 
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.BRUSCHETTA_FEAST.get(), 1), CookingRecipes.NORMAL_COOKING,
+						SMALL_EXP, new ItemStack(Items.BOWL), true)
+				.addIngredient(Items.BREAD).addIngredient(ExtraDelightTags.PROCESSED_ONION)
+				.addIngredient(ExtraDelightTags.PROCESSED_TOMATO).addIngredient(ExtraDelightTags.COOKING_OIL)
+				.addIngredient(ExtraDelightTags.VINEGAR).addIngredient(ExtraDelightTags.PROCESSED_GARLIC)
+				.addIngredient(ExtraDelightTags.CHEESE).build(consumer, "bruschetta_feast");
+
+		bulkBake(ExtraDelightItems.ROASTED_GARLIC.get(), Ingredient.of(ExtraDelightItems.GARLIC_CLOVE.get()), consumer,
+				ExtraDelightItems.SHEET.get(), "roasted_garlic");
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.GARLIC_BREAD.get(), 2), FAST_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.SHEET.get()), false)
+				.addIngredient(Items.BREAD).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.PROCESSED_GARLIC).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.CHEESY_GARLIC_BREAD.get(), 2), FAST_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.SHEET.get()), false)
+				.addIngredient(Items.BREAD).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.PROCESSED_GARLIC).addIngredient(ExtraDelightTags.CHEESE)
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.CHICKEN_KIEV.get(), 2), NORMAL_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+				.addIngredient(ExtraDelightTags.CHICKEN_BREAST_RAW).addIngredient(ExtraDelightTags.PROCESSED_GARLIC)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(Items.EGG)
+				.addIngredient(ExtraDelightTags.BREAD_CRUMBS).build(consumer);
 	}
 
 	private void bulkBake(ItemLike mainResult, Ingredient in, RecipeOutput consumer, ItemLike pan, String name) {

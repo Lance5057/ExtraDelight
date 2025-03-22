@@ -51,7 +51,7 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 	}
 
 	public ChillerRecipe(String group, NonNullList<Ingredient> inputItems, FluidStack inputFluid, ItemStack output,
-						 ItemStack container, float experience, int cookTime, boolean consumeContainer) {
+			ItemStack container, float experience, int cookTime, boolean consumeContainer) {
 		this.group = group;
 		this.fluid = inputFluid;
 		this.inputItems = inputItems;
@@ -67,7 +67,6 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 		this.cookTime = cookTime;
 		this.consumeContainer = consumeContainer;
 	}
-
 
 	public ItemStack getContainerOverride() {
 		return this.container;
@@ -129,7 +128,7 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 
 		int[] matches = RecipeMatcher.findMatches(inputs, this.inputItems);
 		return i == this.inputItems.size() && matches != null
-				&& ItemStack.matches(inv.getItem(INPUT_SLOTS + 1), this.container)
+				&& inv.getItem(INPUT_SLOTS + 1).getItem() == this.container.getItem()
 				&& inv.tank.containsFluid(this.fluid);
 	}
 

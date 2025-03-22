@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:cooking_oil"
+    },
+    {
+      "tag": "c:vinegar"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:aioli_jar_item"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
+}

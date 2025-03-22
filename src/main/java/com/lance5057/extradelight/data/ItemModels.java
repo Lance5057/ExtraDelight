@@ -1210,6 +1210,25 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.CHOCOLATE_COOKIE_BLOCK, "chocolate_cookie_block");
 		forBlockItem(ExtraDelightItems.NUT_BUTTER_COOKIE_BLOCK, "nut_butter_cookie_block");
 
+		forBlockItemFlat(ExtraDelightItems.WILD_GARLIC_BLOCK, "crops/garlic/garlic_stage3");
+		forItem(ExtraDelightItems.GARLIC, "crops/garlic/garlic");
+		forBlockItem(ExtraDelightItems.GARLIC_CRATE, "garlic_crate");
+		forItem(ExtraDelightItems.GARLIC_CLOVE, "crops/garlic/garlic_clove");
+		forItem(ExtraDelightItems.GRATED_GARLIC, "crops/garlic/grated_garlic");
+		forBlockItem(ExtraDelightItems.BRUSCHETTA_FEAST,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/bruschetta_stage0"));
+		forItem(ExtraDelightItems.BRUSCHETTA, "bruschetta");
+		forItem(ExtraDelightItems.AIOLI, "aioli");
+		forItem(ExtraDelightItems.ROASTED_GARLIC, "crops/garlic/roasted_garlic");
+		forItem(ExtraDelightItems.GARLIC_BREAD, "garlic_bread");
+		forItem(ExtraDelightItems.CHEESY_GARLIC_BREAD, "cheesy_garlic_bread");
+		forItem(ExtraDelightItems.CHICKEN_KIEV, "chicken_kiev");
+		forItem(ExtraDelightItems.DEVILLED_SAUSAGES, "devilled_sausages");
+		forBlockItem(ExtraDelightItems.HANGING_GARLIC, "hanging_garlic");
+		forItem(ExtraDelightItems.AGLIO_E_OLIO, "aglio_e_olio");
+		forItem(ExtraDelightItems.PENNE, "penne");
+		forItem(ExtraDelightItems.PENNE_ALL_ARRABIATA, "penne_all_arrabbiata");
+
 		AestheticBlocks.itemModel(this);
 	}
 
