@@ -28,6 +28,8 @@ import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.holdersets.AndHolderSet;
+import net.neoforged.neoforge.registries.holdersets.NotHolderSet;
 
 public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 
@@ -43,8 +45,12 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				HolderSet.Named<Biome> hot = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_HOT);
 				HolderSet.Named<Biome> swamp = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_SWAMP);
 				HolderSet.Named<Biome> cold = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_COLD);
-				HolderSet.Named<Biome> slope = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_MOUNTAIN_SLOPE);
-				
+				HolderSet.Named<Biome> slope = context.lookup(Registries.BIOME)
+						.getOrThrow(Tags.Biomes.IS_MOUNTAIN_SLOPE);
+				NotHolderSet<Biome> notSnowy = new NotHolderSet<Biome>(null,
+						context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_SNOWY));
+				AndHolderSet<Biome> garlicBiome = new AndHolderSet<Biome>(slope, notSnowy);
+
 				// Corn
 				HolderSet.Direct<PlacedFeature> wildCornHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
 						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_CORN.get(),
@@ -122,7 +128,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_mallow")),
 						new BiomeModifiers.AddFeaturesBiomeModifier(swamp, wildMallowHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
-				
+
 				// Mint
 				HolderSet.Direct<PlacedFeature> wildMintHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
 						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_MINT.get(),
@@ -146,7 +152,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 
 				context.register(
 						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_garlic")),
-						new BiomeModifiers.AddFeaturesBiomeModifier(slope, wildGarlicHolderSet,
+						new BiomeModifiers.AddFeaturesBiomeModifier(garlicBiome, wildGarlicHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
 
 				// Cinnamon
@@ -181,13 +187,12 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 
 				// Apple
 
-				HolderSet.Direct<PlacedFeature> appleTreeHolderSet = HolderSet
-						.direct(Holder.direct(new PlacedFeature(
-								Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_APPLE_TREE.get(),
-										ExtraDelightTreeFeatures.createAppleTree().build())),
-								List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
-										HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-										BiomeFilter.biome()))));
+				HolderSet.Direct<PlacedFeature> appleTreeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
+						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_APPLE_TREE.get(),
+								ExtraDelightTreeFeatures.createAppleTree().build())),
+						List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+								BiomeFilter.biome()))));
 
 				context.register(
 						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "apple_tree")),

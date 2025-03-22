@@ -1,0 +1,34 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:garlic_clove"
+    },
+    {
+      "item": "extradelight:garlic_clove"
+    },
+    {
+      "item": "extradelight:garlic_clove"
+    },
+    {
+      "item": "extradelight:garlic_clove"
+    },
+    {
+      "item": "extradelight:garlic_clove"
+    },
+    {
+      "item": "extradelight:garlic_clove"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "extradelight:roasted_garlic"
+  }
+}
