@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_feast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:bruschetta_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/bruschetta_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_feast"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/bruschetta_feast"
+    ]
+  }
+}

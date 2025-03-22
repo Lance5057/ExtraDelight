@@ -54,6 +54,9 @@
     "extradelight:dried_corn_husk_bundle": {
       "chance": 0.85
     },
+    "extradelight:garlic": {
+      "chance": 0.2
+    },
     "extradelight:ginger": {
       "chance": 0.2
     },
@@ -103,6 +106,9 @@
       "chance": 0.2
     },
     "extradelight:wild_chili_block": {
+      "chance": 0.2
+    },
+    "extradelight:wild_garlic_block": {
       "chance": 0.2
     },
     "extradelight:wild_ginger": {

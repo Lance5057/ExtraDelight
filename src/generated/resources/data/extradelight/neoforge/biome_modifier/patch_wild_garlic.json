@@ -1,0 +1,39 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#c:is_mountain/slope",
+      "#c:is_temperate"
+    ]
+  },
+  "features": {
+    "feature": {
+      "type": "extradelight:wild_garlic",
+      "config": {
+        "max_count": 10,
+        "min_count": 5,
+        "tries": 128,
+        "xz_spread": 5,
+        "y_spread": 5
+      }
+    },
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 20
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "WORLD_SURFACE_WG"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "step": "vegetal_decoration"
+}

@@ -11,6 +11,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:aglio_e_olio": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:aglio_e_olio"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:apple_fritters": {
       "conditions": {
         "items": [
@@ -881,6 +891,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:penne_all_arrabbiata": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:penne_all_arrabbiata"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pork_stew": {
       "conditions": {
         "items": [
@@ -1216,6 +1236,9 @@
       "extradelight:grilled_corn_on_cob"
     ],
     [
+      "extradelight:aglio_e_olio"
+    ],
+    [
       "extradelight:fish_chips"
     ],
     [
@@ -1463,6 +1486,9 @@
     ],
     [
       "extradelight:congee"
+    ],
+    [
+      "extradelight:penne_all_arrabbiata"
     ],
     [
       "extradelight:buttered_pasta"

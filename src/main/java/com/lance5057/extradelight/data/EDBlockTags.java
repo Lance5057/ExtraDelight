@@ -36,10 +36,11 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.FRUIT_LOG.get(), ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(),
 				ExtraDelightBlocks.CINNAMON_WOOD.get(), ExtraDelightBlocks.FRUIT_WOOD.get(),
 				ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(), ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get());
-		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get(), ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(),
-				ExtraDelightBlocks.FRUIT_LOG.get(), ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(),
-				ExtraDelightBlocks.CINNAMON_WOOD.get(), ExtraDelightBlocks.FRUIT_WOOD.get(),
-				ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(), ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get());
+		tag(BlockTags.LOGS_THAT_BURN).add(ExtraDelightBlocks.CINNAMON_LOG.get(),
+				ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), ExtraDelightBlocks.FRUIT_LOG.get(),
+				ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(), ExtraDelightBlocks.CINNAMON_WOOD.get(),
+				ExtraDelightBlocks.FRUIT_WOOD.get(), ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(),
+				ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get());
 		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), ExtraDelightBlocks.HAZELNUT_LEAVES.get(),
 				ExtraDelightBlocks.APPLE_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.DRYING_RACK.get(),
@@ -96,8 +97,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_STAIRS.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE_GATE.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get(),
-				ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_PILLAR.get()
-		);
+				ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get(), ExtraDelightBlocks.WHITE_CHOCOLATE_PILLAR.get());
 
 //		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.MINT_CROP.get());
 
@@ -121,12 +121,12 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CURRY.get(), ExtraDelightBlocks.MACARONI_CHEESE.get(),
 				ExtraDelightBlocks.LASAGNA.get(), ExtraDelightBlocks.HOTDISH.get(), ExtraDelightBlocks.HASH_FEAST.get(),
 				ExtraDelightBlocks.CORNBREAD.get(), ExtraDelightBlocks.CORN_PUDDING.get(),
-				ExtraDelightBlocks.APPLE_CRISP.get(),
-				ExtraDelightBlocks.POTATO_AU_GRATIN.get(), ExtraDelightBlocks.CINNAMON_ROLLS.get(),
-				ExtraDelightBlocks.PUNCH.get(), ExtraDelightBlocks.BROWNIES.get(), ExtraDelightBlocks.BLONDIES.get(),
-				ExtraDelightBlocks.FUDGE.get(), ExtraDelightBlocks.CRISP_RICE_TREATS.get(),
-				ExtraDelightBlocks.SCOTCHAROOS.get(), ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(),
-				ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(), ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(),
+				ExtraDelightBlocks.APPLE_CRISP.get(), ExtraDelightBlocks.POTATO_AU_GRATIN.get(),
+				ExtraDelightBlocks.CINNAMON_ROLLS.get(), ExtraDelightBlocks.PUNCH.get(),
+				ExtraDelightBlocks.BROWNIES.get(), ExtraDelightBlocks.BLONDIES.get(), ExtraDelightBlocks.FUDGE.get(),
+				ExtraDelightBlocks.CRISP_RICE_TREATS.get(), ExtraDelightBlocks.SCOTCHAROOS.get(),
+				ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(), ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(),
+				ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(), ExtraDelightBlocks.BRUSCHETTA_FEAST.get(),
 
 				// Feasts on plates
 				ExtraDelightBlocks.MEATLOAF_FEAST.get(), ExtraDelightBlocks.POT_ROAST_FEAST.get(),
@@ -144,8 +144,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.JELLY_LIGHT_GREY.get(), ExtraDelightBlocks.JELLY_CYAN.get(),
 				ExtraDelightBlocks.JELLY_PURPLE.get(), ExtraDelightBlocks.JELLY_BLUE.get(),
 				ExtraDelightBlocks.JELLY_BROWN.get(), ExtraDelightBlocks.JELLY_GREEN.get(),
-				ExtraDelightBlocks.JELLY_RED.get(), ExtraDelightBlocks.JELLY_BLACK.get()
-		);
+				ExtraDelightBlocks.JELLY_RED.get(), ExtraDelightBlocks.JELLY_BLACK.get());
 		AestheticBlocks.WALLPAPER_BLOCKS.forEach(this::makeMineableWithKnife);
 		AestheticBlocks.MOLDED_WALLPAPER_BLOCKS.forEach(this::makeMineableWithKnife);
 		AestheticBlocks.DRIED_CORN_FENCE.forEach(this::makeMineableWithAxe);
@@ -154,8 +153,7 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.WILD_GINGER.get());
 
 		tag(BlockTags.MINEABLE_WITH_HOE).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(),
-				ExtraDelightBlocks.HAZELNUT_LEAVES.get(), ExtraDelightBlocks.APPLE_LEAVES.get()
-		);
+				ExtraDelightBlocks.HAZELNUT_LEAVES.get(), ExtraDelightBlocks.APPLE_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.CINNAMON_LOG.get(),
 				ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), ExtraDelightBlocks.CINNAMON_PLANKS.get(),
 				ExtraDelightBlocks.CINNAMON_CABINET.get(), ExtraDelightBlocks.CINNAMON_DOOR.get(),
@@ -203,17 +201,17 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.DOORS).add(ExtraDelightBlocks.BLOOD_CHOCOLATE_DOOR.get(),
 				ExtraDelightBlocks.DARK_CHOCOLATE_DOOR.get(), ExtraDelightBlocks.MILK_CHOCOLATE_DOOR.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get());
-		tag(BlockTags.WOODEN_DOORS).add(ExtraDelightBlocks.CINNAMON_DOOR.get(),
-				ExtraDelightBlocks.FRUIT_DOOR.get());
+		tag(BlockTags.WOODEN_DOORS).add(ExtraDelightBlocks.CINNAMON_DOOR.get(), ExtraDelightBlocks.FRUIT_DOOR.get());
 		tag(BlockTags.SAPLINGS).add(ExtraDelightBlocks.CINNAMON_SAPLING.get(),
 				ExtraDelightBlocks.HAZELNUT_SAPLING.get(), ExtraDelightBlocks.APPLE_SAPLING.get());
 
 		tag(ExtraDelightTags.COLD_SOURCES).add(Blocks.ICE, Blocks.BLUE_ICE, Blocks.FROSTED_ICE, Blocks.PACKED_ICE,
-					Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW_CAULDRON);
+				Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW_CAULDRON);
 
 		tag(BlockTags.BEE_GROWABLES).add(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightBlocks.CORN_BOTTOM.get(),
 				ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightBlocks.GINGER_CROP.get(),
-				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get());
+				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get(),
+				ExtraDelightBlocks.GARLIC_CROP.get());
 
 		// Dyed Tags
 		tag(Tags.Blocks.DYED_BLACK).add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get());
@@ -237,27 +235,42 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(Tags.Blocks.STORAGE_BLOCKS).addTag(ExtraDelightTags.STORAGE_BLOCKS_FLOUR)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_MEAL).addTag(ExtraDelightTags.STORAGE_BLOCKS_SUGAR)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_ON_COB).addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_HUSK)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_DRIED_CORN_HUSK).addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_COB)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GINGER).addTag(ExtraDelightTags.STORAGE_BLOCKS_EGGS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_APPLE).addTag(ExtraDelightTags.STORAGE_BLOCKS_GOLDEN_APPLE)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_BROWN_MUSHROOM).addTag(ExtraDelightTags.STORAGE_BLOCKS_RED_MUSHROOM)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_SWEET_BERRIES).addTag(ExtraDelightTags.STORAGE_BLOCKS_GLOW_BERRIES)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_SILK).addTag(ExtraDelightTags.STORAGE_BLOCKS_GROUND_CINNAMON)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_RAW_CINNAMON).addTag(ExtraDelightTags.STORAGE_BLOCKS_CINNAMON_STICK)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_DRIED_CORN_HUSK)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_COB).addTag(ExtraDelightTags.STORAGE_BLOCKS_GINGER)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_EGGS).addTag(ExtraDelightTags.STORAGE_BLOCKS_APPLE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GOLDEN_APPLE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_BROWN_MUSHROOM)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_RED_MUSHROOM)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_SWEET_BERRIES)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GLOW_BERRIES).addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_SILK)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GROUND_CINNAMON)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_RAW_CINNAMON)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_CINNAMON_STICK)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_BREAD_CRUMBS).addTag(ExtraDelightTags.STORAGE_BLOCKS_MINT)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_MARSHMALLOW).addTag(ExtraDelightTags.STORAGE_BLOCKS_GOLDEN_CARROT)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_BLOOD_CHOCOLATE_BAR).addTag(ExtraDelightTags.STORAGE_BLOCKS_DARK_CHOCOLATE_BAR)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_MILK_CHOCOLATE_BAR).addTag(ExtraDelightTags.STORAGE_BLOCKS_WHITE_CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_MARSHMALLOW)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GOLDEN_CARROT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_BLOOD_CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_DARK_CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_MILK_CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_WHITE_CHOCOLATE_BAR)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_CHILI).addTag(ExtraDelightTags.STORAGE_BLOCKS_CHILI_POWDER)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_PEANUTS_IN_SHELL).addTag(ExtraDelightTags.STORAGE_BLOCKS_PEANUTS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ROASTED_PEANUTS).addTag(ExtraDelightTags.STORAGE_BLOCKS_HAZELNUTS_IN_SHELL)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_HAZELNUTS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ROASTED_HAZELNUTS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_MALLOW_ROOT).addTag(ExtraDelightTags.STORAGE_BLOCKS_MALLOW_POWDER)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COFFEE_CHERRIES).addTag(ExtraDelightTags.STORAGE_BLOCKS_GREEN_COFFEE)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COFFEE_BEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_GROUND_COFFEE)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_BEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ROASTED_COCOA_BEANS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_SOLIDS).addTag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_POWDER)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_KERNELS);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_PEANUTS_IN_SHELL)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_PEANUTS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ROASTED_PEANUTS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_HAZELNUTS_IN_SHELL)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_HAZELNUTS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ROASTED_HAZELNUTS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_MALLOW_ROOT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_MALLOW_POWDER)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COFFEE_CHERRIES)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GREEN_COFFEE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COFFEE_BEANS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GROUND_COFFEE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_BEANS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ROASTED_COCOA_BEANS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_SOLIDS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_POWDER)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_KERNELS).addTag(ExtraDelightTags.STORAGE_BLOCKS_GARLIC);
+
 		tag(ExtraDelightTags.STORAGE_BLOCKS_FLOUR).add(ExtraDelightBlocks.FLOUR_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_CORN_MEAL).add(ExtraDelightBlocks.CORNMEAL_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_SUGAR).add(ExtraDelightBlocks.SUGAR_SACK.get());
@@ -304,7 +317,8 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_SOLIDS).add(ExtraDelightBlocks.COCOA_SOLIDS_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_POWDER).add(ExtraDelightBlocks.COCOA_POWDER_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_CORN_KERNELS).add(ExtraDelightBlocks.CORN_SACK.get());
-		}
+		tag(ExtraDelightTags.STORAGE_BLOCKS_GARLIC).add(ExtraDelightBlocks.GARLIC_CRATE.get());
+	}
 
 	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {
 		tag(BlockTags.MINEABLE_WITH_AXE).add(blockDeferredBlock.get());

@@ -1,11 +1,13 @@
 package com.lance5057.extradelight.data.recipebuilders;
 
+import java.io.File;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
 
+import net.minecraft.CrashReport;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementRewards;
@@ -13,6 +15,7 @@ import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeBuilder;
@@ -49,7 +52,7 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 		this.fluid = fluid;
 		this.consumeContainer = consumeContainer;
 	}
-	
+
 	public static ChillerRecipeBuilder chill(ItemStack mainResult, int cookingTime, float experience,
 			ItemStack container, FluidStack fluid) {
 		return new ChillerRecipeBuilder(mainResult, cookingTime, experience, container, fluid, false);
@@ -88,9 +91,16 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 
 	public ChillerRecipeBuilder addIngredient(Ingredient ingredientIn, int quantity) {
 		for (int i = 0; i < quantity; ++i) {
-			ingredients.add(ingredientIn);
+			addIngredientToList(ingredientIn);
 		}
 		return this;
+	}
+
+	private void addIngredientToList(Ingredient i) {
+		if (ingredients.size() > 3)
+			Minecraft.crash(null, new File(""), CrashReport.forThrowable(new Throwable(), "Chiller cannot accept more than 4 items! Waah!"));
+		else
+			ingredients.add(i);
 	}
 
 	public ChillerRecipeBuilder unlockedBy(String criterionName, Criterion<?> criterionTrigger) {

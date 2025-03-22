@@ -16,6 +16,9 @@ import com.lance5057.extradelight.items.CoffeeItem;
 import com.lance5057.extradelight.items.CornSilkTeaItem;
 import com.lance5057.extradelight.items.CorncobPipe;
 import com.lance5057.extradelight.items.FrostingItem;
+import com.lance5057.extradelight.items.GarlicCureDrinkableItem;
+import com.lance5057.extradelight.items.GarlicCureItem;
+import com.lance5057.extradelight.items.GarlicTooltipItem;
 import com.lance5057.extradelight.items.GlowberryFoodItem;
 import com.lance5057.extradelight.items.GlowberryJuiceItem;
 import com.lance5057.extradelight.items.GlowberryPopsicleItem;
@@ -51,6 +54,7 @@ import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.neoforged.neoforge.common.EffectCure;
 import net.neoforged.neoforge.fluids.DispenseFluidContainer;
 import net.neoforged.neoforge.fluids.SimpleFluidContent;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -64,6 +68,8 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ExtraDelightItems {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraDelight.MOD_ID);
+
+	public static final EffectCure GARLIC_CURE = EffectCure.get("vampirism:garlic");
 
 	public static void setup() {
 		DispenserBlock.registerBehavior(ExtraDelightItems.APPLE_CIDER_FLUID_BUCKET,
@@ -1740,11 +1746,11 @@ public class ExtraDelightItems {
 			.register("french_toast", () -> new ToolTipConsumableItem(foodItem(EDFoods.FRENCH_TOAST), true))
 			.advancementDessert().finish();
 	public static final DeferredItem<Item> CONGEE = EDItemGenerator
-			.register("congee", () -> new ToolTipConsumableItem(foodItem(EDFoods.CONGEE), true)).advancementMeal().isHotFood()
-			.finish();
+			.register("congee", () -> new ToolTipConsumableItem(foodItem(EDFoods.CONGEE), true)).advancementMeal()
+			.isHotFood().finish();
 	public static final DeferredItem<Item> LUGAW = EDItemGenerator
-			.register("lugaw", () -> new ToolTipConsumableItem(foodItem(EDFoods.LUGAW), true)).advancementMeal().isHotFood()
-			.finish();
+			.register("lugaw", () -> new ToolTipConsumableItem(foodItem(EDFoods.LUGAW), true)).advancementMeal()
+			.isHotFood().finish();
 	public static final DeferredItem<Item> RICE_PUDDING = EDItemGenerator
 			.register("rice_pudding", () -> new Item(foodItem(FoodValues.GLOW_BERRY_CUSTARD))).advancementDessert()
 			.finish();
@@ -1943,8 +1949,8 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> CHILI_SEEDS = ITEMS.register("chili_seeds",
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.CHILI_CROP.get(), new Item.Properties()));
 	public static final DeferredItem<Item> CHILI = EDItemGenerator
-			.register("chili", () -> new ToolTipConsumableItem(foodItem(EDFoods.CHILI), true)).advancementIngredients().isHotFood()
-			.finish();
+			.register("chili", () -> new ToolTipConsumableItem(foodItem(EDFoods.CHILI), true)).advancementIngredients()
+			.isHotFood().finish();
 
 	public static final DeferredItem<Item> WHITE_CHOCOLATE_BOX = ITEMS.register("white_chocolate_box",
 			() -> new BlockItem(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), new Item.Properties().stacksTo(1)
@@ -2852,6 +2858,56 @@ public class ExtraDelightItems {
 			.advancementMeal().isHotFood().finish();
 	public static final DeferredItem<Item> PAMONHA = EDItemGenerator
 			.register("pamonha", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.PAMONHA), true))
+			.advancementMeal().finish();
+
+	public static final DeferredItem<Item> WILD_GARLIC_BLOCK = ITEMS.register("wild_garlic_block",
+			() -> new BlockItem(ExtraDelightBlocks.WILD_GARLIC.get(), new Item.Properties()));
+	public static final DeferredItem<Item> GARLIC = ITEMS.register("garlic", () -> new Item(foodItem(EDFoods.GARLIC)));
+	public static final DeferredItem<Item> GARLIC_CRATE = ITEMS.register("garlic_crate",
+			() -> new BlockItem(ExtraDelightBlocks.GARLIC_CRATE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> GARLIC_CLOVE = EDItemGenerator
+			.register("garlic_clove",
+					() -> new ItemNameBlockItem(ExtraDelightBlocks.GARLIC_CROP.get(), foodItem(EDFoods.GARLIC)))
+			.advancementIngredients().finish();
+	public static final DeferredItem<Item> GRATED_GARLIC = EDItemGenerator
+			.register("grated_garlic", () -> new Item(foodItem(EDFoods.GARLIC))).advancementIngredients().finish();
+	public static final DeferredItem<Item> BRUSCHETTA_FEAST = EDItemGenerator
+			.register("bruschetta_feast",
+					() -> new BlockItem(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> BRUSCHETTA = EDItemGenerator
+			.register("bruschetta", () -> new GarlicTooltipItem(foodItem(EDFoods.BRUSCHETTA), true)).advancementSnack()
+			.servingToolTip().finish();
+	public static final DeferredItem<Item> AIOLI = EDItemGenerator
+			.register("aioli_jar_item",
+					() -> new GarlicCureDrinkableItem(foodItem(EDFoods.AIOLI).craftRemainder(Items.GLASS_BOTTLE)))
+			.advancementIngredients().finish();
+	public static final DeferredItem<Item> ROASTED_GARLIC = EDItemGenerator
+			.register("roasted_garlic", () -> new GarlicCureItem(foodItem(EDFoods.ROASTED_GARLIC)))
+			.advancementIngredients().finish();
+	public static final DeferredItem<Item> GARLIC_BREAD = EDItemGenerator
+			.register("garlic_bread", () -> new GarlicCureItem(foodItem(EDFoods.GARLIC_BREAD))).advancementSnack()
+			.finish();
+	public static final DeferredItem<Item> CHEESY_GARLIC_BREAD = EDItemGenerator
+			.register("cheesy_garlic_bread", () -> new GarlicCureItem(foodItem(EDFoods.CHEESY_GARLIC_BREAD)))
+			.advancementSnack().finish();
+	public static final DeferredItem<Item> CHICKEN_KIEV = EDItemGenerator
+			.register("chicken_kiev", () -> new GarlicTooltipItem(stack16FoodItem(EDFoods.CHICKEN_KIEV), true))
+			.advancementButchercraft().finish();
+	public static final DeferredItem<Item> DEVILLED_SAUSAGES = EDItemGenerator
+			.register("devilled_sausages",
+					() -> new GarlicTooltipItem(stack16FoodItem(EDFoods.DEVILLED_SAUSAGES), true))
+			.advancementButchercraft().finish();
+	public static final DeferredItem<Item> HANGING_GARLIC = ITEMS.register("hanging_garlic",
+			() -> new BlockItem(ExtraDelightBlocks.HANGING_GARLIC.get(), new Item.Properties()));
+	public static final DeferredItem<Item> AGLIO_E_OLIO = EDItemGenerator
+			.register("aglio_e_olio", () -> new GarlicTooltipItem(stack16FoodItem(EDFoods.AGLIO_E_OLIO), true))
+			.advancementMeal().finish();
+	public static final DeferredItem<Item> PENNE = EDItemGenerator
+			.register("penne", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+	public static final DeferredItem<Item> PENNE_ALL_ARRABIATA = EDItemGenerator
+			.register("penne_all_arrabbiata",
+					() -> new GarlicTooltipItem(stack16FoodItem(EDFoods.PENNE_ALL_ARRABBIATA), true))
 			.advancementMeal().finish();
 
 //	public static final DeferredItem<DynamicJam> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new DynamicJam(

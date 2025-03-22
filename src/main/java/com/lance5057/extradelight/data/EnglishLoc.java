@@ -88,6 +88,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.coffee", "Found in jungles.");
 		this.add("extradelight.jei.info.hazelnut", "Trees grow in forests.");
 		this.add("extradelight.jei.info.apple", "Trees grow in forests.");
+		this.add("extradelight.jei.info.garlic", "Found on mountain slopes.");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
@@ -1254,6 +1255,25 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), "Mallow");
 		this.add(ExtraDelightBlocks.MINT_CROP.get(), "Mint");
 		this.add(ExtraDelightBlocks.PEANUT_CROP.get(), "Peanuts");
+
+		this.add(ExtraDelightBlocks.WILD_GARLIC.get(), "Wild Garlic");
+		this.add(ExtraDelightBlocks.GARLIC_CROP.get(), "Garlic");
+		this.add(ExtraDelightItems.GARLIC.get(), "Garlic");
+		this.add(ExtraDelightItems.GARLIC_CLOVE.get(), "Clove of Garlic");
+		this.add(ExtraDelightItems.GRATED_GARLIC.get(), "Grated Garlic");
+		this.add(ExtraDelightItems.BRUSCHETTA_FEAST.get(), "Bruschetta Board");
+		this.add(ExtraDelightItems.BRUSCHETTA.get(), "Bruschetta");
+		this.add(ExtraDelightItems.AIOLI.get(), "Aioli");
+		this.add(ExtraDelightItems.ROASTED_GARLIC.get(), "Roasted Garlic");
+		this.add(ExtraDelightItems.GARLIC_BREAD.get(), "Garlic Bread");
+		this.add(ExtraDelightItems.CHEESY_GARLIC_BREAD.get(), "Cheesy Garlic Bread");
+		this.add(ExtraDelightItems.CHICKEN_KIEV.get(), "Chicken Kiev");
+		this.add(ExtraDelightItems.DEVILLED_SAUSAGES.get(), "Devilled Sausages");
+		this.add(ExtraDelightItems.HANGING_GARLIC.get(), "Hanging Garlic");
+		this.add(ExtraDelightItems.AGLIO_E_OLIO.get(), "Spaghetti Aglio e Olio");
+		this.add(ExtraDelightItems.PENNE.get(), "Penne");
+		this.add(ExtraDelightItems.PENNE_ALL_ARRABIATA.get(), "Penne all'Arrabiatta");
+		this.add(ExtraDelightItems.GARLIC_CRATE.get(), "Garlic Crate");
 
 //		this.add(ExtraDelightItems.DYNAMIC_TEST2.get(), "Sandwich");
 

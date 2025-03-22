@@ -21,11 +21,31 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:bruschetta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:bruschetta"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:caramel_popcorn": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:caramel_popcorn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:cheesy_garlic_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheesy_garlic_bread"
           }
         ]
       },
@@ -46,6 +66,16 @@
         "items": [
           {
             "items": "extradelight:crackers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:garlic_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:garlic_bread"
           }
         ]
       },
@@ -158,6 +188,15 @@
   "requirements": [
     [
       "extradelight:apple_chips"
+    ],
+    [
+      "extradelight:bruschetta"
+    ],
+    [
+      "extradelight:cheesy_garlic_bread"
+    ],
+    [
+      "extradelight:garlic_bread"
     ],
     [
       "extradelight:potato_chips"
