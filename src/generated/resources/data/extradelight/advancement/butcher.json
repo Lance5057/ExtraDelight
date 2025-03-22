@@ -171,6 +171,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:chicken_kiev": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chicken_kiev"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:devilled_sausages": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:devilled_sausages"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:fried_brains": {
       "conditions": {
         "items": [
@@ -449,7 +469,13 @@
       "extradelight:sos"
     ],
     [
+      "extradelight:devilled_sausages"
+    ],
+    [
       "extradelight:blood_chocolate_dipped_bacon"
+    ],
+    [
+      "extradelight:chicken_kiev"
     ],
     [
       "extradelight:blood_chocolate_dipped_graham_cracker"

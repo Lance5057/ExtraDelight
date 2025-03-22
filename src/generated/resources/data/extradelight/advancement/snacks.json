@@ -41,6 +41,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:cheesy_garlic_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheesy_garlic_bread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:cinnamon_toast": {
       "conditions": {
         "items": [
@@ -56,6 +66,16 @@
         "items": [
           {
             "items": "extradelight:crackers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:garlic_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:garlic_bread"
           }
         ]
       },
@@ -171,6 +191,12 @@
     ],
     [
       "extradelight:bruschetta"
+    ],
+    [
+      "extradelight:cheesy_garlic_bread"
+    ],
+    [
+      "extradelight:garlic_bread"
     ],
     [
       "extradelight:potato_chips"

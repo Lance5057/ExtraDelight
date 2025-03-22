@@ -1,6 +1,12 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#c:is_mountain/slope",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#c:is_mountain/slope",
+      "#c:is_temperate"
+    ]
+  },
   "features": {
     "feature": {
       "type": "extradelight:wild_garlic",

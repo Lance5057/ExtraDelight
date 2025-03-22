@@ -29,7 +29,6 @@ import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.holdersets.AndHolderSet;
-import net.neoforged.neoforge.registries.holdersets.NotHolderSet;
 
 public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 
@@ -47,9 +46,9 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				HolderSet.Named<Biome> cold = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_COLD);
 				HolderSet.Named<Biome> slope = context.lookup(Registries.BIOME)
 						.getOrThrow(Tags.Biomes.IS_MOUNTAIN_SLOPE);
-				NotHolderSet<Biome> notSnowy = new NotHolderSet<Biome>(null,
-						context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_SNOWY));
-				AndHolderSet<Biome> garlicBiome = new AndHolderSet<Biome>(slope, notSnowy);
+				HolderSet.Named<Biome> temperate = context.lookup(Registries.BIOME)
+						.getOrThrow(Tags.Biomes.IS_TEMPERATE);
+				AndHolderSet<Biome> garlicBiome = new AndHolderSet<Biome>(slope, temperate);
 
 				// Corn
 				HolderSet.Direct<PlacedFeature> wildCornHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
