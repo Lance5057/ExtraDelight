@@ -13,9 +13,6 @@
   },
   "ingredients": [
     {
-      "tag": "c:foods/milk"
-    },
-    {
       "tag": "extradelight:sweetener"
     },
     {

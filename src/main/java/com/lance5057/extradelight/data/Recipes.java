@@ -557,8 +557,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(new ItemStack(ExtraDelightItems.NUT_BUTTER_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(NeoForgeMod.MILK, 250), true)
-				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
-				.addIngredient(ExtraDelightItems.PEANUT_BUTTER_BOTTLE).build(consumer, "nut_butter_ice_cream");
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightItems.PEANUT_BUTTER_BOTTLE)
+				.build(consumer, "nut_butter_ice_cream");
 	}
 
 	private void meltingRecipes(RecipeOutput consumer) {
