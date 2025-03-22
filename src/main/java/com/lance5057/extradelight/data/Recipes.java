@@ -1409,6 +1409,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		doughshaping(Ingredient.of(ExtraDelightTags.CORN_KERNELS), RecipeCategory.FOOD,
 				ExtraDelightItems.CORN_FLAKES.get(), 1).unlockedBy("has_dough", has(ExtraDelightTags.CORN_KERNELS))
 				.save(consumer);
+
+		doughshaping(Ingredient.of(CommonTags.FOODS_DOUGH), RecipeCategory.FOOD, ExtraDelightItems.PENNE.get(), 1)
+				.unlockedBy("has_dough", has(CommonTags.FOODS_DOUGH)).save(consumer, EDLoc("penne_pasta"));
 	}
 
 	public static SingleItemRecipeBuilder doughshaping(Ingredient p_251375_, RecipeCategory p_248984_,
@@ -2149,6 +2152,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.MAYO.FLUID, 250)) },
 				consumer, "aioli_cheaty_fluids");
+
+		mixing(new ItemStack(ExtraDelightItems.AGLIO_E_OLIO.get(), 1), FAST_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_PASTA),
+						Ingredient.of(ExtraDelightItems.ROASTED_GARLIC), Ingredient.of(ExtraDelightTags.COOKING_OIL),
+						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.CHEESE)},
+				new SizedFluidIngredient[] {},
+				consumer, "aglio_e_olio_mixing");
 	}
 
 	private void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
@@ -2571,14 +2581,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("butter_block_to_item"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHEESE_SANDWICH.get()).pattern(" b ")
-				.pattern("mc ").pattern(" b ").define('c', ExtraDelightTags.CHEESE).define('m', ExtraDelightTags.MAYO)
+				.pattern("mc ").pattern(" b ").define('c', ExtraDelightTags.CHEESE).define('m',
+						CompoundIngredient.of(Ingredient.of(ExtraDelightTags.MAYO),
+						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ExtraDelightItems.AIOLI)))
 				.define('b', ExtraDelightTags.BREAD_SLICE).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
 				.save(consumer, EDLoc("cheese_sandwich"));
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHEESE_SANDWICH.get()).pattern(" b ")
-				.pattern("mc ").pattern(" b ").define('c', ExtraDelightTags.CHEESE).define('m', ExtraDelightTags.BUTTER)
-				.define('b', ExtraDelightTags.BREAD_SLICE).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
-				.save(consumer, EDLoc("grilled_cheese_butter"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get()).pattern("ss ")
 				.pattern("ss ").define('s', ExtraDelightItems.MEAT_PIE_SLICE.get())
@@ -3740,6 +3747,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BACON_EGG_PIE.get()))
 				.save(consumer, EDLoc("bacon_egg_pie_slice"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ExtraDelightItems.HANGING_GARLIC.get()).pattern("ccc")
+				.pattern("crc").pattern("ccc").define('c', ExtraDelightItems.GARLIC.get())
+				.define('r', ModItems.ROPE.get())
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GARLIC.get()))
+				.save(consumer, EDLoc("hanging_garlic"));
+
+		bundleItem9(Ingredient.of(ExtraDelightItems.GARLIC), ExtraDelightItems.GARLIC_CRATE.get(),
+				ExtraDelightItems.GARLIC.get(), consumer, "garlic");
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -4385,6 +4401,24 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				Ingredient.of(CommonTags.FOODS_CABBAGE), Ingredient.of(ExtraDelightTags.PROCESSED_POTATO),
 				Ingredient.of(ExtraDelightItems.SLICED_TOMATO, ModItems.TOMATO_SAUCE.get(), ModItems.TOMATO.get()) },
 				"borscht", consumer);
+
+		pot(ExtraDelightItems.DEVILLED_SAUSAGES.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL, new Ingredient[] {
+						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
+						Ingredient.of(ExtraDelightTags.SAUSAGE_RAW), Ingredient.of(ExtraDelightTags.PROCESSED_APPLE),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
+				"devilled_sausages", consumer);
+
+		pot(ExtraDelightItems.AGLIO_E_OLIO.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL, new Ingredient[] {
+						Ingredient.of(ModItems.RAW_PASTA.get()), Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
+						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ExtraDelightTags.PROCESSED_CHILI),
+						Ingredient.of(ExtraDelightTags.CHEESE) },
+				"aglio_e_olio", consumer);
+
+		pot(ExtraDelightItems.PENNE_ALL_ARRABIATA.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL, new Ingredient[] {
+						Ingredient.of(ModItems.RAW_PASTA.get()), Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
+						Ingredient.of(ModItems.TOMATO_SAUCE.get()), Ingredient.of(ExtraDelightTags.PROCESSED_CHILI),
+						Ingredient.of(ExtraDelightTags.COOKING_OIL) },
+				"penne_all_arrabbiata", consumer);
 
 //		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
 //				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
@@ -5754,17 +5788,25 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.SHEET.get(), "roasted_garlic");
 
 		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.GARLIC_BREAD.get(), 1), FAST_COOKING, MEDIUM_EXP,
+				.OvenRecipe(new ItemStack(ExtraDelightItems.GARLIC_BREAD.get(), 2), FAST_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
 				.addIngredient(Items.BREAD).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ExtraDelightTags.PROCESSED_GARLIC)
 				.build(consumer);
 
 		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.CHEESY_GARLIC_BREAD.get(), 1), FAST_COOKING, MEDIUM_EXP,
+				.OvenRecipe(new ItemStack(ExtraDelightItems.CHEESY_GARLIC_BREAD.get(), 2), FAST_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
 				.addIngredient(Items.BREAD).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ExtraDelightTags.PROCESSED_GARLIC).addIngredient(ExtraDelightTags.CHEESE)
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.CHICKEN_KIEV.get(), 2), NORMAL_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+				.addIngredient(ExtraDelightTags.CHICKEN_BREAST_RAW).addIngredient(ExtraDelightTags.PROCESSED_GARLIC)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(Items.EGG)
+				.addIngredient(ExtraDelightTags.BREAD_CRUMBS)
 				.build(consumer);
 	}
 

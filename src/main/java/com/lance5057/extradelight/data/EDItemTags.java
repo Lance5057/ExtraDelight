@@ -595,7 +595,7 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COFFEE_BEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GROUND_COFFEE)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_BEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ROASTED_COCOA_BEANS)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_SOLIDS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_POWDER)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_KERNELS);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_KERNELS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GARLIC);
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR).add(ExtraDelightItems.FLOUR_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_MEAL).add(ExtraDelightItems.CORNMEAL_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SUGAR).add(ExtraDelightItems.SUGAR_SACK.get());
@@ -642,6 +642,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_SOLIDS).add(ExtraDelightItems.COCOA_SOLIDS_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_POWDER).add(ExtraDelightItems.COCOA_POWDER_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_KERNELS).add(ExtraDelightItems.CORN_SACK.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GARLIC).add(ExtraDelightItems.GARLIC_CRATE.get());
 
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);
@@ -735,7 +736,7 @@ public class EDItemTags extends ItemTagsProvider {
 			tag(ExtraDelightTags.THIRTY_HYDRATION_DRINKS).add(d.item.get());
 			break;
 		case 4:
-			tag(ExtraDelightTags.FOURTY_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.FORTY_HYDRATION_DRINKS).add(d.item.get());
 			break;
 		case 5:
 			tag(ExtraDelightTags.FIFTY_HYDRATION_DRINKS).add(d.item.get());

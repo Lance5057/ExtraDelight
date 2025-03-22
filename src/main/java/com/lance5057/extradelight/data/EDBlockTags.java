@@ -259,7 +259,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COFFEE_BEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_GROUND_COFFEE)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_BEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ROASTED_COCOA_BEANS)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_SOLIDS).addTag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_POWDER)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_KERNELS);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_CORN_KERNELS).addTag(ExtraDelightTags.STORAGE_BLOCKS_GARLIC);
 		tag(ExtraDelightTags.STORAGE_BLOCKS_FLOUR).add(ExtraDelightBlocks.FLOUR_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_CORN_MEAL).add(ExtraDelightBlocks.CORNMEAL_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_SUGAR).add(ExtraDelightBlocks.SUGAR_SACK.get());
@@ -306,6 +306,7 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_SOLIDS).add(ExtraDelightBlocks.COCOA_SOLIDS_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_POWDER).add(ExtraDelightBlocks.COCOA_POWDER_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_CORN_KERNELS).add(ExtraDelightBlocks.CORN_SACK.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_GARLIC).add(ExtraDelightBlocks.GARLIC_CRATE.get());
 		}
 
 	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {

@@ -1267,6 +1267,13 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.ROASTED_GARLIC.get(), "Roasted Garlic");
 		this.add(ExtraDelightItems.GARLIC_BREAD.get(), "Garlic Bread");
 		this.add(ExtraDelightItems.CHEESY_GARLIC_BREAD.get(), "Cheesy Garlic Bread");
+		this.add(ExtraDelightItems.CHICKEN_KIEV.get(), "Chicken Kiev");
+		this.add(ExtraDelightItems.DEVILLED_SAUSAGES.get(), "Devilled Sausages");
+		this.add(ExtraDelightItems.HANGING_GARLIC.get(), "Hanging Garlic");
+		this.add(ExtraDelightItems.AGLIO_E_OLIO.get(), "Spaghetti Aglio e Olio");
+		this.add(ExtraDelightItems.PENNE.get(), "Penne");
+		this.add(ExtraDelightItems.PENNE_ALL_ARRABIATA.get(), "Penne all'Arrabiatta");
+		this.add(ExtraDelightItems.GARLIC_CRATE.get(), "Garlic Crate");
 
 //		this.add(ExtraDelightItems.DYNAMIC_TEST2.get(), "Sandwich");
 

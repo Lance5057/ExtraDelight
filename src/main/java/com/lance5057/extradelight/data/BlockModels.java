@@ -612,7 +612,10 @@ public class BlockModels extends BlockStateProvider {
 		this.cropCrossBlock(ExtraDelightBlocks.GARLIC_CROP.get(), "garlic", GarlicCrop.AGE);
 		simpleBlock(ExtraDelightBlocks.WILD_GARLIC.get(), new ConfiguredModel(models()
 				.cross("wild_garlic", modLoc("block/crops/garlic/garlic_stage3")).renderType("cutout")));
+		this.crateBlock(ExtraDelightBlocks.GARLIC_CRATE.get(), "garlic", "spruce");
 		recipeFeastBlock(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), "bruschetta");
+		this.simpleBlock(ExtraDelightBlocks.HANGING_GARLIC.get(), models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_garlic")));
 
 		AestheticBlocks.blockModel(this);
 	}
