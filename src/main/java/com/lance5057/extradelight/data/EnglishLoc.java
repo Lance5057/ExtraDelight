@@ -1172,6 +1172,16 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("fluid_type.extradelight.nut_butter_fluid", "Nut Butter");
 		this.add("fluid_type.extradelight.marshmallow_fluff_fluid", "Marshmallow Fluff");
 		this.add("fluid_type.extradelight.cocoa_nut_butter_spread_fluid", "Chocolate Nut Butter Spread");
+		
+		this.add("block.extradelight.cocoa_butter_fluid_block", "Cocoa Butter");
+		this.add("block.extradelight.white_chocolate_syrup_fluid_block", "Liquid White Chocolate");
+		this.add("block.extradelight.dark_chocolate_syrup_fluid_block", "Liquid Dark Chocolate");
+		this.add("block.extradelight.milk_chocolate_syrup_fluid_block", "Liquid Milk Chocolate");
+		this.add("block.extradelight.blood_chocolate_syrup_fluid_block", "Liquid Blood Chocolate");
+		this.add("block.extradelight.coffee_fluid_block", "Coffee");
+		this.add("block.extradelight.nut_butter_fluid_block", "Nut Butter");
+		this.add("block.extradelight.marshmallow_fluff_fluid_block", "Marshmallow Fluff");
+		this.add("block.extradelight.cocoa_nut_butter_spread_fluid_block", "Chocolate Nut Butter Spread");
 
 		this.add(ExtraDelightItems.COCOA_BUTTER_BOTTLE.get(), "Cocoa Butter");
 		this.add(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE.get(), "Liquid White Chocolate");
