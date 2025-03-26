@@ -911,6 +911,30 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("fluid_type.extradelight.vinegar_fluid", "Vinegar");
 		this.add("fluid_type.extradelight.whipped_cream_fluid", "Whipped Cream");
 
+		this.add("block.extradelight.apple_cider_fluid_block", "Apple Cider");
+		this.add("block.extradelight.bbq_fluid_block", "BBQ Sauce");
+		this.add("block.extradelight.broth_fluid_block", "Broth");
+		this.add("block.extradelight.cactus_juice_fluid_block", "Cactus Juice");
+		this.add("block.extradelight.caramel_sauce_fluid_block", "Caramel Sauce");
+		this.add("block.extradelight.custard_fluid_block", "Custard");
+		this.add("block.extradelight.egg_mix_fluid_block", "Egg Mix");
+		this.add("block.extradelight.glow_berry_juice_fluid_block", "Glow Berry Juice");
+		this.add("block.extradelight.glow_jam_fluid_block", "Glow Jam");
+		this.add("block.extradelight.golden_jam_fluid_block", "Golden Jam");
+		this.add("block.extradelight.gravy_fluid_block", "Gravy");
+		this.add("block.extradelight.hot_cocoa_fluid_block", "Hot Cocoa");
+		this.add("block.extradelight.jam_fluid_block", "Jam");
+		this.add("block.extradelight.ketchup_fluid_block", "Ketchup");
+		this.add("block.extradelight.mayo_fluid_block", "Mayo");
+		this.add("block.extradelight.melon_juice_fluid_block", "Melon Juice");
+		this.add("block.extradelight.milkshake_fluid_block", "Milkshake");
+		this.add("block.extradelight.oil_fluid_block", "Cooking Oil");
+		this.add("block.extradelight.sweet_berry_juice_fluid_block", "Sweet Berry Juice");
+		this.add("block.extradelight.tea_fluid_block", "Tea");
+		this.add("block.extradelight.tomato_juice_fluid_block", "Tomato Juice");
+		this.add("block.extradelight.vinegar_fluid_block", "Vinegar");
+		this.add("block.extradelight.whipped_cream_fluid_block", "Whipped Cream");
+
 		this.add(ExtraDelightItems.KEG.get(), "Keg");
 
 		this.add(ExtraDelightItems.FRUIT_LOG.get(), "Fruit Log");
