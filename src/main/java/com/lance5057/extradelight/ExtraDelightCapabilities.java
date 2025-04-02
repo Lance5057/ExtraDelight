@@ -32,7 +32,10 @@ public class ExtraDelightCapabilities {
 					if (context == Direction.DOWN) {
 						return be.inputHandler;
 					}
-					return be.outputHandler;
+					else if(context == Direction.UP)
+						return be.outputHandler;
+					else
+						return be.getInventory();
 				});
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.SPICE_RACK.get(),
 				(o, d) -> o.getItemHandler());
