@@ -1,7 +1,5 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
-
 import net.minecraft.core.Direction;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
@@ -31,8 +29,7 @@ public class ExtraDelightCapabilities {
 				(be, context) -> {
 					if (context == Direction.DOWN) {
 						return be.inputHandler;
-					}
-					else if(context == Direction.UP)
+					} else if (context == Direction.UP)
 						return be.outputHandler;
 					else
 						return be.getInventory();
