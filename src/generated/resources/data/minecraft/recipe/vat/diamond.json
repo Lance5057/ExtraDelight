@@ -1,0 +1,23 @@
+{
+  "type": "extradelight:vat",
+  "fluids": {
+    "amount": 1000,
+    "fluid": "minecraft:lava"
+  },
+  "ingredients": [
+    {
+      "tag": "c:bones"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:diamond"
+  },
+  "stage_ingredients": [],
+  "stages": 100,
+  "time": 100,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:dirt"
+  }
+}

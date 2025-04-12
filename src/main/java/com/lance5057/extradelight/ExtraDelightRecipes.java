@@ -15,6 +15,7 @@ import com.lance5057.extradelight.workstations.meltingpot.MeltingPotRecipe;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
 import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
+import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.Recipe;
@@ -48,8 +49,10 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("shaped_jar"));
 	public static final Supplier<RecipeType<DynamicJamRecipe>> DYNAMIC_JAM = RECIPE_TYPES.register("dynamic_jam",
 			() -> registerRecipeType("dynamic_jam"));
-	public static final Supplier<RecipeType<DynamicSandwichRecipe>> DYNAMIC_SANDWICH = RECIPE_TYPES.register("dynamic_sandwich",
-			() -> registerRecipeType("dynamic_jam"));
+	public static final Supplier<RecipeType<DynamicSandwichRecipe>> DYNAMIC_SANDWICH = RECIPE_TYPES
+			.register("dynamic_sandwich", () -> registerRecipeType("dynamic_jam"));
+	public static final Supplier<RecipeType<VatRecipe>> VAT = RECIPE_TYPES.register("vat",
+			() -> registerRecipeType("vat"));
 
 	// Dynamic Names
 //	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES
@@ -104,4 +107,6 @@ public class ExtraDelightRecipes {
 			.register("dynamic_jam", DynamicJamRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SANDWICH_SERIALIZER = RECIPE_SERIALIZERS
 			.register("dynamic_sandwich", DynamicSandwichRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> VAT_SERIALIZER = RECIPE_SERIALIZERS.register("vat",
+			VatRecipe.Serializer::new);
 }

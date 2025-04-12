@@ -115,6 +115,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
 
+		this.dropSelf(ExtraDelightBlocks.VAT.get());
+
 		this.dropSelf(ExtraDelightBlocks.FLOUR.get());
 //		this.dropSelf(ExtraDelightBlocks.COOKING_OIL.get());
 		this.dropSelf(ExtraDelightBlocks.BREADCRUMBS.get());
@@ -504,8 +506,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.hasBlockStateProperties(ExtraDelightBlocks.GARLIC_CROP.get())
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCrop.AGE, 3));
 
-		crop(ExtraDelightBlocks.GARLIC_CROP.get(), ExtraDelightItems.GARLIC.get(),
-				ExtraDelightItems.GARLIC.get(), garlic);
+		crop(ExtraDelightBlocks.GARLIC_CROP.get(), ExtraDelightItems.GARLIC.get(), ExtraDelightItems.GARLIC.get(),
+				garlic);
 		this.dropOther(ExtraDelightBlocks.WILD_GARLIC.get(), ExtraDelightItems.GARLIC.get());
 		this.dropSelf(ExtraDelightBlocks.GARLIC_CRATE.get());
 		this.dropOther(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), Items.BOWL);
@@ -515,17 +517,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 	protected void createFruitBushDrop(Block bush, Item fruit) {
 		this.add(bush,
 				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable().withPool(LootPool.lootPool()
-								.when(LootItemBlockStatePropertyCondition
-										.hasBlockStateProperties(bush).setProperties(
-												StatePropertiesPredicate.Builder.properties()
-														.hasProperty(BushStageFour.AGE, 3)))
-								.add(LootItem.lootTableItem(fruit))
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
-								.apply(ApplyBonusCount
-										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))
+						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(bush).setProperties(
+								StatePropertiesPredicate.Builder.properties().hasProperty(BushStageFour.AGE, 3)))
+						.add(LootItem.lootTableItem(fruit))
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
+						.apply(ApplyBonusCount
+								.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))
 						.withPool(LootPool.lootPool()
-								.when(LootItemBlockStatePropertyCondition
-										.hasBlockStateProperties(bush)
+								.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(bush)
 										.setProperties(StatePropertiesPredicate.Builder.properties()
 												.hasProperty(BushStageFour.AGE, 2)))
 								.add(LootItem.lootTableItem(fruit))

@@ -20,6 +20,7 @@ import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlockEntity;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;
 import com.lance5057.extradelight.workstations.oven.OvenBlockEntity;
+import com.lance5057.extradelight.workstations.vat.VatBlockEntity;
 import com.llamalad7.mixinextras.lib.apache.commons.ArrayUtils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -133,4 +134,8 @@ public class ExtraDelightBlockEntities {
 		event.modify(ModBlockEntityTypes.CABINET.get(),
 				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.CABINETS));
 	};
+	
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VatBlockEntity>> VAT = TILES
+			.register("vat", () -> BlockEntityType.Builder
+					.of(VatBlockEntity::new, ExtraDelightBlocks.VAT.get()).build(null));
 }

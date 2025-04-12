@@ -14,6 +14,7 @@ import com.lance5057.extradelight.workstations.doughshaping.DoughShapingMenu;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotMenu;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlMenu;
 import com.lance5057.extradelight.workstations.oven.OvenMenu;
+import com.lance5057.extradelight.workstations.vat.VatMenu;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
@@ -48,11 +49,14 @@ public class ExtraDelightContainers {
 			.register("counter_cabinet", () -> IMenuTypeExtension.create(CounterCabinetMenu::new));
 	public static final Supplier<MenuType<StyleableMenu>> STYLE_MENU = MENU_TYPES.register("style",
 			() -> IMenuTypeExtension.create(StyleableMenu::new));
-	
+
 	public static final Supplier<MenuType<MeltingPotMenu>> MELTING_POT_MENU = MENU_TYPES.register("melting_pot",
 			() -> IMenuTypeExtension.create(MeltingPotMenu::new));
 	public static final Supplier<MenuType<ChillerMenu>> CHILLER_MENU = MENU_TYPES.register("chiller",
 			() -> IMenuTypeExtension.create(ChillerMenu::new));
+
+	public static final Supplier<MenuType<VatMenu>> VAT_MENU = MENU_TYPES.register("vat",
+			() -> IMenuTypeExtension.create(VatMenu::new));
 
 	public static void register(IEventBus modBus) {
 		MENU_TYPES.register(modBus);

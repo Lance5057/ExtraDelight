@@ -153,6 +153,9 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> CHILLER = ITEMS.register("chiller",
 			() -> new BlockItem(ExtraDelightBlocks.CHILLER.get(), new Item.Properties()));
 
+	public static final DeferredItem<Item> VAT = ITEMS.register("vat",
+			() -> new BlockItem(ExtraDelightBlocks.VAT.get(), new Item.Properties()));
+
 	public static final DeferredItem<Item> BAR_MOLD = ITEMS.register("bar_mold",
 			() -> new BlockItem(ExtraDelightBlocks.BAR_MOLD.get(), new Item.Properties()));
 

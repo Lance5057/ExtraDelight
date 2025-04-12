@@ -17,6 +17,7 @@ import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
+import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
@@ -104,8 +105,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		toolOnBlockRecipes(consumer);
 		meltingRecipes(consumer);
 		chillingRecipes(consumer);
+		vatRecipes(consumer);
 
 		AestheticBlocks.Recipes(consumer);
+	}
+
+	final int dayTick = 24000;
+
+	private void vatRecipes(RecipeOutput consumer) {
+		VatRecipeBuilder.pickle(new ItemStack(Items.DIAMOND), new ItemStack(Items.DIRT), 100)
+				.requires(Ingredient.of(Tags.Items.BONES)).requires(SizedFluidIngredient.of(Fluids.LAVA, 1000))
+				.save(consumer);
 	}
 
 	private void chillingRecipes(RecipeOutput consumer) {

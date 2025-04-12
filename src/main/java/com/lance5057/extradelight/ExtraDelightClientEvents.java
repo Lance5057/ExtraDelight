@@ -32,6 +32,7 @@ import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlRenderer;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlScreen;
 import com.lance5057.extradelight.workstations.mortar.MortarRenderer;
 import com.lance5057.extradelight.workstations.oven.OvenScreen;
+import com.lance5057.extradelight.workstations.vat.VatScreen;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
@@ -73,6 +74,7 @@ public class ExtraDelightClientEvents {
 		event.register(ExtraDelightContainers.MIXING_BOWL_MENU.get(), MixingBowlScreen::new);
 		event.register(ExtraDelightContainers.MELTING_POT_MENU.get(), MeltingPotScreen::new);
 		event.register(ExtraDelightContainers.CHILLER_MENU.get(), ChillerScreen::new);
+		event.register(ExtraDelightContainers.VAT_MENU.get(), VatScreen::new);
 	}
 
 	public static void setTERenderers() {
