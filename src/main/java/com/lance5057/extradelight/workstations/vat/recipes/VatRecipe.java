@@ -1,6 +1,7 @@
 package com.lance5057.extradelight.workstations.vat.recipes;
 
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.workstations.vat.VatBlockEntity;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -11,7 +12,6 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -73,11 +73,11 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 
 	@Override
 	public boolean matches(VatRecipeWrapper input, Level level) {
-		StackedContents stackedcontents = new StackedContents();
+//		StackedContents stackedcontents = new StackedContents();
 		java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
 		int i = 0;
 
-		for (int j = 0; j < 9; ++j) {
+		for (int j = 0; j < 6; ++j) {
 			ItemStack itemstack = input.getItem(j);
 			if (!itemstack.isEmpty()) {
 				++i;
@@ -89,8 +89,9 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 		}
 
 		return i == this.ingredients.size() && RecipeMatcher.findMatches(inputs, this.ingredients) != null
-				&& fluid.test(input.getTank().getFluid()) && ItemStack.isSameItem(containerItem, input.getItem(9))
-				&& input.getItem(9).getCount() >= containerItem.getCount();
+				&& fluid.test(input.getTank().getFluid())
+				&& ItemStack.isSameItem(containerItem, input.getItem(VatBlockEntity.CONTAINER_SLOT))
+				&& input.getItem(VatBlockEntity.CONTAINER_SLOT).getCount() >= containerItem.getCount();
 	}
 
 	/**
@@ -111,7 +112,7 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 		return ExtraDelightRecipes.VAT_SERIALIZER.get();
 	}
 
-	public int getStirs() {
+	public int getTime() {
 		return cookTime;
 	}
 
@@ -132,7 +133,7 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 	@Override
 	public RecipeType<?> getType() {
 		// TODO Auto-generated method stub
-		return ExtraDelightRecipes.MIXING_BOWL.get();
+		return ExtraDelightRecipes.VAT.get();
 	}
 
 	public static class Serializer implements RecipeSerializer<VatRecipe> {
@@ -155,8 +156,8 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 
 						ItemStack.CODEC.fieldOf("result").forGetter(r -> r.result),
 
-						Codec.INT.optionalFieldOf("time", 24000).forGetter(r -> r.cookTime),
-						Codec.INT.optionalFieldOf("stages", 1).forGetter(r -> r.cookTime),
+						Codec.INT.fieldOf("time").forGetter(r -> r.cookTime),
+						Codec.INT.fieldOf("stages").forGetter(r -> r.stages),
 
 						ItemStack.CODEC.optionalFieldOf("usedItem", ItemStack.EMPTY).forGetter(r -> r.containerItem))
 						.apply(inst, VatRecipe::new));
@@ -170,7 +171,8 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 				nonnulllist.set(j, Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer));
 			}
 
-			NonNullList<Ingredient> nonnulllist2 = NonNullList.withSize(i, Ingredient.EMPTY);
+			int x = pBuffer.readVarInt();
+			NonNullList<Ingredient> nonnulllist2 = NonNullList.withSize(x, Ingredient.EMPTY);
 
 			for (int j = 0; j < nonnulllist2.size(); ++j) {
 				nonnulllist2.set(j, Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer));
@@ -193,6 +195,8 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 				Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, ingredient);
 			}
 
+			pBuffer.writeVarInt(pRecipe.stageIngredients.size());
+
 			for (Ingredient ingredient : pRecipe.stageIngredients) {
 				Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, ingredient);
 			}
@@ -200,7 +204,7 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 			SizedFluidIngredient.STREAM_CODEC.encode(pBuffer, pRecipe.getFluid());
 
 			ItemStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.result);
-			pBuffer.writeVarInt(pRecipe.getStirs());
+			pBuffer.writeVarInt(pRecipe.getTime());
 			pBuffer.writeVarInt(pRecipe.getStages());
 			ItemStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.getUsedItem());
 

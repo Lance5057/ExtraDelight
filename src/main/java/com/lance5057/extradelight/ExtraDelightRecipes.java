@@ -11,6 +11,7 @@ import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackSerializer;
+import com.lance5057.extradelight.workstations.evaporator.recipes.EvaporatorRecipe;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotRecipe;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
@@ -53,6 +54,8 @@ public class ExtraDelightRecipes {
 			.register("dynamic_sandwich", () -> registerRecipeType("dynamic_jam"));
 	public static final Supplier<RecipeType<VatRecipe>> VAT = RECIPE_TYPES.register("vat",
 			() -> registerRecipeType("vat"));
+	public static final Supplier<RecipeType<EvaporatorRecipe>> EVAPORATOR = RECIPE_TYPES.register("evaporator",
+			() -> registerRecipeType("evaporator"));
 
 	// Dynamic Names
 //	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES
@@ -109,4 +112,6 @@ public class ExtraDelightRecipes {
 			.register("dynamic_sandwich", DynamicSandwichRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> VAT_SERIALIZER = RECIPE_SERIALIZERS.register("vat",
 			VatRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> EVAPORATOR_SERIALIZER = RECIPE_SERIALIZERS.register("evaporator",
+			EvaporatorRecipe.Serializer::new);
 }

@@ -13,7 +13,12 @@ import com.lance5057.extradelight.blocks.RecipeFondueFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.VanillaFruitLeafBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
-import com.lance5057.extradelight.blocks.crops.*;
+import com.lance5057.extradelight.blocks.crops.BushStageFour;
+import com.lance5057.extradelight.blocks.crops.ChiliCrop;
+import com.lance5057.extradelight.blocks.crops.GarlicCrop;
+import com.lance5057.extradelight.blocks.crops.GingerCrop;
+import com.lance5057.extradelight.blocks.crops.MallowRootCrop;
+import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornProperties;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -58,6 +63,8 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.DRYING_RACK.get(), models().getExistingFile(modLoc("block/drying_rack")));
 
 		this.mortarStyleBlock(ExtraDelightBlocks.MORTAR_STONE.get());
+
+		this.simpleBlock(ExtraDelightBlocks.EVAPORATOR.get(), models().getExistingFile(modLoc("block/evaporator")));
 
 //		this.simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(), models()
 //				.withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool", modLoc("block/cooking_oil")));
@@ -610,8 +617,8 @@ public class BlockModels extends BlockStateProvider {
 		pieLikeBlock(ExtraDelightBlocks.PANFORTE.get(), "panforte");
 
 		this.cropCrossBlock(ExtraDelightBlocks.GARLIC_CROP.get(), "garlic", GarlicCrop.AGE);
-		simpleBlock(ExtraDelightBlocks.WILD_GARLIC.get(), new ConfiguredModel(models()
-				.cross("wild_garlic", modLoc("block/crops/garlic/garlic_stage3")).renderType("cutout")));
+		simpleBlock(ExtraDelightBlocks.WILD_GARLIC.get(), new ConfiguredModel(
+				models().cross("wild_garlic", modLoc("block/crops/garlic/garlic_stage3")).renderType("cutout")));
 		this.crateBlock(ExtraDelightBlocks.GARLIC_CRATE.get(), "garlic", "spruce");
 		recipeFeastBlock(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), "bruschetta");
 		this.simpleBlock(ExtraDelightBlocks.HANGING_GARLIC.get(), models()

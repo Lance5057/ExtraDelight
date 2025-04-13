@@ -116,6 +116,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
 
 		this.dropSelf(ExtraDelightBlocks.VAT.get());
+		this.dropSelf(ExtraDelightBlocks.EVAPORATOR.get());
 
 		this.dropSelf(ExtraDelightBlocks.FLOUR.get());
 //		this.dropSelf(ExtraDelightBlocks.COOKING_OIL.get());

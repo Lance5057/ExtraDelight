@@ -33,7 +33,7 @@ public class VatRecipeBuilder implements RecipeBuilder {
 	final NonNullList<Ingredient> stageIngredients = NonNullList.create();
 	SizedFluidIngredient fluid;
 
-	protected int stages;
+	protected int stages = 0;
 	protected final int cookTime;
 
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
@@ -48,6 +48,11 @@ public class VatRecipeBuilder implements RecipeBuilder {
 		return new VatRecipeBuilder(pResult, usedItem, cookTime);
 	}
 
+	public VatRecipeBuilder requiresFluid(SizedFluidIngredient stack) {
+		this.fluid = stack;
+		return this;
+	}
+
 	public VatRecipeBuilder requires(Ingredient pIngredient) {
 		return this.requires(pIngredient, 1);
 	}
@@ -57,11 +62,6 @@ public class VatRecipeBuilder implements RecipeBuilder {
 			this.ingredients.add(pIngredient);
 		}
 
-		return this;
-	}
-
-	public VatRecipeBuilder requires(SizedFluidIngredient stack) {
-		this.fluid = stack;
 		return this;
 	}
 
@@ -76,6 +76,35 @@ public class VatRecipeBuilder implements RecipeBuilder {
 	public VatRecipeBuilder requires(ItemLike pItem, int pQuantity) {
 		for (int i = 0; i < pQuantity; ++i) {
 			this.requires(Ingredient.of(pItem));
+		}
+
+		return this;
+	}
+
+	public VatRecipeBuilder requiresStage(Ingredient pIngredient) {
+		return this.requiresStage(pIngredient, 1);
+	}
+
+	public VatRecipeBuilder requiresStage(Ingredient pIngredient, int pQuantity) {
+		for (int i = 0; i < pQuantity; ++i) {
+			this.stageIngredients.add(pIngredient);
+			stages++;
+		}
+
+		return this;
+	}
+
+	public VatRecipeBuilder requiresStage(TagKey<Item> pTag) {
+		return this.requiresStage(Ingredient.of(pTag));
+	}
+
+	public VatRecipeBuilder requiresStage(ItemLike pItem) {
+		return this.requiresStage(pItem, 1);
+	}
+
+	public VatRecipeBuilder requiresStage(ItemLike pItem, int pQuantity) {
+		for (int i = 0; i < pQuantity; ++i) {
+			this.requiresStage(Ingredient.of(pItem));
 		}
 
 		return this;
@@ -101,7 +130,7 @@ public class VatRecipeBuilder implements RecipeBuilder {
 	@Override
 	public void save(RecipeOutput recipeOutput, ResourceLocation id) {
 		if (this.ingredients.size() > 6)
-			throw new IllegalStateException("Vat Recipe " + id + " has more than 9 ingredients!");
+			throw new IllegalStateException("Vat Recipe " + id + " has more than 6 ingredients!");
 
 		ResourceLocation recipeId = id.withPrefix("vat/");
 		Advancement.Builder advancementBuilder = recipeOutput.advancement()

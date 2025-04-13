@@ -13,8 +13,15 @@
     "count": 1,
     "id": "minecraft:diamond"
   },
-  "stage_ingredients": [],
-  "stages": 100,
+  "stage_ingredients": [
+    {
+      "tag": "c:bricks"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "stages": 2,
   "time": 100,
   "usedItem": {
     "count": 1,

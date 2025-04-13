@@ -33,7 +33,7 @@ public class VatMenu extends AbstractContainerMenu {
 			// Ingredient Slots - 2 Rows x 3 Columns
 			int startX = 8;
 			int startY = 8;
-			int inputStartX = 64;
+			int inputStartX = 55;
 			int inputStartY = -5;
 			int borderSlotSize = 18;
 			for (int row = 0; row < 2; ++row) {
@@ -44,14 +44,14 @@ public class VatMenu extends AbstractContainerMenu {
 			}
 
 			this.addSlot(
-					new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.FERMENTATION_INPUT_SLOT, 82, 51));
+					new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.FERMENTATION_INPUT_SLOT, 55, 51));
 
-			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.LIQUID_IN_SLOT, 17, -5));
-			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.LIQUID_OUT_SLOT, 17, 51));
+			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.LIQUID_IN_SLOT, 8, -5));
+			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.LIQUID_OUT_SLOT, 8, 51));
 
-			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.CONTAINER_SLOT, 136, 32));
+			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.CONTAINER_SLOT, 151, 32));
 
-			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.OUTPUT_SLOT, 136, 51) {
+			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.OUTPUT_SLOT, 151, 51) {
 
 				@Override
 				public boolean mayPlace(ItemStack stack) {

@@ -16,6 +16,7 @@ import com.lance5057.extradelight.displays.spice.SpiceRackEntity;
 import com.lance5057.extradelight.displays.wreath.WreathEntity;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlockEntity;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlockEntity;
+import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlockEntity;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlockEntity;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;
@@ -134,8 +135,11 @@ public class ExtraDelightBlockEntities {
 		event.modify(ModBlockEntityTypes.CABINET.get(),
 				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.CABINETS));
 	};
-	
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VatBlockEntity>> VAT = TILES
-			.register("vat", () -> BlockEntityType.Builder
-					.of(VatBlockEntity::new, ExtraDelightBlocks.VAT.get()).build(null));
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VatBlockEntity>> VAT = TILES.register("vat",
+			() -> BlockEntityType.Builder.of(VatBlockEntity::new, ExtraDelightBlocks.VAT.get()).build(null));
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EvaporatorBlockEntity>> EVAPORATOR = TILES
+			.register("evaporator", () -> BlockEntityType.Builder
+					.of(EvaporatorBlockEntity::new, ExtraDelightBlocks.EVAPORATOR.get()).build(null));
 }

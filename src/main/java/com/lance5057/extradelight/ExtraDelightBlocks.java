@@ -36,6 +36,7 @@ import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
+import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
@@ -166,6 +167,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> MORTAR_STONE = BLOCKS.register("mortar_stone", () -> new MortarBlock());
 
 	public static final DeferredBlock<Block> VAT = BLOCKS.register("vat", VatBlock::new);
+	public static final DeferredBlock<Block> EVAPORATOR = BLOCKS.register("evaporator", EvaporatorBlock::new);
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));

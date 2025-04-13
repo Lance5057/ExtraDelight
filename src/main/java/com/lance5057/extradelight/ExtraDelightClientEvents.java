@@ -27,6 +27,7 @@ import com.lance5057.extradelight.items.jar.JarItemModel;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
+import com.lance5057.extradelight.workstations.evaporator.EvaporatorRenderer;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotScreen;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlRenderer;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlScreen;
@@ -94,6 +95,7 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.FUNNEL.get(), FunnelRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.CHOCOLATE_BOX.get(), ChocolateBoxRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR.get(), JarRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.EVAPORATOR.get(), EvaporatorRenderer::new);
 	}
 
 	@SubscribeEvent

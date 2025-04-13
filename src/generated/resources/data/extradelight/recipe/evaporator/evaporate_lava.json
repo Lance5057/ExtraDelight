@@ -1,0 +1,9 @@
+{
+  "type": "extradelight:evaporator",
+  "fluid": {
+    "amount": 1000,
+    "fluid": "minecraft:lava"
+  },
+  "loottable": "extradelight:loot",
+  "time": 100
+}

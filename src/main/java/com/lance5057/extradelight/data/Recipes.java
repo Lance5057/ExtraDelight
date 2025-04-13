@@ -11,6 +11,7 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.EvaporatorRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
@@ -106,15 +107,22 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		meltingRecipes(consumer);
 		chillingRecipes(consumer);
 		vatRecipes(consumer);
+		evaporatorRecipes(consumer);
 
 		AestheticBlocks.Recipes(consumer);
+	}
+
+	private void evaporatorRecipes(RecipeOutput consumer) {
+		EvaporatorRecipeBuilder.evaporate(SizedFluidIngredient.of(Fluids.LAVA, 1000), ExtraDelight.modLoc("loot"), 100)
+				.unlockedBy(getName(), has(Items.LAVA_BUCKET)).save(consumer, ExtraDelight.modLoc("evaporate_lava"));
 	}
 
 	final int dayTick = 24000;
 
 	private void vatRecipes(RecipeOutput consumer) {
 		VatRecipeBuilder.pickle(new ItemStack(Items.DIAMOND), new ItemStack(Items.DIRT), 100)
-				.requires(Ingredient.of(Tags.Items.BONES)).requires(SizedFluidIngredient.of(Fluids.LAVA, 1000))
+				.requires(Ingredient.of(Tags.Items.BONES)).requiresFluid(SizedFluidIngredient.of(Fluids.LAVA, 1000))
+				.requiresStage(Ingredient.of(Tags.Items.BRICKS)).requiresStage(Ingredient.of(Tags.Items.EGGS))
 				.save(consumer);
 	}
 

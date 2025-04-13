@@ -9,12 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.util.BlockEntityUtils;
-import com.lance5057.extradelight.workstations.chiller.ChillerBlock;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipeWrapper;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
@@ -65,6 +63,15 @@ public class VatBlockEntity extends BlockEntity {
 	private int cookTimeTotal = 0;
 
 	private int stage = 0;
+	private int stageTotal = 0;
+
+	public int getStageTotal() {
+		return stageTotal;
+	}
+
+	public int getStage() {
+		return stage;
+	}
 
 	private ResourceLocation lastRecipeID;
 	private boolean checkNewRecipe;
@@ -79,7 +86,7 @@ public class VatBlockEntity extends BlockEntity {
 		return cookTimeTotal;
 	}
 
-	public ItemStack containerItem = ItemStack.EMPTY;
+//	public ItemStack containerItem = ItemStack.EMPTY;
 
 	VatRecipe curRecipe;
 
@@ -178,16 +185,16 @@ public class VatBlockEntity extends BlockEntity {
 						return true;
 					else
 						return false;
-				if (slot == OUTPUT_SLOT)
-					return false;
+//				if (slot == OUTPUT_SLOT)
+//					return false;
 				return true;
 			}
 
 			@Override
 			protected void onContentsChanged(int slot) {
-				if (slot != OUTPUT_SLOT) {
-					updateInventory();
-				}
+//				if (slot != OUTPUT_SLOT) {
+//					updateInventory();
+//				}
 
 				if (slot == LIQUID_IN_SLOT)
 					VatBlockEntity.fillInternal(VatBlockEntity.this);
@@ -242,31 +249,39 @@ public class VatBlockEntity extends BlockEntity {
 
 		if (recipeholder != null) {
 			vat.cookTimeTotal = recipeholder.value().getCookTime();
+			vat.stageTotal = recipeholder.value().getStages();
 
-			if (vat.cookTime >= vat.cookTimeTotal) {
-				if (vat.stage < recipeholder.value().getStages()) {
-					vat.items.getStackInSlot(CONTAINER_SLOT).shrink(1);
-					vat.stage++;
-				} else { // Finish
-					ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
-					ItemStack test = vat.items.insertItem(OUTPUT_SLOT, result, true);
-					if (test.isEmpty()) {
-						dropContainers(state, vat, level);
-						subtractItems(vat);
+			if (vat.stage >= vat.stageTotal) {// Finish
+				ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
+				ItemStack test = vat.items.insertItem(OUTPUT_SLOT, result, true);
+				if (test.isEmpty()) {
+					dropContainers(state, vat, level);
+					subtractItems(vat);
 
-						SizedFluidIngredient sfi = recipeholder.value().getFluid();
-						if (sfi.test(vat.fluid.getFluid()))
-							vat.fluid.drain(sfi.amount(), FluidAction.EXECUTE);
-
-						vat.items.insertItem(OUTPUT_SLOT, result, false);
-						vat.cookTime = 0;
-					}
+					SizedFluidIngredient sfi = recipeholder.value().getFluid();
+					if (sfi.test(vat.fluid.getFluid()))
+						vat.fluid.drain(sfi.amount(), FluidAction.EXECUTE);
+					vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
+					vat.items.insertItem(OUTPUT_SLOT, result, false);
+					vat.cookTime = 0;
+					vat.stage = 0;
 				}
 			} else {
-				if (recipeholder.value().getStageIngredients().get(vat.stage)
-						.test(vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT)))
-					vat.cookTime++;
-
+				if (vat.cookTime >= vat.cookTimeTotal) {
+					vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
+					vat.cookTime = 0;
+					vat.stage++;
+				} else {
+					if (!recipeholder.value().getStageIngredients().isEmpty()) {
+						if (recipeholder.value().getStageIngredients().size() > vat.stage) {
+							if (recipeholder.value().getStageIngredients().get(vat.stage)
+									.test(vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT))) {
+								vat.cookTime++;
+							}
+						}
+					} else
+						vat.cookTime++;
+				}
 			}
 		} else {
 			vat.cookTime = 0;
@@ -285,14 +300,14 @@ public class VatBlockEntity extends BlockEntity {
 	}
 
 	private static void dropContainers(BlockState state, @NotNull VatBlockEntity chiller, Level level) {
-		Direction direction = state.getValue(ChillerBlock.FACING).getCounterClockWise();
-		double x = chiller.worldPosition.getX() + 0.5 + (direction.getStepX() * 0.25);
+//		Direction direction = state.getValue(VatBlock.FACING).getCounterClockWise();
+		double x = chiller.worldPosition.getX();
 		double y = chiller.worldPosition.getY() + 0.7;
-		double z = chiller.worldPosition.getZ() + 0.5 + (direction.getStepZ() * 0.25);
+		double z = chiller.worldPosition.getZ();
 
 		for (int i = 0; i < 6; i++) {
-			ItemUtils.spawnItemEntity(level, chiller.items.getStackInSlot(i).getCraftingRemainingItem(), x, y, z,
-					direction.getStepX() * 0.08F, 0.25F, direction.getStepZ() * 0.08F);
+			ItemUtils.spawnItemEntity(level, chiller.items.getStackInSlot(i).getCraftingRemainingItem(), x, y, z, 0, 0,
+					0);
 
 		}
 	}
@@ -308,10 +323,10 @@ public class VatBlockEntity extends BlockEntity {
 		Optional<RecipeHolder<VatRecipe>> recipe = this.matchRecipe();
 		if (recipe.isPresent()) {
 			this.curRecipe = recipe.get().value();
-			this.items.setStackInSlot(OUTPUT_SLOT, curRecipe.getResultItem(this.level.registryAccess()).copy());
+//			this.items.setStackInSlot(OUTPUT_SLOT, curRecipe.getResultItem(this.level.registryAccess()).copy());
 		} else {
 			this.curRecipe = null;
-			this.items.setStackInSlot(OUTPUT_SLOT, ItemStack.EMPTY.copy());
+//			this.items.setStackInSlot(OUTPUT_SLOT, ItemStack.EMPTY.copy());
 		}
 	}
 
@@ -350,7 +365,10 @@ public class VatBlockEntity extends BlockEntity {
 			items.deserializeNBT(registries, nbt.getCompound(INV_TAG));
 		}
 		this.getFluidTank().readFromNBT(registries, nbt);
-		ItemStack.parse(registries, nbt.getCompound("usedItem")).ifPresent(i -> containerItem = i);
+		this.stage = nbt.getInt("stage");
+		this.stageTotal = nbt.getInt("stageTotal");
+		this.cookTime = nbt.getInt("cookTime");
+		this.cookTimeTotal = nbt.getInt("cookTimeTotal");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
@@ -358,7 +376,10 @@ public class VatBlockEntity extends BlockEntity {
 		tag.put(INV_TAG, items.serializeNBT(registries));
 		this.getFluidTank().writeToNBT(registries, tag);
 
-		tag.put("usedItem", containerItem.saveOptional(registries));
+		tag.putInt("stage", this.stage);
+		tag.putInt("stageTotal", this.stageTotal);
+		tag.putInt("cookTime", this.cookTime);
+		tag.putInt("cookTimeTotal", this.cookTimeTotal);
 
 		return tag;
 	}
@@ -412,38 +433,16 @@ public class VatBlockEntity extends BlockEntity {
 
 	}
 
-//	public InteractionResult mix(Player player) {
-//
-//		if (curRecipe != null) {
-//
-//			level.playSound(player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
-//		} else {
-//			this.containerItem = curRecipe.getUsedItem().copy();
-//
-//			ItemStack i = curRecipe.getResultItem(player.level().registryAccess()).copy();
-//
-//			i.onCraftedBy(player.level(), player, 1);
-//			BlockEntityUtils.Inventory.givePlayerItemStack(i, player, level, worldPosition);
-//			dropContainers(items, player);
-//			clearItems();
-//			removeFluids(curRecipe.getFluid());
-//			this.updateInventory();
-//		}
-//		updateInventory();
-//
-//		return InteractionResult.SUCCESS;
-//	}
-
 	private void removeFluids(SizedFluidIngredient list) {
 		if (list.test(fluid.getFluid()))
 			fluid.drain(list.amount(), FluidAction.EXECUTE);
 	}
 
-	public boolean testContainerItem(ItemStack stack) {
-		if (this.containerItem.isEmpty())
-			return true;
-		return this.containerItem.getItem() == stack.getItem();
-	}
+//	public boolean testContainerItem(ItemStack stack) {
+//		if (this.containerItem.isEmpty())
+//			return true;
+//		return this.containerItem.getItem() == stack.getItem();
+//	}
 
 	private void dropContainers(@NotNull IItemHandlerModifiable inv, Player player) {
 		for (int i = 0; i < 9; i++) {
