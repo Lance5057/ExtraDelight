@@ -92,12 +92,12 @@ import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class ExtraDelightBlocks {
 
-	final static VoxelShape bowl = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D);
-	final static VoxelShape plate = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
-	final static VoxelShape pan = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D);
-	final static VoxelShape pot = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D);
-	final static VoxelShape stand = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 4.0D, 13.0D);
-	final static VoxelShape fondue = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D);
+	public final static VoxelShape bowl = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D);
+	public final static VoxelShape plate = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
+	public final static VoxelShape pan = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D);
+	public final static VoxelShape pot = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D);
+	public final static VoxelShape stand = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 4.0D, 13.0D);
+	public final static VoxelShape fondue = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D);
 
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ExtraDelight.MOD_ID);
 

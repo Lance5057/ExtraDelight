@@ -1,6 +1,6 @@
 //package com.lance5057.extradelight.integration.patchouli;
 //
-//import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
+//import com.lance5057.extradelight.workstations.dryingrack.DryingRackRecipe;
 //
 //import net.minecraft.client.Minecraft;
 //import net.minecraft.resources.ResourceLocation;
@@ -10,7 +10,7 @@
 //import vazkii.patchouli.api.IVariable;
 //import vazkii.patchouli.api.IVariableProvider;
 //
-//public class MixingBowlProcessor implements IComponentProcessor {
+//public class DryingRackProcessor implements IComponentProcessor {
 //	protected Recipe<?> recipe;
 //
 //	@Override
@@ -28,10 +28,10 @@
 //		return switch (key) {
 //		case "recipe" -> IVariable.wrap(recipe.getId().toString());
 //		case "output" -> IVariable.from(recipe.getResultItem());
-//		case "stirs" -> IVariable.wrap(Integer.toString(((MixingBowlRecipe) recipe).getStirs()));
-//		case "used" -> IVariable.from(((MixingBowlRecipe) recipe).getUsedItem());
+//		case "input" -> IVariable.from(((DryingRackRecipe) recipe).getInput().getItems());
 //		case "heading" -> IVariable.from(recipe.getResultItem().getHoverName());
 //		default -> null;
 //		};
 //	}
 //}
+

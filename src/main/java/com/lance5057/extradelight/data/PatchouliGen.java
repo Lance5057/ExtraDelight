@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.integration.patchouli.components.CookingPotComponent;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
@@ -41,7 +42,7 @@ public class PatchouliGen extends PatchouliBookProvider {
 		CategoryBuilder condiments = book.addCategory("condiments", "Condiments", "Saucy!", "extradelight:bbq_jar_item")
 				.setSortnum(7);
 		CategoryBuilder deserts = book
-				.addCategory("deserts", "Deserts", "Sweet Treats!", "extradelight:chocolate_custard").setSortnum(5);
+				.addCategory("desserts", "Desserts", "Sweet Treats!", "extradelight:chocolate_custard").setSortnum(5);
 		CategoryBuilder eggs = book.addCategory("eggs", "Egg Dishes", "Breakfast!", "extradelight:quiche");
 		CategoryBuilder fish = book.addCategory("fish", "Fish and Seafood", "Fish!", "extradelight:fried_fish");
 		CategoryBuilder meats = book.addCategory("meats", "Meats and Cheeses", "Tasty Animals!",
@@ -57,7 +58,7 @@ public class PatchouliGen extends PatchouliBookProvider {
 		doBeverages(beverages);
 		doCasseroles(casseroles);
 		doCondiments(condiments);
-		doDeserts(deserts);
+		doDesserts(deserts);
 		doEggs(eggs);
 		doFish(fish);
 		doMeats(meats);
@@ -110,7 +111,7 @@ public class PatchouliGen extends PatchouliBookProvider {
 
 	}
 
-	private void doDeserts(CategoryBuilder deserts) {
+	private void doDesserts(CategoryBuilder deserts) {
 		// TODO Auto-generated method stub
 
 	}
@@ -145,6 +146,7 @@ public class PatchouliGen extends PatchouliBookProvider {
 				"A savory juice made of tomatos. It's jam packed full of nutrients to keep healthy even in the deepest dungeons!");
 		tomato.addCraftingPage(modLoc("tomato_juice"));
 		tomato.build();
+
 	}
 
 }

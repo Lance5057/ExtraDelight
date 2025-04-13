@@ -1,5 +1,7 @@
 //package com.lance5057.extradelight.integration.patchouli;
 //
+//import com.lance5057.extradelight.recipe.FeastRecipe;
+//
 //import net.minecraft.client.Minecraft;
 //import net.minecraft.resources.ResourceLocation;
 //import net.minecraft.world.item.crafting.Recipe;
@@ -7,9 +9,8 @@
 //import vazkii.patchouli.api.IComponentProcessor;
 //import vazkii.patchouli.api.IVariable;
 //import vazkii.patchouli.api.IVariableProvider;
-//import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
 //
-//public class PotProcessor implements IComponentProcessor {
+//public class FeastProcessor implements IComponentProcessor {
 //	protected Recipe<?> recipe;
 //
 //	@Override
@@ -27,9 +28,11 @@
 //		return switch (key) {
 //		case "recipe" -> IVariable.wrap(recipe.getId().toString());
 //		case "output" -> IVariable.from(recipe.getResultItem());
-//		case "container" -> IVariable.from(((CookingPotRecipe) recipe).getOutputContainer());
+//		case "input" -> IVariable.from(((FeastRecipe) recipe).getIngredients().get(0).getItems());
+//		case "feast" -> IVariable.from(((FeastRecipe) recipe).getFeastStack());
 //		case "heading" -> IVariable.from(recipe.getResultItem().getHoverName());
 //		default -> null;
 //		};
-//	} 
+//	}
 //}
+
