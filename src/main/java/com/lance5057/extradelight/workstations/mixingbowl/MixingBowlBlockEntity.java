@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.util.BlockEntityUtils;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipeWrapper;
 
@@ -98,13 +99,21 @@ public class MixingBowlBlockEntity extends BlockEntity {
 					bowl.items.setStackInSlot(LIQUID_IN_SLOT, Items.BUCKET.getDefaultInstance());
 
 				}
-			} else {
+			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
 				int filled = FluidUtil.tryFluidTransfer(bowl.getFluidTank(), fluidHandlerItem,
 						bowl.getFluidTank().getFluidAmount(), true).getAmount();
 				if (filled > 0) {
 					bowl.items.setStackInSlot(LIQUID_IN_SLOT, fluidHandlerItem.getContainer());
 
+				}
+			} else {
+				FluidStack f = BottleFluidRegistry.getFluidFromBottle(inputItem);
+				if (!f.isEmpty()) {
+					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
+						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
+						bowl.items.setStackInSlot(LIQUID_IN_SLOT, new ItemStack(Items.GLASS_BOTTLE, 1));
+					}
 				}
 			}
 		}
@@ -121,12 +130,23 @@ public class MixingBowlBlockEntity extends BlockEntity {
 					inputItem.shrink(1);
 					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, stack.getFluid().getBucket().getDefaultInstance());
 				}
-			} else {
+			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
 				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
 						bowl.getFluidTank().getFluidAmount(), true).getAmount();
 				if (filled > 0) {
 					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, fluidHandlerItem.getContainer());
+				}
+			} else if (inputItem.is(Items.GLASS_BOTTLE)) {
+				if (bowl.getFluidTank().getFluid() != null) {
+					ItemStack i = BottleFluidRegistry.getBottleFromFluid(bowl.getFluidTank().getFluid());
+					if (!i.isEmpty()) {
+						FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
+						bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
+//						inputItem.shrink(1);
+						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, i);
+
+					}
 				}
 			}
 		}
@@ -148,16 +168,16 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
-				if (slot == LIQUID_IN_SLOT)
-					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-						return true;
-					else
-						return false;
-				if (slot == LIQUID_OUT_SLOT)
-					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-						return true;
-					else
-						return false;
+//				if (slot == LIQUID_IN_SLOT)
+//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
+//						return true;
+//					else
+//						return false;
+//				if (slot == LIQUID_OUT_SLOT)
+//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
+//						return true;
+//					else
+//						return false;
 				if (slot == GHOST_SLOT)
 					return false;
 				return true;

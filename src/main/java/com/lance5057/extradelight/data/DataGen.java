@@ -54,7 +54,7 @@ public class DataGen {
 
 		generator.addProvider(event.includeServer(), new DataMapGen(output, lookupProvider));
 
-//		generator.addProvider(event.includeClient(), new PatchouliGen(generator, ExtraDelight.MOD_ID, "en_us"));
+		generator.addProvider(event.includeClient(), new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider));
 	}
 
 //	private static RegistrySetBuilder.PatchedRegistries constructRegistries(HolderLookup.Provider original,

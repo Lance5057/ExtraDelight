@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -77,11 +78,11 @@ public class MeltingPotBlockEntity extends BlockEntity implements HeatableBlockE
 			@Override
 			@NotNull
 			public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
-				if (slot == 1)
-					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-						return super.insertItem(slot, stack, simulate);
-					else
-						return stack;
+//				if (slot == 1)
+//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
+//						return super.insertItem(slot, stack, simulate);
+//					else
+//						return stack;
 
 				return super.insertItem(slot, stack, simulate);
 			}
@@ -146,7 +147,7 @@ public class MeltingPotBlockEntity extends BlockEntity implements HeatableBlockE
 					}
 
 //				if (flag) {
-					
+
 //				}
 			} else
 				pBlockEntity.cookingProgress = 0;
@@ -169,9 +170,18 @@ public class MeltingPotBlockEntity extends BlockEntity implements HeatableBlockE
 							}
 						}
 					}
-				} else {
+				} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
 					IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
 					FluidUtil.tryFluidTransfer(fluidHandlerItem, f, f.getFluidAmount(), true);
+				} else if (inputItem.is(Items.GLASS_BOTTLE)) {
+					ItemStack i = BottleFluidRegistry.getBottleFromFluid(pBlockEntity.getFluidTank().getFluid());
+					if (!i.isEmpty()) {
+						if (pBlockEntity.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
+							pBlockEntity.getFluidTank().drain(250, FluidAction.EXECUTE);
+							inputItem.shrink(1);
+							pBlockEntity.items.setStackInSlot(BUCKET_SLOT_OUT, i);
+						}
+					}
 				}
 
 			}

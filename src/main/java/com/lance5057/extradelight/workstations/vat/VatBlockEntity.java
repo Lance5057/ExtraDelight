@@ -134,7 +134,7 @@ public class VatBlockEntity extends BlockEntity {
 					bowl.items.setStackInSlot(LIQUID_IN_SLOT, fluidHandlerItem.getContainer());
 
 				}
-			} else {
+			} else if (inputItem.is(Items.GLASS_BOTTLE)) {
 				FluidStack f = BottleFluidRegistry.getFluidFromBottle(inputItem);
 				if (!f.isEmpty()) {
 					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {

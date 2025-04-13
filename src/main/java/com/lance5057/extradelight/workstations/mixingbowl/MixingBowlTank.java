@@ -185,7 +185,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 
 	@Override
 	public FluidStack getFluid() {
-		return null;
+		return drain(1000, FluidAction.SIMULATE);
 	}
 
 	@Override

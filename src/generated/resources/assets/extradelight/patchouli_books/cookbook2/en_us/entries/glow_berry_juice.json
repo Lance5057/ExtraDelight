@@ -1,0 +1,15 @@
+{
+  "category": "extradelight:beverages",
+  "icon": "extradelight:glow_berry_juice",
+  "name": "Glow Berry Juice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A tart juice made from glowberries that maintains its glow inducing quality. It's anti-inflammatory and anti-oxidant effects will make you feel a little healthier almost instantly!"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "extradelight:glow_berry_juice"
+    }
+  ]
+}

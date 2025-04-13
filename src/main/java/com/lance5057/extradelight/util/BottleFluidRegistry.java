@@ -29,7 +29,7 @@ public class BottleFluidRegistry {
 		if (f.getAmount() >= bottleMB) {
 			Optional<BottleFluid> b = registry.stream().filter(bf -> bf.fluid.test(f)).findFirst();
 			if (b.isPresent()) {
-				return b.get().bottle.getItems()[0];
+				return b.get().bottle.getItems()[0].copy();
 			}
 		}
 		return ItemStack.EMPTY;

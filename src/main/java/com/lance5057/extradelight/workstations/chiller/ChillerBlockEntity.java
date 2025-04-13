@@ -10,6 +10,7 @@ import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.items.components.ChillComponent;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -136,13 +137,21 @@ public class ChillerBlockEntity extends BlockEntity {
 					bowl.inventory.setStackInSlot(FLUID_IN, Items.BUCKET.getDefaultInstance());
 
 				}
-			} else {
+			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
 				int filled = FluidUtil.tryFluidTransfer(bowl.getFluidTank(), fluidHandlerItem,
 						bowl.getFluidTank().getCapacity(), true).getAmount();
 				if (filled > 0) {
 					bowl.inventory.setStackInSlot(FLUID_IN, fluidHandlerItem.getContainer());
 
+				}
+			} else if (inputItem.is(Items.GLASS_BOTTLE)) {
+				FluidStack f = BottleFluidRegistry.getFluidFromBottle(inputItem);
+				if (!f.isEmpty()) {
+					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
+						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
+						bowl.inventory.setStackInSlot(FLUID_IN, new ItemStack(Items.GLASS_BOTTLE, 1));
+					}
 				}
 			}
 		}
@@ -159,12 +168,20 @@ public class ChillerBlockEntity extends BlockEntity {
 					inputItem.shrink(1);
 					bowl.inventory.setStackInSlot(FLUID_OUT, stack.getFluid().getBucket().getDefaultInstance());
 				}
-			} else {
+			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
 				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
 						bowl.getFluidTank().getFluidAmount(), true).getAmount();
 				if (filled > 0) {
 					bowl.inventory.setStackInSlot(FLUID_OUT, fluidHandlerItem.getContainer());
+				}
+			} else {
+				ItemStack i = BottleFluidRegistry.getBottleFromFluid(bowl.getFluidTank().getFluid());
+				if (!i.isEmpty()) {
+					if (bowl.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
+						bowl.getFluidTank().drain(250, FluidAction.EXECUTE);
+						bowl.inventory.setStackInSlot(FLUID_OUT, i);
+					}
 				}
 			}
 		}
@@ -367,28 +384,29 @@ public class ChillerBlockEntity extends BlockEntity {
 
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
-				if (slot == FLUID_IN) {
-					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-						if (!stack.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).isEmpty())
-							return true;
-					return false;
-				} else if (slot == FLUID_OUT) {
-					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-						if (stack.is(Tags.Items.BUCKETS_EMPTY))
-							return true;
-						else if (stack.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).isEmpty()
-								&& !stack.is(Tags.Items.BUCKETS))
-							return true;
-					return false;
-				} else if (slot == DRIP_TRAY_OUT) {
-					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-						if (stack.is(Tags.Items.BUCKETS_EMPTY))
-							return true;
-						else if (stack.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).isEmpty()
-								&& !stack.is(Tags.Items.BUCKETS))
-							return true;
-					return false;
-				} else if (slot == ICE) {
+//				if (slot == FLUID_IN) {
+//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
+//						if (!stack.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).isEmpty())
+//							return true;
+//					return false;
+//				} else if (slot == FLUID_OUT) {
+//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
+//						if (stack.is(Tags.Items.BUCKETS_EMPTY))
+//							return true;
+//						else if (stack.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).isEmpty()
+//								&& !stack.is(Tags.Items.BUCKETS))
+//							return true;
+//					return false;
+//				} else if (slot == DRIP_TRAY_OUT) {
+//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
+//						if (stack.is(Tags.Items.BUCKETS_EMPTY))
+//							return true;
+//						else if (stack.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).isEmpty()
+//								&& !stack.is(Tags.Items.BUCKETS))
+//							return true;
+//					return false;
+//				} else 
+				if (slot == ICE) {
 					if (!stack.has(ExtraDelightComponents.CHILL))
 						return false;
 				}

@@ -1,8 +1,12 @@
 package com.lance5057.extradelight.workstations.mortar;
 
+import java.util.List;
+
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
+import com.lance5057.extradelight.util.BlockEntityUtils;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -18,6 +22,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -38,10 +43,9 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidUtil;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.items.IItemHandler;
-
-import java.util.List;
 
 public class MortarBlock extends Block implements EntityBlock, IStyleable {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -99,7 +103,7 @@ public class MortarBlock extends Block implements EntityBlock, IStyleable {
 
 				if (pPlayer.getItemInHand(pHand).is(ExtraDelightTags.PESTLES)) {
 					mbe.grind(pPlayer);
-				} else {
+				} else if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null) {
 					IFluidHandlerItem f = stack.getCapability(Capabilities.FluidHandler.ITEM);
 					if (f != null) {
 						FluidUtil.interactWithFluidHandler(pPlayer, pHand, mbe.getFluidTank());
@@ -108,6 +112,15 @@ public class MortarBlock extends Block implements EntityBlock, IStyleable {
 							mbe.extractItem(pPlayer);
 						} else {
 							mbe.insertItem(stack);
+						}
+					}
+				} else if (stack.is(Items.GLASS_BOTTLE)) {
+					ItemStack i = BottleFluidRegistry.getBottleFromFluid(mbe.getFluidTank().getFluid());
+					if (!i.isEmpty()) {
+						if (mbe.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
+							mbe.getFluidTank().drain(250, FluidAction.EXECUTE);
+
+							BlockEntityUtils.Inventory.givePlayerItemStack(i, pPlayer, pLevel, pPos);
 						}
 					}
 				}
@@ -199,7 +212,7 @@ public class MortarBlock extends Block implements EntityBlock, IStyleable {
 
 	@Override
 	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
-								TooltipFlag tooltipFlag) {
+			TooltipFlag tooltipFlag) {
 		MutableComponent textEmpty = Component.translatable(ExtraDelight.MOD_ID + ".tooltip.styleable");
 		tooltipComponents.add(textEmpty.withStyle(ChatFormatting.AQUA));
 	}
