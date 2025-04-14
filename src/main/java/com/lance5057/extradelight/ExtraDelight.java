@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 import com.lance5057.extradelight.worldgen.placers.FoliagePlacerRegistry;
@@ -38,6 +39,8 @@ public class ExtraDelight {
 		modEventBus.addListener(ExtraDelightCapabilities::registerCapabilities);
 		modEventBus.addListener(NetworkHandler::setupPackets);
 		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
+		
+		Fermentation f = new Fermentation();
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);
