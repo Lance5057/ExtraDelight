@@ -15,10 +15,12 @@ import com.lance5057.extradelight.workstations.vat.recipes.VatRecipeWrapper;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
@@ -65,6 +67,12 @@ public class VatBlockEntity extends BlockEntity {
 
 	private int stage = 0;
 	private int stageTotal = 0;
+
+	private boolean lidRequired = false;
+
+	public boolean isLidRequired() {
+		return lidRequired;
+	}
 
 	public int getStageTotal() {
 		return stageTotal;
@@ -260,51 +268,70 @@ public class VatBlockEntity extends BlockEntity {
 
 	public static <T extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, T be) {
 		VatBlockEntity vat = (VatBlockEntity) be;
+		if (level.isClientSide()) {
+			RandomSource random = level.random;
+			double x = (double) pos.getX() + 0.5D + (level.random.nextDouble() * 0.6D - 0.3D);
+			double y = (double) pos.getY() + 1.1D;
+			double z = (double) pos.getZ() + 0.5D + (level.random.nextDouble() * 0.6D - 0.3D);
+			if (vat.cookTime == 0 && vat.stage > 0)
+				if (random.nextFloat() < 0.2F) {
+					level.addParticle(ParticleTypes.GLOW, x, y, z, 0, 0, 0);
+				}
+			if (vat.cookTime != 0 && vat.cookTime < vat.cookTimeTotal)
+				if (random.nextFloat() < 0.5F) {
+					level.addParticle(ParticleTypes.MYCELIUM, x, y, z, 0, 1, 0);
+				}
+		} else {
 
-		RecipeHolder<VatRecipe> recipeholder = vat.quickCheck
-				.getRecipeFor(new VatRecipeWrapper(vat.items, vat.fluid), level).orElse(null);
+			RecipeHolder<VatRecipe> recipeholder = vat.quickCheck
+					.getRecipeFor(new VatRecipeWrapper(vat.items, vat.fluid), level).orElse(null);
 
-		if (recipeholder != null) {
-			vat.cookTimeTotal = recipeholder.value().getCookTime();
-			vat.stageTotal = recipeholder.value().getStages();
+			if (recipeholder != null) {
+				vat.cookTimeTotal = recipeholder.value().getStageIngredients().get(vat.stage).time;
+				vat.lidRequired = recipeholder.value().getStageIngredients().get(vat.stage).lid;
+				vat.stageTotal = recipeholder.value().getStages();
 
-			if (vat.stage >= vat.stageTotal) {// Finish
-				ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
-				ItemStack test = vat.items.insertItem(OUTPUT_SLOT, result, true);
-				if (test.isEmpty()) {
-					dropContainers(state, vat, level);
-					subtractItems(vat);
+				if (vat.stage >= vat.stageTotal) {// Finish
+					ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
+					ItemStack test = vat.items.insertItem(OUTPUT_SLOT, result, true);
+					if (test.isEmpty()) {
+						dropContainers(state, vat, level);
+						subtractItems(vat);
 
-					SizedFluidIngredient sfi = recipeholder.value().getFluid();
-					if (sfi.test(vat.fluid.getFluid()))
-						vat.fluid.drain(sfi.amount(), FluidAction.EXECUTE);
-					vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
-					vat.items.insertItem(OUTPUT_SLOT, result, false);
-					vat.cookTime = 0;
-					vat.stage = 0;
+						SizedFluidIngredient sfi = recipeholder.value().getFluid();
+						if (sfi.test(vat.fluid.getFluid()))
+							vat.fluid.drain(sfi.amount(), FluidAction.EXECUTE);
+						vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
+						vat.items.insertItem(OUTPUT_SLOT, result, false);
+						vat.cookTime = 0;
+						vat.stage = 0;
+					}
+				} else {
+					if (vat.cookTime >= vat.cookTimeTotal) {
+						vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
+						vat.cookTime = 0;
+						vat.stage++;
+
+						vat.cookTimeTotal = recipeholder.value().getStageIngredients().get(vat.stage).time;
+						vat.lidRequired = recipeholder.value().getStageIngredients().get(vat.stage).lid;
+					} else {
+						if (!recipeholder.value().getStageIngredients().isEmpty()) {
+							if (recipeholder.value().getStageIngredients().size() > vat.stage) {
+								if (recipeholder.value().getStageIngredients().get(vat.stage).ingredient
+										.test(vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT))) {
+									vat.cookTime++;
+								}
+							}
+						} else
+							vat.cookTime++;
+					}
 				}
 			} else {
-				if (vat.cookTime >= vat.cookTimeTotal) {
-					vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
-					vat.cookTime = 0;
-					vat.stage++;
-				} else {
-					if (!recipeholder.value().getStageIngredients().isEmpty()) {
-						if (recipeholder.value().getStageIngredients().size() > vat.stage) {
-							if (recipeholder.value().getStageIngredients().get(vat.stage)
-									.test(vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT))) {
-								vat.cookTime++;
-							}
-						}
-					} else
-						vat.cookTime++;
-				}
+				vat.cookTime = 0;
+				vat.cookTimeTotal = 0;
 			}
-		} else {
-			vat.cookTime = 0;
-			vat.cookTimeTotal = 0;
+			vat.updateInventory();
 		}
-		vat.updateInventory();
 	}
 
 	private static void subtractItems(VatBlockEntity chiller) {

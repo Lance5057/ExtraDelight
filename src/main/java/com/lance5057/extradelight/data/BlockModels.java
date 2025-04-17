@@ -22,8 +22,10 @@ import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornProperties;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
+import com.lance5057.extradelight.workstations.vat.VatBlock;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -624,7 +626,20 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.HANGING_GARLIC.get(), models()
 				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_garlic")));
 
+		getVariantBuilder(ExtraDelightBlocks.VAT.get()).forAllStates(state -> {
+			int servings = state.getValue(VatBlock.STYLE);
+
+			String suffix = "_style" + servings;
+
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.withExistingParent("block/cosmetics/vat/vat" + suffix.toLowerCase(), modLoc("block/vat"))
+							.renderType("cutout"))
+					.rotationY(((int) state.getValue(VatBlock.FACING).toYRot() + 90) % 360).build();
+		});
+
 		AestheticBlocks.blockModel(this);
+		Fermentation.blockModels(this);
 	}
 
 	void fluid(LiquidBlock block) {

@@ -20,6 +20,7 @@ import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
 import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
+import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe.StageIngredient;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
@@ -122,8 +123,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	private void vatRecipes(RecipeOutput consumer) {
 		VatRecipeBuilder.pickle(new ItemStack(Items.DIAMOND), new ItemStack(Items.DIRT), 100)
 				.requires(Ingredient.of(Tags.Items.BONES)).requiresFluid(SizedFluidIngredient.of(Fluids.LAVA, 1000))
-				.requiresStage(Ingredient.of(Tags.Items.BRICKS)).requiresStage(Ingredient.of(Tags.Items.EGGS))
-				.save(consumer);
+				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.BRICKS), 1000, false))
+				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.EGGS), 100, false)).save(consumer);
 	}
 
 	private void chillingRecipes(RecipeOutput consumer) {

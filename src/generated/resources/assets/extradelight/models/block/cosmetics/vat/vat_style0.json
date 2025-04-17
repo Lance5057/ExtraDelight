@@ -1,0 +1,4 @@
+{
+  "parent": "extradelight:block/vat",
+  "render_type": "minecraft:cutout"
+}

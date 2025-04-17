@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
+import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe.StageIngredient;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
@@ -30,7 +31,7 @@ public class VatRecipeBuilder implements RecipeBuilder {
 	private String group;
 	final ItemStack result;
 	final NonNullList<Ingredient> ingredients = NonNullList.create();
-	final NonNullList<Ingredient> stageIngredients = NonNullList.create();
+	final NonNullList<StageIngredient> stageIngredients = NonNullList.create();
 	SizedFluidIngredient fluid;
 
 	protected int stages = 0;
@@ -81,31 +82,9 @@ public class VatRecipeBuilder implements RecipeBuilder {
 		return this;
 	}
 
-	public VatRecipeBuilder requiresStage(Ingredient pIngredient) {
-		return this.requiresStage(pIngredient, 1);
-	}
-
-	public VatRecipeBuilder requiresStage(Ingredient pIngredient, int pQuantity) {
-		for (int i = 0; i < pQuantity; ++i) {
-			this.stageIngredients.add(pIngredient);
-			stages++;
-		}
-
-		return this;
-	}
-
-	public VatRecipeBuilder requiresStage(TagKey<Item> pTag) {
-		return this.requiresStage(Ingredient.of(pTag));
-	}
-
-	public VatRecipeBuilder requiresStage(ItemLike pItem) {
-		return this.requiresStage(pItem, 1);
-	}
-
-	public VatRecipeBuilder requiresStage(ItemLike pItem, int pQuantity) {
-		for (int i = 0; i < pQuantity; ++i) {
-			this.requiresStage(Ingredient.of(pItem));
-		}
+	public VatRecipeBuilder requiresStage(StageIngredient pIngredient) {
+		this.stageIngredients.add(pIngredient);
+		stages++;
 
 		return this;
 	}
@@ -137,8 +116,8 @@ public class VatRecipeBuilder implements RecipeBuilder {
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancementBuilder::addCriterion);
-		VatRecipe recipe = new VatRecipe("", this.ingredients, stageIngredients, this.fluid, this.result, this.cookTime,
-				this.stages, this.containerItem);
+		VatRecipe recipe = new VatRecipe("", this.ingredients, stageIngredients, this.fluid, this.result, this.stages,
+				this.containerItem);
 		recipeOutput.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/vat/")));
 	}
 

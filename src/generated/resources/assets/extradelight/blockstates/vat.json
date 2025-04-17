@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,style=0": {
+      "model": "extradelight:block/cosmetics/vat/vat_style0"
+    },
+    "facing=east,style=1": {
+      "model": "extradelight:block/cosmetics/vat/vat_style1"
+    },
+    "facing=north,style=0": {
+      "model": "extradelight:block/cosmetics/vat/vat_style0",
+      "y": 270
+    },
+    "facing=north,style=1": {
+      "model": "extradelight:block/cosmetics/vat/vat_style1",
+      "y": 270
+    },
+    "facing=south,style=0": {
+      "model": "extradelight:block/cosmetics/vat/vat_style0",
+      "y": 90
+    },
+    "facing=south,style=1": {
+      "model": "extradelight:block/cosmetics/vat/vat_style1",
+      "y": 90
+    },
+    "facing=west,style=0": {
+      "model": "extradelight:block/cosmetics/vat/vat_style0",
+      "y": 180
+    },
+    "facing=west,style=1": {
+      "model": "extradelight:block/cosmetics/vat/vat_style1",
+      "y": 180
+    }
+  }
+}

@@ -15,14 +15,21 @@
   },
   "stage_ingredients": [
     {
-      "tag": "c:bricks"
+      "ingredient": {
+        "tag": "c:bricks"
+      },
+      "lid": false,
+      "time": 1000
     },
     {
-      "tag": "c:eggs"
+      "ingredient": {
+        "tag": "c:eggs"
+      },
+      "lid": false,
+      "time": 100
     }
   ],
   "stages": 2,
-  "time": 100,
   "usedItem": {
     "count": 1,
     "id": "minecraft:dirt"
