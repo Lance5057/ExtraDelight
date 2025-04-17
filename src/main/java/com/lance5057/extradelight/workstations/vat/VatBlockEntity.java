@@ -287,9 +287,7 @@ public class VatBlockEntity extends BlockEntity {
 					.getRecipeFor(new VatRecipeWrapper(vat.items, vat.fluid), level).orElse(null);
 
 			if (recipeholder != null) {
-				vat.cookTimeTotal = recipeholder.value().getStageIngredients().get(vat.stage).time;
-				vat.lidRequired = recipeholder.value().getStageIngredients().get(vat.stage).lid;
-				vat.stageTotal = recipeholder.value().getStages();
+				
 
 				if (vat.stage >= vat.stageTotal) {// Finish
 					ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
@@ -307,13 +305,17 @@ public class VatBlockEntity extends BlockEntity {
 						vat.stage = 0;
 					}
 				} else {
+					vat.cookTimeTotal = recipeholder.value().getStageIngredients().get(vat.stage).time;
+					vat.lidRequired = recipeholder.value().getStageIngredients().get(vat.stage).lid;
+					vat.stageTotal = recipeholder.value().getStages();
+					
 					if (vat.cookTime >= vat.cookTimeTotal) {
 						vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
 						vat.cookTime = 0;
 						vat.stage++;
 
-						vat.cookTimeTotal = recipeholder.value().getStageIngredients().get(vat.stage).time;
-						vat.lidRequired = recipeholder.value().getStageIngredients().get(vat.stage).lid;
+//						vat.cookTimeTotal = recipeholder.value().getStageIngredients().get(vat.stage).time;
+//						vat.lidRequired = recipeholder.value().getStageIngredients().get(vat.stage).lid;
 					} else {
 						if (!recipeholder.value().getStageIngredients().isEmpty()) {
 							if (recipeholder.value().getStageIngredients().size() > vat.stage) {

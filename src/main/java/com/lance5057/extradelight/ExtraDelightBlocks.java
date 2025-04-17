@@ -30,6 +30,7 @@ import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
 import com.lance5057.extradelight.blocks.funnel.FunnelBlock;
 import com.lance5057.extradelight.blocks.jar.JarBlock;
 import com.lance5057.extradelight.blocks.keg.KegBlock;
+import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
 import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
@@ -168,6 +169,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<Block> VAT = BLOCKS.register("vat", VatBlock::new);
 	public static final DeferredBlock<Block> EVAPORATOR = BLOCKS.register("evaporator", EvaporatorBlock::new);
+	public static final DeferredBlock<LidBlock> LID = BLOCKS.register("lid", LidBlock::new);
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));

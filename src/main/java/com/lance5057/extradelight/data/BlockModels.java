@@ -22,6 +22,7 @@ import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornProperties;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
@@ -636,6 +637,16 @@ public class BlockModels extends BlockStateProvider {
 							.withExistingParent("block/cosmetics/vat/vat" + suffix.toLowerCase(), modLoc("block/vat"))
 							.renderType("cutout"))
 					.rotationY(((int) state.getValue(VatBlock.FACING).toYRot() + 90) % 360).build();
+		});
+
+		getVariantBuilder(ExtraDelightBlocks.LID.get()).forAllStates(state -> {
+			int servings = state.getValue(LidBlock.STYLE);
+
+			String suffix = "_style" + servings;
+
+			return ConfiguredModel.builder().modelFile(
+					models().withExistingParent("block/cosmetics/lid/lid" + suffix.toLowerCase(), modLoc("block/lid")))
+					.build();
 		});
 
 		AestheticBlocks.blockModel(this);

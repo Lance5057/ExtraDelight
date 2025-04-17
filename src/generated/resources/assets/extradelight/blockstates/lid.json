@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "style=0": {
+      "model": "extradelight:block/cosmetics/lid/lid_style0"
+    },
+    "style=1": {
+      "model": "extradelight:block/cosmetics/lid/lid_style1"
+    }
+  }
+}
