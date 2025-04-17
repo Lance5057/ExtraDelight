@@ -1,7 +1,5 @@
 package com.lance5057.extradelight.workstations.vat.recipes;
 
-import java.util.List;
-
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.workstations.vat.VatBlockEntity;
 import com.mojang.serialization.Codec;
@@ -35,7 +33,7 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 	final String group;
 	final ItemStack result;
 	final NonNullList<Ingredient> ingredients;
-	final List<StageIngredient> stageIngredients;
+	final NonNullList<StageIngredient> stageIngredients;
 	final SizedFluidIngredient fluid;
 
 	protected final int stages;
@@ -44,8 +42,9 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 		return stages;
 	}
 
-	public VatRecipe(String pGroup, NonNullList<Ingredient> pIngredients, List<StageIngredient> pStageIngredients,
-			SizedFluidIngredient pFluids, ItemStack pResult, int stages, ItemStack usedItem) {
+	public VatRecipe(String pGroup, NonNullList<Ingredient> pIngredients,
+			NonNullList<StageIngredient> pStageIngredients, SizedFluidIngredient pFluids, ItemStack pResult, int stages,
+			ItemStack usedItem) {
 //		this.cookTime = time;
 		this.containerItem = usedItem;
 		this.group = pGroup;
@@ -65,7 +64,7 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 		return this.ingredients;
 	}
 
-	public List<StageIngredient> getStageIngredients() {
+	public NonNullList<StageIngredient> getStageIngredients() {
 		return this.stageIngredients;
 	}
 
@@ -159,7 +158,7 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 
 		private static StageIngredient read(RegistryFriendlyByteBuf buffer) {
 			Ingredient i = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
-			int t = buffer.readInt();
+			int t = buffer.readVarInt();
 			boolean l = buffer.readBoolean();
 			return new StageIngredient(i, t, l);
 		}
@@ -182,8 +181,11 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 							return nonNullList;
 						}, ing -> ing).forGetter(VatRecipe::getIngredients),
 
-						Codec.list(StageIngredient.CODEC).fieldOf("stage_ingredients")
-								.forGetter(VatRecipe::getStageIngredients),
+						Codec.list(StageIngredient.CODEC).fieldOf("stage_ingredients").xmap(ing -> {
+							NonNullList<StageIngredient> nonNullList = NonNullList.create();
+							nonNullList.addAll(ing);
+							return nonNullList;
+						}, ing -> ing).forGetter(VatRecipe::getStageIngredients),
 
 						SizedFluidIngredient.FLAT_CODEC.fieldOf("fluids").forGetter(VatRecipe::getFluid),
 
@@ -197,6 +199,7 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 
 		public static VatRecipe fromNetwork(RegistryFriendlyByteBuf pBuffer) {
 			String s = pBuffer.readUtf();
+
 			int i = pBuffer.readVarInt();
 			NonNullList<Ingredient> nonnulllist = NonNullList.withSize(i, Ingredient.EMPTY);
 
@@ -205,7 +208,7 @@ public class VatRecipe implements Recipe<VatRecipeWrapper> {
 			}
 
 			int x = pBuffer.readVarInt();
-			List<StageIngredient> nonnulllist2 = NonNullList.withSize(x, StageIngredient.EMPTY);
+			NonNullList<StageIngredient> nonnulllist2 = NonNullList.withSize(x, StageIngredient.EMPTY);
 
 			for (int j = 0; j < nonnulllist2.size(); ++j) {
 				nonnulllist2.set(j, StageIngredient.STREAM_CODEC.decode(pBuffer));
