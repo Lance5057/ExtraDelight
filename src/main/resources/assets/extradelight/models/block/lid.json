@@ -2,9 +2,10 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"0": "extradelight:block/vat_inside",
+		"0": "block/copper_block",
 		"1": "block/spruce_log_top",
-		"particle": "extradelight:block/vat_inside"
+		"2": "extradelight:block/vat_extra",
+		"particle": "block/copper_block"
 	},
 	"elements": [
 		{
@@ -12,31 +13,31 @@
 			"to": [14, 2, 14],
 			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 1]},
 			"faces": {
-				"north": {"uv": [0, 0, 12, 2], "texture": "#0"},
-				"east": {"uv": [0, 0, 12, 2], "texture": "#0"},
-				"south": {"uv": [0, 0, 12, 2], "texture": "#0"},
-				"west": {"uv": [0, 0, 12, 2], "texture": "#0"},
+				"north": {"uv": [1, 14, 13, 16], "texture": "#2"},
+				"east": {"uv": [1, 14, 13, 16], "texture": "#2"},
+				"south": {"uv": [1, 14, 13, 16], "texture": "#2"},
+				"west": {"uv": [1, 14, 13, 16], "texture": "#2"},
 				"up": {"uv": [2, 2, 14, 14], "texture": "#0"},
-				"down": {"uv": [2, 2, 14, 14], "texture": "#0"}
+				"down": {"uv": [3, 4, 15, 16], "texture": "#0"}
 			}
 		},
 		{
-			"from": [4, 2, 4],
-			"to": [12, 4, 12],
+			"from": [3, 2, 3],
+			"to": [13, 3, 13],
 			"rotation": {"angle": 0, "axis": "y", "origin": [1, 2, 1]},
 			"faces": {
-				"north": {"uv": [4, 2, 12, 4], "texture": "#0"},
-				"east": {"uv": [4, 2, 12, 4], "texture": "#0"},
-				"south": {"uv": [4, 2, 12, 4], "texture": "#0"},
-				"west": {"uv": [4, 2, 12, 4], "texture": "#0"},
-				"up": {"uv": [4, 4, 12, 12], "texture": "#0"},
-				"down": {"uv": [4, 4, 12, 12], "texture": "#0"}
+				"north": {"uv": [4, 2, 14, 3], "texture": "#0"},
+				"east": {"uv": [4, 2, 14, 3], "texture": "#0"},
+				"south": {"uv": [4, 2, 14, 3], "texture": "#0"},
+				"west": {"uv": [4, 2, 14, 3], "texture": "#0"},
+				"up": {"uv": [3, 3, 13, 13], "texture": "#0"},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#0"}
 			}
 		},
 		{
-			"from": [6, 4.5, 6],
-			"to": [10, 6.5, 10],
-			"rotation": {"angle": 0, "axis": "y", "origin": [1, 4.5, 1]},
+			"from": [6, 3.5, 6],
+			"to": [10, 5.5, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 3.5, 1]},
 			"faces": {
 				"north": {"uv": [6, 13, 10, 15], "texture": "#1"},
 				"east": {"uv": [6, 13, 10, 15], "texture": "#1"},
@@ -47,9 +48,9 @@
 			}
 		},
 		{
-			"from": [7, 4, 7],
-			"to": [9, 5, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [1, 4, 1]},
+			"from": [7, 3, 7],
+			"to": [9, 4, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 3, 1]},
 			"faces": {
 				"north": {"uv": [0, 0, 2, 1], "texture": "#1"},
 				"east": {"uv": [0, 0, 2, 1], "texture": "#1"},
