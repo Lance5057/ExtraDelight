@@ -145,6 +145,8 @@ public class AestheticBlocks {
 
 				blocks.add(b);
 				items.add(t);
+				//tag(Tags.Blocks.DYED_BLACK).add(b);
+				//tag(Tags.Items.DYED_BLACK).add(t);
 			}
 		}
 	}
@@ -170,6 +172,8 @@ public class AestheticBlocks {
 
 			blocks.add(b);
 			items.add(t);
+			//tag(Tags.Blocks.DYED_BLACK).add(b);
+			//tag(Tags.Items.DYED_BLACK).add(t);
 		}
 	}
 

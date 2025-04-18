@@ -2,7 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"1": "block/hopper_inside"
+		"1": "block/hopper_inside",
+		"particle": "block/hopper_inside"
 	},
 	"elements": [
 		{

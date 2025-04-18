@@ -2,6 +2,7 @@ package com.lance5057.extradelight.integration.jei;
 
 import java.util.List;
 
+import com.lance5057.extradelight.modules.Fermentation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
@@ -112,6 +113,13 @@ public class JEIPlugin implements IModPlugin {
 		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.WILD_GARLIC_BLOCK.get()),
 						new ItemStack(ExtraDelightItems.GARLIC.get())), VanillaTypes.ITEM_STACK,
 				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.garlic"));
+		registry.addIngredientInfo(List.of(new ItemStack(Fermentation.WILD_CUCUMBER.get()),
+						new ItemStack(Fermentation.CUCUMBER.get()), new ItemStack(Fermentation.CUCUMBER_SEED.get()
+						)), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.cucumber"));
+		registry.addIngredientInfo(List.of(new ItemStack(Fermentation.WILD_SOYBEAN.get()),
+						new ItemStack(Fermentation.SOYBEAN_POD.get())), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.soybean"));
 
 		List<ItemStack> hide = List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
 		registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hide);
