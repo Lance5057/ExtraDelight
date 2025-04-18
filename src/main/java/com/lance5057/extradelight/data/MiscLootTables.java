@@ -13,6 +13,7 @@ import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -38,6 +39,9 @@ public class MiscLootTables implements LootTableSubProvider {
 	public static final ResourceKey<LootTable> CINNAMON_LOG = ResourceKey.create(Registries.LOOT_TABLE,
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "misc/cinnamon_log"));
 
+	public static final ResourceKey<LootTable> EVAPORATOR_LAVA_TEST = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "evaporator/lava_test"));
+
 	protected MiscLootTables(HolderLookup.Provider provider) {
 		registries = provider;
 	}
@@ -53,10 +57,8 @@ public class MiscLootTables implements LootTableSubProvider {
 				LootTable.lootTable().withPool(createPoolWithItem(ExtraDelightItems.CINNAMON_BARK.get(), 1, 4))
 						.withPool(createPoolWithItem(ModItems.TREE_BARK.get(), 0, 2)));
 
-//		t.accept(CORN_TOP, createCropDrops(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
-//				ExtraDelightItems.CORN_SEEDS.get(),
-//				LootItemBlockStatePropertyCondition.hasBlockStateProperties(ExtraDelightBlocks.CORN_TOP.get())
-//						.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 3))));
+		t.accept(EVAPORATOR_LAVA_TEST, LootTable.lootTable().withPool(createPoolWithItem(Items.COBBLESTONE, 1, 4))
+				.withPool(createPoolWithItem(Items.STONE, 0, 2)));
 	}
 
 	@NotNull

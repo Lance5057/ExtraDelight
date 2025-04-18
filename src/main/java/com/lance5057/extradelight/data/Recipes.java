@@ -19,6 +19,7 @@ import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
 import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
+import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe.StageIngredient;
 import com.simibubi.create.Create;
@@ -46,6 +47,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForgeMod;
@@ -114,8 +116,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void evaporatorRecipes(RecipeOutput consumer) {
-		EvaporatorRecipeBuilder.evaporate(SizedFluidIngredient.of(Fluids.LAVA, 1000), ExtraDelight.modLoc("loot"), 100)
-				.unlockedBy(getName(), has(Items.LAVA_BUCKET)).save(consumer, ExtraDelight.modLoc("evaporate_lava"));
+		EvaporatorRecipeBuilder
+				.evaporate(SizedFluidIngredient.of(Fluids.LAVA, 1000), MiscLootTables.EVAPORATOR_LAVA_TEST.location(),
+						100, Blocks.COBBLESTONE)
+				.unlockedBy(getName(), has(Items.LAVA_BUCKET))
+				.save(consumer, ExtraDelight.modLoc("evaporate_lava"));
 	}
 
 	final int dayTick = 24000;
@@ -124,7 +129,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		VatRecipeBuilder.pickle(new ItemStack(Items.DIAMOND), new ItemStack(Items.DIRT), 100)
 				.requires(Ingredient.of(Tags.Items.BONES)).requiresFluid(SizedFluidIngredient.of(Fluids.LAVA, 1000))
 				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.BRICKS), 1000, false))
-				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.EGGS), 100, false)).save(consumer);
+				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.EGGS), 100, true)).save(consumer);
 	}
 
 	private void chillingRecipes(RecipeOutput consumer) {
@@ -4745,6 +4750,50 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.GARLIC_CLOVE.get(), 3)
 				.addResultWithChance(ExtraDelightItems.GARLIC_CLOVE.get(), 0.75f, 1)
 				.build(consumer, EDLoc("cutting/" + "garlic_dividing_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(Fermentation.CUCUMBER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						Fermentation.SLICED_CUCUMBER_ITEM.get(), 3)
+				.build(consumer, EDLoc("cutting/" + "sliced_cucumber_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_GINGER.get()),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.GINGER.get(), 1)
+				.addResultWithChance(Items.RED_DYE, 0.5f, 2).build(consumer, EDLoc("cutting/" + "wild_ginger_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_PEANUT_BLOCK.get()),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.PEANUTS_IN_SHELL.get(), 1)
+				.addResultWithChance(Items.YELLOW_DYE, 0.5f, 2)
+				.build(consumer, EDLoc("cutting/" + "wild_peanut_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_CHILI_BLOCK.get()),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.CHILI_SEEDS.get(), 1)
+				.addResultWithChance(ExtraDelightItems.CHILI.get(), 0.2f, 1)
+				.addResultWithChance(Items.GREEN_DYE, 0.1f, 1).build(consumer, EDLoc("cutting/" + "wild_chili_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK.get()),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.MALLOW_ROOT.get(), 1)
+				.addResultWithChance(Items.PINK_DYE, 0.5f, 2).build(consumer, EDLoc("cutting/" + "wild_mallow_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_GARLIC_BLOCK.get()),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.GARLIC.get(), 1)
+				.addResult(Items.MAGENTA_DYE, 2).addResultWithChance(Items.LIME_DYE, 0.1f, 1)
+				.build(consumer, EDLoc("cutting/" + "wild_garlic_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(Fermentation.WILD_CUCUMBER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						Fermentation.CUCUMBER_SEED.get(), 1)
+				.addResultWithChance(Fermentation.CUCUMBER.get(), 0.2f, 1).addResultWithChance(Items.GREEN_DYE, 0.1f, 1)
+				.build(consumer, EDLoc("cutting/" + "wild_cucumber_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(Fermentation.WILD_SOYBEAN.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						Fermentation.SOYBEAN_POD.get(), 1)
+				.addResultWithChance(Items.LIME_DYE, 0.5f, 2).build(consumer, EDLoc("cutting/" + "wild_soybean_knife"));
 	}
 
 	private void mortarRecipes(RecipeOutput consumer) {

@@ -18,7 +18,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class LidBlock extends Block implements EntityBlock, IStyleable {
-	protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
+	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
 	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length);
 
 	public static enum Styles {
@@ -57,49 +57,41 @@ public class LidBlock extends Block implements EntityBlock, IStyleable {
 
 	@Override
 	public int numStyles() {
-		// TODO Auto-generated method stub
-		return 0;
+		return Styles.values().length;
 	}
 
 	@Override
 	public int getCurrentStyle(BlockState state) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public void setNextStyle(Level level, BlockPos pos, BlockState state) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void setPrevStyle(Level level, BlockPos pos, BlockState state) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public BlockState getState(int i) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setStyle(Level level, BlockPos pos, BlockState state, int style) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public boolean isPatreonStyle(int style) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

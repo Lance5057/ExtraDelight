@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "extradelight:block/crops/cucumber/cucumber_stage7"
+  }
+}

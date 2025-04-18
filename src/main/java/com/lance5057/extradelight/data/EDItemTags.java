@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.extradelight.modules.Fermentation;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -520,9 +521,10 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(Tags.Items.CROPS).add(ExtraDelightItems.GINGER.get(), ExtraDelightItems.MINT.get(),
 				ExtraDelightItems.CHILI.get(), ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.PEANUTS.get(),
-				ExtraDelightItems.GARLIC.get());
+				ExtraDelightItems.GARLIC.get(), Fermentation.CUCUMBER.get(), Fermentation.SOYBEANS.get());
 		tag(Tags.Items.TOOLS).addTag(ExtraDelightTags.SPOONS).addTag(ExtraDelightTags.PESTLES);
-		tag(Tags.Items.SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get());
+		tag(Tags.Items.SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.CUSTARD).add(ExtraDelightItems.APPLE_CUSTARD.get(),
 				ExtraDelightItems.CARAMEL_CUSTARD.get(), ExtraDelightItems.CHOCOLATE_CUSTARD.get(),
@@ -534,23 +536,31 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ItemTags.CAMEL_FOOD).add(ExtraDelightItems.CACTUS.get());
 		tag(ItemTags.CHICKEN_FOOD).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 				ExtraDelightItems.HAZELNUTS.get(), ExtraDelightItems.PEANUTS.get(),
-				ExtraDelightItems.SUNFLOWER_SEEDS.get());
-		tag(ItemTags.COW_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get());
+				ExtraDelightItems.SUNFLOWER_SEEDS.get(), Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
+		tag(ItemTags.COW_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get(),
+				Fermentation.SOYBEANS.get());
 		tag(ItemTags.FROG_FOOD).add(ExtraDelightItems.AGAR_AGAR.get());
+		tag(ItemTags.GOAT_FOOD).add(Fermentation.SOYBEANS.get());
 		tag(ItemTags.LLAMA_FOOD).add(ExtraDelightItems.CORN_HUSK_BUNDLE.get(),
 				ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get());
 		tag(ItemTags.PARROT_FOOD).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 				ExtraDelightItems.HAZELNUTS.get(), ExtraDelightItems.PEANUTS.get(),
-				ExtraDelightItems.SUNFLOWER_SEEDS.get());
+				ExtraDelightItems.SUNFLOWER_SEEDS.get(), Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
 		tag(ItemTags.PIG_FOOD).add(ExtraDelightItems.CORN_COB.get(), ExtraDelightItems.GINGER.get(),
-				ExtraDelightItems.MALLOW_ROOT.get());
-		tag(ItemTags.SHEEP_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get());
+				ExtraDelightItems.MALLOW_ROOT.get(), Fermentation.CUCUMBER.get());
+		tag(ItemTags.SHEEP_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get(),
+				Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.PROCESSED_CHILI).add(ExtraDelightItems.CHILI.get(), ExtraDelightItems.SLICED_CHILI.get());
 
 		tag(ExtraDelightTags.GARLIC).add(ExtraDelightItems.GARLIC.get());
 		tag(ExtraDelightTags.PROCESSED_GARLIC).add(ExtraDelightItems.GARLIC_CLOVE.get(),
 				ExtraDelightItems.GRATED_GARLIC.get());
+
+		tag(ExtraDelightTags.CUCUMBER).add(Fermentation.CUCUMBER.get());
+		tag(ExtraDelightTags.PROCESSED_CUCUMBER).add(Fermentation.CUCUMBER.get(),
+				Fermentation.SLICED_CUCUMBER_ITEM.get());
+		tag(ExtraDelightTags.SOYBEAN).add(Fermentation.SOYBEANS.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get());

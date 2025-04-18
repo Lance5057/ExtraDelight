@@ -2,6 +2,7 @@ package com.lance5057.extradelight.blocks.crops;
 
 import com.lance5057.extradelight.ExtraDelightItems;
 
+import com.lance5057.extradelight.modules.Fermentation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -20,8 +21,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class CucumberCrop extends CropBlock {
 
-	public static final int MAX_AGE = 6;
-	public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 6);
+	public static final int MAX_AGE = 7;
+	public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7);
 	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
 	        Block.box(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
 	        Block.box(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
@@ -46,7 +47,7 @@ public class CucumberCrop extends CropBlock {
 	}
 
 	protected ItemLike getBaseSeedId() {
-		return ExtraDelightItems.CHILI_SEEDS.get();
+		return Fermentation.CUCUMBER_SEED.get();
 	}
 	
 	@Override

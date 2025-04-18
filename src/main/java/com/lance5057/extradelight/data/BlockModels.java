@@ -15,6 +15,7 @@ import com.lance5057.extradelight.blocks.VanillaFruitLeafBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.BushStageFour;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
+import com.lance5057.extradelight.blocks.crops.CucumberCrop;
 import com.lance5057.extradelight.blocks.crops.GarlicCrop;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MallowRootCrop;
@@ -648,6 +649,10 @@ public class BlockModels extends BlockStateProvider {
 					models().withExistingParent("block/cosmetics/lid/lid" + suffix.toLowerCase(), modLoc("block/lid")))
 					.build();
 		});
+
+		this.cropCrossBlock(Fermentation.CUCUMBER_CROP.get(), "cucumber", CucumberCrop.AGE);
+		simpleBlock(Fermentation.WILD_CUCUMBER.get(), new ConfiguredModel(
+				models().cross("wild_cucumber", modLoc("block/crops/cucumber/cucumber_stage7")).renderType("cutout")));
 
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);

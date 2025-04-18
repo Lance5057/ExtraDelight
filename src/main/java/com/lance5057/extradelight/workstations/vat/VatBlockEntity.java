@@ -7,6 +7,7 @@ import javax.annotation.Nonnull;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
@@ -69,6 +70,11 @@ public class VatBlockEntity extends BlockEntity {
 	private int stageTotal = 0;
 
 	private boolean lidRequired = false;
+	private boolean hasLid = false;
+
+	public boolean isHasLid() {
+		return hasLid;
+	}
 
 	public boolean isLidRequired() {
 		return lidRequired;
@@ -282,13 +288,18 @@ public class VatBlockEntity extends BlockEntity {
 					level.addParticle(ParticleTypes.MYCELIUM, x, y, z, 0, 1, 0);
 				}
 		} else {
-
+			if (level.getBlockState(vat.worldPosition.above()).is(ExtraDelightBlocks.LID)) {
+				vat.hasLid = true;
+			} else
+				vat.hasLid = false;
+			
 			RecipeHolder<VatRecipe> recipeholder = vat.quickCheck
 					.getRecipeFor(new VatRecipeWrapper(vat.items, vat.fluid), level).orElse(null);
 
 			if (recipeholder != null) {
-				
-
+//				vat.cookTimeTotal = recipeholder.value().getStageIngredients().get(vat.stage).time;
+//				vat.lidRequired = recipeholder.value().getStageIngredients().get(vat.stage).lid;
+				vat.stageTotal = recipeholder.value().getStages();
 				if (vat.stage >= vat.stageTotal) {// Finish
 					ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
 					ItemStack test = vat.items.insertItem(OUTPUT_SLOT, result, true);
@@ -308,7 +319,7 @@ public class VatBlockEntity extends BlockEntity {
 					vat.cookTimeTotal = recipeholder.value().getStageIngredients().get(vat.stage).time;
 					vat.lidRequired = recipeholder.value().getStageIngredients().get(vat.stage).lid;
 					vat.stageTotal = recipeholder.value().getStages();
-					
+
 					if (vat.cookTime >= vat.cookTimeTotal) {
 						vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
 						vat.cookTime = 0;
@@ -321,7 +332,15 @@ public class VatBlockEntity extends BlockEntity {
 							if (recipeholder.value().getStageIngredients().size() > vat.stage) {
 								if (recipeholder.value().getStageIngredients().get(vat.stage).ingredient
 										.test(vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT))) {
-									vat.cookTime++;
+									if (recipeholder.value().getStageIngredients().get(vat.stage).lid) {
+										if (vat.hasLid) {
+											vat.cookTime++;
+										}
+									} else if (!level.getBlockState(vat.worldPosition.above())
+											.is(ExtraDelightBlocks.LID)) {
+										vat.cookTime++;
+									}
+
 								}
 							}
 						} else
@@ -415,6 +434,8 @@ public class VatBlockEntity extends BlockEntity {
 		this.stageTotal = nbt.getInt("stageTotal");
 		this.cookTime = nbt.getInt("cookTime");
 		this.cookTimeTotal = nbt.getInt("cookTimeTotal");
+		this.lidRequired = nbt.getBoolean("needsLid");
+		this.hasLid = nbt.getBoolean("hasLid");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
@@ -426,6 +447,8 @@ public class VatBlockEntity extends BlockEntity {
 		tag.putInt("stageTotal", this.stageTotal);
 		tag.putInt("cookTime", this.cookTime);
 		tag.putInt("cookTimeTotal", this.cookTimeTotal);
+		tag.putBoolean("needsLid", this.lidRequired);
+		tag.putBoolean("hasLid", this.hasLid);
 
 		return tag;
 	}

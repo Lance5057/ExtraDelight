@@ -5,8 +5,8 @@
     "feature": {
       "type": "extradelight:wild_peanut",
       "config": {
-        "max_count": 10,
-        "min_count": 5,
+        "max_count": 7,
+        "min_count": 3,
         "tries": 128,
         "xz_spread": 5,
         "y_spread": 5
@@ -15,7 +15,7 @@
     "placement": [
       {
         "type": "minecraft:rarity_filter",
-        "chance": 20
+        "chance": 50
       },
       {
         "type": "minecraft:in_square"

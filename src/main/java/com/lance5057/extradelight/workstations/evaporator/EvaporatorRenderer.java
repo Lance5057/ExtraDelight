@@ -11,16 +11,22 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.neoforged.neoforge.client.model.data.ModelData;
+import net.neoforged.neoforge.client.model.renderable.BakedModelRenderable;
+import net.neoforged.neoforge.client.model.renderable.IRenderable;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 
@@ -39,6 +45,17 @@ public class EvaporatorRenderer implements BlockEntityRenderer<EvaporatorBlockEn
 		ItemStack item = inv.getStackInSlot(0);
 
 		if (!item.isEmpty()) {
+			ResourceLocation display = pBlockEntity.getDisplayBlock();
+
+			IRenderable<ModelData> bm = BakedModelRenderable.of(ModelResourceLocation.standalone(display))
+					.withModelDataContext();
+			if (bm != null) {
+				pPoseStack.pushPose();
+				bm.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
+						pPackedOverlay, pPartialTick, ModelData.EMPTY);
+				pPoseStack.popPose();
+			}
+
 			for (int i = 0; i < item.getCount(); i++) {
 				BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 				pPoseStack.pushPose();

@@ -8,6 +8,7 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
+import com.lance5057.extradelight.modules.Fermentation;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -79,7 +80,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.BAKING_STONE_BLOCK.get(), ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(),
 				ExtraDelightBlocks.KEG.get(), ExtraDelightBlocks.MELTING_POT.get(), ExtraDelightBlocks.CHILLER.get(),
 				ExtraDelightBlocks.BAR_MOLD.get(), ExtraDelightBlocks.FUNNEL.get(), ExtraDelightBlocks.JAR.get(),
-				ExtraDelightBlocks.TAP.get(),
+				ExtraDelightBlocks.TAP.get(), ExtraDelightBlocks.VAT.get(), ExtraDelightBlocks.LID.get(),
+				ExtraDelightBlocks.EVAPORATOR.get(),
 
 				// Chocolate
 				ExtraDelightBlocks.BLOOD_CHOCOLATE_BLOCK.get(), ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get(),
@@ -150,7 +152,9 @@ public class EDBlockTags extends BlockTagsProvider {
 		AestheticBlocks.DRIED_CORN_FENCE.forEach(this::makeMineableWithAxe);
 		AestheticBlocks.DRIED_CORN_FENCE.forEach(this::makeFence);
 
-		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.WILD_GINGER.get());
+		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.WILD_GINGER.get(), ExtraDelightBlocks.WILD_PEANUT.get(),
+				ExtraDelightBlocks.WILD_CHILI.get(), ExtraDelightBlocks.WILD_MALLOW_ROOT.get(),
+				ExtraDelightBlocks.WILD_GARLIC.get(), Fermentation.WILD_CUCUMBER.get(), Fermentation.WILD_SOYBEAN.get());
 
 		tag(BlockTags.MINEABLE_WITH_HOE).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(),
 				ExtraDelightBlocks.HAZELNUT_LEAVES.get(), ExtraDelightBlocks.APPLE_LEAVES.get());
@@ -211,7 +215,7 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.BEE_GROWABLES).add(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightBlocks.CORN_BOTTOM.get(),
 				ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightBlocks.GINGER_CROP.get(),
 				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get(),
-				ExtraDelightBlocks.GARLIC_CROP.get());
+				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get());
 
 		// Dyed Tags
 		tag(Tags.Blocks.DYED_BLACK).add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get());

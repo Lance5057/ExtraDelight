@@ -12,6 +12,7 @@ import com.lance5057.extradelight.workstations.evaporator.recipes.EvaporatorReci
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
@@ -19,12 +20,14 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.inventory.RecipeCraftingHolder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeManager.CachedCheck;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -51,6 +54,12 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 
 	private int cookTime = 0;
 	private int cookTimeTotal = 0;
+
+	private ResourceLocation displayBlock = BuiltInRegistries.BLOCK.getKey(Blocks.AIR);
+
+	public ResourceLocation getDisplayBlock() {
+		return displayBlock;
+	}
 
 	public int getCookTime() {
 		return cookTime;
@@ -117,11 +126,6 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
 		this.updateInventory();
 	}
-//
-//	public void extractItem(Player p) {
-//		BlockEntityUtils.Inventory.extractItem(p, items, NUM_SLOTS);
-//		this.updateInventory();
-//	}
 
 	public boolean isInventoryEmpty() {
 		boolean flag = true;
@@ -182,6 +186,8 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 
 		this.cookTime = nbt.getInt("cookTime");
 		this.cookTimeTotal = nbt.getInt("cookTimeTotal");
+
+		this.displayBlock = ResourceLocation.parse(nbt.getString("display"));
 	}
 
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
@@ -190,6 +196,8 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 		tank.writeToNBT(registries, tag);
 		tag.putInt("cookTime", this.cookTime);
 		tag.putInt("cookTimeTotal", this.cookTimeTotal);
+
+		tag.putString("display", this.displayBlock.toString());
 
 		return tag;
 	}
@@ -235,6 +243,7 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 
 		if (recipeholder != null) {
 			evaporator.cookTimeTotal = recipeholder.value().getCookTime();
+			evaporator.displayBlock = recipeholder.value().getDisplay();
 
 			if (evaporator.cookTime >= evaporator.cookTimeTotal) {
 				dropLoot(evaporator, recipeholder.value().getOutput());
@@ -256,6 +265,17 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 						evaporator.insertItem(itemStack);
 					});
 
+		}
+	}
+
+	public void dropItems() {
+		for (int i = 0; i < items.getSlots(); i++) {
+			ItemStack stack = items.getStackInSlot(i);
+			if (!stack.isEmpty()) {
+				level.addFreshEntity(new ItemEntity(level, this.worldPosition.getX(), worldPosition.getY(),
+						worldPosition.getZ(), stack.copy()));
+				items.setStackInSlot(i, ItemStack.EMPTY);
+			}
 		}
 	}
 }

@@ -1,5 +1,6 @@
 package com.lance5057.extradelight.workstations.vat;
 
+import java.awt.Color;
 import java.awt.Rectangle;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -9,6 +10,7 @@ import com.lance5057.extradelight.gui.widgets.FluidStackWidget;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.ImageWidget;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -52,11 +54,16 @@ public class VatScreen extends AbstractContainerScreen<VatMenu> {
 		DecimalFormat df = new DecimalFormat("##.##");
 		df.setRoundingMode(RoundingMode.UP);
 
-		graphics.drawString(this.font, df.format((float) ((float) l / (float) 24000)) + " Days", this.leftPos + 95,
+		graphics.drawString(this.font, df.format((float) ((float) (l-m) / (float) 24000)) + " Days", this.leftPos + 95,
 				this.topPos + 56, 4210752, false);
 
 		if (l != 0) {
 			graphics.drawString(this.font, "Stage", this.leftPos + 125, this.topPos, 4210752, false);
+
+			if (this.menu.tileEntity.isLidRequired() && !this.menu.tileEntity.isHasLid())
+				graphics.drawString(this.font, " Needs Lid!", this.leftPos + 110, this.topPos + 20, 0xff0000, false);
+			else if(!this.menu.tileEntity.isLidRequired() && this.menu.tileEntity.isHasLid())
+				graphics.drawString(this.font, "Remove Lid!", this.leftPos + 113, this.topPos + 20, 0xff0000, false);
 
 			graphics.drawString(this.font,
 					(this.menu.tileEntity.getStage()) + "/" + (this.menu.tileEntity.getStageTotal()),

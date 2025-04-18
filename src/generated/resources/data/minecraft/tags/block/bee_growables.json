@@ -6,6 +6,8 @@
     "extradelight:ginger_crop",
     "extradelight:mallow_root_crop",
     "extradelight:peanut_crop",
-    "extradelight:garlic_crop"
+    "extradelight:garlic_crop",
+    "extradelight:cucumber_crop",
+    "extradelight:soybean_crop"
   ]
 }

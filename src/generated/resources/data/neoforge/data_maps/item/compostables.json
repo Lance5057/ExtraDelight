@@ -48,6 +48,9 @@
     "extradelight:corn_silk": {
       "chance": 0.2
     },
+    "extradelight:cucumber": {
+      "chance": 0.2
+    },
     "extradelight:dried_corn_husk": {
       "chance": 0.2
     },
@@ -90,6 +93,9 @@
     "extradelight:sliced_apple": {
       "chance": 0.2
     },
+    "extradelight:sliced_cucumber_item": {
+      "chance": 0.2
+    },
     "extradelight:sliced_ginger": {
       "chance": 0.2
     },
@@ -102,10 +108,16 @@
     "extradelight:sliced_tomato": {
       "chance": 0.2
     },
+    "extradelight:soybean_pod": {
+      "chance": 0.2
+    },
     "extradelight:unshucked_corn": {
       "chance": 0.2
     },
     "extradelight:wild_chili_block": {
+      "chance": 0.2
+    },
+    "extradelight:wild_cucumber_item": {
       "chance": 0.2
     },
     "extradelight:wild_garlic_block": {
@@ -118,6 +130,9 @@
       "chance": 0.2
     },
     "extradelight:wild_peanut_block": {
+      "chance": 0.2
+    },
+    "extradelight:wild_soybean_item": {
       "chance": 0.2
     }
   }

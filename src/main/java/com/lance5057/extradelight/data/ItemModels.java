@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.modules.Fermentation;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -1228,6 +1229,18 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.AGLIO_E_OLIO, "aglio_e_olio");
 		forItem(ExtraDelightItems.PENNE, "penne");
 		forItem(ExtraDelightItems.PENNE_ALL_ARRABIATA, "penne_all_arrabbiata");
+
+		getBuilder(ExtraDelightItems.VAT.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/vat")));
+		getBuilder(ExtraDelightItems.LID.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/lid")));
+		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/evaporator")));
+		forBlockItemFlat(Fermentation.WILD_CUCUMBER_ITEM, "crops/cucumber/cucumber_stage7");
+		forItem(Fermentation.CUCUMBER, "crops/cucumber/cucumber");
+		forItem(Fermentation.SLICED_CUCUMBER_ITEM, "crops/cucumber/cucumber_slices");
+		forItem(Fermentation.GHERKIN_ITEM, "gherkin");
+		forItem(Fermentation.SLICED_GHERKIN_ITEM, "gherkin_slices");
 
 		AestheticBlocks.itemModel(this);
 	}
