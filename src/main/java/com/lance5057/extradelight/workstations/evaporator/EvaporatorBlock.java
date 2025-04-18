@@ -16,6 +16,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -94,6 +95,10 @@ public class EvaporatorBlock extends Block implements EntityBlock, IStyleable {
 					IFluidHandlerItem f = stack.getCapability(Capabilities.FluidHandler.ITEM);
 					if (f != null) {
 						FluidUtil.interactWithFluidHandler(pPlayer, pHand, mbe.getFluidTank());
+					}
+				} else {
+					if (stack.is(ItemTags.SHOVELS)) {
+						mbe.dropItems();
 					}
 				}
 			}

@@ -1,9 +1,10 @@
 {
   "type": "extradelight:evaporator",
+  "display_block": "extradelight:evaporator/lava_test",
   "fluid": {
     "amount": 1000,
     "fluid": "minecraft:lava"
   },
-  "loottable": "extradelight:loot",
+  "loottable": "extradelight:evaporator/lava_test",
   "time": 100
 }

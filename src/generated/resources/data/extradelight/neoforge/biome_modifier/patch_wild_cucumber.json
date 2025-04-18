@@ -1,0 +1,39 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#c:is_mountain/slope",
+      "#c:is_temperate"
+    ]
+  },
+  "features": {
+    "feature": {
+      "type": "extradelight:wild_cucumber",
+      "config": {
+        "max_count": 3,
+        "min_count": 2,
+        "tries": 64,
+        "xz_spread": 2,
+        "y_spread": 5
+      }
+    },
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 40
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "WORLD_SURFACE_WG"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "step": "vegetal_decoration"
+}
