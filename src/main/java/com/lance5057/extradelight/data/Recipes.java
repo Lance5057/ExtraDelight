@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.extradelight.modules.Fermentation;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -4745,6 +4746,56 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.GARLIC_CLOVE.get(), 3)
 				.addResultWithChance(ExtraDelightItems.GARLIC_CLOVE.get(), 0.75f, 1)
 				.build(consumer, EDLoc("cutting/" + "garlic_dividing_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(Fermentation.CUCUMBER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						Fermentation.SLICED_CUCUMBER_ITEM.get(), 3)
+				.build(consumer, EDLoc("cutting/" + "sliced_cucumber_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_GINGER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						ExtraDelightItems.GINGER.get(), 1)
+				.addResultWithChance(Items.RED_DYE, 0.5f, 2)
+				.build(consumer, EDLoc("cutting/" + "wild_ginger_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_PEANUT_BLOCK.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						ExtraDelightItems.PEANUTS_IN_SHELL.get(), 1)
+				.addResultWithChance(Items.YELLOW_DYE, 0.5f, 2)
+				.build(consumer, EDLoc("cutting/" + "wild_peanut_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_CHILI_BLOCK.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						ExtraDelightItems.CHILI_SEEDS.get(), 1)
+				.addResultWithChance(ExtraDelightItems.CHILI.get(), 0.2f, 1)
+				.addResultWithChance(Items.GREEN_DYE, 0.1f, 1)
+				.build(consumer, EDLoc("cutting/" + "wild_chili_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						ExtraDelightItems.MALLOW_ROOT.get(), 1)
+				.addResultWithChance(Items.PINK_DYE, 0.5f, 2)
+				.build(consumer, EDLoc("cutting/" + "wild_mallow_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_GARLIC_BLOCK.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						ExtraDelightItems.GARLIC.get(), 1)
+				.addResult(Items.MAGENTA_DYE, 2)
+				.addResultWithChance(Items.LIME_DYE, 0.1f, 1)
+				.build(consumer, EDLoc("cutting/" + "wild_garlic_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(Fermentation.WILD_CUCUMBER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						Fermentation.CUCUMBER_SEED.get(), 1)
+				.addResultWithChance(Fermentation.CUCUMBER.get(), 0.2f, 1)
+				.addResultWithChance(Items.GREEN_DYE, 0.1f, 1)
+				.build(consumer, EDLoc("cutting/" + "wild_cucumber_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(Fermentation.WILD_SOYBEAN.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						Fermentation.SOYBEAN_POD.get(), 1)
+				.addResultWithChance(Items.LIME_DYE, 0.5f, 2)
+				.build(consumer, EDLoc("cutting/" + "wild_soybean_knife"));
 	}
 
 	private void mortarRecipes(RecipeOutput consumer) {

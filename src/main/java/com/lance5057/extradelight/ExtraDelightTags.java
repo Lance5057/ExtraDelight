@@ -570,6 +570,11 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> GARLIC = neoforgeItemTag("crops/garlic");
 	public static final TagKey<Item> PROCESSED_GARLIC = modTag("processed/garlic");
 
+	public static final TagKey<Item> CUCUMBER = neoforgeItemTag("crops/cucumber");
+	public static final TagKey<Item> PROCESSED_CUCUMBER = modTag("processed/cucumber");
+
+	public static final TagKey<Item> SOYBEAN = neoforgeItemTag("crops/soybean");
+
 	// Tough as Nails
 	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");
 	public static final TagKey<Item> HEATING_CONSUMED_ITEMS = tanTag("heating_consumed_items");

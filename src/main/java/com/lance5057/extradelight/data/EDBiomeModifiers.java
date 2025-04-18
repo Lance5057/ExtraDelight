@@ -66,8 +66,8 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				// Coffee
 				HolderSet.Direct<PlacedFeature> wildCoffeeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
 						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_COFFEE.get(),
-								new WildConfig(5, 10, 5, 5, 128))),
-						List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
+								new WildConfig(3, 7, 5, 5, 128))),
+						List.of(RarityFilter.onAverageOnceEvery(40), InSquarePlacement.spread(),
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
 
@@ -93,7 +93,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				HolderSet.Direct<PlacedFeature> wildChiliHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
 						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_CHILI.get(),
 								new WildConfig(2, 5, 2, 5, 128))),
-						List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
+						List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
 
@@ -105,8 +105,8 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				// Peanut
 				HolderSet.Direct<PlacedFeature> wildPeanutHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
 						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_PEANUT.get(),
-								new WildConfig(5, 10, 5, 5, 128))),
-						List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
+								new WildConfig(3, 7, 5, 5, 128))),
+						List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
 
@@ -144,14 +144,40 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				// Garlic
 				HolderSet.Direct<PlacedFeature> wildGarlicHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
 						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_GARLIC.get(),
-								new WildConfig(5, 10, 5, 5, 128))),
-						List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
+								new WildConfig(3, 7, 5, 5, 128))),
+						List.of(RarityFilter.onAverageOnceEvery(30), InSquarePlacement.spread(),
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
 
 				context.register(
 						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_garlic")),
 						new BiomeModifiers.AddFeaturesBiomeModifier(garlicBiome, wildGarlicHolderSet,
+								GenerationStep.Decoration.VEGETAL_DECORATION));
+
+				// Cucumber
+				HolderSet.Direct<PlacedFeature> wildCucumberHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
+						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_CUCUMBER.get(),
+								new WildConfig(2, 3, 2, 5, 64))),
+						List.of(RarityFilter.onAverageOnceEvery(40), InSquarePlacement.spread(),
+								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+								BiomeFilter.biome()))));
+
+				context.register(
+						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_cucumber")),
+						new BiomeModifiers.AddFeaturesBiomeModifier(garlicBiome, wildCucumberHolderSet,
+								GenerationStep.Decoration.VEGETAL_DECORATION));
+
+				// Soybean
+				HolderSet.Direct<PlacedFeature> wildSoybeanHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
+						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_SOYBEAN.get(),
+								new WildConfig(2, 4, 5, 5, 64))),
+						List.of(RarityFilter.onAverageOnceEvery(80), InSquarePlacement.spread(),
+								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+								BiomeFilter.biome()))));
+
+				context.register(
+						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_soybean")),
+						new BiomeModifiers.AddFeaturesBiomeModifier(temperate, wildSoybeanHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
 
 				// Cinnamon

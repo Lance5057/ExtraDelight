@@ -156,6 +156,9 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> VAT = ITEMS.register("vat",
 			() -> new BlockItem(ExtraDelightBlocks.VAT.get(), new Item.Properties()));
 
+	public static final DeferredItem<Item> LID = ITEMS.register("lid",
+			() -> new BlockItem(ExtraDelightBlocks.LID.get(), new Item.Properties()));
+
 	public static final DeferredItem<Item> EVAPORATOR = ITEMS.register("evaporator",
 			() -> new BlockItem(ExtraDelightBlocks.EVAPORATOR.get(), new Item.Properties()));
 
@@ -2915,9 +2918,6 @@ public class ExtraDelightItems {
 			.register("penne_all_arrabbiata",
 					() -> new GarlicTooltipItem(stack16FoodItem(EDFoods.PENNE_ALL_ARRABBIATA), true))
 			.advancementMeal().finish();
-
-	public static final DeferredItem<Item> LID = EDItemGenerator
-			.register("lid", () -> new BlockItem(ExtraDelightBlocks.LID.get(), new Item.Properties())).finish();
 
 //	public static final DeferredItem<DynamicJam> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new DynamicJam(
 //			new Item.Properties().component(ExtraDelightComponents.DYNAMIC_FOOD.get(), DynamicItemComponent.EMPTY)));

@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.lance5057.extradelight.modules.Fermentation;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
@@ -15,11 +16,13 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
+import com.lance5057.extradelight.blocks.crops.CucumberCrop;
 import com.lance5057.extradelight.blocks.crops.BushStageFour;
 import com.lance5057.extradelight.blocks.crops.GarlicCrop;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MallowRootCrop;
 import com.lance5057.extradelight.blocks.crops.PeanutCrop;
+import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -506,15 +509,37 @@ public class BlockLootTables extends BlockLootSubProvider {
 		LootItemCondition.Builder garlic = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.GARLIC_CROP.get())
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCrop.AGE, 3));
-
-		crop(ExtraDelightBlocks.GARLIC_CROP.get(), ExtraDelightItems.GARLIC.get(), ExtraDelightItems.GARLIC.get(),
+		crop(ExtraDelightBlocks.GARLIC_CROP.get(), ExtraDelightItems.GARLIC.get(), ExtraDelightItems.GARLIC_CLOVE.get(),
 				garlic);
 		this.dropOther(ExtraDelightBlocks.WILD_GARLIC.get(), ExtraDelightItems.GARLIC.get());
 		this.dropSelf(ExtraDelightBlocks.GARLIC_CRATE.get());
 		this.dropOther(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), Items.BOWL);
 		this.dropSelf(ExtraDelightBlocks.HANGING_GARLIC.get());
-		
+
 		this.dropSelf(ExtraDelightBlocks.LID.get());
+
+		this.dropOther(Fermentation.WILD_CUCUMBER.get(), Fermentation.CUCUMBER.get());
+		LootItemCondition.Builder cucumber = LootItemBlockStatePropertyCondition
+				.hasBlockStateProperties(Fermentation.CUCUMBER_CROP.get())
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CucumberCrop.AGE, 7));
+		crop(Fermentation.CUCUMBER_CROP.get(), Fermentation.CUCUMBER.get(), Fermentation.CUCUMBER_SEED.get(),
+				cucumber);
+
+		this.dropOther(Fermentation.WILD_SOYBEAN.get(), Fermentation.SOYBEAN_POD.get());
+		LootItemCondition.Builder soybean = LootItemBlockStatePropertyCondition
+				.hasBlockStateProperties(Fermentation.SOYBEAN_CROP.get())
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SoybeanCrop.AGE, 5));
+		crop(Fermentation.SOYBEAN_CROP.get(), Fermentation.SOYBEAN_POD.get(), Fermentation.SOYBEANS.get(),
+				soybean);
+
+		this.dropOther(Fermentation.GHERKINS_BLOCK.get(), Items.GLASS_BOTTLE);
+		this.dropOther(Fermentation.PICKLED_BEETS_BLOCK.get(), Items.GLASS_BOTTLE);
+		this.dropOther(Fermentation.PICKLED_ONIONS_BLOCK.get(), Items.GLASS_BOTTLE);
+		this.dropOther(Fermentation.PICKLED_EGGS_BLOCK.get(), Items.GLASS_BOTTLE);
+		this.dropOther(Fermentation.PICKLED_FISH_BLOCK.get(), Items.GLASS_BOTTLE);
+		this.dropOther(Fermentation.PICKLED_TOMATOES_BLOCK.get(), Items.GLASS_BOTTLE);
+		this.dropOther(Fermentation.PICKLED_WATERMELON_BLOCK.get(), Items.GLASS_BOTTLE);
+		this.dropOther(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Items.GLASS_BOTTLE);
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {

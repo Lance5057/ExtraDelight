@@ -2,6 +2,7 @@ package com.lance5057.extradelight.worldgen.features;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.worldgen.features.crops.WildBushStageFourFeature;
 import com.lance5057.extradelight.worldgen.features.crops.WildCornFeature;
 import com.lance5057.extradelight.worldgen.features.crops.WildCropFeature;
@@ -34,6 +35,10 @@ public class ExtraDelightFeatures {
 			.register("wild_mint", (ResourceLocation crop) -> new WildCropFeature(ExtraDelightBlocks.MINT_CROP.get()));
 	public static final DeferredHolder<Feature<?>, WildCropFeature> PATCH_WILD_GARLIC = FEATURES
 			.register("wild_garlic", (ResourceLocation crop) -> new WildCropFeature(ExtraDelightBlocks.WILD_GARLIC.get()));
+	public static final DeferredHolder<Feature<?>, WildCropFeature> PATCH_WILD_CUCUMBER = FEATURES
+			.register("wild_cucumber", (ResourceLocation crop) -> new WildCropFeature(Fermentation.WILD_CUCUMBER.get()));
+	public static final DeferredHolder<Feature<?>, WildCropFeature> PATCH_WILD_SOYBEAN = FEATURES
+			.register("wild_soybean", (ResourceLocation crop) -> new WildCropFeature(Fermentation.WILD_SOYBEAN.get()));
 
 	public static final DeferredHolder<Feature<?>, CinnamonTreeFeature> PATCH_CINNAMON_TREE = FEATURES
 			.register("cinnamon_tree", CinnamonTreeFeature::new);
