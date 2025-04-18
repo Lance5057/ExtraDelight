@@ -12,6 +12,7 @@ import com.lance5057.extradelight.workstations.evaporator.recipes.EvaporatorReci
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
@@ -26,6 +27,7 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeManager.CachedCheck;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -53,7 +55,7 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 	private int cookTime = 0;
 	private int cookTimeTotal = 0;
 
-	private ResourceLocation displayBlock;
+	private ResourceLocation displayBlock = BuiltInRegistries.BLOCK.getKey(Blocks.AIR);
 
 	public ResourceLocation getDisplayBlock() {
 		return displayBlock;
