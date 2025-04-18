@@ -513,6 +513,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.GARLIC_CRATE.get());
 		this.dropOther(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), Items.BOWL);
 		this.dropSelf(ExtraDelightBlocks.HANGING_GARLIC.get());
+		
+		this.dropSelf(ExtraDelightBlocks.LID.get());
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {

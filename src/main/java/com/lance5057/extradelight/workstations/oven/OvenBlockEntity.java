@@ -312,7 +312,8 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		ItemStack storedMealStack = inventory.getStackInSlot(OUTPUT_SLOT);
 		if (storedMealStack.isEmpty()) {
 			inventory.setStackInSlot(OUTPUT_SLOT, resultStack.copy());
-		} else if (ItemStack.isSameItem(resultStack, storedMealStack)) {
+		} else if (ItemStack.isSameItem(resultStack, storedMealStack)
+				&& storedMealStack.getCount() + resultStack.getCount() <= storedMealStack.getMaxStackSize()) {
 			storedMealStack.grow(resultStack.getCount());
 		}
 		oven.setRecipeUsed(recipe);
@@ -329,7 +330,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			}
 			if (!slotStack.isEmpty())
 				slotStack.shrink(1);
-			if(recipe.value().shouldConsumeContainer())
+			if (recipe.value().shouldConsumeContainer())
 				containerInputStack.shrink(1);
 		}
 		return true;

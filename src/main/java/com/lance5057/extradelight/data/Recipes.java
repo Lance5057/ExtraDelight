@@ -5732,14 +5732,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.JALAPENO_POPPER.get(), 2), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), true)
+						new ItemStack(ExtraDelightItems.TRAY.get()), false)
 				.addIngredient(ExtraDelightTags.CHILI).addIngredient(ExtraDelightTags.CHILI)
 				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(CommonTags.FOODS_RAW_BACON)
 				.unlockedByAnyIngredient(ExtraDelightItems.CHILI).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CHILI_CHEESE_CORNBREAD_MUFFIN.get(), 6), NORMAL_COOKING,
-						MEDIUM_EXP, new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), true)
+						MEDIUM_EXP, new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), false)
 				.addIngredient(ExtraDelightTags.CORN_MEAL).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightItems.BUTTER.get())
 				.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ExtraDelightTags.CHEESE)
