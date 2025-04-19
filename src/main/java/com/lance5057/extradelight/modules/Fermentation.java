@@ -9,6 +9,7 @@ import com.lance5057.extradelight.blocks.crops.CucumberCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 
+import com.lance5057.extradelight.util.EDItemGenerator;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -29,6 +30,8 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
+import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 public class Fermentation {
 	public static final DeferredBlock<CucumberCrop> CUCUMBER_CROP = ExtraDelightBlocks.BLOCKS.register("cucumber_crop",
@@ -60,16 +63,16 @@ public class Fermentation {
 			.register("gherkins_block",
 					() -> new RecipeFeastBlock(
 							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-									.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
+									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
-	public static final DeferredItem<Item> GHERKINS_BLOCK_ITEM = ExtraDelightItems.ITEMS.register("gherkins_block_item",
-			() -> new BlockItem(GHERKINS_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<Item> GHERKINS_BLOCK_ITEM = EDItemGenerator.register("gherkins_block_item",
+			() -> new BlockItem(GHERKINS_BLOCK.get(), new Item.Properties())).advancementFeast().finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> PICKLED_BEETS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_beets_block",
 					() -> new RecipeFeastBlock(
 							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-									.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
+									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_BEETS_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
 			"pickled_beets_block_item", () -> new BlockItem(PICKLED_BEETS_BLOCK.get(), new Item.Properties()));
@@ -78,7 +81,7 @@ public class Fermentation {
 			.register("pickled_onions_block",
 					() -> new RecipeFeastBlock(
 							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-									.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
+									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_ONIONS_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
 			"pickled_onions_block_item", () -> new BlockItem(PICKLED_ONIONS_BLOCK.get(), new Item.Properties()));
@@ -87,7 +90,7 @@ public class Fermentation {
 			.register("pickled_eggs_block",
 					() -> new RecipeFeastBlock(
 							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-									.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
+									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_EGGS_BLOCK_ITEM = ExtraDelightItems.ITEMS
 			.register("pickled_eggs_block_item", () -> new BlockItem(PICKLED_EGGS_BLOCK.get(), new Item.Properties()));
@@ -96,7 +99,7 @@ public class Fermentation {
 			.register("pickled_fish_block",
 					() -> new RecipeFeastBlock(
 							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-									.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
+									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_FISH_BLOCK_ITEM = ExtraDelightItems.ITEMS
 			.register("pickled_fish_block_item", () -> new BlockItem(PICKLED_FISH_BLOCK.get(), new Item.Properties()));
@@ -105,7 +108,7 @@ public class Fermentation {
 			.register("pickled_tomatoes_block",
 					() -> new RecipeFeastBlock(
 							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-									.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
+									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_TOMATOES_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
 			"pickled_tomatoes_block_item", () -> new BlockItem(PICKLED_TOMATOES_BLOCK.get(), new Item.Properties()));
@@ -114,7 +117,7 @@ public class Fermentation {
 			.register("pickled_watermelon_block",
 					() -> new RecipeFeastBlock(
 							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-									.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
+									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_WATERMELON_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
 			"pickled_watermelon_block_item",
@@ -124,7 +127,7 @@ public class Fermentation {
 			.register("pickled_sausage_block",
 					() -> new RecipeFeastBlock(
 							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-									.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
+									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_SAUSAGE_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
 			"pickled_sausage_block_item", () -> new BlockItem(PICKLED_SAUSAGE_BLOCK.get(), new Item.Properties()));
@@ -159,12 +162,12 @@ public class Fermentation {
 	public static final DeferredItem<Item> MOO_NAEM_ITEM = ExtraDelightItems.ITEMS.register("moo_naem_item",
 			() -> new Item(new Item.Properties()));
 
-	public static final DeferredItem<Item> GHERKIN_ITEM = ExtraDelightItems.ITEMS.register("gherkin_item",
-			() -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> SLICED_CUCUMBER_ITEM = ExtraDelightItems.ITEMS
-			.register("sliced_cucumber_item", () -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> SLICED_GHERKIN_ITEM = ExtraDelightItems.ITEMS.register("sliced_gherkin_item",
-			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> GHERKIN_ITEM = EDItemGenerator.register("gherkin_item",
+			() -> new Item(new Item.Properties())).advancementIngredients().servingToolTip().finish();
+	public static final DeferredItem<Item> SLICED_CUCUMBER_ITEM = EDItemGenerator
+			.register("sliced_cucumber_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+	public static final DeferredItem<Item> SLICED_GHERKIN_ITEM = EDItemGenerator.register("sliced_gherkin_item",
+			() -> new Item(new Item.Properties())).advancementIngredients().finish();
 
 	public static void blockModels(BlockStateProvider bsp) {
 		bsp.getVariantBuilder(GHERKINS_BLOCK.get()).forAllStates(state -> {
@@ -188,6 +191,18 @@ public class Fermentation {
 	}
 
 	public static void Recipes(RecipeOutput consumer) {
+		// Cutting board
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(Fermentation.CUCUMBER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						Fermentation.SLICED_CUCUMBER_ITEM.get(), 3)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_cucumber_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(Fermentation.GHERKIN_ITEM.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						Fermentation.SLICED_GHERKIN_ITEM.get(), 3)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_gherkin_knife"));
+
+		// Feasts
 		FeastRecipeBuilder
 				.feast(Ingredient.of(ExtraDelightTags.SPOONS), new ItemStack(GHERKIN_ITEM.get()),
 						GHERKINS_BLOCK_ITEM.get())

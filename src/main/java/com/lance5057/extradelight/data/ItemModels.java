@@ -1238,6 +1238,8 @@ public class ItemModels extends ItemModelProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/evaporator")));
 		forBlockItemFlat(Fermentation.WILD_CUCUMBER_ITEM, "crops/cucumber/cucumber_stage7");
 		forItem(Fermentation.CUCUMBER, "crops/cucumber/cucumber");
+		getBuilder(Fermentation.GHERKINS_BLOCK_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gherkin_jar")));
 		forItem(Fermentation.SLICED_CUCUMBER_ITEM, "crops/cucumber/cucumber_slices");
 		forItem(Fermentation.GHERKIN_ITEM, "gherkin");
 		forItem(Fermentation.SLICED_GHERKIN_ITEM, "gherkin_slices");

@@ -74,6 +74,9 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), ExtraDelightBlocks.WHITE_CHILI_FEAST.get(),
 				ExtraDelightBlocks.STUFFING.get(),
 
+				// Feasts in jars
+				Fermentation.GHERKINS_BLOCK.get(),
+
 				ExtraDelightBlocks.SHEET_BLOCK.get(), ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
 				ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
 				ExtraDelightBlocks.PIE_DISH_BLOCK.get(), ExtraDelightBlocks.TRAY_BLOCK.get(),

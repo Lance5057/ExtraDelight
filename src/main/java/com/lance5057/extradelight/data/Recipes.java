@@ -4441,7 +4441,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"aglio_e_olio", consumer);
 
 		pot(ExtraDelightItems.PENNE_ALL_ARRABIATA.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ModItems.RAW_PASTA.get()),
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.PENNE.get()),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ModItems.TOMATO_SAUCE.get()),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				"penne_all_arrabbiata", consumer);
@@ -4751,11 +4751,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.GARLIC_CLOVE.get(), 3)
 				.addResultWithChance(ExtraDelightItems.GARLIC_CLOVE.get(), 0.75f, 1)
 				.build(consumer, EDLoc("cutting/" + "garlic_dividing_knife"));
-
-		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(Fermentation.CUCUMBER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
-						Fermentation.SLICED_CUCUMBER_ITEM.get(), 3)
-				.build(consumer, EDLoc("cutting/" + "sliced_cucumber_knife"));
 
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.WILD_GINGER.get()),
