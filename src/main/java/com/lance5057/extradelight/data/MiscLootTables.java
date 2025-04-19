@@ -16,6 +16,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -57,8 +58,15 @@ public class MiscLootTables implements LootTableSubProvider {
 				LootTable.lootTable().withPool(createPoolWithItem(ExtraDelightItems.CINNAMON_BARK.get(), 1, 4))
 						.withPool(createPoolWithItem(ModItems.TREE_BARK.get(), 0, 2)));
 
-		t.accept(EVAPORATOR_LAVA_TEST, LootTable.lootTable().withPool(createPoolWithItem(Items.COBBLESTONE, 1, 4))
-				.withPool(createPoolWithItem(Items.STONE, 0, 2)));
+		HolderLookup.RegistryLookup<Biome> registrylookup = this.registries.lookupOrThrow(Registries.BIOME);
+		t.accept(EVAPORATOR_LAVA_TEST,
+				LootTable.lootTable()
+						.withPool(createPoolWithItem(Items.COBBLESTONE, 1, 5))
+						.withPool(createPoolWithItem(Items.STONE, 1,4)
+//										.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
+//												.setBiomes(HolderSet.direct(registrylookup.getOrThrow(Biomes.RIVER),
+//														registrylookup.getOrThrow(Biomes.OCEAN)))))
+										));
 	}
 
 	@NotNull

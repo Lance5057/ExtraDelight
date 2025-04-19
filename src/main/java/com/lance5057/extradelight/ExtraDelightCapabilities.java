@@ -86,6 +86,15 @@ public class ExtraDelightCapabilities {
 			return o.getFluidTank();
 		});
 
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.EVAPORATOR.get(),
+				(be, context) -> be.getItemHandler());
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.EVAPORATOR.get(),
+				(o, d) -> {
+					if (o.isInventoryEmpty())
+						return o.getFluidTank();
+					return null;
+				});
+
 //		event.registerItem(Capabilities.ItemHandler.ITEM,
 //				(o, d) -> new ComponentItemHandler(o, ExtraDelightComponents.ITEMSTACK_HANDLER.get(), 7),
 //				ExtraDelightItems.DYNAMIC_TEST2.get());

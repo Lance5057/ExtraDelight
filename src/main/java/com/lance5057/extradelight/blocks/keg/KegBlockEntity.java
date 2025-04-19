@@ -78,7 +78,7 @@ public class KegBlockEntity extends BlockEntity {
 				} else
 					return false;
 			} else
-				return false;
+				return FluidUtil.interactWithFluidHandler(player, hand, tank);
 		}
 		return FluidUtil.interactWithFluidHandler(player, hand, tank);
 	}

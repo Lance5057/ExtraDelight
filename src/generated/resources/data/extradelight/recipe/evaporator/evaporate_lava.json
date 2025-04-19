@@ -1,6 +1,6 @@
 {
   "type": "extradelight:evaporator",
-  "display_block": "extradelight:evaporator/lava_test",
+  "display_block": "minecraft:cobblestone",
   "fluid": {
     "amount": 1000,
     "fluid": "minecraft:lava"

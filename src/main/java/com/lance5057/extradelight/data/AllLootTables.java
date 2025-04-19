@@ -13,7 +13,7 @@ public class AllLootTables extends LootTableProvider {
 	public AllLootTables(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> registries) {
 		super(pOutput, Collections.emptySet(),
 				List.of(new SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK),
-						new SubProviderEntry(MiscLootTables::new, LootContextParamSets.EMPTY),
+						new SubProviderEntry(MiscLootTables::new, LootContextParamSets.ARCHAEOLOGY),
 						new SubProviderEntry(StructureLootTables::new, LootContextParamSets.EMPTY)
 
 				), registries);

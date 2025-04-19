@@ -91,7 +91,7 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 						SizedFluidIngredient.FLAT_CODEC.fieldOf("fluid").forGetter(EvaporatorRecipe::getFluid),
 						Codec.INT.fieldOf("time").forGetter(EvaporatorRecipe::getCookTime),
 						ResourceLocation.CODEC.fieldOf("loottable").forGetter(EvaporatorRecipe::getOutput),
-						ResourceLocation.CODEC.fieldOf("display_block").forGetter(EvaporatorRecipe::getOutput))
+						ResourceLocation.CODEC.fieldOf("display_block").forGetter(EvaporatorRecipe::getDisplay))
 				.apply(inst, EvaporatorRecipe::new));
 
 		public static EvaporatorRecipe fromNetwork(RegistryFriendlyByteBuf pBuffer) {

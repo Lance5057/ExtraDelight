@@ -1,23 +1,33 @@
 package com.lance5057.extradelight.modules;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
-import com.lance5057.extradelight.data.BlockModels;
+import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
+import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 
 public class Fermentation {
@@ -149,14 +159,40 @@ public class Fermentation {
 	public static final DeferredItem<Item> MOO_NAEM_ITEM = ExtraDelightItems.ITEMS.register("moo_naem_item",
 			() -> new Item(new Item.Properties()));
 
-	public static final DeferredItem<Item> GHERKIN_ITEM = ExtraDelightItems.ITEMS
-		.register("gherkin_item",	() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> GHERKIN_ITEM = ExtraDelightItems.ITEMS.register("gherkin_item",
+			() -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> SLICED_CUCUMBER_ITEM = ExtraDelightItems.ITEMS
-			.register("sliced_cucumber_item",	() -> new Item(new Item.Properties()));
-	public static final DeferredItem<Item> SLICED_GHERKIN_ITEM = ExtraDelightItems.ITEMS
-			.register("sliced_gherkin_item",	() -> new Item(new Item.Properties()));
+			.register("sliced_cucumber_item", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> SLICED_GHERKIN_ITEM = ExtraDelightItems.ITEMS.register("sliced_gherkin_item",
+			() -> new Item(new Item.Properties()));
 
 	public static void blockModels(BlockStateProvider bsp) {
+		bsp.getVariantBuilder(GHERKINS_BLOCK.get()).forAllStates(state -> {
+			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
 
+			String suffix = "_stage" + (GHERKINS_BLOCK.get().getMaxServings() - servings);
+
+			if (servings == 0) {
+				suffix = GHERKINS_BLOCK.get().hasLeftovers ? "_leftover" : "_stage3";
+			}
+
+			return ConfiguredModel.builder()
+					.modelFile(new ModelFile.ExistingModelFile(
+							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gherkin_jar" + suffix),
+							bsp.models().existingFileHelper))
+					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
+		});
+
+//		bsp.simpleBlock(GHERKINS_BLOCK.get(), bsp.models()
+//				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gherkin_jar")));
+	}
+
+	public static void Recipes(RecipeOutput consumer) {
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ExtraDelightTags.SPOONS), new ItemStack(GHERKIN_ITEM.get()),
+						GHERKINS_BLOCK_ITEM.get())
+				.unlockedBy("has_pickle_jar",
+						InventoryChangeTrigger.TriggerInstance.hasItems(GHERKINS_BLOCK_ITEM.get()))
+				.save(consumer, ExtraDelight.modLoc("gherkin_pull_feast"));
 	}
 }

@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:empty",
+  "type": "minecraft:archaeology",
   "pools": [
     {
       "bonus_rolls": 0.0,

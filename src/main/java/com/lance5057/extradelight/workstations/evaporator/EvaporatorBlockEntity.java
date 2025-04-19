@@ -32,6 +32,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
@@ -47,7 +48,7 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 
 	private final ItemStackHandler items = createHandler();
 	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> items);
-	public static final int NUM_SLOTS = 1;
+	public static final int NUM_SLOTS = 9;
 
 	public static final String FLUID_TAG = "fluid";
 	private final FluidTank tank = createFluidHandler();
@@ -108,7 +109,7 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 	}
 
 	private ItemStackHandler createHandler() {
-		return new ItemStackHandler(9) {
+		return new ItemStackHandler(NUM_SLOTS) {
 			@Override
 			protected void onContentsChanged(int slot) {
 				EvaporatorBlockEntity.this.requestModelDataUpdate();
@@ -236,21 +237,25 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 	}
 
 	public static <T extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, T be) {
-		EvaporatorBlockEntity evaporator = (EvaporatorBlockEntity) be;
 
-		RecipeHolder<EvaporatorRecipe> recipeholder = evaporator.quickCheck
-				.getRecipeFor(new EvaporatorRecipeWrapper(evaporator.tank), level).orElse(null);
+		float temp = level.getBiome(pos).value().getBaseTemperature();
+		if (level.random.nextFloat() >= temp) {
+			EvaporatorBlockEntity evaporator = (EvaporatorBlockEntity) be;
 
-		if (recipeholder != null) {
-			evaporator.cookTimeTotal = recipeholder.value().getCookTime();
-			evaporator.displayBlock = recipeholder.value().getDisplay();
+			RecipeHolder<EvaporatorRecipe> recipeholder = evaporator.quickCheck
+					.getRecipeFor(new EvaporatorRecipeWrapper(evaporator.tank), level).orElse(null);
 
-			if (evaporator.cookTime >= evaporator.cookTimeTotal) {
-				dropLoot(evaporator, recipeholder.value().getOutput());
-				SizedFluidIngredient sfi = recipeholder.value().getFluid();
-				evaporator.tank.drain(sfi.amount(), FluidAction.EXECUTE);
-			} else {
-				evaporator.cookTime++;
+			if (recipeholder != null) {
+				evaporator.cookTimeTotal = recipeholder.value().getCookTime();
+				evaporator.displayBlock = recipeholder.value().getDisplay();
+
+				if (evaporator.cookTime >= evaporator.cookTimeTotal) {
+					dropLoot(evaporator, recipeholder.value().getOutput());
+					SizedFluidIngredient sfi = recipeholder.value().getFluid();
+					evaporator.tank.drain(sfi.amount(), FluidAction.EXECUTE);
+				} else {
+					evaporator.cookTime++;
+				}
 			}
 		}
 	}
@@ -258,11 +263,12 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 	private static void dropLoot(EvaporatorBlockEntity evaporator, ResourceLocation rc) {
 		if (evaporator.level != null && !evaporator.level.isClientSide()) {
 			final LootParams pParams = new LootParams.Builder((ServerLevel) evaporator.level)
-					.create(LootContextParamSets.EMPTY);
+					.withParameter(LootContextParams.ORIGIN, evaporator.worldPosition.getCenter())
+					.create(LootContextParamSets.ARCHAEOLOGY);
 			evaporator.level.getServer().reloadableRegistries()
 					.getLootTable(ResourceKey.create(Registries.LOOT_TABLE, rc)).getRandomItems(pParams)
 					.forEach(itemStack -> {
-						evaporator.insertItem(itemStack);
+						evaporator.insertItem(itemStack.copy());
 					});
 
 		}
@@ -272,8 +278,8 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 		for (int i = 0; i < items.getSlots(); i++) {
 			ItemStack stack = items.getStackInSlot(i);
 			if (!stack.isEmpty()) {
-				level.addFreshEntity(new ItemEntity(level, this.worldPosition.getX(), worldPosition.getY(),
-						worldPosition.getZ(), stack.copy()));
+				level.addFreshEntity(new ItemEntity(level, this.worldPosition.getX() + 0.5f,
+						worldPosition.getY() + 0.5f, worldPosition.getZ() + 0.5f, stack.copy()));
 				items.setStackInSlot(i, ItemStack.EMPTY);
 			}
 		}

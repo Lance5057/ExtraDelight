@@ -112,6 +112,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		vatRecipes(consumer);
 		evaporatorRecipes(consumer);
 
+		Fermentation.Recipes(consumer);
 		AestheticBlocks.Recipes(consumer);
 	}
 
