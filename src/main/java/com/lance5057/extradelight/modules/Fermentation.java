@@ -7,9 +7,10 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
+import com.lance5057.extradelight.data.BlockModels;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
-
 import com.lance5057.extradelight.util.EDItemGenerator;
+
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -66,10 +67,12 @@ public class Fermentation {
 							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
 									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
-	public static final DeferredItem<Item> GHERKINS_BLOCK_ITEM = EDItemGenerator.register("gherkins_block_item",
-			() -> new BlockItem(GHERKINS_BLOCK.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> GHERKIN_ITEM = EDItemGenerator.register("gherkin_item",
-			() -> new Item(new Item.Properties())).advancementIngredients().servingToolTip().finish();
+	public static final DeferredItem<Item> GHERKINS_BLOCK_ITEM = EDItemGenerator
+			.register("gherkins_block_item", () -> new BlockItem(GHERKINS_BLOCK.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> GHERKIN_ITEM = EDItemGenerator
+			.register("gherkin_item", () -> new Item(new Item.Properties())).advancementIngredients().servingToolTip()
+			.finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> PICKLED_BEETS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_beets_block",
@@ -79,8 +82,9 @@ public class Fermentation {
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_BEETS_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
 			"pickled_beets_block_item", () -> new BlockItem(PICKLED_BEETS_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> PICKLED_BEET_ITEM = EDItemGenerator.register("pickled_beet_item",
-			() -> new Item(new Item.Properties())).advancementIngredients().servingToolTip().finish();
+	public static final DeferredItem<Item> PICKLED_BEET_ITEM = EDItemGenerator
+			.register("pickled_beet_item", () -> new Item(new Item.Properties())).advancementIngredients()
+			.servingToolTip().finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> PICKLED_ONIONS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_onions_block",
@@ -90,8 +94,9 @@ public class Fermentation {
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_ONIONS_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
 			"pickled_onions_block_item", () -> new BlockItem(PICKLED_ONIONS_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> PICKLED_ONION_ITEM = EDItemGenerator.register("pickled_onion_item",
-			() -> new Item(new Item.Properties())).advancementIngredients().servingToolTip().finish();
+	public static final DeferredItem<Item> PICKLED_ONION_ITEM = EDItemGenerator
+			.register("pickled_onion_item", () -> new Item(new Item.Properties())).advancementIngredients()
+			.servingToolTip().finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> PICKLED_CARROTS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_carrots_block",
@@ -99,10 +104,11 @@ public class Fermentation {
 							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
 									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
-	public static final DeferredItem<Item> PICKLED_CARROTS_BLOCK_ITEM = ExtraDelightItems.ITEMS
-			.register("pickled_carrots_block_item", () -> new BlockItem(PICKLED_CARROTS_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> PICKLED_CARROT_ITEM = EDItemGenerator.register("pickled_carrot_item",
-			() -> new Item(new Item.Properties())).advancementSnack().servingToolTip().finish();
+	public static final DeferredItem<Item> PICKLED_CARROTS_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
+			"pickled_carrots_block_item", () -> new BlockItem(PICKLED_CARROTS_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<Item> PICKLED_CARROT_ITEM = EDItemGenerator
+			.register("pickled_carrot_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
+			.finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> PICKLED_EGGS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_eggs_block",
@@ -112,8 +118,9 @@ public class Fermentation {
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_EGGS_BLOCK_ITEM = ExtraDelightItems.ITEMS
 			.register("pickled_eggs_block_item", () -> new BlockItem(PICKLED_EGGS_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> PICKLED_EGG_ITEM = EDItemGenerator.register("pickled_egg_item",
-			() -> new Item(new Item.Properties())).advancementSnack().servingToolTip().finish();
+	public static final DeferredItem<Item> PICKLED_EGG_ITEM = EDItemGenerator
+			.register("pickled_egg_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
+			.finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> PICKLED_FISH_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_fish_block",
@@ -123,8 +130,9 @@ public class Fermentation {
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_FISH_BLOCK_ITEM = ExtraDelightItems.ITEMS
 			.register("pickled_fish_block_item", () -> new BlockItem(PICKLED_FISH_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> PICKLED_FISH_ITEM = EDItemGenerator.register("pickled_fish_item",
-			() -> new Item(new Item.Properties())).advancementSnack().servingToolTip().finish();
+	public static final DeferredItem<Item> PICKLED_FISH_ITEM = EDItemGenerator
+			.register("pickled_fish_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
+			.finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> PICKLED_TOMATOES_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_tomatoes_block",
@@ -134,8 +142,9 @@ public class Fermentation {
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_TOMATOES_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
 			"pickled_tomatoes_block_item", () -> new BlockItem(PICKLED_TOMATOES_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> PICKLED_TOMATO_ITEM = EDItemGenerator.register("pickled_tomato_item",
-			() -> new Item(new Item.Properties())).advancementSnack().servingToolTip().finish();
+	public static final DeferredItem<Item> PICKLED_TOMATO_ITEM = EDItemGenerator
+			.register("pickled_tomato_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
+			.finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> PICKLED_MELON_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_melon_block",
@@ -144,10 +153,10 @@ public class Fermentation {
 									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_MELON_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
-			"pickled_melon_block_item",
-			() -> new BlockItem(PICKLED_MELON_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> PICKLED_MELON_ITEM = EDItemGenerator.register("pickled_melon_item",
-			() -> new Item(new Item.Properties())).advancementSnack().servingToolTip().finish();
+			"pickled_melon_block_item", () -> new BlockItem(PICKLED_MELON_BLOCK.get(), new Item.Properties()));
+	public static final DeferredItem<Item> PICKLED_MELON_ITEM = EDItemGenerator
+			.register("pickled_melon_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
+			.finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> PICKLED_SAUSAGE_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_sausage_block",
@@ -157,8 +166,9 @@ public class Fermentation {
 							true, ExtraDelightBlocks.pot));
 	public static final DeferredItem<Item> PICKLED_SAUSAGE_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
 			"pickled_sausage_block_item", () -> new BlockItem(PICKLED_SAUSAGE_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> PICKLED_SAUSAGE_ITEM = EDItemGenerator.register("pickled_sausage_item",
-			() -> new Item(new Item.Properties())).advancementSnack().servingToolTip().finish();
+	public static final DeferredItem<Item> PICKLED_SAUSAGE_ITEM = EDItemGenerator
+			.register("pickled_sausage_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
+			.finish();
 
 	public static final DeferredItem<Item> SOY_SAUCE_ITEM = ExtraDelightItems.ITEMS.register("soy_sauce_item",
 			() -> new Item(new Item.Properties()));
@@ -192,8 +202,8 @@ public class Fermentation {
 
 	public static final DeferredItem<Item> SLICED_CUCUMBER_ITEM = EDItemGenerator
 			.register("sliced_cucumber_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
-	public static final DeferredItem<Item> SLICED_GHERKIN_ITEM = EDItemGenerator.register("sliced_gherkin_item",
-			() -> new Item(new Item.Properties())).advancementIngredients().finish();
+	public static final DeferredItem<Item> SLICED_GHERKIN_ITEM = EDItemGenerator
+			.register("sliced_gherkin_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
 	public static void blockModels(BlockStateProvider bsp) {
 		bsp.getVariantBuilder(GHERKINS_BLOCK.get()).forAllStates(state -> {
@@ -222,11 +232,14 @@ public class Fermentation {
 			}
 
 			return ConfiguredModel.builder()
-					.modelFile(new ModelFile.ExistingModelFile(
-							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pickled_beets_jar" + suffix),
-							bsp.models().existingFileHelper))
+					.modelFile(new ModelFile.ExistingModelFile(ResourceLocation.fromNamespaceAndPath(
+							ExtraDelight.MOD_ID, "block/pickled_beets_jar" + suffix), bsp.models().existingFileHelper))
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
+
+		BlockModels.cropCrossBlock(bsp, Fermentation.CUCUMBER_CROP.get(), "cucumber", CucumberCrop.AGE);
+		bsp.simpleBlock(Fermentation.WILD_CUCUMBER.get(), new ConfiguredModel(bsp.models()
+				.cross("wild_cucumber", bsp.modLoc("block/crops/cucumber/cucumber_stage7")).renderType("cutout")));
 	}
 
 	public static void Recipes(RecipeOutput consumer) {
