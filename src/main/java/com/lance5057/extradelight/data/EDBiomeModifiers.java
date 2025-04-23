@@ -44,6 +44,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				HolderSet.Named<Biome> hot = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_HOT);
 				HolderSet.Named<Biome> swamp = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_SWAMP);
 				HolderSet.Named<Biome> cold = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_COLD);
+				HolderSet.Named<Biome> hill = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_HILL);
 				HolderSet.Named<Biome> slope = context.lookup(Registries.BIOME)
 						.getOrThrow(Tags.Biomes.IS_MOUNTAIN_SLOPE);
 				HolderSet.Named<Biome> temperate = context.lookup(Registries.BIOME)
@@ -164,7 +165,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 
 				context.register(
 						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_cucumber")),
-						new BiomeModifiers.AddFeaturesBiomeModifier(garlicBiome, wildCucumberHolderSet,
+						new BiomeModifiers.AddFeaturesBiomeModifier(hill, wildCucumberHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
 
 				// Soybean
