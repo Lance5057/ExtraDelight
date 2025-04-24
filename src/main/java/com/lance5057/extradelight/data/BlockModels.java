@@ -210,7 +210,7 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ExtraDelightBlocks.SUGAR_COOKIE_BLOCK.get());
 		this.simpleBlock(ExtraDelightBlocks.SWEET_BERRY_COOKIE_BLOCK.get());
 
-		this.cropCrossBlock(ExtraDelightBlocks.GINGER_CROP.get(), "ginger", GingerCrop.AGE);
+		cropCrossBlock(this,ExtraDelightBlocks.GINGER_CROP.get(), "ginger", GingerCrop.AGE);
 		this.simpleBlock(ExtraDelightBlocks.CANDY_BOWL.get(), models()
 				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/candy_bowl")));
 
@@ -501,15 +501,15 @@ public class BlockModels extends BlockStateProvider {
 		this.fondueBlock(ExtraDelightBlocks.DARK_CHOCOLATE_FONDUE.get(), "dark");
 		this.fondueBlock(ExtraDelightBlocks.MILK_CHOCOLATE_FONDUE.get(), "milk");
 
-		this.cropCrossBlock(ExtraDelightBlocks.PEANUT_CROP.get(), "peanut", PeanutCrop.AGE);
+		cropCrossBlock(this, ExtraDelightBlocks.PEANUT_CROP.get(), "peanut", PeanutCrop.AGE);
 		simpleBlock(ExtraDelightBlocks.WILD_PEANUT.get(), new ConfiguredModel(
 				models().cross("wild_peanut", modLoc("block/crops/peanut/wild_peanut")).renderType("cutout")));
 
-		this.cropCrossBlock(ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), "marshmallow", MallowRootCrop.AGE);
+		cropCrossBlock(this, ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), "marshmallow", MallowRootCrop.AGE);
 		simpleBlock(ExtraDelightBlocks.WILD_MALLOW_ROOT.get(), new ConfiguredModel(models()
 				.cross("wild_mallow_root", modLoc("block/crops/marshmallow/wild_marshmallow")).renderType("cutout")));
 
-		this.cropCrossBlock(ExtraDelightBlocks.CHILI_CROP.get(), "chili", ChiliCrop.AGE);
+		cropCrossBlock(this, ExtraDelightBlocks.CHILI_CROP.get(), "chili", ChiliCrop.AGE);
 		simpleBlock(ExtraDelightBlocks.WILD_CHILI.get(), new ConfiguredModel(
 				models().cross("wild_chili", modLoc("block/crops/chili/wild_chili")).renderType("cutout")));
 
@@ -620,7 +620,7 @@ public class BlockModels extends BlockStateProvider {
 		this.pieBlock(ExtraDelightBlocks.BACON_EGG_PIE.get(), "bacon_egg_pie");
 		pieLikeBlock(ExtraDelightBlocks.PANFORTE.get(), "panforte");
 
-		this.cropCrossBlock(ExtraDelightBlocks.GARLIC_CROP.get(), "garlic", GarlicCrop.AGE);
+		cropCrossBlock(this, ExtraDelightBlocks.GARLIC_CROP.get(), "garlic", GarlicCrop.AGE);
 		simpleBlock(ExtraDelightBlocks.WILD_GARLIC.get(), new ConfiguredModel(
 				models().cross("wild_garlic", modLoc("block/crops/garlic/garlic_stage3")).renderType("cutout")));
 		this.crateBlock(ExtraDelightBlocks.GARLIC_CRATE.get(), "garlic", "spruce");
@@ -649,10 +649,6 @@ public class BlockModels extends BlockStateProvider {
 					models().withExistingParent("block/cosmetics/lid/lid" + suffix.toLowerCase(), modLoc("block/lid")))
 					.build();
 		});
-
-		this.cropCrossBlock(Fermentation.CUCUMBER_CROP.get(), "cucumber", CucumberCrop.AGE);
-		simpleBlock(Fermentation.WILD_CUCUMBER.get(), new ConfiguredModel(
-				models().cross("wild_cucumber", modLoc("block/crops/cucumber/cucumber_stage7")).renderType("cutout")));
 
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);
@@ -1061,14 +1057,15 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	public void cropCrossBlock(CropBlock block, String name, IntegerProperty age) {
-		getVariantBuilder(block).forAllStates(state -> {
+	public static void cropCrossBlock(BlockStateProvider bsp, CropBlock block, String name, IntegerProperty age) {
+		bsp.getVariantBuilder(block).forAllStates(state -> {
 			int a = state.getValue(age);
 			String suffix = "_stage" + a;
 
-			return ConfiguredModel.builder().modelFile(models()
-					.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix, mcLoc("block/cross"))
-					.texture("cross", modLoc("block/crops/" + name + "/" + name + suffix)).renderType("cutout"))
+			return ConfiguredModel.builder().modelFile(bsp.models()
+					.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix,
+							bsp.mcLoc("block/cross"))
+					.texture("cross", bsp.modLoc("block/crops/" + name + "/" + name + suffix)).renderType("cutout"))
 					.build();
 		});
 

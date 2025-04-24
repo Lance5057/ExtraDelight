@@ -60,6 +60,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.horchata", "Removes 1 Harmful Effect");
 		this.add("farmersdelight.tooltip.tea", "Minor Instant Health, Comfort");
 		this.add("farmersdelight.tooltip.gourmet_hot_chocolate", "Removes all Harmful Effects");
+		this.add("farmersdelight.tooltip.coffee", "+20% Speed (3:00)");
 
 		this.add("farmersdelight.tooltip.milkshake", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.chocolate_milkshake", "Instant Health");
@@ -74,6 +75,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add("tooltip.dynamic.ingredients", "Ingredients");
 
+		this.add("biome.extradelight.cornfield", "The Cornfield");
 		this.add("extradelight.corn_dimension.death", "Be more careful in the cornfield next time...");
 		this.add("extradelight.block.recipefeast.use_container", "Something else is needed");
 
@@ -82,7 +84,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.mint", "Found in cold biomes.");
 		this.add("extradelight.jei.info.cinnamon", "Found in jungles.");
 		this.add("extradelight.jei.info.ginger", "Found in hot biomes.");
-		this.add("extradelight.jei.info.corn", "Found in drier, plains biomes.");
+		this.add("extradelight.jei.info.corn", "Found in plains biomes.");
 		this.add("extradelight.jei.info.chili", "Found in hot biomes.");
 		this.add("extradelight.jei.info.mallow", "Found in swamps.");
 		this.add("extradelight.jei.info.peanut", "Found in jungles.");
@@ -90,7 +92,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.hazelnut", "Trees grow in forests.");
 		this.add("extradelight.jei.info.apple", "Trees grow in forests.");
 		this.add("extradelight.jei.info.garlic", "Found on mountain slopes.");
-		this.add("extradelight.jei.info.cucumber", "Found in foothills.");
+		this.add("extradelight.jei.info.cucumber", "Found in hills.");
 		this.add("extradelight.jei.info.soybean", "Found in anything temperate.");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
@@ -1315,38 +1317,10 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.VAT.get(), "Fermentation Vat");
 		this.add(ExtraDelightItems.LID.get(), "Lid");
 		this.add(ExtraDelightItems.EVAPORATOR.get(), "Evaporator");
-		this.add(Fermentation.CUCUMBER_CROP.get(), "Cucumbers");
-		this.add(Fermentation.SOYBEAN_CROP.get(), "Soybeans");
-		this.add(Fermentation.WILD_CUCUMBER.get(), "Wild Cucumber");
-		this.add(Fermentation.WILD_SOYBEAN.get(), "Wild Soybean");
-		this.add(Fermentation.CUCUMBER.get(), "Cucumber");
-		this.add(Fermentation.SOYBEAN_POD.get(), "Soybean Pod");
-		this.add(Fermentation.CUCUMBER_SEED.get(), "Cucumber Seeds");
-		this.add(Fermentation.SOYBEANS.get(), "Soybeans");
-		this.add(Fermentation.GHERKINS_BLOCK.get(), "Jar of Gherkins");
-		this.add(Fermentation.PICKLED_BEETS_BLOCK.get(), "Jar of Pickled Sliced Beetroot");
-		this.add(Fermentation.PICKLED_ONIONS_BLOCK.get(), "Jar of Pickled Onions");
-		this.add(Fermentation.PICKLED_EGGS_BLOCK.get(), "Jar of Pickled Eggs");
-		this.add(Fermentation.PICKLED_FISH_BLOCK.get(), "Jar of Pickled Fish");
-		this.add(Fermentation.PICKLED_TOMATOES_BLOCK.get(), "Jar of Pickled Tomatoes");
-		this.add(Fermentation.PICKLED_WATERMELON_BLOCK.get(), "Jar of Pickled Watermelon");
-		this.add(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), "Jar of Pickled Sausage");
-		this.add(Fermentation.SOY_SAUCE_ITEM.get(), "Soy Sauce");
-		this.add(Fermentation.SAUERKRAUT_ITEM.get(), "Sauerkraut");
-		this.add(Fermentation.KIMCHI_ITEM.get(), "Kimchi");
-		this.add(Fermentation.HOT_SAUCE_ITEM.get(), "Hot Sauce");
-		this.add(Fermentation.MISO_ITEM.get(), "Miso");
-		this.add(Fermentation.NATTO_ITEM.get(), "Natto");
-		this.add(Fermentation.FISH_SAUCE_ITEM.get(), "Fish Sauce");
-		this.add(Fermentation.SALAMI_ITEM.get(), "Salami");
-		this.add(Fermentation.SOAKED_SOYBEANS_ITEM.get(), "Soaked Soybeans");
-		this.add(Fermentation.MOO_NAEM_ITEM.get(), "Moo Naem");
-		this.add(Fermentation.GHERKIN_ITEM.get(), "Gherkin");
-		this.add(Fermentation.SLICED_CUCUMBER_ITEM.get(), "Sliced Cucumber");
-		this.add(Fermentation.SLICED_GHERKIN_ITEM.get(), "Sliced Gherkin");
 
 //		this.add(ExtraDelightItems.DYNAMIC_TEST2.get(), "Sandwich");
 
+		Fermentation.EngLoc(this);
 		AestheticBlocks.EngLoc(this);
 	}
 }

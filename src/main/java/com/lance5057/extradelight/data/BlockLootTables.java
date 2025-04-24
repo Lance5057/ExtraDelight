@@ -535,10 +535,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(Fermentation.GHERKINS_BLOCK.get(), Items.GLASS_BOTTLE);
 		this.dropOther(Fermentation.PICKLED_BEETS_BLOCK.get(), Items.GLASS_BOTTLE);
 		this.dropOther(Fermentation.PICKLED_ONIONS_BLOCK.get(), Items.GLASS_BOTTLE);
+		this.dropOther(Fermentation.PICKLED_CARROTS_BLOCK.get(), Items.GLASS_BOTTLE);
 		this.dropOther(Fermentation.PICKLED_EGGS_BLOCK.get(), Items.GLASS_BOTTLE);
 		this.dropOther(Fermentation.PICKLED_FISH_BLOCK.get(), Items.GLASS_BOTTLE);
 		this.dropOther(Fermentation.PICKLED_TOMATOES_BLOCK.get(), Items.GLASS_BOTTLE);
-		this.dropOther(Fermentation.PICKLED_WATERMELON_BLOCK.get(), Items.GLASS_BOTTLE);
+		this.dropOther(Fermentation.PICKLED_MELON_BLOCK.get(), Items.GLASS_BOTTLE);
 		this.dropOther(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Items.GLASS_BOTTLE);
 	}
 
