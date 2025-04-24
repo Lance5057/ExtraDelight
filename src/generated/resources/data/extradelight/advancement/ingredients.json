@@ -551,6 +551,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:gherkin_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:gherkin_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:gingerbread_cookie_dough": {
       "conditions": {
         "items": [
@@ -951,6 +961,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:sliced_cucumber_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sliced_cucumber_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:sliced_gherkin_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sliced_gherkin_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sliced_ginger": {
       "conditions": {
         "items": [
@@ -1131,6 +1161,9 @@
       "extradelight:breading_misanplas"
     ],
     [
+      "extradelight:sliced_cucumber_item"
+    ],
+    [
       "extradelight:corn_seeds"
     ],
     [
@@ -1180,6 +1213,9 @@
     ],
     [
       "extradelight:frosting_orange"
+    ],
+    [
+      "extradelight:gherkin_item"
     ],
     [
       "extradelight:sliced_tomato"
@@ -1381,6 +1417,9 @@
     ],
     [
       "extradelight:jam"
+    ],
+    [
+      "extradelight:sliced_gherkin_item"
     ],
     [
       "extradelight:cocoa_powder"

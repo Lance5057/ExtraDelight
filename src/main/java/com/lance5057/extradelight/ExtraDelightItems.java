@@ -1847,7 +1847,7 @@ public class ExtraDelightItems {
 			.advancementFeast().finish();
 
 	public static final DeferredItem<Item> PUNCH = EDItemGenerator
-			.register("punch", () -> new MelonJuiceItem(new Item.Properties())).servingToolTip().drink()
+			.register("punch", () -> new MelonJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE))).servingToolTip().drink()
 			.setHydration(60).setThirst(6).isHot(false).setPoison(0).finish();
 	public static final DeferredItem<Item> PUNCH_FEAST = EDItemGenerator
 			.register("punch_feast", () -> new BlockItem(ExtraDelightBlocks.PUNCH.get(), new Item.Properties()))

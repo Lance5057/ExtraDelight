@@ -251,6 +251,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:gherkins_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:gherkins_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:glow_berry_cheesecake": {
       "conditions": {
         "items": [
@@ -945,6 +955,9 @@
     ],
     [
       "extradelight:stirfry_block_item"
+    ],
+    [
+      "extradelight:gherkins_block_item"
     ],
     [
       "extradelight:sticky_toffee_pudding_block"

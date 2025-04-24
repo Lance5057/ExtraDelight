@@ -381,7 +381,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<PieBlock> PUMPKIN_ROLL = BLOCKS.register("pumpkin_roll",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
-					ExtraDelightItems.TARTE_TATIN_SLICE) {
+					ExtraDelightItems.PUMPKIN_ROLL) {
 				@Override
 				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
 						CollisionContext context) {
