@@ -75,7 +75,10 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.STUFFING.get(),
 
 				// Feasts in jars
-				Fermentation.GHERKINS_BLOCK.get(),
+				Fermentation.GHERKINS_BLOCK.get(), Fermentation.PICKLED_BEETS_BLOCK.get(),
+				Fermentation.PICKLED_ONIONS_BLOCK.get(), Fermentation.PICKLED_CARROTS_BLOCK.get(),
+				Fermentation.PICKLED_EGGS_BLOCK.get(), Fermentation.PICKLED_FISH_BLOCK.get(),
+				Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Fermentation.PICKLED_GINGER_BLOCK.get(),
 
 				ExtraDelightBlocks.SHEET_BLOCK.get(), ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
 				ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), ExtraDelightBlocks.SERVING_POT_BLOCK.get(),

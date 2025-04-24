@@ -1,13 +1,12 @@
 package com.lance5057.extradelight.modules;
 
-import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.ExtraDelightBlocks;
-import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.*;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
+import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
 import com.lance5057.extradelight.data.BlockModels;
+import com.lance5057.extradelight.data.ItemModels;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.util.EDItemGenerator;
 
@@ -18,6 +17,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -26,11 +26,11 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
-import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
@@ -146,18 +146,6 @@ public class Fermentation {
 			.register("pickled_tomato_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
 			.finish();
 
-	public static final DeferredBlock<RecipeFeastBlock> PICKLED_MELON_BLOCK = ExtraDelightBlocks.BLOCKS
-			.register("pickled_melon_block",
-					() -> new RecipeFeastBlock(
-							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
-							true, ExtraDelightBlocks.pot));
-	public static final DeferredItem<Item> PICKLED_MELON_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
-			"pickled_melon_block_item", () -> new BlockItem(PICKLED_MELON_BLOCK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> PICKLED_MELON_ITEM = EDItemGenerator
-			.register("pickled_melon_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
-			.finish();
-
 	public static final DeferredBlock<RecipeFeastBlock> PICKLED_SAUSAGE_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_sausage_block",
 					() -> new RecipeFeastBlock(
@@ -169,6 +157,15 @@ public class Fermentation {
 	public static final DeferredItem<Item> PICKLED_SAUSAGE_ITEM = EDItemGenerator
 			.register("pickled_sausage_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
 			.finish();
+
+	public static final DeferredBlock<RecipeFeastBlock> PICKLED_GINGER_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("pickled_ginger_block",
+					() -> new RecipeFeastBlock(
+							BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
+									.sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN),
+							true, ExtraDelightBlocks.pot));
+	public static final DeferredItem<Item> PICKLED_GINGER_BLOCK_ITEM = ExtraDelightItems.ITEMS.register(
+			"pickled_ginger_block_item", () -> new BlockItem(PICKLED_GINGER_BLOCK.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> SOY_SAUCE_ITEM = ExtraDelightItems.ITEMS.register("soy_sauce_item",
 			() -> new Item(new Item.Properties()));
@@ -205,44 +202,58 @@ public class Fermentation {
 	public static final DeferredItem<Item> SLICED_GHERKIN_ITEM = EDItemGenerator
 			.register("sliced_gherkin_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
+	public static final DeferredItem<Item> PICKLE_JUICE = EDItemGenerator
+			.register("pickle_juice", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.advancementIngredients().finish();
+	public static final DeferredItem<Item> PICKLE_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register("pickle_juice_fluid_bucket",
+			() -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.PICKLE_JUICE));
+	public static final DeferredBlock<VinegarFluidBlock> PICKLE_JUICE_FLUID_BLOCK = ExtraDelightBlocks.BLOCKS.register("pickle_juice_fluid_block",
+			() -> new VinegarFluidBlock(ExtraDelightFluids.PICKLE_JUICE.FLUID.get(),
+					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
+
+
 	public static void blockModels(BlockStateProvider bsp) {
-		bsp.getVariantBuilder(GHERKINS_BLOCK.get()).forAllStates(state -> {
-			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
-
-			String suffix = "_stage" + (GHERKINS_BLOCK.get().getMaxServings() - servings);
-
-			if (servings == 0) {
-				suffix = GHERKINS_BLOCK.get().hasLeftovers ? "_leftover" : "_stage3";
-			}
-
-			return ConfiguredModel.builder()
-					.modelFile(new ModelFile.ExistingModelFile(
-							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gherkin_jar" + suffix),
-							bsp.models().existingFileHelper))
-					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
-		});
-
-		bsp.getVariantBuilder(PICKLED_BEETS_BLOCK.get()).forAllStates(state -> {
-			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
-
-			String suffix = "_stage" + (PICKLED_BEETS_BLOCK.get().getMaxServings() - servings);
-
-			if (servings == 0) {
-				suffix = PICKLED_BEETS_BLOCK.get().hasLeftovers ? "_leftover" : "_stage3";
-			}
-
-			return ConfiguredModel.builder()
-					.modelFile(new ModelFile.ExistingModelFile(ResourceLocation.fromNamespaceAndPath(
-							ExtraDelight.MOD_ID, "block/pickled_beets_jar" + suffix), bsp.models().existingFileHelper))
-					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
-		});
+		BlockModels.recipeFeastBlock(bsp, GHERKINS_BLOCK.get(), "gherkin_jar");
+		BlockModels.recipeFeastBlock(bsp, PICKLED_BEETS_BLOCK.get(), "pickled_beets_jar");
+		BlockModels.recipeFeastBlock(bsp, PICKLED_ONIONS_BLOCK.get(), "pickled_onions_jar");
+		BlockModels.recipeFeastBlock(bsp, PICKLED_CARROTS_BLOCK.get(), "pickled_carrot_jar");
+		BlockModels.recipeFeastBlock(bsp, PICKLED_EGGS_BLOCK.get(), "pickled_egg_jar");
+		BlockModels.recipeFeastBlock(bsp, PICKLED_FISH_BLOCK.get(), "pickled_fish_jar");
+		BlockModels.recipeFeastBlock(bsp, PICKLED_SAUSAGE_BLOCK.get(), "pickled_sausage_jar");
+		BlockModels.recipeFeastBlock(bsp, PICKLED_GINGER_BLOCK.get(), "pickled_ginger_jar");
 
 		BlockModels.cropCrossBlock(bsp, Fermentation.CUCUMBER_CROP.get(), "cucumber", CucumberCrop.AGE);
 		bsp.simpleBlock(Fermentation.WILD_CUCUMBER.get(), new ConfiguredModel(bsp.models()
 				.cross("wild_cucumber", bsp.modLoc("block/crops/cucumber/cucumber_stage7")).renderType("cutout")));
 	}
 
+	public static void itemModels(ItemModelProvider tmp) {
+		ItemModels.forBlockItemFlat(tmp, Fermentation.WILD_CUCUMBER_ITEM, "crops/cucumber/cucumber_stage7");
+		ItemModels.forItem(tmp, Fermentation.CUCUMBER, "crops/cucumber/cucumber");
+		tmp.getBuilder(Fermentation.GHERKINS_BLOCK_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gherkin_jar_stage0")));
+		tmp.getBuilder(Fermentation.PICKLED_BEETS_BLOCK_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pickled_beets_jar_stage0")));
+		tmp.getBuilder(Fermentation.PICKLED_ONIONS_BLOCK_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pickled_onions_jar_stage0")));
+		tmp.getBuilder(Fermentation.PICKLED_CARROTS_BLOCK_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pickled_carrot_jar_stage0")));
+		tmp.getBuilder(Fermentation.PICKLED_EGGS_BLOCK_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pickled_egg_jar_stage0")));
+		tmp.getBuilder(Fermentation.PICKLED_FISH_BLOCK_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pickled_fish_jar_stage0")));
+		tmp.getBuilder(Fermentation.PICKLED_GINGER_BLOCK_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pickled_ginger_jar_stage0")));
+		ItemModels.forItem(tmp, Fermentation.SLICED_CUCUMBER_ITEM, "crops/cucumber/cucumber_slices");
+		ItemModels.forItem(tmp, Fermentation.GHERKIN_ITEM, "gherkin");
+		ItemModels.forItem(tmp, Fermentation.SLICED_GHERKIN_ITEM, "gherkin_slices");
+	}
+
 	public static void Recipes(RecipeOutput consumer) {
+		// Vanilla Crafting
+//		this.bucket("pickle_juice", consumer, PICKLE_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+//				PICKLE_JUICE.get());
+
 		// Cutting board
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(Fermentation.CUCUMBER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
@@ -298,17 +309,17 @@ public class Fermentation {
 						InventoryChangeTrigger.TriggerInstance.hasItems(PICKLED_TOMATOES_BLOCK_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("pickled_tomato_pull_feast"));
 		FeastRecipeBuilder
-				.feast(Ingredient.of(ExtraDelightTags.SPOONS), new ItemStack(PICKLED_MELON_ITEM.get()),
-						PICKLED_MELON_BLOCK_ITEM.get())
-				.unlockedBy("has_pickle_jar",
-						InventoryChangeTrigger.TriggerInstance.hasItems(PICKLED_MELON_BLOCK_ITEM.get()))
-				.save(consumer, ExtraDelight.modLoc("pickled_melon_pull_feast"));
-		FeastRecipeBuilder
 				.feast(Ingredient.of(ExtraDelightTags.SPOONS), new ItemStack(PICKLED_SAUSAGE_ITEM.get()),
 						PICKLED_SAUSAGE_BLOCK_ITEM.get())
 				.unlockedBy("has_pickle_jar",
 						InventoryChangeTrigger.TriggerInstance.hasItems(PICKLED_SAUSAGE_BLOCK_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("pickled_sausage_pull_feast"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ExtraDelightTags.SPOONS), new ItemStack(ExtraDelightItems.PICKLED_GINGER.get()),
+						PICKLED_GINGER_BLOCK_ITEM.get())
+				.unlockedBy("has_pickle_jar",
+						InventoryChangeTrigger.TriggerInstance.hasItems(PICKLED_GINGER_BLOCK_ITEM.get()))
+				.save(consumer, ExtraDelight.modLoc("pickled_ginger_pull_feast"));
 	}
 
 	public static void EngLoc(LanguageProvider lp) {
@@ -334,10 +345,9 @@ public class Fermentation {
 		lp.add(PICKLED_FISH_ITEM.get(), "Pickled Fish");
 		lp.add(PICKLED_TOMATOES_BLOCK.get(), "Jar of Pickled Tomatoes");
 		lp.add(PICKLED_TOMATO_ITEM.get(), "Pickled Tomato");
-		lp.add(PICKLED_MELON_BLOCK.get(), "Jar of Pickled Melon");
-		lp.add(PICKLED_MELON_ITEM.get(), "Pickled Melon");
 		lp.add(PICKLED_SAUSAGE_BLOCK.get(), "Jar of Pickled Sausage");
 		lp.add(PICKLED_SAUSAGE_ITEM.get(), "Pickled Sausage");
+		lp.add(PICKLED_GINGER_BLOCK.get(), "Jar of Pickled Ginger");
 		lp.add(SOY_SAUCE_ITEM.get(), "Soy Sauce");
 		lp.add(SAUERKRAUT_ITEM.get(), "Sauerkraut");
 		lp.add(KIMCHI_ITEM.get(), "Kimchi");
@@ -350,5 +360,9 @@ public class Fermentation {
 		lp.add(MOO_NAEM_ITEM.get(), "Moo Naem");
 		lp.add(SLICED_CUCUMBER_ITEM.get(), "Sliced Cucumber");
 		lp.add(SLICED_GHERKIN_ITEM.get(), "Sliced Gherkin");
+		lp.add(PICKLE_JUICE.get(), "Pickle Juice");
+		lp.add(PICKLE_JUICE_FLUID_BUCKET.get(), "Pickle Juice Bucket");
+		lp.add("fluid_type.extradelight.pickle_juice_fluid", "Pickle Juice");
+		lp.add("block.extradelight.pickle_juice_fluid_block", "Pickle Juice");
 	}
 }

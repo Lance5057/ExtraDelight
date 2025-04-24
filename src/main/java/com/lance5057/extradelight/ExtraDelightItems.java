@@ -29,6 +29,7 @@ import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
 import com.lance5057.extradelight.items.jar.JarItem;
+import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.util.EDItemGenerator;
 
 import net.minecraft.ChatFormatting;
@@ -120,6 +121,7 @@ public class ExtraDelightItems {
 				DispenseFluidContainer.getInstance());
 		DispenserBlock.registerBehavior(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET,
 				DispenseFluidContainer.getInstance());
+		DispenserBlock.registerBehavior(Fermentation.PICKLE_JUICE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
 	}
 
 	// Helper methods

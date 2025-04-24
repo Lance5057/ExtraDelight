@@ -532,15 +532,15 @@ public class BlockLootTables extends BlockLootSubProvider {
 		crop(Fermentation.SOYBEAN_CROP.get(), Fermentation.SOYBEAN_POD.get(), Fermentation.SOYBEANS.get(),
 				soybean);
 
-		this.dropOther(Fermentation.GHERKINS_BLOCK.get(), Items.GLASS_BOTTLE);
-		this.dropOther(Fermentation.PICKLED_BEETS_BLOCK.get(), Items.GLASS_BOTTLE);
-		this.dropOther(Fermentation.PICKLED_ONIONS_BLOCK.get(), Items.GLASS_BOTTLE);
-		this.dropOther(Fermentation.PICKLED_CARROTS_BLOCK.get(), Items.GLASS_BOTTLE);
-		this.dropOther(Fermentation.PICKLED_EGGS_BLOCK.get(), Items.GLASS_BOTTLE);
-		this.dropOther(Fermentation.PICKLED_FISH_BLOCK.get(), Items.GLASS_BOTTLE);
-		this.dropOther(Fermentation.PICKLED_TOMATOES_BLOCK.get(), Items.GLASS_BOTTLE);
-		this.dropOther(Fermentation.PICKLED_MELON_BLOCK.get(), Items.GLASS_BOTTLE);
-		this.dropOther(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Items.GLASS_BOTTLE);
+		this.dropOther(Fermentation.GHERKINS_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		this.dropOther(Fermentation.PICKLED_BEETS_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		this.dropOther(Fermentation.PICKLED_ONIONS_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		this.dropOther(Fermentation.PICKLED_CARROTS_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		this.dropOther(Fermentation.PICKLED_EGGS_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		this.dropOther(Fermentation.PICKLED_FISH_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		this.dropOther(Fermentation.PICKLED_TOMATOES_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		this.dropOther(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		this.dropOther(Fermentation.PICKLED_GINGER_BLOCK.get(), Fermentation.PICKLE_JUICE);
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {
