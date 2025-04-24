@@ -7,6 +7,7 @@ import java.util.Optional;
 import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 
+import com.lance5057.extradelight.modules.Fermentation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
@@ -117,6 +118,8 @@ public class BottleFluidRegistry {
 				SizedFluidIngredient.of(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), bottleMB));
+		register(Ingredient.of(Fermentation.PICKLE_JUICE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.PICKLE_JUICE.FLUID.get(), bottleMB));
 
 		register(Ingredient.of(PotionContents.createItemStack(Items.POTION, Potions.WATER)),
 				SizedFluidIngredient.of(Fluids.WATER, bottleMB));

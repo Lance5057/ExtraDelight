@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.fluids.BasicFluid;
 import com.lance5057.extradelight.fluids.FluidRegistration;
+import com.lance5057.extradelight.modules.Fermentation;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.Fluid;
@@ -226,6 +227,11 @@ public class ExtraDelightFluids {
 					.setNearDistance(-1000),
 			ExtraDelightBlocks.COCOA_NUT_BUTTER_SPREAD_FLUID_BLOCK,
 			ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
+
+	public static FluidRegistration PICKLE_JUICE = new FluidRegistration("pickle_juice",
+			() -> new BasicFluid(0xffedeac9, 0xffedeac9,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canExtinguish(true)),
+			Fermentation.PICKLE_JUICE_FLUID_BLOCK, Fermentation.PICKLE_JUICE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	public static void register(IEventBus modBus) {
 		FLUID_TYPES.register(modBus);
