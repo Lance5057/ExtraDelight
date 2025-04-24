@@ -101,6 +101,56 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:pickled_carrot_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_carrot_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_egg_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_egg_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_fish_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_fish_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_sausage_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_sausage_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_tomato_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_tomato_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:popcorn": {
       "conditions": {
         "items": [
@@ -199,6 +249,12 @@
       "extradelight:garlic_bread"
     ],
     [
+      "extradelight:pickled_carrot_item"
+    ],
+    [
+      "extradelight:pickled_egg_item"
+    ],
+    [
       "extradelight:potato_chips"
     ],
     [
@@ -211,10 +267,16 @@
       "extradelight:crackers"
     ],
     [
+      "extradelight:pickled_fish_item"
+    ],
+    [
       "extradelight:caramel_popcorn"
     ],
     [
       "extradelight:roll"
+    ],
+    [
+      "extradelight:pickled_sausage_item"
     ],
     [
       "extradelight:popcorn"
@@ -224,6 +286,9 @@
     ],
     [
       "extradelight:toast"
+    ],
+    [
+      "extradelight:pickled_tomato_item"
     ],
     [
       "extradelight:sunflower_seeds"

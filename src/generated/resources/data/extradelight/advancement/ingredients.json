@@ -871,11 +871,41 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:pickle_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickle_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_beet_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_beet_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pickled_ginger": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:pickled_ginger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_onion_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_onion_item"
           }
         ]
       },
@@ -1140,6 +1170,9 @@
       "extradelight:nut_butter_cookie_dough"
     ],
     [
+      "extradelight:pickled_onion_item"
+    ],
+    [
       "extradelight:furikake"
     ],
     [
@@ -1227,6 +1260,9 @@
       "extradelight:glow_berry_cookie_dough"
     ],
     [
+      "extradelight:pickled_beet_item"
+    ],
+    [
       "extradelight:mayo_jar_item"
     ],
     [
@@ -1270,6 +1306,9 @@
     ],
     [
       "extradelight:cocoa_solids"
+    ],
+    [
+      "extradelight:pickle_juice"
     ],
     [
       "extradelight:honey_cookie_dough"

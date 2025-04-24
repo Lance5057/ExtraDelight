@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "tag": "c:spoons"
+  },
+  "out": {
+    "id": "extradelight:pickled_carrots_block_item"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:pickled_carrot_item"
+  }
+}

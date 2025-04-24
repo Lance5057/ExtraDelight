@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:glass_bottle"
+          "name": "extradelight:pickle_juice"
         }
       ],
       "rolls": 1.0

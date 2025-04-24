@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:glass_bottle"
+          "name": "extradelight:pickle_juice"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/pickled_watermelon_block"
+  "random_sequence": "extradelight:blocks/pickled_carrots_block"
 }
