@@ -971,11 +971,31 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:shredded_cabbage_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:shredded_cabbage_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sliced_apple": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:sliced_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:sliced_beetroot_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sliced_beetroot_item"
           }
         ]
       },
@@ -1245,6 +1265,9 @@
       "extradelight:apple_cookie_dough"
     ],
     [
+      "extradelight:shredded_cabbage_item"
+    ],
+    [
       "extradelight:frosting_orange"
     ],
     [
@@ -1279,6 +1302,9 @@
     ],
     [
       "extradelight:chocolate_chip_cookie_dough"
+    ],
+    [
+      "extradelight:sliced_beetroot_item"
     ],
     [
       "extradelight:pumpkin_cookie_dough"

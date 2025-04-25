@@ -141,16 +141,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:pickled_tomato_item": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:pickled_tomato_item"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:popcorn": {
       "conditions": {
         "items": [
@@ -286,9 +276,6 @@
     ],
     [
       "extradelight:toast"
-    ],
-    [
-      "extradelight:pickled_tomato_item"
     ],
     [
       "extradelight:sunflower_seeds"

@@ -14,7 +14,7 @@
                   "block": "extradelight:soybean_crop",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "5"
+                    "age": "7"
                   }
                 }
               ],
@@ -36,7 +36,7 @@
           "block": "extradelight:soybean_crop",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "5"
+            "age": "7"
           }
         }
       ],
