@@ -528,7 +528,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(Fermentation.WILD_SOYBEAN.get(), Fermentation.SOYBEAN_POD.get());
 		LootItemCondition.Builder soybean = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(Fermentation.SOYBEAN_CROP.get())
-				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SoybeanCrop.AGE, 5));
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SoybeanCrop.AGE, 7));
 		crop(Fermentation.SOYBEAN_CROP.get(), Fermentation.SOYBEAN_POD.get(), Fermentation.SOYBEANS.get(),
 				soybean);
 
@@ -538,7 +538,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(Fermentation.PICKLED_CARROTS_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropOther(Fermentation.PICKLED_EGGS_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropOther(Fermentation.PICKLED_FISH_BLOCK.get(), Fermentation.PICKLE_JUICE);
-		this.dropOther(Fermentation.PICKLED_TOMATOES_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropOther(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropOther(Fermentation.PICKLED_GINGER_BLOCK.get(), Fermentation.PICKLE_JUICE);
 	}

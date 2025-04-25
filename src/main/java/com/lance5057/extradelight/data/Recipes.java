@@ -4277,10 +4277,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON) },
 				"rice_pudding", consumer);
 
-		pot(ExtraDelightItems.PICKLED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F, null,
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.SLICED_GINGER),
-						Ingredient.of(ExtraDelightTags.VINEGAR), Ingredient.of(ExtraDelightTags.SWEETENER) },
-				"pickled_ginger", consumer);
+//		pot(ExtraDelightItems.PICKLED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F, null,
+//				new Ingredient[] { Ingredient.of(ExtraDelightTags.SLICED_GINGER),
+//						Ingredient.of(ExtraDelightTags.VINEGAR), Ingredient.of(ExtraDelightTags.SWEETENER) },
+//				"pickled_ginger", consumer);
 
 		pot(ExtraDelightItems.CANDIED_GINGER.get(), 4, CookingRecipes.NORMAL_COOKING, 0.35F, Items.PAPER,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
@@ -4779,17 +4779,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.GARLIC.get(), 1)
 				.addResult(Items.MAGENTA_DYE, 2).addResultWithChance(Items.LIME_DYE, 0.1f, 1)
 				.build(consumer, EDLoc("cutting/" + "wild_garlic_knife"));
-
-		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(Fermentation.WILD_CUCUMBER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
-						Fermentation.CUCUMBER_SEED.get(), 1)
-				.addResultWithChance(Fermentation.CUCUMBER.get(), 0.2f, 1).addResultWithChance(Items.GREEN_DYE, 0.1f, 1)
-				.build(consumer, EDLoc("cutting/" + "wild_cucumber_knife"));
-
-		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(Fermentation.WILD_SOYBEAN.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
-						Fermentation.SOYBEAN_POD.get(), 1)
-				.addResultWithChance(Items.LIME_DYE, 0.5f, 2).build(consumer, EDLoc("cutting/" + "wild_soybean_knife"));
 	}
 
 	private void mortarRecipes(RecipeOutput consumer) {
