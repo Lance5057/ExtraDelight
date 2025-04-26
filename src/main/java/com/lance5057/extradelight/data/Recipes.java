@@ -117,20 +117,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void evaporatorRecipes(RecipeOutput consumer) {
-		EvaporatorRecipeBuilder
-				.evaporate(SizedFluidIngredient.of(Fluids.LAVA, 1000), MiscLootTables.EVAPORATOR_LAVA_TEST.location(),
-						100, Blocks.COBBLESTONE)
-				.unlockedBy(getName(), has(Items.LAVA_BUCKET))
-				.save(consumer, ExtraDelight.modLoc("evaporate_lava"));
+		
 	}
 
-	final int dayTick = 24000;
+	
 
 	private void vatRecipes(RecipeOutput consumer) {
-		VatRecipeBuilder.pickle(new ItemStack(Items.DIAMOND), new ItemStack(Items.DIRT), 100)
-				.requires(Ingredient.of(Tags.Items.BONES)).requiresFluid(SizedFluidIngredient.of(Fluids.LAVA, 1000))
-				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.BRICKS), 1000, false))
-				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.EGGS), 100, true)).save(consumer);
+//		VatRecipeBuilder.pickle(new ItemStack(Items.DIAMOND), new ItemStack(Items.DIRT), 100)
+//				.requires(Ingredient.of(Tags.Items.BONES)).requiresFluid(SizedFluidIngredient.of(Fluids.LAVA, 1000))
+//				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.BRICKS), 1000, false))
+//				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.EGGS), 100, true)).save(consumer);
 	}
 
 	private void chillingRecipes(RecipeOutput consumer) {
@@ -2185,7 +2181,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new SizedFluidIngredient[] {}, consumer, "aglio_e_olio_mixing");
 	}
 
-	private void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
+	public static void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
 			SizedFluidIngredient[] sizedFluidIngredients, RecipeOutput consumer, String rc) {
 		MixingBowlRecipeBuilder b = MixingBowlRecipeBuilder.stir(output, grind, container);
 
@@ -3783,31 +3779,31 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.GARLIC.get(), consumer, "garlic");
 	}
 
-	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
+	public static void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
 			ItemLike fullItem) {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, fullBucket, 1).requires(fullItem, 4)
 				.requires(Items.BUCKET, 1)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(fullItem))
+				.unlockedBy(name, InventoryChangeTrigger.TriggerInstance.hasItems(fullItem))
 				.save(consumer, EDLoc(name + "_to_bucket"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, fullItem, 4).requires(fullBucket, 1)
-				.requires(emptyItem, 4).unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(fullItem))
+				.requires(emptyItem, 4).unlockedBy(name, InventoryChangeTrigger.TriggerInstance.hasItems(fullItem))
 				.save(consumer, EDLoc(name + "_from_bucket"));
 	}
 
-	private void bundleItem9(Ingredient in, Item b, Item out, RecipeOutput consumer, String name) {
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, b, 1).requires(in, 9).unlockedBy(getName(), has(out))
+	public static void bundleItem9(Ingredient in, Item b, Item out, RecipeOutput consumer, String name) {
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, b, 1).requires(in, 9).unlockedBy(name, has(out))
 				.save(consumer, EDLoc(name + "_to_block"));
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, out, 9).requires(b).unlockedBy(getName(), has(b))
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, out, 9).requires(b).unlockedBy(name, has(b))
 				.save(consumer, EDLoc(name + "_from_block"));
 	}
 
-	private void bundleItem4(Ingredient in, Item b, Item out, RecipeOutput consumer, String name) {
+	public static void bundleItem4(Ingredient in, Item b, Item out, RecipeOutput consumer, String name) {
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, b, 1).pattern("xx").pattern("xx").define('x', in)
-				.unlockedBy(getName(), has(out)).save(consumer, EDLoc(name + "_to_block"));
+				.unlockedBy(name, has(out)).save(consumer, EDLoc(name + "_to_block"));
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, out, 4).requires(b).unlockedBy(getName(), has(b))
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, out, 4).requires(b).unlockedBy(name, has(b))
 				.save(consumer, EDLoc(name + "_from_block"));
 	}
 
@@ -5863,11 +5859,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.BREAD_CRUMBS).build(consumer);
 	}
 
-	private void bulkBake(ItemLike mainResult, Ingredient in, RecipeOutput consumer, ItemLike pan, String name) {
+	public static void bulkBake(ItemLike mainResult, Ingredient in, RecipeOutput consumer, ItemLike pan, String name) {
 		bulkBake(mainResult, in, consumer, pan, name, 1);
 	}
 
-	private void bulkBake(ItemLike mainResult, Ingredient in, RecipeOutput consumer, ItemLike pan, String name,
+	public static void bulkBake(ItemLike mainResult, Ingredient in, RecipeOutput consumer, ItemLike pan, String name,
 			int count) {
 		for (int i = 1; i < 10; i++)
 			OvenRecipeBuilder
@@ -5877,7 +5873,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 					.build(consumer, "extradelight:oven/bulk/" + name + i);
 	}
 
-	private void pot(ItemLike output, int count, int speed, float xp, ItemLike container, Ingredient[] itemsIn,
+	public static void pot(ItemLike output, int count, int speed, float xp, ItemLike container, Ingredient[] itemsIn,
 			String rc, RecipeOutput consumer) {
 
 //		cookingPotRecipe(ItemLike mainResult, int count, int cookingTime, float experience)

@@ -229,7 +229,7 @@ public class ExtraDelightFluids {
 			ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
 
 	public static FluidRegistration PICKLE_JUICE = new FluidRegistration("pickle_juice",
-			() -> new BasicFluid(0x008d9912, 0x008d9912,
+			() -> new BasicFluid(0xff8d9912, 0xff8d9912,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canExtinguish(true)),
 			Fermentation.PICKLE_JUICE_FLUID_BLOCK, Fermentation.PICKLE_JUICE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 

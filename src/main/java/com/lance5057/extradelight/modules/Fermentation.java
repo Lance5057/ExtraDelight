@@ -1,31 +1,47 @@
 package com.lance5057.extradelight.modules;
 
-import com.lance5057.extradelight.*;
+import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightFluids;
+import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
 import com.lance5057.extradelight.data.BlockModels;
 import com.lance5057.extradelight.data.ItemModels;
+import com.lance5057.extradelight.data.MiscLootTables;
+import com.lance5057.extradelight.data.Recipes;
+import com.lance5057.extradelight.data.recipebuilders.EvaporatorRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
 import com.lance5057.extradelight.util.EDItemGenerator;
+import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe.StageIngredient;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
@@ -195,12 +211,11 @@ public class Fermentation {
 	public static final DeferredItem<Item> PICKLE_JUICE = EDItemGenerator
 			.register("pickle_juice", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> PICKLE_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register("pickle_juice_fluid_bucket",
-			() -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.PICKLE_JUICE));
-	public static final DeferredBlock<VinegarFluidBlock> PICKLE_JUICE_FLUID_BLOCK = ExtraDelightBlocks.BLOCKS.register("pickle_juice_fluid_block",
-			() -> new VinegarFluidBlock(ExtraDelightFluids.PICKLE_JUICE.FLUID.get(),
+	public static final DeferredItem<Item> PICKLE_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
+			"pickle_juice_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.PICKLE_JUICE));
+	public static final DeferredBlock<VinegarFluidBlock> PICKLE_JUICE_FLUID_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+			"pickle_juice_fluid_block", () -> new VinegarFluidBlock(ExtraDelightFluids.PICKLE_JUICE.FLUID.get(),
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
-
 
 	public static void blockModels(BlockStateProvider bsp) {
 		BlockModels.recipeFeastBlock(bsp, GHERKINS_BLOCK.get(), "gherkin_jar");
@@ -246,6 +261,8 @@ public class Fermentation {
 		ItemModels.forItem(tmp, SLICED_GHERKIN_ITEM, "gherkin_slices");
 	}
 
+	final int dayTick = 24000;
+
 	public static void Recipes(RecipeOutput consumer) {
 		// Vanilla Crafting
 //		this.bucket("pickle_juice", consumer, PICKLE_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
@@ -279,10 +296,8 @@ public class Fermentation {
 						SLICED_CUCUMBER_ITEM.get(), 3)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_cucumber_knife"));
 
-		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(SOYBEAN_POD.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
-						SOYBEANS.get(), 3)
-				.build(consumer, ExtraDelight.modLoc("cutting/" + "shucked_soybeans_knife"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(SOYBEAN_POD.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+				SOYBEANS.get(), 3).build(consumer, ExtraDelight.modLoc("cutting/" + "shucked_soybeans_knife"));
 
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(GHERKIN_ITEM.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
@@ -338,6 +353,27 @@ public class Fermentation {
 				.unlockedBy("has_pickle_jar",
 						InventoryChangeTrigger.TriggerInstance.hasItems(PICKLED_GINGER_BLOCK_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("pickled_ginger_pull_feast"));
+
+		VatRecipeBuilder
+				.pickle(new ItemStack(Items.DIAMOND) /* output */, new ItemStack(Items.DIRT) /* container */, 100)
+				.requires(Ingredient.of(Tags.Items.BONES)) // input
+				.requiresFluid(SizedFluidIngredient.of(Fluids.LAVA, 1000)) // fluid
+				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.BRICKS), 1000, false)) // stage 1
+																									// (ingredient/time/lid)
+				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.EGGS), 100, true)) // stage 2
+				.save(consumer);
+
+		EvaporatorRecipeBuilder
+				.evaporate(SizedFluidIngredient.of(Fluids.LAVA, 1000), MiscLootTables.EVAPORATOR_LAVA_TEST.location(),
+						100, Blocks.COBBLESTONE)
+				.unlockedBy("has_lava", InventoryChangeTrigger.TriggerInstance.hasItems(Items.LAVA_BUCKET))
+				.save(consumer, ExtraDelight.modLoc("evaporate_lava"));
+
+//		Recipes.mixing(new ItemStack(ExtraDelightItems.AGLIO_E_OLIO.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
+//				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_PASTA),
+//						Ingredient.of(ExtraDelightItems.ROASTED_GARLIC), Ingredient.of(ExtraDelightTags.COOKING_OIL),
+//						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.CHEESE) },
+//				new SizedFluidIngredient[] {}, consumer, "aglio_e_olio_mixing");
 	}
 
 	public static void EngLoc(LanguageProvider lp) {
