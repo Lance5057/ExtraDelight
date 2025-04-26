@@ -540,6 +540,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(Fermentation.PICKLED_FISH_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropOther(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropOther(Fermentation.PICKLED_GINGER_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		this.dropSelf(Fermentation.CUCUMBER_CRATE.get());
+		this.dropSelf(Fermentation.SOYBEAN_SACK.get());
+		this.dropOther(Fermentation.SOY_GLAZED_SALMON_BLOCK.get(), Items.BOWL);
+		this.add(Fermentation.STEAK_PICKLED_ONION_PIE.get(), noDrop());
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {
