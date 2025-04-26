@@ -119,7 +119,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.PUMPKIN_PIE.get(), ExtraDelightBlocks.PUMPKIN_ROLL.get(),
 				ExtraDelightBlocks.APPLE_CHEESECAKE.get(), ExtraDelightBlocks.COFFEE_CAKE.get(),
 				ExtraDelightBlocks.MILK_TART.get(), ExtraDelightBlocks.CHOCOLATE_CAKE.get(),
-				ExtraDelightBlocks.TARTE_TATIN.get(),
+				ExtraDelightBlocks.TARTE_TATIN.get(), Fermentation.STEAK_PICKLED_ONION_PIE.get(),
 
 				// Feasts in bowls
 				ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(),
@@ -143,6 +143,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.MINT_LAMB.get(), ExtraDelightBlocks.CHARCUTERIE_BOARD.get(),
 				ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), ExtraDelightBlocks.MONKEY_BREAD.get(),
 				ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(), ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(),
+				Fermentation.SOY_GLAZED_SALMON_BLOCK.get(),
 
 				// Jellies (also plated)
 				ExtraDelightBlocks.JELLY_WHITE.get(), ExtraDelightBlocks.JELLY_ORANGE.get(),
@@ -328,6 +329,8 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_COCOA_POWDER).add(ExtraDelightBlocks.COCOA_POWDER_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_CORN_KERNELS).add(ExtraDelightBlocks.CORN_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_GARLIC).add(ExtraDelightBlocks.GARLIC_CRATE.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_CUCUMBER).add(Fermentation.CUCUMBER_CRATE.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_SOYBEANS).add(Fermentation.SOYBEAN_SACK.get());
 	}
 
 	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {

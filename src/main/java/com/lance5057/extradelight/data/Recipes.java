@@ -2080,15 +2080,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, "hazelnut_spread");
 
 		mixing(new ItemStack(ExtraDelightItems.APPLE_SLAW.get(), 1), STANDARD_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(ModItems.CABBAGE_LEAF.get()),
-						Ingredient.of(ExtraDelightItems.SLICED_APPLE.get()) },
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE),
+						Ingredient.of(ExtraDelightTags.SLICED_APPLE) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.MAYO.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "apple_slaw_fluids");
 
 		mixing(new ItemStack(ExtraDelightItems.APPLE_SLAW.get(), 1), STANDARD_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(ModItems.CABBAGE_LEAF.get()),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE),
 						Ingredient.of(ExtraDelightTags.SLICED_APPLE), Ingredient.of(ExtraDelightTags.MAYO),
 						Ingredient.of(ExtraDelightTags.VINEGAR) },
 				new SizedFluidIngredient[] {}, consumer, "apple_slaw_bottles");
@@ -2497,11 +2497,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		// Omelette
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.OMELETTE_MIX.get())
-				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(Tags.Items.FOODS_VEGETABLE), 2)
+				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(ExtraDelightTags.PROCESSED_VEG), 2)
 				.unlockedBy(getName(), has(Tags.Items.FOODS_VEGETABLE)).save(consumer, EDLoc("omelette_mix_veg"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.OMELETTE_MIX.get())
-				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(Tags.Items.FOODS_VEGETABLE), 1)
+				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(ExtraDelightTags.PROCESSED_VEG), 1)
 				.requires(Ingredient.of(ExtraDelightTags.MEAT), 1)
 				.unlockedBy(getName(), has(Tags.Items.FOODS_VEGETABLE)).save(consumer, EDLoc("omelette_mix_mix"));
 
@@ -2514,7 +2514,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), has(ExtraDelightTags.CHEESE)).save(consumer, EDLoc("omelette_mix_cheese"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.OMELETTE_MIX.get())
-				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(Tags.Items.FOODS_VEGETABLE), 2)
+				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(ExtraDelightTags.PROCESSED_VEG), 2)
 				.requires(Ingredient.of(ExtraDelightTags.CHEESE), 1)
 				.unlockedBy(getName(), has(Tags.Items.FOODS_VEGETABLE))
 				.save(consumer, EDLoc("omelette_mix_veg_cheese"));
@@ -2522,7 +2522,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.OMELETTE_MIX.get())
 				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(Tags.Items.FOODS_VEGETABLE), 1)
 				.requires(Ingredient.of(ExtraDelightTags.CHEESE), 1).requires(Ingredient.of(ExtraDelightTags.MEAT), 1)
-				.unlockedBy(getName(), has(Tags.Items.FOODS_VEGETABLE))
+				.unlockedBy(getName(), has(ExtraDelightTags.PROCESSED_VEG))
 				.save(consumer, EDLoc("omelette_mix_mix_cheese"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.OMELETTE_MIX.get())
@@ -2748,7 +2748,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		bundleItem9(Ingredient.of(ExtraDelightTags.CORN_MEAL), ExtraDelightItems.CORNMEAL_SACK.get(),
 				ExtraDelightItems.CORN_MEAL.get(), consumer, "cornmeal");
 		bundleItem9(Ingredient.of(Items.SUGAR), ExtraDelightItems.SUGAR_SACK.get(), Items.SUGAR, consumer, "sugar");
-		bundleItem9(Ingredient.of(ExtraDelightItems.CORN_ON_COB.get()), ExtraDelightItems.CORN_CRATE.get(),
+		bundleItem9(Ingredient.of(ExtraDelightTags.CORN_ON_COB), ExtraDelightItems.CORN_CRATE.get(),
 				ExtraDelightItems.CORN_ON_COB.get(), consumer, "corn");
 		bundleItem9(Ingredient.of(ExtraDelightItems.CORN_HUSK.get()), ExtraDelightItems.CORN_HUSK_BUNDLE.get(),
 				ExtraDelightItems.CORN_HUSK.get(), consumer, "corn_husk");
@@ -3921,8 +3921,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		pot(ExtraDelightItems.STIRFRY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.MEAT_RAW), Ingredient.of(ExtraDelightTags.MEAT_RAW),
-						Ingredient.of(Tags.Items.FOODS_VEGETABLE), Ingredient.of(Tags.Items.FOODS_VEGETABLE),
-						Ingredient.of(Tags.Items.FOODS_VEGETABLE), Ingredient.of(Tags.Items.FOODS_VEGETABLE) },
+						Ingredient.of(ExtraDelightTags.PROCESSED_VEG), Ingredient.of(ExtraDelightTags.PROCESSED_VEG),
+						Ingredient.of(ExtraDelightTags.PROCESSED_VEG), Ingredient.of(ExtraDelightTags.PROCESSED_VEG) },
 				"stirfry_feast", consumer);
 
 		pot(ExtraDelightItems.FRIED_FISH.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
@@ -4419,7 +4419,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		pot(ExtraDelightItems.BORSCHT.get(), 4, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL, new Ingredient[] {
 				Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(Items.BEETROOT), Ingredient.of(Items.CARROT),
-				Ingredient.of(CommonTags.FOODS_CABBAGE), Ingredient.of(ExtraDelightTags.PROCESSED_POTATO),
+				Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE), Ingredient.of(ExtraDelightTags.PROCESSED_POTATO),
 				Ingredient.of(ExtraDelightItems.SLICED_TOMATO, ModItems.TOMATO_SAUCE.get(), ModItems.TOMATO.get()) },
 				"borscht", consumer);
 
