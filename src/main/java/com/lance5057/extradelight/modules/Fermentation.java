@@ -13,10 +13,7 @@ import com.lance5057.extradelight.data.BlockModels;
 import com.lance5057.extradelight.data.ItemModels;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.data.Recipes;
-import com.lance5057.extradelight.data.recipebuilders.EvaporatorRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.*;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.util.EDItemGenerator;
@@ -226,6 +223,10 @@ public class Fermentation {
 
 	public static final DeferredItem<Item> SOAKED_SOYBEANS_ITEM = ExtraDelightItems.ITEMS
 			.register("soaked_soybeans_item", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> MASHED_SOYBEANS_ITEM = ExtraDelightItems.ITEMS
+			.register("mashed_soybeans_item", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> SOY_MILK = EDItemGenerator
+			.register("soy_milk", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
 	public static final DeferredItem<Item> MOO_NAEM_ITEM = ExtraDelightItems.ITEMS.register("moo_naem_item",
 			() -> new Item(new Item.Properties()));
@@ -285,6 +286,8 @@ public class Fermentation {
 			.register("sauerkraut_and_sausage", () -> new Item(new Item.Properties())).advancementButchercraft().finish();
 	public static final DeferredItem<Item> YEAST_SPREAD = EDItemGenerator
 			.register("yeast_spread", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+	public static final DeferredItem<Item> CHEESYMITE_SCROLL = EDItemGenerator
+			.register("cheesymite_scroll", () -> new Item(new Item.Properties())).advancementSnack().finish();
 
 	public static void blockModels(BlockStateProvider bsp) {
 		BlockModels.recipeFeastBlock(bsp, GHERKINS_BLOCK.get(), "gherkin_jar");
@@ -523,6 +526,14 @@ public class Fermentation {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "cucumber_salad_mixing_fluids");
 
+		// Mortar
+		MortarRecipeBuilder
+				.grind(Ingredient.of(SOAKED_SOYBEANS_ITEM), MASHED_SOYBEANS_ITEM.toStack(1),
+						FluidStack.EMPTY, Recipes.STANDARD_GRIND)
+				.unlockedBy("has_soaked_soybeans",
+						InventoryChangeTrigger.TriggerInstance.hasItems(SOAKED_SOYBEANS_ITEM))
+				.save(consumer, ExtraDelight.modLoc("mashed_soybeans"));
+
 		// Oven
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(STEAK_PICKLED_ONION_PIE_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
@@ -530,6 +541,13 @@ public class Fermentation {
 				.addIngredient(ExtraDelightTags.CUBED_BEEF_RAW).addIngredient(PICKLED_ONION_ITEM)
 				.addIngredient(ExtraDelightTags.GRAVY).addIngredient(ExtraDelightTags.CHEESE)
 				.unlockedByAnyIngredient(PICKLED_ONION_ITEM).addIngredient(ModItems.PIE_CRUST.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(CHEESYMITE_SCROLL.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.SHEET.get()), false)
+				.addIngredient(ModItems.WHEAT_DOUGH.get()).addIngredient(ExtraDelightTags.CHEESE)
+				.addIngredient(Fermentation.YEAST_SPREAD)
 				.build(consumer);
 
 		// Pot
@@ -564,7 +582,7 @@ public class Fermentation {
 
 		Recipes.pot(MISO_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(MISO_PASTE_ITEM),
-						Ingredient.of(ExtraDelightTags.MISO_SOUP_INGREDIENTS),
+						Ingredient.of(Items.DRIED_KELP),
 						Ingredient.of(ExtraDelightTags.MISO_SOUP_INGREDIENTS) },
 				"miso_soup", consumer);
 
@@ -587,6 +605,10 @@ public class Fermentation {
 						Ingredient.of(ExtraDelightItems.YEAST), Ingredient.of(SALT) },
 				"yeast_spread", consumer);
 
+		Recipes.pot(SOY_MILK.get(), 1, CookingRecipes.SLOW_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(MASHED_SOYBEANS_ITEM) },
+				"soy_milk", consumer);
+
 		// Evaporating
 		EvaporatorRecipeBuilder
 				.evaporate(SizedFluidIngredient.of(Fluids.LAVA, 1000), MiscLootTables.EVAPORATOR_LAVA_TEST.location(),
@@ -605,10 +627,19 @@ public class Fermentation {
 				.save(consumer);
 
 		VatRecipeBuilder
-				.pickle(new ItemStack(PICKLED_BEETS_BLOCK_ITEM.get()), new ItemStack(ExtraDelightItems.JAR.get()), 1000)
+				.pickle(new ItemStack(PICKLED_BEETS_BLOCK_ITEM.get()), new ItemStack(ExtraDelightItems.JAR.get()), 100)
 				.requires(Ingredient.of(SLICED_BEETROOT_ITEM)).requires(Ingredient.of(SLICED_BEETROOT_ITEM))
-				.requires(Ingredient.of(SLICED_BEETROOT_ITEM)).requires(Ingredient.of(SLICED_BEETROOT_ITEM))// input
+				.requires(Ingredient.of(SLICED_BEETROOT_ITEM)).requires(Ingredient.of(SLICED_BEETROOT_ITEM))
+				.requires(Ingredient.of(Items.SUGAR)).requires(Ingredient.of(SALT))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000)) // fluid
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightItems.VINEGAR_FLUID_BUCKET), 1000, true))
+				.save(consumer);
+
+		VatRecipeBuilder
+				.pickle(new ItemStack(SOAKED_SOYBEANS_ITEM.get()), new ItemStack(ExtraDelightItems.JAR.get()), 100)
+				.requires(Ingredient.of(SOYBEANS))
+				.requiresFluid(SizedFluidIngredient.of(Fluids.WATER, 1000)) // fluid
+				.requiresStage(new StageIngredient(Ingredient.of(Items.WATER_BUCKET), 1000, true))
 				.save(consumer);
 	}
 
@@ -652,6 +683,8 @@ public class Fermentation {
 		lp.add(FISH_SAUCE_ITEM.get(), "Fish Sauce");
 		lp.add(SALAMI_ITEM.get(), "Salami");
 		lp.add(SOAKED_SOYBEANS_ITEM.get(), "Soaked Soybeans");
+		lp.add(MASHED_SOYBEANS_ITEM.get(), "Mashed Soybeans");
+		lp.add(SOY_MILK.get(), "Soy Milk");
 		lp.add(MOO_NAEM_ITEM.get(), "Moo Naem");
 		lp.add(SLICED_BEETROOT_ITEM.get(), "Sliced Beetroot");
 		lp.add(SHREDDED_CABBAGE_ITEM.get(), "Shredded Cabbage");
@@ -674,5 +707,6 @@ public class Fermentation {
 		lp.add(SAUERKRAUT_SOUP.get(), "Sauerkraut Soup");
 		lp.add(SAUERKRAUT_AND_SAUSAGE.get(), "Sauerkraut and Sausage");
 		lp.add(YEAST_SPREAD.get(), "Yeast Spread");
+		lp.add(CHEESYMITE_SCROLL.get(), "Cheesymite Scroll");
 	}
 }

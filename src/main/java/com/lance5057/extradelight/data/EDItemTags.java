@@ -571,8 +571,15 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.MISO_SOUP_INGREDIENTS).addTag(ExtraDelightTags.PROCESSED_CABBAGE)
 				.addTag(Tags.Items.MUSHROOMS).addTag(ExtraDelightTags.PROCESSED_CARROT)
 				.addTag(ExtraDelightTags.PROCESSED_POTATO).addTag(ExtraDelightTags.PROCESSED_ONION)
-				.add(Items.DRIED_KELP)
 				.addOptionalTag(CommonTags.FOODS_SAFE_RAW_FISH.location());
+
+		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(),
+				ExtraDelightItems.CHILI.get(), Fermentation.CUCUMBER.get());
+
+		tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(),
+				ExtraDelightItems.GINGER_CUTTING.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				ExtraDelightItems.PEANUTS_IN_SHELL.get(), ExtraDelightItems.MALLOW_ROOT.get(),
+				ExtraDelightItems.GARLIC_CLOVE.get(), Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get());
