@@ -568,6 +568,12 @@ public class EDItemTags extends ItemTagsProvider {
 				.addOptionalTag(CommonTags.CROPS_CABBAGE.location());
 		tag(ExtraDelightTags.PROCESSED_BEETROOT).add(Items.BEETROOT, Fermentation.SLICED_BEETROOT_ITEM.get());
 
+		tag(ExtraDelightTags.MISO_SOUP_INGREDIENTS).addTag(ExtraDelightTags.PROCESSED_CABBAGE)
+				.addTag(Tags.Items.MUSHROOMS).addTag(ExtraDelightTags.PROCESSED_CARROT)
+				.addTag(ExtraDelightTags.PROCESSED_POTATO).addTag(ExtraDelightTags.PROCESSED_ONION)
+				.add(Items.DRIED_KELP)
+				.addOptionalTag(CommonTags.FOODS_SAFE_RAW_FISH.location());
+
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get());
 		tag(Tags.Items.DYED_BLUE).add(ExtraDelightItems.BLUE_CHOCOLATE_BOX.get());

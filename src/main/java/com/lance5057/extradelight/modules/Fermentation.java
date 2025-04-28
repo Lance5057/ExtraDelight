@@ -264,13 +264,27 @@ public class Fermentation {
 					() -> new ToolTipConsumableItem(ExtraDelightItems.stack16FoodItem(EDFoods.BACON_EGG_PIE), true))
 			.advancementButchercraft().servingToolTip().finish();
 	public static final DeferredBlock<Block> STEAK_PICKLED_ONION_PIE = ExtraDelightBlocks.BLOCKS.register("steak_pickled_onion_pie",
-			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.BACON_EGG_PIE_SLICE));
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), STEAK_PICKLED_ONION_PIE_SLICE));
 	public static final DeferredItem<Item> STEAK_PICKLED_ONION_PIE_ITEM = EDItemGenerator
 			.register("steak_pickled_onion_pie_item",
 					() -> new BlockItem(STEAK_PICKLED_ONION_PIE.get(), new Item.Properties()))
 			.advancementButchercraft().feastToolTip().finish();
 	public static final DeferredItem<Item> KIWIBURGER = EDItemGenerator
 			.register("kiwiburger", () -> new Item(new Item.Properties())).advancementMeal().finish();
+	public static final DeferredItem<Item> SHIRAZI_SALAD = EDItemGenerator
+			.register("shirazi_salad", () -> new Item(new Item.Properties())).advancementMeal().finish();
+	public static final DeferredItem<Item> CUCUMBER_SALAD = EDItemGenerator
+			.register("cucumber_salad", () -> new Item(new Item.Properties())).advancementMeal().finish();
+	public static final DeferredItem<Item> MISO_SOUP = EDItemGenerator
+			.register("miso_soup", () -> new Item(new Item.Properties())).advancementMeal().finish();
+	public static final DeferredItem<Item> NATTO_AND_RICE = EDItemGenerator
+			.register("natto_and_rice", () -> new Item(new Item.Properties())).advancementMeal().finish();
+	public static final DeferredItem<Item> SAUERKRAUT_SOUP = EDItemGenerator
+			.register("sauerkraut_soup", () -> new Item(new Item.Properties())).advancementMeal().finish();
+	public static final DeferredItem<Item> SAUERKRAUT_AND_SAUSAGE = EDItemGenerator
+			.register("sauerkraut_and_sausage", () -> new Item(new Item.Properties())).advancementButchercraft().finish();
+	public static final DeferredItem<Item> YEAST_SPREAD = EDItemGenerator
+			.register("yeast_spread", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
 	public static void blockModels(BlockStateProvider bsp) {
 		BlockModels.recipeFeastBlock(bsp, GHERKINS_BLOCK.get(), "gherkin_jar");
@@ -358,6 +372,12 @@ public class Fermentation {
 				.requires(ModItems.FRIED_EGG.get())
 				.unlockedBy("has_beetroot", InventoryChangeTrigger.TriggerInstance.hasItems(PICKLED_BEET_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("kiwiburger_burger"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, NATTO_AND_RICE.get())
+				.requires(NATTO_ITEM).requires(ModItems.COOKED_RICE.get()).requires(SOY_SAUCE_ITEM.get())
+				.requires(ModItems.FRIED_EGG.get())
+				.unlockedBy("natto_and_rice",
+						InventoryChangeTrigger.TriggerInstance.hasItems(NATTO_ITEM.get())).save(consumer);
 
 		// Cutting board
 		CuttingBoardRecipeBuilder
@@ -473,6 +493,36 @@ public class Fermentation {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "gazpacho_mixing_fluids");
 
+		Recipes.mixing(new ItemStack(SHIRAZI_SALAD.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO),
+						Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.MINT),
+						Ingredient.of(ExtraDelightTags.COOKING_OIL) },
+				new SizedFluidIngredient[] {}, consumer, "shirazi_salad_mixing_bottles");
+		Recipes.mixing(new ItemStack(SHIRAZI_SALAD.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO),
+						Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.MINT), },
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
+				consumer, "shirazi_salad_mixing_fluids");
+
+		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(SOY_SAUCE_ITEM),
+						Ingredient.of(ExtraDelightTags.COOKING_OIL),
+						Ingredient.of(ExtraDelightTags.VINEGAR) },
+				new SizedFluidIngredient[] {}, consumer, "cucumber_salad_mixing_bottles");
+		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(SOY_SAUCE_ITEM), },
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
+				consumer, "cucumber_salad_mixing_fluids");
+
 		// Oven
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(STEAK_PICKLED_ONION_PIE_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
@@ -512,6 +562,31 @@ public class Fermentation {
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(SOY_SAUCE_ITEM) },
 				"soy_glazed_salmon", consumer);
 
+		Recipes.pot(MISO_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(MISO_PASTE_ITEM),
+						Ingredient.of(ExtraDelightTags.MISO_SOUP_INGREDIENTS),
+						Ingredient.of(ExtraDelightTags.MISO_SOUP_INGREDIENTS) },
+				"miso_soup", consumer);
+
+		Recipes.pot(SAUERKRAUT_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(SAUERKRAUT_ITEM),
+						Ingredient.of(CommonTags.FOODS_RAW_BACON), Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
+						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO) },
+				"sauerkraut_soup", consumer);
+
+		Recipes.pot(SAUERKRAUT_AND_SAUSAGE.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SAUSAGE_RAW), Ingredient.of(SAUERKRAUT_ITEM),
+						Ingredient.of(CommonTags.FOODS_RAW_BACON), Ingredient.of(Items.SUGAR),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
+						Ingredient.of(ExtraDelightTags.PROCESSED_APPLE) },
+				"sauerkraut_and_sausage", consumer);
+
+		Recipes.pot(YEAST_SPREAD.get(), 1, CookingRecipes.SLOW_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.YEAST), Ingredient.of(ExtraDelightItems.YEAST),
+						Ingredient.of(ExtraDelightItems.YEAST), Ingredient.of(SALT) },
+				"yeast_spread", consumer);
+
 		// Evaporating
 		EvaporatorRecipeBuilder
 				.evaporate(SizedFluidIngredient.of(Fluids.LAVA, 1000), MiscLootTables.EVAPORATOR_LAVA_TEST.location(),
@@ -527,6 +602,13 @@ public class Fermentation {
 				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.BRICKS), 1000, false)) // stage 1
 				// (ingredient/time/lid)
 				.requiresStage(new StageIngredient(Ingredient.of(Tags.Items.EGGS), 100, true)) // stage 2
+				.save(consumer);
+
+		VatRecipeBuilder
+				.pickle(new ItemStack(PICKLED_BEETS_BLOCK_ITEM.get()), new ItemStack(ExtraDelightItems.JAR.get()), 1000)
+				.requires(Ingredient.of(SLICED_BEETROOT_ITEM)).requires(Ingredient.of(SLICED_BEETROOT_ITEM))
+				.requires(Ingredient.of(SLICED_BEETROOT_ITEM)).requires(Ingredient.of(SLICED_BEETROOT_ITEM))// input
+				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000)) // fluid
 				.save(consumer);
 	}
 
@@ -585,5 +667,12 @@ public class Fermentation {
 		lp.add(STEAK_PICKLED_ONION_PIE.get(), "Steak and Pickled Onion Pie");
 		lp.add(STEAK_PICKLED_ONION_PIE_SLICE.get(), "Slice of Steak and Pickled Onion Pie");
 		lp.add(KIWIBURGER.get(), "Kiwiburger");
+		lp.add(SHIRAZI_SALAD.get(), "Shirazi Salad");
+		lp.add(CUCUMBER_SALAD.get(), "Cucumber Salad");
+		lp.add(MISO_SOUP.get(), "Miso Soup");
+		lp.add(NATTO_AND_RICE.get(), "Natto and Rice");
+		lp.add(SAUERKRAUT_SOUP.get(), "Sauerkraut Soup");
+		lp.add(SAUERKRAUT_AND_SAUSAGE.get(), "Sauerkraut and Sausage");
+		lp.add(YEAST_SPREAD.get(), "Yeast Spread");
 	}
 }
