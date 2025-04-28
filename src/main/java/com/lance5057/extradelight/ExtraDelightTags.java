@@ -459,7 +459,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CINNAMON_STICK = neoforgeItemTag("cinnamon/stick");
 
 	public static final TagKey<Item> CHILI = neoforgeItemTag("crops/chili");
-	public static final TagKey<Item> PROCESSED_CHILI = neoforgeItemTag("processed/chili");
+	public static final TagKey<Item> PROCESSED_CHILI = modTag("processed/chili");
 	public static final TagKey<Item> DRIED_CHILI = neoforgeItemTag("crops/chili/dried");
 	public static final TagKey<Item> CHILI_SEEDS = neoforgeItemTag("seeds/chili");
 
