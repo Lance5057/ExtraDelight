@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:whipped_cream_from_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "whipped_cream": {
       "conditions": {
         "items": [
           {
@@ -10,18 +16,12 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "extradelight:whipped_cream_from_bucket"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "Recipes"
+      "whipped_cream"
     ]
   ],
   "rewards": {

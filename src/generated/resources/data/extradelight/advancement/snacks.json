@@ -51,6 +51,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:cheesymite_scroll": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheesymite_scroll"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:cinnamon_toast": {
       "conditions": {
         "items": [
@@ -66,6 +76,16 @@
         "items": [
           {
             "items": "extradelight:crackers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:edamame": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:edamame"
           }
         ]
       },
@@ -230,6 +250,9 @@
       "extradelight:apple_chips"
     ],
     [
+      "extradelight:edamame"
+    ],
+    [
       "extradelight:bruschetta"
     ],
     [
@@ -261,6 +284,9 @@
     ],
     [
       "extradelight:caramel_popcorn"
+    ],
+    [
+      "extradelight:cheesymite_scroll"
     ],
     [
       "extradelight:roll"

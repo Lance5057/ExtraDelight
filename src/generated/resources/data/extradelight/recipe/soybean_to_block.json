@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/soybean"
+    },
+    {
+      "tag": "c:crops/soybean"
+    },
+    {
+      "tag": "c:crops/soybean"
+    },
+    {
+      "tag": "c:crops/soybean"
+    },
+    {
+      "tag": "c:crops/soybean"
+    },
+    {
+      "tag": "c:crops/soybean"
+    },
+    {
+      "tag": "c:crops/soybean"
+    },
+    {
+      "tag": "c:crops/soybean"
+    },
+    {
+      "tag": "c:crops/soybean"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:soybean_sack_item"
+  }
+}

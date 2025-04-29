@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:vat",
+  "fluids": {
+    "amount": 1000,
+    "fluid": "minecraft:water"
+  },
+  "ingredients": [
+    {
+      "item": "extradelight:soybeans"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:soaked_soybeans_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "item": "minecraft:water_bucket"
+      },
+      "lid": true,
+      "time": 1000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "count": 1,
+    "id": "extradelight:jar"
+  }
+}

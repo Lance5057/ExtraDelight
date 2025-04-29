@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cucumber_salad_mixing_fluids": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cucumber_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/cucumber_salad_mixing_fluids"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "cucumber_salad_mixing_fluids"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/cucumber_salad_mixing_fluids"
+    ]
+  }
+}

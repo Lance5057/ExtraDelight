@@ -1,0 +1,31 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/cucumber"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    },
+    {
+      "item": "extradelight:soy_sauce_item"
+    },
+    {
+      "tag": "c:cooking_oil"
+    },
+    {
+      "tag": "c:vinegar"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:cucumber_salad"
+    }
+  ]
+}

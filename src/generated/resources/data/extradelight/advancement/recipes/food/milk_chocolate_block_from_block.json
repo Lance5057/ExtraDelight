@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:milk_chocolate_block_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "milk_chocolate_block": {
       "conditions": {
         "items": [
           {
@@ -10,18 +16,12 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "extradelight:milk_chocolate_block_from_block"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "Recipes"
+      "milk_chocolate_block"
     ]
   ],
   "rewards": {

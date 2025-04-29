@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:salmon"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    },
+    {
+      "tag": "c:cooking_oil"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "item": "extradelight:soy_sauce_item"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:soy_glazed_salmon_block_item"
+    }
+  ]
+}

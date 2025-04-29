@@ -21,6 +21,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:beef_bulgogi": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:beef_bulgogi"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:beef_wellington": {
       "conditions": {
         "items": [
@@ -171,6 +181,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:caramel_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:caramel_chicken"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:chicken_kiev": {
       "conditions": {
         "items": [
@@ -216,6 +236,16 @@
         "items": [
           {
             "items": "extradelight:haggis_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:honey_chili_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:honey_chili_chicken"
           }
         ]
       },
@@ -341,6 +371,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:sauerkraut_and_sausage": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sauerkraut_and_sausage"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sausage_roll": {
       "conditions": {
         "items": [
@@ -356,6 +396,26 @@
         "items": [
           {
             "items": "extradelight:sos"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:steak_pickled_onion_pie_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:steak_pickled_onion_pie_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:steak_pickled_onion_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:steak_pickled_onion_pie_slice"
           }
         ]
       },
@@ -409,6 +469,9 @@
       "extradelight:haggis_block_item"
     ],
     [
+      "extradelight:sauerkraut_and_sausage"
+    ],
+    [
       "extradelight:bbq_ribs_block_item"
     ],
     [
@@ -416,6 +479,9 @@
     ],
     [
       "extradelight:blood_chocolate_dipped_marshmallow"
+    ],
+    [
+      "extradelight:steak_pickled_onion_pie_slice"
     ],
     [
       "extradelight:beef_wellington"
@@ -448,10 +514,16 @@
       "extradelight:beef_wellington_block_item"
     ],
     [
+      "extradelight:honey_chili_chicken"
+    ],
+    [
       "extradelight:stuffed_heart"
     ],
     [
       "extradelight:blood_chocolate_fondue_block"
+    ],
+    [
+      "extradelight:steak_pickled_onion_pie_item"
     ],
     [
       "extradelight:sausage_roll"
@@ -478,6 +550,9 @@
       "extradelight:chicken_kiev"
     ],
     [
+      "extradelight:beef_bulgogi"
+    ],
+    [
       "extradelight:blood_chocolate_dipped_graham_cracker"
     ],
     [
@@ -497,6 +572,9 @@
     ],
     [
       "extradelight:liver_onions"
+    ],
+    [
+      "extradelight:caramel_chicken"
     ]
   ],
   "sends_telemetry_event": true

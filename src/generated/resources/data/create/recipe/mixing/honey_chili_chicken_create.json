@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:chicken/cubed/raw"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    },
+    {
+      "item": "extradelight:soy_sauce_item"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:honey_chili_chicken"
+    }
+  ]
+}

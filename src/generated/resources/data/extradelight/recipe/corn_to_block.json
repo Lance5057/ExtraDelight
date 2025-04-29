@@ -3,31 +3,31 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "extradelight:corn_on_cob"
+      "tag": "c:crops/corn"
     },
     {
-      "item": "extradelight:corn_on_cob"
+      "tag": "c:crops/corn"
     },
     {
-      "item": "extradelight:corn_on_cob"
+      "tag": "c:crops/corn"
     },
     {
-      "item": "extradelight:corn_on_cob"
+      "tag": "c:crops/corn"
     },
     {
-      "item": "extradelight:corn_on_cob"
+      "tag": "c:crops/corn"
     },
     {
-      "item": "extradelight:corn_on_cob"
+      "tag": "c:crops/corn"
     },
     {
-      "item": "extradelight:corn_on_cob"
+      "tag": "c:crops/corn"
     },
     {
-      "item": "extradelight:corn_on_cob"
+      "tag": "c:crops/corn"
     },
     {
-      "item": "extradelight:corn_on_cob"
+      "tag": "c:crops/corn"
     }
   ],
   "result": {

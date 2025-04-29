@@ -3,7 +3,7 @@
   "fluids": [],
   "ingredients": [
     {
-      "item": "farmersdelight:cabbage_leaf"
+      "tag": "extradelight:processed/cabbage"
     },
     {
       "tag": "c:apple/sliced"

@@ -1,0 +1,31 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:beef/cubed/raw"
+    },
+    {
+      "item": "extradelight:pickled_onion_item"
+    },
+    {
+      "tag": "c:gravy"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:steak_pickled_onion_pie_item"
+  }
+}

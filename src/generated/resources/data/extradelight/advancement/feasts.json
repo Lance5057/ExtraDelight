@@ -711,6 +711,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:soy_glazed_salmon_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:soy_glazed_salmon_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sticky_toffee_pudding_block": {
       "conditions": {
         "items": [
@@ -982,6 +992,9 @@
     ],
     [
       "extradelight:salisbury_steak_block_item"
+    ],
+    [
+      "extradelight:soy_glazed_salmon_block_item"
     ],
     [
       "extradelight:hotdish_feast"

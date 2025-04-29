@@ -2,10 +2,10 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "item": "farmersdelight:cabbage_leaf"
+      "tag": "extradelight:processed/cabbage"
     },
     {
-      "item": "extradelight:sliced_apple"
+      "tag": "c:apple/sliced"
     },
     {
       "item": "minecraft:bowl"

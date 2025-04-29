@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/cucumber"
+    },
+    {
+      "tag": "c:crops/cucumber"
+    },
+    {
+      "tag": "c:crops/cucumber"
+    },
+    {
+      "tag": "c:crops/cucumber"
+    },
+    {
+      "tag": "c:crops/cucumber"
+    },
+    {
+      "tag": "c:crops/cucumber"
+    },
+    {
+      "tag": "c:crops/cucumber"
+    },
+    {
+      "tag": "c:crops/cucumber"
+    },
+    {
+      "tag": "c:crops/cucumber"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:cucumber_crate_item"
+  }
+}

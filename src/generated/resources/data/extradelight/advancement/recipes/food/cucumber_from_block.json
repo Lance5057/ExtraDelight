@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cucumber": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cucumber_crate_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cucumber_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "cucumber"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cucumber_from_block"
+    ]
+  }
+}

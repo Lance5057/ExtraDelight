@@ -391,6 +391,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:cucumber_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cucumber_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:curry": {
       "conditions": {
         "items": [
@@ -581,6 +591,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:gazpacho": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:gazpacho"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:glazed_carrot": {
       "conditions": {
         "items": [
@@ -701,6 +721,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:kiwiburger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:kiwiburger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:lamb_stew": {
       "conditions": {
         "items": [
@@ -791,6 +821,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:miso_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:miso_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:mulligatawny_soup": {
       "conditions": {
         "items": [
@@ -816,6 +856,16 @@
         "items": [
           {
             "items": "extradelight:mushroom_risotto"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:natto_and_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:natto_and_rice"
           }
         ]
       },
@@ -1051,6 +1101,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:sauerkraut_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sauerkraut_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:scrambled_eggs": {
       "conditions": {
         "items": [
@@ -1076,6 +1136,16 @@
         "items": [
           {
             "items": "extradelight:seaweed_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:shirazi_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:shirazi_salad"
           }
         ]
       },
@@ -1350,6 +1420,9 @@
       "extradelight:stewed_apples"
     ],
     [
+      "extradelight:miso_soup"
+    ],
+    [
       "extradelight:pork_stew"
     ],
     [
@@ -1357,6 +1430,12 @@
     ],
     [
       "extradelight:stuffing"
+    ],
+    [
+      "extradelight:cucumber_salad"
+    ],
+    [
+      "extradelight:sauerkraut_soup"
     ],
     [
       "extradelight:golden_jam_toast"
@@ -1371,7 +1450,13 @@
       "extradelight:cheeseburger"
     ],
     [
+      "extradelight:kiwiburger"
+    ],
+    [
       "extradelight:stuffed_cactus"
+    ],
+    [
+      "extradelight:natto_and_rice"
     ],
     [
       "extradelight:hashbrowns"
@@ -1485,6 +1570,9 @@
       "extradelight:hazelnut_soup"
     ],
     [
+      "extradelight:gazpacho"
+    ],
+    [
       "extradelight:congee"
     ],
     [
@@ -1501,6 +1589,9 @@
     ],
     [
       "extradelight:corn_fritters"
+    ],
+    [
+      "extradelight:shirazi_salad"
     ],
     [
       "extradelight:charcuterie_board"

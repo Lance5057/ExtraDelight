@@ -14,16 +14,16 @@
       "tag": "c:meat/raw"
     },
     {
-      "tag": "c:foods/vegetable"
+      "tag": "extradelight:processed/vegetable"
     },
     {
-      "tag": "c:foods/vegetable"
+      "tag": "extradelight:processed/vegetable"
     },
     {
-      "tag": "c:foods/vegetable"
+      "tag": "extradelight:processed/vegetable"
     },
     {
-      "tag": "c:foods/vegetable"
+      "tag": "extradelight:processed/vegetable"
     }
   ],
   "recipe_book_tab": "meals",

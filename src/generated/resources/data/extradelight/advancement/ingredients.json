@@ -1071,6 +1071,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:soy_glazed_salmon_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:soy_glazed_salmon_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:soy_milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:soy_milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sugar_cookie_dough": {
       "conditions": {
         "items": [
@@ -1136,6 +1156,16 @@
         "items": [
           {
             "items": "extradelight:yeast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:yeast_spread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:yeast_spread"
           }
         ]
       },
@@ -1283,6 +1313,9 @@
       "extradelight:glow_berry_cookie_dough"
     ],
     [
+      "extradelight:yeast_spread"
+    ],
+    [
       "extradelight:pickled_beet_item"
     ],
     [
@@ -1370,6 +1403,9 @@
       "extradelight:breadcrumbs"
     ],
     [
+      "extradelight:soy_milk"
+    ],
+    [
       "extradelight:frosting_blue"
     ],
     [
@@ -1398,6 +1434,9 @@
     ],
     [
       "extradelight:roasted_garlic"
+    ],
+    [
+      "extradelight:soy_glazed_salmon_item"
     ],
     [
       "extradelight:egg_mix"

@@ -27,7 +27,7 @@
       "tag": "c:cheese"
     },
     {
-      "tag": "c:processed/chili"
+      "tag": "extradelight:processed/chili"
     }
   ],
   "result": {

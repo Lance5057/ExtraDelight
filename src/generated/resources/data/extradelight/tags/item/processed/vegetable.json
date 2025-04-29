@@ -3,6 +3,10 @@
     "#extradelight:processed/carrot",
     "#extradelight:processed/tomato",
     "#extradelight:processed/potato",
-    "#extradelight:processed/onion"
+    "#extradelight:processed/onion",
+    "#extradelight:processed/garlic",
+    "#extradelight:processed/cabbage",
+    "#extradelight:processed/beetroot",
+    "#extradelight:processed/cucumber"
   ]
 }

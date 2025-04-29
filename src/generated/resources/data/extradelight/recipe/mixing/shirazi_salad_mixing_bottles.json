@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/tomato"
+    },
+    {
+      "tag": "extradelight:processed/cucumber"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:mint"
+    },
+    {
+      "tag": "c:cooking_oil"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:shirazi_salad"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
+}

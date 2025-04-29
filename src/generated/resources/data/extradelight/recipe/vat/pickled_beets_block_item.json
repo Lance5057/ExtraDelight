@@ -1,0 +1,45 @@
+{
+  "type": "extradelight:vat",
+  "fluids": {
+    "amount": 1000,
+    "fluid": "extradelight:vinegar_fluid"
+  },
+  "ingredients": [
+    {
+      "item": "extradelight:sliced_beetroot_item"
+    },
+    {
+      "item": "extradelight:sliced_beetroot_item"
+    },
+    {
+      "item": "extradelight:sliced_beetroot_item"
+    },
+    {
+      "item": "extradelight:sliced_beetroot_item"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "extradelight:salt"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:pickled_beets_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "item": "extradelight:vinegar_fluid_bucket"
+      },
+      "lid": true,
+      "time": 1000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "count": 1,
+    "id": "extradelight:jar"
+  }
+}

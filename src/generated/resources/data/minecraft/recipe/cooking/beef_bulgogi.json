@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "farmersdelight:cooked_rice"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:beef/cubed/raw"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:chili/powder"
+    },
+    {
+      "item": "extradelight:hot_sauce_item"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "item": "extradelight:soy_sauce_item"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:beef_bulgogi"
+  }
+}

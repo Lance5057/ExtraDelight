@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:beef/cubed/raw"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:chili/powder"
+    },
+    {
+      "item": "extradelight:hot_sauce_item"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "item": "extradelight:soy_sauce_item"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:beef_bulgogi"
+    }
+  ]
+}

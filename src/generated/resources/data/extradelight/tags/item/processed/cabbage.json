@@ -1,0 +1,9 @@
+{
+  "values": [
+    "extradelight:shredded_cabbage_item",
+    {
+      "id": "#c:crops/cabbage",
+      "required": false
+    }
+  ]
+}

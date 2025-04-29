@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soy_glazed_salmon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:soy_glazed_salmon_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/soy_glazed_salmon_pull_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soy_glazed_salmon"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/soy_glazed_salmon_pull_feast"
+    ]
+  }
+}

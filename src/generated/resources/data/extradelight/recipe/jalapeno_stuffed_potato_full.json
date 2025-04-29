@@ -12,7 +12,7 @@
       "tag": "c:foods/cooked_beef"
     },
     {
-      "tag": "c:processed/chili"
+      "tag": "extradelight:processed/chili"
     }
   ],
   "result": {

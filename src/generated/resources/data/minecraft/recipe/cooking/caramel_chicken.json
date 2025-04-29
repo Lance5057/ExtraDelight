@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "farmersdelight:cooked_rice"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:chicken/thigh/raw"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "item": "extradelight:fish_sauce_item"
+    },
+    {
+      "item": "extradelight:soy_sauce_item"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:caramel_chicken"
+  }
+}

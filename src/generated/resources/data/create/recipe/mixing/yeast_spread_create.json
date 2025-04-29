@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:yeast"
+    },
+    {
+      "item": "extradelight:yeast"
+    },
+    {
+      "item": "extradelight:yeast"
+    },
+    {
+      "item": "extradelight:salt"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:yeast_spread"
+    }
+  ]
+}

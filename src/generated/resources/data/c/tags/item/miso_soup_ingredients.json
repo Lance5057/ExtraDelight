@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#extradelight:processed/cabbage",
+    "#c:mushrooms",
+    "#extradelight:processed/carrot",
+    "#extradelight:processed/potato",
+    "#extradelight:processed/onion",
+    {
+      "id": "#c:foods/safe_raw_fish",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {},
+  "grinds": 4,
+  "ingredient": {
+    "item": "extradelight:soaked_soybeans_item"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:mashed_soybeans_item"
+  }
+}
