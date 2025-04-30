@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.lance5057.extradelight.modules.Fermentation;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
@@ -15,15 +14,16 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
+import com.lance5057.extradelight.blocks.crops.BushStageFour;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
-import com.lance5057.extradelight.blocks.crops.BushStageFour;
 import com.lance5057.extradelight.blocks.crops.GarlicCrop;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MallowRootCrop;
 import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+import com.lance5057.extradelight.modules.Fermentation;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
@@ -522,15 +522,13 @@ public class BlockLootTables extends BlockLootSubProvider {
 		LootItemCondition.Builder cucumber = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(Fermentation.CUCUMBER_CROP.get())
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CucumberCrop.AGE, 7));
-		crop(Fermentation.CUCUMBER_CROP.get(), Fermentation.CUCUMBER.get(), Fermentation.CUCUMBER_SEED.get(),
-				cucumber);
+		crop(Fermentation.CUCUMBER_CROP.get(), Fermentation.CUCUMBER.get(), Fermentation.CUCUMBER_SEED.get(), cucumber);
 
 		this.dropOther(Fermentation.WILD_SOYBEAN.get(), Fermentation.SOYBEAN_POD.get());
 		LootItemCondition.Builder soybean = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(Fermentation.SOYBEAN_CROP.get())
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SoybeanCrop.AGE, 7));
-		crop(Fermentation.SOYBEAN_CROP.get(), Fermentation.SOYBEAN_POD.get(), Fermentation.SOYBEANS.get(),
-				soybean);
+		crop(Fermentation.SOYBEAN_CROP.get(), Fermentation.SOYBEAN_POD.get(), Fermentation.SOYBEANS.get(), soybean);
 
 		this.dropOther(Fermentation.GHERKINS_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropOther(Fermentation.PICKLED_BEETS_BLOCK.get(), Fermentation.PICKLE_JUICE);
@@ -544,6 +542,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(Fermentation.SOYBEAN_SACK.get());
 		this.dropOther(Fermentation.SOY_GLAZED_SALMON_BLOCK.get(), Items.BOWL);
 		this.add(Fermentation.STEAK_PICKLED_ONION_PIE.get(), noDrop());
+
+		this.add(Fermentation.JAR_DISPLAY_BLOCK.get(), noDrop());
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {

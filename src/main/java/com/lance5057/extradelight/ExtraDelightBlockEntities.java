@@ -7,6 +7,7 @@ import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlockEntit
 import com.lance5057.extradelight.blocks.entities.TapBlockEntity;
 import com.lance5057.extradelight.blocks.funnel.FunnelBlockEntity;
 import com.lance5057.extradelight.blocks.jar.JarBlockEntity;
+import com.lance5057.extradelight.blocks.jardisplay.JarDisplayBlockEntity;
 import com.lance5057.extradelight.blocks.keg.KegBlockEntity;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlockEntity;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlEntity;
@@ -14,6 +15,7 @@ import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 import com.lance5057.extradelight.displays.spice.SpiceRackEntity;
 import com.lance5057.extradelight.displays.wreath.WreathEntity;
+import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlockEntity;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlockEntity;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlockEntity;
@@ -142,4 +144,8 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EvaporatorBlockEntity>> EVAPORATOR = TILES
 			.register("evaporator", () -> BlockEntityType.Builder
 					.of(EvaporatorBlockEntity::new, ExtraDelightBlocks.EVAPORATOR.get()).build(null));
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JarDisplayBlockEntity>> JAR_DISPLAY = TILES
+			.register("jar_display", () -> BlockEntityType.Builder
+					.of(JarDisplayBlockEntity::new, Fermentation.JAR_DISPLAY_BLOCK.get()).build(null));
 }

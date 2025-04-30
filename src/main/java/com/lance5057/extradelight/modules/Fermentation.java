@@ -9,6 +9,7 @@ import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
+import com.lance5057.extradelight.blocks.jardisplay.JarDisplayBlock;
 import com.lance5057.extradelight.blocks.jardisplay.JarSingularBlock;
 import com.lance5057.extradelight.data.BlockModels;
 import com.lance5057.extradelight.data.ItemModels;
@@ -274,6 +275,8 @@ public class Fermentation {
 			.register("yeast_spread", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 	public static final DeferredItem<Item> CHEESYMITE_SCROLL = EDItemGenerator
 			.register("cheesymite_scroll", () -> new Item(new Item.Properties())).advancementSnack().finish();
+	public static final DeferredBlock<Block> JAR_DISPLAY_BLOCK = ExtraDelightBlocks.BLOCKS.register("jar_display_block",
+			() -> new JarDisplayBlock(Block.Properties.ofFullCopy(Blocks.GLASS)));
 
 	public static void blockModels(BlockStateProvider bsp) {
 		BlockModels.recipeFeastBlock(bsp, GHERKINS_BLOCK.get(), "gherkin_jar");
@@ -291,6 +294,7 @@ public class Fermentation {
 		BlockModels.cropCrossBlock(bsp, SOYBEAN_CROP.get(), "soybeans", SoybeanCrop.AGE);
 		bsp.simpleBlock(WILD_SOYBEAN.get(), new ConfiguredModel(bsp.models()
 				.cross("wild_soybean", bsp.modLoc("block/crops/soybeans/soybeans_stage7")).renderType("cutout")));
+		bsp.simpleBlock(JAR_DISPLAY_BLOCK.get(), bsp.models().withExistingParent("jar_display", bsp.mcLoc("air")));
 	}
 
 	public static void itemModels(ItemModelProvider tmp) {

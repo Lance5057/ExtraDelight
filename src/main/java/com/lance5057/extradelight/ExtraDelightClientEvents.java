@@ -9,6 +9,7 @@ import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetScreen;
 import com.lance5057.extradelight.blocks.funnel.FunnelRenderer;
 import com.lance5057.extradelight.blocks.jar.JarRenderer;
+import com.lance5057.extradelight.blocks.jardisplay.JarDisplayRenderer;
 import com.lance5057.extradelight.blocks.keg.KegRenderer;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkRenderer;
@@ -96,6 +97,7 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.CHOCOLATE_BOX.get(), ChocolateBoxRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR.get(), JarRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.EVAPORATOR.get(), EvaporatorRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR_DISPLAY.get(), JarDisplayRenderer::new); 
 	}
 
 	@SubscribeEvent
