@@ -71,7 +71,7 @@ public class ExtraDelight {
 
 		event.enqueueWork(() -> {
 			ExtraDelightClientEvents.setTERenderers();
-//			NeoForge.EVENT_BUS.register(ExtraDelightContainers.class);
+			ExtraDelightClientEvents.doFluidRenderLayer();
 		});
 	}
 

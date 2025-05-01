@@ -6,6 +6,7 @@ import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -31,14 +32,20 @@ public class JarSingularBlock extends RecipeFeastBlock {
 		if (!level.isClientSide) {
 			if (stack.getItem() instanceof BlockItem bi) {
 				if (bi.getBlock() instanceof JarSingularBlock b) {
-					ItemStack clone = b.getCloneItemStack(state, result, level, pos, player).copy();
+					ItemStack clone = this.getCloneItemStack(state, result, level, pos, player).copy();
 
-					level.setBlock(pos, Fermentation.JAR_DISPLAY_BLOCK.get().defaultBlockState(), UPDATE_ALL);
+					level.setBlock(pos,
+							Fermentation.JAR_DISPLAY_BLOCK.get().defaultBlockState().setValue(JarDisplayBlock.FACING,
+									result.getDirection() == Direction.UP || result.getDirection() == Direction.DOWN
+											? 
+											player.getDirection() : result.getDirection().getOpposite()),
+							UPDATE_ALL);
 //					level.setBlockEntity(new JarDisplayBlockEntity(pos, state));
 
 					BlockEntity be = level.getBlockEntity(pos);
 					if (be != null && be instanceof JarDisplayBlockEntity jdbe) {
 						BlockEntityUtils.Inventory.insertItem(jdbe.getItems(), clone, JarDisplayBlockEntity.NUM_SLOTS);
+						BlockEntityUtils.Inventory.insertItem(jdbe.getItems(), stack, JarDisplayBlockEntity.NUM_SLOTS);
 					}
 					// Something went wrong, put it back!
 					else {

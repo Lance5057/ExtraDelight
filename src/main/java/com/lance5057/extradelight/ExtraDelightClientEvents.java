@@ -7,6 +7,9 @@ import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRend
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetScreen;
+import com.lance5057.extradelight.blocks.fluids.GlowBerryFluidBlock;
+import com.lance5057.extradelight.blocks.fluids.HotFluidBlock;
+import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
 import com.lance5057.extradelight.blocks.funnel.FunnelRenderer;
 import com.lance5057.extradelight.blocks.jar.JarRenderer;
 import com.lance5057.extradelight.blocks.jardisplay.JarDisplayRenderer;
@@ -42,13 +45,19 @@ import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -58,6 +67,7 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
@@ -97,7 +107,7 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.CHOCOLATE_BOX.get(), ChocolateBoxRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR.get(), JarRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.EVAPORATOR.get(), EvaporatorRenderer::new);
-		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR_DISPLAY.get(), JarDisplayRenderer::new); 
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR_DISPLAY.get(), JarDisplayRenderer::new);
 	}
 
 	@SubscribeEvent
@@ -179,5 +189,35 @@ public class ExtraDelightClientEvents {
 	@SubscribeEvent
 	public static void registerLoader(ModelEvent.RegisterGeometryLoaders registerGeometryLoaders) {
 		registerGeometryLoaders.register(DynamicFoodGeometryLoader.ID, new DynamicFoodGeometryLoader());
+	}
+
+	public static void doFluidRenderLayer() {
+		applyFluidRenderType(ExtraDelightBlocks.COOKING_OIL_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.VINEGAR_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.GRAVY_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.GLOW_BERRY_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.SWEET_BERRY_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.TOMATO_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.CACTUS_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.APPLE_CIDER_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.HOT_COCOA_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.MELON_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.EGG_MIX_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.BBQ_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.KETCHUP_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.MAYO_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.BROTH_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.CARAMEL_SAUCE_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.MILKSHAKE_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.WHIPPED_CREAM_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.JAM_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.GOLDEN_JAM_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK.get());
+		applyFluidRenderType(ExtraDelightBlocks.TEA_FLUID_BLOCK.get());
+	}
+
+	public static void applyFluidRenderType(LiquidBlock liquid) {
+		ItemBlockRenderTypes.setRenderLayer(liquid.fluid.getFlowing(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(liquid.fluid.getSource(), RenderType.translucent());
 	}
 }

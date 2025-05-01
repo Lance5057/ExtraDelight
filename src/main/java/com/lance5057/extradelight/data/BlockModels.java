@@ -648,8 +648,11 @@ public class BlockModels extends BlockStateProvider {
 
 	public static void fluid(BlockStateProvider bsp, LiquidBlock block) {
 		bsp.getVariantBuilder(block).forAllStates(state -> {
-			return ConfiguredModel.builder().modelFile(bsp.models()
-					.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath(), bsp.mcLoc("block/water")))
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models().getBuilder(BuiltInRegistries.BLOCK.getKey(block).getPath())
+							.texture("texture", "minecraft:block/water_still")
+//					.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath(), bsp.mcLoc("block/air"))
+							.renderType("translucent"))
 					.build();
 		});
 	}

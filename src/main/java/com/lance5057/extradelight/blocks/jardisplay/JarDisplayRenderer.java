@@ -52,12 +52,14 @@ public class JarDisplayRenderer implements BlockEntityRenderer<JarDisplayBlockEn
 				pPoseStack.pushPose();
 				pPoseStack.translate(0.5f, 0, 0.5f);
 				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, (float) Math.toRadians(-dir.toYRot()), 0));
-				pPoseStack.translate(xoff - 0.25, yoff - 0.25, zoff - 0.25);
+				pPoseStack.translate(xoff + 0.25, yoff - 0.25, zoff + 0.25);
 
-				if (i == 1 || i == 3)
-					pPoseStack.translate(0, 0.0, 0.5);
-				if (i == 1 || i == 2)
-					pPoseStack.translate(0.5, 0.0, 0.0);
+				if (i == 3)
+					pPoseStack.translate(-0.5, 0.0, -0.5);
+				if (i == 1)
+					pPoseStack.translate(-0.5, 0.0, 0.0);
+				if (i == 2)
+					pPoseStack.translate(0, 0.0, -0.5);
 
 //				pPoseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(-80), 0, 0));
 				float uniscale = 4f;

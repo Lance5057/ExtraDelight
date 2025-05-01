@@ -668,7 +668,8 @@ public class ExtraDelightBlocks {
 	// Fluids
 	public static final DeferredBlock<LiquidBlock> COOKING_OIL_FLUID_BLOCK = BLOCKS.register("cooking_oil_fluid_block",
 			() -> new LiquidBlock(ExtraDelightFluids.OIL.FLUID.get(),
-					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
+					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).liquid()
+							.noLootTable().replaceable().randomTicks().pushReaction(PushReaction.DESTROY)));
 
 	public static final DeferredBlock<VinegarFluidBlock> VINEGAR_FLUID_BLOCK = BLOCKS.register("vinegar_fluid_block",
 			() -> new VinegarFluidBlock(ExtraDelightFluids.VINEGAR.FLUID.get(),

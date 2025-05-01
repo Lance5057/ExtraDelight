@@ -15,7 +15,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class FluidRegistration {
 	private BaseFlowingFluid.Properties properties(Supplier<? extends LiquidBlock> block,
 			Supplier<? extends Item> bucket) {
-		return new BaseFlowingFluid.Properties(TYPE, FLUID, FLUID_FLOWING).block(block).bucket(bucket);
+		return new BaseFlowingFluid.Properties(TYPE, FLUID, FLUID_FLOWING).block(block).bucket(bucket).tickRate(5);
 	}
 
 	public final DeferredHolder<FluidType, FluidType> TYPE;
