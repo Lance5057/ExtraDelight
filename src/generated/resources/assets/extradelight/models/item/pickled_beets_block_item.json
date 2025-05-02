@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/pickled_beets_jar_stage0"
+  "parent": "minecraft:item/generated",
+  "loader": "extradelight:blockstateitem"
 }

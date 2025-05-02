@@ -54,5 +54,14 @@ public class BlockEntityUtils {
 			if (!player.addItem(stack))
 				level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), stack));
 		}
+
+		public static int getEmptySlots(IItemHandler inv) {
+			int count = 0;
+			for (int i = 0; i < inv.getSlots(); i++) {
+				if (inv.getStackInSlot(i).isEmpty())
+					count++;
+			}
+			return count;
+		}
 	}
 }

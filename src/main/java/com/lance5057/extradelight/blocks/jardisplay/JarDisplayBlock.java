@@ -127,9 +127,7 @@ public class JarDisplayBlock extends Block implements EntityBlock {
 							BlockEntityUtils.Inventory.insertItem(jdbe.getItems(), stack.copy(),
 									JarDisplayBlockEntity.NUM_SLOTS);
 						} else {
-							BlockEntityUtils.Inventory.extractItem(player, jdbe.getItems(),
-									JarDisplayBlockEntity.NUM_SLOTS);
-							// if only a single item remains convert back to singular jar!
+							extractItem(level, pos, player, jdbe);
 						}
 					}
 
@@ -147,11 +145,30 @@ public class JarDisplayBlock extends Block implements EntityBlock {
 		BlockEntity be = level.getBlockEntity(pos);
 		if (player.isCrouching()) {
 			if (be != null && be instanceof JarDisplayBlockEntity jdbe) {
-				BlockEntityUtils.Inventory.extractItem(player, jdbe.getItems(), JarDisplayBlockEntity.NUM_SLOTS);
+				extractItem(level, pos, player, jdbe);
+
 				return InteractionResult.SUCCESS;
 			}
 		}
 		return InteractionResult.PASS;
+	}
+
+	private void extractItem(Level level, BlockPos pos, Player player, JarDisplayBlockEntity jdbe) {
+		BlockEntityUtils.Inventory.extractItem(player, jdbe.getItems(), JarDisplayBlockEntity.NUM_SLOTS);
+		if (BlockEntityUtils.Inventory.getEmptySlots(jdbe.getItems()) >= 3) {
+			convertToSingular(pos, level, jdbe);
+		}
+	}
+
+	private void convertToSingular(BlockPos pos, Level level, JarDisplayBlockEntity jdbe) {
+		int i = BlockEntityUtils.Inventory.getLastFilledSlot(jdbe.getItems(), 4);
+
+		if (i != -1) {
+			ItemStack stack = jdbe.getItems().getStackInSlot(i).copy();
+
+			if (stack.getItem() instanceof BlockItem bi) // Gotta check, would be weird if it wasn't
+				level.setBlock(pos, bi.getBlock().defaultBlockState(), Block.UPDATE_ALL);
+		}
 	}
 
 }

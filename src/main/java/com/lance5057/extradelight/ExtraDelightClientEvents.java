@@ -7,15 +7,13 @@ import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRend
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetScreen;
-import com.lance5057.extradelight.blocks.fluids.GlowBerryFluidBlock;
-import com.lance5057.extradelight.blocks.fluids.HotFluidBlock;
-import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
 import com.lance5057.extradelight.blocks.funnel.FunnelRenderer;
 import com.lance5057.extradelight.blocks.jar.JarRenderer;
 import com.lance5057.extradelight.blocks.jardisplay.JarDisplayRenderer;
 import com.lance5057.extradelight.blocks.keg.KegRenderer;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkRenderer;
+import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayScreen;
@@ -53,11 +51,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -67,7 +62,6 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
@@ -189,6 +183,7 @@ public class ExtraDelightClientEvents {
 	@SubscribeEvent
 	public static void registerLoader(ModelEvent.RegisterGeometryLoaders registerGeometryLoaders) {
 		registerGeometryLoaders.register(DynamicFoodGeometryLoader.ID, new DynamicFoodGeometryLoader());
+		registerGeometryLoaders.register(BlockStateItemGeometryLoader.ID, new BlockStateItemGeometryLoader());
 	}
 
 	public static void doFluidRenderLayer() {

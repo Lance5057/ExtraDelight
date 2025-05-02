@@ -14,6 +14,7 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
+import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.BushStageFour;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
@@ -530,7 +531,9 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SoybeanCrop.AGE, 7));
 		crop(Fermentation.SOYBEAN_CROP.get(), Fermentation.SOYBEAN_POD.get(), Fermentation.SOYBEANS.get(), soybean);
 
-		this.dropOther(Fermentation.GHERKINS_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		feast(Fermentation.GHERKINS_BLOCK.get(), Fermentation.GHERKINS_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+//		this.dropOther(Fermentation.GHERKINS_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropOther(Fermentation.PICKLED_BEETS_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropOther(Fermentation.PICKLED_ONIONS_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropOther(Fermentation.PICKLED_CARROTS_BLOCK.get(), Fermentation.PICKLE_JUICE);
@@ -626,5 +629,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.withPool(LootPool.lootPool().when(pDropGrownCropCondition).add(
 						LootItem.lootTableItem(pGrownCropItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(
 								this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F, 1)))));
+	}
+
+	void feast(RecipeFeastBlock block, Item blockItem, Item lastDrop) {
+		LootItemCondition.Builder feast0 = LootItemBlockStatePropertyCondition
+				.hasBlockStateProperties(Fermentation.GHERKINS_BLOCK.get())
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(RecipeFeastBlock.SERVINGS, 0));
+
+		this.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
+				.add(LootItem.lootTableItem(lastDrop).when(feast0).otherwise(LootItem.lootTableItem(Items.AIR)))));
 	}
 }

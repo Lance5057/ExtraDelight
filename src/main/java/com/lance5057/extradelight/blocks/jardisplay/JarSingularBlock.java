@@ -30,6 +30,10 @@ public class JarSingularBlock extends RecipeFeastBlock {
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
 			InteractionHand hand, BlockHitResult result) {
 		if (!level.isClientSide) {
+			if (this.takeServing(stack, level, pos, state, player, hand).consumesAction()) {
+				return ItemInteractionResult.SUCCESS;
+			}
+
 			if (stack.getItem() instanceof BlockItem bi) {
 				if (bi.getBlock() instanceof JarSingularBlock b) {
 					ItemStack clone = this.getCloneItemStack(state, result, level, pos, player).copy();
@@ -37,8 +41,8 @@ public class JarSingularBlock extends RecipeFeastBlock {
 					level.setBlock(pos,
 							Fermentation.JAR_DISPLAY_BLOCK.get().defaultBlockState().setValue(JarDisplayBlock.FACING,
 									result.getDirection() == Direction.UP || result.getDirection() == Direction.DOWN
-											? 
-											player.getDirection() : result.getDirection().getOpposite()),
+											? player.getDirection()
+											: result.getDirection().getOpposite()),
 							UPDATE_ALL);
 //					level.setBlockEntity(new JarDisplayBlockEntity(pos, state));
 
@@ -58,6 +62,8 @@ public class JarSingularBlock extends RecipeFeastBlock {
 			}
 			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		}
-		return ItemInteractionResult.SUCCESS;
+		return this.takeServing(stack, level, pos, state, player, hand);
+//		return ItemInteractionResult.SUCCESS;
 	}
+
 }
