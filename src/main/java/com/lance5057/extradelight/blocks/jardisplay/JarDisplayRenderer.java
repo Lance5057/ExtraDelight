@@ -50,7 +50,7 @@ public class JarDisplayRenderer implements BlockEntityRenderer<JarDisplayBlockEn
 			if (!item.isEmpty()) {
 				BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 				pPoseStack.pushPose();
-				pPoseStack.translate(0.5f, 0, 0.5f);
+				pPoseStack.translate(0.5f, 0.5f, 0.5f);
 				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, (float) Math.toRadians(-dir.toYRot()), 0));
 				pPoseStack.translate(xoff + 0.25, yoff - 0.25, zoff + 0.25);
 
@@ -62,7 +62,7 @@ public class JarDisplayRenderer implements BlockEntityRenderer<JarDisplayBlockEn
 					pPoseStack.translate(0, 0.0, -0.5);
 
 //				pPoseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(-80), 0, 0));
-				float uniscale = 4f;
+				float uniscale = 1f;
 				pPoseStack.scale(uniscale, uniscale, uniscale);
 				itemRenderer.render(item, ItemDisplayContext.GROUND, false, pPoseStack, pBufferSource, pPackedLight,
 						pPackedOverlay, bakedmodel);

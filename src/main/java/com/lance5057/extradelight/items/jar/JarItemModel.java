@@ -9,6 +9,7 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.util.RenderUtil;
+import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
@@ -58,7 +59,8 @@ public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 			if (displayContext == ItemDisplayContext.GUI) {
 
 				ps.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(30), (float) Math.toRadians(225), 0));
-				ps.translate(0, 1f, -1.7f);
+				ps.translate(-0.05f, 1.0f, -1.9f);
+				ps.scale(1.25f, 1.25f, 1.25f);
 			} else if (displayContext == ItemDisplayContext.FIRST_PERSON_LEFT_HAND
 					|| displayContext == ItemDisplayContext.FIRST_PERSON_RIGHT_HAND) {
 				ps.translate(0, 0.35, -0.17f);
@@ -67,7 +69,7 @@ public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 
 			}
 
-			bm.render(ps, mbs, texture -> RenderType.CUTOUT, packedLight, overlay, 0, ModelData.EMPTY);
+			bm.render(ps, mbs, texture -> RenderType.entityCutout(texture), packedLight, overlay, 0, ModelData.EMPTY);
 
 			VertexConsumer vertexConsumer = mbs.getBuffer(Sheets.translucentCullBlockSheet());
 			Matrix4f mat = ps.last().pose();

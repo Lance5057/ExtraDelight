@@ -11,10 +11,10 @@ public class BlockEntityUtils {
 	public static class Inventory {
 		// returns -1 on failure
 		public static int getLastFilledSlot(IItemHandler iItemHandler, int inventorySize) {
-			if (iItemHandler.getStackInSlot(inventorySize - 1) != ItemStack.EMPTY)
+			if (!iItemHandler.getStackInSlot(inventorySize - 1).isEmpty())
 				return inventorySize - 1;
 			for (int i = 0; i <= inventorySize; i++) {
-				if (iItemHandler.getStackInSlot(i) == ItemStack.EMPTY)
+				if (iItemHandler.getStackInSlot(i).isEmpty())
 					return i - 1;
 			}
 			return -1;

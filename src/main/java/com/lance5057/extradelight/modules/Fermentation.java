@@ -350,6 +350,10 @@ public class Fermentation {
 		tmp.getBuilder(PICKLED_GINGER_BLOCK_ITEM.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("item/generated"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
+		ItemModels.forItem(tmp, PICKLED_SAUSAGE_ITEM, "pickled_sausage");
+		tmp.getBuilder(PICKLED_SAUSAGE_BLOCK_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		ItemModels.forItem(tmp, SOY_SAUCE_ITEM, "soy_sauce");
 		ItemModels.forItem(tmp, HOT_SAUCE_ITEM, "hot_sauce");
@@ -361,6 +365,8 @@ public class Fermentation {
 		ItemModels.forItem(tmp, SLICED_GHERKIN_ITEM, "gherkin_slices");
 		ItemModels.forItem(tmp, PICKLE_JUICE, "pickle_juice_bottle");
 		ItemModels.forItem(tmp, PICKLE_JUICE_FLUID_BUCKET, "pickle_juice_bucket");
+		
+		ItemModels.forItem(tmp, SALT, "salt");
 	}
 
 	final int dayTick = 24000;
