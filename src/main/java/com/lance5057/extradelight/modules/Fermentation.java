@@ -32,6 +32,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -97,7 +98,7 @@ public class Fermentation {
 			() -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> CUCUMBER_CRATE_ITEM = ExtraDelightItems.ITEMS.register("cucumber_crate_item",
 			() -> new BlockItem(CUCUMBER_CRATE.get(), new Item.Properties()));
-	public static final DeferredBlock<Block> SOYBEAN_SACK = ExtraDelightBlocks.BLOCKS.register("soybean_crate",
+	public static final DeferredBlock<Block> SOYBEAN_SACK = ExtraDelightBlocks.BLOCKS.register("soybean_sack",
 			() -> new Block(
 					Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_WHITE)));
 	public static final DeferredItem<Item> SOYBEAN_SACK_ITEM = ExtraDelightItems.ITEMS.register("soybean_sack_item",
@@ -220,8 +221,18 @@ public class Fermentation {
 	public static final DeferredItem<Item> FISH_SAUCE_ITEM = ExtraDelightItems.ITEMS.register("fish_sauce_item",
 			() -> new Item(new Item.Properties()));
 
-	public static final DeferredItem<Item> SALAMI_ITEM = ExtraDelightItems.ITEMS.register("salami_item",
+	public static final DeferredItem<Item> SALAMI_MIX = ExtraDelightItems.ITEMS.register("salami_mix",
 			() -> new Item(new Item.Properties()));
+
+	public static final DeferredBlock<Block> UNRIPE_SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS.register("unripe_salami_block",
+			() -> new Block(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_PINK)));
+	public static final DeferredItem<Item> UNRIPE_SALAMI_ITEM = ExtraDelightItems.ITEMS.register("unripe_salami_item",
+			() -> new BlockItem(UNRIPE_SALAMI_BLOCK.get(), new Item.Properties()));
+
+	public static final DeferredBlock<Block> SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS.register("salami_block",
+			() -> new Block(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_RED)));
+	public static final DeferredItem<Item> SALAMI_ITEM = ExtraDelightItems.ITEMS.register("salami_item",
+			() -> new BlockItem(SALAMI_BLOCK.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> SOAKED_SOYBEANS_ITEM = ExtraDelightItems.ITEMS
 			.register("soaked_soybeans_item", () -> new Item(new Item.Properties()));
@@ -298,6 +309,8 @@ public class Fermentation {
 			() -> new JarDisplayBlock(Block.Properties.ofFullCopy(Blocks.GLASS)));
 
 	public static void blockModels(BlockStateProvider bsp) {
+		BlockModels.crateBlock(bsp, CUCUMBER_CRATE.get(), "cucumber", "oak");
+		BlockModels.sackBlock(bsp, SOYBEAN_SACK.get(), "soybean", "brown");
 		BlockModels.recipeFeastBlock(bsp, GHERKINS_BLOCK.get(), "gherkin_jar");
 		BlockModels.recipeFeastBlock(bsp, PICKLED_BEETS_BLOCK.get(), "pickled_beets_jar");
 		BlockModels.recipeFeastBlock(bsp, PICKLED_ONIONS_BLOCK.get(), "pickled_onions_jar");
@@ -314,6 +327,10 @@ public class Fermentation {
 		bsp.simpleBlock(WILD_SOYBEAN.get(), new ConfiguredModel(bsp.models()
 				.cross("wild_soybean", bsp.modLoc("block/crops/soybeans/soybeans_stage7")).renderType("cutout")));
 		bsp.simpleBlock(JAR_DISPLAY_BLOCK.get(), bsp.models().withExistingParent("jar_display", bsp.mcLoc("air")));
+		bsp.simpleBlock(UNRIPE_SALAMI_BLOCK.get(), bsp.models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/unripe_salami_3")));
+		bsp.simpleBlock(SALAMI_BLOCK.get(), bsp.models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/ripe_salami_3")));
 	}
 
 	public static void itemModels(ItemModelProvider tmp) {
@@ -323,7 +340,8 @@ public class Fermentation {
 		ItemModels.forItem(tmp, SOYBEAN_POD, "crops/soybeans/soybeans_pod");
 		ItemModels.forItem(tmp, CUCUMBER_SEED, "crops/cucumber/cucumber_seeds");
 		ItemModels.forItem(tmp, SOYBEANS, "crops/soybeans/soybeans");
-
+		ItemModels.forBlockItem(tmp, CUCUMBER_CRATE_ITEM, "cucumber_crate");
+		ItemModels.forBlockItem(tmp, SOYBEAN_SACK_ITEM, "soybean_sack");
 		tmp.getBuilder(GHERKINS_BLOCK_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("item/generated"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 		ItemModels.forItem(tmp, GHERKIN_ITEM, "gherkin");
@@ -360,7 +378,15 @@ public class Fermentation {
 		ItemModels.forItem(tmp, MISO_PASTE_ITEM, "miso_paste");
 		ItemModels.forItem(tmp, NATTO_ITEM, "natto");
 		ItemModels.forItem(tmp, FISH_SAUCE_ITEM, "fish_sauce");
+		ItemModels.forItem(tmp, SALAMI_MIX, "salami_mix");
+		tmp.getBuilder(UNRIPE_SALAMI_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		tmp.getBuilder(SALAMI_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		ItemModels.forItem(tmp, SOAKED_SOYBEANS_ITEM, "soaked_soybeans");
+		ItemModels.forItem(tmp, SHREDDED_CABBAGE_ITEM, "shredded_cabbage");
 		ItemModels.forItem(tmp, SLICED_CUCUMBER_ITEM, "crops/cucumber/cucumber_slices");
 		ItemModels.forItem(tmp, SLICED_GHERKIN_ITEM, "gherkin_slices");
 		ItemModels.forItem(tmp, PICKLE_JUICE, "pickle_juice_bottle");
@@ -694,6 +720,8 @@ public class Fermentation {
 		lp.add(MISO_PASTE_ITEM.get(), "Miso Paste");
 		lp.add(NATTO_ITEM.get(), "Natto");
 		lp.add(FISH_SAUCE_ITEM.get(), "Fish Sauce");
+		lp.add(SALAMI_MIX.get(), "Salami Mix");
+		lp.add(UNRIPE_SALAMI_ITEM.get(), "Unripe Salami");
 		lp.add(SALAMI_ITEM.get(), "Salami");
 		lp.add(SOAKED_SOYBEANS_ITEM.get(), "Soaked Soybeans");
 		lp.add(MASHED_SOYBEANS_ITEM.get(), "Mashed Soybeans");
