@@ -577,6 +577,7 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> PROCESSED_CABBAGE = modTag("processed/cabbage");
 	public static final TagKey<Item> PROCESSED_BEETROOT = modTag("processed/beetroot");
+	public static final TagKey<Item> PROCESSED_PICKLED_CUCUMBER = modTag("processed/pickled_cucumber");
 
 	public static final TagKey<Item> MISO_SOUP_INGREDIENTS = neoforgeItemTag("miso_soup_ingredients");
 

@@ -241,6 +241,8 @@ public class Fermentation {
 			.register("soaked_soybeans_item", () -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> MASHED_SOYBEANS_ITEM = ExtraDelightItems.ITEMS
 			.register("mashed_soybeans_item", () -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> COOKED_SOYBEANS_ITEM = ExtraDelightItems.ITEMS
+			.register("cooked_soybeans_item", () -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> SOY_MILK = EDItemGenerator
 			.register("soy_milk", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
@@ -308,6 +310,17 @@ public class Fermentation {
 			.register("yeast_spread", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 	public static final DeferredItem<Item> CHEESYMITE_SCROLL = EDItemGenerator
 			.register("cheesymite_scroll", () -> new Item(new Item.Properties())).advancementSnack().finish();
+	public static final DeferredItem<Item> MORKOVCHA = EDItemGenerator
+			.register("morkovcha", () -> new Item(new Item.Properties())).advancementMeal().finish();
+	public static final DeferredItem<Item> ZUPA_OGORKOWA = EDItemGenerator
+			.register("zupa_ogorkowa", () -> new Item(new Item.Properties())).advancementMeal().finish();
+	public static final DeferredItem<Item> KIMCHI_FRIED_RICE = EDItemGenerator
+			.register("kimchi_fried_rice", () -> new Item(new Item.Properties())).advancementMeal().finish();
+	public static final DeferredItem<Item> KONGJANG = EDItemGenerator
+			.register("kongjang", () -> new Item(new Item.Properties())).advancementMeal().finish();
+	public static final DeferredItem<Item> CHEESEBURGER_PICKLE = EDItemGenerator
+			.register("cheeseburger_pickle", () -> new Item(new Item.Properties())).advancementSnack().finish();
+
 	public static final DeferredBlock<Block> JAR_DISPLAY_BLOCK = ExtraDelightBlocks.BLOCKS.register("jar_display_block",
 			() -> new JarDisplayBlock(Block.Properties.ofFullCopy(Blocks.GLASS)));
 
@@ -603,6 +616,20 @@ public class Fermentation {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "cucumber_salad_mixing_fluids");
 
+		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
+						Ingredient.of(ExtraDelightTags.CHILI_POWDER), Ingredient.of(SALT),
+						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ExtraDelightTags.VINEGAR) },
+				new SizedFluidIngredient[] {}, consumer, "morkovcha_mixing_bottles");
+		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
+						Ingredient.of(ExtraDelightTags.CHILI_POWDER), Ingredient.of(SALT), },
+				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
+				consumer, "morkovcha_mixing_fluids");
+
 		// Mortar
 		MortarRecipeBuilder
 				.grind(Ingredient.of(SOAKED_SOYBEANS_ITEM), MASHED_SOYBEANS_ITEM.toStack(1), FluidStack.EMPTY,
@@ -617,15 +644,29 @@ public class Fermentation {
 						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
 				.addIngredient(ExtraDelightTags.CUBED_BEEF_RAW).addIngredient(PICKLED_ONION_ITEM)
 				.addIngredient(ExtraDelightTags.GRAVY).addIngredient(ExtraDelightTags.CHEESE)
-				.unlockedByAnyIngredient(PICKLED_ONION_ITEM).addIngredient(ModItems.PIE_CRUST.get()).build(consumer);
+				.addIngredient(ModItems.PIE_CRUST.get()).unlockedByAnyIngredient(PICKLED_ONION_ITEM).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(CHEESYMITE_SCROLL.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
 				.addIngredient(ModItems.WHEAT_DOUGH.get()).addIngredient(ExtraDelightTags.CHEESE)
-				.addIngredient(Fermentation.YEAST_SPREAD).build(consumer);
+				.addIngredient(YEAST_SPREAD).unlockedByAnyIngredient(YEAST_SPREAD).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(CHEESEBURGER_PICKLE.get(), 3), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.SHEET.get()), false)
+				.addIngredient(ExtraDelightTags.GROUND_BEEF_COOKED).addIngredient(ExtraDelightTags.CHEESE)
+				.addIngredient(ExtraDelightTags.GROUND_BEEF_COOKED).addIngredient(CommonTags.FOODS_RAW_BACON)
+				.addIngredient(CommonTags.FOODS_RAW_BACON).addIngredient(CommonTags.FOODS_RAW_BACON)
+				.addIngredient(GHERKIN_ITEM).addIngredient(GHERKIN_ITEM).addIngredient(GHERKIN_ITEM)
+				.unlockedByAnyIngredient(GHERKIN_ITEM).build(consumer);
 
 		// Pot
+		Recipes.pot(COOKED_SOYBEANS_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(SOAKED_SOYBEANS_ITEM) }, "cooked_soybeans", consumer);
+		Recipes.pot(SOY_MILK.get(), 1, CookingRecipes.SLOW_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(MASHED_SOYBEANS_ITEM) }, "soy_milk", consumer);
+
 		Recipes.pot(EDAMAME.get(), 1, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(SOYBEAN_POD), Ingredient.of(SALT) }, "edamame", consumer);
 
@@ -680,8 +721,25 @@ public class Fermentation {
 						Ingredient.of(ExtraDelightItems.YEAST), Ingredient.of(SALT) },
 				"yeast_spread", consumer);
 
-		Recipes.pot(SOY_MILK.get(), 1, CookingRecipes.SLOW_COOKING, 1.0F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(MASHED_SOYBEANS_ITEM) }, "soy_milk", consumer);
+		Recipes.pot(ZUPA_OGORKOWA.get(), 1, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
+						Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
+						Ingredient.of(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER),
+						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO),
+						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(PICKLE_JUICE) },
+				"zupa_ogorkowa", consumer);
+
+		Recipes.pot(KIMCHI_FRIED_RICE.get(), 1, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(ModItems.COOKED_RICE.get()), Ingredient.of(KIMCHI_ITEM),
+						Ingredient.of(HOT_SAUCE_ITEM), Ingredient.of(Items.DRIED_KELP),
+						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ModItems.FRIED_EGG.get()) },
+				"kimchi_fried_rice", consumer);
+
+		Recipes.pot(KONGJANG.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(SOAKED_SOYBEANS_ITEM), Ingredient.of(SOY_SAUCE_ITEM),
+						Ingredient.of(Items.SUGAR), Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
+						Ingredient.of(ExtraDelightTags.COOKING_OIL) },
+				"kongjang", consumer);
 
 		// Evaporating
 		EvaporatorRecipeBuilder
@@ -758,6 +816,7 @@ public class Fermentation {
 		lp.add(SALAMI_ITEM.get(), "Salami");
 		lp.add(SOAKED_SOYBEANS_ITEM.get(), "Soaked Soybeans");
 		lp.add(MASHED_SOYBEANS_ITEM.get(), "Mashed Soybeans");
+		lp.add(COOKED_SOYBEANS_ITEM.get(), "Cooked Soybeans");
 		lp.add(SOY_MILK.get(), "Soy Milk");
 		lp.add(MOO_NAEM_ITEM.get(), "Moo Naem");
 		lp.add(SLICED_BEETROOT_ITEM.get(), "Sliced Beetroot");
@@ -782,5 +841,10 @@ public class Fermentation {
 		lp.add(SAUERKRAUT_AND_SAUSAGE.get(), "Sauerkraut and Sausage");
 		lp.add(YEAST_SPREAD.get(), "Yeast Spread");
 		lp.add(CHEESYMITE_SCROLL.get(), "Cheesymite Scroll");
+		lp.add(MORKOVCHA.get(), "Morkovcha");
+		lp.add(ZUPA_OGORKOWA.get(), "Zupa Ogórkowa");
+		lp.add(KIMCHI_FRIED_RICE.get(), "Kimchi Fried Rice");
+		lp.add(KONGJANG.get(), "Kongjang");
+		lp.add(CHEESEBURGER_PICKLE.get(), "Cheeseburger Pickle");
 	}
 }
