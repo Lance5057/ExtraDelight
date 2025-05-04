@@ -567,6 +567,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_CABBAGE).add(Fermentation.SHREDDED_CABBAGE_ITEM.get())
 				.addOptionalTag(CommonTags.CROPS_CABBAGE.location());
 		tag(ExtraDelightTags.PROCESSED_BEETROOT).add(Items.BEETROOT, Fermentation.SLICED_BEETROOT_ITEM.get());
+		tag(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER).add(Fermentation.GHERKIN_ITEM.get(),
+				Fermentation.SLICED_GHERKIN_ITEM.get());
 
 		tag(ExtraDelightTags.MISO_SOUP_INGREDIENTS).addTag(ExtraDelightTags.PROCESSED_CABBAGE)
 				.addTag(Tags.Items.MUSHROOMS).addTag(ExtraDelightTags.PROCESSED_CARROT)

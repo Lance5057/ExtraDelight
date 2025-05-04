@@ -140,8 +140,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.add(ExtraDelightBlocks.QUICHE.get(), noDrop());
 
-		this.dropOther(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.get(),
+				Items.BOWL);
+		feast(ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(), ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(),
+				Items.BOWL);
 
 		dropSelf(ExtraDelightBlocks.CHEESE_BLOCK.get());
 		this.add(ExtraDelightBlocks.CHEESE_SLAB_BLOCK.get(),
@@ -152,48 +154,58 @@ public class BlockLootTables extends BlockLootSubProvider {
 				createSlabItemTable(ExtraDelightBlocks.BUTTER_SLAB_BLOCK.get()));
 		this.dropSelf(ExtraDelightBlocks.BUTTER_STAIRS_BLOCK.get());
 
-		this.dropOther(ExtraDelightBlocks.HASH_FEAST.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.POT_ROAST_FEAST.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.MEATLOAF_FEAST.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.HASH_FEAST.get(), ExtraDelightItems.HASH_FEAST_ITEM.get(),	Items.BOWL);
+		feast(ExtraDelightBlocks.POT_ROAST_FEAST.get(), ExtraDelightItems.POT_ROAST_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.MEATLOAF_FEAST.get(), ExtraDelightItems.MEAT_LOAF_FEAST.get(),	Items.BOWL);
 
-		this.dropOther(ExtraDelightBlocks.BBQ_RIBS_FEAST.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.PULLED_PORK_FEAST.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.BBQ_RIBS_FEAST.get(), ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get(),	Items.BOWL);
+		feast(ExtraDelightBlocks.PULLED_PORK_FEAST.get(), ExtraDelightItems.PULLED_PORK_FEAST_ITEM.get(), Items.BOWL);
 
-		this.dropOther(ExtraDelightBlocks.RACK_LAMB.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.STIRFRY.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.BEEF_WELLINGTON.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.HAGGIS.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.RACK_LAMB.get(), ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(),	Items.BOWL);
+		feast(ExtraDelightBlocks.STIRFRY.get(), ExtraDelightItems.STIRFRY_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.BEEF_WELLINGTON.get(), ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.HAGGIS.get(), ExtraDelightItems.HAGGIS_FEAST_ITEM.get(), Items.BOWL);
 
-		this.dropOther(ExtraDelightBlocks.JELLY_WHITE.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_ORANGE.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_MAGENTA.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_LIGHT_BLUE.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_YELLOW.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_LIME.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_PINK.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_GREY.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_LIGHT_GREY.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_CYAN.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_PURPLE.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_BLUE.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_BROWN.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_GREEN.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_RED.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.JELLY_BLACK.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_WHITE.get(), ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_ORANGE.get(), ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_MAGENTA.get(), ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM.get(),	Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_LIGHT_BLUE.get(), ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_YELLOW.get(), ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_LIME.get(), ExtraDelightItems.JELLY_LIME_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_PINK.get(), ExtraDelightItems.JELLY_PINK_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_GREY.get(), ExtraDelightItems.JELLY_GREY_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_LIGHT_GREY.get(), ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_CYAN.get(), ExtraDelightItems.JELLY_CYAN_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_PURPLE.get(), ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_BLUE.get(), ExtraDelightItems.JELLY_BLUE_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_BROWN.get(), ExtraDelightItems.JELLY_BROWN_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_GREEN.get(), ExtraDelightItems.JELLY_GREEN_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_RED.get(), ExtraDelightItems.JELLY_RED_FEAST_ITEM.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.JELLY_BLACK.get(), ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.get(), Items.BOWL);
 
 		this.dropOther(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.MACARONI_CHEESE.get(), ExtraDelightItems.SERVING_POT);
-		this.dropOther(ExtraDelightBlocks.HOTDISH.get(), ExtraDelightItems.SQUARE_PAN);
-		this.dropOther(ExtraDelightBlocks.LASAGNA.get(), ExtraDelightItems.SQUARE_PAN);
+		feast(ExtraDelightBlocks.MACARONI_CHEESE.get(), ExtraDelightItems.MACARONI_CHEESE_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
+		feast(ExtraDelightBlocks.HOTDISH.get(), ExtraDelightItems.HOTDISH_FEAST.get(),
+				ExtraDelightItems.SQUARE_PAN.get());
+		feast(ExtraDelightBlocks.LASAGNA.get(), ExtraDelightItems.LASAGNA_FEAST.get(),
+				ExtraDelightItems.SQUARE_PAN.get());
 
-		this.dropOther(ExtraDelightBlocks.BEEF_STEW.get(), ExtraDelightItems.SERVING_POT);
-		this.dropOther(ExtraDelightBlocks.CHICKEN_STEW.get(), ExtraDelightItems.SERVING_POT);
-		this.dropOther(ExtraDelightBlocks.FISH_STEW.get(), ExtraDelightItems.SERVING_POT);
-		this.dropOther(ExtraDelightBlocks.LAMB_STEW.get(), ExtraDelightItems.SERVING_POT);
-		this.dropOther(ExtraDelightBlocks.PORK_STEW.get(), ExtraDelightItems.SERVING_POT);
-		this.dropOther(ExtraDelightBlocks.RABBIT_STEW.get(), ExtraDelightItems.SERVING_POT);
-		this.dropOther(ExtraDelightBlocks.CURRY.get(), ExtraDelightItems.SERVING_POT);
-		this.dropOther(ExtraDelightBlocks.SALAD.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.BEEF_STEW.get(), ExtraDelightItems.BEEF_STEW_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
+		feast(ExtraDelightBlocks.CHICKEN_STEW.get(), ExtraDelightItems.CHICKEN_STEW_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
+		feast(ExtraDelightBlocks.FISH_STEW.get(), ExtraDelightItems.FISH_STEW_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
+		feast(ExtraDelightBlocks.LAMB_STEW.get(), ExtraDelightItems.LAMB_STEW_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
+		feast(ExtraDelightBlocks.PORK_STEW.get(), ExtraDelightItems.PORK_STEW_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
+		feast(ExtraDelightBlocks.RABBIT_STEW.get(), ExtraDelightItems.RABBIT_STEW_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
+		feast(ExtraDelightBlocks.CURRY.get(), ExtraDelightItems.CURRY_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
+		feast(ExtraDelightBlocks.SALAD.get(), ExtraDelightItems.SALAD_FEAST_ITEM.get(),	Items.BOWL);
 
 		this.dropOther(ExtraDelightBlocks.CORN_BOTTOM.get(), ExtraDelightItems.CORN_SEEDS.get());
 //		this.dropOther(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.CORN_SEEDS.get());
@@ -203,14 +215,19 @@ public class BlockLootTables extends BlockLootSubProvider {
 		crop(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
 				ExtraDelightItems.CORN_SEEDS.get(), lootitemcondition$builder2, 3.0f);
 
-		this.dropOther(ExtraDelightBlocks.CORNBREAD.get(), ModItems.SKILLET.get());
+		feast(ExtraDelightBlocks.CORNBREAD.get(), ExtraDelightItems.CORNBREAD_FEAST.get(),
+				ModItems.SKILLET.get());
 		this.dropOther(ExtraDelightBlocks.CARAMEL_CHEESECAKE.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.CORN_PUDDING.get(), ExtraDelightItems.SQUARE_PAN);
+		feast(ExtraDelightBlocks.CORN_PUDDING.get(), ExtraDelightItems.CORN_PUDDING_FEAST.get(),
+				ExtraDelightItems.SQUARE_PAN.get());
 		this.dropOther(ExtraDelightBlocks.PUMPKIN_PIE.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.PUMPKIN_ROLL.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.APPLE_CRISP.get(), ExtraDelightItems.SQUARE_PAN);
-		this.dropOther(ExtraDelightBlocks.STUFFING.get(), ExtraDelightItems.SERVING_POT);
-		this.dropOther(ExtraDelightBlocks.POTATO_AU_GRATIN.get(), ExtraDelightItems.SQUARE_PAN);
+		feast(ExtraDelightBlocks.APPLE_CRISP.get(), ExtraDelightItems.APPLE_CRISP_FEAST.get(),
+				ExtraDelightItems.SQUARE_PAN.get());
+		feast(ExtraDelightBlocks.STUFFING.get(), ExtraDelightItems.STUFFING_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
+		feast(ExtraDelightBlocks.POTATO_AU_GRATIN.get(), ExtraDelightItems.POTATO_AU_GRATIN_FEAST.get(),
+				ExtraDelightItems.SQUARE_PAN.get());
 
 		this.dropSelf(ExtraDelightBlocks.FLOUR_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.CORNMEAL_SACK.get());
@@ -291,14 +308,15 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropOther(ExtraDelightBlocks.WILD_GINGER.get(), ExtraDelightItems.GINGER.get());
 
-		this.dropOther(ExtraDelightBlocks.CINNAMON_ROLLS.get(), ExtraDelightItems.SQUARE_PAN);
-		this.dropOther(ExtraDelightBlocks.MONKEY_BREAD.get(), Items.AIR);
+		feast(ExtraDelightBlocks.CINNAMON_ROLLS.get(), ExtraDelightItems.CINNAMON_ROLLS_FEAST.get(),
+				ExtraDelightItems.SQUARE_PAN.get());
+		feast(ExtraDelightBlocks.MONKEY_BREAD.get(), ExtraDelightItems.MONKEY_BREAD_FEAST.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.COFFEE_CAKE.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.MINT_LAMB.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.CHARCUTERIE_BOARD.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.MINT_LAMB.get(), ExtraDelightItems.MINT_LAMB_FEAST.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.CHARCUTERIE_BOARD.get(), ExtraDelightItems.CHARCUTERIE_BOARD_FEAST.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.MILK_TART.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.PUNCH.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), Items.AIR);
+		feast(ExtraDelightBlocks.PUNCH.get(), ExtraDelightItems.PUNCH_FEAST.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), ExtraDelightItems.CHRISTMAS_PUDDING_FEAST.get(), Items.AIR);
 
 		this.dropSelf(ExtraDelightBlocks.MINT_CROP.get());
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_SAPLING.get());
@@ -439,14 +457,20 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
 		this.add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
 
-		this.dropOther(ExtraDelightBlocks.BROWNIES.get(), ExtraDelightItems.SQUARE_PAN);
-		this.dropOther(ExtraDelightBlocks.BLONDIES.get(), ExtraDelightItems.SQUARE_PAN);
+		feast(ExtraDelightBlocks.BROWNIES.get(), ExtraDelightItems.BROWNIES_BLOCK.get(),
+				ExtraDelightItems.SQUARE_PAN.get());
+		feast(ExtraDelightBlocks.BLONDIES.get(), ExtraDelightItems.BLONDIES_BLOCK.get(),
+				ExtraDelightItems.SQUARE_PAN.get());
 		this.dropOther(ExtraDelightBlocks.CHOCOLATE_CAKE.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.FUDGE.get(), ExtraDelightItems.TRAY);
-		this.dropOther(ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.CRISP_RICE_TREATS.get(), ExtraDelightItems.TRAY);
-		this.dropOther(ExtraDelightBlocks.SCOTCHAROOS.get(), ExtraDelightItems.TRAY);
-		this.dropOther(ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.FUDGE.get(), ExtraDelightItems.FUDGE_BLOCK.get(), ExtraDelightItems.TRAY.get());
+		feast(ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(), ExtraDelightItems.STICKY_TOFFEE_PUDDING_BLOCK.get(),
+				Items.BOWL);
+		feast(ExtraDelightBlocks.CRISP_RICE_TREATS.get(), ExtraDelightItems.CRISP_RICE_TREATS_BLOCK.get(),
+				ExtraDelightItems.TRAY.get());
+		feast(ExtraDelightBlocks.SCOTCHAROOS.get(), ExtraDelightItems.SCOTCHAROO_BLOCK.get(),
+				ExtraDelightItems.TRAY.get());
+		feast(ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(), ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK.get(),
+				Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.BLOOD_CHOCOLATE_FONDUE.get(), Items.BUCKET);
 		this.dropOther(ExtraDelightBlocks.DARK_CHOCOLATE_FONDUE.get(), Items.BUCKET);
 		this.dropOther(ExtraDelightBlocks.MILK_CHOCOLATE_FONDUE.get(), Items.BUCKET);
@@ -462,8 +486,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.createFruitLeavesDrop(ExtraDelightBlocks.APPLE_LEAVES.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
 				Items.APPLE);
 		this.dropSelf(ExtraDelightBlocks.APPLE_SAPLING.get());
-		this.dropOther(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(), Items.AIR);
+		feast(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), ExtraDelightItems.PORK_AND_APPLES_FEAST.get(), Items.AIR);
+		feast(ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(), ExtraDelightItems.STUFFED_APPLES_FEAST.get(), Items.AIR);
 		this.add(ExtraDelightBlocks.TARTE_TATIN.get(), noDrop());
 
 		this.dropSelf(ExtraDelightBlocks.HANGING_ONIONS.get());
@@ -475,8 +499,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropSelf(ExtraDelightBlocks.CHILI_CRATE.get());
 		this.dropSelf(ExtraDelightBlocks.CHILI_POWDER_SACK.get());
-		this.dropOther(ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), ExtraDelightItems.SERVING_POT);
-		this.dropOther(ExtraDelightBlocks.WHITE_CHILI_FEAST.get(), ExtraDelightItems.SERVING_POT);
+		feast(ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), ExtraDelightItems.CHILI_CON_CARNE_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
+		feast(ExtraDelightBlocks.WHITE_CHILI_FEAST.get(), ExtraDelightItems.WHITE_CHILI_FEAST.get(),
+				ExtraDelightItems.SERVING_POT.get());
 
 		this.dropSelf(ExtraDelightBlocks.PEANUT_IN_SHELL_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.PEANUT_SACK.get());
@@ -491,7 +517,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.MALLOW_ROOT_CRATE.get());
 		this.dropSelf(ExtraDelightBlocks.MALLOW_POWDER_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.GRASSHOPPER_PIE.get());
-		this.dropOther(ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(), ExtraDelightItems.SQUARE_PAN);
+		feast(ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(), ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.get(),
+				ExtraDelightItems.SQUARE_PAN.get());
 
 		this.dropSelf(ExtraDelightBlocks.COFFEE_CHERRY_CRATE.get());
 		this.dropSelf(ExtraDelightBlocks.GREEN_COFFEE_BEAN_SACK.get());
@@ -514,7 +541,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 				garlic);
 		this.dropOther(ExtraDelightBlocks.WILD_GARLIC.get(), ExtraDelightItems.GARLIC.get());
 		this.dropSelf(ExtraDelightBlocks.GARLIC_CRATE.get());
-		this.dropOther(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), Items.BOWL);
+		feast(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), ExtraDelightItems.BRUSCHETTA_FEAST.get(),
+				Items.BOWL);
 		this.dropSelf(ExtraDelightBlocks.HANGING_GARLIC.get());
 
 		this.dropSelf(ExtraDelightBlocks.LID.get());
@@ -547,18 +575,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 				Fermentation.PICKLE_JUICE.get());
 		feast(Fermentation.PICKLED_GINGER_BLOCK.get(), Fermentation.PICKLED_GINGER_BLOCK_ITEM.get(),
 				Fermentation.PICKLE_JUICE.get());
-//		this.dropOther(Fermentation.PICKLED_BEETS_BLOCK.get(), Fermentation.PICKLE_JUICE);
-//		this.dropOther(Fermentation.PICKLED_ONIONS_BLOCK.get(), Fermentation.PICKLE_JUICE);
-//		this.dropOther(Fermentation.PICKLED_CARROTS_BLOCK.get(), Fermentation.PICKLE_JUICE);
-//		this.dropOther(Fermentation.PICKLED_EGGS_BLOCK.get(), Fermentation.PICKLE_JUICE);
-//		this.dropOther(Fermentation.PICKLED_FISH_BLOCK.get(), Fermentation.PICKLE_JUICE);
-//		this.dropOther(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Fermentation.PICKLE_JUICE);
-//		this.dropOther(Fermentation.PICKLED_GINGER_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropSelf(Fermentation.CUCUMBER_CRATE.get());
 		this.dropSelf(Fermentation.SOYBEAN_SACK.get());
 		this.dropSelf(Fermentation.UNRIPE_SALAMI_BLOCK.get());
 		this.dropSelf(Fermentation.SALAMI_BLOCK.get());
-		this.dropOther(Fermentation.SOY_GLAZED_SALMON_BLOCK.get(), Items.BOWL);
+		feast(Fermentation.SOY_GLAZED_SALMON_BLOCK.get(), Fermentation.SOY_GLAZED_SALMON_BLOCK_ITEM.get(),
+				Items.BOWL);
 		this.add(Fermentation.STEAK_PICKLED_ONION_PIE.get(), noDrop());
 
 		this.add(Fermentation.JAR_DISPLAY_BLOCK.get(), noDrop());
