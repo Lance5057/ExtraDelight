@@ -4,6 +4,7 @@
     "down": "extradelight:block/crates/spruce_crate_bottom",
     "east": "extradelight:block/golden_carrot_crate_side",
     "north": "extradelight:block/golden_carrot_crate_side",
+    "particle": "extradelight:block/golden_carrot_crate_top",
     "south": "extradelight:block/golden_carrot_crate_side",
     "up": "extradelight:block/golden_carrot_crate_top",
     "west": "extradelight:block/golden_carrot_crate_side"

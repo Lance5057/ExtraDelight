@@ -6,6 +6,7 @@ import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.SalamiBlock;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
@@ -24,6 +25,7 @@ import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.util.EDItemGenerator;
+import com.lance5057.extradelight.workstations.vat.VatBlock;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe.StageIngredient;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -224,13 +226,14 @@ public class Fermentation {
 	public static final DeferredItem<Item> SALAMI_MIX = ExtraDelightItems.ITEMS.register("salami_mix",
 			() -> new Item(new Item.Properties()));
 
-	public static final DeferredBlock<Block> UNRIPE_SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS.register("unripe_salami_block",
-			() -> new Block(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_PINK)));
+	public static final DeferredBlock<Block> UNRIPE_SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("unripe_salami_block", () -> new SalamiBlock(
+					Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_PINK)));
 	public static final DeferredItem<Item> UNRIPE_SALAMI_ITEM = ExtraDelightItems.ITEMS.register("unripe_salami_item",
 			() -> new BlockItem(UNRIPE_SALAMI_BLOCK.get(), new Item.Properties()));
 
 	public static final DeferredBlock<Block> SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS.register("salami_block",
-			() -> new Block(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_RED)));
+			() -> new SalamiBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_RED)));
 	public static final DeferredItem<Item> SALAMI_ITEM = ExtraDelightItems.ITEMS.register("salami_item",
 			() -> new BlockItem(SALAMI_BLOCK.get(), new Item.Properties()));
 
@@ -327,10 +330,42 @@ public class Fermentation {
 		bsp.simpleBlock(WILD_SOYBEAN.get(), new ConfiguredModel(bsp.models()
 				.cross("wild_soybean", bsp.modLoc("block/crops/soybeans/soybeans_stage7")).renderType("cutout")));
 		bsp.simpleBlock(JAR_DISPLAY_BLOCK.get(), bsp.models().withExistingParent("jar_display", bsp.mcLoc("air")));
-		bsp.simpleBlock(UNRIPE_SALAMI_BLOCK.get(), bsp.models()
-				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/unripe_salami_3")));
-		bsp.simpleBlock(SALAMI_BLOCK.get(), bsp.models()
-				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/ripe_salami_3")));
+//		bsp.simpleBlock(UNRIPE_SALAMI_BLOCK.get(),
+//				bsp.models()
+//						.withExistingParent("unripe_salami",
+//								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/unripe_salami_3"))
+//						.renderType("cutout"));
+//		bsp.simpleBlock(SALAMI_BLOCK.get(),
+//				bsp.models()
+//						.withExistingParent("ripe_salami",
+//								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/ripe_salami_3"))
+//						.renderType("cutout"));
+
+		bsp.getVariantBuilder(UNRIPE_SALAMI_BLOCK.get()).forAllStates(state -> {
+			int count = state.getValue(SalamiBlock.COUNT);
+
+			String suffix = "_" + (count + 1);
+
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models()
+							.withExistingParent("block/unripe_salami_block" + suffix.toLowerCase(),
+									bsp.modLoc("block/unripe_salami" + suffix.toLowerCase()))
+							.renderType("cutout"))
+					.rotationY(((int) state.getValue(SalamiBlock.FACING).toYRot()) % 360).build();
+		});
+
+		bsp.getVariantBuilder(SALAMI_BLOCK.get()).forAllStates(state -> {
+			int count = state.getValue(SalamiBlock.COUNT);
+
+			String suffix = "_" + (count + 1);
+
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models()
+							.withExistingParent("block/ripe_salami_block" + suffix.toLowerCase(),
+									bsp.modLoc("block/ripe_salami" + suffix.toLowerCase()))
+							.renderType("cutout"))
+					.rotationY(((int) state.getValue(SalamiBlock.FACING).toYRot()) % 360).build();
+		});
 	}
 
 	public static void itemModels(ItemModelProvider tmp) {
@@ -379,11 +414,9 @@ public class Fermentation {
 		ItemModels.forItem(tmp, NATTO_ITEM, "natto");
 		ItemModels.forItem(tmp, FISH_SAUCE_ITEM, "fish_sauce");
 		ItemModels.forItem(tmp, SALAMI_MIX, "salami_mix");
-		tmp.getBuilder(UNRIPE_SALAMI_ITEM.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+		tmp.getBuilder(UNRIPE_SALAMI_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("item/generated"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
-		tmp.getBuilder(SALAMI_ITEM.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+		tmp.getBuilder(SALAMI_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("item/generated"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 		ItemModels.forItem(tmp, SOAKED_SOYBEANS_ITEM, "soaked_soybeans");
 		ItemModels.forItem(tmp, SHREDDED_CABBAGE_ITEM, "shredded_cabbage");
@@ -391,7 +424,7 @@ public class Fermentation {
 		ItemModels.forItem(tmp, SLICED_GHERKIN_ITEM, "gherkin_slices");
 		ItemModels.forItem(tmp, PICKLE_JUICE, "pickle_juice_bottle");
 		ItemModels.forItem(tmp, PICKLE_JUICE_FLUID_BUCKET, "pickle_juice_bucket");
-		
+
 		ItemModels.forItem(tmp, SALT, "salt");
 	}
 

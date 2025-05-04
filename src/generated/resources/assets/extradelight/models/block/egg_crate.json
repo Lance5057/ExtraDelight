@@ -4,6 +4,7 @@
     "down": "extradelight:block/crates/spruce_crate_bottom",
     "east": "extradelight:block/egg_crate_side",
     "north": "extradelight:block/egg_crate_side",
+    "particle": "extradelight:block/egg_crate_top",
     "south": "extradelight:block/egg_crate_side",
     "up": "extradelight:block/egg_crate_top",
     "west": "extradelight:block/egg_crate_side"

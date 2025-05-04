@@ -533,27 +533,27 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		feast(Fermentation.GHERKINS_BLOCK.get(), Fermentation.GHERKINS_BLOCK_ITEM.get(),
 				Fermentation.PICKLE_JUICE.get());
-//		feast(Fermentation.PICKLED_BEETS_BLOCK.get(), Fermentation.PICKLED_BEETS_BLOCK_ITEM.get(),
-//				Fermentation.PICKLE_JUICE.get());
-//		feast(Fermentation.PICKLED_ONIONS_BLOCK.get(), Fermentation.PICKLED_ONIONS_BLOCK_ITEM.get(),
-//				Fermentation.PICKLE_JUICE.get());
-//		feast(Fermentation.PICKLED_CARROTS_BLOCK.get(), Fermentation.PICKLED_CARROTS_BLOCK_ITEM.get(),
-//				Fermentation.PICKLE_JUICE.get());
-//		feast(Fermentation.PICKLED_EGGS_BLOCK.get(), Fermentation.PICKLED_EGGS_BLOCK_ITEM.get(),
-//				Fermentation.PICKLE_JUICE.get());
-//		feast(Fermentation.PICKLED_FISH_BLOCK.get(), Fermentation.PICKLED_FISH_BLOCK_ITEM.get(),
-//				Fermentation.PICKLE_JUICE.get());
-//		feast(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Fermentation.PICKLED_SAUSAGE_BLOCK_ITEM.get(),
-//				Fermentation.PICKLE_JUICE.get());
-//		feast(Fermentation.PICKLED_GINGER_BLOCK.get(), Fermentation.PICKLED_GINGER_BLOCK_ITEM.get(),
-//				Fermentation.PICKLE_JUICE.get());
-		this.dropOther(Fermentation.PICKLED_BEETS_BLOCK.get(), Fermentation.PICKLE_JUICE);
-		this.dropOther(Fermentation.PICKLED_ONIONS_BLOCK.get(), Fermentation.PICKLE_JUICE);
-		this.dropOther(Fermentation.PICKLED_CARROTS_BLOCK.get(), Fermentation.PICKLE_JUICE);
-		this.dropOther(Fermentation.PICKLED_EGGS_BLOCK.get(), Fermentation.PICKLE_JUICE);
-		this.dropOther(Fermentation.PICKLED_FISH_BLOCK.get(), Fermentation.PICKLE_JUICE);
-		this.dropOther(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Fermentation.PICKLE_JUICE);
-		this.dropOther(Fermentation.PICKLED_GINGER_BLOCK.get(), Fermentation.PICKLE_JUICE);
+		feast(Fermentation.PICKLED_BEETS_BLOCK.get(), Fermentation.PICKLED_BEETS_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+		feast(Fermentation.PICKLED_ONIONS_BLOCK.get(), Fermentation.PICKLED_ONIONS_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+		feast(Fermentation.PICKLED_CARROTS_BLOCK.get(), Fermentation.PICKLED_CARROTS_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+		feast(Fermentation.PICKLED_EGGS_BLOCK.get(), Fermentation.PICKLED_EGGS_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+		feast(Fermentation.PICKLED_FISH_BLOCK.get(), Fermentation.PICKLED_FISH_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+		feast(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Fermentation.PICKLED_SAUSAGE_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+		feast(Fermentation.PICKLED_GINGER_BLOCK.get(), Fermentation.PICKLED_GINGER_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+//		this.dropOther(Fermentation.PICKLED_BEETS_BLOCK.get(), Fermentation.PICKLE_JUICE);
+//		this.dropOther(Fermentation.PICKLED_ONIONS_BLOCK.get(), Fermentation.PICKLE_JUICE);
+//		this.dropOther(Fermentation.PICKLED_CARROTS_BLOCK.get(), Fermentation.PICKLE_JUICE);
+//		this.dropOther(Fermentation.PICKLED_EGGS_BLOCK.get(), Fermentation.PICKLE_JUICE);
+//		this.dropOther(Fermentation.PICKLED_FISH_BLOCK.get(), Fermentation.PICKLE_JUICE);
+//		this.dropOther(Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Fermentation.PICKLE_JUICE);
+//		this.dropOther(Fermentation.PICKLED_GINGER_BLOCK.get(), Fermentation.PICKLE_JUICE);
 		this.dropSelf(Fermentation.CUCUMBER_CRATE.get());
 		this.dropSelf(Fermentation.SOYBEAN_SACK.get());
 		this.dropSelf(Fermentation.UNRIPE_SALAMI_BLOCK.get());
@@ -648,7 +648,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 	void feast(RecipeFeastBlock block, Item blockItem, Item lastDrop) {
 		LootItemCondition.Builder feast0 = LootItemBlockStatePropertyCondition
-				.hasBlockStateProperties(Fermentation.GHERKINS_BLOCK.get())
+				.hasBlockStateProperties(block)
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(RecipeFeastBlock.SERVINGS, 0));
 
 		this.add(block, LootTable.lootTable().withPool(LootPool.lootPool()

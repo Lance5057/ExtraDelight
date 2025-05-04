@@ -3,15 +3,28 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "extradelight:pickle_juice"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "extradelight:pickled_carrots_block",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "servings": "0"
+                  }
+                }
+              ],
+              "name": "extradelight:pickle_juice"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:air"
+            }
+          ]
         }
       ],
       "rolls": 1.0

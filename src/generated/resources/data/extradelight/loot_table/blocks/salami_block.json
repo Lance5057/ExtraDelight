@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:soybean_sack_item"
+          "name": "extradelight:salami_item"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/soybean_crate"
+  "random_sequence": "extradelight:blocks/salami_block"
 }

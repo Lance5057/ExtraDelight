@@ -4,6 +4,7 @@
     "down": "extradelight:block/crates/oak_crate_bottom",
     "east": "extradelight:block/apple_crate_side",
     "north": "extradelight:block/apple_crate_side",
+    "particle": "extradelight:block/apple_crate_top",
     "south": "extradelight:block/apple_crate_side",
     "up": "extradelight:block/apple_crate_top",
     "west": "extradelight:block/apple_crate_side"

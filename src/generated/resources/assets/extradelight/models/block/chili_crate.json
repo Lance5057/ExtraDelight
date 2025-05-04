@@ -4,6 +4,7 @@
     "down": "extradelight:block/crates/spruce_crate_bottom",
     "east": "extradelight:block/chili_crate_side",
     "north": "extradelight:block/chili_crate_side",
+    "particle": "extradelight:block/chili_crate_top",
     "south": "extradelight:block/chili_crate_side",
     "up": "extradelight:block/chili_crate_top",
     "west": "extradelight:block/chili_crate_side"
