@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.modules.Fermentation;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -1112,10 +1113,6 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.AEBLEFLAESK, "aebleflaesk");
 		forItem(this, ExtraDelightItems.CANDY_BAR_SALAD, "candy_bar_salad");
 
-//		getBuilder(ExtraDelightItems.DYNAMIC_TEST2.getId().getPath())
-//				.parent(new ModelFile.UncheckedModelFile("item/generated"))
-//				.customLoader(DynamicFoodGeometryLoader::builder);
-
 		forBlockItem(this, ExtraDelightItems.HANGING_ONION, "hanging_onion");
 		forBlockItem(this, ExtraDelightItems.HANGING_MINT, "hanging_mint");
 		forBlockItem(this, ExtraDelightItems.HANGING_HAM, "hanging_ham");
@@ -1237,6 +1234,10 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/evaporator")));
 
+		getBuilder(ExtraDelightItems.DYNAMIC_TOAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(DynamicFoodGeometryLoader::builder);
+
 		Fermentation.itemModels(this);
 		AestheticBlocks.itemModel(this);
 	}
@@ -1254,7 +1255,7 @@ public class ItemModels extends ItemModelProvider {
 		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/handheld"), "layer0", tmp.modLoc("block/" + name));
 	}
 
-	public static void forBlockItem(ItemModelProvider tmp,DeferredItem<Item> item, String name) {
+	public static void forBlockItem(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
 		if (item.get() instanceof BlockItem b)
 			tmp.getBuilder(item.getId().getPath())
 					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,

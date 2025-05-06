@@ -28,6 +28,7 @@ import com.lance5057.extradelight.items.OffsetSpatulaItem;
 import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
+import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
 import com.lance5057.extradelight.items.jar.JarItem;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.util.EDItemGenerator;
@@ -1849,8 +1850,8 @@ public class ExtraDelightItems {
 			.advancementFeast().finish();
 
 	public static final DeferredItem<Item> PUNCH = EDItemGenerator
-			.register("punch", () -> new MelonJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE))).servingToolTip().drink()
-			.setHydration(60).setThirst(6).isHot(false).setPoison(0).finish();
+			.register("punch", () -> new MelonJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.servingToolTip().drink().setHydration(60).setThirst(6).isHot(false).setPoison(0).finish();
 	public static final DeferredItem<Item> PUNCH_FEAST = EDItemGenerator
 			.register("punch_feast", () -> new BlockItem(ExtraDelightBlocks.PUNCH.get(), new Item.Properties()))
 			.advancementFeast().finish();
@@ -2926,5 +2927,9 @@ public class ExtraDelightItems {
 //	public static final DeferredItem<DynamicSandwich> DYNAMIC_TEST2 = ITEMS.register("dynamic_test2",
 //			() -> new DynamicSandwich(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
 //					ItemContainerContents.EMPTY)));
+
+	public static final DeferredItem<DynamicToast> DYNAMIC_TOAST = ITEMS.register("dynamic_toast",
+			() -> new DynamicToast(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
+					ItemContainerContents.EMPTY)));
 
 }
