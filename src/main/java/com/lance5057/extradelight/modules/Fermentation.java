@@ -439,6 +439,7 @@ public class Fermentation {
 		ItemModels.forItem(tmp, PICKLE_JUICE_FLUID_BUCKET, "pickle_juice_bucket");
 
 		ItemModels.forItem(tmp, SALT, "salt");
+		ItemModels.forItem(tmp, SAUERKRAUT_ITEM, "sauerkraut");
 	}
 
 	final int dayTick = 24000;

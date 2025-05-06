@@ -4,7 +4,7 @@
 	"render_type": "translucent",
 	"textures": {
 		"1": "extradelight:block/glass_jar",
-		"3": "extradelight:block/beet_pickle_juice",
+		"3": "extradelight:block/onion_pickle_juice",
 		"particle": "extradelight:block/glass_jar"
 	},
 	"elements": [

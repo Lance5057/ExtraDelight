@@ -1,0 +1,43 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:beef/ground/cooked"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "tag": "c:beef/ground/cooked"
+    },
+    {
+      "tag": "c:foods/raw_bacon"
+    },
+    {
+      "tag": "c:foods/raw_bacon"
+    },
+    {
+      "tag": "c:foods/raw_bacon"
+    },
+    {
+      "item": "extradelight:gherkin_item"
+    },
+    {
+      "item": "extradelight:gherkin_item"
+    },
+    {
+      "item": "extradelight:gherkin_item"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "id": "extradelight:cheeseburger_pickle"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/carrot"
+    },
+    {
+      "tag": "extradelight:processed/pickled_cucumber"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    },
+    {
+      "item": "farmersdelight:bone_broth"
+    },
+    {
+      "item": "extradelight:pickle_juice"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:zupa_ogorkowa"
+    }
+  ]
+}

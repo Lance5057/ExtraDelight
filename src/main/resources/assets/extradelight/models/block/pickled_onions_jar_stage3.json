@@ -5,7 +5,7 @@
 	"textures": {
 		"1": "extradelight:block/glass_jar",
 		"2": "extradelight:block/pickle_jar_pickles",
-		"3": "extradelight:block/beet_pickle_juice",
+		"3": "extradelight:block/onion_pickle_juice",
 		"particle": "extradelight:block/glass_jar"
 	},
 	"elements": [

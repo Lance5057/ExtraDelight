@@ -41,6 +41,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:cheeseburger_pickle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheeseburger_pickle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:cheesy_garlic_bread": {
       "conditions": {
         "items": [
@@ -293,6 +303,9 @@
     ],
     [
       "extradelight:pickled_sausage_item"
+    ],
+    [
+      "extradelight:cheeseburger_pickle"
     ],
     [
       "extradelight:popcorn"

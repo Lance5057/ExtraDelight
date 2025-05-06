@@ -3,15 +3,28 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:bowl"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "extradelight:jelly_orange_block",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "servings": "0"
+                  }
+                }
+              ],
+              "name": "minecraft:bowl"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:air"
+            }
+          ]
         }
       ],
       "rolls": 1.0

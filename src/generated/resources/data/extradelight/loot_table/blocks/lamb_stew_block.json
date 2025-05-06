@@ -3,15 +3,28 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "extradelight:serving_pot"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "extradelight:lamb_stew_block",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "servings": "0"
+                  }
+                }
+              ],
+              "name": "extradelight:serving_pot"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:air"
+            }
+          ]
         }
       ],
       "rolls": 1.0

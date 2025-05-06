@@ -721,11 +721,31 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:kimchi_fried_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:kimchi_fried_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:kiwiburger": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:kiwiburger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:kongjang": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:kongjang"
           }
         ]
       },
@@ -826,6 +846,16 @@
         "items": [
           {
             "items": "extradelight:miso_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:morkovcha": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:morkovcha"
           }
         ]
       },
@@ -1220,6 +1250,16 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:zupa_ogorkowa": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:zupa_ogorkowa"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -1318,6 +1358,9 @@
       "extradelight:meat_pie_slice"
     ],
     [
+      "extradelight:kimchi_fried_rice"
+    ],
+    [
       "extradelight:onion_soup"
     ],
     [
@@ -1328,6 +1371,9 @@
     ],
     [
       "extradelight:egg_in_the_basket"
+    ],
+    [
+      "extradelight:zupa_ogorkowa"
     ],
     [
       "extradelight:fish_stew_rice"
@@ -1412,6 +1458,9 @@
     ],
     [
       "extradelight:meatloaf"
+    ],
+    [
+      "extradelight:morkovcha"
     ],
     [
       "extradelight:omelette"
@@ -1502,6 +1551,9 @@
     ],
     [
       "extradelight:riceball_filled"
+    ],
+    [
+      "extradelight:kongjang"
     ],
     [
       "extradelight:meatloaf_sandwich"
