@@ -25,7 +25,6 @@ import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.util.EDItemGenerator;
-import com.lance5057.extradelight.workstations.vat.VatBlock;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe.StageIngredient;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -34,7 +33,6 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -335,6 +333,7 @@ public class Fermentation {
 		BlockModels.recipeFeastBlock(bsp, PICKLED_FISH_BLOCK.get(), "pickled_fish_jar");
 		BlockModels.recipeFeastBlock(bsp, PICKLED_SAUSAGE_BLOCK.get(), "pickled_sausage_jar");
 		BlockModels.recipeFeastBlock(bsp, PICKLED_GINGER_BLOCK.get(), "pickled_ginger_jar");
+		BlockModels.recipeFeastBlock(bsp, SOY_GLAZED_SALMON_BLOCK.get(), "soy_glazed_salmon");
 
 		BlockModels.cropCrossBlock(bsp, CUCUMBER_CROP.get(), "cucumber", CucumberCrop.AGE);
 		bsp.simpleBlock(WILD_CUCUMBER.get(), new ConfiguredModel(bsp.models()
@@ -447,6 +446,17 @@ public class Fermentation {
 		ItemModels.forItem(tmp, MISO_SOUP, "miso_soup");
 		ItemModels.forItem(tmp, YEAST_SPREAD, "yeast_extract");
 		ItemModels.forItem(tmp, CHEESEBURGER_PICKLE, "pickle_bacon_cheeseburger");
+		ItemModels.forItem(tmp, MOO_NAEM_ITEM, "naem_moo");
+		ItemModels.forItem(tmp, COOKED_SOYBEANS_ITEM, "cooked_soybeans");
+		ItemModels.forItem(tmp, MASHED_SOYBEANS_ITEM, "mashed_soybeans");
+		ItemModels.forItem(tmp, KIWIBURGER, "kiwiburger");
+		ItemModels.forItem(tmp, STEAK_PICKLED_ONION_PIE_ITEM, "steak_and_pickled_onion_pie");
+		ItemModels.forItem(tmp, STEAK_PICKLED_ONION_PIE_SLICE, "steak_and_pickled_onion_pie_slice");
+		tmp.getBuilder(SOY_GLAZED_SALMON_BLOCK_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		ItemModels.forItem(tmp, SOY_GLAZED_SALMON_ITEM, "soy_glazed_salmon");
+		ItemModels.forItem(tmp, GAZPACHO, "gazpacho");
 	}
 
 	final int dayTick = 24000;
