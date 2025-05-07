@@ -440,6 +440,13 @@ public class Fermentation {
 
 		ItemModels.forItem(tmp, SALT, "salt");
 		ItemModels.forItem(tmp, SAUERKRAUT_ITEM, "sauerkraut");
+		ItemModels.forItem(tmp, KIMCHI_ITEM, "kimchi");
+		ItemModels.forItem(tmp, SOY_MILK, "soy_milk_bottle");
+		ItemModels.forItem(tmp, SLICED_BEETROOT_ITEM, "sliced_beetroot");
+		ItemModels.forItem(tmp, EDAMAME, "edamame");
+		ItemModels.forItem(tmp, MISO_SOUP, "miso_soup");
+		ItemModels.forItem(tmp, YEAST_SPREAD, "yeast_extract");
+		ItemModels.forItem(tmp, CHEESEBURGER_PICKLE, "pickle_bacon_cheeseburger");
 	}
 
 	final int dayTick = 24000;
@@ -619,14 +626,14 @@ public class Fermentation {
 
 		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
-						Ingredient.of(ExtraDelightTags.CHILI_POWDER), Ingredient.of(SALT),
-						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ExtraDelightTags.VINEGAR) },
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
+						Ingredient.of(SALT), Ingredient.of(ExtraDelightTags.COOKING_OIL),
+						Ingredient.of(ExtraDelightTags.VINEGAR) },
 				new SizedFluidIngredient[] {}, consumer, "morkovcha_mixing_bottles");
 		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
-						Ingredient.of(ExtraDelightTags.CHILI_POWDER), Ingredient.of(SALT), },
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
+						Ingredient.of(SALT), },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "morkovcha_mixing_fluids");
@@ -726,8 +733,8 @@ public class Fermentation {
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER),
-						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO),
-						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(PICKLE_JUICE) },
+						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(PICKLE_JUICE) },
 				"zupa_ogorkowa", consumer);
 
 		Recipes.pot(KIMCHI_FRIED_RICE.get(), 1, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
