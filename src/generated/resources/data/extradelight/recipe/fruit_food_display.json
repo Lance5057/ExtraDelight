@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "S": {
-      "item": "minecraft:oak_slab"
+      "item": "extradelight:fruit_slab"
     },
     "s": {
       "item": "minecraft:stick"
@@ -16,6 +16,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "extradelight:food_display"
+    "id": "extradelight:fruit_food_display"
   }
 }

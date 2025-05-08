@@ -156,7 +156,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);
 	public static final DeferredBlock<DryingRackBlock> DRYING_RACK = BLOCKS.register("drying_rack",
 			DryingRackBlock::new);
-	public static final DeferredBlock<Block> FOOD_DISPLAY = BLOCKS.register("food_display", FoodDisplayBlock::new);
+	
 	public static final DeferredBlock<Block> DOUGH_SHAPING = BLOCKS.register("dough_shaping", DoughShapingBlock::new);
 	public static final DeferredBlock<Block> MIXING_BOWL = BLOCKS.register("mixing_bowl", MixingBowlBlock::new);
 

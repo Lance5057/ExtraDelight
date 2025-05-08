@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "birch_food_display": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:birch_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:birch_food_display"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "birch_food_display"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:birch_food_display"
+    ]
+  }
+}

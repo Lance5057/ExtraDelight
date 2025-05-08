@@ -42,7 +42,8 @@ public class ExtraDelightBlockEntities {
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FoodDisplayEntity>> FOOD_DISPLAY = TILES
 			.register("food_display", () -> BlockEntityType.Builder
-					.of(FoodDisplayEntity::new, ExtraDelightBlocks.FOOD_DISPLAY.get()).build(null));
+					.of(FoodDisplayEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.FOOD_DISPLAY))
+					.build(null));
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KnifeBlockEntity>> KNIFE_BLOCK = TILES
 			.register("knife_block", () -> BlockEntityType.Builder

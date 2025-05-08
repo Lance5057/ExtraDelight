@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:jungle_food_display"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "jungle_food_display": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:jungle_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "jungle_food_display"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:jungle_food_display"
+    ]
+  }
+}

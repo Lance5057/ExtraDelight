@@ -140,8 +140,8 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> DRYING_RACK = ITEMS.register("drying_rack_item",
 			() -> new BlockItem(ExtraDelightBlocks.DRYING_RACK.get(), new Item.Properties()));
 
-	public static final DeferredItem<Item> FOOD_DISPLAY = ITEMS.register("food_display",
-			() -> new BlockItem(ExtraDelightBlocks.FOOD_DISPLAY.get(), new Item.Properties()));
+//	public static final DeferredItem<Item> FOOD_DISPLAY = ITEMS.register("food_display",
+//			() -> new BlockItem(ExtraDelightBlocks.FOOD_DISPLAY.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> DOUGH_SHAPING = ITEMS.register("dough_shaping",
 			() -> new BlockItem(ExtraDelightBlocks.DOUGH_SHAPING.get(), new Item.Properties()));

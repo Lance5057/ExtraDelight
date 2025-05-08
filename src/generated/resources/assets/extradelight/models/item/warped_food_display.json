@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/food_display",
+  "textures": {
+    "0": "minecraft:block/warped_planks"
+  }
+}

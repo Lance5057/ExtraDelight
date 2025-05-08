@@ -457,6 +457,9 @@ public class Fermentation {
 				.customLoader(BlockStateItemGeometryLoader::builder);
 		ItemModels.forItem(tmp, SOY_GLAZED_SALMON_ITEM, "soy_glazed_salmon");
 		ItemModels.forItem(tmp, GAZPACHO, "gazpacho");
+		ItemModels.forItem(tmp, BEEF_BULGOGI, "beef_bulgogi");
+		ItemModels.forItem(tmp, HONEY_CHILI_CHICKEN, "honey_chili_chicken");
+		ItemModels.forItem(tmp, CARAMEL_CHICKEN, "caramel_chicken");
 	}
 
 	final int dayTick = 24000;

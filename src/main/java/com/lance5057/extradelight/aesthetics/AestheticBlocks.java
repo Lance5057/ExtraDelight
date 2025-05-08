@@ -16,6 +16,7 @@ import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlock;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlock;
 import com.lance5057.extradelight.data.Recipes;
 import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
+import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
 import com.lance5057.extradelight.displays.knife.KnifeBlock;
 import com.lance5057.extradelight.displays.spice.SpiceRackBlock;
 import com.lance5057.extradelight.displays.wreath.WreathBlock;
@@ -78,6 +79,7 @@ public class AestheticBlocks {
 	public static final List<DeferredBlock<Block>> KNIFE_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 	public static final List<DeferredBlock<Block>> CABINETS = new ArrayList<DeferredBlock<Block>>();
 	public static final List<DeferredBlock<Block>> COUNTER_CABINETS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> FOOD_DISPLAY = new ArrayList<DeferredBlock<Block>>();
 
 	public static final List<DeferredBlock<Block>> WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 	public static final List<DeferredBlock<Block>> MOLDED_WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
@@ -90,6 +92,7 @@ public class AestheticBlocks {
 	public static final List<DeferredItem<Item>> KNIFE_BLOCK_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> CABINET_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> COUNTER_CABINET_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> FOOD_DISPLAY_ITEMS = new ArrayList<DeferredItem<Item>>();
 
 	public static final List<DeferredItem<Item>> WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> MOLDED_WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
@@ -145,8 +148,8 @@ public class AestheticBlocks {
 
 				blocks.add(b);
 				items.add(t);
-				//tag(Tags.Blocks.DYED_BLACK).add(b);
-				//tag(Tags.Items.DYED_BLACK).add(t);
+				// tag(Tags.Blocks.DYED_BLACK).add(b);
+				// tag(Tags.Items.DYED_BLACK).add(t);
 			}
 		}
 	}
@@ -172,8 +175,8 @@ public class AestheticBlocks {
 
 			blocks.add(b);
 			items.add(t);
-			//tag(Tags.Blocks.DYED_BLACK).add(b);
-			//tag(Tags.Items.DYED_BLACK).add(t);
+			// tag(Tags.Blocks.DYED_BLACK).add(b);
+			// tag(Tags.Items.DYED_BLACK).add(t);
 		}
 	}
 
@@ -219,6 +222,7 @@ public class AestheticBlocks {
 		registerAllWood("half_cabinet", HalfCabinetBlock::new, CABINETS, CABINET_ITEMS);
 		registerAllWood("sink", SinkCabinetBlock::new, SINKS, SINK_ITEMS);
 		registerAllWood("counter_cabinet", CounterCabinetBlock::new, COUNTER_CABINETS, COUNTER_CABINET_ITEMS);
+		registerAllWood("food_display", FoodDisplayBlock::new, FOOD_DISPLAY, FOOD_DISPLAY_ITEMS);
 
 		registerAllColors("wallpaper",
 				() -> new Block(Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.GRASS)),
@@ -272,6 +276,13 @@ public class AestheticBlocks {
 					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.renderType("cutout"));
+
+			bsp.horizontalBlock(FOOD_DISPLAY.get(i).get(), bsp.models()
+					.withExistingParent(WOOD.values()[i].toString() + "_food_display", bsp.modLoc("block/food_display"))
+					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+					.renderType("cutout"));
+
 			System.out.println(WREATHS);
 			if (WOOD.values()[i].toString() == "crimson")
 				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
@@ -403,6 +414,10 @@ public class AestheticBlocks {
 			tmp.getBuilder(CABINETS.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 					tmp.modLoc("block/" + WOOD.values()[i].toString() + "_half_cabinet")));
 
+			tmp.getBuilder(FOOD_DISPLAY.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/food_display")))
+					.texture("0", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"));
+
 			if (WOOD.values()[i].toString() == "cinnamon")
 				tmp.getBuilder(COUNTER_CABINET_ITEMS.get(i).getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 						tmp.modLoc("block/" + WOOD.values()[i].toString() + "_cabinet")));
@@ -498,6 +513,7 @@ public class AestheticBlocks {
 			lp.add(CABINETS.get(i).get(), w + " Half Cabinet");
 			lp.add(DRIED_CORN_FENCE.get(i).get(), "Dried Corn " + w + " Fence");
 			lp.add(COUNTER_CABINETS.get(i).get(), w + " Cabinet (Countertop)");
+			lp.add(FOOD_DISPLAY.get(i).get(), w + " Food Display");
 			if (WOOD.values()[i].toString() != "fruit" && WOOD.values()[i].toString() != "bamboo") {
 				lp.add(WREATHS.get(i).get(), w + " Wreath");
 			}
@@ -608,7 +624,8 @@ public class AestheticBlocks {
 					.save(consumer);
 
 			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GINGHAM_CARPET_ITEMS.get(dye.ordinal()).get(), 3)
-					.pattern("cc").define('c', GINGHAM_ITEMS.get(i)).unlockedBy(dye + "_gingham_carpet_from_block",
+					.pattern("cc").define('c', GINGHAM_ITEMS.get(i))
+					.unlockedBy(dye + "_gingham_carpet_from_block",
 							InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
 					.save(consumer, dye + "_gingham_carpet_from_block");
 		}
@@ -666,6 +683,11 @@ public class AestheticBlocks {
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, WREATHS.get(name.ordinal()).get()).pattern(" l ")
 				.pattern("l l").pattern(" l ").define('l', leaves)
 				.unlockedBy(name + "_wreath", InventoryChangeTrigger.TriggerInstance.hasItems(leaves)).save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, FOOD_DISPLAY.get(name.ordinal()).get()).pattern(" s ")
+				.pattern(" S ").pattern(" s ").define('s', Items.STICK).define('S', slab)
+				.unlockedBy(name + "_food_display", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
+				.save(consumer);
 	}
 
 	static void woodRecipe(RecipeOutput consumer, Item slab, Item trapdoor, Item fence, WOOD name) {
@@ -699,6 +721,11 @@ public class AestheticBlocks {
 				.unlockedBy(name + "_dried_corn_fence_back",
 						InventoryChangeTrigger.TriggerInstance.hasItems(DRIED_CORN_FENCE.get(name.ordinal()).get()))
 				.save(consumer, Recipes.EDLoc(name + "_dried_corn_fence_back"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, FOOD_DISPLAY.get(name.ordinal()).get()).pattern(" s ")
+				.pattern(" S ").pattern(" s ").define('s', Items.STICK).define('S', slab)
+				.unlockedBy(name + "_food_display", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
+				.save(consumer);
 	}
 
 	static void cabinetRecipes(RecipeOutput consumer) {

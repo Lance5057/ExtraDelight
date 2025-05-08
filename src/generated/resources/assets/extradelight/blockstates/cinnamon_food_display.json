@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "encased=false,facing=east,waterlogged=false": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 90
+    },
+    "encased=false,facing=east,waterlogged=true": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 90
+    },
+    "encased=false,facing=north,waterlogged=false": {
+      "model": "extradelight:block/cinnamon_food_display"
+    },
+    "encased=false,facing=north,waterlogged=true": {
+      "model": "extradelight:block/cinnamon_food_display"
+    },
+    "encased=false,facing=south,waterlogged=false": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 180
+    },
+    "encased=false,facing=south,waterlogged=true": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 180
+    },
+    "encased=false,facing=west,waterlogged=false": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 270
+    },
+    "encased=false,facing=west,waterlogged=true": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 270
+    },
+    "encased=true,facing=east,waterlogged=false": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 90
+    },
+    "encased=true,facing=east,waterlogged=true": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 90
+    },
+    "encased=true,facing=north,waterlogged=false": {
+      "model": "extradelight:block/cinnamon_food_display"
+    },
+    "encased=true,facing=north,waterlogged=true": {
+      "model": "extradelight:block/cinnamon_food_display"
+    },
+    "encased=true,facing=south,waterlogged=false": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 180
+    },
+    "encased=true,facing=south,waterlogged=true": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 180
+    },
+    "encased=true,facing=west,waterlogged=false": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 270
+    },
+    "encased=true,facing=west,waterlogged=true": {
+      "model": "extradelight:block/cinnamon_food_display",
+      "y": 270
+    }
+  }
+}

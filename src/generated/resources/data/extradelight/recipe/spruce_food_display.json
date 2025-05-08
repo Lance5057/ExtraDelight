@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:spruce_slab"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " s ",
+    " S ",
+    " s "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:spruce_food_display"
+  }
+}

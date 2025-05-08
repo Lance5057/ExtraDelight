@@ -1095,10 +1095,11 @@ public class BlockModels extends BlockStateProvider {
 	}
 
 	public static void crateBlock(BlockStateProvider bsp, Block block, String type, String woodType) {
-		bsp.simpleBlock(block, new ConfiguredModel(bsp.models().cube(type + "_crate",
-				bsp.modLoc("block/crates/" + woodType + "_crate_bottom"), bsp.modLoc("block/" + type + "_crate_top"),
-				bsp.modLoc("block/" + type + "_crate_side"), bsp.modLoc("block/" + type + "_crate_side"),
-				bsp.modLoc("block/" + type + "_crate_side"), bsp.modLoc("block/" + type + "_crate_side"))
+		bsp.simpleBlock(block, new ConfiguredModel(bsp.models()
+				.cube(type + "_crate", bsp.modLoc("block/crates/" + woodType + "_crate_bottom"),
+						bsp.modLoc("block/" + type + "_crate_top"), bsp.modLoc("block/" + type + "_crate_side"),
+						bsp.modLoc("block/" + type + "_crate_side"), bsp.modLoc("block/" + type + "_crate_side"),
+						bsp.modLoc("block/" + type + "_crate_side"))
 				.texture("particle", bsp.modLoc("block/" + type + "_crate_top"))));
 	}
 

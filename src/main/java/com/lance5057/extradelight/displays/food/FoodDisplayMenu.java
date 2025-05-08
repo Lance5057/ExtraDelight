@@ -2,7 +2,6 @@ package com.lance5057.extradelight.displays.food;
 
 import java.util.Objects;
 
-import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
 
 import net.minecraft.network.FriendlyByteBuf;
@@ -115,7 +114,11 @@ public class FoodDisplayMenu extends AbstractContainerMenu {
 
 	@Override
 	public boolean stillValid(Player pPlayer) {
-		return stillValid(canInteractWithCallable, pPlayer, ExtraDelightBlocks.FOOD_DISPLAY.get());
+		return canInteractWithCallable.evaluate((p_38916_, p_38917_) -> {
+			return !(p_38916_.getBlockState(p_38917_).getBlock() instanceof FoodDisplayBlock) ? false
+					: pPlayer.distanceToSqr((double) p_38917_.getX() + 0.5D, (double) p_38917_.getY() + 0.5D,
+							(double) p_38917_.getZ() + 0.5D) <= 64.0D;
+		}, true);
 	}
 
 }

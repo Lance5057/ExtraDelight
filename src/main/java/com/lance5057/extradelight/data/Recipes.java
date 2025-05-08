@@ -2232,9 +2232,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.define('t', Items.TERRACOTTA)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FURNACE)).save(consumer);
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FOOD_DISPLAY.get()).pattern(" s ")
-				.pattern(" S ").pattern(" s ").define('s', Items.STICK).define('S', Items.OAK_SLAB)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.OAK_SLAB)).save(consumer);
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FOOD_DISPLAY.get()).pattern(" s ")
+//				.pattern(" S ").pattern(" s ").define('s', Items.STICK).define('S', Items.OAK_SLAB)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.OAK_SLAB)).save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.DOUGH_SHAPING.get())
 				.requires(Items.STICK, 1).requires(ItemTags.PLANKS).requires(Ingredient.of(ExtraDelightTags.FLOUR))

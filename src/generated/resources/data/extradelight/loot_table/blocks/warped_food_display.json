@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:food_display"
+          "name": "extradelight:warped_food_display"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/food_display"
+  "random_sequence": "extradelight:blocks/warped_food_display"
 }

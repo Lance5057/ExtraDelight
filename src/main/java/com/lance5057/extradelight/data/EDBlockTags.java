@@ -45,7 +45,7 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), ExtraDelightBlocks.HAZELNUT_LEAVES.get(),
 				ExtraDelightBlocks.APPLE_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.DRYING_RACK.get(),
-				ExtraDelightBlocks.FOOD_DISPLAY.get(), ExtraDelightBlocks.DOUGH_SHAPING.get(),
+				/* ExtraDelightBlocks.FOOD_DISPLAY.get(), */ ExtraDelightBlocks.DOUGH_SHAPING.get(),
 				ExtraDelightBlocks.MIXING_BOWL.get());
 		AestheticBlocks.STEP_STOOLS.forEach(this::makeMineableWithAxe);
 		AestheticBlocks.SPICE_RACKS.forEach(this::makeMineableWithAxe);

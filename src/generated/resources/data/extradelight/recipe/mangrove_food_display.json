@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:mangrove_slab"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " s ",
+    " S ",
+    " s "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:mangrove_food_display"
+  }
+}
