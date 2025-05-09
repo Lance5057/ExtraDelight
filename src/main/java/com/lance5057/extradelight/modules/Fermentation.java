@@ -462,6 +462,8 @@ public class Fermentation {
 		ItemModels.forItem(tmp, BEEF_BULGOGI, "beef_bulgogi");
 		ItemModels.forItem(tmp, HONEY_CHILI_CHICKEN, "honey_chili_chicken");
 		ItemModels.forItem(tmp, CARAMEL_CHICKEN, "caramel_chicken");
+		ItemModels.forItem(tmp, CUCUMBER_SALAD, "cucumber_salad");
+		ItemModels.forItem(tmp, SHIRAZI_SALAD, "shirazi_salad");
 	}
 
 	final int dayTick = 24000;
