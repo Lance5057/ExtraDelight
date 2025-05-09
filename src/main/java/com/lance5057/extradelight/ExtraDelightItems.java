@@ -160,7 +160,7 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.VAT.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> LID = ITEMS.register("lid",
-			() -> new BlockItem(ExtraDelightBlocks.LID.get(), new Item.Properties()));
+			() -> new HelmetBlockItem(ExtraDelightBlocks.LID.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> EVAPORATOR = ITEMS.register("evaporator",
 			() -> new BlockItem(ExtraDelightBlocks.EVAPORATOR.get(), new Item.Properties()));

@@ -42,6 +42,7 @@ import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
@@ -277,11 +278,33 @@ public class AestheticBlocks {
 					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
 					.renderType("cutout"));
 
-			bsp.horizontalBlock(FOOD_DISPLAY.get(i).get(), bsp.models()
-					.withExistingParent(WOOD.values()[i].toString() + "_food_display", bsp.modLoc("block/food_display"))
-					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
-					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
-					.renderType("cutout"));
+			int f = i;
+			bsp.getVariantBuilder(FOOD_DISPLAY.get(i).get()).forAllStates(state -> {
+				if (state.getValue(FoodDisplayBlock.ENCASED)) {
+					return ConfiguredModel.builder()
+							.modelFile(bsp.models()
+									.withExistingParent(WOOD.values()[f].toString() + "_food_display_encased",
+											bsp.modLoc("block/food_display_encased"))
+									.texture("0", bsp.mcLoc("block/" + WOOD.values()[f].toString() + "_planks"))
+									.texture("particle", bsp.mcLoc("block/" + WOOD.values()[f].toString() + "_planks"))
+									.renderType("cutout"))
+							.rotationY(((int) state.getValue(FoodDisplayBlock.FACING).toYRot() + 180) % 360).build();
+				} else
+					return ConfiguredModel.builder()
+							.modelFile(bsp.models()
+									.withExistingParent(WOOD.values()[f].toString() + "_food_display",
+											bsp.modLoc("block/food_display"))
+									.texture("0", bsp.mcLoc("block/" + WOOD.values()[f].toString() + "_planks"))
+									.texture("particle", bsp.mcLoc("block/" + WOOD.values()[f].toString() + "_planks"))
+									.renderType("cutout"))
+							.rotationY(((int) state.getValue(FoodDisplayBlock.FACING).toYRot() + 180) % 360).build();
+			});
+
+//			bsp.horizontalBlock(FOOD_DISPLAY.get(i).get(), bsp.models()
+//					.withExistingParent(WOOD.values()[i].toString() + "_food_display", bsp.modLoc("block/food_display"))
+//					.texture("0", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+//					.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_planks"))
+//					.renderType("cutout"));
 
 			System.out.println(WREATHS);
 			if (WOOD.values()[i].toString() == "crimson")

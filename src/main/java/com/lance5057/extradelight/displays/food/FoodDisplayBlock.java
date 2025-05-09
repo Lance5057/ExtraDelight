@@ -49,6 +49,10 @@ public class FoodDisplayBlock extends Block implements EntityBlock, SimpleWaterl
 				.setValue(WATERLOGGED, false).setValue(ENCASED, false));
 	}
 
+	public boolean useShapeForLightOcclusion(BlockState pState) {
+		return true;
+	}
+
 	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
 			InteractionHand hand, BlockHitResult result) {

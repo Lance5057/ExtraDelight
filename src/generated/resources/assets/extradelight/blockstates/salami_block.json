@@ -1,62 +1,62 @@
 {
   "variants": {
-    "age=0,facing=east": {
+    "count=0,facing=east": {
       "model": "extradelight:block/ripe_salami_block_1",
       "y": 270
     },
-    "age=0,facing=north": {
+    "count=0,facing=north": {
       "model": "extradelight:block/ripe_salami_block_1",
       "y": 180
     },
-    "age=0,facing=south": {
+    "count=0,facing=south": {
       "model": "extradelight:block/ripe_salami_block_1"
     },
-    "age=0,facing=west": {
+    "count=0,facing=west": {
       "model": "extradelight:block/ripe_salami_block_1",
       "y": 90
     },
-    "age=1,facing=east": {
+    "count=1,facing=east": {
       "model": "extradelight:block/ripe_salami_block_2",
       "y": 270
     },
-    "age=1,facing=north": {
+    "count=1,facing=north": {
       "model": "extradelight:block/ripe_salami_block_2",
       "y": 180
     },
-    "age=1,facing=south": {
+    "count=1,facing=south": {
       "model": "extradelight:block/ripe_salami_block_2"
     },
-    "age=1,facing=west": {
+    "count=1,facing=west": {
       "model": "extradelight:block/ripe_salami_block_2",
       "y": 90
     },
-    "age=2,facing=east": {
+    "count=2,facing=east": {
       "model": "extradelight:block/ripe_salami_block_3",
       "y": 270
     },
-    "age=2,facing=north": {
+    "count=2,facing=north": {
       "model": "extradelight:block/ripe_salami_block_3",
       "y": 180
     },
-    "age=2,facing=south": {
+    "count=2,facing=south": {
       "model": "extradelight:block/ripe_salami_block_3"
     },
-    "age=2,facing=west": {
+    "count=2,facing=west": {
       "model": "extradelight:block/ripe_salami_block_3",
       "y": 90
     },
-    "age=3,facing=east": {
+    "count=3,facing=east": {
       "model": "extradelight:block/ripe_salami_block_4",
       "y": 270
     },
-    "age=3,facing=north": {
+    "count=3,facing=north": {
       "model": "extradelight:block/ripe_salami_block_4",
       "y": 180
     },
-    "age=3,facing=south": {
+    "count=3,facing=south": {
       "model": "extradelight:block/ripe_salami_block_4"
     },
-    "age=3,facing=west": {
+    "count=3,facing=west": {
       "model": "extradelight:block/ripe_salami_block_4",
       "y": 90
     }

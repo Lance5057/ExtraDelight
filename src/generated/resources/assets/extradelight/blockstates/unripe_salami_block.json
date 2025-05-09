@@ -1,62 +1,962 @@
 {
   "variants": {
-    "age=0,facing=east": {
+    "age=0,count=0,facing=east": {
       "model": "extradelight:block/unripe_salami_block_1",
       "y": 270
     },
-    "age=0,facing=north": {
+    "age=0,count=0,facing=north": {
       "model": "extradelight:block/unripe_salami_block_1",
       "y": 180
     },
-    "age=0,facing=south": {
+    "age=0,count=0,facing=south": {
       "model": "extradelight:block/unripe_salami_block_1"
     },
-    "age=0,facing=west": {
+    "age=0,count=0,facing=west": {
       "model": "extradelight:block/unripe_salami_block_1",
       "y": 90
     },
-    "age=1,facing=east": {
+    "age=0,count=1,facing=east": {
       "model": "extradelight:block/unripe_salami_block_2",
       "y": 270
     },
-    "age=1,facing=north": {
+    "age=0,count=1,facing=north": {
       "model": "extradelight:block/unripe_salami_block_2",
       "y": 180
     },
-    "age=1,facing=south": {
+    "age=0,count=1,facing=south": {
       "model": "extradelight:block/unripe_salami_block_2"
     },
-    "age=1,facing=west": {
+    "age=0,count=1,facing=west": {
       "model": "extradelight:block/unripe_salami_block_2",
       "y": 90
     },
-    "age=2,facing=east": {
+    "age=0,count=2,facing=east": {
       "model": "extradelight:block/unripe_salami_block_3",
       "y": 270
     },
-    "age=2,facing=north": {
+    "age=0,count=2,facing=north": {
       "model": "extradelight:block/unripe_salami_block_3",
       "y": 180
     },
-    "age=2,facing=south": {
+    "age=0,count=2,facing=south": {
       "model": "extradelight:block/unripe_salami_block_3"
     },
-    "age=2,facing=west": {
+    "age=0,count=2,facing=west": {
       "model": "extradelight:block/unripe_salami_block_3",
       "y": 90
     },
-    "age=3,facing=east": {
+    "age=0,count=3,facing=east": {
       "model": "extradelight:block/unripe_salami_block_4",
       "y": 270
     },
-    "age=3,facing=north": {
+    "age=0,count=3,facing=north": {
       "model": "extradelight:block/unripe_salami_block_4",
       "y": 180
     },
-    "age=3,facing=south": {
+    "age=0,count=3,facing=south": {
       "model": "extradelight:block/unripe_salami_block_4"
     },
-    "age=3,facing=west": {
+    "age=0,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=1,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=1,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=1,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=1,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=1,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=1,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=1,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=1,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=1,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=1,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=1,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=1,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=1,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=1,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=1,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=1,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=10,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=10,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=10,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=10,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=10,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=10,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=10,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=10,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=10,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=10,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=10,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=10,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=10,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=10,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=10,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=10,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=11,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=11,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=11,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=11,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=11,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=11,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=11,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=11,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=11,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=11,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=11,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=11,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=11,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=11,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=11,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=11,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=12,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=12,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=12,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=12,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=12,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=12,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=12,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=12,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=12,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=12,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=12,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=12,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=12,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=12,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=12,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=12,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=13,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=13,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=13,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=13,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=13,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=13,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=13,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=13,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=13,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=13,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=13,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=13,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=13,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=13,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=13,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=13,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=14,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=14,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=14,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=14,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=14,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=14,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=14,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=14,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=14,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=14,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=14,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=14,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=14,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=14,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=14,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=14,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=15,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=15,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=15,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=15,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=15,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=15,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=15,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=15,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=15,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=15,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=15,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=15,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=15,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=15,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=15,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=15,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=2,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=2,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=2,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=2,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=2,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=2,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=2,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=2,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=2,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=2,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=2,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=2,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=2,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=2,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=2,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=2,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=3,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=3,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=3,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=3,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=3,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=3,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=3,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=3,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=3,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=3,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=3,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=3,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=3,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=3,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=3,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=3,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=4,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=4,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=4,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=4,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=4,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=4,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=4,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=4,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=4,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=4,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=4,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=4,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=4,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=4,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=4,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=4,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=5,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=5,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=5,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=5,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=5,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=5,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=5,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=5,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=5,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=5,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=5,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=5,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=5,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=5,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=5,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=5,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=6,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=6,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=6,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=6,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=6,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=6,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=6,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=6,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=6,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=6,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=6,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=6,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=6,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=6,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=6,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=6,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=7,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=7,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=7,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=7,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=7,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=7,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=7,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=7,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=7,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=7,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=7,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=7,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=7,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=7,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=7,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=7,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=8,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=8,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=8,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=8,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=8,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=8,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=8,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=8,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=8,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=8,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=8,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=8,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=8,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=8,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=8,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=8,count=3,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 90
+    },
+    "age=9,count=0,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 270
+    },
+    "age=9,count=0,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 180
+    },
+    "age=9,count=0,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_1"
+    },
+    "age=9,count=0,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_1",
+      "y": 90
+    },
+    "age=9,count=1,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 270
+    },
+    "age=9,count=1,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 180
+    },
+    "age=9,count=1,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_2"
+    },
+    "age=9,count=1,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_2",
+      "y": 90
+    },
+    "age=9,count=2,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 270
+    },
+    "age=9,count=2,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 180
+    },
+    "age=9,count=2,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_3"
+    },
+    "age=9,count=2,facing=west": {
+      "model": "extradelight:block/unripe_salami_block_3",
+      "y": 90
+    },
+    "age=9,count=3,facing=east": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 270
+    },
+    "age=9,count=3,facing=north": {
+      "model": "extradelight:block/unripe_salami_block_4",
+      "y": 180
+    },
+    "age=9,count=3,facing=south": {
+      "model": "extradelight:block/unripe_salami_block_4"
+    },
+    "age=9,count=3,facing=west": {
       "model": "extradelight:block/unripe_salami_block_4",
       "y": 90
     }

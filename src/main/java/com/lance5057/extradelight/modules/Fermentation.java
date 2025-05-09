@@ -6,7 +6,8 @@ import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
-import com.lance5057.extradelight.blocks.SalamiBlock;
+import com.lance5057.extradelight.blocks.RipeSalamiBlock;
+import com.lance5057.extradelight.blocks.UnripeSalamiBlock;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
@@ -225,13 +226,14 @@ public class Fermentation {
 			() -> new Item(new Item.Properties()));
 
 	public static final DeferredBlock<Block> UNRIPE_SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS
-			.register("unripe_salami_block", () -> new SalamiBlock(
+			.register("unripe_salami_block", () -> new UnripeSalamiBlock(
 					Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_PINK)));
 	public static final DeferredItem<Item> UNRIPE_SALAMI_ITEM = ExtraDelightItems.ITEMS.register("unripe_salami_item",
 			() -> new BlockItem(UNRIPE_SALAMI_BLOCK.get(), new Item.Properties()));
 
 	public static final DeferredBlock<Block> SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS.register("salami_block",
-			() -> new SalamiBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_RED)));
+			() -> new RipeSalamiBlock(
+					Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_RED)));
 	public static final DeferredItem<Item> SALAMI_ITEM = ExtraDelightItems.ITEMS.register("salami_item",
 			() -> new BlockItem(SALAMI_BLOCK.get(), new Item.Properties()));
 
@@ -354,7 +356,7 @@ public class Fermentation {
 //						.renderType("cutout"));
 
 		bsp.getVariantBuilder(UNRIPE_SALAMI_BLOCK.get()).forAllStates(state -> {
-			int count = state.getValue(SalamiBlock.COUNT);
+			int count = state.getValue(UnripeSalamiBlock.COUNT);
 
 			String suffix = "_" + (count + 1);
 
@@ -363,11 +365,11 @@ public class Fermentation {
 							.withExistingParent("block/unripe_salami_block" + suffix.toLowerCase(),
 									bsp.modLoc("block/unripe_salami" + suffix.toLowerCase()))
 							.renderType("cutout"))
-					.rotationY(((int) state.getValue(SalamiBlock.FACING).toYRot()) % 360).build();
+					.rotationY(((int) state.getValue(UnripeSalamiBlock.FACING).toYRot()) % 360).build();
 		});
 
 		bsp.getVariantBuilder(SALAMI_BLOCK.get()).forAllStates(state -> {
-			int count = state.getValue(SalamiBlock.COUNT);
+			int count = state.getValue(RipeSalamiBlock.COUNT);
 
 			String suffix = "_" + (count + 1);
 
@@ -376,7 +378,7 @@ public class Fermentation {
 							.withExistingParent("block/ripe_salami_block" + suffix.toLowerCase(),
 									bsp.modLoc("block/ripe_salami" + suffix.toLowerCase()))
 							.renderType("cutout"))
-					.rotationY(((int) state.getValue(SalamiBlock.FACING).toYRot()) % 360).build();
+					.rotationY(((int) state.getValue(RipeSalamiBlock.FACING).toYRot()) % 360).build();
 		});
 	}
 
