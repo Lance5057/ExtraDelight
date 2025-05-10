@@ -111,6 +111,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:cheesymite_scroll_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheesymite_scroll_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:chicken_stew_feast": {
       "conditions": {
         "items": [
@@ -824,6 +834,9 @@
     ],
     [
       "extradelight:fudge_block"
+    ],
+    [
+      "extradelight:cheesymite_scroll_block_item"
     ],
     [
       "extradelight:jelly_cyan_block_item"

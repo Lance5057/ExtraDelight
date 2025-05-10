@@ -48,8 +48,9 @@ public class JarDisplayRenderer implements BlockEntityRenderer<JarDisplayBlockEn
 			ItemStack item = itemInteractionHandler.getStackInSlot(i);
 
 			if (!item.isEmpty()) {
-				BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 				pPoseStack.pushPose();
+				BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0).applyTransform(ItemDisplayContext.NONE, pPoseStack, false);
+				
 				pPoseStack.translate(0.5f, 0.5f, 0.5f);
 				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, (float) Math.toRadians(-dir.toYRot()), 0));
 				pPoseStack.translate(xoff + 0.25, yoff - 0.25, zoff + 0.25);

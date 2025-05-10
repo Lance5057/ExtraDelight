@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "extradelight:item/pickle_bacon_cheeseburger"
+    "layer0": "extradelight:item/cheeseburger_pickle_popper"
   }
 }

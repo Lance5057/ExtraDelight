@@ -681,6 +681,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:hot_wings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:hot_wings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:hotdish": {
       "conditions": {
         "items": [
@@ -1431,6 +1441,9 @@
     ],
     [
       "extradelight:jalapeno_stuffed_potato"
+    ],
+    [
+      "extradelight:hot_wings"
     ],
     [
       "extradelight:cream_corn"

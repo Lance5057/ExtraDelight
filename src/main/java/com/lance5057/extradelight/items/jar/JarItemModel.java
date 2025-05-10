@@ -9,7 +9,6 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.util.RenderUtil;
-import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
@@ -65,7 +64,7 @@ public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 					|| displayContext == ItemDisplayContext.FIRST_PERSON_RIGHT_HAND) {
 				ps.translate(0, 0.35, -0.17f);
 			} else {
-				ps.translate(0, 0.15, -0.17f);
+				ps.translate(0, 0.25f, 0f);
 
 			}
 
@@ -84,7 +83,7 @@ public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 				IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid);
 
 //				
-				RenderUtil.buildCubeAll(new Vector3f(5.5f / 16f, 0.5f / 16f, 5.5f / 16f),
+				RenderUtil.buildCubeAll(new Vector3f(5.75f / 16f, 0.5f / 16f, 5.75f / 16f),
 						new Vector3f(5f / 16f, ((float) f.getAmount() / 1000f) * (6f / 16f), 5f / 16f), vertexConsumer,
 						mat, matrix3f, fluidTypeExtensions.getTintColor(fluidStack),
 						RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), packedLight, overlay, ps);

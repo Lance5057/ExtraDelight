@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 
 import com.lance5057.extradelight.recipe.DynamicJamRecipe;
 import com.lance5057.extradelight.recipe.DynamicSandwichRecipe;
+import com.lance5057.extradelight.recipe.DynamicToastRecipe;
 import com.lance5057.extradelight.recipe.FeastRecipe;
 import com.lance5057.extradelight.recipe.ShapedWithJarRecipe;
 import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
@@ -51,7 +52,9 @@ public class ExtraDelightRecipes {
 	public static final Supplier<RecipeType<DynamicJamRecipe>> DYNAMIC_JAM = RECIPE_TYPES.register("dynamic_jam",
 			() -> registerRecipeType("dynamic_jam"));
 	public static final Supplier<RecipeType<DynamicSandwichRecipe>> DYNAMIC_SANDWICH = RECIPE_TYPES
-			.register("dynamic_sandwich", () -> registerRecipeType("dynamic_jam"));
+			.register("dynamic_sandwich", () -> registerRecipeType("dynamic_sandwich"));
+	public static final Supplier<RecipeType<DynamicToastRecipe>> DYNAMIC_TOAST = RECIPE_TYPES.register("dynamic_toast",
+			() -> registerRecipeType("dynamic_toast"));
 	public static final Supplier<RecipeType<VatRecipe>> VAT = RECIPE_TYPES.register("vat",
 			() -> registerRecipeType("vat"));
 	public static final Supplier<RecipeType<EvaporatorRecipe>> EVAPORATOR = RECIPE_TYPES.register("evaporator",
@@ -110,6 +113,8 @@ public class ExtraDelightRecipes {
 			.register("dynamic_jam", DynamicJamRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SANDWICH_SERIALIZER = RECIPE_SERIALIZERS
 			.register("dynamic_sandwich", DynamicSandwichRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> DYNAMIC_TOAST_SERIALIZER = RECIPE_SERIALIZERS
+			.register("dynamic_toast", DynamicToastRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> VAT_SERIALIZER = RECIPE_SERIALIZERS.register("vat",
 			VatRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> EVAPORATOR_SERIALIZER = RECIPE_SERIALIZERS.register("evaporator",

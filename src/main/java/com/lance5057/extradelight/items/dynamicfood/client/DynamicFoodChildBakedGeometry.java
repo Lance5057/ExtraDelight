@@ -111,4 +111,12 @@ public class DynamicFoodChildBakedGeometry implements BakedModel {
 		return new ItemOverrides() {
 		};
 	}
+
+	@Override
+	public BakedModel applyTransform(ItemDisplayContext transformType, PoseStack poseStack,
+			boolean applyLeftHandTransform) {
+		childrenModels.get(0).getTransforms().getTransform(transformType).apply(applyLeftHandTransform, poseStack);
+//		this.getTransforms().getTransform(transformType).apply(applyLeftHandTransform, poseStack);
+		return this;
+	}
 }

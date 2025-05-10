@@ -107,7 +107,11 @@ public class UnripeSalamiBlock extends Block {
 				level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockstate));
 			}
 		} else
-			level.setBlock(pos, Fermentation.SALAMI_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+			level.setBlock(pos,
+					Fermentation.SALAMI_BLOCK.get().defaultBlockState()
+							.setValue(RipeSalamiBlock.COUNT, state.getValue(COUNT))
+							.setValue(RipeSalamiBlock.FACING, state.getValue(FACING)),
+					Block.UPDATE_ALL);
 	}
 
 	@Override

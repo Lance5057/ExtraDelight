@@ -1318,7 +1318,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.LID.get(), "Lid");
 		this.add(ExtraDelightItems.EVAPORATOR.get(), "Evaporator");
 
-//		this.add(ExtraDelightItems.DYNAMIC_TEST2.get(), "Sandwich");
+		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "Toast");
 
 		Fermentation.EngLoc(this);
 		AestheticBlocks.EngLoc(this);

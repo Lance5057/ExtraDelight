@@ -1,0 +1,19 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "extradelight:butter"
+    },
+    "t": {
+      "item": "extradelight:toast"
+    }
+  },
+  "pattern": [
+    "ts"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:dynamic_toast"
+  }
+}

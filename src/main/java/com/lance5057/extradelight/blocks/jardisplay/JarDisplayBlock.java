@@ -1,31 +1,19 @@
 package com.lance5057.extradelight.blocks.jardisplay;
 
-import java.util.List;
-import java.util.Optional;
-
-import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.recipe.FeastRecipe;
-import com.lance5057.extradelight.recipe.SimpleRecipeWrapper;
+import com.lance5057.extradelight.blocks.IDisplayInteractable;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.CollisionUtil;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -138,7 +126,7 @@ public class JarDisplayBlock extends Block implements EntityBlock {
 				BlockEntity be = level.getBlockEntity(pos);
 				if (be != null && be instanceof JarDisplayBlockEntity jdbe) {
 					if (!player.isCrouching()) {
-						if (stack.getItem() instanceof BlockItem bi && bi.getBlock() instanceof JarSingularBlock b) {
+						if (stack.getItem() instanceof BlockItem bi && bi instanceof IDisplayInteractable) {
 							BlockEntityUtils.Inventory.insertItem(jdbe.getItems(), stack.copy(),
 									JarDisplayBlockEntity.NUM_SLOTS);
 						} else {
@@ -219,49 +207,14 @@ public class JarDisplayBlock extends Block implements EntityBlock {
 
 	protected ItemInteractionResult takeServing(ItemStack stack, Level level, ItemStack individual, Player player,
 			InteractionHand hand, BlockState state, BlockPos pos) {
-		BlockItemStateProperties itemState = individual.get(DataComponents.BLOCK_STATE);
 
-		int servings = itemState.get(JarSingularBlock.SERVINGS);
-
-		if (servings == 0) {
-			level.playSound(null, pos, SoundEvents.WOOD_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
-//				level.destroyBlock(pos, true);
-			return ItemInteractionResult.SUCCESS;
+		if (stack.getItem() instanceof BlockItem bi) {
+			if (bi instanceof IDisplayInteractable b) {
+				return b.itemInteract(stack, individual, state, level, pos, player, hand);
+			}
 		}
 
-		ItemStack heldStack = player.getItemInHand(hand);
-		Optional<RecipeHolder<FeastRecipe>> r = level.getRecipeManager().getRecipeFor(ExtraDelightRecipes.FEAST.get(),
-				new SimpleRecipeWrapper(individual, stack), level);
-
-		if (r.isPresent()) {
-			if (servings > 0) {
-				ItemStack result = r.get().value().getResultItem(player.level().registryAccess()).copy();
-
-				individual.update(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY,
-						s -> s.with(JarSingularBlock.SERVINGS, servings - 1));
-
-				if (!player.getAbilities().instabuild) {
-					if (heldStack.isDamageableItem())
-						heldStack.hurtAndBreak(1, player, null);
-					else
-						heldStack.shrink(1);
-				}
-				if (!player.getInventory().add(result)) {
-					player.drop(result, false);
-				}
-//				if (servings - 1 <= 0) {
-//					List<ItemStack> drops = Block.getDrops(state, (ServerLevel) level, pos, null);
-//					individual.setCount(0);
-//				}
-				level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC.value(), SoundSource.BLOCKS, 1.0F, 1.0F);
-				level.sendBlockUpdated(pos, state, state, Block.UPDATE_ALL);
-
-				return ItemInteractionResult.SUCCESS;
-			}
-		} else
-			player.displayClientMessage(Component.translatable("extradelight.block.recipefeast.use_container"), true);
-
-		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+		return ItemInteractionResult.CONSUME;
 	}
 
 	@Override
@@ -284,31 +237,17 @@ public class JarDisplayBlock extends Block implements EntityBlock {
 		int i = BlockEntityUtils.Inventory.getLastFilledSlot(jdbe.getItems(), JarDisplayBlockEntity.NUM_SLOTS);
 		ItemStackHandler handler = (ItemStackHandler) jdbe.getItems();
 		ItemStack s = jdbe.getItems().getStackInSlot(i);
-		if (s.getItem() instanceof BlockItem bi) {
-			BlockItemStateProperties state = s.get(DataComponents.BLOCK_STATE);
-			if (state != null) {
-				int servings = state.get(JarSingularBlock.SERVINGS);
-				if (servings == 0) {
-					List<ItemStack> drops = Block.getDrops(state.apply(bi.getBlock().defaultBlockState()),
-							(ServerLevel) level, pos, null);
-					drops.forEach(item -> {
-						if (!player.addItem(item))
-							level.addFreshEntity(
-									new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), item.copy()));
-					});
-					handler.setStackInSlot(i, ItemStack.EMPTY);
-				} else {
-					if (!player.addItem(s)) {
-						level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), s.copy()));
-						handler.setStackInSlot(i, ItemStack.EMPTY);
-					}
-				}
-			}
 
-			if (BlockEntityUtils.Inventory.getEmptySlots(jdbe.getItems()) >= 3) {
-				convertToSingular(pos, level, jdbe);
+		if (s.getItem() instanceof BlockItem bi) {
+			if (bi instanceof IDisplayInteractable b) {
+				b.extractItem(level, pos, player, jdbe, handler, s, i);
 			}
 		}
+
+		if (BlockEntityUtils.Inventory.getEmptySlots(jdbe.getItems()) >= 3) {
+			convertToSingular(pos, level, jdbe);
+		}
+
 		level.sendBlockUpdated(pos, jdbe.getBlockState(), jdbe.getBlockState(), Block.UPDATE_ALL);
 	}
 
@@ -318,9 +257,9 @@ public class JarDisplayBlock extends Block implements EntityBlock {
 		if (i != -1) {
 			ItemStack stack = jdbe.getItems().getStackInSlot(i).copy();
 
-			if (stack.getItem() instanceof BlockItem bi) // Gotta check, would be weird if it wasn't
-				level.setBlock(pos, stack.get(DataComponents.BLOCK_STATE).apply(bi.getBlock().defaultBlockState()),
-						Block.UPDATE_ALL);
+			if (stack.getItem() instanceof IDisplayInteractable bi) {
+				bi.convertToSingular(pos, level, jdbe, stack);
+			}
 		}
 	}
 

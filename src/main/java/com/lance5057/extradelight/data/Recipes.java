@@ -11,17 +11,15 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.EvaporatorRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.DynamicToastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
-import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
-import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe.StageIngredient;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
@@ -47,7 +45,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForgeMod;
@@ -117,10 +114,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void evaporatorRecipes(RecipeOutput consumer) {
-		
-	}
 
-	
+	}
 
 	private void vatRecipes(RecipeOutput consumer) {
 //		VatRecipeBuilder.pickle(new ItemStack(Items.DIAMOND), new ItemStack(Items.DIRT), 100)
@@ -2975,49 +2970,49 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.COPPER_INGOT))
 				.save(consumer, EDLoc("tap"));
 
-		this.bucket("apple_cider", consumer, ExtraDelightItems.APPLE_CIDER_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("apple_cider", consumer, ExtraDelightItems.APPLE_CIDER_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ModItems.APPLE_CIDER.get());
-		this.bucket("bbq", consumer, ExtraDelightItems.BBQ_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("bbq", consumer, ExtraDelightItems.BBQ_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.BBQ_SAUCE.get());
-		this.bucket("broth", consumer, ExtraDelightItems.BROTH_FLUID_BUCKET.get(), Items.BOWL,
+		Recipes.bucket("broth", consumer, ExtraDelightItems.BROTH_FLUID_BUCKET.get(), Items.BOWL,
 				ModItems.BONE_BROTH.get());
-		this.bucket("cactus_juice", consumer, ExtraDelightItems.CACTUS_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("cactus_juice", consumer, ExtraDelightItems.CACTUS_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.CACTUS_JUICE.get());
-		this.bucket("caramel_sauce", consumer, ExtraDelightItems.CARAMEL_SAUCE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
-				ExtraDelightItems.CARAMEL_SAUCE.get());
-		this.bucket("egg_mix", consumer, ExtraDelightItems.EGG_MIX_FLUID_BUCKET.get(), Items.BOWL,
+		Recipes.bucket("caramel_sauce", consumer, ExtraDelightItems.CARAMEL_SAUCE_FLUID_BUCKET.get(),
+				Items.GLASS_BOTTLE, ExtraDelightItems.CARAMEL_SAUCE.get());
+		Recipes.bucket("egg_mix", consumer, ExtraDelightItems.EGG_MIX_FLUID_BUCKET.get(), Items.BOWL,
 				ExtraDelightItems.EGG_MIX.get());
-		this.bucket("glow_berry_juice", consumer, ExtraDelightItems.GLOW_BERRY_JUICE_FLUID_BUCKET.get(),
+		Recipes.bucket("glow_berry_juice", consumer, ExtraDelightItems.GLOW_BERRY_JUICE_FLUID_BUCKET.get(),
 				Items.GLASS_BOTTLE, ExtraDelightItems.GLOW_BERRY_JUICE.get());
-		this.bucket("glow_berry_jam", consumer, ExtraDelightItems.GLOW_JAM_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("glow_berry_jam", consumer, ExtraDelightItems.GLOW_JAM_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.GLOW_BERRY_JAM.get());
-		this.bucket("golden_jam", consumer, ExtraDelightItems.GOLDEN_JAM_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("golden_jam", consumer, ExtraDelightItems.GOLDEN_JAM_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.GOLDEN_APPLE_JAM.get());
-		this.bucket("gravy", consumer, ExtraDelightItems.GRAVY_FLUID_BUCKET.get(), Items.BOWL,
+		Recipes.bucket("gravy", consumer, ExtraDelightItems.GRAVY_FLUID_BUCKET.get(), Items.BOWL,
 				ExtraDelightItems.GRAVY.get());
-		this.bucket("hot_cocoa", consumer, ExtraDelightItems.HOT_COCOA_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("hot_cocoa", consumer, ExtraDelightItems.HOT_COCOA_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ModItems.HOT_COCOA.get());
-		this.bucket("jam", consumer, ExtraDelightItems.JAM_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("jam", consumer, ExtraDelightItems.JAM_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.JAM.get());
-		this.bucket("ketchup", consumer, ExtraDelightItems.KETCHUP_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("ketchup", consumer, ExtraDelightItems.KETCHUP_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.KETCHUP.get());
-		this.bucket("mayo", consumer, ExtraDelightItems.MAYO_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("mayo", consumer, ExtraDelightItems.MAYO_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.MAYO.get());
-		this.bucket("melon_juice", consumer, ExtraDelightItems.MELON_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("melon_juice", consumer, ExtraDelightItems.MELON_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ModItems.MELON_JUICE.get());
-		this.bucket("milkshake", consumer, ExtraDelightItems.MILKSHAKE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("milkshake", consumer, ExtraDelightItems.MILKSHAKE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.MILKSHAKE.get());
-		this.bucket("oil", consumer, ExtraDelightItems.OIL_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("oil", consumer, ExtraDelightItems.OIL_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.COOKING_OIL.get());
-		this.bucket("sweet_berry_juice", consumer, ExtraDelightItems.SWEET_BERRY_JUICE_FLUID_BUCKET.get(),
+		Recipes.bucket("sweet_berry_juice", consumer, ExtraDelightItems.SWEET_BERRY_JUICE_FLUID_BUCKET.get(),
 				Items.GLASS_BOTTLE, ExtraDelightItems.SWEET_BERRY_JUICE.get());
-		this.bucket("tea", consumer, ExtraDelightItems.TEA_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("tea", consumer, ExtraDelightItems.TEA_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.TEA.get());
-		this.bucket("tomato_juice", consumer, ExtraDelightItems.TOMATO_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("tomato_juice", consumer, ExtraDelightItems.TOMATO_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.TOMATO_JUICE.get());
-		this.bucket("vinegar", consumer, ExtraDelightItems.VINEGAR_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("vinegar", consumer, ExtraDelightItems.VINEGAR_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.VINEGAR.get());
-		this.bucket("whipped_cream", consumer, ExtraDelightItems.WHIPPED_CREAM_FLUID_BUCKET.get(), Items.BOWL,
+		Recipes.bucket("whipped_cream", consumer, ExtraDelightItems.WHIPPED_CREAM_FLUID_BUCKET.get(), Items.BOWL,
 				ExtraDelightItems.WHIPPED_CREAM.get());
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.KEG.get(), 1).requires(Items.GLASS, 1)
@@ -3553,24 +3548,25 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLASS))
 				.save(consumer, EDLoc("jar"));
 
-		this.bucket("cocoa_butter", consumer, ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("cocoa_butter", consumer, ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.COCOA_BUTTER_BOTTLE);
-		this.bucket("white_chocolate", consumer, ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET.get(),
+		Recipes.bucket("white_chocolate", consumer, ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET.get(),
 				Items.GLASS_BOTTLE, ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE);
-		this.bucket("blood_chocolate", consumer, ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET.get(),
+		Recipes.bucket("blood_chocolate", consumer, ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET.get(),
 				Items.GLASS_BOTTLE, ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE);
-		this.bucket("milk_chocolate", consumer, ExtraDelightItems.MILK_CHOCOLATE_SYRUP_FLUID_BUCKET.get(),
+		Recipes.bucket("milk_chocolate", consumer, ExtraDelightItems.MILK_CHOCOLATE_SYRUP_FLUID_BUCKET.get(),
 				Items.GLASS_BOTTLE, ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE);
-		this.bucket("dark_chocolate", consumer, ExtraDelightItems.DARK_CHOCOLATE_SYRUP_FLUID_BUCKET.get(),
+		Recipes.bucket("dark_chocolate", consumer, ExtraDelightItems.DARK_CHOCOLATE_SYRUP_FLUID_BUCKET.get(),
 				Items.GLASS_BOTTLE, ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE);
-		this.bucket("coffee", consumer, ExtraDelightItems.COFFEE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("coffee", consumer, ExtraDelightItems.COFFEE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.COFFEE);
-		this.bucket("nut_butter", consumer, ExtraDelightItems.NUT_BUTTER_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+		Recipes.bucket("nut_butter", consumer, ExtraDelightItems.NUT_BUTTER_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.PEANUT_BUTTER_BOTTLE);
-		this.bucket("marshmallow_fluff", consumer, ExtraDelightItems.MARSHMALLOW_FLUFF_FLUID_BUCKET.get(),
+		Recipes.bucket("marshmallow_fluff", consumer, ExtraDelightItems.MARSHMALLOW_FLUFF_FLUID_BUCKET.get(),
 				Items.GLASS_BOTTLE, ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE);
-		this.bucket("cocoa_nut_butter_spread", consumer, ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET.get(),
-				Items.GLASS_BOTTLE, ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE);
+		Recipes.bucket("cocoa_nut_butter_spread", consumer,
+				ExtraDelightItems.COCOA_NUT_BUTTER_SPREAD_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+				ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE);
 
 		bundleItem9(Ingredient.of(ExtraDelightTags.MARSHMALLOW), ExtraDelightItems.MARSHMALLOW_BLOCK.get(),
 				ExtraDelightItems.MARSHMALLOW.get(), consumer, "marshmallow");
@@ -3777,13 +3773,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		bundleItem9(Ingredient.of(ExtraDelightItems.GARLIC), ExtraDelightItems.GARLIC_CRATE.get(),
 				ExtraDelightItems.GARLIC.get(), consumer, "garlic");
+
+		DynamicToastRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TOAST.toStack()).pattern("ts")
+				.define('t', ExtraDelightItems.TOAST).define('s', ExtraDelightItems.BUTTER)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer, EDLoc("dynamic_toast"));
 	}
 
 	public static void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
 			ItemLike fullItem) {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, fullBucket, 1).requires(fullItem, 4)
-				.requires(Items.BUCKET, 1)
-				.unlockedBy(name, InventoryChangeTrigger.TriggerInstance.hasItems(fullItem))
+				.requires(Items.BUCKET, 1).unlockedBy(name, InventoryChangeTrigger.TriggerInstance.hasItems(fullItem))
 				.save(consumer, EDLoc(name + "_to_bucket"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, fullItem, 4).requires(fullBucket, 1)

@@ -12,15 +12,14 @@ public class ExtraDelightEvents {
 
 	@SubscribeEvent
 	public static void modifyComponents(ModifyDefaultComponentsEvent event) {
-		event.modify(Items.BLUE_ICE, builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(2500)));
-		event.modify(Items.PACKED_ICE, builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(1000)));
+		event.modify(Items.BLUE_ICE,
+				builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(2500)));
+		event.modify(Items.PACKED_ICE,
+				builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(1000)));
 		event.modify(Items.ICE, builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(250)));
 		event.modify(Items.SNOWBALL,
 				builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(100)));
+
 	}
 
-//	@SubscribeEvent
-//	static void registerRegistries(NewRegistryEvent event) {
-//	    event.register(PieceTypes.PIECE_REGISTRY);
-//	}
 }

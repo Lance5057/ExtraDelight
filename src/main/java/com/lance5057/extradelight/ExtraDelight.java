@@ -39,7 +39,7 @@ public class ExtraDelight {
 		modEventBus.addListener(ExtraDelightCapabilities::registerCapabilities);
 		modEventBus.addListener(NetworkHandler::setupPackets);
 		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
-		
+
 		Fermentation f = new Fermentation();
 
 		AestheticBlocks.setup();
@@ -65,6 +65,8 @@ public class ExtraDelight {
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
 
 		ExtraDelightFeatures.FEATURES.register(modEventBus);
+
+		ExtraDelightMobEffects.register(modEventBus);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {

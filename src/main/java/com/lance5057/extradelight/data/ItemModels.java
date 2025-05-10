@@ -439,7 +439,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.PASTA_TOMATO, "pasta_tomato_sauce");
 		forItem(this, ExtraDelightItems.CHICKEN_PARM, "chicken_parm");
 		forItem(this, ExtraDelightItems.CHEESEBURGER, "cheeseburger");
-		forItem(this, ExtraDelightItems.BACON_CHEESEBURGER, "bacon_cheeseburger");
+		forItem(this, ExtraDelightItems.BACON_CHEESEBURGER, "pickle_bacon_cheeseburger");
 
 		forItem(this, ExtraDelightItems.RICEBALL, "riceball");
 		forItem(this, ExtraDelightItems.RICEBALL_FILLED, "riceball_filled");

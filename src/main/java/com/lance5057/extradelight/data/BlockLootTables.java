@@ -583,6 +583,9 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(Fermentation.STEAK_PICKLED_ONION_PIE.get(), noDrop());
 
 		this.add(Fermentation.JAR_DISPLAY_BLOCK.get(), noDrop());
+		this.dropSelf(Fermentation.SALT_BLOCK.get());
+
+		feast(Fermentation.CHEESYMITE_SCROLL_BLOCK.get(), Fermentation.CHEESYMITE_SCROLL_BLOCK_ITEM.get(), Items.BOWL);
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {

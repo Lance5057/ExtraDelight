@@ -17,6 +17,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemContainerContents;
+import net.neoforged.neoforge.client.model.data.ModelData;
+import net.neoforged.neoforge.client.model.renderable.BakedModelRenderable;
+import net.neoforged.neoforge.client.model.renderable.IRenderable;
 
 public class DynamicToast extends Item implements IDynamic {
 	static final ModelResourceLocation base_model = ModelResourceLocation
@@ -40,15 +43,23 @@ public class DynamicToast extends Item implements IDynamic {
 		ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
 		if (comp != null) {
 			{
-				if (comp.getSlots() > 1)
-					i.add(Minecraft.getInstance().getItemRenderer().getModel(comp.getStackInSlot(1), null, null, 0));
-				else
+				if (comp.getSlots() > 1) {
+					ItemStack s = comp.getStackInSlot(1);
+					String str = s.getItem().getDescriptionId();
+					str = str.substring(str.lastIndexOf('.') + 1);
+//					IRenderable<ModelData> m = BakedModelRenderable
+//							.of(ModelResourceLocation.standalone(ExtraDelight.modLoc("extra/dynamics/toast/" + str)))
+//							.withModelDataContext();
+					ResourceLocation rc = ExtraDelight.modLoc("extra/dynamics/toast/" + str);
+					i.add(Minecraft.getInstance().getModelManager().getModel(ModelResourceLocation.standalone(rc)));
+//					i.add(Minecraft.getInstance().getItemRenderer().getModel(comp.getStackInSlot(1), null, null, 0));
+				} else
 					i.add(Minecraft.getInstance().getModelManager().getModel(missing_model));
 			}
 		} else
 			i.add(Minecraft.getInstance().getModelManager().getModel(missing_model));
 
-		i.add(bm);
+//		i.add(bm);
 		return i;
 	}
 

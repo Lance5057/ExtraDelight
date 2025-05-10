@@ -3,6 +3,7 @@ package com.lance5057.extradelight.blocks.jardisplay;
 import javax.annotation.Nonnull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.blocks.IDisplayInteractable;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -35,7 +36,9 @@ public class JarDisplayBlockEntity extends BlockEntity {
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
 				if (stack.getItem() instanceof BlockItem bi) {
-					if (bi.getBlock() instanceof JarSingularBlock)
+					if (bi.getBlock() instanceof IDisplayInteractable)
+						return true;
+					else if (bi instanceof IDisplayInteractable)
 						return true;
 				}
 				return false;
