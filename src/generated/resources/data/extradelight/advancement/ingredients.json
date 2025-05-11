@@ -361,6 +361,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:fish_sauce_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fish_sauce_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:flour": {
       "conditions": {
         "items": [
@@ -711,6 +721,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:hot_sauce_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:hot_sauce_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:jam": {
       "conditions": {
         "items": [
@@ -816,6 +836,16 @@
         "items": [
           {
             "items": "extradelight:mint_jelly"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:miso_paste_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:miso_paste_item"
           }
         ]
       },
@@ -1081,11 +1111,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:soy_glazed_salmon_item": {
+    "extradelight:soaked_soybeans_item": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:soy_glazed_salmon_item"
+            "items": "extradelight:soaked_soybeans_item"
           }
         ]
       },
@@ -1096,6 +1126,16 @@
         "items": [
           {
             "items": "extradelight:soy_milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:soy_sauce_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:soy_sauce_item"
           }
         ]
       },
@@ -1242,6 +1282,9 @@
       "extradelight:frosting_brown"
     ],
     [
+      "extradelight:fish_sauce_item"
+    ],
+    [
       "extradelight:moo_naem_mix"
     ],
     [
@@ -1326,6 +1369,9 @@
       "extradelight:glow_berry_cookie_dough"
     ],
     [
+      "extradelight:hot_sauce_item"
+    ],
+    [
       "extradelight:yeast_spread"
     ],
     [
@@ -1368,6 +1414,9 @@
       "extradelight:milk_chocolate_syrup_bottle"
     ],
     [
+      "extradelight:soaked_soybeans_item"
+    ],
+    [
       "extradelight:frosting_black"
     ],
     [
@@ -1390,6 +1439,9 @@
     ],
     [
       "extradelight:frosting_pink"
+    ],
+    [
+      "extradelight:soy_sauce_item"
     ],
     [
       "extradelight:frosting_purple"
@@ -1447,9 +1499,6 @@
     ],
     [
       "extradelight:roasted_garlic"
-    ],
-    [
-      "extradelight:soy_glazed_salmon_item"
     ],
     [
       "extradelight:egg_mix"
@@ -1534,6 +1583,9 @@
     ],
     [
       "extradelight:jam"
+    ],
+    [
+      "extradelight:miso_paste_item"
     ],
     [
       "extradelight:sliced_gherkin_item"

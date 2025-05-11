@@ -3,10 +3,10 @@
   "fluids": [],
   "ingredients": [
     {
-      "item": "minecraft:beetroot"
+      "tag": "extradelight:processed/beetroot"
     },
     {
-      "item": "minecraft:beetroot"
+      "tag": "extradelight:processed/beetroot"
     },
     {
       "tag": "c:mint"

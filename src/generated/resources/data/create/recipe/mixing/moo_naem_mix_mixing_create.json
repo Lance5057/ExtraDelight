@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:pork/ground/raw"
+    },
+    {
+      "tag": "c:leather_scrap"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:moo_naem_mix"
+    }
+  ]
+}

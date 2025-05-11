@@ -1191,6 +1191,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:soy_glazed_salmon_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:soy_glazed_salmon_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:stewed_apples": {
       "conditions": {
         "items": [
@@ -1522,6 +1532,9 @@
     ],
     [
       "extradelight:hashbrowns"
+    ],
+    [
+      "extradelight:soy_glazed_salmon_item"
     ],
     [
       "extradelight:quiche_slice"

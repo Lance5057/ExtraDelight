@@ -2,7 +2,7 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "tag": "c:crops/cabbage"
+      "tag": "extradelight:processed/cabbage"
     },
     {
       "tag": "extradelight:processed/onion"

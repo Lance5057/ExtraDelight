@@ -44,6 +44,8 @@ import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
 
 public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCraftingHolder {
 
+	private static ResourceLocation ice = BuiltInRegistries.BLOCK.getKey(Blocks.ICE);
+
 	public static final String INV_TAG = "inv";
 
 	private final ItemStackHandler items = createHandler();
@@ -237,26 +239,29 @@ public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCr
 	}
 
 	public static <T extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, T be) {
-
+		EvaporatorBlockEntity evaporator = (EvaporatorBlockEntity) be;
 		float temp = level.getBiome(pos).value().getBaseTemperature();
-		if (level.random.nextFloat() >= temp) {
-			EvaporatorBlockEntity evaporator = (EvaporatorBlockEntity) be;
+		if (temp > 0.05) {
+			if (level.random.nextFloat() <= temp) {
 
-			RecipeHolder<EvaporatorRecipe> recipeholder = evaporator.quickCheck
-					.getRecipeFor(new EvaporatorRecipeWrapper(evaporator.tank), level).orElse(null);
+				RecipeHolder<EvaporatorRecipe> recipeholder = evaporator.quickCheck
+						.getRecipeFor(new EvaporatorRecipeWrapper(evaporator.tank), level).orElse(null);
 
-			if (recipeholder != null) {
-				evaporator.cookTimeTotal = recipeholder.value().getCookTime();
-				evaporator.displayBlock = recipeholder.value().getDisplay();
+				if (recipeholder != null) {
+					evaporator.cookTimeTotal = recipeholder.value().getCookTime();
+					evaporator.displayBlock = recipeholder.value().getDisplay();
 
-				if (evaporator.cookTime >= evaporator.cookTimeTotal) {
-					dropLoot(evaporator, recipeholder.value().getOutput());
-					SizedFluidIngredient sfi = recipeholder.value().getFluid();
-					evaporator.tank.drain(sfi.amount(), FluidAction.EXECUTE);
-				} else {
-					evaporator.cookTime++;
+					if (evaporator.cookTime >= evaporator.cookTimeTotal) {
+						dropLoot(evaporator, recipeholder.value().getOutput());
+						SizedFluidIngredient sfi = recipeholder.value().getFluid();
+						evaporator.tank.drain(sfi.amount(), FluidAction.EXECUTE);
+					} else {
+						evaporator.cookTime++;
+					}
 				}
 			}
+		} else {
+			evaporator.displayBlock = ice;
 		}
 	}
 

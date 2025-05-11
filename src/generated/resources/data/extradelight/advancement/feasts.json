@@ -611,6 +611,76 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:pickled_beets_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_beets_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_carrots_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_carrots_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_eggs_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_eggs_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_fish_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_fish_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_ginger_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_ginger_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_onions_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_onions_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_sausage_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_sausage_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pork_stew_feast": {
       "conditions": {
         "items": [
@@ -833,6 +903,9 @@
       "extradelight:caramel_cheesecake_item"
     ],
     [
+      "extradelight:pickled_sausage_block_item"
+    ],
+    [
       "extradelight:fudge_block"
     ],
     [
@@ -846,6 +919,9 @@
     ],
     [
       "extradelight:apple_crisp_feast"
+    ],
+    [
+      "extradelight:pickled_eggs_block_item"
     ],
     [
       "extradelight:macaroni_cheese_feast"
@@ -864,6 +940,9 @@
     ],
     [
       "extradelight:quiche"
+    ],
+    [
+      "extradelight:pickled_beets_block_item"
     ],
     [
       "extradelight:jelly_red_block_item"
@@ -888,6 +967,9 @@
     ],
     [
       "extradelight:white_chili_feast"
+    ],
+    [
+      "extradelight:pickled_ginger_block_item"
     ],
     [
       "extradelight:pork_stew_feast"
@@ -917,6 +999,9 @@
       "extradelight:glow_berry_pie"
     ],
     [
+      "extradelight:pickled_fish_block_item"
+    ],
+    [
       "extradelight:hash_block_item"
     ],
     [
@@ -939,6 +1024,9 @@
     ],
     [
       "extradelight:black_forest_trifle_block"
+    ],
+    [
+      "extradelight:pickled_onions_block_item"
     ],
     [
       "extradelight:pumpkin_pie_item"
@@ -990,6 +1078,9 @@
     ],
     [
       "extradelight:sweet_berry_pie"
+    ],
+    [
+      "extradelight:pickled_carrots_block_item"
     ],
     [
       "extradelight:jelly_orange_block_item"

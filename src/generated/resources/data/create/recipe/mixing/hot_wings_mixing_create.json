@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:chicken/wing/cooked"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "item": "extradelight:hot_sauce_item"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:hot_wings"
+    }
+  ]
+}

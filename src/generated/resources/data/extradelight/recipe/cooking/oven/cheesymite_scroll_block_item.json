@@ -1,0 +1,43 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:square_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "item": "farmersdelight:wheat_dough"
+    },
+    {
+      "item": "extradelight:yeast_spread"
+    },
+    {
+      "item": "farmersdelight:wheat_dough"
+    },
+    {
+      "item": "farmersdelight:wheat_dough"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "item": "farmersdelight:wheat_dough"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:cheesymite_scroll_block_item"
+  }
+}

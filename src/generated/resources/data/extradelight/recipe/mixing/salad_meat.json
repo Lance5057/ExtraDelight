@@ -3,7 +3,7 @@
   "fluids": [],
   "ingredients": [
     {
-      "item": "farmersdelight:cabbage"
+      "tag": "extradelight:processed/cabbage"
     },
     {
       "tag": "extradelight:processed/onion"

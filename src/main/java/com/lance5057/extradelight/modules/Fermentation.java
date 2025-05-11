@@ -845,6 +845,12 @@ public class Fermentation {
 						100, Blocks.COBBLESTONE)
 				.unlockedBy("has_lava", InventoryChangeTrigger.TriggerInstance.hasItems(Items.LAVA_BUCKET))
 				.save(consumer, ExtraDelight.modLoc("evaporate_lava"));
+		
+		EvaporatorRecipeBuilder
+		.evaporate(SizedFluidIngredient.of(Fluids.WATER, 1000), MiscLootTables.EVAPORATOR_WATER.location(),
+				100, SALT_BLOCK.get())
+		.unlockedBy("has_water", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WATER_BUCKET))
+		.save(consumer, ExtraDelight.modLoc("evaporate_water"));
 
 		// Vat
 		VatRecipeBuilder

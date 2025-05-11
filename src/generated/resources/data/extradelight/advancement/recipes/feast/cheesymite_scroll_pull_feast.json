@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_any_ingredient": {
+    "has_cheesymite_scrolls": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:yeast_spread"
+            "items": "extradelight:cheesymite_scroll_block_item"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/oven/cheesymite_scroll"
+        "recipe": "extradelight:feast/cheesymite_scroll_pull_feast"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_any_ingredient"
+      "has_cheesymite_scrolls"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/oven/cheesymite_scroll"
+      "extradelight:feast/cheesymite_scroll_pull_feast"
     ]
   }
 }

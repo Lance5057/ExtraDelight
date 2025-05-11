@@ -10,10 +10,10 @@
       "item": "farmersdelight:bone_broth"
     },
     {
-      "item": "minecraft:beetroot"
+      "tag": "extradelight:processed/beetroot"
     },
     {
-      "item": "minecraft:carrot"
+      "tag": "extradelight:processed/carrot"
     },
     {
       "tag": "extradelight:processed/cabbage"

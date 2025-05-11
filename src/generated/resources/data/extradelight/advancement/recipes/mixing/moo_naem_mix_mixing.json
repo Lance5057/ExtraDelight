@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/moo_naem_mix_mixing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "moo_naem_mix_mixing": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:moo_naem_mix"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "moo_naem_mix_mixing"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/moo_naem_mix_mixing"
+    ]
+  }
+}
