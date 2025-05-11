@@ -2378,6 +2378,20 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.define('p', Ingredient.of(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
 				.unlockedBy(getName(), has(Tags.Items.INGOTS_IRON)).save(consumer, EDLoc("grater"));
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.LID.get()).pattern(" b ").pattern("ccc")
+				.define('b', Ingredient.of(ItemTags.WOODEN_BUTTONS))
+				.define('c', Ingredient.of(Items.COPPER_INGOT))
+				.unlockedBy(getName(), has(Tags.Items.INGOTS_COPPER)).save(consumer, EDLoc("lid"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.VAT.get()).pattern("c c").pattern("c c")
+				.pattern("ccc").define('c', Ingredient.of(Tags.Items.INGOTS_COPPER))
+				.unlockedBy(getName(), has(Tags.Items.INGOTS_COPPER)).save(consumer, EDLoc("vat"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.EVAPORATOR.get()).pattern("i i")
+				.pattern("ppp").define('i', Ingredient.of(Tags.Items.NUGGETS_IRON))
+				.define('p', Ingredient.of(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
+				.unlockedBy(getName(), has(Tags.Items.NUGGETS_IRON)).save(consumer, EDLoc("evaporator"));
+
 		// Juice
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GLOW_BERRY_JUICE.get())
 				.requires(Ingredient.of(ExtraDelightTags.FRUIT_GLOW_BERRY), 6).requires(ExtraDelightTags.SWEETENER)
@@ -2647,22 +2661,25 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CHEESEBURGER.get(), 1)
 				.requires(Tags.Items.FOODS_BREAD).requires(ModItems.BEEF_PATTY.get()).requires(CommonTags.CROPS_CABBAGE)
 				.requires(ExtraDelightTags.CHEESE).requires(ExtraDelightTags.PROCESSED_TOMATO)
-				.requires(ExtraDelightTags.PROCESSED_ONION).unlockedBy(getName(), has(ModItems.BEEF_PATTY.get()))
-				.save(consumer, EDLoc("cheeseburger"));
+				.requires(ExtraDelightTags.PROCESSED_ONION).requires(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER)
+				.unlockedBy(getName(), has(ModItems.BEEF_PATTY.get())).save(consumer, EDLoc("cheeseburger"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CHEESEBURGER.get(), 1)
-				.requires(ModItems.HAMBURGER.get()).requires(ExtraDelightTags.CHEESE)
-				.unlockedBy(getName(), has(ModItems.HAMBURGER.get())).save(consumer, EDLoc("cheeseburger_burger"));
+				.requires(ModItems.HAMBURGER.get()).requires(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER)
+				.requires(ExtraDelightTags.CHEESE).unlockedBy(getName(), has(ModItems.HAMBURGER.get()))
+				.save(consumer, EDLoc("cheeseburger_burger"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BACON_CHEESEBURGER.get(), 1)
 				.requires(Tags.Items.FOODS_BREAD).requires(ModItems.BEEF_PATTY.get()).requires(CommonTags.CROPS_CABBAGE)
 				.requires(ExtraDelightTags.CHEESE).requires(ExtraDelightTags.PROCESSED_TOMATO)
 				.requires(ExtraDelightTags.PROCESSED_ONION).requires(CommonTags.FOODS_COOKED_BACON)
+				.requires(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER)
 				.unlockedBy(getName(), has(ModItems.BEEF_PATTY.get())).save(consumer, EDLoc("bacon_cheeseburger"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BACON_CHEESEBURGER.get(), 1)
 				.requires(ModItems.HAMBURGER.get()).requires(ExtraDelightTags.CHEESE)
-				.requires(CommonTags.FOODS_COOKED_BACON).unlockedBy(getName(), has(ModItems.HAMBURGER.get()))
+				.requires(CommonTags.FOODS_COOKED_BACON).requires(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER)
+				.unlockedBy(getName(), has(ModItems.HAMBURGER.get()))
 				.save(consumer, EDLoc("bacon_cheeseburger_burger"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.BACON_CHEESEBURGER.get(), 1)
@@ -2875,9 +2892,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("chocolate_cake_from_slice"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHARCUTERIE_BOARD_FEAST.get()).pattern("cmh")
-				.pattern("cmh").pattern(" b ").define('m', ExtraDelightTags.MEAT_COOKED)
+				.pattern("pmh").pattern(" b ").define('m', CompoundIngredient.of(
+						Ingredient.of(ExtraDelightTags.MEAT_COOKED), Ingredient.of(Fermentation.SALAMI_ITEM.get())))
 				.define('c', ExtraDelightItems.CRACKERS.get()).define('h', ExtraDelightTags.CHEESE)
-				.define('b', Items.BOWL)
+				.define('b', Items.BOWL).define('p', ExtraDelightTags.PICKLED_VEGETABLES)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESE.get()))
 				.save(consumer, EDLoc("charcuterie_board"));
 

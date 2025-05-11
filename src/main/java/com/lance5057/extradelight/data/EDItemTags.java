@@ -575,6 +575,10 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.PROCESSED_POTATO).addTag(ExtraDelightTags.PROCESSED_ONION)
 				.addOptionalTag(CommonTags.FOODS_SAFE_RAW_FISH.location());
 
+		tag(ExtraDelightTags.PICKLED_VEGETABLES).add(Fermentation.GHERKIN_ITEM.get(),
+				Fermentation.PICKLED_ONION_ITEM.get(), Fermentation.PICKLED_CARROT_ITEM.get(),
+				Fermentation.PICKLED_BEET_ITEM.get());
+
 		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(),
 				ExtraDelightItems.CHILI.get(), Fermentation.CUCUMBER.get());
 
