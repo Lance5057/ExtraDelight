@@ -1642,7 +1642,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new SizedFluidIngredient[] {}, consumer, "furikake_rice");
 
 		mixing(new ItemStack(ExtraDelightItems.SALAD_FEAST_ITEM.get(), 1), STANDARD_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(ModItems.CABBAGE.get()),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CARROT), Ingredient.of(ExtraDelightTags.CROUTONS),
 						Ingredient.of(ExtraDelightTags.CHEESE), Ingredient.of(ExtraDelightTags.COOKING_OIL),
@@ -1651,7 +1651,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new SizedFluidIngredient[] {}, consumer, "salad_meat");
 
 		mixing(new ItemStack(ExtraDelightItems.SALAD_FEAST_ITEM.get(), 1), STANDARD_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(CommonTags.CROPS_CABBAGE),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightItems.CROUTONS.get()), Ingredient.of(ExtraDelightTags.CHEESE),
@@ -1992,9 +1992,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new SizedFluidIngredient[] {}, consumer, "frosting_yellow");
 
 		mixing(new ItemStack(ExtraDelightItems.BEET_MINT_SALAD.get(), 2), STANDARD_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(Items.BEETROOT), Ingredient.of(Items.BEETROOT),
-						Ingredient.of(ExtraDelightTags.MINT), Ingredient.of(ExtraDelightTags.SWEETENER),
-						Ingredient.of(ExtraDelightTags.VINEGAR), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT),
+						Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT),	Ingredient.of(ExtraDelightTags.MINT),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.VINEGAR),
+						Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				new SizedFluidIngredient[] {}, consumer, "beet_mint_salad");
 
 		mixing(new ItemStack(ExtraDelightItems.COFFEE_JELLY.get(), 2), STANDARD_GRIND,
@@ -4418,9 +4419,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"pamonha", consumer);
 
 		pot(ExtraDelightItems.BORSCHT.get(), 4, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL, new Ingredient[] {
-				Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(Items.BEETROOT), Ingredient.of(Items.CARROT),
-				Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE), Ingredient.of(ExtraDelightTags.PROCESSED_POTATO),
-				Ingredient.of(ExtraDelightItems.SLICED_TOMATO, ModItems.TOMATO_SAUCE.get(), ModItems.TOMATO.get()) },
+				Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT),
+						Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
+						Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE),
+						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO),
+						Ingredient.of(ExtraDelightItems.SLICED_TOMATO, ModItems.TOMATO_SAUCE.get(),
+								ModItems.TOMATO.get()) },
 				"borscht", consumer);
 
 		pot(ExtraDelightItems.DEVILLED_SAUSAGES.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,

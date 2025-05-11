@@ -1315,7 +1315,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.GARLIC_CRATE.get(), "Garlic Crate");
 
 		this.add(ExtraDelightItems.VAT.get(), "Fermentation Vat");
-		this.add(ExtraDelightItems.LID.get(), "Lid");
+		this.add(ExtraDelightItems.LID.get(), "Vat Lid");
 		this.add(ExtraDelightItems.EVAPORATOR.get(), "Evaporator");
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "Toast");
