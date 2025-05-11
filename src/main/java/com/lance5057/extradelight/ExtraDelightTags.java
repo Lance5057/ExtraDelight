@@ -581,6 +581,8 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> MISO_SOUP_INGREDIENTS = neoforgeItemTag("miso_soup_ingredients");
 
+	public static final TagKey<Item> PICKLED_VEGETABLES = modTag("foods/pickled_vegetables");
+
 	// Tough as Nails
 	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");
 	public static final TagKey<Item> HEATING_CONSUMED_ITEMS = tanTag("heating_consumed_items");
