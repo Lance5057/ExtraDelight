@@ -1002,16 +1002,15 @@ public class BlockModels extends BlockStateProvider {
 
 			return ConfiguredModel.builder().modelFile(bsp.models()
 					.withExistingParent("block/cosmetics/pans/" + base + "_" + suffix.toLowerCase(), bsp.modLoc(base))
-					.texture("0", bsp.modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan"))
-					.texture("particle", bsp.modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan"))
-					.renderType("translucent"))
+//					.texture("0", bsp.modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan"))
+					.texture("particle", bsp.modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan")))
 					.rotationY(((int) state.getValue(HorizontalPanBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}
 
 	public static void stewBlock(BlockStateProvider bsp, RecipeFeastBlock block, String texture) {
 		bsp.getVariantBuilder(block).forAllStates(state -> {
-			int servings = state.getValue(block.SERVINGS);
+			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
 
 			String suffix = "_stage" + (block.getMaxServings() - servings);
 

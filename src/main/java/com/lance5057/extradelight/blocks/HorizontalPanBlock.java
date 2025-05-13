@@ -2,6 +2,7 @@ package com.lance5057.extradelight.blocks;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
+import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock.Styles;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.ChatFormatting;
@@ -35,7 +36,7 @@ public class HorizontalPanBlock extends HorizontalDirectionalBlock implements IS
 	protected VoxelShape SHAPE = Block.box(4.0D, 0.0D, 0.0D, 12.0D, 8.0D, 16.0D);
 	protected VoxelShape SHAPE2 = Block.box(0.0D, 0.0D, 4.0D, 16.0D, 8.0D, 12.0D);
 
-	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, 8);
+	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length - 1);
 
 	public HorizontalPanBlock(Properties p_54120_) {
 		super(p_54120_);
@@ -80,12 +81,12 @@ public class HorizontalPanBlock extends HorizontalDirectionalBlock implements IS
 	}
 
 	public static enum Styles {
-		BASE, IRON, GOLD, DIAMOND, NETHERITE, EMERALD, OBSIDIAN, GLASS, COPPER, AMETHYST_BLOCK
+		BASE, IRON, GOLD, DIAMOND, NETHERITE, EMERALD, OBSIDIAN, COPPER
 	};
 
 	@Override
 	public int numStyles() {
-		return 9;
+		return Styles.values().length;
 	}
 
 	@Override
@@ -135,7 +136,7 @@ public class HorizontalPanBlock extends HorizontalDirectionalBlock implements IS
 		BlockState nextState = state.setValue(STYLE, style);
 		level.setBlock(pos, nextState, 3);
 	}
-	
+
 	@Override
 	public boolean isPatreonStyle(int style) {
 		// TODO Auto-generated method stub
@@ -144,7 +145,7 @@ public class HorizontalPanBlock extends HorizontalDirectionalBlock implements IS
 
 	@Override
 	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
-								TooltipFlag tooltipFlag) {
+			TooltipFlag tooltipFlag) {
 		MutableComponent textEmpty = Component.translatable(ExtraDelight.MOD_ID + ".tooltip.styleable");
 		tooltipComponents.add(textEmpty.withStyle(ChatFormatting.AQUA));
 	}

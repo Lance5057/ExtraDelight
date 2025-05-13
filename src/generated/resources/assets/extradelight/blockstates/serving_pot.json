@@ -29,10 +29,6 @@
       "y": 90
     },
     "facing=east,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/serving_pot_glass_",
-      "y": 90
-    },
-    "facing=east,style=8": {
       "model": "extradelight:block/cosmetics/pans/block/serving_pot_copper_",
       "y": 90
     },
@@ -58,9 +54,6 @@
       "model": "extradelight:block/cosmetics/pans/block/serving_pot_obsidian_"
     },
     "facing=north,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/serving_pot_glass_"
-    },
-    "facing=north,style=8": {
       "model": "extradelight:block/cosmetics/pans/block/serving_pot_copper_"
     },
     "facing=south,style=0": {
@@ -92,10 +85,6 @@
       "y": 180
     },
     "facing=south,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/serving_pot_glass_",
-      "y": 180
-    },
-    "facing=south,style=8": {
       "model": "extradelight:block/cosmetics/pans/block/serving_pot_copper_",
       "y": 180
     },
@@ -128,10 +117,6 @@
       "y": 270
     },
     "facing=west,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/serving_pot_glass_",
-      "y": 270
-    },
-    "facing=west,style=8": {
       "model": "extradelight:block/cosmetics/pans/block/serving_pot_copper_",
       "y": 270
     }
