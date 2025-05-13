@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/lid"
+  "parent": "minecraft:item/generated",
+  "loader": "extradelight:blockstateitem"
 }

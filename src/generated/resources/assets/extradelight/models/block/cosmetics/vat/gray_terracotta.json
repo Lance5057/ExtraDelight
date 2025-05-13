@@ -1,0 +1,10 @@
+{
+  "parent": "extradelight:block/vat",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "extradelight:block/cosmetics/vat/gray_terracotta",
+    "1": "extradelight:block/cosmetics/vat/gray_terracotta_top",
+    "4": "extradelight:block/cosmetics/vat/gray_terracotta_side",
+    "5": "minecraft:block/white_terracotta"
+  }
+}

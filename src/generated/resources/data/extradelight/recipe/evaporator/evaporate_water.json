@@ -6,5 +6,5 @@
     "fluid": "minecraft:water"
   },
   "loottable": "extradelight:evaporator/water",
-  "time": 100
+  "time": 10000
 }

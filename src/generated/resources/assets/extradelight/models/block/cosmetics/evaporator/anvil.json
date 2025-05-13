@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/evaporator",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "2": "minecraft:block/anvil"
+  }
+}

@@ -6,5 +6,5 @@
     "fluid": "minecraft:lava"
   },
   "loottable": "extradelight:evaporator/lava_test",
-  "time": 100
+  "time": 10000
 }

@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "block/brown_terracotta",
 		"1": "block/copper_block",
-		"2": "extradelight:block/cosmetics/vat/brown_terracotta_side",
+		"2": "extradelight:block/cosmetics/vat/black_terracotta_side",
 		"particle": "block/brown_terracotta"
 	},
 	"elements": [

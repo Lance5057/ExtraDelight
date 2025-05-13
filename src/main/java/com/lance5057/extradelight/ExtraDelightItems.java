@@ -52,6 +52,7 @@ import net.minecraft.world.item.SolidBucketItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -156,11 +157,12 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> CHILLER = ITEMS.register("chiller",
 			() -> new BlockItem(ExtraDelightBlocks.CHILLER.get(), new Item.Properties()));
 
-	public static final DeferredItem<Item> VAT = ITEMS.register("vat",
-			() -> new BlockItem(ExtraDelightBlocks.VAT.get(), new Item.Properties()));
+	public static final DeferredItem<Item> VAT = ITEMS.register("vat", () -> new BlockItem(ExtraDelightBlocks.VAT.get(),
+			new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
 	public static final DeferredItem<Item> LID = ITEMS.register("lid",
-			() -> new HelmetBlockItem(ExtraDelightBlocks.LID.get(), new Item.Properties()));
+			() -> new HelmetBlockItem(ExtraDelightBlocks.LID.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
 	public static final DeferredItem<Item> EVAPORATOR = ITEMS.register("evaporator",
 			() -> new BlockItem(ExtraDelightBlocks.EVAPORATOR.get(), new Item.Properties()));

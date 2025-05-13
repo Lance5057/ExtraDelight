@@ -1,0 +1,8 @@
+{
+  "parent": "extradelight:block/lid",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "minecraft:block/orange_terracotta",
+    "2": "extradelight:block/cosmetics/vat/orange_terracotta_side"
+  }
+}

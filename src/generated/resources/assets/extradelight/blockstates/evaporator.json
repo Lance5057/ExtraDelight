@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
-      "model": "extradelight:block/evaporator"
+    "style=0": {
+      "model": "extradelight:block/cosmetics/evaporator/anvil"
+    },
+    "style=1": {
+      "model": "extradelight:block/cosmetics/evaporator/gold_block"
+    },
+    "style=2": {
+      "model": "extradelight:block/cosmetics/evaporator/netherite_block"
+    },
+    "style=3": {
+      "model": "extradelight:block/cosmetics/evaporator/copper_block"
+    },
+    "style=4": {
+      "model": "extradelight:block/cosmetics/evaporator/iron_block"
     }
   }
 }

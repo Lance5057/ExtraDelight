@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/evaporator"
+  "parent": "minecraft:item/generated",
+  "loader": "extradelight:blockstateitem"
 }

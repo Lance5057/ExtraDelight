@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.modules.Fermentation;
 
@@ -1227,12 +1228,20 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.PENNE, "penne");
 		forItem(this, ExtraDelightItems.PENNE_ALL_ARRABIATA, "penne_all_arrabbiata");
 
-		getBuilder(ExtraDelightItems.VAT.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/vat")));
-		getBuilder(ExtraDelightItems.LID.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/lid")));
-		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/evaporator")));
+		getBuilder(ExtraDelightItems.VAT.getId().getPath()).parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.LID.getId().getPath()).parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+//		getBuilder(ExtraDelightItems.VAT.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/vat")));
+//		getBuilder(ExtraDelightItems.LID.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/lid")));
+//		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/evaporator")));
 
 		getBuilder(ExtraDelightItems.DYNAMIC_TOAST.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("item/generated"))

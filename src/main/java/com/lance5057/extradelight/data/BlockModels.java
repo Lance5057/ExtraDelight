@@ -24,6 +24,7 @@ import com.lance5057.extradelight.blocks.crops.corn.CornProperties;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.vat.VatBlock;
@@ -65,8 +66,6 @@ public class BlockModels extends BlockStateProvider {
 		simpleBlock(ExtraDelightBlocks.DRYING_RACK.get(), models().getExistingFile(modLoc("block/drying_rack")));
 
 		mortarStyleBlock(this, ExtraDelightBlocks.MORTAR_STONE.get());
-
-		simpleBlock(ExtraDelightBlocks.EVAPORATOR.get(), models().getExistingFile(modLoc("block/evaporator")));
 
 //		simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(), models()
 //				.withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool", modLoc("block/cooking_oil")));
@@ -626,17 +625,38 @@ public class BlockModels extends BlockStateProvider {
 			String suffix = VatBlock.Styles.values()[servings].toString();
 
 			return ConfiguredModel.builder()
-					.modelFile(models().getExistingFile(modLoc("block/cosmetics/vat/" + suffix.toLowerCase())))
+					.modelFile(models()
+							.withExistingParent("block/cosmetics/vat/" + suffix.toLowerCase(), modLoc("block/vat"))
+							.texture("0", modLoc("block/cosmetics/vat/" + suffix.toLowerCase()))
+							.texture("1", modLoc("block/cosmetics/vat/" + suffix.toLowerCase() + "_top"))
+							.texture("4", modLoc("block/cosmetics/vat/" + suffix.toLowerCase() + "_side"))
+							.texture("5", mcLoc("block/white_terracotta")).renderType("cutout"))
+
 					.rotationY(((int) state.getValue(VatBlock.FACING).toYRot() + 90) % 360).build();
 		});
 
 		getVariantBuilder(ExtraDelightBlocks.LID.get()).forAllStates(state -> {
 			int servings = state.getValue(LidBlock.STYLE);
 
-			String suffix = "_style" + servings;
+			String suffix = LidBlock.Styles.values()[servings].toString();
 
-			return ConfiguredModel.builder().modelFile(
-					models().withExistingParent("block/cosmetics/lid/lid" + suffix.toLowerCase(), modLoc("block/lid")))
+			return ConfiguredModel.builder().modelFile(models()
+					.withExistingParent("block/cosmetics/lid/" + suffix.toLowerCase(), modLoc("block/lid"))
+					.texture("0", mcLoc("block/" + suffix.toLowerCase()))
+					.texture("2", modLoc("block/cosmetics/vat/" + suffix.toLowerCase() + "_side")).renderType("cutout"))
+					.build();
+		});
+
+		getVariantBuilder(ExtraDelightBlocks.EVAPORATOR.get()).forAllStates(state -> {
+			int servings = state.getValue(EvaporatorBlock.STYLE);
+
+			String suffix = EvaporatorBlock.Styles.values()[servings].toString();
+
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.withExistingParent("block/cosmetics/evaporator/" + suffix.toLowerCase(),
+									modLoc("block/evaporator"))
+							.texture("2", mcLoc("block/" + suffix.toLowerCase())).renderType("cutout"))
 					.build();
 		});
 
