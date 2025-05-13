@@ -6,6 +6,9 @@
       "item": "farmersdelight:hamburger"
     },
     {
+      "tag": "extradelight:processed/pickled_cucumber"
+    },
+    {
       "tag": "c:cheese"
     }
   ],

@@ -44,7 +44,8 @@ import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
 
 public class EvaporatorBlockEntity extends SyncedBlockEntity implements RecipeCraftingHolder {
 
-	private static ResourceLocation ice = BuiltInRegistries.BLOCK.getKey(Blocks.ICE);
+	public static ResourceLocation ice = BuiltInRegistries.BLOCK.getKey(Blocks.ICE);
+	public static ResourceLocation air = BuiltInRegistries.BLOCK.getKey(Blocks.AIR);
 
 	public static final String INV_TAG = "inv";
 

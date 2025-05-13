@@ -11,13 +11,21 @@
     "h": {
       "tag": "c:cheese"
     },
-    "m": {
-      "tag": "c:meat/cooked"
+    "m": [
+      {
+        "tag": "c:meat/cooked"
+      },
+      {
+        "item": "extradelight:salami_item"
+      }
+    ],
+    "p": {
+      "tag": "extradelight:foods/pickled_vegetables"
     }
   },
   "pattern": [
     "cmh",
-    "cmh",
+    "pmh",
     " b "
   ],
   "result": {

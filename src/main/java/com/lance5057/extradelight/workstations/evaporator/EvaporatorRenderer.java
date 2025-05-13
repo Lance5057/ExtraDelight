@@ -43,7 +43,7 @@ public class EvaporatorRenderer implements BlockEntityRenderer<EvaporatorBlockEn
 		IItemHandlerModifiable inv = pBlockEntity.getItemHandler();
 		ItemStack item = inv.getStackInSlot(0);
 
-//		if (!item.isEmpty()) {
+		if (!item.isEmpty() || pBlockEntity.getDisplayBlock() == EvaporatorBlockEntity.ice) {
 			ResourceLocation display = pBlockEntity.getDisplayBlock();
 
 			BlockRenderDispatcher br = Minecraft.getInstance().getBlockRenderer();
@@ -51,7 +51,7 @@ public class EvaporatorRenderer implements BlockEntityRenderer<EvaporatorBlockEn
 			pPoseStack.pushPose();
 			pPoseStack.translate(0.05f, 0.11f, 0.05f);
 			pPoseStack.scale(0.9f, 0.1f, 0.9f);
-			
+
 			br.renderSingleBlock(BuiltInRegistries.BLOCK.get(display).defaultBlockState(), pPoseStack, pBufferSource,
 					pPackedLight, pPackedOverlay, ModelData.EMPTY, null);
 			pPoseStack.popPose();
@@ -75,7 +75,7 @@ public class EvaporatorRenderer implements BlockEntityRenderer<EvaporatorBlockEn
 //						pPackedOverlay, bakedmodel);
 //				pPoseStack.popPose();
 //			}
-//		}
+		}
 
 		if (!pBlockEntity.getFluidTank().getFluid().isEmpty()) {
 			VertexConsumer vertexConsumer = pBufferSource.getBuffer(Sheets.translucentCullBlockSheet());

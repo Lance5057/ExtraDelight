@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "minecraft:wooden_buttons"
+    },
+    "c": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    " b ",
+    "ccc"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:lid"
+  }
+}

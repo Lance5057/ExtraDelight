@@ -623,12 +623,10 @@ public class BlockModels extends BlockStateProvider {
 		getVariantBuilder(ExtraDelightBlocks.VAT.get()).forAllStates(state -> {
 			int servings = state.getValue(VatBlock.STYLE);
 
-			String suffix = "_style" + servings;
+			String suffix = VatBlock.Styles.values()[servings].toString();
 
 			return ConfiguredModel.builder()
-					.modelFile(models()
-							.withExistingParent("block/cosmetics/vat/vat" + suffix.toLowerCase(), modLoc("block/vat"))
-							.renderType("cutout"))
+					.modelFile(models().getExistingFile(modLoc("block/cosmetics/vat/" + suffix.toLowerCase())))
 					.rotationY(((int) state.getValue(VatBlock.FACING).toYRot() + 90) % 360).build();
 		});
 

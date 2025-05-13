@@ -1,33 +1,48 @@
 {
   "variants": {
     "facing=east,style=0": {
-      "model": "extradelight:block/cosmetics/vat/vat_style0"
+      "model": "extradelight:block/cosmetics/vat/copper"
     },
     "facing=east,style=1": {
-      "model": "extradelight:block/cosmetics/vat/vat_style1"
+      "model": "extradelight:block/cosmetics/vat/black_terracotta"
+    },
+    "facing=east,style=2": {
+      "model": "extradelight:block/cosmetics/vat/brown_terracotta"
     },
     "facing=north,style=0": {
-      "model": "extradelight:block/cosmetics/vat/vat_style0",
+      "model": "extradelight:block/cosmetics/vat/copper",
       "y": 270
     },
     "facing=north,style=1": {
-      "model": "extradelight:block/cosmetics/vat/vat_style1",
+      "model": "extradelight:block/cosmetics/vat/black_terracotta",
+      "y": 270
+    },
+    "facing=north,style=2": {
+      "model": "extradelight:block/cosmetics/vat/brown_terracotta",
       "y": 270
     },
     "facing=south,style=0": {
-      "model": "extradelight:block/cosmetics/vat/vat_style0",
+      "model": "extradelight:block/cosmetics/vat/copper",
       "y": 90
     },
     "facing=south,style=1": {
-      "model": "extradelight:block/cosmetics/vat/vat_style1",
+      "model": "extradelight:block/cosmetics/vat/black_terracotta",
+      "y": 90
+    },
+    "facing=south,style=2": {
+      "model": "extradelight:block/cosmetics/vat/brown_terracotta",
       "y": 90
     },
     "facing=west,style=0": {
-      "model": "extradelight:block/cosmetics/vat/vat_style0",
+      "model": "extradelight:block/cosmetics/vat/copper",
       "y": 180
     },
     "facing=west,style=1": {
-      "model": "extradelight:block/cosmetics/vat/vat_style1",
+      "model": "extradelight:block/cosmetics/vat/black_terracotta",
+      "y": 180
+    },
+    "facing=west,style=2": {
+      "model": "extradelight:block/cosmetics/vat/brown_terracotta",
       "y": 180
     }
   }

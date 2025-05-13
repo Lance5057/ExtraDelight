@@ -53,11 +53,23 @@ import net.neoforged.neoforge.items.IItemHandler;
 
 public class VatBlock extends Block implements EntityBlock, IStyleable {
 	protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
-	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length);
+	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length-1);
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
 	public static enum Styles {
-		COPPER
+		COPPER,
+		/* WHITE_TERRACOTTA, LIGHT_GRAY_TERRACOTTA, GRAY_TERRACOTTA, */ BLACK_TERRACOTTA,
+		BROWN_TERRACOTTA,/*
+							 * RED_TERRACOTTA, ORANGE_TERRACOTTA, YELLOW_TERRACOTTA, LIME_TERRACOTTA,
+							 * GREEN_TERRACOTTA, CYAN_TERRACOTTA, LIGHT_BLUE_TERRACOTTA, BLUE_TERRACOTTA,
+							 * MAGENTA_TERRACOTTA, PINK_TERRACOTTA, PURPLE_TERRACOTTA,
+							 * WHITE_GLAZED_TERRACOTTA, LIGHT_GRAY_GLAZED_TERRACOTTA,
+							 * GRAY_GLAZED_TERRACOTTA, BLACK_GLAZED_TERRACOTTA, BROWN_GLAZED_TERRACOTTA,
+							 * RED_GLAZED_TERRACOTTA, ORANGE_GLAZED_TERRACOTTA, YELLOW_GLAZED_TERRACOTTA,
+							 * LIME_GLAZED_TERRACOTTA, GREEN_GLAZED_TERRACOTTA, CYAN_GLAZED_TERRACOTTA,
+							 * LIGHT_BLUE_GLAZED_TERRACOTTA, BLUE_GLAZED_TERRACOTTA,
+							 * MAGENTA_GLAZED_TERRACOTTA, PINK_GLAZED_TERRACOTTA, PURPLE_GLAZED_TERRACOTTA
+							 */
 	}
 
 	public VatBlock() {
@@ -212,10 +224,10 @@ public class VatBlock extends Block implements EntityBlock, IStyleable {
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState,
 			BlockEntityType<T> pBlockEntityType) {
 //		if (!pLevel.isClientSide())
-			return pBlockEntityType == ExtraDelightBlockEntities.VAT.get() ? VatBlockEntity::tick : null;
+		return pBlockEntityType == ExtraDelightBlockEntities.VAT.get() ? VatBlockEntity::tick : null;
 //		return null;
 	}
-	
+
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
