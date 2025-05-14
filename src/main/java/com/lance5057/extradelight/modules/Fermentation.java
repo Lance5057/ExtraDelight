@@ -221,25 +221,33 @@ public class Fermentation {
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
 
 	public static final DeferredItem<Item> SOY_SAUCE_ITEM = EDItemGenerator
-			.register("soy_sauce_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("soy_sauce_item",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE))
+			).advancementIngredients().finish();
 
 	public static final DeferredItem<Item> SAUERKRAUT_ITEM = ExtraDelightItems.ITEMS.register("sauerkraut_item",
-			() -> new Item(new Item.Properties()));
+			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL)));
 
 	public static final DeferredItem<Item> KIMCHI_ITEM = ExtraDelightItems.ITEMS.register("kimchi_item",
-			() -> new Item(new Item.Properties()));
+			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL)));
 
 	public static final DeferredItem<Item> HOT_SAUCE_ITEM = EDItemGenerator
-			.register("hot_sauce_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("hot_sauce_item",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE))
+			).advancementIngredients().finish();
 
 	public static final DeferredItem<Item> MISO_PASTE_ITEM = EDItemGenerator
-			.register("miso_paste_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("miso_paste_item",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE))
+			).advancementIngredients().finish();
 
 	public static final DeferredItem<Item> NATTO_ITEM = ExtraDelightItems.ITEMS.register("natto_item",
-			() -> new Item(new Item.Properties()));
+			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL)));
 
 	public static final DeferredItem<Item> FISH_SAUCE_ITEM = EDItemGenerator
-			.register("fish_sauce_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("fish_sauce_item",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE))
+			).advancementIngredients().finish();
 
 	public static final DeferredItem<Item> SALAMI_MIX = ExtraDelightItems.ITEMS.register("salami_mix",
 			() -> new Item(new Item.Properties()));
@@ -257,17 +265,19 @@ public class Fermentation {
 			() -> new BlockItem(SALAMI_BLOCK.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> SOAKED_SOYBEANS_ITEM = EDItemGenerator
-			.register("soaked_soybeans_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("soaked_soybeans_item",
+					() -> new Item(new Item.Properties().craftRemainder(Items.BOWL))
+			).advancementIngredients().finish();
 	public static final DeferredItem<Item> MASHED_SOYBEANS_ITEM = ExtraDelightItems.ITEMS
 			.register("mashed_soybeans_item", () -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> COOKED_SOYBEANS_ITEM = ExtraDelightItems.ITEMS
 			.register("cooked_soybeans_item", () -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> SOY_MILK = EDItemGenerator
-			.register("soy_milk", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("soy_milk",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE))
+			).advancementIngredients().finish();
 
-	public static final DeferredItem<Item> MOO_NAEM_MIX = EDItemGenerator
-			.register("moo_naem_mix", () -> new Item(new Item.Properties())).advancementIngredients().finish();
-	public static final DeferredItem<Item> MOO_NAEM_ITEM = ExtraDelightItems.ITEMS.register("moo_naem_item",
+	public static final DeferredItem<Item> NAEM_MOO_ITEM = ExtraDelightItems.ITEMS.register("naem_moo_item",
 			() -> new Item(new Item.Properties()));
 
 	public static final DeferredItem<Item> SLICED_BEETROOT_ITEM = EDItemGenerator
@@ -329,7 +339,9 @@ public class Fermentation {
 			.register("sauerkraut_and_sausage", () -> new Item(new Item.Properties())).advancementButchercraft()
 			.finish();
 	public static final DeferredItem<Item> YEAST_SPREAD = EDItemGenerator
-			.register("yeast_spread", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("yeast_spread",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE))
+			).advancementIngredients().finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> CHEESYMITE_SCROLL_BLOCK = ExtraDelightBlocks.BLOCKS.register(
 			"cheesymite_scroll_block",
@@ -482,8 +494,7 @@ public class Fermentation {
 		ItemModels.forItem(tmp, EDAMAME, "edamame");
 		ItemModels.forItem(tmp, MISO_SOUP, "miso_soup");
 		ItemModels.forItem(tmp, YEAST_SPREAD, "yeast_extract");
-//		ItemModels.forItem(tmp, CHEESEBURGER_PICKLE, "pickle_bacon_cheeseburger");
-		ItemModels.forItem(tmp, MOO_NAEM_ITEM, "naem_moo");
+		ItemModels.forItem(tmp, NAEM_MOO_ITEM, "naem_moo");
 		ItemModels.forItem(tmp, COOKED_SOYBEANS_ITEM, "cooked_soybeans");
 		ItemModels.forItem(tmp, MASHED_SOYBEANS_ITEM, "mashed_soybeans");
 		ItemModels.forItem(tmp, KIWIBURGER, "kiwiburger");
@@ -512,7 +523,6 @@ public class Fermentation {
 		ItemModels.forBlockItem(tmp, SALT_BLOCK_ITEM, "salt");
 
 		ItemModels.forItem(tmp, HOT_WINGS, "hot_wings");
-		ItemModels.forItem(tmp, MOO_NAEM_MIX, "moo_naem_mix");
 	}
 
 	final static int dayTick = 24000;
@@ -721,12 +731,6 @@ public class Fermentation {
 						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(HOT_SAUCE_ITEM) },
 				new SizedFluidIngredient[] {}, consumer, "hot_wings_mixing");
 
-		Recipes.mixing(new ItemStack(MOO_NAEM_MIX.get(), 1), Recipes.FAST_GRIND, ItemStack.EMPTY,
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.GROUND_PORK_RAW),
-						Ingredient.of(ExtraDelightTags.LEATHER_SCRAP), Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
-						Ingredient.of(ModItems.COOKED_RICE.get()), Ingredient.of(ExtraDelightTags.PROCESSED_CHILI) },
-				new SizedFluidIngredient[] {}, consumer, "moo_naem_mix_mixing");
-
 		// Mortar
 		MortarRecipeBuilder
 				.grind(Ingredient.of(SOAKED_SOYBEANS_ITEM), MASHED_SOYBEANS_ITEM.toStack(1), FluidStack.EMPTY,
@@ -919,8 +923,7 @@ public class Fermentation {
 		lp.add(MASHED_SOYBEANS_ITEM.get(), "Mashed Soybeans");
 		lp.add(COOKED_SOYBEANS_ITEM.get(), "Cooked Soybeans");
 		lp.add(SOY_MILK.get(), "Soy Milk");
-		lp.add(MOO_NAEM_MIX.get(), "Moo Naem Mix");
-		lp.add(MOO_NAEM_ITEM.get(), "Moo Naem");
+		lp.add(NAEM_MOO_ITEM.get(), "Naem Moo");
 		lp.add(SLICED_BEETROOT_ITEM.get(), "Sliced Beetroot");
 		lp.add(SHREDDED_CABBAGE_ITEM.get(), "Shredded Cabbage");
 		lp.add(SLICED_CUCUMBER_ITEM.get(), "Sliced Cucumber");
