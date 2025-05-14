@@ -1,6 +1,4 @@
 {
-  "parent": "extradelight:block/jelly_block_stage0",
-  "textures": {
-    "1": "extradelight:block/jelly_light_grey"
-  }
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

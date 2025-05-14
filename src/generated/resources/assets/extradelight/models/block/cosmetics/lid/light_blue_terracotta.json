@@ -3,6 +3,7 @@
   "render_type": "minecraft:cutout",
   "textures": {
     "0": "minecraft:block/light_blue_terracotta",
-    "2": "extradelight:block/cosmetics/vat/light_blue_terracotta_side"
+    "2": "extradelight:block/cosmetics/vat/light_blue_terracotta_side",
+    "particle": "minecraft:block/light_blue_terracotta"
   }
 }

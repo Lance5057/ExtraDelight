@@ -3,6 +3,7 @@
   "render_type": "minecraft:cutout",
   "textures": {
     "0": "minecraft:block/copper_block",
-    "2": "extradelight:block/cosmetics/vat/copper_block_side"
+    "2": "extradelight:block/cosmetics/vat/copper_block_side",
+    "particle": "minecraft:block/copper_block"
   }
 }

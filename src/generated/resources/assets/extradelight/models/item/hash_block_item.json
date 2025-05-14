@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/hash_block_stage0"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

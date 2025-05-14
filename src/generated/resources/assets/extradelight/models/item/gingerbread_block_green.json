@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/gingerbread_block_creeper_green"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.jetbrains.annotations.NotNull;
@@ -15,6 +16,8 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.RipeSalamiBlock;
+import com.lance5057.extradelight.blocks.UnripeSalamiBlock;
 import com.lance5057.extradelight.blocks.crops.BushStageFour;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
@@ -40,6 +43,7 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.CopyBlockState;
 import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
@@ -577,8 +581,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 				Fermentation.PICKLE_JUICE.get());
 		this.dropSelf(Fermentation.CUCUMBER_CRATE.get());
 		this.dropSelf(Fermentation.SOYBEAN_SACK.get());
-		this.dropSelf(Fermentation.UNRIPE_SALAMI_BLOCK.get());
-		this.dropSelf(Fermentation.SALAMI_BLOCK.get());
+		this.add(Fermentation.UNRIPE_SALAMI_BLOCK.get(), i -> this.unsalami(i));
+		this.add(Fermentation.SALAMI_BLOCK.get(), i -> this.salami(i));
 		feast(Fermentation.SOY_GLAZED_SALMON_BLOCK.get(), Fermentation.SOY_GLAZED_SALMON_BLOCK_ITEM.get(), Items.BOWL);
 		this.add(Fermentation.STEAK_PICKLED_ONION_PIE.get(), noDrop());
 
@@ -668,6 +672,26 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.withPool(LootPool.lootPool().when(pDropGrownCropCondition).add(
 						LootItem.lootTableItem(pGrownCropItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(
 								this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F, 1)))));
+	}
+
+	net.minecraft.world.level.storage.loot.LootTable.Builder salami(Block block) {
+		return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(
+				(LootPoolEntryContainer.Builder<?>) this.applyExplosionDecay(block, LootItem.lootTableItem(block).apply(
+						List.of(2, 3, 4),
+						p_249985_ -> SetItemCountFunction.setCount(ConstantValue.exactly((float) p_249985_.intValue()))
+								.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+										.setProperties(StatePropertiesPredicate.Builder.properties()
+												.hasProperty(RipeSalamiBlock.COUNT, p_249985_.intValue()-1)))))));
+	}
+
+	net.minecraft.world.level.storage.loot.LootTable.Builder unsalami(Block block) {
+		return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(
+				(LootPoolEntryContainer.Builder<?>) this.applyExplosionDecay(block, LootItem.lootTableItem(block).apply(
+						List.of(2, 3, 4),
+						p_249985_ -> SetItemCountFunction.setCount(ConstantValue.exactly((float) p_249985_.intValue()))
+								.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+										.setProperties(StatePropertiesPredicate.Builder.properties()
+												.hasProperty(UnripeSalamiBlock.COUNT, p_249985_.intValue()-1)))))));
 	}
 
 	void feast(RecipeFeastBlock block, Item blockItem, Item lastDrop) {

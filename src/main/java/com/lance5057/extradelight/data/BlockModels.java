@@ -261,15 +261,15 @@ public class BlockModels extends BlockStateProvider {
 				models().orientableWithBottom("keg_horizontal", modLoc("block/keg_side"), modLoc("block/keg_side"),
 						modLoc("block/keg_bottom"), modLoc("block/keg_top")).renderType("cutout"));
 
-		panBlock(this, ExtraDelightBlocks.SHEET_BLOCK.get(), "block/sheet");
-		panBlock(this, ExtraDelightBlocks.TRAY_BLOCK.get(), "block/tray");
-		panBlock(this, ExtraDelightBlocks.LOAF_PAN_BLOCK.get(), "block/loaf_pan");
-		panBlock(this, ExtraDelightBlocks.PIE_DISH_BLOCK.get(), "block/pie_dish");
-		panBlock(this, ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), "block/square_pan");
+		panBlock(this, ExtraDelightBlocks.SHEET_BLOCK.get(), "sheet");
+		panBlock(this, ExtraDelightBlocks.TRAY_BLOCK.get(), "tray");
+		panBlock(this, ExtraDelightBlocks.LOAF_PAN_BLOCK.get(), "loaf_pan");
+		panBlock(this, ExtraDelightBlocks.PIE_DISH_BLOCK.get(), "pie_dish");
+		panBlock(this, ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), "square_pan");
 		bakingStoneStyleBlock(this, ExtraDelightBlocks.BAKING_STONE_BLOCK.get());
-		panBlock(this, ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), "block/muffin_tray");
-		panBlock(this, ExtraDelightBlocks.SERVING_POT_BLOCK.get(), "block/serving_pot");
-		panBlock(this, ExtraDelightBlocks.BAR_MOLD.get(), "block/bar_mold");
+		panBlock(this, ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), "muffin_tray");
+		panBlock(this, ExtraDelightBlocks.SERVING_POT_BLOCK.get(), "serving_pot");
+		panBlock(this, ExtraDelightBlocks.BAR_MOLD.get(), "bar_mold");
 
 		logBlock(ExtraDelightBlocks.FRUIT_LOG.get());
 		axisBlock(ExtraDelightBlocks.FRUIT_WOOD.get(), modLoc("block/fruit_log"), modLoc("block/fruit_log"));
@@ -630,7 +630,8 @@ public class BlockModels extends BlockStateProvider {
 							.texture("0", modLoc("block/cosmetics/vat/" + suffix.toLowerCase()))
 							.texture("1", modLoc("block/cosmetics/vat/" + suffix.toLowerCase() + "_top"))
 							.texture("4", modLoc("block/cosmetics/vat/" + suffix.toLowerCase() + "_side"))
-							.texture("5", mcLoc("block/white_terracotta")).renderType("cutout"))
+							.texture("5", mcLoc("block/white_terracotta")).renderType("cutout")
+							.texture("particle", modLoc("block/cosmetics/vat/" + suffix.toLowerCase())))
 
 					.rotationY(((int) state.getValue(VatBlock.FACING).toYRot() + 90) % 360).build();
 		});
@@ -640,10 +641,12 @@ public class BlockModels extends BlockStateProvider {
 
 			String suffix = LidBlock.Styles.values()[servings].toString();
 
-			return ConfiguredModel.builder().modelFile(models()
-					.withExistingParent("block/cosmetics/lid/" + suffix.toLowerCase(), modLoc("block/lid"))
-					.texture("0", mcLoc("block/" + suffix.toLowerCase()))
-					.texture("2", modLoc("block/cosmetics/vat/" + suffix.toLowerCase() + "_side")).renderType("cutout"))
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.withExistingParent("block/cosmetics/lid/" + suffix.toLowerCase(), modLoc("block/lid"))
+							.texture("0", mcLoc("block/" + suffix.toLowerCase()))
+							.texture("2", modLoc("block/cosmetics/vat/" + suffix.toLowerCase() + "_side"))
+							.renderType("cutout").texture("particle", mcLoc("block/" + suffix.toLowerCase())))
 					.build();
 		});
 
@@ -998,12 +1001,15 @@ public class BlockModels extends BlockStateProvider {
 		bsp.getVariantBuilder(block).forAllStates(state -> {
 			int servings = state.getValue(HorizontalPanBlock.STYLE);
 
-			String suffix = HorizontalPanBlock.Styles.values()[servings] + "_";
+			String suffix = HorizontalPanBlock.Styles.values()[servings].toString();
 
-			return ConfiguredModel.builder().modelFile(bsp.models()
-					.withExistingParent("block/cosmetics/pans/" + base + "_" + suffix.toLowerCase(), bsp.modLoc(base))
-//					.texture("0", bsp.modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan"))
-					.texture("particle", bsp.modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "pan")))
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models()
+							.withExistingParent("block/cosmetics/pans/" + base + "_" + suffix.toLowerCase() + "_block",
+									bsp.modLoc("block/" + base))
+							.texture("0", bsp.modLoc("block/cosmetics/pans/" + suffix.toLowerCase()))
+							.texture("1", bsp.modLoc("block/cosmetics/pans/" + suffix.toLowerCase() + "_bottom"))
+							.texture("particle", bsp.modLoc("block/cosmetics/pans/" + suffix.toLowerCase())))
 					.rotationY(((int) state.getValue(HorizontalPanBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}

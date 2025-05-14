@@ -1,0 +1,8 @@
+{
+  "parent": "extradelight:block/bar_mold",
+  "textures": {
+    "0": "extradelight:block/cosmetics/pans/iron_block",
+    "1": "extradelight:block/cosmetics/pans/iron_block_bottom",
+    "particle": "extradelight:block/cosmetics/pans/iron_block"
+  }
+}

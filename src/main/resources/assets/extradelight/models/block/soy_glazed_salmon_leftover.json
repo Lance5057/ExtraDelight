@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "minecraft:cutout",
 	"textures": {
 		"0": "extradelight:block/soy_glazed_salmon",
 		"2": "farmersdelight:block/tray_bottom",

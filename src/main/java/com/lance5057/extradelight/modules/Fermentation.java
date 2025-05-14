@@ -293,7 +293,8 @@ public class Fermentation {
 			"soy_glazed_salmon_block",
 			() -> new RecipeFeastBlock(
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_ORANGE), true,
-					ExtraDelightBlocks.plate));
+					Block.box(0, 0, 0, 0, 0, 0), Block.box(-4.0D, 0.0D, 2.5D, 20.0D, 1.0D, 11.5D),
+					Block.box(2.5D, 0.0D, -4.0D, 11.5D, 1.0D, 20.0D)));
 	public static final DeferredItem<Item> SOY_GLAZED_SALMON_BLOCK_ITEM = EDItemGenerator
 			.register("soy_glazed_salmon_block_item",
 					() -> new BlockItem(SOY_GLAZED_SALMON_BLOCK.get(), new Item.Properties()))
@@ -372,6 +373,8 @@ public class Fermentation {
 		BlockModels.recipeFeastBlock(bsp, PICKLED_GINGER_BLOCK.get(), "pickled_ginger_jar");
 		BlockModels.recipeFeastBlock(bsp, SOY_GLAZED_SALMON_BLOCK.get(), "soy_glazed_salmon");
 		BlockModels.recipeFeastBlock(bsp, CHEESYMITE_SCROLL_BLOCK.get(), "cheesy_vegemite_scrolls");
+
+		BlockModels.pieBlock(bsp, STEAK_PICKLED_ONION_PIE.get(), "steak_and_pickled_onion_pie");
 
 		BlockModels.cropCrossBlock(bsp, CUCUMBER_CROP.get(), "cucumber", CucumberCrop.AGE);
 		bsp.simpleBlock(WILD_CUCUMBER.get(), new ConfiguredModel(bsp.models()
@@ -512,7 +515,7 @@ public class Fermentation {
 		ItemModels.forItem(tmp, MOO_NAEM_MIX, "moo_naem_mix");
 	}
 
-	final int dayTick = 24000;
+	final static int dayTick = 24000;
 
 	public static void Recipes(RecipeOutput consumer) {
 		// Vanilla Crafting
@@ -859,7 +862,8 @@ public class Fermentation {
 				.requires(Ingredient.of(SLICED_BEETROOT_ITEM)).requires(Ingredient.of(SLICED_BEETROOT_ITEM))
 				.requires(Ingredient.of(Items.SUGAR)).requires(Ingredient.of(SALT))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000)) // fluid
-				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightItems.VINEGAR_FLUID_BUCKET), 1000, true))
+				.requiresStage(
+						new StageIngredient(Ingredient.of(ExtraDelightItems.VINEGAR_FLUID_BUCKET), dayTick, true))
 				.save(consumer);
 
 		VatRecipeBuilder

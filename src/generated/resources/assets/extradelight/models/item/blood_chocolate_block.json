@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/cosmetics/chocolate/blood_chocolate_style0"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

@@ -5,21 +5,28 @@ import com.lance5057.extradelight.blocks.interfaces.IStyleable;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.BlockItemStateProperties;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.phys.HitResult;
 
 import java.util.List;
 
@@ -99,5 +106,29 @@ public class ChocolateStyleBlock extends Block implements IStyleable {
 								TooltipFlag tooltipFlag) {
 		MutableComponent textEmpty = Component.translatable(ExtraDelight.MOD_ID + ".tooltip.styleable");
 		tooltipComponents.add(textEmpty.withStyle(ChatFormatting.AQUA));
+	}
+	
+	@Override
+	public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos,
+			Player player) {
+		ItemStack stack = new ItemStack(this);
+		stack.set(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY.with(STYLE, state.getValue(STYLE)));
+		return stack;
+	}
+
+	@Override
+	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+		if (!level.isClientSide && !player.isCreative() && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)
+				&& state.getValue(STYLE) > 0) {
+			ItemStack itemstack = new ItemStack(this);
+			itemstack.set(DataComponents.BLOCK_STATE,
+					BlockItemStateProperties.EMPTY.with(STYLE, state.getValue(STYLE)));
+			ItemEntity itementity = new ItemEntity(level, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(),
+					itemstack);
+			itementity.setDefaultPickUpDelay();
+			level.addFreshEntity(itementity);
+		}
+
+		return super.playerWillDestroy(level, pos, state, player);
 	}
 }

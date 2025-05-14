@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/tray"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

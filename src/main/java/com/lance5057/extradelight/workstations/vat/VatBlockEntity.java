@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipeWrapper;
@@ -292,13 +291,11 @@ public class VatBlockEntity extends BlockEntity {
 				vat.hasLid = true;
 			} else
 				vat.hasLid = false;
-			
+
 			RecipeHolder<VatRecipe> recipeholder = vat.quickCheck
 					.getRecipeFor(new VatRecipeWrapper(vat.items, vat.fluid), level).orElse(null);
 
 			if (recipeholder != null) {
-//				vat.cookTimeTotal = recipeholder.value().getStageIngredients().get(vat.stage).time;
-//				vat.lidRequired = recipeholder.value().getStageIngredients().get(vat.stage).lid;
 				vat.stageTotal = recipeholder.value().getStages();
 				if (vat.stage >= vat.stageTotal) {// Finish
 					ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
@@ -310,7 +307,12 @@ public class VatBlockEntity extends BlockEntity {
 						SizedFluidIngredient sfi = recipeholder.value().getFluid();
 						if (sfi.test(vat.fluid.getFluid()))
 							vat.fluid.drain(sfi.amount(), FluidAction.EXECUTE);
+						ItemUtils.spawnItemEntity(level,
+								vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).copy().getCraftingRemainingItem(),
+								vat.getBlockPos().getX(), vat.getBlockPos().getY() + 1, vat.getBlockPos().getZ(), 0, 0,
+								0);
 						vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
+
 						vat.items.insertItem(OUTPUT_SLOT, result, false);
 						vat.cookTime = 0;
 						vat.stage = 0;
@@ -321,12 +323,13 @@ public class VatBlockEntity extends BlockEntity {
 					vat.stageTotal = recipeholder.value().getStages();
 
 					if (vat.cookTime >= vat.cookTimeTotal) {
+						ItemUtils.spawnItemEntity(level,
+								vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).copy().getCraftingRemainingItem(),
+								vat.getBlockPos().getX(), vat.getBlockPos().getY() + 1, vat.getBlockPos().getZ(), 0, 0,
+								0);
 						vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
 						vat.cookTime = 0;
 						vat.stage++;
-
-//						vat.cookTimeTotal = recipeholder.value().getStageIngredients().get(vat.stage).time;
-//						vat.lidRequired = recipeholder.value().getStageIngredients().get(vat.stage).lid;
 					} else {
 						if (!recipeholder.value().getStageIngredients().isEmpty()) {
 							if (recipeholder.value().getStageIngredients().size() > vat.stage) {
@@ -371,10 +374,13 @@ public class VatBlockEntity extends BlockEntity {
 		double z = chiller.worldPosition.getZ();
 
 		for (int i = 0; i < 6; i++) {
-			ItemUtils.spawnItemEntity(level, chiller.items.getStackInSlot(i).getCraftingRemainingItem(), x, y, z, 0, 0,
-					0);
+			ItemUtils.spawnItemEntity(level, chiller.items.getStackInSlot(i).copy().getCraftingRemainingItem(), x, y, z,
+					0, 0, 0);
 
 		}
+
+//		ItemUtils.spawnItemEntity(level,
+//				chiller.items.getStackInSlot(FERMENTATION_INPUT_SLOT).getCraftingRemainingItem(), x, y, z, 0, 0, 0);
 	}
 
 	public void updateInventory() {
@@ -465,25 +471,6 @@ public class VatBlockEntity extends BlockEntity {
 		writeNBT(nbt, registries);
 	}
 
-	private ItemStack[] getItems() {
-		int s = getLastFilledSlot(items);
-		if (s != -1) {
-			ItemStack[] stacks = new ItemStack[s + 1];
-			for (int i = 0; i < s + 1; i++) {
-				stacks[i] = items.getStackInSlot(i);
-			}
-			return stacks;
-		}
-		return new ItemStack[0];
-	}
-
-	private void clearItems() {
-		for (int i = 0; i < 9; i++) {
-			items.getStackInSlot(i).shrink(1);
-		}
-		items.getStackInSlot(CONTAINER_SLOT).shrink(1);
-	}
-
 	protected Optional<RecipeHolder<VatRecipe>> matchRecipe() {
 		if (level != null) {
 
@@ -500,24 +487,5 @@ public class VatBlockEntity extends BlockEntity {
 		}
 		return Optional.empty();
 
-	}
-
-	private void removeFluids(SizedFluidIngredient list) {
-		if (list.test(fluid.getFluid()))
-			fluid.drain(list.amount(), FluidAction.EXECUTE);
-	}
-
-//	public boolean testContainerItem(ItemStack stack) {
-//		if (this.containerItem.isEmpty())
-//			return true;
-//		return this.containerItem.getItem() == stack.getItem();
-//	}
-
-	private void dropContainers(@NotNull IItemHandlerModifiable inv, Player player) {
-		for (int i = 0; i < 9; i++) {
-			BlockEntityUtils.Inventory.givePlayerItemStack(inv.getStackInSlot(i).getCraftingRemainingItem(), player,
-					level, worldPosition);
-
-		}
 	}
 }

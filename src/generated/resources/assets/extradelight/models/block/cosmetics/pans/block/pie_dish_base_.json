@@ -1,6 +1,0 @@
-{
-  "parent": "extradelight:block/pie_dish",
-  "textures": {
-    "particle": "extradelight:block/cosmetics/pans/base_pan"
-  }
-}

@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/tarte_tatin_stage0"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

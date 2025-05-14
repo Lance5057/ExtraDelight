@@ -52,7 +52,7 @@
 			"faces": {
 				"east": {"uv": [5, 1, 11, 4], "texture": "#0"},
 				"west": {"uv": [5, 1, 11, 4], "texture": "#0"},
-				"up": {"uv": [0, 0, 6, 1], "rotation": 90, "texture": "#0"}
+				"up": {"uv": [5, 0, 11, 1], "rotation": 90, "texture": "#0"}
 			}
 		},
 		{

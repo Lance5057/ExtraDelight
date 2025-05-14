@@ -5,6 +5,7 @@
     "0": "extradelight:block/cosmetics/vat/pink_terracotta",
     "1": "extradelight:block/cosmetics/vat/pink_terracotta_top",
     "4": "extradelight:block/cosmetics/vat/pink_terracotta_side",
-    "5": "minecraft:block/white_terracotta"
+    "5": "minecraft:block/white_terracotta",
+    "particle": "extradelight:block/cosmetics/vat/pink_terracotta"
   }
 }

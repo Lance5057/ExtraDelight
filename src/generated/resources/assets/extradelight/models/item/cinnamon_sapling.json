@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "minecraft:block/block",
   "textures": {
     "layer0": "extradelight:block/cinnamon_sapling"
   }

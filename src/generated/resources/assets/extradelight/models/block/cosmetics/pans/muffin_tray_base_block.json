@@ -1,0 +1,8 @@
+{
+  "parent": "extradelight:block/muffin_tray",
+  "textures": {
+    "0": "extradelight:block/cosmetics/pans/base",
+    "1": "extradelight:block/cosmetics/pans/base_bottom",
+    "particle": "extradelight:block/cosmetics/pans/base"
+  }
+}

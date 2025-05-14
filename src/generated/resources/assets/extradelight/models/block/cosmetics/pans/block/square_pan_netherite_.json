@@ -1,6 +1,0 @@
-{
-  "parent": "extradelight:block/square_pan",
-  "textures": {
-    "particle": "extradelight:block/cosmetics/pans/netherite_pan"
-  }
-}

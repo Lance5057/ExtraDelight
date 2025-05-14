@@ -27,8 +27,6 @@ public class ItemModels extends ItemModelProvider {
 	protected void registerModels() {
 		getBuilder(ExtraDelightItems.OVEN.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/oven")));
-//		getBuilder(ExtraDelightItems.FOOD_DISPLAY.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/food_display")));
 		getBuilder(ExtraDelightItems.DOUGH_SHAPING.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/doughforming")));
 		getBuilder(ExtraDelightItems.MIXING_BOWL.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
@@ -111,16 +109,32 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(ExtraDelightItems.CORN_COB_PIPE.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/corncob_pipe")))
-				.texture("1", modLoc("item/corncob_pipe")); // not craftable, dungeon item
+				.texture("1", modLoc("item/corncob_pipe"));
 
-		forBlockItem(this, ExtraDelightItems.BAKING_STONE, "baking_stone");
-		forBlockItem(this, ExtraDelightItems.LOAF_PAN, "loafpan");
-		forBlockItem(this, ExtraDelightItems.MUFFIN_TIN, "muffin_tray");
-		forBlockItem(this, ExtraDelightItems.PIE_DISH, "piepan");
-		forBlockItem(this, ExtraDelightItems.SHEET, "sheet");
-		forBlockItem(this, ExtraDelightItems.TRAY, "tray");
-		forBlockItem(this, ExtraDelightItems.SQUARE_PAN, "square_pan");
-		forBlockItem(this, ExtraDelightItems.SERVING_POT, "serving_pot");
+		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+		this.getBuilder(ExtraDelightItems.BAKING_STONE.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.LOAF_PAN.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.MUFFIN_TIN.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.PIE_DISH.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.SHEET.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.TRAY.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.SQUARE_PAN.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.SERVING_POT.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forItem(this, ExtraDelightItems.WOODEN_SPOON, "wooden_spoon");
 		forItem(this, ExtraDelightItems.DIAMOND_SPOON, "diamond_spoon");
@@ -243,12 +257,14 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.EGG_SALAD_SANDWICH, "egg_salad_sandwich");
 
 		// Feasts
-		forBlockItem(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/salisbury_steak_block_stage0"));
+		getBuilder(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.SALISBURY_STEAK, "salisbury_steak");
 
-		forBlockItem(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/mashed_potato_gravy_block_stage0"));
+		getBuilder(ExtraDelightItems.MASHED_POTATO_GRAVY_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.MASHED_POTATO_GRAVY, "mashed_potato_gravy");
 
 		forItem(this, ExtraDelightItems.JERKY, "beef_jerky");
@@ -286,87 +302,130 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(this, ExtraDelightItems.CHEESE_BLOCK_ITEM, "cheese_block");
 		forBlockItem(this, ExtraDelightItems.BUTTER_BLOCK_ITEM, "butter_block");
 
-		forBlockItem(ExtraDelightItems.HASH_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hash_block_stage0"));
+		getBuilder(ExtraDelightItems.HASH_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.HASH, "hash");
 
-		forBlockItem(ExtraDelightItems.POT_ROAST_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/potroast_block_stage0"));
+		getBuilder(ExtraDelightItems.POT_ROAST_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.POT_ROAST, "pot_roast");
 
-		forBlockItem(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/bbq_ribs_block_stage0"));
+		getBuilder(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.BBQ_RIBS, "bbq_ribs");
 
 		forItem(this, ExtraDelightItems.MEAT_PIE_BLOCK_ITEM, "meat_pie");
 		forItem(this, ExtraDelightItems.MEAT_PIE_SLICE, "meat_pie_slice");
 
-		forBlockItem(ExtraDelightItems.PULLED_PORK_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pulled_pork_block_stage0"));
+		getBuilder(ExtraDelightItems.PULLED_PORK_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.PULLED_PORK_SANDWICH, "pulled_pork_sandwich");
 
-		forBlockItem(ExtraDelightItems.RACK_LAMB_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/rack_lamb_block_stage0"));
+		getBuilder(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.RACK_LAMB, "rack_lamb");
 
-		forBlockItem(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/beef_wellington_block_stage0"));
+		getBuilder(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.BEEF_WELLINGTON, "beef_wellington");
 
-		forBlockItem(ExtraDelightItems.HAGGIS_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/haggis_block_stage0"));
+		getBuilder(ExtraDelightItems.HAGGIS_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.HAGGIS, "haggis");
 
-		forBlockItem(ExtraDelightItems.STIRFRY_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/stirfry_block_stage0"));
+		getBuilder(ExtraDelightItems.STIRFRY_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.STIRFRY, "stirfry");
 
-		forBlockItem(ExtraDelightItems.MEAT_LOAF_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/meatloaf_block_stage0"));
+		getBuilder(ExtraDelightItems.MEAT_LOAF_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		forItem(this, ExtraDelightItems.MEAT_LOAF, "meatloaf");
 
 		getBuilder(ExtraDelightItems.BEEF_STEW_FEAST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
-				.texture("1", modLoc("block/beef_stew"));
-		getBuilder(ExtraDelightItems.CHICKEN_STEW_FEAST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
-				.texture("1", modLoc("block/chicken_stew"));
-		getBuilder(ExtraDelightItems.FISH_STEW_FEAST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
-				.texture("1", modLoc("block/fish_stew"));
-		getBuilder(ExtraDelightItems.LAMB_STEW_FEAST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
-				.texture("1", modLoc("block/lamb_stew"));
-		getBuilder(ExtraDelightItems.PORK_STEW_FEAST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
-				.texture("1", modLoc("block/pork_stew"));
-		getBuilder(ExtraDelightItems.RABBIT_STEW_FEAST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/curry_block_stage0")))
-				.texture("1", modLoc("block/rabbit_stew"));
-		getBuilder(ExtraDelightItems.CURRY_FEAST.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/curry_block_stage0")));
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
-		this.jellyBlock(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM, "white");
-		this.jellyBlock(ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM, "orange");
-		this.jellyBlock(ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM, "magenta");
-		this.jellyBlock(ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM, "light_blue");
-		this.jellyBlock(ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM, "yellow");
-		this.jellyBlock(ExtraDelightItems.JELLY_LIME_FEAST_ITEM, "lime");
-		this.jellyBlock(ExtraDelightItems.JELLY_PINK_FEAST_ITEM, "pink");
-		this.jellyBlock(ExtraDelightItems.JELLY_GREY_FEAST_ITEM, "grey");
-		this.jellyBlock(ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM, "light_grey");
-		this.jellyBlock(ExtraDelightItems.JELLY_CYAN_FEAST_ITEM, "cyan");
-		this.jellyBlock(ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM, "purple");
-		this.jellyBlock(ExtraDelightItems.JELLY_BLUE_FEAST_ITEM, "blue");
-		this.jellyBlock(ExtraDelightItems.JELLY_BROWN_FEAST_ITEM, "brown");
-		this.jellyBlock(ExtraDelightItems.JELLY_GREEN_FEAST_ITEM, "green");
-		this.jellyBlock(ExtraDelightItems.JELLY_RED_FEAST_ITEM, "red");
-		this.jellyBlock(ExtraDelightItems.JELLY_BLACK_FEAST_ITEM, "black");
+		getBuilder(ExtraDelightItems.CHICKEN_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+		getBuilder(ExtraDelightItems.FISH_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+		getBuilder(ExtraDelightItems.LAMB_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+		getBuilder(ExtraDelightItems.PORK_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+		getBuilder(ExtraDelightItems.RABBIT_STEW_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+		getBuilder(ExtraDelightItems.CURRY_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+		this.getBuilder(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_LIME_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_PINK_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_GREY_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_CYAN_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_BLUE_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_BROWN_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_GREEN_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_RED_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		this.getBuilder(ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forItem(this, ExtraDelightItems.JELLY_WHITE, "jelly_white");
 		forItem(this, ExtraDelightItems.JELLY_ORANGE, "jelly_orange");
@@ -410,16 +469,19 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.MEAT_LOAF, "meatloaf");
 		forItem(this, ExtraDelightItems.MEAT_LOAF_SANDWICH, "meatloaf_sandwich");
 
-		forBlockItem(ExtraDelightItems.MACARONI_CHEESE_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/macaroni_cheese_block_stage0"));
+		getBuilder(ExtraDelightItems.MACARONI_CHEESE_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.MACARONI_CHEESE, "macaroni_cheese");
 
-		forBlockItem(ExtraDelightItems.HOTDISH_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hotdish_block_stage0"));
+		getBuilder(ExtraDelightItems.HOTDISH_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.HOTDISH, "hotdish");
 
-		forBlockItem(ExtraDelightItems.LASAGNA_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/lasagna_block_stage0"));
+		getBuilder(ExtraDelightItems.LASAGNA_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.LASAGNA, "lasagna");
 
 		forItem(this, ExtraDelightItems.BREAD_CRUMBS, "breadcrumbs");
@@ -431,8 +493,9 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.CROUTONS, "croutons");
 
 		forItem(this, ExtraDelightItems.SALAD, "chef_salad");
-		forBlockItem(ExtraDelightItems.SALAD_FEAST_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/salad_block_stage0"));
+		getBuilder(ExtraDelightItems.SALAD_FEAST_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forItem(this, ExtraDelightItems.ALFREDO_SAUCE, "alfredo_sauce");
 		forItem(this, ExtraDelightItems.CHICKEN_ALFREDO, "chicken_alfredo");
@@ -498,28 +561,34 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.PUMPKIN_PIE_SLICE, "pumpkin_pie_slice");
 
 		forItem(this, ExtraDelightItems.CORNBREAD, "cornbread");
-		forBlockItem(ExtraDelightItems.CORNBREAD_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cornbread_stage0"));
+		getBuilder(ExtraDelightItems.CORNBREAD_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forItem(this, ExtraDelightItems.CORN_PUDDING, "corn_pudding");
-		forBlockItem(ExtraDelightItems.CORN_PUDDING_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/corn_pudding_stage0"));
+		getBuilder(ExtraDelightItems.CORN_PUDDING_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forItem(this, ExtraDelightItems.PUMPKIN_ROLL, "pumpkin_roll");
-		forBlockItem(ExtraDelightItems.PUMPKIN_ROLL_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pumpkin_roll_stage0"));
+		getBuilder(ExtraDelightItems.PUMPKIN_ROLL_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forItem(this, ExtraDelightItems.APPLE_CRISP, "apple_crisp");
-		forBlockItem(ExtraDelightItems.APPLE_CRISP_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/apple_crisp_stage0"));
+		getBuilder(ExtraDelightItems.APPLE_CRISP_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forItem(this, ExtraDelightItems.STUFFING, "stuffing");
-		forBlockItem(ExtraDelightItems.STUFFING_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/stuffing_stage0"));
+		getBuilder(ExtraDelightItems.STUFFING_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forItem(this, ExtraDelightItems.POTATO_AU_GRATIN, "potato_au_gratin");
-		forBlockItem(ExtraDelightItems.POTATO_AU_GRATIN_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/potato_au_gratin_stage0"));
+		getBuilder(ExtraDelightItems.POTATO_AU_GRATIN_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forBlockItem(this, ExtraDelightItems.FLOUR_SACK, "flour_sack");
 		forBlockItem(this, ExtraDelightItems.CORNMEAL_SACK, "cornmeal_sack");
@@ -671,38 +740,54 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.CANDY_RED, "candy_red");
 		forItem(this, ExtraDelightItems.CANDY_BLACK, "candy_black");
 
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_WHITE,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_white"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_ORANGE,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_orange"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_MAGENTA,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_magenta"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_BLUE, ResourceLocation
-				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_light_blue"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_YELLOW,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_yellow"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIME,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_lime"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_PINK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_pink"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_GRAY,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_grey"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_GRAY, ResourceLocation
-				.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_light_grey"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_CYAN,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_cyan"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_PURPLE,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_purple"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_BLUE,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_blue"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_BROWN,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_brown"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_GREEN,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_green"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_RED,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_red"));
-		forBlockItem(ExtraDelightItems.GINGERBREAD_BLOCK_BLACK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gingerbread_block_creeper_black"));
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_WHITE.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_ORANGE.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_MAGENTA.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_BLUE.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_YELLOW.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_LIME.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_PINK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_GRAY.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_LIGHT_GRAY.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_CYAN.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_PURPLE.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_BLUE.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_BROWN.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_GREEN.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_RED.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.GINGERBREAD_BLOCK_BLACK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forBlockItem(this, ExtraDelightItems.CANDY_BOWL_ITEM, "candy_bowl");
 		forItem(this, ExtraDelightItems.MINT, "mint");
@@ -752,20 +837,26 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.MILK_TART_SLICE, "milk_tart_slice");
 		forItem(this, ExtraDelightItems.PUNCH, "punch");
 
-		forBlockItem(ExtraDelightItems.CINNAMON_ROLLS_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_rolls_stage0"));
-		forBlockItem(ExtraDelightItems.MONKEY_BREAD_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/monkey_bread_stage0"));
+		getBuilder(ExtraDelightItems.CINNAMON_ROLLS_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.MONKEY_BREAD_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.COFFEE_CAKE_FEAST, "coffee_cake");
-		forBlockItem(ExtraDelightItems.MINT_LAMB_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/mint_lamb_stage0"));
-		forBlockItem(ExtraDelightItems.CHARCUTERIE_BOARD_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/charcuterie_stage0"));
-		forBlockItem(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/christmas_pudding_stage0"));
+		getBuilder(ExtraDelightItems.MINT_LAMB_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.CHARCUTERIE_BOARD_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.CHRISTMAS_PUDDING_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.MILK_TART_FEAST, "milk_tart");
-		forBlockItem(ExtraDelightItems.PUNCH_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/punch_stage0"));
+		getBuilder(ExtraDelightItems.PUNCH_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forBlockItemFlat(this, ExtraDelightItems.WILD_GINGER, "crops/ginger/wild_ginger");
 
 		forBlockItem(this, ExtraDelightItems.CHEESE_STAIRS_BLOCK_ITEM, "cheese_stairs");
@@ -877,8 +968,9 @@ public class ItemModels extends ItemModelProvider {
 		this.forBlockItem(ExtraDelightItems.PURPLE_CHOCOLATE_BOX,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/purple_chocolate_box"));
 
-		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-				"block/cosmetics/chocolate/blood_chocolate_style0"));
+		getBuilder(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_FENCE,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_fence_inventory"));
 		forBlockItem(this, ExtraDelightItems.BLOOD_CHOCOLATE_FENCE_GATE, "blood_chocolate_fence");
@@ -891,8 +983,9 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_PILLAR,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_pillar"));
 
-		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-				"block/cosmetics/chocolate/dark_chocolate_style0"));
+		getBuilder(ExtraDelightItems.DARK_CHOCOLATE_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_FENCE,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_fence_inventory"));
 		forBlockItem(this, ExtraDelightItems.DARK_CHOCOLATE_FENCE_GATE, "dark_chocolate_fence");
@@ -905,8 +998,9 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_PILLAR,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_pillar"));
 
-		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-				"block/cosmetics/chocolate/milk_chocolate_style0"));
+		getBuilder(ExtraDelightItems.MILK_CHOCOLATE_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_FENCE,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/milk_chocolate_fence_inventory"));
 		forBlockItem(this, ExtraDelightItems.MILK_CHOCOLATE_FENCE_GATE, "milk_chocolate_fence_gate");
@@ -919,8 +1013,9 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_PILLAR,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/milk_chocolate_pillar"));
 
-		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-				"block/cosmetics/chocolate/white_chocolate_style0"));
+		getBuilder(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_FENCE,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_fence_inventory"));
 		forBlockItem(this, ExtraDelightItems.WHITE_CHOCOLATE_FENCE_GATE, "white_chocolate_fence_gate");
@@ -979,40 +1074,51 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.PEANUT_BUTTER_JELLY, "peanut_butter_jelly");
 		forItem(this, ExtraDelightItems.COFFEE, "coffee");
 
-		forBlockItem(ExtraDelightItems.BROWNIES_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/brownies_stage0"));
+		getBuilder(ExtraDelightItems.BROWNIES_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.BROWNIE, "brownie");
-		forBlockItem(ExtraDelightItems.BLONDIES_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blondies_stage0"));
+		getBuilder(ExtraDelightItems.BLONDIES_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.BLONDIE, "blondie");
 
 		forItem(this, ExtraDelightItems.CHOCOLATE_CAKE_BLOCK, "chocolate_cake");
 		forItem(this, ExtraDelightItems.CHOCOLATE_CAKE, "chocolate_cake_slice");
-		forBlockItem(ExtraDelightItems.FUDGE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/fudge_stage0"));
+		getBuilder(ExtraDelightItems.FUDGE_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.FUDGE_SLICE, "fudge");
-		forBlockItem(ExtraDelightItems.STICKY_TOFFEE_PUDDING_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/sticky_toffee_pudding_stage0"));
+		getBuilder(ExtraDelightItems.STICKY_TOFFEE_PUDDING_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE, "sticky_toffee_pudding");
 		forItem(this, ExtraDelightItems.CRISP_RICE, "crisp_rice");
 		forItem(this, ExtraDelightItems.CRISP_RICE_CEREAL, "crisp_rice_cereal");
-		forBlockItem(ExtraDelightItems.CRISP_RICE_TREATS_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/crisp_rice_treats_stage0"));
+		getBuilder(ExtraDelightItems.CRISP_RICE_TREATS_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.CRISP_RICE_TREAT, "crisp_rice_treat");
-		forBlockItem(ExtraDelightItems.SCOTCHAROO_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/scotcharoos_stage0"));
+		getBuilder(ExtraDelightItems.SCOTCHAROO_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.SCOTCHAROO, "scotcharoo");
-		forBlockItem(ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/black_forest_trifle_stage0"));
+		getBuilder(ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.BLACK_FOREST_TRIFLE, "black_forest_trifle");
-		forBlockItem(ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/blood_chocolate_fondue_pot_stage0"));
-		forBlockItem(ExtraDelightItems.MILK_CHOCOLATE_FONDUE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/milk_chocolate_fondue_pot_stage0"));
-		forBlockItem(ExtraDelightItems.DARK_CHOCOLATE_FONDUE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/dark_chocolate_fondue_pot_stage0"));
-		forBlockItem(ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chocolate_fondue_pot_stage0"));
+		getBuilder(ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.MILK_CHOCOLATE_FONDUE_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.DARK_CHOCOLATE_FONDUE_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		forItem(this, ExtraDelightItems.CORN_FLAKES, "corn_flakes");
 		forItem(this, ExtraDelightItems.CORN_FLAKES_CEREAL, "corn_flake_cereal");
@@ -1097,19 +1203,22 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItemFlat(this, ExtraDelightItems.APPLE_SAPLING, "crops/fruit/apple/apple_sapling");
 		forItem(this, ExtraDelightItems.ROMBOSSE, "rombosse");
 		forItem(this, ExtraDelightItems.APPLE_SLAW, "apple_slaw");
-		forBlockItem(ExtraDelightItems.PORK_AND_APPLES_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pork_apple_roast_stage0"));
+		getBuilder(ExtraDelightItems.PORK_AND_APPLES_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.PORK_AND_APPLES, "pork_apple_roast");
 		forItem(this, ExtraDelightItems.APPLE_CHIPS, "apple_chips");
-		forBlockItem(ExtraDelightItems.STUFFED_APPLES_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/stuffed_apples_stage0"));
+		getBuilder(ExtraDelightItems.STUFFED_APPLES_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.STUFFED_APPLE, "stuffed_apple");
 		forItem(this, ExtraDelightItems.STUFFED_APPLE_ICE_CREAM, "stuffed_apple_ice_cream");
 		forItem(this, ExtraDelightItems.MULLIGATAWNY_SOUP, "mulligatawny_soup");
 		getBuilder(ExtraDelightItems.TARTE_TATIN_IN_PAN.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/tarte_tatin")));
-		forBlockItem(ExtraDelightItems.TARTE_TATIN,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/tarte_tatin_stage0"));
+		getBuilder(ExtraDelightItems.TARTE_TATIN.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.TARTE_TATIN_SLICE, "tarte_tatin_slice");
 		forItem(this, ExtraDelightItems.AEBLEFLAESK, "aebleflaesk");
 		forItem(this, ExtraDelightItems.CANDY_BAR_SALAD, "candy_bar_salad");
@@ -1195,17 +1304,16 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.PAMONHA, "pamonha");
 
 		getBuilder(ExtraDelightItems.CHILI_CON_CARNE_FEAST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chili_con_carne_stage0")))
-				.texture("1", modLoc("block/chili_con_carne"));
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		getBuilder(ExtraDelightItems.WHITE_CHILI_FEAST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/white_chili_stage0")))
-				.texture("1", modLoc("block/white_chili"));
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
-		forBlockItem(ExtraDelightItems.MARSHMALLOW_SLICE_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/marshmallow_slice_stage0"));
+		getBuilder(ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forBlockItem(this, ExtraDelightItems.CHOCOLATE_COOKIE_BLOCK, "chocolate_cookie_block");
 		forBlockItem(this, ExtraDelightItems.NUT_BUTTER_COOKIE_BLOCK, "nut_butter_cookie_block");
 
@@ -1214,8 +1322,9 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(this, ExtraDelightItems.GARLIC_CRATE, "garlic_crate");
 		forItem(this, ExtraDelightItems.GARLIC_CLOVE, "crops/garlic/garlic_clove");
 		forItem(this, ExtraDelightItems.GRATED_GARLIC, "crops/garlic/grated_garlic");
-		forBlockItem(ExtraDelightItems.BRUSCHETTA_FEAST,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/bruschetta_stage0"));
+		getBuilder(ExtraDelightItems.BRUSCHETTA_FEAST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forItem(this, ExtraDelightItems.BRUSCHETTA, "bruschetta");
 		forItem(this, ExtraDelightItems.AIOLI, "aioli");
 		forItem(this, ExtraDelightItems.ROASTED_GARLIC, "crops/garlic/roasted_garlic");
@@ -1228,23 +1337,16 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.PENNE, "penne");
 		forItem(this, ExtraDelightItems.PENNE_ALL_ARRABIATA, "penne_all_arrabbiata");
 
-		getBuilder(ExtraDelightItems.VAT.getId().getPath()).parent(new ModelFile.UncheckedModelFile("item/generated"))
+		getBuilder(ExtraDelightItems.VAT.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
-		getBuilder(ExtraDelightItems.LID.getId().getPath()).parent(new ModelFile.UncheckedModelFile("item/generated"))
+		getBuilder(ExtraDelightItems.LID.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 
-//		getBuilder(ExtraDelightItems.VAT.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/vat")));
-//		getBuilder(ExtraDelightItems.LID.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/lid")));
-//		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
-//				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/evaporator")));
-
 		getBuilder(ExtraDelightItems.DYNAMIC_TOAST.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(DynamicFoodGeometryLoader::builder);
 
 		Fermentation.itemModels(this);
@@ -1281,15 +1383,8 @@ public class ItemModels extends ItemModelProvider {
 				texture);
 	}
 
-	public void jellyBlock(DeferredItem<Item> item, String color) {
-		ModelFile jellyModel = new ModelFile.UncheckedModelFile(modLoc("block/jelly_block_stage0"));
-
-		getBuilder(item.getId().getPath()).parent(jellyModel).texture("1",
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/jelly_" + color));
-	}
-
 	private void forBlockItemWithParent(DeferredItem<Item> item) {
-		singleTexture(item.getId().getPath(), mcLoc("item/generated"), "layer0",
+		singleTexture(item.getId().getPath(), mcLoc("block/block"), "layer0",
 				modLoc("block/" + item.getId().getPath()));
 	}
 

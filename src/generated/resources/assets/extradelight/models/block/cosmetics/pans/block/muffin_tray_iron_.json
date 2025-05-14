@@ -1,6 +1,0 @@
-{
-  "parent": "extradelight:block/muffin_tray",
-  "textures": {
-    "particle": "extradelight:block/cosmetics/pans/iron_pan"
-  }
-}

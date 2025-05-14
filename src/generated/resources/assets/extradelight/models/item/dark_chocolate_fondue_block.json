@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/dark_chocolate_fondue_pot_stage0"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

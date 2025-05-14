@@ -6,10 +6,10 @@ import com.lance5057.extradelight.util.CollisionUtil;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -127,7 +127,7 @@ public class JarDisplayBlock extends Block implements EntityBlock {
 				if (be != null && be instanceof JarDisplayBlockEntity jdbe) {
 					if (!player.isCrouching()) {
 						if (stack.getItem() instanceof BlockItem bi && bi instanceof IDisplayInteractable) {
-							BlockEntityUtils.Inventory.insertItem(jdbe.getItems(), stack.copy(),
+							BlockEntityUtils.Inventory.insertItem(jdbe.getItems(), stack,
 									JarDisplayBlockEntity.NUM_SLOTS);
 						} else {
 							return takeServingFromIndividual(player, stack, state, level, state.getValue(FACING),
@@ -263,4 +263,20 @@ public class JarDisplayBlock extends Block implements EntityBlock {
 		}
 	}
 
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity tileEntity = level.getBlockEntity(pos);
+			if (tileEntity instanceof JarDisplayBlockEntity te) {
+				IItemHandler items = te.getItems();
+				for (int i = 0; i < te.getItems().getSlots(); i++) {
+					level.addFreshEntity(
+							new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+				}
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
+
+			super.onRemove(state, level, pos, newState, isMoving);
+		}
+	}
 }

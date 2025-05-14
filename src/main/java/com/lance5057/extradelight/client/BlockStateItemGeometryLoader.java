@@ -21,7 +21,7 @@ public class BlockStateItemGeometryLoader implements IGeometryLoader<BlockStateI
 	}
 
 	public static <T extends ModelBuilder<T>> CustomLoaderBuilder<T> builder(T parent,
-			ExistingFileHelper existingFileHelper) {
+			ExistingFileHelper existingFileHelper) { 
 		return new CustomLoaderBuilder<T>(ID, parent, existingFileHelper, true) {
 		};
 	}

@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/pie_dish"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/cinnamon_rolls_stage0"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

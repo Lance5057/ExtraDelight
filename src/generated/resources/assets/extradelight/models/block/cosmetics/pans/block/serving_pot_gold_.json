@@ -1,6 +1,0 @@
-{
-  "parent": "extradelight:block/serving_pot",
-  "textures": {
-    "particle": "extradelight:block/cosmetics/pans/gold_pan"
-  }
-}

@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/pork_apple_roast_stage0"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

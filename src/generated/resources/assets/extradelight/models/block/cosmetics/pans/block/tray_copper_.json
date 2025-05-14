@@ -1,6 +1,0 @@
-{
-  "parent": "extradelight:block/tray",
-  "textures": {
-    "particle": "extradelight:block/cosmetics/pans/copper_pan"
-  }
-}

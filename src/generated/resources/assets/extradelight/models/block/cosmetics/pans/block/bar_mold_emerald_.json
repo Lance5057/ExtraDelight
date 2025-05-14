@@ -1,6 +1,0 @@
-{
-  "parent": "extradelight:block/bar_mold",
-  "textures": {
-    "particle": "extradelight:block/cosmetics/pans/emerald_pan"
-  }
-}

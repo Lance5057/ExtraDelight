@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/corn_pudding_stage0"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

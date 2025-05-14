@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/potato_au_gratin_stage0"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

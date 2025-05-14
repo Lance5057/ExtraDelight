@@ -1,123 +1,108 @@
 {
   "variants": {
     "facing=east,style=0": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_base_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_base_block",
       "y": 90
     },
     "facing=east,style=1": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_iron_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_iron_block_block",
       "y": 90
     },
     "facing=east,style=2": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_gold_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_gold_block_block",
       "y": 90
     },
     "facing=east,style=3": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_diamond_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_diamond_block_block",
       "y": 90
     },
     "facing=east,style=4": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_netherite_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_netherite_block_block",
       "y": 90
     },
     "facing=east,style=5": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_emerald_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_emerald_block_block",
       "y": 90
     },
     "facing=east,style=6": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_obsidian_",
-      "y": 90
-    },
-    "facing=east,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_copper_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_copper_block_block",
       "y": 90
     },
     "facing=north,style=0": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_base_"
+      "model": "extradelight:block/cosmetics/pans/pie_dish_base_block"
     },
     "facing=north,style=1": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_iron_"
+      "model": "extradelight:block/cosmetics/pans/pie_dish_iron_block_block"
     },
     "facing=north,style=2": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_gold_"
+      "model": "extradelight:block/cosmetics/pans/pie_dish_gold_block_block"
     },
     "facing=north,style=3": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_diamond_"
+      "model": "extradelight:block/cosmetics/pans/pie_dish_diamond_block_block"
     },
     "facing=north,style=4": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_netherite_"
+      "model": "extradelight:block/cosmetics/pans/pie_dish_netherite_block_block"
     },
     "facing=north,style=5": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_emerald_"
+      "model": "extradelight:block/cosmetics/pans/pie_dish_emerald_block_block"
     },
     "facing=north,style=6": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_obsidian_"
-    },
-    "facing=north,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_copper_"
+      "model": "extradelight:block/cosmetics/pans/pie_dish_copper_block_block"
     },
     "facing=south,style=0": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_base_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_base_block",
       "y": 180
     },
     "facing=south,style=1": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_iron_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_iron_block_block",
       "y": 180
     },
     "facing=south,style=2": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_gold_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_gold_block_block",
       "y": 180
     },
     "facing=south,style=3": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_diamond_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_diamond_block_block",
       "y": 180
     },
     "facing=south,style=4": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_netherite_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_netherite_block_block",
       "y": 180
     },
     "facing=south,style=5": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_emerald_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_emerald_block_block",
       "y": 180
     },
     "facing=south,style=6": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_obsidian_",
-      "y": 180
-    },
-    "facing=south,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_copper_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_copper_block_block",
       "y": 180
     },
     "facing=west,style=0": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_base_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_base_block",
       "y": 270
     },
     "facing=west,style=1": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_iron_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_iron_block_block",
       "y": 270
     },
     "facing=west,style=2": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_gold_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_gold_block_block",
       "y": 270
     },
     "facing=west,style=3": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_diamond_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_diamond_block_block",
       "y": 270
     },
     "facing=west,style=4": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_netherite_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_netherite_block_block",
       "y": 270
     },
     "facing=west,style=5": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_emerald_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_emerald_block_block",
       "y": 270
     },
     "facing=west,style=6": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_obsidian_",
-      "y": 270
-    },
-    "facing=west,style=7": {
-      "model": "extradelight:block/cosmetics/pans/block/pie_dish_copper_",
+      "model": "extradelight:block/cosmetics/pans/pie_dish_copper_block_block",
       "y": 270
     }
   }

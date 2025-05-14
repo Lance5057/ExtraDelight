@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/baking_stone"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }
