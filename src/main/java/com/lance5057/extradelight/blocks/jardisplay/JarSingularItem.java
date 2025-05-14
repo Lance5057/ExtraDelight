@@ -119,7 +119,7 @@ public class JarSingularItem extends BlockItem implements IDisplayInteractable {
 		BlockState bs = this.getBlock().defaultBlockState();
 		if (stack.has(DataComponents.BLOCK_STATE))
 			bs = stack.get(DataComponents.BLOCK_STATE).apply(bs);
-		level.setBlock(pos, bs, Block.UPDATE_ALL);
+		level.setBlock(pos, bs, Block.UPDATE_CLIENTS);
 	}
 
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "gingerbread_alex_smelting": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "Recipes"
+      "gingerbread_alex_smelting"
     ]
   ],
   "rewards": {

@@ -15,9 +15,12 @@ import com.google.common.cache.CacheBuilder;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.block.model.ItemOverrides;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
@@ -34,7 +37,12 @@ public class DynamicFoodItemOverrides extends ItemOverrides {
 	public BakedModel resolve(BakedModel pModel, ItemStack pStack, @Nullable ClientLevel pLevel,
 			@Nullable LivingEntity pEntity, int pSeed) {
 		if (pStack.getItem() instanceof IDynamic customizable) {
-			Collection<BakedModel> pieces = customizable.getPieces(pStack);
+			Collection<ResourceLocation> resources = customizable.getPieces(pStack);
+			List<BakedModel> pieces = new ArrayList<BakedModel>();
+
+			for (ResourceLocation rc : resources)
+				pieces.add(Minecraft.getInstance().getModelManager().getModel(ModelResourceLocation.standalone(rc)));
+
 			try {
 				return cache.get(pieces.size(), () -> {
 					List<BakedModel> pieceBakedModels = new ArrayList<>(pieces.size());

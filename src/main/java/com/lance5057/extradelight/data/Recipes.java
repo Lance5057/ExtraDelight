@@ -1555,15 +1555,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"crisp_rice");
 	}
 
-	private void vanillaCooking(Ingredient of, @NotNull Item item, RecipeOutput consumer, String name) {
+	public static void vanillaCooking(Ingredient of, @NotNull Item item, RecipeOutput consumer, String name) {
 		SimpleCookingRecipeBuilder.campfireCooking(of, RecipeCategory.FOOD, item, MEDIUM_EXP, CAMPFIRE_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy(name + "_campfire", InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("campfire/" + name + "_fire"));
 		SimpleCookingRecipeBuilder.smelting(of, RecipeCategory.FOOD, item, MEDIUM_EXP, FURNACE_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy(name + "_smelting", InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smelting/" + name + "_smelt"));
 		SimpleCookingRecipeBuilder.smoking(of, RecipeCategory.FOOD, item, MEDIUM_EXP, SMOKER_COOKING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+				.unlockedBy(name + "_smoking", InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smoking/" + name + "_smoke"));
 
 //		bulkBake(item, of, consumer, ExtraDelightItems.SHEET.get(), name, 1);

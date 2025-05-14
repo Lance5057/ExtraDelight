@@ -2,9 +2,6 @@ package com.lance5057.extradelight.integration.jei;
 
 import java.util.List;
 
-import com.lance5057.extradelight.modules.Fermentation;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -13,6 +10,7 @@ import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.integration.jei.categories.ChillerRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.DoughShapingRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.DryingRackRecipeCategory;
+import com.lance5057.extradelight.integration.jei.categories.EvaporatorRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.FeastRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MeltingPotRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MixingBowlRecipeCategory;
@@ -20,6 +18,8 @@ import com.lance5057.extradelight.integration.jei.categories.MortarRecipeCategor
 import com.lance5057.extradelight.integration.jei.categories.OvenRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.ShapedWithJarRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.ToolOnBlockRecipeCatagory;
+import com.lance5057.extradelight.integration.jei.categories.VatRecipeCategory;
+import com.lance5057.extradelight.modules.Fermentation;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -28,8 +28,10 @@ import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 
 @JeiPlugin
@@ -52,6 +54,8 @@ public class JEIPlugin implements IModPlugin {
 				new FeastRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new MeltingPotRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new ChillerRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new VatRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new EvaporatorRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new ShapedWithJarRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
 	}
 
@@ -77,49 +81,59 @@ public class JEIPlugin implements IModPlugin {
 				.getAllRecipesFor(ExtraDelightRecipes.SHAPED_JAR.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(ChillerRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
 				.getAllRecipesFor(ExtraDelightRecipes.CHILLER.get()).stream().map(RecipeHolder::value).toList());
+		registry.addRecipes(VatRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.VAT.get()).stream().map(RecipeHolder::value).toList());
+		registry.addRecipes(EvaporatorRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.EVAPORATOR.get()).stream().map(RecipeHolder::value).toList());
 
 		registry.addIngredientInfo(new ItemStack(ExtraDelightItems.MINT.get()), VanillaTypes.ITEM_STACK,
 				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.mint"));
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.CINNAMON_SAPLING.get()),
-				new ItemStack(ExtraDelightItems.CINNAMON_LOG.get()), new ItemStack(ExtraDelightItems.CINNAMON_BARK.get()
-						)), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.cinnamon"));
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.WILD_GINGER.get()),
-						new ItemStack(ExtraDelightItems.GINGER.get())), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.ginger"));
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.CORN_SEEDS.get()),
-						new ItemStack(ExtraDelightItems.UNSHUCKED_CORN.get())), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.corn"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(ExtraDelightItems.CINNAMON_SAPLING.get()),
+						new ItemStack(ExtraDelightItems.CINNAMON_LOG.get()),
+						new ItemStack(ExtraDelightItems.CINNAMON_BARK.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.cinnamon"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(ExtraDelightItems.WILD_GINGER.get()),
+						new ItemStack(ExtraDelightItems.GINGER.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.ginger"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(ExtraDelightItems.CORN_SEEDS.get()),
+						new ItemStack(ExtraDelightItems.UNSHUCKED_CORN.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.corn"));
 		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.WILD_CHILI_BLOCK.get()),
-						new ItemStack(ExtraDelightItems.CHILI.get()), new ItemStack(ExtraDelightItems.CHILI_SEEDS.get()
-						)), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.chili"));
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK.get()),
-						new ItemStack(ExtraDelightItems.MALLOW_ROOT.get())), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.mallow"));
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.WILD_PEANUT_BLOCK.get()),
-						new ItemStack(ExtraDelightItems.PEANUTS_IN_SHELL.get())), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.peanut"));
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.COFFEE_CHERRIES.get())), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.coffee"));
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.HAZELNUT_SAPLING.get()),
+				new ItemStack(ExtraDelightItems.CHILI.get()), new ItemStack(ExtraDelightItems.CHILI_SEEDS.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.chili"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK.get()),
+						new ItemStack(ExtraDelightItems.MALLOW_ROOT.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.mallow"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(ExtraDelightItems.WILD_PEANUT_BLOCK.get()),
+						new ItemStack(ExtraDelightItems.PEANUTS_IN_SHELL.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.peanut"));
+		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.COFFEE_CHERRIES.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.coffee"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(ExtraDelightItems.HAZELNUT_SAPLING.get()),
 						new ItemStack(ExtraDelightItems.HAZELNUTS_IN_SHELL.get()),
-						new ItemStack(ExtraDelightItems.HAZELNUT_LEAVES.get())), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.hazelnut"));
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.APPLE_SAPLING.get()),
-						new ItemStack(Items.APPLE),
-						new ItemStack(ExtraDelightItems.APPLE_LEAVES.get())), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.apple"));
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.WILD_GARLIC_BLOCK.get()),
-						new ItemStack(ExtraDelightItems.GARLIC.get())), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.garlic"));
-		registry.addIngredientInfo(List.of(new ItemStack(Fermentation.WILD_CUCUMBER.get()),
-						new ItemStack(Fermentation.CUCUMBER.get()), new ItemStack(Fermentation.CUCUMBER_SEED.get()
-						)), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.cucumber"));
-		registry.addIngredientInfo(List.of(new ItemStack(Fermentation.WILD_SOYBEAN.get()),
-						new ItemStack(Fermentation.SOYBEAN_POD.get())), VanillaTypes.ITEM_STACK,
-				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.soybean"));
+						new ItemStack(ExtraDelightItems.HAZELNUT_LEAVES.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.hazelnut"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(ExtraDelightItems.APPLE_SAPLING.get()), new ItemStack(Items.APPLE),
+						new ItemStack(ExtraDelightItems.APPLE_LEAVES.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.apple"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(ExtraDelightItems.WILD_GARLIC_BLOCK.get()),
+						new ItemStack(ExtraDelightItems.GARLIC.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.garlic"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(Fermentation.WILD_CUCUMBER.get()), new ItemStack(Fermentation.CUCUMBER.get()),
+						new ItemStack(Fermentation.CUCUMBER_SEED.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.cucumber"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(Fermentation.WILD_SOYBEAN.get()), new ItemStack(Fermentation.SOYBEAN_POD.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.soybean"));
 
 		List<ItemStack> hide = List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
 		registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hide);
@@ -159,9 +173,14 @@ public class JEIPlugin implements IModPlugin {
 
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.MELTING_POT.getDelegate()),
 				MeltingPotRecipeCategory.TYPE);
-		
-		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.CHILLER.getDelegate()),
-				ChillerRecipeCategory.TYPE);
+
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.CHILLER.getDelegate()), ChillerRecipeCategory.TYPE);
+
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.VAT.getDelegate()), VatRecipeCategory.TYPE);
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.LID.getDelegate()), VatRecipeCategory.TYPE);
+
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.EVAPORATOR.getDelegate()),
+				EvaporatorRecipeCategory.TYPE);
 	}
 
 }

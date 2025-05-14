@@ -1,0 +1,76 @@
+package com.lance5057.extradelight.integration.jei.categories;
+
+import java.util.List;
+
+import org.jetbrains.annotations.Nullable;
+
+import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
+import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
+
+import mezz.jei.api.constants.VanillaTypes;
+import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
+import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.helpers.IGuiHelper;
+import mezz.jei.api.neoforge.NeoForgeTypes;
+import mezz.jei.api.recipe.IFocusGroup;
+import mezz.jei.api.recipe.RecipeIngredientRole;
+import mezz.jei.api.recipe.RecipeType;
+import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+
+public class VatRecipeCategory implements IRecipeCategory<VatRecipe> {
+	public static final RecipeType<VatRecipe> TYPE = RecipeType.create(ExtraDelight.MOD_ID, "vat", VatRecipe.class);
+	private final IDrawable background;
+	private final Component localizedName;
+	private final IDrawable icon;
+
+	public VatRecipeCategory(IGuiHelper guiHelper) {
+		background = guiHelper.createDrawable(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 155, 183, 101, 73);
+		localizedName = Component.translatable("extradelight.jei.vat");
+		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ExtraDelightItems.VAT.get()));
+	}
+
+	@Override
+	public RecipeType<VatRecipe> getRecipeType() {
+		return TYPE;
+	}
+
+	@Override
+	public Component getTitle() {
+		return localizedName;
+	}
+
+	@Override
+	public @Nullable IDrawable getIcon() {
+		return icon;
+	}
+
+	@Override
+	public void setRecipe(IRecipeLayoutBuilder builder, VatRecipe recipe, IFocusGroup focuses) {
+
+		for (int i = 0; i < recipe.getIngredients().size(); i++) {
+			if (i < 2)
+				builder.addSlot(RecipeIngredientRole.INPUT, 22 + i % 2 * 18, 20)
+						.addIngredients(recipe.getIngredients().get(i));
+			else
+				builder.addSlot(RecipeIngredientRole.INPUT, 22 + i % 2 * 18, 38)
+						.addIngredients(recipe.getIngredients().get(i));
+		}
+
+		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 49, 1)
+				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid().getFluids()))
+				.setFluidRenderer(6000, false, 16, 71);
+
+//		builder.addSlot(RecipeIngredientRole.CATALYST, 31, 56)
+//				.addIngredients(Ingredient.of(recipe.getOutputContainer()));
+
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 84, 30).addIngredients(Ingredient.of(recipe.getResultItem(null)));
+	}
+
+}

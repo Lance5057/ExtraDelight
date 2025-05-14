@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "extradelight:item/moo_naem_mix"
+    "layer0": "extradelight:item/cooked_wheat_seeds"
   }
 }

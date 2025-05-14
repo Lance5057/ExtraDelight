@@ -851,16 +851,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:moo_naem_mix": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:moo_naem_mix"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:nut_butter_cookie_dough": {
       "conditions": {
         "items": [
@@ -1283,9 +1273,6 @@
     ],
     [
       "extradelight:fish_sauce_item"
-    ],
-    [
-      "extradelight:moo_naem_mix"
     ],
     [
       "extradelight:apple_sauce"

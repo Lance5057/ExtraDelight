@@ -8,24 +8,18 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemContainerContents;
-import net.neoforged.neoforge.client.model.data.ModelData;
-import net.neoforged.neoforge.client.model.renderable.BakedModelRenderable;
-import net.neoforged.neoforge.client.model.renderable.IRenderable;
 
 public class DynamicToast extends Item implements IDynamic {
-	static final ModelResourceLocation base_model = ModelResourceLocation
-			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/dynamics/toast/toast"));
-	static final ModelResourceLocation missing_model = ModelResourceLocation
-			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/dynamics/toast/empty_toast"));
+	static final ResourceLocation base_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+			"extra/dynamics/toast/toast");
+	static final ResourceLocation missing_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+			"extra/dynamics/toast/empty_toast");
 
 	public DynamicToast(Properties properties) {
 		super(properties);
@@ -33,12 +27,10 @@ public class DynamicToast extends Item implements IDynamic {
 	}
 
 	@Override
-	public Collection<BakedModel> getPieces(ItemStack itemStack) {
-		List<BakedModel> i = new ArrayList<BakedModel>();
-//		Minecraft.getInstance().getItemRenderer().getModel(itemStack, null, null, 0);
+	public Collection<ResourceLocation> getPieces(ItemStack itemStack) {
+		List<ResourceLocation> i = new ArrayList<ResourceLocation>();
 
-		BakedModel bm = Minecraft.getInstance().getModelManager().getModel(base_model);
-		i.add(bm);
+		i.add(base_model);
 
 		ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
 		if (comp != null) {
@@ -47,17 +39,13 @@ public class DynamicToast extends Item implements IDynamic {
 					ItemStack s = comp.getStackInSlot(1);
 					String str = s.getItem().getDescriptionId();
 					str = str.substring(str.lastIndexOf('.') + 1);
-//					IRenderable<ModelData> m = BakedModelRenderable
-//							.of(ModelResourceLocation.standalone(ExtraDelight.modLoc("extra/dynamics/toast/" + str)))
-//							.withModelDataContext();
 					ResourceLocation rc = ExtraDelight.modLoc("extra/dynamics/toast/" + str);
-					i.add(Minecraft.getInstance().getModelManager().getModel(ModelResourceLocation.standalone(rc)));
-//					i.add(Minecraft.getInstance().getItemRenderer().getModel(comp.getStackInSlot(1), null, null, 0));
+					i.add(rc);
 				} else
-					i.add(Minecraft.getInstance().getModelManager().getModel(missing_model));
+					i.add(missing_model);
 			}
 		} else
-			i.add(Minecraft.getInstance().getModelManager().getModel(missing_model));
+			i.add(missing_model);
 
 //		i.add(bm);
 		return i;

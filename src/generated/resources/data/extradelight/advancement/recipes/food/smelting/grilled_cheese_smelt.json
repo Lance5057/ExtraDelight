@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "grilled_cheese_smelting": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "Recipes"
+      "grilled_cheese_smelting"
     ]
   ],
   "rewards": {

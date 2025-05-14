@@ -269,11 +269,13 @@ public class JarDisplayBlock extends Block implements EntityBlock {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
 			if (tileEntity instanceof JarDisplayBlockEntity te) {
 				IItemHandler items = te.getItems();
-				for (int i = 0; i < te.getItems().getSlots(); i++) {
-					level.addFreshEntity(
-							new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+				if (!items.getStackInSlot(1).isEmpty()) {
+					for (int i = 0; i < te.getItems().getSlots(); i++) {
+						level.addFreshEntity(
+								new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+					}
+					level.updateNeighbourForOutputSignal(pos, this);
 				}
-				level.updateNeighbourForOutputSignal(pos, this);
 			}
 
 			super.onRemove(state, level, pos, newState, isMoving);

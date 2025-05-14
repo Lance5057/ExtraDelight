@@ -34,7 +34,7 @@
         "item": "extradelight:vinegar_fluid_bucket"
       },
       "lid": true,
-      "time": 1000
+      "time": 24000
     }
   ],
   "stages": 1,

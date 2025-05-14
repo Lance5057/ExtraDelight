@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smelting/sugar_cookie_steve_smelt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "sugar_cookie_steve_smelting": {
       "conditions": {
         "items": [
           {
@@ -10,18 +16,12 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "extradelight:smelting/sugar_cookie_steve_smelt"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "Recipes"
+      "sugar_cookie_steve_smelting"
     ]
   ],
   "rewards": {

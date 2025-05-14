@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cooked_wheat_seeds_smelting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cooked_wheat_seeds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smelting/cooked_wheat_seeds_smelt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "cooked_wheat_seeds_smelting"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smelting/cooked_wheat_seeds_smelt"
+    ]
+  }
+}

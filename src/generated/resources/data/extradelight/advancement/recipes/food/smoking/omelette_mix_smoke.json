@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "Recipes": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smoking/omelette_mix_smoke"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "omelette_mix_smoking": {
       "conditions": {
         "items": [
           {
@@ -10,18 +16,12 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "extradelight:smoking/omelette_mix_smoke"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "Recipes"
+      "omelette_mix_smoking"
     ]
   ],
   "rewards": {
