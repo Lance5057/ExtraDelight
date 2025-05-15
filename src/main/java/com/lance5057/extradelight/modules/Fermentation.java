@@ -899,9 +899,9 @@ public class Fermentation {
 		VatRecipeBuilder.pickle(new ItemStack(PICKLED_CARROTS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
 				.requires(Ingredient.of(Tags.Items.CROPS_CARROT)).requires(Ingredient.of(Tags.Items.CROPS_CARROT))
 				.requires(Ingredient.of(Tags.Items.CROPS_CARROT)).requires(Ingredient.of(Tags.Items.CROPS_CARROT))
-				.requires(Ingredient.of(SALT))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 3, true))
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick * 3, true))
 				.save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(PICKLED_EGGS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
