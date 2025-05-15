@@ -1,0 +1,44 @@
+{
+  "type": "extradelight:vat",
+  "fluids": {
+    "amount": 1000,
+    "fluid": "extradelight:vinegar_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "c:crops/onion"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:pickled_onions_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "tag": "salt:can_be_salted"
+      },
+      "lid": false,
+      "time": 24000
+    },
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 504000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
+}

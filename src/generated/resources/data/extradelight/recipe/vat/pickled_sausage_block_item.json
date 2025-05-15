@@ -1,0 +1,37 @@
+{
+  "type": "extradelight:vat",
+  "fluids": {
+    "amount": 1000,
+    "fluid": "extradelight:vinegar_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "c:sausage/cooked"
+    },
+    {
+      "tag": "c:sausage/cooked"
+    },
+    {
+      "tag": "c:sausage/cooked"
+    },
+    {
+      "tag": "c:sausage/cooked"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:pickled_sausage_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 72000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
+}

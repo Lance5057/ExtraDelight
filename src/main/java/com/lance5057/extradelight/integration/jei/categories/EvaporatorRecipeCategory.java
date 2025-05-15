@@ -51,6 +51,11 @@ public class EvaporatorRecipeCategory implements IRecipeCategory<EvaporatorRecip
 	public @Nullable IDrawable getIcon() {
 		return icon;
 	}
+	
+	@Override
+	public IDrawable getBackground() {
+		return background;
+	}
 
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, EvaporatorRecipe recipe, IFocusGroup focuses) {

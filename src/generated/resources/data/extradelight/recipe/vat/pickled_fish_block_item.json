@@ -1,43 +1,45 @@
 {
   "type": "extradelight:vat",
   "fluids": {
-    "amount": 168000,
+    "amount": 1000,
     "fluid": "extradelight:vinegar_fluid"
   },
   "ingredients": [
     {
-      "item": "extradelight:sliced_beetroot_item"
+      "tag": "c:foods/safe_raw_fish"
     },
     {
-      "item": "extradelight:sliced_beetroot_item"
+      "tag": "c:foods/safe_raw_fish"
     },
     {
-      "item": "extradelight:sliced_beetroot_item"
+      "tag": "c:foods/safe_raw_fish"
     },
     {
-      "item": "extradelight:sliced_beetroot_item"
+      "tag": "c:foods/safe_raw_fish"
     },
     {
       "item": "minecraft:sugar"
-    },
-    {
-      "item": "extradelight:salt"
     }
   ],
   "result": {
     "count": 1,
-    "id": "extradelight:pickled_beets_block_item"
+    "id": "extradelight:pickled_fish_block_item"
   },
   "stage_ingredients": [
     {
       "ingredient": {
-        "item": "extradelight:vinegar_fluid_bucket"
+        "tag": "salt:can_be_salted"
       },
-      "lid": true,
+      "lid": false,
       "time": 24000
+    },
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 48000
     }
   ],
-  "stages": 1,
+  "stages": 2,
   "usedItem": {
     "count": 1,
     "id": "minecraft:glass_bottle"
