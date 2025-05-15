@@ -35,18 +35,16 @@ public class VatRecipeBuilder implements RecipeBuilder {
 	SizedFluidIngredient fluid;
 
 	protected int stages = 0;
-	protected final int cookTime;
 
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 
-	public VatRecipeBuilder(ItemStack pResult, ItemStack containerItem, int cookTime) {
+	public VatRecipeBuilder(ItemStack pResult, ItemStack containerItem) {
 		this.containerItem = containerItem;
 		this.result = pResult;
-		this.cookTime = cookTime;
 	}
 
-	public static VatRecipeBuilder pickle(ItemStack pResult, ItemStack usedItem, int cookTime) {
-		return new VatRecipeBuilder(pResult, usedItem, cookTime);
+	public static VatRecipeBuilder pickle(ItemStack pResult, ItemStack usedItem) {
+		return new VatRecipeBuilder(pResult, usedItem);
 	}
 
 	public VatRecipeBuilder requiresFluid(SizedFluidIngredient stack) {
