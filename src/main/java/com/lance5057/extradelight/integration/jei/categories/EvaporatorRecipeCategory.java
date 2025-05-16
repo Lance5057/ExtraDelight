@@ -79,10 +79,10 @@ public class EvaporatorRecipeCategory implements IRecipeCategory<EvaporatorRecip
 
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
-		guiGraphics.drawString(fontRenderer, "+ Extras", 30, 50, 0xffffff);
+		guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.evaporator.extra"), 30, 50, 0xffffff);
 
-		guiGraphics.drawString(fontRenderer, "Requires View", 27, 4, 0xffffff);
-		guiGraphics.drawString(fontRenderer, "of Sky!", 44, 14, 0xffffff);
+		guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.evaporator.view"), 27, 4, 0xffffff);
+		guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.evaporator.sky"), 44, 14, 0xffffff);
 
 		RenderSystem.disableBlend();
 	}

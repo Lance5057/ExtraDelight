@@ -95,6 +95,16 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.cucumber", "Found in hills.");
 		this.add("extradelight.jei.info.soybean", "Found in anything temperate.");
 
+		this.add("extradelight.jei.info.evaporator.extra", "+ Extras");
+		this.add("extradelight.jei.info.evaporator.view", "Requires View"); // Combine with the one under
+		this.add("extradelight.jei.info.evaporator.sky", "of Sky!");
+		
+		this.add("extradelight.jei.info.vat.stage", "Stage: %d");
+		this.add("extradelight.jei.info.vat.lid.on", "Lid On!");
+		this.add("extradelight.jei.info.vat.lid.off", "Lid Off");
+		this.add("extradelight.jei.info.vat.day", "%f Day");
+		this.add("extradelight.jei.info.vat.days", "%f Days");
+
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".tooltip.feast", "Feast Block");
@@ -1177,7 +1187,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("fluid_type.extradelight.nut_butter_fluid", "Nut Butter");
 		this.add("fluid_type.extradelight.marshmallow_fluff_fluid", "Marshmallow Fluff");
 		this.add("fluid_type.extradelight.cocoa_nut_butter_spread_fluid", "Chocolate Nut Butter Spread");
-		
+
 		this.add("block.extradelight.cocoa_butter_fluid_block", "Cocoa Butter");
 		this.add("block.extradelight.white_chocolate_syrup_fluid_block", "Liquid White Chocolate");
 		this.add("block.extradelight.dark_chocolate_syrup_fluid_block", "Liquid Dark Chocolate");

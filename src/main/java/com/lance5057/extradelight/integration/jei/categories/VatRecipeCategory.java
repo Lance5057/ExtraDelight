@@ -81,18 +81,23 @@ public class VatRecipeCategory implements IRecipeCategory<VatRecipe> {
 
 		for (int i = 0; i < recipe.getStages(); i++) {
 			stage.draw(guiGraphics, 0, 47 + (i * 31));
-			guiGraphics.drawString(fontRenderer, "Stage: " + (i + 1), 0, 49 + (i * 31), 0xFFFFFFFF);
+			guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.stage", (i + 1)), 0,
+					49 + (i * 31), 0xFFFFFFFF);
 
 			if (recipe.getStageIngredients().get(i).lid)
-				guiGraphics.drawString(fontRenderer, "Lid On!", 0, 58 + (i * 31), 0xFFFF5555);
+				guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.lid.on"), 0,
+						58 + (i * 31), 0xFFFF5555);
 			else
-				guiGraphics.drawString(fontRenderer, "Lid Off", 0, 58 + (i * 31), 0xFFFFFFFF);
+				guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.lid.off"), 0,
+						58 + (i * 31), 0xFFFFFFFF);
 
 			float f = ((float) recipe.getStageIngredients().get(i).time / (float) Fermentation.dayTick);
 			if (f > 1 || f < 1)
-				guiGraphics.drawString(fontRenderer, f + " Days", 0, 67 + (i * 31), 0xFFFFFFFF);
+				guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.days", f), 0,
+						67 + (i * 31), 0xFFFFFFFF);
 			else
-				guiGraphics.drawString(fontRenderer, f + " Day", 0, 67 + (i * 31), 0xFFFFFFFF);
+				guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.day", f), 0,
+						67 + (i * 31), 0xFFFFFFFF);
 		}
 
 		finish.draw(guiGraphics, 0, 46 + (recipe.getStages() * 31));
