@@ -211,7 +211,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_GINGER).addTag(ExtraDelightTags.GRATED_GINGER)
 				.addTag(ExtraDelightTags.SLICED_GINGER);
 
-		tag(ExtraDelightTags.SALT).add(ExtraDelightItems.BACON_CHEESEBURGER.get(),
+		tag(ExtraDelightTags.CAN_BE_SALTED).add(ExtraDelightItems.BACON_CHEESEBURGER.get(),
 				ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get(), ExtraDelightItems.BACON_EGG_SANDWICH.get(),
 				ExtraDelightItems.BAD_FOOD.get(), ExtraDelightItems.BBQ_RIBS.get(),
 				ExtraDelightItems.BEEF_STEW_RICE.get(), ExtraDelightItems.BEEF_WELLINGTON.get(),

@@ -2,38 +2,34 @@
   "type": "extradelight:vat",
   "fluids": {
     "amount": 1000,
-    "fluid": "extradelight:vinegar_fluid"
+    "fluid": "minecraft:water"
   },
   "ingredients": [
     {
-      "tag": "c:crops/carrot"
+      "item": "extradelight:cooked_soybeans_item"
     },
     {
-      "tag": "c:crops/carrot"
-    },
-    {
-      "tag": "c:crops/carrot"
-    },
-    {
-      "tag": "c:crops/carrot"
+      "item": "extradelight:cooked_wheat_seeds"
     }
   ],
   "result": {
     "count": 1,
-    "id": "extradelight:pickled_carrots_block_item"
+    "id": "extradelight:soy_sauce_item"
   },
   "stage_ingredients": [
     {
-      "ingredient": [],
+      "ingredient": {
+        "item": "extradelight:yeast"
+      },
       "lid": true,
       "time": 72000
     },
     {
       "ingredient": {
-        "tag": "salt:can_be_salted"
+        "item": "extradelight:salt"
       },
       "lid": true,
-      "time": 72000
+      "time": 336000
     }
   ],
   "stages": 2,

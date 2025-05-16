@@ -15,16 +15,14 @@
   },
   "stage_ingredients": [
     {
-      "ingredient": {
-        "item": "minecraft:water_bucket"
-      },
+      "ingredient": [],
       "lid": true,
-      "time": 1000
+      "time": 24000
     }
   ],
   "stages": 1,
   "usedItem": {
     "count": 1,
-    "id": "extradelight:jar"
+    "id": "minecraft:bowl"
   }
 }

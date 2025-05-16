@@ -111,8 +111,8 @@ public class Fermentation {
 	public static final DeferredItem<Item> SOYBEAN_SACK_ITEM = ExtraDelightItems.ITEMS.register("soybean_sack_item",
 			() -> new BlockItem(SOYBEAN_SACK.get(), new Item.Properties()));
 
-	public static final DeferredBlock<JarSingularBlock> GHERKINS_BLOCK = ExtraDelightBlocks.BLOCKS.register(
-			"gherkins_block", () -> new JarSingularBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
+	public static final DeferredBlock<JarSingularBlock> GHERKINS_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("gherkins_block", () -> new JarSingularBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
 					.strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
 	public static final DeferredItem<Item> GHERKINS_BLOCK_ITEM = EDItemGenerator
 			.register("gherkins_block_item",
@@ -124,9 +124,9 @@ public class Fermentation {
 			.register("gherkin_item", () -> new Item(new Item.Properties())).advancementIngredients().servingToolTip()
 			.finish();
 
-	public static final DeferredBlock<JarSingularBlock> PICKLED_BEETS_BLOCK = ExtraDelightBlocks.BLOCKS.register(
-			"pickled_beets_block", () -> new JarSingularBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-					.strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
+	public static final DeferredBlock<JarSingularBlock> PICKLED_BEETS_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("pickled_beets_block", () -> new JarSingularBlock(BlockBehaviour.Properties
+					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
 	public static final DeferredItem<Item> PICKLED_BEETS_BLOCK_ITEM = EDItemGenerator
 			.register("pickled_beets_block_item",
 					() -> new JarSingularItem(PICKLED_BEETS_BLOCK.get(),
@@ -137,9 +137,9 @@ public class Fermentation {
 			.register("pickled_beet_item", () -> new Item(new Item.Properties())).advancementIngredients()
 			.servingToolTip().finish();
 
-	public static final DeferredBlock<JarSingularBlock> PICKLED_ONIONS_BLOCK = ExtraDelightBlocks.BLOCKS.register(
-			"pickled_onions_block", () -> new JarSingularBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-					.strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
+	public static final DeferredBlock<JarSingularBlock> PICKLED_ONIONS_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("pickled_onions_block", () -> new JarSingularBlock(BlockBehaviour.Properties
+					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
 	public static final DeferredItem<Item> PICKLED_ONIONS_BLOCK_ITEM = EDItemGenerator
 			.register("pickled_onions_block_item",
 					() -> new JarSingularItem(PICKLED_ONIONS_BLOCK.get(),
@@ -150,9 +150,9 @@ public class Fermentation {
 			.register("pickled_onion_item", () -> new Item(new Item.Properties())).advancementIngredients()
 			.servingToolTip().finish();
 
-	public static final DeferredBlock<JarSingularBlock> PICKLED_CARROTS_BLOCK = ExtraDelightBlocks.BLOCKS.register(
-			"pickled_carrots_block", () -> new JarSingularBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-					.strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
+	public static final DeferredBlock<JarSingularBlock> PICKLED_CARROTS_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("pickled_carrots_block", () -> new JarSingularBlock(BlockBehaviour.Properties
+					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
 	public static final DeferredItem<Item> PICKLED_CARROTS_BLOCK_ITEM = EDItemGenerator
 			.register("pickled_carrots_block_item",
 					() -> new JarSingularItem(PICKLED_CARROTS_BLOCK.get(),
@@ -163,9 +163,9 @@ public class Fermentation {
 			.register("pickled_carrot_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
 			.finish();
 
-	public static final DeferredBlock<JarSingularBlock> PICKLED_EGGS_BLOCK = ExtraDelightBlocks.BLOCKS.register(
-			"pickled_eggs_block", () -> new JarSingularBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-					.strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
+	public static final DeferredBlock<JarSingularBlock> PICKLED_EGGS_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("pickled_eggs_block", () -> new JarSingularBlock(BlockBehaviour.Properties
+					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
 	public static final DeferredItem<Item> PICKLED_EGGS_BLOCK_ITEM = EDItemGenerator
 			.register("pickled_eggs_block_item",
 					() -> new JarSingularItem(PICKLED_EGGS_BLOCK.get(),
@@ -176,9 +176,9 @@ public class Fermentation {
 			.register("pickled_egg_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
 			.finish();
 
-	public static final DeferredBlock<JarSingularBlock> PICKLED_FISH_BLOCK = ExtraDelightBlocks.BLOCKS.register(
-			"pickled_fish_block", () -> new JarSingularBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-					.strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
+	public static final DeferredBlock<JarSingularBlock> PICKLED_FISH_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("pickled_fish_block", () -> new JarSingularBlock(BlockBehaviour.Properties
+					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
 	public static final DeferredItem<Item> PICKLED_FISH_BLOCK_ITEM = EDItemGenerator
 			.register("pickled_fish_block_item",
 					() -> new JarSingularItem(PICKLED_FISH_BLOCK.get(),
@@ -189,9 +189,9 @@ public class Fermentation {
 			.register("pickled_fish_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
 			.finish();
 
-	public static final DeferredBlock<JarSingularBlock> PICKLED_SAUSAGE_BLOCK = ExtraDelightBlocks.BLOCKS.register(
-			"pickled_sausage_block", () -> new JarSingularBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-					.strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
+	public static final DeferredBlock<JarSingularBlock> PICKLED_SAUSAGE_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("pickled_sausage_block", () -> new JarSingularBlock(BlockBehaviour.Properties
+					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
 	public static final DeferredItem<Item> PICKLED_SAUSAGE_BLOCK_ITEM = EDItemGenerator
 			.register("pickled_sausage_block_item",
 					() -> new JarSingularItem(PICKLED_SAUSAGE_BLOCK.get(),
@@ -202,9 +202,9 @@ public class Fermentation {
 			.register("pickled_sausage_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
 			.finish();
 
-	public static final DeferredBlock<JarSingularBlock> PICKLED_GINGER_BLOCK = ExtraDelightBlocks.BLOCKS.register(
-			"pickled_ginger_block", () -> new JarSingularBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-					.strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
+	public static final DeferredBlock<JarSingularBlock> PICKLED_GINGER_BLOCK = ExtraDelightBlocks.BLOCKS
+			.register("pickled_ginger_block", () -> new JarSingularBlock(BlockBehaviour.Properties
+					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
 	public static final DeferredItem<Item> PICKLED_GINGER_BLOCK_ITEM = EDItemGenerator
 			.register("pickled_ginger_block_item",
 					() -> new JarSingularItem(PICKLED_GINGER_BLOCK.get(),
@@ -536,8 +536,8 @@ public class Fermentation {
 		ItemModels.forItem(tmp, COOKED_WHEAT_SEEDS, "cooked_wheat_seeds");
 	}
 
-	final static int dayTick = 24000;
-	final static int hourTick = 1000;
+	public final static int dayTick = 24000;
+	public final static int hourTick = 1000;
 
 	public static void Recipes(RecipeOutput consumer) {
 		// Vanilla Crafting
@@ -862,14 +862,14 @@ public class Fermentation {
 
 		// Evaporating
 		EvaporatorRecipeBuilder
-				.evaporate(SizedFluidIngredient.of(Fluids.LAVA, 1000), MiscLootTables.EVAPORATOR_LAVA_TEST.location(),
-						10000, Blocks.COBBLESTONE)
+				.evaporate(SizedFluidIngredient.of(Fluids.LAVA, 1000), new ItemStack(Items.COBBLESTONE),
+						MiscLootTables.EVAPORATOR_LAVA_TEST.location(), 10000, Blocks.COBBLESTONE)
 				.unlockedBy("has_lava", InventoryChangeTrigger.TriggerInstance.hasItems(Items.LAVA_BUCKET))
 				.save(consumer, ExtraDelight.modLoc("evaporate_lava"));
 
 		EvaporatorRecipeBuilder
-				.evaporate(SizedFluidIngredient.of(Fluids.WATER, 1000), MiscLootTables.EVAPORATOR_WATER.location(),
-						10000, SALT_BLOCK.get())
+				.evaporate(SizedFluidIngredient.of(Fluids.WATER, 1000), Fermentation.SALT.toStack(),
+						MiscLootTables.EVAPORATOR_WATER.location(), 10000, SALT_BLOCK.get())
 				.unlockedBy("has_water", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WATER_BUCKET))
 				.save(consumer, ExtraDelight.modLoc("evaporate_water"));
 
@@ -878,7 +878,8 @@ public class Fermentation {
 				.requires(Ingredient.of(ExtraDelightTags.CUCUMBER)).requires(Ingredient.of(ExtraDelightTags.CUCUMBER))
 				.requires(Ingredient.of(ExtraDelightTags.CUCUMBER)).requires(Ingredient.of(ExtraDelightTags.CUCUMBER))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000))
-				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), (int) (dayTick), false))
+				.requiresStage(
+						new StageIngredient(Ingredient.of(ExtraDelightTags.CAN_BE_SALTED), (int) (dayTick), false))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, (int) (dayTick * 7 * 1.5), true)).save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(PICKLED_BEETS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
@@ -886,14 +887,13 @@ public class Fermentation {
 				.requires(Ingredient.of(SLICED_BEETROOT_ITEM)).requires(Ingredient.of(SLICED_BEETROOT_ITEM))
 				.requires(Ingredient.of(Items.SUGAR)).requires(Ingredient.of(SALT))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000)) // fluid
-				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true))
-				.save(consumer);
+				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(PICKLED_ONIONS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
 				.requires(Ingredient.of(CommonTags.CROPS_ONION)).requires(Ingredient.of(CommonTags.CROPS_ONION))
 				.requires(Ingredient.of(CommonTags.CROPS_ONION)).requires(Ingredient.of(CommonTags.CROPS_ONION))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000))
-				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick, false))
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.CAN_BE_SALTED), dayTick, false))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7 * 3, true)).save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(PICKLED_CARROTS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
@@ -901,13 +901,14 @@ public class Fermentation {
 				.requires(Ingredient.of(Tags.Items.CROPS_CARROT)).requires(Ingredient.of(Tags.Items.CROPS_CARROT))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 3, true))
-				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick * 3, true))
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.CAN_BE_SALTED), dayTick * 3, true))
 				.save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(PICKLED_EGGS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
-				.requires(Ingredient.of(ExtraDelightTags.BOILED_EGG)).requires(Ingredient.of(ExtraDelightTags.BOILED_EGG))
-				.requires(Ingredient.of(ExtraDelightTags.BOILED_EGG)).requires(Ingredient.of(ExtraDelightTags.BOILED_EGG))
-				.requires(Ingredient.of(Items.SUGAR))
+				.requires(Ingredient.of(ExtraDelightTags.BOILED_EGG))
+				.requires(Ingredient.of(ExtraDelightTags.BOILED_EGG))
+				.requires(Ingredient.of(ExtraDelightTags.BOILED_EGG))
+				.requires(Ingredient.of(ExtraDelightTags.BOILED_EGG)).requires(Ingredient.of(Items.SUGAR))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
 
@@ -917,7 +918,7 @@ public class Fermentation {
 				.requires(Ingredient.of(CommonTags.FOODS_SAFE_RAW_FISH))
 				.requires(Ingredient.of(CommonTags.FOODS_SAFE_RAW_FISH)).requires(Ingredient.of(Items.SUGAR))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000))
-				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick, false))
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.CAN_BE_SALTED), dayTick, false))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 2, true)).save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(PICKLED_SAUSAGE_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
@@ -934,7 +935,7 @@ public class Fermentation {
 				.requires(Ingredient.of(ExtraDelightTags.SLICED_GINGER))
 				.requires(Ingredient.of(ExtraDelightTags.SLICED_GINGER))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 1000))
-				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), hourTick, false))
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.CAN_BE_SALTED), hourTick, false))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(SOAKED_SOYBEANS_ITEM.get()), new ItemStack(Items.BOWL))

@@ -1,7 +1,7 @@
 {
   "type": "extradelight:vat",
   "fluids": {
-    "amount": 168000,
+    "amount": 1000,
     "fluid": "extradelight:vinegar_fluid"
   },
   "ingredients": [
@@ -30,11 +30,9 @@
   },
   "stage_ingredients": [
     {
-      "ingredient": {
-        "item": "extradelight:vinegar_fluid_bucket"
-      },
+      "ingredient": [],
       "lid": true,
-      "time": 24000
+      "time": 168000
     }
   ],
   "stages": 1,

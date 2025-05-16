@@ -6,16 +6,16 @@
   },
   "ingredients": [
     {
-      "tag": "extradelight:processed/ginger"
+      "tag": "c:ginger/sliced"
     },
     {
-      "tag": "extradelight:processed/ginger"
+      "tag": "c:ginger/sliced"
     },
     {
-      "tag": "extradelight:processed/ginger"
+      "tag": "c:ginger/sliced"
     },
     {
-      "tag": "extradelight:processed/ginger"
+      "tag": "c:ginger/sliced"
     }
   ],
   "result": {

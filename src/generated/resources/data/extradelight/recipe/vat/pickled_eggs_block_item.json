@@ -6,16 +6,16 @@
   },
   "ingredients": [
     {
-      "tag": "c:eggs"
+      "tag": "c:eggs/boiled"
     },
     {
-      "tag": "c:eggs"
+      "tag": "c:eggs/boiled"
     },
     {
-      "tag": "c:eggs"
+      "tag": "c:eggs/boiled"
     },
     {
-      "tag": "c:eggs"
+      "tag": "c:eggs/boiled"
     },
     {
       "item": "minecraft:sugar"

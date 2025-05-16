@@ -6,6 +6,7 @@ import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 
@@ -39,7 +40,7 @@ public class VatRecipeCategory implements IRecipeCategory<VatRecipe> {
 		background = guiHelper.createDrawable(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei3.png"), 0, 0, 101, 47);
 		stage = guiHelper.createDrawable(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei3.png"), 0, 47, 101, 32);
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei3.png"), 0, 47, 101, 31);
 		finish = guiHelper.createDrawable(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei3.png"), 0, 78, 101, 33);
 		localizedName = Component.translatable("extradelight.jei.vat");
@@ -78,12 +79,24 @@ public class VatRecipeCategory implements IRecipeCategory<VatRecipe> {
 
 		background.draw(guiGraphics, 0, 0);
 
-		for (int i = 0; i < recipe.getStages(); i++)
-			stage.draw(guiGraphics, 0, 47 + (i * 32));
+		for (int i = 0; i < recipe.getStages(); i++) {
+			stage.draw(guiGraphics, 0, 47 + (i * 31));
+			guiGraphics.drawString(fontRenderer, "Stage: " + (i + 1), 0, 49 + (i * 31), 0xFFFFFFFF);
 
-		finish.draw(guiGraphics, 0, 57 + (recipe.getStages() * 32));
+			if (recipe.getStageIngredients().get(i).lid)
+				guiGraphics.drawString(fontRenderer, "Lid On!", 0, 58 + (i * 31), 0xFFFF5555);
+			else
+				guiGraphics.drawString(fontRenderer, "Lid Off", 0, 58 + (i * 31), 0xFFFFFFFF);
 
-		guiGraphics.drawString(fontRenderer, recipe.getStages() + "", 0, 0, 0xFFFFFFFF);
+			float f = ((float) recipe.getStageIngredients().get(i).time / (float) Fermentation.dayTick);
+			if (f > 1 || f < 1)
+				guiGraphics.drawString(fontRenderer, f + " Days", 0, 67 + (i * 31), 0xFFFFFFFF);
+			else
+				guiGraphics.drawString(fontRenderer, f + " Day", 0, 67 + (i * 31), 0xFFFFFFFF);
+		}
+
+		finish.draw(guiGraphics, 0, 46 + (recipe.getStages() * 31));
+
 	}
 
 	@Override
@@ -107,18 +120,18 @@ public class VatRecipeCategory implements IRecipeCategory<VatRecipe> {
 						new ItemStack(recipe.getFluid().getFluids()[0].getFluid().getBucket())));
 
 		for (int i = 0; i < recipe.getStages(); i++) {
-			builder.addSlot(RecipeIngredientRole.INPUT, 47, 59 + i * 32)
+			builder.addSlot(RecipeIngredientRole.INPUT, 58, 59 + i * 31)
 					.addIngredients(recipe.getStageIngredients().get(i).ingredient);
 
-			if (recipe.getStageIngredients().get(i).lid)
-				builder.addSlot(RecipeIngredientRole.INPUT, 66, 59 + i * 32)
-						.addIngredients(Ingredient.of(ExtraDelightItems.LID.get()));
+//			if (recipe.getStageIngredients().get(i).lid)
+//				builder.addSlot(RecipeIngredientRole.INPUT, 84, 59 + i * 31)
+//						.addIngredients(Ingredient.of(ExtraDelightItems.LID.get()));
 		}
 
-		builder.addSlot(RecipeIngredientRole.CATALYST, 85, (recipe.getStages() * 32) + 62)
+		builder.addSlot(RecipeIngredientRole.CATALYST, 84, (recipe.getStages() * 31) + 62)
 				.addIngredients(Ingredient.of(recipe.getUsedItem()));
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 59, (recipe.getStages() * 32) + 62)
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 58, (recipe.getStages() * 31) + 62)
 				.addIngredients(Ingredient.of(recipe.getResultItem(null)));
 	}
 

@@ -51,7 +51,7 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Block> COLD_SOURCES = neoforgeBlockTag("cold_sources");
 
-	public static final TagKey<Item> SALT = ItemTags
+	public static final TagKey<Item> CAN_BE_SALTED = ItemTags
 			.create(ResourceLocation.fromNamespaceAndPath("salt", "can_be_salted"));
 
 	public static final TagKey<Block> MORTAR_BLOCK = neoforgeBlockTag("mortars");

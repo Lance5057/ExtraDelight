@@ -38,17 +38,20 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 	final ResourceLocation output;
 	final ResourceLocation display;
 
+	final ItemStack outItem;
+
 	public ResourceLocation getDisplay() {
 		return display;
 	}
 
 	public EvaporatorRecipe(String pGroup, SizedFluidIngredient fluid, int time, ResourceLocation lootTable,
-			ResourceLocation displayBlock) {
+			ResourceLocation displayBlock, ItemStack outItem) {
 		this.group = pGroup;
 		this.cookTime = time;
 		this.fluid = fluid;
 		this.output = lootTable;
 		this.display = displayBlock;
+		this.outItem = outItem;
 	}
 
 	@Override
@@ -72,7 +75,11 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 
 	@Override
 	public ItemStack getResultItem(Provider registries) {
-		return ItemStack.EMPTY;
+		return outItem;
+	}
+
+	public ItemStack getResultItem() {
+		return outItem;
 	}
 
 	@Override
@@ -91,7 +98,8 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 						SizedFluidIngredient.FLAT_CODEC.fieldOf("fluid").forGetter(EvaporatorRecipe::getFluid),
 						Codec.INT.fieldOf("time").forGetter(EvaporatorRecipe::getCookTime),
 						ResourceLocation.CODEC.fieldOf("loottable").forGetter(EvaporatorRecipe::getOutput),
-						ResourceLocation.CODEC.fieldOf("display_block").forGetter(EvaporatorRecipe::getDisplay))
+						ResourceLocation.CODEC.fieldOf("display_block").forGetter(EvaporatorRecipe::getDisplay),
+						ItemStack.CODEC.fieldOf("outItem").forGetter(EvaporatorRecipe::getResultItem))
 				.apply(inst, EvaporatorRecipe::new));
 
 		public static EvaporatorRecipe fromNetwork(RegistryFriendlyByteBuf pBuffer) {
@@ -101,7 +109,9 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 			ResourceLocation r = ResourceLocation.STREAM_CODEC.decode(pBuffer);
 			ResourceLocation d = ResourceLocation.STREAM_CODEC.decode(pBuffer);
 
-			return new EvaporatorRecipe(s, fluid, g, r, d);
+			ItemStack stack = ItemStack.STREAM_CODEC.decode(pBuffer);
+
+			return new EvaporatorRecipe(s, fluid, g, r, d, stack);
 		}
 
 		public static void toNetwork(RegistryFriendlyByteBuf pBuffer, EvaporatorRecipe pRecipe) {
@@ -110,6 +120,8 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 			pBuffer.writeVarInt(pRecipe.cookTime);
 			ResourceLocation.STREAM_CODEC.encode(pBuffer, pRecipe.output);
 			ResourceLocation.STREAM_CODEC.encode(pBuffer, pRecipe.display);
+
+			ItemStack.STREAM_CODEC.encode(pBuffer, pRecipe.outItem);
 		}
 
 		@Override
