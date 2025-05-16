@@ -1,27 +1,24 @@
 {
   "type": "extradelight:vat",
   "fluids": {
-    "amount": 1000,
+    "amount": 250,
     "fluid": "extradelight:vinegar_fluid"
   },
   "ingredients": [
     {
-      "item": "extradelight:sliced_beetroot_item"
+      "tag": "extradelight:processed/beetroot"
     },
     {
-      "item": "extradelight:sliced_beetroot_item"
+      "tag": "extradelight:processed/beetroot"
     },
     {
-      "item": "extradelight:sliced_beetroot_item"
+      "tag": "extradelight:processed/beetroot"
     },
     {
-      "item": "extradelight:sliced_beetroot_item"
+      "tag": "extradelight:processed/beetroot"
     },
     {
       "item": "minecraft:sugar"
-    },
-    {
-      "item": "extradelight:salt"
     }
   ],
   "result": {
@@ -30,7 +27,9 @@
   },
   "stage_ingredients": [
     {
-      "ingredient": [],
+      "ingredient": {
+        "tag": "c:salt"
+      },
       "lid": true,
       "time": 168000
     }

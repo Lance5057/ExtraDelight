@@ -1,0 +1,55 @@
+{
+  "type": "extradelight:vat",
+  "fluids": {
+    "amount": 1000,
+    "fluid": "minecraft:water"
+  },
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:fruit"
+        },
+        {
+          "tag": "c:crops/sugar_cane"
+        },
+        {
+          "item": "minecraft:sugar"
+        },
+        {
+          "tag": "c:crops/wheat"
+        },
+        {
+          "tag": "c:crops/rice"
+        }
+      ]
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:vinegar"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "item": "extradelight:yeast"
+      },
+      "lid": true,
+      "time": 72000
+    },
+    {
+      "ingredient": [],
+      "lid": false,
+      "time": 168000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "count": 4,
+    "id": "minecraft:glass_bottle"
+  }
+}

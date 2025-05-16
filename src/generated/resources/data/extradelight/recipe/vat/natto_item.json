@@ -1,23 +1,25 @@
 {
   "type": "extradelight:vat",
   "fluids": {
-    "amount": 1000,
+    "amount": 250,
     "fluid": "minecraft:water"
   },
   "ingredients": [
     {
-      "tag": "c:crops/soybean"
+      "tag": "c:soybeans/cooked"
     }
   ],
   "result": {
     "count": 1,
-    "id": "extradelight:soaked_soybeans_item"
+    "id": "extradelight:natto_item"
   },
   "stage_ingredients": [
     {
-      "ingredient": [],
+      "ingredient": {
+        "item": "extradelight:yeast"
+      },
       "lid": true,
-      "time": 24000
+      "time": 72000
     }
   ],
   "stages": 1,

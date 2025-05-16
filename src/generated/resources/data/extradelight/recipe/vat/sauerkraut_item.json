@@ -2,30 +2,24 @@
   "type": "extradelight:vat",
   "fluids": {
     "amount": 250,
-    "fluid": "extradelight:vinegar_fluid"
+    "fluid": "minecraft:water"
   },
   "ingredients": [
     {
-      "tag": "c:ginger/sliced"
+      "tag": "extradelight:processed/cabbage"
     },
     {
-      "tag": "c:ginger/sliced"
-    },
-    {
-      "tag": "c:ginger/sliced"
-    },
-    {
-      "tag": "c:ginger/sliced"
+      "tag": "extradelight:processed/cabbage"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "extradelight:pickled_ginger_block_item"
+    "count": 2,
+    "id": "extradelight:sauerkraut_item"
   },
   "stage_ingredients": [
     {
       "ingredient": {
-        "tag": "c:salt"
+        "item": "extradelight:salt"
       },
       "lid": false,
       "time": 1000
@@ -38,7 +32,7 @@
   ],
   "stages": 2,
   "usedItem": {
-    "count": 1,
-    "id": "minecraft:glass_bottle"
+    "count": 2,
+    "id": "minecraft:bowl"
   }
 }

@@ -1,7 +1,7 @@
 {
   "type": "extradelight:vat",
   "fluids": {
-    "amount": 1000,
+    "amount": 250,
     "fluid": "extradelight:vinegar_fluid"
   },
   "ingredients": [
@@ -28,7 +28,7 @@
   "stage_ingredients": [
     {
       "ingredient": {
-        "tag": "salt:can_be_salted"
+        "tag": "c:salt"
       },
       "lid": false,
       "time": 24000
@@ -36,7 +36,7 @@
     {
       "ingredient": [],
       "lid": true,
-      "time": 48000
+      "time": 168000
     }
   ],
   "stages": 2,

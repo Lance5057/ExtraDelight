@@ -6,23 +6,25 @@
   },
   "ingredients": [
     {
-      "tag": "c:crops/soybean"
+      "tag": "c:fruit"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "extradelight:soaked_soybeans_item"
+    "count": 16,
+    "id": "extradelight:yeast"
   },
   "stage_ingredients": [
     {
-      "ingredient": [],
-      "lid": true,
-      "time": 24000
+      "ingredient": {
+        "item": "extradelight:yeast"
+      },
+      "lid": false,
+      "time": 168000
     }
   ],
   "stages": 1,
   "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
+    "count": 16,
+    "id": "minecraft:glass_bottle"
   }
 }

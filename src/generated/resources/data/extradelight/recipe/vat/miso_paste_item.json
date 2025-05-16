@@ -1,0 +1,52 @@
+{
+  "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "minecraft:water"
+  },
+  "ingredients": [
+    {
+      "tag": "c:soybeans/cooked"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "tag": "c:soybeans/cooked"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "tag": "c:soybeans/cooked"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "extradelight:miso_paste_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "item": "extradelight:salt"
+      },
+      "lid": false,
+      "time": 48000
+    },
+    {
+      "ingredient": {
+        "item": "extradelight:yeast"
+      },
+      "lid": true,
+      "time": 336000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "count": 6,
+    "id": "minecraft:glass_bottle"
+  }
+}

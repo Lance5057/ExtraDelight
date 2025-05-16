@@ -1,0 +1,49 @@
+{
+  "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "minecraft:water"
+  },
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/cabbage"
+    },
+    {
+      "tag": "extradelight:processed/cabbage"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "tag": "c:chili/powder"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "extradelight:kimchi_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "item": "extradelight:salt"
+      },
+      "lid": false,
+      "time": 7000
+    },
+    {
+      "ingredient": {
+        "item": "extradelight:salt"
+      },
+      "lid": true,
+      "time": 168000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "count": 2,
+    "id": "minecraft:bowl"
+  }
+}

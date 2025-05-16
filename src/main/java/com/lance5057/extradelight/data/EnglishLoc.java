@@ -104,8 +104,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.vat.stage", "Stage: %d");
 		this.add("extradelight.jei.info.vat.lid.on", "Lid On!");
 		this.add("extradelight.jei.info.vat.lid.off", "Lid Off");
-		this.add("extradelight.jei.info.vat.day", "%f Day");
-		this.add("extradelight.jei.info.vat.days", "%f Days");
+		this.add("extradelight.jei.info.vat.day", "%s Day");
+		this.add("extradelight.jei.info.vat.days", "%s Days");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");

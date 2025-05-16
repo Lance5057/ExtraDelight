@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "minecraft:water"
+  },
+  "ingredients": [
+    {
+      "tag": "c:pork/ground/raw"
+    },
+    {
+      "tag": "c:leather_scrap"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:naem_moo_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "tag": "c:salt"
+      },
+      "lid": true,
+      "time": 120000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:lily_pad"
+  }
+}

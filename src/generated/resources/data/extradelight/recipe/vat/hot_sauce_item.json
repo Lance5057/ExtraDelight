@@ -6,26 +6,23 @@
   },
   "ingredients": [
     {
-      "tag": "c:crops/onion"
+      "tag": "extradelight:processed/chili"
     },
     {
-      "tag": "c:crops/onion"
+      "tag": "extradelight:processed/garlic"
     },
     {
-      "tag": "c:crops/onion"
-    },
-    {
-      "tag": "c:crops/onion"
+      "tag": "extradelight:processed/onion"
     }
   ],
   "result": {
     "count": 1,
-    "id": "extradelight:pickled_onions_block_item"
+    "id": "extradelight:hot_sauce_item"
   },
   "stage_ingredients": [
     {
       "ingredient": {
-        "tag": "c:salt"
+        "item": "extradelight:salt"
       },
       "lid": false,
       "time": 24000

@@ -1,5 +1,6 @@
 package com.lance5057.extradelight.integration.jei.categories;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import org.jetbrains.annotations.Nullable;
@@ -92,11 +93,12 @@ public class VatRecipeCategory implements IRecipeCategory<VatRecipe> {
 						58 + (i * 31), 0xFFFFFFFF);
 
 			float f = ((float) recipe.getStageIngredients().get(i).time / (float) Fermentation.dayTick);
+			DecimalFormat df = new DecimalFormat("##.##");
 			if (f > 1 || f < 1)
-				guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.days", f), 0,
+				guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.days", df.format(f)), 0,
 						67 + (i * 31), 0xFFFFFFFF);
 			else
-				guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.day", f), 0,
+				guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.day", df.format(f)), 0,
 						67 + (i * 31), 0xFFFFFFFF);
 		}
 
