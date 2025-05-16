@@ -862,12 +862,6 @@ public class Fermentation {
 
 		// Evaporating
 		EvaporatorRecipeBuilder
-				.evaporate(SizedFluidIngredient.of(Fluids.LAVA, 1000), new ItemStack(Items.COBBLESTONE),
-						MiscLootTables.EVAPORATOR_LAVA_TEST.location(), 10000, Blocks.COBBLESTONE)
-				.unlockedBy("has_lava", InventoryChangeTrigger.TriggerInstance.hasItems(Items.LAVA_BUCKET))
-				.save(consumer, ExtraDelight.modLoc("evaporate_lava"));
-
-		EvaporatorRecipeBuilder
 				.evaporate(SizedFluidIngredient.of(Fluids.WATER, 1000), Fermentation.SALT.toStack(),
 						MiscLootTables.EVAPORATOR_WATER.location(), 10000, SALT_BLOCK.get())
 				.unlockedBy("has_water", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WATER_BUCKET))

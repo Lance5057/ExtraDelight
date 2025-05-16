@@ -49,6 +49,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.tool_on_block", "Tool on Block");
 		this.add("extradelight.jei.meltingpot", "Melting");
 		this.add("extradelight.jei.chiller", "Chilling");
+		this.add("extradelight.jei.evaporator", "Evaporating");
+		this.add("extradelight.jei.vat", "Fermenting");
 
 		this.add("farmersdelight.tooltip.glow_berry_juice", "Minor Instant Health, Glow");
 		this.add("farmersdelight.tooltip.sweet_berry_juice", "Minor Instant Health");
