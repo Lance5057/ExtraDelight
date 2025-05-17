@@ -1115,7 +1115,7 @@ public class ExtraDelightItems {
 			.register("corn_fritters", () -> new ToolTipConsumableItem(foodItem(EDFoods.CORN_FRITTERS), true))
 			.advancementMeal().finish();
 	public static final DeferredItem<Item> POPCORN = EDItemGenerator
-			.register("popcorn", () -> new Item(foodItem(EDFoods.COOKED_CORN))).advancementSnack().finish();
+			.register("popcorn", () -> new Item(foodItem(EDFoods.POPCORN))).advancementSnack().finish();
 	public static final DeferredItem<Item> GRILLED_CORN_ON_COB = EDItemGenerator
 			.register("grilled_corn_on_cob", () -> new Item(foodItem(EDFoods.GRILLED_CORN))).advancementMeal().finish();
 	public static final DeferredItem<Item> COOKED_CORN = EDItemGenerator

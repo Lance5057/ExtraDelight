@@ -64,6 +64,7 @@ public class EDFoods {
 	public static final FoodProperties COOKED_TRIPE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
 	public static final FoodProperties CACTUS = new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f).effect(PAIN, 1F).build();
 	public static final FoodProperties COOKED_CORN = new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties POPCORN = new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f).build();
 	public static final FoodProperties GRILLED_CORN = new FoodProperties.Builder().nutrition(3).saturationModifier(0.2f).build();
 	public static final FoodProperties ICE_CREAM = new FoodProperties.Builder().nutrition(4).saturationModifier(0.3f).usingConvertsTo(Items.BOWL).alwaysEdible().build();
 	public static final FoodProperties TOPPED_ICE_CREAM = new FoodProperties.Builder().nutrition(6).saturationModifier(0.5f).usingConvertsTo(Items.BOWL).alwaysEdible().build();

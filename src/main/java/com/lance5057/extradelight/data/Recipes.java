@@ -2726,7 +2726,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		// Halloween Start!
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CARAMEL_POPCORN.get(), 1)
 				.requires(ExtraDelightTags.POPCORN).requires(ExtraDelightItems.CARAMEL_SAUCE.get(), 1)
-				.unlockedBy(getName(), has(ExtraDelightTags.POPCORN)).save(consumer, EDLoc("caramel_popcorn"));
+				.requires(Items.BOWL).unlockedBy(getName(), has(ExtraDelightTags.POPCORN))
+				.save(consumer, EDLoc("caramel_popcorn"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CARAMEL_POPSICLE.get()).pattern(" cm")
 				.pattern("isc").pattern("Si ").define('m', CommonTags.FOODS_MILK)
