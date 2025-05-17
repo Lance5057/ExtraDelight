@@ -600,16 +600,16 @@ public class Fermentation {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, KIWIBURGER.get(), 1).requires(Tags.Items.FOODS_BREAD)
 				.requires(ModItems.BEEF_PATTY.get()).requires(CommonTags.CROPS_CABBAGE)
 				.requires(ExtraDelightTags.PROCESSED_TOMATO).requires(ExtraDelightTags.PROCESSED_ONION)
-				.requires(ExtraDelightTags.PROCESSED_BEETROOT).requires(ModItems.FRIED_EGG.get())
+				.requires(ExtraDelightTags.PICKLED_BEETROOT).requires(ModItems.FRIED_EGG.get())
 				.unlockedBy("has_beetroot", InventoryChangeTrigger.TriggerInstance.hasItems(PICKLED_BEET_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("kiwiburger"));
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, KIWIBURGER.get(), 1).requires(ModItems.HAMBURGER.get())
-				.requires(ExtraDelightTags.PROCESSED_BEETROOT).requires(ModItems.FRIED_EGG.get())
+				.requires(ExtraDelightTags.PICKLED_BEETROOT).requires(ModItems.FRIED_EGG.get())
 				.unlockedBy("has_beetroot", InventoryChangeTrigger.TriggerInstance.hasItems(PICKLED_BEET_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("kiwiburger_burger"));
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, NATTO_AND_RICE.get()).requires(NATTO_ITEM)
-				.requires(ModItems.COOKED_RICE.get()).requires(SOY_SAUCE_ITEM.get()).requires(ModItems.FRIED_EGG.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, NATTO_AND_RICE.get()).requires(ExtraDelightTags.NATTO)
+				.requires(ModItems.COOKED_RICE.get()).requires(ExtraDelightTags.SOY_SAUCE).requires(ModItems.FRIED_EGG.get())
 				.unlockedBy("natto_and_rice", InventoryChangeTrigger.TriggerInstance.hasItems(NATTO_ITEM.get()))
 				.save(consumer);
 
@@ -750,13 +750,13 @@ public class Fermentation {
 		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 2), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(SOY_SAUCE_ITEM),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(ExtraDelightTags.SOY_SAUCE),
 						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ExtraDelightTags.VINEGAR) },
 				new SizedFluidIngredient[] {}, consumer, "cucumber_salad_mixing_bottles");
 		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 2), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(SOY_SAUCE_ITEM), },
+						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(ExtraDelightTags.SOY_SAUCE), },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "cucumber_salad_mixing_fluids");
@@ -777,7 +777,7 @@ public class Fermentation {
 
 		Recipes.mixing(new ItemStack(HOT_WINGS.get(), 1), Recipes.FAST_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CHICKEN_WING_COOKED),
-						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(HOT_SAUCE_ITEM) },
+						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ExtraDelightTags.HOT_SAUCE) },
 				new SizedFluidIngredient[] {}, consumer, "hot_wings_mixing");
 
 		Recipes.mixing(new ItemStack(SALAMI_MIX.get(), 8), Recipes.STANDARD_GRIND, ItemStack.EMPTY,
@@ -787,7 +787,7 @@ public class Fermentation {
 
 		// Mortar
 		MortarRecipeBuilder
-				.grind(Ingredient.of(SOAKED_SOYBEANS_ITEM), MASHED_SOYBEANS_ITEM.toStack(1), FluidStack.EMPTY,
+				.grind(Ingredient.of(ExtraDelightTags.SOAKED_SOYBEANS), MASHED_SOYBEANS_ITEM.toStack(1), FluidStack.EMPTY,
 						Recipes.STANDARD_GRIND)
 				.unlockedBy("has_soaked_soybeans",
 						InventoryChangeTrigger.TriggerInstance.hasItems(SOAKED_SOYBEANS_ITEM))
@@ -797,7 +797,7 @@ public class Fermentation {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(STEAK_PICKLED_ONION_PIE_ITEM.get(), 1), Recipes.NORMAL_COOKING,
 						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
-				.addIngredient(ExtraDelightTags.CUBED_BEEF_RAW).addIngredient(PICKLED_ONION_ITEM)
+				.addIngredient(ExtraDelightTags.CUBED_BEEF_RAW).addIngredient(ExtraDelightTags.PICKLED_ONION)
 				.addIngredient(ExtraDelightTags.GRAVY).addIngredient(ExtraDelightTags.CHEESE)
 				.addIngredient(ModItems.PIE_CRUST.get()).unlockedByAnyIngredient(PICKLED_ONION_ITEM).build(consumer);
 
@@ -806,7 +806,7 @@ public class Fermentation {
 						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
 				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightTags.CHEESE)
 				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ModItems.WHEAT_DOUGH.get())
-				.addIngredient(YEAST_SPREAD).addIngredient(ModItems.WHEAT_DOUGH.get())
+				.addIngredient(ExtraDelightTags.YEAST_SPREAD).addIngredient(ModItems.WHEAT_DOUGH.get())
 				.addIngredient(ModItems.WHEAT_DOUGH.get()).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ModItems.WHEAT_DOUGH.get()).unlockedByAnyIngredient(YEAST_SPREAD).build(consumer);
 
@@ -816,14 +816,15 @@ public class Fermentation {
 				.addIngredient(ExtraDelightTags.GROUND_BEEF_COOKED).addIngredient(ExtraDelightTags.CHEESE)
 				.addIngredient(ExtraDelightTags.GROUND_BEEF_COOKED).addIngredient(CommonTags.FOODS_RAW_BACON)
 				.addIngredient(CommonTags.FOODS_RAW_BACON).addIngredient(CommonTags.FOODS_RAW_BACON)
-				.addIngredient(GHERKIN_ITEM).addIngredient(GHERKIN_ITEM).addIngredient(GHERKIN_ITEM)
+				.addIngredient(ExtraDelightTags.PICKLED_CUCUMBER).addIngredient(ExtraDelightTags.PICKLED_CUCUMBER)
+				.addIngredient(ExtraDelightTags.PICKLED_CUCUMBER)
 				.unlockedByAnyIngredient(GHERKIN_ITEM).build(consumer);
 
 		// Pot
 		Recipes.pot(COOKED_SOYBEANS_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(SOAKED_SOYBEANS_ITEM) }, "cooked_soybeans", consumer);
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SOAKED_SOYBEANS) }, "cooked_soybeans", consumer);
 		Recipes.pot(SOY_MILK.get(), 1, CookingRecipes.SLOW_COOKING, 1.0F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(MASHED_SOYBEANS_ITEM) }, "soy_milk", consumer);
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.MASHED_SOYBEANS) }, "soy_milk", consumer);
 
 		Recipes.pot(EDAMAME.get(), 1, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(SOYBEAN_POD), Ingredient.of(SALT) }, "edamame", consumer);
@@ -831,44 +832,44 @@ public class Fermentation {
 		Recipes.pot(BEEF_BULGOGI.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CUBED_BEEF_RAW),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
-						Ingredient.of(HOT_SAUCE_ITEM), Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
-						Ingredient.of(SOY_SAUCE_ITEM) },
+						Ingredient.of(ExtraDelightTags.HOT_SAUCE), Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
+						Ingredient.of(ExtraDelightTags.SOY_SAUCE) },
 				"beef_bulgogi", consumer);
 
 		Recipes.pot(HONEY_CHILI_CHICKEN.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CUBED_CHICKEN_RAW), Ingredient.of(Items.HONEY_BOTTLE),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(SOY_SAUCE_ITEM) },
+						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(ExtraDelightTags.SOY_SAUCE) },
 				"honey_chili_chicken", consumer);
 
 		Recipes.pot(CARAMEL_CHICKEN.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CHICKEN_THIGH_RAW), Ingredient.of(Items.SUGAR),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(FISH_SAUCE_ITEM),
-						Ingredient.of(SOY_SAUCE_ITEM) },
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.FISH_SAUCE),
+						Ingredient.of(ExtraDelightTags.SOY_SAUCE) },
 				"caramel_chicken", consumer);
 
 		Recipes.pot(SOY_GLAZED_SALMON_BLOCK_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(Items.SALMON), Ingredient.of(Items.HONEY_BOTTLE),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(ExtraDelightTags.COOKING_OIL),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(SOY_SAUCE_ITEM) },
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.SOY_SAUCE) },
 				"soy_glazed_salmon", consumer);
 
 		Recipes.pot(MISO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(MISO_PASTE_ITEM),
+				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.MISO_PASTE),
 						Ingredient.of(Items.DRIED_KELP), Ingredient.of(ExtraDelightTags.MISO_SOUP_INGREDIENTS) },
 				"miso_soup", consumer);
 
 		Recipes.pot(SAUERKRAUT_SOUP.get(), 3, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(SAUERKRAUT_ITEM),
+				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.SAUERKRAUT),
 						Ingredient.of(CommonTags.FOODS_RAW_BACON), Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO) },
 				"sauerkraut_soup", consumer);
 
 		Recipes.pot(SAUERKRAUT_AND_SAUSAGE.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.SAUSAGE_RAW), Ingredient.of(SAUERKRAUT_ITEM),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SAUSAGE_RAW), Ingredient.of(ExtraDelightTags.SAUERKRAUT),
 						Ingredient.of(CommonTags.FOODS_RAW_BACON), Ingredient.of(Items.SUGAR),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_APPLE) },
@@ -884,18 +885,19 @@ public class Fermentation {
 						Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO), Ingredient.of(ModItems.BONE_BROTH.get()),
-						Ingredient.of(PICKLE_JUICE) },
+						Ingredient.of(ExtraDelightTags.PICKLE_JUICE) },
 				"zupa_ogorkowa", consumer);
 
 		Recipes.pot(KIMCHI_FRIED_RICE.get(), 2, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ModItems.COOKED_RICE.get()), Ingredient.of(KIMCHI_ITEM),
-						Ingredient.of(HOT_SAUCE_ITEM), Ingredient.of(Items.DRIED_KELP),
+				new Ingredient[] { Ingredient.of(ModItems.COOKED_RICE.get()), Ingredient.of(ExtraDelightTags.KIMCHI),
+						Ingredient.of(ExtraDelightTags.HOT_SAUCE), Ingredient.of(Items.DRIED_KELP),
 						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ModItems.FRIED_EGG.get()) },
 				"kimchi_fried_rice", consumer);
 
 		Recipes.pot(KONGJANG.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(SOAKED_SOYBEANS_ITEM), Ingredient.of(SOAKED_SOYBEANS_ITEM),
-						Ingredient.of(SOY_SAUCE_ITEM), Ingredient.of(Items.SUGAR),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SOAKED_SOYBEANS),
+						Ingredient.of(ExtraDelightTags.SOAKED_SOYBEANS),
+						Ingredient.of(ExtraDelightTags.SOY_SAUCE), Ingredient.of(Items.SUGAR),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				"kongjang", consumer);
 
@@ -1053,11 +1055,6 @@ public class Fermentation {
 				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick * 5, true))
 				.save(consumer, "naem_moo_but_with_dripleaf");
 
-//		VatRecipeBuilder.pickle(new ItemStack(SOAKED_SOYBEANS_ITEM.get()), new ItemStack(Items.BOWL))
-//				.requires(Ingredient.of(ExtraDelightTags.SOYBEAN))
-//				.requiresFluid(SizedFluidIngredient.of(Fluids.WATER, 250))
-//				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick, false)).save(consumer);
-
 		VatRecipeBuilder.pickle(new ItemStack(ExtraDelightItems.VINEGAR.get(), 4), new ItemStack(Items.GLASS_BOTTLE, 4))
 				.requires(CompoundIngredient.of(Ingredient.of(ExtraDelightTags.FRUIT),
 						Ingredient.of(Tags.Items.CROPS_SUGAR_CANE), Ingredient.of(Items.SUGAR),
@@ -1157,6 +1154,6 @@ public class Fermentation {
 		lp.add(KONGJANG.get(), "Kongjang");
 		lp.add(CHEESEBURGER_PICKLE.get(), "Cheeseburger Pickle Popper");
 		lp.add(HOT_WINGS.get(), "Hot Wings");
-		lp.add(COOKED_WHEAT_SEEDS.get(), "Toasted Wheat Berries");
+		lp.add(COOKED_WHEAT_SEEDS.get(), "Roasted Wheat Berries");
 	}
 }

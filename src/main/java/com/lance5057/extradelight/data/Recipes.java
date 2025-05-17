@@ -1591,7 +1591,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		mixing(new ItemStack(ModItems.WHEAT_DOUGH.get(), 3), LONG_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.FLOUR),
 						Ingredient.of(ExtraDelightTags.FLOUR) },
-				new SizedFluidIngredient[] {}, consumer, "wheat_dough");
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 1000))
+				}, consumer, "wheat_dough");
 
 		mixing(new ItemStack(ExtraDelightItems.EGG_MIX.get(), 1), LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(Tags.Items.EGGS),
@@ -2875,7 +2877,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern("cmh").pattern("pbp")
 				.define('m',
 						CompoundIngredient.of(Ingredient.of(ExtraDelightTags.MEAT_COOKED),
-								Ingredient.of(Fermentation.SALAMI_ITEM.get())))
+								Ingredient.of(ExtraDelightTags.SALAMI)))
 				.define('c', ExtraDelightItems.CRACKERS.get()).define('h', ExtraDelightTags.CHEESE)
 				.define('b', Items.BOWL).define('p', ExtraDelightTags.PICKLED_VEGETABLES)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESE.get()))

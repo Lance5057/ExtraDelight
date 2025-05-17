@@ -552,7 +552,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ItemTags.SHEEP_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get(),
 				Fermentation.SOYBEAN_POD.get(), Fermentation.SOYBEANS.get());
 
-		tag(ExtraDelightTags.PROCESSED_CHILI).add(ExtraDelightItems.CHILI.get(), ExtraDelightItems.SLICED_CHILI.get());
+		tag(ExtraDelightTags.PROCESSED_CHILI).addTag(ExtraDelightTags.CHILI).add(ExtraDelightItems.SLICED_CHILI.get());
 
 		tag(ExtraDelightTags.GARLIC).add(ExtraDelightItems.GARLIC.get());
 		tag(ExtraDelightTags.PROCESSED_GARLIC).add(ExtraDelightItems.GARLIC_CLOVE.get(),
@@ -566,17 +566,46 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_CABBAGE).add(Fermentation.SHREDDED_CABBAGE_ITEM.get())
 				.addOptionalTag(CommonTags.CROPS_CABBAGE.location());
 		tag(ExtraDelightTags.PROCESSED_BEETROOT).add(Items.BEETROOT, Fermentation.SLICED_BEETROOT_ITEM.get());
-		tag(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER).add(Fermentation.GHERKIN_ITEM.get(),
-				Fermentation.SLICED_GHERKIN_ITEM.get());
+
+		tag(ExtraDelightTags.PICKLED_CUCUMBER).add(Fermentation.GHERKIN_ITEM.get());
+		tag(ExtraDelightTags.PICKLED_CUCUMBER_SLICED).add(Fermentation.SLICED_GHERKIN_ITEM.get());
+		tag(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER).addTag(ExtraDelightTags.PICKLED_CUCUMBER)
+				.addTag(ExtraDelightTags.PICKLED_CUCUMBER_SLICED);
+		tag(ExtraDelightTags.PICKLED_BEETROOT).add(Fermentation.PICKLED_BEET_ITEM.get());
+		tag(ExtraDelightTags.PICKLED_ONION).add(Fermentation.PICKLED_ONION_ITEM.get());
+		tag(ExtraDelightTags.PICKLED_CARROT).add(Fermentation.PICKLED_CARROT_ITEM.get());
+		tag(ExtraDelightTags.PICKLED_FISH).add(Fermentation.PICKLED_FISH_ITEM.get());
+		tag(ExtraDelightTags.PICKLED_SAUSAGE).add(Fermentation.PICKLED_SAUSAGE_ITEM.get());
+		tag(ExtraDelightTags.PICKLED_CABBAGE).add(Fermentation.SAUERKRAUT_ITEM.get());
 
 		tag(ExtraDelightTags.MISO_SOUP_INGREDIENTS).addTag(ExtraDelightTags.PROCESSED_CABBAGE)
 				.addTag(Tags.Items.MUSHROOMS).addTag(ExtraDelightTags.PROCESSED_CARROT)
 				.addTag(ExtraDelightTags.PROCESSED_POTATO).addTag(ExtraDelightTags.PROCESSED_ONION)
 				.addOptionalTag(CommonTags.FOODS_SAFE_RAW_FISH.location());
 
-		tag(ExtraDelightTags.PICKLED_VEGETABLES).add(Fermentation.GHERKIN_ITEM.get(),
-				Fermentation.PICKLED_ONION_ITEM.get(), Fermentation.PICKLED_CARROT_ITEM.get(),
-				Fermentation.PICKLED_BEET_ITEM.get());
+		tag(ExtraDelightTags.PICKLED).addTag(ExtraDelightTags.PICKLED_VEGETABLES).addTag(ExtraDelightTags.PICKLED_MEAT)
+				.addTag(ExtraDelightTags.PICKLED_EGGS);
+		tag(ExtraDelightTags.PICKLED_VEGETABLES).addTag(ExtraDelightTags.PICKLED_CUCUMBER)
+				.addTag(ExtraDelightTags.PICKLED_BEETROOT).addTag(ExtraDelightTags.PICKLED_ONION)
+				.addTag(ExtraDelightTags.PICKLED_CARROT).addTag(ExtraDelightTags.PICKLED_CABBAGE);
+		tag(ExtraDelightTags.PICKLED_MEAT).addTag(ExtraDelightTags.PICKLED_FISH).addTag(ExtraDelightTags.PICKLED_SAUSAGE);
+		tag(ExtraDelightTags.PICKLED_EGGS).add(Fermentation.PICKLED_EGG_ITEM.get());
+
+		tag(ExtraDelightTags.PICKLE_JUICE).add(Fermentation.PICKLE_JUICE.get());
+		tag(ExtraDelightTags.SOY_SAUCE).add(Fermentation.SOY_SAUCE_ITEM.get());
+		tag(ExtraDelightTags.SAUERKRAUT).add(Fermentation.SAUERKRAUT_ITEM.get());
+		tag(ExtraDelightTags.KIMCHI).add(Fermentation.KIMCHI_ITEM.get());
+		tag(ExtraDelightTags.HOT_SAUCE).add(Fermentation.HOT_SAUCE_ITEM.get());
+		tag(ExtraDelightTags.MISO_PASTE).add(Fermentation.MISO_PASTE_ITEM.get());
+		tag(ExtraDelightTags.NATTO).add(Fermentation.NATTO_ITEM.get());
+		tag(ExtraDelightTags.FISH_SAUCE).add(Fermentation.FISH_SAUCE_ITEM.get());
+		tag(ExtraDelightTags.SALAMI).add(Fermentation.SALAMI_ITEM.get());
+		tag(ExtraDelightTags.SOAKED_SOYBEANS).add(Fermentation.SOAKED_SOYBEANS_ITEM.get());
+		tag(ExtraDelightTags.MASHED_SOYBEANS).add(Fermentation.MASHED_SOYBEANS_ITEM.get());
+		tag(ExtraDelightTags.COOKED_SOYBEANS).add(Fermentation.COOKED_SOYBEANS_ITEM.get());
+		tag(ExtraDelightTags.SOY_MILK).add(Fermentation.SOY_MILK.get());
+		tag(ExtraDelightTags.YEAST_SPREAD).add(Fermentation.YEAST_SPREAD.get());
+		tag(ExtraDelightTags.SALAMI_MIX).add(Fermentation.SALAMI_MIX.get());
 
 		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI.get(),
 				Fermentation.CUCUMBER.get());
