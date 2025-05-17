@@ -10,6 +10,9 @@
       "item": "extradelight:soaked_soybeans_item"
     },
     {
+      "item": "extradelight:soaked_soybeans_item"
+    },
+    {
       "item": "extradelight:soy_sauce_item"
     },
     {
@@ -24,7 +27,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "count": 1,
+    "count": 2,
     "id": "extradelight:kongjang"
   }
 }

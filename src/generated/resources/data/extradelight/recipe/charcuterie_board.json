@@ -25,8 +25,8 @@
   },
   "pattern": [
     "cmh",
-    "pmh",
-    " b "
+    "cmh",
+    "pbp"
   ],
   "result": {
     "count": 1,

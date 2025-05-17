@@ -89,7 +89,7 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 
 		int off = 0;
 		for (SizedFluidIngredient i : recipe.getFluids()) {
-			builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 - 61, 61 - (off*12))
+			builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 61, 61 - (off*12))
 					.addIngredients(NeoForgeTypes.FLUID_STACK, Arrays.asList(i.getFluids()))
 					.setFluidRenderer(i.amount(), false, 16, 12);
 			off++;

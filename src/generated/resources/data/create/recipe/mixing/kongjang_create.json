@@ -6,6 +6,9 @@
       "item": "extradelight:soaked_soybeans_item"
     },
     {
+      "item": "extradelight:soaked_soybeans_item"
+    },
+    {
       "item": "extradelight:soy_sauce_item"
     },
     {
@@ -23,6 +26,7 @@
   ],
   "results": [
     {
+      "count": 2,
       "item": "extradelight:kongjang"
     }
   ]

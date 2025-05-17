@@ -22,7 +22,7 @@
     }
   ],
   "result": {
-    "count": 1,
+    "count": 2,
     "id": "extradelight:naem_moo_item"
   },
   "stage_ingredients": [
@@ -36,7 +36,7 @@
   ],
   "stages": 1,
   "usedItem": {
-    "count": 1,
+    "count": 2,
     "id": "minecraft:big_dripleaf"
   }
 }

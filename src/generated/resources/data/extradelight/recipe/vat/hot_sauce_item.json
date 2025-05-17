@@ -16,7 +16,7 @@
     }
   ],
   "result": {
-    "count": 1,
+    "count": 4,
     "id": "extradelight:hot_sauce_item"
   },
   "stage_ingredients": [
@@ -35,7 +35,7 @@
   ],
   "stages": 2,
   "usedItem": {
-    "count": 1,
+    "count": 4,
     "id": "minecraft:glass_bottle"
   }
 }
