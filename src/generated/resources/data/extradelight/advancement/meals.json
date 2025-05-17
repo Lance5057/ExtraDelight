@@ -121,16 +121,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:buttered_toast": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:buttered_toast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:cactus_eggs": {
       "conditions": {
         "items": [
@@ -611,26 +601,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:glow_jam_toast": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:glow_jam_toast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "extradelight:golden_jam_toast": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:golden_jam_toast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:grilled_cheese": {
       "conditions": {
         "items": [
@@ -716,16 +686,6 @@
         "items": [
           {
             "items": "extradelight:jalapeno_stuffed_potato"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "extradelight:jam_toast": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:jam_toast"
           }
         ]
       },
@@ -1348,9 +1308,6 @@
       "extradelight:cooked_cactus"
     ],
     [
-      "extradelight:buttered_toast"
-    ],
-    [
       "extradelight:croque_madame"
     ],
     [
@@ -1414,9 +1371,6 @@
       "extradelight:pasta_tomato"
     ],
     [
-      "extradelight:jam_toast"
-    ],
-    [
       "extradelight:lugaw"
     ],
     [
@@ -1474,9 +1428,6 @@
       "extradelight:fish_salad_sandwich"
     ],
     [
-      "extradelight:glow_jam_toast"
-    ],
-    [
       "extradelight:lamb_stew"
     ],
     [
@@ -1508,9 +1459,6 @@
     ],
     [
       "extradelight:sauerkraut_soup"
-    ],
-    [
-      "extradelight:golden_jam_toast"
     ],
     [
       "extradelight:potato_salad"

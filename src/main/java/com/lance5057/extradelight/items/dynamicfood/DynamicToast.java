@@ -55,12 +55,19 @@ public class DynamicToast extends Item implements IDynamic {
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip,
 			TooltipFlag isAdvanced) {
 		ItemContainerContents comp = stack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
+
 		if (comp != null) {
 			{
 				if (comp.nonEmptyItems() != null) {
 					tooltip.add(Component.translatable("tooltip.dynamic.ingredients"));
-					for (ItemStack s : comp.nonEmptyItems())
+					for (ItemStack s : comp.nonEmptyItems()) {
 						tooltip.add(Component.literal(" - ").append(Component.translatable(s.getDescriptionId())));
+						if (isAdvanced.hasShiftDown()) {
+							s.getItem().appendHoverText(stack, context, tooltip, isAdvanced);
+						}
+					}
+					if (!isAdvanced.hasShiftDown())
+						tooltip.add(Component.translatable("tooltip.see_more").withColor(0xFF555555));
 				}
 			}
 		}
@@ -71,11 +78,11 @@ public class DynamicToast extends Item implements IDynamic {
 		ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
 		if (comp != null) {
 			if (comp.getSlots() > 1)
-				return Component.translatable(comp.getStackInSlot(1).getDescriptionId()).append(" ")
-						.append(Component.translatable(this.getDescriptionId(itemStack)));
+				return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),
+						Component.translatable(comp.getStackInSlot(1).getDescriptionId())));
 		}
 
-		return Component.translatable(this.getDescriptionId(itemStack));
+		return Component.translatable("dynamic.toast");
 	}
 
 }

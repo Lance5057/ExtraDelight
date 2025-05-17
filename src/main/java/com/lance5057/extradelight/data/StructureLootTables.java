@@ -115,7 +115,6 @@ public class StructureLootTables implements LootTableSubProvider {
 				.add(LootItem.lootTableItem(ExtraDelightItems.CACTUS_SOUP.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.BBQ_RIBS.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.BUTTERED_PASTA.get()).setWeight(UNCOMMON))
-				.add(LootItem.lootTableItem(ExtraDelightItems.BUTTERED_TOAST.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.CARROT_SOUP.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.CHEESE_SANDWICH.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.CHICKEN_STEW.get()).setWeight(UNCOMMON))
@@ -139,7 +138,6 @@ public class StructureLootTables implements LootTableSubProvider {
 				.add(LootItem.lootTableItem(ExtraDelightItems.HONEY_CHEESECAKE_SLICE.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.HONEY_CUSTARD.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.HONEY_POPSICLE.get()).setWeight(UNCOMMON))
-				.add(LootItem.lootTableItem(ExtraDelightItems.JAM_TOAST.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.MACARONI_CHEESE.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.MASHED_POTATO_GRAVY.get()).setWeight(UNCOMMON))
 				.add(LootItem.lootTableItem(ExtraDelightItems.MEAT_PIE_SLICE.get()).setWeight(UNCOMMON))
@@ -216,7 +214,6 @@ public class StructureLootTables implements LootTableSubProvider {
 
 				.add(LootItem.lootTableItem(ExtraDelightItems.CURRY_RICE.get()).setWeight(LEGENDARY))
 				.add(LootItem.lootTableItem(ExtraDelightItems.GOLDEN_APPLE_JAM.get()).setWeight(LEGENDARY))
-				.add(LootItem.lootTableItem(ExtraDelightItems.GOLDEN_JAM_TOAST.get()).setWeight(LEGENDARY))
 				.add(LootItem.lootTableItem(ExtraDelightItems.OXTAIL_SOUP.get()).setWeight(LEGENDARY))
 
 				// Feasts

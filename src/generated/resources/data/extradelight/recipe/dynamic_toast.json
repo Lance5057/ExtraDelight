@@ -3,10 +3,10 @@
   "category": "misc",
   "key": {
     "s": {
-      "item": "extradelight:butter"
+      "tag": "extradelight:toast_topping"
     },
     "t": {
-      "item": "extradelight:toast"
+      "tag": "c:toast"
     }
   },
   "pattern": [

@@ -26,8 +26,8 @@ public class FeastRecipeCategory implements IRecipeCategory<FeastRecipe> {
 	private final IDrawable icon;
 
 	public FeastRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 220,
-				64, 18);
+		background = guiHelper.createDrawable(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 220, 64, 18);
 		localizedName = Component.translatable("extradelight.jei.feast");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ExtraDelightItems.CURRY_FEAST.get()));

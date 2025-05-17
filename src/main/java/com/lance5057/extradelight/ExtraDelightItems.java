@@ -503,14 +503,14 @@ public class ExtraDelightItems {
 
 	// Bread
 
-	public static final DeferredItem<Item> JAM_TOAST = EDItemGenerator
-			.register("jam_toast", () -> new Item(foodItem(EDFoods.JAM_BREAD))).advancementMeal().finish();
-	public static final DeferredItem<Item> GLOW_JAM_TOAST = EDItemGenerator
-			.register("glow_jam_toast", () -> new ToolTipConsumableItem(foodItem(EDFoods.GLOW_JAM_BREAD), true))
-			.advancementMeal().finish();
-	public static final DeferredItem<Item> GOLDEN_JAM_TOAST = EDItemGenerator
-			.register("golden_jam_toast", () -> new ToolTipConsumableItem(foodItem(EDFoods.GOLDEN_JAM_BREAD), true))
-			.advancementMeal().finish();
+//	public static final DeferredItem<Item> JAM_TOAST = EDItemGenerator
+//			.register("jam_toast", () -> new Item(foodItem(EDFoods.JAM_BREAD))).advancementMeal().finish();
+//	public static final DeferredItem<Item> GLOW_JAM_TOAST = EDItemGenerator
+//			.register("glow_jam_toast", () -> new ToolTipConsumableItem(foodItem(EDFoods.GLOW_JAM_BREAD), true))
+//			.advancementMeal().finish();
+//	public static final DeferredItem<Item> GOLDEN_JAM_TOAST = EDItemGenerator
+//			.register("golden_jam_toast", () -> new ToolTipConsumableItem(foodItem(EDFoods.GOLDEN_JAM_BREAD), true))
+//			.advancementMeal().finish();
 
 	// Potato
 	public static final DeferredItem<Item> GRATED_POTATO = EDItemGenerator
@@ -1001,8 +1001,8 @@ public class ExtraDelightItems {
 			.register("bacon_egg_cheese_sandwich", () -> new Item(foodItem(EDFoods.BACON_EGG_CHEESE_SANDWICH)))
 			.advancementMeal().finish();
 
-	public static final DeferredItem<Item> BUTTERED_TOAST = EDItemGenerator
-			.register("buttered_toast", () -> new Item(foodItem(EDFoods.BUTTERED_TOAST))).advancementMeal().finish();
+//	public static final DeferredItem<Item> BUTTERED_TOAST = EDItemGenerator
+//			.register("buttered_toast", () -> new Item(foodItem(EDFoods.BUTTERED_TOAST))).advancementMeal().finish();
 
 	public static final DeferredItem<Item> CROUTONS = EDItemGenerator
 			.register("croutons", () -> new Item(foodItem(EDFoods.SLICED_BREAD))).advancementIngredients().finish();
@@ -2890,7 +2890,7 @@ public class ExtraDelightItems {
 					() -> new BlockItem(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> BRUSCHETTA = EDItemGenerator
-			.register("bruschetta", () -> new GarlicTooltipItem(foodItem(EDFoods.BRUSCHETTA), true)).advancementSnack()
+			.register("bruschetta", () -> new GarlicTooltipItem(foodItem(EDFoods.BRUSCETTA), true)).advancementSnack()
 			.servingToolTip().finish();
 	public static final DeferredItem<Item> AIOLI = EDItemGenerator
 			.register("aioli_jar_item",

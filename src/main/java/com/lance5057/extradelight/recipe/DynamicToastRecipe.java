@@ -1,5 +1,8 @@
 package com.lance5057.extradelight.recipe;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightRecipes;
@@ -10,8 +13,10 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
@@ -32,12 +37,31 @@ public class DynamicToastRecipe extends ShapedRecipe {
 		ItemStack stack = super.getResultItem(registries).copy();
 		if (stack.getItem() instanceof DynamicToast) {
 
+			int nutrition = 0;
+			float saturation = 0;
+			List<FoodProperties.PossibleEffect> effects = new ArrayList<FoodProperties.PossibleEffect>();
+
 			NonNullList<ItemStack> l = NonNullList.create();
 			for (ItemStack s : input.items())
-				if (s != null && !s.isEmpty())
+				if (s != null && !s.isEmpty()) {
 					l.add(s);
+					if (s.has(DataComponents.FOOD)) {
+						FoodProperties f = s.get(DataComponents.FOOD);
+						nutrition += f.nutrition();
+						saturation += f.saturation();
+
+						effects.addAll(f.effects());
+					} else
+						ExtraDelight.logger
+								.error(s.getDescriptionId() + " doesn't have a food component! How did we get here?!");
+				}
 
 			stack.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
+
+			FoodProperties food = new FoodProperties(nutrition, saturation / input.items().size(), false, 1.6F,
+					java.util.Optional.empty(), effects);
+
+			stack.set(DataComponents.FOOD, food);
 		} else {
 			ExtraDelight.logger.error("DynamicToastRecipe result not DynamicToast!");
 		}

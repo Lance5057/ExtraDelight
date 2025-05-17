@@ -141,11 +141,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "extradelight:buttered_toast",
-          "weight": 50
-        },
-        {
-          "type": "minecraft:item",
           "name": "extradelight:carrot_soup",
           "weight": 50
         },
@@ -257,11 +252,6 @@
         {
           "type": "minecraft:item",
           "name": "extradelight:honey_popsicle",
-          "weight": 50
-        },
-        {
-          "type": "minecraft:item",
-          "name": "extradelight:jam_toast",
           "weight": 50
         },
         {
@@ -631,10 +621,6 @@
         {
           "type": "minecraft:item",
           "name": "extradelight:golden_apple_jam"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "extradelight:golden_jam_toast"
         },
         {
           "type": "minecraft:item",

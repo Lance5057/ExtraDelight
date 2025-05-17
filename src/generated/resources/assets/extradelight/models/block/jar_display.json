@@ -1,3 +1,6 @@
 {
-  "parent": "minecraft:block/air"
+  "parent": "minecraft:block/air",
+  "textures": {
+    "particle": "minecraft:block/glass"
+  }
 }

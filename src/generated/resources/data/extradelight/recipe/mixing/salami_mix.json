@@ -1,0 +1,20 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "c:beef/ground"
+    },
+    {
+      "tag": "c:fat"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "extradelight:salami_mix"
+  },
+  "stirs": 4
+}

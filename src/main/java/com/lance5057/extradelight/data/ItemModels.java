@@ -218,9 +218,6 @@ public class ItemModels extends ItemModelProvider {
 		// Bread
 		forItem(this, ExtraDelightItems.BREAD_SLICE, "bread_slice");
 		forItem(this, ExtraDelightItems.TOAST, "toast");
-		forItem(this, ExtraDelightItems.JAM_TOAST, "jam_toast");
-		forItem(this, ExtraDelightItems.GLOW_JAM_TOAST, "glow_jam_toast");
-		forItem(this, ExtraDelightItems.GOLDEN_JAM_TOAST, "golden_jam_toast");
 		forItem(this, ExtraDelightItems.EGG_BASKET, "egg_in_the_basket");
 
 		// Jam
@@ -489,7 +486,6 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(this, ExtraDelightItems.BACON_EGG_SANDWICH, "bacon_egg_sandwich");
 		forItem(this, ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH, "bacon_egg_cheese_sandwich");
-		forItem(this, ExtraDelightItems.BUTTERED_TOAST, "buttered_toast");
 		forItem(this, ExtraDelightItems.CROUTONS, "croutons");
 
 		forItem(this, ExtraDelightItems.SALAD, "chef_salad");

@@ -2,12 +2,12 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.lance5057.extradelight.modules.Fermentation;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.util.EDItemGenerator;
 
 import net.minecraft.core.HolderLookup;
@@ -216,21 +216,20 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.BAD_FOOD.get(), ExtraDelightItems.BBQ_RIBS.get(),
 				ExtraDelightItems.BEEF_STEW_RICE.get(), ExtraDelightItems.BEEF_WELLINGTON.get(),
 				ExtraDelightItems.BEET_MINT_SALAD.get(), ExtraDelightItems.BOILED_EGG.get(),
-				ExtraDelightItems.BUTTERED_PASTA.get(), ExtraDelightItems.BUTTERED_TOAST.get(),
-				ExtraDelightItems.CACTUS_EGGS.get(), ExtraDelightItems.CACTUS_SALAD.get(),
-				ExtraDelightItems.CACTUS_SOUP.get(), ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE.get(),
-				ExtraDelightItems.CARAMEL_CUSTARD.get(), ExtraDelightItems.CARAMEL_POPCORN.get(),
-				ExtraDelightItems.CARAMEL_POPSICLE.get(), ExtraDelightItems.CARROT_SALAD.get(),
-				ExtraDelightItems.CHEESE_SANDWICH.get(), ExtraDelightItems.CHEESEBURGER.get(),
-				ExtraDelightItems.CHICKEN_ALFREDO.get(), ExtraDelightItems.CHICKEN_FRIED_STEAK.get(),
-				ExtraDelightItems.CHICKEN_PARM.get(), ExtraDelightItems.CHICKEN_STEW.get(),
-				ExtraDelightItems.CHICKEN_STEW_RICE.get(), ExtraDelightItems.CONGEE.get(),
-				ExtraDelightItems.COOKED_CACTUS.get(), ExtraDelightItems.COOKED_CORN.get(),
-				ExtraDelightItems.COOKED_PASTA.get(), ExtraDelightItems.CORN_CHOWDER.get(),
-				ExtraDelightItems.CORN_FRITTERS.get(), ExtraDelightItems.CORN_PUDDING.get(),
-				ExtraDelightItems.CORNBREAD.get(), ExtraDelightItems.CROQUE_MADAME.get(),
-				ExtraDelightItems.CROQUE_MONSIEUR.get(), ExtraDelightItems.CURRY.get(),
-				ExtraDelightItems.CURRY_RICE.get(), ExtraDelightItems.DRIED_FRUIT.get(),
+				ExtraDelightItems.BUTTERED_PASTA.get(), ExtraDelightItems.CACTUS_EGGS.get(),
+				ExtraDelightItems.CACTUS_SALAD.get(), ExtraDelightItems.CACTUS_SOUP.get(),
+				ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE.get(), ExtraDelightItems.CARAMEL_CUSTARD.get(),
+				ExtraDelightItems.CARAMEL_POPCORN.get(), ExtraDelightItems.CARAMEL_POPSICLE.get(),
+				ExtraDelightItems.CARROT_SALAD.get(), ExtraDelightItems.CHEESE_SANDWICH.get(),
+				ExtraDelightItems.CHEESEBURGER.get(), ExtraDelightItems.CHICKEN_ALFREDO.get(),
+				ExtraDelightItems.CHICKEN_FRIED_STEAK.get(), ExtraDelightItems.CHICKEN_PARM.get(),
+				ExtraDelightItems.CHICKEN_STEW.get(), ExtraDelightItems.CHICKEN_STEW_RICE.get(),
+				ExtraDelightItems.CONGEE.get(), ExtraDelightItems.COOKED_CACTUS.get(),
+				ExtraDelightItems.COOKED_CORN.get(), ExtraDelightItems.COOKED_PASTA.get(),
+				ExtraDelightItems.CORN_CHOWDER.get(), ExtraDelightItems.CORN_FRITTERS.get(),
+				ExtraDelightItems.CORN_PUDDING.get(), ExtraDelightItems.CORNBREAD.get(),
+				ExtraDelightItems.CROQUE_MADAME.get(), ExtraDelightItems.CROQUE_MONSIEUR.get(),
+				ExtraDelightItems.CURRY.get(), ExtraDelightItems.CURRY_RICE.get(), ExtraDelightItems.DRIED_FRUIT.get(),
 				ExtraDelightItems.EGG_BASKET.get(), ExtraDelightItems.EGG_SALAD.get(),
 				ExtraDelightItems.EGG_SALAD_SANDWICH.get(), ExtraDelightItems.FISH_AND_CHIPS.get(),
 				ExtraDelightItems.FISH_CAKES.get(), ExtraDelightItems.FISH_SALAD.get(),
@@ -579,13 +578,19 @@ public class EDItemTags extends ItemTagsProvider {
 				Fermentation.PICKLED_ONION_ITEM.get(), Fermentation.PICKLED_CARROT_ITEM.get(),
 				Fermentation.PICKLED_BEET_ITEM.get());
 
-		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(),
-				ExtraDelightItems.CHILI.get(), Fermentation.CUCUMBER.get());
+		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI.get(),
+				Fermentation.CUCUMBER.get());
 
 		tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(),
 				ExtraDelightItems.GINGER_CUTTING.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 				ExtraDelightItems.PEANUTS_IN_SHELL.get(), ExtraDelightItems.MALLOW_ROOT.get(),
 				ExtraDelightItems.GARLIC_CLOVE.get(), Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
+
+		tag(ExtraDelightTags.TOAST_TOPPING).add(ExtraDelightItems.BUTTER.get(),
+				ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get(), ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get(),
+				ExtraDelightItems.JAM.get(), ExtraDelightItems.GLOW_BERRY_JAM.get(),
+				ExtraDelightItems.GOLDEN_APPLE_JAM.get(), ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(),
+				Fermentation.YEAST_SPREAD.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get());

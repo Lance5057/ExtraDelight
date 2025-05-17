@@ -1,0 +1,15 @@
+{
+  "type": "butchercraft:grinder",
+  "attachment": {
+    "item": "butchercraft:extruder_tip"
+  },
+  "grinds": 16,
+  "ingredient": {
+    "tag": "c:salami_mix"
+  },
+  "ingredientCount": 8,
+  "result": {
+    "count": 1,
+    "id": "butchercraft:sausage_linked"
+  }
+}

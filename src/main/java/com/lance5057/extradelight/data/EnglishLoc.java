@@ -22,6 +22,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("itemGroup.extradelight.tab", "Extra Delight");
 		this.add("itemGroup.extradelight.aesthetics", "Extra Delight Aesthetic Items");
 
+		this.add("tooltip.see_more", "Shift for more...");
+		this.add("dynamic.toast", "Dynamic Toast");
+
 		this.add("farmersdelight.tooltip.oven.empty", "");
 		this.add("container.doughshaper", "Dough Shaping");
 
@@ -100,12 +103,14 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.evaporator.extra", "+ Extras");
 		this.add("extradelight.jei.info.evaporator.view", "Requires View"); // Combine with the one under
 		this.add("extradelight.jei.info.evaporator.sky", "of Sky!");
-		
+
 		this.add("extradelight.jei.info.vat.stage", "Stage: %d");
 		this.add("extradelight.jei.info.vat.lid.on", "Lid On!");
 		this.add("extradelight.jei.info.vat.lid.off", "Lid Off");
 		this.add("extradelight.jei.info.vat.day", "%s Day");
 		this.add("extradelight.jei.info.vat.days", "%s Days");
+		
+		this.add("extradelight.jei.info.pickle_juice", "Drops from Pickle Jar items when emptied.");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
@@ -345,9 +350,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.JAM.get(), "Jam");
 		this.add(ExtraDelightItems.BREAD_SLICE.get(), "Slice of Bread");
 		this.add(ExtraDelightItems.TOAST.get(), "Toast");
-		this.add(ExtraDelightItems.JAM_TOAST.get(), "Jam on Bread");
-		this.add(ExtraDelightItems.GLOW_JAM_TOAST.get(), "Glowing Jam on Bread");
-		this.add(ExtraDelightItems.GOLDEN_JAM_TOAST.get(), "Golden Jam on Bread");
 		this.add(ExtraDelightItems.GRATED_POTATO.get(), "Grated Potato");
 		this.add(ExtraDelightItems.SLICED_POTATO.get(), "Sliced Potato");
 		this.add(ExtraDelightItems.POTATO_STICKS.get(), "Potato Sticks");
@@ -471,7 +473,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.BACON_EGG_SANDWICH.get(), "Bacon Egg Sandwich");
 		this.add(ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get(), "Bacon Egg and Cheese Sandwich");
 
-		this.add(ExtraDelightItems.BUTTERED_TOAST.get(), "Buttered Toast");
 		this.add(ExtraDelightItems.CROUTONS.get(), "Croutons");
 		this.add(ExtraDelightItems.SALAD.get(), "Chef Salad");
 		this.add(ExtraDelightItems.SALAD_FEAST_ITEM.get(), "Chef Salad Feast");
@@ -1330,7 +1331,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.LID.get(), "Vat Lid");
 		this.add(ExtraDelightItems.EVAPORATOR.get(), "Evaporator");
 
-		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "Toast");
+		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
 
 		Fermentation.EngLoc(this);
 		AestheticBlocks.EngLoc(this);

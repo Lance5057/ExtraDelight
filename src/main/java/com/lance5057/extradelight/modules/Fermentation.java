@@ -37,6 +37,7 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -61,8 +62,10 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
+import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
+import vectorwing.farmersdelight.common.item.MilkBottleItem;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
@@ -86,7 +89,7 @@ public class Fermentation {
 			() -> new BlockItem(WILD_SOYBEAN.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> CUCUMBER = ExtraDelightItems.ITEMS.register("cucumber",
-			() -> new Item(new Item.Properties()));
+			() -> new Item(new Item.Properties().food(EDFoods.CUCUMBER)));
 	public static final DeferredItem<Item> SOYBEAN_POD = ExtraDelightItems.ITEMS.register("soybean_pod",
 			() -> new Item(new Item.Properties()));
 
@@ -122,8 +125,8 @@ public class Fermentation {
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> GHERKIN_ITEM = EDItemGenerator
-			.register("gherkin_item", () -> new Item(new Item.Properties())).advancementIngredients().servingToolTip()
-			.finish();
+			.register("gherkin_item", () -> new Item(new Item.Properties().food(EDFoods.GHERKINS)))
+			.advancementIngredients().servingToolTip().finish();
 
 	public static final DeferredBlock<JarSingularBlock> PICKLED_BEETS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_beets_block", () -> new JarSingularBlock(BlockBehaviour.Properties
@@ -135,8 +138,8 @@ public class Fermentation {
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> PICKLED_BEET_ITEM = EDItemGenerator
-			.register("pickled_beet_item", () -> new Item(new Item.Properties())).advancementIngredients()
-			.servingToolTip().finish();
+			.register("pickled_beet_item", () -> new Item(new Item.Properties().food(EDFoods.PICKLED_BEET)))
+			.advancementIngredients().servingToolTip().finish();
 
 	public static final DeferredBlock<JarSingularBlock> PICKLED_ONIONS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_onions_block", () -> new JarSingularBlock(BlockBehaviour.Properties
@@ -148,8 +151,8 @@ public class Fermentation {
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> PICKLED_ONION_ITEM = EDItemGenerator
-			.register("pickled_onion_item", () -> new Item(new Item.Properties())).advancementIngredients()
-			.servingToolTip().finish();
+			.register("pickled_onion_item", () -> new Item(new Item.Properties().food(EDFoods.PICKLED_ONION)))
+			.advancementIngredients().servingToolTip().finish();
 
 	public static final DeferredBlock<JarSingularBlock> PICKLED_CARROTS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_carrots_block", () -> new JarSingularBlock(BlockBehaviour.Properties
@@ -161,8 +164,8 @@ public class Fermentation {
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> PICKLED_CARROT_ITEM = EDItemGenerator
-			.register("pickled_carrot_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
-			.finish();
+			.register("pickled_carrot_item", () -> new Item(new Item.Properties().food(EDFoods.PICKLED_CARROT)))
+			.advancementSnack().servingToolTip().finish();
 
 	public static final DeferredBlock<JarSingularBlock> PICKLED_EGGS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_eggs_block", () -> new JarSingularBlock(BlockBehaviour.Properties
@@ -174,8 +177,8 @@ public class Fermentation {
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> PICKLED_EGG_ITEM = EDItemGenerator
-			.register("pickled_egg_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
-			.finish();
+			.register("pickled_egg_item", () -> new Item(new Item.Properties().food(EDFoods.PICKLED_EGG)))
+			.advancementSnack().servingToolTip().finish();
 
 	public static final DeferredBlock<JarSingularBlock> PICKLED_FISH_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_fish_block", () -> new JarSingularBlock(BlockBehaviour.Properties
@@ -187,8 +190,8 @@ public class Fermentation {
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> PICKLED_FISH_ITEM = EDItemGenerator
-			.register("pickled_fish_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
-			.finish();
+			.register("pickled_fish_item", () -> new Item(new Item.Properties().food(EDFoods.PICKLED_FISH)))
+			.advancementSnack().servingToolTip().finish();
 
 	public static final DeferredBlock<JarSingularBlock> PICKLED_SAUSAGE_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_sausage_block", () -> new JarSingularBlock(BlockBehaviour.Properties
@@ -200,8 +203,8 @@ public class Fermentation {
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> PICKLED_SAUSAGE_ITEM = EDItemGenerator
-			.register("pickled_sausage_item", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
-			.finish();
+			.register("pickled_sausage_item", () -> new Item(new Item.Properties().food(EDFoods.PICKLED_SAUSAGE)))
+			.advancementSnack().servingToolTip().finish();
 
 	public static final DeferredBlock<JarSingularBlock> PICKLED_GINGER_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_ginger_block", () -> new JarSingularBlock(BlockBehaviour.Properties
@@ -223,78 +226,92 @@ public class Fermentation {
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
 
 	public static final DeferredItem<Item> SOY_SAUCE_ITEM = EDItemGenerator
-			.register("soy_sauce_item", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.register("soy_sauce_item",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.SOY_SAUCE)))
 			.advancementIngredients().finish();
 
 	public static final DeferredItem<Item> SAUERKRAUT_ITEM = ExtraDelightItems.ITEMS.register("sauerkraut_item",
-			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL)));
+			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.SAUERKRAUT)));
 
 	public static final DeferredItem<Item> KIMCHI_ITEM = ExtraDelightItems.ITEMS.register("kimchi_item",
-			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL)));
+			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.KIMCHI)));
 
 	public static final DeferredItem<Item> HOT_SAUCE_ITEM = EDItemGenerator
-			.register("hot_sauce_item", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.register("hot_sauce_item",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.HOT_SAUCE)))
 			.advancementIngredients().finish();
 
 	public static final DeferredItem<Item> MISO_PASTE_ITEM = EDItemGenerator
-			.register("miso_paste_item", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.register("miso_paste_item",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.MISO_PASTE)))
 			.advancementIngredients().finish();
 
 	public static final DeferredItem<Item> NATTO_ITEM = ExtraDelightItems.ITEMS.register("natto_item",
-			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL)));
+			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.NATTO)));
 
 	public static final DeferredItem<Item> FISH_SAUCE_ITEM = EDItemGenerator
-			.register("fish_sauce_item", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.register("fish_sauce_item",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.FISH_SAUCE)))
 			.advancementIngredients().finish();
 
 	public static final DeferredItem<Item> SALAMI_MIX = ExtraDelightItems.ITEMS.register("salami_mix",
-			() -> new Item(new Item.Properties()));
+			() -> new Item(new Item.Properties().food(EDFoods.SALAMI_MIX)));
 
 	public static final DeferredBlock<Block> UNRIPE_SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("unripe_salami_block", () -> new UnripeSalamiBlock(
 					Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_PINK)));
 	public static final DeferredItem<Item> UNRIPE_SALAMI_ITEM = ExtraDelightItems.ITEMS.register("unripe_salami_item",
-			() -> new BlockItem(UNRIPE_SALAMI_BLOCK.get(), new Item.Properties()));
+			() -> new BlockItem(UNRIPE_SALAMI_BLOCK.get(), new Item.Properties().food(EDFoods.UNRIPE_SALAMI)));
 
 	public static final DeferredBlock<Block> SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS.register("salami_block",
 			() -> new RipeSalamiBlock(
 					Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_RED)));
 	public static final DeferredItem<Item> SALAMI_ITEM = ExtraDelightItems.ITEMS.register("salami_item",
-			() -> new BlockItem(SALAMI_BLOCK.get(), new Item.Properties()));
+			() -> new BlockItem(SALAMI_BLOCK.get(), new Item.Properties().food(EDFoods.SALAMI)));
 
 	public static final DeferredItem<Item> SOAKED_SOYBEANS_ITEM = EDItemGenerator
-			.register("soaked_soybeans_item", () -> new Item(new Item.Properties().craftRemainder(Items.BOWL)))
+			.register("soaked_soybeans_item",
+					() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.COOKED_SOYBEANS)))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> MASHED_SOYBEANS_ITEM = ExtraDelightItems.ITEMS
-			.register("mashed_soybeans_item", () -> new Item(new Item.Properties()));
+			.register("mashed_soybeans_item", () -> new Item(new Item.Properties().food(EDFoods.COOKED_SOYBEANS)));
 	public static final DeferredItem<Item> COOKED_SOYBEANS_ITEM = ExtraDelightItems.ITEMS
-			.register("cooked_soybeans_item", () -> new Item(new Item.Properties()));
+			.register("cooked_soybeans_item", () -> new Item(new Item.Properties().food(EDFoods.COOKED_SOYBEANS)));
 	public static final DeferredItem<Item> SOY_MILK = EDItemGenerator
-			.register("soy_milk", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.register("soy_milk", () -> new MilkBottleItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
 			.advancementIngredients().finish();
 
 	public static final DeferredItem<Item> NAEM_MOO_ITEM = ExtraDelightItems.ITEMS.register("naem_moo_item",
-			() -> new Item(new Item.Properties()));
+			() -> new Item(new Item.Properties().food(EDFoods.NAEM_MOO)));
 
 	public static final DeferredItem<Item> SLICED_BEETROOT_ITEM = EDItemGenerator
-			.register("sliced_beetroot_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("sliced_beetroot_item", () -> new Item(new Item.Properties().food(Foods.BEETROOT)))
+			.advancementIngredients().finish();
 	public static final DeferredItem<Item> SHREDDED_CABBAGE_ITEM = EDItemGenerator
-			.register("shredded_cabbage_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("shredded_cabbage_item", () -> new Item(new Item.Properties().food(FoodValues.CABBAGE)))
+			.advancementIngredients().finish();
 	public static final DeferredItem<Item> SLICED_CUCUMBER_ITEM = EDItemGenerator
-			.register("sliced_cucumber_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("sliced_cucumber_item", () -> new Item(new Item.Properties().food(EDFoods.CUCUMBER)))
+			.advancementIngredients().finish();
 	public static final DeferredItem<Item> SLICED_GHERKIN_ITEM = EDItemGenerator
-			.register("sliced_gherkin_item", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("sliced_gherkin_item", () -> new Item(new Item.Properties().food(EDFoods.GHERKINS)))
+			.advancementIngredients().finish();
 
 	public static final DeferredItem<Item> GAZPACHO = EDItemGenerator
-			.register("gazpacho", () -> new Item(new Item.Properties())).advancementMeal().finish();
+			.register("gazpacho", () -> new Item(new Item.Properties().food(EDFoods.GAZPACHO))).advancementMeal()
+			.finish();
 	public static final DeferredItem<Item> EDAMAME = EDItemGenerator
-			.register("edamame", () -> new Item(new Item.Properties())).advancementSnack().finish();
+			.register("edamame", () -> new Item(new Item.Properties().food(EDFoods.EDAMAME))).advancementSnack()
+			.finish();
 	public static final DeferredItem<Item> BEEF_BULGOGI = EDItemGenerator
-			.register("beef_bulgogi", () -> new Item(new Item.Properties())).advancementButchercraft().finish();
+			.register("beef_bulgogi", () -> new Item(new Item.Properties().food(EDFoods.BEEF_BULGOGI)))
+			.advancementButchercraft().finish();
 	public static final DeferredItem<Item> HONEY_CHILI_CHICKEN = EDItemGenerator
-			.register("honey_chili_chicken", () -> new Item(new Item.Properties())).advancementButchercraft().finish();
+			.register("honey_chili_chicken", () -> new Item(new Item.Properties().food(EDFoods.HONEY_CHILI_CHICKEN)))
+			.advancementButchercraft().finish();
 	public static final DeferredItem<Item> CARAMEL_CHICKEN = EDItemGenerator
-			.register("caramel_chicken", () -> new Item(new Item.Properties())).advancementButchercraft().finish();
+			.register("caramel_chicken", () -> new Item(new Item.Properties().food(EDFoods.CARAMEL_CHICKEN)))
+			.advancementButchercraft().finish();
 	public static final DeferredBlock<RecipeFeastBlock> SOY_GLAZED_SALMON_BLOCK = ExtraDelightBlocks.BLOCKS.register(
 			"soy_glazed_salmon_block",
 			() -> new RecipeFeastBlock(
@@ -306,8 +323,8 @@ public class Fermentation {
 					() -> new BlockItem(SOY_GLAZED_SALMON_BLOCK.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> SOY_GLAZED_SALMON_ITEM = EDItemGenerator
-			.register("soy_glazed_salmon_item", () -> new Item(new Item.Properties())).advancementMeal()
-			.servingToolTip().finish();
+			.register("soy_glazed_salmon_item", () -> new Item(new Item.Properties().food(EDFoods.SOY_GLAZED_SALMON)))
+			.advancementMeal().servingToolTip().finish();
 	public static final DeferredItem<Item> STEAK_PICKLED_ONION_PIE_SLICE = EDItemGenerator
 			.register("steak_pickled_onion_pie_slice",
 					() -> new ToolTipConsumableItem(ExtraDelightItems.stack16FoodItem(EDFoods.BACON_EGG_PIE), true))
@@ -320,22 +337,30 @@ public class Fermentation {
 					() -> new BlockItem(STEAK_PICKLED_ONION_PIE.get(), new Item.Properties()))
 			.advancementButchercraft().feastToolTip().finish();
 	public static final DeferredItem<Item> KIWIBURGER = EDItemGenerator
-			.register("kiwiburger", () -> new Item(new Item.Properties())).advancementMeal().finish();
-	public static final DeferredItem<Item> SHIRAZI_SALAD = EDItemGenerator
-			.register("shirazi_salad", () -> new Item(new Item.Properties())).advancementMeal().finish();
-	public static final DeferredItem<Item> CUCUMBER_SALAD = EDItemGenerator
-			.register("cucumber_salad", () -> new Item(new Item.Properties())).advancementMeal().finish();
-	public static final DeferredItem<Item> MISO_SOUP = EDItemGenerator
-			.register("miso_soup", () -> new Item(new Item.Properties())).advancementMeal().finish();
-	public static final DeferredItem<Item> NATTO_AND_RICE = EDItemGenerator
-			.register("natto_and_rice", () -> new Item(new Item.Properties())).advancementMeal().finish();
-	public static final DeferredItem<Item> SAUERKRAUT_SOUP = EDItemGenerator
-			.register("sauerkraut_soup", () -> new Item(new Item.Properties())).advancementMeal().finish();
-	public static final DeferredItem<Item> SAUERKRAUT_AND_SAUSAGE = EDItemGenerator
-			.register("sauerkraut_and_sausage", () -> new Item(new Item.Properties())).advancementButchercraft()
+			.register("kiwiburger", () -> new Item(new Item.Properties().food(EDFoods.KIWIBURGER))).advancementMeal()
 			.finish();
+	public static final DeferredItem<Item> SHIRAZI_SALAD = EDItemGenerator
+			.register("shirazi_salad", () -> new Item(new Item.Properties().food(EDFoods.SHIRAZI_SALAD)))
+			.advancementMeal().finish();
+	public static final DeferredItem<Item> CUCUMBER_SALAD = EDItemGenerator
+			.register("cucumber_salad", () -> new Item(new Item.Properties().food(EDFoods.CUCUMBER_SALAD)))
+			.advancementMeal().finish();
+	public static final DeferredItem<Item> MISO_SOUP = EDItemGenerator
+			.register("miso_soup", () -> new Item(new Item.Properties().food(EDFoods.MISO_SOUP))).advancementMeal()
+			.finish();
+	public static final DeferredItem<Item> NATTO_AND_RICE = EDItemGenerator
+			.register("natto_and_rice", () -> new Item(new Item.Properties().food(EDFoods.NATTO_AND_RICE)))
+			.advancementMeal().finish();
+	public static final DeferredItem<Item> SAUERKRAUT_SOUP = EDItemGenerator
+			.register("sauerkraut_soup", () -> new Item(new Item.Properties().food(EDFoods.SAUERKRAUT_SOUP)))
+			.advancementMeal().finish();
+	public static final DeferredItem<Item> SAUERKRAUT_AND_SAUSAGE = EDItemGenerator
+			.register("sauerkraut_and_sausage",
+					() -> new Item(new Item.Properties().food(EDFoods.SAUERKRAUT_AND_SAUSAGE)))
+			.advancementButchercraft().finish();
 	public static final DeferredItem<Item> YEAST_SPREAD = EDItemGenerator
-			.register("yeast_spread", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.register("yeast_spread",
+					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.YEAST_SPREAD)))
 			.advancementIngredients().finish();
 
 	public static final DeferredBlock<RecipeFeastBlock> CHEESYMITE_SCROLL_BLOCK = ExtraDelightBlocks.BLOCKS.register(
@@ -348,27 +373,34 @@ public class Fermentation {
 					() -> new BlockItem(CHEESYMITE_SCROLL_BLOCK.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> CHEESYMITE_SCROLL_SERVING = EDItemGenerator
-			.register("cheesymite_scroll", () -> new Item(new Item.Properties())).advancementSnack().servingToolTip()
-			.finish();
+			.register("cheesymite_scroll",
+					() -> new Item(new Item.Properties().food(EDFoods.CHEESYMITE_SCROLL_SERVING)))
+			.advancementSnack().servingToolTip().finish();
 
 	public static final DeferredItem<Item> MORKOVCHA = EDItemGenerator
-			.register("morkovcha", () -> new Item(new Item.Properties())).advancementMeal().finish();
+			.register("morkovcha", () -> new Item(new Item.Properties().food(EDFoods.MORKOVCHA))).advancementMeal()
+			.finish();
 	public static final DeferredItem<Item> ZUPA_OGORKOWA = EDItemGenerator
-			.register("zupa_ogorkowa", () -> new Item(new Item.Properties())).advancementMeal().finish();
+			.register("zupa_ogorkowa", () -> new Item(new Item.Properties().food(EDFoods.ZUPA_OGORKOWA)))
+			.advancementMeal().finish();
 	public static final DeferredItem<Item> KIMCHI_FRIED_RICE = EDItemGenerator
-			.register("kimchi_fried_rice", () -> new Item(new Item.Properties())).advancementMeal().finish();
+			.register("kimchi_fried_rice", () -> new Item(new Item.Properties().food(EDFoods.KIMCHI_FRIED_RICE)))
+			.advancementMeal().finish();
 	public static final DeferredItem<Item> KONGJANG = EDItemGenerator
-			.register("kongjang", () -> new Item(new Item.Properties())).advancementMeal().finish();
+			.register("kongjang", () -> new Item(new Item.Properties().food(EDFoods.KONGJANG))).advancementMeal()
+			.finish();
 	public static final DeferredItem<Item> CHEESEBURGER_PICKLE = EDItemGenerator
-			.register("cheeseburger_pickle", () -> new Item(new Item.Properties())).advancementSnack().finish();
+			.register("cheeseburger_pickle", () -> new Item(new Item.Properties().food(EDFoods.CHEESEBURGER_PICKLE)))
+			.advancementSnack().finish();
 	public static final DeferredItem<Item> HOT_WINGS = EDItemGenerator
-			.register("hot_wings", () -> new Item(new Item.Properties())).advancementMeal().finish();
+			.register("hot_wings", () -> new Item(new Item.Properties().food(EDFoods.HOT_WINGS))).advancementMeal()
+			.finish();
 
 	public static final DeferredBlock<Block> JAR_DISPLAY_BLOCK = ExtraDelightBlocks.BLOCKS.register("jar_display_block",
-			() -> new JarDisplayBlock(Block.Properties.ofFullCopy(Blocks.GLASS)));
+			() -> new JarDisplayBlock(Block.Properties.ofFullCopy(Blocks.GLASS).strength(0.8F)));
 
 	public static final DeferredItem<Item> COOKED_WHEAT_SEEDS = ExtraDelightItems.ITEMS.register("cooked_wheat_seeds",
-			() -> new Item(new Item.Properties()));
+			() -> new Item(new Item.Properties().food(EDFoods.COOKED_WHEAT_SEEDS)));
 
 	public static void blockModels(BlockStateProvider bsp) {
 		BlockModels.crateBlock(bsp, CUCUMBER_CRATE.get(), "cucumber", "oak");
@@ -405,7 +437,8 @@ public class Fermentation {
 		BlockModels.cropCrossBlock(bsp, SOYBEAN_CROP.get(), "soybeans", SoybeanCrop.AGE);
 		bsp.simpleBlock(WILD_SOYBEAN.get(), new ConfiguredModel(bsp.models()
 				.cross("wild_soybean", bsp.modLoc("block/crops/soybeans/soybeans_stage7")).renderType("cutout")));
-		bsp.simpleBlock(JAR_DISPLAY_BLOCK.get(), bsp.models().withExistingParent("jar_display", bsp.mcLoc("air")));
+		bsp.simpleBlock(JAR_DISPLAY_BLOCK.get(), bsp.models().withExistingParent("jar_display", bsp.mcLoc("air"))
+				.texture("particle", bsp.mcLoc("block/glass")));
 
 		bsp.getVariantBuilder(UNRIPE_SALAMI_BLOCK.get()).forAllStates(state -> {
 			int count = state.getValue(UnripeSalamiBlock.COUNT);
@@ -714,13 +747,13 @@ public class Fermentation {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
 				consumer, "shirazi_salad_mixing_fluids");
 
-		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
+		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 2), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(SOY_SAUCE_ITEM),
 						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ExtraDelightTags.VINEGAR) },
 				new SizedFluidIngredient[] {}, consumer, "cucumber_salad_mixing_bottles");
-		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
+		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 2), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(SOY_SAUCE_ITEM), },
@@ -728,13 +761,13 @@ public class Fermentation {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "cucumber_salad_mixing_fluids");
 
-		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
+		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 3), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
 						Ingredient.of(SALT), Ingredient.of(ExtraDelightTags.COOKING_OIL),
 						Ingredient.of(ExtraDelightTags.VINEGAR) },
 				new SizedFluidIngredient[] {}, consumer, "morkovcha_mixing_bottles");
-		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
+		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 3), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
 						Ingredient.of(SALT), },
@@ -746,6 +779,11 @@ public class Fermentation {
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CHICKEN_WING_COOKED),
 						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(HOT_SAUCE_ITEM) },
 				new SizedFluidIngredient[] {}, consumer, "hot_wings_mixing");
+
+		Recipes.mixing(new ItemStack(SALAMI_MIX.get(), 8), Recipes.STANDARD_GRIND, ItemStack.EMPTY,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.GROUND_BEEF), Ingredient.of(ExtraDelightTags.FAT),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
+				new SizedFluidIngredient[] {}, consumer, "salami_mix");
 
 		// Mortar
 		MortarRecipeBuilder
@@ -790,21 +828,21 @@ public class Fermentation {
 		Recipes.pot(EDAMAME.get(), 1, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(SOYBEAN_POD), Ingredient.of(SALT) }, "edamame", consumer);
 
-		Recipes.pot(BEEF_BULGOGI.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
+		Recipes.pot(BEEF_BULGOGI.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CUBED_BEEF_RAW),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
 						Ingredient.of(HOT_SAUCE_ITEM), Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
 						Ingredient.of(SOY_SAUCE_ITEM) },
 				"beef_bulgogi", consumer);
 
-		Recipes.pot(HONEY_CHILI_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
+		Recipes.pot(HONEY_CHILI_CHICKEN.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CUBED_CHICKEN_RAW), Ingredient.of(Items.HONEY_BOTTLE),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(SOY_SAUCE_ITEM) },
 				"honey_chili_chicken", consumer);
 
-		Recipes.pot(CARAMEL_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
+		Recipes.pot(CARAMEL_CHICKEN.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CHICKEN_THIGH_RAW), Ingredient.of(Items.SUGAR),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(FISH_SAUCE_ITEM),
@@ -817,19 +855,19 @@ public class Fermentation {
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(SOY_SAUCE_ITEM) },
 				"soy_glazed_salmon", consumer);
 
-		Recipes.pot(MISO_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+		Recipes.pot(MISO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(MISO_PASTE_ITEM),
 						Ingredient.of(Items.DRIED_KELP), Ingredient.of(ExtraDelightTags.MISO_SOUP_INGREDIENTS) },
 				"miso_soup", consumer);
 
-		Recipes.pot(SAUERKRAUT_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+		Recipes.pot(SAUERKRAUT_SOUP.get(), 3, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(SAUERKRAUT_ITEM),
 						Ingredient.of(CommonTags.FOODS_RAW_BACON), Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO) },
 				"sauerkraut_soup", consumer);
 
-		Recipes.pot(SAUERKRAUT_AND_SAUSAGE.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+		Recipes.pot(SAUERKRAUT_AND_SAUSAGE.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.SAUSAGE_RAW), Ingredient.of(SAUERKRAUT_ITEM),
 						Ingredient.of(CommonTags.FOODS_RAW_BACON), Ingredient.of(Items.SUGAR),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
@@ -841,7 +879,7 @@ public class Fermentation {
 						Ingredient.of(ExtraDelightItems.YEAST), Ingredient.of(SALT) },
 				"yeast_spread", consumer);
 
-		Recipes.pot(ZUPA_OGORKOWA.get(), 1, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
+		Recipes.pot(ZUPA_OGORKOWA.get(), 3, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER),
@@ -849,16 +887,16 @@ public class Fermentation {
 						Ingredient.of(PICKLE_JUICE) },
 				"zupa_ogorkowa", consumer);
 
-		Recipes.pot(KIMCHI_FRIED_RICE.get(), 1, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
+		Recipes.pot(KIMCHI_FRIED_RICE.get(), 2, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ModItems.COOKED_RICE.get()), Ingredient.of(KIMCHI_ITEM),
 						Ingredient.of(HOT_SAUCE_ITEM), Ingredient.of(Items.DRIED_KELP),
 						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ModItems.FRIED_EGG.get()) },
 				"kimchi_fried_rice", consumer);
 
-		Recipes.pot(KONGJANG.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(SOAKED_SOYBEANS_ITEM), Ingredient.of(SOY_SAUCE_ITEM),
-						Ingredient.of(Items.SUGAR), Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
-						Ingredient.of(ExtraDelightTags.COOKING_OIL) },
+		Recipes.pot(KONGJANG.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+				new Ingredient[] { Ingredient.of(SOAKED_SOYBEANS_ITEM), Ingredient.of(SOAKED_SOYBEANS_ITEM),
+						Ingredient.of(SOY_SAUCE_ITEM), Ingredient.of(Items.SUGAR),
+						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				"kongjang", consumer);
 
 		// Evaporating
@@ -953,7 +991,7 @@ public class Fermentation {
 				.requiresStage(new StageIngredient(Ingredient.of(SALT), hourTick, false))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
 
-		VatRecipeBuilder.pickle(new ItemStack(HOT_SAUCE_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
+		VatRecipeBuilder.pickle(new ItemStack(HOT_SAUCE_ITEM.get(), 4), new ItemStack(Items.GLASS_BOTTLE, 4))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_CHILI))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
@@ -995,7 +1033,7 @@ public class Fermentation {
 				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick * 14, true))
 				.save(consumer);
 
-		VatRecipeBuilder.pickle(new ItemStack(NAEM_MOO_ITEM.get()), new ItemStack(Items.LILY_PAD))
+		VatRecipeBuilder.pickle(new ItemStack(NAEM_MOO_ITEM.get(), 2), new ItemStack(Items.LILY_PAD, 2))
 				.requires(Ingredient.of(ExtraDelightTags.GROUND_PORK_RAW))
 				.requires(Ingredient.of(ExtraDelightTags.LEATHER_SCRAP))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC))
@@ -1005,7 +1043,7 @@ public class Fermentation {
 				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick * 5, true))
 				.save(consumer);
 
-		VatRecipeBuilder.pickle(new ItemStack(NAEM_MOO_ITEM.get()), new ItemStack(Items.BIG_DRIPLEAF))
+		VatRecipeBuilder.pickle(new ItemStack(NAEM_MOO_ITEM.get(), 2), new ItemStack(Items.BIG_DRIPLEAF, 2))
 				.requires(Ingredient.of(ExtraDelightTags.GROUND_PORK_RAW))
 				.requires(Ingredient.of(ExtraDelightTags.LEATHER_SCRAP))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC))

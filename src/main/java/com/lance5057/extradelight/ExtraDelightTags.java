@@ -639,6 +639,8 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> TOAST_TOPPING = modTag("toast_topping");
 
+	public static final TagKey<Item> SALAMI_MIX = neoforgeItemTag("salami_mix");
+
 	// Tough as Nails
 	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");
 	public static final TagKey<Item> HEATING_CONSUMED_ITEMS = tanTag("heating_consumed_items");

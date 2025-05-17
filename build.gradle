@@ -115,6 +115,8 @@ dependencies {
 	
 	compileOnly "vazkii.patchouli:Patchouli:1.21-87-NEOFORGE:api"
     runtimeOnly "vazkii.patchouli:Patchouli:1.21-87-NEOFORGE"
+    
+    implementation('com.blamejared.crafttweaker:CraftTweaker-neoforge-1.21.1:21.0.27')
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

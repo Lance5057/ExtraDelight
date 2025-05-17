@@ -134,6 +134,8 @@ public class JEIPlugin implements IModPlugin {
 		registry.addIngredientInfo(
 				List.of(new ItemStack(Fermentation.WILD_SOYBEAN.get()), new ItemStack(Fermentation.SOYBEAN_POD.get())),
 				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.soybean"));
+		registry.addIngredientInfo(new ItemStack(Fermentation.PICKLE_JUICE.get()), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.pickle_juice"));
 
 		List<ItemStack> hide = List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
 		registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hide);
