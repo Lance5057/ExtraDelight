@@ -608,31 +608,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> SOAKED_SOYBEANS = neoforgeItemTag("soybeans/soaked");
 	public static final TagKey<Item> MASHED_SOYBEANS = neoforgeItemTag("soybeans/mashed");
 	public static final TagKey<Item> COOKED_SOYBEANS = neoforgeItemTag("soybeans/cooked");
-	public static final TagKey<Item> SOYMILK = neoforgeItemTag("milk/soy");
+	public static final TagKey<Item> SOY_MILK = neoforgeItemTag("milk/soy");
 	public static final TagKey<Item> YEAST_SPREAD = neoforgeItemTag("yeast_spread");
-
-	public static final TagKey<Item> NAEM_MOO = neoforgeItemTag("foods/naem_moo");
-	public static final TagKey<Item> GAZPACHO = neoforgeItemTag("foods/gazpacho");
-	public static final TagKey<Item> EDAMAME = neoforgeItemTag("foods/edamame");
-	public static final TagKey<Item> BEEF_BULGOGI = neoforgeItemTag("foods/beef_bulgogi");
-	public static final TagKey<Item> HONEY_CHILI_CHICKEN = neoforgeItemTag("foods/honey_chili_chicken");
-	public static final TagKey<Item> CARAMEL_CHICKEN = neoforgeItemTag("foods/caramel_chicken");
-	public static final TagKey<Item> SOY_GLAZED_SALMON = neoforgeItemTag("foods/soy_glazed_salmon");
-	public static final TagKey<Item> STEAK_AND_PICKLED_ONION_PIE = neoforgeItemTag("foods/steak_and_pickled_onion_pie");
-	public static final TagKey<Item> KIWIBURGER = neoforgeItemTag("foods/kiwiburger");
-	public static final TagKey<Item> SHIRAZI_SALAD = neoforgeItemTag("foods/shirazi_salad");
-	public static final TagKey<Item> CUCUMBER_SALAD = neoforgeItemTag("foods/cucumber_salad");
-	public static final TagKey<Item> MISO_SOUP = neoforgeItemTag("foods/miso_soup");
-	public static final TagKey<Item> NATTO_AND_RICE = neoforgeItemTag("foods/natto_and_rice");
-	public static final TagKey<Item> SAUERKRAUT_SOUP = neoforgeItemTag("foods/sauerkraut_soup");
-	public static final TagKey<Item> SAUERKRAUT_AND_SAUSAGE = neoforgeItemTag("foods/sauerkraut_and_sausage");
-	public static final TagKey<Item> CHEESYMITE_SCROLL = neoforgeItemTag("foods/cheesymite_scroll");
-	public static final TagKey<Item> MORKOVCHA = neoforgeItemTag("foods/morkovcha");
-	public static final TagKey<Item> ZUPA_OGAERKOWA = neoforgeItemTag("foods/zupa_ogaerkowa");
-	public static final TagKey<Item> KIMCHI_FRIED_RICE = neoforgeItemTag("foods/kimchi_fried_rice");
-	public static final TagKey<Item> KONGJANG = neoforgeItemTag("foods/kongjang");
-	public static final TagKey<Item> CHEESEBURGER_PICKLE_POPPER = neoforgeItemTag("foods/cheeseburger_pickle_popper");
-	public static final TagKey<Item> HOT_WINGS = neoforgeItemTag("foods/hot_wings");
 	public static final TagKey<Item> COOKED_WHEAT_SEEDS = neoforgeItemTag("foods/cooked_wheat_seeds");
 
 	public static final TagKey<Item> SALT = neoforgeItemTag("salt");
