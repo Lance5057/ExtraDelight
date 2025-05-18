@@ -21,7 +21,7 @@
       "item": "farmersdelight:wheat_dough"
     },
     {
-      "item": "extradelight:yeast_spread"
+      "tag": "c:yeast_spread"
     },
     {
       "item": "farmersdelight:wheat_dough"

@@ -12,13 +12,13 @@
       "tag": "c:chili/powder"
     },
     {
-      "item": "extradelight:hot_sauce_item"
+      "tag": "c:hot_sauce"
     },
     {
       "tag": "extradelight:processed/garlic"
     },
     {
-      "item": "extradelight:soy_sauce_item"
+      "tag": "c:soy_sauce"
     },
     {
       "item": "farmersdelight:cooked_rice"

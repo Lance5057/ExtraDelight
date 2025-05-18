@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "extradelight:caramel_sauce"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:caramel_sauce_fluid"
+  }
+}

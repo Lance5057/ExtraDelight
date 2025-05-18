@@ -6,8 +6,10 @@ import java.util.Optional;
 
 import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
-
+import com.lance5057.extradelight.data.recipebuilders.BottleFluidRegistryRecipeBuilder;
 import com.lance5057.extradelight.modules.Fermentation;
+
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
@@ -45,14 +47,21 @@ public class BottleFluidRegistry {
 		return FluidStack.EMPTY;
 	}
 
+	public static void createRecipesForJEI(RecipeOutput consumer) {
+		registry.forEach(bf -> {
+			new BottleFluidRegistryRecipeBuilder(bf.bottle, bf.fluid).save(consumer, bf.fluid.getFluids()[0].getDescriptionId());
+		});
+	}
+
 	public static class BottleFluid {
-		Ingredient bottle;
-		SizedFluidIngredient fluid;
+		public Ingredient bottle;
+		public SizedFluidIngredient fluid;
 
 		public BottleFluid(Ingredient b, SizedFluidIngredient f) {
 			this.bottle = b;
 			this.fluid = f;
 		}
+
 	}
 
 	static {

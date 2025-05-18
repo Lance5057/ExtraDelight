@@ -16,6 +16,7 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.RecipeFondueFeastBlock;
 import com.lance5057.extradelight.blocks.RipeSalamiBlock;
 import com.lance5057.extradelight.blocks.UnripeSalamiBlock;
 import com.lance5057.extradelight.blocks.crops.BushStageFour;
@@ -476,10 +477,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 				ExtraDelightItems.TRAY.get());
 		feast(ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(), ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK.get(),
 				Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.BLOOD_CHOCOLATE_FONDUE.get(), Items.BUCKET);
-		this.dropOther(ExtraDelightBlocks.DARK_CHOCOLATE_FONDUE.get(), Items.BUCKET);
-		this.dropOther(ExtraDelightBlocks.MILK_CHOCOLATE_FONDUE.get(), Items.BUCKET);
-		this.dropOther(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), Items.BUCKET);
+		feast(ExtraDelightBlocks.BLOOD_CHOCOLATE_FONDUE.get(), ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK.get(),
+				Items.BUCKET);
+		feast(ExtraDelightBlocks.DARK_CHOCOLATE_FONDUE.get(), ExtraDelightItems.DARK_CHOCOLATE_FONDUE_BLOCK.get(),
+				Items.BUCKET);
+		feast(ExtraDelightBlocks.MILK_CHOCOLATE_FONDUE.get(), ExtraDelightItems.MILK_CHOCOLATE_FONDUE_BLOCK.get(),
+				Items.BUCKET);
+		feast(ExtraDelightBlocks.WHITE_CHOCOLATE_FONDUE.get(), ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK.get(),
+				Items.BUCKET);
 
 		this.dropSelf(ExtraDelightBlocks.HAZELNUT_SAPLING.get());
 
@@ -681,7 +686,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 						p_249985_ -> SetItemCountFunction.setCount(ConstantValue.exactly((float) p_249985_.intValue()))
 								.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
 										.setProperties(StatePropertiesPredicate.Builder.properties()
-												.hasProperty(RipeSalamiBlock.COUNT, p_249985_.intValue()-1)))))));
+												.hasProperty(RipeSalamiBlock.COUNT, p_249985_.intValue() - 1)))))));
 	}
 
 	net.minecraft.world.level.storage.loot.LootTable.Builder unsalami(Block block) {
@@ -691,12 +696,21 @@ public class BlockLootTables extends BlockLootSubProvider {
 						p_249985_ -> SetItemCountFunction.setCount(ConstantValue.exactly((float) p_249985_.intValue()))
 								.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
 										.setProperties(StatePropertiesPredicate.Builder.properties()
-												.hasProperty(UnripeSalamiBlock.COUNT, p_249985_.intValue()-1)))))));
+												.hasProperty(UnripeSalamiBlock.COUNT, p_249985_.intValue() - 1)))))));
 	}
 
 	void feast(RecipeFeastBlock block, Item blockItem, Item lastDrop) {
 		LootItemCondition.Builder feast0 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(RecipeFeastBlock.SERVINGS, 0));
+
+		this.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
+				.add(LootItem.lootTableItem(lastDrop).when(feast0).otherwise(LootItem.lootTableItem(Items.AIR)))));
+	}
+
+	void feast(RecipeFondueFeastBlock block, Item blockItem, Item lastDrop) {
+		LootItemCondition.Builder feast0 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+				.setProperties(
+						StatePropertiesPredicate.Builder.properties().hasProperty(RecipeFondueFeastBlock.SERVINGS, 0));
 
 		this.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
 				.add(LootItem.lootTableItem(lastDrop).when(feast0).otherwise(LootItem.lootTableItem(Items.AIR)))));

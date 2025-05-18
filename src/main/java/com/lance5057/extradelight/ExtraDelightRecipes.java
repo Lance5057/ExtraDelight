@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import java.util.function.Supplier;
 
+import com.lance5057.extradelight.recipe.BottleFluidRegistryRecipe;
 import com.lance5057.extradelight.recipe.DynamicToastRecipe;
 import com.lance5057.extradelight.recipe.FeastRecipe;
 import com.lance5057.extradelight.recipe.ShapedWithJarRecipe;
@@ -57,6 +58,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("vat"));
 	public static final Supplier<RecipeType<EvaporatorRecipe>> EVAPORATOR = RECIPE_TYPES.register("evaporator",
 			() -> registerRecipeType("evaporator"));
+	public static final Supplier<RecipeType<BottleFluidRegistryRecipe>> BOTTLE_FLUID_REGISTRY = RECIPE_TYPES
+			.register("fluid_registry", () -> registerRecipeType("fluid_registry"));
 
 	// Dynamic Names
 //	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES
@@ -117,4 +120,6 @@ public class ExtraDelightRecipes {
 			VatRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> EVAPORATOR_SERIALIZER = RECIPE_SERIALIZERS.register("evaporator",
 			EvaporatorRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> BOTTLE_FLUID_SERIALIZER = RECIPE_SERIALIZERS
+			.register("bottle_fluid", BottleFluidRegistryRecipe.Serializer::new);
 }

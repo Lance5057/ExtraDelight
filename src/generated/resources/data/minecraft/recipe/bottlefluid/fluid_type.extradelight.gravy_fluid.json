@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "extradelight:gravy_boat_item"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:gravy_fluid"
+  }
+}

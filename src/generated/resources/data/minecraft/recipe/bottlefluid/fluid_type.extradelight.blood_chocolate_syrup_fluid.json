@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "extradelight:blood_chocolate_syrup_bottle"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:blood_chocolate_syrup_fluid"
+  }
+}

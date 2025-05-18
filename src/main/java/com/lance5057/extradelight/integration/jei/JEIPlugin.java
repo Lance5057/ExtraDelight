@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.integration.jei.categories.BottleFluidRegistryCategory;
 import com.lance5057.extradelight.integration.jei.categories.ChillerRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.DoughShapingRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.DryingRackRecipeCategory;
@@ -56,6 +57,7 @@ public class JEIPlugin implements IModPlugin {
 				new ChillerRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new VatRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new EvaporatorRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new BottleFluidRegistryCategory(registry.getJeiHelpers().getGuiHelper()),
 				new ShapedWithJarRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
 	}
 
@@ -85,6 +87,8 @@ public class JEIPlugin implements IModPlugin {
 				.getAllRecipesFor(ExtraDelightRecipes.VAT.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(EvaporatorRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
 				.getAllRecipesFor(ExtraDelightRecipes.EVAPORATOR.get()).stream().map(RecipeHolder::value).toList());
+		registry.addRecipes(BottleFluidRegistryCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.BOTTLE_FLUID_REGISTRY.get()).stream().map(RecipeHolder::value).toList());
 
 		registry.addIngredientInfo(new ItemStack(ExtraDelightItems.MINT.get()), VanillaTypes.ITEM_STACK,
 				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.mint"));
@@ -183,6 +187,7 @@ public class JEIPlugin implements IModPlugin {
 
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.EVAPORATOR.getDelegate()),
 				EvaporatorRecipeCategory.TYPE);
+		
 	}
 
 }

@@ -8,7 +8,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "extradelight:mashed_soybeans_item"
+      "tag": "c:soybeans/mashed"
     }
   ],
   "recipe_book_tab": "meals",

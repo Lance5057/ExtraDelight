@@ -7,7 +7,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "extradelight:soaked_soybeans_item"
+      "tag": "c:soybeans/soaked"
     }
   ],
   "recipe_book_tab": "meals",

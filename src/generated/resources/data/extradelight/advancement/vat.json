@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "vat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:vat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.vat.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:vat"
+    },
+    "title": {
+      "translate": "extradelight.advancement.vat.name"
+    }
+  },
+  "requirements": [
+    [
+      "vat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

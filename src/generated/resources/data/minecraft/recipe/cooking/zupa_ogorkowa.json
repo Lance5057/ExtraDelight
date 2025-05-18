@@ -23,7 +23,7 @@
       "item": "farmersdelight:bone_broth"
     },
     {
-      "item": "extradelight:pickle_juice"
+      "tag": "c:pickle_juice"
     }
   ],
   "recipe_book_tab": "meals",

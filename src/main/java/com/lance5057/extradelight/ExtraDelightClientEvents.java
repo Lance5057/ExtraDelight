@@ -26,6 +26,7 @@ import com.lance5057.extradelight.displays.wreath.WreathScreen;
 import com.lance5057.extradelight.gui.StyleableScreen;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.items.jar.JarItemModel;
+import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
@@ -209,6 +210,7 @@ public class ExtraDelightClientEvents {
 		applyFluidRenderType(ExtraDelightBlocks.GOLDEN_JAM_FLUID_BLOCK.get());
 		applyFluidRenderType(ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK.get());
 		applyFluidRenderType(ExtraDelightBlocks.TEA_FLUID_BLOCK.get());
+		applyFluidRenderType(Fermentation.PICKLE_JUICE_FLUID_BLOCK.get());
 	}
 
 	public static void applyFluidRenderType(LiquidBlock liquid) {

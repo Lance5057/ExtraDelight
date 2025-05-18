@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "evaporator": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:evaporator"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.evaporator.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:evaporator"
+    },
+    "title": {
+      "translate": "extradelight.advancement.evaporator.name"
+    }
+  },
+  "requirements": [
+    [
+      "evaporator"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "extradelight:whipped_cream"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:whipped_cream_fluid"
+  }
+}

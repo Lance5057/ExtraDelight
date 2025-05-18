@@ -6,10 +6,10 @@
       "item": "farmersdelight:cooked_rice"
     },
     {
-      "item": "extradelight:kimchi_item"
+      "tag": "c:kimchi"
     },
     {
-      "item": "extradelight:hot_sauce_item"
+      "tag": "c:hot_sauce"
     },
     {
       "item": "minecraft:dried_kelp"

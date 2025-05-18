@@ -1,8 +1,8 @@
 {
   "values": [
-    "extradelight:gherkin_item",
-    "extradelight:pickled_onion_item",
-    "extradelight:pickled_carrot_item",
-    "extradelight:pickled_beet_item"
+    "#c:foods/pickled/vegetables/cucumber",
+    "#c:foods/pickled/vegetables/beetroot",
+    "#c:foods/pickled/vegetables/onion",
+    "#c:foods/pickled/vegetables/carrot"
   ]
 }

@@ -16,7 +16,7 @@
         "tag": "c:meat/cooked"
       },
       {
-        "item": "extradelight:salami_item"
+        "tag": "c:foods/salami"
       }
     ],
     "p": {

@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "extradelight:hazelnut_spread_bottle"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:cocoa_nut_butter_spread_fluid"
+  }
+}

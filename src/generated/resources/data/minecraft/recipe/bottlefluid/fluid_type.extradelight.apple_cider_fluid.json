@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "farmersdelight:apple_cider"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:apple_cider_fluid"
+  }
+}

@@ -576,7 +576,6 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PICKLED_CARROT).add(Fermentation.PICKLED_CARROT_ITEM.get());
 		tag(ExtraDelightTags.PICKLED_FISH).add(Fermentation.PICKLED_FISH_ITEM.get());
 		tag(ExtraDelightTags.PICKLED_SAUSAGE).add(Fermentation.PICKLED_SAUSAGE_ITEM.get());
-		tag(ExtraDelightTags.PICKLED_CABBAGE).add(Fermentation.SAUERKRAUT_ITEM.get());
 
 		tag(ExtraDelightTags.MISO_SOUP_INGREDIENTS).addTag(ExtraDelightTags.PROCESSED_CABBAGE)
 				.addTag(Tags.Items.MUSHROOMS).addTag(ExtraDelightTags.PROCESSED_CARROT)
@@ -587,8 +586,9 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.PICKLED_EGGS);
 		tag(ExtraDelightTags.PICKLED_VEGETABLES).addTag(ExtraDelightTags.PICKLED_CUCUMBER)
 				.addTag(ExtraDelightTags.PICKLED_BEETROOT).addTag(ExtraDelightTags.PICKLED_ONION)
-				.addTag(ExtraDelightTags.PICKLED_CARROT).addTag(ExtraDelightTags.PICKLED_CABBAGE);
-		tag(ExtraDelightTags.PICKLED_MEAT).addTag(ExtraDelightTags.PICKLED_FISH).addTag(ExtraDelightTags.PICKLED_SAUSAGE);
+				.addTag(ExtraDelightTags.PICKLED_CARROT);
+		tag(ExtraDelightTags.PICKLED_MEAT).addTag(ExtraDelightTags.PICKLED_FISH)
+				.addTag(ExtraDelightTags.PICKLED_SAUSAGE);
 		tag(ExtraDelightTags.PICKLED_EGGS).add(Fermentation.PICKLED_EGG_ITEM.get());
 
 		tag(ExtraDelightTags.PICKLE_JUICE).add(Fermentation.PICKLE_JUICE.get());

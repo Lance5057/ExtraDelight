@@ -592,7 +592,6 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> PICKLED_CARROT = neoforgeItemTag("foods/pickled/vegetables/carrot");
 	public static final TagKey<Item> PICKLED_FISH = neoforgeItemTag("foods/pickled/meat/fish");
 	public static final TagKey<Item> PICKLED_SAUSAGE = neoforgeItemTag("foods/pickled/meat/sausage");
-	public static final TagKey<Item> PICKLED_CABBAGE = neoforgeItemTag("foods/pickled/vegetables/cabbage");
 
 	public static final TagKey<Item> MISO_SOUP_INGREDIENTS = neoforgeItemTag("miso_soup_ingredients");
 

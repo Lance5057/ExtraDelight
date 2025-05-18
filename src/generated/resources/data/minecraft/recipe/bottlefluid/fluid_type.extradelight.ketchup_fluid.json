@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "extradelight:ketchup_jar_item"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:ketchup_fluid"
+  }
+}

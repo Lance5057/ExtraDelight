@@ -6,7 +6,7 @@
       "item": "farmersdelight:bone_broth"
     },
     {
-      "item": "extradelight:sauerkraut_item"
+      "tag": "c:sauerkraut"
     },
     {
       "tag": "c:foods/raw_bacon"

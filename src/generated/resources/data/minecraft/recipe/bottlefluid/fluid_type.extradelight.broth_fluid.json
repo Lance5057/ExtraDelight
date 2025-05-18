@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "farmersdelight:bone_broth"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:broth_fluid"
+  }
+}

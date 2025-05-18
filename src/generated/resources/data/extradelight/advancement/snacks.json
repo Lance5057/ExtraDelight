@@ -211,6 +211,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:salami_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:salami_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sunflower_seeds": {
       "conditions": {
         "items": [
@@ -257,19 +267,10 @@
   },
   "requirements": [
     [
-      "extradelight:apple_chips"
-    ],
-    [
       "extradelight:edamame"
     ],
     [
-      "extradelight:bruschetta"
-    ],
-    [
       "extradelight:cheesy_garlic_bread"
-    ],
-    [
-      "extradelight:garlic_bread"
     ],
     [
       "extradelight:pickled_carrot_item"
@@ -278,34 +279,19 @@
       "extradelight:pickled_egg_item"
     ],
     [
-      "extradelight:potato_chips"
-    ],
-    [
       "extradelight:boiled_egg"
     ],
     [
       "extradelight:jerky"
     ],
     [
-      "extradelight:crackers"
-    ],
-    [
       "extradelight:pickled_fish_item"
-    ],
-    [
-      "extradelight:caramel_popcorn"
     ],
     [
       "extradelight:cheesymite_scroll"
     ],
     [
       "extradelight:roll"
-    ],
-    [
-      "extradelight:pickled_sausage_item"
-    ],
-    [
-      "extradelight:cheeseburger_pickle"
     ],
     [
       "extradelight:popcorn"
@@ -317,16 +303,43 @@
       "extradelight:toast"
     ],
     [
-      "extradelight:sunflower_seeds"
+      "extradelight:roasted_pumpkin_seeds"
     ],
     [
-      "extradelight:roasted_pumpkin_seeds"
+      "extradelight:cinnamon_toast"
+    ],
+    [
+      "extradelight:apple_chips"
+    ],
+    [
+      "extradelight:bruschetta"
+    ],
+    [
+      "extradelight:garlic_bread"
+    ],
+    [
+      "extradelight:potato_chips"
+    ],
+    [
+      "extradelight:crackers"
+    ],
+    [
+      "extradelight:caramel_popcorn"
+    ],
+    [
+      "extradelight:pickled_sausage_item"
+    ],
+    [
+      "extradelight:cheeseburger_pickle"
+    ],
+    [
+      "extradelight:sunflower_seeds"
     ],
     [
       "extradelight:graham_cracker"
     ],
     [
-      "extradelight:cinnamon_toast"
+      "extradelight:salami_item"
     ]
   ],
   "sends_telemetry_event": true

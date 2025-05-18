@@ -27,13 +27,13 @@
       "tag": "c:foods/raw_bacon"
     },
     {
-      "item": "extradelight:gherkin_item"
+      "tag": "c:foods/pickled/vegetables/cucumber"
     },
     {
-      "item": "extradelight:gherkin_item"
+      "tag": "c:foods/pickled/vegetables/cucumber"
     },
     {
-      "item": "extradelight:gherkin_item"
+      "tag": "c:foods/pickled/vegetables/cucumber"
     }
   ],
   "result": {

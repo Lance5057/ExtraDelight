@@ -6,7 +6,7 @@
       "item": "farmersdelight:bone_broth"
     },
     {
-      "item": "extradelight:miso_paste_item"
+      "tag": "c:miso_paste"
     },
     {
       "item": "minecraft:dried_kelp"

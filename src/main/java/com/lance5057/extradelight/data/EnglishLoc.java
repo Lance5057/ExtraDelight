@@ -148,6 +148,18 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.name", "A Little Less Roughage");
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.desc", "Make some flour and make your bread less fibrous.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.vat.name", "A Real Crock of...");
+		this.add(ExtraDelight.MOD_ID + ".advancement.vat.desc", "Make a vat, harness the power of fermentation!");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.evaporator.name", "It's a Bit Dry");
+		this.add(ExtraDelight.MOD_ID + ".advancement.evaporator.desc", "Make an evaporator, become salty");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.pickle.name", "Hey Hey Hey!");
+		this.add(ExtraDelight.MOD_ID + ".advancement.pickle.desc", "Get a pickle, or maybe two");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.lid.name", "Put a Lid on it.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.lid.desc", "Make a Lid for your vat, or your head");
 
 		// this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.name", "Regal Purple");
 		// this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.desc", "Find an

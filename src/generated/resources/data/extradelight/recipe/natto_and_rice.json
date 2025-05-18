@@ -3,13 +3,13 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "extradelight:natto_item"
+      "tag": "c:foods/natto"
     },
     {
       "item": "farmersdelight:cooked_rice"
     },
     {
-      "item": "extradelight:soy_sauce_item"
+      "tag": "c:soy_sauce"
     },
     {
       "item": "farmersdelight:fried_egg"

@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "farmersdelight:hot_cocoa"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:hot_cocoa_fluid"
+  }
+}

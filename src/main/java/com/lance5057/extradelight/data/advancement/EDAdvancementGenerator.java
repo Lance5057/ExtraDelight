@@ -9,6 +9,7 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.modules.Fermentation;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.Advancement.Builder;
@@ -21,11 +22,13 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.ItemUsedOnLocationTrigger;
 import net.minecraft.advancements.critereon.LocationPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -121,6 +124,45 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.parent(start)
 				.addCriterion("oven", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.OVEN.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":oven");
+
+		AdvancementHolder evaporator = Advancement.Builder.advancement()
+				.display(ExtraDelightItems.EVAPORATOR.get(),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.evaporator.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.evaporator.desc"), null,
+						AdvancementType.TASK, true, true, false)
+				.parent(start)
+				.addCriterion("evaporator",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.EVAPORATOR.get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":evaporator");
+
+		AdvancementHolder vat = Advancement.Builder.advancement()
+				.display(ExtraDelightItems.VAT.get(),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.vat.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.vat.desc"), null,
+						AdvancementType.TASK, true, true, false)
+				.parent(start)
+				.addCriterion("vat", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.VAT.get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":vat");
+		
+		AdvancementHolder lid = Advancement.Builder.advancement()
+				.display(ExtraDelightItems.LID.get(),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.lid.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.lid.desc"), null,
+						AdvancementType.TASK, true, true, false)
+				.parent(vat)
+				.addCriterion("lid", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LID.get()))
+				.save(consumer, ExtraDelight.MOD_ID + ":lid");
+
+		AdvancementHolder pickle = Advancement.Builder.advancement()
+				.display(Fermentation.GHERKIN_ITEM.get(),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.pickle.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.pickle.desc"), null,
+						AdvancementType.TASK, true, true, false)
+				.parent(vat)
+				.addCriterion("pickle",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+								.of(ExtraDelightTags.PICKLED).withCount(MinMaxBounds.Ints.atLeast(2))))
+				.save(consumer, ExtraDelight.MOD_ID + ":pickle");
 
 		AdvancementHolder trays = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.TRAY.get(),

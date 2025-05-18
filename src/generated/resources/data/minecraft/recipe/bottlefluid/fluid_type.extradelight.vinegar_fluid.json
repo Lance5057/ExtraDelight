@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "extradelight:vinegar"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:vinegar_fluid"
+  }
+}

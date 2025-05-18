@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "minecraft:potion"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "minecraft:water"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "parent": "extradelight:vat",
+  "criteria": {
+    "pickle": {
+      "conditions": {
+        "items": [
+          {
+            "count": {
+              "min": 2
+            },
+            "items": "#c:foods/pickled"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.pickle.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:gherkin_item"
+    },
+    "title": {
+      "translate": "extradelight.advancement.pickle.name"
+    }
+  },
+  "requirements": [
+    [
+      "pickle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

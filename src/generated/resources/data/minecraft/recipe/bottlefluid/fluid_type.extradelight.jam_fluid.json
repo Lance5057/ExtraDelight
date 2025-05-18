@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "extradelight:jam"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:jam_fluid"
+  }
+}

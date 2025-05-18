@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "extradelight:milkshake"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:milkshake_fluid"
+  }
+}

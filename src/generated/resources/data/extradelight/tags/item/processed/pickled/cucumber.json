@@ -1,6 +1,6 @@
 {
   "values": [
-    "extradelight:gherkin_item",
-    "extradelight:sliced_gherkin_item"
+    "#c:foods/pickled/vegetables/cucumber",
+    "#c:foods/pickled/vegetables/cucumber/sliced"
   ]
 }

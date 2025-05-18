@@ -3,13 +3,13 @@
   "heat_requirement": "heated",
   "ingredients": [
     {
-      "item": "extradelight:soaked_soybeans_item"
+      "tag": "c:soybeans/soaked"
     },
     {
-      "item": "extradelight:soaked_soybeans_item"
+      "tag": "c:soybeans/soaked"
     },
     {
-      "item": "extradelight:soy_sauce_item"
+      "tag": "c:soy_sauce"
     },
     {
       "item": "minecraft:sugar"

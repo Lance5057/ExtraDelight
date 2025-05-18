@@ -19,10 +19,10 @@
       "tag": "extradelight:processed/garlic"
     },
     {
-      "item": "extradelight:fish_sauce_item"
+      "tag": "c:fish_sauce"
     },
     {
-      "item": "extradelight:soy_sauce_item"
+      "tag": "c:soy_sauce"
     }
   ],
   "recipe_book_tab": "meals",

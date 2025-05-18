@@ -19,6 +19,7 @@ import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
@@ -111,6 +112,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		Fermentation.Recipes(consumer);
 		AestheticBlocks.Recipes(consumer);
+		BottleFluidRegistry.createRecipesForJEI(consumer);
 	}
 
 	private void evaporatorRecipes(RecipeOutput consumer) {

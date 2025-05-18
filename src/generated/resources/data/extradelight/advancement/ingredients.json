@@ -231,6 +231,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:cooked_soybeans_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cooked_soybeans_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:cooked_wheat_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cooked_wheat_seeds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:cooking_oil": {
       "conditions": {
         "items": [
@@ -306,6 +326,16 @@
         "items": [
           {
             "items": "extradelight:croutons"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:cucumber": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cucumber"
           }
         ]
       },
@@ -751,6 +781,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:kimchi_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:kimchi_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:lasagna_noodles": {
       "conditions": {
         "items": [
@@ -786,6 +826,16 @@
         "items": [
           {
             "items": "extradelight:marshmallow_fluff_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:mashed_soybeans_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:mashed_soybeans_item"
           }
         ]
       },
@@ -846,6 +896,26 @@
         "items": [
           {
             "items": "extradelight:miso_paste_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:naem_moo_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:naem_moo_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:natto_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:natto_item"
           }
         ]
       },
@@ -1001,6 +1071,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:salami_mix": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:salami_mix"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:sauerkraut_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sauerkraut_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:shredded_cabbage_item": {
       "conditions": {
         "items": [
@@ -1131,6 +1221,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:soybean_pod": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:soybean_pod"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sugar_cookie_dough": {
       "conditions": {
         "items": [
@@ -1146,6 +1246,16 @@
         "items": [
           {
             "items": "extradelight:sweet_berry_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:unripe_salami_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:unripe_salami_item"
           }
         ]
       },
@@ -1293,6 +1403,9 @@
       "extradelight:corn_seeds"
     ],
     [
+      "extradelight:salami_mix"
+    ],
+    [
       "extradelight:frosting_light_gray"
     ],
     [
@@ -1323,6 +1436,9 @@
       "extradelight:roasted_peanuts"
     ],
     [
+      "extradelight:cooked_wheat_seeds"
+    ],
+    [
       "extradelight:marshmallow_fluff_bottle"
     ],
     [
@@ -1330,6 +1446,9 @@
     ],
     [
       "extradelight:potato_sticks"
+    ],
+    [
+      "extradelight:kimchi_item"
     ],
     [
       "extradelight:roasted_cocoa_beans"
@@ -1401,6 +1520,9 @@
       "extradelight:milk_chocolate_syrup_bottle"
     ],
     [
+      "extradelight:sauerkraut_item"
+    ],
+    [
       "extradelight:soaked_soybeans_item"
     ],
     [
@@ -1464,6 +1586,9 @@
       "extradelight:sliced_apple"
     ],
     [
+      "extradelight:cooked_soybeans_item"
+    ],
+    [
       "extradelight:green_coffee"
     ],
     [
@@ -1482,6 +1607,9 @@
       "extradelight:white_chocolate_chips"
     ],
     [
+      "extradelight:natto_item"
+    ],
+    [
       "extradelight:hazelnuts"
     ],
     [
@@ -1492,6 +1620,9 @@
     ],
     [
       "extradelight:peanuts"
+    ],
+    [
+      "extradelight:unripe_salami_item"
     ],
     [
       "extradelight:corn_meal"
@@ -1509,6 +1640,9 @@
       "extradelight:frosting_white"
     ],
     [
+      "extradelight:cucumber"
+    ],
+    [
       "extradelight:frosting_green"
     ],
     [
@@ -1516,6 +1650,9 @@
     ],
     [
       "extradelight:mint"
+    ],
+    [
+      "extradelight:soybean_pod"
     ],
     [
       "extradelight:ground_cinnamon"
@@ -1566,6 +1703,9 @@
       "extradelight:cheese"
     ],
     [
+      "extradelight:naem_moo_item"
+    ],
+    [
       "extradelight:garlic_clove"
     ],
     [
@@ -1573,6 +1713,9 @@
     ],
     [
       "extradelight:miso_paste_item"
+    ],
+    [
+      "extradelight:mashed_soybeans_item"
     ],
     [
       "extradelight:sliced_gherkin_item"

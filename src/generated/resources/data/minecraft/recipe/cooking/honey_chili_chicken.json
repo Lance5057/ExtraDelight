@@ -22,7 +22,7 @@
       "tag": "extradelight:processed/ginger"
     },
     {
-      "item": "extradelight:soy_sauce_item"
+      "tag": "c:soy_sauce"
     }
   ],
   "recipe_book_tab": "meals",

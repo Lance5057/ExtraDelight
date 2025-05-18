@@ -7,13 +7,15 @@ import java.util.Set;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.block.model.ItemOverrides;
+import net.minecraft.client.renderer.block.model.ItemTransform;
+import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelBakery;
@@ -26,6 +28,7 @@ import net.neoforged.neoforge.client.model.data.ModelData;
 
 public class DynamicFoodChildBakedGeometry implements BakedModel {
 	private final List<BakedModel> childrenModels;
+	
 
 	public DynamicFoodChildBakedGeometry(List<BakedModel> childrenModels) {
 		this.childrenModels = childrenModels;

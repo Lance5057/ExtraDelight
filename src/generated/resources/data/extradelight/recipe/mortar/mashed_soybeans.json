@@ -3,7 +3,7 @@
   "fluidOut": {},
   "grinds": 4,
   "ingredient": {
-    "item": "extradelight:soaked_soybeans_item"
+    "tag": "c:soybeans/soaked"
   },
   "result": {
     "count": 1,
