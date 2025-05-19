@@ -96,6 +96,8 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.SWEETENER).add(Items.HONEY_BOTTLE).add(Items.SUGAR);
 		tag(ExtraDelightTags.MAYO).add(ExtraDelightItems.MAYO.get());
+		tag(ExtraDelightTags.KETCHUP).add(ExtraDelightItems.KETCHUP.get());
+		tag(ExtraDelightTags.BBQ_SAUCE).add(ExtraDelightItems.BBQ_SAUCE.get());
 
 		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
@@ -107,8 +109,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.GELATIN).add(ExtraDelightItems.AGAR_AGAR.get());
 		tag(ExtraDelightTags.BUTTER).add(ExtraDelightItems.BUTTER.get());
 		tag(ExtraDelightTags.GRAVY).add(ExtraDelightItems.GRAVY.get());
-		tag(ExtraDelightTags.CONDIMENTS).add(ExtraDelightItems.KETCHUP.get()).add(ExtraDelightItems.BBQ_SAUCE.get())
-				.add(ExtraDelightItems.MAYO.get());
+		tag(ExtraDelightTags.CONDIMENTS).addTag(ExtraDelightTags.KETCHUP).addTag(ExtraDelightTags.BBQ_SAUCE)
+				.addTag(ExtraDelightTags.MAYO).addTag(ExtraDelightTags.HOT_SAUCE);
 
 		tag(ExtraDelightTags.STARCH).add(ModItems.RICE.get(), ExtraDelightItems.POTATO_STICKS.get(),
 				ExtraDelightItems.GRATED_POTATO.get(), ExtraDelightItems.SLICED_POTATO.get());
@@ -558,6 +560,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_GARLIC).add(ExtraDelightItems.GARLIC_CLOVE.get(),
 				ExtraDelightItems.GRATED_GARLIC.get());
 
+		tag(ExtraDelightTags.SALT).add(Fermentation.SALT.get());
+
 		tag(ExtraDelightTags.CUCUMBER).add(Fermentation.CUCUMBER.get());
 		tag(ExtraDelightTags.PROCESSED_CUCUMBER).add(Fermentation.CUCUMBER.get(),
 				Fermentation.SLICED_CUCUMBER_ITEM.get());
@@ -685,7 +689,10 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_SOLIDS)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_COCOA_POWDER)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_KERNELS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GARLIC);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GARLIC)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CUCUMBER)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SOYBEANS)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT);
 
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR).add(ExtraDelightItems.FLOUR_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_MEAL).add(ExtraDelightItems.CORNMEAL_SACK.get());
@@ -741,6 +748,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GARLIC).add(ExtraDelightItems.GARLIC_CRATE.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CUCUMBER).add(Fermentation.CUCUMBER_CRATE_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SOYBEANS).add(Fermentation.SOYBEAN_SACK_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT).add(Fermentation.SALT_BLOCK_ITEM.get());
 
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);

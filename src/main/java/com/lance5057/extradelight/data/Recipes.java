@@ -3750,7 +3750,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CURRYWURST.get(), 2)
 				.requires(ExtraDelightTags.BREAD_SLICE).requires(ExtraDelightTags.BREAD_SLICE)
-				.requires(ExtraDelightItems.KETCHUP).requires(ExtraDelightItems.CURRY_POWDER)
+				.requires(ExtraDelightTags.KETCHUP).requires(ExtraDelightItems.CURRY_POWDER)
 				.requires(ExtraDelightTags.SAUSAGE_COOKED).requires(ExtraDelightTags.SAUSAGE_COOKED)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CURRY_POWDER))
 				.save(consumer, EDLoc("currywurst"));
@@ -5008,7 +5008,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), false)
 				.addIngredient(ExtraDelightTags.RIBS_RAW).addIngredient(ExtraDelightTags.RIBS_RAW)
 				.addIngredient(ExtraDelightTags.RIBS_RAW).addIngredient(ExtraDelightTags.RIBS_RAW)
-				.addIngredient(ExtraDelightItems.BBQ_SAUCE.get()).build(consumer, "bbq_ribs_feast");
+				.addIngredient(ExtraDelightTags.BBQ_SAUCE).build(consumer, "bbq_ribs_feast");
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), 1), SLOW_COOKING, MEDIUM_EXP,
@@ -5195,7 +5195,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.MEAT_LOAF_FEAST.get(), 1), SLOW_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.LOAF_PAN.get()), false)
-				.addIngredient(ExtraDelightItems.KETCHUP.get()).addIngredient(ExtraDelightTags.BREAD_CRUMBS)
+				.addIngredient(ExtraDelightTags.KETCHUP).addIngredient(ExtraDelightTags.BREAD_CRUMBS)
 				.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
 				.addIngredient(ExtraDelightTags.GROUND_MEAT_RAW).addIngredient(ExtraDelightTags.GROUND_MEAT_RAW)
 				.addIngredient(ExtraDelightTags.PROCESSED_ONION)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */

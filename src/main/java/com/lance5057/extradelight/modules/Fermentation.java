@@ -781,13 +781,13 @@ public class Fermentation {
 		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 3), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
-						Ingredient.of(SALT), Ingredient.of(ExtraDelightTags.COOKING_OIL),
+						Ingredient.of(ExtraDelightTags.SALT), Ingredient.of(ExtraDelightTags.COOKING_OIL),
 						Ingredient.of(ExtraDelightTags.VINEGAR) },
 				new SizedFluidIngredient[] {}, consumer, "morkovcha_mixing_bottles");
 		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 3), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
-						Ingredient.of(SALT), },
+						Ingredient.of(ExtraDelightTags.SALT), },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "morkovcha_mixing_fluids");
@@ -843,7 +843,7 @@ public class Fermentation {
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.MASHED_SOYBEANS) }, "soy_milk", consumer);
 
 		Recipes.pot(EDAMAME.get(), 1, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(SOYBEAN_POD), Ingredient.of(SALT) }, "edamame", consumer);
+				new Ingredient[] { Ingredient.of(SOYBEAN_POD), Ingredient.of(ExtraDelightTags.SALT) }, "edamame", consumer);
 
 		Recipes.pot(BEEF_BULGOGI.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CUBED_BEEF_RAW),
@@ -893,7 +893,7 @@ public class Fermentation {
 
 		Recipes.pot(YEAST_SPREAD.get(), 1, CookingRecipes.SLOW_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightItems.YEAST), Ingredient.of(ExtraDelightItems.YEAST),
-						Ingredient.of(ExtraDelightItems.YEAST), Ingredient.of(SALT) },
+						Ingredient.of(ExtraDelightItems.YEAST), Ingredient.of(ExtraDelightTags.SALT) },
 				"yeast_spread", consumer);
 
 		Recipes.pot(ZUPA_OGORKOWA.get(), 3, CookingRecipes.FAST_COOKING, 1.0F, Items.BOWL,
@@ -919,7 +919,7 @@ public class Fermentation {
 
 		// Evaporating
 		EvaporatorRecipeBuilder
-				.evaporate(SizedFluidIngredient.of(Fluids.WATER, 1000), Fermentation.SALT.toStack(),
+				.evaporate(SizedFluidIngredient.of(Fluids.WATER, 1000), SALT.toStack(),
 						MiscLootTables.EVAPORATOR_WATER.location(), 10000, SALT_BLOCK.get())
 				.unlockedBy("has_water", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WATER_BUCKET))
 				.save(consumer, ExtraDelight.modLoc("evaporate_water"));
@@ -1000,13 +1000,13 @@ public class Fermentation {
 				.requires(Ingredient.of(ExtraDelightTags.COOKED_WHEAT_SEEDS))
 				.requiresFluid(SizedFluidIngredient.of(Fluids.WATER, 250))
 				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightItems.YEAST), dayTick * 3, true))
-				.requiresStage(new StageIngredient(Ingredient.of(SALT), dayTick * 14, true)).save(consumer);
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick * 14, true)).save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(SAUERKRAUT_ITEM.get(), 2), new ItemStack(Items.BOWL, 2))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE))
 				.requiresFluid(SizedFluidIngredient.of(Fluids.WATER, 250))
-				.requiresStage(new StageIngredient(Ingredient.of(SALT), hourTick, false))
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), hourTick, false))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(HOT_SAUCE_ITEM.get(), 4), new ItemStack(Items.GLASS_BOTTLE, 4))
@@ -1014,7 +1014,7 @@ public class Fermentation {
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 250))
-				.requiresStage(new StageIngredient(Ingredient.of(SALT), dayTick, false))
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick, false))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(KIMCHI_ITEM.get(), 2), new ItemStack(Items.BOWL, 2))
@@ -1024,8 +1024,8 @@ public class Fermentation {
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC))
 				.requires(Ingredient.of(ExtraDelightTags.CHILI_POWDER))
 				.requiresFluid(SizedFluidIngredient.of(Fluids.WATER, 250))
-				.requiresStage(new StageIngredient(Ingredient.of(SALT), hourTick * 7, false))
-				.requiresStage(new StageIngredient(Ingredient.of(SALT), dayTick * 7, true)).save(consumer);
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), hourTick * 7, false))
+				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(MISO_PASTE_ITEM.get(), 6), new ItemStack(Items.GLASS_BOTTLE, 6))
 				.requires(Ingredient.of(ExtraDelightTags.COOKED_SOYBEANS))
@@ -1035,7 +1035,7 @@ public class Fermentation {
 				.requires(Ingredient.of(ExtraDelightTags.COOKED_SOYBEANS))
 				.requires(Ingredient.of(ModItems.COOKED_RICE.get()))
 				.requiresFluid(SizedFluidIngredient.of(Fluids.WATER, 250))
-				.requiresStage(new StageIngredient(Ingredient.of(SALT), dayTick * 2, false))
+				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick * 2, false))
 				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightItems.YEAST), dayTick * 14, true))
 				.save(consumer);
 
@@ -1170,6 +1170,7 @@ public class Fermentation {
 		lp.add(KONGJANG.get(), "Kongjang");
 		lp.add(CHEESEBURGER_PICKLE.get(), "Cheeseburger Pickle Popper");
 		lp.add(HOT_WINGS.get(), "Hot Wings");
+		lp.add("block.extradelight.jar_display_block", "Jar Display");
 		lp.add(COOKED_WHEAT_SEEDS.get(), "Roasted Wheat Berries");
 	}
 }
