@@ -99,8 +99,8 @@ public class Fermentation {
 	public static final DeferredItem<Item> SOYBEANS = ExtraDelightItems.ITEMS.register("soybeans",
 			() -> new ItemNameBlockItem(SOYBEAN_CROP.get(), new Item.Properties()));
 
-	public static final DeferredItem<Item> SALT = ExtraDelightItems.ITEMS.register("salt",
-			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> SALT = EDItemGenerator.register("salt",
+			() -> new Item(new Item.Properties())).advancementIngredients().finish();
 	public static final DeferredBlock<Block> SALT_BLOCK = ExtraDelightBlocks.BLOCKS.register("salt_block",
 			() -> new Block(Block.Properties.ofFullCopy(Blocks.REDSTONE_BLOCK).mapColor(MapColor.TERRACOTTA_WHITE)));
 	public static final DeferredItem<Item> SALT_BLOCK_ITEM = ExtraDelightItems.ITEMS.register("salt_block_item",
@@ -297,7 +297,7 @@ public class Fermentation {
 
 	public static final DeferredItem<Item> NAEM_MOO_ITEM = EDItemGenerator
 			.register("naem_moo_item", () -> new Item(new Item.Properties().food(EDFoods.NAEM_MOO)))
-			.advancementIngredients().finish();
+			.advancementSnack().finish();
 
 	public static final DeferredItem<Item> SLICED_BEETROOT_ITEM = EDItemGenerator
 			.register("sliced_beetroot_item", () -> new Item(new Item.Properties().food(Foods.BEETROOT)))
@@ -822,16 +822,16 @@ public class Fermentation {
 				.OvenRecipe(new ItemStack(CHEESYMITE_SCROLL_BLOCK_ITEM.get(), 1), Recipes.NORMAL_COOKING,
 						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
 				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightTags.CHEESE)
-				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ModItems.WHEAT_DOUGH.get())
-				.addIngredient(ExtraDelightTags.YEAST_SPREAD).addIngredient(ModItems.WHEAT_DOUGH.get())
-				.addIngredient(ModItems.WHEAT_DOUGH.get()).addIngredient(ExtraDelightTags.BUTTER)
-				.addIngredient(ModItems.WHEAT_DOUGH.get()).unlockedByAnyIngredient(YEAST_SPREAD).build(consumer);
+				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightTags.DOUGH)
+				.addIngredient(ExtraDelightTags.YEAST_SPREAD).addIngredient(ExtraDelightTags.DOUGH)
+				.addIngredient(ExtraDelightTags.DOUGH).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.DOUGH).unlockedByAnyIngredient(YEAST_SPREAD).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(CHEESEBURGER_PICKLE.get(), 3), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
-				.addIngredient(ExtraDelightTags.GROUND_BEEF_COOKED).addIngredient(ExtraDelightTags.CHEESE)
-				.addIngredient(ExtraDelightTags.GROUND_BEEF_COOKED).addIngredient(CommonTags.FOODS_RAW_BACON)
+				.addIngredient(ExtraDelightTags.GROUND_BEEF_RAW).addIngredient(ExtraDelightTags.CHEESE)
+				.addIngredient(ExtraDelightTags.GROUND_BEEF_RAW).addIngredient(CommonTags.FOODS_RAW_BACON)
 				.addIngredient(CommonTags.FOODS_RAW_BACON).addIngredient(CommonTags.FOODS_RAW_BACON)
 				.addIngredient(ExtraDelightTags.PICKLED_CUCUMBER).addIngredient(ExtraDelightTags.PICKLED_CUCUMBER)
 				.addIngredient(ExtraDelightTags.PICKLED_CUCUMBER).unlockedByAnyIngredient(GHERKIN_ITEM).build(consumer);
@@ -873,12 +873,12 @@ public class Fermentation {
 				"soy_glazed_salmon", consumer);
 
 		Recipes.pot(MISO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.MISO_PASTE),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.MISO_PASTE),
 						Ingredient.of(Items.DRIED_KELP), Ingredient.of(ExtraDelightTags.MISO_SOUP_INGREDIENTS) },
 				"miso_soup", consumer);
 
 		Recipes.pot(SAUERKRAUT_SOUP.get(), 3, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.SAUERKRAUT),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.SAUERKRAUT),
 						Ingredient.of(CommonTags.FOODS_RAW_BACON), Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO) },
@@ -900,7 +900,7 @@ public class Fermentation {
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_PICKLED_CUCUMBER),
-						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(ExtraDelightTags.PICKLE_JUICE) },
 				"zupa_ogorkowa", consumer);
 

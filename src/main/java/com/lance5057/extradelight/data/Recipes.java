@@ -192,26 +192,26 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.chill(ExtraDelightItems.PEANUT_BUTTER_CUP.toStack(6), FAST_COOKING, SMALL_EXP,
 						ExtraDelightItems.MUFFIN_TIN.toStack(),
 						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.PEANUT_BUTTER)).build(consumer, "milk_peanut_butter_cup");
+				.addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER)).build(consumer, "milk_peanut_butter_cup");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.PEANUT_BUTTER_CUP.toStack(6), FAST_COOKING, SMALL_EXP,
 						ExtraDelightItems.MUFFIN_TIN.toStack(),
 						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.PEANUT_BUTTER)).build(consumer, "dark_peanut_butter_cup");
+				.addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER)).build(consumer, "dark_peanut_butter_cup");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.PEANUT_BUTTER_CUP.toStack(6), FAST_COOKING, SMALL_EXP,
 						ExtraDelightItems.MUFFIN_TIN.toStack(),
 						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.PEANUT_BUTTER))
+				.addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER))
 				.build(consumer, "white_peanut_butter_cup");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.PEANUT_BUTTER_CUP.toStack(6), FAST_COOKING, SMALL_EXP,
 						ExtraDelightItems.MUFFIN_TIN.toStack(),
 						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.PEANUT_BUTTER))
+				.addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER))
 				.build(consumer, "blood_peanut_butter_cup");
 
 		ChillerRecipeBuilder
@@ -575,7 +575,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(new ItemStack(ExtraDelightItems.NUT_BUTTER_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(NeoForgeMod.MILK, 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightItems.PEANUT_BUTTER_BOTTLE)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.NUT_BUTTER)
 				.build(consumer, "nut_butter_ice_cream");
 	}
 
@@ -1354,13 +1354,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void doughShapeRecipes(RecipeOutput consumer) {
-		doughshaping(Ingredient.of(CommonTags.FOODS_DOUGH), RecipeCategory.FOOD, ExtraDelightItems.MACARONI.get(), 1)
-				.unlockedBy("has_dough", has(CommonTags.FOODS_DOUGH)).save(consumer, EDLoc("macaroni_pasta"));
-		doughshaping(Ingredient.of(CommonTags.FOODS_DOUGH), RecipeCategory.FOOD,
-				ExtraDelightItems.LASAGNA_NOODLES.get(), 1).unlockedBy("has_dough", has(CommonTags.FOODS_DOUGH))
+		doughshaping(Ingredient.of(ExtraDelightTags.DOUGH), RecipeCategory.FOOD, ExtraDelightItems.MACARONI.get(), 1)
+				.unlockedBy("has_dough", has(ExtraDelightTags.DOUGH)).save(consumer, EDLoc("macaroni_pasta"));
+		doughshaping(Ingredient.of(ExtraDelightTags.DOUGH), RecipeCategory.FOOD,
+				ExtraDelightItems.LASAGNA_NOODLES.get(), 1).unlockedBy("has_dough", has(ExtraDelightTags.DOUGH))
 				.save(consumer, EDLoc("lasagna_pasta"));
-		doughshaping(Ingredient.of(CommonTags.FOODS_DOUGH), RecipeCategory.FOOD, ModItems.RAW_PASTA.get(), 1)
-				.unlockedBy("has_dough", has(CommonTags.FOODS_DOUGH)).save(consumer, EDLoc("raw_pasta"));
+		doughshaping(Ingredient.of(ExtraDelightTags.DOUGH), RecipeCategory.FOOD, ModItems.RAW_PASTA.get(), 1)
+				.unlockedBy("has_dough", has(ExtraDelightTags.DOUGH)).save(consumer, EDLoc("raw_pasta"));
 
 		doughshaping(Ingredient.of(ExtraDelightTags.GINGERBREAD_COOKIE_DOUGH), RecipeCategory.FOOD,
 				ExtraDelightItems.RAW_GINGERBREAD_ALEX.get(), 8)
@@ -1428,8 +1428,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.CORN_FLAKES.get(), 1).unlockedBy("has_dough", has(ExtraDelightTags.CORN_KERNELS))
 				.save(consumer);
 
-		doughshaping(Ingredient.of(CommonTags.FOODS_DOUGH), RecipeCategory.FOOD, ExtraDelightItems.PENNE.get(), 1)
-				.unlockedBy("has_dough", has(CommonTags.FOODS_DOUGH)).save(consumer, EDLoc("penne_pasta"));
+		doughshaping(Ingredient.of(ExtraDelightTags.DOUGH), RecipeCategory.FOOD, ExtraDelightItems.PENNE.get(), 1)
+				.unlockedBy("has_dough", has(ExtraDelightTags.DOUGH)).save(consumer, EDLoc("penne_pasta"));
 	}
 
 	public static SingleItemRecipeBuilder doughshaping(Ingredient p_251375_, RecipeCategory p_248984_,
@@ -2112,19 +2112,19 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		mixing(new ItemStack(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
 						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(Tags.Items.EGGS),
-						Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE) },
+						Ingredient.of(ExtraDelightTags.NUT_BUTTER) },
 				new SizedFluidIngredient[] {}, consumer, "nut_butter_cookie_dough");
 
 		mixing(new ItemStack(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.SUGAR_COOKIE_DOUGH),
-						Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE) },
+						Ingredient.of(ExtraDelightTags.NUT_BUTTER) },
 				new SizedFluidIngredient[] {}, consumer, "nut_butter_cookie_dough_sugar");
 
 		mixing(new ItemStack(ExtraDelightItems.NUT_BUTTER_MILKSHAKE.get(), 1), STANDARD_GRIND,
 				new ItemStack(Items.GLASS_BOTTLE),
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK),
 						Ingredient.of(ExtraDelightItems.ICE_CREAM.get()),
-						Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE) },
+						Ingredient.of(ExtraDelightTags.NUT_BUTTER) },
 				new SizedFluidIngredient[] {}, consumer, "nut_butter_milkshake");
 
 		mixing(new ItemStack(ExtraDelightItems.NUT_BUTTER_MILKSHAKE.get(), 1), STANDARD_GRIND,
@@ -3473,7 +3473,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("trail_mix"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.FLUFFER_NUTTER.get(), 1)
-				.requires(ExtraDelightTags.BREAD_SLICE).requires(ExtraDelightTags.PEANUT_BUTTER)
+				.requires(ExtraDelightTags.BREAD_SLICE).requires(ExtraDelightTags.NUT_BUTTER)
 				.requires(ExtraDelightTags.MARSHMALLOW_FLUFF).requires(ExtraDelightTags.BREAD_SLICE)
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance
@@ -3493,7 +3493,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("corn_flakes_cereal"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.PEANUT_BUTTER_JELLY.get(), 1)
-				.requires(ExtraDelightTags.BREAD_SLICE).requires(ExtraDelightTags.PEANUT_BUTTER)
+				.requires(ExtraDelightTags.BREAD_SLICE).requires(ExtraDelightTags.NUT_BUTTER)
 				.requires(ExtraDelightTags.JAM).requires(ExtraDelightTags.BREAD_SLICE)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.JAM.get()))
 				.save(consumer, EDLoc("pbj"));
@@ -3855,7 +3855,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer);
 
 		pot(ExtraDelightItems.GRAVY.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ModItems.BONE_BROTH.get()) },
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.BROTH) },
 				"gravy_boat", consumer);
 
 		pot(ExtraDelightItems.SALISBURY_STEAK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
@@ -3885,7 +3885,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ExtraDelightItems.BEEF_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 				ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(Items.BEEF), Ingredient.of(Items.CARROT), Ingredient.of(Items.POTATO),
-						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(ExtraDelightTags.FLOUR) },
 				"beef_stew", consumer);
 
@@ -3893,35 +3893,35 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(Items.PORKCHOP), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
-						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
+						Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.FLOUR) },
 				"pork_stew", consumer);
 
 		pot(ExtraDelightItems.LAMB_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 				ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(Items.MUTTON), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
-						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
+						Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.FLOUR) },
 				"mutton_stew", consumer);
 
 		pot(ExtraDelightItems.RABBIT_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 				ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(Items.RABBIT), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
-						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
+						Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.FLOUR) },
 				"rabbit_stew", consumer);
 
 		pot(ExtraDelightItems.CHICKEN_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 				ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(Items.CHICKEN), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
-						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
+						Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.FLOUR) },
 				"chicken_stew", consumer);
 
 		pot(ExtraDelightItems.FISH_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 				ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_SAFE_RAW_FISH), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
-						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
+						Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.FLOUR) },
 				"fish_stew", consumer);
 
 		pot(ExtraDelightItems.STIRFRY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
@@ -3949,25 +3949,25 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		pot(ExtraDelightItems.CARROT_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(Tags.Items.CROPS_CARROT), Ingredient.of(Tags.Items.CROPS_CARROT),
-						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(CommonTags.FOODS_MILK) },
 				"carrot_soup", consumer);
 
 		pot(ExtraDelightItems.FISH_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ItemTags.FISHES), Ingredient.of(ItemTags.FISHES),
-						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(Items.DRIED_KELP) },
 				"fish_soup", consumer);
 
 		pot(ExtraDelightItems.POTATO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(Tags.Items.CROPS_POTATO), Ingredient.of(Tags.Items.CROPS_POTATO),
-						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(CommonTags.FOODS_MILK) },
 				"potato_soup", consumer);
 
 		pot(ExtraDelightItems.TOMATO_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(CommonTags.CROPS_TOMATO), Ingredient.of(CommonTags.CROPS_TOMATO),
-						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(CommonTags.FOODS_MILK) },
 				"tomato_soup", consumer);
 
@@ -4045,13 +4045,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		pot(ExtraDelightItems.MUSHROOM_RISOTTO.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(Tags.Items.MUSHROOMS), Ingredient.of(ExtraDelightTags.CHEESE),
-						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(ExtraDelightTags.PROCESSED_ONION) },
 				"mushroom_risotto", consumer);
 
 		pot(ExtraDelightItems.CURRY_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_RAW_CHICKEN),
-						Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(CommonTags.CROPS_ONION) },
 				"curry", consumer);
 
@@ -4067,7 +4067,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new Ingredient[] { Ingredient.of(ExtraDelightItems.COOKED_CACTUS.get()),
 						Ingredient.of(ExtraDelightItems.COOKED_CACTUS.get()),
 						Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO),
-						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ModItems.BONE_BROTH.get()) },
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.BROTH) },
 				"cactus_soup", consumer);
 
 		pot(ExtraDelightItems.STUFFED_CACTUS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null,
@@ -4119,7 +4119,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						CompoundIngredient.of(Ingredient.of(CommonTags.FOODS_COOKED_BACON),
 								Ingredient.of(CommonTags.FOODS_RAW_BACON)),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(CommonTags.FOODS_MILK),
-						Ingredient.of(ModItems.BONE_BROTH.get()) },
+						Ingredient.of(ExtraDelightTags.BROTH) },
 				"corn_chowder", consumer);
 
 		pot(ExtraDelightItems.CREAM_CORN.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
@@ -4159,7 +4159,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ExtraDelightItems.STUFFING_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
 				ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(ExtraDelightItems.CROUTONS.get()),
-						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(Tags.Items.EGGS) },
 				"stuffing", consumer);
 
@@ -4268,7 +4268,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		pot(ExtraDelightItems.LUGAW.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL, new Ingredient[] {
 				Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(ExtraDelightTags.PROCESSED_GINGER),
-				Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
+				Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.BROTH),
 				Ingredient.of(ExtraDelightItems.BOILED_EGG.get()), Ingredient.of(CommonTags.FOODS_COOKED_CHICKEN) },
 				"lugaw", consumer);
 
@@ -4341,7 +4341,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PUFFED_RICE),
 						Ingredient.of(ExtraDelightTags.MARSHMALLOW), Ingredient.of(ExtraDelightTags.BUTTER),
 						Ingredient.of(ExtraDelightTags.BUTTERSCOTCH), Ingredient.of(ExtraDelightTags.CHOCOLATE_SYRUP),
-						Ingredient.of(ExtraDelightTags.PEANUT_BUTTER) },
+						Ingredient.of(ExtraDelightTags.NUT_BUTTER) },
 				"scotcharoos", consumer);
 
 		pot(ExtraDelightItems.SOS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, ExtraDelightItems.BREAD_SLICE.get(),
@@ -4351,7 +4351,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		pot(ExtraDelightItems.OXTAIL_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.OXTAIL), Ingredient.of(Items.CARROT),
-						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO) },
+						Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO) },
 				"oxtail_soup", consumer);
 
 		pot(ExtraDelightItems.LIVER_ONIONS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
@@ -4366,7 +4366,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ExtraDelightItems.MULLIGATAWNY_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()),
 						Ingredient.of(ExtraDelightTags.SLICED_APPLE), Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
-						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(CommonTags.FOODS_RAW_CHICKEN),
+						Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(CommonTags.FOODS_RAW_CHICKEN),
 						Ingredient.of(ModItems.RICE.get()) },
 				"mulligatawny_soup", consumer);
 
@@ -4378,20 +4378,20 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		pot(ExtraDelightItems.CHILI_CON_CARNE_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
 				ExtraDelightItems.SERVING_POT,
-				new Ingredient[] { Ingredient.of(ModItems.TOMATO_SAUCE.get()), Ingredient.of(ModItems.BONE_BROTH.get()),
+				new Ingredient[] { Ingredient.of(ModItems.TOMATO_SAUCE.get()), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(ExtraDelightTags.MEAT), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_VEG), Ingredient.of(ExtraDelightTags.PROCESSED_VEG) },
 				"chili_con_carne", consumer);
 
 		pot(ExtraDelightItems.WHITE_CHILI_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
 				ExtraDelightItems.SERVING_POT,
-				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ModItems.BONE_BROTH.get()),
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(CommonTags.FOODS_COOKED_CHICKEN), Ingredient.of(ExtraDelightTags.PROCESSED_CHILI),
 						Ingredient.of(ExtraDelightTags.PROCESSED_VEG), Ingredient.of(ExtraDelightTags.PROCESSED_VEG) },
 				"white_chili", consumer);
 
 		pot(ExtraDelightItems.NUT_BUTTER_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.NUT_BUTTER),
 						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(Tags.Items.EGGS),
 						Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"nut_butter_custard", consumer);
@@ -4406,7 +4406,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ExtraDelightItems.ONION_SOUP.get(), 3, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.BUTTER),
-						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.BREAD_SLICE),
+						Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.BREAD_SLICE),
 						Ingredient.of(ExtraDelightTags.CHEESE) },
 				"onion_soup", consumer);
 
@@ -4423,14 +4423,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"pamonha", consumer);
 
 		pot(ExtraDelightItems.BORSCHT.get(), 4, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL, new Ingredient[] {
-				Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT),
+				Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT),
 				Ingredient.of(ExtraDelightTags.PROCESSED_CARROT), Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE),
 				Ingredient.of(ExtraDelightTags.PROCESSED_POTATO),
 				Ingredient.of(ExtraDelightItems.SLICED_TOMATO, ModItems.TOMATO_SAUCE.get(), ModItems.TOMATO.get()) },
 				"borscht", consumer);
 
 		pot(ExtraDelightItems.DEVILLED_SAUSAGES.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ModItems.BONE_BROTH.get()),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.SAUSAGE_RAW),
 						Ingredient.of(ExtraDelightTags.PROCESSED_APPLE),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
@@ -4584,7 +4584,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer, EDLoc("cutting/" + "ginger_cutting_knife"));
 
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(ExtraDelightItems.GINGER.get()), Ingredient.of(ExtraDelightTags.SPOONS),
+				.cuttingRecipe(Ingredient.of(ExtraDelightTags.GINGER), Ingredient.of(ExtraDelightTags.SPOONS),
 						ExtraDelightItems.PEELED_GINGER.get(), 1)
 				.addResultWithChance(ExtraDelightItems.GINGER_CUTTING.get(), 0.25f, 1)
 				.build(consumer, EDLoc("cutting/" + "spoon_ginger"));
@@ -4997,7 +4997,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.POT_ROAST_FEAST_ITEM.get(), 1), CookingRecipes.SLOW_COOKING,
 						MEDIUM_EXP, new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
-				.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ExtraDelightTags.ROAST_RAW)
+				.addIngredient(ExtraDelightTags.BROTH).addIngredient(ExtraDelightTags.ROAST_RAW)
 				.addIngredient(ExtraDelightTags.COOKING_OIL).addIngredient(ExtraDelightTags.PROCESSED_ONION)
 				.addIngredient(ExtraDelightTags.PROCESSED_POTATO).addIngredient(ExtraDelightTags.PROCESSED_CARROT)
 				.addIngredient(ExtraDelightTags.PROCESSED_ONION).addIngredient(ExtraDelightTags.PROCESSED_POTATO)
@@ -5025,7 +5025,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), false)
 				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BEEF_ROAST)
 				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BUTTER)
-				.addIngredient(CommonTags.FOODS_DOUGH).addIngredient(ExtraDelightTags.LIVER)
+				.addIngredient(ExtraDelightTags.DOUGH).addIngredient(ExtraDelightTags.LIVER)
 				.addIngredient(CommonTags.FOODS_COOKED_BACON).addIngredient(Tags.Items.EGGS)
 				.addIngredient(ExtraDelightTags.PROCESSED_ONION)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
@@ -5178,7 +5178,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.SAUSAGE_ROLL.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
-				.addIngredient(ExtraDelightTags.SAUSAGE).addIngredient(CommonTags.FOODS_DOUGH)
+				.addIngredient(ExtraDelightTags.SAUSAGE).addIngredient(ExtraDelightTags.DOUGH)
 				.unlockedBy("sausage_roll", has(ExtraDelightTags.SAUSAGE)).build(consumer);
 
 		OvenRecipeBuilder
@@ -5188,8 +5188,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
 				.addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
 				.addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
-				.addIngredient(ExtraDelightTags.GROUND_MEAT_COOKED).addIngredient(ModItems.TOMATO_SAUCE.get())
-				.addIngredient(ExtraDelightTags.GROUND_MEAT_COOKED)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
+				.addIngredient(ExtraDelightTags.GROUND_BEEF_COOKED).addIngredient(ModItems.TOMATO_SAUCE.get())
+				.addIngredient(ExtraDelightTags.GROUND_BEEF_COOKED)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("lasagna", has(ExtraDelightItems.LASAGNA_NOODLES.get())).build(consumer, "lasagna_bc");
 
 		OvenRecipeBuilder
@@ -5204,7 +5204,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.SHEPHERDS_PIE_BLOCK.get(), 1), SLOW_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
-				.addIngredient(Items.BAKED_POTATO).addIngredient(ModItems.BONE_BROTH.get())
+				.addIngredient(Items.BAKED_POTATO).addIngredient(ExtraDelightTags.BROTH)
 				.addIngredient(Items.BAKED_POTATO).addIngredient(ExtraDelightTags.GROUND_MUTTON_COOKED)
 				.addIngredient(ExtraDelightTags.PROCESSED_CARROT).addIngredient(ExtraDelightTags.GROUND_MUTTON_COOKED)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ModItems.TOMATO_SAUCE.get())
@@ -5215,7 +5215,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.SHEPHERDS_PIE_BLOCK.get(), 1), SLOW_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
-				.addIngredient(Items.BAKED_POTATO).addIngredient(ModItems.BONE_BROTH.get())
+				.addIngredient(Items.BAKED_POTATO).addIngredient(ExtraDelightTags.BROTH)
 				.addIngredient(Items.BAKED_POTATO).addIngredient(ExtraDelightTags.GROUND_MUTTON_COOKED)
 				.addIngredient(ExtraDelightTags.PROCESSED_CARROT).addIngredient(Items.COOKED_MUTTON)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ModItems.TOMATO_SAUCE.get())
@@ -5354,7 +5354,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.TRAY.get(), "mutton_chops");
 		bulkBake(ModItems.SMOKED_HAM.get(), Ingredient.of(ModItems.HAM.get()), consumer, ExtraDelightItems.TRAY.get(),
 				"ham");
-		bulkBake(Items.BREAD, Ingredient.of(CommonTags.FOODS_DOUGH), consumer, ExtraDelightItems.LOAF_PAN.get(),
+		bulkBake(Items.BREAD, Ingredient.of(ExtraDelightTags.DOUGH), consumer, ExtraDelightItems.LOAF_PAN.get(),
 				"bread");
 		bulkBake(Items.BAKED_POTATO, Ingredient.of(Items.POTATO), consumer, ExtraDelightItems.SHEET.get(), "potato");
 		bulkBake(ExtraDelightItems.ROASTED_CARROT.get(), Ingredient.of(Items.CARROT), consumer,
@@ -5594,14 +5594,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.FRUIT_BREAD.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.LOAF_PAN.get()), false)
-				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).addIngredient(CommonTags.FOODS_DOUGH)
+				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).addIngredient(ExtraDelightTags.DOUGH)
 				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.FRUIT_BREAD.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.LOAF_PAN.get()), false)
-				.addIngredient(ExtraDelightTags.DRIED_FRUIT).addIngredient(CommonTags.FOODS_DOUGH)
+				.addIngredient(ExtraDelightTags.DRIED_FRUIT).addIngredient(ExtraDelightTags.DOUGH)
 				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.save(consumer, EDLoc("fruit_bread_dried"));
 
@@ -5615,13 +5615,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.ROLL.get(), 6), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), false)
-				.addIngredient(CommonTags.FOODS_DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
+				.addIngredient(ExtraDelightTags.DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CINNAMON_ROLLS_FEAST.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), true)
-				.addIngredient(CommonTags.FOODS_DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightTags.DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
 				.addIngredient(ExtraDelightItems.FROSTING_WHITE.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
@@ -5629,7 +5629,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.MONKEY_BREAD_FEAST.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
-				.addIngredient(CommonTags.FOODS_DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightTags.DOUGH).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
 				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.build(consumer);
@@ -5733,7 +5733,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.OvenRecipe(new ItemStack(ExtraDelightItems.ROMBOSSE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.TRAY.get()), false)
 				.addIngredient(ExtraDelightTags.FRUIT_APPLE).addIngredient(ExtraDelightTags.BUTTER)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ModItems.WHEAT_DOUGH.get())
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.DOUGH)
 				.addIngredient(ExtraDelightTags.CINNAMON_STICK).unlockedByAnyIngredient(ExtraDelightItems.TRAY.get())
 				.build(consumer);
 
@@ -5742,7 +5742,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
 				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.PORK_ROAST)
 				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.PROCESSED_ONION)
-				.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.BROTH).addIngredient(ExtraDelightTags.BUTTER)
 				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get()).build(consumer);
 
 		OvenRecipeBuilder

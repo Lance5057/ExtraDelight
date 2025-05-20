@@ -81,7 +81,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> FRUIT_SWEET_BERRY = neoforgeItemTag("fruit/sweet_berry");
 	public static final TagKey<Item> FRUIT_GLOW_BERRY = neoforgeItemTag("fruit/glow_berry");
 
-	public static final TagKey<Item> JAM = neoforgeItemTag("jam");
+	public static final TagKey<Item> JAM = neoforgeItemTag("jams");
 	public static final TagKey<Item> JAM_MUNDANE = neoforgeItemTag("jam/mundane");
 	public static final TagKey<Item> JAM_FRUIT = neoforgeItemTag("jam/fruit");
 	public static final TagKey<Item> JAM_GLOW_BERRY = neoforgeItemTag("jam/glow_berry");
@@ -543,7 +543,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> NOUGAT = neoforgeItemTag("nougat");
 
 	public static final TagKey<Item> JAMMABLE = neoforgeItemTag("jammable");
-	public static final TagKey<Item> PEANUT_BUTTER = neoforgeItemTag("peanut_butter");
+	public static final TagKey<Item> NUT_BUTTER = neoforgeItemTag("nut_butter");
 	public static final TagKey<Item> CHOCOLATE_SYRUP = neoforgeItemTag("liquid_chocolate");
 	public static final TagKey<Item> COOKIE = neoforgeItemTag("foods/cookie");
 	public static final TagKey<Item> SUGAR_COOKIE = neoforgeItemTag("foods/cookie/sugar");
@@ -618,6 +618,10 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> TOAST_TOPPING = modTag("toast_topping");
 
 	public static final TagKey<Item> SALAMI_MIX = neoforgeItemTag("salami_mix");
+
+	public static final TagKey<Item> DOUGH = neoforgeItemTag("dough");
+	public static final TagKey<Item> BROTH = modTag("broth");
+
 
 	// Tough as Nails
 	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");
