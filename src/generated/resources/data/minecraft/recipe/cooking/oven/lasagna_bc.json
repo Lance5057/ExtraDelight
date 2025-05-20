@@ -27,13 +27,13 @@
       "item": "extradelight:lasagna_noodles"
     },
     {
-      "tag": "c:ground_meat/cooked"
+      "tag": "c:beef/ground/cooked"
     },
     {
       "item": "farmersdelight:tomato_sauce"
     },
     {
-      "tag": "c:ground_meat/cooked"
+      "tag": "c:beef/ground/cooked"
     }
   ],
   "result": {

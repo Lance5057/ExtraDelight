@@ -7,7 +7,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "extradelight:peanut_butter_bottle"
+      "tag": "c:nut_butter"
     },
     {
       "tag": "c:foods/milk"

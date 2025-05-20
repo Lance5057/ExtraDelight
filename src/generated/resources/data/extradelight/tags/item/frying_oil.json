@@ -1,5 +1,9 @@
 {
   "values": [
-    "extradelight:cooking_oil"
+    "extradelight:cooking_oil",
+    {
+      "id": "#c:cookingoil/cookingoil",
+      "required": false
+    }
   ]
 }

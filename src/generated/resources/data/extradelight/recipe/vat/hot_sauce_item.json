@@ -22,7 +22,7 @@
   "stage_ingredients": [
     {
       "ingredient": {
-        "item": "extradelight:salt"
+        "tag": "c:salt"
       },
       "lid": false,
       "time": 24000

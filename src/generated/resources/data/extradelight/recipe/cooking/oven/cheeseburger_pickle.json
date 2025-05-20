@@ -9,13 +9,13 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "c:beef/ground/cooked"
+      "tag": "c:beef/ground/raw"
     },
     {
       "tag": "c:cheese"
     },
     {
-      "tag": "c:beef/ground/cooked"
+      "tag": "c:beef/ground/raw"
     },
     {
       "tag": "c:foods/raw_bacon"

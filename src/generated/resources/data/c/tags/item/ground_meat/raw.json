@@ -1,5 +1,8 @@
 {
   "values": [
-    "farmersdelight:minced_beef"
+    "#c:beef/ground/raw",
+    "#c:pork/ground/raw",
+    "#c:mutton/ground/raw",
+    "#c:rabbit/ground/raw"
   ]
 }

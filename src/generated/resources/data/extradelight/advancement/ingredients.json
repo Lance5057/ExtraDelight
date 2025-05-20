@@ -901,16 +901,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:naem_moo_item": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:naem_moo_item"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:natto_item": {
       "conditions": {
         "items": [
@@ -1076,6 +1066,16 @@
         "items": [
           {
             "items": "extradelight:salami_mix"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:salt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:salt"
           }
         ]
       },
@@ -1697,13 +1697,13 @@
       "extradelight:ground_coffee"
     ],
     [
+      "extradelight:salt"
+    ],
+    [
       "extradelight:sliced_onion"
     ],
     [
       "extradelight:cheese"
-    ],
-    [
-      "extradelight:naem_moo_item"
     ],
     [
       "extradelight:garlic_clove"

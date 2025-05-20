@@ -10,7 +10,7 @@
       "tag": "c:flour"
     },
     {
-      "item": "farmersdelight:bone_broth"
+      "tag": "extradelight:broth"
     }
   ],
   "recipe_book_tab": "meals",

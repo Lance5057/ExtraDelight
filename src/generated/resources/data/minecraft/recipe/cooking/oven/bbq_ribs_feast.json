@@ -21,7 +21,7 @@
       "tag": "c:meat/ribs/raw"
     },
     {
-      "item": "extradelight:bbq_jar_item"
+      "tag": "c:condiments/bbq_sauce"
     }
   ],
   "result": {

@@ -4,7 +4,7 @@
   "cookingtime": 100,
   "experience": 1.0,
   "ingredient": {
-    "tag": "c:crops/peanuts/shelled"
+    "tag": "c:crops/peanut/shelled"
   },
   "result": {
     "count": 1,

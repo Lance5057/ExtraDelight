@@ -12,7 +12,7 @@
       "item": "extradelight:yeast"
     },
     {
-      "item": "extradelight:salt"
+      "tag": "c:salt"
     },
     {
       "item": "minecraft:bowl"

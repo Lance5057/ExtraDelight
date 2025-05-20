@@ -1,5 +1,13 @@
 {
   "values": [
-    "extradelight:green_coffee"
+    "extradelight:green_coffee",
+    {
+      "id": "#c:crops/coffeebean",
+      "required": false
+    },
+    {
+      "id": "#c:crops/coffee_beans",
+      "required": false
+    }
   ]
 }

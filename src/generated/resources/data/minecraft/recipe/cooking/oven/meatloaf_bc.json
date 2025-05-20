@@ -9,7 +9,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "extradelight:ketchup_jar_item"
+      "tag": "c:condiments/ketchup"
     },
     {
       "tag": "c:bread/crumbs"

@@ -18,22 +18,22 @@
       "tag": "c:cheese"
     },
     {
-      "item": "farmersdelight:wheat_dough"
+      "tag": "c:dough"
     },
     {
       "tag": "c:yeast_spread"
     },
     {
-      "item": "farmersdelight:wheat_dough"
+      "tag": "c:dough"
     },
     {
-      "item": "farmersdelight:wheat_dough"
+      "tag": "c:dough"
     },
     {
       "tag": "c:butter"
     },
     {
-      "item": "farmersdelight:wheat_dough"
+      "tag": "c:dough"
     }
   ],
   "result": {

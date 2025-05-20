@@ -1,5 +1,9 @@
 {
   "values": [
-    "extradelight:mayo_jar_item"
+    "extradelight:mayo_jar_item",
+    {
+      "id": "#c:condiments/mayonaise",
+      "required": false
+    }
   ]
 }

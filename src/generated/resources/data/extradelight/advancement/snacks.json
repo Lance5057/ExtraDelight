@@ -131,6 +131,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:naem_moo_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:naem_moo_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pickled_carrot_item": {
       "conditions": {
         "items": [
@@ -322,6 +332,9 @@
     ],
     [
       "extradelight:crackers"
+    ],
+    [
+      "extradelight:naem_moo_item"
     ],
     [
       "extradelight:caramel_popcorn"

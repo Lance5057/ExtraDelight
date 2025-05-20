@@ -49,7 +49,7 @@ public class BottleFluidRegistryCategory implements IRecipeCategory<BottleFluidR
 	public IDrawable getIcon() {
 		return icon;
 	}
-	
+
 	@Override
 	public IDrawable getBackground() {
 		return background;
@@ -65,6 +65,15 @@ public class BottleFluidRegistryCategory implements IRecipeCategory<BottleFluidR
 		builder.addSlot(RecipeIngredientRole.INPUT, 1, 37).addIngredients(recipe.bottle);
 
 		builder.addSlot(RecipeIngredientRole.INPUT, 44, 37)
+				.addIngredients(Ingredient.of(recipe.fluid.getFluids()[0].getFluid().getBucket()));
+
+		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 - 7, 1)
+				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.fluid.getFluids()))
+				.setFluidRenderer(250, false, 16, 16);
+
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 1, 37).addIngredients(recipe.bottle);
+
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 44, 37)
 				.addIngredients(Ingredient.of(recipe.fluid.getFluids()[0].getFluid().getBucket()));
 	}
 

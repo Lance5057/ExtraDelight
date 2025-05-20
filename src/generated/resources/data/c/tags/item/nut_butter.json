@@ -1,0 +1,9 @@
+{
+  "values": [
+    "extradelight:peanut_butter_bottle",
+    {
+      "id": "#c:nutbutters",
+      "required": false
+    }
+  ]
+}

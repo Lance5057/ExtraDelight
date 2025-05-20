@@ -9,7 +9,7 @@
       "item": "minecraft:carrot"
     },
     {
-      "item": "farmersdelight:bone_broth"
+      "tag": "extradelight:broth"
     },
     {
       "tag": "extradelight:processed/tomato"

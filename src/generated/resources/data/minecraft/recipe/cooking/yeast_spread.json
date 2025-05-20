@@ -17,7 +17,7 @@
       "item": "extradelight:yeast"
     },
     {
-      "item": "extradelight:salt"
+      "tag": "c:salt"
     }
   ],
   "recipe_book_tab": "meals",

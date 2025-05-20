@@ -11,7 +11,7 @@
       "item": "extradelight:soybean_pod"
     },
     {
-      "item": "extradelight:salt"
+      "tag": "c:salt"
     }
   ],
   "recipe_book_tab": "meals",

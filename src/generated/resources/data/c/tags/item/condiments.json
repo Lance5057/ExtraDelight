@@ -1,7 +1,8 @@
 {
   "values": [
-    "extradelight:ketchup_jar_item",
-    "extradelight:bbq_jar_item",
-    "extradelight:mayo_jar_item"
+    "#c:condiments/ketchup",
+    "#c:condiments/bbq_sauce",
+    "#c:condiments/mayonnaise",
+    "#c:condiments/hot_sauce"
   ]
 }

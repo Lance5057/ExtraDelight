@@ -1,6 +1,10 @@
 {
   "values": [
     "#c:bread/sliced",
-    "#c:toast"
+    "#c:toast",
+    {
+      "id": "#c:bread_slices",
+      "required": false
+    }
   ]
 }

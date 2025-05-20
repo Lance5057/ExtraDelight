@@ -9,22 +9,22 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "c:foods/dough"
+      "tag": "c:dough"
     },
     {
-      "tag": "c:foods/dough"
+      "tag": "c:dough"
     },
     {
-      "tag": "c:foods/dough"
+      "tag": "c:dough"
     },
     {
-      "tag": "c:foods/dough"
+      "tag": "c:dough"
     },
     {
-      "tag": "c:foods/dough"
+      "tag": "c:dough"
     },
     {
-      "tag": "c:foods/dough"
+      "tag": "c:dough"
     }
   ],
   "result": {

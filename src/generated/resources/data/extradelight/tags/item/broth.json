@@ -1,0 +1,9 @@
+{
+  "values": [
+    "farmersdelight:bone_broth",
+    {
+      "id": "#c:stock",
+      "required": false
+    }
+  ]
+}

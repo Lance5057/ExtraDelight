@@ -1,5 +1,9 @@
 {
   "values": [
-    "extradelight:cinnamon_stick"
+    "extradelight:cinnamon_stick",
+    {
+      "id": "#c:foods/popcorn",
+      "required": false
+    }
   ]
 }

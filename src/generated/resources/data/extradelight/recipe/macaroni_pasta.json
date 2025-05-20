@@ -1,7 +1,7 @@
 {
   "type": "extradelight:dough_shaping",
   "ingredient": {
-    "tag": "c:foods/dough"
+    "tag": "c:dough"
   },
   "result": {
     "count": 1,

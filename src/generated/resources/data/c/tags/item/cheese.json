@@ -1,5 +1,17 @@
 {
   "values": [
-    "extradelight:cheese"
+    "extradelight:cheese",
+    {
+      "id": "#c:foods/cheese",
+      "required": false
+    },
+    {
+      "id": "#c:cheeses",
+      "required": false
+    },
+    {
+      "id": "#brewinandchewin:foods/cheese_wedge",
+      "required": false
+    }
   ]
 }

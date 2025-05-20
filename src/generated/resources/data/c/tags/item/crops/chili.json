@@ -1,5 +1,17 @@
 {
   "values": [
-    "extradelight:chili"
+    "extradelight:chili",
+    {
+      "id": "#c:crops/chili_pepper",
+      "required": false
+    },
+    {
+      "id": "#c:crops/chili_pepper",
+      "required": false
+    },
+    {
+      "id": "#c:crops/chile_pepper",
+      "required": false
+    }
   ]
 }

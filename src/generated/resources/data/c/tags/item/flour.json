@@ -1,5 +1,9 @@
 {
   "values": [
-    "extradelight:flour"
+    "extradelight:flour",
+    {
+      "id": "#c:flours/wheat",
+      "required": false
+    }
   ]
 }

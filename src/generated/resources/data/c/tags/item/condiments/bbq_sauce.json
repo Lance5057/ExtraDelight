@@ -1,0 +1,9 @@
+{
+  "values": [
+    "extradelight:bbq_jar_item",
+    {
+      "id": "#c:condiments/bbqsauce",
+      "required": false
+    }
+  ]
+}

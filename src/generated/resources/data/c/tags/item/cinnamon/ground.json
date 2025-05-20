@@ -1,5 +1,13 @@
 {
   "values": [
-    "extradelight:ground_cinnamon"
+    "extradelight:ground_cinnamon",
+    {
+      "id": "#c:dusts/cinnamon",
+      "required": false
+    },
+    {
+      "id": "#c:groundcinnamon",
+      "required": false
+    }
   ]
 }

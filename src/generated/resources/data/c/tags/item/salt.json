@@ -1,0 +1,9 @@
+{
+  "values": [
+    "extradelight:salt",
+    {
+      "id": "#c:dusts/salt",
+      "required": false
+    }
+  ]
+}

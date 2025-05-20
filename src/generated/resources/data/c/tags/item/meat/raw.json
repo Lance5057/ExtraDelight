@@ -4,6 +4,10 @@
     "minecraft:chicken",
     "minecraft:mutton",
     "minecraft:porkchop",
-    "minecraft:rabbit"
+    "minecraft:rabbit",
+    {
+      "id": "#c:rawmeats",
+      "required": false
+    }
   ]
 }
