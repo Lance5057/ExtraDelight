@@ -1342,6 +1342,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.VAT.get(), "Fermentation Vat");
 		this.add(ExtraDelightItems.LID.get(), "Vat Lid");
 		this.add(ExtraDelightItems.EVAPORATOR.get(), "Evaporator");
+		this.add("extradelight.jei.bottlefluid", "Decanting");
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
 

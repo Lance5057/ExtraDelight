@@ -612,7 +612,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(this, ExtraDelightItems.CINNAMON_CABINET, "cinnamon_cabinet");
 		this.slab(ExtraDelightItems.CINNAMON_SLAB.getId().getPath(), modLoc("block/cinnamon_planks"),
 				modLoc("block/cinnamon_planks"), modLoc("block/cinnamon_planks"));
-		forBlockItemWithParent(ExtraDelightItems.CINNAMON_SAPLING);
+		forBlockItemFlat(this, ExtraDelightItems.CINNAMON_SAPLING, "cinnamon_sapling");
 		forItem(this, ExtraDelightItems.CINNAMON_BARK, "cinnamon_bark");
 		forItem(this, ExtraDelightItems.CINNAMON_STICK, "cinnamon_stick");
 		forItem(this, ExtraDelightItems.GROUND_CINNAMON, "ground_cinnamon");
