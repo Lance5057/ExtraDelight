@@ -15,10 +15,14 @@ public class CompatTags {
 	}
 
 	// Tags for other mod compat
+	// Make items stand up on Create belts
+	public static final TagKey<Item> UPRIGHT_ON_BELT = otherModItemTag("create", "upright_on_belt");
+
+	// Foods
 	// Flour
 	public static final TagKey<Item> FLOURS_WHEAT = neoforgeItemTag("flours/wheat"); // For Create
 	// Dough
-	public static final TagKey<Item> DOUGHS = neoforgeItemTag("doughs"); // For Create
+	public static final TagKey<Item> DOUGHS = neoforgeItemTag("doughs"); // For Create & Croptopia
 	// Cheese
 	public static final TagKey<Item> FOODS_CHEESE = neoforgeItemTag("foods/cheese"); // For Expanded Delight
 	public static final TagKey<Item> CHEESES = neoforgeItemTag("cheeses"); // For Croptopia
@@ -65,4 +69,14 @@ public class CompatTags {
 	public static final TagKey<Item> JELLIES = neoforgeItemTag("jellies"); // For PHC
 	// Nut Butters
 	public static final TagKey<Item> NUTBUTTERS = neoforgeItemTag("nutbutters"); // For PHC
+	// Soy Sauce
+	public static final TagKey<Item> SOYSAUCE = neoforgeItemTag("condiments/soysauce"); // For PHC
+	public static final TagKey<Item> SOY_SAUCES = neoforgeItemTag("soy_sauces"); // For Croptopia
+	// Hot Sauce
+	public static final TagKey<Item> HOTSAUCE = neoforgeItemTag("condiments/hotsauce"); // For PHC
+	// Soy Milk
+	public static final TagKey<Item> SOYMILK = neoforgeItemTag("milk/soymilk"); // For PHC
+	public static final TagKey<Item> SOY_MILKS = neoforgeItemTag("soy_milks");
+	// Processed Cucumber
+	public static final TagKey<Item> CUCUMBERS = otherModItemTag("culturaldelights", "cucumbers"); // contains sliced as well
 }

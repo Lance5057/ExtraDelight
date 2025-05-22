@@ -121,7 +121,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.BUTTER).add(ExtraDelightItems.BUTTER.get());
 		tag(ExtraDelightTags.GRAVY).add(ExtraDelightItems.GRAVY.get());
 		tag(ExtraDelightTags.CONDIMENTS).addTag(ExtraDelightTags.KETCHUP).addTag(ExtraDelightTags.BBQ_SAUCE)
-				.addTag(ExtraDelightTags.MAYO).addTag(ExtraDelightTags.HOT_SAUCE);
+				.addTag(ExtraDelightTags.MAYO).addTag(ExtraDelightTags.HOT_SAUCE).addTag(ExtraDelightTags.SOY_SAUCE)
+				.addTag(ExtraDelightTags.AIOLI);
 
 		tag(ExtraDelightTags.STARCH).add(ModItems.RICE.get(), ExtraDelightItems.POTATO_STICKS.get(),
 				ExtraDelightItems.GRATED_POTATO.get(), ExtraDelightItems.SLICED_POTATO.get());
@@ -576,11 +577,13 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_GARLIC).add(ExtraDelightItems.GARLIC_CLOVE.get(),
 				ExtraDelightItems.GRATED_GARLIC.get());
 
+		tag(ExtraDelightTags.AIOLI).add(ExtraDelightItems.AIOLI.get());
+
 		tag(ExtraDelightTags.SALT).add(Fermentation.SALT.get()).addOptionalTag(CompatTags.DUSTS_SALT);
 
 		tag(ExtraDelightTags.CUCUMBER).add(Fermentation.CUCUMBER.get());
 		tag(ExtraDelightTags.PROCESSED_CUCUMBER).add(Fermentation.CUCUMBER.get(),
-				Fermentation.SLICED_CUCUMBER_ITEM.get());
+				Fermentation.SLICED_CUCUMBER_ITEM.get()).addOptionalTag(CompatTags.CUCUMBERS);
 		tag(ExtraDelightTags.SOYBEAN).add(Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.PROCESSED_CABBAGE).add(Fermentation.SHREDDED_CABBAGE_ITEM.get())
@@ -612,10 +615,11 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PICKLED_EGGS).add(Fermentation.PICKLED_EGG_ITEM.get());
 
 		tag(ExtraDelightTags.PICKLE_JUICE).add(Fermentation.PICKLE_JUICE.get());
-		tag(ExtraDelightTags.SOY_SAUCE).add(Fermentation.SOY_SAUCE_ITEM.get());
+		tag(ExtraDelightTags.SOY_SAUCE).add(Fermentation.SOY_SAUCE_ITEM.get()).addOptionalTag(CompatTags.SOYSAUCE)
+				.addOptionalTag(CompatTags.SOY_SAUCES);
 		tag(ExtraDelightTags.SAUERKRAUT).add(Fermentation.SAUERKRAUT_ITEM.get());
 		tag(ExtraDelightTags.KIMCHI).add(Fermentation.KIMCHI_ITEM.get());
-		tag(ExtraDelightTags.HOT_SAUCE).add(Fermentation.HOT_SAUCE_ITEM.get());
+		tag(ExtraDelightTags.HOT_SAUCE).add(Fermentation.HOT_SAUCE_ITEM.get()).addOptionalTag(CompatTags.HOTSAUCE);
 		tag(ExtraDelightTags.MISO_PASTE).add(Fermentation.MISO_PASTE_ITEM.get());
 		tag(ExtraDelightTags.NATTO).add(Fermentation.NATTO_ITEM.get());
 		tag(ExtraDelightTags.FISH_SAUCE).add(Fermentation.FISH_SAUCE_ITEM.get());
@@ -623,7 +627,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.SOAKED_SOYBEANS).add(Fermentation.SOAKED_SOYBEANS_ITEM.get());
 		tag(ExtraDelightTags.MASHED_SOYBEANS).add(Fermentation.MASHED_SOYBEANS_ITEM.get());
 		tag(ExtraDelightTags.COOKED_SOYBEANS).add(Fermentation.COOKED_SOYBEANS_ITEM.get());
-		tag(ExtraDelightTags.SOY_MILK).add(Fermentation.SOY_MILK.get());
+		tag(ExtraDelightTags.SOY_MILK).add(Fermentation.SOY_MILK.get()).addOptionalTag(CompatTags.SOYMILK)
+				.addOptionalTag(CompatTags.SOY_MILKS);
 		tag(ExtraDelightTags.YEAST_SPREAD).add(Fermentation.YEAST_SPREAD.get());
 		tag(ExtraDelightTags.SALAMI_MIX).add(Fermentation.SALAMI_MIX.get());
 
@@ -768,6 +773,41 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CUCUMBER).add(Fermentation.CUCUMBER_CRATE_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SOYBEANS).add(Fermentation.SOYBEAN_SACK_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT).add(Fermentation.SALT_BLOCK_ITEM.get());
+
+		tag(CompatTags.UPRIGHT_ON_BELT).add(ExtraDelightItems.COOKING_OIL.get(), ExtraDelightItems.VINEGAR.get(),
+						ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.GRAVY.get(),
+						ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.YEAST.get(),
+						ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.GLOW_BERRY_JUICE.get(),
+						ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.SWEET_BERRY_JUICE.get(),
+						ExtraDelightItems.TOMATO_JUICE.get(), ExtraDelightItems.CACTUS_JUICE.get(),
+						ExtraDelightItems.FURIKAKE.get(), ExtraDelightItems.CURRY_POWDER.get(),
+						ExtraDelightItems.JAM.get(), ExtraDelightItems.GLOW_BERRY_JAM.get(),
+						ExtraDelightItems.GOLDEN_APPLE_JAM.get(), ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get(),
+						ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get(), ExtraDelightItems.CHEESECAKE_ITEM.get(),
+						ExtraDelightItems.HONEY_CHEESECAKE_ITEM.get(), ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get(),
+						ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get(), ExtraDelightItems.APPLE_CHEESECAKE_ITEM.get(),
+						ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM.get(), ExtraDelightItems.QUICHE.get(),
+						ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get(), ExtraDelightItems.TEA.get(),
+						ExtraDelightItems.CARAMEL_SAUCE.get(), ExtraDelightItems.PUMPKIN_PIE_ITEM.get(),
+						ExtraDelightItems.MILKSHAKE.get(), ExtraDelightItems.CHOCOLATE_MILKSHAKE.get(),
+						ExtraDelightItems.GLOW_BERRY_MILKSHAKE.get(), ExtraDelightItems.SWEET_BERRY_MILKSHAKE.get(),
+						ExtraDelightItems.PUMPKIN_MILKSHAKE.get(), ExtraDelightItems.HONEY_MILKSHAKE.get(),
+						ExtraDelightItems.APPLE_MILKSHAKE.get(), ExtraDelightItems.COOKIE_DOUGH_MILKSHAKE.get(),
+						ExtraDelightItems.MINT_CHIP_MILKSHAKE.get(), ExtraDelightItems.CHOCOLATE_MILK.get(),
+						ExtraDelightItems.EGGNOG.get(), ExtraDelightItems.GINGER_BEER.get(),
+						ExtraDelightItems.HORCHATA.get(), ExtraDelightItems.MINT_JELLY.get(),
+						ExtraDelightItems.PUNCH.get(), ExtraDelightItems.XOCOLATL.get(),
+						ExtraDelightItems.GOURMET_HOT_CHOCOLATE.get(), ExtraDelightItems.COFFEE.get(),
+						ExtraDelightItems.COFFEE_CAKE_FEAST.get(), ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get(),
+						ExtraDelightItems.COCOA_BUTTER_BOTTLE.get(), ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get(),
+						ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(), ExtraDelightItems.NUT_BUTTER_MILKSHAKE.get(),
+						ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get(), ExtraDelightItems.MISSISSIPPI_MUD_PIE.get(),
+						ExtraDelightItems.GRASSHOPPER_PIE.get(), ExtraDelightItems.AFFOGATO.get(),
+						ExtraDelightItems.MILK_TART_FEAST.get(), ExtraDelightItems.BACON_EGG_PIE.get(),
+						ExtraDelightItems.PANFORTE.get(), Fermentation.MISO_PASTE_ITEM.get(),
+						Fermentation.FISH_SAUCE_ITEM.get(), Fermentation.SOY_MILK.get(),
+						Fermentation.STEAK_PICKLED_ONION_PIE_ITEM.get(), Fermentation.YEAST_SPREAD.get())
+				.addTag(ExtraDelightTags.CONDIMENTS);
 
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);
