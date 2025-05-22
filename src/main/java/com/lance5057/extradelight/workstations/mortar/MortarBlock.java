@@ -107,12 +107,6 @@ public class MortarBlock extends Block implements EntityBlock, IStyleable {
 					IFluidHandlerItem f = stack.getCapability(Capabilities.FluidHandler.ITEM);
 					if (f != null) {
 						FluidUtil.interactWithFluidHandler(pPlayer, pHand, mbe.getFluidTank());
-					} else {
-						if (pPlayer.isCrouching()) {
-							mbe.extractItem(pPlayer);
-						} else {
-							mbe.insertItem(stack);
-						}
 					}
 				} else if (stack.is(Items.GLASS_BOTTLE)) {
 					ItemStack i = BottleFluidRegistry.getBottleFromFluid(mbe.getFluidTank().getFluid());
@@ -123,8 +117,13 @@ public class MortarBlock extends Block implements EntityBlock, IStyleable {
 							BlockEntityUtils.Inventory.givePlayerItemStack(i, pPlayer, pLevel, pPos);
 						}
 					}
+				} else {
+					if (pPlayer.isCrouching()) {
+						mbe.extractItem(pPlayer);
+					} else {
+						mbe.insertItem(stack);
+					}
 				}
-
 			}
 			return ItemInteractionResult.CONSUME;
 		}
