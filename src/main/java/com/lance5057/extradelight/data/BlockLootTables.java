@@ -403,7 +403,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_STAIRS.get());
-		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_DOOR.get());
+		this.add(ExtraDelightBlocks.MILK_CHOCOLATE_DOOR.get(), createDoorTable(ExtraDelightBlocks.MILK_CHOCOLATE_DOOR.get()));
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_TRAPDOOR.get());
 		this.add(ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(),
 				createSlabItemTable(ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get()));
@@ -413,7 +413,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_STAIRS.get());
-		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_DOOR.get());
+		this.add(ExtraDelightBlocks.DARK_CHOCOLATE_DOOR.get(), createDoorTable(ExtraDelightBlocks.DARK_CHOCOLATE_DOOR.get()));
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_TRAPDOOR.get());
 		this.add(ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(),
 				createSlabItemTable(ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get()));
@@ -423,7 +423,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_STAIRS.get());
-		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get());
+		this.add(ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get(), createDoorTable(ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get()));
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_TRAPDOOR.get());
 		this.add(ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get(),
 				createSlabItemTable(ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get()));
@@ -433,7 +433,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get());
-		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_DOOR.get());
+		this.add(ExtraDelightBlocks.BLOOD_CHOCOLATE_DOOR.get(), createDoorTable(ExtraDelightBlocks.BLOOD_CHOCOLATE_DOOR.get()));
 		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_TRAPDOOR.get());
 		this.add(ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(),
 				createSlabItemTable(ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get()));

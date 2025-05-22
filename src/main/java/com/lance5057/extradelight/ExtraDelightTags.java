@@ -572,6 +572,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> GARLIC = neoforgeItemTag("crops/garlic");
 	public static final TagKey<Item> PROCESSED_GARLIC = modTag("processed/garlic");
 
+	public static final TagKey<Item> AIOLI = neoforgeItemTag("condiments/aioli");
+
 	public static final TagKey<Item> CUCUMBER = neoforgeItemTag("crops/cucumber");
 	public static final TagKey<Item> PROCESSED_CUCUMBER = modTag("processed/cucumber");
 
@@ -598,7 +600,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> MISO_SOUP_INGREDIENTS = neoforgeItemTag("miso_soup_ingredients");
 
 	public static final TagKey<Item> PICKLE_JUICE = neoforgeItemTag("pickle_juice");
-	public static final TagKey<Item> SOY_SAUCE = neoforgeItemTag("soy_sauce");
+	public static final TagKey<Item> SOY_SAUCE = neoforgeItemTag("condiments/soy_sauce");
 	public static final TagKey<Item> SAUERKRAUT = neoforgeItemTag("sauerkraut");
 	public static final TagKey<Item> KIMCHI = neoforgeItemTag("kimchi");
 	public static final TagKey<Item> HOT_SAUCE = neoforgeItemTag("condiments/hot_sauce");

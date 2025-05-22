@@ -2601,7 +2601,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern("mc ").pattern(" b ").define('c', ExtraDelightTags.CHEESE)
 				.define('m',
 						CompoundIngredient.of(Ingredient.of(ExtraDelightTags.MAYO),
-								Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ExtraDelightItems.AIOLI)))
+								Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ExtraDelightTags.AIOLI)))
 				.define('b', ExtraDelightTags.BREAD_SLICE).unlockedBy(getName(), has(ExtraDelightTags.CHEESE))
 				.save(consumer, EDLoc("cheese_sandwich"));
 
