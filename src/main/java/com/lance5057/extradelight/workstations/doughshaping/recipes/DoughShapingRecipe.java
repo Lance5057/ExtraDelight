@@ -32,6 +32,11 @@ public class DoughShapingRecipe extends SingleItemRecipe {
 		return new ItemStack(ExtraDelightBlocks.DOUGH_SHAPING.get());
 	}
 
+	@Override
+	public String getGroup() {
+		return this.group;
+	}
+
 	public static class Serializer implements RecipeSerializer<DoughShapingRecipe> {
 		private static final MapCodec<DoughShapingRecipe> CODEC = RecordCodecBuilder
 				.mapCodec(inst -> inst

@@ -3,6 +3,8 @@
     "#c:condiments/ketchup",
     "#c:condiments/bbq_sauce",
     "#c:condiments/mayonnaise",
-    "#c:condiments/hot_sauce"
+    "#c:condiments/hot_sauce",
+    "#c:condiments/soy_sauce",
+    "#c:condiments/aioli"
   ]
 }

@@ -1,5 +1,9 @@
 {
   "values": [
-    "extradelight:hot_sauce_item"
+    "extradelight:hot_sauce_item",
+    {
+      "id": "#c:condiments/hotsauce",
+      "required": false
+    }
   ]
 }

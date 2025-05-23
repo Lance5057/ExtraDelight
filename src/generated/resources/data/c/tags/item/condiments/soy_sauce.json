@@ -1,0 +1,13 @@
+{
+  "values": [
+    "extradelight:soy_sauce_item",
+    {
+      "id": "#c:condiments/soysauce",
+      "required": false
+    },
+    {
+      "id": "#c:soy_sauces",
+      "required": false
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 package com.lance5057.extradelight.workstations.meltingpot;
 
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.workstations.evaporator.recipes.EvaporatorRecipe;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -19,12 +20,13 @@ import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.fluids.FluidStack;
 
 public class MeltingPotRecipe implements Recipe<SingleRecipeInput> {
-
+	final String group;
 	public Ingredient input;
 	public int cooktime;
 	public FluidStack result;
 
-	public MeltingPotRecipe(Ingredient in, int time, FluidStack out) {
+	public MeltingPotRecipe(Ingredient in, int time, FluidStack out, String group) {
+		this.group = group;
 		this.input = in;
 		this.cooktime = time;
 		this.result = out;
@@ -37,7 +39,7 @@ public class MeltingPotRecipe implements Recipe<SingleRecipeInput> {
 
 	@Override
 	public ItemStack assemble(SingleRecipeInput input, Provider registries) {
-		return new ItemStack(Items.STICK); //Because other mods expect something regardless
+		return new ItemStack(Items.STICK); // Because other mods expect something regardless
 	}
 
 	@Override
@@ -47,7 +49,7 @@ public class MeltingPotRecipe implements Recipe<SingleRecipeInput> {
 
 	@Override
 	public ItemStack getResultItem(Provider registries) {
-		return new ItemStack(Items.STICK); //Because other mods expect something regardless
+		return new ItemStack(Items.STICK); // Because other mods expect something regardless
 	}
 
 	@Override
@@ -60,23 +62,31 @@ public class MeltingPotRecipe implements Recipe<SingleRecipeInput> {
 		return ExtraDelightRecipes.MELTING_POT.get();
 	}
 
+	@Override
+	public String getGroup() {
+		return this.group;
+	}
+
 	public static class Serializer implements RecipeSerializer<MeltingPotRecipe> {
 		private static final MapCodec<MeltingPotRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst
 				.group(Ingredient.CODEC.fieldOf("ingredient").forGetter(r -> r.input),
 						Codec.INT.optionalFieldOf("cooktime", 100).forGetter(r -> r.cooktime),
-						FluidStack.CODEC.fieldOf("result").forGetter(r -> r.result))
+						FluidStack.CODEC.fieldOf("result").forGetter(r -> r.result),
+						Codec.STRING.optionalFieldOf("group", "").forGetter(MeltingPotRecipe::getGroup))
 
 				.apply(inst, MeltingPotRecipe::new));
 
 		public static MeltingPotRecipe fromNetwork(RegistryFriendlyByteBuf pBuffer) {
+			String s = pBuffer.readUtf();
 			Ingredient ingredient = Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer);
 
 			int cooktime = pBuffer.readVarInt();
 			FluidStack usedItem = FluidStack.OPTIONAL_STREAM_CODEC.decode(pBuffer);
-			return new MeltingPotRecipe(ingredient, cooktime, usedItem);
+			return new MeltingPotRecipe(ingredient, cooktime, usedItem, s);
 		}
 
 		public static void toNetwork(RegistryFriendlyByteBuf pBuffer, MeltingPotRecipe pRecipe) {
+			pBuffer.writeUtf(pRecipe.group);
 			Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, pRecipe.input);
 			pBuffer.writeVarInt(pRecipe.cooktime);
 			FluidStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.result);

@@ -16,7 +16,7 @@
         "tag": "c:butter"
       },
       {
-        "item": "extradelight:aioli_jar_item"
+        "tag": "c:condiments/aioli"
       }
     ]
   },

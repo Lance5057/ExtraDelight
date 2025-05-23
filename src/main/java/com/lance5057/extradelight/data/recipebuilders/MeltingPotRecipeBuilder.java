@@ -3,6 +3,8 @@ package com.lance5057.extradelight.data.recipebuilders;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import javax.annotation.Nullable;
+
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotRecipe;
 
 import net.minecraft.advancements.Advancement;
@@ -20,6 +22,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 
 public class MeltingPotRecipeBuilder implements RecipeBuilder {
 
+	private String group = "";
 	private final Ingredient input;
 	private final int cooktime;
 	private final FluidStack output;
@@ -32,7 +35,7 @@ public class MeltingPotRecipeBuilder implements RecipeBuilder {
 		this.output = output;
 
 	}
-	
+
 	public static MeltingPotRecipeBuilder melt(Ingredient in, int time, FluidStack out) {
 		return new MeltingPotRecipeBuilder(in, time, out);
 	}
@@ -45,6 +48,7 @@ public class MeltingPotRecipeBuilder implements RecipeBuilder {
 
 	@Override
 	public RecipeBuilder group(String groupName) {
+		this.group = groupName;
 		return this;
 	}
 
@@ -60,7 +64,7 @@ public class MeltingPotRecipeBuilder implements RecipeBuilder {
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancementBuilder::addCriterion);
-		MeltingPotRecipe recipe = new MeltingPotRecipe(this.input, this.cooktime, this.output);
+		MeltingPotRecipe recipe = new MeltingPotRecipe(this.input, this.cooktime, this.output, group);
 		recipeOutput.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/melting/")));
 	}
 

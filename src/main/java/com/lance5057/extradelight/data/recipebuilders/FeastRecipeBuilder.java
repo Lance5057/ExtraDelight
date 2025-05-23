@@ -14,6 +14,7 @@ import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.RecipeBuilder;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -22,12 +23,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public class FeastRecipeBuilder implements RecipeBuilder {
+	private final RecipeCategory category= RecipeCategory.FOOD;
 	private final ItemStack result;
 	private final Ingredient ingredient;
 	private final BlockItem block;
 //	private final Advancement.Builder advancement = Advancement.Builder.advancement();
 	@Nullable
-	private String group;
+	private String group = "";
 //	private final FeastRecipe.Serializer serializer;
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 
@@ -91,7 +93,7 @@ public class FeastRecipeBuilder implements RecipeBuilder {
 
 //		public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab, NonNullList<Ingredient> inputItems,
 //				ItemStack output, ItemStack container, float experience, int cookTime) {
-		FeastRecipe recipe = new FeastRecipe("", this.block, this.ingredient, this.result);
+		FeastRecipe recipe = new FeastRecipe(group, this.block, this.ingredient, this.result);
 		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/feast/")));
 	}
 

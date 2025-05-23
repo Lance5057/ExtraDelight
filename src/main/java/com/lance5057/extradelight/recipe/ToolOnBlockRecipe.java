@@ -85,6 +85,8 @@ public class ToolOnBlockRecipe implements Recipe<SimpleRecipeWrapper> {
 		// TODO Auto-generated method stub
 		return new ItemStack(out);
 	}
+	
+	
 
 	public static class Serializer implements RecipeSerializer<ToolOnBlockRecipe> {
 		private static final MapCodec<ToolOnBlockRecipe> CODEC = RecordCodecBuilder

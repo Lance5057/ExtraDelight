@@ -74,5 +74,10 @@ public class DryingRackRecipe implements Recipe<SingleRecipeInput> {
 		// TODO Auto-generated method stub
 		return result;
 	}
+	
+	@Override
+	public String getGroup() {
+		return this.group;
+	}
 
 }

@@ -10,6 +10,7 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -21,6 +22,7 @@ public class FeastRecipe implements Recipe<SimpleRecipeWrapper> {
 	protected final BlockItem feast;
 	protected final Ingredient container;
 	protected final ItemStack result;
+	final CookingBookCategory category = CookingBookCategory.FOOD;
 
 	public Ingredient getContainer() {
 		return container;
@@ -116,5 +118,10 @@ public class FeastRecipe implements Recipe<SimpleRecipeWrapper> {
 	@Override
 	public RecipeType<?> getType() {
 		return ExtraDelightRecipes.FEAST.get();
+	}
+
+	@Override
+	public String getGroup() {
+		return this.group;
 	}
 }

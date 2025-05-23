@@ -91,6 +91,11 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 	public RecipeType<?> getType() {
 		return ExtraDelightRecipes.EVAPORATOR.get();
 	}
+	
+	@Override
+	public String getGroup() {
+		return this.group;
+	}
 
 	public static class Serializer implements RecipeSerializer<EvaporatorRecipe> {
 		private static final MapCodec<EvaporatorRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst

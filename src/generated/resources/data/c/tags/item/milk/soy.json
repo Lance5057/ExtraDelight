@@ -1,5 +1,13 @@
 {
   "values": [
-    "extradelight:soy_milk"
+    "extradelight:soy_milk",
+    {
+      "id": "#c:milk/soymilk",
+      "required": false
+    },
+    {
+      "id": "#c:soy_milks",
+      "required": false
+    }
   ]
 }
