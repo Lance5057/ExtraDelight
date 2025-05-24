@@ -5894,9 +5894,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 			b.addIngredient(i);
 		b.build(consumer, rc);
 
-		ConditionalRecipe.builder()
-                .addCondition(new ModLoadedCondition("create"))
-                .addRecipe(c -> {
+		
 		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
 				CreateLoc(rc + "_create"));
 
@@ -5908,8 +5906,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 			p.require(container);
 
 		p.requiresHeat(HeatCondition.HEATED);
-		p.build(consumer);
-		})
-                .build(consumer, ResourceLocation.fromNamespaceAndPath("create", "mixing/"+rc.getPath());
+		p.build(consumer.withConditions(new ModLoadedCondition("create"));
 	}
 }
