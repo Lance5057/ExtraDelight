@@ -2194,9 +2194,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		b.save(consumer, EDLoc(rc));
 
-		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
-				CreateLoc(rc + "_create"));
-
 		p.output(output);
 		for (Ingredient i : ingredients)
 			p.require(i);
@@ -5897,6 +5894,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 			b.addIngredient(i);
 		b.build(consumer, rc);
 
+		ConditionalRecipe.builder()
+                .addCondition(new ModLoadedCondition("patchouli"))
+                .addRecipe(c -> {
 		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
 				CreateLoc(rc + "_create"));
 
@@ -5909,5 +5909,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		p.requiresHeat(HeatCondition.HEATED);
 		p.build(consumer);
+		})
+                .build(consumer, ResourceLocation.fromNamespaceAndPath("create", "mixing/"+rc.getPath());
 	}
 }
