@@ -2209,7 +2209,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				flag = false;
 
 		if (flag)
-			p.build(consumer);
+			p.build(consumer.withConditions(new ModLoadedCondition("create"));
 	}
 
 	private void craftingRecipes(RecipeOutput consumer) {
