@@ -5895,7 +5895,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		b.build(consumer, rc);
 
 		ConditionalRecipe.builder()
-                .addCondition(new ModLoadedCondition("patchouli"))
+                .addCondition(new ModLoadedCondition("create"))
                 .addRecipe(c -> {
 		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
 				CreateLoc(rc + "_create"));
