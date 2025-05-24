@@ -130,6 +130,7 @@
   "block.extradelight.fruit_molded_yellow_wallpaper": "Fruit Moulded Yellow Wallpaper",
   "block.extradelight.gray_chocolate_box": "Grey Chocolate Box",
   "block.extradelight.gray_frosted_gingerbread_block": "Grey Frosted Gingerbread Block",
+  "block.extradelight.hot_cocoa_fluid_block": "Hot Chocolate",
   "block.extradelight.jungle_molded_black_wallpaper": "Jungle Moulded Black Wallpaper",
   "block.extradelight.jungle_molded_blue_wallpaper": "Jungle Moulded Blue Wallpaper",
   "block.extradelight.jungle_molded_brown_wallpaper": "Jungle Moulded Brown Wallpaper",
@@ -217,8 +218,10 @@
   "block.extradelight.warped_molded_white_wallpaper": "Warped Moulded White Wallpaper",
   "block.extradelight.warped_molded_yellow_wallpaper": "Warped Moulded Yellow Wallpaper",
   "extradelight.advancement.frosting.desc": "Make every colour of frosting.",
+  "fluid_type.extradelight.hot_cocoa_fluid": "Hot Chocolate",
   "item.extradelight.candy_gray": "Grey Candy",
   "item.extradelight.candy_light_gray": "Light Grey Candy",
   "item.extradelight.frosting_gray": "Grey Frosting",
-  "item.extradelight.frosting_light_gray": "Light Grey Frosting"
+  "item.extradelight.frosting_light_gray": "Light Grey Frosting",
+  "item.extradelight.hot_cocoa_fluid_bucket": "Hot Chocolate Bucket"
 }

@@ -313,9 +313,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CROUTONS).add(ExtraDelightItems.CROUTONS.get());
 		tag(ExtraDelightTags.DRIED_FRUIT).add(ExtraDelightItems.DRIED_FRUIT.get());
 		tag(ExtraDelightTags.BREAD_CRUMBS).add(ExtraDelightItems.BREAD_CRUMBS.get());
-		tag(ExtraDelightTags.POPCORN).add(ExtraDelightItems.POPCORN.get());
-		tag(ExtraDelightTags.CINNAMON_STICK).add(ExtraDelightItems.CINNAMON_STICK.get())
+		tag(ExtraDelightTags.POPCORN).add(ExtraDelightItems.POPCORN.get())
 				.addOptionalTag(CompatTags.FOODS_POPCORN);
+		tag(ExtraDelightTags.CINNAMON_STICK).add(ExtraDelightItems.CINNAMON_STICK.get());
 
 		tag(ExtraDelightTags.SUGAR_COOKIE_DOUGH).add(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get());
 		tag(ExtraDelightTags.GINGERBREAD_COOKIE_DOUGH).add(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get());
@@ -806,7 +806,8 @@ public class EDItemTags extends ItemTagsProvider {
 						ExtraDelightItems.MILK_TART_FEAST.get(), ExtraDelightItems.BACON_EGG_PIE.get(),
 						ExtraDelightItems.PANFORTE.get(), Fermentation.MISO_PASTE_ITEM.get(),
 						Fermentation.FISH_SAUCE_ITEM.get(), Fermentation.SOY_MILK.get(),
-						Fermentation.STEAK_PICKLED_ONION_PIE_ITEM.get(), Fermentation.YEAST_SPREAD.get())
+						Fermentation.STEAK_PICKLED_ONION_PIE_ITEM.get(), Fermentation.YEAST_SPREAD.get(),
+						Fermentation.PICKLE_JUICE.get())
 				.addTag(ExtraDelightTags.CONDIMENTS);
 
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {

@@ -47,6 +47,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluids;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
@@ -2193,6 +2194,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		b.unlockedBy(rc, has(output.getItem()));
 
 		b.save(consumer, EDLoc(rc));
+
+		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
+				CreateLoc(rc + "_create"));
 
 		p.output(output);
 		for (Ingredient i : ingredients)
@@ -4866,7 +4870,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.INK_SAC))
 				.save(consumer, EDLoc("dye_black"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.PITCHER_PLANT), new ItemStack(Items.CYAN_DYE, 2), FluidStack.EMPTY,
+				.grind(Ingredient.of(Items.PITCHER_PLANT), new ItemStack(Items.CYAN_DYE, 3), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.PITCHER_PLANT))
 				.save(consumer, EDLoc("dye_cyan"));
@@ -5906,6 +5910,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 			p.require(container);
 
 		p.requiresHeat(HeatCondition.HEATED);
-		p.build(consumer.withConditions(new ModLoadedCondition("create"));
+		p.build(consumer.withConditions(new ModLoadedCondition("create")));
 	}
 }

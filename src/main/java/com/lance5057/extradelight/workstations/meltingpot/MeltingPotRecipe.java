@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.workstations.meltingpot;
 
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.evaporator.recipes.EvaporatorRecipe;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

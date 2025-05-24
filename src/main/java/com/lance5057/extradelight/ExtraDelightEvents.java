@@ -34,10 +34,12 @@ public class ExtraDelightEvents {
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.EVAPORATOR.get(), r-> RecipeBookCategories.UNKNOWN);
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.FEAST.get(), r-> RecipeBookCategories.UNKNOWN);
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MELTING_POT.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MIXING_BOWL.get(), r-> RecipeBookCategories.UNKNOWN);
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MORTAR.get(), r-> RecipeBookCategories.UNKNOWN);
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.OVEN.get(), r-> RecipeBookCategories.UNKNOWN);
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.SHAPED_JAR.get(), r-> RecipeBookCategories.UNKNOWN);
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.TOOL_ON_BLOCK.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.VAT.get(), r-> RecipeBookCategories.UNKNOWN);
 	}
 
 }
