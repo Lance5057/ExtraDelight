@@ -15,7 +15,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -109,6 +112,8 @@ public class BottleFluidRegistry {
 				SizedFluidIngredient.of(ExtraDelightFluids.MAYO.FLUID.get(), bottleMB));
 		register(Ingredient.of(ModItems.MELON_JUICE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.MELON_JUICE.FLUID.get(), bottleMB));
+		register(Ingredient.of(ModItems.MILK_BOTTLE.get()),
+				SizedFluidIngredient.of(NeoForgeMod.MILK.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.MILKSHAKE.get()),

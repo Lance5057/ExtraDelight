@@ -202,10 +202,10 @@ public class Fermentation {
 					() -> new JarSingularItem(PICKLED_SAUSAGE_BLOCK.get(),
 							new Item.Properties().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
-			.advancementFeast().finish();
+			.advancementButchercraft().finish();
 	public static final DeferredItem<Item> PICKLED_SAUSAGE_ITEM = EDItemGenerator
 			.register("pickled_sausage_item", () -> new Item(new Item.Properties().food(EDFoods.PICKLED_SAUSAGE)))
-			.advancementSnack().servingToolTip().finish();
+			.advancementButchercraft().servingToolTip().finish();
 
 	public static final DeferredBlock<JarSingularBlock> PICKLED_GINGER_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_ginger_block", () -> new JarSingularBlock(BlockBehaviour.Properties
