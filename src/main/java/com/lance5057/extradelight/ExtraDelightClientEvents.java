@@ -217,4 +217,22 @@ public class ExtraDelightClientEvents {
 		ItemBlockRenderTypes.setRenderLayer(liquid.fluid.getFlowing(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(liquid.fluid.getSource(), RenderType.translucent());
 	}
+
+	@SubscribeEvent
+	public static void onRegisterRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.BOTTLE_FLUID_REGISTRY.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.CHILLER.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.DOUGH_SHAPING.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.DRYING_RACK.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.DYNAMIC_TOAST.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.EVAPORATOR.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.FEAST.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MELTING_POT.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MIXING_BOWL.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MORTAR.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.OVEN.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.SHAPED_JAR.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.TOOL_ON_BLOCK.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.VAT.get(), r-> RecipeBookCategories.UNKNOWN);
+	}
 }
