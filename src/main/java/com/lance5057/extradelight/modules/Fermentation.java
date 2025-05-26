@@ -739,58 +739,34 @@ public class Fermentation {
 		Recipes.mixing(new ItemStack(GAZPACHO.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
-						Ingredient.of(ExtraDelightTags.BREAD_CRUMBS), Ingredient.of(ExtraDelightTags.COOKING_OIL),
-						Ingredient.of(ExtraDelightTags.VINEGAR) },
-				new SizedFluidIngredient[] {}, consumer, "gazpacho_mixing_bottles");
-		Recipes.mixing(new ItemStack(GAZPACHO.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO),
-						Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
 						Ingredient.of(ExtraDelightTags.BREAD_CRUMBS) },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
-				consumer, "gazpacho_mixing_fluids");
+				consumer, "gazpacho_mixing");
 
-		Recipes.mixing(new ItemStack(SHIRAZI_SALAD.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO),
-						Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
-						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.MINT),
-						Ingredient.of(ExtraDelightTags.COOKING_OIL) },
-				new SizedFluidIngredient[] {}, consumer, "shirazi_salad_mixing_bottles");
 		Recipes.mixing(new ItemStack(SHIRAZI_SALAD.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.MINT), },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
-				consumer, "shirazi_salad_mixing_fluids");
+				consumer, "shirazi_salad_mixing");
 
-		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 2), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(ExtraDelightTags.SOY_SAUCE),
-						Ingredient.of(ExtraDelightTags.COOKING_OIL), Ingredient.of(ExtraDelightTags.VINEGAR) },
-				new SizedFluidIngredient[] {}, consumer, "cucumber_salad_mixing_bottles");
 		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 2), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(ExtraDelightTags.SOY_SAUCE), },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
-				consumer, "cucumber_salad_mixing_fluids");
+				consumer, "cucumber_salad_mixing");
 
-		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 3), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
-						Ingredient.of(ExtraDelightTags.SALT), Ingredient.of(ExtraDelightTags.COOKING_OIL),
-						Ingredient.of(ExtraDelightTags.VINEGAR) },
-				new SizedFluidIngredient[] {}, consumer, "morkovcha_mixing_bottles");
 		Recipes.mixing(new ItemStack(MORKOVCHA.get(), 3), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
 						Ingredient.of(ExtraDelightTags.SALT), },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
-				consumer, "morkovcha_mixing_fluids");
+				consumer, "morkovcha_mixing");
 
 		Recipes.mixing(new ItemStack(HOT_WINGS.get(), 1), Recipes.FAST_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CHICKEN_WING_COOKED),

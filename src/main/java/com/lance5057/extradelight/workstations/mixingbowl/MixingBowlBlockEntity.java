@@ -112,7 +112,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				if (!f.isEmpty()) {
 					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
 						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
-						bowl.items.setStackInSlot(LIQUID_IN_SLOT, new ItemStack(Items.GLASS_BOTTLE, 1));
+						bowl.items.setStackInSlot(LIQUID_IN_SLOT, inputItem.getCraftingRemainingItem());
 					}
 				}
 			}
@@ -137,10 +137,10 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				if (filled > 0) {
 					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, fluidHandlerItem.getContainer());
 				}
-			} else if (inputItem.is(Items.GLASS_BOTTLE)) {
+			} else {
 				if (bowl.getFluidTank().getFluid() != null) {
 					ItemStack i = BottleFluidRegistry.getBottleFromFluid(bowl.getFluidTank().getFluid());
-					if (!i.isEmpty()) {
+					if (!i.isEmpty() && i.getItem().getCraftingRemainingItem() == inputItem.getItem()) {
 						FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
 						bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
 //						inputItem.shrink(1);

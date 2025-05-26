@@ -2,11 +2,9 @@ package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.items.components.ChillComponent;
 
-import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID)
