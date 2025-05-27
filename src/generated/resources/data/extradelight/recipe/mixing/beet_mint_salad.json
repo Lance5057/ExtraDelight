@@ -1,6 +1,15 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
+    }
+  ],
   "ingredients": [
     {
       "tag": "extradelight:processed/beetroot"
@@ -13,12 +22,6 @@
     },
     {
       "tag": "extradelight:sweetener"
-    },
-    {
-      "tag": "c:vinegar"
-    },
-    {
-      "tag": "c:cooking_oil"
     }
   ],
   "result": {

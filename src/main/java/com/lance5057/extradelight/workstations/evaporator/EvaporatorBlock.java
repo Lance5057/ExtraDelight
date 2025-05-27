@@ -207,7 +207,7 @@ public class EvaporatorBlock extends Block implements EntityBlock, IStyleable {
 			return pBlockEntityType == ExtraDelightBlockEntities.EVAPORATOR.get() ? EvaporatorBlockEntity::tick : null;
 		return null;
 	}
-	
+
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos,
 			Player player) {
@@ -215,11 +215,11 @@ public class EvaporatorBlock extends Block implements EntityBlock, IStyleable {
 		stack.set(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY.with(STYLE, state.getValue(STYLE)));
 		return stack;
 	}
-	
+
 	@Override
 	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-		if (!level.isClientSide && !player.isCreative() && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)
-				&& state.getValue(STYLE) > 0) {
+		if (!level.isClientSide && !player.isCreative()
+				&& level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) {
 			ItemStack itemstack = new ItemStack(this);
 			itemstack.set(DataComponents.BLOCK_STATE,
 					BlockItemStateProperties.EMPTY.with(STYLE, state.getValue(STYLE)));
@@ -231,6 +231,5 @@ public class EvaporatorBlock extends Block implements EntityBlock, IStyleable {
 
 		return super.playerWillDestroy(level, pos, state, player);
 	}
-
 
 }

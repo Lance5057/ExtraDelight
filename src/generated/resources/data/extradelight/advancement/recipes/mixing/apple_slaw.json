@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "apple_slaw_fluids": {
+    "apple_slaw": {
       "conditions": {
         "items": [
           {
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:mixing/apple_slaw_fluids"
+        "recipe": "extradelight:mixing/apple_slaw"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "apple_slaw_fluids"
+      "apple_slaw"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:mixing/apple_slaw_fluids"
+      "extradelight:mixing/apple_slaw"
     ]
   }
 }

@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:mixing/whippedcream_bucket"
+        "recipe": "extradelight:mixing/morkovcha_mixing"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "whippedcream_bucket": {
+    "morkovcha_mixing": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:whipped_cream"
+            "items": "extradelight:morkovcha"
           }
         ]
       },
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "whippedcream_bucket"
+      "morkovcha_mixing"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:mixing/whippedcream_bucket"
+      "extradelight:mixing/morkovcha_mixing"
     ]
   }
 }

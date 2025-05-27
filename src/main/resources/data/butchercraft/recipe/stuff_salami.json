@@ -1,4 +1,10 @@
 {
+	"neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "butchercraft:grinder",
   "attachment": {
     "item": "butchercraft:extruder_tip"

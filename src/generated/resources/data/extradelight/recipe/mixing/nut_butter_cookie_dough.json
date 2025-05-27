@@ -1,6 +1,11 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:nut_butter_fluid"
+    }
+  ],
   "ingredients": [
     {
       "tag": "c:flour"
@@ -13,9 +18,6 @@
     },
     {
       "tag": "c:eggs"
-    },
-    {
-      "tag": "c:nut_butter"
     }
   ],
   "result": {

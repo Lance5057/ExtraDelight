@@ -671,16 +671,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:pickled_sausage_block_item": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:pickled_sausage_block_item"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:pork_stew_feast": {
       "conditions": {
         "items": [
@@ -901,9 +891,6 @@
     ],
     [
       "extradelight:caramel_cheesecake_item"
-    ],
-    [
-      "extradelight:pickled_sausage_block_item"
     ],
     [
       "extradelight:fudge_block"

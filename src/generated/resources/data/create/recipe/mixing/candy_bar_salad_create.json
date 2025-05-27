@@ -1,9 +1,12 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "create:mixing",
   "ingredients": [
-    {
-      "tag": "c:whipped_cream"
-    },
     {
       "tag": "c:chocolate/bar"
     },
@@ -14,13 +17,20 @@
       "tag": "c:foods/custard"
     },
     {
-      "item": "extradelight:caramel_sauce"
-    },
-    {
       "tag": "c:marshmallow"
     },
     {
       "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:caramel_sauce_fluid"
     }
   ],
   "results": [

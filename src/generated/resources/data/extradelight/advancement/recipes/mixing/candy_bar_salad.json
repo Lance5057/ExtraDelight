@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "gazpacho_mixing_fluids": {
+    "candy_bar_salad": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:gazpacho"
+            "items": "extradelight:candy_bar_salad"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:mixing/gazpacho_mixing_fluids"
+        "recipe": "extradelight:mixing/candy_bar_salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "gazpacho_mixing_fluids"
+      "candy_bar_salad"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:mixing/gazpacho_mixing_fluids"
+      "extradelight:mixing/candy_bar_salad"
     ]
   }
 }

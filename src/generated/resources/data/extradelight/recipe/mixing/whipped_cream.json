@@ -1,13 +1,14 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
-  "ingredients": [
+  "fluids": [
     {
-      "item": "minecraft:milk_bucket"
+      "amount": 250,
+      "fluid": "minecraft:milk"
     }
   ],
+  "ingredients": [],
   "result": {
-    "count": 4,
+    "count": 1,
     "id": "extradelight:whipped_cream"
   },
   "stirs": 8,

@@ -112,7 +112,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				if (!f.isEmpty()) {
 					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
 						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
-						bowl.items.setStackInSlot(LIQUID_IN_SLOT, inputItem.getCraftingRemainingItem());
+						bowl.items.setStackInSlot(LIQUID_IN_SLOT, inputItem.getCraftingRemainingItem().copy());
 					}
 				}
 			}
@@ -307,7 +307,8 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		this.getFluidTank().writeToNBT(registries, tag);
 		tag.putInt("stirs", this.stirs);
 
-		tag.put("usedItem", containerItem.saveOptional(registries));
+		if (!containerItem.isEmpty())
+			tag.put("usedItem", containerItem.saveOptional(registries));
 		tag.putBoolean("complete", this.complete);
 
 		return tag;
@@ -419,8 +420,8 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	private void dropContainers(@NotNull IItemHandlerModifiable inv, Player player) {
 		for (int i = 0; i < 9; i++) {
-			BlockEntityUtils.Inventory.givePlayerItemStack(inv.getStackInSlot(i).getCraftingRemainingItem(), player,
-					level, worldPosition);
+			BlockEntityUtils.Inventory.givePlayerItemStack(inv.getStackInSlot(i).getCraftingRemainingItem().copy(),
+					player, level, worldPosition);
 
 		}
 	}

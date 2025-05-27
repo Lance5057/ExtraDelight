@@ -1,6 +1,4 @@
 {
-  "parent": "extradelight:item/mortar",
-  "textures": {
-    "0": "minecraft:block/stone"
-  }
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

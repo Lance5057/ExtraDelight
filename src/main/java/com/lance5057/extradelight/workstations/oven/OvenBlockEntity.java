@@ -255,7 +255,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		if (!mealContainerStack.isEmpty()) {
 			return mealContainerStack;
 		} else {
-			return getMeal().getCraftingRemainingItem();
+			return getMeal().getCraftingRemainingItem().copy();
 		}
 	}
 
@@ -325,7 +325,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 				double x = worldPosition.getX() + 0.5 + (direction.getStepX() * 0.25);
 				double y = worldPosition.getY() + 0.7;
 				double z = worldPosition.getZ() + 0.5 + (direction.getStepZ() * 0.25);
-				ItemUtils.spawnItemEntity(level, inventory.getStackInSlot(i).getCraftingRemainingItem(), x, y, z,
+				ItemUtils.spawnItemEntity(level, inventory.getStackInSlot(i).getCraftingRemainingItem().copy(), x, y, z,
 						direction.getStepX() * 0.08F, 0.25F, direction.getStepZ() * 0.08F);
 			}
 			if (!slotStack.isEmpty())
@@ -445,7 +445,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		if (!mealContainerStack.isEmpty()) {
 			return ItemStack.isSameItem(containerItem, this.mealContainerStack);
 		} else {
-			return ItemStack.isSameItem(getMeal().getCraftingRemainingItem(), containerItem);
+			return ItemStack.isSameItem(getMeal().getCraftingRemainingItem().copy(), containerItem);
 		}
 	}
 

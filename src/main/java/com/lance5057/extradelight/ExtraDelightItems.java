@@ -139,23 +139,29 @@ public class ExtraDelightItems {
 			.register("oven", () -> new BlockItem(ExtraDelightBlocks.OVEN.get(), new Item.Properties())).finish();
 
 	public static final DeferredItem<Item> DRYING_RACK = ITEMS.register("drying_rack_item",
-			() -> new BlockItem(ExtraDelightBlocks.DRYING_RACK.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.DRYING_RACK.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
 //	public static final DeferredItem<Item> FOOD_DISPLAY = ITEMS.register("food_display",
 //			() -> new BlockItem(ExtraDelightBlocks.FOOD_DISPLAY.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> DOUGH_SHAPING = ITEMS.register("dough_shaping",
-			() -> new BlockItem(ExtraDelightBlocks.DOUGH_SHAPING.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.DOUGH_SHAPING.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 	public static final DeferredItem<Item> MIXING_BOWL = ITEMS.register("mixing_bowl",
-			() -> new BlockItem(ExtraDelightBlocks.MIXING_BOWL.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.MIXING_BOWL.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
 	public static final DeferredItem<Item> MORTAR_STONE = ITEMS.register("mortar_stone",
-			() -> new BlockItem(ExtraDelightBlocks.MORTAR_STONE.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.MORTAR_STONE.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
 	public static final DeferredItem<Item> MELTING_POT = ITEMS.register("melting_pot",
-			() -> new BlockItem(ExtraDelightBlocks.MELTING_POT.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.MELTING_POT.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 	public static final DeferredItem<Item> CHILLER = ITEMS.register("chiller",
-			() -> new BlockItem(ExtraDelightBlocks.CHILLER.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.CHILLER.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
 	public static final DeferredItem<Item> VAT = ITEMS.register("vat", () -> new BlockItem(ExtraDelightBlocks.VAT.get(),
 			new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
@@ -165,10 +171,12 @@ public class ExtraDelightItems {
 					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
 	public static final DeferredItem<Item> EVAPORATOR = ITEMS.register("evaporator",
-			() -> new BlockItem(ExtraDelightBlocks.EVAPORATOR.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.EVAPORATOR.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
 	public static final DeferredItem<Item> BAR_MOLD = ITEMS.register("bar_mold",
-			() -> new BlockItem(ExtraDelightBlocks.BAR_MOLD.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.BAR_MOLD.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
 	public static final DeferredItem<Item> FUNNEL = ITEMS.register("funnel",
 			() -> new BlockItem(ExtraDelightBlocks.FUNNEL.get(), new Item.Properties()));
@@ -196,21 +204,29 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().durability(35)));
 
 	public static final DeferredItem<Item> SHEET = ITEMS.register("sheet",
-			() -> new BlockItem(ExtraDelightBlocks.SHEET_BLOCK.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.SHEET_BLOCK.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 	public static final DeferredItem<Item> TRAY = ITEMS.register("tray",
-			() -> new BlockItem(ExtraDelightBlocks.TRAY_BLOCK.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.TRAY_BLOCK.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 	public static final DeferredItem<Item> LOAF_PAN = ITEMS.register("loaf_pan",
-			() -> new BlockItem(ExtraDelightBlocks.LOAF_PAN_BLOCK.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 	public static final DeferredItem<Item> PIE_DISH = ITEMS.register("pie_dish",
-			() -> new BlockItem(ExtraDelightBlocks.PIE_DISH_BLOCK.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.PIE_DISH_BLOCK.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 	public static final DeferredItem<Item> SQUARE_PAN = ITEMS.register("square_pan",
-			() -> new BlockItem(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 	public static final DeferredItem<Item> BAKING_STONE = ITEMS.register("baking_stone",
-			() -> new BlockItem(ExtraDelightBlocks.BAKING_STONE_BLOCK.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.BAKING_STONE_BLOCK.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 	public static final DeferredItem<Item> MUFFIN_TIN = ITEMS.register("muffin_tin",
-			() -> new BlockItem(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), new Item.Properties()));
+			() -> new BlockItem(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 	public static final DeferredItem<Item> SERVING_POT = ITEMS.register("serving_pot",
-			() -> new HelmetBlockItem(ExtraDelightBlocks.SERVING_POT_BLOCK.get(), new Item.Properties()));
+			() -> new HelmetBlockItem(ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
+					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
 	public static final DeferredItem<Item> GRATER = ITEMS.register("grater",
 			() -> new Item(new Item.Properties().durability(250)));

@@ -29,8 +29,9 @@ public class ItemModels extends ItemModelProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/oven")));
 		getBuilder(ExtraDelightItems.DOUGH_SHAPING.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/doughforming")));
-		getBuilder(ExtraDelightItems.MIXING_BOWL.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/mixing_bowl")));
+		getBuilder(ExtraDelightItems.MIXING_BOWL.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		getBuilder(ExtraDelightItems.YEAST_POT.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/yeast_pot")));
 		getBuilder(ExtraDelightItems.VINEGAR_POT.getId().getPath())
@@ -60,9 +61,8 @@ public class ItemModels extends ItemModelProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/drying_rack")));
 
 		getBuilder(ExtraDelightItems.MORTAR_STONE.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(
-						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/mortar")))
-				.texture("0", mcLoc("block/stone"));
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 
 		getBuilder(ExtraDelightItems.PESTLE_STONE.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(

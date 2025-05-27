@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:serving_pot"
+          "name": "minecraft:air"
         }
       ],
       "rolls": 1.0

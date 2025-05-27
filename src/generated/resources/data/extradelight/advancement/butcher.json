@@ -291,6 +291,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:pickled_sausage_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_sausage_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pickled_sausage_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_sausage_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pork_and_apples": {
       "conditions": {
         "items": [
@@ -448,6 +468,9 @@
   },
   "requirements": [
     [
+      "extradelight:pickled_sausage_block_item"
+    ],
+    [
       "extradelight:pork_and_apples"
     ],
     [
@@ -539,6 +562,9 @@
     ],
     [
       "extradelight:sos"
+    ],
+    [
+      "extradelight:pickled_sausage_item"
     ],
     [
       "extradelight:devilled_sausages"

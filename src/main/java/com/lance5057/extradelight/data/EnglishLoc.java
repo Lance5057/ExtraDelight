@@ -111,6 +111,36 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.vat.days", "%s Days");
 		
 		this.add("extradelight.jei.info.pickle_juice", "Drops from Pickle Jar items when emptied.");
+		
+//		 "tag.item.extradelight.baking_trays": "Baking Trays",
+//		  "tag.item.extradelight.broth": "Broth",
+//		  "tag.item.extradelight.candy_bowl_valid": "Valid for Candy Bowl",
+//		  "tag.item.extradelight.chocolate_bar_filling": "Chocolate Bar Filling",
+//		  "tag.item.extradelight.chocolate_box_valid": "Valid for Chocolate Box",
+//		  "tag.item.extradelight.chocolate_truffle_filling": "Chocolate Truffle Filling",
+//		  "tag.item.extradelight.corn_dim_confiscate": "Corn Confiscate",
+//		  "tag.item.extradelight.frying_oil": "Cooking Oil",
+//		  "tag.item.extradelight.jelly": "Jelly",
+//		  "tag.item.extradelight.makes_stock": "Makes Stock",
+//		  "tag.item.extradelight.processed.apple": "Processed Apples",
+//		  "tag.item.extradelight.processed.beetroot": "Processed Beetroots",
+//		  "tag.item.extradelight.processed.cabbage": "Processed Cabbages",
+//		  "tag.item.extradelight.processed.carrot": "Processed Carrot",
+//		  "tag.item.extradelight.processed.chili": "Processed Chilis",
+//		  "tag.item.extradelight.processed.cucumber": "Processed Cucumbers",
+//		  "tag.item.extradelight.processed.fruit": "Processed Fruits",
+//		  "tag.item.extradelight.processed.garlic": "Processed Garlics",
+//		  "tag.item.extradelight.processed.ginger": "Processed Gingers",
+//		  "tag.item.extradelight.processed.onion": "Processed Onions",
+//		  "tag.item.extradelight.processed.pickled.cucumber": "Processed Pickled Cucumbers",
+//		  "tag.item.extradelight.processed.potato": "Processed Potatoes",
+//		  "tag.item.extradelight.processed.produce": "Processed Produces",
+//		  "tag.item.extradelight.processed.tomato": "Processed Tomatoes",
+//		  "tag.item.extradelight.processed.vegetable": "Processed Vegetables",
+//		  "tag.item.extradelight.riceball_filling": "Riceball Filling",
+//		  "tag.item.extradelight.sweetener": "Sweetener",
+//		  "tag.item.extradelight.toast_or_bread_slice": "Toast or Bread Slice",
+//		  "tag.item.extradelight.toast_topping": "Toast Topping"
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");

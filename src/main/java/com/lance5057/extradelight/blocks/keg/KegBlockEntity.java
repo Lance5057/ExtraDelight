@@ -54,8 +54,9 @@ public class KegBlockEntity extends BlockEntity {
 	}
 
 	public boolean use(Player player, InteractionHand hand) {
-		if (player.getItemInHand(hand).is(Items.GLASS_BOTTLE)) {
-			ItemStack i = BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid());
+		ItemStack i = BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid()).copy();
+		if (ItemStack.isSameItem(player.getItemInHand(hand), i)) {
+
 			if (!i.isEmpty()) {
 				if (this.getTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
 					this.getTank().drain(250, FluidAction.EXECUTE);
@@ -72,7 +73,8 @@ public class KegBlockEntity extends BlockEntity {
 				if (this.getTank().fill(stack, FluidAction.SIMULATE) == 250) {
 					this.getTank().fill(stack, FluidAction.EXECUTE);
 					player.getItemInHand(hand).shrink(1);
-					BlockEntityUtils.Inventory.givePlayerItemStack(new ItemStack(Items.GLASS_BOTTLE), player, level,
+					BlockEntityUtils.Inventory.givePlayerItemStack(
+							player.getItemInHand(hand).getCraftingRemainingItem().copy(), player, level,
 							worldPosition);
 					return true;
 				} else

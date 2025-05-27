@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "create:mixing",
   "ingredients": [
     {
@@ -14,13 +20,17 @@
       "tag": "c:salt"
     },
     {
-      "tag": "c:cooking_oil"
-    },
-    {
-      "tag": "c:vinegar"
-    },
-    {
       "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
     }
   ],
   "results": [

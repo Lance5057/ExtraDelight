@@ -1,14 +1,23 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "create:mixing",
   "ingredients": [
-    {
-      "tag": "extradelight:processed/tomato"
-    },
     {
       "tag": "extradelight:processed/cucumber"
     },
     {
-      "tag": "c:bread/crumbs"
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    },
+    {
+      "tag": "c:condiments/soy_sauce"
     },
     {
       "item": "minecraft:bowl"
@@ -26,7 +35,8 @@
   ],
   "results": [
     {
-      "item": "extradelight:gazpacho"
+      "count": 2,
+      "item": "extradelight:cucumber_salad"
     }
   ]
 }

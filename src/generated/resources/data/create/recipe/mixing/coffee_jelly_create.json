@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "create:mixing",
   "ingredients": [
     {
@@ -8,18 +14,22 @@
       "tag": "extradelight:sweetener"
     },
     {
-      "tag": "c:coffee"
-    },
-    {
-      "tag": "c:whipped_cream"
-    },
-    {
       "item": "minecraft:glass_bottle"
     },
     {
       "type": "fluid_stack",
       "amount": 100,
       "fluid": "minecraft:water"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:coffee_fluid"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
     }
   ],
   "results": [

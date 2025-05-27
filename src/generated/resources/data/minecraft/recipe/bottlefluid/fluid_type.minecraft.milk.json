@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "farmersdelight:milk_bottle"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "minecraft:milk"
+  }
+}

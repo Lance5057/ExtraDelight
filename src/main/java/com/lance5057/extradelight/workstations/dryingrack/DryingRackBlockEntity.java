@@ -15,6 +15,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Container;
@@ -240,9 +242,11 @@ public class DryingRackBlockEntity extends BlockEntity {
 		this.cookingProgress = nbt.getIntArray("CookingTimes");
 		this.cookingTime = nbt.getIntArray("CookingTotalTimes");
 
-//		for (int i = 0; i < NUM_SLOTS; i++) {
+		for (int i = 0; i < NUM_SLOTS; i++) {
+			int f = i;
+			ItemStack.parse(registries, nbt.getCompound("item_" + i)).ifPresent(stack -> results[f] = stack);
 //			results[i].deserializeNBT(nbt.getCompound("item_" + i));
-//		}
+		}
 	}
 
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
@@ -252,9 +256,10 @@ public class DryingRackBlockEntity extends BlockEntity {
 		tag.putIntArray("CookingTimes", this.cookingProgress);
 		tag.putIntArray("CookingTotalTimes", this.cookingTime);
 
-//		for (int i = 0; i < NUM_SLOTS; i++) {
-//			tag.put("item_" + i, results[i].serializeNBT());
-//		}
+		for (int i = 0; i < NUM_SLOTS; i++) {
+			if (!results[i].isEmpty())
+				tag.put("item_" + i, results[i].save(registries));
+		}
 
 		return tag;
 	}

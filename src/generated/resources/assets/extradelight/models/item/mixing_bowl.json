@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/mixing_bowl"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

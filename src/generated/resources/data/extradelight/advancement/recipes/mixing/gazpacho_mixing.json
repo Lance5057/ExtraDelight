@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "apple_slaw_bottles": {
+    "gazpacho_mixing": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:apple_slaw"
+            "items": "extradelight:gazpacho"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:mixing/apple_slaw_bottles"
+        "recipe": "extradelight:mixing/gazpacho_mixing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "apple_slaw_bottles"
+      "gazpacho_mixing"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:mixing/apple_slaw_bottles"
+      "extradelight:mixing/gazpacho_mixing"
     ]
   }
 }

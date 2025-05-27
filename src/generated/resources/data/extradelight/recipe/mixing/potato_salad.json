@@ -1,6 +1,11 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    }
+  ],
   "ingredients": [
     {
       "item": "minecraft:baked_potato"
@@ -10,9 +15,6 @@
     },
     {
       "tag": "extradelight:processed/onion"
-    },
-    {
-      "tag": "c:condiments/mayonnaise"
     }
   ],
   "result": {

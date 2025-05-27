@@ -1,5 +1,9 @@
 {
   "values": [
-    "extradelight:popcorn"
+    "extradelight:popcorn",
+    {
+      "id": "#c:foods/popcorn",
+      "required": false
+    }
   ]
 }

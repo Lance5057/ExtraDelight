@@ -308,7 +308,7 @@ public class VatBlockEntity extends BlockEntity {
 						if (sfi.test(vat.fluid.getFluid()))
 							vat.fluid.drain(sfi.amount(), FluidAction.EXECUTE);
 						ItemUtils.spawnItemEntity(level,
-								vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).copy().getCraftingRemainingItem(),
+								vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).copy().getCraftingRemainingItem().copy(),
 								vat.getBlockPos().getX(), vat.getBlockPos().getY() + 1, vat.getBlockPos().getZ(), 0, 0,
 								0);
 						vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
@@ -374,7 +374,7 @@ public class VatBlockEntity extends BlockEntity {
 		double z = chiller.worldPosition.getZ();
 
 		for (int i = 0; i < 6; i++) {
-			ItemUtils.spawnItemEntity(level, chiller.items.getStackInSlot(i).copy().getCraftingRemainingItem(), x, y, z,
+			ItemUtils.spawnItemEntity(level, chiller.items.getStackInSlot(i).copy().getCraftingRemainingItem().copy(), x, y, z,
 					0, 0, 0);
 
 		}

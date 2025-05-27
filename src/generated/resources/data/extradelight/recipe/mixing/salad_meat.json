@@ -1,6 +1,15 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
+    }
+  ],
   "ingredients": [
     {
       "tag": "extradelight:processed/cabbage"
@@ -16,12 +25,6 @@
     },
     {
       "tag": "c:cheese"
-    },
-    {
-      "tag": "c:cooking_oil"
-    },
-    {
-      "tag": "c:vinegar"
     },
     {
       "tag": "c:eggs/boiled"

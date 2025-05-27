@@ -15,7 +15,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 15.0,
+                "max": 64.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
@@ -28,8 +28,8 @@
       "name": "main",
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 2.0,
-        "min": 1.0
+        "max": 1.0,
+        "min": 0.0
       }
     }
   ],

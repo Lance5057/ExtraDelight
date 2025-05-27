@@ -294,10 +294,10 @@ public class StructureLootTables implements LootTableSubProvider {
 
 		t.accept(dungeon_rot,
 				LootTable.lootTable()
-						.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(1, 2))
+						.withPool(LootPool.lootPool().name("main").setRolls(UniformGenerator.between(0, 1))
 								.add(NestedLootTable.lootTableReference(StructureLootTables.meals).setWeight(1))
 								.add(LootItem.lootTableItem(ExtraDelightItems.BAD_FOOD.get())
-										.apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 15)))
+										.apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 64)))
 										.setWeight(20))));
 
 		t.accept(cactus_juice,

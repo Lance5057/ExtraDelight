@@ -150,7 +150,7 @@ public class ChillerBlockEntity extends BlockEntity {
 				if (!f.isEmpty()) {
 					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
 						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
-						bowl.inventory.setStackInSlot(FLUID_IN, inputItem.getCraftingRemainingItem());
+						bowl.inventory.setStackInSlot(FLUID_IN, inputItem.getCraftingRemainingItem().copy());
 					}
 				}
 			}
@@ -284,7 +284,7 @@ public class ChillerBlockEntity extends BlockEntity {
 		double z = chiller.worldPosition.getZ() + 0.5 + (direction.getStepZ() * 0.25);
 
 		for (int i = 0; i < 4; i++) {
-			ItemUtils.spawnItemEntity(level, chiller.inventory.getStackInSlot(i).getCraftingRemainingItem(), x, y, z,
+			ItemUtils.spawnItemEntity(level, chiller.inventory.getStackInSlot(i).getCraftingRemainingItem().copy(), x, y, z,
 					direction.getStepX() * 0.08F, 0.25F, direction.getStepZ() * 0.08F);
 
 		}

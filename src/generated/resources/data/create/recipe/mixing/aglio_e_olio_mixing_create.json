@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "create:mixing",
   "ingredients": [
     {
@@ -8,9 +14,6 @@
       "item": "extradelight:roasted_garlic"
     },
     {
-      "tag": "c:cooking_oil"
-    },
-    {
       "tag": "extradelight:processed/chili"
     },
     {
@@ -18,6 +21,11 @@
     },
     {
       "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
     }
   ],
   "results": [

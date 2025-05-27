@@ -6,22 +6,19 @@
     }
   ],
   "type": "create:mixing",
-  "heat_requirement": "heated",
   "ingredients": [
     {
-      "tag": "c:mushrooms"
+      "item": "minecraft:bowl"
     },
     {
-      "tag": "c:mushrooms"
-    },
-    {
-      "item": "extradelight:breading_misanplas"
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "minecraft:milk"
     }
   ],
   "results": [
     {
-      "count": 3,
-      "item": "extradelight:fried_mushrooms"
+      "item": "extradelight:whipped_cream"
     }
   ]
 }

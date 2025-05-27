@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "create:mixing",
   "ingredients": [
     {
@@ -14,7 +20,9 @@
       "tag": "c:eggs"
     },
     {
-      "tag": "c:nut_butter"
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:nut_butter_fluid"
     }
   ],
   "results": [

@@ -1,6 +1,11 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    }
+  ],
   "ingredients": [
     {
       "tag": "c:carrot/grated"
@@ -10,9 +15,6 @@
     },
     {
       "tag": "extradelight:processed/apple"
-    },
-    {
-      "tag": "c:condiments/mayonnaise"
     }
   ],
   "result": {

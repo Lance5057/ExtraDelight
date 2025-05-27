@@ -46,7 +46,7 @@ public class MeltingPotBlock extends Block implements EntityBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final EnumProperty<OvenSupport> SUPPORT = EnumProperty.create("support", OvenSupport.class);
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	
+
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 
 	public MeltingPotBlock(Properties p_49795_) {
@@ -59,17 +59,17 @@ public class MeltingPotBlock extends Block implements EntityBlock {
 	public RenderShape getRenderShape(BlockState pState) {
 		return RenderShape.MODEL;
 	}
-	
+
 	@Override
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
 		return SHAPE;
 	}
-	
+
 	@Override
 	public boolean useShapeForLightOcclusion(BlockState pState) {
 		return true;
 	}
-	
+
 	@Override
 	public boolean isPathfindable(BlockState pState, PathComputationType pType) {
 		return false;
@@ -159,7 +159,7 @@ public class MeltingPotBlock extends Block implements EntityBlock {
 	public FluidState getFluidState(BlockState state) {
 		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
-	
+
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {
@@ -167,8 +167,8 @@ public class MeltingPotBlock extends Block implements EntityBlock {
 			if (tileEntity instanceof MeltingPotBlockEntity te) {
 				IItemHandler items = te.getItemHandler();
 				for (int i = 0; i < te.getItemHandler().getSlots(); i++) {
-						level.addFreshEntity(
-								new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+					level.addFreshEntity(
+							new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
 				}
 				level.updateNeighbourForOutputSignal(pos, this);
 			}

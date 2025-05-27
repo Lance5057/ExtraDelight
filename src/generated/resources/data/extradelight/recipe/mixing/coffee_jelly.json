@@ -4,6 +4,14 @@
     {
       "amount": 100,
       "fluid": "minecraft:water"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:coffee_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
     }
   ],
   "ingredients": [
@@ -12,12 +20,6 @@
     },
     {
       "tag": "extradelight:sweetener"
-    },
-    {
-      "tag": "c:coffee"
-    },
-    {
-      "tag": "c:whipped_cream"
     }
   ],
   "result": {

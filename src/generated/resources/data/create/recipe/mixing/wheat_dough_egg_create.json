@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "create:mixing",
   "ingredients": [
     {
@@ -12,9 +18,6 @@
     },
     {
       "tag": "c:eggs"
-    },
-    {
-      "item": "minecraft:bowl"
     }
   ],
   "results": [

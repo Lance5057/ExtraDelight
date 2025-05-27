@@ -1,10 +1,12 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
-  "ingredients": [
+  "fluids": [
     {
-      "tag": "c:condiments/mayonnaise"
-    },
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    }
+  ],
+  "ingredients": [
     {
       "tag": "extradelight:processed/garlic"
     }
@@ -13,7 +15,7 @@
     "count": 1,
     "id": "extradelight:aioli_jar_item"
   },
-  "stirs": 4,
+  "stirs": 8,
   "usedItem": {
     "count": 1,
     "id": "minecraft:glass_bottle"

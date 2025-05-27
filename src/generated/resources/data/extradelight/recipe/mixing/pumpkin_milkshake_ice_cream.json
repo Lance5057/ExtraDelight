@@ -1,10 +1,12 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
-  "ingredients": [
+  "fluids": [
     {
-      "tag": "c:foods/milk"
-    },
+      "amount": 250,
+      "fluid": "minecraft:milk"
+    }
+  ],
+  "ingredients": [
     {
       "item": "extradelight:pumpkin_ice_cream"
     }

@@ -1,15 +1,17 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    }
+  ],
   "ingredients": [
     {
       "tag": "c:foods/cooked_fish"
     },
     {
       "tag": "c:foods/cooked_fish"
-    },
-    {
-      "tag": "c:condiments/mayonnaise"
     }
   ],
   "result": {

@@ -1,11 +1,12 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
-  "ingredients": [
+  "fluids": [
     {
-      "tag": "c:whipped_cream"
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
     }
   ],
+  "ingredients": [],
   "result": {
     "count": 1,
     "id": "extradelight:butter"

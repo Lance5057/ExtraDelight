@@ -1,17 +1,27 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "create:mixing",
   "ingredients": [
-    {
-      "tag": "c:foods/milk"
-    },
     {
       "item": "extradelight:ice_cream"
     },
     {
-      "tag": "c:nut_butter"
+      "item": "minecraft:glass_bottle"
     },
     {
-      "item": "minecraft:glass_bottle"
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:nut_butter_fluid"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "minecraft:milk"
     }
   ],
   "results": [

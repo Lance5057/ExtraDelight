@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:mixing/whippedcream_bottle"
+        "recipe": "extradelight:mixing/shirazi_salad_mixing"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "whippedcream_bottle": {
+    "shirazi_salad_mixing": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:whipped_cream"
+            "items": "extradelight:shirazi_salad"
           }
         ]
       },
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "whippedcream_bottle"
+      "shirazi_salad_mixing"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:mixing/whippedcream_bottle"
+      "extradelight:mixing/shirazi_salad_mixing"
     ]
   }
 }

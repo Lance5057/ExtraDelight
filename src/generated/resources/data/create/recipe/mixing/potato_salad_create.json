@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "create:mixing",
   "ingredients": [
     {
@@ -11,10 +17,12 @@
       "tag": "extradelight:processed/onion"
     },
     {
-      "tag": "c:condiments/mayonnaise"
+      "item": "minecraft:bowl"
     },
     {
-      "item": "minecraft:bowl"
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
     }
   ],
   "results": [

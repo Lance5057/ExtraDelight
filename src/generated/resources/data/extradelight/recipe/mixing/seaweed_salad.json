@@ -1,6 +1,11 @@
 {
   "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
+    }
+  ],
   "ingredients": [
     {
       "item": "minecraft:kelp"
@@ -10,9 +15,6 @@
     },
     {
       "tag": "c:carrot/grated"
-    },
-    {
-      "tag": "c:vinegar"
     }
   ],
   "result": {

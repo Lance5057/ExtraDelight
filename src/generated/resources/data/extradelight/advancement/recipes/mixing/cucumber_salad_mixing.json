@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "cucumber_salad_mixing_bottles": {
+    "cucumber_salad_mixing": {
       "conditions": {
         "items": [
           {
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:mixing/cucumber_salad_mixing_bottles"
+        "recipe": "extradelight:mixing/cucumber_salad_mixing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "cucumber_salad_mixing_bottles"
+      "cucumber_salad_mixing"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:mixing/cucumber_salad_mixing_bottles"
+      "extradelight:mixing/cucumber_salad_mixing"
     ]
   }
 }

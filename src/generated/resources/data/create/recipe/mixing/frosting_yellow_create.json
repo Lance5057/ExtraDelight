@@ -1,9 +1,12 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
   "type": "create:mixing",
   "ingredients": [
-    {
-      "tag": "c:whipped_cream"
-    },
     {
       "item": "extradelight:butter"
     },
@@ -12,6 +15,11 @@
     },
     {
       "tag": "c:dyes/yellow"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
     }
   ],
   "results": [

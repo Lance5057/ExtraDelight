@@ -171,16 +171,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:pickled_sausage_item": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:pickled_sausage_item"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:popcorn": {
       "conditions": {
         "items": [
@@ -338,9 +328,6 @@
     ],
     [
       "extradelight:caramel_popcorn"
-    ],
-    [
-      "extradelight:pickled_sausage_item"
     ],
     [
       "extradelight:cheeseburger_pickle"

@@ -6,6 +6,7 @@ import com.lance5057.extradelight.blocks.interfaces.IStyleable;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -22,8 +23,11 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
@@ -35,6 +39,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.items.IItemHandler;
@@ -188,7 +193,7 @@ public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
 
 	@Override
 	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
-								TooltipFlag tooltipFlag) {
+			TooltipFlag tooltipFlag) {
 		MutableComponent textEmpty = Component.translatable(ExtraDelight.MOD_ID + ".tooltip.styleable");
 		tooltipComponents.add(textEmpty.withStyle(ChatFormatting.AQUA));
 	}
@@ -209,6 +214,30 @@ public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
 
 			super.onRemove(state, level, pos, newState, isMoving);
 		}
+	}
+
+	@Override
+	public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos,
+			Player player) {
+		ItemStack stack = new ItemStack(this);
+		stack.set(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY.with(STYLE, state.getValue(STYLE)));
+		return stack;
+	}
+
+	@Override
+	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+		if (!level.isClientSide && !player.isCreative()
+				&& level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) {
+			ItemStack itemstack = new ItemStack(this);
+			itemstack.set(DataComponents.BLOCK_STATE,
+					BlockItemStateProperties.EMPTY.with(STYLE, state.getValue(STYLE)));
+			ItemEntity itementity = new ItemEntity(level, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(),
+					itemstack);
+			itementity.setDefaultPickUpDelay();
+			level.addFreshEntity(itementity);
+		}
+
+		return super.playerWillDestroy(level, pos, state, player);
 	}
 
 }
