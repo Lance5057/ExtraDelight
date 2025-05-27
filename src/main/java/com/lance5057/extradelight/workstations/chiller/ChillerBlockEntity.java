@@ -145,12 +145,12 @@ public class ChillerBlockEntity extends BlockEntity {
 					bowl.inventory.setStackInSlot(FLUID_IN, fluidHandlerItem.getContainer());
 
 				}
-			} else if (inputItem.is(Items.GLASS_BOTTLE)) {
+			} else {
 				FluidStack f = BottleFluidRegistry.getFluidFromBottle(inputItem);
 				if (!f.isEmpty()) {
 					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
 						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
-						bowl.inventory.setStackInSlot(FLUID_IN, new ItemStack(Items.GLASS_BOTTLE, 1));
+						bowl.inventory.setStackInSlot(FLUID_IN, inputItem.getCraftingRemainingItem());
 					}
 				}
 			}
@@ -177,7 +177,7 @@ public class ChillerBlockEntity extends BlockEntity {
 				}
 			} else {
 				ItemStack i = BottleFluidRegistry.getBottleFromFluid(bowl.getFluidTank().getFluid());
-				if (!i.isEmpty()) {
+				if (!i.isEmpty() && i.getItem().getCraftingRemainingItem() == inputItem.getItem()) {
 					if (bowl.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
 						bowl.getFluidTank().drain(250, FluidAction.EXECUTE);
 						bowl.inventory.setStackInSlot(FLUID_OUT, i);

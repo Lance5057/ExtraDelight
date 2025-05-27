@@ -39,6 +39,7 @@ import com.lance5057.extradelight.workstations.oven.OvenScreen;
 import com.lance5057.extradelight.workstations.vat.VatScreen;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
@@ -61,6 +62,7 @@ import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 

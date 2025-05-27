@@ -13,12 +13,7 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.blocks.FruitLeafBlock;
-import com.lance5057.extradelight.blocks.HorizontalPanBlock;
-import com.lance5057.extradelight.blocks.RecipeFeastBlock;
-import com.lance5057.extradelight.blocks.RecipeFondueFeastBlock;
-import com.lance5057.extradelight.blocks.RipeSalamiBlock;
-import com.lance5057.extradelight.blocks.UnripeSalamiBlock;
+import com.lance5057.extradelight.blocks.*;
 import com.lance5057.extradelight.blocks.crops.BushStageFour;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
@@ -28,7 +23,10 @@ import com.lance5057.extradelight.blocks.crops.MallowRootCrop;
 import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
+import com.lance5057.extradelight.workstations.vat.VatBlock;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
@@ -41,12 +39,12 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.CopyBlockState;
 import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
@@ -125,8 +123,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 								.add(LootItem.lootTableItem(ModItems.CANVAS.get()))));
 
-		this.dropSelf(ExtraDelightBlocks.VAT.get());
-		this.dropSelf(ExtraDelightBlocks.EVAPORATOR.get());
+		this.styleBlock(ExtraDelightBlocks.VAT.get(), VatBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.EVAPORATOR.get(), EvaporatorBlock.STYLE);
 
 		this.dropSelf(ExtraDelightBlocks.FLOUR.get());
 //		this.dropSelf(ExtraDelightBlocks.COOKING_OIL.get());
@@ -285,22 +283,22 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropSelf(ExtraDelightBlocks.CANDY_BOWL.get());
 
-		this.dropSelf(ExtraDelightBlocks.BLACK_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.BLUE_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.BROWN_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.CYAN_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.GRAY_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.GREEN_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.LIGHT_BLUE_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.LIGHT_GRAY_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.LIME_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.MAGENTA_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.ORANGE_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.PINK_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.PURPLE_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.RED_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.WHITE_FROSTED_GINGERBREAD_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.YELLOW_FROSTED_GINGERBREAD_BLOCK.get());
+		this.styleBlock(ExtraDelightBlocks.BLACK_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.BLUE_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.BROWN_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.CYAN_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.GRAY_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.GREEN_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.LIGHT_BLUE_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.LIGHT_GRAY_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.LIME_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.MAGENTA_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.ORANGE_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.PINK_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.PURPLE_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.RED_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.WHITE_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.YELLOW_FROSTED_GINGERBREAD_BLOCK.get(), FrostableBlock.STYLE);
 
 		this.dropSelf(ExtraDelightBlocks.CANDY_CANE_GREEN_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.CANDY_CANE_RED_BLOCK.get());
@@ -363,20 +361,15 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropSelf(ExtraDelightBlocks.KEG.get());
 
-		this.add(ExtraDelightBlocks.SHEET_BLOCK.get(), LootTable.lootTable()
-				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-						.add(LootItem.lootTableItem(ExtraDelightBlocks.SHEET_BLOCK.get()).apply(CopyBlockState
-								.copyState(ExtraDelightBlocks.SHEET_BLOCK.get()).copy(HorizontalPanBlock.STYLE)))));
-
-//		this.dropSelf(ExtraDelightBlocks.SHEET_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.TRAY_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.LOAF_PAN_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.PIE_DISH_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.BAKING_STONE_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.SERVING_POT_BLOCK.get());
-		this.dropSelf(ExtraDelightBlocks.BAR_MOLD.get());
+		this.styleBlock(ExtraDelightBlocks.SHEET_BLOCK.get(), HorizontalPanBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.TRAY_BLOCK.get(), HorizontalPanBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.LOAF_PAN_BLOCK.get(), HorizontalPanBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.PIE_DISH_BLOCK.get(), HorizontalPanBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), HorizontalPanBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.BAKING_STONE_BLOCK.get(), HorizontalPanBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), HorizontalPanBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.SERVING_POT_BLOCK.get(), HorizontalPanBlock.STYLE);
+		this.styleBlock(ExtraDelightBlocks.BAR_MOLD.get(), HorizontalPanBlock.STYLE);
 
 		this.dropSelf(ExtraDelightBlocks.FRUIT_LOG.get());
 		this.dropSelf(ExtraDelightBlocks.FRUIT_WOOD.get());
@@ -399,7 +392,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 //		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_HANGING_SIGN.get());
 		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_SIGN.get());
 
-		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get());
+		this.styleBlock(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE);
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_STAIRS.get());
@@ -409,7 +402,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 				createSlabItemTable(ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get()));
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_PILLAR.get());
 
-		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get());
+		this.styleBlock(ExtraDelightBlocks.DARK_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE);
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_STAIRS.get());
@@ -419,7 +412,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 				createSlabItemTable(ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get()));
 		this.dropSelf(ExtraDelightBlocks.DARK_CHOCOLATE_PILLAR.get());
 
-		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get());
+		this.styleBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE);
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_STAIRS.get());
@@ -429,7 +422,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 				createSlabItemTable(ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get()));
 		this.dropSelf(ExtraDelightBlocks.WHITE_CHOCOLATE_PILLAR.get());
 
-		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_BLOCK.get());
+		this.styleBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_BLOCK.get(), ChocolateStyleBlock.STYLE);
 		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE.get());
 		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get());
@@ -554,7 +547,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		feast(ExtraDelightBlocks.BRUSCHETTA_FEAST.get(), ExtraDelightItems.BRUSCHETTA_FEAST.get(), Items.BOWL);
 		this.dropSelf(ExtraDelightBlocks.HANGING_GARLIC.get());
 
-		this.dropSelf(ExtraDelightBlocks.LID.get());
+		this.styleBlock(ExtraDelightBlocks.LID.get(), LidBlock.STYLE);
 
 		this.dropOther(Fermentation.WILD_CUCUMBER.get(), Fermentation.CUCUMBER.get());
 		LootItemCondition.Builder cucumber = LootItemBlockStatePropertyCondition
@@ -714,5 +707,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
 				.add(LootItem.lootTableItem(lastDrop).when(feast0).otherwise(LootItem.lootTableItem(Items.AIR)))));
+	}
+
+	void styleBlock(Block block, IntegerProperty style) {
+		LootItemCondition.Builder style0 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+				.setProperties(
+						StatePropertiesPredicate.Builder.properties().hasProperty(style, 0));
+
+		this.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
+				.add(LootItem.lootTableItem(block).when(style0).otherwise(LootItem.lootTableItem(Items.AIR)))));
 	}
 }
