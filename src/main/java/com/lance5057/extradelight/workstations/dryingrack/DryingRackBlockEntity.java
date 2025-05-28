@@ -15,8 +15,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Container;
@@ -244,7 +242,8 @@ public class DryingRackBlockEntity extends BlockEntity {
 
 		for (int i = 0; i < NUM_SLOTS; i++) {
 			int f = i;
-			ItemStack.parse(registries, nbt.getCompound("item_" + i)).ifPresent(stack -> results[f] = stack);
+			if (nbt.contains("item_" + i))
+				ItemStack.parse(registries, nbt.getCompound("item_" + i)).ifPresent(stack -> results[f] = stack);
 //			results[i].deserializeNBT(nbt.getCompound("item_" + i));
 		}
 	}

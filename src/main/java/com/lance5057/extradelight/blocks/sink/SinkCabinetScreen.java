@@ -35,6 +35,13 @@ public class SinkCabinetScreen extends AbstractContainerScreen<SinkCabinetMenu> 
 	}
 
 	@Override
+	public void render(GuiGraphics gui, final int mouseX, final int mouseY, float partialTicks) {
+		super.render(gui, mouseX, mouseY, partialTicks);
+
+		this.renderTooltip(gui, mouseX, mouseY);
+	}
+
+	@Override
 	protected void renderBg(GuiGraphics graphics, float pPartialTick, int pMouseX, int pMouseY) {
 		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 		if (this.minecraft == null)
@@ -44,17 +51,15 @@ public class SinkCabinetScreen extends AbstractContainerScreen<SinkCabinetMenu> 
 		graphics.blit(BACKGROUND_TEXTURE, this.leftPos, this.topPos + 60, 0, 0, 175, 89);
 		if (tab) {
 			graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 69, this.topPos, 68, 126, 38, 65);
-			
+
 			graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 3, this.topPos, 0, 191, 68, 65);
 			graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 105, this.topPos, 0, 191, 68, 65);
 		} else
 			graphics.blit(BACKGROUND_TEXTURE, this.leftPos + 72, this.topPos + 28, 0, 90, 32, 32);
-
 	}
 
 	@Override
-	protected void renderLabels(GuiGraphics p_281635_, int p_282681_, int p_283686_) {
-
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 	}
 
 	public void switchTabs() {

@@ -3,6 +3,7 @@ package com.lance5057.extradelight;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.BakingStoneBlock;
 import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
+import com.lance5057.extradelight.blocks.CornHuskBlock;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HangingBlock;
@@ -33,7 +34,6 @@ import com.lance5057.extradelight.blocks.keg.KegBlock;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
-import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
@@ -419,8 +419,8 @@ public class ExtraDelightBlocks {
 			() -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN)));
 	public static final DeferredBlock<Block> CORN_CRATE = BLOCKS.register("corn_crate", () -> new Block(
 			Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
-	public static final DeferredBlock<HayBlock> CORN_HUSK_BUNDLE = BLOCKS.register("corn_husk_bundle",
-			() -> new HayBlock(
+	public static final DeferredBlock<CornHuskBlock> CORN_HUSK_BUNDLE = BLOCKS.register("corn_husk_bundle",
+			() -> new CornHuskBlock(
 					Block.Properties.ofFullCopy(Blocks.HAY_BLOCK).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
 	public static final DeferredBlock<HayBlock> DRIED_CORN_HUSK_BUNDLE = BLOCKS.register("dried_corn_husk_bundle",
 			() -> new HayBlock(Block.Properties.ofFullCopy(Blocks.HAY_BLOCK).mapColor(MapColor.TERRACOTTA_YELLOW)));

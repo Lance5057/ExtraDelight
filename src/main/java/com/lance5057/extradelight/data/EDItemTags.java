@@ -631,6 +631,7 @@ public class EDItemTags extends ItemTagsProvider {
 				.addOptionalTag(CompatTags.SOY_MILKS);
 		tag(ExtraDelightTags.YEAST_SPREAD).add(Fermentation.YEAST_SPREAD.get());
 		tag(ExtraDelightTags.SALAMI_MIX).add(Fermentation.SALAMI_MIX.get());
+		tag(ExtraDelightTags.COOKED_WHEAT_SEEDS).add(Fermentation.COOKED_WHEAT_SEEDS.get());
 
 		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI.get(),
 				Fermentation.CUCUMBER.get());

@@ -297,7 +297,8 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		}
 		this.getFluidTank().readFromNBT(registries, nbt);
 		this.stirs = nbt.getInt("stirs");
-		ItemStack.parse(registries, nbt.getCompound("usedItem")).ifPresent(i -> containerItem = i);
+		if (nbt.contains("usedItem"))
+			ItemStack.parse(registries, nbt.getCompound("usedItem")).ifPresent(i -> containerItem = i);
 		this.complete = nbt.getBoolean("complete");
 	}
 
@@ -338,11 +339,11 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		return new ItemStack[0];
 	}
 
-	private void clearItems() {
+	private void clearItems(int k) {
 		for (int i = 0; i < 9; i++) {
 			items.getStackInSlot(i).shrink(1);
 		}
-		items.getStackInSlot(CONTAINER_SLOT).shrink(1);
+		items.getStackInSlot(CONTAINER_SLOT).shrink(k);
 	}
 
 	protected Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe() {
@@ -393,7 +394,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 //				NeoForgeEventFactory.firePlayerCraftingEvent(player, i, new RecipeWrapper(items));
 				BlockEntityUtils.Inventory.givePlayerItemStack(i, player, level, worldPosition);
 				dropContainers(items, player);
-				clearItems();
+				clearItems(i.getCount());
 				removeFluids(curRecipe.getFluids());
 				this.stirs = 0;
 //				items.setStackInSlot(CONTAINER_SLOT, i);

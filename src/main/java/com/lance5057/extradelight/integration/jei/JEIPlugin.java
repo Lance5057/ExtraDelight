@@ -5,6 +5,7 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.integration.jei.categories.BottleFluidRegistryCategory;
@@ -21,13 +22,25 @@ import com.lance5057.extradelight.integration.jei.categories.ShapedWithJarRecipe
 import com.lance5057.extradelight.integration.jei.categories.ToolOnBlockRecipeCatagory;
 import com.lance5057.extradelight.integration.jei.categories.VatRecipeCategory;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.workstations.chiller.ChillerMenu;
+import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
+import com.lance5057.extradelight.workstations.meltingpot.MeltingPotMenu;
+import com.lance5057.extradelight.workstations.meltingpot.MeltingPotScreen;
+import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlMenu;
+import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlScreen;
+import com.lance5057.extradelight.workstations.oven.OvenMenu;
+import com.lance5057.extradelight.workstations.oven.OvenScreen;
+import com.lance5057.extradelight.workstations.vat.VatMenu;
+import com.lance5057.extradelight.workstations.vat.VatScreen;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
+import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.IRecipeTransferRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -87,8 +100,10 @@ public class JEIPlugin implements IModPlugin {
 				.getAllRecipesFor(ExtraDelightRecipes.VAT.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(EvaporatorRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
 				.getAllRecipesFor(ExtraDelightRecipes.EVAPORATOR.get()).stream().map(RecipeHolder::value).toList());
-		registry.addRecipes(BottleFluidRegistryCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
-				.getAllRecipesFor(ExtraDelightRecipes.BOTTLE_FLUID_REGISTRY.get()).stream().map(RecipeHolder::value).toList());
+		registry.addRecipes(BottleFluidRegistryCategory.TYPE,
+				Minecraft.getInstance().level.getRecipeManager()
+						.getAllRecipesFor(ExtraDelightRecipes.BOTTLE_FLUID_REGISTRY.get()).stream()
+						.map(RecipeHolder::value).toList());
 
 		registry.addIngredientInfo(new ItemStack(ExtraDelightItems.MINT.get()), VanillaTypes.ITEM_STACK,
 				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.mint"));
@@ -187,7 +202,27 @@ public class JEIPlugin implements IModPlugin {
 
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.EVAPORATOR.getDelegate()),
 				EvaporatorRecipeCategory.TYPE);
-		
+
+	}
+
+	@Override
+	public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
+		registration.addRecipeTransferHandler(OvenMenu.class, ExtraDelightContainers.OVEN_MENU.get(),
+				OvenRecipeCategory.TYPE, 0, 6, 9, 36);
+		registration.addRecipeTransferHandler(VatMenu.class, ExtraDelightContainers.VAT_MENU.get(),
+				VatRecipeCategory.TYPE, 0, 6, 9, 36);
+		registration.addRecipeTransferHandler(ChillerMenu.class, ExtraDelightContainers.CHILLER_MENU.get(),
+				ChillerRecipeCategory.TYPE, 0, 6, 9, 36);
+		registration.addRecipeTransferHandler(MixingBowlMenu.class, ExtraDelightContainers.MIXING_BOWL_MENU.get(),
+				MixingBowlRecipeCategory.TYPE, 0, 6, 9, 36);
+	}
+
+	@Override
+	public void registerGuiHandlers(IGuiHandlerRegistration registration) {
+		registration.addRecipeClickArea(OvenScreen.class, 90, 36, 22, 22, OvenRecipeCategory.TYPE);
+		registration.addRecipeClickArea(VatScreen.class, 62, 50 - 19, 87, 18, VatRecipeCategory.TYPE);
+		registration.addRecipeClickArea(ChillerScreen.class, 101, 42, 22, 15, ChillerRecipeCategory.TYPE);
+		registration.addRecipeClickArea(MixingBowlScreen.class, 122, 23, 20, 18, MixingBowlRecipeCategory.TYPE);
 	}
 
 }

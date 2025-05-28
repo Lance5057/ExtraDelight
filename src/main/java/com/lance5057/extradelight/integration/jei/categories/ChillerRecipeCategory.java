@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
 
 import mezz.jei.api.constants.VanillaTypes;
@@ -29,7 +30,7 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 
 	public ChillerRecipeCategory(IGuiHelper guiHelper) {
 		background = guiHelper.createDrawable(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 155, 183, 101, 73);
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 132, 0, 124, 73);
 		localizedName = Component.translatable("extradelight.jei.chiller");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ExtraDelightItems.CHILLER.get()));
@@ -60,21 +61,25 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 
 		for (int i = 0; i < recipe.getIngredients().size(); i++) {
 			if (i < 2)
-				builder.addSlot(RecipeIngredientRole.INPUT, 22 + i % 2 * 18, 20)
+				builder.addSlot(RecipeIngredientRole.INPUT, 45 + i % 2 * 18, 20)
 						.addIngredients(recipe.getIngredients().get(i));
 			else
-				builder.addSlot(RecipeIngredientRole.INPUT, 22 + i % 2 * 18, 38)
+				builder.addSlot(RecipeIngredientRole.INPUT, 45 + i % 2 * 18, 38)
 						.addIngredients(recipe.getIngredients().get(i));
 		}
 
-		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 49, 1)
+		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 38, 1)
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid()))
-				.setFluidRenderer(6000, false, 16, 71);
+				.setFluidRenderer(1000, false, 16, 71);
 
-		builder.addSlot(RecipeIngredientRole.CATALYST, 31, 56)
+		builder.addSlot(RecipeIngredientRole.INPUT, 54, 56)
 				.addIngredients(Ingredient.of(recipe.getOutputContainer()));
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 84, 30).addIngredients(Ingredient.of(recipe.output));
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 107, 30).addIngredients(Ingredient.of(recipe.output));
+
+		builder.addSlot(RecipeIngredientRole.CATALYST, 1, 1)
+				.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluid(recipe.getFluid()),
+						new ItemStack(recipe.getFluid().getFluid().getBucket())));
 	}
 
 }

@@ -30,7 +30,7 @@ public class BottleFluidRegistryCategory implements IRecipeCategory<BottleFluidR
 
 	public BottleFluidRegistryCategory(IGuiHelper guiHelper) {
 		background = guiHelper.createDrawable(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 86, 202, 61, 54);
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 84, 125, 61, 54);
 		localizedName = Component.translatable("extradelight.jei.bottlefluid");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(Items.GLASS_BOTTLE));
 	}
@@ -58,22 +58,22 @@ public class BottleFluidRegistryCategory implements IRecipeCategory<BottleFluidR
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, BottleFluidRegistryRecipe recipe, IFocusGroup focuses) {
 
-		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 7, 1)
+		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 6, 1)
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.fluid.getFluids()))
 				.setFluidRenderer(250, false, 16, 16);
 
-		builder.addSlot(RecipeIngredientRole.INPUT, 1, 37).addIngredients(recipe.bottle);
+		builder.addSlot(RecipeIngredientRole.INPUT, 2, 37).addIngredients(recipe.bottle);
 
-		builder.addSlot(RecipeIngredientRole.INPUT, 44, 37)
+		builder.addSlot(RecipeIngredientRole.INPUT, 45, 37)
 				.addIngredients(Ingredient.of(recipe.fluid.getFluids()[0].getFluid().getBucket()));
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 - 7, 1)
+		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 - 6, 1)
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.fluid.getFluids()))
 				.setFluidRenderer(250, false, 16, 16);
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 1, 37).addIngredients(recipe.bottle);
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 2, 37).addIngredients(recipe.bottle);
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 44, 37)
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 45, 37)
 				.addIngredients(Ingredient.of(recipe.fluid.getFluids()[0].getFluid().getBucket()));
 	}
 

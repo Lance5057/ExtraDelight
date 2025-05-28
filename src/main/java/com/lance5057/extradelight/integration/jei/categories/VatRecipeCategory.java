@@ -118,16 +118,16 @@ public class VatRecipeCategory implements IRecipeCategory<VatRecipe> {
 						.addIngredients(recipe.getIngredients().get(i));
 		}
 
-		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 25, 1)
+		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 - 25, 1)
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid().getFluids()))
 				.setFluidRenderer(1000, false, 16, 34);
 
-		builder.addSlot(RecipeIngredientRole.INPUT, 1, 10)
+		builder.addSlot(RecipeIngredientRole.CATALYST, 1, 10)
 				.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluid(recipe.getFluid().getFluids()[0]),
 						new ItemStack(recipe.getFluid().getFluids()[0].getFluid().getBucket())));
 
 		for (int i = 0; i < recipe.getStages(); i++) {
-			builder.addSlot(RecipeIngredientRole.INPUT, 58, 59 + i * 31)
+			builder.addSlot(RecipeIngredientRole.CATALYST, 58, 59 + i * 31)
 					.addIngredients(recipe.getStageIngredients().get(i).ingredient);
 
 //			if (recipe.getStageIngredients().get(i).lid)
@@ -135,7 +135,7 @@ public class VatRecipeCategory implements IRecipeCategory<VatRecipe> {
 //						.addIngredients(Ingredient.of(ExtraDelightItems.LID.get()));
 		}
 
-		builder.addSlot(RecipeIngredientRole.CATALYST, 84, (recipe.getStages() * 31) + 62)
+		builder.addSlot(RecipeIngredientRole.INPUT, 84, (recipe.getStages() * 31) + 62)
 				.addIngredients(Ingredient.of(recipe.getUsedItem()));
 
 		builder.addSlot(RecipeIngredientRole.OUTPUT, 58, (recipe.getStages() * 31) + 62)

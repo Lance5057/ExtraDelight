@@ -302,7 +302,7 @@ public class VatBlockEntity extends BlockEntity {
 					ItemStack test = vat.items.insertItem(OUTPUT_SLOT, result, true);
 					if (test.isEmpty()) {
 						dropContainers(state, vat, level);
-						subtractItems(vat);
+						subtractItems(vat, result.getCount());
 
 						SizedFluidIngredient sfi = recipeholder.value().getFluid();
 						if (sfi.test(vat.fluid.getFluid()))
@@ -358,10 +358,10 @@ public class VatBlockEntity extends BlockEntity {
 		}
 	}
 
-	private static void subtractItems(VatBlockEntity chiller) {
+	private static void subtractItems(VatBlockEntity chiller, int k) {
 		ItemStackHandler i = chiller.items;
 
-		i.getStackInSlot(CONTAINER_SLOT).shrink(1);
+		i.getStackInSlot(CONTAINER_SLOT).shrink(k);
 
 		for (int j = 0; j < 6; j++)
 			i.getStackInSlot(j).shrink(1);

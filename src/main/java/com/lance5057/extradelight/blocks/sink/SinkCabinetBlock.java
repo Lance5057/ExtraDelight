@@ -1,6 +1,8 @@
 package com.lance5057.extradelight.blocks.sink;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.util.BlockEntityUtils;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,6 +15,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -27,6 +30,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -88,49 +92,59 @@ public class SinkCabinetBlock extends Block implements EntityBlock {
 		BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
 		if (tileEntity instanceof SinkCabinetBlockEntity be) {
 			if (!pLevel.isClientSide) {
-				IFluidHandlerItem handlerItem = FluidUtil.getFluidHandler(stack).orElse(null);
-				if (handlerItem != null) {
+				if (stack.is(Items.GLASS_BOTTLE)) {
+					BlockEntityUtils.Inventory.givePlayerItemStack(
+							BottleFluidRegistry.getBottleFromFluid(new FluidStack(Fluids.WATER.getSource(), 1000)),
+							pPlayer, pLevel, pPos);
+					pPlayer.getItemInHand(pHand).shrink(1);
+				} else if (stack.is(Items.POTION)) {
+					BlockEntityUtils.Inventory.givePlayerItemStack(new ItemStack(Items.GLASS_BOTTLE), pPlayer, pLevel,
+							pPos);
+					pPlayer.getItemInHand(pHand).shrink(1);
+				} else {
+					IFluidHandlerItem handlerItem = FluidUtil.getFluidHandler(stack).orElse(null);
+					if (handlerItem != null) {
 
-					FluidStack f = FluidUtil.getFluidContained(stack).orElse(FluidStack.EMPTY);
-					if (f.isEmpty()) {
-						FluidActionResult far = FluidUtil.tryFillContainer(stack, be.getFluidHandler(),
-								Integer.MAX_VALUE, pPlayer, true);
-						if (far.isSuccess()) {
-							stack.shrink(1);
-							pPlayer.setItemInHand(pHand, stack);
-							pPlayer.getInventory().placeItemBackInInventory(far.getResult());
-							return ItemInteractionResult.SUCCESS;
+						FluidStack f = FluidUtil.getFluidContained(stack).orElse(FluidStack.EMPTY);
+						if (f.isEmpty()) {
+							FluidActionResult far = FluidUtil.tryFillContainer(stack, be.getFluidHandler(),
+									Integer.MAX_VALUE, pPlayer, true);
+							if (far.isSuccess()) {
+								stack.shrink(1);
+								pPlayer.setItemInHand(pHand, stack);
+								pPlayer.getInventory().placeItemBackInInventory(far.getResult());
+								return ItemInteractionResult.SUCCESS;
 
+							}
+						} else {
+							FluidActionResult far = FluidUtil.tryEmptyContainer(stack, be.getFluidHandler(),
+									Integer.MAX_VALUE, pPlayer, true);
+							if (far.isSuccess()) {
+								stack.shrink(1);
+								pPlayer.setItemInHand(pHand, stack);
+								pPlayer.getInventory().placeItemBackInInventory(far.getResult());
+								return ItemInteractionResult.SUCCESS;
+
+							}
 						}
 					} else {
-						FluidActionResult far = FluidUtil.tryEmptyContainer(stack, be.getFluidHandler(),
-								Integer.MAX_VALUE, pPlayer, true);
-						if (far.isSuccess()) {
-							stack.shrink(1);
-							pPlayer.setItemInHand(pHand, stack);
-							pPlayer.getInventory().placeItemBackInInventory(far.getResult());
-							return ItemInteractionResult.SUCCESS;
+						MenuProvider containerProvider = new MenuProvider() {
+							@Override
+							public Component getDisplayName() {
+								return Component.translatable(be.getDisplayName());
+							}
 
-						}
+							@Override
+							public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
+									Player playerEntity) {
+								return new SinkCabinetMenu(windowId, playerInventory, be);
+							}
+						};
+						pPlayer.openMenu(containerProvider, buf -> buf.writeBlockPos(pPos));
+						return ItemInteractionResult.SUCCESS;
 					}
-				} else {
-					MenuProvider containerProvider = new MenuProvider() {
-						@Override
-						public Component getDisplayName() {
-							return Component.translatable(be.getDisplayName());
-						}
-
-						@Override
-						public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
-								Player playerEntity) {
-							return new SinkCabinetMenu(windowId, playerInventory, be);
-						}
-					};
-					pPlayer.openMenu(containerProvider, buf -> buf.writeBlockPos(pPos));
-					return ItemInteractionResult.SUCCESS;
 				}
 			}
-
 		}
 		return ItemInteractionResult.CONSUME;
 

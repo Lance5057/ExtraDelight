@@ -4,8 +4,10 @@ import java.util.Objects;
 
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.gui.HideableSlot;
+import com.lance5057.extradelight.network.HideableSlotUpdatePacket;
 
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -21,11 +23,13 @@ public class SinkCabinetMenu extends AbstractContainerMenu {
 //	private final ContainerData data;
 	private final ContainerLevelAccess canInteractWithCallable;
 	protected final Level level;
+	private final Player player;
 
 	protected SinkCabinetMenu(final int windowId, final Inventory playerInventory,
 			final SinkCabinetBlockEntity tileEntity) {
 		super(ExtraDelightContainers.SINK_MENU.get(), windowId);
 		this.tileEntity = tileEntity;
+		this.player = playerInventory.player;
 //		this.data = OvenDataIn;
 		this.level = playerInventory.player.level();
 		this.canInteractWithCallable = ContainerLevelAccess.create(tileEntity.getLevel(), tileEntity.getBlockPos());
@@ -87,7 +91,7 @@ public class SinkCabinetMenu extends AbstractContainerMenu {
 
 	@Override
 	public ItemStack quickMoveStack(Player pPlayer, int pIndex) {
-		int indexOutput = 9;
+		int indexOutput = 19;
 		int startPlayerInv = indexOutput;
 		int endPlayerInv = startPlayerInv + 36;
 
@@ -138,5 +142,12 @@ public class SinkCabinetMenu extends AbstractContainerMenu {
 				h.toggleActive();
 		});
 	}
+
+//	@Override
+//	public void sendAllDataToRemote() {
+//		super.sendAllDataToRemote();
+//		if (this.player instanceof ServerPlayer serverPlayer)
+//			serverPlayer.connection.send(new HideableSlotUpdatePacket(this.containerId));
+//	}
 
 }

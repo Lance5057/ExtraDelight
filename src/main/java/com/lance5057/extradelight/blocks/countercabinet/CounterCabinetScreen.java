@@ -13,8 +13,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class CounterCabinetScreen extends AbstractContainerScreen<CounterCabinetMenu> {
-	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-			"textures/gui/display.png");
+	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation
+			.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/display.png");
 	private static final WidgetSprites TAB_BUTTON = new WidgetSprites(
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "settings"),
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "settings"));
@@ -36,7 +36,15 @@ public class CounterCabinetScreen extends AbstractContainerScreen<CounterCabinet
 	}
 
 	@Override
+	public void render(GuiGraphics gui, final int mouseX, final int mouseY, float partialTicks) {
+		super.render(gui, mouseX, mouseY, partialTicks);
+
+		this.renderTooltip(gui, mouseX, mouseY);
+	}
+
+	@Override
 	protected void renderBg(GuiGraphics graphics, float pPartialTick, int pMouseX, int pMouseY) {
+
 		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 		if (this.minecraft == null)
 			return;
@@ -52,8 +60,7 @@ public class CounterCabinetScreen extends AbstractContainerScreen<CounterCabinet
 	}
 
 	@Override
-	protected void renderLabels(GuiGraphics p_281635_, int p_282681_, int p_283686_) {
-
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 	}
 
 	public void switchTabs() {

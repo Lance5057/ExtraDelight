@@ -1029,7 +1029,7 @@ public class Fermentation {
 
 		VatRecipeBuilder.pickle(new ItemStack(NAEM_MOO_ITEM.get(), 2), new ItemStack(Items.LILY_PAD, 2))
 				.requires(Ingredient.of(ExtraDelightTags.GROUND_PORK_RAW))
-				.requires(Ingredient.of(ExtraDelightTags.LEATHER_SCRAP))
+//				.requires(Ingredient.of(ExtraDelightTags.LEATHER_SCRAP))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC))
 				.requires(Ingredient.of(ModItems.COOKED_RICE.get()))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_CHILI))
@@ -1039,7 +1039,7 @@ public class Fermentation {
 
 		VatRecipeBuilder.pickle(new ItemStack(NAEM_MOO_ITEM.get(), 2), new ItemStack(Items.BIG_DRIPLEAF, 2))
 				.requires(Ingredient.of(ExtraDelightTags.GROUND_PORK_RAW))
-				.requires(Ingredient.of(ExtraDelightTags.LEATHER_SCRAP))
+//				.requires(Ingredient.of(ExtraDelightTags.LEATHER_SCRAP))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC))
 				.requires(Ingredient.of(ModItems.COOKED_RICE.get()))
 				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_CHILI))

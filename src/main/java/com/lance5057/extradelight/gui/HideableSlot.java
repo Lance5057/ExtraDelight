@@ -1,5 +1,6 @@
 package com.lance5057.extradelight.gui;
 
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
@@ -30,5 +31,15 @@ public class HideableSlot extends SlotItemHandler {
 	public boolean isHighlightable() {
 		return active;
 	}
+
+//	@Override
+//	public boolean mayPlace(ItemStack stack) {
+//		if (active) {
+//			if (stack.isEmpty())
+//				return false;
+//			return getItemHandler().isItemValid(index, stack);
+//		}
+//		return false;
+//	}
 
 }
