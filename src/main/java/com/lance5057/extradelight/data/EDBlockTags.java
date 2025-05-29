@@ -224,6 +224,9 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get(),
 				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get());
 
+		tag(BlockTags.FLOWER_POTS).add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(),
+				ExtraDelightBlocks.HAZELNUT_SAPLING.get(), ExtraDelightBlocks.APPLE_SAPLING.get());
+
 		// Dyed Tags
 		tag(Tags.Blocks.DYED_BLACK).add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get());
 		tag(Tags.Blocks.DYED_BLUE).add(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get());

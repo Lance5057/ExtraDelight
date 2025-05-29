@@ -592,6 +592,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(Fermentation.SALT_BLOCK.get());
 
 		feast(Fermentation.CHEESYMITE_SCROLL_BLOCK.get(), Fermentation.CHEESYMITE_SCROLL_BLOCK_ITEM.get(), Items.BOWL);
+
+		add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.CINNAMON_SAPLING.get()));
+		add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.HAZELNUT_SAPLING.get()));
+		add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.APPLE_SAPLING.get()));
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {

@@ -120,6 +120,7 @@ public class MortarBlock extends Block implements EntityBlock, IStyleable {
 							mbe.getFluidTank().drain(250, FluidAction.EXECUTE);
 
 							BlockEntityUtils.Inventory.givePlayerItemStack(i, pPlayer, pLevel, pPos);
+							pPlayer.getItemInHand(pHand).shrink(1);
 						}
 					}
 				} else {
