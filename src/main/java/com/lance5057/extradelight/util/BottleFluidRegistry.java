@@ -135,6 +135,7 @@ public class BottleFluidRegistry {
 		register(Ingredient.of(Fermentation.PICKLE_JUICE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.PICKLE_JUICE.FLUID.get(), bottleMB));
 
+		// If we just use Items.POTION we get an item called Uncraftable Potion instead of Water Bottle
 		register(Ingredient.of(PotionContents.createItemStack(Items.POTION, Potions.WATER)),
 				SizedFluidIngredient.of(Fluids.WATER, bottleMB));
 	}

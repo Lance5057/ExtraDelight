@@ -4,6 +4,8 @@ import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
+import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.item.alchemy.Potions;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
@@ -150,7 +152,12 @@ public class ChillerBlockEntity extends BlockEntity {
 				if (!f.isEmpty()) {
 					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
 						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
-						bowl.inventory.setStackInSlot(FLUID_IN, inputItem.getCraftingRemainingItem().copy());
+						// Because the blasted water bottle has no craftRemainder
+						if (inputItem.is(Items.POTION)) {
+							bowl.inventory.setStackInSlot(FLUID_IN, new ItemStack(Items.GLASS_BOTTLE));
+						} else {
+							bowl.inventory.setStackInSlot(FLUID_IN, inputItem.getCraftingRemainingItem().copy());
+						}
 					}
 				}
 			}
@@ -183,6 +190,12 @@ public class ChillerBlockEntity extends BlockEntity {
 						bowl.inventory.setStackInSlot(FLUID_OUT, i);
 					}
 				}
+				// Because the blasted water bottle has no craftRemainder
+				if (i.getItem() == Items.POTION && inputItem.getItem() == Items.GLASS_BOTTLE) {
+					FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
+					bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
+					bowl.inventory.setStackInSlot(FLUID_OUT, i);
+				}
 			}
 		}
 	}
@@ -198,12 +211,20 @@ public class ChillerBlockEntity extends BlockEntity {
 					inputItem.shrink(1);
 					bowl.inventory.setStackInSlot(DRIP_TRAY_OUT, stack.getFluid().getBucket().getDefaultInstance());
 				}
-			} else {
+			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
 				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getDripTray(),
 						bowl.getDripTray().getFluidAmount(), true).getAmount();
 				if (filled > 0) {
 					bowl.inventory.setStackInSlot(DRIP_TRAY_OUT, fluidHandlerItem.getContainer());
+				}
+			} else {
+				// Because the blasted water bottle has no craftRemainder
+				if (inputItem.getItem() == Items.GLASS_BOTTLE) {
+					FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
+					bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
+					// If we just use Items.POTION we get an item called Uncraftable Potion instead of Water Bottle
+					bowl.inventory.setStackInSlot(DRIP_TRAY_OUT, PotionContents.createItemStack(Items.POTION, Potions.WATER));
 				}
 			}
 		}

@@ -147,12 +147,17 @@ public class VatBlockEntity extends BlockEntity {
 					bowl.items.setStackInSlot(LIQUID_IN_SLOT, fluidHandlerItem.getContainer());
 
 				}
-			} else if (inputItem.is(Items.GLASS_BOTTLE)) {
+			} else {
 				FluidStack f = BottleFluidRegistry.getFluidFromBottle(inputItem);
 				if (!f.isEmpty()) {
 					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
 						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
-						bowl.items.setStackInSlot(LIQUID_IN_SLOT, new ItemStack(Items.GLASS_BOTTLE, 1));
+						// Because the blasted water bottle has no craftRemainder
+						if (inputItem.is(Items.POTION)) {
+							bowl.items.setStackInSlot(LIQUID_IN_SLOT, new ItemStack(Items.GLASS_BOTTLE));
+						} else {
+							bowl.items.setStackInSlot(LIQUID_IN_SLOT, inputItem.getCraftingRemainingItem().copy());
+						}
 					}
 				}
 			}
