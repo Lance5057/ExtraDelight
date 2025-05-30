@@ -2320,12 +2320,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.STONE_PRESSURE_PLATE))
 				.save(consumer, EDLoc("baking_stone"));
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.YEAST_POT.get())
-				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(Items.WATER_BUCKET)
+				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(Tags.Items.BUCKETS_WATER)
 				.requires(ExtraDelightTags.SWEETENER)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
 				.save(consumer, EDLoc("yeast_pot"));
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.VINEGAR_POT.get())
-				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(Items.WATER_BUCKET)
+				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(Tags.Items.BUCKETS_WATER)
 				.requires(ExtraDelightTags.SWEETENER).requires(Ingredient.of(ExtraDelightTags.FRUIT))
 				.requires(Ingredient.of(ExtraDelightTags.FRUIT))
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
@@ -2928,7 +2928,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.PUNCH_FEAST.get()).pattern("fff")
 				.pattern("sws").pattern(" b ").define('f', ExtraDelightTags.PROCESSED_FRUIT)
-				.define('s', ExtraDelightTags.SWEETENER).define('w', Items.WATER_BUCKET).define('b', Items.BOWL)
+				.define('s', ExtraDelightTags.SWEETENER).define('w', Tags.Items.BUCKETS_WATER).define('b', Items.BOWL)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.WATER_BUCKET))
 				.save(consumer, EDLoc("punch"));
 
@@ -3012,7 +3012,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("cinnamon_button"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.TAP.get(), 1).pattern(" l ").pattern("bcb")
-				.define('l', Items.LEVER).define('b', Items.WATER_BUCKET).define('c', Items.COPPER_INGOT)
+				.define('l', Items.LEVER).define('b', Tags.Items.BUCKETS_WATER).define('c', Items.COPPER_INGOT)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.COPPER_INGOT))
 				.save(consumer, EDLoc("tap"));
 
@@ -4208,7 +4208,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		pot(ExtraDelightItems.EGGNOG.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(ModItems.MILK_BOTTLE.get()),
-						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON), Ingredient.of(Items.EGG),
+						Ingredient.of(ExtraDelightTags.GROUND_CINNAMON), Ingredient.of(Tags.Items.EGGS),
 						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(Tags.Items.EGGS) },
 				"eggnog", consumer);
 
@@ -5084,7 +5084,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.OvenRecipe(new ItemStack(Items.CAKE, 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
 				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(CommonTags.FOODS_MILK)
-				.addIngredient(CommonTags.FOODS_MILK).addIngredient(CommonTags.FOODS_MILK).addIngredient(Items.EGG)
+				.addIngredient(CommonTags.FOODS_MILK).addIngredient(CommonTags.FOODS_MILK).addIngredient(Tags.Items.EGGS)
 				.addIngredient(ExtraDelightTags.SWEETENER, 2)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
 
@@ -5379,7 +5379,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ModItems.PIE_CRUST.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedBy("apple_pie", has(Items.APPLE)).save(consumer, EDLoc("apple_pie_stewed"));
 
-		bulkBake(ModItems.FRIED_EGG.get(), Ingredient.of(Items.EGG), consumer, ExtraDelightItems.TRAY.get(),
+		bulkBake(ModItems.FRIED_EGG.get(), Ingredient.of(Tags.Items.EGGS), consumer, ExtraDelightItems.TRAY.get(),
 				"fried_egg");
 		bulkBake(ModItems.BEEF_PATTY.get(), Ingredient.of(ModItems.MINCED_BEEF.get()), consumer,
 				ExtraDelightItems.TRAY.get(), "beef_patty");
@@ -5680,7 +5680,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(CommonTags.FOODS_MILK)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(CommonTags.FOODS_MILK).addIngredient(Items.EGG)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(CommonTags.FOODS_MILK).addIngredient(Tags.Items.EGGS)
 				.addIngredient(ExtraDelightTags.SWEETENER, 2)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(Items.WHEAT, Items.EGG, Items.SUGAR, Items.MILK_BUCKET).build(consumer);
 
@@ -5909,7 +5909,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CHICKEN_KIEV.get(), 2), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.TRAY.get()), false)
 				.addIngredient(ExtraDelightTags.CHICKEN_BREAST_RAW).addIngredient(ExtraDelightTags.PROCESSED_GARLIC)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(Items.EGG)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(Tags.Items.EGGS)
 				.addIngredient(ExtraDelightTags.BREAD_CRUMBS).build(consumer);
 	}
 

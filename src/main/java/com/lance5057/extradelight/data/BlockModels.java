@@ -663,6 +663,10 @@ public class BlockModels extends BlockStateProvider {
 					.build();
 		});
 
+		pottedBlock(this, ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "cinnamon_sapling", "cinnamon_sapling");
+		pottedBlock(this, ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "hazelnut_sapling", "crops/fruit/hazelnut/hazelnut_sapling");
+		pottedBlock(this, ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "apple_sapling", "crops/fruit/apple/apple_sapling");
+
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);
 	}
@@ -1089,6 +1093,14 @@ public class BlockModels extends BlockStateProvider {
 					.build();
 		});
 
+	}
+
+	private static void pottedBlock(BlockStateProvider bsp, Block block, String name, String path) {
+		bsp.simpleBlock(block,
+				new ConfiguredModel(bsp.models()
+						.withExistingParent("potted_" + name, "block/flower_pot_cross")
+						.texture("plant", bsp.modLoc("block/" + path))
+						.renderType("cutout")));
 	}
 
 	private static void simpleCross(BlockStateProvider bsp, Block block) {

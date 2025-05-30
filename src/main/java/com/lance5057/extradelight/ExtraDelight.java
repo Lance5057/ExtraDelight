@@ -80,5 +80,6 @@ public class ExtraDelight {
 	public void setupCommon(FMLCommonSetupEvent event) {
 		ExtraDelightBlocks.setup();
 		ExtraDelightItems.setup();
+		PottedPlants.setup();
 	}
 }

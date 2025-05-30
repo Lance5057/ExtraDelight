@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
+import net.minecraft.world.level.material.Fluids;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
@@ -112,7 +113,12 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				if (!f.isEmpty()) {
 					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
 						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
-						bowl.items.setStackInSlot(LIQUID_IN_SLOT, inputItem.getCraftingRemainingItem().copy());
+						// Because the blasted water bottle has no craftRemainder
+						if (inputItem.is(Items.POTION)) {
+							bowl.items.setStackInSlot(LIQUID_IN_SLOT, new ItemStack(Items.GLASS_BOTTLE));
+						} else {
+							bowl.items.setStackInSlot(LIQUID_IN_SLOT, inputItem.getCraftingRemainingItem().copy());
+						}
 					}
 				}
 			}
@@ -145,7 +151,12 @@ public class MixingBowlBlockEntity extends BlockEntity {
 						bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
 //						inputItem.shrink(1);
 						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, i);
-
+					}
+					// Because the blasted water bottle has no craftRemainder
+					if (i.getItem() == Items.POTION && inputItem.getItem() == Items.GLASS_BOTTLE) {
+						FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
+						bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
+						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, i);
 					}
 				}
 			}

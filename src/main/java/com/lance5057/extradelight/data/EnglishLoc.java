@@ -109,38 +109,35 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.vat.lid.off", "Lid Off");
 		this.add("extradelight.jei.info.vat.day", "%s Day");
 		this.add("extradelight.jei.info.vat.days", "%s Days");
-		
+
 		this.add("extradelight.jei.info.pickle_juice", "Drops from Pickle Jar items when emptied.");
-		
-//		 "tag.item.extradelight.baking_trays": "Baking Trays",
-//		  "tag.item.extradelight.broth": "Broth",
-//		  "tag.item.extradelight.candy_bowl_valid": "Valid for Candy Bowl",
-//		  "tag.item.extradelight.chocolate_bar_filling": "Chocolate Bar Filling",
-//		  "tag.item.extradelight.chocolate_box_valid": "Valid for Chocolate Box",
-//		  "tag.item.extradelight.chocolate_truffle_filling": "Chocolate Truffle Filling",
-//		  "tag.item.extradelight.corn_dim_confiscate": "Corn Confiscate",
-//		  "tag.item.extradelight.frying_oil": "Cooking Oil",
-//		  "tag.item.extradelight.jelly": "Jelly",
-//		  "tag.item.extradelight.makes_stock": "Makes Stock",
-//		  "tag.item.extradelight.processed.apple": "Processed Apples",
-//		  "tag.item.extradelight.processed.beetroot": "Processed Beetroots",
-//		  "tag.item.extradelight.processed.cabbage": "Processed Cabbages",
-//		  "tag.item.extradelight.processed.carrot": "Processed Carrot",
-//		  "tag.item.extradelight.processed.chili": "Processed Chilis",
-//		  "tag.item.extradelight.processed.cucumber": "Processed Cucumbers",
-//		  "tag.item.extradelight.processed.fruit": "Processed Fruits",
-//		  "tag.item.extradelight.processed.garlic": "Processed Garlics",
-//		  "tag.item.extradelight.processed.ginger": "Processed Gingers",
-//		  "tag.item.extradelight.processed.onion": "Processed Onions",
-//		  "tag.item.extradelight.processed.pickled.cucumber": "Processed Pickled Cucumbers",
-//		  "tag.item.extradelight.processed.potato": "Processed Potatoes",
-//		  "tag.item.extradelight.processed.produce": "Processed Produces",
-//		  "tag.item.extradelight.processed.tomato": "Processed Tomatoes",
-//		  "tag.item.extradelight.processed.vegetable": "Processed Vegetables",
-//		  "tag.item.extradelight.riceball_filling": "Riceball Filling",
-//		  "tag.item.extradelight.sweetener": "Sweetener",
-//		  "tag.item.extradelight.toast_or_bread_slice": "Toast or Bread Slice",
-//		  "tag.item.extradelight.toast_topping": "Toast Topping"
+
+		this.add("tag.item.extradelight.baking_trays", "Baking Trays");
+		this.add("tag.item.extradelight.broth", "Broth");
+		this.add("tag.item.extradelight.candy_bowl_valid", "Valid items to put in Candy Bowl");
+		this.add("tag.item.extradelight.chocolate_bar_filling", "Chocolate Bar fillings");
+		this.add("tag.item.extradelight.chocolate_box_valid", "Valid items to put in Chocolate Box");
+		this.add("tag.item.extradelight.chocolate_truffle_filling", "Chocolate Truffle fillings");
+		this.add("tag.item.extradelight.corn_dim_confiscate", "Items confiscated when leaving the Cornfield");
+		this.add("tag.item.extradelight.frying_oil", "Frying Oil");
+		this.add("tag.item.extradelight.jelly", "Jelly");
+		this.add("tag.item.extradelight.makes_stock", "Makes Stock");
+		this.add("tag.item.extradelight.processed.apple", "Processed Apple");
+		this.add("tag.item.extradelight.processed.beetroot", "Processed Beetroot");
+		this.add("tag.item.extradelight.processed.cabbage", "Processed Cabbage");
+		this.add("tag.item.extradelight.processed.carrot", "Processed Carrot");
+		this.add("tag.item.extradelight.processed.chili", "Processed Chili");
+		this.add("tag.item.extradelight.processed.cucumber", "Processed Cucumber");
+		this.add("tag.item.extradelight.processed.fruit", "Processed Fruit");
+		this.add("tag.item.extradelight.processed.garlic", "Processed Garlic");
+		this.add("tag.item.extradelight.processed.ginger", "Processed Ginger");
+		this.add("tag.item.extradelight.processed.onion", "Processed Onion");
+		this.add("tag.item.extradelight.processed.pickled.cucumber", "Processed Pickled Cucumber");
+		this.add("tag.item.extradelight.processed.potato", "Processed Potato");
+		this.add("tag.item.extradelight.processed.produce", "Processed Fruit & Vegetables");
+		this.add("tag.item.extradelight.processed.tomato", "Processed Tomato");
+		this.add("tag.item.extradelight.processed.vegetable", "Processed Vegetables");
+		this.add("tag.item.extradelight.riceball_filling", "Riceball fillings");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
@@ -1375,6 +1372,10 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.bottlefluid", "Decanting");
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
+
+		this.add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "Potted Cinnamon Sapling");
+		this.add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "Potted Hazelnut Sapling");
+		this.add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "Potted Apple Sapling");
 
 		Fermentation.EngLoc(this);
 		AestheticBlocks.EngLoc(this);
