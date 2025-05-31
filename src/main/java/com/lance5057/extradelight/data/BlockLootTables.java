@@ -658,25 +658,27 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition,
 			float amount) {
-		this.add(pCropBlock,
-				LootTable.lootTable()
-						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(amount))
-								.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)))
-						.withPool(
-								LootPool.lootPool().when(pDropGrownCropCondition)
-										.add(LootItem.lootTableItem(pGrownCropItem)
-												.apply(ApplyBonusCount.addBonusBinomialDistributionCount(
-														this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F,
-														1)))));
+		this.add(pCropBlock, LootTable.lootTable()
+				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+						.add(LootItem.lootTableItem(pSeedsItem).when(pDropGrownCropCondition)))
+				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(amount))
+						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)))
+				.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
+						.add(LootItem.lootTableItem(pGrownCropItem)
+								.apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+								this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F, 1)))));
 	}
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition) {
 		this.add(pCropBlock, LootTable.lootTable()
+				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+						.add(LootItem.lootTableItem(pSeedsItem).when(pDropGrownCropCondition)))
 				.withPool(LootPool.lootPool()
 						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)
 								.otherwise(LootItem.lootTableItem(pSeedsItem))))
-				.withPool(LootPool.lootPool().when(pDropGrownCropCondition).add(
-						LootItem.lootTableItem(pGrownCropItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+				.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
+						.add(LootItem.lootTableItem(pGrownCropItem)
+								.apply(ApplyBonusCount.addBonusBinomialDistributionCount(
 								this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F, 1)))));
 	}
 
