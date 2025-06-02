@@ -5419,6 +5419,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.SHEET.get(), "cooked_cactus");
 		bulkBake(ExtraDelightItems.CRISP_RICE.get(), Ingredient.of(CommonTags.CROPS_RICE), consumer,
 				ExtraDelightItems.TRAY.get(), "crisp_rice");
+		bulkBake(ExtraDelightItems.ROASTED_COCOA_BEANS.get(), Ingredient.of(Items.COCOA_BEANS), consumer,
+				ExtraDelightItems.TRAY.get(), "roasted_cocoa_beans");
 
 		// Halloween Start!
 		OvenRecipeBuilder

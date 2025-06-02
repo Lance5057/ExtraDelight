@@ -2725,7 +2725,7 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> CHILI_POWDER_SACK = ITEMS.register("chili_powder_sack",
 			() -> new BlockItem(ExtraDelightBlocks.CHILI_POWDER_SACK.get(), new Item.Properties()));
 	public static final DeferredItem<Item> SLICED_CHILI = EDItemGenerator
-			.register("sliced_chili", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
+			.register("sliced_chili", () -> new ToolTipConsumableItem(foodItem(EDFoods.CHILI), true))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> JALAPENO_STUFFED_POTATO = EDItemGenerator
 			.register("jalapeno_stuffed_potato",
