@@ -228,9 +228,10 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		
 		boolean applyChanges = action.simulate() ? false : true;
 		
-		FluidStack stack = drain.copyWithAmount(maxDrain);
+		int maxDrainSanitized = Math.min(maxDrain, keyval);
+		FluidStack stack = drain.copyWithAmount(maxDrainSanitized);
 		if (applyChanges) {
-			fluid.merge(key, 0-maxDrain, Integer::sum);
+			fluid.merge(key, 0-maxDrainSanitized, Integer::sum);
 			if(fluid.getOrDefault(key, -1) <= 0) fluid.remove(key);
 			if(full) full = false;
 		}

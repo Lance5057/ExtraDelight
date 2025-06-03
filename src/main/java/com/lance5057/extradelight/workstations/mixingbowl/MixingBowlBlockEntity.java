@@ -98,7 +98,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				if (filled == FluidType.BUCKET_VOLUME) {
 					bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
 							IFluidHandler.FluidAction.EXECUTE);
-					inputItem.shrink(1);
+					bowl.items.extractItem(LIQUID_IN_SLOT, 1, false); // is this actually doing something here?
 					bowl.items.setStackInSlot(LIQUID_IN_SLOT, Items.BUCKET.getDefaultInstance());
 
 				}
@@ -135,7 +135,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 						IFluidHandler.FluidAction.SIMULATE);
 				if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
 					bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
-					inputItem.shrink(1);
+					bowl.items.extractItem(LIQUID_OUT_SLOT, 1, false);
 					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, stack.getFluid().getBucket().getDefaultInstance());
 				}
 			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
@@ -349,9 +349,9 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	private void clearItems(int k) {
 		for (int i = 0; i < 9; i++) {
-			items.getStackInSlot(i).shrink(1);
+			if(!items.getStackInSlot(i).isEmpty()) items.extractItem(i, 1, false);
 		}
-		items.getStackInSlot(CONTAINER_SLOT).shrink(k);
+		if(!items.getStackInSlot(CONTAINER_SLOT).isEmpty()) items.extractItem(CONTAINER_SLOT, k, false);
 	}
 
 	protected Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe() {
@@ -405,21 +405,21 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				this.containerItem = curRecipe.getUsedItem().copy();
 
 				ItemStack i = curRecipe.getResultItem(player.level().registryAccess()).copy();
-
-//				
+				int k = i.getCount();
+				var fl = curRecipe.getFluids();
+				
 
 				i.onCraftedBy(player.level(), player, 1);
 //				NeoForgeEventFactory.firePlayerCraftingEvent(player, i, new RecipeWrapper(items));
 				BlockEntityUtils.Inventory.givePlayerItemStack(i, player, level, worldPosition);
 				dropContainers(items, player);
-				clearItems(i.getCount());
-				removeFluids(curRecipe.getFluids());
+				clearItems(k);
+				removeFluids(fl);
 				this.stirs = 0;
 //				items.setStackInSlot(CONTAINER_SLOT, i);
-				this.updateInventory();
 				complete = true;
 			}
-			updateInventory();
+			this.updateInventory();
 		}
 
 		return InteractionResult.SUCCESS;
