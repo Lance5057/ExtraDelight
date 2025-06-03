@@ -93,34 +93,34 @@ public class MixingBowlFluidWidget extends AbstractWidget {
 			Minecraft minecraft = Minecraft.getInstance();
 			MixingBowlTank fluidTank = this.getFluid.get();
 			List<FormattedCharSequence> list = new ArrayList<FormattedCharSequence>();
-			if (!getFluid.get().isEmpty(5)) {
-				list.add(getFluid.get().getFluid(5).getDisplayName().getVisualOrderText());
-				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(5) + "mB").withColor(0x999999)
+			if (!fluidTank.isEmpty(5)) {
+				list.add(fluidTank.getFluid(5).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + fluidTank.getFluidAmount(5) + "mB").withColor(0x999999)
 						.getVisualOrderText());
 			}
-			if (!getFluid.get().isEmpty(4)) {
-				list.add(getFluid.get().getFluid(4).getDisplayName().getVisualOrderText());
-				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(4) + "mB").withColor(0x999999)
+			if (!fluidTank.isEmpty(4)) {
+				list.add(fluidTank.getFluid(4).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + fluidTank.getFluidAmount(4) + "mB").withColor(0x999999)
 						.getVisualOrderText());
 			}
-			if (!getFluid.get().isEmpty(3)) {
-				list.add(getFluid.get().getFluid(3).getDisplayName().getVisualOrderText());
-				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(3) + "mB").withColor(0x999999)
+			if (!fluidTank.isEmpty(3)) {
+				list.add(fluidTank.getFluid(3).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + fluidTank.getFluidAmount(3) + "mB").withColor(0x999999)
 						.getVisualOrderText());
 			}
-			if (!getFluid.get().isEmpty(2)) {
-				list.add(getFluid.get().getFluid(2).getDisplayName().getVisualOrderText());
-				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(2) + "mB").withColor(0x999999)
+			if (!fluidTank.isEmpty(2)) {
+				list.add(fluidTank.getFluid(2).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + fluidTank.getFluidAmount(2) + "mB").withColor(0x999999)
 						.getVisualOrderText());
 			}
-			if (!getFluid.get().isEmpty(1)) {
-				list.add(getFluid.get().getFluid(1).getDisplayName().getVisualOrderText());
-				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(1) + "mB").withColor(0x999999)
+			if (!fluidTank.isEmpty(1)) {
+				list.add(fluidTank.getFluid(1).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + fluidTank.getFluidAmount(1) + "mB").withColor(0x999999)
 						.getVisualOrderText());
 			}
-			if (!getFluid.get().isEmpty(0)) {
-				list.add(getFluid.get().getFluid(0).getDisplayName().getVisualOrderText());
-				list.add(Component.literal(" - " + getFluid.get().getFluidAmount(0) + "mB").withColor(0x999999)
+			if (!fluidTank.isEmpty(0)) {
+				list.add(fluidTank.getFluid(0).getDisplayName().getVisualOrderText());
+				list.add(Component.literal(" - " + fluidTank.getFluidAmount(0) + "mB").withColor(0x999999)
 						.getVisualOrderText());
 			}
 			guiGraphics.renderTooltip(minecraft.font, list, mouseX, mouseY);

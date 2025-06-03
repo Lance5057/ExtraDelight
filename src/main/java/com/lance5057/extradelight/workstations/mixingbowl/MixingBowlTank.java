@@ -1,8 +1,11 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -10,11 +13,13 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.IFluidTank;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
+import com.lance5057.extradelight.fluids.FluidKey;
 
 public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	protected Predicate<FluidStack> validator;
-	protected FluidStack[] fluid;
+	protected LinkedHashMap<FluidKey, Integer> fluid;
 	protected int capacity;
+	private boolean full;
 
 	public MixingBowlTank(int capacity) {
 		this(capacity, e -> true);
@@ -23,12 +28,14 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	public MixingBowlTank(int capacity, Predicate<FluidStack> validator) {
 		this.capacity = capacity;
 		this.validator = validator;
-
-		fluid = new FluidStack[getTanks()];
-		for (int i = 0; i < getTanks(); i++)
-			fluid[i] = FluidStack.EMPTY;
+		this.fluid = new LinkedHashMap<>();
+		this.full = false;
 	}
-
+	
+	public int getTotalAmount() {
+		return fluid.values().stream().mapToInt(i -> i).sum();
+	}
+	
 	public MixingBowlTank setCapacity(int capacity) {
 		this.capacity = capacity;
 		return this;
@@ -46,35 +53,53 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	}
 
 	public int getCapacity(int tank) {
-		return capacity;
+		return capacity/6;
 	}
-
+	
 	public FluidStack getFluid(int tank) {
-		return fluid[tank];
+		Iterator<Map.Entry<FluidKey, Integer>> itr = fluid.entrySet().iterator();
+		while(tank-- > 0 && itr.hasNext()) {
+			itr.next();
+		}
+		if(!itr.hasNext()) return FluidStack.EMPTY;
+		var tmp = itr.next();
+		FluidStack target = tmp.getKey().createStack(tmp.getValue());
+		return target;
 	}
 
 	public int getFluidAmount(int tank) {
-		return fluid[tank].getAmount();
+		FluidStack target = getFluid(tank);
+		return target.getAmount();
 	}
 
-	public MixingBowlTank readFromNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
-		for (int i = 0; i < this.getTanks(); i++)
-			fluid[i] = FluidStack.parseOptional(lookupProvider, nbt.getCompound("Fluid" + i));
+	public synchronized MixingBowlTank readFromNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
+		this.fluid.clear();
+		int i = 0;
+		while(nbt.contains("Fluid" + i)) {
+			FluidStack dat = FluidStack.parseOptional(lookupProvider, nbt.getCompound("Fluid" + i));
+			if (!dat.isEmpty()) fill(dat,FluidAction.EXECUTE);
+			i++;
+		}
 		return this;
 	}
 
-	public CompoundTag writeToNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
-		for (int i = 0; i < this.getTanks(); i++)
-			if (!fluid[i].isEmpty()) {
-				nbt.put("Fluid" + i, fluid[i].save(lookupProvider));
-			}
-
-		return nbt;
+	public synchronized CompoundTag writeToNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
+		int index = 0;
+	    for (Map.Entry<FluidKey, Integer> entry : fluid.entrySet()) {
+	        if (entry.getValue() > 0) {
+	            FluidStack stack = entry.getKey().createStack(entry.getValue());
+	            if (!stack.isEmpty()) {
+	                nbt.put("Fluid" + index, stack.save(lookupProvider));
+	                index++;
+	            }
+	        }
+	    }
+	    return nbt;
 	}
 
 	@Override
 	public int getTanks() {
-		return 6;
+		return fluid.size();
 	}
 
 	@Override
@@ -84,14 +109,43 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 
 	@Override
 	public int getTankCapacity(int tank) {
-		return getCapacity(tank);
+		return capacity;
 	}
 
 	@Override
 	public boolean isFluidValid(int tank, FluidStack stack) {
 		return isFluidValid(tank, stack);
 	}
+	
+	@Override
+	public int fill(FluidStack resource, FluidAction action) {
+			int fill = doFill(resource, action);
+			return fill;
+	}
+	
+	private synchronized int doFill(FluidStack resource, FluidAction action) {
+		if (resource.isEmpty() || !isFluidValid(resource)) return 0;
+		if (full) return 0;
+		
 
+		int vacancy = capacity - getTotalAmount();
+		int fillTotal = resource.getAmount();
+		boolean applyChanges = action.simulate() ? false : true;
+		
+		
+		if (vacancy < fillTotal) {
+			if(applyChanges && vacancy == 0) full = true;
+			return 0;
+		}
+		var key = new FluidKey(resource);
+		
+		if (fillTotal <= 0) return 0;
+		if (applyChanges) fluid.merge(key, resource.getAmount(), Integer::sum);
+		if (applyChanges) onContentsChanged();
+		
+		return fillTotal;
+	}
+	/*
 	@Override
 	public int fill(FluidStack resource, FluidAction action) {
 		for (int i = 0; i < this.getTanks(); i++) {
@@ -102,6 +156,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		return 0;
 	}
 
+	
 	private int doFill(FluidStack resource, FluidAction action, int tank) {
 		if (resource.isEmpty() || !isFluidValid(resource)) {
 			return 0;
@@ -134,15 +189,60 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		if (filled > 0)
 			onContentsChanged();
 		return filled;
+	}*/
+	
+	@Override
+	public FluidStack drain(FluidStack resource, FluidAction action) {
+			return doDrain(resource, action);
 	}
-
+	
+	public FluidStack drain(SizedFluidIngredient resource, FluidAction action) {
+			FluidStack tmp = resource.getFluids()[0];
+			return doDrain(tmp, action);
+	}
+	
+	@Override
+	public FluidStack drain(int maxDrain, FluidAction action) {
+		Iterator<Map.Entry<FluidKey, Integer>> itr = fluid.entrySet().iterator();
+		while (itr.hasNext()) {
+			var i = itr.next();
+			FluidStack s = doDrain(i.getKey().createStack(maxDrain), action);
+			if (!s.isEmpty()) return s;
+		}
+		return FluidStack.EMPTY;
+	}
+	
+	private FluidStack doDrain(FluidStack drain, FluidAction action) {
+		return doDrain(drain,action,false);
+	}
+	
+	private synchronized FluidStack doDrain(FluidStack drain, FluidAction action, boolean iff) {
+		// iff - this will succeed if and only if maxDrain <= amount stored; default is false
+		int maxDrain = drain.getAmount();
+		if (maxDrain <= 0) return FluidStack.EMPTY;
+		
+		FluidKey key = new FluidKey(drain);
+		int keyval = fluid.getOrDefault(key, -1);
+		if (keyval == -1) return FluidStack.EMPTY;
+		if (iff && maxDrain > keyval) return FluidStack.EMPTY;
+		
+		boolean applyChanges = action.simulate() ? false : true;
+		
+		FluidStack stack = drain.copyWithAmount(maxDrain);
+		if (applyChanges) {
+			fluid.merge(key, 0-maxDrain, Integer::sum);
+			if(fluid.getOrDefault(key, -1) <= 0) fluid.remove(key);
+			if(full) full = false;
+		}
+		return stack;
+	}
+	/*
 	@Override
 	public FluidStack drain(FluidStack resource, FluidAction action) {
 		for (int i = 0; i < this.getTanks(); i++) {
 			if (!resource.isEmpty() && FluidStack.isSameFluidSameComponents(resource, fluid[i])) {
 				return doDrain(resource.getAmount(), action, i);
 			}
-
 		}
 		return FluidStack.EMPTY;
 	}
@@ -156,7 +256,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		}
 		return FluidStack.EMPTY;
 	}
-
+	
 	@Override
 	public FluidStack drain(int maxDrain, FluidAction action) {
 		for (int i = 0; i < this.getTanks(); i++) {
@@ -179,7 +279,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		}
 		return stack;
 	}
-
+	*/
 	protected void onContentsChanged() {
 	}
 
@@ -198,23 +298,22 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		return 0;
 	}
 
-	public void setFluid(FluidStack stack, int tank) {
-		this.fluid[tank] = stack;
-	}
+//	public void setFluid(FluidStack stack, int tank) {
+//		this.fluid[tank] = stack;
+//	}
 
 	public boolean isEmpty(int tank) {
-		return fluid[tank].isEmpty();
+		return (getFluidAmount(tank) == 0);
 	}
 
 	public int getSpace(int tank) {
-		return Math.max(0, capacity - fluid[tank].getAmount());
+		return Math.max(0, capacity - getFluidAmount(tank));
 	}
 
 	public List<FluidStack> getAsList() {
 		List<FluidStack> l = new ArrayList<FluidStack>();
 		for (int i = 0; i < this.getTanks(); i++)
-			if (!this.getFluid(i).isEmpty())
-				l.add(getFluid(i));
+			l.add(getFluid(i));
 		return l;
 	}
 }

@@ -69,11 +69,13 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	private MixingBowlTank createFluidHandler() {
-		MixingBowlTank tank = new MixingBowlTank(FluidType.BUCKET_VOLUME) {
+		MixingBowlTank tank = new MixingBowlTank(FluidType.BUCKET_VOLUME * 6) { // 6000
 			@Override
 			protected void onContentsChanged() {
+				var level = MixingBowlBlockEntity.this.getLevel();
+				if (level == null) return;
 				MixingBowlBlockEntity.this.requestModelDataUpdate();
-				MixingBowlBlockEntity.this.getLevel().sendBlockUpdated(MixingBowlBlockEntity.this.getBlockPos(),
+				level.sendBlockUpdated(MixingBowlBlockEntity.this.getBlockPos(),
 						MixingBowlBlockEntity.this.getBlockState(), MixingBowlBlockEntity.this.getBlockState(),
 						Block.UPDATE_ALL);
 				MixingBowlBlockEntity.this.setChanged();
@@ -170,6 +172,11 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	private ItemStackHandler createHandler() {
 		return new ItemStackHandler(GHOST_SLOT + 1) {
 			@Override
+			public int getSlotLimit(int slot) {
+				if (slot == LIQUID_IN_SLOT || slot == LIQUID_OUT_SLOT) return 1;
+				else return 64;
+			}
+			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				if (slot == LIQUID_IN_SLOT || slot == LIQUID_OUT_SLOT)
 					return 1;
@@ -182,13 +189,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 //				if (slot == LIQUID_IN_SLOT)
 //					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
 //						return true;
-//					else
-//						return false;
-//				if (slot == LIQUID_OUT_SLOT)
-//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-//						return true;
-//					else
-//						return false;
 				if (slot == GHOST_SLOT)
 					return false;
 				return true;
