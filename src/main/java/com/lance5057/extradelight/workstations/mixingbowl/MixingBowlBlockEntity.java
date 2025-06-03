@@ -69,11 +69,13 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	}
 
 	private MixingBowlTank createFluidHandler() {
-		MixingBowlTank tank = new MixingBowlTank(FluidType.BUCKET_VOLUME) {
+		MixingBowlTank tank = new MixingBowlTank(FluidType.BUCKET_VOLUME * 6) { // 6000
 			@Override
 			protected void onContentsChanged() {
+				var level = MixingBowlBlockEntity.this.getLevel();
+				if (level == null) return;
 				MixingBowlBlockEntity.this.requestModelDataUpdate();
-				MixingBowlBlockEntity.this.getLevel().sendBlockUpdated(MixingBowlBlockEntity.this.getBlockPos(),
+				level.sendBlockUpdated(MixingBowlBlockEntity.this.getBlockPos(),
 						MixingBowlBlockEntity.this.getBlockState(), MixingBowlBlockEntity.this.getBlockState(),
 						Block.UPDATE_ALL);
 				MixingBowlBlockEntity.this.setChanged();
@@ -96,7 +98,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				if (filled == FluidType.BUCKET_VOLUME) {
 					bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
 							IFluidHandler.FluidAction.EXECUTE);
-					inputItem.shrink(1);
+					bowl.items.extractItem(LIQUID_IN_SLOT, 1, false); // is this actually doing something here?
 					bowl.items.setStackInSlot(LIQUID_IN_SLOT, Items.BUCKET.getDefaultInstance());
 
 				}
@@ -133,7 +135,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 						IFluidHandler.FluidAction.SIMULATE);
 				if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
 					bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
-					inputItem.shrink(1);
+					bowl.items.extractItem(LIQUID_OUT_SLOT, 1, false);
 					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, stack.getFluid().getBucket().getDefaultInstance());
 				}
 			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
@@ -170,6 +172,11 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	private ItemStackHandler createHandler() {
 		return new ItemStackHandler(GHOST_SLOT + 1) {
 			@Override
+			public int getSlotLimit(int slot) {
+				if (slot == LIQUID_IN_SLOT || slot == LIQUID_OUT_SLOT) return 1;
+				else return 64;
+			}
+			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				if (slot == LIQUID_IN_SLOT || slot == LIQUID_OUT_SLOT)
 					return 1;
@@ -179,16 +186,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
-//				if (slot == LIQUID_IN_SLOT)
-//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-//						return true;
-//					else
-//						return false;
-//				if (slot == LIQUID_OUT_SLOT)
-//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-//						return true;
-//					else
-//						return false;
 				if (slot == GHOST_SLOT)
 					return false;
 				return true;
@@ -352,9 +349,9 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	private void clearItems(int k) {
 		for (int i = 0; i < 9; i++) {
-			items.getStackInSlot(i).shrink(1);
+			if(!items.getStackInSlot(i).isEmpty()) items.extractItem(i, 1, false);
 		}
-		items.getStackInSlot(CONTAINER_SLOT).shrink(k);
+		if(!items.getStackInSlot(CONTAINER_SLOT).isEmpty()) items.extractItem(CONTAINER_SLOT, k, false);
 	}
 
 	protected Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe() {
@@ -365,6 +362,16 @@ public class MixingBowlBlockEntity extends BlockEntity {
 						@Override
 						public int size() {
 							return 9;
+						}
+						@Override
+						public boolean isEmpty() {
+							boolean res = true;
+							if(this.getTank().getTotalAmount() != 0) return false;
+							for(int i=0;i<this.inv.getSlots();i++) if (!this.inv.getStackInSlot(i).isEmpty()) {
+								res = false;
+								break;
+							}
+							return res;
 						}
 					}, level);
 
@@ -398,21 +405,21 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				this.containerItem = curRecipe.getUsedItem().copy();
 
 				ItemStack i = curRecipe.getResultItem(player.level().registryAccess()).copy();
-
-//				
+				int k = i.getCount();
+				var fl = curRecipe.getFluids();
+				
 
 				i.onCraftedBy(player.level(), player, 1);
 //				NeoForgeEventFactory.firePlayerCraftingEvent(player, i, new RecipeWrapper(items));
 				BlockEntityUtils.Inventory.givePlayerItemStack(i, player, level, worldPosition);
 				dropContainers(items, player);
-				clearItems(i.getCount());
-				removeFluids(curRecipe.getFluids());
+				clearItems(k);
+				removeFluids(fl);
 				this.stirs = 0;
 //				items.setStackInSlot(CONTAINER_SLOT, i);
-				this.updateInventory();
 				complete = true;
 			}
-			updateInventory();
+			this.updateInventory();
 		}
 
 		return InteractionResult.SUCCESS;
