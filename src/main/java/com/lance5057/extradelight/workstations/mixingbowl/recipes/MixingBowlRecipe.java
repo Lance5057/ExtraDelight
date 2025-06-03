@@ -60,7 +60,7 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 
 	@Override
 	public boolean matches(MixingBowlRecipeWrapper input, Level level) {
-		StackedContents stackedcontents = new StackedContents();
+//		StackedContents stackedcontents = new StackedContents();
 		java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
 		int i = 0;
 
@@ -74,8 +74,11 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 				inputs.add(itemstack);
 			}
 		}
-
-		return i == this.ingredients.size() && RecipeMatcher.findMatches(inputs, this.ingredients) != null
+		
+		boolean itemMatchFlag = (this.ingredients == null || this.ingredients.isEmpty() || ItemStack.isSameItem(this.ingredients.get(0).getItems()[0],ItemStack.EMPTY)) ? // some failsafes
+				i == 0 
+				: i == this.ingredients.size() && RecipeMatcher.findMatches(inputs, this.ingredients) != null;
+		return itemMatchFlag
 				&& matchFluids(input.getTank().getAsList()) && ItemStack.isSameItem(usedItem, input.getItem(9))
 				&& input.getItem(9).getCount() >= usedItem.getCount();
 	}
@@ -149,7 +152,7 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 
 						Ingredient.LIST_CODEC.fieldOf("ingredients").xmap(ing -> {
 							NonNullList<Ingredient> nonNullList = NonNullList.create();
-							nonNullList.addAll(ing);
+							if(!ing.isEmpty())nonNullList.addAll(ing);
 							return nonNullList;
 						}, ing -> ing).forGetter(MixingBowlRecipe::getIngredients),
 

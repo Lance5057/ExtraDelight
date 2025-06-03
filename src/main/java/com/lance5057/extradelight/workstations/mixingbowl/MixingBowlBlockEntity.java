@@ -186,9 +186,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
-//				if (slot == LIQUID_IN_SLOT)
-//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-//						return true;
 				if (slot == GHOST_SLOT)
 					return false;
 				return true;
@@ -365,6 +362,16 @@ public class MixingBowlBlockEntity extends BlockEntity {
 						@Override
 						public int size() {
 							return 9;
+						}
+						@Override
+						public boolean isEmpty() {
+							boolean res = true;
+							if(this.getTank().getTotalAmount() != 0) return false;
+							for(int i=0;i<this.inv.getSlots();i++) if (!this.inv.getStackInSlot(i).isEmpty()) {
+								res = false;
+								break;
+							}
+							return res;
 						}
 					}, level);
 
