@@ -52,7 +52,12 @@ public class BlockEntityUtils {
 
 		public static void givePlayerItemStack(ItemStack stack, Player player, Level level, BlockPos pos) {
 			if (!player.addItem(stack))
-				level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), stack));
+				dropItemInWorld(stack, level, pos);
+		}
+
+		public static void dropItemInWorld(ItemStack stack, Level level, BlockPos pos) {
+			level.addFreshEntity(
+					new ItemEntity(level, pos.getCenter().x, pos.getCenter().y + 0.5f, pos.getCenter().z, stack));
 		}
 
 		public static int getEmptySlots(IItemHandler inv) {

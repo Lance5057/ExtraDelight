@@ -810,6 +810,8 @@ public class EDItemTags extends ItemTagsProvider {
 						Fermentation.STEAK_PICKLED_ONION_PIE_ITEM.get(), Fermentation.YEAST_SPREAD.get(),
 						Fermentation.PICKLE_JUICE.get())
 				.addTag(ExtraDelightTags.CONDIMENTS);
+		
+		tag(CommonTags.FOODS_MILK).add(Fermentation.SOY_MILK.get());
 
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);

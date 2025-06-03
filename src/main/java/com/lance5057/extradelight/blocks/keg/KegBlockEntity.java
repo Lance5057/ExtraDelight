@@ -54,15 +54,19 @@ public class KegBlockEntity extends BlockEntity {
 	}
 
 	public boolean use(Player player, InteractionHand hand) {
-		ItemStack i = BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid()).copy();
-		if (ItemStack.isSameItem(player.getItemInHand(hand), i)) {
+		ItemStack i = BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid()).getCraftingRemainingItem()
+				.copy();
+		ItemStack i2 = player.getItemInHand(hand);
+		if (ItemStack.isSameItem(i2, i)) {
 
 			if (!i.isEmpty()) {
 				if (this.getTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
 					this.getTank().drain(250, FluidAction.EXECUTE);
 //					inputItem.shrink(1);
 //					this.items.setStackInSlot(BUCKET_SLOT_OUT, i);
-					BlockEntityUtils.Inventory.givePlayerItemStack(i, player, level, worldPosition);
+					BlockEntityUtils.Inventory.givePlayerItemStack(
+							BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid()).copy(), player, level,
+							worldPosition);
 					player.getItemInHand(hand).shrink(1);
 					return true;
 				}
@@ -74,8 +78,7 @@ public class KegBlockEntity extends BlockEntity {
 					this.getTank().fill(stack, FluidAction.EXECUTE);
 					player.getItemInHand(hand).shrink(1);
 					BlockEntityUtils.Inventory.givePlayerItemStack(
-							player.getItemInHand(hand).getCraftingRemainingItem().copy(), player, level,
-							worldPosition);
+							player.getItemInHand(hand).getCraftingRemainingItem().copy(), player, level, worldPosition);
 					return true;
 				} else
 					return false;

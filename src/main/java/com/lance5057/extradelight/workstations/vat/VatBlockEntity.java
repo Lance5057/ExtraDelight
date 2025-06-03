@@ -8,7 +8,9 @@ import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightConfig;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipeWrapper;
@@ -312,10 +314,13 @@ public class VatBlockEntity extends BlockEntity {
 						SizedFluidIngredient sfi = recipeholder.value().getFluid();
 						if (sfi.test(vat.fluid.getFluid()))
 							vat.fluid.drain(sfi.amount(), FluidAction.EXECUTE);
-						ItemUtils.spawnItemEntity(level,
-								vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).copy().getCraftingRemainingItem().copy(),
-								vat.getBlockPos().getX(), vat.getBlockPos().getY() + 1, vat.getBlockPos().getZ(), 0, 0,
-								0);
+						BlockEntityUtils.Inventory.dropItemInWorld(
+								vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).getCraftingRemainingItem().copy(),
+								level, vat.getBlockPos());
+//						ItemUtils.spawnItemEntity(level,
+//								vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).getCraftingRemainingItem().copy(),
+//								vat.getBlockPos().getX(), vat.getBlockPos().getY() + 1, vat.getBlockPos().getZ(), 0, 0,
+//								0);
 						vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
 
 						vat.items.insertItem(OUTPUT_SLOT, result, false);
@@ -328,10 +333,14 @@ public class VatBlockEntity extends BlockEntity {
 					vat.stageTotal = recipeholder.value().getStages();
 
 					if (vat.cookTime >= vat.cookTimeTotal) {
-						ItemUtils.spawnItemEntity(level,
-								vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).copy().getCraftingRemainingItem(),
-								vat.getBlockPos().getX(), vat.getBlockPos().getY() + 1, vat.getBlockPos().getZ(), 0, 0,
-								0);
+//						ItemUtils.spawnItemEntity(level,
+//								vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).copy().getCraftingRemainingItem(),
+//								vat.getBlockPos().getX(), vat.getBlockPos().getY() + 1, vat.getBlockPos().getZ(), 0, 0,
+//								0);
+
+						BlockEntityUtils.Inventory.dropItemInWorld(
+								vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).getCraftingRemainingItem().copy(),
+								level, vat.getBlockPos());
 						vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT).shrink(1);
 						vat.cookTime = 0;
 						vat.stage++;
@@ -342,17 +351,18 @@ public class VatBlockEntity extends BlockEntity {
 										.test(vat.items.getStackInSlot(FERMENTATION_INPUT_SLOT))) {
 									if (recipeholder.value().getStageIngredients().get(vat.stage).lid) {
 										if (vat.hasLid) {
-											vat.cookTime++;
+											increaseCookTime(vat);
 										}
 									} else if (!level.getBlockState(vat.worldPosition.above())
 											.is(ExtraDelightBlocks.LID)) {
-										vat.cookTime++;
+										increaseCookTime(vat);
 									}
 
 								}
 							}
 						} else
-							vat.cookTime++;
+
+							increaseCookTime(vat);
 					}
 				}
 			} else {
@@ -361,6 +371,13 @@ public class VatBlockEntity extends BlockEntity {
 			}
 			vat.updateInventory();
 		}
+	}
+
+	static void increaseCookTime(VatBlockEntity vat) {
+		if (ExtraDelightConfig.ENABLE_DEBUG_MODE.isFalse())
+			vat.cookTime++;
+		else
+			vat.cookTime += 1000;
 	}
 
 	private static void subtractItems(VatBlockEntity chiller, int k) {
@@ -379,8 +396,8 @@ public class VatBlockEntity extends BlockEntity {
 		double z = chiller.worldPosition.getZ();
 
 		for (int i = 0; i < 6; i++) {
-			ItemUtils.spawnItemEntity(level, chiller.items.getStackInSlot(i).copy().getCraftingRemainingItem().copy(), x, y, z,
-					0, 0, 0);
+			ItemUtils.spawnItemEntity(level, chiller.items.getStackInSlot(i).copy().getCraftingRemainingItem().copy(),
+					x, y, z, 0, 0, 0);
 
 		}
 

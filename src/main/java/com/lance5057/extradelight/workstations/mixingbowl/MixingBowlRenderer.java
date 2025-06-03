@@ -1,18 +1,28 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
 import org.jetbrains.annotations.NotNull;
+import org.joml.Matrix3f;
+import org.joml.Matrix4f;
 import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
+import com.lance5057.extradelight.util.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.material.Fluid;
+import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.items.IItemHandler;
 
 public class MixingBowlRenderer implements BlockEntityRenderer<MixingBowlBlockEntity> {
@@ -38,6 +48,30 @@ public class MixingBowlRenderer implements BlockEntityRenderer<MixingBowlBlockEn
 //		renderStack(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv, 24, 31);
 //		renderSolid(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv);
 //		renderFinish(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv);
+
+		if (pBlockEntity.getFluidTank() instanceof MixingBowlTank mbt) {
+			if (!mbt.getFluid().isEmpty()) {
+				VertexConsumer vertexConsumer = pBufferSource.getBuffer(Sheets.translucentCullBlockSheet());
+				Matrix4f mat = pPoseStack.last().pose();
+				Matrix3f matrix3f = pPoseStack.last().normal();
+
+				pPoseStack.pushPose();
+
+				FluidStack fluidStack = mbt.getFluid(); //pBlockEntity.getFluidTank().getFluid();
+				Fluid fluid = fluidStack.getFluid();
+				IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid);
+
+				RenderUtil.buildPlane(new Vector3f(0.2f, 0.2f, 0.2f), new Vector3f(0.2f, 0.2f, 0.8f),
+						new Vector3f(0.8f, 0.2f, 0.8f), new Vector3f(0.8f, 0.2f, 0.2f), vertexConsumer, mat, matrix3f,
+						fluidTypeExtensions.getTintColor(fluidStack),
+						RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), Direction.UP.getNormal(), pPackedLight,
+						pPackedOverlay, pPoseStack);
+
+				pPoseStack.popPose();
+
+			}
+			
+		}
 
 		timer++;
 	}

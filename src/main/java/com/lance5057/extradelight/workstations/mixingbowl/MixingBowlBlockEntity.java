@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
-import net.minecraft.world.level.material.Fluids;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
@@ -73,7 +72,8 @@ public class MixingBowlBlockEntity extends BlockEntity {
 			@Override
 			protected void onContentsChanged() {
 				var level = MixingBowlBlockEntity.this.getLevel();
-				if (level == null) return;
+				if (level == null)
+					return;
 				MixingBowlBlockEntity.this.requestModelDataUpdate();
 				level.sendBlockUpdated(MixingBowlBlockEntity.this.getBlockPos(),
 						MixingBowlBlockEntity.this.getBlockState(), MixingBowlBlockEntity.this.getBlockState(),
@@ -98,8 +98,10 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				if (filled == FluidType.BUCKET_VOLUME) {
 					bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
 							IFluidHandler.FluidAction.EXECUTE);
-					bowl.items.extractItem(LIQUID_IN_SLOT, 1, false); // is this actually doing something here?
-					bowl.items.setStackInSlot(LIQUID_IN_SLOT, Items.BUCKET.getDefaultInstance());
+					BlockEntityUtils.Inventory.dropItemInWorld(Items.BUCKET.getDefaultInstance(), bowl.level,
+							bowl.worldPosition);
+
+					bowl.items.getStackInSlot(LIQUID_IN_SLOT).shrink(1);
 
 				}
 			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
@@ -107,20 +109,26 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				int filled = FluidUtil.tryFluidTransfer(bowl.getFluidTank(), fluidHandlerItem,
 						bowl.getFluidTank().getFluidAmount(), true).getAmount();
 				if (filled > 0) {
-					bowl.items.setStackInSlot(LIQUID_IN_SLOT, fluidHandlerItem.getContainer());
 
+					bowl.items.getStackInSlot(LIQUID_IN_SLOT).shrink(1);
 				}
 			} else {
 				FluidStack f = BottleFluidRegistry.getFluidFromBottle(inputItem);
 				if (!f.isEmpty()) {
 					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
 						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
+
 						// Because the blasted water bottle has no craftRemainder
 						if (inputItem.is(Items.POTION)) {
-							bowl.items.setStackInSlot(LIQUID_IN_SLOT, new ItemStack(Items.GLASS_BOTTLE));
+							BlockEntityUtils.Inventory.dropItemInWorld(Items.GLASS_BOTTLE.getDefaultInstance(),
+									bowl.level, bowl.worldPosition);
+
 						} else {
-							bowl.items.setStackInSlot(LIQUID_IN_SLOT, inputItem.getCraftingRemainingItem().copy());
+							BlockEntityUtils.Inventory.dropItemInWorld(inputItem.getCraftingRemainingItem().copy(),
+									bowl.level, bowl.worldPosition);
 						}
+
+						bowl.items.getStackInSlot(LIQUID_IN_SLOT).shrink(1);
 					}
 				}
 			}
@@ -135,30 +143,35 @@ public class MixingBowlBlockEntity extends BlockEntity {
 						IFluidHandler.FluidAction.SIMULATE);
 				if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
 					bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
-					bowl.items.extractItem(LIQUID_OUT_SLOT, 1, false);
-					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, stack.getFluid().getBucket().getDefaultInstance());
+					BlockEntityUtils.Inventory.dropItemInWorld(stack.getFluid().getBucket().getDefaultInstance(),
+							bowl.level, bowl.worldPosition);
+
+					bowl.items.getStackInSlot(LIQUID_IN_SLOT).shrink(1);
 				}
 			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
 				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
 						bowl.getFluidTank().getFluidAmount(), true).getAmount();
 				if (filled > 0) {
-					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, fluidHandlerItem.getContainer());
+					BlockEntityUtils.Inventory.dropItemInWorld(fluidHandlerItem.getContainer(), bowl.level,
+							bowl.worldPosition);
 				}
 			} else {
 				if (bowl.getFluidTank().getFluid() != null) {
-					ItemStack i = BottleFluidRegistry.getBottleFromFluid(bowl.getFluidTank().getFluid());
+					FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
+					ItemStack i = BottleFluidRegistry.getBottleFromFluid(stack);
 					if (!i.isEmpty() && i.getItem().getCraftingRemainingItem() == inputItem.getItem()) {
-						FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
+
 						bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
-//						inputItem.shrink(1);
-						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, i);
+						BlockEntityUtils.Inventory.dropItemInWorld(i, bowl.level, bowl.worldPosition);
+						inputItem.shrink(1);
+//						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, i);
 					}
 					// Because the blasted water bottle has no craftRemainder
 					if (i.getItem() == Items.POTION && inputItem.getItem() == Items.GLASS_BOTTLE) {
-						FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
-						bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
-						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, i);
+						FluidStack stack1 = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
+						bowl.getFluidTank().drain(stack1, FluidAction.EXECUTE);
+						BlockEntityUtils.Inventory.dropItemInWorld(i, bowl.level, bowl.worldPosition);
 					}
 				}
 			}
@@ -173,9 +186,12 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		return new ItemStackHandler(GHOST_SLOT + 1) {
 			@Override
 			public int getSlotLimit(int slot) {
-				if (slot == LIQUID_IN_SLOT || slot == LIQUID_OUT_SLOT) return 1;
-				else return 64;
+				if (slot == LIQUID_IN_SLOT || slot == LIQUID_OUT_SLOT)
+					return 1;
+				else
+					return 64;
 			}
+
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				if (slot == LIQUID_IN_SLOT || slot == LIQUID_OUT_SLOT)
@@ -349,9 +365,11 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	private void clearItems(int k) {
 		for (int i = 0; i < 9; i++) {
-			if(!items.getStackInSlot(i).isEmpty()) items.extractItem(i, 1, false);
+			if (!items.getStackInSlot(i).isEmpty())
+				items.extractItem(i, 1, false);
 		}
-		if(!items.getStackInSlot(CONTAINER_SLOT).isEmpty()) items.extractItem(CONTAINER_SLOT, k, false);
+		if (!items.getStackInSlot(CONTAINER_SLOT).isEmpty())
+			items.extractItem(CONTAINER_SLOT, k, false);
 	}
 
 	protected Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe() {
@@ -363,14 +381,17 @@ public class MixingBowlBlockEntity extends BlockEntity {
 						public int size() {
 							return 9;
 						}
+
 						@Override
 						public boolean isEmpty() {
 							boolean res = true;
-							if(this.getTank().getTotalAmount() != 0) return false;
-							for(int i=0;i<this.inv.getSlots();i++) if (!this.inv.getStackInSlot(i).isEmpty()) {
-								res = false;
-								break;
-							}
+							if (this.getTank().getTotalAmount() != 0)
+								return false;
+							for (int i = 0; i < this.inv.getSlots(); i++)
+								if (!this.inv.getStackInSlot(i).isEmpty()) {
+									res = false;
+									break;
+								}
 							return res;
 						}
 					}, level);
@@ -407,7 +428,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				ItemStack i = curRecipe.getResultItem(player.level().registryAccess()).copy();
 				int k = i.getCount();
 				var fl = curRecipe.getFluids();
-				
 
 				i.onCraftedBy(player.level(), player, 1);
 //				NeoForgeEventFactory.firePlayerCraftingEvent(player, i, new RecipeWrapper(items));

@@ -34,7 +34,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.neoforged.neoforge.items.IItemHandler;
 
-@SuppressWarnings("deprecation") 
+@SuppressWarnings("deprecation")
 public class CounterCabinetBlock extends BaseEntityBlock {
 	public static final MapCodec<CounterCabinetBlock> CODEC = simpleCodec(CounterCabinetBlock::new);
 
@@ -57,10 +57,11 @@ public class CounterCabinetBlock extends BaseEntityBlock {
 
 	@Override
 	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
-			BlockHitResult hitResult) {
-		BlockEntity tileEntity = level.getBlockEntity(pos);
-		if (tileEntity instanceof CounterCabinetBlockEntity be) {
-			if (!level.isClientSide) {
+			BlockHitResult hit) {
+		if (!level.isClientSide) {
+			BlockEntity tileEntity = level.getBlockEntity(pos);
+			if (tileEntity instanceof CounterCabinetBlockEntity be) {
+
 				MenuProvider containerProvider = new MenuProvider() {
 					@Override
 					public Component getDisplayName() {
@@ -74,10 +75,9 @@ public class CounterCabinetBlock extends BaseEntityBlock {
 					}
 				};
 				player.openMenu(containerProvider, buf -> buf.writeBlockPos(pos));
-				return InteractionResult.SUCCESS;
 			}
 		}
-		return InteractionResult.PASS;
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
+		"particle": "extradelight:block/panforte",
 		"bottom": "extradelight:block/mississippi_mud_pie_bottom",
 		"top": "extradelight:block/panforte"
 	},

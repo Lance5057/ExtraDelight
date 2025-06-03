@@ -5,6 +5,25 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "extradelight:chili_crop",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "age": "6"
+              }
+            }
+          ],
+          "name": "extradelight:chili_seeds"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
           "type": "minecraft:alternatives",
           "children": [
             {

@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.blocks.keg;
 
+import com.lance5057.extradelight.util.BottleFluidRegistry;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
@@ -29,14 +31,13 @@ public class KegBlock extends RotatedPillarBlock implements EntityBlock {
 		if (pLevel.isClientSide) {
 			return ItemInteractionResult.SUCCESS;
 		} else {
+
 			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
 			if (tileEntity instanceof KegBlockEntity be) {
 				be.use(pPlayer, pHand);
-
-				return ItemInteractionResult.SUCCESS;
 			}
 
 		}
-		return ItemInteractionResult.CONSUME;
+		return ItemInteractionResult.SUCCESS;
 	}
 }

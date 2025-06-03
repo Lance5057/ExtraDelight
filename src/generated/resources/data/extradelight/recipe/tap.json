@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "b": {
-      "item": "minecraft:water_bucket"
+      "tag": "c:buckets/water"
     },
     "c": {
       "item": "minecraft:copper_ingot"

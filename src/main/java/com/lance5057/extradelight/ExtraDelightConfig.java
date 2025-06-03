@@ -5,6 +5,9 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class ExtraDelightConfig {
 	public static ModConfigSpec spec;
 
+	public static final String DEBUG = "debug";
+	public static ModConfigSpec.BooleanValue ENABLE_DEBUG_MODE;
+	
 	public static final String CATEGORY_RECIPE_BOOK = "recipe_book";
 	public static ModConfigSpec.BooleanValue ENABLE_RECIPE_BOOK_OVEN;
 
@@ -18,6 +21,11 @@ public class ExtraDelightConfig {
 	static {
 		ModConfigSpec.Builder Builder = new ModConfigSpec.Builder();
 
+		Builder.comment("Debug Mode").push(DEBUG);
+		ENABLE_DEBUG_MODE = Builder.comment("Enable Debug Mode for Developement")
+				.define("enableDebug", false);
+		Builder.pop();
+		
 		Builder.comment("Recipe book").push(CATEGORY_RECIPE_BOOK);
 		ENABLE_RECIPE_BOOK_OVEN = Builder.comment("Should the Oven have a Recipe Book available on its interface?")
 				.define("enableRecipeBookOven", false);

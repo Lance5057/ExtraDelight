@@ -204,7 +204,7 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 					for (int i = 0; i < 1 + level.random.nextInt(4); i++)
 						level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, getInsertedItem()),
 								worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
-								worldPosition.getY() - 0.5f - level.random.nextDouble(),
+								worldPosition.getY() + 0.5f - level.random.nextDouble(),
 								worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
 					level.playSound(Player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
@@ -215,8 +215,9 @@ public class MortarBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 
 						ItemStack it = recipe.getResultItem(this.level.registryAccess()).copy();
 
-						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
-								getBlockPos().getZ(), it));
+						BlockEntityUtils.Inventory.dropItemInWorld(it, level, worldPosition);
+//						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
+//								getBlockPos().getZ(), it));
 						tank.fill(recipe.getFluid(), FluidAction.EXECUTE);
 					}
 					items.setStackInSlot(0, ItemStack.EMPTY);

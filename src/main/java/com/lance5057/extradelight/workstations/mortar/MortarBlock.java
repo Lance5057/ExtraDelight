@@ -100,40 +100,56 @@ public class MortarBlock extends Block implements EntityBlock, IStyleable {
 	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
 			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-		if (pLevel.isClientSide) {
-			return ItemInteractionResult.SUCCESS;
-		} else {
-			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
-			if (tileEntity instanceof MortarBlockEntity mbe) {
+//		if (pLevel.isClientSide) {
+//			return ItemInteractionResult.SUCCESS;
+//		} else {
+		BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
+		if (tileEntity instanceof MortarBlockEntity mbe) {
 
-				if (pPlayer.getItemInHand(pHand).is(ExtraDelightTags.PESTLES)) {
-					mbe.grind(pPlayer);
-				} else if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null) {
-					IFluidHandlerItem f = stack.getCapability(Capabilities.FluidHandler.ITEM);
-					if (f != null) {
-						FluidUtil.interactWithFluidHandler(pPlayer, pHand, mbe.getFluidTank());
-					}
-				} else if (stack.is(Items.GLASS_BOTTLE)) {
-					ItemStack i = BottleFluidRegistry.getBottleFromFluid(mbe.getFluidTank().getFluid());
-					if (!i.isEmpty()) {
-						if (mbe.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
-							mbe.getFluidTank().drain(250, FluidAction.EXECUTE);
+			if (mbe.getInsertedItem().isEmpty()) {
+				ItemStack offhandStack = pPlayer.getOffhandItem();
+				if (offhandStack.isEmpty())
+					return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+				if (pHand.equals(InteractionHand.MAIN_HAND))
+					return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
-							BlockEntityUtils.Inventory.givePlayerItemStack(i, pPlayer, pLevel, pPos);
-							pPlayer.getItemInHand(pHand).shrink(1);
-						}
-					}
-				} else {
-					if (pPlayer.isCrouching()) {
-						mbe.extractItem(pPlayer);
-					} else {
-						mbe.insertItem(stack);
+				mbe.insertItem(offhandStack);
+				return ItemInteractionResult.SUCCESS;
+			}
+
+			else if (pPlayer.getItemInHand(pHand).is(ExtraDelightTags.PESTLES)) {
+				mbe.grind(pPlayer);
+				return ItemInteractionResult.SUCCESS;
+			} else if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null) {
+				IFluidHandlerItem f = stack.getCapability(Capabilities.FluidHandler.ITEM);
+				if (f != null) {
+					FluidUtil.interactWithFluidHandler(pPlayer, pHand, mbe.getFluidTank());
+					return ItemInteractionResult.SUCCESS;
+				}
+			} else if (stack.is(Items.GLASS_BOTTLE)) {
+				ItemStack i = BottleFluidRegistry.getBottleFromFluid(mbe.getFluidTank().getFluid());
+				if (!i.isEmpty()) {
+					if (mbe.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
+						mbe.getFluidTank().drain(250, FluidAction.EXECUTE);
+
+						BlockEntityUtils.Inventory.givePlayerItemStack(i, pPlayer, pLevel, pPos);
+						pPlayer.getItemInHand(pHand).shrink(1);
+						return ItemInteractionResult.SUCCESS;
 					}
 				}
+			} else {
+				if (pPlayer.isCrouching()) {
+					mbe.extractItem(pPlayer);
+					return ItemInteractionResult.SUCCESS;
+				} else {
+					mbe.insertItem(stack);
+					return ItemInteractionResult.SUCCESS;
+				}
 			}
-			return ItemInteractionResult.CONSUME;
 		}
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
+//	}
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {

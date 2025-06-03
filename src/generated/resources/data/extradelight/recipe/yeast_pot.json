@@ -9,7 +9,7 @@
       "item": "farmersdelight:canvas"
     },
     {
-      "item": "minecraft:water_bucket"
+      "tag": "c:buckets/water"
     },
     {
       "tag": "extradelight:sweetener"
