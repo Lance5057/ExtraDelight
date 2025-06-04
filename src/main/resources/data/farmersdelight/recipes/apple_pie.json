@@ -1,4 +1,4 @@
 {
-  "type": "forge:conditional",
-  "recipes": [{"conditions": [{"type": "forge:false"}]}]
+  "type": "neoforge:conditional",
+  "recipes": [{"conditions": [{"type": "neoforge:false"}]}]
 }

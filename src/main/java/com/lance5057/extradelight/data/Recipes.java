@@ -50,6 +50,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.FalseCondition;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.crafting.CompoundIngredient;
@@ -2225,6 +2226,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void craftingRecipes(RecipeOutput consumer) {
+		
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
+		.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+		.save(consumer.withConditions(FalseCondition.INSTANCE));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CORN_COB_PIPE.get()).pattern("cs")
 				.define('c', ExtraDelightItems.CORN_COB.get()).define('s', Items.STICK)
