@@ -21,17 +21,25 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	protected Predicate<FluidStack> validator;
 	protected LinkedHashMap<FluidKey, Integer> fluid;
 	protected int capacity;
+	protected final int variety_cap;
 	private boolean full;
+	private boolean slots_full; // for enforcing variety_cap
 
 	public MixingBowlTank(int capacity) {
-		this(capacity, e -> true);
+		this(capacity, e -> true, 6);
 	}
-
+	
 	public MixingBowlTank(int capacity, Predicate<FluidStack> validator) {
+		this(capacity, validator, 6);
+	}
+	
+	public MixingBowlTank(int capacity, Predicate<FluidStack> validator, int variety_cap) {
 		this.capacity = capacity;
 		this.validator = validator;
 		this.fluid = new LinkedHashMap<>();
 		this.full = false;
+		this.variety_cap = variety_cap;
+		this.slots_full = false;
 	}
 
 	public int getTotalAmount() {
@@ -55,7 +63,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	}
 
 	public int getCapacity(int tank) {
-		return capacity / 6;
+		return capacity / variety_cap;
 	}
 
 	public FluidStack getFluid(int tank) {
@@ -77,6 +85,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 
 	public synchronized MixingBowlTank readFromNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
 		this.fluid.clear();
+		this.slots_full = false;
 		int i = 0;
 		while (nbt.contains("Fluid" + i)) {
 			FluidStack dat = FluidStack.parseOptional(lookupProvider, nbt.getCompound("Fluid" + i));
@@ -126,12 +135,18 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		int fill = doFill(resource, action);
 		return fill;
 	}
-
+	
+	public int getVacancy() {
+		return capacity - getTotalAmount();
+	}
+	
 	private synchronized int doFill(FluidStack resource, FluidAction action) {
-		if (resource.isEmpty() || !isFluidValid(resource))
-			return 0;
-		if (full)
-			return 0;
+		if (resource.isEmpty() || !isFluidValid(resource)) return 0;
+		if (slots_full) {
+			FluidKey key = new FluidKey(resource);
+			if(!fluid.containsKey(key))return 0;
+		}
+		if (full) return 0;
 
 		int vacancy = capacity - getTotalAmount();
 		int fillTotal = resource.getAmount();
@@ -143,14 +158,13 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 			return 0;
 		}
 		var key = new FluidKey(resource);
-
-		if (fillTotal <= 0)
-			return 0;
-		if (applyChanges)
+		
+		if (fillTotal <= 0) return 0;
+		if (applyChanges) {
 			fluid.merge(key, resource.getAmount(), Integer::sum);
-		if (applyChanges)
 			onContentsChanged();
-
+		}
+		
 		return fillTotal;
 	}
 	/*
@@ -226,6 +240,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 				fluid.remove(key);
 			if (full)
 				full = false;
+			onContentsChanged();
 		}
 		return stack;
 	}
@@ -253,6 +268,8 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 	 * fluid[tank].shrink(drained); onContentsChanged(); } return stack; }
 	 */
 	protected void onContentsChanged() {
+		int variety = fluid.size();
+		this.slots_full = (variety >= variety_cap);
 	}
 
 	@Override
