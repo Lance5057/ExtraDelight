@@ -57,12 +57,14 @@ public class MixingBowlRenderer implements BlockEntityRenderer<MixingBowlBlockEn
 
 				pPoseStack.pushPose();
 
-				FluidStack fluidStack = mbt.getFluid(); //pBlockEntity.getFluidTank().getFluid();
+				FluidStack fluidStack = mbt.getFluid(); // pBlockEntity.getFluidTank().getFluid();
 				Fluid fluid = fluidStack.getFluid();
 				IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid);
 
-				RenderUtil.buildPlane(new Vector3f(0.2f, 0.2f, 0.2f), new Vector3f(0.2f, 0.2f, 0.8f),
-						new Vector3f(0.8f, 0.2f, 0.8f), new Vector3f(0.8f, 0.2f, 0.2f), vertexConsumer, mat, matrix3f,
+				float height = ((float) fluidStack.getAmount()) / 6000f * 0.3f + 0.05f;
+
+				RenderUtil.buildPlane(new Vector3f(0.18f, height, 0.18f), new Vector3f(0.18f, height, 0.82f),
+						new Vector3f(0.82f, height, 0.82f), new Vector3f(0.82f, height, 0.18f), vertexConsumer, mat, matrix3f,
 						fluidTypeExtensions.getTintColor(fluidStack),
 						RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), Direction.UP.getNormal(), pPackedLight,
 						pPackedOverlay, pPoseStack);
@@ -70,7 +72,7 @@ public class MixingBowlRenderer implements BlockEntityRenderer<MixingBowlBlockEn
 				pPoseStack.popPose();
 
 			}
-			
+
 		}
 
 		timer++;

@@ -105,46 +105,46 @@ public class MortarBlock extends Block implements EntityBlock, IStyleable {
 //		} else {
 		BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
 		if (tileEntity instanceof MortarBlockEntity mbe) {
+			ItemStack i = BottleFluidRegistry.getBottleFromFluid(mbe.getFluidTank().getFluid());
+			ItemStack offhandStack = pPlayer.getOffhandItem();
 
-			if (mbe.getInsertedItem().isEmpty()) {
-				ItemStack offhandStack = pPlayer.getOffhandItem();
-				if (offhandStack.isEmpty())
-					return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-				if (pHand.equals(InteractionHand.MAIN_HAND))
-					return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-
-				mbe.insertItem(offhandStack);
-				return ItemInteractionResult.SUCCESS;
-			}
-
-			else if (pPlayer.getItemInHand(pHand).is(ExtraDelightTags.PESTLES)) {
-				mbe.grind(pPlayer);
-				return ItemInteractionResult.SUCCESS;
-			} else if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null) {
+			if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null) {
 				IFluidHandlerItem f = stack.getCapability(Capabilities.FluidHandler.ITEM);
 				if (f != null) {
 					FluidUtil.interactWithFluidHandler(pPlayer, pHand, mbe.getFluidTank());
 					return ItemInteractionResult.SUCCESS;
 				}
-			} else if (stack.is(Items.GLASS_BOTTLE)) {
-				ItemStack i = BottleFluidRegistry.getBottleFromFluid(mbe.getFluidTank().getFluid());
-				if (!i.isEmpty()) {
-					if (mbe.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
-						mbe.getFluidTank().drain(250, FluidAction.EXECUTE);
+			} else if (!i.isEmpty() && (ItemStack.isSameItem(i.getCraftingRemainingItem(), stack) || ItemStack.isSameItem(i.getCraftingRemainingItem(), offhandStack))) {
 
-						BlockEntityUtils.Inventory.givePlayerItemStack(i, pPlayer, pLevel, pPos);
-						pPlayer.getItemInHand(pHand).shrink(1);
-						return ItemInteractionResult.SUCCESS;
-					}
-				}
-			} else {
-				if (pPlayer.isCrouching()) {
-					mbe.extractItem(pPlayer);
+//				if (!i.isEmpty()) {
+				if (mbe.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
+					mbe.getFluidTank().drain(250, FluidAction.EXECUTE);
+
+					BlockEntityUtils.Inventory.givePlayerItemStack(i, pPlayer, pLevel, pPos);
+					pPlayer.getItemInHand(pHand).shrink(1);
 					return ItemInteractionResult.SUCCESS;
-				} else {
-					mbe.insertItem(stack);
-					return ItemInteractionResult.SUCCESS;
+//					}
 				}
+			} else if (pPlayer.isCrouching()) {
+				mbe.extractItem(pPlayer);
+				return ItemInteractionResult.SUCCESS;
+			} else if (mbe.getInsertedItem().isEmpty()) {
+
+				if (offhandStack.isEmpty())
+					if (!stack.isEmpty())
+						mbe.insertItem(stack);
+					else
+						return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+//				if (pHand.equals(InteractionHand.MAIN_HAND))
+//					return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+
+				mbe.insertItem(offhandStack);
+				return ItemInteractionResult.SUCCESS;
+			}
+
+			else if (stack.is(ExtraDelightTags.PESTLES) || offhandStack.is(ExtraDelightTags.PESTLES)) {
+				mbe.grind(pPlayer);
+				return ItemInteractionResult.SUCCESS;
 			}
 		}
 		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;

@@ -615,22 +615,22 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		MeltingPotRecipeBuilder
 				.melt(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK), FAST_COOKING,
-						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID, 250))
+						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID, 1000))
 				.save(consumer, EDLoc("blood_chocolate_block"));
 
 		MeltingPotRecipeBuilder
 				.melt(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_BLOCK), FAST_COOKING,
-						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID, 250))
+						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID, 1000))
 				.save(consumer, EDLoc("milk_chocolate_block"));
 
 		MeltingPotRecipeBuilder
 				.melt(Ingredient.of(ExtraDelightItems.DARK_CHOCOLATE_BLOCK), FAST_COOKING,
-						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID, 250))
+						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID, 1000))
 				.save(consumer, EDLoc("dark_chocolate_block"));
 
 		MeltingPotRecipeBuilder
 				.melt(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_BLOCK), FAST_COOKING,
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID, 250))
+						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID, 1000))
 				.save(consumer, EDLoc("white_chocolate_block"));
 	}
 
