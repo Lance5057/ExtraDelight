@@ -190,12 +190,12 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				IFluidHandlerItem fluidHandlerItem = inputItem.copyWithCount(1).getCapability(Capabilities.FluidHandler.ITEM);
 				// not really the actual capacity of fluidHandlerItem
 				// this might cause mod compat issues later on
-				int maxFill = Math.min(bowl.getFluidTank().getFluidAmount(0), fluidHandlerItem.getTankCapacity(0));
+				int maxFill = Math.min(bowl.getFluidTank().getFluidAmount(0), (fluidHandlerItem.getTankCapacity(0) - fluidHandlerItem.getFluidInTank(0).getAmount()) * sz);
 				int diff = 0;
 				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
 						maxFill, true).getAmount();
 				maxFill -= filled;
-				while (filled > 0 && maxFill > 0) {
+				while (filled > 0 && maxFill >= 0) {
 					filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
 							maxFill, true).getAmount();
 					BlockEntityUtils.Inventory.dropItemInWorld(fluidHandlerItem.getContainer().copy(), bowl.level,
@@ -273,7 +273,16 @@ public class MixingBowlBlockEntity extends BlockEntity {
 			if (pSlot.getItem() == ExtraDelightItems.JAR.get()) {
 // hardcoded for now, but inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null
 // might work here too
-				fluidSize = pSlot.copyWithCount(1).getCapability(Capabilities.FluidHandler.ITEM).getTankCapacity(0);
+				var temp = pSlot.copyWithCount(1);
+				if (!temp.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).isEmpty()) {
+					// blocking this entirely for now due to a bug with partially filled jars
+					return 0;
+					//if (!FluidStack.isSameFluidSameComponents(temp.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0), fluids.getFluid(0)))
+					//	return 0;
+				}
+				fluidSize = temp.getCapability(Capabilities.FluidHandler.ITEM).getTankCapacity(0) - temp.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).getAmount();
+				if (fluidSize == 0)
+					return 0;
 				return (fluids.getFluidAmount(0) / fluidSize) 
 						+ ((fluids.getFluidAmount(0) % fluidSize != 0)? 1 : 0);
 			}
