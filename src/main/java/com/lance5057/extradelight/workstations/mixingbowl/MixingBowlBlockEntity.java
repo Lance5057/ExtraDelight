@@ -8,6 +8,7 @@ import javax.annotation.Nonnull;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
@@ -195,11 +196,12 @@ public class MixingBowlBlockEntity extends BlockEntity {
 						maxFill, true).getAmount();
 				maxFill -= filled;
 				while (filled > 0 && maxFill > 0) {
-					filled = FluidUtil.tryFluidTransfer(inputItem.copyWithCount(1).getCapability(Capabilities.FluidHandler.ITEM), bowl.getFluidTank(),
+					filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
 							maxFill, true).getAmount();
 					BlockEntityUtils.Inventory.dropItemInWorld(fluidHandlerItem.getContainer().copy(), bowl.level,
 							bowl.worldPosition);
-					filled = FluidUtil.tryFluidTransfer(inputItem.copyWithCount(1).getCapability(Capabilities.FluidHandler.ITEM), bowl.getFluidTank(),
+					fluidHandlerItem = inputItem.copyWithCount(1).getCapability(Capabilities.FluidHandler.ITEM);
+					filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
 							maxFill, false).getAmount();
 					maxFill -= filled;
 					diff++;
@@ -267,7 +269,16 @@ public class MixingBowlBlockEntity extends BlockEntity {
 			fluidSize = 1000;
 		else if (pSlot.getItem() == Items.GLASS_BOTTLE || pSlot.getItem() == Items.BOWL)
 			fluidSize = 250;
-		if (fluidSize == 0)return 0;
+		if (fluidSize == 0) {
+			if (pSlot.getItem() == ExtraDelightItems.JAR.get()) {
+// hardcoded for now, but inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null
+// might work here too
+				fluidSize = pSlot.copyWithCount(1).getCapability(Capabilities.FluidHandler.ITEM).getTankCapacity(0);
+				return (fluids.getFluidAmount(0) / fluidSize) 
+						+ ((fluids.getFluidAmount(0) % fluidSize != 0)? 1 : 0);
+			}
+			return 0;
+		}
 		return (fluids.getFluidAmount(0) / fluidSize);
 	}
 	
