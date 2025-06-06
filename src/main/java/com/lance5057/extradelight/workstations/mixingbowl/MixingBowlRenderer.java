@@ -61,7 +61,7 @@ public class MixingBowlRenderer implements BlockEntityRenderer<MixingBowlBlockEn
 				Fluid fluid = fluidStack.getFluid();
 				IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid);
 
-				float height = ((float) fluidStack.getAmount()) / 6000f * 0.3f + 0.05f;
+				float height = ((float) fluidStack.getAmount()) / 6000f * 0.25f + 0.1f;
 
 				RenderUtil.buildPlane(new Vector3f(0.18f, height, 0.18f), new Vector3f(0.18f, height, 0.82f),
 						new Vector3f(0.82f, height, 0.82f), new Vector3f(0.82f, height, 0.18f), vertexConsumer, mat, matrix3f,
