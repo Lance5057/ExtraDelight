@@ -145,16 +145,20 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	public static void drainInternal(MixingBowlBlockEntity bowl) {
 		ItemStack inputItem = bowl.items.getStackInSlot(LIQUID_OUT_SLOT);
 		if (!inputItem.isEmpty()) {
+			int sz = inputItem.getCount();
 			if (inputItem.getItem() == Items.BUCKET) {
 				FluidStack stack = bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME,
 						IFluidHandler.FluidAction.SIMULATE);
-				if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
+				var item = stack.getFluid().getBucket().getDefaultInstance();
+				while (stack.getAmount() == FluidType.BUCKET_VOLUME) {
 					bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
-					BlockEntityUtils.Inventory.dropItemInWorld(stack.getFluid().getBucket().getDefaultInstance(),
+					BlockEntityUtils.Inventory.dropItemInWorld(item.copy(),
 							bowl.level, bowl.worldPosition);
-
-					bowl.items.getStackInSlot(LIQUID_OUT_SLOT).shrink(1);
+					stack = bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME,
+							IFluidHandler.FluidAction.SIMULATE);
 				}
+				bowl.items.getStackInSlot(LIQUID_OUT_SLOT).shrink(sz);
+				bowl.updateInventory();
 			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
 				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
@@ -169,7 +173,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				if (bowl.getFluidTank().getFluid() != null) {
 					FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
 					ItemStack i = BottleFluidRegistry.getBottleFromFluid(stack);
-					int sz = inputItem.getCount();
 					if (!i.isEmpty() && i.getItem().getCraftingRemainingItem() == inputItem.getItem()) {
 						for (int j = 0; j < sz; j++)
 							bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
@@ -242,11 +245,12 @@ public class MixingBowlBlockEntity extends BlockEntity {
 					// any fluid container items added by other mods
 					if (fluids.getTanks() == 0)
 						return false;
-					ItemStack itmp = BottleFluidRegistry.getBottleFromFluid(fluids.getFluid(0).copyWithAmount(250));
+					ItemStack itmp = stack.getItem() == Items.BUCKET
+							  ? BottleFluidRegistry.getBottleFromFluid(fluids.getFluid(0).copyWithAmount(1000))
+							  : BottleFluidRegistry.getBottleFromFluid(fluids.getFluid(0).copyWithAmount(250));
 					boolean antecedent = (!itmp.isEmpty()
 							&& itmp.getItem().getCraftingRemainingItem() == stack.getItem())
 							|| (itmp.getItem() == Items.POTION && stack.getItem() == Items.GLASS_BOTTLE)
-							|| (stack.getItem() == Items.BUCKET && fluids.getFluidAmount(0) >= 1000)
 							|| stack.getCapability(Capabilities.FluidHandler.ITEM) != null;
 					return (antecedent)
 							&& (!itmp.isEmpty() || stack.getCount() + items.getStackInSlot(slot).getCount() < 2);
