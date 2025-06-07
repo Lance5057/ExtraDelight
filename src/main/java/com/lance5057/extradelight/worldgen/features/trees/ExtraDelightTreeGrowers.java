@@ -16,4 +16,7 @@ public class ExtraDelightTreeGrowers {
 	public static final TreeGrower APPLE = new TreeGrower(ExtraDelight.MOD_ID + "apple", 0.1F, Optional.empty(),
 			Optional.empty(), Optional.of(ExtraDelightTreeFeatures.APPLE), Optional.empty(), Optional.empty(),
 			Optional.empty());
+	public static final TreeGrower LEMON = new TreeGrower(ExtraDelight.MOD_ID + "lemon", 0.1F, Optional.empty(),
+			Optional.empty(), Optional.of(ExtraDelightTreeFeatures.LEMON), Optional.empty(), Optional.empty(),
+			Optional.empty());
 }

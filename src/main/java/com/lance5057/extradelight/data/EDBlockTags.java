@@ -9,6 +9,7 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -43,7 +44,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.FRUIT_WOOD.get(), ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(),
 				ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get());
 		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), ExtraDelightBlocks.HAZELNUT_LEAVES.get(),
-				ExtraDelightBlocks.APPLE_LEAVES.get());
+				ExtraDelightBlocks.APPLE_LEAVES.get(), SummerCitrus.LEMON_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.DRYING_RACK.get(),
 				/* ExtraDelightBlocks.FOOD_DISPLAY.get(), */ ExtraDelightBlocks.DOUGH_SHAPING.get(),
 				ExtraDelightBlocks.MIXING_BOWL.get());
@@ -164,7 +165,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.WILD_GARLIC.get(), Fermentation.WILD_CUCUMBER.get(), Fermentation.WILD_SOYBEAN.get());
 
 		tag(BlockTags.MINEABLE_WITH_HOE).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(),
-				ExtraDelightBlocks.HAZELNUT_LEAVES.get(), ExtraDelightBlocks.APPLE_LEAVES.get());
+				ExtraDelightBlocks.HAZELNUT_LEAVES.get(), ExtraDelightBlocks.APPLE_LEAVES.get(),
+				SummerCitrus.LEMON_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.CINNAMON_LOG.get(),
 				ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), ExtraDelightBlocks.CINNAMON_PLANKS.get(),
 				ExtraDelightBlocks.CINNAMON_CABINET.get(), ExtraDelightBlocks.CINNAMON_DOOR.get(),
@@ -214,7 +216,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.WHITE_CHOCOLATE_DOOR.get());
 		tag(BlockTags.WOODEN_DOORS).add(ExtraDelightBlocks.CINNAMON_DOOR.get(), ExtraDelightBlocks.FRUIT_DOOR.get());
 		tag(BlockTags.SAPLINGS).add(ExtraDelightBlocks.CINNAMON_SAPLING.get(),
-				ExtraDelightBlocks.HAZELNUT_SAPLING.get(), ExtraDelightBlocks.APPLE_SAPLING.get());
+				ExtraDelightBlocks.HAZELNUT_SAPLING.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
+				SummerCitrus.LEMON_SAPLING.get());
 
 		tag(ExtraDelightTags.COLD_SOURCES).add(Blocks.ICE, Blocks.BLUE_ICE, Blocks.FROSTED_ICE, Blocks.PACKED_ICE,
 				Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW_CAULDRON);
@@ -225,7 +228,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get());
 
 		tag(BlockTags.FLOWER_POTS).add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(),
-				ExtraDelightBlocks.HAZELNUT_SAPLING.get(), ExtraDelightBlocks.APPLE_SAPLING.get());
+				ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(),
+				SummerCitrus.POTTED_LEMON_SAPLING.get());
 
 		// Dyed Tags
 		tag(Tags.Blocks.DYED_BLACK).add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get());

@@ -1,5 +1,6 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -41,6 +42,7 @@ public class ExtraDelight {
 		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
 
 		Fermentation f = new Fermentation();
+		SummerCitrus s = new SummerCitrus();
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);

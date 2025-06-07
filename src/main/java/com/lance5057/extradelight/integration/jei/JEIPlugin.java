@@ -2,6 +2,7 @@ package com.lance5057.extradelight.integration.jei;
 
 import java.util.List;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -158,6 +159,11 @@ public class JEIPlugin implements IModPlugin {
 		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.YEAST.get()), new ItemStack(ExtraDelightItems.YEAST_POT.get())),
 									VanillaTypes.ITEM_STACK,
 									Component.translatable(ExtraDelight.MOD_ID + ".jei.info.yeast"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(SummerCitrus.LEMON_SAPLING.get()),
+						new ItemStack(SummerCitrus.LEMON.get()),
+						new ItemStack(SummerCitrus.LEMON_LEAVES.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.lemon"));
 
 		List<ItemStack> hide = List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
 		registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hide);

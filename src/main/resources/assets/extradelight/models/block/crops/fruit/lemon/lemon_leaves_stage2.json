@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "cutout",
 	"textures": {
 		"0": "extradelight:block/crops/fruit/lemon/lemon_leaves",
 		"1": "extradelight:item/crops/fruit/lime/lime",

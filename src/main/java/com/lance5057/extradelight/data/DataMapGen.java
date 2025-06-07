@@ -5,6 +5,7 @@ import java.util.concurrent.CompletableFuture;
 import com.lance5057.extradelight.ExtraDelightItems;
 
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -76,11 +77,15 @@ public class DataMapGen extends DataMapProvider {
 		compostables.add(ExtraDelightItems.APPLE_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.WILD_GARLIC_BLOCK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.GARLIC.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+
 		compostables.add(Fermentation.WILD_CUCUMBER.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
 		compostables.add(Fermentation.CUCUMBER.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
 		compostables.add(Fermentation.SLICED_CUCUMBER_ITEM.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
 		compostables.add(Fermentation.WILD_SOYBEAN.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
 		compostables.add(Fermentation.SOYBEAN_POD.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
+
+		compostables.add(SummerCitrus.LEMON_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(SummerCitrus.LEMON_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 	}
 
 }

@@ -7,6 +7,7 @@ import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -100,6 +101,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.cucumber", "Found in hills.");
 		this.add("extradelight.jei.info.soybean", "Found in anything temperate.");
 		this.add("extradelight.jei.info.yeast", "Use an empty glass bottle on an active yeast pot to obtain them.");
+		this.add("extradelight.jei.info.lemon", "Found in hills.");
 
 		this.add("extradelight.jei.info.evaporator.extra", "+ Extras");
 		this.add("extradelight.jei.info.evaporator.view", "Requires View"); // Combine with the one under
@@ -1379,6 +1381,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "Potted Apple Sapling");
 
 		Fermentation.EngLoc(this);
+		SummerCitrus.EngLoc(this);
 		AestheticBlocks.EngLoc(this);
 	}
 }

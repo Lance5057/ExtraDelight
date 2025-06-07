@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
@@ -596,6 +597,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 		add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.CINNAMON_SAPLING.get()));
 		add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.HAZELNUT_SAPLING.get()));
 		add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.APPLE_SAPLING.get()));
+
+		this.createFruitLeavesDrop(SummerCitrus.LEMON_LEAVES.get(), SummerCitrus.LEMON_SAPLING.get(),
+				SummerCitrus.LEMON.get());
+		this.dropSelf(SummerCitrus.LEMON_SAPLING.get());
+		add(SummerCitrus.POTTED_LEMON_SAPLING.get(), createPotFlowerItemTable(SummerCitrus.LEMON_SAPLING.get()));
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {

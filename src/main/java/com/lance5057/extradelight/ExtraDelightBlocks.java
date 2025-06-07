@@ -34,6 +34,7 @@ import com.lance5057.extradelight.blocks.keg.KegBlock;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
@@ -131,6 +132,8 @@ public class ExtraDelightBlocks {
 		fire.setFlammable(ExtraDelightBlocks.MINT_CROP.get(), 1000, 1000);
 
 		fire.setFlammable(ExtraDelightBlocks.APPLE_LEAVES.get(), 30, 60);
+
+		fire.setFlammable(SummerCitrus.LEMON_LEAVES.get(), 30, 60);
 	}
 
 	public static final DeferredBlock<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);

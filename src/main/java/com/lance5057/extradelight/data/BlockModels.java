@@ -24,6 +24,7 @@ import com.lance5057.extradelight.blocks.crops.corn.CornProperties;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
@@ -669,6 +670,7 @@ public class BlockModels extends BlockStateProvider {
 
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);
+		SummerCitrus.blockModels(this);
 	}
 
 	public static void fluid(BlockStateProvider bsp, LiquidBlock block) {
@@ -1095,7 +1097,7 @@ public class BlockModels extends BlockStateProvider {
 
 	}
 
-	private static void pottedBlock(BlockStateProvider bsp, Block block, String name, String path) {
+	public static void pottedBlock(BlockStateProvider bsp, Block block, String name, String path) {
 		bsp.simpleBlock(block,
 				new ConfiguredModel(bsp.models()
 						.withExistingParent("potted_" + name, "block/flower_pot_cross")

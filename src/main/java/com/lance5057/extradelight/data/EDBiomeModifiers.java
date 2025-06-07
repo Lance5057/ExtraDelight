@@ -224,5 +224,19 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "apple_tree")),
 						new BiomeModifiers.AddFeaturesBiomeModifier(forest, appleTreeHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
+
+				// Lemon
+
+				HolderSet.Direct<PlacedFeature> lemonTreeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
+						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_LEMON_TREE.get(),
+								ExtraDelightTreeFeatures.createLemonTree().build())),
+						List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+								BiomeFilter.biome()))));
+
+				context.register(
+						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "lemon_tree")),
+						new BiomeModifiers.AddFeaturesBiomeModifier(hill, lemonTreeHolderSet,
+								GenerationStep.Decoration.VEGETAL_DECORATION));
 			});
 }

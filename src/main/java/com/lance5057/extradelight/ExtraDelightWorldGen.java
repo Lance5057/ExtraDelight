@@ -57,6 +57,11 @@ public class ExtraDelightWorldGen {
 	public static final ResourceKey<PlacedFeature> PLACED_APPLE_TREE = ResourceKey.create(Registries.PLACED_FEATURE,
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "apple"));
 
+	public static final ResourceKey<ConfiguredFeature<?, ?>> CONFIGURED_LEMON_TREE = ResourceKey.create(
+			Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "lemon"));
+	public static final ResourceKey<PlacedFeature> PLACED_LEMON_TREE = ResourceKey.create(Registries.PLACED_FEATURE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "lemon"));
+
 	public static final ResourceKey<StructureSet> STRUCTURE_SET = ResourceKey.create(Registries.STRUCTURE_SET,
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structure_set"));
 

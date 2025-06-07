@@ -7,6 +7,7 @@ import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.modules.Fermentation;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -1346,6 +1347,7 @@ public class ItemModels extends ItemModelProvider {
 				.customLoader(DynamicFoodGeometryLoader::builder);
 
 		Fermentation.itemModels(this);
+		SummerCitrus.itemModels(this);
 		AestheticBlocks.itemModel(this);
 	}
 
@@ -1371,6 +1373,10 @@ public class ItemModels extends ItemModelProvider {
 
 	public void forBlockItem(DeferredItem<Item> item, ResourceLocation modelLocation) {
 		getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation));
+	}
+
+	public static void forBlockItem(ItemModelProvider tmp, DeferredItem<Item> item, ResourceLocation modelLocation) {
+		tmp.getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation));
 	}
 
 	public void forBlockItem(DeferredItem<Item> item, ResourceLocation modelLocation, String key,
