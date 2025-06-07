@@ -30,6 +30,9 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 		this.canInteractWithCallable = ContainerLevelAccess.create(tileEntity.getLevel(), tileEntity.getBlockPos());
 
 		if (tileEntity != null) {
+			// Initialize BlockEntity menu ref
+			this.tileEntity.setMenu(this);
+			
 			// Ingredient Slots - 2 Rows x 3 Columns
 			int startX = 8;
 			int startY = 8;
