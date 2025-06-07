@@ -2,7 +2,7 @@ package com.lance5057.extradelight.workstations.mixingbowl;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.gui.widgets.FluidStackWidget;
-import com.lance5057.extradelight.gui.widgets.MixingBowlFluidWidget;
+import com.lance5057.extradelight.gui.widgets.FancyTankWidget;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.gui.GuiGraphics;
@@ -23,7 +23,7 @@ public class MixingBowlScreen extends AbstractContainerScreen<MixingBowlMenu> {
 	@Override
 	public void init() {
 		super.init();
-		addRenderableOnly(new MixingBowlFluidWidget(this.leftPos + 41, this.topPos - 4, 16, 71, menu::getFluidTank));
+		addRenderableOnly(new FancyTankWidget(this.leftPos + 41, this.topPos - 4, 16, 71, menu::getFluidTank));
 	}
 	
 	@Override

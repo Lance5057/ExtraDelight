@@ -4,6 +4,9 @@ import java.util.Objects;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
+import com.lance5057.extradelight.gui.FancyTankInSlot;
+import com.lance5057.extradelight.gui.FancyTankOutSlot;
+import com.lance5057.extradelight.workstations.FancyTank;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,7 +17,6 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class MixingBowlMenu extends AbstractContainerMenu {
@@ -31,8 +33,8 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 
 		if (tileEntity != null) {
 			// Initialize BlockEntity menu ref
-			this.tileEntity.setMenu(this);
-			
+//			this.tileEntity.setMenu(this);
+
 			// Ingredient Slots - 2 Rows x 3 Columns
 			int startX = 8;
 			int startY = 8;
@@ -48,10 +50,10 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 
 			this.addSlot(
 					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.CONTAINER_SLOT, 122, 46));
-			this.addSlot(
-					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.LIQUID_IN_SLOT, 17, -5));
-			this.addSlot(
-					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.LIQUID_OUT_SLOT, 17, 51));
+			this.addSlot(new FancyTankInSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
+					MixingBowlBlockEntity.LIQUID_IN_SLOT, 17, -5));
+			this.addSlot(new FancyTankOutSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
+					MixingBowlBlockEntity.LIQUID_OUT_SLOT, 17, 51));
 			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.GHOST_SLOT, 147, 23) {
 				@Override
 				public boolean mayPickup(Player playerIn) {
@@ -89,9 +91,8 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 	public MixingBowlMenu(final int windowId, final Inventory playerInventory, final FriendlyByteBuf data) {
 		this(windowId, playerInventory, getTileEntity(playerInventory, data));
 	}
-	
-	public MixingBowlTank getFluidTank()
-	{
+
+	public FancyTank getFluidTank() {
 		return this.tileEntity.getFluidTank();
 	}
 

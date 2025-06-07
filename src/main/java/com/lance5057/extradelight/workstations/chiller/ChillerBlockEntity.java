@@ -4,8 +4,6 @@ import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
-import net.minecraft.world.item.alchemy.PotionContents;
-import net.minecraft.world.item.alchemy.Potions;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
@@ -13,6 +11,9 @@ import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.items.components.ChillComponent;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
+import com.lance5057.extradelight.workstations.FancyTank;
+import com.lance5057.extradelight.workstations.IFancyTankHandler;
+import com.lance5057.extradelight.workstations.vat.VatBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -21,10 +22,11 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeManager.CachedCheck;
@@ -34,7 +36,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.FluidUtil;
@@ -42,10 +44,11 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
-public class ChillerBlockEntity extends BlockEntity {
+public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler<ChillerBlockEntity> {
 	public static final int INGREDIENT_SLOTS = 4;
 	public static final int CONTAINER_SLOT = 5;
 	public static final int OUTPUT_SLOT = 6;
@@ -56,7 +59,18 @@ public class ChillerBlockEntity extends BlockEntity {
 	public static final int INVENTORY_SIZE = ICE + 1;
 	public static final String ITEM_TAG = "inv";
 	private final ItemStackHandler inventory = createHandler();
+	private final Lazy<IItemHandlerModifiable> itemHandler = Lazy.of(() -> inventory);
 	private int cookTime;
+
+	@Override
+	public int getFluidInSlot() {
+		return FLUID_IN;
+	}
+
+	@Override
+	public int getFluidOutSlot() {
+		return FLUID_OUT;
+	}
 
 	public int getCookTime() {
 		return cookTime;
@@ -75,24 +89,31 @@ public class ChillerBlockEntity extends BlockEntity {
 		return chilltime;
 	}
 
+	@Override
+	public IItemHandlerModifiable getItemHandler() {
+		return itemHandler.get();
+	}
+
 	private ResourceLocation lastRecipeID;
 	private boolean checkNewRecipe;
 	private final CachedCheck<ChillerRecipeWrapper, ChillerRecipe> quickCheck = RecipeManager
 			.createCheck(ExtraDelightRecipes.CHILLER.get());
 
-	private final FluidTank fluid = createFluidHandler();
+	private final FancyTank fluid = createFluidHandler();
 	private final FluidTank dripTray = createDripFluidHandler();
 
-	private FluidTank createFluidHandler() {
-		FluidTank tank = new FluidTank(FluidType.BUCKET_VOLUME * 6) {
+	private FancyTank createFluidHandler() {
+		FancyTank tank = new FancyTank(FluidType.BUCKET_VOLUME, e -> true, 1) {
 			@Override
 			protected void onContentsChanged() {
+				super.onContentsChanged();
+				var level = ChillerBlockEntity.this.getLevel();
+				if (level == null)
+					return;
 				ChillerBlockEntity.this.requestModelDataUpdate();
-				ChillerBlockEntity.this.getLevel().sendBlockUpdated(ChillerBlockEntity.this.getBlockPos(),
-						ChillerBlockEntity.this.getBlockState(), ChillerBlockEntity.this.getBlockState(),
-						Block.UPDATE_ALL);
+				level.sendBlockUpdated(ChillerBlockEntity.this.getBlockPos(), ChillerBlockEntity.this.getBlockState(),
+						ChillerBlockEntity.this.getBlockState(), Block.UPDATE_ALL);
 				ChillerBlockEntity.this.setChanged();
-
 			}
 		};
 
@@ -114,7 +135,7 @@ public class ChillerBlockEntity extends BlockEntity {
 		return tank;
 	}
 
-	public FluidTank getFluidTank() {
+	public FancyTank getFluidTank() {
 		return fluid;
 	}
 
@@ -124,80 +145,6 @@ public class ChillerBlockEntity extends BlockEntity {
 
 	public ChillerBlockEntity(BlockPos pos, BlockState state) {
 		super(ExtraDelightBlockEntities.CHILLER.get(), pos, state);
-	}
-
-	public static void fillInternal(ChillerBlockEntity bowl) {
-		ItemStack inputItem = bowl.inventory.getStackInSlot(FLUID_IN);
-		if (!inputItem.isEmpty()) {
-			if (inputItem.getItem() instanceof BucketItem filledBucket) {
-				int filled = bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
-						IFluidHandler.FluidAction.SIMULATE);
-				if (filled == FluidType.BUCKET_VOLUME) {
-					bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
-							IFluidHandler.FluidAction.EXECUTE);
-					inputItem.shrink(1);
-					bowl.inventory.setStackInSlot(FLUID_IN, Items.BUCKET.getDefaultInstance());
-
-				}
-			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
-				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
-				int filled = FluidUtil.tryFluidTransfer(bowl.getFluidTank(), fluidHandlerItem,
-						bowl.getFluidTank().getCapacity(), true).getAmount();
-				if (filled > 0) {
-					bowl.inventory.setStackInSlot(FLUID_IN, fluidHandlerItem.getContainer());
-
-				}
-			} else {
-				FluidStack f = BottleFluidRegistry.getFluidFromBottle(inputItem);
-				if (!f.isEmpty()) {
-					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
-						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
-						// Because the blasted water bottle has no craftRemainder
-						if (inputItem.is(Items.POTION)) {
-							bowl.inventory.setStackInSlot(FLUID_IN, new ItemStack(Items.GLASS_BOTTLE));
-						} else {
-							bowl.inventory.setStackInSlot(FLUID_IN, inputItem.getCraftingRemainingItem().copy());
-						}
-					}
-				}
-			}
-		}
-	}
-
-	public static void drainInternal(ChillerBlockEntity bowl) {
-		ItemStack inputItem = bowl.inventory.getStackInSlot(FLUID_OUT);
-		if (!inputItem.isEmpty()) {
-			if (inputItem.getItem() == Items.BUCKET) {
-				FluidStack stack = bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME,
-						IFluidHandler.FluidAction.SIMULATE);
-				if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
-					bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
-					inputItem.shrink(1);
-					bowl.inventory.setStackInSlot(FLUID_OUT, stack.getFluid().getBucket().getDefaultInstance());
-				}
-			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
-				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
-				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
-						bowl.getFluidTank().getFluidAmount(), true).getAmount();
-				if (filled > 0) {
-					bowl.inventory.setStackInSlot(FLUID_OUT, fluidHandlerItem.getContainer());
-				}
-			} else {
-				ItemStack i = BottleFluidRegistry.getBottleFromFluid(bowl.getFluidTank().getFluid());
-				if (!i.isEmpty() && i.getItem().getCraftingRemainingItem() == inputItem.getItem()) {
-					if (bowl.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
-						bowl.getFluidTank().drain(250, FluidAction.EXECUTE);
-						bowl.inventory.setStackInSlot(FLUID_OUT, i);
-					}
-				}
-				// Because the blasted water bottle has no craftRemainder
-				if (i.getItem() == Items.POTION && inputItem.getItem() == Items.GLASS_BOTTLE) {
-					FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
-					bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
-					bowl.inventory.setStackInSlot(FLUID_OUT, i);
-				}
-			}
-		}
 	}
 
 	public static void drainDripTray(ChillerBlockEntity bowl) {
@@ -223,8 +170,10 @@ public class ChillerBlockEntity extends BlockEntity {
 				if (inputItem.getItem() == Items.GLASS_BOTTLE) {
 					FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
 					bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
-					// If we just use Items.POTION we get an item called Uncraftable Potion instead of Water Bottle
-					bowl.inventory.setStackInSlot(DRIP_TRAY_OUT, PotionContents.createItemStack(Items.POTION, Potions.WATER));
+					// If we just use Items.POTION we get an item called Uncraftable Potion instead
+					// of Water Bottle
+					bowl.inventory.setStackInSlot(DRIP_TRAY_OUT,
+							PotionContents.createItemStack(Items.POTION, Potions.WATER));
 				}
 			}
 		}
@@ -305,8 +254,8 @@ public class ChillerBlockEntity extends BlockEntity {
 		double z = chiller.worldPosition.getZ() + 0.5 + (direction.getStepZ() * 0.25);
 
 		for (int i = 0; i < 4; i++) {
-			ItemUtils.spawnItemEntity(level, chiller.inventory.getStackInSlot(i).getCraftingRemainingItem().copy(), x, y, z,
-					direction.getStepX() * 0.08F, 0.25F, direction.getStepZ() * 0.08F);
+			ItemUtils.spawnItemEntity(level, chiller.inventory.getStackInSlot(i).getCraftingRemainingItem().copy(), x,
+					y, z, direction.getStepX() * 0.08F, 0.25F, direction.getStepZ() * 0.08F);
 
 		}
 	}
@@ -395,9 +344,9 @@ public class ChillerBlockEntity extends BlockEntity {
 				updateInventory();
 
 				if (slot == FLUID_IN)
-					ChillerBlockEntity.fillInternal(ChillerBlockEntity.this);
+					ChillerBlockEntity.this.fillInternal(ChillerBlockEntity.this);
 				if (slot == FLUID_OUT)
-					ChillerBlockEntity.drainInternal(ChillerBlockEntity.this);
+					ChillerBlockEntity.this.drainInternal(ChillerBlockEntity.this);
 				if (slot == DRIP_TRAY_OUT)
 					ChillerBlockEntity.drainDripTray(ChillerBlockEntity.this);
 
@@ -405,40 +354,23 @@ public class ChillerBlockEntity extends BlockEntity {
 
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
-//				if (slot == FLUID_IN) {
-//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-//						if (!stack.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).isEmpty())
-//							return true;
-//					return false;
-//				} else if (slot == FLUID_OUT) {
-//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-//						if (stack.is(Tags.Items.BUCKETS_EMPTY))
-//							return true;
-//						else if (stack.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).isEmpty()
-//								&& !stack.is(Tags.Items.BUCKETS))
-//							return true;
-//					return false;
-//				} else if (slot == DRIP_TRAY_OUT) {
-//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-//						if (stack.is(Tags.Items.BUCKETS_EMPTY))
-//							return true;
-//						else if (stack.getCapability(Capabilities.FluidHandler.ITEM).getFluidInTank(0).isEmpty()
-//								&& !stack.is(Tags.Items.BUCKETS))
-//							return true;
-//					return false;
-//				} else 
-				if (slot == ICE) {
-					if (!stack.has(ExtraDelightComponents.CHILL))
-						return false;
-				}
-				return true;
-			}
+				switch (slot) {
+				case FLUID_IN:
+					return stack.getCapability(Capabilities.FluidHandler.ITEM) != null || stack.is(Items.BUCKET)
+							|| !BottleFluidRegistry.getFluidFromBottle(stack).isEmpty();
+				case FLUID_OUT:
 
-			@Override
-			public int getSlotLimit(int slot) {
-				if (slot == FLUID_IN || slot == FLUID_OUT || slot == DRIP_TRAY_OUT)
-					return 1;
-				return Item.ABSOLUTE_MAX_STACK_SIZE;
+					return stack.getCapability(Capabilities.FluidHandler.ITEM) != null || stack.is(Items.BUCKET)
+							|| ItemStack.isSameItem(stack,
+									BottleFluidRegistry
+											.getBottleFromFluid(ChillerBlockEntity.this.getFluidTank().getFluid())
+											.getCraftingRemainingItem())
+							|| stack.is(Items.GLASS_BOTTLE);
+//				case GHOST_SLOT:
+//					return false;
+				default:
+					return true;
+				}
 			}
 		};
 	}

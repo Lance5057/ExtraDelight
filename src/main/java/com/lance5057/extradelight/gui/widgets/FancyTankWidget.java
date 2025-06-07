@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
 
-import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlTank;
+import com.lance5057.extradelight.workstations.FancyTank;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.Minecraft;
@@ -22,11 +22,11 @@ import net.minecraft.util.FormattedCharSequence;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidStack;
 
-public class MixingBowlFluidWidget extends AbstractWidget {
+public class FancyTankWidget extends AbstractWidget {
 
-	private final Supplier<MixingBowlTank> getFluid;
+	private final Supplier<FancyTank> getFluid;
 
-	public MixingBowlFluidWidget(int x, int y, int width, int height, Supplier<MixingBowlTank> getFluid) {
+	public FancyTankWidget(int x, int y, int width, int height, Supplier<FancyTank> getFluid) {
 
 		super(x, y, width, height, Component.empty());
 		this.getFluid = getFluid;
@@ -37,7 +37,7 @@ public class MixingBowlFluidWidget extends AbstractWidget {
 		Minecraft minecraft = Minecraft.getInstance();
 		RenderSystem.defaultBlendFunc();
 		RenderSystem.enableDepthTest();
-		MixingBowlTank fluidTank = this.getFluid.get();
+		FancyTank fluidTank = this.getFluid.get();
 
 		int offset = 0;
 		for (int tank = 0; tank < fluidTank.getTanks(); tank++) {
@@ -59,7 +59,7 @@ public class MixingBowlFluidWidget extends AbstractWidget {
 						int stored = fluidTank.getFluidAmount(tank);
 						float capacity = fluidTank.getCapacity(tank);
 						float filledVolume = stored / capacity;
-						int renderableHeight = (int) (filledVolume * 12);
+						int renderableHeight = (int) (filledVolume * Math.ceil((float)height / (float)fluidTank.getVarietyCap()));
 
 						int atlasWidth = (int) (sprite.contents().width() / (sprite.getU1() - sprite.getU0()));
 						int atlasHeight = (int) (sprite.contents().height() / (sprite.getV1() - sprite.getV0()));
@@ -91,7 +91,7 @@ public class MixingBowlFluidWidget extends AbstractWidget {
 	public void renderToolTip(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		if (isHovered(mouseX, mouseY)) {
 			Minecraft minecraft = Minecraft.getInstance();
-			MixingBowlTank fluidTank = this.getFluid.get();
+			FancyTank fluidTank = this.getFluid.get();
 			List<FormattedCharSequence> list = new ArrayList<FormattedCharSequence>();
 			if (!fluidTank.isEmpty(5)) {
 				list.add(fluidTank.getFluid(5).getDisplayName().getVisualOrderText());

@@ -7,6 +7,7 @@ import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
 import com.lance5057.extradelight.util.RenderUtil;
+import com.lance5057.extradelight.workstations.FancyTank;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
@@ -49,7 +50,7 @@ public class MixingBowlRenderer implements BlockEntityRenderer<MixingBowlBlockEn
 //		renderSolid(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv);
 //		renderFinish(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, itemRenderer, inv);
 
-		if (pBlockEntity.getFluidTank() instanceof MixingBowlTank mbt) {
+		if (pBlockEntity.getFluidTank() instanceof FancyTank mbt) {
 			if (!mbt.getFluid().isEmpty()) {
 				VertexConsumer vertexConsumer = pBufferSource.getBuffer(Sheets.translucentCullBlockSheet());
 				Matrix4f mat = pPoseStack.last().pose();

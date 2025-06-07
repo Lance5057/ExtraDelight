@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.workstations.mixingbowl;
+package com.lance5057.extradelight.workstations;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,23 +17,27 @@ import net.neoforged.neoforge.fluids.IFluidTank;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
-public class MixingBowlTank implements IFluidHandler, IFluidTank {
+public class FancyTank implements IFluidHandler, IFluidTank {
 	protected Predicate<FluidStack> validator;
 	protected LinkedHashMap<FluidKey, Integer> fluid;
 	protected int capacity;
 	protected final int variety_cap;
+	public int getVarietyCap() {
+		return variety_cap;
+	}
+
 	private boolean full;
 	private boolean slots_full; // for enforcing variety_cap
 
-	public MixingBowlTank(int capacity) {
+	public FancyTank(int capacity) {
 		this(capacity, e -> true, 6);
 	}
 	
-	public MixingBowlTank(int capacity, Predicate<FluidStack> validator) {
+	public FancyTank(int capacity, Predicate<FluidStack> validator) {
 		this(capacity, validator, 6);
 	}
 	
-	public MixingBowlTank(int capacity, Predicate<FluidStack> validator, int variety_cap) {
+	public FancyTank(int capacity, Predicate<FluidStack> validator, int variety_cap) {
 		this.capacity = capacity;
 		this.validator = validator;
 		this.fluid = new LinkedHashMap<>();
@@ -46,12 +50,12 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		return fluid.values().stream().mapToInt(i -> i).sum();
 	}
 
-	public MixingBowlTank setCapacity(int capacity) {
+	public FancyTank setCapacity(int capacity) {
 		this.capacity = capacity;
 		return this;
 	}
 
-	public MixingBowlTank setValidator(Predicate<FluidStack> validator) {
+	public FancyTank setValidator(Predicate<FluidStack> validator) {
 		if (validator != null) {
 			this.validator = validator;
 		}
@@ -83,7 +87,7 @@ public class MixingBowlTank implements IFluidHandler, IFluidTank {
 		return target.getAmount();
 	}
 
-	public synchronized MixingBowlTank readFromNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
+	public synchronized FancyTank readFromNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
 		this.fluid.clear();
 		this.slots_full = false;
 		int i = 0;

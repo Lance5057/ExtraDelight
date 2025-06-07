@@ -1,16 +1,14 @@
 package com.lance5057.extradelight.workstations.vat;
 
-import java.awt.Color;
 import java.awt.Rectangle;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.gui.widgets.FluidStackWidget;
+import com.lance5057.extradelight.gui.widgets.FancyTankWidget;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.ImageWidget;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -29,7 +27,7 @@ public class VatScreen extends AbstractContainerScreen<VatMenu> {
 	@Override
 	public void init() {
 		super.init();
-		addRenderableOnly(new FluidStackWidget(this.leftPos + 32, this.topPos - 4, 16, 71, menu::getFluidTank));
+		addRenderableOnly(new FancyTankWidget(this.leftPos + 32, this.topPos - 5, 16, 72, menu::getFluidTank));
 	}
 
 	@Override

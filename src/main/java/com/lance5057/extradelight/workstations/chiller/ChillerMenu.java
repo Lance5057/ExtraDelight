@@ -5,6 +5,9 @@ import java.util.Objects;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.gui.FancyTankInSlot;
+import com.lance5057.extradelight.gui.FancyTankOutSlot;
+import com.lance5057.extradelight.workstations.FancyTank;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -75,8 +78,10 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 			}
 		});
 
-		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.FLUID_IN, 19, 13));
-		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.FLUID_OUT, 19, 68));
+		this.addSlot(new FancyTankInSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
+				ChillerBlockEntity.FLUID_IN, 19, 13));
+		this.addSlot(new FancyTankOutSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
+				ChillerBlockEntity.FLUID_OUT, 19, 68));
 
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.DRIP_TRAY_OUT, 150, 68));
 
@@ -97,7 +102,7 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 		}
 	}
 
-	public FluidTank getFluidTank() {
+	public FancyTank getFluidTank() {
 		return this.tileEntity.getFluidTank();
 	}
 

@@ -12,6 +12,8 @@ import com.lance5057.extradelight.ExtraDelightConfig;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
+import com.lance5057.extradelight.workstations.FancyTank;
+import com.lance5057.extradelight.workstations.IFancyTankHandler;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipeWrapper;
 
@@ -24,7 +26,6 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -36,19 +37,14 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
-import net.neoforged.neoforge.fluids.FluidUtil;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
-import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
-import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
-public class VatBlockEntity extends BlockEntity {
+public class VatBlockEntity extends BlockEntity implements IFancyTankHandler<VatBlockEntity> {
 	public static final String INV_TAG = "inv";
 
 	private final ItemStackHandler items = createHandler();
@@ -60,9 +56,19 @@ public class VatBlockEntity extends BlockEntity {
 	public static final int LIQUID_OUT_SLOT = LIQUID_IN_SLOT + 1;
 	public static final int OUTPUT_SLOT = LIQUID_OUT_SLOT + 1;
 
+	@Override
+	public int getFluidInSlot() {
+		return LIQUID_IN_SLOT;
+	}
+
+	@Override
+	public int getFluidOutSlot() {
+		return LIQUID_OUT_SLOT;
+	}
+
 	public static final String FLUID_TAG = "tank";
 
-	private final FluidTank fluid = createFluidHandler();
+	private final FancyTank fluid = createFluidHandler();
 
 	private int cookTime = 0;
 	private int cookTimeTotal = 0;
@@ -110,13 +116,17 @@ public class VatBlockEntity extends BlockEntity {
 		super(ExtraDelightBlockEntities.VAT.get(), pPos, pState);
 	}
 
-	private FluidTank createFluidHandler() {
-		FluidTank tank = new FluidTank(FluidType.BUCKET_VOLUME) {
+	private FancyTank createFluidHandler() {
+		FancyTank tank = new FancyTank(FluidType.BUCKET_VOLUME, e -> true, 1) {
 			@Override
 			protected void onContentsChanged() {
+				super.onContentsChanged();
+				var level = VatBlockEntity.this.getLevel();
+				if (level == null)
+					return;
 				VatBlockEntity.this.requestModelDataUpdate();
-				VatBlockEntity.this.getLevel().sendBlockUpdated(VatBlockEntity.this.getBlockPos(),
-						VatBlockEntity.this.getBlockState(), VatBlockEntity.this.getBlockState(), Block.UPDATE_ALL);
+				level.sendBlockUpdated(VatBlockEntity.this.getBlockPos(), VatBlockEntity.this.getBlockState(),
+						VatBlockEntity.this.getBlockState(), Block.UPDATE_ALL);
 				VatBlockEntity.this.setChanged();
 			}
 		};
@@ -124,76 +134,8 @@ public class VatBlockEntity extends BlockEntity {
 		return tank;
 	}
 
-	public FluidTank getFluidTank() {
+	public FancyTank getFluidTank() {
 		return fluid;
-	}
-
-	public static void fillInternal(VatBlockEntity bowl) {
-		ItemStack inputItem = bowl.items.getStackInSlot(LIQUID_IN_SLOT);
-		if (!inputItem.isEmpty()) {
-			if (inputItem.getItem() instanceof BucketItem filledBucket) {
-				int filled = bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
-						IFluidHandler.FluidAction.SIMULATE);
-				if (filled == FluidType.BUCKET_VOLUME) {
-					bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
-							IFluidHandler.FluidAction.EXECUTE);
-					inputItem.shrink(1);
-					bowl.items.setStackInSlot(LIQUID_IN_SLOT, Items.BUCKET.getDefaultInstance());
-
-				}
-			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
-				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
-				int filled = FluidUtil.tryFluidTransfer(bowl.getFluidTank(), fluidHandlerItem,
-						bowl.getFluidTank().getFluidAmount(), true).getAmount();
-				if (filled > 0) {
-					bowl.items.setStackInSlot(LIQUID_IN_SLOT, fluidHandlerItem.getContainer());
-
-				}
-			} else {
-				FluidStack f = BottleFluidRegistry.getFluidFromBottle(inputItem);
-				if (!f.isEmpty()) {
-					if (bowl.getFluidTank().fill(f, FluidAction.SIMULATE) == 250) {
-						bowl.getFluidTank().fill(f, FluidAction.EXECUTE);
-						// Because the blasted water bottle has no craftRemainder
-						if (inputItem.is(Items.POTION)) {
-							bowl.items.setStackInSlot(LIQUID_IN_SLOT, new ItemStack(Items.GLASS_BOTTLE));
-						} else {
-							bowl.items.setStackInSlot(LIQUID_IN_SLOT, inputItem.getCraftingRemainingItem().copy());
-						}
-					}
-				}
-			}
-		}
-	}
-
-	public static void drainInternal(VatBlockEntity bowl) {
-		ItemStack inputItem = bowl.items.getStackInSlot(LIQUID_OUT_SLOT);
-		if (!inputItem.isEmpty()) {
-			if (inputItem.getItem() == Items.BUCKET) {
-				FluidStack stack = bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME,
-						IFluidHandler.FluidAction.SIMULATE);
-				if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
-					bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
-					inputItem.shrink(1);
-					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, stack.getFluid().getBucket().getDefaultInstance());
-				}
-			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
-				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
-				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
-						bowl.getFluidTank().getFluidAmount(), true).getAmount();
-				if (filled > 0) {
-					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, fluidHandlerItem.getContainer());
-				}
-			} else {
-				ItemStack i = BottleFluidRegistry.getBottleFromFluid(bowl.getFluidTank().getFluid());
-				if (!i.isEmpty()) {
-					if (bowl.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
-						bowl.getFluidTank().drain(250, FluidAction.EXECUTE);
-						bowl.items.setStackInSlot(LIQUID_OUT_SLOT, i);
-					}
-				}
-			}
-		}
 	}
 
 	public IItemHandlerModifiable getItemHandler() {
@@ -202,44 +144,43 @@ public class VatBlockEntity extends BlockEntity {
 
 	private ItemStackHandler createHandler() {
 		return new ItemStackHandler(OUTPUT_SLOT + 1) {
-			@Override
-			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
-				if (slot == LIQUID_IN_SLOT || slot == LIQUID_OUT_SLOT)
-					return 1;
-				else
-					return 64;
-			}
 
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
-//				if (slot == LIQUID_IN_SLOT)
-//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-//						return true;
-//					else
-//						return false;
-//				if (slot == LIQUID_OUT_SLOT)
-//					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
-//						return true;
-//					else
-//						return false;
-//				if (slot == OUTPUT_SLOT)
+				switch (slot) {
+				case LIQUID_IN_SLOT:
+					return stack.getCapability(Capabilities.FluidHandler.ITEM) != null || stack.is(Items.BUCKET)
+							|| !BottleFluidRegistry.getFluidFromBottle(stack).isEmpty();
+				case LIQUID_OUT_SLOT:
+
+					return stack.getCapability(Capabilities.FluidHandler.ITEM) != null || stack.is(Items.BUCKET)
+							|| ItemStack.isSameItem(stack,
+									BottleFluidRegistry
+											.getBottleFromFluid(VatBlockEntity.this.getFluidTank().getFluid())
+											.getCraftingRemainingItem())
+							|| stack.is(Items.GLASS_BOTTLE);
+//				case GHOST_SLOT:
 //					return false;
-				return true;
+				default:
+					return true;
+				}
 			}
 
 			@Override
 			protected void onContentsChanged(int slot) {
-//				if (slot != OUTPUT_SLOT) {
+//				if (slot != GHOST_SLOT) {
+//					zeroProgress();
 //					updateInventory();
 //				}
 
 				if (slot == LIQUID_IN_SLOT)
-					VatBlockEntity.fillInternal(VatBlockEntity.this);
+					VatBlockEntity.this.fillInternal(VatBlockEntity.this);
 				if (slot == LIQUID_OUT_SLOT)
-					VatBlockEntity.drainInternal(VatBlockEntity.this);
+					VatBlockEntity.this.drainInternal(VatBlockEntity.this);
 			}
 
 		};
+
 	}
 
 	private boolean doesMealHaveContainer(ItemStack meal) {
@@ -510,4 +451,5 @@ public class VatBlockEntity extends BlockEntity {
 		return Optional.empty();
 
 	}
+
 }

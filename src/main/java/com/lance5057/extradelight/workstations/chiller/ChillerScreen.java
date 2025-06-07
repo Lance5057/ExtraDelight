@@ -3,6 +3,7 @@ package com.lance5057.extradelight.workstations.chiller;
 import java.awt.Rectangle;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.gui.widgets.FancyTankWidget;
 import com.lance5057.extradelight.gui.widgets.FluidStackWidget;
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -29,7 +30,7 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 	public void init() {
 		super.init();
 		this.titleLabelX = 28;
-		addRenderableOnly(new FluidStackWidget(this.leftPos + 43, this.topPos + 13, 16, 71, menu::getFluidTank));
+		addRenderableOnly(new FancyTankWidget(this.leftPos + 43, this.topPos + 13, 16, 71, menu::getFluidTank));
 		addRenderableOnly(new FluidStackWidget(this.leftPos + 126, this.topPos + 73, 16, 11, menu::getDripTray));
 	}
 
@@ -67,7 +68,8 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 
 		int p = o != 0 && n != 0 ? -(n * 12 / o) : -HEAT_ICON.height;
 
-		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 128, this.topPos + 28-p, HEAT_ICON.x , HEAT_ICON.y-p, HEAT_ICON.width, HEAT_ICON.height);
+		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 128, this.topPos + 28 - p, HEAT_ICON.x, HEAT_ICON.y - p,
+				HEAT_ICON.width, HEAT_ICON.height);
 	}
 
 }

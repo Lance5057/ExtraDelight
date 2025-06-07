@@ -5,6 +5,7 @@ import javax.annotation.Nonnull;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightConfig;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 
@@ -125,7 +126,10 @@ public class MeltingPotBlockEntity extends BlockEntity implements HeatableBlockE
 				if (f.isEmpty() || f.fill(fluid, FluidAction.SIMULATE) == fluid.getAmount())
 					if (!itemstack.isEmpty()) {
 //						flag = true;
-						int j = pBlockEntity.cookingProgress++;
+						pBlockEntity.cookingProgress++;
+						if(ExtraDelightConfig.ENABLE_DEBUG_MODE.get())
+							pBlockEntity.cookingProgress+=100;
+						
 						if (pBlockEntity.cookingProgress >= pBlockEntity.cookingTime) {
 							f.fill(fluid, FluidAction.EXECUTE);
 							itemstack.shrink(1);
@@ -179,7 +183,17 @@ public class MeltingPotBlockEntity extends BlockEntity implements HeatableBlockE
 						if (pBlockEntity.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
 							pBlockEntity.getFluidTank().drain(250, FluidAction.EXECUTE);
 							inputItem.shrink(1);
-							pBlockEntity.items.setStackInSlot(BUCKET_SLOT_OUT, i);
+							
+							if(pBlockEntity.items.getStackInSlot(BUCKET_SLOT_OUT).isEmpty())
+								pBlockEntity.items.setStackInSlot(BUCKET_SLOT_OUT, i);
+							else
+							{
+								ItemStack s = pBlockEntity.items.getStackInSlot(BUCKET_SLOT_OUT);
+								
+								if(ItemStack.isSameItem(i, s))
+								{
+									s.setCount(s.getCount()+i.getCount());								}
+							}
 						}
 					}
 				}

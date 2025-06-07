@@ -1,19 +1,21 @@
 package com.lance5057.extradelight.workstations.vat.recipes;
 
+import com.lance5057.extradelight.workstations.FancyTank;
+
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 
 public class VatRecipeWrapper extends RecipeWrapper {
 
-	final FluidTank tank;
+	final FancyTank tank;
 
-	public VatRecipeWrapper(IItemHandler inv, FluidTank tank) {
+	public VatRecipeWrapper(IItemHandler inv, FancyTank fluid) {
 		super(inv);
-		this.tank = tank;
+		this.tank = fluid;
 	}
 
-	public FluidTank getTank() {
+	public FancyTank getTank() {
 		return tank;
 	}
 }

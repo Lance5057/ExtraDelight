@@ -4,6 +4,9 @@ import java.util.Objects;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
+import com.lance5057.extradelight.gui.FancyTankInSlot;
+import com.lance5057.extradelight.gui.FancyTankOutSlot;
+import com.lance5057.extradelight.workstations.FancyTank;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,7 +17,6 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class VatMenu extends AbstractContainerMenu {
@@ -46,8 +48,10 @@ public class VatMenu extends AbstractContainerMenu {
 			this.addSlot(
 					new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.FERMENTATION_INPUT_SLOT, 55, 51));
 
-			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.LIQUID_IN_SLOT, 8, -5));
-			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.LIQUID_OUT_SLOT, 8, 51));
+			this.addSlot(new FancyTankInSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
+					VatBlockEntity.LIQUID_IN_SLOT, 8, -5));
+			this.addSlot(new FancyTankOutSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
+					VatBlockEntity.LIQUID_OUT_SLOT, 8, 51));
 
 			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.OUTPUT_SLOT, 151, 32));
 
@@ -80,7 +84,7 @@ public class VatMenu extends AbstractContainerMenu {
 		this(windowId, playerInventory, getTileEntity(playerInventory, data));
 	}
 
-	public FluidTank getFluidTank() {
+	public FancyTank getFluidTank() {
 		return this.tileEntity.getFluidTank();
 	}
 
