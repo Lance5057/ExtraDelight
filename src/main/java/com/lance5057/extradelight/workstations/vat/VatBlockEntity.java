@@ -14,6 +14,7 @@ import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.FancyTank;
 import com.lance5057.extradelight.workstations.IFancyTankHandler;
+import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipeWrapper;
 
@@ -38,6 +39,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
@@ -155,9 +157,8 @@ public class VatBlockEntity extends BlockEntity implements IFancyTankHandler<Vat
 
 					return stack.getCapability(Capabilities.FluidHandler.ITEM) != null || stack.is(Items.BUCKET)
 							|| ItemStack.isSameItem(stack,
-									BottleFluidRegistry
-											.getBottleFromFluid(VatBlockEntity.this.getFluidTank().getFluid())
-											.getCraftingRemainingItem())
+									BottleFluidRegistry.getBottleFromFluid(VatBlockEntity.this.getFluidTank().drain(250,
+											IFluidHandler.FluidAction.SIMULATE)).getCraftingRemainingItem())
 							|| stack.is(Items.GLASS_BOTTLE);
 //				case GHOST_SLOT:
 //					return false;

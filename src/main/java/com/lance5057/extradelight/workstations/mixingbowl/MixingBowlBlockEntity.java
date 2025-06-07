@@ -34,6 +34,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
@@ -133,9 +134,8 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 
 					return stack.getCapability(Capabilities.FluidHandler.ITEM) != null || stack.is(Items.BUCKET)
 							|| ItemStack.isSameItem(stack,
-									BottleFluidRegistry
-											.getBottleFromFluid(MixingBowlBlockEntity.this.getFluidTank().getFluid())
-											.getCraftingRemainingItem())
+									BottleFluidRegistry.getBottleFromFluid(MixingBowlBlockEntity.this.getFluidTank()
+											.drain(250, IFluidHandler.FluidAction.SIMULATE)).getCraftingRemainingItem())
 							|| stack.is(Items.GLASS_BOTTLE);
 				case GHOST_SLOT:
 					return false;

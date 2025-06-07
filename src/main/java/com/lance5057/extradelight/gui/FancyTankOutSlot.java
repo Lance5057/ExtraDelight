@@ -7,6 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
@@ -24,13 +25,14 @@ public class FancyTankOutSlot extends SlotItemHandler {
 	}
 
 	private int calcFluidOutSlotSize(ItemStack pSlot) {
-		if (pSlot.getCapability(Capabilities.FluidHandler.ITEM) != null
-				&& !pSlot.is(Items.BUCKET) && !pSlot.getCraftingRemainingItem().is(Items.BUCKET))
+		if (pSlot.getCapability(Capabilities.FluidHandler.ITEM) != null && !pSlot.is(Items.BUCKET)
+				&& !pSlot.getCraftingRemainingItem().is(Items.BUCKET))
 			return 1;
 		else {
 			if (pSlot.getItem() == Items.BUCKET)
 				return tank.getFluidAmount(0) / 1000;
-			else if (ItemStack.isSameItem(pSlot, BottleFluidRegistry.getBottleFromFluid(tank.getFluid()).getCraftingRemainingItem()))
+			else if (ItemStack.isSameItem(pSlot,
+					BottleFluidRegistry.getBottleFromFluid(tank.drain(250, IFluidHandler.FluidAction.SIMULATE)).getCraftingRemainingItem()))
 				return tank.getFluidAmount(0) / 250;
 			else if (tank.getFluid().is(Fluids.WATER) && pSlot.is(Items.GLASS_BOTTLE))
 				return tank.getFluidAmount(0) / 250;

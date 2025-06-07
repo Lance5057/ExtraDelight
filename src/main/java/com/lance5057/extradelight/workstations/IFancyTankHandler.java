@@ -154,7 +154,7 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 				if (getFluidTank().getFluid() != null) {
 					FluidStack stack = getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
 					ItemStack i = BottleFluidRegistry.getBottleFromFluid(stack);
-					if (!i.isEmpty() && i.getItem().getCraftingRemainingItem() == inputItem.getItem()) {
+					if (!i.isEmpty() && ItemStack.isSameItem(i.getCraftingRemainingItem(), inputItem)) {
 						for (int j = 0; j < sz; j++)
 							getFluidTank().drain(stack, FluidAction.EXECUTE);
 						BlockEntityUtils.Inventory.dropItemInWorld(i.copyWithCount(sz), be.getLevel(),

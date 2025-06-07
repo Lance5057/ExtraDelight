@@ -13,6 +13,7 @@ import com.lance5057.extradelight.items.components.ChillComponent;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.FancyTank;
 import com.lance5057.extradelight.workstations.IFancyTankHandler;
+import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.vat.VatBlockEntity;
 
 import net.minecraft.core.BlockPos;
@@ -362,9 +363,8 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 
 					return stack.getCapability(Capabilities.FluidHandler.ITEM) != null || stack.is(Items.BUCKET)
 							|| ItemStack.isSameItem(stack,
-									BottleFluidRegistry
-											.getBottleFromFluid(ChillerBlockEntity.this.getFluidTank().getFluid())
-											.getCraftingRemainingItem())
+									BottleFluidRegistry.getBottleFromFluid(ChillerBlockEntity.this.getFluidTank()
+											.drain(250, IFluidHandler.FluidAction.SIMULATE)).getCraftingRemainingItem())
 							|| stack.is(Items.GLASS_BOTTLE);
 //				case GHOST_SLOT:
 //					return false;
