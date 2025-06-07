@@ -671,7 +671,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition) {
 		this.add(pCropBlock, LootTable.lootTable()
-				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+				.withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1, 2))
 						.add(LootItem.lootTableItem(pSeedsItem).when(pDropGrownCropCondition)))
 				.withPool(LootPool.lootPool()
 						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)
