@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import java.util.Set;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
