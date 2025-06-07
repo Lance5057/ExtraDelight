@@ -30,7 +30,7 @@ public class FancyTankOutSlot extends SlotItemHandler {
 		else {
 			if (pSlot.getItem() == Items.BUCKET)
 				return tank.getFluidAmount(0) / 1000;
-			else if (ItemStack.isSameItem(pSlot, BottleFluidRegistry.getBottleFromFluid(tank.getFluid())))
+			else if (ItemStack.isSameItem(pSlot, BottleFluidRegistry.getBottleFromFluid(tank.getFluid()).getCraftingRemainingItem()))
 				return tank.getFluidAmount(0) / 250;
 			else if (tank.getFluid().is(Fluids.WATER) && pSlot.is(Items.GLASS_BOTTLE))
 				return tank.getFluidAmount(0) / 250;
