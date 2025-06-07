@@ -25,7 +25,7 @@ public class FancyTankOutSlot extends SlotItemHandler {
 
 	private int calcFluidOutSlotSize(ItemStack pSlot) {
 		if (pSlot.getCapability(Capabilities.FluidHandler.ITEM) != null
-				&& !pSlot.getCraftingRemainingItem().is(Items.BUCKET))
+				&& !pSlot.is(Items.BUCKET) && !pSlot.getCraftingRemainingItem().is(Items.BUCKET))
 			return 1;
 		else {
 			if (pSlot.getItem() == Items.BUCKET)

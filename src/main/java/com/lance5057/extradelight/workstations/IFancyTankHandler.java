@@ -92,13 +92,15 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 				while (stack.getAmount() == FluidType.BUCKET_VOLUME && itr-- >= 0) {
 					getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
 					BlockEntityUtils.Inventory.dropItemInWorld(item.copy(), be.getLevel(), be.getBlockPos());
+					inputItem.shrink(1);
 					stack = getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.SIMULATE);
 				}
-				int diff = oitr - itr;
-				int szDiff = sz - oitr;
-				var origin = inputItem.copy();
-//				boolean movedBack = true;
-				getItemHandler().getStackInSlot(getFluidOutSlot()).shrink(diff);
+//				int diff = oitr - itr;
+////				int szDiff = sz - oitr;
+////				var origin = inputItem.copy();
+//////				boolean movedBack = true;
+//				ItemStack bucket = getItemHandler().getStackInSlot(getFluidOutSlot());
+//				bucket.shrink(diff);
 //				var stackInMouse = bowl.menu.getCarried();
 //				if(ItemStack.isSameItemSameComponents(stackInMouse, inputItem)) {
 //					stackInMouse.grow(itr + szDiff);
@@ -120,19 +122,20 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 				// this might cause mod compat issues later on
 				int maxFill = Math.min(getFluidTank().getFluidAmount(0),
 						(fluidHandlerItem.getTankCapacity(0) - fluidHandlerItem.getFluidInTank(0).getAmount()) * sz);
-				int diff = 0;
+//				int diff = 0;
 				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, getFluidTank(), maxFill, true).getAmount();
 				maxFill -= filled;
 				while (filled > 0 && maxFill >= 0) {
 					filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, getFluidTank(), maxFill, true).getAmount();
 					BlockEntityUtils.Inventory.dropItemInWorld(fluidHandlerItem.getContainer().copy(), be.getLevel(),
 							be.getBlockPos());
-					fluidHandlerItem = inputItem.copyWithCount(1).getCapability(Capabilities.FluidHandler.ITEM);
-					filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, getFluidTank(), maxFill, false).getAmount();
-					maxFill -= filled;
-					diff++;
+					inputItem.shrink(1);
+//					fluidHandlerItem = inputItem.copyWithCount(1).getCapability(Capabilities.FluidHandler.ITEM);
+//					filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, getFluidTank(), maxFill, false).getAmount();
+//					maxFill -= filled;
+//					diff++;
 				}
-				getItemHandler().getStackInSlot(getFluidOutSlot()).shrink(diff);
+//				getItemHandler().getStackInSlot(getFluidOutSlot()).shrink(diff);
 //				var stackInMouse = bowl.menu.getCarried();
 //				boolean movedBack = true;
 //				if(ItemStack.isSameItemSameComponents(stackInMouse, inputItem)) {
