@@ -21,7 +21,7 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.5.3";
+	public static final String VERSION = "2.5.4";
 
 	public static ResourceLocation modLoc(String s) {
 		return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);
