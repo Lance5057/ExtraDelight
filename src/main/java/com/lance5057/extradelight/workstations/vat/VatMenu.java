@@ -53,9 +53,9 @@ public class VatMenu extends AbstractContainerMenu {
 			this.addSlot(new FancyTankOutSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
 					VatBlockEntity.LIQUID_OUT_SLOT, 8, 51));
 
-			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.OUTPUT_SLOT, 151, 32));
+			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.CONTAINER_SLOT, 151, 32));
 
-			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.CONTAINER_SLOT, 151, 51) {
+			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.OUTPUT_SLOT, 151, 51) {
 
 				@Override
 				public boolean mayPlace(ItemStack stack) {
