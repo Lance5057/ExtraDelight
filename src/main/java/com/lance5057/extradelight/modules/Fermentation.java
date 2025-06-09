@@ -1071,6 +1071,7 @@ public class Fermentation {
 
 	public static void EngLoc(LanguageProvider lp) {
 		lp.add("effect.extradelight.pickled", "Pickled!");
+		lp.add("effect.extradelight.pickled.description", "Chance to negate poison tick.");
 		lp.add(CUCUMBER_CROP.get(), "Cucumbers");
 		lp.add(SOYBEAN_CROP.get(), "Soybeans");
 		lp.add(WILD_CUCUMBER.get(), "Wild Cucumber");
@@ -1080,7 +1081,7 @@ public class Fermentation {
 		lp.add(CUCUMBER_SEED.get(), "Cucumber Seeds");
 		lp.add(SOYBEANS.get(), "Soybeans");
 		lp.add(SALT.get(), "Salt");
-		lp.add(SALT_BLOCK_ITEM.get(), "Salt Block");
+		lp.add(SALT_BLOCK.get(), "Salt Block");
 		lp.add(CUCUMBER_CRATE.get(), "Cucumber Crate");
 		lp.add(SOYBEAN_SACK.get(), "Soybean Sack");
 		lp.add(GHERKINS_BLOCK.get(), "Jar of Pickled Cucumbers");
@@ -1127,7 +1128,7 @@ public class Fermentation {
 		lp.add(HONEY_CHILI_CHICKEN.get(), "Honey Chili Chicken");
 		lp.add(CARAMEL_CHICKEN.get(), "Caramel Chicken");
 		lp.add(SOY_GLAZED_SALMON_BLOCK.get(), "Soy-Glazed Salmon");
-		lp.add(SOY_GLAZED_SALMON_ITEM.get(), "Bowl of Soy-Glazed Salmon");
+		lp.add(SOY_GLAZED_SALMON_ITEM.get(), "Plate of Soy-Glazed Salmon");
 		lp.add(STEAK_PICKLED_ONION_PIE.get(), "Steak and Pickled Onion Pie");
 		lp.add(STEAK_PICKLED_ONION_PIE_SLICE.get(), "Slice of Steak and Pickled Onion Pie");
 		lp.add(KIWIBURGER.get(), "Kiwiburger");
