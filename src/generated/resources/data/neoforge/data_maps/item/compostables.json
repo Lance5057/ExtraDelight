@@ -75,6 +75,12 @@
     "extradelight:hazelnuts_in_shell": {
       "chance": 0.2
     },
+    "extradelight:lemon_leaves": {
+      "chance": 0.2
+    },
+    "extradelight:lemon_sapling": {
+      "chance": 0.2
+    },
     "extradelight:mallow_root": {
       "chance": 0.2
     },

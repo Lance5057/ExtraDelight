@@ -801,6 +801,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:lemon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:macaroni": {
       "conditions": {
         "items": [
@@ -1344,6 +1354,9 @@
     ],
     [
       "extradelight:macaroni"
+    ],
+    [
+      "extradelight:lemon"
     ],
     [
       "extradelight:frosting_red"
