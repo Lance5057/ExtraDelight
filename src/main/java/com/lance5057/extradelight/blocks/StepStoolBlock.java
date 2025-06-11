@@ -69,15 +69,15 @@ public class StepStoolBlock extends Block {
 	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
 			InteractionHand hand, BlockHitResult result) {
-		if (!level.isClientSide) {
-			ItemStack r = new ItemStack(this.asItem());
-			if (!player.addItem(r))
-				level.addFreshEntity(
-						new ItemEntity(level, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, r, 0, 0, 0));
-			level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
+//		if (!level.isClientSide) {
+		ItemStack r = new ItemStack(this.asItem());
+		if (!player.addItem(r))
+			level.addFreshEntity(
+					new ItemEntity(level, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, r, 0, 0, 0));
+		level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
 
-			return ItemInteractionResult.SUCCESS;
-		}
-		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+		return ItemInteractionResult.SUCCESS;
+//		}
+//		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 }

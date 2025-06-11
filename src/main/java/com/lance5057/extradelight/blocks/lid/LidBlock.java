@@ -14,6 +14,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -31,6 +33,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -154,9 +157,25 @@ public class LidBlock extends Block implements IStyleable {
 	}
 
 	@Override
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
+			InteractionHand hand, BlockHitResult result) {
+//		if (!level.isClientSide) {
+			ItemStack r = new ItemStack(this.asItem());
+			r.set(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY.with(STYLE, state.getValue(STYLE)));
+			if (!player.addItem(r))
+				level.addFreshEntity(
+						new ItemEntity(level, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, r, 0, 0, 0));
+			level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
+
+			return ItemInteractionResult.SUCCESS;
+//		}
+//		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+	}
+
+	@Override
 	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-		if (!level.isClientSide && !player.isCreative() && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)
-				&& state.getValue(STYLE) > 0) {
+		if (!level.isClientSide && !player.isCreative()
+				&& level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) {
 			ItemStack itemstack = new ItemStack(this);
 			itemstack.set(DataComponents.BLOCK_STATE,
 					BlockItemStateProperties.EMPTY.with(STYLE, state.getValue(STYLE)));
