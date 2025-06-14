@@ -13,8 +13,6 @@ import com.lance5057.extradelight.items.components.ChillComponent;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.FancyTank;
 import com.lance5057.extradelight.workstations.IFancyTankHandler;
-import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
-import com.lance5057.extradelight.workstations.vat.VatBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -23,7 +21,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
@@ -226,15 +223,15 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 					ItemStack ice = chiller.inventory.getStackInSlot(ICE);
 
 					ChillComponent time = ice.get(ExtraDelightComponents.CHILL.get());
-					chiller.chilltime = time.time();
-					chiller.chillDuration = time.time();
+					if (time != null) {
+						chiller.chilltime = time.time();
+						chiller.chillDuration = time.time();
 
-					ice.shrink(1);
-					return true;
-				} else
-					return false;
-			} else
-				return true;
+						ice.shrink(1);
+						return true;
+					}
+				}
+			}
 		return false;
 	}
 
@@ -366,6 +363,10 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 									BottleFluidRegistry.getBottleFromFluid(ChillerBlockEntity.this.getFluidTank()
 											.drain(250, IFluidHandler.FluidAction.SIMULATE)).getCraftingRemainingItem())
 							|| stack.is(Items.GLASS_BOTTLE);
+				case ICE:
+					if (stack.has(ExtraDelightComponents.CHILL.get()))
+						return true;
+					return false;
 //				case GHOST_SLOT:
 //					return false;
 				default:
