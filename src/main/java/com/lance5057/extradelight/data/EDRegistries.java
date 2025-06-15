@@ -88,6 +88,15 @@ public class EDRegistries {
 
 				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_LEMON_TREE,
 						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createLemonTree().build()));
+
+				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_LIME_TREE,
+						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createLimeTree().build()));
+
+				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_ORANGE_TREE,
+						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createOrangeTree().build()));
+
+				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_GRAPEFRUIT_TREE,
+						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createGrapefruitTree().build()));
 			}).add(Registries.PLACED_FEATURE, bootstrap -> {
 				HolderGetter<ConfiguredFeature<?, ?>> cfgs = bootstrap.lookup(Registries.CONFIGURED_FEATURE);
 				bootstrap.register(ExtraDelightWorldGen.PLACED_CORN_MAZE,
@@ -114,6 +123,18 @@ public class EDRegistries {
 				bootstrap.register(ExtraDelightWorldGen.PLACED_LEMON_TREE, new PlacedFeature(
 						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_LEMON_TREE),
 						List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.LEMON_SAPLING.get()))));
+
+				bootstrap.register(ExtraDelightWorldGen.PLACED_LIME_TREE, new PlacedFeature(
+						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_LIME_TREE),
+						List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.LIME_SAPLING.get()))));
+
+				bootstrap.register(ExtraDelightWorldGen.PLACED_ORANGE_TREE, new PlacedFeature(
+						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_ORANGE_TREE),
+						List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.ORANGE_SAPLING.get()))));
+
+				bootstrap.register(ExtraDelightWorldGen.PLACED_GRAPEFRUIT_TREE, new PlacedFeature(
+						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_GRAPEFRUIT_TREE),
+						List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.GRAPEFRUIT_SAPLING.get()))));
 			}).add(Registries.BIOME, bootstrap -> {
 				HolderGetter<PlacedFeature> placedFeatures = bootstrap.lookup(Registries.PLACED_FEATURE);
 				bootstrap.register(ExtraDelightWorldGen.CORNFIELD_BIOME, new Biome.BiomeBuilder()

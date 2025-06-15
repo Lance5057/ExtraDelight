@@ -23,6 +23,12 @@ public class ExtraDelightTreePlacements {
 			.createKey("apple");
 	public static final ResourceKey<PlacedFeature> LEMON_TREE_CHECKED = ExtraDelightTreePlacement
 			.createKey("lemon");
+	public static final ResourceKey<PlacedFeature> LIME_TREE_CHECKED = ExtraDelightTreePlacement
+			.createKey("lime");
+	public static final ResourceKey<PlacedFeature> ORANGE_TREE_CHECKED = ExtraDelightTreePlacement
+			.createKey("orange");
+	public static final ResourceKey<PlacedFeature> GRAPEFRUIT_TREE_CHECKED = ExtraDelightTreePlacement
+			.createKey("grapefruit");
 
 	public static void bootstrap(BootstrapContext<PlacedFeature> context) {
 		HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureGetter = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -35,6 +41,12 @@ public class ExtraDelightTreePlacements {
 				.getOrThrow(ExtraDelightTreeFeatures.APPLE);
 		final Holder<ConfiguredFeature<?, ?>> LEMON_TREE = configuredFeatureGetter
 				.getOrThrow(ExtraDelightTreeFeatures.LEMON);
+		final Holder<ConfiguredFeature<?, ?>> LIME_TREE = configuredFeatureGetter
+				.getOrThrow(ExtraDelightTreeFeatures.LIME);
+		final Holder<ConfiguredFeature<?, ?>> ORANGE_TREE = configuredFeatureGetter
+				.getOrThrow(ExtraDelightTreeFeatures.ORANGE);
+		final Holder<ConfiguredFeature<?, ?>> GRAPEFRUIT_TREE = configuredFeatureGetter
+				.getOrThrow(ExtraDelightTreeFeatures.GRAPEFRUIT);
 
 		context.register(CINNAMON_TREE_CHECKED, new PlacedFeature(CINNAMON_TREE,
 				List.of(PlacementUtils.filteredByBlockSurvival(ExtraDelightBlocks.CINNAMON_SAPLING.get()))));
@@ -47,5 +59,14 @@ public class ExtraDelightTreePlacements {
 
 		context.register(LEMON_TREE_CHECKED, new PlacedFeature(LEMON_TREE,
 				List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.LEMON_SAPLING.get()))));
+
+		context.register(LIME_TREE_CHECKED, new PlacedFeature(LIME_TREE,
+				List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.LIME_SAPLING.get()))));
+
+		context.register(ORANGE_TREE_CHECKED, new PlacedFeature(ORANGE_TREE,
+				List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.ORANGE_SAPLING.get()))));
+
+		context.register(GRAPEFRUIT_TREE_CHECKED, new PlacedFeature(GRAPEFRUIT_TREE,
+				List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.GRAPEFRUIT_SAPLING.get()))));
 	}
 }

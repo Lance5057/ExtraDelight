@@ -102,6 +102,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.soybean", "Found in anything temperate.");
 		this.add("extradelight.jei.info.yeast", "Use an empty glass bottle on an active yeast pot to obtain them.");
 		this.add("extradelight.jei.info.lemon", "Found in hills.");
+		this.add("extradelight.jei.info.lime", "Found in hot biomes.");
+		this.add("extradelight.jei.info.orange", "Found in wet biomes.");
+		this.add("extradelight.jei.info.grapefruit", "Found in jungle biomes.");
 
 		this.add("extradelight.jei.info.evaporator.extra", "+ Extras");
 		this.add("extradelight.jei.info.evaporator.view", "Requires View"); // Combine with the one under

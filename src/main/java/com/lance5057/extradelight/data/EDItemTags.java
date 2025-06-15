@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import java.util.concurrent.CompletableFuture;
 
 import com.lance5057.extradelight.CompatTags;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -409,7 +410,9 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.WHITE_CHOCOLATE_DOOR.get());
 		tag(ItemTags.WOODEN_DOORS).add(ExtraDelightItems.CINNAMON_DOOR.get(), ExtraDelightItems.FRUIT_DOOR.get());
 		tag(ItemTags.SAPLINGS).add(ExtraDelightItems.CINNAMON_SAPLING.get(), ExtraDelightItems.HAZELNUT_SAPLING.get(),
-				ExtraDelightItems.APPLE_SAPLING.get());
+				ExtraDelightItems.APPLE_SAPLING.get(), SummerCitrus.LEMON_SAPLING_ITEM.get(),
+				SummerCitrus.LIME_SAPLING_ITEM.get(), SummerCitrus.ORANGE_SAPLING_ITEM.get(),
+				SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
 
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BAR.get());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR_FILLED).add(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get());
