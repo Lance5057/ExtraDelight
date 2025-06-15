@@ -602,6 +602,18 @@ public class BlockLootTables extends BlockLootSubProvider {
 				SummerCitrus.LEMON.get());
 		this.dropSelf(SummerCitrus.LEMON_SAPLING.get());
 		add(SummerCitrus.POTTED_LEMON_SAPLING.get(), createPotFlowerItemTable(SummerCitrus.LEMON_SAPLING.get()));
+		this.createFruitLeavesDrop(SummerCitrus.LIME_LEAVES.get(), SummerCitrus.LIME_SAPLING.get(),
+				SummerCitrus.LIME.get());
+		this.dropSelf(SummerCitrus.LIME_SAPLING.get());
+		add(SummerCitrus.POTTED_LIME_SAPLING.get(), createPotFlowerItemTable(SummerCitrus.LIME_SAPLING.get()));
+		this.createFruitLeavesDrop(SummerCitrus.ORANGE_LEAVES.get(), SummerCitrus.ORANGE_SAPLING.get(),
+				SummerCitrus.ORANGE.get());
+		this.dropSelf(SummerCitrus.ORANGE_SAPLING.get());
+		add(SummerCitrus.POTTED_ORANGE_SAPLING.get(), createPotFlowerItemTable(SummerCitrus.ORANGE_SAPLING.get()));
+		this.createFruitLeavesDrop(SummerCitrus.GRAPEFRUIT_LEAVES.get(), SummerCitrus.GRAPEFRUIT_SAPLING.get(),
+				SummerCitrus.GRAPEFRUIT.get());
+		this.dropSelf(SummerCitrus.GRAPEFRUIT_SAPLING.get());
+		add(SummerCitrus.POTTED_GRAPEFRUIT_SAPLING.get(), createPotFlowerItemTable(SummerCitrus.GRAPEFRUIT_SAPLING.get()));
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {

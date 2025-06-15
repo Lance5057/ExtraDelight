@@ -52,6 +52,15 @@ public class ExtraDelightFeatures {
 	public static final DeferredHolder<Feature<?>, CinnamonTreeFeature> PATCH_LEMON_TREE = FEATURES
 			.register("lemon_tree", CinnamonTreeFeature::new);
 
+	public static final DeferredHolder<Feature<?>, CinnamonTreeFeature> PATCH_LIME_TREE = FEATURES
+			.register("lime_tree", CinnamonTreeFeature::new);
+
+	public static final DeferredHolder<Feature<?>, CinnamonTreeFeature> PATCH_ORANGE_TREE = FEATURES
+			.register("orange_tree", CinnamonTreeFeature::new);
+
+	public static final DeferredHolder<Feature<?>, CinnamonTreeFeature> PATCH_GRAPEFRUIT_TREE = FEATURES
+			.register("grapefruit_tree", CinnamonTreeFeature::new);
+
 	public static final DeferredHolder<Feature<?>, CornMazeFeature> CORN_MAZE_FEATURE = FEATURES
 			.register("corn_maze_feature", CornMazeFeature::new);
 	public static final DeferredHolder<Feature<?>, CornMazeRail> CORN_RAIL_FEATURE = FEATURES

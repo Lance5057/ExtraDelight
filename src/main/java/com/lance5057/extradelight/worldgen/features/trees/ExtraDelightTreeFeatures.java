@@ -62,10 +62,43 @@ public class ExtraDelightTreeFeatures {
 				new FruitLeafPlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(3, 2, 3));
 	}
 
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LIME = ResourceKey.create(Registries.CONFIGURED_FEATURE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "lime"));
+
+	public static TreeConfiguration.TreeConfigurationBuilder createLimeTree() {
+		return new TreeConfiguration.TreeConfigurationBuilder(
+				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()), new StraightTrunkPlacer(3, 0, 2),
+				BlockStateProvider.simple(SummerCitrus.LIME_LEAVES.get()),
+				new FruitLeafPlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(3, 2, 3));
+	}
+
+	public static final ResourceKey<ConfiguredFeature<?, ?>> ORANGE = ResourceKey.create(Registries.CONFIGURED_FEATURE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "orange"));
+
+	public static TreeConfiguration.TreeConfigurationBuilder createOrangeTree() {
+		return new TreeConfiguration.TreeConfigurationBuilder(
+				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()), new StraightTrunkPlacer(3, 0, 2),
+				BlockStateProvider.simple(SummerCitrus.ORANGE_LEAVES.get()),
+				new FruitLeafPlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(3, 2, 3));
+	}
+
+	public static final ResourceKey<ConfiguredFeature<?, ?>> GRAPEFRUIT = ResourceKey.create(Registries.CONFIGURED_FEATURE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "grapefruit"));
+
+	public static TreeConfiguration.TreeConfigurationBuilder createGrapefruitTree() {
+		return new TreeConfiguration.TreeConfigurationBuilder(
+				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()), new StraightTrunkPlacer(3, 0, 2),
+				BlockStateProvider.simple(SummerCitrus.GRAPEFRUIT_LEAVES.get()),
+				new FruitLeafPlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(3, 2, 3));
+	}
+
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> p_256317_) {
 		FeatureUtils.register(p_256317_, CINNAMON, Feature.TREE, createCinnamonTree().build());
 		FeatureUtils.register(p_256317_, HAZELNUT, Feature.TREE, createHazelnutTree().build());
 		FeatureUtils.register(p_256317_, APPLE, Feature.TREE, createAppleTree().build());
 		FeatureUtils.register(p_256317_, LEMON, Feature.TREE, createLemonTree().build());
+		FeatureUtils.register(p_256317_, LIME, Feature.TREE, createLimeTree().build());
+		FeatureUtils.register(p_256317_, ORANGE, Feature.TREE, createOrangeTree().build());
+		FeatureUtils.register(p_256317_, GRAPEFRUIT, Feature.TREE, createGrapefruitTree().build());
 	}
 }

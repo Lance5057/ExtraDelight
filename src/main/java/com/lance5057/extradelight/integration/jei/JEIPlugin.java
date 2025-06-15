@@ -164,6 +164,21 @@ public class JEIPlugin implements IModPlugin {
 						new ItemStack(SummerCitrus.LEMON.get()),
 						new ItemStack(SummerCitrus.LEMON_LEAVES.get())),
 				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.lemon"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(SummerCitrus.LIME_SAPLING.get()),
+						new ItemStack(SummerCitrus.LIME.get()),
+						new ItemStack(SummerCitrus.LIME_LEAVES.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.lime"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(SummerCitrus.ORANGE_SAPLING.get()),
+						new ItemStack(SummerCitrus.ORANGE.get()),
+						new ItemStack(SummerCitrus.ORANGE_LEAVES.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.orange"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(SummerCitrus.GRAPEFRUIT_SAPLING.get()),
+						new ItemStack(SummerCitrus.GRAPEFRUIT.get()),
+						new ItemStack(SummerCitrus.GRAPEFRUIT_LEAVES.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.grapefruit"));
 
 		List<ItemStack> hide = List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
 		registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hide);

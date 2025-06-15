@@ -134,6 +134,9 @@ public class ExtraDelightBlocks {
 		fire.setFlammable(ExtraDelightBlocks.APPLE_LEAVES.get(), 30, 60);
 
 		fire.setFlammable(SummerCitrus.LEMON_LEAVES.get(), 30, 60);
+		fire.setFlammable(SummerCitrus.LIME_LEAVES.get(), 30, 60);
+		fire.setFlammable(SummerCitrus.ORANGE_LEAVES.get(), 30, 60);
+		fire.setFlammable(SummerCitrus.GRAPEFRUIT_LEAVES.get(), 30, 60);
 	}
 
 	public static final DeferredBlock<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);

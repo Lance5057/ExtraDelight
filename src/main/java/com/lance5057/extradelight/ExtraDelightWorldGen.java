@@ -62,6 +62,21 @@ public class ExtraDelightWorldGen {
 	public static final ResourceKey<PlacedFeature> PLACED_LEMON_TREE = ResourceKey.create(Registries.PLACED_FEATURE,
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "lemon"));
 
+	public static final ResourceKey<ConfiguredFeature<?, ?>> CONFIGURED_LIME_TREE = ResourceKey.create(
+			Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "lime"));
+	public static final ResourceKey<PlacedFeature> PLACED_LIME_TREE = ResourceKey.create(Registries.PLACED_FEATURE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "lime"));
+
+	public static final ResourceKey<ConfiguredFeature<?, ?>> CONFIGURED_ORANGE_TREE = ResourceKey.create(
+			Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "orange"));
+	public static final ResourceKey<PlacedFeature> PLACED_ORANGE_TREE = ResourceKey.create(Registries.PLACED_FEATURE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "orange"));
+
+	public static final ResourceKey<ConfiguredFeature<?, ?>> CONFIGURED_GRAPEFRUIT_TREE = ResourceKey.create(
+			Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "grapefruit"));
+	public static final ResourceKey<PlacedFeature> PLACED_GRAPEFRUIT_TREE = ResourceKey.create(Registries.PLACED_FEATURE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "grapefruit"));
+
 	public static final ResourceKey<StructureSet> STRUCTURE_SET = ResourceKey.create(Registries.STRUCTURE_SET,
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "structure_set"));
 
