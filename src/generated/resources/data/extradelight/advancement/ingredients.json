@@ -641,6 +641,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:grapefruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grapefruit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:grated_carrot": {
       "conditions": {
         "items": [
@@ -811,6 +821,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:lime": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lime"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:macaroni": {
       "conditions": {
         "items": [
@@ -936,6 +956,16 @@
         "items": [
           {
             "items": "extradelight:omelette_mix"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:orange"
           }
         ]
       },
@@ -1359,6 +1389,9 @@
       "extradelight:lemon"
     ],
     [
+      "extradelight:orange"
+    ],
+    [
       "extradelight:frosting_red"
     ],
     [
@@ -1494,6 +1527,9 @@
       "extradelight:yeast_spread"
     ],
     [
+      "extradelight:lime"
+    ],
+    [
       "extradelight:pickled_beet_item"
     ],
     [
@@ -1618,6 +1654,9 @@
     ],
     [
       "extradelight:white_chocolate_chips"
+    ],
+    [
+      "extradelight:grapefruit"
     ],
     [
       "extradelight:natto_item"
