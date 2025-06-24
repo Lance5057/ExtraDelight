@@ -1,30 +1,29 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [
-    {
-      "amount": 250,
-      "fluid": "extradelight:mayo_fluid"
-    },
-    {
-      "amount": 250,
-      "fluid": "extradelight:vinegar_fluid"
-    }
-  ],
+  "type": "create:mixing",
   "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
     {
       "tag": "extradelight:processed/cabbage"
     },
     {
       "tag": "c:apple/sliced"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
     }
   ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:apple_slaw"
-  },
-  "stirs": 4,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  }
+  "results": [
+    {
+      "item": "extradelight:apple_slaw"
+    }
+  ]
 }

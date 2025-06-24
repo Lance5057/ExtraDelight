@@ -1,6 +1,5 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "type": "create:mixing",
   "ingredients": [
     {
       "tag": "c:flour"
@@ -21,9 +20,9 @@
       "tag": "c:cinnamon/ground"
     }
   ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:gingerbread_cookie_dough"
-  },
-  "stirs": 4
+  "results": [
+    {
+      "item": "extradelight:gingerbread_cookie_dough"
+    }
+  ]
 }

@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import java.util.concurrent.CompletableFuture;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.data.compat.create.CreateMixingRecipes;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreePlacement;
 
 import net.minecraft.core.HolderLookup;
@@ -36,25 +37,22 @@ public class DataGen {
 		generator.addProvider(true, blockTags);
 		generator.addProvider(event.includeServer(),
 				new EDItemTags(output, lookupProvider, blockTags.contentsGetter(), helper));
-		generator.addProvider(event.includeServer(),
-				new EDFluidTags(output, lookupProvider, helper));
+		generator.addProvider(event.includeServer(), new EDFluidTags(output, lookupProvider, helper));
 
 		generator.addProvider(event.includeServer(), new Recipes(output, lookupProvider));
 		generator.addProvider(event.includeServer(), new LootModifiers(lookupProvider, output));
 		generator.addProvider(event.includeServer(), new Advancements(output, lookupProvider, helper));
 		generator.addProvider(event.includeClient(), new EnglishLoc(output));
 
-//		generator.addProvider(event.includeServer(),
-//				new DatapackBuiltinEntriesProvider(output,
-//						event.getLookupProvider().thenApply(r -> constructRegistries(r, BUILDER)),
-//						Set.of(ExtraDelight.MOD_ID)));
-
 		generator.addProvider(event.includeServer(), new EDBiomeModifiers(output, lookupProvider));
 		generator.addProvider(event.includeServer(), EDRegistries.provider(output, lookupProvider));
 
 		generator.addProvider(event.includeServer(), new DataMapGen(output, lookupProvider));
 
-		generator.addProvider(event.includeClient(), new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider));
+		generator.addProvider(event.includeClient(),
+				new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider));
+
+		generator.addProvider(event.includeClient(), new CreateMixingRecipes(output, lookupProvider, "extradelight"));
 	}
 
 //	private static RegistrySetBuilder.PatchedRegistries constructRegistries(HolderLookup.Provider original,

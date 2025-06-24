@@ -1,23 +1,21 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [
+  "type": "create:mixing",
+  "ingredients": [
     {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "type": "fluid_stack",
       "amount": 250,
       "fluid": "extradelight:mayo_fluid"
     }
   ],
-  "ingredients": [
+  "results": [
     {
-      "tag": "extradelight:processed/garlic"
+      "item": "extradelight:aioli_jar_item"
     }
-  ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:aioli_jar_item"
-  },
-  "stirs": 8,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:glass_bottle"
-  }
+  ]
 }

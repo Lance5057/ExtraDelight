@@ -1,16 +1,9 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [
-    {
-      "amount": 250,
-      "fluid": "extradelight:whipped_cream_fluid"
-    },
-    {
-      "amount": 250,
-      "fluid": "extradelight:caramel_sauce_fluid"
-    }
-  ],
+  "type": "create:mixing",
   "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
     {
       "tag": "c:chocolate/bar"
     },
@@ -22,15 +15,21 @@
     },
     {
       "tag": "c:marshmallow"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:caramel_sauce_fluid"
     }
   ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:candy_bar_salad"
-  },
-  "stirs": 4,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  }
+  "results": [
+    {
+      "item": "extradelight:candy_bar_salad"
+    }
+  ]
 }

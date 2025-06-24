@@ -1,7 +1,9 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "type": "create:mixing",
   "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
     {
       "tag": "c:alfredo_sauce"
     },
@@ -12,13 +14,9 @@
       "tag": "c:foods/cooked_chicken"
     }
   ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:chicken_alfredo"
-  },
-  "stirs": 2,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  }
+  "results": [
+    {
+      "item": "extradelight:chicken_alfredo"
+    }
+  ]
 }

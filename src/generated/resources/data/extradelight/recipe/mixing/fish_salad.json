@@ -1,26 +1,25 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [
-    {
-      "amount": 250,
-      "fluid": "extradelight:mayo_fluid"
-    }
-  ],
+  "type": "create:mixing",
   "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
     {
       "tag": "c:foods/cooked_fish"
     },
     {
       "tag": "c:foods/cooked_fish"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
     }
   ],
-  "result": {
-    "count": 2,
-    "id": "extradelight:fish_salad"
-  },
-  "stirs": 8,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  }
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:fish_salad"
+    }
+  ]
 }

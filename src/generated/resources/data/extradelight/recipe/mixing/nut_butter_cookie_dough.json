@@ -1,11 +1,5 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [
-    {
-      "amount": 250,
-      "fluid": "extradelight:nut_butter_fluid"
-    }
-  ],
+  "type": "create:mixing",
   "ingredients": [
     {
       "tag": "c:flour"
@@ -18,11 +12,16 @@
     },
     {
       "tag": "c:eggs"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:nut_butter_fluid"
     }
   ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:nut_butter_cookie_dough"
-  },
-  "stirs": 4
+  "results": [
+    {
+      "item": "extradelight:nut_butter_cookie_dough"
+    }
+  ]
 }

@@ -1,6 +1,5 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "type": "create:mixing",
   "ingredients": [
     {
       "tag": "c:cookie_dough/sugar"
@@ -9,9 +8,9 @@
       "tag": "c:chocolate/chips"
     }
   ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:chocolate_chip_cookie_dough"
-  },
-  "stirs": 4
+  "results": [
+    {
+      "item": "extradelight:chocolate_chip_cookie_dough"
+    }
+  ]
 }

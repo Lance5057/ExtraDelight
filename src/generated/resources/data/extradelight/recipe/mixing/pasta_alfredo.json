@@ -1,7 +1,9 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "type": "create:mixing",
   "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
     {
       "tag": "c:alfredo_sauce"
     },
@@ -9,13 +11,9 @@
       "item": "extradelight:cooked_pasta"
     }
   ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:pasta_alfredo"
-  },
-  "stirs": 2,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  }
+  "results": [
+    {
+      "item": "extradelight:pasta_alfredo"
+    }
+  ]
 }

@@ -1,12 +1,9 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [
-    {
-      "amount": 100,
-      "fluid": "extradelight:cocoa_butter_fluid"
-    }
-  ],
+  "type": "create:mixing",
   "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
     {
       "tag": "extradelight:sweetener"
     },
@@ -15,15 +12,16 @@
     },
     {
       "tag": "c:cocoa/solids"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 100,
+      "fluid": "extradelight:cocoa_butter_fluid"
     }
   ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:dark_chocolate_syrup_bottle"
-  },
-  "stirs": 4,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:glass_bottle"
-  }
+  "results": [
+    {
+      "item": "extradelight:dark_chocolate_syrup_bottle"
+    }
+  ]
 }

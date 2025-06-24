@@ -1,11 +1,5 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [
-    {
-      "amount": 250,
-      "fluid": "minecraft:water"
-    }
-  ],
+  "type": "create:mixing",
   "ingredients": [
     {
       "tag": "c:mallowroot/powder"
@@ -18,11 +12,17 @@
     },
     {
       "tag": "c:eggs"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "minecraft:water"
     }
   ],
-  "result": {
-    "count": 4,
-    "id": "extradelight:marshmallow"
-  },
-  "stirs": 4
+  "results": [
+    {
+      "count": 4,
+      "item": "extradelight:marshmallow"
+    }
+  ]
 }

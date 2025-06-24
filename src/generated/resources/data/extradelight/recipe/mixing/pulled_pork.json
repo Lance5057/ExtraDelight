@@ -1,32 +1,30 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [
+  "type": "create:mixing",
+  "ingredients": [
     {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:pork/scrap/cooked"
+    },
+    {
+      "tag": "c:pork/scrap/cooked"
+    },
+    {
+      "tag": "c:pork/scrap/cooked"
+    },
+    {
+      "tag": "c:pork/scrap/cooked"
+    },
+    {
+      "type": "fluid_stack",
       "amount": 250,
       "fluid": "extradelight:bbq_fluid"
     }
   ],
-  "ingredients": [
+  "results": [
     {
-      "tag": "c:pork/scrap/cooked"
-    },
-    {
-      "tag": "c:pork/scrap/cooked"
-    },
-    {
-      "tag": "c:pork/scrap/cooked"
-    },
-    {
-      "tag": "c:pork/scrap/cooked"
+      "item": "extradelight:pulled_pork_block_item"
     }
-  ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:pulled_pork_block_item"
-  },
-  "stirs": 4,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  }
+  ]
 }

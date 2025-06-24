@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:alfredo_sauce"
+    },
+    {
+      "item": "extradelight:cooked_pasta"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:pasta_alfredo"
+    }
+  ]
+}

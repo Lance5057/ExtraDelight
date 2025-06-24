@@ -1,6 +1,5 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [],
+  "type": "create:mixing",
   "ingredients": [
     {
       "tag": "c:cookie_dough/sugar"
@@ -12,9 +11,9 @@
       "tag": "c:cinnamon/ground"
     }
   ],
-  "result": {
-    "count": 1,
-    "id": "extradelight:apple_cookie_dough"
-  },
-  "stirs": 4
+  "results": [
+    {
+      "item": "extradelight:apple_cookie_dough"
+    }
+  ]
 }

@@ -1,27 +1,27 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [
+  "type": "create:mixing",
+  "ingredients": [
     {
-      "amount": 250,
-      "tag": "c:chocolate"
+      "item": "minecraft:glass_bottle"
     },
     {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:chocolate"
+    },
+    {
+      "type": "fluid_stack",
       "amount": 250,
       "fluid": "extradelight:nut_butter_fluid"
     }
   ],
-  "ingredients": [
+  "results": [
     {
-      "tag": "extradelight:sweetener"
+      "count": 2,
+      "item": "extradelight:hazelnut_spread_bottle"
     }
-  ],
-  "result": {
-    "count": 2,
-    "id": "extradelight:hazelnut_spread_bottle"
-  },
-  "stirs": 4,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:glass_bottle"
-  }
+  ]
 }

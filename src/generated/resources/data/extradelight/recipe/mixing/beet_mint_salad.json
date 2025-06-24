@@ -1,16 +1,9 @@
 {
-  "type": "extradelight:mixing_bowl",
-  "fluids": [
-    {
-      "amount": 250,
-      "fluid": "extradelight:oil_fluid"
-    },
-    {
-      "amount": 250,
-      "fluid": "extradelight:vinegar_fluid"
-    }
-  ],
+  "type": "create:mixing",
   "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
     {
       "tag": "extradelight:processed/beetroot"
     },
@@ -22,15 +15,22 @@
     },
     {
       "tag": "extradelight:sweetener"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
     }
   ],
-  "result": {
-    "count": 2,
-    "id": "extradelight:beet_mint_salad"
-  },
-  "stirs": 4,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  }
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:beet_mint_salad"
+    }
+  ]
 }
