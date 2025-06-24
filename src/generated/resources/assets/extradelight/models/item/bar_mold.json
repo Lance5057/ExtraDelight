@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/bar_mold"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }
