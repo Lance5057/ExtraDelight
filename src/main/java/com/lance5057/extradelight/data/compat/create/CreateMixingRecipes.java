@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.data;
+package com.lance5057.extradelight.data.compat.create;
 
 import java.util.concurrent.CompletableFuture;
 
