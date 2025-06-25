@@ -19,6 +19,7 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
@@ -72,14 +73,16 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid()))
 				.setFluidRenderer(1000, false, 16, 71);
 
-		builder.addSlot(RecipeIngredientRole.INPUT, 54, 56)
-				.addIngredients(Ingredient.of(recipe.getOutputContainer()));
+		builder.addSlot(RecipeIngredientRole.INPUT, 54, 56).addIngredients(Ingredient.of(recipe.getOutputContainer()));
 
 		builder.addSlot(RecipeIngredientRole.OUTPUT, 107, 30).addIngredients(Ingredient.of(recipe.output));
 
 		builder.addSlot(RecipeIngredientRole.CATALYST, 1, 1)
 				.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluid(recipe.getFluid()),
 						new ItemStack(recipe.getFluid().getFluid().getBucket())));
+
+		builder.addSlot(RecipeIngredientRole.CATALYST, 107, 10)
+				.addIngredients(Ingredient.of(Items.ICE, Items.SNOWBALL, Items.BLUE_ICE, Items.PACKED_ICE));
 	}
 
 }

@@ -1,0 +1,36 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "extradelight:cooked_corn"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    },
+    {
+      "tag": "c:foods/cooked_bacon"
+    },
+    {
+      "tag": "c:foods/raw_bacon"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "extradelight:broth"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "extradelight:corn_chowder"
+    }
+  ]
+}

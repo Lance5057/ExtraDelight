@@ -2,7 +2,6 @@ package com.lance5057.extradelight.workstations.vat.recipes;
 
 import com.lance5057.extradelight.workstations.FancyTank;
 
-import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 

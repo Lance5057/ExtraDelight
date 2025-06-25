@@ -3,8 +3,8 @@ package com.lance5057.extradelight.data;
 import java.util.concurrent.CompletableFuture;
 
 import com.lance5057.extradelight.ExtraDelightItems;
-
 import com.lance5057.extradelight.modules.Fermentation;
+
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;

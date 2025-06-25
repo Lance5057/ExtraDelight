@@ -39,6 +39,11 @@ public class ExtraDelightCapabilities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.WREATH.get(),
 				(o, d) -> o.getItemHandler());
 
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.COUNTER_CABINET_BLOCK.get(),
+				(o, d) -> o.getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.SINK_BLOCK.get(),
+				(o, d) -> o.getItemHandler());
+
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.TAP.get(),
 				(o, d) -> o.getFluidHandler());
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.SINK_BLOCK.get(),

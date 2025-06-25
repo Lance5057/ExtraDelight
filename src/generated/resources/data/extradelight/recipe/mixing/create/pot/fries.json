@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:potato_sticks"
+    },
+    {
+      "tag": "extradelight:frying_oil"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:french_fries"
+    }
+  ]
+}

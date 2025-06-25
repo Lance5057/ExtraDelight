@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "tag": "c:candy"
+    },
+    {
+      "tag": "c:candy"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:candy_apple"
+    }
+  ]
+}

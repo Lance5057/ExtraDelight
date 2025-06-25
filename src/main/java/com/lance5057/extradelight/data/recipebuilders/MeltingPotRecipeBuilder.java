@@ -3,8 +3,6 @@ package com.lance5057.extradelight.data.recipebuilders;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import javax.annotation.Nullable;
-
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotRecipe;
 
 import net.minecraft.advancements.Advancement;

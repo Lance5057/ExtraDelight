@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.blocks;
 
+import java.util.List;
+
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
 
@@ -27,8 +29,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.HitResult;
-
-import java.util.List;
 
 public class ChocolateStyleBlock extends Block implements IStyleable {
 	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, 5);

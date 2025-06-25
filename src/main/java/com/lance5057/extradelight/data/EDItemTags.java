@@ -2,9 +2,9 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.lance5057.extradelight.CompatTags;
 import org.jetbrains.annotations.Nullable;
 
+import com.lance5057.extradelight.CompatTags;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;

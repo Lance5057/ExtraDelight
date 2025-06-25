@@ -72,6 +72,11 @@ public class JarBlock extends Block implements EntityBlock {
 				}
 
 				return ItemInteractionResult.SUCCESS;
+			} else {
+				BlockEntity be = level.getBlockEntity(pos);
+				if (be != null && be instanceof JarBlockEntity jdbe) {
+					jdbe.use(player, hand);
+				}
 			}
 
 		}

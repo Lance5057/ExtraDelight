@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:foods/pasta"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:cooked_pasta"
+    }
+  ]
+}

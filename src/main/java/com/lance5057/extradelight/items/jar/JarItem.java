@@ -51,34 +51,18 @@ public class JarItem extends BlockItem implements IDisplayInteractable {
 	@Override
 	public ItemInteractionResult itemInteract(ItemStack heldItem, ItemStack interactItem, BlockState state, Level level,
 			BlockPos pos, Player player, InteractionHand hand) {
-		// TODO Auto-generated method stub
+		
 		return ItemInteractionResult.CONSUME;
 	}
 
 	@Override
 	public void extractItem(Level level, BlockPos pos, Player player, JarDisplayBlockEntity jdbe,
 			ItemStackHandler handler, ItemStack s, int index) {
-//		if (s.getItem() instanceof BlockItem bi) {
-//			BlockItemStateProperties state = s.get(DataComponents.BLOCK_STATE);
-//			if (state != null) {
-//				int servings = state.get(JarSingularBlock.SERVINGS);
-//				if (servings == 0) {
-//					List<ItemStack> drops = Block.getDrops(state.apply(bi.getBlock().defaultBlockState()),
-//							(ServerLevel) level, pos, null);
-//					drops.forEach(item -> {
-//						if (!player.addItem(item))
-//							level.addFreshEntity(
-//									new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), item.copy()));
-//					});
-//					handler.setStackInSlot(index, ItemStack.EMPTY);
-//				} else {
+
 		if (!player.addItem(s)) {
 			level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), s.copy()));
 			handler.setStackInSlot(index, ItemStack.EMPTY);
 		}
-//				}
-//			}
-//		}
 
 	}
 
