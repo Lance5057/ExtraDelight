@@ -205,7 +205,7 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 					chiller.cookTime = 0;
 				}
 			} else {
-				if (testChillTime(chiller)) {
+				if (isChilling(chiller)) {
 					chiller.cookTime++;
 				}
 			}
@@ -216,7 +216,7 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 		chiller.updateInventory();
 	}
 
-	private static boolean testChillTime(ChillerBlockEntity chiller) {
+	private static boolean isChilling(ChillerBlockEntity chiller) {
 		if (chiller.dripTray.getFluidAmount() < 1000)
 			if (chiller.chilltime <= 0) {
 				if (!chiller.inventory.getStackInSlot(ICE).isEmpty()) {
@@ -231,6 +231,8 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 						return true;
 					}
 				}
+			} else {
+				return true;
 			}
 		return false;
 	}
