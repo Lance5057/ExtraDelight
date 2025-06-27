@@ -1,5 +1,6 @@
 {
-  "type": "create:mixing",
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
       "tag": "c:flour"
@@ -14,9 +15,9 @@
       "tag": "c:eggs"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:sugar_cookie_dough"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "extradelight:sugar_cookie_dough"
+  },
+  "stirs": 4
 }

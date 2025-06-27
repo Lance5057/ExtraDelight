@@ -1,24 +1,26 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "item": "minecraft:bowl"
-    },
-    {
-      "tag": "c:eggs/boiled"
-    },
-    {
-      "tag": "c:eggs/boiled"
-    },
-    {
-      "type": "fluid_stack",
       "amount": 250,
       "fluid": "extradelight:mayo_fluid"
     }
   ],
-  "results": [
+  "ingredients": [
     {
-      "item": "extradelight:egg_salad"
+      "tag": "c:eggs/boiled"
+    },
+    {
+      "tag": "c:eggs/boiled"
     }
-  ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:egg_salad"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
 }

@@ -1,9 +1,12 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "item": "minecraft:bowl"
-    },
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    }
+  ],
+  "ingredients": [
     {
       "item": "minecraft:baked_potato"
     },
@@ -12,17 +15,15 @@
     },
     {
       "tag": "extradelight:processed/onion"
-    },
-    {
-      "type": "fluid_stack",
-      "amount": 250,
-      "fluid": "extradelight:mayo_fluid"
     }
   ],
-  "results": [
-    {
-      "count": 2,
-      "item": "extradelight:potato_salad"
-    }
-  ]
+  "result": {
+    "count": 2,
+    "id": "extradelight:potato_salad"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
 }

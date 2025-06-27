@@ -1,5 +1,6 @@
 {
-  "type": "create:mixing",
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
       "item": "extradelight:butter"
@@ -11,10 +12,9 @@
       "tag": "c:dyes/brown"
     }
   ],
-  "results": [
-    {
-      "count": 4,
-      "item": "extradelight:frosting_brown"
-    }
-  ]
+  "result": {
+    "count": 4,
+    "id": "extradelight:frosting_brown"
+  },
+  "stirs": 2
 }

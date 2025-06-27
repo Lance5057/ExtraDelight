@@ -28,7 +28,7 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.5.8";
+	public static final String VERSION = "2.5.9";
 
 	public static ResourceLocation modLoc(String s) {
 		return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);

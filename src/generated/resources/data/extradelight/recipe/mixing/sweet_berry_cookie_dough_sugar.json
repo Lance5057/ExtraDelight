@@ -1,5 +1,6 @@
 {
-  "type": "create:mixing",
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
       "tag": "c:cookie_dough/sugar"
@@ -8,9 +9,9 @@
       "item": "minecraft:sweet_berries"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:sweet_berry_cookie_dough"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "extradelight:sweet_berry_cookie_dough"
+  },
+  "stirs": 4
 }

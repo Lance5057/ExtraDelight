@@ -1,9 +1,12 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "item": "minecraft:bowl"
-    },
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    }
+  ],
+  "ingredients": [
     {
       "tag": "c:carrot/grated"
     },
@@ -12,16 +15,15 @@
     },
     {
       "tag": "extradelight:processed/apple"
-    },
-    {
-      "type": "fluid_stack",
-      "amount": 250,
-      "fluid": "extradelight:mayo_fluid"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:carrot_salad"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "extradelight:carrot_salad"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
 }

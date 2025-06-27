@@ -1,9 +1,16 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "item": "minecraft:glass_bottle"
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
     },
+    {
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
+    }
+  ],
+  "ingredients": [
     {
       "tag": "c:eggs"
     },
@@ -12,21 +19,15 @@
     },
     {
       "tag": "extradelight:processed/garlic"
-    },
-    {
-      "type": "fluid_stack",
-      "amount": 250,
-      "fluid": "extradelight:vinegar_fluid"
-    },
-    {
-      "type": "fluid_stack",
-      "amount": 250,
-      "fluid": "extradelight:oil_fluid"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:aioli_jar_item"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "extradelight:aioli_jar_item"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
 }

@@ -1,9 +1,12 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "item": "minecraft:glass_bottle"
-    },
+      "amount": 250,
+      "fluid": "minecraft:milk"
+    }
+  ],
+  "ingredients": [
     {
       "item": "extradelight:ice_cream"
     },
@@ -15,16 +18,15 @@
     },
     {
       "item": "farmersdelight:pumpkin_slice"
-    },
-    {
-      "type": "fluid_stack",
-      "amount": 250,
-      "fluid": "minecraft:milk"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:pumpkin_milkshake"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "extradelight:pumpkin_milkshake"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
 }

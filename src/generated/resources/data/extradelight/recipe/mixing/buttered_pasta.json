@@ -1,9 +1,7 @@
 {
-  "type": "create:mixing",
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
     {
       "item": "extradelight:cooked_pasta"
     },
@@ -11,9 +9,13 @@
       "tag": "c:butter"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:buttered_pasta"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "extradelight:buttered_pasta"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
 }

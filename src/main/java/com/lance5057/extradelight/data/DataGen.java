@@ -52,6 +52,6 @@ public class DataGen {
 		generator.addProvider(event.includeClient(),
 				new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider));
 
-		generator.addProvider(event.includeClient(), new CreateMixingRecipes(output, lookupProvider, "extradelight"));
+		generator.addProvider(event.includeClient(), new CreateMixingRecipes(output, lookupProvider, "create"));
 	}
 }

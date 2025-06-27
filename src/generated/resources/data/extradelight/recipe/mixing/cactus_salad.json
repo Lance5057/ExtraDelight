@@ -1,9 +1,7 @@
 {
-  "type": "create:mixing",
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
     {
       "tag": "c:cactus/cooked"
     },
@@ -17,9 +15,13 @@
       "tag": "c:cheese"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:cactus_salad"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "extradelight:cactus_salad"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
 }

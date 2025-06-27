@@ -1,29 +1,30 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "item": "minecraft:glass_bottle"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "type": "fluid_stack",
       "amount": 250,
       "fluid": "extradelight:oil_fluid"
     },
     {
-      "type": "fluid_stack",
       "amount": 250,
       "fluid": "extradelight:vinegar_fluid"
     }
   ],
-  "results": [
+  "ingredients": [
     {
-      "item": "extradelight:mayo_jar_item"
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:eggs"
     }
-  ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:mayo_jar_item"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
 }

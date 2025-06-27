@@ -1,24 +1,26 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "item": "minecraft:bowl"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "type": "fluid_stack",
       "amount": 250,
       "fluid": "minecraft:milk"
     }
   ],
-  "results": [
+  "ingredients": [
     {
-      "item": "extradelight:egg_mix"
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:eggs"
     }
-  ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:egg_mix"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
 }

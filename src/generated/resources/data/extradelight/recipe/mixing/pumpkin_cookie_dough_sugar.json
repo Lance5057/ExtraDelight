@@ -1,5 +1,6 @@
 {
-  "type": "create:mixing",
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
       "tag": "c:cookie_dough/sugar"
@@ -8,9 +9,9 @@
       "item": "farmersdelight:pumpkin_slice"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:pumpkin_cookie_dough"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "extradelight:pumpkin_cookie_dough"
+  },
+  "stirs": 4
 }

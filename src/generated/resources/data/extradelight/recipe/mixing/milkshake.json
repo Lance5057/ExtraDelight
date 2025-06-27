@@ -1,21 +1,23 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "item": "minecraft:glass_bottle"
-    },
-    {
-      "item": "extradelight:ice_cream"
-    },
-    {
-      "type": "fluid_stack",
       "amount": 250,
       "fluid": "minecraft:milk"
     }
   ],
-  "results": [
+  "ingredients": [
     {
-      "item": "extradelight:milkshake"
+      "item": "extradelight:ice_cream"
     }
-  ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:milkshake"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
 }

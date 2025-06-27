@@ -1,9 +1,7 @@
 {
-  "type": "create:mixing",
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
     {
       "item": "farmersdelight:tomato_sauce"
     },
@@ -14,9 +12,13 @@
       "item": "farmersdelight:beef_patty"
     }
   ],
-  "results": [
-    {
-      "item": "farmersdelight:pasta_with_meatballs"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:pasta_with_meatballs"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
 }

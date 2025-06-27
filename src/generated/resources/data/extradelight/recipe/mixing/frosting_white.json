@@ -1,5 +1,11 @@
 {
-  "type": "create:mixing",
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
+    }
+  ],
   "ingredients": [
     {
       "item": "extradelight:butter"
@@ -9,17 +15,11 @@
     },
     {
       "tag": "c:dyes/white"
-    },
-    {
-      "type": "fluid_stack",
-      "amount": 250,
-      "fluid": "extradelight:whipped_cream_fluid"
     }
   ],
-  "results": [
-    {
-      "count": 4,
-      "item": "extradelight:frosting_white"
-    }
-  ]
+  "result": {
+    "count": 4,
+    "id": "extradelight:frosting_white"
+  },
+  "stirs": 2
 }

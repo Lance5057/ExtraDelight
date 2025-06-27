@@ -1,9 +1,12 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "item": "minecraft:glass_bottle"
-    },
+      "amount": 250,
+      "fluid": "minecraft:milk"
+    }
+  ],
+  "ingredients": [
     {
       "item": "extradelight:ice_cream"
     },
@@ -12,16 +15,15 @@
     },
     {
       "tag": "c:mint"
-    },
-    {
-      "type": "fluid_stack",
-      "amount": 250,
-      "fluid": "minecraft:milk"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:mint_chip_milkshake"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "extradelight:mint_chip_milkshake"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
 }

@@ -1,5 +1,11 @@
 {
-  "type": "create:mixing",
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 100,
+      "fluid": "minecraft:water"
+    }
+  ],
   "ingredients": [
     {
       "tag": "extradelight:sweetener"
@@ -18,17 +24,11 @@
     },
     {
       "tag": "c:dyes"
-    },
-    {
-      "type": "fluid_stack",
-      "amount": 100,
-      "fluid": "minecraft:water"
     }
   ],
-  "results": [
-    {
-      "count": 4,
-      "item": "extradelight:gummies"
-    }
-  ]
+  "result": {
+    "count": 4,
+    "id": "extradelight:gummies"
+  },
+  "stirs": 4
 }

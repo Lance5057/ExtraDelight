@@ -1,15 +1,15 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "type": "fluid_stack",
       "amount": 250,
       "fluid": "extradelight:whipped_cream_fluid"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:butter"
-    }
-  ]
+  "ingredients": [],
+  "result": {
+    "count": 1,
+    "id": "extradelight:butter"
+  },
+  "stirs": 8
 }

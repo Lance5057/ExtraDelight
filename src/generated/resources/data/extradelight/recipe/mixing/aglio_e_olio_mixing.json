@@ -1,9 +1,12 @@
 {
-  "type": "create:mixing",
-  "ingredients": [
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
     {
-      "item": "minecraft:bowl"
-    },
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
+    }
+  ],
+  "ingredients": [
     {
       "item": "extradelight:cooked_pasta"
     },
@@ -15,16 +18,15 @@
     },
     {
       "tag": "c:cheese"
-    },
-    {
-      "type": "fluid_stack",
-      "amount": 250,
-      "fluid": "extradelight:oil_fluid"
     }
   ],
-  "results": [
-    {
-      "item": "extradelight:aglio_e_olio"
-    }
-  ]
+  "result": {
+    "count": 1,
+    "id": "extradelight:aglio_e_olio"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
 }
