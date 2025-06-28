@@ -71,7 +71,7 @@ public class AestheticBlocks {
 	};
 
 	public static enum EXTRA_LEAVES {
-		azalea, flowering_azalea, hazelnut, apple
+		azalea, flowering_azalea, hazelnut, apple, lemon, lime, orange, grapefruit
 	};
 
 	public static final List<DeferredBlock<Block>> STEP_STOOLS = new ArrayList<DeferredBlock<Block>>();
