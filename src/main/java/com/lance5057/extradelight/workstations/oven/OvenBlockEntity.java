@@ -278,21 +278,20 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			if (resultStack.isEmpty()) {
 				return false;
 			} else {
-				ItemStack storedMealStack = inventory.getStackInSlot(MEAL_DISPLAY_SLOT);
+				ItemStack storedMealStack = inventory.getStackInSlot(OUTPUT_SLOT);
 				if (storedMealStack.isEmpty()) {
 					return true;
 				} else if (!ItemStack.isSameItem(storedMealStack, resultStack)) {
 					return false;
-				} else if (storedMealStack.getCount() + resultStack.getCount() <= inventory
-						.getSlotLimit(MEAL_DISPLAY_SLOT)) {
+				} else if (storedMealStack.getCount() + resultStack.getCount() <= inventory.getSlotLimit(OUTPUT_SLOT)
+						&& storedMealStack.getCount() + resultStack.getCount() <= resultStack.getMaxStackSize()) {
 					return true;
-				} else {
-					return storedMealStack.getCount() + resultStack.getCount() <= resultStack.getMaxStackSize();
+
 				}
 			}
-		} else {
-			return false;
 		}
+		return false;
+
 	}
 
 	private boolean processCooking(RecipeHolder<OvenRecipe> recipe, OvenBlockEntity oven) {

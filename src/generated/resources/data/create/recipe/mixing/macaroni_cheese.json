@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:macaroni"
+    },
+    {
+      "item": "extradelight:macaroni"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "tag": "c:cheese"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:macaroni_cheese_feast"
+    }
+  ]
+}

@@ -17,6 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.FluidUtil;
@@ -56,6 +57,8 @@ public class KegBlockEntity extends BlockEntity {
 	public boolean use(Player player, InteractionHand hand) {
 		ItemStack i = BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid()).getCraftingRemainingItem()
 				.copy();
+		if(this.getTank().getFluid().is(Fluids.WATER))
+			i = Items.GLASS_BOTTLE.getDefaultInstance();
 		ItemStack i2 = player.getItemInHand(hand);
 		if (ItemStack.isSameItem(i2, i)) {
 
@@ -76,9 +79,13 @@ public class KegBlockEntity extends BlockEntity {
 			if (!stack.isEmpty()) {
 				if (this.getTank().fill(stack, FluidAction.SIMULATE) == 250) {
 					this.getTank().fill(stack, FluidAction.EXECUTE);
-					player.getItemInHand(hand).shrink(1);
+					
 					BlockEntityUtils.Inventory.givePlayerItemStack(
 							player.getItemInHand(hand).getCraftingRemainingItem().copy(), player, level, worldPosition);
+					if(player.getItemInHand(hand).is(Items.POTION))
+						BlockEntityUtils.Inventory.givePlayerItemStack(
+								Items.GLASS_BOTTLE.getDefaultInstance(), player, level, worldPosition);
+					player.getItemInHand(hand).shrink(1);
 					return true;
 				} else
 					return false;

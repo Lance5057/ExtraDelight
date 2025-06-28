@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:puffed_rice"
+    },
+    {
+      "tag": "c:marshmallow"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:butterscotch"
+    },
+    {
+      "tag": "c:liquid_chocolate"
+    },
+    {
+      "tag": "c:nut_butter"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:scotcharoo_block"
+    }
+  ]
+}

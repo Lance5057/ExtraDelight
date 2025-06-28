@@ -3,7 +3,6 @@ package com.lance5057.extradelight.integration.jei.categories;
 import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.recipe.BottleFluidRegistryRecipe;
 
 import mezz.jei.api.constants.VanillaTypes;

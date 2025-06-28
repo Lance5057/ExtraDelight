@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:cookie_dough/sugar"
+    },
+    {
+      "item": "extradelight:grated_ginger"
+    },
+    {
+      "tag": "c:cinnamon/ground"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:gingerbread_cookie_dough"
+    }
+  ]
+}

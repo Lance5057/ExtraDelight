@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "extradelight:corn_seeds"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:cooked_corn"
+    }
+  ]
+}

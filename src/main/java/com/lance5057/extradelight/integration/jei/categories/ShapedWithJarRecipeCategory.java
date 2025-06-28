@@ -5,7 +5,6 @@ import java.util.List;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.recipe.ShapedWithJarRecipe;
-import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;

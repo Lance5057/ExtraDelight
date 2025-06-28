@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.worldgen.config.WildConfig;
 
 import net.minecraft.core.BlockPos;

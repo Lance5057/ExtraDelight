@@ -1,9 +1,12 @@
 package com.lance5057.extradelight;
 
-import com.lance5057.extradelight.modules.SummerCitrus;
+import java.util.Set;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Sets;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.network.NetworkHandler;
@@ -11,6 +14,8 @@ import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 import com.lance5057.extradelight.worldgen.placers.FoliagePlacerRegistry;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -18,11 +23,12 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.5.5";
+	public static final String VERSION = "2.5.9";
 
 	public static ResourceLocation modLoc(String s) {
 		return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);
@@ -42,7 +48,6 @@ public class ExtraDelight {
 		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
 
 		Fermentation f = new Fermentation();
-		SummerCitrus s = new SummerCitrus();
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);
@@ -83,5 +88,16 @@ public class ExtraDelight {
 		ExtraDelightBlocks.setup();
 		ExtraDelightItems.setup();
 		PottedPlants.setup();
+		registerItemSetAdditions();
+	}
+	
+	public static void registerItemSetAdditions() {
+		Set<Item> newWantedItems = Sets.newHashSet(
+				ExtraDelightItems.CHILI.get(),
+				ExtraDelightItems.GINGER.get(),
+				ExtraDelightItems.GARLIC.get(),
+				Fermentation.CUCUMBER.get());
+		newWantedItems.addAll(Villager.WANTED_ITEMS);
+		Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
 	}
 }

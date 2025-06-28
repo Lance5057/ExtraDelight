@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "tag": "c:crops/coffee/ground"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:coffee"
+    }
+  ]
+}

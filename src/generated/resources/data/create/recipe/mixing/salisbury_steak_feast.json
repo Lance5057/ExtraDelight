@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "farmersdelight:minced_beef"
+    },
+    {
+      "item": "farmersdelight:minced_beef"
+    },
+    {
+      "item": "farmersdelight:minced_beef"
+    },
+    {
+      "tag": "c:foods/onion"
+    },
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "item": "extradelight:gravy_boat_item"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:salisbury_steak_block_item"
+    }
+  ]
+}

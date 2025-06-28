@@ -1,7 +1,5 @@
 package com.lance5057.extradelight.blocks.keg;
 
-import com.lance5057.extradelight.util.BottleFluidRegistry;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;

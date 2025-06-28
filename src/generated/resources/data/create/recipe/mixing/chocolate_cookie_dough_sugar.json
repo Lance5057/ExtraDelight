@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:cookie_dough/sugar"
+    },
+    {
+      "tag": "c:cocoa/powder"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:chocolate_cookie_dough"
+    }
+  ]
+}

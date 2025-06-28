@@ -4,7 +4,6 @@ import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.state.OvenSupport;
-import com.lance5057.extradelight.workstations.chiller.ChillerBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

@@ -1,0 +1,27 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "item": "extradelight:curry_powder"
+    },
+    {
+      "tag": "c:cooking_oil"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "extradelight:onion_bhaji"
+    }
+  ]
+}

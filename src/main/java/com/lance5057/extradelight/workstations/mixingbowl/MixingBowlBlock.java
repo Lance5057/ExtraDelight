@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
+import java.util.List;
+
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
@@ -43,8 +45,6 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.items.IItemHandler;
-
-import java.util.List;
 
 public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 6.0D, 14.0D);

@@ -2,10 +2,6 @@
   "type": "extradelight:mixing_bowl",
   "fluids": [
     {
-      "amount": 100,
-      "fluid": "minecraft:water"
-    },
-    {
       "amount": 250,
       "fluid": "extradelight:coffee_fluid"
     },

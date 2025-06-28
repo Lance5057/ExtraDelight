@@ -22,9 +22,6 @@ import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.simibubi.create.Create;
-import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
-import com.simibubi.create.content.processing.recipe.HeatCondition;
-import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
@@ -52,7 +49,6 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.FalseCondition;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
-import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -2031,7 +2027,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		mixing(new ItemStack(ExtraDelightItems.COFFEE_JELLY.get(), 2), STANDARD_GRIND,
 				new ItemStack(Items.GLASS_BOTTLE),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.GELATIN), Ingredient.of(ExtraDelightTags.SWEETENER) },
-				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 100)),
+				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.COFFEE.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250)) },
 				consumer, "coffee_jelly");
@@ -2204,32 +2200,33 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		b.save(consumer, EDLoc(rc));
 
-		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
-				CreateLoc(rc + "_create"));
-
-		p.output(output);
-		for (Ingredient i : ingredients)
-			p.require(i);
-
-		for (int i = 0; i < container.getCount(); i++)
-			p.require(container.getItem());
-
-		boolean flag = true;
-		for (SizedFluidIngredient f : sizedFluidIngredients)
-			if (f.getFluids() != null && f.getFluids().length > 0)
-				p.require(f.getFluids()[0].getFluid(), f.amount());
-			else
-				flag = false;
-
-		if (flag)
-			p.build(consumer.withConditions(new ModLoadedCondition("create")));
+//		MixingRecipeGen p = new MixingRecipeGen(null, registries, CreateLoc(rc + "_create")) {
+//
+//		};
+//
+//		p.output(output);
+//		for (Ingredient i : ingredients)
+//			p.require(i);
+//
+//		for (int i = 0; i < container.getCount(); i++)
+//			p.require(container.getItem());
+//
+//		boolean flag = true;
+//		for (SizedFluidIngredient f : sizedFluidIngredients)
+//			if (f.getFluids() != null && f.getFluids().length > 0)
+//				p.require(f.getFluids()[0].getFluid(), f.amount());
+//			else
+//				flag = false;
+//
+//		if (flag)
+//			p.build(consumer.withConditions(new ModLoadedCondition("create")));
 	}
 
 	private void craftingRecipes(RecipeOutput consumer) {
-		
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
-		.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
-		.save(consumer.withConditions(FalseCondition.INSTANCE));
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CORN_COB_PIPE.get()).pattern("cs")
 				.define('c', ExtraDelightItems.CORN_COB.get()).define('s', Items.STICK)
@@ -5930,17 +5927,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 			b.addIngredient(i);
 		b.build(consumer, rc);
 
-		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
-				CreateLoc(rc + "_create"));
-
-		p.output(output, count);
-		for (Ingredient i : itemsIn)
-			p.require(i);
-
-		if (container != null)
-			p.require(container);
-
-		p.requiresHeat(HeatCondition.HEATED);
-		p.build(consumer.withConditions(new ModLoadedCondition("create")));
+//		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
+//				CreateLoc(rc + "_create"));
+//
+//		p.output(output, count);
+//		for (Ingredient i : itemsIn)
+//			p.require(i);
+//
+//		if (container != null)
+//			p.require(container);
+//
+//		p.requiresHeat(HeatCondition.HEATED);
+//		p.build(consumer.withConditions(new ModLoadedCondition("create")));
 	}
 }
