@@ -35,7 +35,7 @@ public class JuicerRecipeBuilder implements RecipeBuilder {
 		this.fluid = fluidOut;
 	}
 
-	public static JuicerRecipeBuilder grind(Ingredient pIngredient, ItemStack pResult, FluidStack fluidOut) {
+	public static JuicerRecipeBuilder squeeze(Ingredient pIngredient, ItemStack pResult, FluidStack fluidOut) {
 		return new JuicerRecipeBuilder(pResult, pIngredient, fluidOut);
 	}
 

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:juicer/flower_pot"
+        "recipe": "extradelight:juicer/bbq"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -15,7 +15,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:juicer/flower_pot"
+      "extradelight:juicer/bbq"
     ]
   }
 }

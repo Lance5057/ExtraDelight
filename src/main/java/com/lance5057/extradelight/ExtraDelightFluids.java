@@ -4,6 +4,7 @@ import com.lance5057.extradelight.fluids.BasicFluid;
 import com.lance5057.extradelight.fluids.FluidRegistration;
 import com.lance5057.extradelight.modules.Fermentation;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.bus.api.IEventBus;
@@ -232,6 +233,30 @@ public class ExtraDelightFluids {
 			() -> new BasicFluid(0xff8d9912, 0xff8d9912,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).canExtinguish(true)),
 			Fermentation.PICKLE_JUICE_FLUID_BLOCK, Fermentation.PICKLE_JUICE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration LEMON_JUICE = new FluidRegistration("lemon_juice",
+			() -> new BasicFluid(0xfffff695, 0xfffff695,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			SummerCitrus.LEMON_JUICE_FLUID_BLOCK, SummerCitrus.LEMON_JUICE_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration LIME_JUICE = new FluidRegistration("lime_juice",
+			() -> new BasicFluid(0xffddf075, 0xffddf075,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			SummerCitrus.LIME_JUICE_FLUID_BLOCK, SummerCitrus.LIME_JUICE_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration ORANGE_JUICE = new FluidRegistration("orange_juice",
+			() -> new BasicFluid(0xffffb833, 0xffffb833,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			SummerCitrus.ORANGE_JUICE_FLUID_BLOCK, SummerCitrus.ORANGE_JUICE_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
+
+	public static FluidRegistration GRAPEFRUIT_JUICE = new FluidRegistration("grapefruit_juice",
+			() -> new BasicFluid(0xffCE854D, 0xffCE854D,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BLOCK, SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BUCKET,
+			FLUID_TYPES, FLUIDS);
 
 	public static void register(IEventBus modBus) {
 		FLUID_TYPES.register(modBus);

@@ -63,6 +63,12 @@
     "extradelight:ginger": {
       "chance": 0.2
     },
+    "extradelight:grapefruit_leaves": {
+      "chance": 0.2
+    },
+    "extradelight:grapefruit_sapling": {
+      "chance": 0.2
+    },
     "extradelight:hazelnut_leaves": {
       "chance": 0.2
     },

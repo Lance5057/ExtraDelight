@@ -90,6 +90,8 @@ public class DataMapGen extends DataMapProvider {
 		compostables.add(SummerCitrus.LIME_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(SummerCitrus.ORANGE_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(SummerCitrus.ORANGE_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(SummerCitrus.GRAPEFRUIT_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(SummerCitrus.GRAPEFRUIT_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 	}
 
 }

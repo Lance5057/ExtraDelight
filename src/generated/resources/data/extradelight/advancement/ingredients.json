@@ -651,6 +651,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:grapefruit_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grapefruit_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:grated_carrot": {
       "conditions": {
         "items": [
@@ -821,11 +831,31 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:lemon_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:lime": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:lime"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lime_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lime_juice"
           }
         ]
       },
@@ -966,6 +996,16 @@
         "items": [
           {
             "items": "extradelight:orange"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:orange_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:orange_juice"
           }
         ]
       },
@@ -1548,6 +1588,9 @@
       "extradelight:corn_flakes"
     ],
     [
+      "extradelight:orange_juice"
+    ],
+    [
       "extradelight:chocolate_chip_cookie_dough"
     ],
     [
@@ -1585,6 +1628,9 @@
     ],
     [
       "extradelight:cocoa_solids"
+    ],
+    [
+      "extradelight:lime_juice"
     ],
     [
       "extradelight:pickle_juice"
@@ -1657,6 +1703,9 @@
     ],
     [
       "extradelight:grapefruit"
+    ],
+    [
+      "extradelight:grapefruit_juice"
     ],
     [
       "extradelight:natto_item"
@@ -1756,6 +1805,9 @@
     ],
     [
       "extradelight:cheese"
+    ],
+    [
+      "extradelight:lemon_juice"
     ],
     [
       "extradelight:garlic_clove"

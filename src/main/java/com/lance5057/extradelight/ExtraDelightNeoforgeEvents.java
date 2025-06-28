@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.modules.Fermentation;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
@@ -72,6 +73,14 @@ public class ExtraDelightNeoforgeEvents {
 				new ItemStack(ExtraDelightItems.CINNAMON_SAPLING.get(), 1), 2, 16, 0.05F));
 		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 5),
 				new ItemStack(ExtraDelightItems.HAZELNUT_SAPLING.get(), 1), 2, 16, 0.05F));
+		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 5),
+				new ItemStack(SummerCitrus.LEMON_SAPLING.get(), 1), 2, 16, 0.05F));
+		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 5),
+				new ItemStack(SummerCitrus.LIME_SAPLING.get(), 1), 2, 16, 0.05F));
+		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 5),
+				new ItemStack(SummerCitrus.ORANGE_SAPLING.get(), 1), 2, 16, 0.05F));
+		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 5),
+				new ItemStack(SummerCitrus.GRAPEFRUIT_SAPLING.get(), 1), 2, 16, 0.05F));
 
 		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 1),
 				new ItemStack(Fermentation.SOYBEANS.get(), 3), 2, 16, 0.05F));

@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -110,13 +111,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		evaporatorRecipes(consumer);
 		juicerRecipes(consumer);
 
+		SummerCitrus.Recipes(consumer);
 		Fermentation.Recipes(consumer);
 		AestheticBlocks.Recipes(consumer);
 		BottleFluidRegistry.createRecipesForJEI(consumer);
 	}
 
 	private void juicerRecipes(RecipeOutput consumer) {
-		JuicerRecipeBuilder.grind(Ingredient.of(Items.BRICK), new ItemStack(Items.FLOWER_POT), new FluidStack(ExtraDelightFluids.BBQ.FLUID, 250)).save(consumer);
+		JuicerRecipeBuilder.squeeze(
+					Ingredient.of(Items.BRICK), new ItemStack(Items.FLOWER_POT),
+				new FluidStack(ExtraDelightFluids.BBQ.FLUID, 250)).save(consumer, EDLoc("bbq"));
 	}
 
 	private void evaporatorRecipes(RecipeOutput consumer) {

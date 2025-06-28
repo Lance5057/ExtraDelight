@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:juicer",
+  "fluidOut": {
+    "amount": 250,
+    "id": "extradelight:grapefruit_juice_fluid"
+  },
+  "ingredient": {
+    "item": "extradelight:grapefruit"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:bone_meal"
+  }
+}
