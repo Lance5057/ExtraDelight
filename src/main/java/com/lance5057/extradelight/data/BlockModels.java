@@ -26,6 +26,7 @@ import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
+import com.lance5057.extradelight.workstations.juicer.JuicerBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.vat.VatBlock;
@@ -661,6 +662,19 @@ public class BlockModels extends BlockStateProvider {
 							.withExistingParent("block/cosmetics/evaporator/" + suffix.toLowerCase(),
 									modLoc("block/evaporator"))
 							.texture("2", mcLoc("block/" + suffix.toLowerCase())).renderType("cutout"))
+					.build();
+		});
+		
+		getVariantBuilder(ExtraDelightBlocks.JUICER.get()).forAllStates(state -> {
+			int servings = state.getValue(JuicerBlock.STYLE);
+
+			String suffix = EvaporatorBlock.Styles.values()[servings].toString();
+
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.withExistingParent("block/cosmetics/evaporator/" + suffix.toLowerCase(),
+									modLoc("block/evaporator"))
+							.texture("2", mcLoc("block/" + suffix.toLowerCase())).renderType("cutout")).rotationY(state.getValue(JuicerBlock.FACING).toYRot())
 					.build();
 		});
 

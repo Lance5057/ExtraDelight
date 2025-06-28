@@ -39,6 +39,7 @@ import com.lance5057.extradelight.workstations.chiller.ChillerBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
+import com.lance5057.extradelight.workstations.juicer.JuicerBlock;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
@@ -142,7 +143,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);
 	public static final DeferredBlock<DryingRackBlock> DRYING_RACK = BLOCKS.register("drying_rack",
 			DryingRackBlock::new);
-	
+
 	public static final DeferredBlock<Block> DOUGH_SHAPING = BLOCKS.register("dough_shaping", DoughShapingBlock::new);
 	public static final DeferredBlock<Block> MIXING_BOWL = BLOCKS.register("mixing_bowl", MixingBowlBlock::new);
 
@@ -156,6 +157,9 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> VAT = BLOCKS.register("vat", VatBlock::new);
 	public static final DeferredBlock<Block> EVAPORATOR = BLOCKS.register("evaporator", EvaporatorBlock::new);
 	public static final DeferredBlock<LidBlock> LID = BLOCKS.register("lid", LidBlock::new);
+
+	public static final DeferredBlock<JuicerBlock> JUICER = BLOCKS.register("juicer",
+			() -> new JuicerBlock(Properties.ofFullCopy(Blocks.BARREL)));
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));

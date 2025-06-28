@@ -19,6 +19,7 @@ import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlockEntity;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlockEntity;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlockEntity;
+import com.lance5057.extradelight.workstations.juicer.JuicerBlockEntity;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlockEntity;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;
@@ -149,4 +150,7 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JarDisplayBlockEntity>> JAR_DISPLAY = TILES
 			.register("jar_display", () -> BlockEntityType.Builder
 					.of(JarDisplayBlockEntity::new, Fermentation.JAR_DISPLAY_BLOCK.get()).build(null));
+	
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JuicerBlockEntity>> JUICER = TILES.register("juicer",
+			() -> BlockEntityType.Builder.of(JuicerBlockEntity::new, ExtraDelightBlocks.JUICER.get()).build(null));
 }
