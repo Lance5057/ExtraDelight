@@ -664,23 +664,23 @@ public class BlockModels extends BlockStateProvider {
 							.texture("2", mcLoc("block/" + suffix.toLowerCase())).renderType("cutout"))
 					.build();
 		});
-		
+
 		getVariantBuilder(ExtraDelightBlocks.JUICER.get()).forAllStates(state -> {
 			int servings = state.getValue(JuicerBlock.STYLE);
 
 			String suffix = EvaporatorBlock.Styles.values()[servings].toString();
 
 			return ConfiguredModel.builder()
-					.modelFile(models()
-							.withExistingParent("block/cosmetics/evaporator/" + suffix.toLowerCase(),
-									modLoc("block/evaporator"))
-							.texture("2", mcLoc("block/" + suffix.toLowerCase())).renderType("cutout")).rotationY(state.getValue(JuicerBlock.FACING).toYRot())
-					.build();
+					.modelFile(models().withExistingParent("block/cosmetics/juicer/" + suffix.toLowerCase(),
+							modLoc("block/juicer")))
+					.rotationY((int) state.getValue(JuicerBlock.FACING).toYRot()).build();
 		});
 
 		pottedBlock(this, ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "cinnamon_sapling", "cinnamon_sapling");
-		pottedBlock(this, ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "hazelnut_sapling", "crops/fruit/hazelnut/hazelnut_sapling");
-		pottedBlock(this, ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "apple_sapling", "crops/fruit/apple/apple_sapling");
+		pottedBlock(this, ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "hazelnut_sapling",
+				"crops/fruit/hazelnut/hazelnut_sapling");
+		pottedBlock(this, ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "apple_sapling",
+				"crops/fruit/apple/apple_sapling");
 
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);
@@ -1113,10 +1113,8 @@ public class BlockModels extends BlockStateProvider {
 
 	public static void pottedBlock(BlockStateProvider bsp, Block block, String name, String path) {
 		bsp.simpleBlock(block,
-				new ConfiguredModel(bsp.models()
-						.withExistingParent("potted_" + name, "block/flower_pot_cross")
-						.texture("plant", bsp.modLoc("block/" + path))
-						.renderType("cutout")));
+				new ConfiguredModel(bsp.models().withExistingParent("potted_" + name, "block/flower_pot_cross")
+						.texture("plant", bsp.modLoc("block/" + path)).renderType("cutout")));
 	}
 
 	private static void simpleCross(BlockStateProvider bsp, Block block) {

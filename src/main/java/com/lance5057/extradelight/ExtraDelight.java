@@ -9,6 +9,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 import com.lance5057.extradelight.worldgen.placers.FoliagePlacerRegistry;
@@ -23,7 +24,6 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
@@ -48,6 +48,7 @@ public class ExtraDelight {
 		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
 
 		Fermentation f = new Fermentation();
+		SummerCitrus s = new SummerCitrus();
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);
@@ -90,13 +91,10 @@ public class ExtraDelight {
 		PottedPlants.setup();
 		registerItemSetAdditions();
 	}
-	
+
 	public static void registerItemSetAdditions() {
-		Set<Item> newWantedItems = Sets.newHashSet(
-				ExtraDelightItems.CHILI.get(),
-				ExtraDelightItems.GINGER.get(),
-				ExtraDelightItems.GARLIC.get(),
-				Fermentation.CUCUMBER.get());
+		Set<Item> newWantedItems = Sets.newHashSet(ExtraDelightItems.CHILI.get(), ExtraDelightItems.GINGER.get(),
+				ExtraDelightItems.GARLIC.get(), Fermentation.CUCUMBER.get());
 		newWantedItems.addAll(Villager.WANTED_ITEMS);
 		Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
 	}

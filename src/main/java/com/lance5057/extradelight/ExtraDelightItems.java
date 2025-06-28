@@ -2950,4 +2950,7 @@ public class ExtraDelightItems {
 			() -> new DynamicToast(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
 					ItemContainerContents.EMPTY)));
 
+	public static final DeferredItem<Item> JUICER = ITEMS.register("juicer",
+			() -> new BlockItem(ExtraDelightBlocks.JUICER.get(), new Item.Properties()));
+
 }

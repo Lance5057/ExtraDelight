@@ -13,6 +13,7 @@ import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DynamicToastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.JuicerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
@@ -107,10 +108,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		chillingRecipes(consumer);
 		vatRecipes(consumer);
 		evaporatorRecipes(consumer);
+		juicerRecipes(consumer);
 
 		Fermentation.Recipes(consumer);
 		AestheticBlocks.Recipes(consumer);
 		BottleFluidRegistry.createRecipesForJEI(consumer);
+	}
+
+	private void juicerRecipes(RecipeOutput consumer) {
+		JuicerRecipeBuilder.grind(Ingredient.of(Items.BRICK), new ItemStack(Items.FLOWER_POT), new FluidStack(ExtraDelightFluids.BBQ.FLUID, 250)).save(consumer);
 	}
 
 	private void evaporatorRecipes(RecipeOutput consumer) {

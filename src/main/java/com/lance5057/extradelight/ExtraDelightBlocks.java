@@ -179,7 +179,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<LidBlock> LID = BLOCKS.register("lid", LidBlock::new);
 
 	public static final DeferredBlock<JuicerBlock> JUICER = BLOCKS.register("juicer",
-			() -> new JuicerBlock(Properties.ofFullCopy(Blocks.BARREL)));
+			() -> new JuicerBlock(Properties.ofFullCopy(Blocks.BARREL).noOcclusion()));
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));

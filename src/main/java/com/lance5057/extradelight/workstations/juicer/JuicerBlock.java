@@ -2,12 +2,11 @@ package com.lance5057.extradelight.workstations.juicer;
 
 import java.util.List;
 
-import javax.annotation.Nullable;
-
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
-import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock.Styles;
+import com.lance5057.extradelight.util.BlockEntityUtils;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -34,8 +33,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -48,34 +45,27 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.fluids.FluidUtil;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
+import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.items.IItemHandler;
 
 public class JuicerBlock extends Block implements EntityBlock, IStyleable {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
-	
 	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length - 1);
+	protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
 
 	public static enum Styles {
-		OAK
+		OAK, SPRUCE
 	};
 
 	public JuicerBlock(Properties p_49795_) {
 		super(p_49795_);
-		this.registerDefaultState(
-				this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
-	}
-
-	@Override
-	public RenderShape getRenderShape(BlockState pState) {
-		return RenderShape.MODEL;
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-		return SHAPE;
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
+				.setValue(WATERLOGGED, false).setValue(STYLE, 0));
 	}
 
 	@Override
@@ -89,11 +79,21 @@ public class JuicerBlock extends Block implements EntityBlock, IStyleable {
 	}
 
 	@Override
+	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+		return SHAPE;
+	}
+
+	@Override
+	public RenderShape getRenderShape(BlockState pState) {
+		return RenderShape.MODEL;
+	}
+
+	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		Level level = context.getLevel();
 		FluidState fluid = level.getFluidState(context.getClickedPos());
 
-		BlockState state = this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
+		BlockState state = this.defaultBlockState().setValue(FACING, context.getHorizontalDirection())
 				.setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
 
 		return state;
@@ -104,21 +104,58 @@ public class JuicerBlock extends Block implements EntityBlock, IStyleable {
 		return new JuicerBlockEntity(p_153215_, p_153216_);
 	}
 
-	@Nullable
-	@Override
-	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState,
-			BlockEntityType<T> pBlockEntityType) {
-		if (!pLevel.isClientSide())
-			return pBlockEntityType == ExtraDelightBlockEntities.MELTING_POT.get() ? JuicerBlockEntity::tick : null;
-		return null;
-	}
-
 	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
 			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+//		if (pLevel.isClientSide) {
+//			return ItemInteractionResult.SUCCESS;
+//		} else {
+		BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
+		if (tileEntity instanceof JuicerBlockEntity mbe) {
+			ItemStack i = BottleFluidRegistry.getBottleFromFluid(mbe.getFluidTank().getFluid());
+			ItemStack offhandStack = pPlayer.getOffhandItem();
 
-		return ItemInteractionResult.CONSUME;
+			if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null) {
+				IFluidHandlerItem f = stack.getCapability(Capabilities.FluidHandler.ITEM);
+				if (f != null) {
+					FluidUtil.interactWithFluidHandler(pPlayer, pHand, mbe.getFluidTank());
+					return ItemInteractionResult.SUCCESS;
+				}
+			} else if (!i.isEmpty() && (ItemStack.isSameItem(i.getCraftingRemainingItem(), stack)
+					|| ItemStack.isSameItem(i.getCraftingRemainingItem(), offhandStack))) {
 
+//				if (!i.isEmpty()) {
+				if (mbe.getFluidTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
+					mbe.getFluidTank().drain(250, FluidAction.EXECUTE);
+
+					BlockEntityUtils.Inventory.givePlayerItemStack(i, pPlayer, pLevel, pPos);
+					pPlayer.getItemInHand(pHand).shrink(1);
+					return ItemInteractionResult.SUCCESS;
+//					}
+				}
+			} else if (pPlayer.isCrouching()) {
+				mbe.extractItem(pPlayer);
+				return ItemInteractionResult.SUCCESS;
+			} else if (mbe.getInsertedItem().isEmpty()) {
+
+				if (offhandStack.isEmpty())
+					if (!stack.isEmpty())
+						mbe.insertItem(stack);
+					else
+						return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+//				if (pHand.equals(InteractionHand.MAIN_HAND))
+//					return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+
+				mbe.insertItem(offhandStack);
+				return ItemInteractionResult.SUCCESS;
+			}
+
+			else if (stack.isEmpty() || offhandStack.isEmpty()) {
+				mbe.grind(pPlayer);
+				return ItemInteractionResult.SUCCESS;
+			}
+		}
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 
 	@Override
@@ -133,7 +170,7 @@ public class JuicerBlock extends Block implements EntityBlock, IStyleable {
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(FACING, WATERLOGGED);
+		builder.add(FACING, WATERLOGGED, STYLE);
 	}
 
 	@Override
