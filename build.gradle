@@ -27,7 +27,7 @@ repositories {
     maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven" } 
     maven { url = "https://maven.theillusivec4.top/" } 
     maven { url = "https://maven.blamejared.com/" }
-	//flatDir { dirs '../FarmersDelight/build/libs', '../Butchercraft/build/libs' }
+	flatDir { dirs '../Butchercraft/build/libs' }
 }
 
 
@@ -93,7 +93,7 @@ dependencies {
 	
 	implementation "curse.maven:farmersdelight-398521:6597295"
 	//implementation "curse.maven:vampirism-become-a-vampire-233029:6164796"
-	//implementation name: 'butchercraft-2.6.3'
+	implementation name: 'butchercraft-2.6.3'
 
 	 // compile against the JEI API but do not include it at runtime
     compileOnly "mezz.jei:jei-1.21.1-common-api:${jei_version}"

@@ -2,7 +2,6 @@ package com.lance5057.extradelight;
 
 import java.util.Set;
 
-import com.lance5057.extradelight.modules.SummerCitrus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,7 +28,7 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.5.9";
+	public static final String VERSION = "2.5.10";
 
 	public static ResourceLocation modLoc(String s) {
 		return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);
@@ -87,10 +86,12 @@ public class ExtraDelight {
 	}
 
 	public void setupCommon(FMLCommonSetupEvent event) {
-		ExtraDelightBlocks.setup();
-		ExtraDelightItems.setup();
-		PottedPlants.setup();
-		registerItemSetAdditions();
+		event.enqueueWork(() -> {
+			ExtraDelightBlocks.setup();
+			ExtraDelightItems.setup();
+			PottedPlants.setup();
+			registerItemSetAdditions();
+		});
 	}
 
 	public static void registerItemSetAdditions() {
