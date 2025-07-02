@@ -49,6 +49,10 @@
     "#c:storage_blocks_garlic",
     "#c:storage_blocks_cucumber",
     "#c:storage_blocks_soybeans",
-    "#c:storage_blocks_salt"
+    "#c:storage_blocks_salt",
+    "#c:storage_blocks_lemon",
+    "#c:storage_blocks_lime",
+    "#c:storage_blocks_orange",
+    "#c:storage_blocks_grapefruit"
   ]
 }

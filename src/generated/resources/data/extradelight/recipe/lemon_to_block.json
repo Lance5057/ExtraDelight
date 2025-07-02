@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/lemon"
+    },
+    {
+      "tag": "c:crops/lemon"
+    },
+    {
+      "tag": "c:crops/lemon"
+    },
+    {
+      "tag": "c:crops/lemon"
+    },
+    {
+      "tag": "c:crops/lemon"
+    },
+    {
+      "tag": "c:crops/lemon"
+    },
+    {
+      "tag": "c:crops/lemon"
+    },
+    {
+      "tag": "c:crops/lemon"
+    },
+    {
+      "tag": "c:crops/lemon"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:lemon_crate_item"
+  }
+}

@@ -618,6 +618,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(SummerCitrus.GRAPEFRUIT_SAPLING.get());
 		add(SummerCitrus.POTTED_GRAPEFRUIT_SAPLING.get(),
 				createPotFlowerItemTable(SummerCitrus.GRAPEFRUIT_SAPLING.get()));
+		this.dropSelf(SummerCitrus.LEMON_CRATE.get());
+		this.dropSelf(SummerCitrus.LIME_CRATE.get());
+		this.dropSelf(SummerCitrus.ORANGE_CRATE.get());
+		this.dropSelf(SummerCitrus.GRAPEFRUIT_CRATE.get());
 
 		this.dropSelf(ExtraDelightBlocks.JUICER.get());
 	}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "grapefruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grapefruit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:grapefruit_to_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "grapefruit"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:grapefruit_to_block"
+    ]
+  }
+}

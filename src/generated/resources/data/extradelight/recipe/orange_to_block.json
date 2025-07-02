@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/orange"
+    },
+    {
+      "tag": "c:crops/orange"
+    },
+    {
+      "tag": "c:crops/orange"
+    },
+    {
+      "tag": "c:crops/orange"
+    },
+    {
+      "tag": "c:crops/orange"
+    },
+    {
+      "tag": "c:crops/orange"
+    },
+    {
+      "tag": "c:crops/orange"
+    },
+    {
+      "tag": "c:crops/orange"
+    },
+    {
+      "tag": "c:crops/orange"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:orange_crate_item"
+  }
+}

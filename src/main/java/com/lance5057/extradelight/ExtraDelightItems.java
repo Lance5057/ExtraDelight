@@ -174,6 +174,9 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.EVAPORATOR.get(),
 					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
 
+	public static final DeferredItem<Item> JUICER = ITEMS.register("juicer",
+			() -> new BlockItem(ExtraDelightBlocks.JUICER.get(), new Item.Properties()));
+
 	public static final DeferredItem<Item> BAR_MOLD = ITEMS.register("bar_mold",
 			() -> new BlockItem(ExtraDelightBlocks.BAR_MOLD.get(),
 					new Item.Properties().component(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY)));
@@ -2949,8 +2952,4 @@ public class ExtraDelightItems {
 	public static final DeferredItem<DynamicToast> DYNAMIC_TOAST = ITEMS.register("dynamic_toast",
 			() -> new DynamicToast(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
 					ItemContainerContents.EMPTY)));
-
-	public static final DeferredItem<Item> JUICER = ITEMS.register("juicer",
-			() -> new BlockItem(ExtraDelightBlocks.JUICER.get(), new Item.Properties()));
-
 }
