@@ -267,6 +267,9 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new JarItem(ExtraDelightBlocks.JAR.get(),
 			new Item.Properties().component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1)));
 
+	public static final DeferredItem<Item> WHISK = ITEMS.register("whisk",
+			() -> new SwordItem(Tiers.IRON, new Item.Properties()));
+
 	public static final DeferredItem<Item> YEAST = EDItemGenerator
 			.register("yeast", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
 			.advancementIngredients().finish();

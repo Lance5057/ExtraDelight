@@ -220,6 +220,7 @@ public class ExtraDelightClientEvents {
 		applyFluidRenderType(SummerCitrus.LIME_JUICE_FLUID_BLOCK.get());
 		applyFluidRenderType(SummerCitrus.ORANGE_JUICE_FLUID_BLOCK.get());
 		applyFluidRenderType(SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(SummerCitrus.EGG_WHITE_FLUID_BLOCK.get());
 	}
 
 	public static void applyFluidRenderType(LiquidBlock liquid) {

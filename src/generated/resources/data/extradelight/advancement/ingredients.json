@@ -381,6 +381,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:egg_white": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:egg_white"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:egg_yolk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:egg_yolk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:fish_flakes": {
       "conditions": {
         "items": [
@@ -1738,6 +1758,9 @@
       "extradelight:glow_berry_jam"
     ],
     [
+      "extradelight:egg_yolk"
+    ],
+    [
       "extradelight:frosting_white"
     ],
     [
@@ -1748,6 +1771,9 @@
     ],
     [
       "extradelight:frosting_yellow"
+    ],
+    [
+      "extradelight:egg_white"
     ],
     [
       "extradelight:mint"

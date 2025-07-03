@@ -21,6 +21,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -146,6 +147,17 @@ public class SummerCitrus {
     public static final DeferredItem<Item> GRAPEFRUIT_CRATE_ITEM = ExtraDelightItems.ITEMS.register("grapefruit_crate_item",
             () -> new BlockItem(GRAPEFRUIT_CRATE.get(), new Item.Properties()));
 
+    // Egg separating
+    public static final DeferredItem<Item> EGG_YOLK = EDItemGenerator.register("egg_yolk",
+            () -> new Item(new Item.Properties().craftRemainder(Items.BONE_MEAL))).advancementIngredients().finish();
+    public static final DeferredItem<Item> EGG_WHITE = EDItemGenerator.register("egg_white",
+            () -> new Item(new Item.Properties().craftRemainder(Items.BOWL))).advancementIngredients().finish();
+    public static final DeferredItem<Item> EGG_WHITE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
+            "egg_white_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.EGG_WHITE));
+    public static final DeferredBlock<LiquidBlock> EGG_WHITE_FLUID_BLOCK = ExtraDelightBlocks.BLOCKS.register(
+            "egg_white_fluid_block", () -> new LiquidBlock(ExtraDelightFluids.EGG_WHITE.FLUID.get(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
+
     public static void blockModels(BlockStateProvider bsp) {
         BlockModels.fruitLeafBlock(bsp, LEMON_LEAVES.get(), "lemon");
         bsp.simpleBlock(LEMON_SAPLING.get(), new ConfiguredModel(bsp.models()
@@ -170,6 +182,8 @@ public class SummerCitrus {
                 .cross("grapefruit_sapling", bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_sapling")).renderType("cutout")));
         BlockModels.pottedBlock(bsp, POTTED_GRAPEFRUIT_SAPLING.get(), "grapefruit_sapling", "crops/fruit/grapefruit/grapefruit_sapling");
 //        BlockModels.crateBlock(bsp, GRAPEFRUIT_CRATE.get(), "grapefruit", "oak");
+
+        BlockModels.fluid(bsp, EGG_WHITE_FLUID_BLOCK.get());
     }
 
     public static void itemModels(ItemModelProvider tmp) {
@@ -200,6 +214,10 @@ public class SummerCitrus {
 //        ItemModels.forItem(tmp, GRAPEFRUIT_JUICE, "grapefruit_juice_bottle");
 //        ItemModels.forItem(tmp, GRAPEFRUIT_JUICE_FLUID_BUCKET, "grapefruit_juice_bucket");
 //        ItemModels.forBlockItem(tmp, ORANGE_CRATE_ITEM, "orange_crate");
+
+//        ItemModels.forItem(tmp, EGG_YOLK, "egg_yolk");
+//        ItemModels.forItem(tmp, EGG_WHITE, "egg_white");
+//        ItemModels.forItem(tmp, EGG_WHITE_FLUID_BUCKET, "egg_white_bucket");
     }
 
     public static void Recipes(RecipeOutput consumer) {
@@ -212,6 +230,8 @@ public class SummerCitrus {
                 ORANGE_JUICE.get());
         Recipes.bucket("grapefruit_juice", consumer, GRAPEFRUIT_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
                 GRAPEFRUIT_JUICE.get());
+        Recipes.bucket("egg_white", consumer, EGG_WHITE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
+                EGG_WHITE.get());
 
         Recipes.bundleItem9(Ingredient.of(ExtraDelightTags.LEMON), LEMON_CRATE_ITEM.get(), LEMON.get(),
                 consumer, "lemon");
@@ -277,5 +297,11 @@ public class SummerCitrus {
         lp.add("fluid_type.extradelight.grapefruit_juice_fluid", "Grapefruit Juice");
         lp.add("block.extradelight.grapefruit_juice_fluid_block", "Grapefruit Juice");
         lp.add(GRAPEFRUIT_CRATE.get(), "Grapefruit Crate");
+
+        lp.add(EGG_YOLK.get(), "Egg Yolk");
+        lp.add(EGG_WHITE.get(), "Egg White");
+        lp.add(EGG_WHITE_FLUID_BUCKET.get(), "Egg White Bucket");
+        lp.add("fluid_type.extradelight.egg_white_fluid", "Egg White");
+        lp.add("block.extradelight.egg_white_fluid_block", "Egg White");
     }
 }

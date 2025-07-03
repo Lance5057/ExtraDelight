@@ -1385,6 +1385,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "Potted Apple Sapling");
 
 		this.add(ExtraDelightItems.JUICER.get(), "Juicer");
+		this.add(ExtraDelightItems.WHISK.get(), "Whisk");
 
 		Fermentation.EngLoc(this);
 		SummerCitrus.EngLoc(this);

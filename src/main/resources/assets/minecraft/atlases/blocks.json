@@ -161,6 +161,14 @@
 		{
 			"type": "minecraft:single",
 			"resource": "extradelight:liquid/cocoa_butter_still"
-		}
+		},
+	  {
+		  "type": "minecraft:single",
+		  "resource": "extradelight:liquid/egg_white_flow"
+	  },
+	  {
+		  "type": "minecraft:single",
+		  "resource": "extradelight:liquid/egg_white_still"
+	  }
 	]
 }

@@ -2416,6 +2416,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.define('p', Ingredient.of(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
 				.unlockedBy(getName(), has(Tags.Items.NUGGETS_IRON)).save(consumer, EDLoc("evaporator"));
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.JUICER.get()).pattern(" s ").pattern(" b ")
+				.pattern("ccc").define('s', Ingredient.of(Items.STICK))
+				.define('b', Ingredient.of(Items.BARREL))
+				.define('c', Ingredient.of(Tags.Items.INGOTS_COPPER))
+				.unlockedBy(getName(), has(Tags.Items.INGOTS_COPPER)).save(consumer, EDLoc("juicer"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHISK.get()).pattern(" i ").pattern("iii")
+				.pattern(" s ").define('i', Ingredient.of(Tags.Items.NUGGETS_IRON))
+				.define('s', Ingredient.of(Items.STICK))
+				.unlockedBy(getName(), has(Tags.Items.NUGGETS_IRON)).save(consumer, EDLoc("whisk"));
+
 		// Juice
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GLOW_BERRY_JUICE.get())
 				.requires(Ingredient.of(ExtraDelightTags.FRUIT_GLOW_BERRY), 6).requires(ExtraDelightTags.SWEETENER)
