@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "extradelight:honey_ice_cream"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "minecraft:milk"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:honey_milkshake"
+    }
+  ]
+}

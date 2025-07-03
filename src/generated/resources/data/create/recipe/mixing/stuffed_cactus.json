@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_cactus"
+    },
+    {
+      "item": "extradelight:cooked_cactus"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "item": "extradelight:breading_misanplas"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:stuffed_cactus"
+    }
+  ]
+}

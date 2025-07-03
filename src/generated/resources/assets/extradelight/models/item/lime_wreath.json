@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/wreath",
+  "textures": {
+    "all": "extradelight:block/crops/fruit/lime/lime_leaves"
+  }
+}

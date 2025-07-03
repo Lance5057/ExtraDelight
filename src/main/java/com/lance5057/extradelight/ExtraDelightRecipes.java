@@ -12,6 +12,7 @@ import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShaping
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackSerializer;
 import com.lance5057.extradelight.workstations.evaporator.recipes.EvaporatorRecipe;
+import com.lance5057.extradelight.workstations.juicer.JuicerRecipe;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotRecipe;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
@@ -60,6 +61,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("evaporator"));
 	public static final Supplier<RecipeType<BottleFluidRegistryRecipe>> BOTTLE_FLUID_REGISTRY = RECIPE_TYPES
 			.register("fluid_registry", () -> registerRecipeType("fluid_registry"));
+	public static final Supplier<RecipeType<JuicerRecipe>> JUICER = RECIPE_TYPES.register("juicer",
+			() -> registerRecipeType("juicer"));
 
 	// Dynamic Names
 //	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES
@@ -122,4 +125,6 @@ public class ExtraDelightRecipes {
 			EvaporatorRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> BOTTLE_FLUID_SERIALIZER = RECIPE_SERIALIZERS
 			.register("bottle_fluid", BottleFluidRegistryRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> JUICER_SERIALIZER = RECIPE_SERIALIZERS.register("juicer",
+			JuicerRecipe.Serializer::new);
 }

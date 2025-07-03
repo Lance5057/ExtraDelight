@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "minecraft:milk"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:whipped_cream"
+    }
+  ]
+}

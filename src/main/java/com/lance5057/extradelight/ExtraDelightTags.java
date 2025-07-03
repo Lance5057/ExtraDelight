@@ -624,6 +624,10 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> DOUGH = neoforgeItemTag("dough");
 	public static final TagKey<Item> BROTH = modTag("broth");
 
+	public static final TagKey<Item> LEMON = neoforgeItemTag("crops/lemon");
+	public static final TagKey<Item> LIME = neoforgeItemTag("crops/lime");
+	public static final TagKey<Item> ORANGE = neoforgeItemTag("crops/orange");
+	public static final TagKey<Item> GRAPEFRUIT = neoforgeItemTag("crops/grapefruit");
 
 	// Tough as Nails
 	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");
@@ -733,6 +737,10 @@ public class ExtraDelightTags {
 	public static final TagKey<Block> STORAGE_BLOCKS_CUCUMBER = neoforgeBlockTag("storage_blocks_cucumber");
 	public static final TagKey<Block> STORAGE_BLOCKS_SOYBEANS = neoforgeBlockTag("storage_blocks_soybeans");
 	public static final TagKey<Block> STORAGE_BLOCKS_SALT = neoforgeBlockTag("storage_blocks_salt");
+	public static final TagKey<Block> STORAGE_BLOCKS_LEMON = neoforgeBlockTag("storage_blocks_lemon");
+	public static final TagKey<Block> STORAGE_BLOCKS_LIME = neoforgeBlockTag("storage_blocks_lime");
+	public static final TagKey<Block> STORAGE_BLOCKS_ORANGE = neoforgeBlockTag("storage_blocks_orange");
+	public static final TagKey<Block> STORAGE_BLOCKS_GRAPEFRUIT = neoforgeBlockTag("storage_blocks_grapefruit");
 
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_FLOUR = neoforgeItemTag("storage_blocks_flour");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CORN_MEAL = neoforgeItemTag("storage_blocks_corn_meal");
@@ -802,5 +810,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CUCUMBER = neoforgeItemTag("storage_blocks_cucumber");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_SOYBEANS = neoforgeItemTag("storage_blocks_soybeans");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_SALT = neoforgeItemTag("storage_blocks_salt");
-
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_LEMON = neoforgeItemTag("storage_blocks_lemon");
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_LIME= neoforgeItemTag("storage_blocks_lime");
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_ORANGE = neoforgeItemTag("storage_blocks_orange");
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_GRAPEFRUIT = neoforgeItemTag("storage_blocks_grapefruit");
 }

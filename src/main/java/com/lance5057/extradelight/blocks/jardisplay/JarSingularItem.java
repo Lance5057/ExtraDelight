@@ -1,6 +1,5 @@
 package com.lance5057.extradelight.blocks.jardisplay;
 
-import java.util.List;
 import java.util.Optional;
 
 import com.lance5057.extradelight.ExtraDelightRecipes;
@@ -11,7 +10,6 @@ import com.lance5057.extradelight.recipe.SimpleRecipeWrapper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;

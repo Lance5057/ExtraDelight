@@ -4,7 +4,6 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.integration.patchouli.components.CookingPotComponent;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;

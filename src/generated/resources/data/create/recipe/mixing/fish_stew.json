@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:foods/safe_raw_fish"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "c:flour"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:fish_stew_feast"
+    }
+  ]
+}

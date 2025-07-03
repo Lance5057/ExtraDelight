@@ -10,6 +10,7 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.EDItemGenerator;
 
 import net.minecraft.core.HolderLookup;
@@ -653,6 +654,11 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.DOUGH).addOptionalTag(CommonTags.FOODS_DOUGH).addOptionalTag(CompatTags.DOUGHS);
 		tag(ExtraDelightTags.BROTH).add(ModItems.BONE_BROTH.get()).addOptionalTag(CompatTags.STOCK);
 
+		tag(ExtraDelightTags.LEMON).add(SummerCitrus.LEMON.get());
+		tag(ExtraDelightTags.LIME).add(SummerCitrus.LIME.get());
+		tag(ExtraDelightTags.ORANGE).add(SummerCitrus.ORANGE.get());
+		tag(ExtraDelightTags.GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get());
+
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get());
 		tag(Tags.Items.DYED_BLUE).add(ExtraDelightItems.BLUE_CHOCOLATE_BOX.get());
@@ -720,7 +726,11 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GARLIC)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CUCUMBER)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SOYBEANS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LEMON)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LIME)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ORANGE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT);
 
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR).add(ExtraDelightItems.FLOUR_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_MEAL).add(ExtraDelightItems.CORNMEAL_SACK.get());
@@ -777,6 +787,10 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CUCUMBER).add(Fermentation.CUCUMBER_CRATE_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SOYBEANS).add(Fermentation.SOYBEAN_SACK_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT).add(Fermentation.SALT_BLOCK_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LEMON).add(SummerCitrus.LEMON_CRATE_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LIME).add(SummerCitrus.LIME_CRATE_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ORANGE).add(SummerCitrus.ORANGE_CRATE_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT_CRATE_ITEM.get());
 
 		tag(CompatTags.UPRIGHT_ON_BELT).add(ExtraDelightItems.COOKING_OIL.get(), ExtraDelightItems.VINEGAR.get(),
 						ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.GRAVY.get(),

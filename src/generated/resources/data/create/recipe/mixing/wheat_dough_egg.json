@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "id": "farmersdelight:wheat_dough"
+    }
+  ]
+}

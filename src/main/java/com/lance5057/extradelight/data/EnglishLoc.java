@@ -55,6 +55,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.chiller", "Chilling");
 		this.add("extradelight.jei.evaporator", "Evaporating");
 		this.add("extradelight.jei.vat", "Fermenting");
+		this.add("extradelight.jei.juicer", "Juicing");
 
 		this.add("farmersdelight.tooltip.glow_berry_juice", "Minor Instant Health, Glow");
 		this.add("farmersdelight.tooltip.sweet_berry_juice", "Minor Instant Health");
@@ -1382,6 +1383,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "Potted Cinnamon Sapling");
 		this.add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "Potted Hazelnut Sapling");
 		this.add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "Potted Apple Sapling");
+
+		this.add(ExtraDelightItems.JUICER.get(), "Juicer");
+		this.add(ExtraDelightItems.WHISK.get(), "Whisk");
 
 		Fermentation.EngLoc(this);
 		SummerCitrus.EngLoc(this);

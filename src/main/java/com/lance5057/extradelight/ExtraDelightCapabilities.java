@@ -39,6 +39,11 @@ public class ExtraDelightCapabilities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.WREATH.get(),
 				(o, d) -> o.getItemHandler());
 
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.COUNTER_CABINET_BLOCK.get(),
+				(o, d) -> o.getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.SINK_BLOCK.get(),
+				(o, d) -> o.getItemHandler());
+
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.TAP.get(),
 				(o, d) -> o.getFluidHandler());
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.SINK_BLOCK.get(),
@@ -94,6 +99,10 @@ public class ExtraDelightCapabilities {
 						return o.getFluidTank();
 					return null;
 				});
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.JUICER.get(),
+				(be, context) -> be.getItemHandler());
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.JUICER.get(),
+				(be, context) -> be.getFluidTank());
 
 //		event.registerItem(Capabilities.ItemHandler.ITEM,
 //				(o, d) -> new ComponentItemHandler(o, ExtraDelightComponents.ITEMSTACK_HANDLER.get(), 7),

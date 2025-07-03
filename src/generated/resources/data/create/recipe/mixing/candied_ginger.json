@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "id": "extradelight:candied_ginger"
+    }
+  ]
+}

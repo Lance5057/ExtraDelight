@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:liquid_chocolate"
+    },
+    {
+      "tag": "c:chili/powder"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:xocolati"
+    }
+  ]
+}

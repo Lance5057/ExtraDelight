@@ -7,7 +7,6 @@ import javax.annotation.Nullable;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
-import com.lance5057.extradelight.state.OvenSupport;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -47,8 +46,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;

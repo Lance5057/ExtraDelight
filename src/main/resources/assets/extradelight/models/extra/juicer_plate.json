@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "block/oak_log_top",
+		"particle": "block/oak_log_top"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 3],
+			"to": [13, 1, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 0, 3]},
+			"faces": {
+				"north": {"uv": [3, 3, 13, 4], "texture": "#0"},
+				"east": {"uv": [3, 3, 13, 4], "texture": "#0"},
+				"south": {"uv": [3, 3, 13, 4], "texture": "#0"},
+				"west": {"uv": [3, 3, 13, 4], "texture": "#0"},
+				"up": {"uv": [3, 3, 13, 13], "texture": "#0"},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "extradelight:penne"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    },
+    {
+      "tag": "c:cooking_oil"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:penne_all_arrabbiata"
+    }
+  ]
+}

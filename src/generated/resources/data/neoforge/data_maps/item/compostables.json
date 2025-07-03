@@ -63,6 +63,12 @@
     "extradelight:ginger": {
       "chance": 0.2
     },
+    "extradelight:grapefruit_leaves": {
+      "chance": 0.2
+    },
+    "extradelight:grapefruit_sapling": {
+      "chance": 0.2
+    },
     "extradelight:hazelnut_leaves": {
       "chance": 0.2
     },
@@ -81,6 +87,12 @@
     "extradelight:lemon_sapling": {
       "chance": 0.2
     },
+    "extradelight:lime_leaves": {
+      "chance": 0.2
+    },
+    "extradelight:lime_sapling": {
+      "chance": 0.2
+    },
     "extradelight:mallow_root": {
       "chance": 0.2
     },
@@ -88,6 +100,12 @@
       "chance": 0.2
     },
     "extradelight:mint": {
+      "chance": 0.2
+    },
+    "extradelight:orange_leaves": {
+      "chance": 0.2
+    },
+    "extradelight:orange_sapling": {
       "chance": 0.2
     },
     "extradelight:peanuts": {

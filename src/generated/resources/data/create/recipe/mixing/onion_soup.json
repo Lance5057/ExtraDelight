@@ -1,0 +1,33 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "c:bread/sliced"
+    },
+    {
+      "tag": "c:cheese"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "id": "extradelight:onion_soup"
+    }
+  ]
+}

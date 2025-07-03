@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "extradelight:fish_soup"
+    }
+  ]
+}

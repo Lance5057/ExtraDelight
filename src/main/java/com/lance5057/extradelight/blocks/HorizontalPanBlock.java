@@ -166,8 +166,8 @@ public class HorizontalPanBlock extends HorizontalDirectionalBlock implements IS
 
 	@Override
 	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-		if (!level.isClientSide && !player.isCreative() && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)
-				&& state.getValue(STYLE) > 0) {
+		if (!level.isClientSide && !player.isCreative()
+				&& level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) {
 			ItemStack itemstack = new ItemStack(this);
 			itemstack.set(DataComponents.BLOCK_STATE,
 					BlockItemStateProperties.EMPTY.with(STYLE, state.getValue(STYLE)));

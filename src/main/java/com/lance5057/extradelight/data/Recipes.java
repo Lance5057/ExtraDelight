@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -13,6 +14,7 @@ import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DynamicToastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.JuicerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
@@ -22,9 +24,6 @@ import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.simibubi.create.Create;
-import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
-import com.simibubi.create.content.processing.recipe.HeatCondition;
-import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
@@ -52,7 +51,6 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.FalseCondition;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
-import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -111,10 +109,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		chillingRecipes(consumer);
 		vatRecipes(consumer);
 		evaporatorRecipes(consumer);
+		juicerRecipes(consumer);
 
+		SummerCitrus.Recipes(consumer);
 		Fermentation.Recipes(consumer);
 		AestheticBlocks.Recipes(consumer);
 		BottleFluidRegistry.createRecipesForJEI(consumer);
+	}
+
+	private void juicerRecipes(RecipeOutput consumer) {
+		JuicerRecipeBuilder.squeeze(
+					Ingredient.of(Items.BRICK), new ItemStack(Items.FLOWER_POT),
+				new FluidStack(ExtraDelightFluids.BBQ.FLUID, 250)).save(consumer, EDLoc("bbq"));
 	}
 
 	private void evaporatorRecipes(RecipeOutput consumer) {
@@ -2031,7 +2037,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		mixing(new ItemStack(ExtraDelightItems.COFFEE_JELLY.get(), 2), STANDARD_GRIND,
 				new ItemStack(Items.GLASS_BOTTLE),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.GELATIN), Ingredient.of(ExtraDelightTags.SWEETENER) },
-				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 100)),
+				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.COFFEE.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250)) },
 				consumer, "coffee_jelly");
@@ -2204,32 +2210,33 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		b.save(consumer, EDLoc(rc));
 
-		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
-				CreateLoc(rc + "_create"));
-
-		p.output(output);
-		for (Ingredient i : ingredients)
-			p.require(i);
-
-		for (int i = 0; i < container.getCount(); i++)
-			p.require(container.getItem());
-
-		boolean flag = true;
-		for (SizedFluidIngredient f : sizedFluidIngredients)
-			if (f.getFluids() != null && f.getFluids().length > 0)
-				p.require(f.getFluids()[0].getFluid(), f.amount());
-			else
-				flag = false;
-
-		if (flag)
-			p.build(consumer.withConditions(new ModLoadedCondition("create")));
+//		MixingRecipeGen p = new MixingRecipeGen(null, registries, CreateLoc(rc + "_create")) {
+//
+//		};
+//
+//		p.output(output);
+//		for (Ingredient i : ingredients)
+//			p.require(i);
+//
+//		for (int i = 0; i < container.getCount(); i++)
+//			p.require(container.getItem());
+//
+//		boolean flag = true;
+//		for (SizedFluidIngredient f : sizedFluidIngredients)
+//			if (f.getFluids() != null && f.getFluids().length > 0)
+//				p.require(f.getFluids()[0].getFluid(), f.amount());
+//			else
+//				flag = false;
+//
+//		if (flag)
+//			p.build(consumer.withConditions(new ModLoadedCondition("create")));
 	}
 
 	private void craftingRecipes(RecipeOutput consumer) {
-		
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
-		.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
-		.save(consumer.withConditions(FalseCondition.INSTANCE));
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CORN_COB_PIPE.get()).pattern("cs")
 				.define('c', ExtraDelightItems.CORN_COB.get()).define('s', Items.STICK)
@@ -2408,6 +2415,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern("ppp").define('i', Ingredient.of(Tags.Items.NUGGETS_IRON))
 				.define('p', Ingredient.of(Items.HEAVY_WEIGHTED_PRESSURE_PLATE))
 				.unlockedBy(getName(), has(Tags.Items.NUGGETS_IRON)).save(consumer, EDLoc("evaporator"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.JUICER.get()).pattern(" s ").pattern(" b ")
+				.pattern("ccc").define('s', Ingredient.of(Items.STICK))
+				.define('b', Ingredient.of(Items.BARREL))
+				.define('c', Ingredient.of(Tags.Items.INGOTS_COPPER))
+				.unlockedBy(getName(), has(Tags.Items.INGOTS_COPPER)).save(consumer, EDLoc("juicer"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHISK.get()).pattern(" i ").pattern("iii")
+				.pattern(" s ").define('i', Ingredient.of(Tags.Items.NUGGETS_IRON))
+				.define('s', Ingredient.of(Items.STICK))
+				.unlockedBy(getName(), has(Tags.Items.NUGGETS_IRON)).save(consumer, EDLoc("whisk"));
 
 		// Juice
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GLOW_BERRY_JUICE.get())
@@ -5930,17 +5948,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 			b.addIngredient(i);
 		b.build(consumer, rc);
 
-		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
-				CreateLoc(rc + "_create"));
-
-		p.output(output, count);
-		for (Ingredient i : itemsIn)
-			p.require(i);
-
-		if (container != null)
-			p.require(container);
-
-		p.requiresHeat(HeatCondition.HEATED);
-		p.build(consumer.withConditions(new ModLoadedCondition("create")));
+//		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
+//				CreateLoc(rc + "_create"));
+//
+//		p.output(output, count);
+//		for (Ingredient i : itemsIn)
+//			p.require(i);
+//
+//		if (container != null)
+//			p.require(container);
+//
+//		p.requiresHeat(HeatCondition.HEATED);
+//		p.build(consumer.withConditions(new ModLoadedCondition("create")));
 	}
 }

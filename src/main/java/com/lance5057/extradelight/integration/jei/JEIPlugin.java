@@ -25,8 +25,6 @@ import com.lance5057.extradelight.integration.jei.categories.VatRecipeCategory;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.workstations.chiller.ChillerMenu;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
-import com.lance5057.extradelight.workstations.meltingpot.MeltingPotMenu;
-import com.lance5057.extradelight.workstations.meltingpot.MeltingPotScreen;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlMenu;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlScreen;
 import com.lance5057.extradelight.workstations.oven.OvenMenu;

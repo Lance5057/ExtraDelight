@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:foods/milk"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:caramel_sauce"
+    }
+  ]
+}

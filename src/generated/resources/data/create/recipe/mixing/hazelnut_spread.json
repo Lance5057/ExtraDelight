@@ -1,0 +1,27 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:chocolate"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:nut_butter_fluid"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "extradelight:hazelnut_spread_bottle"
+    }
+  ]
+}

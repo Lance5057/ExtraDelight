@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "grapefruit_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grapefruit_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:grapefruit_juice_to_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "grapefruit_juice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:grapefruit_juice_to_bucket"
+    ]
+  }
+}

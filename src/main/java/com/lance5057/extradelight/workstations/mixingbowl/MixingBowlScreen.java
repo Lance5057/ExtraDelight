@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.gui.widgets.FluidStackWidget;
 import com.lance5057.extradelight.gui.widgets.FancyTankWidget;
 import com.mojang.blaze3d.systems.RenderSystem;
 

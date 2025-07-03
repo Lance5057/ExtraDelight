@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "item": "extradelight:cooked_pasta"
+    },
+    {
+      "item": "minecraft:cooked_mutton"
+    }
+  ],
+  "results": [
+    {
+      "id": "farmersdelight:pasta_with_mutton_chop"
+    }
+  ]
+}

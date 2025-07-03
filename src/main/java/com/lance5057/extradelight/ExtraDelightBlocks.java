@@ -39,6 +39,7 @@ import com.lance5057.extradelight.workstations.chiller.ChillerBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
+import com.lance5057.extradelight.workstations.juicer.JuicerBlock;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
@@ -52,7 +53,27 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.CakeBlock;
+import net.minecraft.world.level.block.CarpetBlock;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.FireBlock;
+import net.minecraft.world.level.block.HayBlock;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.StandingSignBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
@@ -142,7 +163,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);
 	public static final DeferredBlock<DryingRackBlock> DRYING_RACK = BLOCKS.register("drying_rack",
 			DryingRackBlock::new);
-	
+
 	public static final DeferredBlock<Block> DOUGH_SHAPING = BLOCKS.register("dough_shaping", DoughShapingBlock::new);
 	public static final DeferredBlock<Block> MIXING_BOWL = BLOCKS.register("mixing_bowl", MixingBowlBlock::new);
 
@@ -156,6 +177,9 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> VAT = BLOCKS.register("vat", VatBlock::new);
 	public static final DeferredBlock<Block> EVAPORATOR = BLOCKS.register("evaporator", EvaporatorBlock::new);
 	public static final DeferredBlock<LidBlock> LID = BLOCKS.register("lid", LidBlock::new);
+
+	public static final DeferredBlock<JuicerBlock> JUICER = BLOCKS.register("juicer",
+			() -> new JuicerBlock(Properties.ofFullCopy(Blocks.BARREL).noOcclusion()));
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));

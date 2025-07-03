@@ -272,7 +272,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 
 				HolderSet.Direct<PlacedFeature> grapefruitTreeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
 						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_GRAPEFRUIT_TREE.get(),
-								ExtraDelightTreeFeatures.createOrangeTree().build())),
+								ExtraDelightTreeFeatures.createGrapefruitTree().build())),
 						List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));

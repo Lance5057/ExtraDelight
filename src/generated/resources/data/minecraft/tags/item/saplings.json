@@ -2,6 +2,10 @@
   "values": [
     "extradelight:cinnamon_sapling",
     "extradelight:hazelnut_sapling",
-    "extradelight:apple_sapling"
+    "extradelight:apple_sapling",
+    "extradelight:lemon_sapling",
+    "extradelight:lime_sapling",
+    "extradelight:orange_sapling",
+    "extradelight:grapefruit_sapling"
   ]
 }

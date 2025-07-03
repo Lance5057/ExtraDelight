@@ -1169,7 +1169,9 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.HAZELNUT_LEAVES, modLoc("block/crops/fruit/hazelnut/hazelnut_leaves_stage0"));
 
 		forBlockItem(this, ExtraDelightItems.CHILLER, "chiller");
-		forBlockItem(this, ExtraDelightItems.BAR_MOLD, "bar_mold");
+		this.getBuilder(ExtraDelightItems.BAR_MOLD.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		forBlockItemFlat(this, ExtraDelightItems.HAZELNUT_SAPLING, "crops/fruit/hazelnut/hazelnut_sapling");
 
 		forItem(this, ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET, "blood_chocolate_syrup_bucket");
@@ -1341,6 +1343,10 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.JUICER.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+//		forItem(this, ExtraDelightItems.WHISK, "whisk");
 
 		getBuilder(ExtraDelightItems.DYNAMIC_TOAST.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("block/block"))

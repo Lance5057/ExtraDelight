@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/lime"
+    },
+    {
+      "tag": "c:crops/lime"
+    },
+    {
+      "tag": "c:crops/lime"
+    },
+    {
+      "tag": "c:crops/lime"
+    },
+    {
+      "tag": "c:crops/lime"
+    },
+    {
+      "tag": "c:crops/lime"
+    },
+    {
+      "tag": "c:crops/lime"
+    },
+    {
+      "tag": "c:crops/lime"
+    },
+    {
+      "tag": "c:crops/lime"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:lime_crate_item"
+  }
+}

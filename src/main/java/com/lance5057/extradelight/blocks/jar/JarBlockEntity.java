@@ -4,6 +4,8 @@ import javax.annotation.Nonnull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightComponents;
+import com.lance5057.extradelight.util.BlockEntityUtils;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -13,11 +15,16 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.SimpleFluidContent;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 
 public class JarBlockEntity extends BlockEntity {
@@ -63,6 +70,41 @@ public class JarBlockEntity extends BlockEntity {
 	}
 
 	public boolean use(Player player, InteractionHand hand) {
+		ItemStack i = BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid()).getCraftingRemainingItem()
+				.copy();
+		if(this.getTank().getFluid().is(Fluids.WATER))
+			i = Items.GLASS_BOTTLE.getDefaultInstance();
+		ItemStack i2 = player.getItemInHand(hand);
+		if (ItemStack.isSameItem(i2, i)) {
+
+			if (!i.isEmpty()) {
+				if (this.getTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
+					this.getTank().drain(250, FluidAction.EXECUTE);
+					BlockEntityUtils.Inventory.givePlayerItemStack(
+							BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid()).copy(), player, level,
+							worldPosition);
+					player.getItemInHand(hand).shrink(1);
+					return true;
+				}
+			}
+		} else if (!player.getItemInHand(hand).isEmpty()) {
+			FluidStack stack = BottleFluidRegistry.getFluidFromBottle(player.getItemInHand(hand));
+			if (!stack.isEmpty()) {
+				if (this.getTank().fill(stack, FluidAction.SIMULATE) == 250) {
+					this.getTank().fill(stack, FluidAction.EXECUTE);
+
+					BlockEntityUtils.Inventory.givePlayerItemStack(
+							player.getItemInHand(hand).getCraftingRemainingItem().copy(), player, level, worldPosition);
+					if (player.getItemInHand(hand).is(Items.POTION))
+						BlockEntityUtils.Inventory.givePlayerItemStack(Items.GLASS_BOTTLE.getDefaultInstance(), player,
+								level, worldPosition);
+					player.getItemInHand(hand).shrink(1);
+					return true;
+				} else
+					return false;
+			} else
+				return FluidUtil.interactWithFluidHandler(player, hand, tank);
+		}
 		return FluidUtil.interactWithFluidHandler(player, hand, tank);
 	}
 

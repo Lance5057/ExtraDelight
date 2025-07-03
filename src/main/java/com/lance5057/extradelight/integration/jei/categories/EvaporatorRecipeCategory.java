@@ -24,6 +24,7 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
@@ -68,6 +69,8 @@ public class EvaporatorRecipeCategory implements IRecipeCategory<EvaporatorRecip
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 49, 1)
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid().getFluids()))
 				.setFluidRenderer(1000, false, 16, 71);
+		
+		builder.addSlot(RecipeIngredientRole.CATALYST, 65, 30).addIngredients(Ingredient.of(ItemTags.SHOVELS));
 
 		builder.addSlot(RecipeIngredientRole.OUTPUT, 45, 30).addIngredients(Ingredient.of(recipe.getResultItem(null)));
 	}

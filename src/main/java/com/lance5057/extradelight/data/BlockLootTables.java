@@ -594,9 +594,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		feast(Fermentation.CHEESYMITE_SCROLL_BLOCK.get(), Fermentation.CHEESYMITE_SCROLL_BLOCK_ITEM.get(), Items.BOWL);
 
-		add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.CINNAMON_SAPLING.get()));
-		add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.HAZELNUT_SAPLING.get()));
-		add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.APPLE_SAPLING.get()));
+		add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(),
+				createPotFlowerItemTable(ExtraDelightBlocks.CINNAMON_SAPLING.get()));
+		add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(),
+				createPotFlowerItemTable(ExtraDelightBlocks.HAZELNUT_SAPLING.get()));
+		add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(),
+				createPotFlowerItemTable(ExtraDelightBlocks.APPLE_SAPLING.get()));
 
 		this.createFruitLeavesDrop(SummerCitrus.LEMON_LEAVES.get(), SummerCitrus.LEMON_SAPLING.get(),
 				SummerCitrus.LEMON.get());
@@ -613,7 +616,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.createFruitLeavesDrop(SummerCitrus.GRAPEFRUIT_LEAVES.get(), SummerCitrus.GRAPEFRUIT_SAPLING.get(),
 				SummerCitrus.GRAPEFRUIT.get());
 		this.dropSelf(SummerCitrus.GRAPEFRUIT_SAPLING.get());
-		add(SummerCitrus.POTTED_GRAPEFRUIT_SAPLING.get(), createPotFlowerItemTable(SummerCitrus.GRAPEFRUIT_SAPLING.get()));
+		add(SummerCitrus.POTTED_GRAPEFRUIT_SAPLING.get(),
+				createPotFlowerItemTable(SummerCitrus.GRAPEFRUIT_SAPLING.get()));
+		this.dropSelf(SummerCitrus.LEMON_CRATE.get());
+		this.dropSelf(SummerCitrus.LIME_CRATE.get());
+		this.dropSelf(SummerCitrus.ORANGE_CRATE.get());
+		this.dropSelf(SummerCitrus.GRAPEFRUIT_CRATE.get());
+
+		this.dropSelf(ExtraDelightBlocks.JUICER.get());
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {
@@ -676,15 +686,18 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition,
 			float amount) {
-		this.add(pCropBlock, LootTable.lootTable()
-				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-						.add(LootItem.lootTableItem(pSeedsItem).when(pDropGrownCropCondition)))
-				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(amount))
-						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)))
-				.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
-						.add(LootItem.lootTableItem(pGrownCropItem)
-								.apply(ApplyBonusCount.addBonusBinomialDistributionCount(
-								this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F, 1)))));
+		this.add(pCropBlock,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+								.add(LootItem.lootTableItem(pSeedsItem).when(pDropGrownCropCondition)))
+						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(amount))
+								.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)))
+						.withPool(
+								LootPool.lootPool().when(pDropGrownCropCondition)
+										.add(LootItem.lootTableItem(pGrownCropItem)
+												.apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+														this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F,
+														1)))));
 	}
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition) {
@@ -694,9 +707,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.withPool(LootPool.lootPool()
 						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)
 								.otherwise(LootItem.lootTableItem(pSeedsItem))))
-				.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
-						.add(LootItem.lootTableItem(pGrownCropItem)
-								.apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+				.withPool(LootPool.lootPool().when(pDropGrownCropCondition).add(
+						LootItem.lootTableItem(pGrownCropItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(
 								this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F, 1)))));
 	}
 

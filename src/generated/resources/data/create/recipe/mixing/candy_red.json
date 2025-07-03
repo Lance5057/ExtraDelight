@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:dyes/red"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "id": "extradelight:candy_red"
+    }
+  ]
+}

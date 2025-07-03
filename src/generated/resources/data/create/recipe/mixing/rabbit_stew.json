@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:rabbit"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "c:flour"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:rabbit_stew_feast"
+    }
+  ]
+}
