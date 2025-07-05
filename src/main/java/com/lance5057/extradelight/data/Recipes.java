@@ -1641,6 +1641,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, "butter");
 
 		mixing(new ItemStack(ExtraDelightItems.WHIPPED_CREAM.get(), 1), LONG_GRIND, new ItemStack(Items.BOWL),
+				Ingredient.of(ExtraDelightItems.WHISK),
 				new Ingredient[] {},
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(NeoForgeMod.MILK, 250)) }, consumer,
 				"whipped_cream");
@@ -2230,6 +2231,20 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 //
 //		if (flag)
 //			p.build(consumer.withConditions(new ModLoadedCondition("create")));
+	}
+
+	public static void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient utensil, Ingredient[] ingredients,
+							  SizedFluidIngredient[] sizedFluidIngredients, RecipeOutput consumer, String rc) {
+		MixingBowlRecipeBuilder b = MixingBowlRecipeBuilder.stir(output, grind, container, utensil);
+
+		for (Ingredient i : ingredients)
+			b.requires(i);
+		for (SizedFluidIngredient f : sizedFluidIngredients)
+			b.requires(f);
+
+		b.unlockedBy(rc, has(output.getItem()));
+
+		b.save(consumer, EDLoc(rc));
 	}
 
 	private void craftingRecipes(RecipeOutput consumer) {

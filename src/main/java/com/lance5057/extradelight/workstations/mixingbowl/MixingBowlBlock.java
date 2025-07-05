@@ -16,6 +16,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -97,33 +98,58 @@ public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
 			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
 		if (pLevel.isClientSide) {
 			return ItemInteractionResult.SUCCESS;
-		} else if (stack.is(ExtraDelightTags.SPOONS)) {
-			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
-			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
-				mbe.mix(pPlayer);
-			}
-			return ItemInteractionResult.SUCCESS;
 		} else {
 			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
 			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
-				MenuProvider containerProvider = new MenuProvider() {
-					@Override
-					public Component getDisplayName() {
-						return Component.translatable("screen.mixing_bowl.name");
-					}
+				InteractionResult result = mbe.mix(pPlayer, stack);
+				if (result == InteractionResult.SUCCESS) {
+					return ItemInteractionResult.SUCCESS;
+				}
+				else {
+					MenuProvider containerProvider = new MenuProvider() {
+						@Override
+						public Component getDisplayName() {
+							return Component.translatable("screen.mixing_bowl.name");
+						}
 
-					@Override
-					public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
-							Player playerEntity) {
-						return new MixingBowlMenu(windowId, playerInventory, mbe);
-					}
-				};
-				pPlayer.openMenu(containerProvider, buf -> buf.writeBlockPos(pPos));
-
+						@Override
+						public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
+																Player playerEntity) {
+							return new MixingBowlMenu(windowId, playerInventory, mbe);
+						}
+					};
+					pPlayer.openMenu(containerProvider, buf -> buf.writeBlockPos(pPos));
+				}
 			}
 			return ItemInteractionResult.CONSUME;
-
 		}
+//		} else if (stack.is(ExtraDelightTags.SPOONS)) {
+//			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
+//			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
+//				mbe.mix(pPlayer);
+//			}
+//			return ItemInteractionResult.SUCCESS;
+//		} else {
+//			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
+//			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
+//				MenuProvider containerProvider = new MenuProvider() {
+//					@Override
+//					public Component getDisplayName() {
+//						return Component.translatable("screen.mixing_bowl.name");
+//					}
+//
+//					@Override
+//					public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
+//							Player playerEntity) {
+//						return new MixingBowlMenu(windowId, playerInventory, mbe);
+//					}
+//				};
+//				pPlayer.openMenu(containerProvider, buf -> buf.writeBlockPos(pPos));
+//
+//			}
+//			return ItemInteractionResult.CONSUME;
+//
+//		}
 
 	}
 

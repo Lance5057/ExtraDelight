@@ -26,7 +26,8 @@ import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 	protected final int stirs;
-	final ItemStack usedItem;
+	final ItemStack container;
+	final Ingredient utensil;
 
 	final String group;
 	final ItemStack result;
@@ -35,9 +36,10 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 //	private final boolean isSimple;
 
 	public MixingBowlRecipe(String pGroup, NonNullList<Ingredient> pIngredients, List<SizedFluidIngredient> pFluids,
-			ItemStack pResult, int stirs, ItemStack usedItem) {
+			ItemStack pResult, int stirs, ItemStack container, Ingredient utensil) {
 		this.stirs = stirs;
-		this.usedItem = usedItem;
+		this.container = container;
+		this.utensil = utensil;
 		this.group = pGroup;
 		this.result = pResult;
 
@@ -78,8 +80,8 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 				i == 0 
 				: i == this.ingredients.size() && RecipeMatcher.findMatches(inputs, this.ingredients) != null;
 		return itemMatchFlag
-				&& matchFluids(input.getTank().getAsList()) && ItemStack.isSameItem(usedItem, input.getItem(9))
-				&& input.getItem(9).getCount() >= usedItem.getCount();
+				&& matchFluids(input.getTank().getAsList()) && ItemStack.isSameItem(container, input.getItem(9))
+				&& input.getItem(9).getCount() >= container.getCount();
 	}
 
 	boolean matchFluids(List<FluidStack> f) {
@@ -125,8 +127,12 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 		return stirs;
 	}
 
-	public ItemStack getUsedItem() {
-		return this.usedItem;
+	public ItemStack getContainer() {
+		return this.container;
+	}
+
+	public Ingredient getUtensil() {
+		return this.utensil;
 	}
 
 	@Override
@@ -162,8 +168,10 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 
 						Codec.INT.optionalFieldOf("stirs", 100).forGetter(r -> r.stirs),
 
-						ItemStack.CODEC.optionalFieldOf("usedItem", ItemStack.EMPTY).forGetter(r -> r.usedItem))
-						.apply(inst, MixingBowlRecipe::new));
+						ItemStack.CODEC.optionalFieldOf("container", ItemStack.EMPTY).forGetter(r -> r.container),
+
+						Ingredient.CODEC.fieldOf("utensil").forGetter(r -> r.utensil)
+				).apply(inst, MixingBowlRecipe::new));
 
 		public static MixingBowlRecipe fromNetwork(RegistryFriendlyByteBuf pBuffer) {
 			String s = pBuffer.readUtf();
@@ -183,8 +191,9 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 
 			ItemStack itemstack = ItemStack.OPTIONAL_STREAM_CODEC.decode(pBuffer);
 			int stirs = pBuffer.readVarInt();
-			ItemStack usedItem = ItemStack.OPTIONAL_STREAM_CODEC.decode(pBuffer);
-			return new MixingBowlRecipe(s, nonnulllist, fl, itemstack, stirs, usedItem);
+			ItemStack container = ItemStack.OPTIONAL_STREAM_CODEC.decode(pBuffer);
+			Ingredient utensil = Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer);
+			return new MixingBowlRecipe(s, nonnulllist, fl, itemstack, stirs, container, utensil);
 		}
 
 		public static void toNetwork(RegistryFriendlyByteBuf pBuffer, MixingBowlRecipe pRecipe) {
@@ -203,7 +212,8 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 
 			ItemStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.result);
 			pBuffer.writeVarInt(pRecipe.getStirs());
-			ItemStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.getUsedItem());
+			ItemStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.getContainer());
+			Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, pRecipe.utensil);
 
 		}
 

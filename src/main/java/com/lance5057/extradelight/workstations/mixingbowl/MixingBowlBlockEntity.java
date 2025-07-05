@@ -258,8 +258,8 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 		}
 		this.getFluidTank().readFromNBT(registries, nbt);
 		this.stirs = nbt.getInt("stirs");
-		if (nbt.contains("usedItem"))
-			ItemStack.parse(registries, nbt.getCompound("usedItem")).ifPresent(i -> containerItem = i);
+		if (nbt.contains("container"))
+			ItemStack.parse(registries, nbt.getCompound("container")).ifPresent(i -> containerItem = i);
 		this.complete = nbt.getBoolean("complete");
 	}
 
@@ -270,7 +270,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 		tag.putInt("stirs", this.stirs);
 
 		if (!containerItem.isEmpty())
-			tag.put("usedItem", containerItem.saveOptional(registries));
+			tag.put("container", containerItem.saveOptional(registries));
 		tag.putBoolean("complete", this.complete);
 
 		return tag;
@@ -340,10 +340,10 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 
 	}
 
-	public InteractionResult mix(Player player) {
+	public InteractionResult mix(Player player, ItemStack utensil) {
 
 //		Optional<RecipeHolder<MixingBowlRecipe>> recipeOptional = matchRecipe();
-		if (curRecipe != null) {
+		if (curRecipe != null && curRecipe.getUtensil().test(utensil)) {
 //			MixingBowlRecipe recipe = recipeOptional.get().value();
 
 			if (this.stirs < curRecipe.getStirs()) {
@@ -360,7 +360,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 
 				level.playSound(player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
 			} else {
-				this.containerItem = curRecipe.getUsedItem().copy();
+				this.containerItem = curRecipe.getContainer().copy();
 
 				ItemStack i = curRecipe.getResultItem(player.level().registryAccess()).copy();
 				int k = i.getCount();
@@ -377,9 +377,10 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 				complete = true;
 			}
 			this.updateInventory();
+			return InteractionResult.SUCCESS;
+		} else {
+			return InteractionResult.FAIL;
 		}
-
-		return InteractionResult.SUCCESS;
 	}
 
 	private void removeFluids(List<SizedFluidIngredient> list) {

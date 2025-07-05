@@ -68,8 +68,8 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, MixingBowlRecipe recipe, IFocusGroup focuses) {
 		List<Ingredient> input = recipe.getIngredients();
-		Ingredient pestle = Ingredient.of(ExtraDelightTags.SPOONS);
-		ItemStack used = recipe.getUsedItem();
+		Ingredient utensil = recipe.getUtensil();
+		ItemStack container = recipe.getContainer();
 		ItemStack output = recipe.getResultItem(Minecraft.getInstance().level.registryAccess());
 
 		int x = 0;
@@ -82,8 +82,8 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 				x = 0;
 			}
 		}
-		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 28, 12).addIngredients(pestle);
-		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 + 32, 52).addItemStack(used);
+		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 28, 12).addIngredients(utensil);
+		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 + 32, 52).addItemStack(container);
 
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 57, 29).addItemStack(output);
 
