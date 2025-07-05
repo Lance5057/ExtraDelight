@@ -1346,7 +1346,8 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(ExtraDelightItems.JUICER.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 
-//		forItem(this, ExtraDelightItems.WHISK, "whisk");
+		getBuilder(ExtraDelightItems.WHISK.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/whisk"), existingFileHelper));
 
 		getBuilder(ExtraDelightItems.DYNAMIC_TOAST.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("block/block"))

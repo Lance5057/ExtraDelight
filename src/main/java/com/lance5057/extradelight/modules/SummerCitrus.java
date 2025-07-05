@@ -163,25 +163,25 @@ public class SummerCitrus {
         bsp.simpleBlock(LEMON_SAPLING.get(), new ConfiguredModel(bsp.models()
                 .cross("lemon_sapling", bsp.modLoc("block/crops/fruit/lemon/lemon_sapling")).renderType("cutout")));
         BlockModels.pottedBlock(bsp, POTTED_LEMON_SAPLING.get(), "lemon_sapling", "crops/fruit/lemon/lemon_sapling");
-//        BlockModels.crateBlock(bsp, LEMON_CRATE.get(), "lemon", "oak");
+        BlockModels.crateBlock(bsp, LEMON_CRATE.get(), "lemon", "oak");
 
         BlockModels.fruitLeafBlock(bsp, LIME_LEAVES.get(), "lime");
         bsp.simpleBlock(LIME_SAPLING.get(), new ConfiguredModel(bsp.models()
                 .cross("lime_sapling", bsp.modLoc("block/crops/fruit/lime/lime_sapling")).renderType("cutout")));
         BlockModels.pottedBlock(bsp, POTTED_LIME_SAPLING.get(), "lime_sapling", "crops/fruit/lime/lime_sapling");
-//        BlockModels.crateBlock(bsp, LIME_CRATE.get(), "lime", "oak");
+        BlockModels.crateBlock(bsp, LIME_CRATE.get(), "lime", "oak");
 
         BlockModels.fruitLeafBlock(bsp, ORANGE_LEAVES.get(), "orange");
         bsp.simpleBlock(ORANGE_SAPLING.get(), new ConfiguredModel(bsp.models()
                 .cross("orange_sapling", bsp.modLoc("block/crops/fruit/orange/orange_sapling")).renderType("cutout")));
         BlockModels.pottedBlock(bsp, POTTED_ORANGE_SAPLING.get(), "orange_sapling", "crops/fruit/orange/orange_sapling");
-//        BlockModels.crateBlock(bsp, ORANGE_CRATE.get(), "orange", "oak");
+        BlockModels.crateBlock(bsp, ORANGE_CRATE.get(), "orange", "oak");
 
         BlockModels.fruitLeafBlock(bsp, GRAPEFRUIT_LEAVES.get(), "grapefruit");
         bsp.simpleBlock(GRAPEFRUIT_SAPLING.get(), new ConfiguredModel(bsp.models()
                 .cross("grapefruit_sapling", bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_sapling")).renderType("cutout")));
         BlockModels.pottedBlock(bsp, POTTED_GRAPEFRUIT_SAPLING.get(), "grapefruit_sapling", "crops/fruit/grapefruit/grapefruit_sapling");
-//        BlockModels.crateBlock(bsp, GRAPEFRUIT_CRATE.get(), "grapefruit", "oak");
+        BlockModels.crateBlock(bsp, GRAPEFRUIT_CRATE.get(), "grapefruit", "oak");
 
         BlockModels.fluid(bsp, EGG_WHITE_FLUID_BLOCK.get());
     }
@@ -192,28 +192,28 @@ public class SummerCitrus {
         ItemModels.forBlockItemFlat(tmp, LEMON_SAPLING_ITEM, "crops/fruit/lemon/lemon_sapling");
 //        ItemModels.forItem(tmp, LEMON_JUICE, "lemon_juice_bottle");
 //        ItemModels.forItem(tmp, LEMON_JUICE_FLUID_BUCKET, "lemon_juice_bucket");
-//        ItemModels.forBlockItem(tmp, LEMON_CRATE_ITEM, "lemon_crate");
+        ItemModels.forBlockItem(tmp, LEMON_CRATE_ITEM, "lemon_crate");
 
         ItemModels.forItem(tmp, LIME, "crops/fruit/lime/lime");
         ItemModels.forBlockItem(tmp, LIME_LEAVES_ITEM, tmp.modLoc("block/crops/fruit/lime/lime_leaves_stage0"));
         ItemModels.forBlockItemFlat(tmp, LIME_SAPLING_ITEM, "crops/fruit/lime/lime_sapling");
 //        ItemModels.forItem(tmp, LIME_JUICE, "lime_juice_bottle");
 //        ItemModels.forItem(tmp, LIME_JUICE_FLUID_BUCKET, "lime_juice_bucket");
-//        ItemModels.forBlockItem(tmp, LIME_CRATE_ITEM, "lime_crate");
+        ItemModels.forBlockItem(tmp, LIME_CRATE_ITEM, "lime_crate");
 
         ItemModels.forItem(tmp, ORANGE, "crops/fruit/orange/orange");
         ItemModels.forBlockItem(tmp, ORANGE_LEAVES_ITEM, tmp.modLoc("block/crops/fruit/orange/orange_leaves_stage0"));
         ItemModels.forBlockItemFlat(tmp, ORANGE_SAPLING_ITEM, "crops/fruit/orange/orange_sapling");
 //        ItemModels.forItem(tmp, ORANGE_JUICE, "orange_juice_bottle");
 //        ItemModels.forItem(tmp, ORANGE_JUICE_FLUID_BUCKET, "orange_juice_bucket");
-//        ItemModels.forBlockItem(tmp, ORANGE_CRATE_ITEM, "orange_crate");
+        ItemModels.forBlockItem(tmp, ORANGE_CRATE_ITEM, "orange_crate");
 
         ItemModels.forItem(tmp, GRAPEFRUIT, "crops/fruit/grapefruit/grapefruit");
         ItemModels.forBlockItem(tmp, GRAPEFRUIT_LEAVES_ITEM, tmp.modLoc("block/crops/fruit/grapefruit/grapefruit_leaves_stage0"));
         ItemModels.forBlockItemFlat(tmp, GRAPEFRUIT_SAPLING_ITEM, "crops/fruit/grapefruit/grapefruit_sapling");
 //        ItemModels.forItem(tmp, GRAPEFRUIT_JUICE, "grapefruit_juice_bottle");
 //        ItemModels.forItem(tmp, GRAPEFRUIT_JUICE_FLUID_BUCKET, "grapefruit_juice_bucket");
-//        ItemModels.forBlockItem(tmp, ORANGE_CRATE_ITEM, "orange_crate");
+        ItemModels.forBlockItem(tmp, GRAPEFRUIT_CRATE_ITEM, "grapefruit_crate");
 
 //        ItemModels.forItem(tmp, EGG_YOLK, "egg_yolk");
 //        ItemModels.forItem(tmp, EGG_WHITE, "egg_white");
