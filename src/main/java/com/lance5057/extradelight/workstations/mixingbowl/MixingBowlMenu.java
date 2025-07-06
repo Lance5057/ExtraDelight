@@ -70,6 +70,23 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 					return false;
 				}
 			});
+			
+			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.GHOST_TOOL_SLOT, 127, 13) {
+				@Override
+				public boolean mayPickup(Player playerIn) {
+					return false;
+				}
+
+				@Override
+				public ItemStack remove(int amount) {
+					return ItemStack.EMPTY.copy();
+				}
+
+				@Override
+				public boolean mayPlace(ItemStack stack) {
+					return false;
+				}
+			});
 
 			// Main Player Inventory
 			int startPlayerInvY = startY * 4 + 51;

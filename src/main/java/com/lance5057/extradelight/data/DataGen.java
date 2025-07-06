@@ -50,7 +50,7 @@ public class DataGen {
 		generator.addProvider(event.includeServer(), new DataMapGen(output, lookupProvider));
 
 		generator.addProvider(event.includeClient(),
-				new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider));
+				new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider)); 
 
 		generator.addProvider(event.includeClient(), new CreateMixingRecipes(output, lookupProvider, "create"));
 	}

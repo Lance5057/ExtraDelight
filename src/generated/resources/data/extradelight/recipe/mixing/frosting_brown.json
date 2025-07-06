@@ -16,5 +16,8 @@
     "count": 4,
     "id": "extradelight:frosting_brown"
   },
-  "stirs": 2
+  "stirs": 2,
+  "utensil": {
+    "tag": "c:spoons"
+  }
 }

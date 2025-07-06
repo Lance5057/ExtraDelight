@@ -51,7 +51,9 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 	public static final int LIQUID_IN_SLOT = 10;
 	public static final int LIQUID_OUT_SLOT = 11;
 	public static final int GHOST_SLOT = 12;
-
+	public static final int GHOST_TOOL_SLOT = 13;
+	public static final int INVENTORY_SIZE = GHOST_TOOL_SLOT + 1;
+	
 	@Override
 	public int getFluidInSlot() {
 		return LIQUID_IN_SLOT;
@@ -122,7 +124,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 //	}
 
 	private ItemStackHandler createHandler() {
-		return new ItemStackHandler(GHOST_SLOT + 1) {
+		return new ItemStackHandler(INVENTORY_SIZE) {
 
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
@@ -138,6 +140,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 											.drain(250, IFluidHandler.FluidAction.SIMULATE)).getCraftingRemainingItem())
 							|| stack.is(Items.GLASS_BOTTLE);
 				case GHOST_SLOT:
+				case GHOST_TOOL_SLOT:
 					return false;
 				default:
 					return true;
@@ -146,7 +149,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 
 			@Override
 			protected void onContentsChanged(int slot) {
-				if (slot != GHOST_SLOT) {
+				if (slot != GHOST_SLOT && slot != GHOST_TOOL_SLOT) {
 					zeroProgress();
 					updateInventory();
 				}
@@ -212,9 +215,11 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 		if (recipe.isPresent()) {
 			this.curRecipe = recipe.get().value();
 			this.items.setStackInSlot(GHOST_SLOT, curRecipe.getResultItem(this.level.registryAccess()).copy());
+			this.items.setStackInSlot(GHOST_TOOL_SLOT, curRecipe.getUtensil().getItems()[0]);
 		} else {
 			this.curRecipe = null;
 			this.items.setStackInSlot(GHOST_SLOT, ItemStack.EMPTY.copy());
+			this.items.setStackInSlot(GHOST_TOOL_SLOT, ItemStack.EMPTY.copy());
 		}
 	}
 

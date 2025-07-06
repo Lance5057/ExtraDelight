@@ -22,5 +22,8 @@
     "count": 1,
     "id": "extradelight:chocolate_chip_cookie_dough"
   },
-  "stirs": 4
+  "stirs": 4,
+  "utensil": {
+    "tag": "c:spoons"
+  }
 }

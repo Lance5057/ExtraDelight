@@ -1,5 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
   "fluids": [],
   "ingredients": [
     {
@@ -14,8 +18,7 @@
     "id": "extradelight:buttered_pasta"
   },
   "stirs": 2,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
+  "utensil": {
+    "tag": "c:spoons"
   }
 }

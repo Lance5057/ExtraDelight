@@ -231,7 +231,7 @@ public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
 			if (tileEntity instanceof MixingBowlBlockEntity te) {
 				IItemHandler items = te.getItemHandler();
 				for (int i = 0; i < te.getItemHandler().getSlots(); i++) {
-					if (i != MixingBowlBlockEntity.GHOST_SLOT)
+					if (i != MixingBowlBlockEntity.GHOST_SLOT && i != MixingBowlBlockEntity.GHOST_TOOL_SLOT)
 						level.addFreshEntity(
 								new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
 				}

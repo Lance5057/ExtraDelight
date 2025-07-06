@@ -235,7 +235,7 @@ public class ExtraDelightFluids {
 			Fermentation.PICKLE_JUICE_FLUID_BLOCK, Fermentation.PICKLE_JUICE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	public static FluidRegistration LEMON_JUICE = new FluidRegistration("lemon_juice",
-			() -> new BasicFluid(0xfffff695, 0xfffff695,
+			() -> new BasicFluid(0xfffff695, 0xffc,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
 			SummerCitrus.LEMON_JUICE_FLUID_BLOCK, SummerCitrus.LEMON_JUICE_FLUID_BUCKET,
 			FLUID_TYPES, FLUIDS);

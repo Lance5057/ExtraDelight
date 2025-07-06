@@ -2,7 +2,6 @@ package com.lance5057.extradelight.data.compat.create;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
@@ -30,7 +29,7 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 		super(output, registries, defaultNamespace);
 	}
 
-	GeneratedRecipe
+	GeneratedRecipe 
 
 	WHEAT_DOUGH_EGG = create("wheat_dough_egg",
 			b -> b.output(new ItemStack(ModItems.WHEAT_DOUGH.get(), 3)).require(Ingredient.of(ExtraDelightTags.FLOUR))
@@ -91,29 +90,25 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 							.require(Ingredient.of(ExtraDelightTags.FISH_FLAKES))
 							.require(Ingredient.of(ExtraDelightTags.FISH_FLAKES))),
 
-			SALAD_MEAT = create("salad_meat",
-					b -> b.output(new ItemStack(ExtraDelightItems.SALAD_FEAST_ITEM.get(), 1)).require(Items.BOWL)
-							.require(Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE))
-							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
-							.require(Ingredient.of(ExtraDelightTags.PROCESSED_CARROT))
-							.require(Ingredient.of(ExtraDelightTags.CROUTONS))
-							.require(Ingredient.of(ExtraDelightTags.CHEESE))
-							.require(Ingredient.of(ExtraDelightTags.BOILED_EGG))
-							.require(Ingredient.of(ExtraDelightTags.MEAT_COOKED))
-							.require(ExtraDelightFluids.OIL.FLUID.get(), 250)
-							.require(ExtraDelightFluids.VINEGAR.FLUID.get(), 250)),
+			SALAD_MEAT = create("salad_meat", b -> b.output(new ItemStack(ExtraDelightItems.SALAD_FEAST_ITEM.get(), 1))
+					.require(Items.BOWL).require(Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE))
+					.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
+					.require(Ingredient.of(ExtraDelightTags.PROCESSED_CARROT))
+					.require(Ingredient.of(ExtraDelightTags.CROUTONS)).require(Ingredient.of(ExtraDelightTags.CHEESE))
+					.require(Ingredient.of(ExtraDelightTags.BOILED_EGG))
+					.require(Ingredient.of(ExtraDelightTags.MEAT_COOKED))
+					.require(ExtraDelightFluids.OIL.FLUID.get(), 250)
+					.require(ExtraDelightFluids.VINEGAR.FLUID.get(), 250)),
 
-			SALAD_VEG = create("salad_veg",
-					b -> b.output(new ItemStack(ExtraDelightItems.SALAD_FEAST_ITEM.get(), 1)).require(Items.BOWL)
-							.require(Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE))
-							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
-							.require(Ingredient.of(ExtraDelightTags.PROCESSED_CARROT))
-							.require(Ingredient.of(ExtraDelightItems.CROUTONS.get()))
-							.require(Ingredient.of(ExtraDelightTags.CHEESE))
-							.require(Ingredient.of(ExtraDelightTags.BOILED_EGG))
-							.require(Ingredient.of(ExtraDelightTags.PROCESSED_VEG))
-							.require(ExtraDelightFluids.OIL.FLUID.get(), 250)
-							.require(ExtraDelightFluids.VINEGAR.FLUID.get(), 250)),
+			SALAD_VEG = create("salad_veg", b -> b.output(new ItemStack(ExtraDelightItems.SALAD_FEAST_ITEM.get(), 1))
+					.require(Items.BOWL).require(Ingredient.of(ExtraDelightTags.PROCESSED_CABBAGE))
+					.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
+					.require(Ingredient.of(ExtraDelightTags.PROCESSED_CARROT))
+					.require(Ingredient.of(ExtraDelightItems.CROUTONS.get()))
+					.require(Ingredient.of(ExtraDelightTags.CHEESE)).require(Ingredient.of(ExtraDelightTags.BOILED_EGG))
+					.require(Ingredient.of(ExtraDelightTags.PROCESSED_VEG))
+					.require(ExtraDelightFluids.OIL.FLUID.get(), 250)
+					.require(ExtraDelightFluids.VINEGAR.FLUID.get(), 250)),
 
 			PASTA_ALFREDO = create("pasta_alfredo",
 					b -> b.output(new ItemStack(ExtraDelightItems.PASTA_ALFREDO.get(), 1)).require(Items.BOWL)
@@ -443,12 +438,10 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 							.require(Ingredient.of(Tags.Items.DYES_PURPLE))
 							.require(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250)),
 
-			FROSTING_RED = create("frosting_red",
-					b -> b.output(new ItemStack(ExtraDelightItems.FROSTING_RED.get(), 4))
-							.require(Ingredient.of(ExtraDelightItems.BUTTER.get()))
-							.require(Ingredient.of(ExtraDelightTags.SWEETENER))
-							.require(Ingredient.of(Tags.Items.DYES_RED))
-							.require(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250)),
+			FROSTING_RED = create("frosting_red", b -> b.output(new ItemStack(ExtraDelightItems.FROSTING_RED.get(), 4))
+					.require(Ingredient.of(ExtraDelightItems.BUTTER.get()))
+					.require(Ingredient.of(ExtraDelightTags.SWEETENER)).require(Ingredient.of(Tags.Items.DYES_RED))
+					.require(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250)),
 
 			FROSTING_WHITE = create("frosting_white",
 					b -> b.output(new ItemStack(ExtraDelightItems.FROSTING_WHITE.get(), 4))
@@ -775,28 +768,27 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 							.require(Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()))
 							.requiresHeat(HeatCondition.HEATED)),
 
-			CARROT_SOUP = create("carrot_soup", b -> b
-					.output(new ItemStack(ExtraDelightItems.CARROT_SOUP.get(), 2)).require(Items.BOWL)
-					.require(Ingredient.of(Tags.Items.CROPS_CARROT)).require(Ingredient.of(Tags.Items.CROPS_CARROT))
-					.require(Ingredient.of(CommonTags.CROPS_ONION)).require(Ingredient.of(ExtraDelightTags.BROTH))
-					.require(Ingredient.of(CommonTags.FOODS_MILK)).requiresHeat(HeatCondition.HEATED)),
+			CARROT_SOUP = create("carrot_soup", b -> b.output(new ItemStack(ExtraDelightItems.CARROT_SOUP.get(), 2))
+					.require(Items.BOWL).require(Ingredient.of(Tags.Items.CROPS_CARROT))
+					.require(Ingredient.of(Tags.Items.CROPS_CARROT)).require(Ingredient.of(CommonTags.CROPS_ONION))
+					.require(Ingredient.of(ExtraDelightTags.BROTH)).require(Ingredient.of(CommonTags.FOODS_MILK))
+					.requiresHeat(HeatCondition.HEATED)),
 
 			FISH_SOUP = create("fish_soup", b -> b.output(new ItemStack(ExtraDelightItems.FISH_SOUP.get(), 2))
 					.require(Items.BOWL).require(Ingredient.of(ItemTags.FISHES)).require(Ingredient.of(ItemTags.FISHES))
 					.require(Ingredient.of(CommonTags.CROPS_ONION)).require(Ingredient.of(ExtraDelightTags.BROTH))
 					.require(Ingredient.of(Items.DRIED_KELP)).requiresHeat(HeatCondition.HEATED)),
 
-			POTATO_SOUP = create("potato_soup", b -> b
-					.output(new ItemStack(ExtraDelightItems.POTATO_SOUP.get(), 2)).require(Items.BOWL)
-					.require(Ingredient.of(Tags.Items.CROPS_POTATO)).require(Ingredient.of(Tags.Items.CROPS_POTATO))
-					.require(Ingredient.of(CommonTags.CROPS_ONION)).require(Ingredient.of(ExtraDelightTags.BROTH))
-					.require(Ingredient.of(CommonTags.FOODS_MILK))),
+			POTATO_SOUP = create("potato_soup", b -> b.output(new ItemStack(ExtraDelightItems.POTATO_SOUP.get(), 2))
+					.require(Items.BOWL).require(Ingredient.of(Tags.Items.CROPS_POTATO))
+					.require(Ingredient.of(Tags.Items.CROPS_POTATO)).require(Ingredient.of(CommonTags.CROPS_ONION))
+					.require(Ingredient.of(ExtraDelightTags.BROTH)).require(Ingredient.of(CommonTags.FOODS_MILK))),
 
-			TOMATO_SOUP = create("tomato_soup", b -> b
-					.output(new ItemStack(ExtraDelightItems.TOMATO_SOUP.get(), 2)).require(Items.BOWL)
-					.require(Ingredient.of(CommonTags.CROPS_TOMATO)).require(Ingredient.of(CommonTags.CROPS_TOMATO))
-					.require(Ingredient.of(CommonTags.CROPS_ONION)).require(Ingredient.of(ExtraDelightTags.BROTH))
-					.require(Ingredient.of(CommonTags.FOODS_MILK)).requiresHeat(HeatCondition.HEATED)),
+			TOMATO_SOUP = create("tomato_soup", b -> b.output(new ItemStack(ExtraDelightItems.TOMATO_SOUP.get(), 2))
+					.require(Items.BOWL).require(Ingredient.of(CommonTags.CROPS_TOMATO))
+					.require(Ingredient.of(CommonTags.CROPS_TOMATO)).require(Ingredient.of(CommonTags.CROPS_ONION))
+					.require(Ingredient.of(ExtraDelightTags.BROTH)).require(Ingredient.of(CommonTags.FOODS_MILK))
+					.requiresHeat(HeatCondition.HEATED)),
 
 			BOILED_EGG = create("boiled_egg",
 					b -> b.output(new ItemStack(ExtraDelightItems.BOILED_EGG.get(), 1))
@@ -849,13 +841,11 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 							.require(Ingredient.of(Items.APPLE)).require(Ingredient.of(ExtraDelightTags.SWEETENER))
 							.requiresHeat(HeatCondition.HEATED)),
 
-			HASH_FEAST_ITEM = create("hash",
-					b -> b.output(new ItemStack(ExtraDelightItems.HASH_FEAST_ITEM.get(), 1)).require(Items.BOWL)
-							.require(Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()))
-							.require(Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()))
-							.require(Ingredient.of(CommonTags.CROPS_ONION))
-							.require(Ingredient.of(ExtraDelightTags.FRYING_OIL))
-							.require(Ingredient.of(ExtraDelightTags.MEAT)).requiresHeat(HeatCondition.HEATED)),
+			HASH_FEAST_ITEM = create("hash", b -> b.output(new ItemStack(ExtraDelightItems.HASH_FEAST_ITEM.get(), 1))
+					.require(Items.BOWL).require(Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()))
+					.require(Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()))
+					.require(Ingredient.of(CommonTags.CROPS_ONION)).require(Ingredient.of(ExtraDelightTags.FRYING_OIL))
+					.require(Ingredient.of(ExtraDelightTags.MEAT)).requiresHeat(HeatCondition.HEATED)),
 
 			SEAWEED_CRISPS = create("seaweed_crisps",
 					b -> b.output(new ItemStack(ExtraDelightItems.SEAWEED_CRISPS.get(), 1))
@@ -1019,13 +1009,11 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 							.require(Ingredient.of(CommonTags.FOODS_MILK)).require(Ingredient.of(Tags.Items.EGGS))
 							.require(Ingredient.of(ExtraDelightTags.SWEETENER)).requiresHeat(HeatCondition.HEATED)),
 
-			STUFFING_FEAST = create("stuffing",
-					b -> b.output(new ItemStack(ExtraDelightItems.STUFFING_FEAST.get(), 1))
-							.require(Ingredient.of(ExtraDelightItems.CROUTONS.get()))
-							.require(Ingredient.of(ExtraDelightTags.BUTTER))
-							.require(Ingredient.of(ExtraDelightTags.BROTH))
-							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
-							.require(Ingredient.of(Tags.Items.EGGS)).requiresHeat(HeatCondition.HEATED)),
+			STUFFING_FEAST = create("stuffing", b -> b.output(new ItemStack(ExtraDelightItems.STUFFING_FEAST.get(), 1))
+					.require(Ingredient.of(ExtraDelightItems.CROUTONS.get()))
+					.require(Ingredient.of(ExtraDelightTags.BUTTER)).require(Ingredient.of(ExtraDelightTags.BROTH))
+					.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION)).require(Ingredient.of(Tags.Items.EGGS))
+					.requiresHeat(HeatCondition.HEATED)),
 
 			// Holiday
 
@@ -1151,18 +1139,18 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 					.require(Items.BOWL).require(Ingredient.of(CommonTags.CROPS_RICE))
 					.require(Ingredient.of(ExtraDelightTags.PROCESSED_GINGER)).requiresHeat(HeatCondition.HEATED)),
 
-			LUGAW = create("lugaw", b -> b.output(new ItemStack(ExtraDelightItems.LUGAW.get(), 1))
-					.require(Items.BOWL).require(Ingredient.of(CommonTags.CROPS_RICE))
+			LUGAW = create("lugaw", b -> b.output(new ItemStack(ExtraDelightItems.LUGAW.get(), 1)).require(Items.BOWL)
+					.require(Ingredient.of(CommonTags.CROPS_RICE))
 					.require(Ingredient.of(ExtraDelightTags.PROCESSED_GINGER))
 					.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
 					.require(Ingredient.of(ExtraDelightTags.BROTH))
 					.require(Ingredient.of(ExtraDelightItems.BOILED_EGG.get()))
 					.require(Ingredient.of(CommonTags.FOODS_COOKED_CHICKEN)).requiresHeat(HeatCondition.HEATED)),
 
-			RICE_PUDDING = create("rice_pudding", b -> b
-					.output(new ItemStack(ExtraDelightItems.RICE_PUDDING.get(), 1)).require(Items.GLASS_BOTTLE)
-					.require(Ingredient.of(CommonTags.CROPS_RICE)).require(Ingredient.of(CommonTags.CROPS_RICE))
-					.require(Ingredient.of(CommonTags.FOODS_MILK)).require(Ingredient.of(ExtraDelightTags.SWEETENER))
+			RICE_PUDDING = create("rice_pudding", b -> b.output(new ItemStack(ExtraDelightItems.RICE_PUDDING.get(), 1))
+					.require(Items.GLASS_BOTTLE).require(Ingredient.of(CommonTags.CROPS_RICE))
+					.require(Ingredient.of(CommonTags.CROPS_RICE)).require(Ingredient.of(CommonTags.FOODS_MILK))
+					.require(Ingredient.of(ExtraDelightTags.SWEETENER))
 					.require(Ingredient.of(ExtraDelightTags.GROUND_CINNAMON)).requiresHeat(HeatCondition.HEATED)),
 
 			CANDIED_GINGER = create("candied_ginger",
@@ -1240,18 +1228,14 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 					.require(Ingredient.of(ExtraDelightTags.FLOUR)).require(Ingredient.of(CommonTags.FOODS_MILK))
 					.requiresHeat(HeatCondition.HEATED)),
 
-			OXTAIL_SOUP = create("oxtail_soup",
-					b -> b.output(new ItemStack(ExtraDelightItems.OXTAIL_SOUP.get(), 2)).require(Items.BOWL)
-							.require(Ingredient.of(ExtraDelightTags.OXTAIL)).require(Ingredient.of(Items.CARROT))
-							.require(Ingredient.of(ExtraDelightTags.BROTH))
-							.require(Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO))
-							.requiresHeat(HeatCondition.HEATED)),
+			OXTAIL_SOUP = create("oxtail_soup", b -> b.output(new ItemStack(ExtraDelightItems.OXTAIL_SOUP.get(), 2))
+					.require(Items.BOWL).require(Ingredient.of(ExtraDelightTags.OXTAIL))
+					.require(Ingredient.of(Items.CARROT)).require(Ingredient.of(ExtraDelightTags.BROTH))
+					.require(Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO)).requiresHeat(HeatCondition.HEATED)),
 
-			LIVER_ONIONS = create("liver_onions",
-					b -> b.output(new ItemStack(ExtraDelightItems.LIVER_ONIONS.get(), 1)).require(Items.BOWL)
-							.require(Ingredient.of(ExtraDelightTags.LIVER))
-							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
-							.requiresHeat(HeatCondition.HEATED)),
+			LIVER_ONIONS = create("liver_onions", b -> b.output(new ItemStack(ExtraDelightItems.LIVER_ONIONS.get(), 1))
+					.require(Items.BOWL).require(Ingredient.of(ExtraDelightTags.LIVER))
+					.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION)).requiresHeat(HeatCondition.HEATED)),
 
 			FRIED_BRAINS = create("fried_brains",
 					b -> b.output(new ItemStack(ExtraDelightItems.FRIED_BRAINS.get(), 1))
