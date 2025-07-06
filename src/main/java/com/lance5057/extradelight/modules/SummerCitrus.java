@@ -33,6 +33,8 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
+import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 public class SummerCitrus {
     // Lemon
@@ -62,6 +64,8 @@ public class SummerCitrus {
             () -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.PLANT)));
     public static final DeferredItem<Item> LEMON_CRATE_ITEM = ExtraDelightItems.ITEMS.register("lemon_crate_item",
             () -> new BlockItem(LEMON_CRATE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SLICED_LEMON = EDItemGenerator.register("sliced_lemon",
+            () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
     // Lime
     public static final DeferredItem<Item> LIME = EDItemGenerator.register("lime",
@@ -90,6 +94,8 @@ public class SummerCitrus {
             () -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.PLANT)));
     public static final DeferredItem<Item> LIME_CRATE_ITEM = ExtraDelightItems.ITEMS.register("lime_crate_item",
             () -> new BlockItem(LIME_CRATE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SLICED_LIME = EDItemGenerator.register("sliced_lime",
+            () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
     // Orange
     public static final DeferredItem<Item> ORANGE = EDItemGenerator.register("orange",
@@ -118,6 +124,8 @@ public class SummerCitrus {
             () -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.PLANT)));
     public static final DeferredItem<Item> ORANGE_CRATE_ITEM = ExtraDelightItems.ITEMS.register("orange_crate_item",
             () -> new BlockItem(ORANGE_CRATE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SLICED_ORANGE = EDItemGenerator.register("sliced_orange",
+            () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
     // Grapefruit
     public static final DeferredItem<Item> GRAPEFRUIT = EDItemGenerator.register("grapefruit",
@@ -146,6 +154,8 @@ public class SummerCitrus {
             () -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.PLANT)));
     public static final DeferredItem<Item> GRAPEFRUIT_CRATE_ITEM = ExtraDelightItems.ITEMS.register("grapefruit_crate_item",
             () -> new BlockItem(GRAPEFRUIT_CRATE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> SLICED_GRAPEFRUIT = EDItemGenerator.register("sliced_grapefruit",
+            () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
     // Egg separating
     public static final DeferredItem<Item> EGG_YOLK = EDItemGenerator.register("egg_yolk",
@@ -163,24 +173,28 @@ public class SummerCitrus {
         bsp.simpleBlock(LEMON_SAPLING.get(), new ConfiguredModel(bsp.models()
                 .cross("lemon_sapling", bsp.modLoc("block/crops/fruit/lemon/lemon_sapling")).renderType("cutout")));
         BlockModels.pottedBlock(bsp, POTTED_LEMON_SAPLING.get(), "lemon_sapling", "crops/fruit/lemon/lemon_sapling");
+        BlockModels.fluid(bsp, LEMON_JUICE_FLUID_BLOCK.get());
         BlockModels.crateBlock(bsp, LEMON_CRATE.get(), "lemon", "oak");
 
         BlockModels.fruitLeafBlock(bsp, LIME_LEAVES.get(), "lime");
         bsp.simpleBlock(LIME_SAPLING.get(), new ConfiguredModel(bsp.models()
                 .cross("lime_sapling", bsp.modLoc("block/crops/fruit/lime/lime_sapling")).renderType("cutout")));
         BlockModels.pottedBlock(bsp, POTTED_LIME_SAPLING.get(), "lime_sapling", "crops/fruit/lime/lime_sapling");
+        BlockModels.fluid(bsp, LIME_JUICE_FLUID_BLOCK.get());
         BlockModels.crateBlock(bsp, LIME_CRATE.get(), "lime", "oak");
 
         BlockModels.fruitLeafBlock(bsp, ORANGE_LEAVES.get(), "orange");
         bsp.simpleBlock(ORANGE_SAPLING.get(), new ConfiguredModel(bsp.models()
                 .cross("orange_sapling", bsp.modLoc("block/crops/fruit/orange/orange_sapling")).renderType("cutout")));
         BlockModels.pottedBlock(bsp, POTTED_ORANGE_SAPLING.get(), "orange_sapling", "crops/fruit/orange/orange_sapling");
+        BlockModels.fluid(bsp, ORANGE_JUICE_FLUID_BLOCK.get());
         BlockModels.crateBlock(bsp, ORANGE_CRATE.get(), "orange", "oak");
 
         BlockModels.fruitLeafBlock(bsp, GRAPEFRUIT_LEAVES.get(), "grapefruit");
         bsp.simpleBlock(GRAPEFRUIT_SAPLING.get(), new ConfiguredModel(bsp.models()
                 .cross("grapefruit_sapling", bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_sapling")).renderType("cutout")));
         BlockModels.pottedBlock(bsp, POTTED_GRAPEFRUIT_SAPLING.get(), "grapefruit_sapling", "crops/fruit/grapefruit/grapefruit_sapling");
+        BlockModels.fluid(bsp, GRAPEFRUIT_JUICE_FLUID_BLOCK.get());
         BlockModels.crateBlock(bsp, GRAPEFRUIT_CRATE.get(), "grapefruit", "oak");
 
         BlockModels.fluid(bsp, EGG_WHITE_FLUID_BLOCK.get());
@@ -191,31 +205,35 @@ public class SummerCitrus {
         ItemModels.forBlockItem(tmp, LEMON_LEAVES_ITEM, tmp.modLoc("block/crops/fruit/lemon/lemon_leaves_stage0"));
         ItemModels.forBlockItemFlat(tmp, LEMON_SAPLING_ITEM, "crops/fruit/lemon/lemon_sapling");
 //        ItemModels.forItem(tmp, LEMON_JUICE, "lemon_juice_bottle");
-//        ItemModels.forItem(tmp, LEMON_JUICE_FLUID_BUCKET, "lemon_juice_bucket");
+        ItemModels.forItem(tmp, LEMON_JUICE_FLUID_BUCKET, "lemon_juice_bucket");
         ItemModels.forBlockItem(tmp, LEMON_CRATE_ITEM, "lemon_crate");
+        ItemModels.forItem(tmp, SLICED_LEMON, "crops/fruit/lemon/sliced_lemon");
 
         ItemModels.forItem(tmp, LIME, "crops/fruit/lime/lime");
         ItemModels.forBlockItem(tmp, LIME_LEAVES_ITEM, tmp.modLoc("block/crops/fruit/lime/lime_leaves_stage0"));
         ItemModels.forBlockItemFlat(tmp, LIME_SAPLING_ITEM, "crops/fruit/lime/lime_sapling");
 //        ItemModels.forItem(tmp, LIME_JUICE, "lime_juice_bottle");
-//        ItemModels.forItem(tmp, LIME_JUICE_FLUID_BUCKET, "lime_juice_bucket");
+        ItemModels.forItem(tmp, LIME_JUICE_FLUID_BUCKET, "lime_juice_bucket");
         ItemModels.forBlockItem(tmp, LIME_CRATE_ITEM, "lime_crate");
+        ItemModels.forItem(tmp, SLICED_LIME, "crops/fruit/lime/sliced_lime");
 
         ItemModels.forItem(tmp, ORANGE, "crops/fruit/orange/orange");
         ItemModels.forBlockItem(tmp, ORANGE_LEAVES_ITEM, tmp.modLoc("block/crops/fruit/orange/orange_leaves_stage0"));
         ItemModels.forBlockItemFlat(tmp, ORANGE_SAPLING_ITEM, "crops/fruit/orange/orange_sapling");
 //        ItemModels.forItem(tmp, ORANGE_JUICE, "orange_juice_bottle");
-//        ItemModels.forItem(tmp, ORANGE_JUICE_FLUID_BUCKET, "orange_juice_bucket");
+        ItemModels.forItem(tmp, ORANGE_JUICE_FLUID_BUCKET, "orange_juice_bucket");
         ItemModels.forBlockItem(tmp, ORANGE_CRATE_ITEM, "orange_crate");
+        ItemModels.forItem(tmp, SLICED_ORANGE, "crops/fruit/orange/sliced_orange");
 
         ItemModels.forItem(tmp, GRAPEFRUIT, "crops/fruit/grapefruit/grapefruit");
         ItemModels.forBlockItem(tmp, GRAPEFRUIT_LEAVES_ITEM, tmp.modLoc("block/crops/fruit/grapefruit/grapefruit_leaves_stage0"));
         ItemModels.forBlockItemFlat(tmp, GRAPEFRUIT_SAPLING_ITEM, "crops/fruit/grapefruit/grapefruit_sapling");
 //        ItemModels.forItem(tmp, GRAPEFRUIT_JUICE, "grapefruit_juice_bottle");
-//        ItemModels.forItem(tmp, GRAPEFRUIT_JUICE_FLUID_BUCKET, "grapefruit_juice_bucket");
+        ItemModels.forItem(tmp, GRAPEFRUIT_JUICE_FLUID_BUCKET, "grapefruit_juice_bucket");
         ItemModels.forBlockItem(tmp, GRAPEFRUIT_CRATE_ITEM, "grapefruit_crate");
+        ItemModels.forItem(tmp, SLICED_GRAPEFRUIT, "crops/fruit/grapefruit/sliced_grapefruit");
 
-//        ItemModels.forItem(tmp, EGG_YOLK, "egg_yolk");
+        ItemModels.forItem(tmp, EGG_YOLK, "egg_yolk");
 //        ItemModels.forItem(tmp, EGG_WHITE, "egg_white");
 //        ItemModels.forItem(tmp, EGG_WHITE_FLUID_BUCKET, "egg_white_bucket");
     }
@@ -242,6 +260,24 @@ public class SummerCitrus {
         Recipes.bundleItem9(Ingredient.of(ExtraDelightTags.GRAPEFRUIT), GRAPEFRUIT_CRATE_ITEM.get(), GRAPEFRUIT.get(),
                 consumer, "grapefruit");
 
+        // Cutting Board
+        CuttingBoardRecipeBuilder
+                .cuttingRecipe(Ingredient.of(LEMON.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+                        SLICED_LEMON.get(), 3)
+                .build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_lemon_knife"));
+        CuttingBoardRecipeBuilder
+                .cuttingRecipe(Ingredient.of(LIME.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+                        SLICED_LIME.get(), 3)
+                .build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_lime_knife"));
+        CuttingBoardRecipeBuilder
+                .cuttingRecipe(Ingredient.of(ORANGE.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+                        SLICED_ORANGE.get(), 3)
+                .build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_orange_knife"));
+        CuttingBoardRecipeBuilder
+                .cuttingRecipe(Ingredient.of(GRAPEFRUIT.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+                        SLICED_GRAPEFRUIT.get(), 3)
+                .build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_grapefruit_knife"));
+
         // Juicer
         JuicerRecipeBuilder.squeeze(Ingredient.of(LEMON), new ItemStack(Items.BONE_MEAL),
                 new FluidStack(ExtraDelightFluids.LEMON_JUICE.FLUID, 250))
@@ -267,6 +303,7 @@ public class SummerCitrus {
         lp.add("fluid_type.extradelight.lemon_juice_fluid", "Lemon Juice");
         lp.add("block.extradelight.lemon_juice_fluid_block", "Lemon Juice");
         lp.add(LEMON_CRATE.get(), "Lemon Crate");
+        lp.add(SLICED_LEMON.get(), "Sliced Lemon");
 
         lp.add(LIME.get(), "Lime");
         lp.add(LIME_LEAVES.get(), "Lime Leaves");
@@ -277,6 +314,7 @@ public class SummerCitrus {
         lp.add("fluid_type.extradelight.lime_juice_fluid", "Lime Juice");
         lp.add("block.extradelight.lime_juice_fluid_block", "Lime Juice");
         lp.add(LIME_CRATE.get(), "Lime Crate");
+        lp.add(SLICED_LIME.get(), "Sliced Lime");
 
         lp.add(ORANGE.get(), "Orange");
         lp.add(ORANGE_LEAVES.get(), "Orange Leaves");
@@ -287,6 +325,7 @@ public class SummerCitrus {
         lp.add("fluid_type.extradelight.orange_juice_fluid", "Orange Juice");
         lp.add("block.extradelight.orange_juice_fluid_block", "Orange Juice");
         lp.add(ORANGE_CRATE.get(), "Orange Crate");
+        lp.add(SLICED_ORANGE.get(), "Sliced Orange");
 
         lp.add(GRAPEFRUIT.get(), "Grapefruit");
         lp.add(GRAPEFRUIT_LEAVES.get(), "Grapefruit Leaves");
@@ -297,6 +336,7 @@ public class SummerCitrus {
         lp.add("fluid_type.extradelight.grapefruit_juice_fluid", "Grapefruit Juice");
         lp.add("block.extradelight.grapefruit_juice_fluid_block", "Grapefruit Juice");
         lp.add(GRAPEFRUIT_CRATE.get(), "Grapefruit Crate");
+        lp.add(SLICED_GRAPEFRUIT.get(), "Sliced Grapefruit");
 
         lp.add(EGG_YOLK.get(), "Egg Yolk");
         lp.add(EGG_WHITE.get(), "Egg White");

@@ -524,13 +524,13 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.CACTUS_JUICE, "cactus_juice");
 		forItem(this, ExtraDelightItems.STUFFED_CACTUS, "stuffed_cactus");
 
-		forItem(this, ExtraDelightItems.CORN_SEEDS, "crops/corn_seeds");
-		forItem(this, ExtraDelightItems.CORN_COB, "crops/corn_cob");
-		forItem(this, ExtraDelightItems.CORN_HUSK, "crops/corn_husk");
-		forItem(this, ExtraDelightItems.CORN_ON_COB, "crops/corn_on_cob");
-		forItem(this, ExtraDelightItems.CORN_SILK, "crops/corn_silk");
-		forItem(this, ExtraDelightItems.DRIED_CORN_HUSK, "crops/dried_corn_husk");
-		forItem(this, ExtraDelightItems.UNSHUCKED_CORN, "crops/unshucked_corn");
+		forItem(this, ExtraDelightItems.CORN_SEEDS, "crops/corn/corn_seeds");
+		forItem(this, ExtraDelightItems.CORN_COB, "crops/corn/corn_cob");
+		forItem(this, ExtraDelightItems.CORN_HUSK, "crops/corn/corn_husk");
+		forItem(this, ExtraDelightItems.CORN_ON_COB, "crops/corn/corn_on_cob");
+		forItem(this, ExtraDelightItems.CORN_SILK, "crops/corn/corn_silk");
+		forItem(this, ExtraDelightItems.DRIED_CORN_HUSK, "crops/corn/dried_corn_husk");
+		forItem(this, ExtraDelightItems.UNSHUCKED_CORN, "crops/corn/unshucked_corn");
 		forItem(this, ExtraDelightItems.CORN_MEAL, "cornmeal");
 
 		forItem(this, ExtraDelightItems.CORN_CHOWDER, "corn_chowder");
@@ -698,10 +698,10 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(this, ExtraDelightItems.SUGAR_COOKIE_BLOCK, "sugar_cookie_block");
 		forBlockItem(this, ExtraDelightItems.SWEET_BERRY_COOKIE_BLOCK, "sweet_berry_cookie_block");
 
-		forItem(this, ExtraDelightItems.GINGER, "ginger");
-		forItem(this, ExtraDelightItems.GINGER_CUTTING, "ginger_cutting");
-		forItem(this, ExtraDelightItems.PEELED_GINGER, "peeled_ginger");
-		forItem(this, ExtraDelightItems.SLICED_GINGER, "sliced_ginger");
+		forItem(this, ExtraDelightItems.GINGER, "crops/ginger/ginger");
+		forItem(this, ExtraDelightItems.GINGER_CUTTING, "crops/ginger/ginger_cutting");
+		forItem(this, ExtraDelightItems.PEELED_GINGER, "crops/ginger/peeled_ginger");
+		forItem(this, ExtraDelightItems.SLICED_GINGER, "crops/ginger/sliced_ginger");
 		forItem(this, ExtraDelightItems.GRATED_GINGER, "grated_ginger");
 		forItem(this, ExtraDelightItems.FROSTING_WHITE, "frosting_white");
 		forItem(this, ExtraDelightItems.FROSTING_ORANGE, "frosting_orange");
@@ -1267,7 +1267,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(this, ExtraDelightItems.ROASTED_PEANUT_SACK, "roasted_peanut_sack");
 		forBlockItem(this, ExtraDelightItems.SUGAR_SACK, "sugar_sack");
 
-		forItem(this, ExtraDelightItems.SLICED_CHILI, "sliced_chili_pepper");
+		forItem(this, ExtraDelightItems.SLICED_CHILI, "crops/chili/sliced_chili_pepper");
 		forItem(this, ExtraDelightItems.JALAPENO_STUFFED_POTATO, "jalapeno_stuffed_potato");
 		forItem(this, ExtraDelightItems.JALAPENO_POPPER, "jalapeno_popper");
 		forItem(this, ExtraDelightItems.CHILI_CHEESE_CORNBREAD_MUFFIN, "chili_cheese_cornbread_muffin");

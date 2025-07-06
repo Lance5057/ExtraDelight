@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:lime"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 3,
+        "id": "extradelight:sliced_lime"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

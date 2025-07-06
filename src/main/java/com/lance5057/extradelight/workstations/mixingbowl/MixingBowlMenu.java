@@ -70,8 +70,7 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 					return false;
 				}
 			});
-			
-			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.GHOST_TOOL_SLOT, 127, 13) {
+			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.GHOST_UTENSIL_SLOT, 118, 5) {
 				@Override
 				public boolean mayPickup(Player playerIn) {
 					return false;

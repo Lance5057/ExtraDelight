@@ -482,6 +482,8 @@ public class Fermentation {
 					.rotationY(((int) state.getValue(RipeSalamiBlock.FACING).toYRot()) % 360).build();
 		});
 
+		BlockModels.fluid(bsp, PICKLE_JUICE_FLUID_BLOCK.get());
+
 		bsp.simpleBlock(SALT_BLOCK.get());
 	}
 

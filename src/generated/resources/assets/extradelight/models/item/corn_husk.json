@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "extradelight:item/crops/corn_husk"
+    "layer0": "extradelight:item/crops/corn/corn_husk"
   }
 }
