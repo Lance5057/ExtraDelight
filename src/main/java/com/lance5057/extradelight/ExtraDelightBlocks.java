@@ -1186,7 +1186,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> POTTED_HAZELNUT_SAPLING = BLOCKS.register("potted_hazelnut_sapling",
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HAZELNUT_SAPLING,
 					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
-	public static final DeferredBlock<Block> POTTED_APPLE_SAPLING = BLOCKS.register("potted_apple_sap	ling",
+	public static final DeferredBlock<Block> POTTED_APPLE_SAPLING = BLOCKS.register("potted_apple_sapling",
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, APPLE_SAPLING,
 					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 }

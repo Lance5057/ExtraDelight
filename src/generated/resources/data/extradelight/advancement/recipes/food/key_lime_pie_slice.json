@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:key_lime_pie_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:key_lime_pie_slice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pie"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:key_lime_pie_slice"
+    ]
+  }
+}

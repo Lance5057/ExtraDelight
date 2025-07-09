@@ -251,6 +251,46 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:key_lime_pie_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:key_lime_pie_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:key_lime_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:key_lime_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lemon_meringue_pie_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_meringue_pie_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lemon_meringue_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_meringue_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:liver_onions": {
       "conditions": {
         "items": [
@@ -480,46 +520,22 @@
       "extradelight:blood_chocolate_chips"
     ],
     [
-      "extradelight:rack_lamb_block_item"
-    ],
-    [
-      "extradelight:blood_chocolate_filled_bar"
+      "extradelight:lemon_meringue_pie_slice"
     ],
     [
       "extradelight:blood_chocolate_truffle"
     ],
     [
-      "extradelight:haggis_block_item"
-    ],
-    [
-      "extradelight:sauerkraut_and_sausage"
-    ],
-    [
-      "extradelight:bbq_ribs_block_item"
-    ],
-    [
       "extradelight:bbq_ribs"
-    ],
-    [
-      "extradelight:blood_chocolate_dipped_marshmallow"
     ],
     [
       "extradelight:steak_pickled_onion_pie_slice"
     ],
     [
-      "extradelight:beef_wellington"
-    ],
-    [
-      "extradelight:fried_brains"
-    ],
-    [
       "extradelight:mint_lamb_feast"
     ],
     [
-      "extradelight:blood_chocolate_dipped_coffee_bean"
-    ],
-    [
-      "extradelight:pot_roast_block_item"
+      "extradelight:key_lime_pie_slice"
     ],
     [
       "extradelight:pulled_pork_block_item"
@@ -528,13 +544,7 @@
       "extradelight:mint_lamb"
     ],
     [
-      "extradelight:blood_chocolate_dipped_glow_berry"
-    ],
-    [
       "extradelight:potroast"
-    ],
-    [
-      "extradelight:beef_wellington_block_item"
     ],
     [
       "extradelight:honey_chili_chicken"
@@ -546,13 +556,13 @@
       "extradelight:blood_chocolate_fondue_block"
     ],
     [
+      "extradelight:key_lime_pie_item"
+    ],
+    [
       "extradelight:steak_pickled_onion_pie_item"
     ],
     [
       "extradelight:sausage_roll"
-    ],
-    [
-      "extradelight:pulled_pork_sandwich"
     ],
     [
       "extradelight:blood_chocolate_bar"
@@ -561,16 +571,7 @@
       "extradelight:haggis"
     ],
     [
-      "extradelight:sos"
-    ],
-    [
       "extradelight:pickled_sausage_item"
-    ],
-    [
-      "extradelight:devilled_sausages"
-    ],
-    [
-      "extradelight:blood_chocolate_dipped_bacon"
     ],
     [
       "extradelight:chicken_kiev"
@@ -582,22 +583,73 @@
       "extradelight:blood_chocolate_dipped_graham_cracker"
     ],
     [
-      "extradelight:oxtail_soup"
-    ],
-    [
       "extradelight:blood_chocolate_dipped_sweet_berry"
-    ],
-    [
-      "extradelight:rack_lamb"
     ],
     [
       "extradelight:blood_chocolate_syrup_bottle"
     ],
     [
-      "extradelight:pork_and_apples_feast"
+      "extradelight:liver_onions"
     ],
     [
-      "extradelight:liver_onions"
+      "extradelight:rack_lamb_block_item"
+    ],
+    [
+      "extradelight:blood_chocolate_filled_bar"
+    ],
+    [
+      "extradelight:haggis_block_item"
+    ],
+    [
+      "extradelight:sauerkraut_and_sausage"
+    ],
+    [
+      "extradelight:bbq_ribs_block_item"
+    ],
+    [
+      "extradelight:blood_chocolate_dipped_marshmallow"
+    ],
+    [
+      "extradelight:beef_wellington"
+    ],
+    [
+      "extradelight:fried_brains"
+    ],
+    [
+      "extradelight:blood_chocolate_dipped_coffee_bean"
+    ],
+    [
+      "extradelight:pot_roast_block_item"
+    ],
+    [
+      "extradelight:blood_chocolate_dipped_glow_berry"
+    ],
+    [
+      "extradelight:beef_wellington_block_item"
+    ],
+    [
+      "extradelight:pulled_pork_sandwich"
+    ],
+    [
+      "extradelight:sos"
+    ],
+    [
+      "extradelight:devilled_sausages"
+    ],
+    [
+      "extradelight:blood_chocolate_dipped_bacon"
+    ],
+    [
+      "extradelight:oxtail_soup"
+    ],
+    [
+      "extradelight:rack_lamb"
+    ],
+    [
+      "extradelight:lemon_meringue_pie_item"
+    ],
+    [
+      "extradelight:pork_and_apples_feast"
     ],
     [
       "extradelight:caramel_chicken"

@@ -751,7 +751,9 @@ public class Fermentation {
 						Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.MINT), },
 				new SizedFluidIngredient[] {
-						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
+						SizedFluidIngredient.of(ExtraDelightTags.LEMON_LIME, 250)
+				},
 				consumer, "shirazi_salad_mixing");
 
 		Recipes.mixing(new ItemStack(CUCUMBER_SALAD.get(), 2), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),

@@ -1,10 +1,11 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
+	"render_type": "cutout",
 	"textures": {
 		"3": "extradelight:block/meringue",
 		"4": "extradelight:block/meringue_top",
-		"5": "extradelight:block/lemon_meringie_pie_inner",
+		"5": "extradelight:block/lemon_meringue_pie_inner",
 		"side": "farmersdelight:block/pie_side",
 		"top": "farmersdelight:block/apple_pie_top",
 		"bottom": "farmersdelight:block/pie_bottom",

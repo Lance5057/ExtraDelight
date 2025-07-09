@@ -801,6 +801,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:ice_cubes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:ice_cubes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:jam": {
       "conditions": {
         "items": [
@@ -861,6 +871,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:lemon_zest": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_zest"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:lime": {
       "conditions": {
         "items": [
@@ -876,6 +896,16 @@
         "items": [
           {
             "items": "extradelight:lime_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lime_zest": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lime_zest"
           }
         ]
       },
@@ -926,6 +956,26 @@
         "items": [
           {
             "items": "extradelight:mayo_jar_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:melon_chunks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:melon_chunks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:melon_rind": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:melon_rind"
           }
         ]
       },
@@ -1371,6 +1421,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:stiff_peaks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:stiff_peaks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sugar_cookie_dough": {
       "conditions": {
         "items": [
@@ -1504,6 +1564,9 @@
       "extradelight:bread_slice"
     ],
     [
+      "extradelight:melon_rind"
+    ],
+    [
       "extradelight:agar_agar"
     ],
     [
@@ -1618,6 +1681,9 @@
       "extradelight:sliced_tomato"
     ],
     [
+      "extradelight:lemon_zest"
+    ],
+    [
       "extradelight:cooking_oil"
     ],
     [
@@ -1640,6 +1706,9 @@
     ],
     [
       "extradelight:chili"
+    ],
+    [
+      "extradelight:ice_cubes"
     ],
     [
       "extradelight:cooked_corn"
@@ -1685,6 +1754,9 @@
     ],
     [
       "extradelight:penne"
+    ],
+    [
+      "extradelight:lime_zest"
     ],
     [
       "extradelight:frosting_magenta"
@@ -1852,6 +1924,9 @@
       "extradelight:dark_chocolate_chips"
     ],
     [
+      "extradelight:melon_chunks"
+    ],
+    [
       "extradelight:grated_carrot"
     ],
     [
@@ -1904,6 +1979,9 @@
     ],
     [
       "extradelight:cocoa_powder"
+    ],
+    [
+      "extradelight:stiff_peaks"
     ],
     [
       "extradelight:mallow_powder"

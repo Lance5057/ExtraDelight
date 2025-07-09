@@ -8,6 +8,10 @@
     {
       "amount": 250,
       "fluid": "extradelight:oil_fluid"
+    },
+    {
+      "amount": 250,
+      "tag": "c:lemon_or_lime_juice"
     }
   ],
   "ingredients": [

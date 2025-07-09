@@ -1,6 +1,7 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
+	"render_type": "cutout",
 	"textures": {
 		"3": "extradelight:block/meringue",
 		"4": "extradelight:block/meringue_top",

@@ -9,6 +9,7 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.data.recipebuilders.BottleFluidRegistryRecipeBuilder;
 import com.lance5057.extradelight.modules.Fermentation;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -88,12 +89,16 @@ public class BottleFluidRegistry {
 				SizedFluidIngredient.of(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.EGG_MIX.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.EGG_MIX.FLUID.get(), bottleMB));
+		register(Ingredient.of(SummerCitrus.EGG_WHITE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.EGG_WHITE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.GLOW_BERRY_JUICE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.GLOW_BERRY_JAM.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.GLOW_JAM.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.GOLDEN_APPLE_JAM.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.GOLDEN_JAM.FLUID.get(), bottleMB));
+		register(Ingredient.of(SummerCitrus.GRAPEFRUIT_JUICE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.GRAPEFRUIT_JUICE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.GRAVY.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.GRAVY.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get()),
@@ -104,6 +109,10 @@ public class BottleFluidRegistry {
 				SizedFluidIngredient.of(ExtraDelightFluids.JAM.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.KETCHUP.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.KETCHUP.FLUID.get(), bottleMB));
+		register(Ingredient.of(SummerCitrus.LEMON_JUICE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.LEMON_JUICE.FLUID.get(), bottleMB));
+		register(Ingredient.of(SummerCitrus.LIME_JUICE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.LIME_JUICE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.MAYO.get()),
@@ -116,6 +125,8 @@ public class BottleFluidRegistry {
 				SizedFluidIngredient.of(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.MILKSHAKE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.MILKSHAKE.FLUID.get(), bottleMB));
+		register(Ingredient.of(SummerCitrus.ORANGE_JUICE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.ORANGE_JUICE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.NUT_BUTTER.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.SWEET_BERRY_JUICE.get()),

@@ -27,5 +27,8 @@ public class EDFluidTags extends FluidTagsProvider {
 				ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(),
 				ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(),
 				ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get());
+
+		tag(ExtraDelightTags.LEMON_LIME).add(ExtraDelightFluids.LEMON_JUICE.FLUID.get(),
+				ExtraDelightFluids.LIME_JUICE.FLUID.get());
 	}
 }
