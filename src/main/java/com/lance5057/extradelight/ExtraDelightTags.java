@@ -27,6 +27,10 @@ public class ExtraDelightTags {
 		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("extradelight", tag));
 	}
 
+	public static TagKey<Fluid> modFluidTag(String tag) {
+		return FluidTags.create(ResourceLocation.fromNamespaceAndPath("extradelight", tag));
+	}
+
 	public static TagKey<Item> butcherTag(String tag) {
 		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("butchercraft", tag));
 	}
@@ -629,7 +633,12 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> ORANGE = neoforgeItemTag("crops/orange");
 	public static final TagKey<Item> GRAPEFRUIT = neoforgeItemTag("crops/grapefruit");
 
-	public static final TagKey<Fluid> LEMON_LIME = neoforgeFluidTag("lemon_or_lime_juice");
+	public static final TagKey<Fluid> LEMON_LIME = modFluidTag("lemon_or_lime_juice");
+	public static final TagKey<Item> PROCESSED_LEMON = modTag("processed/lemon");
+	public static final TagKey<Item> PROCESSED_LIME = modTag("processed/lime");
+	public static final TagKey<Item> PROCESSED_ORANGE = modTag("processed/orange");
+	public static final TagKey<Item> PROCESSED_GRAPEFRUIT = modTag("processed/grapefruit");
+	public static final TagKey<Item> PROCESSED_MELON = modTag("processed/melon");
 
 	// Tough as Nails
 	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");

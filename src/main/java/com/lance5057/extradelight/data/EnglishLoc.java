@@ -138,7 +138,12 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.processed.fruit", "Processed Fruit");
 		this.add("tag.item.extradelight.processed.garlic", "Processed Garlic");
 		this.add("tag.item.extradelight.processed.ginger", "Processed Ginger");
+		this.add("tag.item.extradelight.processed.grapefruit", "Processed Grapefruit");
+		this.add("tag.item.extradelight.processed.lemon", "Processed Lemon");
+		this.add("tag.item.extradelight.processed.lime", "Processed Lime");
+		this.add("tag.item.extradelight.processed.melon", "Processed Melon");
 		this.add("tag.item.extradelight.processed.onion", "Processed Onion");
+		this.add("tag.item.extradelight.processed.orange", "Processed Orange");
 		this.add("tag.item.extradelight.processed.pickled.cucumber", "Processed Pickled Cucumber");
 		this.add("tag.item.extradelight.processed.potato", "Processed Potato");
 		this.add("tag.item.extradelight.processed.produce", "Processed Fruit & Vegetables");

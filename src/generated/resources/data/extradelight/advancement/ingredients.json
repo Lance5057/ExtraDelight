@@ -861,6 +861,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:lemon_curd": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_curd"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:lemon_juice": {
       "conditions": {
         "items": [
@@ -976,6 +986,16 @@
         "items": [
           {
             "items": "extradelight:melon_rind"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:meringue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:meringue"
           }
         ]
       },
@@ -1612,6 +1632,9 @@
       "extradelight:corn_seeds"
     ],
     [
+      "extradelight:lemon_curd"
+    ],
+    [
       "extradelight:salami_mix"
     ],
     [
@@ -1982,6 +2005,9 @@
     ],
     [
       "extradelight:stiff_peaks"
+    ],
+    [
+      "extradelight:meringue"
     ],
     [
       "extradelight:mallow_powder"

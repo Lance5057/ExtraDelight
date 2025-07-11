@@ -165,7 +165,7 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.PROCESSED_CUCUMBER);
 
 		tag(ExtraDelightTags.PROCESSED_FRUIT).addTag(ExtraDelightTags.PROCESSED_APPLE).add(Items.SWEET_BERRIES,
-				Items.GLOW_BERRIES, Items.MELON_SLICE);
+				Items.GLOW_BERRIES).addTag(ExtraDelightTags.PROCESSED_MELON);
 		tag(ExtraDelightTags.PROCESSED_PRODUCE).addTag(ExtraDelightTags.PROCESSED_FRUIT)
 				.addTag(ExtraDelightTags.PROCESSED_VEG);
 
@@ -658,6 +658,12 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.LIME).add(SummerCitrus.LIME.get());
 		tag(ExtraDelightTags.ORANGE).add(SummerCitrus.ORANGE.get());
 		tag(ExtraDelightTags.GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get());
+
+		tag(ExtraDelightTags.PROCESSED_LEMON).add(SummerCitrus.LEMON.get(), SummerCitrus.SLICED_LEMON.get());
+		tag(ExtraDelightTags.PROCESSED_LIME).add(SummerCitrus.LIME.get(), SummerCitrus.SLICED_LIME.get());
+		tag(ExtraDelightTags.PROCESSED_ORANGE).add(SummerCitrus.ORANGE.get(), SummerCitrus.SLICED_ORANGE.get());
+		tag(ExtraDelightTags.PROCESSED_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get(), SummerCitrus.SLICED_GRAPEFRUIT.get());
+		tag(ExtraDelightTags.PROCESSED_MELON).add(Items.MELON_SLICE, SummerCitrus.MELON_CHUNKS.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get());

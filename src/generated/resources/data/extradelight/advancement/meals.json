@@ -271,6 +271,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:citrus_onion_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:citrus_onion_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:congee": {
       "conditions": {
         "items": [
@@ -601,6 +611,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:grapefruit_beetroot_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grapefruit_beetroot_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:grilled_cheese": {
       "conditions": {
         "items": [
@@ -806,6 +826,16 @@
         "items": [
           {
             "items": "extradelight:meatloaf_sandwich"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:melon_gazpacho": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:melon_gazpacho"
           }
         ]
       },
@@ -1211,6 +1241,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:thai_melon_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:thai_melon_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:tomato_soup": {
       "conditions": {
         "items": [
@@ -1371,6 +1411,9 @@
       "extradelight:pasta_tomato"
     ],
     [
+      "extradelight:melon_gazpacho"
+    ],
+    [
       "extradelight:lugaw"
     ],
     [
@@ -1405,6 +1448,9 @@
     ],
     [
       "extradelight:jalapeno_stuffed_potato"
+    ],
+    [
+      "extradelight:thai_melon_salad"
     ],
     [
       "extradelight:hot_wings"
@@ -1536,6 +1582,9 @@
       "extradelight:fried_fish"
     ],
     [
+      "extradelight:grapefruit_beetroot_salad"
+    ],
+    [
       "extradelight:roasted_carrot"
     ],
     [
@@ -1570,6 +1619,9 @@
     ],
     [
       "extradelight:cactus_soup"
+    ],
+    [
+      "extradelight:citrus_onion_salad"
     ],
     [
       "extradelight:curry_rice"

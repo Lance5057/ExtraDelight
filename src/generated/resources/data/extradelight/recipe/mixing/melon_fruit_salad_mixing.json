@@ -1,0 +1,39 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:melon"
+  },
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "tag": "extradelight:processed/fruit"
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "c:foods/berry"
+      },
+      "subtracted": {
+        "item": "minecraft:glow_berries"
+      }
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:melon_fruit_salad_item"
+  },
+  "stirs": 2,
+  "utensil": {
+    "tag": "c:spoons"
+  }
+}

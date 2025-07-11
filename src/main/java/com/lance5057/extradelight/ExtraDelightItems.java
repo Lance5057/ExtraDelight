@@ -31,6 +31,7 @@ import com.lance5057.extradelight.items.XocolatlItem;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
 import com.lance5057.extradelight.items.jar.JarItem;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.EDItemGenerator;
 
 import net.minecraft.ChatFormatting;
@@ -124,6 +125,11 @@ public class ExtraDelightItems {
 		DispenserBlock.registerBehavior(ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_FLUID_BUCKET,
 				DispenseFluidContainer.getInstance());
 		DispenserBlock.registerBehavior(Fermentation.PICKLE_JUICE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
+		DispenserBlock.registerBehavior(SummerCitrus.LEMON_JUICE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
+		DispenserBlock.registerBehavior(SummerCitrus.LIME_JUICE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
+		DispenserBlock.registerBehavior(SummerCitrus.ORANGE_JUICE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
+		DispenserBlock.registerBehavior(SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
+		DispenserBlock.registerBehavior(SummerCitrus.EGG_WHITE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
 	}
 
 	// Helper methods

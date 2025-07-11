@@ -311,6 +311,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:eton_mess": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:eton_mess"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:french_toast": {
       "conditions": {
         "items": [
@@ -611,6 +621,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:key_lime_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:key_lime_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:lava_cake": {
       "conditions": {
         "items": [
@@ -621,11 +641,31 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:lemon_meringue_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_meringue_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:marshmallow_slice": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:marshmallow_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:melon_salad_serving": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:melon_salad_serving"
           }
         ]
       },
@@ -955,6 +995,9 @@
       "extradelight:jelly_white"
     ],
     [
+      "extradelight:lemon_meringue_pie_slice"
+    ],
+    [
       "extradelight:apple_custard"
     ],
     [
@@ -994,6 +1037,9 @@
       "extradelight:chocolate_ice_cream"
     ],
     [
+      "extradelight:melon_salad_serving"
+    ],
+    [
       "extradelight:affogato"
     ],
     [
@@ -1010,6 +1056,9 @@
     ],
     [
       "extradelight:muffin_sweet_berry"
+    ],
+    [
+      "extradelight:key_lime_pie_slice"
     ],
     [
       "extradelight:candy_bar_salad"
@@ -1034,6 +1083,9 @@
     ],
     [
       "extradelight:candy_apple"
+    ],
+    [
+      "extradelight:eton_mess"
     ],
     [
       "extradelight:candy_golden_apple"

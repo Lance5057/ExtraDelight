@@ -491,6 +491,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:key_lime_pie_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:key_lime_pie_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:lamb_stew_feast": {
       "conditions": {
         "items": [
@@ -506,6 +516,16 @@
         "items": [
           {
             "items": "extradelight:lasanga_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lemon_meringue_pie_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_meringue_pie_item"
           }
         ]
       },
@@ -556,6 +576,16 @@
         "items": [
           {
             "items": "extradelight:meatloaf_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:melon_fruit_salad_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:melon_fruit_salad_item"
           }
         ]
       },
@@ -992,6 +1022,9 @@
       "extradelight:hash_block_item"
     ],
     [
+      "extradelight:key_lime_pie_item"
+    ],
+    [
       "extradelight:stuffing_feast"
     ],
     [
@@ -1124,6 +1157,9 @@
       "extradelight:jelly_pink_block_item"
     ],
     [
+      "extradelight:melon_fruit_salad_item"
+    ],
+    [
       "extradelight:pumpkin_roll_feast"
     ],
     [
@@ -1143,6 +1179,9 @@
     ],
     [
       "extradelight:jelly_light_grey_block_item"
+    ],
+    [
+      "extradelight:lemon_meringue_pie_item"
     ],
     [
       "extradelight:jelly_brown_block_item"

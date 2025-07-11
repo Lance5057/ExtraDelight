@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:mixing/stiff_peaks"
+        "recipe": "extradelight:mixing/lemonade_mixing"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "stiff_peaks": {
+    "lemonade_mixing": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:stiff_peaks"
+            "items": "extradelight:lemonade"
           }
         ]
       },
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "stiff_peaks"
+      "lemonade_mixing"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:mixing/stiff_peaks"
+      "extradelight:mixing/lemonade_mixing"
     ]
   }
 }
