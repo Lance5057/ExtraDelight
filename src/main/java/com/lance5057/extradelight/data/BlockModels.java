@@ -849,7 +849,7 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	private static void createCakeBlock(BlockStateProvider bsp, Block block, String prefix) {
+	public static void createCakeBlock(BlockStateProvider bsp, Block block, String prefix) {
 		bsp.getVariantBuilder(block).forAllStates(state -> {
 			int bites = state.getValue(BlockStateProperties.BITES);
 			String suffix = bites > 0 ? "_slice" + bites : "";

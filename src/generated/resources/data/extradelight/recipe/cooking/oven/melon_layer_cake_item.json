@@ -1,0 +1,43 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:square_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:melon_juice"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:frosting/red"
+    },
+    {
+      "tag": "c:frosting/green"
+    },
+    {
+      "tag": "c:chocolate/chips"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:melon_layer_cake_item"
+  }
+}

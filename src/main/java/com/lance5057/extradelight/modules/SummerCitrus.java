@@ -24,16 +24,13 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
@@ -50,6 +47,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
+import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
@@ -287,6 +285,37 @@ public class SummerCitrus {
 			.register("melon_fruit_salad_item",
 					() -> new BlockItem(MELON_FRUIT_SALAD.get(), new Item.Properties()))
 			.advancementFeast().finish();
+	public static final DeferredItem<Item> LEMON_CUCUMBER_CAKE_SLICE = EDItemGenerator
+			.register("lemon_cucumber_cake_slice", () -> new Item(foodItem(FoodValues.CAKE_SLICE))).advancementDessert()
+			.servingToolTip().finish();
+	public static final DeferredBlock<Block> LEMON_CUCUMBER_CAKE = ExtraDelightBlocks.BLOCKS.register("lemon_cucumber_cake",
+			() -> new CakeBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
+	public static final DeferredItem<Item> LEMON_CUCUMBER_CAKE_ITEM = EDItemGenerator
+			.register("lemon_cucumber_cake_item",
+					() -> new BlockItem(LEMON_CUCUMBER_CAKE.get(), new Item.Properties()))
+			.advancementFeast().feastToolTip().finish();
+	public static final DeferredBlock<RecipeFeastBlock> BAKED_COD = ExtraDelightBlocks.BLOCKS.register(
+			"baked_cod",
+			() -> new RecipeFeastBlock(
+					BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_ORANGE), true,
+					Block.box(0, 0, 0, 0, 0, 0), Block.box(-4.0D, 0.0D, 2.5D, 20.0D, 1.0D, 11.5D),
+					Block.box(2.5D, 0.0D, -4.0D, 11.5D, 1.0D, 20.0D)));
+	public static final DeferredItem<Item> BAKED_COD_ITEM = EDItemGenerator
+			.register("baked_cod_item",
+					() -> new BlockItem(BAKED_COD.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> BAKED_COD_SERVING = EDItemGenerator
+			.register("baked_cod_serving", () -> new Item(new Item.Properties().food(EDFoods.SOY_GLAZED_SALMON)))
+			.advancementMeal().servingToolTip().finish();
+	public static final DeferredItem<Item> MELON_LAYER_CAKE_SLICE = EDItemGenerator
+			.register("melon_layer_cake_slice", () -> new Item(foodItem(FoodValues.CAKE_SLICE))).advancementDessert()
+			.servingToolTip().finish();
+	public static final DeferredBlock<Block> MELON_LAYER_CAKE = ExtraDelightBlocks.BLOCKS.register("melon_layer_cake",
+			() -> new CakeBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
+	public static final DeferredItem<Item> MELON_LAYER_CAKE_ITEM = EDItemGenerator
+			.register("melon_layer_cake_item",
+					() -> new BlockItem(MELON_LAYER_CAKE.get(), new Item.Properties()))
+			.advancementFeast().feastToolTip().finish();
 
 	public static void blockModels(BlockStateProvider bsp) {
 		BlockModels.fruitLeafBlock(bsp, LEMON_LEAVES.get(), "lemon");
@@ -348,6 +377,9 @@ public class SummerCitrus {
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
 //		BlockModels.recipeFeastBlock(bsp, MELON_FRUIT_SALAD.get());
+		BlockModels.createCakeBlock(bsp, LEMON_CUCUMBER_CAKE.get(), "lemon_cucumber");
+		BlockModels.recipeFeastBlock(bsp, BAKED_COD.get(), "baked_cod");
+//		BlockModels.createCakeBlock(bsp, MELON_LAYER_CAKE.get(), "melon_layer");
 	}
 
 	public static void itemModels(ItemModelProvider tmp) {
@@ -414,6 +446,14 @@ public class SummerCitrus {
 //		ItemModels.getBuilder(MELON_FRUIT_SALAD_ITEM.getId().getPath())
 //				.parent(new ModelFile.UncheckedModelFile("block/block"))
 //				.customLoader(BlockStateItemGeometryLoader::builder);
+//		ItemModels.forItem(tmp, LEMON_CUCUMBER_CAKE_ITEM, "lemon_cucumber_cake");
+//		ItemModels.forItem(tmp, LEMON_CUCUMBER_CAKE_SLICE, "lemon_cucumber_cake_slice");
+		tmp.getBuilder(BAKED_COD_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+//		ItemModels.forItem(tmp, BAKED_COD_SERVING, "baked_cod_serving");
+//		ItemModels.forItem(tmp, MELON_LAYER_CAKE_ITEM, "melon_layer_cake");
+//		ItemModels.forItem(tmp, MELON_CAKE_SLICE, "melon_layer_cake_slice");
 	}
 
 	public static void Recipes(RecipeOutput consumer) {
@@ -444,6 +484,16 @@ public class SummerCitrus {
 				.unlockedBy("has_pie",
 						InventoryChangeTrigger.TriggerInstance.hasItems(KEY_LIME_PIE_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("key_lime_pie_slice"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LEMON_CUCUMBER_CAKE_ITEM.get())
+				.requires(LEMON_CUCUMBER_CAKE_SLICE.get(), 7)
+				.unlockedBy("has_cake",
+						InventoryChangeTrigger.TriggerInstance.hasItems(LEMON_CUCUMBER_CAKE_ITEM.get()))
+				.save(consumer, ExtraDelight.modLoc("lemon_cucumber_cake_from_slice"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MELON_LAYER_CAKE_ITEM.get())
+				.requires(MELON_LAYER_CAKE_SLICE.get(), 7)
+				.unlockedBy("has_cake",
+						InventoryChangeTrigger.TriggerInstance.hasItems(MELON_LAYER_CAKE_ITEM.get()))
+				.save(consumer, ExtraDelight.modLoc("melon_layer_cake_from_slice"));
 
 		// Feasts
 		FeastRecipeBuilder
@@ -452,6 +502,12 @@ public class SummerCitrus {
 				.unlockedBy("has_melon_salad",
 						InventoryChangeTrigger.TriggerInstance.hasItems(MELON_FRUIT_SALAD.get()))
 				.save(consumer, ExtraDelight.modLoc("melon_salad_pull_feast"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(BAKED_COD_SERVING.get()),
+						BAKED_COD_ITEM.get())
+				.unlockedBy("has_baked_cod",
+						InventoryChangeTrigger.TriggerInstance.hasItems(BAKED_COD_ITEM.get()))
+				.save(consumer, ExtraDelight.modLoc("baked_cod_pull_feast"));
 
 		// Cutting Board
 		CuttingBoardRecipeBuilder
@@ -486,6 +542,14 @@ public class SummerCitrus {
 				.cuttingRecipe(Ingredient.of(KEY_LIME_PIE_ITEM.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
 						KEY_LIME_PIE_SLICE.get(), 4)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "key_lime_pie_knife"));
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(LEMON_CUCUMBER_CAKE_ITEM.get()),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), LEMON_CUCUMBER_CAKE_SLICE.get(), 7)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "lemon_cucumber_cake_knife"));
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(MELON_LAYER_CAKE_ITEM.get()),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), MELON_LAYER_CAKE_SLICE.get(), 7)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "melon_layer_cake_knife"));
 
 		// Juicer
 		JuicerRecipeBuilder
@@ -605,6 +669,29 @@ public class SummerCitrus {
 //				.OvenRecipe(new ItemStack(KEY_LIME_PIE_ITEM.get(), 1), Recipes.NORMAL_COOKING,
 //						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
 //				.addIngredient(ModItems.PIE_CRUST.get()).unlockedByAnyIngredient(LIME).build(consumer);
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(LEMON_CUCUMBER_CAKE_ITEM.get(), 1), Recipes.NORMAL_COOKING,
+						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
+				.addIngredient(ExtraDelightTags.PROCESSED_CUCUMBER).addIngredient(LEMON_ZEST).addIngredient(LEMON_JUICE)
+				.addIngredient(Items.SUGAR).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FROSTING_WHITE)
+				.addIngredient(ExtraDelightTags.PROCESSED_LEMON)
+				.unlockedByAnyIngredient(LEMON_ZEST).build(consumer);
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(BAKED_COD_ITEM.get(), 1), Recipes.NORMAL_COOKING,
+						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), true)
+				.addIngredient(Items.COD).addIngredient(ExtraDelightTags.COOKING_OIL)
+				.addIngredient(ExtraDelightTags.PROCESSED_GARLIC).addIngredient(ExtraDelightTags.PROCESSED_LEMON)
+				.addIngredient(ExtraDelightTags.SALT)
+				.unlockedByAnyIngredient(Items.COD).build(consumer);
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(MELON_LAYER_CAKE_ITEM.get(), 1), Recipes.NORMAL_COOKING,
+						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
+				.addIngredient(ModItems.MELON_JUICE.get()).addIngredient(CommonTags.FOODS_MILK)
+				.addIngredient(Items.SUGAR).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FROSTING_RED)
+				.addIngredient(ExtraDelightTags.FROSTING_GREEN).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
+				.unlockedByAnyIngredient(Items.MELON_SLICE).build(consumer);
 
 		// Pot
 		Recipes.pot(LEMON_CURD.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
@@ -690,5 +777,11 @@ public class SummerCitrus {
 		lp.add(CITRUS_ONION_SALAD.get(), "Citrus, Onion and Mint Salad");
 		lp.add(MELON_FRUIT_SALAD.get(), "Melon Fruit Salad");
 		lp.add(MELON_FRUIT_SALAD_SERVING.get(), "Bowl of Melon Fruit Salad");
+		lp.add(LEMON_CUCUMBER_CAKE.get(), "Lemon Cucumber Cake");
+		lp.add(LEMON_CUCUMBER_CAKE_SLICE.get(), "Slice of Lemon Cucumber Cake");
+		lp.add(BAKED_COD.get(), "Baked Cod");
+		lp.add(BAKED_COD_SERVING.get(), "Plate of Baked Cod");
+		lp.add(MELON_LAYER_CAKE.get(), "Melon Layer Cake");
+		lp.add(MELON_LAYER_CAKE_SLICE.get(), "Slice of Melon Layer Cake");
 	}
 }

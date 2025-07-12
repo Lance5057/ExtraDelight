@@ -31,6 +31,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:baked_cod_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:baked_cod_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:beef_stew_feast": {
       "conditions": {
         "items": [
@@ -521,6 +531,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:lemon_cucumber_cake_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_cucumber_cake_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:lemon_meringue_pie_item": {
       "conditions": {
         "items": [
@@ -586,6 +606,16 @@
         "items": [
           {
             "items": "extradelight:melon_fruit_salad_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:melon_layer_cake_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:melon_layer_cake_item"
           }
         ]
       },
@@ -977,6 +1007,9 @@
       "extradelight:bruschetta_feast"
     ],
     [
+      "extradelight:baked_cod_item"
+    ],
+    [
       "extradelight:jelly_white_block_item"
     ],
     [
@@ -996,6 +1029,9 @@
     ],
     [
       "extradelight:jelly_blue_block_item"
+    ],
+    [
+      "extradelight:melon_layer_cake_item"
     ],
     [
       "extradelight:rabbit_stew_feast"
@@ -1125,6 +1161,9 @@
     ],
     [
       "extradelight:cheesecake"
+    ],
+    [
+      "extradelight:lemon_cucumber_cake_item"
     ],
     [
       "extradelight:milk_chocolate_fondue_block"

@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:melon_layer_cake_item"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 7,
+        "id": "extradelight:melon_layer_cake_slice"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

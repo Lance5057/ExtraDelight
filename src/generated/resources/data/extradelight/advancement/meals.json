@@ -81,6 +81,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:baked_cod_serving": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:baked_cod_serving"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:beef_stew_rice": {
       "conditions": {
         "items": [
@@ -1451,6 +1461,9 @@
     ],
     [
       "extradelight:thai_melon_salad"
+    ],
+    [
+      "extradelight:baked_cod_serving"
     ],
     [
       "extradelight:hot_wings"
