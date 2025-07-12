@@ -13,6 +13,7 @@ import com.lance5057.extradelight.aesthetics.block.RibbonBlock;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlock;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketBlock;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlock;
 import com.lance5057.extradelight.data.Recipes;
 import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
@@ -384,6 +385,7 @@ public class AestheticBlocks {
 			bsp.simpleBlock(GINGHAM_CARPET_BLOCKS.get(i).get(),
 					bsp.models().carpet("gingham_carpet_" + DyeColor.values()[i].toString(),
 							bsp.modLoc("block/gingham/" + DyeColor.values()[i].toString())));
+
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {

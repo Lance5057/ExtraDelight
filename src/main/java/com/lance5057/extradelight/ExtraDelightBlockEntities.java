@@ -9,6 +9,7 @@ import com.lance5057.extradelight.blocks.funnel.FunnelBlockEntity;
 import com.lance5057.extradelight.blocks.jar.JarBlockEntity;
 import com.lance5057.extradelight.blocks.jardisplay.JarDisplayBlockEntity;
 import com.lance5057.extradelight.blocks.keg.KegBlockEntity;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketBlockEntity;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlockEntity;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlEntity;
 import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
@@ -16,6 +17,7 @@ import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 import com.lance5057.extradelight.displays.spice.SpiceRackEntity;
 import com.lance5057.extradelight.displays.wreath.WreathEntity;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlockEntity;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlockEntity;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlockEntity;
@@ -75,10 +77,19 @@ public class ExtraDelightBlockEntities {
 									AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.COUNTER_CABINETS))
 							.build(null));
 
-//	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<HalfCabinetEntity>> HALF_CABINET = TILES.register("half_cabinet",
-//			() -> BlockEntityType.Builder
-//					.of(HalfCabinetEntity::new, AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.CABINETS))
-//					.build(null));
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<PicnicBasketBlockEntity>> PICNIC_BASKET = TILES
+			.register("picnic_basket",
+					() -> BlockEntityType.Builder
+							.of(PicnicBasketBlockEntity::new, SummerCitrus.WHITE_PICNIC_BASKET.get(),
+									SummerCitrus.ORANGE_PICNIC_BASKET.get(), SummerCitrus.MAGENTA_PICNIC_BASKET.get(),
+									SummerCitrus.LIGHT_BLUE_PICNIC_BASKET.get(),
+									SummerCitrus.YELLOW_PICNIC_BASKET.get(), SummerCitrus.LIME_PICNIC_BASKET.get(),
+									SummerCitrus.PINK_PICNIC_BASKET.get(), SummerCitrus.GRAY_PICNIC_BASKET.get(),
+									SummerCitrus.LIGHT_GRAY_PICNIC_BASKET.get(), SummerCitrus.CYAN_PICNIC_BASKET.get(),
+									SummerCitrus.BLUE_PICNIC_BASKET.get(), SummerCitrus.BROWN_PICNIC_BASKET.get(),
+									SummerCitrus.GREEN_PICNIC_BASKET.get(), SummerCitrus.RED_PICNIC_BASKET.get(),
+									SummerCitrus.BLACK_PICNIC_BASKET.get(), SummerCitrus.PURPLE_PICNIC_BASKET.get())
+							.build(null));
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MortarBlockEntity>> MORTAR = TILES
 			.register("mortar", () -> BlockEntityType.Builder
@@ -150,7 +161,8 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JarDisplayBlockEntity>> JAR_DISPLAY = TILES
 			.register("jar_display", () -> BlockEntityType.Builder
 					.of(JarDisplayBlockEntity::new, Fermentation.JAR_DISPLAY_BLOCK.get()).build(null));
-	
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JuicerBlockEntity>> JUICER = TILES.register("juicer",
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JuicerBlockEntity>> JUICER = TILES.register(
+			"juicer",
 			() -> BlockEntityType.Builder.of(JuicerBlockEntity::new, ExtraDelightBlocks.JUICER.get()).build(null));
 }

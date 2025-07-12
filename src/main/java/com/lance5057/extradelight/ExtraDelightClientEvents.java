@@ -11,6 +11,8 @@ import com.lance5057.extradelight.blocks.funnel.FunnelRenderer;
 import com.lance5057.extradelight.blocks.jar.JarRenderer;
 import com.lance5057.extradelight.blocks.jardisplay.JarDisplayRenderer;
 import com.lance5057.extradelight.blocks.keg.KegRenderer;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketRenderer;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketScreen;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkRenderer;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
@@ -86,6 +88,7 @@ public class ExtraDelightClientEvents {
 		event.register(ExtraDelightContainers.MELTING_POT_MENU.get(), MeltingPotScreen::new);
 		event.register(ExtraDelightContainers.CHILLER_MENU.get(), ChillerScreen::new);
 		event.register(ExtraDelightContainers.VAT_MENU.get(), VatScreen::new);
+		event.register(ExtraDelightContainers.PICNIC_BASKET_MENU.get(), PicnicBasketScreen::new);
 	}
 
 	public static void setTERenderers() {
@@ -108,6 +111,7 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.EVAPORATOR.get(), EvaporatorRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR_DISPLAY.get(), JarDisplayRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JUICER.get(), JuicerRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.PICNIC_BASKET.get(), PicnicBasketRenderer::new);
 	}
 
 	@SubscribeEvent

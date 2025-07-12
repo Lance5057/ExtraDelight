@@ -3,6 +3,7 @@ package com.lance5057.extradelight;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetMenu;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketMenu;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetMenu;
 import com.lance5057.extradelight.displays.food.FoodDisplayMenu;
 import com.lance5057.extradelight.displays.knife.KnifeBlockMenu;
@@ -57,6 +58,9 @@ public class ExtraDelightContainers {
 
 	public static final Supplier<MenuType<VatMenu>> VAT_MENU = MENU_TYPES.register("vat",
 			() -> IMenuTypeExtension.create(VatMenu::new));
+
+	public static final Supplier<MenuType<PicnicBasketMenu>> PICNIC_BASKET_MENU = MENU_TYPES.register("picnic_basket",
+			() -> IMenuTypeExtension.create(PicnicBasketMenu::new));
 
 	public static void register(IEventBus modBus) {
 		MENU_TYPES.register(modBus);

@@ -442,24 +442,24 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.FUNNEL.get());
 
 //		this.add(Blocks.BLACK_SHULKER_BOX, p_248609_ -> this.createShulkerBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 		this.add(ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get(),
-				p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
+				p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 		this.add(ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get(),
-				p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
+				p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 
 		feast(ExtraDelightBlocks.BROWNIES.get(), ExtraDelightItems.BROWNIES_BLOCK.get(),
 				ExtraDelightItems.SQUARE_PAN.get());
@@ -631,6 +631,23 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(SummerCitrus.MELON_LAYER_CAKE.get(), Items.AIR);
 
 		this.dropSelf(ExtraDelightBlocks.JUICER.get());
+
+		this.add(SummerCitrus.WHITE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.ORANGE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.MAGENTA_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.LIGHT_BLUE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.YELLOW_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.LIME_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.PINK_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.GRAY_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.LIGHT_GRAY_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.CYAN_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.BLUE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.BROWN_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.GREEN_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.RED_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.BLACK_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.PURPLE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {
@@ -662,7 +679,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		});
 	}
 
-	protected LootTable.Builder createChocolateBoxDrop(Block block) {
+	protected LootTable.Builder createContainerItemDrop(Block block) {
 		return LootTable.lootTable()
 				.withPool(this.applyExplosionCondition(block,
 						LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
