@@ -476,11 +476,10 @@ public class SummerCitrus {
 					.texture("inner", bsp.modLoc("block/key_lime_pie_inner")))
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
-//		BlockModels.recipeFeastBlock(bsp, MELON_FRUIT_SALAD.get());
+		BlockModels.recipeFeastBlock(bsp, MELON_FRUIT_SALAD.get());
 		BlockModels.createCakeBlock(bsp, LEMON_CUCUMBER_CAKE.get(), "lemon_cucumber");
 		BlockModels.recipeFeastBlock(bsp, BAKED_COD.get(), "baked_cod");
 //		BlockModels.createCakeBlock(bsp, MELON_LAYER_CAKE.get(), "melon_layer");
-		BlockModels.recipeFeastBlock(bsp, MELON_FRUIT_SALAD.get(), "melon_fruit_salad");
 
 		picnicBasket(bsp, WHITE_PICNIC_BASKET.get());
 		picnicBasket(bsp, ORANGE_PICNIC_BASKET.get());
@@ -515,7 +514,7 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, LEMON, "crops/fruit/lemon/lemon");
 		ItemModels.forBlockItem(tmp, LEMON_LEAVES_ITEM, tmp.modLoc("block/crops/fruit/lemon/lemon_leaves_stage0"));
 		ItemModels.forBlockItemFlat(tmp, LEMON_SAPLING_ITEM, "crops/fruit/lemon/lemon_sapling");
-//        ItemModels.forItem(tmp, LEMON_JUICE, "lemon_juice_bottle");
+        ItemModels.forItem(tmp, LEMON_JUICE, "lemon_juice_bottle");
 		ItemModels.forItem(tmp, LEMON_JUICE_FLUID_BUCKET, "lemon_juice_bucket");
 		ItemModels.forBlockItem(tmp, LEMON_CRATE_ITEM, "lemon_crate");
 		ItemModels.forItem(tmp, SLICED_LEMON, "crops/fruit/lemon/sliced_lemon");
@@ -524,7 +523,7 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, LIME, "crops/fruit/lime/lime");
 		ItemModels.forBlockItem(tmp, LIME_LEAVES_ITEM, tmp.modLoc("block/crops/fruit/lime/lime_leaves_stage0"));
 		ItemModels.forBlockItemFlat(tmp, LIME_SAPLING_ITEM, "crops/fruit/lime/lime_sapling");
-//        ItemModels.forItem(tmp, LIME_JUICE, "lime_juice_bottle");
+        ItemModels.forItem(tmp, LIME_JUICE, "lime_juice_bottle");
 		ItemModels.forItem(tmp, LIME_JUICE_FLUID_BUCKET, "lime_juice_bucket");
 		ItemModels.forBlockItem(tmp, LIME_CRATE_ITEM, "lime_crate");
 		ItemModels.forItem(tmp, SLICED_LIME, "crops/fruit/lime/sliced_lime");
@@ -533,7 +532,7 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, ORANGE, "crops/fruit/orange/orange");
 		ItemModels.forBlockItem(tmp, ORANGE_LEAVES_ITEM, tmp.modLoc("block/crops/fruit/orange/orange_leaves_stage0"));
 		ItemModels.forBlockItemFlat(tmp, ORANGE_SAPLING_ITEM, "crops/fruit/orange/orange_sapling");
-//        ItemModels.forItem(tmp, ORANGE_JUICE, "orange_juice_bottle");
+        ItemModels.forItem(tmp, ORANGE_JUICE, "orange_juice_bottle");
 		ItemModels.forItem(tmp, ORANGE_JUICE_FLUID_BUCKET, "orange_juice_bucket");
 		ItemModels.forBlockItem(tmp, ORANGE_CRATE_ITEM, "orange_crate");
 		ItemModels.forItem(tmp, SLICED_ORANGE, "crops/fruit/orange/sliced_orange");
@@ -542,7 +541,7 @@ public class SummerCitrus {
 		ItemModels.forBlockItem(tmp, GRAPEFRUIT_LEAVES_ITEM,
 				tmp.modLoc("block/crops/fruit/grapefruit/grapefruit_leaves_stage0"));
 		ItemModels.forBlockItemFlat(tmp, GRAPEFRUIT_SAPLING_ITEM, "crops/fruit/grapefruit/grapefruit_sapling");
-//        ItemModels.forItem(tmp, GRAPEFRUIT_JUICE, "grapefruit_juice_bottle");
+        ItemModels.forItem(tmp, GRAPEFRUIT_JUICE, "grapefruit_juice_bottle");
 		ItemModels.forItem(tmp, GRAPEFRUIT_JUICE_FLUID_BUCKET, "grapefruit_juice_bucket");
 		ItemModels.forBlockItem(tmp, GRAPEFRUIT_CRATE_ITEM, "grapefruit_crate");
 		ItemModels.forItem(tmp, SLICED_GRAPEFRUIT, "crops/fruit/grapefruit/sliced_grapefruit");
@@ -571,10 +570,10 @@ public class SummerCitrus {
 //		ItemModels.forItem(tmp, DALGONA_COFFEE, "dalgona_coffee");
 //		ItemModels.forItem(tmp, GRAPEFRUIT_BEETROOT_SALAD, "grapefruit_beetroot_salad");
 //		ItemModels.forItem(tmp, CITRUS_ONION_SALAD, "citrus_onion_salad");
-//		ItemModels.forItem(tmp, MELON_FRUIT_SALAD_ITEM, "melon_fruit_salad");
-//		ItemModels.getBuilder(MELON_FRUIT_SALAD_ITEM.getId().getPath())
-//				.parent(new ModelFile.UncheckedModelFile("block/block"))
-//				.customLoader(BlockStateItemGeometryLoader::builder);
+//		ItemModels.forItem(tmp, MELON_FRUIT_SALAD_SERVING, "melon_fruit_salad_serving");
+		tmp.getBuilder(MELON_FRUIT_SALAD_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 //		ItemModels.forItem(tmp, LEMON_CUCUMBER_CAKE_ITEM, "lemon_cucumber_cake");
 //		ItemModels.forItem(tmp, LEMON_CUCUMBER_CAKE_SLICE, "lemon_cucumber_cake_slice");
 		tmp.getBuilder(BAKED_COD_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("item/generated"))
@@ -582,6 +581,23 @@ public class SummerCitrus {
 //		ItemModels.forItem(tmp, BAKED_COD_SERVING, "baked_cod_serving");
 //		ItemModels.forItem(tmp, MELON_LAYER_CAKE_ITEM, "melon_layer_cake");
 //		ItemModels.forItem(tmp, MELON_CAKE_SLICE, "melon_layer_cake_slice");
+
+		ItemModels.forBlockItem(tmp, WHITE_PICNIC_BASKET_ITEM, "white_picnic_basket");
+		ItemModels.forBlockItem(tmp, ORANGE_PICNIC_BASKET_ITEM, "orange_picnic_basket");
+		ItemModels.forBlockItem(tmp, MAGENTA_PICNIC_BASKET_ITEM, "magenta_picnic_basket");
+		ItemModels.forBlockItem(tmp, LIGHT_BLUE_PICNIC_BASKET_ITEM, "light_blue_picnic_basket");
+		ItemModels.forBlockItem(tmp, YELLOW_PICNIC_BASKET_ITEM, "yellow_picnic_basket");
+		ItemModels.forBlockItem(tmp, LIME_PICNIC_BASKET_ITEM, "lime_picnic_basket");
+		ItemModels.forBlockItem(tmp, PINK_PICNIC_BASKET_ITEM, "pink_picnic_basket");
+		ItemModels.forBlockItem(tmp, GRAY_PICNIC_BASKET_ITEM, "gray_picnic_basket");
+		ItemModels.forBlockItem(tmp, LIGHT_GRAY_PICNIC_BASKET_ITEM, "light_gray_picnic_basket");
+		ItemModels.forBlockItem(tmp, CYAN_PICNIC_BASKET_ITEM, "cyan_picnic_basket");
+		ItemModels.forBlockItem(tmp, BLUE_PICNIC_BASKET_ITEM, "blue_picnic_basket");
+		ItemModels.forBlockItem(tmp, BROWN_PICNIC_BASKET_ITEM, "brown_picnic_basket");
+		ItemModels.forBlockItem(tmp, GREEN_PICNIC_BASKET_ITEM, "green_picnic_basket");
+		ItemModels.forBlockItem(tmp, RED_PICNIC_BASKET_ITEM, "red_picnic_basket");
+		ItemModels.forBlockItem(tmp, BLACK_PICNIC_BASKET_ITEM, "black_picnic_basket");
+		ItemModels.forBlockItem(tmp, PURPLE_PICNIC_BASKET_ITEM, "purple_picnic_basket");
 	}
 
 	public static void Recipes(RecipeOutput consumer) {
@@ -772,11 +788,11 @@ public class SummerCitrus {
 		Recipes.mixing(new ItemStack(MELON_FRUIT_SALAD_ITEM.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.MELON),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_APPLE),
 						Ingredient.of(ExtraDelightTags.PROCESSED_MELON),
-						Ingredient.of(ExtraDelightTags.PROCESSED_FRUIT),
-						DifferenceIngredient.of(Ingredient.of(Tags.Items.FOODS_BERRY),
-								Ingredient.of(Items.GLOW_BERRIES)),
-						Ingredient.of(Items.HONEY_BOTTLE) },
-				new SizedFluidIngredient[] {}, consumer, "melon_fruit_salad_mixing");
+						Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE), Ingredient.of(Tags.Items.FOODS_BERRY),
+						Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(ExtraDelightTags.MINT) },
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(ExtraDelightTags.LEMON_LIME, 250)
+				}, consumer, "melon_fruit_salad_mixing");
 
 		// Oven
 		OvenRecipeBuilder
@@ -905,5 +921,22 @@ public class SummerCitrus {
 		lp.add(BAKED_COD_SERVING.get(), "Plate of Baked Cod");
 		lp.add(MELON_LAYER_CAKE.get(), "Melon Layer Cake");
 		lp.add(MELON_LAYER_CAKE_SLICE.get(), "Slice of Melon Layer Cake");
+
+		lp.add(WHITE_PICNIC_BASKET.get(), "White Picnic Basket");
+		lp.add(ORANGE_PICNIC_BASKET.get(), "Orange Picnic Basket");
+		lp.add(MAGENTA_PICNIC_BASKET.get(), "Magenta Picnic Basket");
+		lp.add(LIGHT_BLUE_PICNIC_BASKET.get(), "Light Blue Picnic Basket");
+		lp.add(YELLOW_PICNIC_BASKET.get(), "Yellow Picnic Basket");
+		lp.add(LIME_PICNIC_BASKET.get(), "Lime Picnic Basket");
+		lp.add(PINK_PICNIC_BASKET.get(), "Pink Picnic Basket");
+		lp.add(GRAY_PICNIC_BASKET.get(), "Gray Picnic Basket");
+		lp.add(LIGHT_GRAY_PICNIC_BASKET.get(), "Light Gray Picnic Basket");
+		lp.add(CYAN_PICNIC_BASKET.get(), "Cyan Picnic Basket");
+		lp.add(BLUE_PICNIC_BASKET.get(), "Blue Picnic Basket");
+		lp.add(BROWN_PICNIC_BASKET.get(), "Brown Picnic Basket");
+		lp.add(GREEN_PICNIC_BASKET.get(), "Green Picnic Basket");
+		lp.add(RED_PICNIC_BASKET.get(), "Red Picnic Basket");
+		lp.add(BLACK_PICNIC_BASKET.get(), "Black Picnic Basket");
+		lp.add(PURPLE_PICNIC_BASKET.get(), "Purple Picnic Basket");
 	}
 }

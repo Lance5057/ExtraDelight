@@ -4,7 +4,12 @@
     "count": 1,
     "id": "minecraft:melon"
   },
-  "fluids": [],
+  "fluids": [
+    {
+      "amount": 250,
+      "tag": "extradelight:lemon_or_lime_juice"
+    }
+  ],
   "ingredients": [
     {
       "tag": "extradelight:processed/apple"
@@ -13,19 +18,16 @@
       "tag": "extradelight:processed/melon"
     },
     {
-      "tag": "extradelight:processed/fruit"
+      "tag": "extradelight:processed/orange"
     },
     {
-      "type": "neoforge:difference",
-      "base": {
-        "tag": "c:foods/berry"
-      },
-      "subtracted": {
-        "item": "minecraft:glow_berries"
-      }
+      "tag": "c:foods/berry"
     },
     {
       "item": "minecraft:honey_bottle"
+    },
+    {
+      "tag": "c:mint"
     }
   ],
   "result": {
