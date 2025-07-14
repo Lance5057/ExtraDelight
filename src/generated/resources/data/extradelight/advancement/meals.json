@@ -851,6 +851,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:melon_rind_stirfry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:melon_rind_stirfry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:miso_soup": {
       "conditions": {
         "items": [
@@ -936,6 +946,16 @@
         "items": [
           {
             "items": "extradelight:onion_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:orange_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:orange_chicken"
           }
         ]
       },
@@ -1472,6 +1492,9 @@
       "extradelight:cream_corn"
     ],
     [
+      "extradelight:melon_rind_stirfry"
+    ],
+    [
       "extradelight:fluffer_nutter"
     ],
     [
@@ -1578,6 +1601,9 @@
     ],
     [
       "extradelight:beet_mint_salad"
+    ],
+    [
+      "extradelight:orange_chicken"
     ],
     [
       "extradelight:mashed_potato_gravy"

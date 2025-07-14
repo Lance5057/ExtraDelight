@@ -1101,6 +1101,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:orange_zest": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:orange_zest"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:peanut_butter_bottle": {
       "conditions": {
         "items": [
@@ -1585,6 +1595,9 @@
     ],
     [
       "extradelight:melon_rind"
+    ],
+    [
+      "extradelight:orange_zest"
     ],
     [
       "extradelight:agar_agar"

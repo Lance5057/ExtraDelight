@@ -221,6 +221,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:chocolate_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chocolate_orange"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:dark_chocolate_bar": {
       "conditions": {
         "items": [
@@ -727,6 +737,9 @@
     ],
     [
       "extradelight:nougat"
+    ],
+    [
+      "extradelight:chocolate_orange"
     ],
     [
       "extradelight:dark_chocolate_truffle"

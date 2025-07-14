@@ -231,6 +231,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:chocolate_mousse": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chocolate_mousse"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:christmas_pudding": {
       "conditions": {
         "items": [
@@ -391,11 +401,31 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:grapefruit_sorbet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grapefruit_sorbet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:grasshopper_pie_slice": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:grasshopper_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:grilled_grapefruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grilled_grapefruit"
           }
         ]
       },
@@ -456,6 +486,16 @@
         "items": [
           {
             "items": "extradelight:ice_cream_sundae"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:jaffa_cake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:jaffa_cake"
           }
         ]
       },
@@ -646,6 +686,16 @@
         "items": [
           {
             "items": "extradelight:lemon_cucumber_cake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lemon_delicious": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_delicious"
           }
         ]
       },
@@ -1138,6 +1188,9 @@
       "extradelight:chocolate_cheesecake_slice"
     ],
     [
+      "extradelight:lemon_delicious"
+    ],
+    [
       "extradelight:scotcharoo"
     ],
     [
@@ -1160,6 +1213,9 @@
     ],
     [
       "extradelight:sweet_berry_custard"
+    ],
+    [
+      "extradelight:grapefruit_sorbet"
     ],
     [
       "extradelight:glow_berry_ice_cream"
@@ -1204,6 +1260,9 @@
       "extradelight:jelly_cyan"
     ],
     [
+      "extradelight:grilled_grapefruit"
+    ],
+    [
       "extradelight:pumpkin_roll"
     ],
     [
@@ -1229,6 +1288,9 @@
     ],
     [
       "extradelight:apple_cheesecake_slice"
+    ],
+    [
+      "extradelight:chocolate_mousse"
     ],
     [
       "extradelight:nut_butter_custard"
@@ -1289,6 +1351,9 @@
     ],
     [
       "extradelight:jelly_grey"
+    ],
+    [
+      "extradelight:jaffa_cake"
     ]
   ],
   "sends_telemetry_event": true

@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:orange"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "extradelight:orange_zest"
+      }
+    }
+  ],
+  "tool": {
+    "item": "extradelight:grater"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:egg_yolk"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "item": "extradelight:lime_juice"
+    },
+    {
+      "item": "extradelight:lime_zest"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "item": "extradelight:sliced_lime"
+    },
+    {
+      "tag": "c:whipped_cream"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:key_lime_pie_item"
+  }
+}
