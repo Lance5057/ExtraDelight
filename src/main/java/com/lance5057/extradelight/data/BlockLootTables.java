@@ -629,6 +629,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(SummerCitrus.LEMON_CUCUMBER_CAKE.get(), Items.AIR);
 		feast(SummerCitrus.BAKED_COD.get(), SummerCitrus.BAKED_COD_ITEM.get(), ExtraDelightItems.TRAY.get());
 		this.dropOther(SummerCitrus.MELON_LAYER_CAKE.get(), Items.AIR);
+		this.add(SummerCitrus.PAVLOVA.get(), noDrop());
+		feast(SummerCitrus.PRESERVED_LEMONS_BLOCK.get(), SummerCitrus.PRESERVED_LEMONS_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+		feast(SummerCitrus.PICKLED_RINDS_BLOCK.get(), SummerCitrus.PICKLED_RINDS_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
 
 		this.dropSelf(ExtraDelightBlocks.JUICER.get());
 

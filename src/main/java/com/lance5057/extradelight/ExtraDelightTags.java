@@ -627,6 +627,7 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> DOUGH = neoforgeItemTag("dough");
 	public static final TagKey<Item> BROTH = modTag("broth");
+	public static final TagKey<Item> RAW_PASTA = neoforgeItemTag("pasta");
 
 	public static final TagKey<Item> LEMON = neoforgeItemTag("crops/lemon");
 	public static final TagKey<Item> LIME = neoforgeItemTag("crops/lime");

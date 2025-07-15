@@ -671,6 +671,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:pavlova_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pavlova_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pickled_beets_block_item": {
       "conditions": {
         "items": [
@@ -731,6 +741,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:pickled_rinds_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_rinds_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pork_stew_feast": {
       "conditions": {
         "items": [
@@ -746,6 +766,16 @@
         "items": [
           {
             "items": "extradelight:potato_au_gratin_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:preserved_lemons_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:preserved_lemons_block_item"
           }
         ]
       },
@@ -1043,6 +1073,9 @@
       "extradelight:corn_pudding_feast"
     ],
     [
+      "extradelight:pickled_rinds_block_item"
+    ],
+    [
       "extradelight:chicken_stew_feast"
     ],
     [
@@ -1121,6 +1154,9 @@
       "extradelight:lasanga_feast"
     ],
     [
+      "extradelight:pavlova_item"
+    ],
+    [
       "extradelight:stirfry_block_item"
     ],
     [
@@ -1137,6 +1173,9 @@
     ],
     [
       "extradelight:pickled_carrots_block_item"
+    ],
+    [
+      "extradelight:preserved_lemons_block_item"
     ],
     [
       "extradelight:jelly_orange_block_item"

@@ -1,0 +1,38 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:chicken/breast/raw"
+        },
+        {
+          "tag": "c:chicken/thigh/raw"
+        }
+      ]
+    },
+    {
+      "item": "extradelight:lime_juice"
+    },
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "tag": "c:chili/powder"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:melon_lime_glazed_chicken"
+  }
+}

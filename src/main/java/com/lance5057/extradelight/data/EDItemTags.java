@@ -653,6 +653,7 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.DOUGH).addOptionalTag(CommonTags.FOODS_DOUGH).addOptionalTag(CompatTags.DOUGHS);
 		tag(ExtraDelightTags.BROTH).add(ModItems.BONE_BROTH.get()).addOptionalTag(CompatTags.STOCK);
+		tag(ExtraDelightTags.RAW_PASTA).addOptionalTag(CommonTags.FOODS_PASTA);
 
 		tag(ExtraDelightTags.LEMON).add(SummerCitrus.LEMON.get());
 		tag(ExtraDelightTags.LIME).add(SummerCitrus.LIME.get());

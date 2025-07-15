@@ -11,6 +11,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:candied_citrus_zest": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:candied_citrus_zest"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:candied_ginger": {
       "conditions": {
         "items": [
@@ -803,6 +813,9 @@
     ],
     [
       "extradelight:white_chocolate_truffle"
+    ],
+    [
+      "extradelight:candied_citrus_zest"
     ],
     [
       "extradelight:caramel_candy"

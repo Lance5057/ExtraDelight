@@ -201,6 +201,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:cheese_souffle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheese_souffle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:cheeseburger": {
       "conditions": {
         "items": [
@@ -951,16 +961,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:orange_chicken": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:orange_chicken"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:pamonha": {
       "conditions": {
         "items": [
@@ -1076,6 +1076,16 @@
         "items": [
           {
             "items": "extradelight:potato_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:preserved_lemon_pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:preserved_lemon_pasta"
           }
         ]
       },
@@ -1345,6 +1355,12 @@
       "extradelight:lasanga"
     ],
     [
+      "extradelight:cheese_souffle"
+    ],
+    [
+      "extradelight:preserved_lemon_pasta"
+    ],
+    [
       "extradelight:bacon_egg_cheese_sandwich"
     ],
     [
@@ -1601,9 +1617,6 @@
     ],
     [
       "extradelight:beet_mint_salad"
-    ],
-    [
-      "extradelight:orange_chicken"
     ],
     [
       "extradelight:mashed_potato_gravy"

@@ -4452,7 +4452,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"devilled_sausages", consumer);
 
 		pot(ExtraDelightItems.AGLIO_E_OLIO.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ModItems.RAW_PASTA.get()),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.RAW_PASTA),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ExtraDelightTags.COOKING_OIL),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.CHEESE) },
 				"aglio_e_olio", consumer);

@@ -261,6 +261,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:melon_lime_glazed_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:melon_lime_glazed_chicken"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:mint_lamb": {
       "conditions": {
         "items": [
@@ -276,6 +286,16 @@
         "items": [
           {
             "items": "extradelight:mint_lamb_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:orange_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:orange_chicken"
           }
         ]
       },
@@ -597,10 +617,16 @@
       "extradelight:pork_and_apples_feast"
     ],
     [
+      "extradelight:melon_lime_glazed_chicken"
+    ],
+    [
       "extradelight:liver_onions"
     ],
     [
       "extradelight:caramel_chicken"
+    ],
+    [
+      "extradelight:orange_chicken"
     ]
   ],
   "sends_telemetry_event": true

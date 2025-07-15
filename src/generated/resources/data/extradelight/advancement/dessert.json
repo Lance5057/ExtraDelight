@@ -711,6 +711,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:lemon_posset": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_posset"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lime_souffle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lime_souffle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:marshmallow_slice": {
       "conditions": {
         "items": [
@@ -846,6 +866,16 @@
         "items": [
           {
             "items": "extradelight:panforte_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pavlova_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pavlova_slice"
           }
         ]
       },
@@ -1197,6 +1227,9 @@
       "extradelight:caramel_popsicle"
     ],
     [
+      "extradelight:lime_souffle"
+    ],
+    [
       "extradelight:lemon_cucumber_cake_slice"
     ],
     [
@@ -1242,7 +1275,13 @@
       "extradelight:cookie_dough_ice_cream"
     ],
     [
+      "extradelight:pavlova_slice"
+    ],
+    [
       "extradelight:key_lime_pie_slice"
+    ],
+    [
+      "extradelight:lemon_posset"
     ],
     [
       "extradelight:muffin_ginger"

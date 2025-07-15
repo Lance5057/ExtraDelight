@@ -10,21 +10,21 @@
       "tag": "c:pasta"
     },
     {
-      "tag": "extradelight:processed/garlic"
+      "tag": "c:butter"
     },
     {
-      "tag": "c:cooking_oil"
-    },
-    {
-      "tag": "extradelight:processed/chili"
+      "item": "extradelight:preserved_lemon_item"
     },
     {
       "tag": "c:cheese"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
     "count": 1,
-    "id": "extradelight:aglio_e_olio"
+    "id": "extradelight:preserved_lemon_pasta"
   }
 }

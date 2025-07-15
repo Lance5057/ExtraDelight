@@ -7,24 +7,21 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "c:pasta"
+      "item": "extradelight:lemon_zest"
     },
     {
-      "tag": "extradelight:processed/garlic"
+      "tag": "c:foods/milk"
     },
     {
-      "tag": "c:cooking_oil"
+      "item": "minecraft:sugar"
     },
     {
-      "tag": "extradelight:processed/chili"
-    },
-    {
-      "tag": "c:cheese"
+      "item": "extradelight:lemon_juice"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "count": 1,
-    "id": "extradelight:aglio_e_olio"
+    "count": 3,
+    "id": "extradelight:lemon_posset"
   }
 }
