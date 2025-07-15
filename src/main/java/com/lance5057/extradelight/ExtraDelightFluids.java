@@ -237,32 +237,27 @@ public class ExtraDelightFluids {
 	public static FluidRegistration LEMON_JUICE = new FluidRegistration("lemon_juice",
 			() -> new BasicFluid(0xfffff695, 0xffc,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
-			SummerCitrus.LEMON_JUICE_FLUID_BLOCK, SummerCitrus.LEMON_JUICE_FLUID_BUCKET,
-			FLUID_TYPES, FLUIDS);
+			SummerCitrus.LEMON_JUICE_FLUID_BLOCK, SummerCitrus.LEMON_JUICE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	public static FluidRegistration LIME_JUICE = new FluidRegistration("lime_juice",
 			() -> new BasicFluid(0xffddf075, 0xffddf075,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
-			SummerCitrus.LIME_JUICE_FLUID_BLOCK, SummerCitrus.LIME_JUICE_FLUID_BUCKET,
-			FLUID_TYPES, FLUIDS);
+			SummerCitrus.LIME_JUICE_FLUID_BLOCK, SummerCitrus.LIME_JUICE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	public static FluidRegistration ORANGE_JUICE = new FluidRegistration("orange_juice",
 			() -> new BasicFluid(0xffffb833, 0xffffb833,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
-			SummerCitrus.ORANGE_JUICE_FLUID_BLOCK, SummerCitrus.ORANGE_JUICE_FLUID_BUCKET,
-			FLUID_TYPES, FLUIDS);
+			SummerCitrus.ORANGE_JUICE_FLUID_BLOCK, SummerCitrus.ORANGE_JUICE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	public static FluidRegistration GRAPEFRUIT_JUICE = new FluidRegistration("grapefruit_juice",
-			() -> new BasicFluid(0xffCE854D, 0xffCE854D,
+			() -> new BasicFluid(0xfff28d60, 0xfff28d60,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
-			SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BLOCK, SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BUCKET,
-			FLUID_TYPES, FLUIDS);
+			SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BLOCK, SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	public static FluidRegistration EGG_WHITE = new FluidRegistration("egg_white",
 			() -> new BasicFluid("egg_white", 0xffffffff, 0xfffff695,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
-							.motionScale(0.0023333333333333335D))
-					.setNearDistance(-1000),
+							.motionScale(20.0023333333333333335D)),
 			SummerCitrus.EGG_WHITE_FLUID_BLOCK, SummerCitrus.EGG_WHITE_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
 
 	public static void register(IEventBus modBus) {

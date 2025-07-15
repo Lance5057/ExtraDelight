@@ -564,7 +564,7 @@ public class SummerCitrus {
 		BlockModels.recipeFeastBlock(bsp, MELON_FRUIT_SALAD.get());
 		BlockModels.createCakeBlock(bsp, LEMON_CUCUMBER_CAKE.get(), "lemon_cucumber");
 		BlockModels.recipeFeastBlock(bsp, BAKED_COD.get(), "baked_cod");
-//		BlockModels.createCakeBlock(bsp, MELON_LAYER_CAKE.get(), "melon_layer");
+		BlockModels.createCakeBlock(bsp, MELON_LAYER_CAKE.get(), "melon_layer");
 //		BlockModels.pieLikeBlock(bsp, PAVLOVA.get(), "pavlova");
 //		BlockModels.recipeFeastBlock(bsp, PRESERVED_LEMONS_BLOCK.get(), "preserved_lemon_jar");
 //		BlockModels.recipeFeastBlock(bsp, PICKLED_RINDS_BLOCK.get(), "pickled_rind_jar");

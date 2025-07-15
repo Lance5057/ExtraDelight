@@ -76,7 +76,7 @@ public class PicnicBasketMenu extends AbstractContainerMenu {
 
 	@Override
 	public ItemStack quickMoveStack(Player pPlayer, int pIndex) {
-		int indexOutput = 28;
+		int indexOutput = 12;
 		int startPlayerInv = indexOutput;
 		int endPlayerInv = startPlayerInv + 36;
 
