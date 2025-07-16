@@ -5656,16 +5656,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.FRUIT_BREAD.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.LOAF_PAN.get()), false)
-				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).addIngredient(ExtraDelightTags.DOUGH)
+				.addIngredient(CompoundIngredient.of(Ingredient.of(ExtraDelightTags.PROCESSED_FRUIT),
+						Ingredient.of(ExtraDelightTags.DRIED_FRUIT))).addIngredient(ExtraDelightTags.DOUGH)
 				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.build(consumer);
-
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.FRUIT_BREAD.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.LOAF_PAN.get()), false)
-				.addIngredient(ExtraDelightTags.DRIED_FRUIT).addIngredient(ExtraDelightTags.DOUGH)
-				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
-				.save(consumer, EDLoc("fruit_bread_dried"));
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.CRACKERS.get(), 4), NORMAL_COOKING, MEDIUM_EXP,

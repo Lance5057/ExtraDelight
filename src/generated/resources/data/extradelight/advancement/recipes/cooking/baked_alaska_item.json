@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "farmersdelight:wheat_dough"
+            "items": "extradelight:stiff_peaks"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:cooking/oven/fruit_bread_dried"
+        "recipe": "extradelight:cooking/oven/baked_alaska_item"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:cooking/oven/fruit_bread_dried"
+      "extradelight:cooking/oven/baked_alaska_item"
     ]
   }
 }

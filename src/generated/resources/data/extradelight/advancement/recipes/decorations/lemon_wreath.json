@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:lemon_wreath"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "lemon_wreath": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemon_leaves"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "lemon_wreath"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:lemon_wreath"
+    ]
+  }
+}

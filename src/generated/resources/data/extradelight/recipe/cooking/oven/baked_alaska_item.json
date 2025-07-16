@@ -1,0 +1,31 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": true,
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:cake"
+    },
+    {
+      "tag": "c:ice_cream"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:baked_alaska_item"
+  }
+}

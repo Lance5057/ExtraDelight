@@ -4,10 +4,10 @@
     "item": "minecraft:bowl"
   },
   "out": {
-    "id": "extradelight:melon_fruit_salad_item"
+    "id": "extradelight:baked_alaska_item"
   },
   "result": {
     "count": 1,
-    "id": "extradelight:melon_fruit_salad_serving"
+    "id": "extradelight:baked_alaska_serving"
   }
 }

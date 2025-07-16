@@ -9,7 +9,15 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "extradelight:processed/fruit"
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "extradelight:processed/fruit"
+        },
+        {
+          "tag": "c:fruit/dried"
+        }
+      ]
     },
     {
       "tag": "c:dough"

@@ -11,14 +11,14 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "block": "extradelight:melon_fruit_salad",
+                  "block": "extradelight:baked_alaska",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "servings": "0"
                   }
                 }
               ],
-              "name": "extradelight:melon_rind"
+              "name": "extradelight:tray"
             },
             {
               "type": "minecraft:item",
@@ -27,8 +27,8 @@
           ]
         }
       ],
-      "rolls": 4.0
+      "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/melon_fruit_salad"
+  "random_sequence": "extradelight:blocks/baked_alaska"
 }

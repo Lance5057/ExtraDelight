@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "l": {
+      "item": "extradelight:lemon_leaves"
+    }
+  },
+  "pattern": [
+    " l ",
+    "l l",
+    " l "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:lemon_wreath"
+  }
+}

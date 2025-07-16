@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import org.apache.commons.lang3.text.WordUtils;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -598,6 +599,16 @@ public class AestheticBlocks {
 				WOOD.cherry);
 		woodRecipe(consumer, Items.BAMBOO_SLAB, Items.BAMBOO_TRAPDOOR, Items.BAMBOO_FENCE, WOOD.bamboo);
 
+		// Recipes for leaves with no wood
+		leafRecipe(consumer, Items.AZALEA_LEAVES, EXTRA_LEAVES.azalea);
+		leafRecipe(consumer, Items.FLOWERING_AZALEA_LEAVES, EXTRA_LEAVES.flowering_azalea);
+		leafRecipe(consumer, ExtraDelightItems.HAZELNUT_LEAVES.get(), EXTRA_LEAVES.hazelnut);
+		leafRecipe(consumer, ExtraDelightItems.APPLE_LEAVES.get(), EXTRA_LEAVES.apple);
+		leafRecipe(consumer, SummerCitrus.LEMON_LEAVES_ITEM.get(), EXTRA_LEAVES.lemon);
+		leafRecipe(consumer, SummerCitrus.LIME_LEAVES_ITEM.get(), EXTRA_LEAVES.lime);
+		leafRecipe(consumer, SummerCitrus.ORANGE_LEAVES_ITEM.get(), EXTRA_LEAVES.orange);
+		leafRecipe(consumer, SummerCitrus.GRAPEFRUIT_LEAVES_ITEM.get(), EXTRA_LEAVES.grapefruit);
+
 		moldRecipe(consumer, Items.OAK_SLAB, WOOD.oak, 0);
 		moldRecipe(consumer, Items.DARK_OAK_SLAB, WOOD.dark_oak, 1 * 16);
 		moldRecipe(consumer, Items.SPRUCE_SLAB, WOOD.spruce, 2 * 16);
@@ -751,6 +762,13 @@ public class AestheticBlocks {
 				.pattern(" S ").pattern(" s ").define('s', Items.STICK).define('S', slab)
 				.unlockedBy(name + "_food_display", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
 				.save(consumer);
+	}
+
+	static void leafRecipe(RecipeOutput consumer, Item leaves, EXTRA_LEAVES name) {
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, WREATHS.get(WOOD.values().length + name.ordinal() - 2)
+						.get()).pattern(" l ").pattern("l l").pattern(" l ").define('l', leaves)
+				.unlockedBy(name + "_wreath", InventoryChangeTrigger.TriggerInstance.hasItems(leaves)).save(consumer);
+
 	}
 
 	static void cabinetRecipes(RecipeOutput consumer) {

@@ -625,7 +625,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(SummerCitrus.LEMON_MERINGUE_PIE.get(), noDrop());
 		this.add(SummerCitrus.KEY_LIME_PIE.get(), noDrop());
 		feast(SummerCitrus.MELON_FRUIT_SALAD.get(), SummerCitrus.MELON_FRUIT_SALAD_ITEM.get(),
-				SummerCitrus.MELON_RIND.get());
+				SummerCitrus.MELON_RIND.get(), 4);
 		this.dropOther(SummerCitrus.LEMON_CUCUMBER_CAKE.get(), Items.AIR);
 		feast(SummerCitrus.BAKED_COD.get(), SummerCitrus.BAKED_COD_ITEM.get(), ExtraDelightItems.TRAY.get());
 		this.dropOther(SummerCitrus.MELON_LAYER_CAKE.get(), Items.AIR);
@@ -634,6 +634,9 @@ public class BlockLootTables extends BlockLootSubProvider {
 				Fermentation.PICKLE_JUICE.get());
 		feast(SummerCitrus.PICKLED_RINDS_BLOCK.get(), SummerCitrus.PICKLED_RINDS_BLOCK_ITEM.get(),
 				Fermentation.PICKLE_JUICE.get());
+		this.add(SummerCitrus.KYIV_CAKE.get(), noDrop());
+		feast(SummerCitrus.BAKED_ALASKA.get(), SummerCitrus.BAKED_ALASKA_ITEM.get(),
+				ExtraDelightItems.TRAY.get());
 
 		this.dropSelf(ExtraDelightBlocks.JUICER.get());
 
@@ -766,6 +769,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(RecipeFeastBlock.SERVINGS, 0));
 
 		this.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
+				.add(LootItem.lootTableItem(lastDrop).when(feast0).otherwise(LootItem.lootTableItem(Items.AIR)))));
+	}
+
+	void feast(RecipeFeastBlock block, Item blockItem, Item lastDrop, int dropAmount) {
+		LootItemCondition.Builder feast0 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(RecipeFeastBlock.SERVINGS, 0));
+
+		this.add(block, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(dropAmount))
 				.add(LootItem.lootTableItem(lastDrop).when(feast0).otherwise(LootItem.lootTableItem(Items.AIR)))));
 	}
 

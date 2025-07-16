@@ -99,6 +99,12 @@
     "extradelight:marshmallow": {
       "chance": 0.2
     },
+    "extradelight:melon_chunks": {
+      "chance": 0.2
+    },
+    "extradelight:melon_rind": {
+      "chance": 0.2
+    },
     "extradelight:mint": {
       "chance": 0.2
     },
@@ -123,7 +129,19 @@
     "extradelight:sliced_ginger": {
       "chance": 0.2
     },
+    "extradelight:sliced_grapefruit": {
+      "chance": 0.2
+    },
+    "extradelight:sliced_lemon": {
+      "chance": 0.2
+    },
+    "extradelight:sliced_lime": {
+      "chance": 0.2
+    },
     "extradelight:sliced_onion": {
+      "chance": 0.2
+    },
+    "extradelight:sliced_orange": {
       "chance": 0.2
     },
     "extradelight:sliced_potato": {

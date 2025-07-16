@@ -15,26 +15,29 @@
       "item": "extradelight:stiff_peaks"
     },
     {
-      "item": "extradelight:stiff_peaks"
-    },
-    {
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "c:crops/hazelnut/cooked"
     },
     {
-      "item": "extradelight:whipped_cream"
+      "tag": "c:flour"
     },
     {
-      "tag": "extradelight:processed/fruit"
+      "tag": "c:eggs"
     },
     {
-      "tag": "extradelight:processed/fruit"
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:liquid_chocolate"
+    },
+    {
+      "tag": "c:whipped_cream"
     }
   ],
   "result": {
     "count": 1,
-    "id": "extradelight:pavlova_item"
+    "id": "extradelight:kyiv_cake_item"
   }
 }

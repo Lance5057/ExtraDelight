@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "item": "extradelight:kyiv_cake_slice"
+    }
+  },
+  "pattern": [
+    "ff ",
+    "ff "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:kyiv_cake_item"
+  }
+}

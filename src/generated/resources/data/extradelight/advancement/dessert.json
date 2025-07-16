@@ -61,6 +61,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:baked_alaska_serving": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:baked_alaska_serving"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:black_forest_trifle": {
       "conditions": {
         "items": [
@@ -671,6 +681,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:kyiv_cake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:kyiv_cake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:lava_cake": {
       "conditions": {
         "items": [
@@ -741,21 +761,21 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:melon_layer_cake_slice": {
+    "extradelight:melon_fruit_salad_serving": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:melon_layer_cake_slice"
+            "items": "extradelight:melon_fruit_salad_serving"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:melon_salad_serving": {
+    "extradelight:melon_layer_cake_slice": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:melon_salad_serving"
+            "items": "extradelight:melon_layer_cake_slice"
           }
         ]
       },
@@ -1089,6 +1109,9 @@
       "extradelight:monkey_bread"
     ],
     [
+      "extradelight:melon_fruit_salad_serving"
+    ],
+    [
       "extradelight:jelly_white"
     ],
     [
@@ -1260,13 +1283,13 @@
       "extradelight:brownie"
     ],
     [
+      "extradelight:baked_alaska_serving"
+    ],
+    [
       "extradelight:mississippi_mud_pie_slice"
     ],
     [
       "extradelight:chocolate_ice_cream"
-    ],
-    [
-      "extradelight:melon_salad_serving"
     ],
     [
       "extradelight:honey_custard"
@@ -1312,6 +1335,9 @@
     ],
     [
       "extradelight:honey_ice_cream"
+    ],
+    [
+      "extradelight:kyiv_cake_slice"
     ],
     [
       "extradelight:fruit_bread"

@@ -86,12 +86,18 @@ public class DataMapGen extends DataMapProvider {
 
 		compostables.add(SummerCitrus.LEMON_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(SummerCitrus.LEMON_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(SummerCitrus.SLICED_LEMON.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(SummerCitrus.LIME_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(SummerCitrus.LIME_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(SummerCitrus.SLICED_LIME.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(SummerCitrus.ORANGE_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(SummerCitrus.ORANGE_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(SummerCitrus.SLICED_ORANGE.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(SummerCitrus.GRAPEFRUIT_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(SummerCitrus.GRAPEFRUIT_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(SummerCitrus.SLICED_GRAPEFRUIT.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(SummerCitrus.MELON_CHUNKS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(SummerCitrus.MELON_RIND.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 	}
 
 }
