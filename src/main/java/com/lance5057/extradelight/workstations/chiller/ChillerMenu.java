@@ -2,12 +2,14 @@ package com.lance5057.extradelight.workstations.chiller;
 
 import java.util.Objects;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.gui.FancyTankInSlot;
 import com.lance5057.extradelight.gui.FancyTankOutSlot;
 import com.lance5057.extradelight.workstations.FancyTank;
+import com.mojang.datafixers.util.Pair;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +17,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.RecipeBookMenu;
 import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.inventory.Slot;
@@ -27,11 +30,10 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
-import vectorwing.farmersdelight.FarmersDelight;
 
 public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRecipe> {
-	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = ResourceLocation
-			.fromNamespaceAndPath(FarmersDelight.MODID, "item/empty_container_slot_bowl");
+	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BUCKET = ResourceLocation
+			.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/empty_container_slot_bucket");
 
 	public final ChillerBlockEntity tileEntity;
 	public final ItemStackHandler inventory;
@@ -79,11 +81,23 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 		});
 
 		this.addSlot(new FancyTankInSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
-				ChillerBlockEntity.FLUID_IN, 19, 13));
+				ChillerBlockEntity.FLUID_IN, 19, 13) {
+			public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
+				return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BUCKET);
+			}
+		});
 		this.addSlot(new FancyTankOutSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
-				ChillerBlockEntity.FLUID_OUT, 19, 68));
+				ChillerBlockEntity.FLUID_OUT, 19, 68) {
+			public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
+				return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BUCKET);
+			}
+		});
 
-		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.DRIP_TRAY_OUT, 150, 68));
+		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.DRIP_TRAY_OUT, 150, 68) {
+			public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
+				return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BUCKET);
+			}
+		});
 
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.ICE, 126, 10));
 
