@@ -59,7 +59,6 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
-import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
@@ -234,7 +233,7 @@ public class SummerCitrus {
 	// The rest!
 	public static final DeferredItem<Item> ICE_CUBES = EDItemGenerator
 			.register("ice_cubes", () -> new Item(
-					new Item.Properties().component(ExtraDelightComponents.CHILL.value(), new ChillComponent(60))))
+					new Item.Properties().component(ExtraDelightComponents.CHILL.value(), new ChillComponent(25))))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> MERINGUE = EDItemGenerator
 			.register("meringue", () -> new Item(new Item.Properties())).advancementIngredients().finish();
@@ -652,7 +651,7 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, ORANGE_JUICE_FLUID_BUCKET, "orange_juice_bucket");
 		ItemModels.forBlockItem(tmp, ORANGE_CRATE_ITEM, "orange_crate");
 		ItemModels.forItem(tmp, SLICED_ORANGE, "crops/fruit/orange/sliced_orange");
-//		ItemModels.forItem(tmp, ORANGE_ZEST, "crops/fruit/orange/orange_zest");
+		ItemModels.forItem(tmp, ORANGE_ZEST, "crops/fruit/orange/orange_zest");
 
 		ItemModels.forItem(tmp, GRAPEFRUIT, "crops/fruit/grapefruit/grapefruit");
 		ItemModels.forBlockItem(tmp, GRAPEFRUIT_LEAVES_ITEM,
@@ -685,7 +684,7 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, THAI_MELON_SALAD, "thai_melon_salad");
 //		ItemModels.forItem(tmp, ETON_MESS, "eton_mess");
 //		ItemModels.forItem(tmp, DALGONA_COFFEE, "dalgona_coffee");
-//		ItemModels.forItem(tmp, GRAPEFRUIT_BEETROOT_SALAD, "grapefruit_beetroot_salad");
+		ItemModels.forItem(tmp, GRAPEFRUIT_BEETROOT_SALAD, "grapefruit_beetroot_salad");
 //		ItemModels.forItem(tmp, CITRUS_ONION_SALAD, "citrus_onion_salad");
 //		ItemModels.forItem(tmp, MELON_FRUIT_SALAD_SERVING, "melon_fruit_salad_serving");
 		tmp.getBuilder(MELON_FRUIT_SALAD_ITEM.getId().getPath())
@@ -700,7 +699,7 @@ public class SummerCitrus {
 //		ItemModels.forItem(tmp, MELON_CAKE_SLICE, "melon_layer_cake_slice");
 		ItemModels.forItem(tmp, GRAPEFRUIT_SORBET, "grapefruit_sorbet");
 		ItemModels.forItem(tmp, CHOCOLATE_ORANGE, "chocolate_orange");
-//		ItemModels.forItem(tmp, CHOCOLATE_MOUSSE, "chocolate_mousse");
+		ItemModels.forItem(tmp, CHOCOLATE_MOUSSE, "chocolate_mousse");
 //		ItemModels.forItem(tmp, JAFFA_CAKE, "jaffa_cake");
 //		ItemModels.forItem(tmp, GRILLED_GRAPEFRUIT, "grilled_grapefruit");
 //		ItemModels.forItem(tmp, LEMON_DELICIOUS, "lemon_delicious");

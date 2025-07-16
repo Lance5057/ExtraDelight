@@ -641,6 +641,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> PROCESSED_GRAPEFRUIT = modTag("processed/grapefruit");
 	public static final TagKey<Item> PROCESSED_MELON = modTag("processed/melon");
 
+	public static final TagKey<Item> CHILLING_ITEMS = modTag("chilling_items");
+
 	// Tough as Nails
 	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");
 	public static final TagKey<Item> HEATING_CONSUMED_ITEMS = tanTag("heating_consumed_items");

@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
 
@@ -82,7 +84,7 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 						new ItemStack(recipe.getFluid().getFluid().getBucket())));
 
 		builder.addSlot(RecipeIngredientRole.CATALYST, 107, 10)
-				.addIngredients(Ingredient.of(Items.ICE, Items.SNOWBALL, Items.BLUE_ICE, Items.PACKED_ICE));
+				.addIngredients(Ingredient.of(ExtraDelightTags.CHILLING_ITEMS));
 	}
 
 }

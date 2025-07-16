@@ -665,6 +665,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_ORANGE).add(SummerCitrus.ORANGE.get(), SummerCitrus.SLICED_ORANGE.get());
 		tag(ExtraDelightTags.PROCESSED_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get(), SummerCitrus.SLICED_GRAPEFRUIT.get());
 		tag(ExtraDelightTags.PROCESSED_MELON).add(Items.MELON_SLICE, SummerCitrus.MELON_CHUNKS.get());
+		tag(ExtraDelightTags.CHILLING_ITEMS).add(Items.BLUE_ICE, Items.PACKED_ICE, Items.ICE, Items.SNOWBALL,
+				SummerCitrus.ICE_CUBES.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get());
