@@ -250,4 +250,5 @@ public class ExtraDelightClientEvents {
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.TOOL_ON_BLOCK.get(), r -> RecipeBookCategories.UNKNOWN);
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.VAT.get(), r -> RecipeBookCategories.UNKNOWN);
 	}
+
 }

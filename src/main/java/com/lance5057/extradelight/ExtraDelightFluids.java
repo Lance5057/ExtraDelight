@@ -257,7 +257,8 @@ public class ExtraDelightFluids {
 	public static FluidRegistration EGG_WHITE = new FluidRegistration("egg_white",
 			() -> new BasicFluid("egg_white", 0xffffffff, 0xfffdfdd0,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
-							.motionScale(0.0023333333333333335D)).setNearDistance(-15),
+							.motionScale(0.0023333333333333335D))
+					.setNearDistance(-15),
 			SummerCitrus.EGG_WHITE_FLUID_BLOCK, SummerCitrus.EGG_WHITE_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
 
 	public static void register(IEventBus modBus) {
