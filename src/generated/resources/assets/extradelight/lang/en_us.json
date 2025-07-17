@@ -816,6 +816,7 @@
   "dynamic.toast": "Dynamic Toast",
   "effect.extradelight.pickled": "Pickled!",
   "effect.extradelight.pickled.description": "Chance to negate poison tick.",
+  "effect.extradelight.sour_pucker": "Pucker Up",
   "extradelight.advancement.badfood.desc": "Maybe eating something you found in a dungeon wasn't the best idea...",
   "extradelight.advancement.badfood.name": "Wall Chicken",
   "extradelight.advancement.burn_mint.desc": "Set mint ablaze.",
@@ -989,6 +990,7 @@
   "farmersdelight.tooltip.oven.empty": "",
   "farmersdelight.tooltip.pumpkin_milkshake": "Instant Health",
   "farmersdelight.tooltip.punch": "Minor Instant Health",
+  "farmersdelight.tooltip.soy_milk": "Clears 1 Effect",
   "farmersdelight.tooltip.soybean_pod": "Hold Right-Click to shell",
   "farmersdelight.tooltip.sweet_berry_juice": "Minor Instant Health",
   "farmersdelight.tooltip.sweet_berry_milkshake": "Instant Health",
@@ -1711,6 +1713,7 @@
   "tag.item.extradelight.baking_trays": "Baking Trays",
   "tag.item.extradelight.broth": "Broth",
   "tag.item.extradelight.candy_bowl_valid": "Valid items to put in Candy Bowl",
+  "tag.item.extradelight.chilling_items": "Items that will power the Chiller",
   "tag.item.extradelight.chocolate_bar_filling": "Chocolate Bar fillings",
   "tag.item.extradelight.chocolate_box_valid": "Valid items to put in Chocolate Box",
   "tag.item.extradelight.chocolate_truffle_filling": "Chocolate Truffle fillings",
@@ -1739,6 +1742,8 @@
   "tag.item.extradelight.processed.tomato": "Processed Tomato",
   "tag.item.extradelight.processed.vegetable": "Processed Vegetables",
   "tag.item.extradelight.riceball_filling": "Riceball fillings",
+  "tag.item.extradelight.toast_or_bread_slice": "Bread Slice, regardless of toasting status",
+  "tag.item.extradelight.toast_topping": "Toast toppings",
   "tooltip.dynamic.ingredients": "Ingredients",
   "tooltip.see_more": "Shift for more..."
 }

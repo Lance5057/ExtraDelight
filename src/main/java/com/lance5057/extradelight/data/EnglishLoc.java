@@ -122,6 +122,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.baking_trays", "Baking Trays");
 		this.add("tag.item.extradelight.broth", "Broth");
 		this.add("tag.item.extradelight.candy_bowl_valid", "Valid items to put in Candy Bowl");
+		this.add("tag.item.extradelight.chilling_items", "Items that will power the Chiller");
 		this.add("tag.item.extradelight.chocolate_bar_filling", "Chocolate Bar fillings");
 		this.add("tag.item.extradelight.chocolate_box_valid", "Valid items to put in Chocolate Box");
 		this.add("tag.item.extradelight.chocolate_truffle_filling", "Chocolate Truffle fillings");
@@ -150,6 +151,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.processed.tomato", "Processed Tomato");
 		this.add("tag.item.extradelight.processed.vegetable", "Processed Vegetables");
 		this.add("tag.item.extradelight.riceball_filling", "Riceball fillings");
+		this.add("tag.item.extradelight.toast_or_bread_slice", "Bread Slice, regardless of toasting status");
+		this.add("tag.item.extradelight.toast_topping", "Toast toppings");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");

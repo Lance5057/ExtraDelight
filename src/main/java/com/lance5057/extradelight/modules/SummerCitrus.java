@@ -1159,6 +1159,8 @@ public class SummerCitrus {
 	}
 
 	public static void EngLoc(LanguageProvider lp) {
+		lp.add("effect.extradelight.sour_pucker", "Pucker Up");
+
 		lp.add(LEMON.get(), "Lemon");
 		lp.add(LEMON_LEAVES.get(), "Lemon Leaves");
 		lp.add(LEMON_SAPLING.get(), "Lemon Sapling");

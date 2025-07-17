@@ -1125,6 +1125,7 @@ public class Fermentation {
 		lp.add(MASHED_SOYBEANS_ITEM.get(), "Mashed Soybeans");
 		lp.add(COOKED_SOYBEANS_ITEM.get(), "Cooked Soybeans");
 		lp.add(SOY_MILK.get(), "Soy Milk");
+		lp.add("farmersdelight.tooltip.soy_milk", "Clears 1 Effect");
 		lp.add(NAEM_MOO_ITEM.get(), "Naem Moo");
 		lp.add(SLICED_BEETROOT_ITEM.get(), "Sliced Beetroot");
 		lp.add(SHREDDED_CABBAGE_ITEM.get(), "Shredded Cabbage");
