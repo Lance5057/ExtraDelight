@@ -25,6 +25,7 @@ import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
 import com.lance5057.extradelight.food.EDFoods;
+import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.util.EDItemGenerator;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe.StageIngredient;
@@ -92,7 +93,9 @@ public class Fermentation {
 			.register("cucumber", () -> new Item(new Item.Properties().food(EDFoods.CUCUMBER))).advancementIngredients()
 			.finish();
 	public static final DeferredItem<Item> SOYBEAN_POD = EDItemGenerator
-			.register("soybean_pod", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("soybean_pod",
+					() -> new ShuckableCorn(MiscLootTables.SOYBEANS, new Item.Properties())).advancementIngredients()
+			.finish();
 
 	public static final DeferredItem<Item> CUCUMBER_SEED = ExtraDelightItems.ITEMS.register("cucumber_seed",
 			() -> new ItemNameBlockItem(CUCUMBER_CROP.get(), new Item.Properties()));
@@ -1082,6 +1085,7 @@ public class Fermentation {
 		lp.add(WILD_SOYBEAN.get(), "Wild Soybean");
 		lp.add(CUCUMBER.get(), "Cucumber");
 		lp.add(SOYBEAN_POD.get(), "Soybean Pod");
+		lp.add("farmersdelight.tooltip.soybean_pod", "Hold Right-Click to shell");
 		lp.add(CUCUMBER_SEED.get(), "Cucumber Seeds");
 		lp.add(SOYBEANS.get(), "Soybeans");
 		lp.add(SALT.get(), "Salt");

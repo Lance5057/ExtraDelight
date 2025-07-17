@@ -45,6 +45,8 @@ public class MiscLootTables implements LootTableSubProvider {
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "misc/corn_top"));
 	public static final ResourceKey<LootTable> CINNAMON_LOG = ResourceKey.create(Registries.LOOT_TABLE,
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "misc/cinnamon_log"));
+	public static final ResourceKey<LootTable> SOYBEANS = ResourceKey.create(Registries.LOOT_TABLE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "misc/soybeans"));
 
 	public static final ResourceKey<LootTable> EVAPORATOR_LAVA_TEST = ResourceKey.create(Registries.LOOT_TABLE,
 			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "evaporator/lava_test"));
@@ -62,6 +64,9 @@ public class MiscLootTables implements LootTableSubProvider {
 				LootTable.lootTable().withPool(createPoolWithItem(ExtraDelightItems.CORN_HUSK.get(), 2, 3))
 						.withPool(createPoolWithItem(ExtraDelightItems.CORN_SILK.get(), 1, 2))
 						.withPool(createPoolWithItem(ExtraDelightItems.CORN_ON_COB.get(), 1)));
+
+		t.accept(SOYBEANS,
+				LootTable.lootTable().withPool(createPoolWithItem(Fermentation.SOYBEANS.get(), 3)));
 
 		t.accept(CINNAMON_LOG,
 				LootTable.lootTable().withPool(createPoolWithItem(ExtraDelightItems.CINNAMON_BARK.get(), 1, 4))
