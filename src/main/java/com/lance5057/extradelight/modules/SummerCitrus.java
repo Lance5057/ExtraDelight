@@ -690,13 +690,13 @@ public class SummerCitrus {
 		tmp.getBuilder(MELON_FRUIT_SALAD_ITEM.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("item/generated"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
-//		ItemModels.forItem(tmp, LEMON_CUCUMBER_CAKE_ITEM, "lemon_cucumber_cake");
-//		ItemModels.forItem(tmp, LEMON_CUCUMBER_CAKE_SLICE, "lemon_cucumber_cake_slice");
+		ItemModels.forItem(tmp, LEMON_CUCUMBER_CAKE_ITEM, "lemon_cucumber_cake");
+		ItemModels.forItem(tmp, LEMON_CUCUMBER_CAKE_SLICE, "lemon_cucumber_cake_slice");
 		tmp.getBuilder(BAKED_COD_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("item/generated"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 //		ItemModels.forItem(tmp, BAKED_COD_SERVING, "baked_cod_serving");
-//		ItemModels.forItem(tmp, MELON_LAYER_CAKE_ITEM, "melon_layer_cake");
-//		ItemModels.forItem(tmp, MELON_CAKE_SLICE, "melon_layer_cake_slice");
+		ItemModels.forItem(tmp, MELON_LAYER_CAKE_ITEM, "melon_layer_cake");
+		ItemModels.forItem(tmp, MELON_LAYER_CAKE_SLICE, "melon_layer_cake_slice");
 		ItemModels.forItem(tmp, GRAPEFRUIT_SORBET, "grapefruit_sorbet");
 		ItemModels.forItem(tmp, CHOCOLATE_ORANGE, "chocolate_orange");
 		ItemModels.forItem(tmp, CHOCOLATE_MOUSSE, "chocolate_mousse");
