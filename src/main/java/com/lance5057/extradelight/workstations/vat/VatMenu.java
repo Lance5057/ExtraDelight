@@ -2,24 +2,35 @@ package com.lance5057.extradelight.workstations.vat;
 
 import java.util.Objects;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.gui.FancyTankInSlot;
 import com.lance5057.extradelight.gui.FancyTankOutSlot;
 import com.lance5057.extradelight.workstations.FancyTank;
 
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.items.SlotItemHandler;
+import vectorwing.farmersdelight.FarmersDelight;
 
 public class VatMenu extends AbstractContainerMenu {
+	public static final ResourceLocation EMPTY_CATALYST_SLOT = ResourceLocation
+			.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/empty_catalyst_slot");
+	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = ResourceLocation
+			.fromNamespaceAndPath(FarmersDelight.MODID, "item/empty_container_slot_bowl");
+	public static final ResourceLocation EMPTY_CONTAINER_SLOT_BUCKET = ResourceLocation
+			.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/empty_container_slot_bucket");
 
 	public final VatBlockEntity tileEntity;
 	private final ContainerLevelAccess canInteractWithCallable;
@@ -46,14 +57,26 @@ public class VatMenu extends AbstractContainerMenu {
 			}
 
 			this.addSlot(
-					new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.FERMENTATION_INPUT_SLOT, 55, 51));
+					new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.FERMENTATION_INPUT_SLOT, 55, 51) {
+						public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
+							return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CATALYST_SLOT);
+						}
+					});
 
 			this.addSlot(new FancyTankInSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
-					VatBlockEntity.LIQUID_IN_SLOT, 8, -5));
+					VatBlockEntity.LIQUID_IN_SLOT, 8, -5) {
+				public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
+					return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BUCKET);
+				}
+			});
 			this.addSlot(new FancyTankOutSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
 					VatBlockEntity.LIQUID_OUT_SLOT, 8, 51));
 
-			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.CONTAINER_SLOT, 151, 32));
+			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.CONTAINER_SLOT, 151, 32) {
+				public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
+					return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BOWL);
+				}
+			});
 
 			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), VatBlockEntity.OUTPUT_SLOT, 151, 51) {
 
