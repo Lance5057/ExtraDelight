@@ -73,6 +73,7 @@ public class ExtraDelight {
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
 
 		ExtraDelightFeatures.FEATURES.register(modEventBus);
+		ExtraDelightBanners.BANNER_PATTERNS.register(modEventBus);
 
 		ExtraDelightMobEffects.register(modEventBus);
 	}
