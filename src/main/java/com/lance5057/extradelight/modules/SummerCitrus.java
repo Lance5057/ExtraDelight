@@ -40,13 +40,10 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BannerPatternItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
@@ -64,7 +61,6 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.entity.BannerPattern;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
@@ -84,7 +80,6 @@ import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.block.PieBlock;
@@ -545,13 +540,14 @@ public class SummerCitrus {
 			"purple_picnic_basket", () -> new BlockItem(SummerCitrus.PURPLE_PICNIC_BASKET.get(), new Item.Properties()
 					.stacksTo(1).component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
 
-	public static final TagKey<BannerPattern> bannerTag = TagKey.create(Registries.BANNER_PATTERN,
-			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "pattern_item/citrus_rind"));
-	public static final DeferredItem<Item> CITRUS_RIND_PATTERN = ExtraDelightItems.ITEMS.register(
-			"citrus_rind_banner_item", () -> new BannerPatternItem(bannerTag, new Item.Properties().stacksTo(1)));
-	public static final DeferredHolder<BannerPattern, BannerPattern> QUAD_TOP = ExtraDelightBanners.BANNER_PATTERNS
-			.register("citrus_rind",
-					() -> new BannerPattern(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "citrus_rind"), "citrus_rind"));
+//	public static final TagKey<BannerPattern> CITRUS_BANNER_TAG = TagKey.create(Registries.BANNER_PATTERN,
+//			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "citrus_rind_banner_tag"));
+	public static final DeferredItem<Item> CITRUS_RIND_PATTERN_ITEM = ExtraDelightItems.ITEMS.register(
+			"citrus_rind_banner_item", () -> new BannerPatternItem(ExtraDelightBanners.CITRUS_RIND_BANNER_PATTERN,
+					new Item.Properties().stacksTo(1)));
+//	public static final DeferredHolder<BannerPattern, BannerPattern> CITRUS_RIND = ExtraDelightBanners.BANNER_PATTERNS
+//			.register("citrus_rind_banner", () -> new BannerPattern(ExtraDelight.modLoc("citrus_rind_banner"),
+//					"block.minecraft.banner.extradelight.citrus_rind"));
 
 	public static void blockModels(BlockStateProvider bsp) {
 		BlockModels.fruitLeafBlock(bsp, LEMON_LEAVES.get(), "lemon");

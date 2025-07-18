@@ -4,11 +4,8 @@ import java.util.concurrent.CompletableFuture;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.data.compat.create.CreateMixingRecipes;
-import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreePlacement;
 
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -18,8 +15,8 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 @EventBusSubscriber(modid = ExtraDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class DataGen {
-	private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder().add(Registries.PLACED_FEATURE,
-			ExtraDelightTreePlacement::bootstrap);
+//	private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder().add(Registries.PLACED_FEATURE,
+//			ExtraDelightTreePlacement::bootstrap);
 
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
@@ -28,6 +25,7 @@ public class DataGen {
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
+		
 		generator.addProvider(event.includeClient(), new ItemModels(output, helper));
 		generator.addProvider(true, new BlockModels(output, helper));
 
@@ -38,6 +36,7 @@ public class DataGen {
 		generator.addProvider(event.includeServer(),
 				new EDItemTags(output, lookupProvider, blockTags.contentsGetter(), helper));
 		generator.addProvider(event.includeServer(), new EDFluidTags(output, lookupProvider, helper));
+		
 
 		generator.addProvider(event.includeServer(), new Recipes(output, lookupProvider));
 		generator.addProvider(event.includeServer(), new LootModifiers(lookupProvider, output));
@@ -46,12 +45,15 @@ public class DataGen {
 
 		generator.addProvider(event.includeServer(), new EDBiomeModifiers(output, lookupProvider));
 		generator.addProvider(event.includeServer(), EDRegistries.provider(output, lookupProvider));
+		
 
 		generator.addProvider(event.includeServer(), new DataMapGen(output, lookupProvider));
 
 		generator.addProvider(event.includeClient(),
-				new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider)); 
+				new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider));
 
 		generator.addProvider(event.includeClient(), new CreateMixingRecipes(output, lookupProvider, "create"));
+		
+		generator.addProvider(true, new EDBannerTags(output, lookupProvider, helper));
 	}
 }

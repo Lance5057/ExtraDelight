@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBanners;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightWorldGen;
 import com.lance5057.extradelight.modules.SummerCitrus;
@@ -264,7 +265,7 @@ public class EDRegistries {
 									List.of(Pair.of(StructurePoolElement.single(id.toString()), 1)),
 									StructureTemplatePool.Projection.RIGID));
 				}
-			});
+			}).add(Registries.BANNER_PATTERN, ExtraDelightBanners::bootstrap);
 
 	public static DatapackBuiltinEntriesProvider provider(PackOutput output,
 			CompletableFuture<HolderLookup.Provider> lookupProvider) {
