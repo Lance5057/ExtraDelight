@@ -221,6 +221,8 @@ public class SummerCitrus {
 			.register("sliced_grapefruit", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
 	// Egg separating
+//	public static final DeferredItem<Item> CRACKED_EGG = EDItemGenerator
+//			.register("cracked_egg", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 	public static final DeferredItem<Item> EGG_YOLK = EDItemGenerator
 			.register("egg_yolk", () -> new Item(new Item.Properties().craftRemainder(Items.BONE_MEAL)))
 			.advancementIngredients().finish();

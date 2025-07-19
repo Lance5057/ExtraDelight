@@ -8,7 +8,9 @@ import javax.annotation.Nonnull;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.FancyTank;
@@ -24,6 +26,7 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -33,6 +36,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.util.Lazy;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
@@ -53,7 +57,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 	public static final int GHOST_SLOT = 12;
 	public static final int GHOST_UTENSIL_SLOT = 13;
 	public static final int INVENTORY_SIZE = GHOST_UTENSIL_SLOT + 1;
-	
+
 	@Override
 	public int getFluidInSlot() {
 		return LIQUID_IN_SLOT;
@@ -406,6 +410,18 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 					player, level, worldPosition);
 
 		}
+	}
+
+	public ItemInteractionResult handleEgg(Player pPlayer, ItemStack stack) {
+		if (this.getFluidTank().fill(new FluidStack(ExtraDelightFluids.EGG_WHITE.FLUID, 250),
+				FluidAction.SIMULATE) == 250) {
+			BlockEntityUtils.Inventory.givePlayerItemStack(new ItemStack(SummerCitrus.EGG_YOLK.get()), pPlayer, level,
+					worldPosition);
+			this.getFluidTank().fill(new FluidStack(ExtraDelightFluids.EGG_WHITE.FLUID, 250), FluidAction.EXECUTE);
+			stack.shrink(1);
+			return ItemInteractionResult.SUCCESS;
+		}
+		return ItemInteractionResult.CONSUME;
 	}
 
 }

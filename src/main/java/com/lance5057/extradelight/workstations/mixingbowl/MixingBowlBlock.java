@@ -3,7 +3,6 @@ package com.lance5057.extradelight.workstations.mixingbowl;
 import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
 
 import net.minecraft.ChatFormatting;
@@ -45,6 +44,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.items.IItemHandler;
 
 public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
@@ -96,16 +96,16 @@ public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
 	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
 			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-		if (pLevel.isClientSide) {
-			return ItemInteractionResult.SUCCESS;
-		} else {
-			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
-			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
+
+		BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
+		if (tileEntity instanceof MixingBowlBlockEntity mbe) {
+			if (stack.is(Tags.Items.EGGS)) {
+				return mbe.handleEgg(pPlayer, stack);
+			} else {
 				InteractionResult result = mbe.mix(pPlayer, stack);
 				if (result == InteractionResult.SUCCESS) {
 					return ItemInteractionResult.SUCCESS;
-				}
-				else {
+				} else {
 					MenuProvider containerProvider = new MenuProvider() {
 						@Override
 						public Component getDisplayName() {
@@ -114,42 +114,15 @@ public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
 
 						@Override
 						public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
-																Player playerEntity) {
+								Player playerEntity) {
 							return new MixingBowlMenu(windowId, playerInventory, mbe);
 						}
 					};
 					pPlayer.openMenu(containerProvider, buf -> buf.writeBlockPos(pPos));
 				}
 			}
-			return ItemInteractionResult.CONSUME;
 		}
-//		} else if (stack.is(ExtraDelightTags.SPOONS)) {
-//			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
-//			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
-//				mbe.mix(pPlayer);
-//			}
-//			return ItemInteractionResult.SUCCESS;
-//		} else {
-//			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
-//			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
-//				MenuProvider containerProvider = new MenuProvider() {
-//					@Override
-//					public Component getDisplayName() {
-//						return Component.translatable("screen.mixing_bowl.name");
-//					}
-//
-//					@Override
-//					public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
-//							Player playerEntity) {
-//						return new MixingBowlMenu(windowId, playerInventory, mbe);
-//					}
-//				};
-//				pPlayer.openMenu(containerProvider, buf -> buf.writeBlockPos(pPos));
-//
-//			}
-//			return ItemInteractionResult.CONSUME;
-//
-//		}
+		return ItemInteractionResult.CONSUME;
 
 	}
 
