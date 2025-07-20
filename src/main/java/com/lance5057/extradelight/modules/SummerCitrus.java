@@ -221,8 +221,6 @@ public class SummerCitrus {
 			.register("sliced_grapefruit", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
 	// Egg separating
-//	public static final DeferredItem<Item> CRACKED_EGG = EDItemGenerator
-//			.register("cracked_egg", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 	public static final DeferredItem<Item> EGG_YOLK = EDItemGenerator
 			.register("egg_yolk", () -> new Item(new Item.Properties().craftRemainder(Items.BONE_MEAL)))
 			.advancementIngredients().finish();
@@ -322,8 +320,8 @@ public class SummerCitrus {
 	public static final DeferredBlock<RecipeFeastBlock> BAKED_COD = ExtraDelightBlocks.BLOCKS.register("baked_cod",
 			() -> new RecipeFeastBlock(
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_ORANGE), true,
-					Block.box(0, 0, 0, 0, 0, 0), Block.box(-4.0D, 0.0D, 2.5D, 20.0D, 1.0D, 11.5D),
-					Block.box(2.5D, 0.0D, -4.0D, 11.5D, 1.0D, 20.0D)));
+					Block.box(0, 0, 0, 0, 0, 0), Block.box(-4.0D, 0.0D, 3.5D, 20.0D, 1.0D, 12.5D),
+					Block.box(3.5D, 0.0D, -4.0D, 12.5D, 1.0D, 20.0D)));
 	public static final DeferredItem<Item> BAKED_COD_ITEM = EDItemGenerator
 			.register("baked_cod_item", () -> new BlockItem(BAKED_COD.get(), new Item.Properties())).advancementFeast()
 			.finish();
@@ -612,7 +610,7 @@ public class SummerCitrus {
 		BlockModels.createCakeBlock(bsp, LEMON_CUCUMBER_CAKE.get(), "lemon_cucumber");
 		BlockModels.recipeFeastBlock(bsp, BAKED_COD.get(), "baked_cod");
 		BlockModels.createCakeBlock(bsp, MELON_LAYER_CAKE.get(), "melon_layer");
-//		BlockModels.pieLikeBlock(bsp, PAVLOVA.get(), "pavlova");
+		BlockModels.pieLikeBlock(bsp, PAVLOVA.get(), "pavlova");
 //		BlockModels.recipeFeastBlock(bsp, PRESERVED_LEMONS_BLOCK.get(), "preserved_lemon_jar");
 //		BlockModels.recipeFeastBlock(bsp, PICKLED_RINDS_BLOCK.get(), "pickled_rind_jar");
 //		BlockModels.pieLikeBlock(bsp, KYIV_CAKE.get(), "kyiv_cake");
@@ -704,10 +702,10 @@ public class SummerCitrus {
 //		ItemModels.forItem(tmp, ORANGEADE, "orangeade");
 		ItemModels.forItem(tmp, MELON_GAZPACHO, "melon_gazpacho");
 		ItemModels.forItem(tmp, THAI_MELON_SALAD, "thai_melon_salad");
-//		ItemModels.forItem(tmp, ETON_MESS, "eton_mess");
-//		ItemModels.forItem(tmp, DALGONA_COFFEE, "dalgona_coffee");
+		ItemModels.forItem(tmp, ETON_MESS, "eton_mess");
+		ItemModels.forItem(tmp, DALGONA_COFFEE, "dalgona_coffee");
 		ItemModels.forItem(tmp, GRAPEFRUIT_BEETROOT_SALAD, "grapefruit_beetroot_salad");
-//		ItemModels.forItem(tmp, CITRUS_ONION_SALAD, "citrus_onion_salad");
+		ItemModels.forItem(tmp, CITRUS_ONION_SALAD, "citrus_onion_mint_salad");
 //		ItemModels.forItem(tmp, MELON_FRUIT_SALAD_SERVING, "melon_fruit_salad_serving");
 		tmp.getBuilder(MELON_FRUIT_SALAD_ITEM.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("item/generated"))
@@ -1296,5 +1294,8 @@ public class SummerCitrus {
 		lp.add(RED_PICNIC_BASKET.get(), "Red Picnic Basket");
 		lp.add(BLACK_PICNIC_BASKET.get(), "Black Picnic Basket");
 		lp.add(PURPLE_PICNIC_BASKET.get(), "Purple Picnic Basket");
+
+		lp.add(CITRUS_RIND_PATTERN_ITEM.get(), "Banner Pattern");
+		lp.add("item.extradelight.citrus_rind_banner_item.desc", "Citrus Rind");
 	}
 }

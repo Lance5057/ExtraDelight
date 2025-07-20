@@ -3,7 +3,6 @@ package com.lance5057.extradelight.data;
 import java.util.concurrent.CompletableFuture;
 
 import com.lance5057.extradelight.CompatTags;
-import com.lance5057.extradelight.modules.SummerCitrus;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;

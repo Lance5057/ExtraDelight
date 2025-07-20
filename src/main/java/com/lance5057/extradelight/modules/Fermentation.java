@@ -334,8 +334,8 @@ public class Fermentation {
 			"soy_glazed_salmon_block",
 			() -> new RecipeFeastBlock(
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_ORANGE), true,
-					Block.box(0, 0, 0, 0, 0, 0), Block.box(-4.0D, 0.0D, 2.5D, 20.0D, 1.0D, 11.5D),
-					Block.box(2.5D, 0.0D, -4.0D, 11.5D, 1.0D, 20.0D)));
+					Block.box(0, 0, 0, 0, 0, 0), Block.box(-4.0D, 0.0D, 3.5D, 20.0D, 1.0D, 12.5D),
+					Block.box(3.5D, 0.0D, -4.0D, 12.5D, 1.0D, 20.0D)));
 	public static final DeferredItem<Item> SOY_GLAZED_SALMON_BLOCK_ITEM = EDItemGenerator
 			.register("soy_glazed_salmon_block_item",
 					() -> new BlockItem(SOY_GLAZED_SALMON_BLOCK.get(), new Item.Properties()))
