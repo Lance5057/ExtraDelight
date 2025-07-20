@@ -28,6 +28,7 @@ import com.lance5057.extradelight.items.OffsetSpatulaItem;
 import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
+import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
 import com.lance5057.extradelight.items.jar.JarItem;
 import com.lance5057.extradelight.modules.Fermentation;
@@ -128,7 +129,8 @@ public class ExtraDelightItems {
 		DispenserBlock.registerBehavior(SummerCitrus.LEMON_JUICE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
 		DispenserBlock.registerBehavior(SummerCitrus.LIME_JUICE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
 		DispenserBlock.registerBehavior(SummerCitrus.ORANGE_JUICE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
-		DispenserBlock.registerBehavior(SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
+		DispenserBlock.registerBehavior(SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BUCKET,
+				DispenseFluidContainer.getInstance());
 		DispenserBlock.registerBehavior(SummerCitrus.EGG_WHITE_FLUID_BUCKET, DispenseFluidContainer.getInstance());
 	}
 
@@ -2960,5 +2962,8 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<DynamicToast> DYNAMIC_TOAST = ITEMS.register("dynamic_toast",
 			() -> new DynamicToast(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
+					ItemContainerContents.EMPTY)));
+	public static final DeferredItem<DynamicJam> DYNAMIC_JAM = ITEMS.register("dynamic_jam",
+			() -> new DynamicJam(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
 					ItemContainerContents.EMPTY)));
 }

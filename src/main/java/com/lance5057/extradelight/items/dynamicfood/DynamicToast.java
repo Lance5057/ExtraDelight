@@ -23,11 +23,10 @@ public class DynamicToast extends Item implements IDynamic {
 
 	public DynamicToast(Properties properties) {
 		super(properties);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public Collection<ResourceLocation> getPieces(ItemStack itemStack) {
+	public List<ResourceLocation> getPieces(ItemStack itemStack) {
 		List<ResourceLocation> i = new ArrayList<ResourceLocation>();
 
 		i.add(base_model);
@@ -39,6 +38,11 @@ public class DynamicToast extends Item implements IDynamic {
 					ItemStack s = comp.getStackInSlot(1);
 					String str = s.getItem().getDescriptionId();
 					str = str.substring(str.lastIndexOf('.') + 1);
+					if(s.getItem() instanceof IDynamic id)
+					{
+						String p = id.getPieces(s).get(1).getPath();
+						str += "/" + p.substring(p.lastIndexOf('/') + 1);
+					}
 					ResourceLocation rc = ExtraDelight.modLoc("extra/dynamics/toast/" + str);
 					i.add(rc);
 				} else

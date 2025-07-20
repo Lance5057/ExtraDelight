@@ -3,6 +3,7 @@ package com.lance5057.extradelight;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.recipe.BottleFluidRegistryRecipe;
+import com.lance5057.extradelight.recipe.DynamicJamRecipe;
 import com.lance5057.extradelight.recipe.DynamicToastRecipe;
 import com.lance5057.extradelight.recipe.FeastRecipe;
 import com.lance5057.extradelight.recipe.ShapedWithJarRecipe;
@@ -49,8 +50,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("chiller"));
 	public static final Supplier<RecipeType<ShapedWithJarRecipe>> SHAPED_JAR = RECIPE_TYPES.register("shaped_jar",
 			() -> registerRecipeType("shaped_jar"));
-//	public static final Supplier<RecipeType<DynamicJamRecipe>> DYNAMIC_JAM = RECIPE_TYPES.register("dynamic_jam",
-//			() -> registerRecipeType("dynamic_jam"));
+	public static final Supplier<RecipeType<DynamicJamRecipe>> DYNAMIC_JAM = RECIPE_TYPES.register("dynamic_jam",
+			() -> registerRecipeType("dynamic_jam"));
 //	public static final Supplier<RecipeType<DynamicSandwichRecipe>> DYNAMIC_SANDWICH = RECIPE_TYPES
 //			.register("dynamic_sandwich", () -> registerRecipeType("dynamic_sandwich"));
 	public static final Supplier<RecipeType<DynamicToastRecipe>> DYNAMIC_TOAST = RECIPE_TYPES.register("dynamic_toast",
@@ -113,8 +114,8 @@ public class ExtraDelightRecipes {
 			ChillerRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> SHAPED_JAR_SERIALIZER = RECIPE_SERIALIZERS.register("shaped_jar",
 			ShapedWithJarRecipe.Serializer::new);
-//	public static final Supplier<RecipeSerializer<?>> DYNAMIC_JAM_SERIALIZER = RECIPE_SERIALIZERS
-//			.register("dynamic_jam", DynamicJamRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> DYNAMIC_JAM_SERIALIZER = RECIPE_SERIALIZERS
+			.register("dynamic_jam", DynamicJamRecipe.Serializer::new);
 //	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SANDWICH_SERIALIZER = RECIPE_SERIALIZERS
 //			.register("dynamic_sandwich", DynamicSandwichRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> DYNAMIC_TOAST_SERIALIZER = RECIPE_SERIALIZERS

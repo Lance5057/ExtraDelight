@@ -2,7 +2,6 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.lance5057.extradelight.modules.SummerCitrus;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -12,6 +11,7 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.DynamicJamRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DynamicToastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.JuicerRecipeBuilder;
@@ -21,6 +21,7 @@ import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.simibubi.create.Create;
@@ -4463,9 +4464,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				"penne_all_arrabbiata", consumer);
 
-//		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
-//				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-//				.build(consumer);
+		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_JAM, 1, 1, 1, Items.GLASS_BOTTLE)
+				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer);
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {
