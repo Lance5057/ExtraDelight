@@ -681,7 +681,7 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, SLICED_GRAPEFRUIT, "crops/fruit/grapefruit/sliced_grapefruit");
 
 		ItemModels.forItem(tmp, EGG_YOLK, "egg_yolk");
-//        ItemModels.forItem(tmp, EGG_WHITE, "egg_white");
+        ItemModels.forItem(tmp, EGG_WHITE, "egg_white");
 		ItemModels.forItem(tmp, EGG_WHITE_FLUID_BUCKET, "egg_white_bucket");
 		ItemModels.forItem(tmp, STIFF_PEAKS, "stiff_peaks");
 
@@ -727,7 +727,7 @@ public class SummerCitrus {
 //		ItemModels.forItem(tmp, CHEESE_SOUFFLE, "cheese_souffle");
 		tmp.getBuilder(PAVLOVA_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
-//		ItemModels.forItem(tmp, PAVLOVA_SLICE, "pavlova_slice");
+		ItemModels.forItem(tmp, PAVLOVA_SLICE, "pavlova_slice");
 //		tmp.getBuilder(PRESERVED_LEMONS_BLOCK_ITEM.getId().getPath())
 //				.parent(new ModelFile.UncheckedModelFile("item/generated"))
 //				.customLoader(BlockStateItemGeometryLoader::builder);
