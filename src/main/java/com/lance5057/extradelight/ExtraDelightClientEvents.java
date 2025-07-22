@@ -19,6 +19,7 @@ import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayScreen;
+import com.lance5057.extradelight.displays.fruitbowl.FruitBowlRenderer;
 import com.lance5057.extradelight.displays.knife.KnifeBlockRenderer;
 import com.lance5057.extradelight.displays.knife.KnifeBlockScreen;
 import com.lance5057.extradelight.displays.spice.SpiceRackRenderer;
@@ -112,6 +113,7 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR_DISPLAY.get(), JarDisplayRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JUICER.get(), JuicerRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.PICNIC_BASKET.get(), PicnicBasketRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.FRUIT_BOWL.get(), FruitBowlRenderer::new);
 	}
 
 	@SubscribeEvent

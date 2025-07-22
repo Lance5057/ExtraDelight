@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.lance5057.extradelight.modules.SummerCitrus;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
@@ -29,6 +28,7 @@ import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
@@ -126,6 +126,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropOther(ExtraDelightBlocks.VAT.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.EVAPORATOR.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.FRUIT_BOWL.get(), Items.AIR);
 
 		this.dropSelf(ExtraDelightBlocks.FLOUR.get());
 //		this.dropSelf(ExtraDelightBlocks.COOKING_OIL.get());
@@ -635,8 +636,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		feast(SummerCitrus.PICKLED_RINDS_BLOCK.get(), SummerCitrus.PICKLED_RINDS_BLOCK_ITEM.get(),
 				Fermentation.PICKLE_JUICE.get());
 		this.add(SummerCitrus.KYIV_CAKE.get(), noDrop());
-		feast(SummerCitrus.BAKED_ALASKA.get(), SummerCitrus.BAKED_ALASKA_ITEM.get(),
-				ExtraDelightItems.TRAY.get());
+		feast(SummerCitrus.BAKED_ALASKA.get(), SummerCitrus.BAKED_ALASKA_ITEM.get(), ExtraDelightItems.TRAY.get());
 
 		this.dropSelf(ExtraDelightBlocks.JUICER.get());
 

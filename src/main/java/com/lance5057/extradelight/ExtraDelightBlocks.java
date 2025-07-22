@@ -34,6 +34,7 @@ import com.lance5057.extradelight.blocks.keg.KegBlock;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
+import com.lance5057.extradelight.displays.fruitbowl.FruitBowlBlock;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
@@ -181,6 +182,9 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<JuicerBlock> JUICER = BLOCKS.register("juicer",
 			() -> new JuicerBlock(Properties.ofFullCopy(Blocks.BARREL).noOcclusion()));
+
+	public static final DeferredBlock<Block> FRUIT_BOWL = BLOCKS.register("fruit_bowl",
+			() -> new FruitBowlBlock(Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));

@@ -23,6 +23,7 @@ import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornProperties;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
+import com.lance5057.extradelight.displays.fruitbowl.FruitBowlBlock;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
@@ -681,6 +682,8 @@ public class BlockModels extends BlockStateProvider {
 				"crops/fruit/hazelnut/hazelnut_sapling");
 		pottedBlock(this, ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "apple_sapling",
 				"crops/fruit/apple/apple_sapling");
+		
+		fruitBowlStyleBlock(this, ExtraDelightBlocks.FRUIT_BOWL.get());
 
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);
@@ -757,6 +760,20 @@ public class BlockModels extends BlockStateProvider {
 					.modelFile(bsp.models()
 							.withExistingParent("mixing_bowl" + suffix.toLowerCase(), bsp.modLoc("block/mixing_bowl"))
 							.texture("1", bsp.mcLoc("block/" + suffix.toLowerCase())))
+					.build();
+		});
+	}
+
+	public static void fruitBowlStyleBlock(BlockStateProvider bsp, Block block) {
+		bsp.getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(FruitBowlBlock.STYLE);
+
+			String suffix = FruitBowlBlock.Styles.values()[servings] + "";
+
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models()
+							.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+							.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase())))
 					.build();
 		});
 	}

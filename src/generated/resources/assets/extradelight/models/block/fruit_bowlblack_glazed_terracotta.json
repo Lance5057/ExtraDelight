@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/fruit_bowl",
+  "textures": {
+    "0": "minecraft:block/black_glazed_terracotta"
+  }
+}

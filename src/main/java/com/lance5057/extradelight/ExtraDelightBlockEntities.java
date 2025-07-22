@@ -13,6 +13,7 @@ import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketBlockEntity;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlockEntity;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlEntity;
 import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
+import com.lance5057.extradelight.displays.fruitbowl.FruitBowlBlockEntity;
 import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
 import com.lance5057.extradelight.displays.spice.SpiceRackEntity;
 import com.lance5057.extradelight.displays.wreath.WreathEntity;
@@ -165,4 +166,8 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JuicerBlockEntity>> JUICER = TILES.register(
 			"juicer",
 			() -> BlockEntityType.Builder.of(JuicerBlockEntity::new, ExtraDelightBlocks.JUICER.get()).build(null));
+	
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FruitBowlBlockEntity>> FRUIT_BOWL = TILES.register(
+			"fruit_bowl",
+			() -> BlockEntityType.Builder.of(FruitBowlBlockEntity::new, ExtraDelightBlocks.FRUIT_BOWL.get()).build(null));
 }

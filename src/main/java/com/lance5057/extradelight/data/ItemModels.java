@@ -1357,6 +1357,10 @@ public class ItemModels extends ItemModelProvider {
 				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(DynamicFoodGeometryLoader::builder);
 
+		getBuilder(ExtraDelightItems.FRUIT_BOWL.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
 		Fermentation.itemModels(this);
 		SummerCitrus.itemModels(this);
 		AestheticBlocks.itemModel(this);
