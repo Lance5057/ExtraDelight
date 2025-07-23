@@ -2,9 +2,9 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.lance5057.extradelight.CompatTags;
 import org.jetbrains.annotations.Nullable;
 
+import com.lance5057.extradelight.CompatTags;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
@@ -66,7 +66,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.FRUIT_MELON).add(Items.MELON_SLICE);
 
 		tag(ExtraDelightTags.FRUIT).addTag(ExtraDelightTags.FRUIT_APPLE).addTag(ExtraDelightTags.FRUIT_GLOW_BERRY)
-				.addTag(ExtraDelightTags.FRUIT_SWEET_BERRY).addTag(ExtraDelightTags.FRUIT_MELON);
+				.addTag(ExtraDelightTags.FRUIT_SWEET_BERRY).addTag(ExtraDelightTags.FRUIT_MELON).add(Items.CHORUS_FRUIT)
+				.add(SummerCitrus.LEMON.get(), SummerCitrus.LIME.get(), SummerCitrus.ORANGE.get(),
+						SummerCitrus.GRAPEFRUIT.get());
 
 		tag(ExtraDelightTags.COOKING_OIL).add(ExtraDelightItems.COOKING_OIL.get()).addOptionalTag(CompatTags.COOKINGOIL)
 				.addOptionalTag(CompatTags.OLIVE_OILS);
