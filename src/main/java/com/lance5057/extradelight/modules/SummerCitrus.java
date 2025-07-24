@@ -370,7 +370,7 @@ public class SummerCitrus {
 				@Override
 				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
 						CollisionContext context) {
-					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
+					return Block.box(3.0D, 0.0D, 3.0D, 13.0D, 3.0D, 13.0D);
 				}
 			});
 	public static final DeferredItem<Item> PAVLOVA_ITEM = EDItemGenerator
@@ -718,9 +718,9 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, GRAPEFRUIT_SORBET, "grapefruit_sorbet");
 		ItemModels.forItem(tmp, CHOCOLATE_ORANGE, "chocolate_orange");
 		ItemModels.forItem(tmp, CHOCOLATE_MOUSSE, "chocolate_mousse");
-//		ItemModels.forItem(tmp, JAFFA_CAKE, "jaffa_cake");
-//		ItemModels.forItem(tmp, GRILLED_GRAPEFRUIT, "grilled_grapefruit");
-//		ItemModels.forItem(tmp, LEMON_DELICIOUS, "lemon_delicious");
+		ItemModels.forItem(tmp, JAFFA_CAKE, "jaffa_cake");
+		ItemModels.forItem(tmp, GRILLED_GRAPEFRUIT, "grilled_grapefruit");
+		ItemModels.forItem(tmp, LEMON_DELICIOUS, "lemon_delicious");
 //		ItemModels.forItem(tmp, ORANGE_CHICKEN, "orange_chicken");
 //		ItemModels.forItem(tmp, MELON_RIND_STIRFRY, "melon_rind_stirfry");
 //		ItemModels.forItem(tmp, LIME_SOUFFLE, "lime_souffle");

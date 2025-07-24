@@ -53,7 +53,7 @@ import net.neoforged.neoforge.items.IItemHandler;
 public class FruitBowlBlock extends Block implements EntityBlock, SimpleWaterloggedBlock, IStyleable {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 5.0D, 12.0D);
+	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 5.0D, 14.0D);
 	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length - 1);
 
 	public static enum Styles {
