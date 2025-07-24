@@ -62,6 +62,9 @@ public class ExtraDelight {
 
 		ExtraDelightItems.ITEMS.register(modEventBus);
 		ExtraDelightTabs.TABS.register(modEventBus);
+		
+		ExtraDelightPaintings.PAINTING_VARIANTS.register(modEventBus);
+		ExtraDelightBanners.BANNER_PATTERNS.register(modEventBus);
 
 		ExtraDelightBlockEntities.TILES.register(modEventBus);
 		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);

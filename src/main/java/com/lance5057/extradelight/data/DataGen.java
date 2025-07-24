@@ -25,7 +25,6 @@ public class DataGen {
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
-		
 		generator.addProvider(event.includeClient(), new ItemModels(output, helper));
 		generator.addProvider(true, new BlockModels(output, helper));
 
@@ -36,7 +35,6 @@ public class DataGen {
 		generator.addProvider(event.includeServer(),
 				new EDItemTags(output, lookupProvider, blockTags.contentsGetter(), helper));
 		generator.addProvider(event.includeServer(), new EDFluidTags(output, lookupProvider, helper));
-		
 
 		generator.addProvider(event.includeServer(), new Recipes(output, lookupProvider));
 		generator.addProvider(event.includeServer(), new LootModifiers(lookupProvider, output));
@@ -45,7 +43,6 @@ public class DataGen {
 
 		generator.addProvider(event.includeServer(), new EDBiomeModifiers(output, lookupProvider));
 		generator.addProvider(event.includeServer(), EDRegistries.provider(output, lookupProvider));
-		
 
 		generator.addProvider(event.includeServer(), new DataMapGen(output, lookupProvider));
 
@@ -53,7 +50,6 @@ public class DataGen {
 				new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider));
 
 		generator.addProvider(event.includeClient(), new CreateMixingRecipes(output, lookupProvider, "create"));
-		
-		generator.addProvider(true, new EDBannerTags(output, lookupProvider, helper));
+
 	}
 }

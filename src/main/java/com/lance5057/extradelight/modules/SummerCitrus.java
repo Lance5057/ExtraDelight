@@ -6,6 +6,7 @@ import static vectorwing.farmersdelight.common.registry.ModItems.bowlFoodItem;
 import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBanners;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightFluids;
@@ -43,6 +44,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.world.item.BannerPatternItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -538,14 +540,9 @@ public class SummerCitrus {
 			"purple_picnic_basket", () -> new BlockItem(SummerCitrus.PURPLE_PICNIC_BASKET.get(), new Item.Properties()
 					.stacksTo(1).component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
 
-//	public static final TagKey<BannerPattern> CITRUS_BANNER_TAG = TagKey.create(Registries.BANNER_PATTERN,
-//			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "citrus_rind_banner_tag"));
-//	public static final DeferredItem<Item> CITRUS_RIND_PATTERN_ITEM = ExtraDelightItems.ITEMS.register(
-//			"citrus_rind_banner_item", () -> new BannerPatternItem(ExtraDelightBanners.CITRUS_RIND_BANNER_PATTERN,
-//					new Item.Properties().stacksTo(1)));
-//	public static final DeferredHolder<BannerPattern, BannerPattern> CITRUS_RIND = ExtraDelightBanners.BANNER_PATTERNS
-//			.register("citrus_rind_banner", () -> new BannerPattern(ExtraDelight.modLoc("citrus_rind_banner"),
-//					"block.minecraft.banner.extradelight.citrus_rind"));
+	public static final DeferredItem<Item> CITRUS_RIND_PATTERN_ITEM = ExtraDelightItems.ITEMS.register(
+			"citrus_rind_banner_item",
+			() -> new BannerPatternItem(ExtraDelightBanners.CITRUS_PATTERN_TAG, new Item.Properties().stacksTo(1)));
 
 	public static void blockModels(BlockStateProvider bsp) {
 		BlockModels.fruitLeafBlock(bsp, LEMON_LEAVES.get(), "lemon");
@@ -681,7 +678,7 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, SLICED_GRAPEFRUIT, "crops/fruit/grapefruit/sliced_grapefruit");
 
 		ItemModels.forItem(tmp, EGG_YOLK, "egg_yolk");
-        ItemModels.forItem(tmp, EGG_WHITE, "egg_white");
+		ItemModels.forItem(tmp, EGG_WHITE, "egg_white");
 		ItemModels.forItem(tmp, EGG_WHITE_FLUID_BUCKET, "egg_white_bucket");
 		ItemModels.forItem(tmp, STIFF_PEAKS, "stiff_peaks");
 

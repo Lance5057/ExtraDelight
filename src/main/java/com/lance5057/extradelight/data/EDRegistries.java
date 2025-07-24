@@ -265,7 +265,7 @@ public class EDRegistries {
 									List.of(Pair.of(StructurePoolElement.single(id.toString()), 1)),
 									StructureTemplatePool.Projection.RIGID));
 				}
-			}).add(Registries.BANNER_PATTERN, ExtraDelightBanners::bootstrap);
+			});
 
 	public static DatapackBuiltinEntriesProvider provider(PackOutput output,
 			CompletableFuture<HolderLookup.Provider> lookupProvider) {
