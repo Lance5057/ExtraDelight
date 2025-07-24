@@ -90,14 +90,14 @@ public class ExtraDelight {
 			ExtraDelightBlocks.setup();
 			ExtraDelightItems.setup();
 			PottedPlants.setup();
-//			registerItemSetAdditions();
+			registerItemSetAdditions();
 		});
 	}
 
-//	public static void registerItemSetAdditions() {
-//		Set<Item> newWantedItems = Sets.newHashSet(ExtraDelightItems.CHILI.get(), ExtraDelightItems.GINGER.get(),
-//				ExtraDelightItems.GARLIC.get(), Fermentation.CUCUMBER.get());
-//		newWantedItems.addAll(Villager.WANTED_ITEMS);
-//		Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
-//	}
+	public static void registerItemSetAdditions() {
+		Set<Item> newWantedItems = Sets.newHashSet(ExtraDelightItems.CHILI.get(), ExtraDelightItems.GINGER.get(),
+				ExtraDelightItems.GARLIC.get(), Fermentation.CUCUMBER.get());
+		newWantedItems.addAll(Villager.WANTED_ITEMS);
+		Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
+	}
 }
