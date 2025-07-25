@@ -571,6 +571,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:lemonade_tray_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemonade_tray_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:limeade_tray_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:limeade_tray_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:macaroni_cheese_feast": {
       "conditions": {
         "items": [
@@ -676,6 +696,16 @@
         "items": [
           {
             "items": "extradelight:monkey_bread_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:orangeade_tray_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:orangeade_tray_item"
           }
         ]
       },
@@ -1057,6 +1087,9 @@
       "extradelight:glow_berry_pie"
     ],
     [
+      "extradelight:lemonade_tray_item"
+    ],
+    [
       "extradelight:stuffing_feast"
     ],
     [
@@ -1201,6 +1234,9 @@
       "extradelight:key_lime_pie_item"
     ],
     [
+      "extradelight:orangeade_tray_item"
+    ],
+    [
       "extradelight:charcuterie_board_feast"
     ],
     [
@@ -1214,6 +1250,9 @@
     ],
     [
       "extradelight:pumpkin_pie_item"
+    ],
+    [
+      "extradelight:limeade_tray_item"
     ],
     [
       "extradelight:apple_cheesecake"
