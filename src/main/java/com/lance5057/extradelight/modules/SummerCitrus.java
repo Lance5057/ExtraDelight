@@ -686,7 +686,7 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, MELON_RIND, "melon_rind");
 
 		ItemModels.forItem(tmp, ICE_CUBES, "ice_cubes");
-//		ItemModels.forItem(tmp, MERINGUE, "meringue");
+		ItemModels.forItem(tmp, MERINGUE, "meringue");
 //		ItemModels.forItem(tmp, LEMON_CURD, "lemon_curd");
 //		ItemModels.forItem(tmp, LEMON_MERINGUE_PIE_ITEM, "lemon_meringue_pie");
 		ItemModels.forItem(tmp, LEMON_MERINGUE_PIE_SLICE, "lemon_meringue_pie_slice");
