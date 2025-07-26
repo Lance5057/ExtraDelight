@@ -277,12 +277,33 @@ public class SummerCitrus {
 	public static final DeferredItem<Item> LEMONADE = EDItemGenerator
 			.register("lemonade", () -> new GlowberryJuiceItem(ExtraDelightItems.drinkItem())).drink().setHydration(20)
 			.setThirst(6).setPoison(0).isHot(false).finish();
+	public static final DeferredBlock<RecipeFeastBlock> LEMONADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
+			"lemonade_tray",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_YELLOW), true,
+					plate));
+	public static final DeferredItem<Item> LEMONADE_TRAY_ITEM = EDItemGenerator
+			.register("lemonade_tray_item", () -> new BlockItem(LEMONADE_TRAY.get(), new Item.Properties()))
+			.advancementFeast().finish();
 	public static final DeferredItem<Item> LIMEADE = EDItemGenerator
 			.register("limeade", () -> new GlowberryJuiceItem(ExtraDelightItems.drinkItem())).drink().setHydration(20)
 			.setThirst(6).setPoison(0).isHot(false).finish();
+	public static final DeferredBlock<RecipeFeastBlock> LIMEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
+			"limeade_tray",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_GREEN), true,
+					plate));
+	public static final DeferredItem<Item> LIMEADE_TRAY_ITEM = EDItemGenerator
+			.register("limeade_tray_item", () -> new BlockItem(LIMEADE_TRAY.get(), new Item.Properties()))
+			.advancementFeast().finish();
 	public static final DeferredItem<Item> ORANGEADE = EDItemGenerator
 			.register("orangeade", () -> new GlowberryJuiceItem(ExtraDelightItems.drinkItem())).drink().setHydration(20)
 			.setThirst(6).setPoison(0).isHot(false).finish();
+	public static final DeferredBlock<RecipeFeastBlock> ORANGEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
+			"orangeade_tray",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_ORANGE), true,
+					plate));
+	public static final DeferredItem<Item> ORANGEADE_TRAY_ITEM = EDItemGenerator
+			.register("orangeade_tray_item", () -> new BlockItem(ORANGEADE_TRAY.get(), new Item.Properties()))
+			.advancementFeast().finish();
 	public static final DeferredItem<Item> MELON_GAZPACHO = EDItemGenerator
 			.register("melon_gazpacho", () -> new Item(bowlFoodItem(EDFoods.GAZPACHO))).advancementMeal().finish();
 	public static final DeferredItem<Item> THAI_MELON_SALAD = EDItemGenerator
@@ -430,11 +451,6 @@ public class SummerCitrus {
 	public static final DeferredItem<Item> KYIV_CAKE_ITEM = EDItemGenerator
 			.register("kyiv_cake_item", () -> new BlockItem(KYIV_CAKE.get(), new Item.Properties())).advancementFeast()
 			.feastToolTip().finish();
-	public static final DeferredItem<Item> BAKED_ALASKA_SERVING = EDItemGenerator
-			.register("baked_alaska_serving",
-					() -> new ToolTipConsumableItem(ExtraDelightItems.stack16FoodItem(EDFoods.SHIRAZI_SALAD), true))
-			.advancementDessert().servingToolTip().finish();
-
 	public static final DeferredBlock<RawBakedAlaskaBlock> RAW_BAKED_ALASKA = ExtraDelightBlocks.BLOCKS
 			.register("raw_baked_alaska", () -> new RawBakedAlaskaBlock(
 					Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_WHITE).lightLevel(s -> {
@@ -445,6 +461,10 @@ public class SummerCitrus {
 	public static final DeferredItem<Item> RAW_BAKED_ALASKA_ITEM = EDItemGenerator
 			.register("raw_baked_alaska_item", () -> new BlockItem(RAW_BAKED_ALASKA.get(), new Item.Properties()))
 			.finish();
+	public static final DeferredItem<Item> BAKED_ALASKA_SERVING = EDItemGenerator
+			.register("baked_alaska_serving",
+					() -> new ToolTipConsumableItem(ExtraDelightItems.stack16FoodItem(EDFoods.SHIRAZI_SALAD), true))
+			.advancementDessert().servingToolTip().finish();
 	public static final DeferredBlock<RecipeFeastBlock> BAKED_ALASKA = ExtraDelightBlocks.BLOCKS
 			.register("baked_alaska",
 					() -> new RecipeFeastBlock(
@@ -554,30 +574,6 @@ public class SummerCitrus {
 			"purple_picnic_basket", () -> new BlockItem(SummerCitrus.PURPLE_PICNIC_BASKET.get(), new Item.Properties()
 					.stacksTo(1).component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
 
-	public static final DeferredBlock<RecipeFeastBlock> LEMONADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
-			"lemonade_tray",
-			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_YELLOW), true,
-					plate));
-	public static final DeferredItem<Item> LEMONADE_TRAY_ITEM = EDItemGenerator
-			.register("lemonade_tray_item", () -> new BlockItem(LEMONADE_TRAY.get(), new Item.Properties()))
-			.advancementFeast().finish();
-
-	public static final DeferredBlock<RecipeFeastBlock> LIMEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
-			"limeade_tray",
-			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_GREEN), true,
-					plate));
-	public static final DeferredItem<Item> LIMEADE_TRAY_ITEM = EDItemGenerator
-			.register("limeade_tray_item", () -> new BlockItem(LIMEADE_TRAY.get(), new Item.Properties()))
-			.advancementFeast().finish();
-
-	public static final DeferredBlock<RecipeFeastBlock> ORANGEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
-			"orangeade_tray",
-			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_ORANGE), true,
-					plate));
-	public static final DeferredItem<Item> ORANGEADE_TRAY_ITEM = EDItemGenerator
-			.register("orangeade_tray_item", () -> new BlockItem(ORANGEADE_TRAY.get(), new Item.Properties()))
-			.advancementFeast().finish();
-
 	public static final DeferredItem<Item> CITRUS_RIND_PATTERN_ITEM = ExtraDelightItems.ITEMS.register(
 			"citrus_rind_banner_item",
 			() -> new BannerPatternItem(ExtraDelightBanners.CITRUS_PATTERN_TAG, new Item.Properties().stacksTo(1)));
@@ -682,7 +678,7 @@ public class SummerCitrus {
 							.withExistingParent("block/orangeade_tray" + suffix,
 									ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 											"block/lemonade_tray" + suffix))
-							.texture("4", bsp.modLoc("item/orangade")))
+							.texture("4", bsp.modLoc("item/orangeade")))
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 
@@ -779,8 +775,14 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, KEY_LIME_PIE_ITEM, "key_lime_pie");
 		ItemModels.forItem(tmp, KEY_LIME_PIE_SLICE, "key_lime_pie_slice");
 		ItemModels.forItem(tmp, LEMONADE, "lemonade");
+		tmp.getBuilder(LEMONADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		ItemModels.forItem(tmp, LIMEADE, "limeade");
+		tmp.getBuilder(LIMEADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		ItemModels.forItem(tmp, ORANGEADE, "orangeade");
+		tmp.getBuilder(ORANGEADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		ItemModels.forItem(tmp, MELON_GAZPACHO, "melon_gazpacho");
 		ItemModels.forItem(tmp, THAI_MELON_SALAD, "thai_melon_salad");
 		ItemModels.forItem(tmp, ETON_MESS, "eton_mess");
@@ -846,13 +848,6 @@ public class SummerCitrus {
 		ItemModels.forBlockItem(tmp, BLACK_PICNIC_BASKET_ITEM, "black_picnic_basket");
 		ItemModels.forBlockItem(tmp, PURPLE_PICNIC_BASKET_ITEM, "purple_picnic_basket");
 
-		tmp.getBuilder(LEMONADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
-				.customLoader(BlockStateItemGeometryLoader::builder);
-		tmp.getBuilder(LIMEADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
-				.customLoader(BlockStateItemGeometryLoader::builder);
-		tmp.getBuilder(ORANGEADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
-				.customLoader(BlockStateItemGeometryLoader::builder);
-
 		ItemModels.forItem(tmp, CITRUS_RIND_PATTERN_ITEM, "citrus_banner_pattern");
 	}
 
@@ -877,6 +872,26 @@ public class SummerCitrus {
 		Recipes.bundleItem9(Ingredient.of(ExtraDelightTags.GRAPEFRUIT), GRAPEFRUIT_CRATE_ITEM.get(), GRAPEFRUIT.get(),
 				consumer, "grapefruit");
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LEMONADE_TRAY_ITEM.get())
+				.requires(LEMONADE.get(), 4).requires(Items.GLASS_BOTTLE)
+				.unlockedBy("has_lemonade", InventoryChangeTrigger.TriggerInstance.hasItems(LEMONADE.get()))
+				.save(consumer, ExtraDelight.modLoc("lemonade_tray"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LIMEADE_TRAY_ITEM.get())
+				.requires(LIMEADE.get(), 4).requires(Items.GLASS_BOTTLE)
+				.unlockedBy("has_limeade", InventoryChangeTrigger.TriggerInstance.hasItems(LIMEADE.get()))
+				.save(consumer, ExtraDelight.modLoc("limeade_tray"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ORANGEADE_TRAY_ITEM.get())
+				.requires(ORANGEADE.get(), 4).requires(Items.GLASS_BOTTLE)
+				.unlockedBy("has_orangeade", InventoryChangeTrigger.TriggerInstance.hasItems(ORANGEADE.get()))
+				.save(consumer, ExtraDelight.modLoc("orangeade_tray"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, RAW_BAKED_ALASKA_ITEM.get()).pattern("sps").pattern("pip")
+				.pattern("ccc")
+				.define('s', Items.SUGAR).define('p', STIFF_PEAKS)
+				.define('i', ExtraDelightTags.ICE_CREAM).define('c', ExtraDelightTags.CAKE_SLICE)
+				.unlockedBy("has_peaks", InventoryChangeTrigger.TriggerInstance.hasItems(STIFF_PEAKS.get()))
+				.save(consumer, ExtraDelight.modLoc("baked_alaska"));
+
+		// Cake/Pie reconstruction
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, LEMON_MERINGUE_PIE_ITEM.get()).pattern("ff ").pattern("ff ")
 				.define('f', LEMON_MERINGUE_PIE_SLICE.get())
 				.unlockedBy("has_pie", InventoryChangeTrigger.TriggerInstance.hasItems(LEMON_MERINGUE_PIE_ITEM.get()))
@@ -904,9 +919,24 @@ public class SummerCitrus {
 
 		// Feasts
 		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.GLASS_BOTTLE), new ItemStack(LEMONADE.get()),
+						LEMONADE_TRAY_ITEM.get())
+				.unlockedBy("has_lemonade_tray", InventoryChangeTrigger.TriggerInstance.hasItems(LEMONADE_TRAY_ITEM.get()))
+				.save(consumer, ExtraDelight.modLoc("lemonade_tray_pull_feast"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.GLASS_BOTTLE), new ItemStack(LIMEADE.get()),
+						LIMEADE_TRAY_ITEM.get())
+				.unlockedBy("has_limeade_tray", InventoryChangeTrigger.TriggerInstance.hasItems(LIMEADE_TRAY_ITEM.get()))
+				.save(consumer, ExtraDelight.modLoc("limeade_tray_pull_feast"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.GLASS_BOTTLE), new ItemStack(ORANGEADE.get()),
+						ORANGEADE_TRAY_ITEM.get())
+				.unlockedBy("has_orangeade_tray", InventoryChangeTrigger.TriggerInstance.hasItems(ORANGEADE_TRAY_ITEM.get()))
+				.save(consumer, ExtraDelight.modLoc("orangeade_tray_pull_feast"));
+		FeastRecipeBuilder
 				.feast(Ingredient.of(Items.BOWL), new ItemStack(MELON_FRUIT_SALAD_SERVING.get()),
 						MELON_FRUIT_SALAD_ITEM.get())
-				.unlockedBy("has_melon_salad", InventoryChangeTrigger.TriggerInstance.hasItems(MELON_FRUIT_SALAD.get()))
+				.unlockedBy("has_melon_salad", InventoryChangeTrigger.TriggerInstance.hasItems(MELON_FRUIT_SALAD_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("melon_salad_pull_feast"));
 		FeastRecipeBuilder
 				.feast(Ingredient.of(Items.BOWL), new ItemStack(BAKED_COD_SERVING.get()), BAKED_COD_ITEM.get())
@@ -1191,12 +1221,6 @@ public class SummerCitrus {
 				.addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ExtraDelightTags.CHOCOLATE_SYRUP).addIngredient(ExtraDelightTags.WHIPPED_CREAM)
 				.unlockedByAnyIngredient(STIFF_PEAKS).build(consumer);
-		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(BAKED_ALASKA_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), true)
-				.addIngredient(Items.CAKE).addIngredient(ExtraDelightTags.ICE_CREAM).addIngredient(STIFF_PEAKS)
-				.addIngredient(STIFF_PEAKS).addIngredient(Items.SUGAR).unlockedByAnyIngredient(STIFF_PEAKS)
-				.build(consumer);
 
 		// Pot
 		Recipes.pot(LEMON_CURD.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
@@ -1228,7 +1252,7 @@ public class SummerCitrus {
 				"candied_citrus_zest", consumer);
 		Recipes.pot(LEMON_POSSET.get(), 3, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(LEMON_ZEST), Ingredient.of(CommonTags.FOODS_MILK),
-						Ingredient.of(Items.SUGAR), Ingredient.of(LEMON_JUICE) },
+						Ingredient.of(Items.SUGAR), Ingredient.of(LEMON_JUICE), Ingredient.of(Items.SWEET_BERRIES) },
 				"lemon_posset", consumer);
 		Recipes.pot(MELON_LIME_GLAZED_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] {
@@ -1240,8 +1264,8 @@ public class SummerCitrus {
 
 		// Vat
 		VatRecipeBuilder.pickle(new ItemStack(PRESERVED_LEMONS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
-				.requires(Ingredient.of(LEMON)).requires(Ingredient.of(LEMON)).requires(Ingredient.of(LEMON))
-				.requires(Ingredient.of(LEMON))
+				.requires(Ingredient.of(SLICED_LEMON)).requires(Ingredient.of(SLICED_LEMON))
+				.requires(Ingredient.of(SLICED_LEMON)).requires(Ingredient.of(SLICED_LEMON))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.LEMON_JUICE.FLUID.get(), 250))
 				.requiresStage(new VatRecipe.StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick, false))
 				.requiresStage(new VatRecipe.StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
@@ -1323,8 +1347,11 @@ public class SummerCitrus {
 		lp.add(KEY_LIME_PIE.get(), "Key Lime Pie");
 		lp.add(KEY_LIME_PIE_SLICE.get(), "Slice of Key Lime Pie");
 		lp.add(LEMONADE.get(), "Lemonade");
+		lp.add(LEMONADE_TRAY.get(), "Tray of Lemonade");
 		lp.add(LIMEADE.get(), "Limeade");
+		lp.add(LIMEADE_TRAY.get(), "Tray of Limeade");
 		lp.add(ORANGEADE.get(), "Orangeade");
+		lp.add(ORANGEADE_TRAY.get(), "Tray of Orangeade");
 		lp.add(MELON_GAZPACHO.get(), "Melon Gazpacho");
 		lp.add(THAI_MELON_SALAD.get(), "Thai Melon Salad");
 		lp.add(ETON_MESS.get(), "Eton Mess");
@@ -1361,8 +1388,9 @@ public class SummerCitrus {
 		lp.add(MELON_LIME_GLAZED_CHICKEN.get(), "Melon and Lime Glazed Chicken");
 		lp.add(KYIV_CAKE.get(), "Kyiv Cake");
 		lp.add(KYIV_CAKE_SLICE.get(), "Slice of Kyiv Cake");
+		lp.add(RAW_BAKED_ALASKA.get(), "Un-Baked Alaska");
 		lp.add(BAKED_ALASKA.get(), "Baked Alaska");
-		lp.add(BAKED_ALASKA_SERVING.get(), "Bowl of Baked Alaska");
+		lp.add(BAKED_ALASKA_SERVING.get(), "Portion of Baked Alaska");
 
 		lp.add(WHITE_PICNIC_BASKET.get(), "White Picnic Basket");
 		lp.add(ORANGE_PICNIC_BASKET.get(), "Orange Picnic Basket");
@@ -1381,7 +1409,7 @@ public class SummerCitrus {
 		lp.add(BLACK_PICNIC_BASKET.get(), "Black Picnic Basket");
 		lp.add(PURPLE_PICNIC_BASKET.get(), "Purple Picnic Basket");
 
-//		lp.add(CITRUS_RIND_PATTERN_ITEM.get(), "Banner Pattern");
-//		lp.add("item.extradelight.citrus_rind_banner_item.desc", "Citrus Rind");
+		lp.add(CITRUS_RIND_PATTERN_ITEM.get(), "Banner Pattern");
+		lp.add("item.extradelight.citrus_rind_banner_item.desc", "Citrus Rind");
 	}
 }

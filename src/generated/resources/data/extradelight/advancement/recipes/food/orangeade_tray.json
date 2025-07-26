@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_orangeade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:orangeade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:orangeade_tray"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_orangeade"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:orangeade_tray"
+    ]
+  }
+}

@@ -49,6 +49,7 @@ public class DataMapGen extends DataMapProvider {
 				false);
 		compostables.add(ExtraDelightItems.BREAD_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.GINGER.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(ExtraDelightItems.GINGER_CUTTING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.MINT.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.COFFEE_CHERRIES.asItem().builtInRegistryHolder(), new Compostable(0.2f),
 				false);
@@ -66,6 +67,7 @@ public class DataMapGen extends DataMapProvider {
 				false);
 		compostables.add(ExtraDelightItems.PEANUTS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.CHILI.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(ExtraDelightItems.CHILI_SEEDS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 
 		compostables.add(ExtraDelightItems.WILD_CHILI_BLOCK.asItem().builtInRegistryHolder(), new Compostable(0.2f),
 				false);
@@ -77,12 +79,15 @@ public class DataMapGen extends DataMapProvider {
 		compostables.add(ExtraDelightItems.APPLE_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.WILD_GARLIC_BLOCK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(ExtraDelightItems.GARLIC.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+		compostables.add(ExtraDelightItems.GARLIC_CLOVE.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 
 		compostables.add(Fermentation.WILD_CUCUMBER.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
 		compostables.add(Fermentation.CUCUMBER.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
+		compostables.add(Fermentation.CUCUMBER_SEED.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
 		compostables.add(Fermentation.SLICED_CUCUMBER_ITEM.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
 		compostables.add(Fermentation.WILD_SOYBEAN.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
 		compostables.add(Fermentation.SOYBEAN_POD.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
+		compostables.add(Fermentation.SOYBEANS.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
 
 		compostables.add(SummerCitrus.LEMON_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
 		compostables.add(SummerCitrus.LEMON_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);

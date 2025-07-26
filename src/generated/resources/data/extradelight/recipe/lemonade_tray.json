@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:lemonade"
+    },
+    {
+      "item": "extradelight:lemonade"
+    },
+    {
+      "item": "extradelight:lemonade"
+    },
+    {
+      "item": "extradelight:lemonade"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:lemonade_tray_item"
+  }
+}

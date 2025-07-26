@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "out": {
+    "id": "extradelight:lemonade_tray_item"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:lemonade"
+  }
+}

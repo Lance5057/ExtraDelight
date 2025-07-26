@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:limeade"
+    },
+    {
+      "item": "extradelight:limeade"
+    },
+    {
+      "item": "extradelight:limeade"
+    },
+    {
+      "item": "extradelight:limeade"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:limeade_tray_item"
+  }
+}

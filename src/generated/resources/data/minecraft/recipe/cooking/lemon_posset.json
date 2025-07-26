@@ -17,6 +17,9 @@
     },
     {
       "item": "extradelight:lemon_juice"
+    },
+    {
+      "item": "minecraft:sweet_berries"
     }
   ],
   "recipe_book_tab": "meals",
