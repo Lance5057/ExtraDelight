@@ -639,7 +639,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		feast(SummerCitrus.BAKED_ALASKA.get(), SummerCitrus.BAKED_ALASKA_ITEM.get(), ExtraDelightItems.TRAY.get());
 
 		this.dropSelf(ExtraDelightBlocks.JUICER.get());
-		
+
 		feast(SummerCitrus.LEMONADE_TRAY.get(), SummerCitrus.LEMONADE_TRAY_ITEM.get(), Items.GLASS_BOTTLE);
 		feast(SummerCitrus.LIMEADE_TRAY.get(), SummerCitrus.LIMEADE_TRAY_ITEM.get(), Items.GLASS_BOTTLE);
 		feast(SummerCitrus.ORANGEADE_TRAY.get(), SummerCitrus.ORANGEADE_TRAY_ITEM.get(), Items.GLASS_BOTTLE);
@@ -660,6 +660,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(SummerCitrus.RED_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 		this.add(SummerCitrus.BLACK_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 		this.add(SummerCitrus.PURPLE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+
+		this.dropSelf(SummerCitrus.RAW_BAKED_ALASKA.get());
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {

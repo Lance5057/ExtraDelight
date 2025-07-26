@@ -1,4 +1,4 @@
 {
-  "parent": "minecraft:block/block",
+  "parent": "minecraft:item/generated",
   "loader": "extradelight:blockstateitem"
 }

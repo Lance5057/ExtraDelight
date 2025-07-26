@@ -13,6 +13,7 @@ import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
+import com.lance5057.extradelight.blocks.RawBakedAlaskaBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
 import com.lance5057.extradelight.blocks.jardisplay.JarSingularBlock;
@@ -433,10 +434,21 @@ public class SummerCitrus {
 			.register("baked_alaska_serving",
 					() -> new ToolTipConsumableItem(ExtraDelightItems.stack16FoodItem(EDFoods.SHIRAZI_SALAD), true))
 			.advancementDessert().servingToolTip().finish();
+
+	public static final DeferredBlock<RawBakedAlaskaBlock> RAW_BAKED_ALASKA = ExtraDelightBlocks.BLOCKS
+			.register("raw_baked_alaska", () -> new RawBakedAlaskaBlock(
+					Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_WHITE).lightLevel(s -> {
+						if (s.getValue(RawBakedAlaskaBlock.ON_FIRE))
+							return 10;
+						return 0;
+					})));
+	public static final DeferredItem<Item> RAW_BAKED_ALASKA_ITEM = EDItemGenerator
+			.register("raw_baked_alaska_item", () -> new BlockItem(RAW_BAKED_ALASKA.get(), new Item.Properties()))
+			.finish();
 	public static final DeferredBlock<RecipeFeastBlock> BAKED_ALASKA = ExtraDelightBlocks.BLOCKS
 			.register("baked_alaska",
 					() -> new RecipeFeastBlock(
-							Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_WHITE), true,
+							Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_WHITE), false,
 							plate));
 	public static final DeferredItem<Item> BAKED_ALASKA_ITEM = EDItemGenerator
 			.register("baked_alaska_item", () -> new BlockItem(BAKED_ALASKA.get(), new Item.Properties()))
@@ -632,10 +644,10 @@ public class SummerCitrus {
 		BlockModels.recipeFeastBlock(bsp, BAKED_COD.get(), "baked_cod");
 		BlockModels.createCakeBlock(bsp, MELON_LAYER_CAKE.get(), "melon_layer");
 		BlockModels.pieLikeBlock(bsp, PAVLOVA.get(), "pavlova");
-//		BlockModels.recipeFeastBlock(bsp, PRESERVED_LEMONS_BLOCK.get(), "preserved_lemon_jar");
-//		BlockModels.recipeFeastBlock(bsp, PICKLED_RINDS_BLOCK.get(), "pickled_rind_jar");
+		BlockModels.recipeFeastBlock(bsp, PRESERVED_LEMONS_BLOCK.get(), "preserved_lemons_jar");
+		BlockModels.recipeFeastBlock(bsp, PICKLED_RINDS_BLOCK.get(), "pickled_rind_jar");
 		BlockModels.pieLikeBlock(bsp, KYIV_CAKE.get(), "kyiv_cake");
-//		BlockModels.recipeFeastBlock(bsp, BAKED_ALASKA.get());
+		BlockModels.recipeFeastBlock(bsp, BAKED_ALASKA.get());
 		BlockModels.recipeFeastBlock(bsp, LEMONADE_TRAY.get());
 
 		bsp.getVariantBuilder(LIMEADE_TRAY.get()).forAllStates(state -> {
@@ -690,6 +702,17 @@ public class SummerCitrus {
 		picnicBasket(bsp, RED_PICNIC_BASKET.get());
 		picnicBasket(bsp, BLACK_PICNIC_BASKET.get());
 		picnicBasket(bsp, PURPLE_PICNIC_BASKET.get());
+
+		bsp.getVariantBuilder(RAW_BAKED_ALASKA.get()).forAllStates(state -> {
+			boolean on_fire = state.getValue(RawBakedAlaskaBlock.ON_FIRE);
+
+			if (on_fire)
+				return ConfiguredModel.builder()
+						.modelFile(bsp.models().getExistingFile(bsp.modLoc("block/baked_alaska_on_fire"))).build();
+			else
+				return ConfiguredModel.builder()
+						.modelFile(bsp.models().getExistingFile(bsp.modLoc("block/baked_alaska_raw"))).build();
+		});
 	}
 
 	public static void picnicBasket(BlockStateProvider bsp, PicnicBasketBlock block) {
@@ -781,32 +804,30 @@ public class SummerCitrus {
 		ItemModels.forItem(tmp, JAFFA_CAKE, "jaffa_cake");
 		ItemModels.forItem(tmp, GRILLED_GRAPEFRUIT, "grilled_grapefruit");
 		ItemModels.forItem(tmp, LEMON_DELICIOUS, "lemon_delicious");
-//		ItemModels.forItem(tmp, ORANGE_CHICKEN, "orange_chicken");
-//		ItemModels.forItem(tmp, MELON_RIND_STIRFRY, "melon_rind_stirfry");
-//		ItemModels.forItem(tmp, LIME_SOUFFLE, "lime_souffle");
-//		ItemModels.forItem(tmp, CHEESE_SOUFFLE, "cheese_souffle");
+		ItemModels.forItem(tmp, ORANGE_CHICKEN, "orange_chicken");
+		ItemModels.forItem(tmp, MELON_RIND_STIRFRY, "melon_rind_stirfry");
+		ItemModels.forItem(tmp, LIME_SOUFFLE, "lime_souffle");
+		ItemModels.forItem(tmp, CHEESE_SOUFFLE, "cheese_souffle");
 		tmp.getBuilder(PAVLOVA_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 		ItemModels.forItem(tmp, PAVLOVA_SLICE, "pavlova_slice");
-//		tmp.getBuilder(PRESERVED_LEMONS_BLOCK_ITEM.getId().getPath())
-//				.parent(new ModelFile.UncheckedModelFile("item/generated"))
-//				.customLoader(BlockStateItemGeometryLoader::builder);
-//		ItemModels.forItem(tmp, PRESERVED_LEMON_ITEM, "preserved_lemon");
-//		tmp.getBuilder(PICKLED_RINDS_BLOCK_ITEM.getId().getPath())
-//				.parent(new ModelFile.UncheckedModelFile("item/generated"))
-//				.customLoader(BlockStateItemGeometryLoader::builder);
-//		ItemModels.forItem(tmp, PICKLED_RIND_ITEM, "pickled_rind");
-//		ItemModels.forItem(tmp, PRESERVED_LEMON_PASTA, "preserved_lemon_pasta");
-//		ItemModels.forItem(tmp, CANDIED_CITRUS_ZEST, "candied_citrus_zest");
-//		ItemModels.forItem(tmp, LEMON_POSSET, "lemon_posset");
-//		ItemModels.forItem(tmp, MELON_LIME_GLAZED_CHICKEN, "melon_lime_glazed_chicken");
-		tmp.getBuilder(KYIV_CAKE_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+		tmp.getBuilder(PRESERVED_LEMONS_BLOCK_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
+		ItemModels.forItem(tmp, PRESERVED_LEMON_ITEM, "preserved_lemon");
+		tmp.getBuilder(PICKLED_RINDS_BLOCK_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		ItemModels.forItem(tmp, PICKLED_RIND_ITEM, "pickled_melon_rind");
+		ItemModels.forItem(tmp, PRESERVED_LEMON_PASTA, "preserved_lemon_pasta");
+		ItemModels.forItem(tmp, CANDIED_CITRUS_ZEST, "candied_citrus_zest");
+		ItemModels.forItem(tmp, LEMON_POSSET, "lemon_posset");
+		ItemModels.forItem(tmp, MELON_LIME_GLAZED_CHICKEN, "melon_lime_glazed_chicken");
+		ItemModels.forItem(tmp, KYIV_CAKE_ITEM, "kyiv_cake");
 		ItemModels.forItem(tmp, KYIV_CAKE_SLICE, "kyiv_cake_slice");
-//		ItemModels.forItem(tmp, BAKED_ALASKA_SERVING, "baked_alaska_serving");
-//		tmp.getBuilder(BAKED_ALASKA_ITEM.getId().getPath())
-//				.parent(new ModelFile.UncheckedModelFile("item/generated"))
-//				.customLoader(BlockStateItemGeometryLoader::builder);
+		ItemModels.forItem(tmp, BAKED_ALASKA_SERVING, "baked_alaska_serving");
+		ItemModels.forItem(tmp, BAKED_ALASKA_ITEM, "baked_alaska");
+		ItemModels.forItem(tmp, RAW_BAKED_ALASKA_ITEM, "raw_baked_alaska");
 
 		ItemModels.forBlockItem(tmp, WHITE_PICNIC_BASKET_ITEM, "white_picnic_basket");
 		ItemModels.forBlockItem(tmp, ORANGE_PICNIC_BASKET_ITEM, "orange_picnic_basket");
@@ -825,9 +846,14 @@ public class SummerCitrus {
 		ItemModels.forBlockItem(tmp, BLACK_PICNIC_BASKET_ITEM, "black_picnic_basket");
 		ItemModels.forBlockItem(tmp, PURPLE_PICNIC_BASKET_ITEM, "purple_picnic_basket");
 
-		ItemModels.forBlockItem(tmp, LEMONADE_TRAY_ITEM, "lemonade_tray");
-		ItemModels.forBlockItem(tmp, LIMEADE_TRAY_ITEM, "limeade_tray");
-		ItemModels.forBlockItem(tmp, ORANGEADE_TRAY_ITEM, "orangeade_tray");
+		tmp.getBuilder(LEMONADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		tmp.getBuilder(LIMEADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		tmp.getBuilder(ORANGEADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+		ItemModels.forItem(tmp, CITRUS_RIND_PATTERN_ITEM, "citrus_banner_pattern");
 	}
 
 	public final static int dayTick = 24000;

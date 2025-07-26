@@ -1,3 +1,4 @@
 {
-  "parent": "extradelight:block/orangeade_tray"
+  "parent": "minecraft:block/block",
+  "loader": "extradelight:blockstateitem"
 }

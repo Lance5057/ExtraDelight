@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "extradelight:item/kyiv_cake"
+    "layer0": "extradelight:item/pickled_melon_rind"
   }
 }
