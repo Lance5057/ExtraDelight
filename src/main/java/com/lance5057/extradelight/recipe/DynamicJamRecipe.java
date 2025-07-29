@@ -41,8 +41,9 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 			DynamicItemComponent comp = stack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
 			if (comp != null) {
 				comp.addItem(stack);
-			} else
-				ExtraDelight.logger.error("DynamicJam lost its component!");
+			} 
+//			else
+//				ExtraDelight.logger.error("DynamicJam lost its component!");
 		} else {
 			ExtraDelight.logger.error("DynamicJamRecipe result not DynamicJam!");
 		}

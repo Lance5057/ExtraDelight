@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.items.dynamicfood;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -16,9 +15,9 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemContainerContents;
 
 public class DynamicJam extends Item implements IDynamic {
-	static final ResourceLocation base_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+	public static final ResourceLocation base_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"extra/dynamics/jam/jam_jar");
-	static final ResourceLocation missing_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+	public static final ResourceLocation missing_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"extra/dynamics/jam/jam_missing");
 
 	public DynamicJam(Properties properties) {
@@ -39,6 +38,7 @@ public class DynamicJam extends Item implements IDynamic {
 					String str = s.getItem().getDescriptionId();
 					str = str.substring(str.lastIndexOf('.') + 1);
 					ResourceLocation rc = ExtraDelight.modLoc("extra/dynamics/jam/" + str);
+
 					i.add(rc);
 				} else
 					i.add(missing_model);

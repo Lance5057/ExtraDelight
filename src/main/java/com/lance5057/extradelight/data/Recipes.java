@@ -112,6 +112,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		evaporatorRecipes(consumer);
 		juicerRecipes(consumer);
 
+		dynamicJamRecipes(consumer);
+
 		SummerCitrus.Recipes(consumer);
 		Fermentation.Recipes(consumer);
 		AestheticBlocks.Recipes(consumer);
@@ -119,8 +121,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void juicerRecipes(RecipeOutput consumer) {
-		JuicerRecipeBuilder.squeeze(
-					Ingredient.of(Items.BRICK), new ItemStack(Items.FLOWER_POT),
+		JuicerRecipeBuilder.squeeze(Ingredient.of(Items.BRICK), new ItemStack(Items.FLOWER_POT),
 				new FluidStack(ExtraDelightFluids.BBQ.FLUID, 250)).save(consumer, EDLoc("bbq"));
 	}
 
@@ -1642,8 +1643,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, "butter");
 
 		mixing(new ItemStack(ExtraDelightItems.WHIPPED_CREAM.get(), 1), LONG_GRIND, new ItemStack(Items.BOWL),
-				Ingredient.of(ExtraDelightItems.WHISK),
-				new Ingredient[] {},
+				Ingredient.of(ExtraDelightItems.WHISK), new Ingredient[] {},
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(NeoForgeMod.MILK, 250)) }, consumer,
 				"whipped_cream");
 
@@ -2234,8 +2234,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 //			p.build(consumer.withConditions(new ModLoadedCondition("create")));
 	}
 
-	public static void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient utensil, Ingredient[] ingredients,
-							  SizedFluidIngredient[] sizedFluidIngredients, RecipeOutput consumer, String rc) {
+	public static void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient utensil,
+			Ingredient[] ingredients, SizedFluidIngredient[] sizedFluidIngredients, RecipeOutput consumer, String rc) {
 		MixingBowlRecipeBuilder b = MixingBowlRecipeBuilder.stir(output, grind, container, utensil);
 
 		for (Ingredient i : ingredients)
@@ -2433,15 +2433,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), has(Tags.Items.NUGGETS_IRON)).save(consumer, EDLoc("evaporator"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.JUICER.get()).pattern(" s ").pattern(" b ")
-				.pattern("ccc").define('s', Ingredient.of(Items.STICK))
-				.define('b', Ingredient.of(Items.BARREL))
+				.pattern("ccc").define('s', Ingredient.of(Items.STICK)).define('b', Ingredient.of(Items.BARREL))
 				.define('c', Ingredient.of(Tags.Items.INGOTS_COPPER))
 				.unlockedBy(getName(), has(Tags.Items.INGOTS_COPPER)).save(consumer, EDLoc("juicer"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.WHISK.get()).pattern(" i ").pattern("iii")
 				.pattern(" s ").define('i', Ingredient.of(Tags.Items.NUGGETS_IRON))
-				.define('s', Ingredient.of(Items.STICK))
-				.unlockedBy(getName(), has(Tags.Items.NUGGETS_IRON)).save(consumer, EDLoc("whisk"));
+				.define('s', Ingredient.of(Items.STICK)).unlockedBy(getName(), has(Tags.Items.NUGGETS_IRON))
+				.save(consumer, EDLoc("whisk"));
 
 		// Juice
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GLOW_BERRY_JUICE.get())
@@ -4464,9 +4463,34 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				"penne_all_arrabbiata", consumer);
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_JAM, 1, 1, 1, Items.GLASS_BOTTLE)
+	}
+
+	private void dynamicJamRecipes(RecipeOutput consumer) {
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE)
 				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-				.build(consumer);
+				.build(consumer, "dynamic_chorus");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE).addIngredient(Ingredient.of(Items.APPLE))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_apple");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE)
+				.addIngredient(Ingredient.of(Items.MELON_SLICE)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_melon");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE)
+				.addIngredient(Ingredient.of(Items.SWEET_BERRIES)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_berries");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE).addIngredient(Ingredient.of(Items.CARROT))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_carrot");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE)
+				.addIngredient(Ingredient.of(Items.GOLDEN_APPLE)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_golden_apple");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE)
+				.addIngredient(Ingredient.of(Items.GLOW_BERRIES)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_glow_berries");
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {
@@ -5658,7 +5682,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.OvenRecipe(new ItemStack(ExtraDelightItems.FRUIT_BREAD.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.LOAF_PAN.get()), false)
 				.addIngredient(CompoundIngredient.of(Ingredient.of(ExtraDelightTags.PROCESSED_FRUIT),
-						Ingredient.of(ExtraDelightTags.DRIED_FRUIT))).addIngredient(ExtraDelightTags.DOUGH)
+						Ingredient.of(ExtraDelightTags.DRIED_FRUIT)))
+				.addIngredient(ExtraDelightTags.DOUGH)
 				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
 				.build(consumer);
 

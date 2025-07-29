@@ -15,6 +15,9 @@
     "extradelight:chili": {
       "chance": 0.2
     },
+    "extradelight:chili_seeds": {
+      "chance": 0.2
+    },
     "extradelight:cinnamon_bark": {
       "chance": 0.2
     },
@@ -51,6 +54,9 @@
     "extradelight:cucumber": {
       "chance": 0.2
     },
+    "extradelight:cucumber_seed": {
+      "chance": 0.2
+    },
     "extradelight:dried_corn_husk": {
       "chance": 0.2
     },
@@ -60,7 +66,13 @@
     "extradelight:garlic": {
       "chance": 0.2
     },
+    "extradelight:garlic_clove": {
+      "chance": 0.2
+    },
     "extradelight:ginger": {
+      "chance": 0.2
+    },
+    "extradelight:ginger_cutting": {
       "chance": 0.2
     },
     "extradelight:grapefruit_leaves": {
@@ -151,6 +163,9 @@
       "chance": 0.2
     },
     "extradelight:soybean_pod": {
+      "chance": 0.2
+    },
+    "extradelight:soybeans": {
       "chance": 0.2
     },
     "extradelight:unshucked_corn": {

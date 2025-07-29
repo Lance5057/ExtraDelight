@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.recipe.DynamicJamRecipe;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -41,29 +42,26 @@ public class DynamicJamRecipeBuilder implements RecipeBuilder {
 	private final ItemStack container;
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 
-	public DynamicJamRecipeBuilder(ItemLike result, int count, int cookingTime, float experience,
-			@Nullable ItemLike container) {
-		this(new ItemStack(result, count), cookingTime, experience, container);
+	public DynamicJamRecipeBuilder(int count, int cookingTime, float experience, @Nullable ItemLike container) {
+		this(cookingTime, experience, container);
 	}
 
-	public DynamicJamRecipeBuilder(ItemStack resultIn, int cookingTime, float experience,
-			@Nullable ItemLike container) {
-		this.result = resultIn.getItem();
-		this.resultStack = resultIn;
+	public DynamicJamRecipeBuilder(int cookingTime, float experience, @Nullable ItemLike container) {
+		this.result = ExtraDelightItems.DYNAMIC_JAM.get();
+		this.resultStack = new ItemStack(ExtraDelightItems.DYNAMIC_JAM.get());
 		this.cookingTime = cookingTime;
 		this.experience = experience;
 		this.container = container != null ? new ItemStack(container) : ItemStack.EMPTY;
 		this.tab = null;
 	}
 
-	public static DynamicJamRecipeBuilder cookingPotRecipe(ItemLike mainResult, int count, int cookingTime,
-			float experience) {
-		return new DynamicJamRecipeBuilder(mainResult, count, cookingTime, experience, null);
+	public static DynamicJamRecipeBuilder cookingPotRecipe(int count, int cookingTime, float experience) {
+		return new DynamicJamRecipeBuilder(count, cookingTime, experience, null);
 	}
 
-	public static DynamicJamRecipeBuilder cookingPotRecipe(ItemLike mainResult, int count, int cookingTime,
-			float experience, ItemLike container) {
-		return new DynamicJamRecipeBuilder(mainResult, count, cookingTime, experience, container);
+	public static DynamicJamRecipeBuilder cookingPotRecipe(int count, int cookingTime, float experience,
+			ItemLike container) {
+		return new DynamicJamRecipeBuilder(count, cookingTime, experience, container);
 	}
 
 	public DynamicJamRecipeBuilder addIngredient(TagKey<Item> tagIn) {
