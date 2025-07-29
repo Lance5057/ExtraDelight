@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import java.util.Set;
 
+import com.lance5057.extradelight.armor.EDArmorMaterial;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -78,6 +79,8 @@ public class ExtraDelight {
 		ExtraDelightFeatures.FEATURES.register(modEventBus);
 
 		ExtraDelightMobEffects.register(modEventBus);
+
+		EDArmorMaterial.register(modEventBus);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {

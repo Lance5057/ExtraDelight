@@ -8,6 +8,8 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.aesthetics.HelmetBlockItem;
+import com.lance5057.extradelight.armor.ApronItem;
+import com.lance5057.extradelight.armor.EDArmorMaterial;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.fluids.FluidRegistration;
 import com.lance5057.extradelight.food.EDFoods;
@@ -43,17 +45,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.BucketItem;
-import net.minecraft.world.item.DoubleHighBlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SolidBucketItem;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.context.UseOnContext;
@@ -2962,6 +2954,9 @@ public class ExtraDelightItems {
 //	public static final DeferredItem<DynamicSandwich> DYNAMIC_TEST2 = ITEMS.register("dynamic_test2",
 //			() -> new DynamicSandwich(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
 //					ItemContainerContents.EMPTY)));
+
+	public static final DeferredItem<Item> APRON = ITEMS.register("apron", () -> new ApronItem(EDArmorMaterial.WOOL,
+			new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(5))));
 
 	public static final DeferredItem<DynamicToast> DYNAMIC_TOAST = ITEMS.register("dynamic_toast",
 			() -> new DynamicToast(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),

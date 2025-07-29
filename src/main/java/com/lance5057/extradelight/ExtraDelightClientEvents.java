@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRenderer;
+import com.lance5057.extradelight.armor.models.ApronModel;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetScreen;
@@ -48,6 +49,9 @@ import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.EntityModelSet;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -56,7 +60,10 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -189,6 +196,17 @@ public class ExtraDelightClientEvents {
 				return JarItemModel.getInstance();
 			}
 		}, ExtraDelightItems.JAR.asItem());
+
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
+														  EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+				EntityModelSet models = Minecraft.getInstance().getEntityModels();
+				ModelPart root = models.bakeLayer(ApronModel.LAYER_LOCATION);
+				return new ApronModel(root);
+			}
+
+		}, ExtraDelightItems.APRON);
 
 	}
 

@@ -1361,6 +1361,8 @@ public class ItemModels extends ItemModelProvider {
 				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 
+//		forItem(this, ExtraDelightItems.APRON, "apron");
+
 		Fermentation.itemModels(this);
 		SummerCitrus.itemModels(this);
 		AestheticBlocks.itemModel(this);

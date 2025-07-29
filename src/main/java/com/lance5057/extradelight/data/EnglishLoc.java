@@ -1386,6 +1386,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.EVAPORATOR.get(), "Evaporator");
 		this.add("extradelight.jei.bottlefluid", "Decanting");
 
+		this.add(ExtraDelightItems.APRON.get(), "Apron");
+
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
 
 		this.add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "Potted Cinnamon Sapling");
