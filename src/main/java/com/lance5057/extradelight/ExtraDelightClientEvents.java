@@ -50,7 +50,9 @@ import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.EntityModelSet;
+import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -70,11 +72,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.ModelEvent;
+import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
-import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 
@@ -184,6 +183,12 @@ public class ExtraDelightClientEvents {
 
 //		for (RegistryObject<Item> b : AestheticBlocks.WREATH_ITEMS)
 		event.register(itemBlockColourHandler, AestheticBlocks.getRegistryListAsItems(AestheticBlocks.WREATH_ITEMS));
+	}
+
+	@SubscribeEvent
+	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(ApronModel.LAYER_LOCATION,
+				() -> LayerDefinition.create(ApronModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 32, 32));
 	}
 
 	@SubscribeEvent
