@@ -30,6 +30,7 @@ import com.lance5057.extradelight.items.OffsetSpatulaItem;
 import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
+import com.lance5057.extradelight.items.components.ApronComponent;
 import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
 import com.lance5057.extradelight.items.jar.JarItem;
@@ -45,7 +46,18 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.BucketItem;
+import net.minecraft.world.item.DoubleHighBlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SolidBucketItem;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.context.UseOnContext;
@@ -2955,8 +2967,10 @@ public class ExtraDelightItems {
 //			() -> new DynamicSandwich(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
 //					ItemContainerContents.EMPTY)));
 
-	public static final DeferredItem<Item> APRON = ITEMS.register("apron", () -> new ApronItem(EDArmorMaterial.WOOL,
-			new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(5))));
+	public static final DeferredItem<Item> APRON = ITEMS.register("apron",
+			() -> new ApronItem(EDArmorMaterial.WOOL,
+					new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(5))
+							.component(ExtraDelightComponents.APRON.get(), new ApronComponent(0))));
 
 	public static final DeferredItem<DynamicToast> DYNAMIC_TOAST = ITEMS.register("dynamic_toast",
 			() -> new DynamicToast(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),

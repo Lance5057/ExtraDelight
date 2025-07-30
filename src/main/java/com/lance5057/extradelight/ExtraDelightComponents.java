@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import java.util.function.Supplier;
 
+import com.lance5057.extradelight.items.components.ApronComponent;
 import com.lance5057.extradelight.items.components.ChillComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 
@@ -33,4 +34,8 @@ public class ExtraDelightComponents {
 			.register("dynamic_food",
 					() -> DataComponentType.<DynamicItemComponent>builder().persistent(DynamicItemComponent.CODEC)
 							.networkSynchronized(DynamicItemComponent.STREAM_CODEC).cacheEncoding().build());
+
+	public static final DeferredHolder<DataComponentType<?>, DataComponentType<ApronComponent>> APRON = COMPONENTS
+			.register("apron", () -> DataComponentType.<ApronComponent>builder().persistent(ApronComponent.CODEC)
+					.networkSynchronized(ApronComponent.STREAM_CODEC).cacheEncoding().build());
 }
