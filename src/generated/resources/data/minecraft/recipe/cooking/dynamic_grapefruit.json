@@ -6,10 +6,10 @@
   },
   "cookingtime": 1,
   "experience": 1.0,
-  "graphic": "glow_berries",
+  "graphic": "grapefruit",
   "ingredients": [
     {
-      "item": "minecraft:glow_berries"
+      "item": "extradelight:sliced_grapefruit"
     }
   ],
   "recipe_book_tab": "meals",

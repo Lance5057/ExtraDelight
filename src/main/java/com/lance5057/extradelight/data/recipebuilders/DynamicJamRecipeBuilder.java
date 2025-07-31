@@ -41,27 +41,30 @@ public class DynamicJamRecipeBuilder implements RecipeBuilder {
 	private final float experience;
 	private final ItemStack container;
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
+	
+	private final String graphic;
 
-	public DynamicJamRecipeBuilder(int count, int cookingTime, float experience, @Nullable ItemLike container) {
-		this(cookingTime, experience, container);
+	public DynamicJamRecipeBuilder(int count, int cookingTime, float experience, @Nullable ItemLike container, String graphic) {
+		this(cookingTime, experience, container, graphic);
 	}
 
-	public DynamicJamRecipeBuilder(int cookingTime, float experience, @Nullable ItemLike container) {
+	public DynamicJamRecipeBuilder(int cookingTime, float experience, @Nullable ItemLike container, String graphic) {
 		this.result = ExtraDelightItems.DYNAMIC_JAM.get();
 		this.resultStack = new ItemStack(ExtraDelightItems.DYNAMIC_JAM.get());
 		this.cookingTime = cookingTime;
 		this.experience = experience;
 		this.container = container != null ? new ItemStack(container) : ItemStack.EMPTY;
 		this.tab = null;
+		this.graphic = graphic;
 	}
 
-	public static DynamicJamRecipeBuilder cookingPotRecipe(int count, int cookingTime, float experience) {
-		return new DynamicJamRecipeBuilder(count, cookingTime, experience, null);
+	public static DynamicJamRecipeBuilder cookingPotRecipe(int count, int cookingTime, float experience, String graphic) {
+		return new DynamicJamRecipeBuilder(count, cookingTime, experience, null, graphic);
 	}
 
 	public static DynamicJamRecipeBuilder cookingPotRecipe(int count, int cookingTime, float experience,
-			ItemLike container) {
-		return new DynamicJamRecipeBuilder(count, cookingTime, experience, container);
+			ItemLike container, String graphic) {
+		return new DynamicJamRecipeBuilder(count, cookingTime, experience, container, graphic);
 	}
 
 	public DynamicJamRecipeBuilder addIngredient(TagKey<Item> tagIn) {
@@ -143,7 +146,7 @@ public class DynamicJamRecipeBuilder implements RecipeBuilder {
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancementBuilder::addCriterion);
 		DynamicJamRecipe recipe = new DynamicJamRecipe("", this.tab, this.ingredients, this.resultStack, this.container,
-				this.experience, this.cookingTime);
+				this.experience, this.cookingTime, this.graphic);
 		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/cooking/")));
 	}
 }

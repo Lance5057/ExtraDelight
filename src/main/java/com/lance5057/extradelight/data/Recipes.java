@@ -4466,31 +4466,49 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void dynamicJamRecipes(RecipeOutput consumer) {
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE)
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "chorus_fruit")
 				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 				.build(consumer, "dynamic_chorus");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE).addIngredient(Ingredient.of(Items.APPLE))
-				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_apple");
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "apple")
+				.addIngredient(Ingredient.of(Items.APPLE)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_apple");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE)
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "melon")
 				.addIngredient(Ingredient.of(Items.MELON_SLICE)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 				.build(consumer, "dynamic_melon");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE)
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "sweet_berries")
 				.addIngredient(Ingredient.of(Items.SWEET_BERRIES)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 				.build(consumer, "dynamic_berries");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE).addIngredient(Ingredient.of(Items.CARROT))
-				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_carrot");
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "carrot")
+				.addIngredient(Ingredient.of(Items.CARROT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_carrot");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE)
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "golden_apple")
 				.addIngredient(Ingredient.of(Items.GOLDEN_APPLE)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 				.build(consumer, "dynamic_golden_apple");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE)
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "glow_berries")
 				.addIngredient(Ingredient.of(Items.GLOW_BERRIES)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 				.build(consumer, "dynamic_glow_berries");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "orange")
+				.addIngredient(Ingredient.of(SummerCitrus.SLICED_ORANGE))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_orange");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "lemon")
+				.addIngredient(Ingredient.of(SummerCitrus.SLICED_LEMON)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_lemon");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "lime")
+				.addIngredient(Ingredient.of(SummerCitrus.SLICED_LIME)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_lime");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "grapefruit")
+				.addIngredient(Ingredient.of(SummerCitrus.SLICED_GRAPEFRUIT))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_grapefruit");
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {

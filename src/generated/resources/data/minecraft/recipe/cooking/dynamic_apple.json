@@ -6,6 +6,7 @@
   },
   "cookingtime": 1,
   "experience": 1.0,
+  "graphic": "apple",
   "ingredients": [
     {
       "item": "minecraft:apple"

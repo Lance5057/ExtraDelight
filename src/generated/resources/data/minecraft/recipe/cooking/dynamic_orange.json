@@ -6,10 +6,10 @@
   },
   "cookingtime": 1,
   "experience": 1.0,
-  "graphic": "glow_berries",
+  "graphic": "orange",
   "ingredients": [
     {
-      "item": "minecraft:glow_berries"
+      "item": "extradelight:sliced_orange"
     }
   ],
   "recipe_book_tab": "meals",

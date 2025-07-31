@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 
 import net.minecraft.network.chat.Component;
@@ -30,14 +31,11 @@ public class DynamicJam extends Item implements IDynamic {
 
 		i.add(base_model);
 
-		ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
+		DynamicItemComponent comp = itemStack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
 		if (comp != null) {
 			{
-				if (comp.getSlots() > 0) {
-					ItemStack s = comp.getStackInSlot(0);
-					String str = s.getItem().getDescriptionId();
-					str = str.substring(str.lastIndexOf('.') + 1);
-					ResourceLocation rc = ExtraDelight.modLoc("extra/dynamics/jam/" + str);
+				if (comp.graphics().size() > 0) {
+					ResourceLocation rc = ExtraDelight.modLoc("extra/dynamics/jam/" + comp.graphics().get(0));
 
 					i.add(rc);
 				} else

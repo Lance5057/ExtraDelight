@@ -6,6 +6,7 @@
   },
   "cookingtime": 1,
   "experience": 1.0,
+  "graphic": "melon",
   "ingredients": [
     {
       "item": "minecraft:melon_slice"

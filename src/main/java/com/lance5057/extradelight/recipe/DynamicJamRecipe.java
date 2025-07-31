@@ -20,7 +20,6 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
@@ -29,19 +28,28 @@ import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
 
 public class DynamicJamRecipe extends CookingPotRecipe {
 
+	private final String graphic;
+
 	public DynamicJamRecipe(String group, CookingPotRecipeBookTab tab, NonNullList<Ingredient> inputItems,
-			ItemStack output, ItemStack container, float experience, int cookTime) {
+			ItemStack output, ItemStack container, float experience, int cookTime, String graphic) {
 		super(group, tab, inputItems, output, container, experience, cookTime);
+		this.graphic = graphic;
+
+	}
+
+	public String getGraphic() {
+		return graphic;
 	}
 
 	@Override
 	public ItemStack getResultItem(HolderLookup.Provider provider) {
 		ItemStack stack = super.getResultItem(provider);
 		if (stack.getItem() instanceof DynamicJam jam) {
+
 			DynamicItemComponent comp = stack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
-			if (comp != null) {
-				comp.addItem(stack);
-			} 
+//			if (comp != null) {
+//				comp.addItem(stack);
+//			}
 //			else
 //				ExtraDelight.logger.error("DynamicJam lost its component!");
 		} else {
@@ -60,8 +68,8 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 			float saturation = 0;
 			List<FoodProperties.PossibleEffect> effects = new ArrayList<FoodProperties.PossibleEffect>();
 
-			NonNullList<ItemStack> l = NonNullList.create();
-			for (int i = 0; i < inv.size()-2; i++) {
+			List<ItemStack> l = new ArrayList<ItemStack>();
+			for (int i = 0; i < inv.size() - 2; i++) {
 				ItemStack s = inv.getItem(i);
 				if (s != null && !s.isEmpty()) {
 					l.add(s);
@@ -77,7 +85,7 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 				}
 			}
 
-			stack.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
+			stack.set(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(List.of(graphic), l));
 
 			FoodProperties food = new FoodProperties(nutrition, saturation / inv.size(), false, 1.6F,
 					java.util.Optional.empty(), effects);
@@ -114,7 +122,8 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 						ItemStack.STRICT_CODEC.optionalFieldOf("container", ItemStack.EMPTY)
 								.forGetter(CookingPotRecipe::getContainerOverride),
 						Codec.FLOAT.optionalFieldOf("experience", 0.0F).forGetter(CookingPotRecipe::getExperience),
-						Codec.INT.optionalFieldOf("cookingtime", 200).forGetter(CookingPotRecipe::getCookTime))
+						Codec.INT.optionalFieldOf("cookingtime", 200).forGetter(CookingPotRecipe::getCookTime),
+						Codec.STRING.optionalFieldOf("graphic", "").forGetter(DynamicJamRecipe::getGraphic))
 						.apply(inst, DynamicJamRecipe::new));
 
 		public static final StreamCodec<RegistryFriendlyByteBuf, DynamicJamRecipe> STREAM_CODEC = StreamCodec
@@ -145,7 +154,9 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 			ItemStack container = ItemStack.OPTIONAL_STREAM_CODEC.decode(buffer);
 			float experienceIn = buffer.readFloat();
 			int cookTimeIn = buffer.readVarInt();
-			return new DynamicJamRecipe(groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+			String graphic = buffer.readUtf();
+			return new DynamicJamRecipe(groupIn, tabIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn,
+					graphic);
 		}
 
 		private static void toNetwork(RegistryFriendlyByteBuf buffer, DynamicJamRecipe recipe) {
@@ -161,6 +172,7 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 			ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, recipe.getOutputContainer());
 			buffer.writeFloat(recipe.getExperience());
 			buffer.writeVarInt(recipe.getCookTime());
+			buffer.writeUtf(recipe.getGraphic());
 		}
 	}
 }
