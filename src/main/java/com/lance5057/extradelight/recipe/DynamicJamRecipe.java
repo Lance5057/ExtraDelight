@@ -20,6 +20,7 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
@@ -44,17 +45,16 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 	@Override
 	public ItemStack getResultItem(HolderLookup.Provider provider) {
 		ItemStack stack = super.getResultItem(provider);
-		if (stack.getItem() instanceof DynamicJam jam) {
-
-			DynamicItemComponent comp = stack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
+//		if (stack.getItem() instanceof DynamicJam jam) {
+//
+//			ItemContainerContents comp = stack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
 //			if (comp != null) {
-//				comp.addItem(stack);
-//			}
-//			else
+//				comp..addItem(stack);
+//			} else
 //				ExtraDelight.logger.error("DynamicJam lost its component!");
-		} else {
-			ExtraDelight.logger.error("DynamicJamRecipe result not DynamicJam!");
-		}
+//		} else {
+//			ExtraDelight.logger.error("DynamicJamRecipe result not DynamicJam!");
+//		}
 
 		return stack;
 	}
@@ -85,7 +85,8 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 				}
 			}
 
-			stack.set(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(List.of(graphic), l));
+			stack.set(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(List.of(graphic)));
+			stack.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
 
 			FoodProperties food = new FoodProperties(nutrition, saturation / inv.size(), false, 1.6F,
 					java.util.Optional.empty(), effects);
