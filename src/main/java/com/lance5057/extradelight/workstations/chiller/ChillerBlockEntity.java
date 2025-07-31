@@ -10,6 +10,7 @@ import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.items.components.ChillComponent;
+import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.FancyTank;
 import com.lance5057.extradelight.workstations.IFancyTankHandler;
@@ -166,12 +167,17 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 			} else {
 				// Because the blasted water bottle has no craftRemainder
 				if (inputItem.getItem() == Items.GLASS_BOTTLE) {
-					FluidStack stack = bowl.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE);
-					bowl.getFluidTank().drain(stack, FluidAction.EXECUTE);
-					// If we just use Items.POTION we get an item called Uncraftable Potion instead
-					// of Water Bottle
-					bowl.inventory.setStackInSlot(DRIP_TRAY_OUT,
-							PotionContents.createItemStack(Items.POTION, Potions.WATER));
+					FluidStack stack = bowl.getDripTray().drain(250, IFluidHandler.FluidAction.SIMULATE);
+
+					if (stack.getAmount() == 250) {
+						bowl.getDripTray().drain(stack, FluidAction.EXECUTE);
+						// If we just use Items.POTION we get an item called Uncraftable Potion instead
+						// of Water Bottle
+						BlockEntityUtils.Inventory.dropItemInWorld(
+								PotionContents.createItemStack(Items.POTION, Potions.WATER), bowl.level,
+								bowl.getBlockPos());
+						inputItem.shrink(1);
+					}
 				}
 			}
 		}
@@ -180,6 +186,7 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 	public static <T extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, T be) {
 		ChillerBlockEntity chiller = (ChillerBlockEntity) be;
 
+		ChillerBlockEntity.drainDripTray(chiller);
 		if (chiller.chilltime > 0) {
 			chiller.chilltime--;
 			chiller.dripTray.fill(new FluidStack(Fluids.WATER, 1), FluidAction.EXECUTE);
