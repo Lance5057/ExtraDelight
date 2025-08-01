@@ -919,17 +919,17 @@ public class SummerCitrus {
 
 		// Feasts
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.GLASS_BOTTLE), new ItemStack(LEMONADE.get()),
+				.feast(Ingredient.of(), new ItemStack(LEMONADE.get()),
 						LEMONADE_TRAY_ITEM.get())
 				.unlockedBy("has_lemonade_tray", InventoryChangeTrigger.TriggerInstance.hasItems(LEMONADE_TRAY_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("lemonade_tray_pull_feast"));
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.GLASS_BOTTLE), new ItemStack(LIMEADE.get()),
+				.feast(Ingredient.of(), new ItemStack(LIMEADE.get()),
 						LIMEADE_TRAY_ITEM.get())
 				.unlockedBy("has_limeade_tray", InventoryChangeTrigger.TriggerInstance.hasItems(LIMEADE_TRAY_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("limeade_tray_pull_feast"));
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.GLASS_BOTTLE), new ItemStack(ORANGEADE.get()),
+				.feast(Ingredient.of(), new ItemStack(ORANGEADE.get()),
 						ORANGEADE_TRAY_ITEM.get())
 				.unlockedBy("has_orangeade_tray", InventoryChangeTrigger.TriggerInstance.hasItems(ORANGEADE_TRAY_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("orangeade_tray_pull_feast"));

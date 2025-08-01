@@ -48,7 +48,7 @@ public class JuicerBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 	private final FluidTank tank = createFluidHandler();
 
 	private FluidTank createFluidHandler() {
-		FluidTank tank = new FluidTank(FluidType.BUCKET_VOLUME) {
+		FluidTank tank = new FluidTank(FluidType.BUCKET_VOLUME * 4) {
 			@Override
 			protected void onContentsChanged() {
 				JuicerBlockEntity.this.requestModelDataUpdate();

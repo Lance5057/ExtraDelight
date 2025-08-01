@@ -2963,10 +2963,10 @@ public class ExtraDelightItems {
 //			() -> new DynamicSandwich(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
 //					ItemContainerContents.EMPTY)));
 
-	public static final DeferredItem<DynamicToast> DYNAMIC_TOAST = ITEMS.register("dynamic_toast",
+	public static final DeferredItem<Item> DYNAMIC_TOAST = ITEMS.register("dynamic_toast",
 			() -> new DynamicToast(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
 					ItemContainerContents.EMPTY)));
-	public static final DeferredItem<DynamicJam> DYNAMIC_JAM = ITEMS.register("dynamic_jam",
+	public static final DeferredItem<Item> DYNAMIC_JAM = ITEMS.register("dynamic_jam",
 			() -> new DynamicJam(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
 					ItemContainerContents.EMPTY)));
 }

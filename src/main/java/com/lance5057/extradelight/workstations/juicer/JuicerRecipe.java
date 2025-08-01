@@ -29,6 +29,10 @@ public class JuicerRecipe extends SingleItemRecipe {
 		return fluidOut;
 	}
 
+	public Ingredient getInput() {
+		return this.ingredient;
+	}
+
 	@Override
 	public boolean matches(SingleRecipeInput input, Level level) {
 		return this.ingredient.test(input.getItem(0));

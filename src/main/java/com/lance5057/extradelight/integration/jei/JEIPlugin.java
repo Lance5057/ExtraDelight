@@ -2,7 +2,6 @@ package com.lance5057.extradelight.integration.jei;
 
 import java.util.List;
 
-import com.lance5057.extradelight.modules.SummerCitrus;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -15,6 +14,7 @@ import com.lance5057.extradelight.integration.jei.categories.DoughShapingRecipeC
 import com.lance5057.extradelight.integration.jei.categories.DryingRackRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.EvaporatorRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.FeastRecipeCategory;
+import com.lance5057.extradelight.integration.jei.categories.JuicerRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MeltingPotRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MixingBowlRecipeCategory;
 import com.lance5057.extradelight.integration.jei.categories.MortarRecipeCategory;
@@ -23,6 +23,7 @@ import com.lance5057.extradelight.integration.jei.categories.ShapedWithJarRecipe
 import com.lance5057.extradelight.integration.jei.categories.ToolOnBlockRecipeCatagory;
 import com.lance5057.extradelight.integration.jei.categories.VatRecipeCategory;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.chiller.ChillerMenu;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlMenu;
@@ -70,7 +71,8 @@ public class JEIPlugin implements IModPlugin {
 				new VatRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new EvaporatorRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
 				new BottleFluidRegistryCategory(registry.getJeiHelpers().getGuiHelper()),
-				new ShapedWithJarRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
+				new ShapedWithJarRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new JuicerRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
 	}
 
 	@Override
@@ -103,6 +105,8 @@ public class JEIPlugin implements IModPlugin {
 				Minecraft.getInstance().level.getRecipeManager()
 						.getAllRecipesFor(ExtraDelightRecipes.BOTTLE_FLUID_REGISTRY.get()).stream()
 						.map(RecipeHolder::value).toList());
+		registry.addRecipes(JuicerRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
+				.getAllRecipesFor(ExtraDelightRecipes.JUICER.get()).stream().map(RecipeHolder::value).toList());
 
 		registry.addIngredientInfo(new ItemStack(ExtraDelightItems.MINT.get()), VanillaTypes.ITEM_STACK,
 				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.mint"));
@@ -154,28 +158,23 @@ public class JEIPlugin implements IModPlugin {
 				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.soybean"));
 		registry.addIngredientInfo(new ItemStack(Fermentation.PICKLE_JUICE.get()), VanillaTypes.ITEM_STACK,
 				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.pickle_juice"));
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.YEAST.get()), new ItemStack(ExtraDelightItems.YEAST_POT.get())),
-									VanillaTypes.ITEM_STACK,
-									Component.translatable(ExtraDelight.MOD_ID + ".jei.info.yeast"));
 		registry.addIngredientInfo(
-				List.of(new ItemStack(SummerCitrus.LEMON_SAPLING.get()),
-						new ItemStack(SummerCitrus.LEMON.get()),
+				List.of(new ItemStack(ExtraDelightItems.YEAST.get()), new ItemStack(ExtraDelightItems.YEAST_POT.get())),
+				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.yeast"));
+		registry.addIngredientInfo(
+				List.of(new ItemStack(SummerCitrus.LEMON_SAPLING.get()), new ItemStack(SummerCitrus.LEMON.get()),
 						new ItemStack(SummerCitrus.LEMON_LEAVES.get())),
 				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.lemon"));
 		registry.addIngredientInfo(
-				List.of(new ItemStack(SummerCitrus.LIME_SAPLING.get()),
-						new ItemStack(SummerCitrus.LIME.get()),
+				List.of(new ItemStack(SummerCitrus.LIME_SAPLING.get()), new ItemStack(SummerCitrus.LIME.get()),
 						new ItemStack(SummerCitrus.LIME_LEAVES.get())),
 				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.lime"));
 		registry.addIngredientInfo(
-				List.of(new ItemStack(SummerCitrus.ORANGE_SAPLING.get()),
-						new ItemStack(SummerCitrus.ORANGE.get()),
+				List.of(new ItemStack(SummerCitrus.ORANGE_SAPLING.get()), new ItemStack(SummerCitrus.ORANGE.get()),
 						new ItemStack(SummerCitrus.ORANGE_LEAVES.get())),
 				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.orange"));
-		registry.addIngredientInfo(
-				List.of(new ItemStack(SummerCitrus.GRAPEFRUIT_SAPLING.get()),
-						new ItemStack(SummerCitrus.GRAPEFRUIT.get()),
-						new ItemStack(SummerCitrus.GRAPEFRUIT_LEAVES.get())),
+		registry.addIngredientInfo(List.of(new ItemStack(SummerCitrus.GRAPEFRUIT_SAPLING.get()),
+				new ItemStack(SummerCitrus.GRAPEFRUIT.get()), new ItemStack(SummerCitrus.GRAPEFRUIT_LEAVES.get())),
 				VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.grapefruit"));
 
 		List<ItemStack> hide = List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
@@ -224,7 +223,7 @@ public class JEIPlugin implements IModPlugin {
 
 		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.EVAPORATOR.getDelegate()),
 				EvaporatorRecipeCategory.TYPE);
-
+		registry.addRecipeCatalyst(new ItemStack(ExtraDelightItems.JUICER.getDelegate()), JuicerRecipeCategory.TYPE);
 	}
 
 	@Override
