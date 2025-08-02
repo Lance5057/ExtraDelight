@@ -639,6 +639,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> PROCESSED_LIME = modTag("processed/lime");
 	public static final TagKey<Item> PROCESSED_ORANGE = modTag("processed/orange");
 	public static final TagKey<Item> PROCESSED_GRAPEFRUIT = modTag("processed/grapefruit");
+	public static final TagKey<Item> PROCESSED_CITRUS = modTag("processed/citrus");
 	public static final TagKey<Item> PROCESSED_MELON = modTag("processed/melon");
 
 	public static final TagKey<Item> CHILLING_ITEMS = modTag("chilling_items");

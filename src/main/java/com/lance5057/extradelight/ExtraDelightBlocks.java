@@ -632,30 +632,30 @@ public class ExtraDelightBlocks {
 			() -> new TapBlock(Block.Properties.ofFullCopy(Blocks.STONE)));
 
 	public static final DeferredBlock<HorizontalPanBlock> SHEET_BLOCK = BLOCKS.register("sheet",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 1.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 1.0D, 15.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> TRAY_BLOCK = BLOCKS.register("tray",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> LOAF_PAN_BLOCK = BLOCKS.register("loaf_pan",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(4.0D, 0.0D, 2.0D, 12.0D, 4.0D, 14.0D), Block.box(2.0D, 0.0D, 4.0D, 14.0D, 4.0D, 12.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> PIE_DISH_BLOCK = BLOCKS.register("pie_dish",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 14.0D), Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 14.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> SQUARE_PAN_BLOCK = BLOCKS.register("square_pan",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D), Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D)));
 	public static final DeferredBlock<BakingStoneBlock> BAKING_STONE_BLOCK = BLOCKS.register("baking_stone",
-			() -> new BakingStoneBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+			() -> new BakingStoneBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.STONE)));
 	public static final DeferredBlock<HorizontalPanBlock> MUFFIN_TIN_BLOCK = BLOCKS.register("muffin_tray",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.STONE),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(3.5D, 0.0D, 1.5D, 12.5D, 2.0D, 14.5D), Block.box(1.5D, 0.0D, 3.5D, 14.5D, 2.0D, 12.5D)));
 	public static final DeferredBlock<HorizontalPanBlock> SERVING_POT_BLOCK = BLOCKS.register("serving_pot",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.LANTERN),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.LANTERN),
 					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> BAR_MOLD = BLOCKS.register("bar_mold",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
 
 	public static final DeferredBlock<BushStageFour> COFFEE_BUSH = ExtraDelightBlocks.BLOCKS.register("coffee_bush",

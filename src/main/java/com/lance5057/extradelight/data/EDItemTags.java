@@ -641,6 +641,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI.get(),
 				Fermentation.CUCUMBER.get());
 
+		tag(CommonTags.FOODS_MILK).add(Fermentation.SOY_MILK.get());
+
 		tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(),
 				ExtraDelightItems.GINGER_CUTTING.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 				ExtraDelightItems.PEANUTS_IN_SHELL.get(), ExtraDelightItems.MALLOW_ROOT.get(),
@@ -666,6 +668,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_ORANGE).add(SummerCitrus.ORANGE.get(), SummerCitrus.SLICED_ORANGE.get());
 		tag(ExtraDelightTags.PROCESSED_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get(),
 				SummerCitrus.SLICED_GRAPEFRUIT.get());
+		tag(ExtraDelightTags.PROCESSED_CITRUS).addTag(ExtraDelightTags.PROCESSED_LEMON)
+				.addTag(ExtraDelightTags.PROCESSED_LIME).addTag(ExtraDelightTags.PROCESSED_ORANGE)
+				.addTag(ExtraDelightTags.PROCESSED_GRAPEFRUIT);
 		tag(ExtraDelightTags.PROCESSED_MELON).add(Items.MELON_SLICE, SummerCitrus.MELON_CHUNKS.get());
 		tag(ExtraDelightTags.CHILLING_ITEMS).add(Items.BLUE_ICE, Items.PACKED_ICE, Items.ICE, Items.SNOWBALL,
 				SummerCitrus.ICE_CUBES.get());
@@ -901,9 +906,21 @@ public class EDItemTags extends ItemTagsProvider {
 				Fermentation.CUCUMBER_SALAD.get(), Fermentation.MISO_SOUP.get(), Fermentation.NATTO_AND_RICE.get(),
 				Fermentation.SAUERKRAUT_SOUP.get(), Fermentation.YEAST_SPREAD.get(), Fermentation.PICKLE_JUICE.get(),
 				Fermentation.SAUERKRAUT_AND_SAUSAGE.get(), Fermentation.MORKOVCHA.get(),
-				Fermentation.ZUPA_OGORKOWA.get(), Fermentation.KIMCHI_FRIED_RICE.get(), Fermentation.KONGJANG.get());
-
-		tag(CommonTags.FOODS_MILK).add(Fermentation.SOY_MILK.get());
+				Fermentation.ZUPA_OGORKOWA.get(), Fermentation.KIMCHI_FRIED_RICE.get(), Fermentation.KONGJANG.get(),
+				SummerCitrus.LEMON_JUICE.get(), SummerCitrus.LIME_JUICE.get(), SummerCitrus.ORANGE_JUICE.get(),
+				SummerCitrus.GRAPEFRUIT_JUICE.get(), SummerCitrus.STIFF_PEAKS.get(), SummerCitrus.EGG_WHITE.get(),
+				SummerCitrus.LEMON_CURD.get(), SummerCitrus.LEMON_MERINGUE_PIE_ITEM.get(),
+				SummerCitrus.KEY_LIME_PIE_ITEM.get(), SummerCitrus.LEMONADE.get(), SummerCitrus.LIMEADE.get(),
+				SummerCitrus.ORANGEADE.get(), SummerCitrus.MELON_GAZPACHO.get(), SummerCitrus.THAI_MELON_SALAD.get(),
+				SummerCitrus.DALGONA_COFFEE.get(), SummerCitrus.GRAPEFRUIT_BEETROOT_SALAD.get(),
+				SummerCitrus.CITRUS_ONION_SALAD.get(), SummerCitrus.MELON_FRUIT_SALAD_SERVING.get(),
+				SummerCitrus.LEMON_CUCUMBER_CAKE_ITEM.get(), SummerCitrus.BAKED_COD_SERVING.get(),
+				SummerCitrus.MELON_LAYER_CAKE_ITEM.get(), SummerCitrus.GRAPEFRUIT_SORBET.get(),
+				SummerCitrus.LEMON_DELICIOUS.get(), SummerCitrus.ORANGE_CHICKEN.get(),
+				SummerCitrus.MELON_RIND_STIRFRY.get(), SummerCitrus.LIME_SOUFFLE.get(),
+				SummerCitrus.CHEESE_SOUFFLE.get(), SummerCitrus.PRESERVED_LEMON_PASTA.get(),
+				SummerCitrus.MELON_LIME_GLAZED_CHICKEN.get(), SummerCitrus.KYIV_CAKE_ITEM.get(),
+				SummerCitrus.RAW_BAKED_ALASKA_ITEM.get(), SummerCitrus.BAKED_ALASKA_ITEM.get());
 
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);

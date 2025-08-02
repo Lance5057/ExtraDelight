@@ -25,6 +25,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add("tooltip.see_more", "Shift for more...");
 		this.add("dynamic.toast", "Dynamic Toast");
+		this.add("dynamic.jam", "Dynamic Jam");
 
 		this.add("farmersdelight.tooltip.oven.empty", "");
 		this.add("container.doughshaper", "Dough Shaping");
@@ -135,6 +136,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.processed.cabbage", "Processed Cabbage");
 		this.add("tag.item.extradelight.processed.carrot", "Processed Carrot");
 		this.add("tag.item.extradelight.processed.chili", "Processed Chili");
+		this.add("tag.item.extradelight.processed.citrus", "Processed Citrus");
 		this.add("tag.item.extradelight.processed.cucumber", "Processed Cucumber");
 		this.add("tag.item.extradelight.processed.fruit", "Processed Fruit");
 		this.add("tag.item.extradelight.processed.garlic", "Processed Garlic");
@@ -1387,6 +1389,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.bottlefluid", "Decanting");
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
+		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "%s %s");
+		this.add("extradelight.jam", "Jam");
+		this.add("extradelight.marmalade", "Marmalade");
 
 		this.add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "Potted Cinnamon Sapling");
 		this.add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "Potted Hazelnut Sapling");

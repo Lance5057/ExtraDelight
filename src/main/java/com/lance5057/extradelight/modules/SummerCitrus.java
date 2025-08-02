@@ -37,6 +37,7 @@ import com.lance5057.extradelight.util.EDItemGenerator;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
@@ -45,13 +46,9 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BannerPatternItem;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -94,33 +91,19 @@ import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
+import java.util.List;
+
 public class SummerCitrus {
-	public static final DeferredBlock<Block> ORANGE_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
-			.register("orange_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
-	public static final DeferredBlock<Block> LEMON_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
-			.register("lemon_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
-	public static final DeferredBlock<Block> LIME_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register("lime_petal_litter",
-			() -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
-	public static final DeferredBlock<Block> GRAPEFRUIT_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register(
-			"grapefruit_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
-
-	public static final DeferredItem<Item> ORANGE_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
-			"orange_petal_litter_item",
-			() -> new BlockItem(SummerCitrus.ORANGE_PETAL_LITTER.get(), new Item.Properties()));
-	public static final DeferredItem<Item> LEMON_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
-			"lemon_petal_litter_item",
-			() -> new BlockItem(SummerCitrus.LEMON_PETAL_LITTER.get(), new Item.Properties()));
-	public static final DeferredItem<Item> LIME_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
-			"lime_petal_litter_item", () -> new BlockItem(SummerCitrus.LIME_PETAL_LITTER.get(), new Item.Properties()));
-	public static final DeferredItem<Item> GRAPEFRUIT_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
-			"grapefruit_petal_litter_item",
-			() -> new BlockItem(SummerCitrus.GRAPEFRUIT_PETAL_LITTER.get(), new Item.Properties()));
-
 	// Lemon
 	public static final DeferredItem<Item> LEMON = EDItemGenerator
 			.register("lemon", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+	public static final DeferredBlock<Block> LEMON_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
+			.register("lemon_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
 	public static final DeferredBlock<FruitLeafBlock> LEMON_LEAVES = ExtraDelightBlocks.BLOCKS.register("lemon_leaves",
 			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), LEMON, LEMON_PETAL_LITTER));
+	public static final DeferredItem<Item> LEMON_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"lemon_petal_litter_item",
+			() -> new BlockItem(SummerCitrus.LEMON_PETAL_LITTER.get(), new Item.Properties()));
 	public static final DeferredItem<Item> LEMON_LEAVES_ITEM = ExtraDelightItems.ITEMS.register("lemon_leaves",
 			() -> new BlockItem(LEMON_LEAVES.get(), new Item.Properties()));
 	public static final DeferredBlock<SaplingBlock> LEMON_SAPLING = ExtraDelightBlocks.BLOCKS.register("lemon_sapling",
@@ -151,6 +134,10 @@ public class SummerCitrus {
 	// Lime
 	public static final DeferredItem<Item> LIME = EDItemGenerator
 			.register("lime", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+	public static final DeferredBlock<Block> LIME_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register("lime_petal_litter",
+			() -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+	public static final DeferredItem<Item> LIME_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"lime_petal_litter_item", () -> new BlockItem(SummerCitrus.LIME_PETAL_LITTER.get(), new Item.Properties()));
 	public static final DeferredBlock<FruitLeafBlock> LIME_LEAVES = ExtraDelightBlocks.BLOCKS.register("lime_leaves",
 			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), LIME, LIME_PETAL_LITTER));
 	public static final DeferredItem<Item> LIME_LEAVES_ITEM = ExtraDelightItems.ITEMS.register("lime_leaves",
@@ -182,6 +169,11 @@ public class SummerCitrus {
 	// Orange
 	public static final DeferredItem<Item> ORANGE = EDItemGenerator
 			.register("orange", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+	public static final DeferredBlock<Block> ORANGE_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
+			.register("orange_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+	public static final DeferredItem<Item> ORANGE_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"orange_petal_litter_item",
+			() -> new BlockItem(SummerCitrus.ORANGE_PETAL_LITTER.get(), new Item.Properties()));
 	public static final DeferredBlock<FruitLeafBlock> ORANGE_LEAVES = ExtraDelightBlocks.BLOCKS.register(
 			"orange_leaves",
 			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), ORANGE, ORANGE_PETAL_LITTER));
@@ -215,6 +207,11 @@ public class SummerCitrus {
 	// Grapefruit
 	public static final DeferredItem<Item> GRAPEFRUIT = EDItemGenerator
 			.register("grapefruit", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+	public static final DeferredBlock<Block> GRAPEFRUIT_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register(
+			"grapefruit_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+	public static final DeferredItem<Item> GRAPEFRUIT_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"grapefruit_petal_litter_item",
+			() -> new BlockItem(SummerCitrus.GRAPEFRUIT_PETAL_LITTER.get(), new Item.Properties()));
 	public static final DeferredBlock<FruitLeafBlock> GRAPEFRUIT_LEAVES = ExtraDelightBlocks.BLOCKS
 			.register("grapefruit_leaves", () -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
 					GRAPEFRUIT, GRAPEFRUIT_PETAL_LITTER));
@@ -298,7 +295,7 @@ public class SummerCitrus {
 			.register("key_lime_pie_item", () -> new BlockItem(KEY_LIME_PIE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
 	public static final DeferredItem<Item> LEMONADE = EDItemGenerator
-			.register("lemonade", () -> new GlowberryJuiceItem(ExtraDelightItems.drinkItem())).drink().setHydration(20)
+			.register("lemonade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink().setHydration(20)
 			.setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LEMONADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"lemonade_tray",
@@ -308,7 +305,7 @@ public class SummerCitrus {
 			.register("lemonade_tray_item", () -> new BlockItem(LEMONADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> LIMEADE = EDItemGenerator
-			.register("limeade", () -> new GlowberryJuiceItem(ExtraDelightItems.drinkItem())).drink().setHydration(20)
+			.register("limeade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink().setHydration(20)
 			.setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LIMEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"limeade_tray",
@@ -318,7 +315,7 @@ public class SummerCitrus {
 			.register("limeade_tray_item", () -> new BlockItem(LIMEADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> ORANGEADE = EDItemGenerator
-			.register("orangeade", () -> new GlowberryJuiceItem(ExtraDelightItems.drinkItem())).drink().setHydration(20)
+			.register("orangeade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink().setHydration(20)
 			.setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> ORANGEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"orangeade_tray",
@@ -480,7 +477,15 @@ public class SummerCitrus {
 						if (s.getValue(RawBakedAlaskaBlock.ON_FIRE))
 							return 10;
 						return 0;
-					})));
+					})){
+				@Override
+				public void appendHoverText(ItemStack stack, Item.TooltipContext context,
+											List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+					tooltipComponents.add(Component.literal("")
+							.append(Component.translatable(ExtraDelight.MOD_ID + ".raw_baked_alaska.tooltip"))
+							.withStyle(ChatFormatting.GOLD));
+				}
+			});
 	public static final DeferredItem<Item> RAW_BAKED_ALASKA_ITEM = EDItemGenerator
 			.register("raw_baked_alaska_item", () -> new BlockItem(RAW_BAKED_ALASKA.get(), new Item.Properties()))
 			.finish();
@@ -886,21 +891,6 @@ public class SummerCitrus {
 							.renderType("cutout"))
 					.rotationY(270).build();
 		});
-
-//		bsp.simpleBlock(ORANGE_PETAL_LITTER.get(),
-//				bsp.models().carpet("orange_petal_litter", bsp.modLoc("block/crops/fruit/orange/orange_petal_litter"))
-//						.renderType("cutout"));
-//		bsp.simpleBlock(LEMON_PETAL_LITTER.get(),
-//				bsp.models().carpet("lemon_petal_litter", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter"))
-//						.renderType("cutout"));
-//		bsp.simpleBlock(LIME_PETAL_LITTER.get(),
-//				bsp.models().carpet("lime_petal_litter", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter"))
-//						.renderType("cutout"));
-//		bsp.simpleBlock(GRAPEFRUIT_PETAL_LITTER.get(),
-//				bsp.models()
-//						.carpet("grapefruit_petal_litter",
-//								bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter"))
-//						.renderType("cutout"));
 	}
 
 	public static void picnicBasket(BlockStateProvider bsp, PicnicBasketBlock block) {
@@ -1042,11 +1032,11 @@ public class SummerCitrus {
 
 		ItemModels.forItem(tmp, CITRUS_RIND_PATTERN_ITEM, "citrus_banner_pattern");
 
-		ItemModels.forBlockItemFlat(tmp, GRAPEFRUIT_PETAL_LITTER_ITEM,
-				"crops/fruit/grapefruit/grapefruit_petal_litter");
 		ItemModels.forBlockItemFlat(tmp, LEMON_PETAL_LITTER_ITEM, "crops/fruit/lemon/lemon_petal_litter");
 		ItemModels.forBlockItemFlat(tmp, LIME_PETAL_LITTER_ITEM, "crops/fruit/lime/lime_petal_litter");
 		ItemModels.forBlockItemFlat(tmp, ORANGE_PETAL_LITTER_ITEM, "crops/fruit/orange/orange_petal_litter");
+		ItemModels.forBlockItemFlat(tmp, GRAPEFRUIT_PETAL_LITTER_ITEM,
+				"crops/fruit/grapefruit/grapefruit_petal_litter");
 	}
 
 	public final static int dayTick = 24000;
@@ -1479,6 +1469,7 @@ public class SummerCitrus {
 
 		lp.add(LEMON.get(), "Lemon");
 		lp.add(LEMON_LEAVES.get(), "Lemon Leaves");
+		lp.add(LEMON_PETAL_LITTER.get(), "Lemon Petals");
 		lp.add(LEMON_SAPLING.get(), "Lemon Sapling");
 		lp.add(POTTED_LEMON_SAPLING.get(), "Potted Lemon Sapling");
 		lp.add(LEMON_JUICE.get(), "Lemon Juice");
@@ -1491,6 +1482,7 @@ public class SummerCitrus {
 
 		lp.add(LIME.get(), "Lime");
 		lp.add(LIME_LEAVES.get(), "Lime Leaves");
+		lp.add(LIME_PETAL_LITTER.get(), "Lime Petals");
 		lp.add(LIME_SAPLING.get(), "Lime Sapling");
 		lp.add(POTTED_LIME_SAPLING.get(), "Potted Lime Sapling");
 		lp.add(LIME_JUICE.get(), "Lime Juice");
@@ -1503,6 +1495,7 @@ public class SummerCitrus {
 
 		lp.add(ORANGE.get(), "Orange");
 		lp.add(ORANGE_LEAVES.get(), "Orange Leaves");
+		lp.add(ORANGE_PETAL_LITTER.get(), "Orange Petals");
 		lp.add(ORANGE_SAPLING.get(), "Orange Sapling");
 		lp.add(POTTED_ORANGE_SAPLING.get(), "Potted Orange Sapling");
 		lp.add(ORANGE_JUICE.get(), "Orange Juice");
@@ -1515,6 +1508,7 @@ public class SummerCitrus {
 
 		lp.add(GRAPEFRUIT.get(), "Grapefruit");
 		lp.add(GRAPEFRUIT_LEAVES.get(), "Grapefruit Leaves");
+		lp.add(GRAPEFRUIT_PETAL_LITTER.get(), "Grapefruit Petals");
 		lp.add(GRAPEFRUIT_SAPLING.get(), "Grapefruit Sapling");
 		lp.add(POTTED_GRAPEFRUIT_SAPLING.get(), "Potted Grapefruit Sapling");
 		lp.add(GRAPEFRUIT_JUICE.get(), "Grapefruit Juice");
@@ -1584,6 +1578,7 @@ public class SummerCitrus {
 		lp.add(KYIV_CAKE.get(), "Kyiv Cake");
 		lp.add(KYIV_CAKE_SLICE.get(), "Slice of Kyiv Cake");
 		lp.add(RAW_BAKED_ALASKA.get(), "Un-Baked Alaska");
+		lp.add(ExtraDelight.MOD_ID + ".raw_baked_alaska.tooltip", "Ignite me!");
 		lp.add(BAKED_ALASKA.get(), "Baked Alaska");
 		lp.add(BAKED_ALASKA_SERVING.get(), "Portion of Baked Alaska");
 
@@ -1606,5 +1601,13 @@ public class SummerCitrus {
 
 		lp.add(CITRUS_RIND_PATTERN_ITEM.get(), "Banner Pattern");
 		lp.add("item.extradelight.citrus_rind_banner_item.desc", "Citrus Rind");
+		lp.add("painting.extradelight.big_lemon_slice.title", "Big Lemon Slice");
+		lp.add("painting.extradelight.big_lemon_slice.author", "Lance5057");
+		lp.add("painting.extradelight.big_lime_slice.title", "Big Lime Slice");
+		lp.add("painting.extradelight.big_lime_slice.author", "Lance5057");
+		lp.add("painting.extradelight.big_orange_slice.title", "Big Orange Slice");
+		lp.add("painting.extradelight.big_orange_slice.author", "Lance5057");
+		lp.add("painting.extradelight.big_grapefruit_slice.title", "Big Grapefruit Slice");
+		lp.add("painting.extradelight.big_grapefruit_slice.author", "Lance5057");
 	}
 }
