@@ -113,6 +113,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		juicerRecipes(consumer);
 
 		dynamicJamRecipes(consumer);
+		dynamicToast(consumer);
 
 		SummerCitrus.Recipes(consumer);
 		Fermentation.Recipes(consumer);
@@ -3795,10 +3796,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		bundleItem9(Ingredient.of(ExtraDelightItems.GARLIC), ExtraDelightItems.GARLIC_CRATE.get(),
 				ExtraDelightItems.GARLIC.get(), consumer, "garlic");
 
-		DynamicToastRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TOAST.toStack()).pattern("ts")
-				.define('t', ExtraDelightTags.TOAST).define('s', ExtraDelightTags.TOAST_TOPPING)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
-				.save(consumer, EDLoc("dynamic_toast"));
 	}
 
 	public static void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -4509,6 +4506,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "grapefruit")
 				.addIngredient(Ingredient.of(SummerCitrus.SLICED_GRAPEFRUIT))
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_grapefruit");
+	}
+
+	private void dynamicToast(RecipeOutput consumer) {
+		DynamicToastRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TOAST.toStack(), "dynamic")
+				.pattern("ts").define('t', ExtraDelightTags.TOAST).define('s', ExtraDelightItems.DYNAMIC_JAM)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer, EDLoc("dynamic_toast_dynamic_jam"));
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {

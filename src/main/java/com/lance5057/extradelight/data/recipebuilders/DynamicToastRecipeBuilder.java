@@ -37,15 +37,17 @@ public class DynamicToastRecipeBuilder implements RecipeBuilder {
 	@Nullable
 	private String group;
 	private boolean showNotification = true;
+	private final String graphic;
 
-	public DynamicToastRecipeBuilder(RecipeCategory p_249996_, ItemStack result) {
+	public DynamicToastRecipeBuilder(RecipeCategory p_249996_, ItemStack result, String graphic) {
 		this.category = p_249996_;
 		this.result = result;
 		this.resultStack = result;
+		this.graphic = graphic;
 	}
 
-	public static DynamicToastRecipeBuilder shaped(RecipeCategory p_251325_, ItemStack result) {
-		return new DynamicToastRecipeBuilder(p_251325_, result);
+	public static DynamicToastRecipeBuilder shaped(RecipeCategory p_251325_, ItemStack result, String graphic) {
+		return new DynamicToastRecipeBuilder(p_251325_, result, graphic);
 	}
 
 	/**
@@ -116,7 +118,7 @@ public class DynamicToastRecipeBuilder implements RecipeBuilder {
 				.rewards(AdvancementRewards.Builder.recipe(id)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancement$builder::addCriterion);
 		DynamicToastRecipe shapedrecipe = new DynamicToastRecipe(Objects.requireNonNullElse(this.group, ""),
-				RecipeBuilder.determineBookCategory(this.category), shapedrecipepattern, this.resultStack);
+				RecipeBuilder.determineBookCategory(this.category), shapedrecipepattern, this.resultStack, this.graphic);
 		recipeOutput.accept(id, shapedrecipe,
 				advancement$builder.build(id.withPrefix("recipes/" + this.category.getFolderName() + "/")));
 	}

@@ -1,9 +1,10 @@
 {
   "type": "extradelight:dynamic_toast",
   "category": "misc",
+  "graphic": "dynamic",
   "key": {
     "s": {
-      "tag": "extradelight:toast_topping"
+      "item": "extradelight:dynamic_jam"
     },
     "t": {
       "tag": "c:toast"

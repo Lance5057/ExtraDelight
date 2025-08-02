@@ -78,6 +78,8 @@ public class ExtraDelight {
 		ExtraDelightFeatures.FEATURES.register(modEventBus);
 
 		ExtraDelightMobEffects.register(modEventBus);
+		
+		ExtraDelightParticles.PARTICLE_TYPES.register(modEventBus);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {

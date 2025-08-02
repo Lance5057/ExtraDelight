@@ -1,11 +1,15 @@
 package com.lance5057.extradelight.particles;
 
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.ParticleRenderType;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.client.particle.TextureSheetParticle;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
+import vectorwing.farmersdelight.client.particle.StarParticle;
 
 @OnlyIn(Dist.CLIENT)
 public class PetalParticle extends TextureSheetParticle {
@@ -20,13 +24,13 @@ public class PetalParticle extends TextureSheetParticle {
 
 	protected PetalParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
 		super(level, x, y, z);
-		this.setSprite(spriteSet.get(this.random.nextInt(12), 12));
+		this.setSprite(spriteSet.get(this.random.nextInt(4), 4));
 		this.rotSpeed = (float) Math.toRadians(this.random.nextBoolean() ? -30.0 : 30.0);
 		this.particleRandom = this.random.nextFloat();
 		this.spinAcceleration = (float) Math.toRadians(this.random.nextBoolean() ? -5.0 : 5.0);
 		this.lifetime = 300;
 		this.gravity = 7.5E-4F;
-		float f = this.random.nextBoolean() ? 0.05F : 0.075F;
+		float f = this.random.nextBoolean() ? 0.075F : 0.1F;
 		this.quadSize = f;
 		this.setSize(f, f);
 		this.friction = 1.0F;
@@ -69,6 +73,23 @@ public class PetalParticle extends TextureSheetParticle {
 				this.yd = this.yd * (double) this.friction;
 				this.zd = this.zd * (double) this.friction;
 			}
+		}
+	}
+	
+	public static class Factory implements ParticleProvider<SimpleParticleType>
+	{
+		private final SpriteSet spriteSet;
+
+		public Factory(SpriteSet sprite) {
+			this.spriteSet = sprite;
+		}
+
+		@Override
+		public Particle createParticle(SimpleParticleType typeIn, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+			PetalParticle particle = new PetalParticle(level, x, y + 0.3D, z, spriteSet);
+			particle.pickSprite(this.spriteSet);
+			particle.setColor(1.0F, 1.0F, 1.0F);
+			return particle;
 		}
 	}
 }

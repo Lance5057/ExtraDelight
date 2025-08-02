@@ -662,6 +662,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(SummerCitrus.PURPLE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 
 		this.dropSelf(SummerCitrus.RAW_BAKED_ALASKA.get());
+		
+		this.dropSelf(SummerCitrus.GRAPEFRUIT_PETAL_LITTER.get());
+		this.dropSelf(SummerCitrus.ORANGE_PETAL_LITTER.get());
+		this.dropSelf(SummerCitrus.LIME_PETAL_LITTER.get());
+		this.dropSelf(SummerCitrus.LEMON_PETAL_LITTER.get());
+		
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {

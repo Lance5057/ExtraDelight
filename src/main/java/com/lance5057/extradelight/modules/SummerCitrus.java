@@ -59,6 +59,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
+import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -578,6 +579,27 @@ public class SummerCitrus {
 			"citrus_rind_banner_item",
 			() -> new BannerPatternItem(ExtraDelightBanners.CITRUS_PATTERN_TAG, new Item.Properties().stacksTo(1)));
 
+	public static final DeferredBlock<CarpetBlock> ORANGE_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
+			.register("orange_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+	public static final DeferredBlock<CarpetBlock> LEMON_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
+			.register("lemon_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+	public static final DeferredBlock<CarpetBlock> LIME_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
+			.register("lime_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+	public static final DeferredBlock<CarpetBlock> GRAPEFRUIT_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register(
+			"grapefruit_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+
+	public static final DeferredItem<Item> ORANGE_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"orange_petal_litter_item",
+			() -> new BlockItem(SummerCitrus.ORANGE_PETAL_LITTER.get(), new Item.Properties()));
+	public static final DeferredItem<Item> LEMON_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"lemon_petal_litter_item",
+			() -> new BlockItem(SummerCitrus.LEMON_PETAL_LITTER.get(), new Item.Properties()));
+	public static final DeferredItem<Item> LIME_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"lime_petal_litter_item", () -> new BlockItem(SummerCitrus.LIME_PETAL_LITTER.get(), new Item.Properties()));
+	public static final DeferredItem<Item> GRAPEFRUIT_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"grapefruit_petal_litter_item",
+			() -> new BlockItem(SummerCitrus.GRAPEFRUIT_PETAL_LITTER.get(), new Item.Properties()));
+
 	public static void blockModels(BlockStateProvider bsp) {
 		BlockModels.fruitLeafBlock(bsp, LEMON_LEAVES.get(), "lemon");
 		bsp.simpleBlock(LEMON_SAPLING.get(), new ConfiguredModel(bsp.models()
@@ -709,6 +731,21 @@ public class SummerCitrus {
 				return ConfiguredModel.builder()
 						.modelFile(bsp.models().getExistingFile(bsp.modLoc("block/baked_alaska_raw"))).build();
 		});
+
+		bsp.simpleBlock(ORANGE_PETAL_LITTER.get(),
+				bsp.models().carpet("orange_petal_litter", bsp.modLoc("block/crops/fruit/orange/orange_petal_litter"))
+						.renderType("cutout"));
+		bsp.simpleBlock(LEMON_PETAL_LITTER.get(),
+				bsp.models().carpet("lemon_petal_litter", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter"))
+						.renderType("cutout"));
+		bsp.simpleBlock(LIME_PETAL_LITTER.get(),
+				bsp.models().carpet("lime_petal_litter", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter"))
+						.renderType("cutout"));
+		bsp.simpleBlock(GRAPEFRUIT_PETAL_LITTER.get(),
+				bsp.models()
+						.carpet("grapefruit_petal_litter",
+								bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter"))
+						.renderType("cutout"));
 	}
 
 	public static void picnicBasket(BlockStateProvider bsp, PicnicBasketBlock block) {
@@ -849,6 +886,11 @@ public class SummerCitrus {
 		ItemModels.forBlockItem(tmp, PURPLE_PICNIC_BASKET_ITEM, "purple_picnic_basket");
 
 		ItemModels.forItem(tmp, CITRUS_RIND_PATTERN_ITEM, "citrus_banner_pattern");
+		
+		ItemModels.forBlockItemFlat(tmp, GRAPEFRUIT_PETAL_LITTER_ITEM, "crops/fruit/grapefruit/grapefruit_petal_litter");
+		ItemModels.forBlockItemFlat(tmp, LEMON_PETAL_LITTER_ITEM, "crops/fruit/lemon/lemon_petal_litter");
+		ItemModels.forBlockItemFlat(tmp, LIME_PETAL_LITTER_ITEM, "crops/fruit/lime/lime_petal_litter");
+		ItemModels.forBlockItemFlat(tmp, ORANGE_PETAL_LITTER_ITEM, "crops/fruit/orange/orange_petal_litter");
 	}
 
 	public final static int dayTick = 24000;
@@ -872,21 +914,20 @@ public class SummerCitrus {
 		Recipes.bundleItem9(Ingredient.of(ExtraDelightTags.GRAPEFRUIT), GRAPEFRUIT_CRATE_ITEM.get(), GRAPEFRUIT.get(),
 				consumer, "grapefruit");
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LEMONADE_TRAY_ITEM.get())
-				.requires(LEMONADE.get(), 4).requires(Items.GLASS_BOTTLE)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LEMONADE_TRAY_ITEM.get()).requires(LEMONADE.get(), 4)
+				.requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_lemonade", InventoryChangeTrigger.TriggerInstance.hasItems(LEMONADE.get()))
 				.save(consumer, ExtraDelight.modLoc("lemonade_tray"));
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LIMEADE_TRAY_ITEM.get())
-				.requires(LIMEADE.get(), 4).requires(Items.GLASS_BOTTLE)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LIMEADE_TRAY_ITEM.get()).requires(LIMEADE.get(), 4)
+				.requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_limeade", InventoryChangeTrigger.TriggerInstance.hasItems(LIMEADE.get()))
 				.save(consumer, ExtraDelight.modLoc("limeade_tray"));
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ORANGEADE_TRAY_ITEM.get())
-				.requires(ORANGEADE.get(), 4).requires(Items.GLASS_BOTTLE)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ORANGEADE_TRAY_ITEM.get()).requires(ORANGEADE.get(), 4)
+				.requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_orangeade", InventoryChangeTrigger.TriggerInstance.hasItems(ORANGEADE.get()))
 				.save(consumer, ExtraDelight.modLoc("orangeade_tray"));
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, RAW_BAKED_ALASKA_ITEM.get()).pattern("sps").pattern("pip")
-				.pattern("ccc")
-				.define('s', Items.SUGAR).define('p', STIFF_PEAKS)
+				.pattern("ccc").define('s', Items.SUGAR).define('p', STIFF_PEAKS)
 				.define('i', ExtraDelightTags.ICE_CREAM).define('c', ExtraDelightTags.CAKE_SLICE)
 				.unlockedBy("has_peaks", InventoryChangeTrigger.TriggerInstance.hasItems(STIFF_PEAKS.get()))
 				.save(consumer, ExtraDelight.modLoc("baked_alaska"));
@@ -918,25 +959,23 @@ public class SummerCitrus {
 				.save(consumer, ExtraDelight.modLoc("kyiv_cake_from_slice"));
 
 		// Feasts
-		FeastRecipeBuilder
-				.feast(Ingredient.of(), new ItemStack(LEMONADE.get()),
-						LEMONADE_TRAY_ITEM.get())
-				.unlockedBy("has_lemonade_tray", InventoryChangeTrigger.TriggerInstance.hasItems(LEMONADE_TRAY_ITEM.get()))
+		FeastRecipeBuilder.feast(Ingredient.of(), new ItemStack(LEMONADE.get()), LEMONADE_TRAY_ITEM.get())
+				.unlockedBy("has_lemonade_tray",
+						InventoryChangeTrigger.TriggerInstance.hasItems(LEMONADE_TRAY_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("lemonade_tray_pull_feast"));
-		FeastRecipeBuilder
-				.feast(Ingredient.of(), new ItemStack(LIMEADE.get()),
-						LIMEADE_TRAY_ITEM.get())
-				.unlockedBy("has_limeade_tray", InventoryChangeTrigger.TriggerInstance.hasItems(LIMEADE_TRAY_ITEM.get()))
+		FeastRecipeBuilder.feast(Ingredient.of(), new ItemStack(LIMEADE.get()), LIMEADE_TRAY_ITEM.get())
+				.unlockedBy("has_limeade_tray",
+						InventoryChangeTrigger.TriggerInstance.hasItems(LIMEADE_TRAY_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("limeade_tray_pull_feast"));
-		FeastRecipeBuilder
-				.feast(Ingredient.of(), new ItemStack(ORANGEADE.get()),
-						ORANGEADE_TRAY_ITEM.get())
-				.unlockedBy("has_orangeade_tray", InventoryChangeTrigger.TriggerInstance.hasItems(ORANGEADE_TRAY_ITEM.get()))
+		FeastRecipeBuilder.feast(Ingredient.of(), new ItemStack(ORANGEADE.get()), ORANGEADE_TRAY_ITEM.get())
+				.unlockedBy("has_orangeade_tray",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ORANGEADE_TRAY_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("orangeade_tray_pull_feast"));
 		FeastRecipeBuilder
 				.feast(Ingredient.of(Items.BOWL), new ItemStack(MELON_FRUIT_SALAD_SERVING.get()),
 						MELON_FRUIT_SALAD_ITEM.get())
-				.unlockedBy("has_melon_salad", InventoryChangeTrigger.TriggerInstance.hasItems(MELON_FRUIT_SALAD_ITEM.get()))
+				.unlockedBy("has_melon_salad",
+						InventoryChangeTrigger.TriggerInstance.hasItems(MELON_FRUIT_SALAD_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("melon_salad_pull_feast"));
 		FeastRecipeBuilder
 				.feast(Ingredient.of(Items.BOWL), new ItemStack(BAKED_COD_SERVING.get()), BAKED_COD_ITEM.get())

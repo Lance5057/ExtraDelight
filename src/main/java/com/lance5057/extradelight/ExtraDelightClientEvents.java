@@ -31,6 +31,7 @@ import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLo
 import com.lance5057.extradelight.items.jar.JarItemModel;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
+import com.lance5057.extradelight.particles.PetalParticle;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
@@ -61,12 +62,14 @@ import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
@@ -114,6 +117,11 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JUICER.get(), JuicerRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.PICNIC_BASKET.get(), PicnicBasketRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.FRUIT_BOWL.get(), FruitBowlRenderer::new);
+	}
+
+	@SubscribeEvent(priority = EventPriority.LOWEST)
+	public static void registerParticles(RegisterParticleProvidersEvent event) {
+		Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.PETALS.get(), PetalParticle.Factory::new);
 	}
 
 	@SubscribeEvent

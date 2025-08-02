@@ -2957,12 +2957,6 @@ public class ExtraDelightItems {
 					() -> new GarlicTooltipItem(stack16FoodItem(EDFoods.PENNE_ALL_ARRABBIATA), true))
 			.advancementMeal().finish();
 
-//	public static final DeferredItem<DynamicJam> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new DynamicJam(
-//			new Item.Properties().component(ExtraDelightComponents.DYNAMIC_FOOD.get(), DynamicItemComponent.EMPTY)));
-//	public static final DeferredItem<DynamicSandwich> DYNAMIC_TEST2 = ITEMS.register("dynamic_test2",
-//			() -> new DynamicSandwich(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
-//					ItemContainerContents.EMPTY)));
-
 	public static final DeferredItem<Item> DYNAMIC_TOAST = ITEMS.register("dynamic_toast",
 			() -> new DynamicToast(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
 					ItemContainerContents.EMPTY)));

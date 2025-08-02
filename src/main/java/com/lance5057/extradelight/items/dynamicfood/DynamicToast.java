@@ -1,11 +1,12 @@
 package com.lance5057.extradelight.items.dynamicfood;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
+import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 
 import net.minecraft.network.chat.Component;
@@ -27,24 +28,31 @@ public class DynamicToast extends Item implements IDynamic {
 
 	@Override
 	public List<ResourceLocation> getPieces(ItemStack itemStack) {
+
 		List<ResourceLocation> i = new ArrayList<ResourceLocation>();
 
 		i.add(base_model);
 
-		ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
+		DynamicItemComponent comp = itemStack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
+		ItemContainerContents items = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
 		if (comp != null) {
 			{
-				if (comp.getSlots() > 1) {
-					ItemStack s = comp.getStackInSlot(1);
-					String str = s.getItem().getDescriptionId();
-					str = str.substring(str.lastIndexOf('.') + 1);
-					if(s.getItem() instanceof IDynamic id)
-					{
-						String p = id.getPieces(s).get(1).getPath();
-						str += "/" + p.substring(p.lastIndexOf('/') + 1);
+				if (comp.graphics().size() > 0) {
+					ResourceLocation rc = missing_model;
+					String str = "extra/dynamics/toast/";
+
+					for (ItemStack s : items.nonEmptyItems()) {
+//					ItemStack s = items.getStackInSlot(1);
+						if (!s.is(ExtraDelightTags.TOAST)) {
+							if (s.getItem() instanceof IDynamic id) {
+								DynamicItemComponent dyn = s.get(ExtraDelightComponents.DYNAMIC_FOOD.get());
+								rc = ExtraDelight.modLoc(str + "dynamic_jam/" + dyn.graphics().get(0));
+							} else
+								rc = ExtraDelight.modLoc(str + comp.graphics().get(0));
+
+							i.add(rc);
+						}
 					}
-					ResourceLocation rc = ExtraDelight.modLoc("extra/dynamics/toast/" + str);
-					i.add(rc);
 				} else
 					i.add(missing_model);
 			}

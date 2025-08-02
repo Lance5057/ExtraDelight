@@ -7,6 +7,7 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -27,9 +28,17 @@ import net.minecraft.world.item.crafting.ShapedRecipePattern;
 
 public class DynamicToastRecipe extends ShapedRecipe {
 
+	private final String graphic;
+
 	public DynamicToastRecipe(String group, CraftingBookCategory category, ShapedRecipePattern pattern,
-			ItemStack result) {
+			ItemStack result, String graphic) {
 		super(group, category, pattern, result);
+		this.graphic = graphic;
+
+	}
+
+	public String getGraphic() {
+		return graphic;
 	}
 
 	@Override
@@ -56,6 +65,7 @@ public class DynamicToastRecipe extends ShapedRecipe {
 								.error(s.getDescriptionId() + " doesn't have a food component! How did we get here?!");
 				}
 
+			stack.set(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(List.of(graphic)));
 			stack.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
 
 			FoodProperties food = new FoodProperties(nutrition, saturation / input.items().size(), false, 1.6F,
@@ -79,14 +89,17 @@ public class DynamicToastRecipe extends ShapedRecipe {
 //	}
 
 	public static class Serializer implements RecipeSerializer<DynamicToastRecipe> {
-		public static final MapCodec<DynamicToastRecipe> CODEC = RecordCodecBuilder.mapCodec(p_340778_ -> p_340778_
-				.group(Codec.STRING.optionalFieldOf("group", "").forGetter(p_311729_ -> p_311729_.getGroup()),
-						CraftingBookCategory.CODEC.fieldOf("category").orElse(CraftingBookCategory.MISC)
-								.forGetter(p_311732_ -> p_311732_.category()),
-						ShapedRecipePattern.MAP_CODEC.forGetter(p_311733_ -> p_311733_.pattern),
-						ItemStack.STRICT_CODEC.fieldOf("result").forGetter(p_311730_ -> p_311730_.getResultItem(null)))
+		public static final MapCodec<DynamicToastRecipe> CODEC = RecordCodecBuilder.mapCodec(
+	            p_340778_ -> p_340778_.group(
+	                        Codec.STRING.optionalFieldOf("group", "").forGetter(p_311729_ -> p_311729_.getGroup()),
+	                        CraftingBookCategory.CODEC.fieldOf("category").orElse(CraftingBookCategory.MISC).forGetter(p_311732_ -> p_311732_.category()),
+	                        ShapedRecipePattern.MAP_CODEC.forGetter(p_311733_ -> p_311733_.pattern),
+	                        ItemStack.STRICT_CODEC.fieldOf("result").forGetter(p_311730_ -> p_311730_.getResultItem(null)),
+	                        Codec.STRING.optionalFieldOf("graphic", "").forGetter(DynamicToastRecipe::getGraphic)
+	                    )
+	                    .apply(p_340778_, DynamicToastRecipe::new)
+	        );
 
-				.apply(p_340778_, DynamicToastRecipe::new));
 		public static final StreamCodec<RegistryFriendlyByteBuf, DynamicToastRecipe> STREAM_CODEC = StreamCodec
 				.of(DynamicToastRecipe.Serializer::toNetwork, DynamicToastRecipe.Serializer::fromNetwork);
 
@@ -105,7 +118,8 @@ public class DynamicToastRecipe extends ShapedRecipe {
 			CraftingBookCategory craftingbookcategory = buffer.readEnum(CraftingBookCategory.class);
 			ShapedRecipePattern shapedrecipepattern = ShapedRecipePattern.STREAM_CODEC.decode(buffer);
 			ItemStack itemstack = ItemStack.STREAM_CODEC.decode(buffer);
-			return new DynamicToastRecipe(s, craftingbookcategory, shapedrecipepattern, itemstack);
+			String graphic = buffer.readUtf();
+			return new DynamicToastRecipe(s, craftingbookcategory, shapedrecipepattern, itemstack, graphic);
 		}
 
 		private static void toNetwork(RegistryFriendlyByteBuf buffer, DynamicToastRecipe recipe) {
@@ -113,6 +127,7 @@ public class DynamicToastRecipe extends ShapedRecipe {
 			buffer.writeEnum(recipe.category());
 			ShapedRecipePattern.STREAM_CODEC.encode(buffer, recipe.pattern);
 			ItemStack.STREAM_CODEC.encode(buffer, recipe.getResultItem(null));
+			buffer.writeUtf(recipe.getGraphic());
 		}
 	}
 }
