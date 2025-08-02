@@ -60,7 +60,8 @@ public class DynamicJam extends Item implements IDynamic {
 					for (ItemStack s : comp.nonEmptyItems()) {
 						tooltip.add(Component.literal(" - ").append(Component.translatable(s.getDescriptionId())));
 						if (isAdvanced.hasShiftDown()) {
-							s.getItem().appendHoverText(stack, context, tooltip, isAdvanced);
+							if (!(s.getItem() instanceof DynamicJam))
+								s.getItem().appendHoverText(stack, context, tooltip, isAdvanced);
 						}
 					}
 					if (!isAdvanced.hasShiftDown())

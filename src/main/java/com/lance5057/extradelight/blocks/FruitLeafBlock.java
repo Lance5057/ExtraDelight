@@ -77,10 +77,12 @@ public class FruitLeafBlock extends AbstractFruitLeafBlock {
 				if (i < 3 && p_222564_.getRawBrightness(p_222565_.above(), 0) >= 9
 						&& net.neoforged.neoforge.common.CommonHooks.canCropGrow(p_222564_, p_222565_, p_222563_,
 								p_222566_.nextInt(5) == 0)) {
-					if(p_222563_.getValue(AGE) == 2)
-					{
-
-					}
+					if (petalLitter != null)
+						if (p_222563_.getValue(AGE) == 2) {
+							BlockPos p = searchBelow(p_222565_, p_222564_, 5);
+							if (p != p_222565_)
+								p_222564_.setBlock(p, petalLitter.get().defaultBlockState(), UPDATE_ALL);
+						}
 					BlockState blockstate = p_222563_.setValue(AGE, Integer.valueOf(i + 1));
 					p_222564_.setBlock(p_222565_, blockstate, 2);
 					p_222564_.gameEvent(GameEvent.BLOCK_CHANGE, p_222565_, GameEvent.Context.of(blockstate));
@@ -88,6 +90,17 @@ public class FruitLeafBlock extends AbstractFruitLeafBlock {
 				}
 			}
 		}
+	}
+
+	BlockPos searchBelow(BlockPos pos, Level level, int limit) {
+		for (int i = 2; i < limit + 2; i++) {
+			BlockPos bp = new BlockPos(pos.getX(), pos.getY() - i, pos.getZ());
+
+			if (level.getBlockState(bp).isSolid()) {
+				return bp.above();
+			}
+		}
+		return pos;
 	}
 
 	protected boolean decaying(BlockState p_221386_) {

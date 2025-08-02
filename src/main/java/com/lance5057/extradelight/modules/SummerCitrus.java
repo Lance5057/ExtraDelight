@@ -95,11 +95,32 @@ import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
 public class SummerCitrus {
+	public static final DeferredBlock<Block> ORANGE_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
+			.register("orange_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+	public static final DeferredBlock<Block> LEMON_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
+			.register("lemon_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+	public static final DeferredBlock<Block> LIME_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register("lime_petal_litter",
+			() -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+	public static final DeferredBlock<Block> GRAPEFRUIT_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register(
+			"grapefruit_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+
+	public static final DeferredItem<Item> ORANGE_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"orange_petal_litter_item",
+			() -> new BlockItem(SummerCitrus.ORANGE_PETAL_LITTER.get(), new Item.Properties()));
+	public static final DeferredItem<Item> LEMON_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"lemon_petal_litter_item",
+			() -> new BlockItem(SummerCitrus.LEMON_PETAL_LITTER.get(), new Item.Properties()));
+	public static final DeferredItem<Item> LIME_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"lime_petal_litter_item", () -> new BlockItem(SummerCitrus.LIME_PETAL_LITTER.get(), new Item.Properties()));
+	public static final DeferredItem<Item> GRAPEFRUIT_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"grapefruit_petal_litter_item",
+			() -> new BlockItem(SummerCitrus.GRAPEFRUIT_PETAL_LITTER.get(), new Item.Properties()));
+
 	// Lemon
 	public static final DeferredItem<Item> LEMON = EDItemGenerator
 			.register("lemon", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 	public static final DeferredBlock<FruitLeafBlock> LEMON_LEAVES = ExtraDelightBlocks.BLOCKS.register("lemon_leaves",
-			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), LEMON));
+			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), LEMON, LEMON_PETAL_LITTER));
 	public static final DeferredItem<Item> LEMON_LEAVES_ITEM = ExtraDelightItems.ITEMS.register("lemon_leaves",
 			() -> new BlockItem(LEMON_LEAVES.get(), new Item.Properties()));
 	public static final DeferredBlock<SaplingBlock> LEMON_SAPLING = ExtraDelightBlocks.BLOCKS.register("lemon_sapling",
@@ -131,7 +152,7 @@ public class SummerCitrus {
 	public static final DeferredItem<Item> LIME = EDItemGenerator
 			.register("lime", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 	public static final DeferredBlock<FruitLeafBlock> LIME_LEAVES = ExtraDelightBlocks.BLOCKS.register("lime_leaves",
-			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), LIME));
+			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), LIME, LIME_PETAL_LITTER));
 	public static final DeferredItem<Item> LIME_LEAVES_ITEM = ExtraDelightItems.ITEMS.register("lime_leaves",
 			() -> new BlockItem(LIME_LEAVES.get(), new Item.Properties()));
 	public static final DeferredBlock<SaplingBlock> LIME_SAPLING = ExtraDelightBlocks.BLOCKS.register("lime_sapling",
@@ -162,7 +183,8 @@ public class SummerCitrus {
 	public static final DeferredItem<Item> ORANGE = EDItemGenerator
 			.register("orange", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 	public static final DeferredBlock<FruitLeafBlock> ORANGE_LEAVES = ExtraDelightBlocks.BLOCKS.register(
-			"orange_leaves", () -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), ORANGE));
+			"orange_leaves",
+			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), ORANGE, ORANGE_PETAL_LITTER));
 	public static final DeferredItem<Item> ORANGE_LEAVES_ITEM = ExtraDelightItems.ITEMS.register("orange_leaves",
 			() -> new BlockItem(ORANGE_LEAVES.get(), new Item.Properties()));
 	public static final DeferredBlock<SaplingBlock> ORANGE_SAPLING = ExtraDelightBlocks.BLOCKS
@@ -193,9 +215,9 @@ public class SummerCitrus {
 	// Grapefruit
 	public static final DeferredItem<Item> GRAPEFRUIT = EDItemGenerator
 			.register("grapefruit", () -> new Item(new Item.Properties())).advancementIngredients().finish();
-	public static final DeferredBlock<FruitLeafBlock> GRAPEFRUIT_LEAVES = ExtraDelightBlocks.BLOCKS.register(
-			"grapefruit_leaves",
-			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), GRAPEFRUIT));
+	public static final DeferredBlock<FruitLeafBlock> GRAPEFRUIT_LEAVES = ExtraDelightBlocks.BLOCKS
+			.register("grapefruit_leaves", () -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
+					GRAPEFRUIT, GRAPEFRUIT_PETAL_LITTER));
 	public static final DeferredItem<Item> GRAPEFRUIT_LEAVES_ITEM = ExtraDelightItems.ITEMS
 			.register("grapefruit_leaves", () -> new BlockItem(GRAPEFRUIT_LEAVES.get(), new Item.Properties()));
 	public static final DeferredBlock<SaplingBlock> GRAPEFRUIT_SAPLING = ExtraDelightBlocks.BLOCKS
@@ -579,27 +601,6 @@ public class SummerCitrus {
 			"citrus_rind_banner_item",
 			() -> new BannerPatternItem(ExtraDelightBanners.CITRUS_PATTERN_TAG, new Item.Properties().stacksTo(1)));
 
-	public static final DeferredBlock<CarpetBlock> ORANGE_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
-			.register("orange_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
-	public static final DeferredBlock<CarpetBlock> LEMON_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
-			.register("lemon_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
-	public static final DeferredBlock<CarpetBlock> LIME_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
-			.register("lime_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
-	public static final DeferredBlock<CarpetBlock> GRAPEFRUIT_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register(
-			"grapefruit_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
-
-	public static final DeferredItem<Item> ORANGE_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
-			"orange_petal_litter_item",
-			() -> new BlockItem(SummerCitrus.ORANGE_PETAL_LITTER.get(), new Item.Properties()));
-	public static final DeferredItem<Item> LEMON_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
-			"lemon_petal_litter_item",
-			() -> new BlockItem(SummerCitrus.LEMON_PETAL_LITTER.get(), new Item.Properties()));
-	public static final DeferredItem<Item> LIME_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
-			"lime_petal_litter_item", () -> new BlockItem(SummerCitrus.LIME_PETAL_LITTER.get(), new Item.Properties()));
-	public static final DeferredItem<Item> GRAPEFRUIT_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
-			"grapefruit_petal_litter_item",
-			() -> new BlockItem(SummerCitrus.GRAPEFRUIT_PETAL_LITTER.get(), new Item.Properties()));
-
 	public static void blockModels(BlockStateProvider bsp) {
 		BlockModels.fruitLeafBlock(bsp, LEMON_LEAVES.get(), "lemon");
 		bsp.simpleBlock(LEMON_SAPLING.get(), new ConfiguredModel(bsp.models()
@@ -732,20 +733,174 @@ public class SummerCitrus {
 						.modelFile(bsp.models().getExistingFile(bsp.modLoc("block/baked_alaska_raw"))).build();
 		});
 
-		bsp.simpleBlock(ORANGE_PETAL_LITTER.get(),
-				bsp.models().carpet("orange_petal_litter", bsp.modLoc("block/crops/fruit/orange/orange_petal_litter"))
-						.renderType("cutout"));
-		bsp.simpleBlock(LEMON_PETAL_LITTER.get(),
-				bsp.models().carpet("lemon_petal_litter", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter"))
-						.renderType("cutout"));
-		bsp.simpleBlock(LIME_PETAL_LITTER.get(),
-				bsp.models().carpet("lime_petal_litter", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter"))
-						.renderType("cutout"));
-		bsp.simpleBlock(GRAPEFRUIT_PETAL_LITTER.get(),
-				bsp.models()
-						.carpet("grapefruit_petal_litter",
-								bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter"))
-						.renderType("cutout"));
+		bsp.getVariantBuilder(ORANGE_PETAL_LITTER.get()).forAllStates(state -> {
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models()
+							.carpet("orange_petal_litter", bsp.modLoc("block/crops/fruit/orange/orange_petal_litter"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(bsp.models()
+							.carpet("orange_petal_litter", bsp.modLoc("block/crops/fruit/orange/orange_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(bsp.models()
+							.carpet("orange_petal_litter", bsp.modLoc("block/crops/fruit/orange/orange_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(bsp.models()
+							.carpet("orange_petal_litter", bsp.modLoc("block/crops/fruit/orange/orange_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(270).nextModel()
+					.modelFile(bsp.models()
+							.carpet("orange_petal_litter_2",
+									bsp.modLoc("block/crops/fruit/orange/orange_petal_litter_2"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(bsp.models()
+							.carpet("orange_petal_litter_2",
+									bsp.modLoc("block/crops/fruit/orange/orange_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(bsp.models()
+							.carpet("orange_petal_litter_2",
+									bsp.modLoc("block/crops/fruit/orange/orange_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(bsp.models()
+							.carpet("orange_petal_litter_2",
+									bsp.modLoc("block/crops/fruit/orange/orange_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(270).build();
+		});
+
+		bsp.getVariantBuilder(LIME_PETAL_LITTER.get()).forAllStates(state -> {
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models()
+							.carpet("lime_petal_litter", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(bsp.models()
+							.carpet("lime_petal_litter", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(bsp.models()
+							.carpet("lime_petal_litter", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(bsp.models()
+							.carpet("lime_petal_litter", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(270).nextModel()
+					.modelFile(bsp.models()
+							.carpet("lime_petal_litter_2", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter_2"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(bsp.models()
+							.carpet("lime_petal_litter_2", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(bsp.models()
+							.carpet("lime_petal_litter_2", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(bsp.models()
+							.carpet("lime_petal_litter_2", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(270).build();
+		});
+
+		bsp.getVariantBuilder(LEMON_PETAL_LITTER.get()).forAllStates(state -> {
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models()
+							.carpet("lemon_petal_litter", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(bsp.models()
+							.carpet("lemon_petal_litter", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(bsp.models()
+							.carpet("lemon_petal_litter", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(bsp.models()
+							.carpet("lemon_petal_litter", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(270).nextModel()
+					.modelFile(bsp.models()
+							.carpet("lemon_petal_litter_2", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter_2"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(bsp.models()
+							.carpet("lemon_petal_litter_2", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(bsp.models()
+							.carpet("lemon_petal_litter_2", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(bsp.models()
+							.carpet("lemon_petal_litter_2", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(270).build();
+		});
+
+		bsp.getVariantBuilder(GRAPEFRUIT_PETAL_LITTER.get()).forAllStates(state -> {
+			return ConfiguredModel.builder().modelFile(bsp.models()
+					.carpet("grapefruit_petal_litter",
+							bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter"))
+					.renderType("cutout")).nextModel()
+					.modelFile(bsp.models()
+							.carpet("grapefruit_petal_litter",
+									bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(bsp.models()
+							.carpet("grapefruit_petal_litter",
+									bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(bsp.models()
+							.carpet("grapefruit_petal_litter",
+									bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter"))
+							.renderType("cutout"))
+					.rotationY(270).nextModel()
+					.modelFile(bsp.models()
+							.carpet("grapefruit_petal_litter_2",
+									bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter_2"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(bsp.models()
+							.carpet("grapefruit_petal_litter_2",
+									bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(bsp.models()
+							.carpet("grapefruit_petal_litter_2",
+									bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(bsp.models()
+							.carpet("grapefruit_petal_litter_2",
+									bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter_2"))
+							.renderType("cutout"))
+					.rotationY(270).build();
+		});
+
+//		bsp.simpleBlock(ORANGE_PETAL_LITTER.get(),
+//				bsp.models().carpet("orange_petal_litter", bsp.modLoc("block/crops/fruit/orange/orange_petal_litter"))
+//						.renderType("cutout"));
+//		bsp.simpleBlock(LEMON_PETAL_LITTER.get(),
+//				bsp.models().carpet("lemon_petal_litter", bsp.modLoc("block/crops/fruit/lemon/lemon_petal_litter"))
+//						.renderType("cutout"));
+//		bsp.simpleBlock(LIME_PETAL_LITTER.get(),
+//				bsp.models().carpet("lime_petal_litter", bsp.modLoc("block/crops/fruit/lime/lime_petal_litter"))
+//						.renderType("cutout"));
+//		bsp.simpleBlock(GRAPEFRUIT_PETAL_LITTER.get(),
+//				bsp.models()
+//						.carpet("grapefruit_petal_litter",
+//								bsp.modLoc("block/crops/fruit/grapefruit/grapefruit_petal_litter"))
+//						.renderType("cutout"));
 	}
 
 	public static void picnicBasket(BlockStateProvider bsp, PicnicBasketBlock block) {
@@ -886,8 +1041,9 @@ public class SummerCitrus {
 		ItemModels.forBlockItem(tmp, PURPLE_PICNIC_BASKET_ITEM, "purple_picnic_basket");
 
 		ItemModels.forItem(tmp, CITRUS_RIND_PATTERN_ITEM, "citrus_banner_pattern");
-		
-		ItemModels.forBlockItemFlat(tmp, GRAPEFRUIT_PETAL_LITTER_ITEM, "crops/fruit/grapefruit/grapefruit_petal_litter");
+
+		ItemModels.forBlockItemFlat(tmp, GRAPEFRUIT_PETAL_LITTER_ITEM,
+				"crops/fruit/grapefruit/grapefruit_petal_litter");
 		ItemModels.forBlockItemFlat(tmp, LEMON_PETAL_LITTER_ITEM, "crops/fruit/lemon/lemon_petal_litter");
 		ItemModels.forBlockItemFlat(tmp, LIME_PETAL_LITTER_ITEM, "crops/fruit/lime/lime_petal_litter");
 		ItemModels.forBlockItemFlat(tmp, ORANGE_PETAL_LITTER_ITEM, "crops/fruit/orange/orange_petal_litter");

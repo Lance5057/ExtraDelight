@@ -4513,6 +4513,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern("ts").define('t', ExtraDelightTags.TOAST).define('s', ExtraDelightItems.DYNAMIC_JAM)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
 				.save(consumer, EDLoc("dynamic_toast_dynamic_jam"));
+
+		DynamicToastRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TOAST.toStack(), "lemon_curd")
+				.pattern("ts").define('t', ExtraDelightTags.TOAST).define('s', SummerCitrus.LEMON_CURD)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer, EDLoc("dynamic_toast_lemon_curd"));
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {
