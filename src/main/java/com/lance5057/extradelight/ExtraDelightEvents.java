@@ -1,21 +1,11 @@
 package com.lance5057.extradelight;
 
-import java.util.Map;
-import java.util.function.Supplier;
-
-import com.google.common.collect.ImmutableMap;
 import com.lance5057.extradelight.items.components.ChillComponent;
 
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
-import net.neoforged.neoforge.registries.DeferredItem;
-import vectorwing.farmersdelight.FarmersDelight;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID)
 public class ExtraDelightEvents {

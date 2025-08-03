@@ -5,6 +5,8 @@ import static com.lance5057.extradelight.ExtraDelightBlocks.plate;
 import static vectorwing.farmersdelight.common.registry.ModItems.bowlFoodItem;
 import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 
+import java.util.List;
+
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBanners;
 import com.lance5057.extradelight.ExtraDelightBlocks;
@@ -31,6 +33,7 @@ import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.GlowberryJuiceItem;
 import com.lance5057.extradelight.items.GourmetHotCocoa;
+import com.lance5057.extradelight.items.SourJuiceItem;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.components.ChillComponent;
 import com.lance5057.extradelight.util.EDItemGenerator;
@@ -48,7 +51,13 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.BannerPatternItem;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -91,8 +100,6 @@ import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
-import java.util.List;
-
 public class SummerCitrus {
 	// Lemon
 	public static final DeferredItem<Item> LEMON = EDItemGenerator
@@ -115,7 +122,8 @@ public class SummerCitrus {
 			.register("potted_lemon_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
 					LEMON_SAPLING, Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> LEMON_JUICE = EDItemGenerator
-			.register("lemon_juice", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.register("lemon_juice",
+					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 2))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> LEMON_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"lemon_juice_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.LEMON_JUICE));
@@ -150,7 +158,8 @@ public class SummerCitrus {
 			.register("potted_lime_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
 					LIME_SAPLING, Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> LIME_JUICE = EDItemGenerator
-			.register("lime_juice", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.register("lime_juice",
+					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 2))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> LIME_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"lime_juice_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.LIME_JUICE));
@@ -188,7 +197,7 @@ public class SummerCitrus {
 			"potted_orange_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ORANGE_SAPLING,
 					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> ORANGE_JUICE = EDItemGenerator
-			.register("orange_juice", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.register("orange_juice", () -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 1))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> ORANGE_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"orange_juice_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.ORANGE_JUICE));
@@ -227,7 +236,7 @@ public class SummerCitrus {
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GRAPEFRUIT_SAPLING,
 					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> GRAPEFRUIT_JUICE = EDItemGenerator
-			.register("grapefruit_juice", () -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
+			.register("grapefruit_juice", () -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 1))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> GRAPEFRUIT_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"grapefruit_juice_fluid_bucket",
@@ -295,8 +304,8 @@ public class SummerCitrus {
 			.register("key_lime_pie_item", () -> new BlockItem(KEY_LIME_PIE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
 	public static final DeferredItem<Item> LEMONADE = EDItemGenerator
-			.register("lemonade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink().setHydration(20)
-			.setThirst(6).setPoison(0).isHot(false).finish();
+			.register("lemonade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink()
+			.setHydration(20).setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LEMONADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"lemonade_tray",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_YELLOW), true,
@@ -305,8 +314,8 @@ public class SummerCitrus {
 			.register("lemonade_tray_item", () -> new BlockItem(LEMONADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> LIMEADE = EDItemGenerator
-			.register("limeade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink().setHydration(20)
-			.setThirst(6).setPoison(0).isHot(false).finish();
+			.register("limeade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink()
+			.setHydration(20).setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LIMEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"limeade_tray",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_GREEN), true,
@@ -315,8 +324,8 @@ public class SummerCitrus {
 			.register("limeade_tray_item", () -> new BlockItem(LIMEADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> ORANGEADE = EDItemGenerator
-			.register("orangeade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink().setHydration(20)
-			.setThirst(6).setPoison(0).isHot(false).finish();
+			.register("orangeade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink()
+			.setHydration(20).setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> ORANGEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"orangeade_tray",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_ORANGE), true,
@@ -477,10 +486,10 @@ public class SummerCitrus {
 						if (s.getValue(RawBakedAlaskaBlock.ON_FIRE))
 							return 10;
 						return 0;
-					})){
+					})) {
 				@Override
 				public void appendHoverText(ItemStack stack, Item.TooltipContext context,
-											List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+						List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
 					tooltipComponents.add(Component.literal("")
 							.append(Component.translatable(ExtraDelight.MOD_ID + ".raw_baked_alaska.tooltip"))
 							.withStyle(ChatFormatting.GOLD));

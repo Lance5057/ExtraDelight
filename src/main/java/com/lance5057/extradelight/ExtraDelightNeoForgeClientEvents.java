@@ -60,7 +60,7 @@ public class ExtraDelightNeoForgeClientEvents {
 				tooltip.add(i);
 			}, flag);
 		}
-		
+
 //		TooltipProvider tooltipProvider1 = stack.get(ExtraDelightComponents.DYNAMIC_FOOD.get());
 //
 //		if (tooltipProvider1 != null) {
@@ -94,13 +94,14 @@ public class ExtraDelightNeoForgeClientEvents {
 	public static Set<DeferredItem<Item>> servings = new HashSet<DeferredItem<Item>>();
 
 	public static Set<DeferredItem<Item>> butchercraft = new HashSet<DeferredItem<Item>>();
-	
+
 	@SubscribeEvent
-	public static void puckerEffect(ComputeFovModifierEvent event)
-	{
-		if(event.getPlayer().hasEffect(ExtraDelightMobEffects.SOUR_PUCKER))
-		{
-			event.setNewFovModifier(-1000);
+	public static void puckerEffect(ComputeFovModifierEvent event) {
+		if (event.getPlayer().hasEffect(ExtraDelightMobEffects.SOUR_PUCKER)) {
+			int i = event.getPlayer().getEffect(ExtraDelightMobEffects.SOUR_PUCKER).getAmplifier();
+			float s = i * 0.25f;
+
+			event.setNewFovModifier(event.getFovModifier() - s);
 		}
 	}
 
