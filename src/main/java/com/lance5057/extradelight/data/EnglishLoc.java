@@ -192,16 +192,16 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.name", "A Little Less Roughage");
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.desc", "Make some flour and make your bread less fibrous.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.vat.name", "A Real Crock of...");
 		this.add(ExtraDelight.MOD_ID + ".advancement.vat.desc", "Make a vat, harness the power of fermentation!");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.evaporator.name", "It's a Bit Dry");
 		this.add(ExtraDelight.MOD_ID + ".advancement.evaporator.desc", "Make an evaporator, become salty");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.pickle.name", "Hey Hey Hey!");
 		this.add(ExtraDelight.MOD_ID + ".advancement.pickle.desc", "Get a pickle, or maybe two");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.lid.name", "Put a Lid on it.");
 		this.add(ExtraDelight.MOD_ID + ".advancement.lid.desc", "Make a Lid for your vat, or your head");
 
@@ -1389,7 +1389,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.bottlefluid", "Decanting");
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
-		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "%s %s");
+		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "%1$s %2$s");
 		this.add("extradelight.jam", "Jam");
 		this.add("extradelight.marmalade", "Marmalade");
 
@@ -1400,6 +1400,18 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.JUICER.get(), "Juicer");
 		this.add(ExtraDelightItems.WHISK.get(), "Whisk");
 		this.add(ExtraDelightBlocks.FRUIT_BOWL.get(), "Fruit Bowl");
+
+		this.add("extradelight.jam.melon", "Melon");
+		this.add("extradelight.jam.sweet_berries", "Sweet Berry");
+		this.add("extradelight.jam.glow_berries", "Glow Berry");
+		this.add("extradelight.jam.chorus_fruit", "Chorus Fruit");
+		this.add("extradelight.jam.apple", "Apple");
+		this.add("extradelight.jam.carrot", "Carrot");
+		this.add("extradelight.jam.lemon", "Lemon");
+		this.add("extradelight.jam.lime", "Lime");
+		this.add("extradelight.jam.grapefruit", "Grapefruit");
+		this.add("extradelight.jam.golden_apple", "Golden Apple");
+		this.add("extradelight.jam.orange", "Orange");
 
 		Fermentation.EngLoc(this);
 		SummerCitrus.EngLoc(this);

@@ -827,7 +827,9 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_SOYBEANS = neoforgeItemTag("storage_blocks_soybeans");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_SALT = neoforgeItemTag("storage_blocks_salt");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_LEMON = neoforgeItemTag("storage_blocks_lemon");
-	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_LIME= neoforgeItemTag("storage_blocks_lime");
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_LIME = neoforgeItemTag("storage_blocks_lime");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_ORANGE = neoforgeItemTag("storage_blocks_orange");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_GRAPEFRUIT = neoforgeItemTag("storage_blocks_grapefruit");
+
+	public static final TagKey<Item> IS_MARMALADE_INGREDIENT = modTag("marmalade_ingredient");
 }

@@ -73,7 +73,7 @@ public class DynamicToast extends Item implements IDynamic {
 				if (comp.nonEmptyItems() != null) {
 					tooltip.add(Component.translatable("tooltip.dynamic.ingredients"));
 					for (ItemStack s : comp.nonEmptyItems()) {
-						tooltip.add(Component.literal(" - ").append(Component.translatable(s.getDescriptionId())));
+						tooltip.add(Component.literal(" - ").append(s.getItem().getName(s)));
 						if (isAdvanced.hasShiftDown()) {
 							s.getItem().appendHoverText(stack, context, tooltip, isAdvanced);
 						}
@@ -91,7 +91,7 @@ public class DynamicToast extends Item implements IDynamic {
 		if (comp != null) {
 			if (comp.getSlots() > 1)
 				return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),
-						Component.translatable(comp.getStackInSlot(1).getDescriptionId())));
+						comp.getStackInSlot(1).getItem().getName(comp.getStackInSlot(1))));
 		}
 
 		return Component.translatable("dynamic.toast");

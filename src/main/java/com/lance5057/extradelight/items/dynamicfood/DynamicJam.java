@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 
@@ -59,10 +60,10 @@ public class DynamicJam extends Item implements IDynamic {
 					tooltip.add(Component.translatable("tooltip.dynamic.ingredients"));
 					for (ItemStack s : comp.nonEmptyItems()) {
 						tooltip.add(Component.literal(" - ").append(Component.translatable(s.getDescriptionId())));
-						if (isAdvanced.hasShiftDown()) {
-							if (!(s.getItem() instanceof DynamicJam))
-								s.getItem().appendHoverText(stack, context, tooltip, isAdvanced);
-						}
+//						if (isAdvanced.hasShiftDown()) {
+//							if (!(s.getItem() instanceof DynamicJam))
+//								s.getItem().appendHoverText(stack, context, tooltip, isAdvanced);
+//						}
 					}
 					if (!isAdvanced.hasShiftDown())
 						tooltip.add(Component.translatable("tooltip.see_more").withColor(0xFF555555));
@@ -74,10 +75,19 @@ public class DynamicJam extends Item implements IDynamic {
 	@Override
 	public Component getName(ItemStack itemStack) {
 		ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
+		DynamicItemComponent dyn = itemStack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
+
 		if (comp != null) {
-			if (comp.getSlots() > 1)
-				return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),
-						Component.translatable(comp.getStackInSlot(1).getDescriptionId())));
+			if (comp.getSlots() > 0) {
+				if (comp.getStackInSlot(0).is(ExtraDelightTags.IS_MARMALADE_INGREDIENT))
+					return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),
+							Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
+							Component.translatable("extradelight.marmalade")));
+				else
+					return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),
+							Component.translatable("extradelight.jam."
+									+ dyn.graphics().get(0)), Component.translatable("extradelight.jam")));
+			}
 		}
 
 		return Component.translatable("dynamic.jam");

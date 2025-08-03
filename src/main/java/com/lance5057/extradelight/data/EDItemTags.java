@@ -922,6 +922,9 @@ public class EDItemTags extends ItemTagsProvider {
 				SummerCitrus.MELON_LIME_GLAZED_CHICKEN.get(), SummerCitrus.KYIV_CAKE_ITEM.get(),
 				SummerCitrus.RAW_BAKED_ALASKA_ITEM.get(), SummerCitrus.BAKED_ALASKA_ITEM.get());
 
+		tag(ExtraDelightTags.IS_MARMALADE_INGREDIENT).add(SummerCitrus.SLICED_GRAPEFRUIT.get(),
+				SummerCitrus.SLICED_LEMON.get(), SummerCitrus.SLICED_LIME.get(), SummerCitrus.SLICED_ORANGE.get());
+
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);
 		}
