@@ -4,12 +4,26 @@
     "count": 1,
     "id": "minecraft:glass_bottle"
   },
-  "cookingtime": 1,
   "experience": 1.0,
   "graphic": "orange",
   "ingredients": [
     {
-      "item": "extradelight:sliced_orange"
+      "tag": "extradelight:processed/orange"
+    },
+    {
+      "tag": "extradelight:processed/orange"
+    },
+    {
+      "tag": "extradelight:processed/orange"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
     }
   ],
   "recipe_book_tab": "meals",

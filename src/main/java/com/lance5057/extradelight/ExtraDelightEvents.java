@@ -22,25 +22,4 @@ public class ExtraDelightEvents {
 		event.modify(Items.SNOWBALL,
 				builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(50)));
 	}
-
-//	@SubscribeEvent
-//	public static void itemRemapping(FMLCommonSetupEvent event) {
-//		event.enqueueWork(() -> {
-//			Map<ResourceLocation, DeferredItem<Item>> itemRemapping = (new ImmutableMap.Builder<ResourceLocation, DeferredItem<Item>>())
-//					.put(ExtraDelight.modLoc("carrot_jam"), ExtraDelightItems.DYNAMIC_JAM).build();
-//
-//			for (Map.Entry<ResourceLocation, DeferredItem<Item>> mapping : itemRemapping.entrySet()) {
-//				Supplier<Item> itemSupplier = itemRemapping.get(mapping.getKey());
-//
-//				if (itemSupplier != null) {
-//					Item item = itemSupplier.get();
-//					if (item != null && BuiltInRegistries.ITEM.getKey(item) != null) {
-//						ExtraDelightItems.ITEMS.addAlias(mapping.getKey(), BuiltInRegistries.ITEM.getKey(item));
-//						FarmersDelight.LOGGER.warn("Remapping item '{}' to '{}'...", mapping.getKey().toString(),
-//								BuiltInRegistries.ITEM.getKey(item).toString());
-//					}
-//				}
-//			}
-//		});
-//	}
 }

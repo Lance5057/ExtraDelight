@@ -3987,29 +3987,29 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ExtraDelightItems.BOILED_EGG.get(), 1, CookingRecipes.FAST_COOKING, 0.35F, null,
 				new Ingredient[] { Ingredient.of(Tags.Items.EGGS) }, "boiled_egg", consumer);
 
-		pot(ExtraDelightItems.GLOW_BERRY_JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(Items.GLOW_BERRIES),
-						Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(ExtraDelightTags.SWEETENER),
-						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
-				"glow_berry_jam", consumer);
-
-		pot(ExtraDelightItems.GOLDEN_APPLE_JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(Items.GOLDEN_APPLE),
-						Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(ExtraDelightTags.SWEETENER),
-						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
-				"golden_apple_jam", consumer);
-
-		pot(ExtraDelightItems.JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-				new Ingredient[] {
-						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
-								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
-						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
-								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
-						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
-								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
-						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER),
-						Ingredient.of(ExtraDelightTags.SWEETENER) },
-				"fruit_jam", consumer);
+//		pot(ExtraDelightItems.GLOW_BERRY_JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
+//				new Ingredient[] { Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(Items.GLOW_BERRIES),
+//						Ingredient.of(Items.GLOW_BERRIES), Ingredient.of(ExtraDelightTags.SWEETENER),
+//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
+//				"glow_berry_jam", consumer);
+//
+//		pot(ExtraDelightItems.GOLDEN_APPLE_JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
+//				new Ingredient[] { Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(Items.GOLDEN_APPLE),
+//						Ingredient.of(Items.GOLDEN_APPLE), Ingredient.of(ExtraDelightTags.SWEETENER),
+//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
+//				"golden_apple_jam", consumer);
+//
+//		pot(ExtraDelightItems.JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
+//				new Ingredient[] {
+//						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
+//								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
+//						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
+//								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
+//						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
+//								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
+//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER),
+//						Ingredient.of(ExtraDelightTags.SWEETENER) },
+//				"fruit_jam", consumer);
 
 		pot(ExtraDelightItems.SEAWEED_PASTE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, null, new Ingredient[] {
 				Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP) },
@@ -4463,49 +4463,86 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void dynamicJamRecipes(RecipeOutput consumer) {
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "chorus_fruit")
-				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-				.build(consumer, "dynamic_chorus");
+		DynamicJamRecipeBuilder
+				.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "chorus_fruit")
+				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).addIngredient(Ingredient.of(Items.CHORUS_FRUIT))
+				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_chorus");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "apple")
-				.addIngredient(Ingredient.of(Items.APPLE)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-				.build(consumer, "dynamic_apple");
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "apple")
+				.addIngredient(Ingredient.of(Items.APPLE)).addIngredient(Ingredient.of(Items.APPLE))
+				.addIngredient(Ingredient.of(Items.APPLE)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_apple");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "melon")
-				.addIngredient(Ingredient.of(Items.MELON_SLICE)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "melon")
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_MELON))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_MELON))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_MELON))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 				.build(consumer, "dynamic_melon");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "sweet_berries")
-				.addIngredient(Ingredient.of(Items.SWEET_BERRIES)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-				.build(consumer, "dynamic_berries");
+		DynamicJamRecipeBuilder
+				.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "sweet_berries")
+				.addIngredient(Ingredient.of(Items.SWEET_BERRIES)).addIngredient(Ingredient.of(Items.SWEET_BERRIES))
+				.addIngredient(Ingredient.of(Items.SWEET_BERRIES)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_berries");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "carrot")
-				.addIngredient(Ingredient.of(Items.CARROT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "carrot")
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_CARROT))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_CARROT))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_CARROT))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 				.build(consumer, "dynamic_carrot");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "golden_apple")
-				.addIngredient(Ingredient.of(Items.GOLDEN_APPLE)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-				.build(consumer, "dynamic_golden_apple");
+		DynamicJamRecipeBuilder
+				.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "golden_apple")
+				.addIngredient(Ingredient.of(Items.GOLDEN_APPLE)).addIngredient(Ingredient.of(Items.GOLDEN_APPLE))
+				.addIngredient(Ingredient.of(Items.GOLDEN_APPLE)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_golden_apple");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "glow_berries")
-				.addIngredient(Ingredient.of(Items.GLOW_BERRIES)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-				.build(consumer, "dynamic_glow_berries");
+		DynamicJamRecipeBuilder
+				.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "glow_berries")
+				.addIngredient(Ingredient.of(Items.GLOW_BERRIES)).addIngredient(Ingredient.of(Items.GLOW_BERRIES))
+				.addIngredient(Ingredient.of(Items.GLOW_BERRIES)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_glow_berries");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "orange")
-				.addIngredient(Ingredient.of(SummerCitrus.SLICED_ORANGE))
-				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_orange");
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "orange")
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_orange");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "lemon")
-				.addIngredient(Ingredient.of(SummerCitrus.SLICED_LEMON)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "lemon")
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 				.build(consumer, "dynamic_lemon");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "lime")
-				.addIngredient(Ingredient.of(SummerCitrus.SLICED_LIME)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-				.build(consumer, "dynamic_lime");
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "lime")
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_LIME))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_LIME))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_LIME)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_lime");
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(1, 1, 1, Items.GLASS_BOTTLE, "grapefruit")
-				.addIngredient(Ingredient.of(SummerCitrus.SLICED_GRAPEFRUIT))
-				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_grapefruit");
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "grapefruit")
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_GRAPEFRUIT))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_GRAPEFRUIT))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_GRAPEFRUIT))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_grapefruit");
 	}
 
 	private void dynamicToast(RecipeOutput consumer) {

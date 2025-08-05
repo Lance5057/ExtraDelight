@@ -4,12 +4,26 @@
     "count": 1,
     "id": "minecraft:glass_bottle"
   },
-  "cookingtime": 1,
   "experience": 1.0,
   "graphic": "lime",
   "ingredients": [
     {
-      "item": "extradelight:sliced_lime"
+      "tag": "extradelight:processed/lime"
+    },
+    {
+      "tag": "extradelight:processed/lime"
+    },
+    {
+      "tag": "extradelight:processed/lime"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
     }
   ],
   "recipe_book_tab": "meals",

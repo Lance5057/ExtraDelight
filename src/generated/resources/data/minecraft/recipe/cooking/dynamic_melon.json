@@ -4,12 +4,26 @@
     "count": 1,
     "id": "minecraft:glass_bottle"
   },
-  "cookingtime": 1,
   "experience": 1.0,
   "graphic": "melon",
   "ingredients": [
     {
-      "item": "minecraft:melon_slice"
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
     }
   ],
   "recipe_book_tab": "meals",

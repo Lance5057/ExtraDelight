@@ -1412,6 +1412,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jam.grapefruit", "Grapefruit");
 		this.add("extradelight.jam.golden_apple", "Golden Apple");
 		this.add("extradelight.jam.orange", "Orange");
+		
+		this.add(ExtraDelight.MOD_ID + ".tooltip.deprecated", "This item is deprecated! Right-click to convert!");
 
 		Fermentation.EngLoc(this);
 		SummerCitrus.EngLoc(this);

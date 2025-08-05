@@ -3,6 +3,7 @@ package com.lance5057.extradelight;
 import static vectorwing.farmersdelight.common.registry.ModItems.bowlFoodItem;
 import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -15,6 +16,7 @@ import com.lance5057.extradelight.items.CactusJuiceItem;
 import com.lance5057.extradelight.items.CoffeeItem;
 import com.lance5057.extradelight.items.CornSilkTeaItem;
 import com.lance5057.extradelight.items.CorncobPipe;
+import com.lance5057.extradelight.items.DeprecatedItem;
 import com.lance5057.extradelight.items.FrostingItem;
 import com.lance5057.extradelight.items.GarlicCureDrinkableItem;
 import com.lance5057.extradelight.items.GarlicCureItem;
@@ -30,11 +32,13 @@ import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
 import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.jar.JarItem;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.EDItemGenerator;
 
+import mezz.jei.api.recipe.RecipeType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -57,7 +61,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.neoforged.neoforge.common.EffectCure;
 import net.neoforged.neoforge.fluids.DispenseFluidContainer;
@@ -522,17 +525,6 @@ public class ExtraDelightItems {
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> CURRY_POWDER = ITEMS.register("curry_powder",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
-
-	// Jams
-	public static final DeferredItem<Item> JAM = EDItemGenerator
-			.register("jam", () -> new Item(foodItem(EDFoods.JAM).craftRemainder(Items.GLASS_BOTTLE)))
-			.advancementIngredients().finish();
-	public static final DeferredItem<Item> GLOW_BERRY_JAM = EDItemGenerator.register("glow_berry_jam",
-			() -> new ToolTipConsumableItem(foodItem(EDFoods.GLOW_JAM).craftRemainder(Items.GLASS_BOTTLE), true))
-			.advancementIngredients().finish();
-	public static final DeferredItem<Item> GOLDEN_APPLE_JAM = EDItemGenerator.register("golden_apple_jam",
-			() -> new ToolTipConsumableItem(foodItem(EDFoods.GOLDEN_JAM).craftRemainder(Items.GLASS_BOTTLE), true))
-			.advancementIngredients().finish();
 
 	// Bread
 
@@ -2958,9 +2950,130 @@ public class ExtraDelightItems {
 			.advancementMeal().finish();
 
 	public static final DeferredItem<Item> DYNAMIC_TOAST = ITEMS.register("dynamic_toast",
-			() -> new DynamicToast(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
-					ItemContainerContents.EMPTY)));
+			() -> new DynamicToast(new Item.Properties()
+					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
+					.food(EDFoods.BUTTERED_TOAST)));
 	public static final DeferredItem<Item> DYNAMIC_JAM = ITEMS.register("dynamic_jam",
-			() -> new DynamicJam(new Item.Properties().component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(),
-					ItemContainerContents.EMPTY)));
+			() -> new DynamicJam(new Item.Properties()
+					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
+					.food(EDFoods.JAM)));
+
+	static {
+
+	}
+
+	// Jams
+	public static final DeferredItem<Item> JAM = EDItemGenerator.register("jam", () -> new DeprecatedItem() {
+
+		@Override
+		public ItemStack changeToStack(ItemStack stack) {
+			List<ItemStack> l = List.of(Items.SWEET_BERRIES.getDefaultInstance(),
+					Items.SWEET_BERRIES.getDefaultInstance(), Items.SWEET_BERRIES.getDefaultInstance(),
+					Items.SUGAR.getDefaultInstance(), Items.SUGAR.getDefaultInstance(),
+					Items.SUGAR.getDefaultInstance());
+
+			ItemStack jam = new ItemStack(DYNAMIC_JAM.get(), stack.getCount());
+			jam.set(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(List.of("sweet_berries")));
+			jam.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
+
+			int nutrition = 0;
+			float saturation = 0;
+			List<FoodProperties.PossibleEffect> effects = new ArrayList<FoodProperties.PossibleEffect>();
+
+			for (ItemStack s : l)
+				if (s != null && !s.isEmpty()) {
+					if (s.has(DataComponents.FOOD)) {
+						FoodProperties f = s.get(DataComponents.FOOD);
+						nutrition += f.nutrition();
+						saturation += f.saturation();
+
+						effects.addAll(f.effects());
+					}
+				}
+
+			FoodProperties food = new FoodProperties(nutrition, saturation / l.size(), false, 1.6F,
+					java.util.Optional.empty(), effects);
+
+			stack.set(DataComponents.FOOD, food);
+
+			return jam;
+		}
+
+	}).finish();
+	public static final DeferredItem<Item> GLOW_BERRY_JAM = EDItemGenerator
+			.register("glow_berry_jam", () -> new DeprecatedItem() {
+
+				@Override
+				public ItemStack changeToStack(ItemStack stack) {
+					List<ItemStack> l = List.of(Items.GLOW_BERRIES.getDefaultInstance(),
+							Items.GLOW_BERRIES.getDefaultInstance(), Items.GLOW_BERRIES.getDefaultInstance(),
+							Items.SUGAR.getDefaultInstance(), Items.SUGAR.getDefaultInstance(),
+							Items.SUGAR.getDefaultInstance());
+
+					ItemStack jam = new ItemStack(DYNAMIC_JAM.get(), stack.getCount());
+					jam.set(ExtraDelightComponents.DYNAMIC_FOOD.get(),
+							new DynamicItemComponent(List.of("glow_berries")));
+					jam.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
+
+					int nutrition = 0;
+					float saturation = 0;
+					List<FoodProperties.PossibleEffect> effects = new ArrayList<FoodProperties.PossibleEffect>();
+
+					for (ItemStack s : l)
+						if (s != null && !s.isEmpty()) {
+							if (s.has(DataComponents.FOOD)) {
+								FoodProperties f = s.get(DataComponents.FOOD);
+								nutrition += f.nutrition();
+								saturation += f.saturation();
+
+								effects.addAll(f.effects());
+							}
+						}
+
+					FoodProperties food = new FoodProperties(nutrition, saturation / l.size(), false, 1.6F,
+							java.util.Optional.empty(), effects);
+
+					stack.set(DataComponents.FOOD, food);
+					return jam;
+				}
+
+			}).finish();
+	public static final DeferredItem<Item> GOLDEN_APPLE_JAM = EDItemGenerator
+			.register("golden_apple_jam", () -> new DeprecatedItem() {
+
+				@Override
+				public ItemStack changeToStack(ItemStack stack) {
+					List<ItemStack> l = List.of(Items.GOLDEN_APPLE.getDefaultInstance(),
+							Items.GOLDEN_APPLE.getDefaultInstance(), Items.GOLDEN_APPLE.getDefaultInstance(),
+							Items.SUGAR.getDefaultInstance(), Items.SUGAR.getDefaultInstance(),
+							Items.SUGAR.getDefaultInstance());
+
+					ItemStack jam = new ItemStack(DYNAMIC_JAM.get(), stack.getCount());
+					jam.set(ExtraDelightComponents.DYNAMIC_FOOD.get(),
+							new DynamicItemComponent(List.of("golden_apple")));
+					jam.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
+
+					int nutrition = 0;
+					float saturation = 0;
+					List<FoodProperties.PossibleEffect> effects = new ArrayList<FoodProperties.PossibleEffect>();
+
+					for (ItemStack s : l)
+						if (s != null && !s.isEmpty()) {
+							if (s.has(DataComponents.FOOD)) {
+								FoodProperties f = s.get(DataComponents.FOOD);
+								nutrition += f.nutrition();
+								saturation += f.saturation();
+
+								effects.addAll(f.effects());
+							}
+						}
+
+					FoodProperties food = new FoodProperties(nutrition, saturation / l.size(), false, 1.6F,
+							java.util.Optional.empty(), effects);
+
+					stack.set(DataComponents.FOOD, food);
+					return jam;
+				}
+
+			}).finish();
 }

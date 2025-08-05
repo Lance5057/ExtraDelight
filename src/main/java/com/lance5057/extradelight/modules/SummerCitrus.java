@@ -611,7 +611,7 @@ public class SummerCitrus {
 			"purple_picnic_basket", () -> new BlockItem(SummerCitrus.PURPLE_PICNIC_BASKET.get(), new Item.Properties()
 					.stacksTo(1).component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
 
-	public static final DeferredItem<Item> CITRUS_RIND_PATTERN_ITEM = ExtraDelightItems.ITEMS.register(
+	public static final DeferredItem<Item> CITRUS_PATTERN_ITEM = ExtraDelightItems.ITEMS.register(
 			"citrus_rind_banner_item",
 			() -> new BannerPatternItem(ExtraDelightBanners.CITRUS_PATTERN_TAG, new Item.Properties().stacksTo(1)));
 
@@ -1039,7 +1039,7 @@ public class SummerCitrus {
 		ItemModels.forBlockItem(tmp, BLACK_PICNIC_BASKET_ITEM, "black_picnic_basket");
 		ItemModels.forBlockItem(tmp, PURPLE_PICNIC_BASKET_ITEM, "purple_picnic_basket");
 
-		ItemModels.forItem(tmp, CITRUS_RIND_PATTERN_ITEM, "citrus_banner_pattern");
+		ItemModels.forItem(tmp, CITRUS_PATTERN_ITEM, "citrus_banner_pattern");
 
 		ItemModels.forBlockItemFlat(tmp, LEMON_PETAL_LITTER_ITEM, "crops/fruit/lemon/lemon_petal_litter");
 		ItemModels.forBlockItemFlat(tmp, LIME_PETAL_LITTER_ITEM, "crops/fruit/lime/lime_petal_litter");
@@ -1069,6 +1069,11 @@ public class SummerCitrus {
 		Recipes.bundleItem9(Ingredient.of(ExtraDelightTags.GRAPEFRUIT), GRAPEFRUIT_CRATE_ITEM.get(), GRAPEFRUIT.get(),
 				consumer, "grapefruit");
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CITRUS_PATTERN_ITEM.get()).requires(ExtraDelightTags.PROCESSED_CITRUS)
+		.requires(Items.PAPER)
+		.unlockedBy("has_paper", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
+		.save(consumer, ExtraDelight.modLoc("citrus_pattern"));
+		
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LEMONADE_TRAY_ITEM.get()).requires(LEMONADE.get(), 4)
 				.requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_lemonade", InventoryChangeTrigger.TriggerInstance.hasItems(LEMONADE.get()))
@@ -1164,7 +1169,7 @@ public class SummerCitrus {
 						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250))
 				.addIngredient(Ingredient.of(ORANGE_ZEST)).build(consumer, "chocolate_orange_chilling");
 		ChillerRecipeBuilder
-				.chill(CHOCOLATE_MOUSSE.toStack(), Recipes.NORMAL_COOKING, Recipes.SMALL_EXP, new ItemStack(Items.BOWL),
+				.chill(CHOCOLATE_MOUSSE.toStack(2), Recipes.NORMAL_COOKING, Recipes.SMALL_EXP, new ItemStack(Items.BOWL),
 						new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250))
 				.addIngredient(Ingredient.of(EGG_YOLK)).addIngredient(Ingredient.of(STIFF_PEAKS))
 				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_SYRUP))
@@ -1301,14 +1306,14 @@ public class SummerCitrus {
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 50)),
 						SizedFluidIngredient.of(new FluidStack(NeoForgeMod.MILK, 250)) },
 				consumer, "dalgona_coffee_mixing");
-		Recipes.mixing(new ItemStack(GRAPEFRUIT_BEETROOT_SALAD.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
+		Recipes.mixing(new ItemStack(GRAPEFRUIT_BEETROOT_SALAD.get(), 2), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GRAPEFRUIT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT), Ingredient.of(ExtraDelightTags.SALT),
 						Ingredient.of(Items.HONEY_BOTTLE) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
 				consumer, "grapefruit_beetroot_salad_mixing");
-		Recipes.mixing(new ItemStack(CITRUS_ONION_SALAD.get(), 1), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
+		Recipes.mixing(new ItemStack(CITRUS_ONION_SALAD.get(), 3), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GRAPEFRUIT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE), Ingredient.of(Items.HONEY_BOTTLE),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.MINT),
@@ -1608,8 +1613,8 @@ public class SummerCitrus {
 		lp.add(BLACK_PICNIC_BASKET.get(), "Black Picnic Basket");
 		lp.add(PURPLE_PICNIC_BASKET.get(), "Purple Picnic Basket");
 
-		lp.add(CITRUS_RIND_PATTERN_ITEM.get(), "Banner Pattern");
-		lp.add("item.extradelight.citrus_rind_banner_item.desc", "Citrus Rind");
+		lp.add(CITRUS_PATTERN_ITEM.get(), "Banner Pattern");
+		lp.add("item.extradelight.citrus_rind_banner_item.desc", "Citrus");
 		lp.add("painting.extradelight.big_lemon_slice.title", "Big Lemon Slice");
 		lp.add("painting.extradelight.big_lemon_slice.author", "Lance5057");
 		lp.add("painting.extradelight.big_lime_slice.title", "Big Lime Slice");

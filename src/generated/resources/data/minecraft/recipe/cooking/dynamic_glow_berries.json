@@ -4,12 +4,26 @@
     "count": 1,
     "id": "minecraft:glass_bottle"
   },
-  "cookingtime": 1,
   "experience": 1.0,
   "graphic": "glow_berries",
   "ingredients": [
     {
       "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
     }
   ],
   "recipe_book_tab": "meals",

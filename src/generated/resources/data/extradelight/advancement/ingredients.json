@@ -641,26 +641,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:glow_berry_jam": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:glow_berry_jam"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "extradelight:golden_apple_jam": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:golden_apple_jam"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:grapefruit": {
       "conditions": {
         "items": [
@@ -806,16 +786,6 @@
         "items": [
           {
             "items": "extradelight:ice_cubes"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "extradelight:jam": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:jam"
           }
         ]
       },
@@ -1687,9 +1657,6 @@
       "extradelight:marshmallow_fluff_bottle"
     ],
     [
-      "extradelight:golden_apple_jam"
-    ],
-    [
       "extradelight:potato_sticks"
     ],
     [
@@ -1906,9 +1873,6 @@
       "extradelight:omelette_mix"
     ],
     [
-      "extradelight:glow_berry_jam"
-    ],
-    [
       "extradelight:egg_yolk"
     ],
     [
@@ -2000,9 +1964,6 @@
     ],
     [
       "extradelight:garlic_clove"
-    ],
-    [
-      "extradelight:jam"
     ],
     [
       "extradelight:miso_paste_item"
