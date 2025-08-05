@@ -10,14 +10,16 @@ import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 public class SourJuiceItem extends DrinkableItem {
 	final int potency;
+	final int chance;
 
-	public SourJuiceItem(Properties properties, int potency) {
+	public SourJuiceItem(Properties properties, int potency, int chance) {
 		super(properties, false, true);
 		this.potency = potency;
+		this.chance = chance;
 	}
 
 	@Override
 	public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
-		consumer.addEffect(new MobEffectInstance(ExtraDelightMobEffects.SOUR_PUCKER, 100, potency));
+		consumer.addEffect(new MobEffectInstance(ExtraDelightMobEffects.SOUR_PUCKER, chance, potency));
 	}
 }

@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.effects.PickledEffect;
 import com.lance5057.extradelight.effects.SourPuckerEffect;
+import com.lance5057.extradelight.effects.SunshineEffect;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
@@ -17,6 +18,8 @@ public class ExtraDelightMobEffects {
 			PickledEffect::new);
 	public static final DeferredHolder<MobEffect, SourPuckerEffect> SOUR_PUCKER = EFFECTS.register("sour_pucker",
 			SourPuckerEffect::new);
+	public static final DeferredHolder<MobEffect, SunshineEffect> SUNSHINE = EFFECTS.register("sunshine",
+			SunshineEffect::new);
 
 	public static void register(IEventBus modBus) {
 		EFFECTS.register(modBus);

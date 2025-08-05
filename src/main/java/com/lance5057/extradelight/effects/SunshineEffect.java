@@ -1,5 +1,8 @@
 package com.lance5057.extradelight.effects;
 
+import com.lance5057.extradelight.ExtraDelightMobEffects;
+
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -14,17 +17,38 @@ public class SunshineEffect extends MobEffect {
 
 	@Override
 	public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
-		if (livingEntity.hasEffect(MobEffects.BLINDNESS)) {
-			MobEffectInstance mbi = livingEntity.getEffect(MobEffects.BLINDNESS);
-			if (mbi.getAmplifier() <= amplifier) {
-				int i = mbi.getAmplifier() - amplifier;
-				if (i == 0)
-					livingEntity.removeEffect(MobEffects.BLINDNESS);
-				else
-					livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, i));
-			}
-		}
 
+		amplifier = breakdownEffect(livingEntity, amplifier, MobEffects.BLINDNESS);
+		amplifier = breakdownEffect(livingEntity, amplifier, MobEffects.DARKNESS);
+
+		return true;
+	}
+
+	private int breakdownEffect(LivingEntity livingEntity, int amplifier, Holder<MobEffect> blindness) {
+		if (amplifier >= 0)
+			if (livingEntity.hasEffect(blindness)) {
+				MobEffectInstance mbi = livingEntity.getEffect(blindness);
+
+				int i = mbi.getAmplifier() - 1;
+				livingEntity.removeEffect(blindness);
+				if (i > -1)
+					livingEntity.addEffect(new MobEffectInstance(blindness, mbi.getDuration(), i));
+
+				amplifier--;
+
+				int mbi2 = livingEntity.getEffect(ExtraDelightMobEffects.SUNSHINE).getDuration();
+
+				livingEntity.removeEffect(ExtraDelightMobEffects.SUNSHINE);
+
+				if (amplifier >= 0)
+					livingEntity.addEffect(new MobEffectInstance(ExtraDelightMobEffects.SUNSHINE, mbi2, amplifier));
+			}
+
+		return amplifier;
+	}
+
+	@Override
+	public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
 		return true;
 	}
 

@@ -98,7 +98,7 @@ public class ExtraDelightNeoForgeClientEvents {
 	@SubscribeEvent
 	public static void puckerEffect(ComputeFovModifierEvent event) {
 		if (event.getPlayer().hasEffect(ExtraDelightMobEffects.SOUR_PUCKER)) {
-			int i = event.getPlayer().getEffect(ExtraDelightMobEffects.SOUR_PUCKER).getAmplifier();
+			int i = event.getPlayer().getEffect(ExtraDelightMobEffects.SOUR_PUCKER).getAmplifier() + 1;
 			float s = i * 0.25f;
 
 			event.setNewFovModifier(event.getFovModifier() - s);
