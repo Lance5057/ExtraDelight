@@ -121,7 +121,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		Fermentation.Recipes(consumer);
 		AestheticBlocks.Recipes(consumer);
 		BottleFluidRegistry.createRecipesForJEI(consumer);
-		
+
 		SpecialRecipeBuilder.special(FlourDoughRecipe::new).save(consumer, "flour_dough");
 	}
 
@@ -2256,6 +2256,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	private void craftingRecipes(RecipeOutput consumer) {
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.APPLE_PIE.get(), 1)
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
 				.save(consumer.withConditions(FalseCondition.INSTANCE));
 
@@ -4559,6 +4563,34 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern("ts").define('t', ExtraDelightTags.TOAST).define('s', SummerCitrus.LEMON_CURD)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
 				.save(consumer, EDLoc("dynamic_toast_lemon_curd"));
+
+		DynamicToastRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TOAST.toStack(), "nut_butter")
+				.pattern("ts").define('t', ExtraDelightTags.TOAST).define('s', ExtraDelightItems.PEANUT_BUTTER_BOTTLE)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer, EDLoc("dynamic_toast_nut_butter"));
+
+		DynamicToastRecipeBuilder
+				.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TOAST.toStack(), "hazelnut_spread").pattern("ts")
+				.define('t', ExtraDelightTags.TOAST).define('s', ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer, EDLoc("dynamic_toast_hazelnut_spread"));
+
+		DynamicToastRecipeBuilder
+				.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TOAST.toStack(), "marshmallow_fluff")
+				.pattern("ts").define('t', ExtraDelightTags.TOAST)
+				.define('s', ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer, EDLoc("dynamic_toast_marshmallow_fluff"));
+
+		DynamicToastRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TOAST.toStack(), "yeast_spread")
+				.pattern("ts").define('t', ExtraDelightTags.TOAST).define('s', Fermentation.YEAST_SPREAD)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer, EDLoc("dynamic_toast_yeast_spread"));
+
+		DynamicToastRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TOAST.toStack(), "butter")
+				.pattern("ts").define('t', ExtraDelightTags.TOAST).define('s', ExtraDelightTags.BUTTER)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
+				.save(consumer, EDLoc("dynamic_toast_butter"));
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {

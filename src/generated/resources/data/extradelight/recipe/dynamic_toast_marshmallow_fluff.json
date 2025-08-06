@@ -1,0 +1,20 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "misc",
+  "graphic": "marshmallow_fluff",
+  "key": {
+    "s": {
+      "item": "extradelight:marshmallow_fluff_bottle"
+    },
+    "t": {
+      "tag": "c:toast"
+    }
+  },
+  "pattern": [
+    "ts"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:dynamic_toast"
+  }
+}

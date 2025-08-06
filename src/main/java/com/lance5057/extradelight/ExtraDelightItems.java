@@ -2955,12 +2955,12 @@ public class ExtraDelightItems {
 					.food(EDFoods.BUTTERED_TOAST)));
 	public static final DeferredItem<Item> DYNAMIC_JAM = ITEMS.register("dynamic_jam",
 			() -> new DynamicJam(new Item.Properties()
-					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
+					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(List.of(Items.SWEET_BERRIES.getDefaultInstance(),
+					Items.SWEET_BERRIES.getDefaultInstance(), Items.SWEET_BERRIES.getDefaultInstance(),
+					Items.SUGAR.getDefaultInstance(), Items.SUGAR.getDefaultInstance(),
+					Items.SUGAR.getDefaultInstance())))
+					.component(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(List.of("sweet_berries")))
 					.food(EDFoods.JAM)));
-
-	static {
-
-	}
 
 	// Jams
 	public static final DeferredItem<Item> JAM = EDItemGenerator.register("jam", () -> new DeprecatedItem() {
