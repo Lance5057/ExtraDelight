@@ -1,5 +1,7 @@
 package com.lance5057.extradelight.items;
 
+import com.lance5057.extradelight.ExtraDelightMobEffects;
+
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,7 +22,7 @@ public class XAdeDrink extends DrinkableItem {
 	@Override
 	public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
 		consumer.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, FoodValues.MEDIUM_DURATION));
-//		consumer.addEffect(new MobEffectInstance(ExtraDelightMobEffects.SUNSHINE.get(), FoodValues.MEDIUM_DURATION, potency));
+		consumer.addEffect(new MobEffectInstance(ExtraDelightMobEffects.SUNSHINE, FoodValues.MEDIUM_DURATION, potency));
 	}
 
 }

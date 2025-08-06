@@ -1,7 +1,7 @@
 {
   "type": "extradelight:bottle_fluid",
   "bottle": {
-    "item": "extradelight:golden_apple_jam"
+    "item": "extradelight:dynamic_jam"
   },
   "fluid": {
     "amount": 250,

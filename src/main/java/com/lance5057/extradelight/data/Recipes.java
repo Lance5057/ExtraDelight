@@ -22,6 +22,7 @@ import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
+import com.lance5057.extradelight.recipe.FlourDoughRecipe;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.simibubi.create.Create;
@@ -37,6 +38,7 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
+import net.minecraft.data.recipes.SpecialRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
@@ -119,6 +121,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		Fermentation.Recipes(consumer);
 		AestheticBlocks.Recipes(consumer);
 		BottleFluidRegistry.createRecipesForJEI(consumer);
+		
+		SpecialRecipeBuilder.special(FlourDoughRecipe::new).save(consumer, "flour_dough");
 	}
 
 	private void juicerRecipes(RecipeOutput consumer) {

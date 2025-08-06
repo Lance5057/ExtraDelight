@@ -6,6 +6,7 @@ import com.lance5057.extradelight.recipe.BottleFluidRegistryRecipe;
 import com.lance5057.extradelight.recipe.DynamicJamRecipe;
 import com.lance5057.extradelight.recipe.DynamicToastRecipe;
 import com.lance5057.extradelight.recipe.FeastRecipe;
+import com.lance5057.extradelight.recipe.FlourDoughRecipe;
 import com.lance5057.extradelight.recipe.ShapedWithJarRecipe;
 import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
 import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
@@ -24,6 +25,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ExtraDelightRecipes {
@@ -128,4 +130,7 @@ public class ExtraDelightRecipes {
 			.register("bottle_fluid", BottleFluidRegistryRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> JUICER_SERIALIZER = RECIPE_SERIALIZERS.register("juicer",
 			JuicerRecipe.Serializer::new);
+	
+	public static final Supplier<SimpleCraftingRecipeSerializer<?>> DOUGH =
+			RECIPE_SERIALIZERS.register("flour_dough", () -> new SimpleCraftingRecipeSerializer<>(FlourDoughRecipe::new));
 }

@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "tag": "forge:sandwich_bread"
-    },
-    {
-      "tag": "forge:cooked_eggs"
-    },
-    {
-      "tag": "forge:cooked_eggs"
-    }
-  ],
-  "result": {
-    "item": "farmersdelight:egg_sandwich"
-  }
-}
+{"neoforge:conditions":[{"type":"neoforge:never"}]}
