@@ -77,7 +77,7 @@ public class DynamicJam extends Item implements IDynamic {
 		ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
 		DynamicItemComponent dyn = itemStack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
 
-		if (comp != null) {
+		if (comp != null && dyn != null) {
 			if (comp.getSlots() > 0) {
 				if (comp.getStackInSlot(0).is(ExtraDelightTags.IS_MARMALADE_INGREDIENT))
 					return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),

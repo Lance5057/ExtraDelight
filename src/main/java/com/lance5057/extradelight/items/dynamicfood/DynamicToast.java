@@ -35,7 +35,7 @@ public class DynamicToast extends Item implements IDynamic {
 
 		DynamicItemComponent comp = itemStack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
 		ItemContainerContents items = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
-		if (comp != null) {
+		if (comp != null && items != null) {
 			{
 				if (comp.graphics().size() > 0) {
 					ResourceLocation rc = missing_model;
