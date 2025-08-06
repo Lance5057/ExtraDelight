@@ -83,7 +83,7 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 				.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluid(recipe.getFluid()),
 						new ItemStack(recipe.getFluid().getFluid().getBucket())));
 
-		builder.addSlot(RecipeIngredientRole.CATALYST, 107, 10)
+		builder.addSlot(RecipeIngredientRole.CATALYST, 107, 9)
 				.addIngredients(Ingredient.of(ExtraDelightTags.CHILLING_ITEMS));
 	}
 
