@@ -2,16 +2,13 @@
   "type": "extradelight:dynamic_toast",
   "category": "misc",
   "graphic": "hazelnut_spread",
-  "key": {
-    "s": {
-      "item": "extradelight:hazelnut_spread_bottle"
-    },
-    "t": {
+  "ingredients": [
+    {
       "tag": "c:toast"
+    },
+    {
+      "item": "extradelight:hazelnut_spread_bottle"
     }
-  },
-  "pattern": [
-    "ts"
   ],
   "result": {
     "count": 1,

@@ -1404,7 +1404,7 @@ public class SummerCitrus {
 				.addIngredient(Items.SUGAR).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE)
 				.addIngredient(Ingredient.of(ExtraDelightItems.JELLY_ORANGE)).addIngredient(ORANGE_ZEST)
-				.unlockedByAnyIngredient(ORANGE).build(consumer);
+				.unlockedByAnyIngredient(ORANGE).build(consumer, "jaffa_jelly");
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(GRILLED_GRAPEFRUIT.get(), 8), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,

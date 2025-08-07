@@ -2,16 +2,13 @@
   "type": "extradelight:dynamic_toast",
   "category": "misc",
   "graphic": "dynamic",
-  "key": {
-    "s": {
-      "item": "extradelight:dynamic_jam"
-    },
-    "t": {
+  "ingredients": [
+    {
       "tag": "c:toast"
+    },
+    {
+      "item": "extradelight:dynamic_jam"
     }
-  },
-  "pattern": [
-    "ts"
   ],
   "result": {
     "count": 1,

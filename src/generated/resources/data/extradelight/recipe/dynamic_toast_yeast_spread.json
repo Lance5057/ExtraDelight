@@ -2,16 +2,13 @@
   "type": "extradelight:dynamic_toast",
   "category": "misc",
   "graphic": "yeast_spread",
-  "key": {
-    "s": {
-      "item": "extradelight:yeast_spread"
-    },
-    "t": {
+  "ingredients": [
+    {
       "tag": "c:toast"
+    },
+    {
+      "item": "extradelight:yeast_spread"
     }
-  },
-  "pattern": [
-    "ts"
   ],
   "result": {
     "count": 1,

@@ -2,16 +2,13 @@
   "type": "extradelight:dynamic_toast",
   "category": "misc",
   "graphic": "butter",
-  "key": {
-    "s": {
-      "tag": "c:butter"
-    },
-    "t": {
+  "ingredients": [
+    {
       "tag": "c:toast"
+    },
+    {
+      "tag": "c:butter"
     }
-  },
-  "pattern": [
-    "ts"
   ],
   "result": {
     "count": 1,

@@ -2,16 +2,13 @@
   "type": "extradelight:dynamic_toast",
   "category": "misc",
   "graphic": "lemon_curd",
-  "key": {
-    "s": {
-      "item": "extradelight:lemon_curd"
-    },
-    "t": {
+  "ingredients": [
+    {
       "tag": "c:toast"
+    },
+    {
+      "item": "extradelight:lemon_curd"
     }
-  },
-  "pattern": [
-    "ts"
   ],
   "result": {
     "count": 1,
