@@ -24,7 +24,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "extradelight:whipped_cream"
+      "tag": "c:whipped_cream"
     },
     {
       "tag": "extradelight:processed/fruit"

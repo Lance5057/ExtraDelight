@@ -69,6 +69,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.tea", "Minor Instant Health, Comfort");
 		this.add("farmersdelight.tooltip.gourmet_hot_chocolate", "Removes all Harmful Effects");
 		this.add("farmersdelight.tooltip.coffee", "+20% Speed (3:00)");
+		this.add("farmersdelight.tooltip.xocolati", "Medium Fire Resist, Removes 1 Harmful Effect");
 
 		this.add("farmersdelight.tooltip.milkshake", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.chocolate_milkshake", "Instant Health");

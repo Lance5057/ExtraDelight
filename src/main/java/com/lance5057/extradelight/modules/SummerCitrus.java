@@ -31,11 +31,9 @@ import com.lance5057.extradelight.data.recipebuilders.JuicerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
 import com.lance5057.extradelight.food.EDFoods;
-import com.lance5057.extradelight.items.GlowberryJuiceItem;
-import com.lance5057.extradelight.items.GourmetHotCocoa;
-import com.lance5057.extradelight.items.SourJuiceItem;
-import com.lance5057.extradelight.items.ToolTipConsumableItem;
+import com.lance5057.extradelight.items.*;
 import com.lance5057.extradelight.items.components.ChillComponent;
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.util.EDItemGenerator;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
@@ -238,7 +236,7 @@ public class SummerCitrus {
 					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> GRAPEFRUIT_JUICE = EDItemGenerator
 			.register("grapefruit_juice",
-					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 1, 25))
+					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 1, 50))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> GRAPEFRUIT_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"grapefruit_juice_fluid_bucket",
@@ -305,7 +303,7 @@ public class SummerCitrus {
 			.register("key_lime_pie_item", () -> new BlockItem(KEY_LIME_PIE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
 	public static final DeferredItem<Item> LEMONADE = EDItemGenerator
-			.register("lemonade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink()
+			.register("lemonade", () -> new XAdeDrink(new Item.Properties().stacksTo(16), 2)).drink()
 			.setHydration(20).setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LEMONADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"lemonade_tray",
@@ -315,7 +313,7 @@ public class SummerCitrus {
 			.register("lemonade_tray_item", () -> new BlockItem(LEMONADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> LIMEADE = EDItemGenerator
-			.register("limeade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink()
+			.register("limeade", () -> new XAdeDrink(new Item.Properties().stacksTo(16), 2)).drink()
 			.setHydration(20).setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LIMEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"limeade_tray",
@@ -325,7 +323,7 @@ public class SummerCitrus {
 			.register("limeade_tray_item", () -> new BlockItem(LIMEADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> ORANGEADE = EDItemGenerator
-			.register("orangeade", () -> new GlowberryJuiceItem(new Item.Properties().stacksTo(16))).drink()
+			.register("orangeade", () -> new XAdeDrink(new Item.Properties().stacksTo(16), 2)).drink()
 			.setHydration(20).setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> ORANGEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"orangeade_tray",
@@ -1387,12 +1385,15 @@ public class SummerCitrus {
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FROSTING_RED)
 				.addIngredient(ExtraDelightTags.FROSTING_GREEN).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
 				.unlockedByAnyIngredient(Items.MELON_SLICE).build(consumer);
+		ItemStack stack = new ItemStack(ExtraDelightItems.DYNAMIC_JAM.get());
+		stack.set(ExtraDelightComponents.DYNAMIC_FOOD, new DynamicItemComponent(List.of("orange")));
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(JAFFA_CAKE.get(), 6), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), false)
 				.addIngredient(Items.SUGAR).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.JELLY_ORANGE)
-				.addIngredient(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE).addIngredient(ORANGE_ZEST)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE)
+				.addIngredient(CompoundIngredient.of(Ingredient.of(ExtraDelightItems.JELLY_ORANGE),
+						Ingredient.of(stack))).addIngredient(ORANGE_ZEST)
 				.unlockedByAnyIngredient(ORANGE).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(GRILLED_GRAPEFRUIT.get(), 8), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
@@ -1426,7 +1427,7 @@ public class SummerCitrus {
 				.OvenRecipe(new ItemStack(PAVLOVA_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
 				.addIngredient(STIFF_PEAKS).addIngredient(STIFF_PEAKS).addIngredient(STIFF_PEAKS)
-				.addIngredient(Items.SUGAR).addIngredient(Items.SUGAR).addIngredient(ExtraDelightItems.WHIPPED_CREAM)
+				.addIngredient(Items.SUGAR).addIngredient(Items.SUGAR).addIngredient(ExtraDelightTags.WHIPPED_CREAM)
 				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).addIngredient(ExtraDelightTags.PROCESSED_FRUIT)
 				.unlockedByAnyIngredient(STIFF_PEAKS).build(consumer);
 		OvenRecipeBuilder
@@ -1507,6 +1508,7 @@ public class SummerCitrus {
 		lp.add(LEMON_SAPLING.get(), "Lemon Sapling");
 		lp.add(POTTED_LEMON_SAPLING.get(), "Potted Lemon Sapling");
 		lp.add(LEMON_JUICE.get(), "Lemon Juice");
+		lp.add("farmersdelight.tooltip.lemon_juice", "Minor Instant Health");
 		lp.add(LEMON_JUICE_FLUID_BUCKET.get(), "Lemon Juice Bucket");
 		lp.add("fluid_type.extradelight.lemon_juice_fluid", "Lemon Juice");
 		lp.add("block.extradelight.lemon_juice_fluid_block", "Lemon Juice");
@@ -1520,6 +1522,7 @@ public class SummerCitrus {
 		lp.add(LIME_SAPLING.get(), "Lime Sapling");
 		lp.add(POTTED_LIME_SAPLING.get(), "Potted Lime Sapling");
 		lp.add(LIME_JUICE.get(), "Lime Juice");
+		lp.add("farmersdelight.tooltip.lime_juice", "Minor Instant Health");
 		lp.add(LIME_JUICE_FLUID_BUCKET.get(), "Lime Juice Bucket");
 		lp.add("fluid_type.extradelight.lime_juice_fluid", "Lime Juice");
 		lp.add("block.extradelight.lime_juice_fluid_block", "Lime Juice");
@@ -1533,6 +1536,7 @@ public class SummerCitrus {
 		lp.add(ORANGE_SAPLING.get(), "Orange Sapling");
 		lp.add(POTTED_ORANGE_SAPLING.get(), "Potted Orange Sapling");
 		lp.add(ORANGE_JUICE.get(), "Orange Juice");
+		lp.add("farmersdelight.tooltip.orange_juice", "Minor Instant Health");
 		lp.add(ORANGE_JUICE_FLUID_BUCKET.get(), "Orange Juice Bucket");
 		lp.add("fluid_type.extradelight.orange_juice_fluid", "Orange Juice");
 		lp.add("block.extradelight.orange_juice_fluid_block", "Orange Juice");
@@ -1546,6 +1550,7 @@ public class SummerCitrus {
 		lp.add(GRAPEFRUIT_SAPLING.get(), "Grapefruit Sapling");
 		lp.add(POTTED_GRAPEFRUIT_SAPLING.get(), "Potted Grapefruit Sapling");
 		lp.add(GRAPEFRUIT_JUICE.get(), "Grapefruit Juice");
+		lp.add("farmersdelight.tooltip.grapefruit_juice", "Minor Instant Health");
 		lp.add(GRAPEFRUIT_JUICE_FLUID_BUCKET.get(), "Grapefruit Juice Bucket");
 		lp.add("fluid_type.extradelight.grapefruit_juice_fluid", "Grapefruit Juice");
 		lp.add("block.extradelight.grapefruit_juice_fluid_block", "Grapefruit Juice");
@@ -1570,15 +1575,19 @@ public class SummerCitrus {
 		lp.add(KEY_LIME_PIE.get(), "Key Lime Pie");
 		lp.add(KEY_LIME_PIE_SLICE.get(), "Slice of Key Lime Pie");
 		lp.add(LEMONADE.get(), "Lemonade");
+		lp.add("farmersdelight.tooltip.lemonade", "Medium Fire Resist, Sunshine 2");
 		lp.add(LEMONADE_TRAY.get(), "Tray of Lemonade");
 		lp.add(LIMEADE.get(), "Limeade");
+		lp.add("farmersdelight.tooltip.limeade", "Medium Fire Resist, Sunshine 2");
 		lp.add(LIMEADE_TRAY.get(), "Tray of Limeade");
 		lp.add(ORANGEADE.get(), "Orangeade");
+		lp.add("farmersdelight.tooltip.orangeade", "Medium Fire Resist, Sunshine 2");
 		lp.add(ORANGEADE_TRAY.get(), "Tray of Orangeade");
 		lp.add(MELON_GAZPACHO.get(), "Melon Gazpacho");
 		lp.add(THAI_MELON_SALAD.get(), "Thai Melon Salad");
 		lp.add(ETON_MESS.get(), "Eton Mess");
 		lp.add(DALGONA_COFFEE.get(), "Dalgona Coffee");
+		lp.add("farmersdelight.tooltip.dalgona_coffee", "Removes all Harmful Effects");
 		lp.add(GRAPEFRUIT_BEETROOT_SALAD.get(), "Grapefruit and Beetroot Salad");
 		lp.add(CITRUS_ONION_SALAD.get(), "Citrus, Onion and Mint Salad");
 		lp.add(MELON_FRUIT_SALAD.get(), "Melon Fruit Salad");

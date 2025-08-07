@@ -1615,7 +1615,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"egg_mix");
 
 		mixing(new ItemStack(ExtraDelightItems.MAYO.get(), 1), LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
-				new Ingredient[] { Ingredient.of(Tags.Items.EGGS), Ingredient.of(Tags.Items.EGGS) },
+				Ingredient.of(ExtraDelightItems.WHISK),
+				new Ingredient[] { CompoundIngredient.of(Ingredient.of(Tags.Items.EGGS), Ingredient.of(SummerCitrus.EGG_YOLK)),
+						CompoundIngredient.of(Ingredient.of(Tags.Items.EGGS), Ingredient.of(SummerCitrus.EGG_YOLK)) },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "mayo");
@@ -1642,7 +1644,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.MAYO.FLUID, 250)) },
 				consumer, "fish_salad");
 
-		mixing(new ItemStack(ExtraDelightItems.BUTTER.get(), 1), LONG_GRIND, ItemStack.EMPTY, new Ingredient[] {},
+		mixing(new ItemStack(ExtraDelightItems.BUTTER.get(), 1), LONG_GRIND, ItemStack.EMPTY,
+				Ingredient.of(ExtraDelightItems.WHISK), new Ingredient[] {},
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250)) },
 				consumer, "butter");
@@ -2182,7 +2185,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, "potato_salad");
 
 		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
-				new Ingredient[] { Ingredient.of(Tags.Items.EGGS), Ingredient.of(Tags.Items.EGGS),
+				Ingredient.of(ExtraDelightItems.WHISK),
+				new Ingredient[] { CompoundIngredient.of(Ingredient.of(Tags.Items.EGGS), Ingredient.of(SummerCitrus.EGG_YOLK)),
+						CompoundIngredient.of(Ingredient.of(Tags.Items.EGGS), Ingredient.of(SummerCitrus.EGG_YOLK)),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)),
@@ -2190,6 +2195,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, "aioli_from_scratch");
 
 		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
+				Ingredient.of(ExtraDelightItems.WHISK),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.MAYO.FLUID, 250)) },

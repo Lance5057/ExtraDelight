@@ -13,6 +13,6 @@
   },
   "stirs": 8,
   "utensil": {
-    "tag": "c:spoons"
+    "item": "extradelight:whisk"
   }
 }

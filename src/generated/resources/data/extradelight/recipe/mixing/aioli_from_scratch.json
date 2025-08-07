@@ -16,10 +16,26 @@
   ],
   "ingredients": [
     {
-      "tag": "c:eggs"
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:eggs"
+        },
+        {
+          "item": "extradelight:egg_yolk"
+        }
+      ]
     },
     {
-      "tag": "c:eggs"
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:eggs"
+        },
+        {
+          "item": "extradelight:egg_yolk"
+        }
+      ]
     },
     {
       "tag": "extradelight:processed/garlic"
@@ -31,6 +47,6 @@
   },
   "stirs": 8,
   "utensil": {
-    "tag": "c:spoons"
+    "item": "extradelight:whisk"
   }
 }
