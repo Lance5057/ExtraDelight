@@ -56,17 +56,15 @@ public class DynamicJam extends Item implements IDynamic {
 
 		if (comp != null) {
 			{
-				if (comp.nonEmptyItems() != null) {
-					tooltip.add(Component.translatable("tooltip.dynamic.ingredients"));
-					for (ItemStack s : comp.nonEmptyItems()) {
-						tooltip.add(Component.literal(" - ").append(Component.translatable(s.getDescriptionId())));
-//						if (isAdvanced.hasShiftDown()) {
-//							if (!(s.getItem() instanceof DynamicJam))
-//								s.getItem().appendHoverText(stack, context, tooltip, isAdvanced);
-//						}
+				if (isAdvanced.hasShiftDown()) {
+					if (comp.nonEmptyItems() != null) {
+						tooltip.add(Component.translatable("tooltip.dynamic.ingredients"));
+						for (ItemStack s : comp.nonEmptyItems()) {
+							tooltip.add(Component.literal(" - ").append(Component.translatable(s.getDescriptionId())));
+						}
 					}
-					if (!isAdvanced.hasShiftDown())
-						tooltip.add(Component.translatable("tooltip.see_more").withColor(0xFF555555));
+				} else {
+					tooltip.add(Component.translatable("tooltip.see_more").withColor(0xFFAAAAAA));
 				}
 			}
 		}
@@ -85,8 +83,8 @@ public class DynamicJam extends Item implements IDynamic {
 							Component.translatable("extradelight.marmalade")));
 				else
 					return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),
-							Component.translatable("extradelight.jam."
-									+ dyn.graphics().get(0)), Component.translatable("extradelight.jam")));
+							Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
+							Component.translatable("extradelight.jam")));
 			}
 		}
 

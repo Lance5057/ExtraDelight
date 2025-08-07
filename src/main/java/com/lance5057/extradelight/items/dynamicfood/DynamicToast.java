@@ -90,8 +90,17 @@ public class DynamicToast extends Item implements IDynamic {
 		ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
 		if (comp != null) {
 			if (comp.getSlots() > 1)
-				return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),
-						comp.getStackInSlot(1).getItem().getName(comp.getStackInSlot(1))));
+			{
+				for(ItemStack stack : comp.nonEmptyItems())
+				{
+					if(!stack.is(ExtraDelightTags.TOAST))
+					{
+						return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),
+								stack.getItem().getName(stack)));
+					}
+				}
+				
+			}
 		}
 
 		return Component.translatable("dynamic.toast");

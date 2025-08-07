@@ -31,7 +31,10 @@ import com.lance5057.extradelight.data.recipebuilders.JuicerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.VatRecipeBuilder;
 import com.lance5057.extradelight.food.EDFoods;
-import com.lance5057.extradelight.items.*;
+import com.lance5057.extradelight.items.GourmetHotCocoa;
+import com.lance5057.extradelight.items.SourJuiceItem;
+import com.lance5057.extradelight.items.ToolTipConsumableItem;
+import com.lance5057.extradelight.items.XAdeDrink;
 import com.lance5057.extradelight.items.components.ChillComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.util.EDItemGenerator;
@@ -82,6 +85,7 @@ import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.crafting.CompoundIngredient;
+import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -303,8 +307,8 @@ public class SummerCitrus {
 			.register("key_lime_pie_item", () -> new BlockItem(KEY_LIME_PIE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
 	public static final DeferredItem<Item> LEMONADE = EDItemGenerator
-			.register("lemonade", () -> new XAdeDrink(new Item.Properties().stacksTo(16), 2)).drink()
-			.setHydration(20).setThirst(6).setPoison(0).isHot(false).finish();
+			.register("lemonade", () -> new XAdeDrink(new Item.Properties().stacksTo(16), 2)).drink().setHydration(20)
+			.setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LEMONADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"lemonade_tray",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_YELLOW), true,
@@ -313,8 +317,8 @@ public class SummerCitrus {
 			.register("lemonade_tray_item", () -> new BlockItem(LEMONADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> LIMEADE = EDItemGenerator
-			.register("limeade", () -> new XAdeDrink(new Item.Properties().stacksTo(16), 2)).drink()
-			.setHydration(20).setThirst(6).setPoison(0).isHot(false).finish();
+			.register("limeade", () -> new XAdeDrink(new Item.Properties().stacksTo(16), 2)).drink().setHydration(20)
+			.setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LIMEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"limeade_tray",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_GREEN), true,
@@ -323,8 +327,8 @@ public class SummerCitrus {
 			.register("limeade_tray_item", () -> new BlockItem(LIMEADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> ORANGEADE = EDItemGenerator
-			.register("orangeade", () -> new XAdeDrink(new Item.Properties().stacksTo(16), 2)).drink()
-			.setHydration(20).setThirst(6).setPoison(0).isHot(false).finish();
+			.register("orangeade", () -> new XAdeDrink(new Item.Properties().stacksTo(16), 2)).drink().setHydration(20)
+			.setThirst(6).setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> ORANGEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"orangeade_tray",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_ORANGE), true,
@@ -1385,16 +1389,23 @@ public class SummerCitrus {
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FROSTING_RED)
 				.addIngredient(ExtraDelightTags.FROSTING_GREEN).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
 				.unlockedByAnyIngredient(Items.MELON_SLICE).build(consumer);
-		ItemStack stack = new ItemStack(ExtraDelightItems.DYNAMIC_JAM.get());
-		stack.set(ExtraDelightComponents.DYNAMIC_FOOD, new DynamicItemComponent(List.of("orange")));
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(JAFFA_CAKE.get(), 6), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), false)
 				.addIngredient(Items.SUGAR).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE)
-				.addIngredient(CompoundIngredient.of(Ingredient.of(ExtraDelightItems.JELLY_ORANGE),
-						Ingredient.of(stack))).addIngredient(ORANGE_ZEST)
+				.addIngredient(DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+						new DynamicItemComponent(List.of("orange")), ExtraDelightItems.DYNAMIC_JAM.get()))
+				.addIngredient(ORANGE_ZEST).unlockedByAnyIngredient(ORANGE).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(JAFFA_CAKE.get(), 6), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), false)
+				.addIngredient(Items.SUGAR).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE)
+				.addIngredient(Ingredient.of(ExtraDelightItems.JELLY_ORANGE)).addIngredient(ORANGE_ZEST)
 				.unlockedByAnyIngredient(ORANGE).build(consumer);
+
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(GRILLED_GRAPEFRUIT.get(), 8), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.TRAY.get()), false)

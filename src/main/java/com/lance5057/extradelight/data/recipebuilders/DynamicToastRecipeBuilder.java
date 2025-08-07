@@ -16,9 +16,12 @@ import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
+import net.minecraft.core.NonNullList;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -29,105 +32,100 @@ import net.minecraft.world.level.ItemLike;
 
 public class DynamicToastRecipeBuilder implements RecipeBuilder {
 	private final RecipeCategory category;
-	private final ItemStack result;
-	private final ItemStack resultStack; // Neo: add stack result support
-	private final List<String> rows = Lists.newArrayList();
-	private final Map<Character, Ingredient> key = Maps.newLinkedHashMap();
-	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
-	@Nullable
-	private String group;
-	private boolean showNotification = true;
+    private final ItemStack result;
+    private final NonNullList<Ingredient> ingredients = NonNullList.create();
+    private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
+    @Nullable
+    private String group;
 	private final String graphic;
 
 	public DynamicToastRecipeBuilder(RecipeCategory p_249996_, ItemStack result, String graphic) {
 		this.category = p_249996_;
 		this.result = result;
-		this.resultStack = result;
 		this.graphic = graphic;
 	}
 
-	public static DynamicToastRecipeBuilder shaped(RecipeCategory p_251325_, ItemStack result, String graphic) {
-		return new DynamicToastRecipeBuilder(p_251325_, result, graphic);
-	}
 
-	/**
-	 * Adds a key to the recipe pattern.
-	 */
-	public DynamicToastRecipeBuilder define(Character symbol, TagKey<Item> tag) {
-		return this.define(symbol, Ingredient.of(tag));
-	}
+    public static DynamicToastRecipeBuilder shapeless(RecipeCategory p_252339_, ItemStack result, String graphic) {
+        return new DynamicToastRecipeBuilder(p_252339_, result, graphic);
+    }
 
-	/**
-	 * Adds a key to the recipe pattern.
-	 */
-	public DynamicToastRecipeBuilder define(Character symbol, ItemLike item) {
-		return this.define(symbol, Ingredient.of(item));
-	}
+    /**
+     * Adds an ingredient that can be any item in the given tag.
+     */
+    public DynamicToastRecipeBuilder requires(TagKey<Item> tag) {
+        return this.requires(Ingredient.of(tag));
+    }
 
-	/**
-	 * Adds a key to the recipe pattern.
-	 */
-	public DynamicToastRecipeBuilder define(Character symbol, Ingredient ingredient) {
-		if (this.key.containsKey(symbol)) {
-			throw new IllegalArgumentException("Symbol '" + symbol + "' is already defined!");
-		} else if (symbol == ' ') {
-			throw new IllegalArgumentException("Symbol ' ' (whitespace) is reserved and cannot be defined");
-		} else {
-			this.key.put(symbol, ingredient);
-			return this;
-		}
-	}
+    /**
+     * Adds an ingredient of the given item.
+     */
+    public DynamicToastRecipeBuilder requires(ItemLike item) {
+        return this.requires(item, 1);
+    }
 
-	/**
-	 * Adds a new entry to the patterns for this recipe.
-	 */
-	public DynamicToastRecipeBuilder pattern(String pattern) {
-		if (!this.rows.isEmpty() && pattern.length() != this.rows.get(0).length()) {
-			throw new IllegalArgumentException("Pattern must be the same width on every line!");
-		} else {
-			this.rows.add(pattern);
-			return this;
-		}
-	}
+    /**
+     * Adds the given ingredient multiple times.
+     */
+    public DynamicToastRecipeBuilder requires(ItemLike item, int quantity) {
+        for (int i = 0; i < quantity; i++) {
+            this.requires(Ingredient.of(item));
+        }
 
-	public DynamicToastRecipeBuilder unlockedBy(String name, Criterion<?> criterion) {
-		this.criteria.put(name, criterion);
-		return this;
-	}
+        return this;
+    }
 
-	public DynamicToastRecipeBuilder group(@Nullable String groupName) {
-		this.group = groupName;
-		return this;
-	}
+    /**
+     * Adds an ingredient.
+     */
+    public DynamicToastRecipeBuilder requires(Ingredient ingredient) {
+        return this.requires(ingredient, 1);
+    }
 
-	public DynamicToastRecipeBuilder showNotification(boolean showNotification) {
-		this.showNotification = showNotification;
-		return this;
-	}
+    /**
+     * Adds an ingredient multiple times.
+     */
+    public DynamicToastRecipeBuilder requires(Ingredient ingredient, int quantity) {
+        for (int i = 0; i < quantity; i++) {
+            this.ingredients.add(ingredient);
+        }
 
-	@Override
-	public Item getResult() {
-		return this.result.getItem();
-	}
+        return this;
+    }
+
+    public DynamicToastRecipeBuilder unlockedBy(String name, Criterion<?> criterion) {
+        this.criteria.put(name, criterion);
+        return this;
+    }
+
+    public DynamicToastRecipeBuilder group(@Nullable String groupName) {
+        this.group = groupName;
+        return this;
+    }
+
+    @Override
+    public Item getResult() {
+        return this.result.getItem();
+    }
 
 	@Override
 	public void save(RecipeOutput recipeOutput, ResourceLocation id) {
-		ShapedRecipePattern shapedrecipepattern = this.ensureValid(id);
+		this.ensureValid(id);
 		Advancement.Builder advancement$builder = recipeOutput.advancement()
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
 				.rewards(AdvancementRewards.Builder.recipe(id)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancement$builder::addCriterion);
 		DynamicToastRecipe shapedrecipe = new DynamicToastRecipe(Objects.requireNonNullElse(this.group, ""),
-				RecipeBuilder.determineBookCategory(this.category), shapedrecipepattern, this.resultStack, this.graphic);
+				RecipeBuilder.determineBookCategory(this.category), this.result, this.ingredients, this.graphic);
 		recipeOutput.accept(id, shapedrecipe,
 				advancement$builder.build(id.withPrefix("recipes/" + this.category.getFolderName() + "/")));
 	}
 
-	private ShapedRecipePattern ensureValid(ResourceLocation loaction) {
-		if (this.criteria.isEmpty()) {
-			throw new IllegalStateException("No way of obtaining recipe " + loaction);
-		} else {
-			return ShapedRecipePattern.of(this.key, this.rows);
-		}
-	}
+	private void ensureValid(ResourceLocation id) {
+        if (this.criteria.isEmpty()) {
+            throw new IllegalStateException("No way of obtaining recipe " + id);
+        }
+    }
+
+	
 }

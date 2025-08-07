@@ -24,15 +24,15 @@
       "item": "extradelight:dark_chocolate_syrup_bottle"
     },
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "extradelight:jelly_orange"
-        },
-        {
-          "item": "extradelight:dynamic_jam"
+      "type": "neoforge:components",
+      "components": {
+        "extradelight:dynamic_food": {
+          "graphics": [
+            "orange"
+          ]
         }
-      ]
+      },
+      "items": "extradelight:dynamic_jam"
     },
     {
       "item": "extradelight:orange_zest"

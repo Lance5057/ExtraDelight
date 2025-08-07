@@ -2,6 +2,8 @@ package com.lance5057.extradelight.blocks;
 
 import java.util.OptionalInt;
 
+import com.lance5057.extradelight.ExtraDelightParticles;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -25,16 +27,27 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class VanillaFruitLeafBlock extends AbstractFruitLeafBlock {
 
 	private final Item fruit;
+	private final DeferredBlock<Block> petalLitter;
 
 	public VanillaFruitLeafBlock(Properties p_49795_, Item fruit) {
 		super(p_49795_);
 		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0))
 				.setValue(DISTANCE, Integer.valueOf(7)).setValue(PERSISTENT, false).setValue(STERILE, false));
 		this.fruit = fruit;
+		petalLitter = null;
+	}
+
+	public VanillaFruitLeafBlock(Properties p_49795_, Item fruit, DeferredBlock<Block> petalLitter) {
+		super(p_49795_);
+		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0))
+				.setValue(DISTANCE, Integer.valueOf(7)).setValue(PERSISTENT, false).setValue(STERILE, false));
+		this.fruit = fruit;
+		this.petalLitter = petalLitter;
 	}
 
 	@Override
@@ -135,6 +148,17 @@ public class VanillaFruitLeafBlock extends AbstractFruitLeafBlock {
 				}
 			}
 		}
+
+		if (petalLitter != null)
+			if (p_221374_.getValue(AGE) == 1 || p_221374_.getValue(AGE) == 2)
+				if (p_221377_.nextInt(5) == 0) {
+					BlockPos blockpos = p_221376_.below();
+					BlockState blockstate = p_221375_.getBlockState(blockpos);
+					if (!isFaceFull(blockstate.getCollisionShape(p_221375_, blockpos), Direction.UP)) {
+						ParticleUtils.spawnParticleBelow(p_221375_, p_221376_, p_221377_,
+								ExtraDelightParticles.PETALS.get());
+					}
+				}
 	}
 
 	@Override

@@ -167,15 +167,16 @@ public class FruitLeafBlock extends AbstractFruitLeafBlock {
 			}
 		}
 
-		if (p_221374_.getValue(AGE) == 1 || p_221374_.getValue(AGE) == 2)
-			if (p_221377_.nextInt(5) == 0) {
-				BlockPos blockpos = p_221376_.below();
-				BlockState blockstate = p_221375_.getBlockState(blockpos);
-				if (!isFaceFull(blockstate.getCollisionShape(p_221375_, blockpos), Direction.UP)) {
-					ParticleUtils.spawnParticleBelow(p_221375_, p_221376_, p_221377_,
-							ExtraDelightParticles.PETALS.get());
+		if (petalLitter != null)
+			if (p_221374_.getValue(AGE) == 1 || p_221374_.getValue(AGE) == 2)
+				if (p_221377_.nextInt(5) == 0) {
+					BlockPos blockpos = p_221376_.below();
+					BlockState blockstate = p_221375_.getBlockState(blockpos);
+					if (!isFaceFull(blockstate.getCollisionShape(p_221375_, blockpos), Direction.UP)) {
+						ParticleUtils.spawnParticleBelow(p_221375_, p_221376_, p_221377_,
+								ExtraDelightParticles.PETALS.get());
+					}
 				}
-			}
 	}
 
 	@Override
