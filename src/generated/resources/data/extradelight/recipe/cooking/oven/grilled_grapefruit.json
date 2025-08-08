@@ -9,16 +9,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "extradelight:grapefruit"
+      "tag": "c:crops/grapefruit"
     },
     {
-      "item": "extradelight:grapefruit"
+      "tag": "c:crops/grapefruit"
     },
     {
-      "item": "extradelight:grapefruit"
+      "tag": "c:crops/grapefruit"
     },
     {
-      "item": "extradelight:grapefruit"
+      "tag": "c:crops/grapefruit"
     },
     {
       "tag": "extradelight:sweetener"

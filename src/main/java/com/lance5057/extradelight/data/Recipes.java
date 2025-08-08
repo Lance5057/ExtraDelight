@@ -4633,7 +4633,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.SUNFLOWER_SEEDS.get(), 2)
 				.addResult(Items.YELLOW_DYE, 2).build(consumer, EDLoc("cutting/" + "sunflower_seeds"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.APPLE), Ingredient.of(CommonTags.TOOLS_KNIFE),
-				ExtraDelightItems.SLICED_APPLE.get(), 1).build(consumer, EDLoc("cutting/" + "cut_apples"));
+				ExtraDelightItems.SLICED_APPLE.get(), 2).build(consumer, EDLoc("cutting/" + "cut_apples"));
 
 		// Grate
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Tags.Items.CROPS_POTATO),
@@ -5008,7 +5008,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL))
 				.save(consumer, EDLoc("dye_white"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.ORANGE_TULIP, Items.TORCHFLOWER), new ItemStack(Items.ORANGE_DYE, 2),
+				.grind(Ingredient.of(Items.ORANGE_TULIP, Items.TORCHFLOWER, SummerCitrus.ORANGE_PETAL_LITTER_ITEM),
+						new ItemStack(Items.ORANGE_DYE, 2),
 						FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ORANGE_TULIP))
 				.save(consumer, EDLoc("dye_orange"));
@@ -5028,7 +5029,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLUE_ORCHID))
 				.save(consumer, EDLoc("dye_light_blue"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.DANDELION), new ItemStack(Items.YELLOW_DYE, 2), FluidStack.EMPTY,
+				.grind(Ingredient.of(Items.DANDELION, SummerCitrus.LEMON_PETAL_LITTER_ITEM),
+						new ItemStack(Items.YELLOW_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.DANDELION))
 				.save(consumer, EDLoc("dye_yellow"));
@@ -5038,12 +5040,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.SUNFLOWER))
 				.save(consumer, EDLoc("dye_yellow_three"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.SEA_PICKLE), new ItemStack(Items.LIME_DYE, 2), FluidStack.EMPTY,
+				.grind(Ingredient.of(Items.SEA_PICKLE, SummerCitrus.LIME_PETAL_LITTER_ITEM),
+						new ItemStack(Items.LIME_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.SEA_PICKLE))
 				.save(consumer, EDLoc("dye_lime"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.PINK_TULIP), new ItemStack(Items.PINK_DYE, 2), FluidStack.EMPTY,
+				.grind(Ingredient.of(Items.PINK_TULIP, Items.PINK_PETALS, SummerCitrus.GRAPEFRUIT_PETAL_LITTER_ITEM),
+						new ItemStack(Items.PINK_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.PINK_TULIP))
 				.save(consumer, EDLoc("dye_pink"));

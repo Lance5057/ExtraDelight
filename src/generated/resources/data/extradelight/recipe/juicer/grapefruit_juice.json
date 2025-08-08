@@ -5,7 +5,7 @@
     "id": "extradelight:grapefruit_juice_fluid"
   },
   "ingredient": {
-    "item": "extradelight:grapefruit"
+    "tag": "c:crops/grapefruit"
   },
   "result": {
     "count": 1,

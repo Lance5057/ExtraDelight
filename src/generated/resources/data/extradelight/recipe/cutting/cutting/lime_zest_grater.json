@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "extradelight:lime"
+      "tag": "c:crops/lime"
     }
   ],
   "result": [

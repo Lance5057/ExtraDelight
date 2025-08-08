@@ -2,14 +2,14 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "minecraft:apple"
+      "item": "extradelight:lime_petal_litter_item"
     }
   ],
   "result": [
     {
       "item": {
         "count": 2,
-        "id": "extradelight:sliced_apple"
+        "id": "minecraft:lime_dye"
       }
     }
   ],

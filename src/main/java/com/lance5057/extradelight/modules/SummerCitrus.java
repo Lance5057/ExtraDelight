@@ -1208,12 +1208,12 @@ public class SummerCitrus {
 						SLICED_GRAPEFRUIT.get(), 3)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_grapefruit_knife"));
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(LEMON.get()), Ingredient.of(ExtraDelightItems.GRATER), LEMON_ZEST.get(), 2)
+				.cuttingRecipe(Ingredient.of(ExtraDelightTags.LEMON), Ingredient.of(ExtraDelightItems.GRATER), LEMON_ZEST.get(), 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "lemon_zest_grater"));
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(LIME.get()), Ingredient.of(ExtraDelightItems.GRATER), LIME_ZEST.get(), 2)
+				.cuttingRecipe(Ingredient.of(ExtraDelightTags.LIME), Ingredient.of(ExtraDelightItems.GRATER), LIME_ZEST.get(), 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "lime_zest_grater"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ORANGE.get()), Ingredient.of(ExtraDelightItems.GRATER),
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightTags.ORANGE), Ingredient.of(ExtraDelightItems.GRATER),
 				ORANGE_ZEST.get(), 2).build(consumer, ExtraDelight.modLoc("cutting/" + "orange_zest_grater"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(Items.MELON_SLICE), Ingredient.of(CommonTags.TOOLS_KNIFE),
@@ -1244,22 +1244,34 @@ public class SummerCitrus {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(KYIV_CAKE_ITEM.get()),
 				Ingredient.of(CommonTags.TOOLS_KNIFE), KYIV_CAKE_SLICE.get(), 4)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "kyiv_cake_knife"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(LEMON_PETAL_LITTER_ITEM),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), Items.YELLOW_DYE, 2)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "yellow_petals"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(LIME_PETAL_LITTER_ITEM),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), Items.LIME_DYE, 2)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "lime_petals"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ORANGE_PETAL_LITTER_ITEM),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), Items.ORANGE_DYE, 2)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "orange_petals"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(GRAPEFRUIT_PETAL_LITTER_ITEM, Items.PINK_PETALS), // remove PINK_PETALS when FD adds
+				Ingredient.of(CommonTags.TOOLS_KNIFE), Items.PINK_DYE, 2)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "pink_petals"));
 
 		// Juicer
 		JuicerRecipeBuilder
-				.squeeze(Ingredient.of(LEMON), new ItemStack(Items.YELLOW_DYE),
+				.squeeze(Ingredient.of(ExtraDelightTags.LEMON), new ItemStack(Items.BONE_MEAL),
 						new FluidStack(ExtraDelightFluids.LEMON_JUICE.FLUID, 250))
 				.save(consumer, ExtraDelight.modLoc("lemon_juice"));
 		JuicerRecipeBuilder
-				.squeeze(Ingredient.of(LIME), new ItemStack(Items.LIME_DYE),
-						new FluidStack(ExtraDelightFluids.LIME_JUICE.FLUID, 100))
+				.squeeze(Ingredient.of(ExtraDelightTags.LIME), new ItemStack(Items.BONE_MEAL),
+						new FluidStack(ExtraDelightFluids.LIME_JUICE.FLUID, 250))
 				.save(consumer, ExtraDelight.modLoc("lime_juice"));
 		JuicerRecipeBuilder
-				.squeeze(Ingredient.of(ORANGE), new ItemStack(Items.ORANGE_DYE),
+				.squeeze(Ingredient.of(ExtraDelightTags.ORANGE), new ItemStack(Items.BONE_MEAL),
 						new FluidStack(ExtraDelightFluids.ORANGE_JUICE.FLUID, 250))
 				.save(consumer, ExtraDelight.modLoc("orange_juice"));
 		JuicerRecipeBuilder
-				.squeeze(Ingredient.of(GRAPEFRUIT), new ItemStack(Items.YELLOW_DYE),
+				.squeeze(Ingredient.of(ExtraDelightTags.GRAPEFRUIT), new ItemStack(Items.BONE_MEAL),
 						new FluidStack(ExtraDelightFluids.GRAPEFRUIT_JUICE.FLUID, 250))
 				.save(consumer, ExtraDelight.modLoc("grapefruit_juice"));
 
@@ -1366,7 +1378,7 @@ public class SummerCitrus {
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
 				.addIngredient(EGG_YOLK).addIngredient(CommonTags.FOODS_MILK).addIngredient(LIME_JUICE)
 				.addIngredient(LIME_ZEST).addIngredient(Items.SUGAR).addIngredient(STIFF_PEAKS)
-				.addIngredient(SLICED_LIME).addIngredient(ExtraDelightTags.WHIPPED_CREAM)
+				.addIngredient(ExtraDelightTags.PROCESSED_LIME).addIngredient(ExtraDelightTags.WHIPPED_CREAM)
 				.addIngredient(ModItems.PIE_CRUST.get()).unlockedByAnyIngredient(LIME).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(LEMON_CUCUMBER_CAKE_ITEM.get(), 1), Recipes.NORMAL_COOKING,
@@ -1409,7 +1421,8 @@ public class SummerCitrus {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(GRILLED_GRAPEFRUIT.get(), 8), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.TRAY.get()), false)
-				.addIngredient(GRAPEFRUIT).addIngredient(GRAPEFRUIT).addIngredient(GRAPEFRUIT).addIngredient(GRAPEFRUIT)
+				.addIngredient(ExtraDelightTags.GRAPEFRUIT).addIngredient(ExtraDelightTags.GRAPEFRUIT)
+				.addIngredient(ExtraDelightTags.GRAPEFRUIT).addIngredient(ExtraDelightTags.GRAPEFRUIT)
 				.addIngredient(ExtraDelightTags.SWEETENER).unlockedByAnyIngredient(GRAPEFRUIT).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(LEMON_DELICIOUS.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
@@ -1458,7 +1471,7 @@ public class SummerCitrus {
 				"lemon_curd", consumer);
 		Recipes.pot(ORANGE_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CUBED_CHICKEN_RAW), Ingredient.of(Items.SUGAR),
-						CompoundIngredient.of(Ingredient.of(ORANGE_JUICE), Ingredient.of(ORANGE_ZEST)),
+						Ingredient.of(ORANGE_JUICE, ORANGE_ZEST),
 						Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER) },
@@ -1492,8 +1505,8 @@ public class SummerCitrus {
 
 		// Vat
 		VatRecipeBuilder.pickle(new ItemStack(PRESERVED_LEMONS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
-				.requires(Ingredient.of(SLICED_LEMON)).requires(Ingredient.of(SLICED_LEMON))
-				.requires(Ingredient.of(SLICED_LEMON)).requires(Ingredient.of(SLICED_LEMON))
+				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON)).requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
+				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON)).requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.LEMON_JUICE.FLUID.get(), 250))
 				.requiresStage(new VatRecipe.StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick, false))
 				.requiresStage(new VatRecipe.StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);

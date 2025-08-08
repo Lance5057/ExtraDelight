@@ -5,7 +5,7 @@
     "id": "extradelight:lemon_juice_fluid"
   },
   "ingredient": {
-    "item": "extradelight:lemon"
+    "tag": "c:crops/lemon"
   },
   "result": {
     "count": 1,

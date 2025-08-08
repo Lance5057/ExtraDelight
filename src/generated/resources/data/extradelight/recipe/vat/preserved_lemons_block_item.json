@@ -6,16 +6,16 @@
   },
   "ingredients": [
     {
-      "item": "extradelight:sliced_lemon"
+      "tag": "extradelight:processed/lemon"
     },
     {
-      "item": "extradelight:sliced_lemon"
+      "tag": "extradelight:processed/lemon"
     },
     {
-      "item": "extradelight:sliced_lemon"
+      "tag": "extradelight:processed/lemon"
     },
     {
-      "item": "extradelight:sliced_lemon"
+      "tag": "extradelight:processed/lemon"
     }
   ],
   "result": {
