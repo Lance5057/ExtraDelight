@@ -279,7 +279,7 @@ public class ExtraDelightItems {
 			new Item.Properties().component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1)));
 
 	public static final DeferredItem<Item> WHISK = ITEMS.register("whisk",
-			() -> new SwordItem(Tiers.IRON, new Item.Properties()));
+			() -> new SwordItem(Tiers.WOOD, new Item.Properties()));
 
 	public static final DeferredItem<Item> FRUIT_BOWL = ITEMS.register("fruit_bowl",
 			() -> new BlockItem(ExtraDelightBlocks.FRUIT_BOWL.get(), new Item.Properties()));

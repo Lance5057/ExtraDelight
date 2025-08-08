@@ -1,9 +1,6 @@
 package com.lance5057.extradelight;
 
-import java.util.List;
-
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;

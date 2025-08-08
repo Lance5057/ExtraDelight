@@ -1343,11 +1343,14 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
-		getBuilder(ExtraDelightItems.JUICER.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
-				.customLoader(BlockStateItemGeometryLoader::builder);
+//		getBuilder(ExtraDelightItems.JUICER.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+//				.customLoader(BlockStateItemGeometryLoader::builder);
+		
+		getBuilder(ExtraDelightItems.JUICER.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/juicer_item"), existingFileHelper));
 
 		getBuilder(ExtraDelightItems.WHISK.getId().getPath()).parent(new ModelFile.ExistingModelFile(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/whisk"), existingFileHelper));
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/whisk_item"), existingFileHelper));
 
 		getBuilder(ExtraDelightItems.DYNAMIC_TOAST.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("block/block"))
@@ -1370,9 +1373,10 @@ public class ItemModels extends ItemModelProvider {
 		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/handheld"), "layer0", tmp.modLoc("item/" + name));
 	}
 
-	public void forItemModel(DeferredItem<Item> item, String path) {
-		getBuilder(item.getId().getPath()).parent(
-				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, path)));
+	public void forItemModel(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
+		tmp.getBuilder(item.getId().getPath()+"_item").parent(new ModelFile.ExistingModelFile(tmp.modLoc("item/" + name), existingFileHelper));
+//		getBuilder(item.getId().getPath()).parent(
+//				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/" + path)));
 	}
 
 	public static void forBlockItemFlat(ItemModelProvider tmp, DeferredItem<Item> item, String name) {

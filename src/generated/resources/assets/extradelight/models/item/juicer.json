@@ -1,4 +1,3 @@
 {
-  "parent": "minecraft:block/block",
-  "loader": "extradelight:blockstateitem"
+  "parent": "extradelight:item/juicer_item"
 }

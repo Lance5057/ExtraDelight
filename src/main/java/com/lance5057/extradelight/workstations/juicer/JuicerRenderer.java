@@ -42,7 +42,7 @@ public class JuicerRenderer implements BlockEntityRenderer<JuicerBlockEntity> {
 			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/juicer_plate"));
 	IRenderable<ModelData> plate;
 
-	float rotationY = 0;
+//	float rotationY = 0;
 
 	public JuicerRenderer(BlockEntityRendererProvider.Context cxt) {
 		crank = BakedModelRenderable.of(crankRC).withModelDataContext();
@@ -64,8 +64,7 @@ public class JuicerRenderer implements BlockEntityRenderer<JuicerBlockEntity> {
 
 		pPoseStack.translate(-0, 0 + height, -0);
 
-		rotationY = MathUtil.lerp(rotationY, g, pPartialTick);
-		pPoseStack.mulPose(new Quaternionf().rotateY(rotationY));
+		pPoseStack.mulPose(new Quaternionf().rotateY(g));
 
 		pPoseStack.translate(-0.5, 0, -0.5);
 		crank.render(pPoseStack, pBufferSource, texture -> RenderType.entitySolid(texture), LightTexture.FULL_SKY,
@@ -118,8 +117,8 @@ public class JuicerRenderer implements BlockEntityRenderer<JuicerBlockEntity> {
 			Fluid fluid = fluidStack.getFluid();
 			IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid);
 
-			RenderUtil.buildCubeAll(new Vector3f(5f / 16f, 2.8F / 16f, 5f / 16f),
-					new Vector3f(6f / 16f, pBlockEntity.getFullness() * (3f / 16f), 6f / 16f), vertexConsumer, mat,
+			RenderUtil.buildCubeAll(new Vector3f(2f / 16f, 2.8F / 16f, 2f / 16f),
+					new Vector3f(12f / 16f, pBlockEntity.getFullness() * (11f / 16f), 12f / 16f), vertexConsumer, mat,
 					matrix3f, fluidTypeExtensions.getTintColor(fluidStack),
 					RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), pPackedLight, pPackedOverlay, pPoseStack);
 			pPoseStack.popPose();

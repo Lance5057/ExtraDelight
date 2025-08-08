@@ -19,6 +19,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import vectorwing.farmersdelight.common.registry.ModIngredientTypes;
 
 public class JuicerRecipeCategory implements IRecipeCategory<JuicerRecipe> {
 	public static final RecipeType<JuicerRecipe> TYPE = RecipeType.create(ExtraDelight.MOD_ID, "juicer",
@@ -29,7 +30,7 @@ public class JuicerRecipeCategory implements IRecipeCategory<JuicerRecipe> {
 
 	public JuicerRecipeCategory(IGuiHelper guiHelper) {
 		background = guiHelper.createDrawable(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 204, 80, 52, 18);
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 181, 41, 36);
 		localizedName = Component.translatable("extradelight.jei.juicer");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ExtraDelightItems.JUICER.get()));
@@ -59,10 +60,12 @@ public class JuicerRecipeCategory implements IRecipeCategory<JuicerRecipe> {
 	public void setRecipe(IRecipeLayoutBuilder builder, JuicerRecipe recipe, IFocusGroup focuses) {
 		Ingredient input = recipe.getInput();
 
-		builder.addSlot(RecipeIngredientRole.INPUT, 6, 1).addIngredients(input);
+		builder.addSlot(RecipeIngredientRole.INPUT, 1, 10).addIngredients(input);
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 3, 1)
+		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 4, 1)
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid()))
 				.setFluidRenderer(recipe.getFluid().getAmount(), false, 16, 16);
+		
+		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 4, 19).addItemStack(recipe.getResultItem(null));
 	}
 }

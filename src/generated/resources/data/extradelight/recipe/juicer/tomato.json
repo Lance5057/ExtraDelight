@@ -2,13 +2,13 @@
   "type": "extradelight:juicer",
   "fluidOut": {
     "amount": 250,
-    "id": "extradelight:orange_juice_fluid"
+    "id": "extradelight:tomato_juice_fluid"
   },
   "ingredient": {
-    "item": "extradelight:orange"
+    "tag": "extradelight:processed/tomato"
   },
   "result": {
     "count": 1,
-    "id": "minecraft:orange_dye"
+    "id": "minecraft:red_dye"
   }
 }

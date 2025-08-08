@@ -5,8 +5,6 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.ExtraDelightComponents;
-import com.lance5057.extradelight.ExtraDelightConfig;
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
@@ -25,7 +23,6 @@ import com.lance5057.extradelight.integration.jei.categories.ShapedWithJarRecipe
 import com.lance5057.extradelight.integration.jei.categories.ToolOnBlockRecipeCatagory;
 import com.lance5057.extradelight.integration.jei.categories.VatRecipeCategory;
 import com.lance5057.extradelight.integration.jei.interpreters.DynamicItemInterpreter;
-import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.chiller.ChillerMenu;
@@ -40,7 +37,6 @@ import com.lance5057.extradelight.workstations.vat.VatScreen;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.registration.IExtraIngredientRegistration;
 import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
@@ -52,7 +48,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.RecipeHolder;
 
 @JeiPlugin

@@ -1247,19 +1247,19 @@ public class SummerCitrus {
 
 		// Juicer
 		JuicerRecipeBuilder
-				.squeeze(Ingredient.of(LEMON), new ItemStack(Items.BONE_MEAL),
+				.squeeze(Ingredient.of(LEMON), new ItemStack(Items.YELLOW_DYE),
 						new FluidStack(ExtraDelightFluids.LEMON_JUICE.FLUID, 250))
 				.save(consumer, ExtraDelight.modLoc("lemon_juice"));
 		JuicerRecipeBuilder
-				.squeeze(Ingredient.of(LIME), new ItemStack(Items.BONE_MEAL),
-						new FluidStack(ExtraDelightFluids.LIME_JUICE.FLUID, 250))
+				.squeeze(Ingredient.of(LIME), new ItemStack(Items.LIME_DYE),
+						new FluidStack(ExtraDelightFluids.LIME_JUICE.FLUID, 100))
 				.save(consumer, ExtraDelight.modLoc("lime_juice"));
 		JuicerRecipeBuilder
-				.squeeze(Ingredient.of(ORANGE), new ItemStack(Items.BONE_MEAL),
+				.squeeze(Ingredient.of(ORANGE), new ItemStack(Items.ORANGE_DYE),
 						new FluidStack(ExtraDelightFluids.ORANGE_JUICE.FLUID, 250))
 				.save(consumer, ExtraDelight.modLoc("orange_juice"));
 		JuicerRecipeBuilder
-				.squeeze(Ingredient.of(GRAPEFRUIT), new ItemStack(Items.BONE_MEAL),
+				.squeeze(Ingredient.of(GRAPEFRUIT), new ItemStack(Items.YELLOW_DYE),
 						new FluidStack(ExtraDelightFluids.GRAPEFRUIT_JUICE.FLUID, 250))
 				.save(consumer, ExtraDelight.modLoc("grapefruit_juice"));
 

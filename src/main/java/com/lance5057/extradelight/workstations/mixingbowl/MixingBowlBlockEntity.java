@@ -219,7 +219,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 		if (recipe.isPresent()) {
 			this.curRecipe = recipe.get().value();
 			this.items.setStackInSlot(GHOST_SLOT, curRecipe.getResultItem(this.level.registryAccess()).copy());
-			this.items.setStackInSlot(GHOST_UTENSIL_SLOT, curRecipe.getUtensil().getItems()[0]);
+			this.items.setStackInSlot(GHOST_UTENSIL_SLOT, curRecipe.getUtensil().getItems()[level.random.nextInt(curRecipe.getUtensil().getItems().length)]);
 		} else {
 			this.curRecipe = null;
 			this.items.setStackInSlot(GHOST_SLOT, ItemStack.EMPTY.copy());

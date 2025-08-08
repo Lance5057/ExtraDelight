@@ -2,13 +2,13 @@
   "type": "extradelight:juicer",
   "fluidOut": {
     "amount": 250,
-    "id": "extradelight:bbq_fluid"
+    "id": "extradelight:pickle_juice_fluid"
   },
   "ingredient": {
-    "item": "minecraft:brick"
+    "tag": "c:foods/pickled"
   },
   "result": {
     "count": 1,
-    "id": "minecraft:flower_pot"
+    "id": "minecraft:bone_meal"
   }
 }

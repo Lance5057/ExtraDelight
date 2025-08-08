@@ -2,13 +2,13 @@
   "type": "extradelight:juicer",
   "fluidOut": {
     "amount": 100,
-    "id": "extradelight:lime_juice_fluid"
+    "id": "extradelight:cactus_juice_fluid"
   },
   "ingredient": {
-    "item": "extradelight:lime"
+    "tag": "c:vegetable/cactus"
   },
   "result": {
     "count": 1,
-    "id": "minecraft:lime_dye"
+    "id": "minecraft:green_dye"
   }
 }

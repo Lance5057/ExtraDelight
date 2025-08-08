@@ -126,8 +126,26 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void juicerRecipes(RecipeOutput consumer) {
-		JuicerRecipeBuilder.squeeze(Ingredient.of(Items.BRICK), new ItemStack(Items.FLOWER_POT),
-				new FluidStack(ExtraDelightFluids.BBQ.FLUID, 250)).save(consumer, EDLoc("bbq"));
+		JuicerRecipeBuilder.squeeze(Ingredient.of(Items.GLOW_BERRIES), new ItemStack(Items.ORANGE_DYE),
+				new FluidStack(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID, 100)).save(consumer, EDLoc("glow_berries"));
+		
+		JuicerRecipeBuilder.squeeze(Ingredient.of(Items.SWEET_BERRIES), new ItemStack(Items.RED_DYE),
+				new FluidStack(ExtraDelightFluids.SWEET_BERRY_JUICE.FLUID, 100)).save(consumer, EDLoc("sweet_berries"));
+		
+		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO), new ItemStack(Items.RED_DYE),
+				new FluidStack(ExtraDelightFluids.TOMATO_JUICE.FLUID, 250)).save(consumer, EDLoc("tomato"));
+		
+		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.CACTUS), new ItemStack(Items.GREEN_DYE),
+				new FluidStack(ExtraDelightFluids.CACTUS_JUICE.FLUID, 100)).save(consumer, EDLoc("cactus"));
+		
+		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PROCESSED_MELON), new ItemStack(Items.PINK_DYE),
+				new FluidStack(ExtraDelightFluids.MELON_JUICE.FLUID, 100)).save(consumer, EDLoc("melon"));
+		
+		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PICKLED), new ItemStack(Items.BONE_MEAL),
+				new FluidStack(ExtraDelightFluids.PICKLE_JUICE.FLUID, 250)).save(consumer, EDLoc("pickle"));
+		
+		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE), new ItemStack(Items.RED_DYE),
+				new FluidStack(ExtraDelightFluids.APPLE_CIDER.FLUID, 250)).save(consumer, EDLoc("apple"));
 	}
 
 	private void evaporatorRecipes(RecipeOutput consumer) {

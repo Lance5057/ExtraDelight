@@ -13,9 +13,11 @@ import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 import com.lance5057.extradelight.worldgen.placers.FoliagePlacerRegistry;
+import com.simibubi.create.AllCreativeModeTabs;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;

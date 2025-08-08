@@ -2,13 +2,13 @@
   "type": "extradelight:juicer",
   "fluidOut": {
     "amount": 100,
-    "id": "extradelight:lime_juice_fluid"
+    "id": "extradelight:sweet_berry_juice_fluid"
   },
   "ingredient": {
-    "item": "extradelight:lime"
+    "item": "minecraft:sweet_berries"
   },
   "result": {
     "count": 1,
-    "id": "minecraft:lime_dye"
+    "id": "minecraft:red_dye"
   }
 }

@@ -1,0 +1,33 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "juicer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:juicer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.juicer.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "extradelight:oak_counter_cabinet"
+    },
+    "title": {
+      "translate": "extradelight.advancement.juicer.name"
+    }
+  },
+  "requirements": [
+    [
+      "juicer"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

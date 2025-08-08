@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:juicer/bbq"
+        "recipe": "extradelight:juicer/glow_berries"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -15,7 +15,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:juicer/bbq"
+      "extradelight:juicer/glow_berries"
     ]
   }
 }
