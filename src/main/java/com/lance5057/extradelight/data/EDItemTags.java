@@ -943,6 +943,12 @@ public class EDItemTags extends ItemTagsProvider {
 	public void parseTaNTag(EDItemGenerator.Drink d) {
 		tag(ExtraDelightTags.DRINKS).add(d.item.get());
 
+		if (d.isHot)
+			tag(ExtraDelightTags.HEATING_CONSUMED_ITEMS).add(d.item.get());
+
+		if (d.isCold)
+			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(d.item.get());
+
 		switch (d.thirst) {
 		case 1:
 			tag(ExtraDelightTags.ONE_THIRST_DRINKS).add(d.item.get());

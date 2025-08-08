@@ -1,5 +1,6 @@
 {
   "values": [
+    "extradelight:lemonade",
     "extradelight:glow_berry_popsicle",
     "extradelight:fudge_popsicle",
     "extradelight:honey_popsicle",
@@ -15,6 +16,8 @@
     "extradelight:cookie_dough_ice_cream",
     "extradelight:mint_chip_ice_cream",
     "extradelight:ice_cream_sundae",
-    "extradelight:affogato"
+    "extradelight:affogato",
+    "extradelight:ice_cubes",
+    "extradelight:grapefruit_sorbet"
   ]
 }

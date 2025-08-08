@@ -29,7 +29,7 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 		super(output, registries, defaultNamespace);
 	}
 
-	GeneratedRecipe 
+	GeneratedRecipe
 
 	WHEAT_DOUGH_EGG = create("wheat_dough_egg",
 			b -> b.output(new ItemStack(ModItems.WHEAT_DOUGH.get(), 3)).require(Ingredient.of(ExtraDelightTags.FLOUR))

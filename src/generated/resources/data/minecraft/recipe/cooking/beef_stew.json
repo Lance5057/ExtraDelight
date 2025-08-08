@@ -1,34 +1,23 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:false"
+    }
+  ],
   "type": "farmersdelight:cooking",
   "container": {
     "count": 1,
-    "id": "extradelight:serving_pot"
+    "id": "minecraft:glass_bottle"
   },
-  "cookingtime": 400,
-  "experience": 0.35,
+  "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:beef"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:potato"
-    },
-    {
-      "tag": "c:crops/onion"
-    },
-    {
-      "tag": "extradelight:broth"
-    },
-    {
-      "tag": "c:flour"
+      "item": "minecraft:barrier"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
     "count": 1,
-    "id": "extradelight:beef_stew_feast"
+    "id": "farmersdelight:beef_stew"
   }
 }

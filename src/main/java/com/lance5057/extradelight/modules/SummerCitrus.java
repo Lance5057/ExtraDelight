@@ -282,7 +282,7 @@ public class SummerCitrus {
 	public static final DeferredItem<Item> ICE_CUBES = EDItemGenerator
 			.register("ice_cubes", () -> new Item(
 					foodItem(EDFoods.ICE_CUBE).component(ExtraDelightComponents.CHILL.value(), new ChillComponent(25))))
-			.advancementIngredients().finish();
+			.isColdFood().advancementIngredients().finish();
 	public static final DeferredItem<Item> MERINGUE = EDItemGenerator
 			.register("meringue", () -> new Item(foodItem(EDFoods.MERINGUE))).advancementIngredients().finish();
 	public static final DeferredItem<Item> LEMON_CURD = EDItemGenerator
@@ -308,7 +308,7 @@ public class SummerCitrus {
 			.advancementFeast().feastToolTip().finish();
 	public static final DeferredItem<Item> LEMONADE = EDItemGenerator
 			.register("lemonade", () -> new XAdeDrink(new Item.Properties().stacksTo(16), 2)).drink().setHydration(20)
-			.setThirst(6).setPoison(0).isHot(false).finish();
+			.setThirst(8).setPoison(0).isCold(true).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LEMONADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"lemonade_tray",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_YELLOW), true,
@@ -395,7 +395,7 @@ public class SummerCitrus {
 			.advancementFeast().feastToolTip().finish();
 	public static final DeferredItem<Item> GRAPEFRUIT_SORBET = EDItemGenerator
 			.register("grapefruit_sorbet", () -> new Item(bowlFoodItem(EDFoods.GRAPEFRUIT_SORBET))).advancementDessert()
-			.finish();
+			.isColdFood().finish();
 	public static final DeferredItem<Item> CHOCOLATE_ORANGE = EDItemGenerator
 			.register("chocolate_orange", () -> new Item(bowlFoodItem(EDFoods.CHOCOLATE_ORANGE))).advancementCandy()
 			.finish();
@@ -420,7 +420,7 @@ public class SummerCitrus {
 			.register("lime_souffle", () -> new Item(bowlFoodItem(EDFoods.LIME_SOUFFLE))).advancementDessert().finish();
 	public static final DeferredItem<Item> CHEESE_SOUFFLE = EDItemGenerator
 			.register("cheese_souffle", () -> new Item(bowlFoodItem(EDFoods.CHEESE_SOUFFLE))).advancementMeal()
-			.finish();
+			.isHotFood().finish();
 	public static final DeferredItem<Item> PAVLOVA_SLICE = EDItemGenerator
 			.register("pavlova_slice", () -> new ToolTipConsumableItem(foodItem(EDFoods.PAVLOVA_SLICE), true))
 			.advancementDessert().servingToolTip().finish();
@@ -1207,14 +1207,15 @@ public class SummerCitrus {
 				.cuttingRecipe(Ingredient.of(GRAPEFRUIT.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
 						SLICED_GRAPEFRUIT.get(), 3)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_grapefruit_knife"));
-		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(ExtraDelightTags.LEMON), Ingredient.of(ExtraDelightItems.GRATER), LEMON_ZEST.get(), 2)
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightTags.LEMON),
+				Ingredient.of(ExtraDelightItems.GRATER), LEMON_ZEST.get(), 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "lemon_zest_grater"));
-		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(ExtraDelightTags.LIME), Ingredient.of(ExtraDelightItems.GRATER), LIME_ZEST.get(), 2)
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightTags.LIME),
+				Ingredient.of(ExtraDelightItems.GRATER), LIME_ZEST.get(), 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "lime_zest_grater"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightTags.ORANGE), Ingredient.of(ExtraDelightItems.GRATER),
-				ORANGE_ZEST.get(), 2).build(consumer, ExtraDelight.modLoc("cutting/" + "orange_zest_grater"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightTags.ORANGE),
+				Ingredient.of(ExtraDelightItems.GRATER), ORANGE_ZEST.get(), 2)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "orange_zest_grater"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(Items.MELON_SLICE), Ingredient.of(CommonTags.TOOLS_KNIFE),
 						MELON_CHUNKS.get(), 2)
@@ -1245,15 +1246,19 @@ public class SummerCitrus {
 				Ingredient.of(CommonTags.TOOLS_KNIFE), KYIV_CAKE_SLICE.get(), 4)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "kyiv_cake_knife"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(LEMON_PETAL_LITTER_ITEM),
-						Ingredient.of(CommonTags.TOOLS_KNIFE), Items.YELLOW_DYE, 2)
+				Ingredient.of(CommonTags.TOOLS_KNIFE), Items.YELLOW_DYE, 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "yellow_petals"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(LIME_PETAL_LITTER_ITEM),
-						Ingredient.of(CommonTags.TOOLS_KNIFE), Items.LIME_DYE, 2)
+				Ingredient.of(CommonTags.TOOLS_KNIFE), Items.LIME_DYE, 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "lime_petals"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ORANGE_PETAL_LITTER_ITEM),
-						Ingredient.of(CommonTags.TOOLS_KNIFE), Items.ORANGE_DYE, 2)
+				Ingredient.of(CommonTags.TOOLS_KNIFE), Items.ORANGE_DYE, 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "orange_petals"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(GRAPEFRUIT_PETAL_LITTER_ITEM, Items.PINK_PETALS), // remove PINK_PETALS when FD adds
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(GRAPEFRUIT_PETAL_LITTER_ITEM, Items.PINK_PETALS), // remove
+																												// PINK_PETALS
+																												// when
+																												// FD
+																												// adds
 				Ingredient.of(CommonTags.TOOLS_KNIFE), Items.PINK_DYE, 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "pink_petals"));
 
@@ -1471,8 +1476,7 @@ public class SummerCitrus {
 				"lemon_curd", consumer);
 		Recipes.pot(ORANGE_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CUBED_CHICKEN_RAW), Ingredient.of(Items.SUGAR),
-						Ingredient.of(ORANGE_JUICE, ORANGE_ZEST),
-						Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS),
+						Ingredient.of(ORANGE_JUICE, ORANGE_ZEST), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER) },
 				"orange_chicken", consumer);
@@ -1505,8 +1509,10 @@ public class SummerCitrus {
 
 		// Vat
 		VatRecipeBuilder.pickle(new ItemStack(PRESERVED_LEMONS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
-				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON)).requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
-				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON)).requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
+				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
+				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
+				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
+				.requires(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.LEMON_JUICE.FLUID.get(), 250))
 				.requiresStage(new VatRecipe.StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick, false))
 				.requiresStage(new VatRecipe.StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);

@@ -126,24 +126,28 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void juicerRecipes(RecipeOutput consumer) {
-		JuicerRecipeBuilder.squeeze(Ingredient.of(Items.GLOW_BERRIES), new ItemStack(Items.ORANGE_DYE),
-				new FluidStack(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID, 100)).save(consumer, EDLoc("glow_berries"));
-		
-		JuicerRecipeBuilder.squeeze(Ingredient.of(Items.SWEET_BERRIES), new ItemStack(Items.RED_DYE),
-				new FluidStack(ExtraDelightFluids.SWEET_BERRY_JUICE.FLUID, 100)).save(consumer, EDLoc("sweet_berries"));
-		
+		JuicerRecipeBuilder
+				.squeeze(Ingredient.of(Items.GLOW_BERRIES), new ItemStack(Items.ORANGE_DYE),
+						new FluidStack(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID, 100))
+				.save(consumer, EDLoc("glow_berries"));
+
+		JuicerRecipeBuilder
+				.squeeze(Ingredient.of(Items.SWEET_BERRIES), new ItemStack(Items.RED_DYE),
+						new FluidStack(ExtraDelightFluids.SWEET_BERRY_JUICE.FLUID, 100))
+				.save(consumer, EDLoc("sweet_berries"));
+
 		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO), new ItemStack(Items.RED_DYE),
 				new FluidStack(ExtraDelightFluids.TOMATO_JUICE.FLUID, 250)).save(consumer, EDLoc("tomato"));
-		
+
 		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.CACTUS), new ItemStack(Items.GREEN_DYE),
 				new FluidStack(ExtraDelightFluids.CACTUS_JUICE.FLUID, 100)).save(consumer, EDLoc("cactus"));
-		
+
 		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PROCESSED_MELON), new ItemStack(Items.PINK_DYE),
 				new FluidStack(ExtraDelightFluids.MELON_JUICE.FLUID, 100)).save(consumer, EDLoc("melon"));
-		
+
 		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PICKLED), new ItemStack(Items.BONE_MEAL),
 				new FluidStack(ExtraDelightFluids.PICKLE_JUICE.FLUID, 250)).save(consumer, EDLoc("pickle"));
-		
+
 		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE), new ItemStack(Items.RED_DYE),
 				new FluidStack(ExtraDelightFluids.APPLE_CIDER.FLUID, 250)).save(consumer, EDLoc("apple"));
 	}
@@ -2285,7 +2289,43 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
 				.save(consumer.withConditions(FalseCondition.INSTANCE));
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.PIE_CRUST.get(), 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.APPLE_PIE.get(), 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SWEET_BERRY_CHEESECAKE.get(), 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SWEET_BERRY_COOKIE.get(), 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_COOKIE.get(), 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHOCOLATE_PIE.get(), 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MELON_POPSICLE.get(), 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.ROAST_CHICKEN_BLOCK.get(), 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_GLAZED_HAM_BLOCK.get(), 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SHEPHERDS_PIE_BLOCK.get(), 1)
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
 				.save(consumer.withConditions(FalseCondition.INSTANCE));
 
@@ -3860,6 +3900,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void potRecipes(RecipeOutput consumer) {
+		pot(ModItems.BEEF_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(Items.BARRIER) }, "beef_stew",
+				consumer.withConditions(FalseCondition.INSTANCE));
+
+		pot(ModItems.FISH_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(Items.BARRIER) }, "fish_stew",
+				consumer.withConditions(FalseCondition.INSTANCE));
 
 		pot(ExtraDelightItems.CHOCOLATE_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.COCOA_POWDER), Ingredient.of(CommonTags.FOODS_MILK),
@@ -3934,7 +3981,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new Ingredient[] { Ingredient.of(Items.BEEF), Ingredient.of(Items.CARROT), Ingredient.of(Items.POTATO),
 						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ExtraDelightTags.BROTH),
 						Ingredient.of(ExtraDelightTags.FLOUR) },
-				"beef_stew", consumer);
+				"beef_stew_feast", consumer);
 
 		pot(ExtraDelightItems.PORK_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
 				ExtraDelightItems.SERVING_POT,
@@ -3969,7 +4016,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_SAFE_RAW_FISH), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
 						Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.FLOUR) },
-				"fish_stew", consumer);
+				"fish_stew_feast", consumer);
 
 		pot(ExtraDelightItems.STIRFRY_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.MEAT_RAW), Ingredient.of(ExtraDelightTags.MEAT_RAW),
@@ -5009,8 +5056,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("dye_white"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.ORANGE_TULIP, Items.TORCHFLOWER, SummerCitrus.ORANGE_PETAL_LITTER_ITEM),
-						new ItemStack(Items.ORANGE_DYE, 2),
-						FluidStack.EMPTY, STANDARD_GRIND)
+						new ItemStack(Items.ORANGE_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ORANGE_TULIP))
 				.save(consumer, EDLoc("dye_orange"));
 		MortarRecipeBuilder
@@ -5030,8 +5076,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("dye_light_blue"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.DANDELION, SummerCitrus.LEMON_PETAL_LITTER_ITEM),
-						new ItemStack(Items.YELLOW_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
+						new ItemStack(Items.YELLOW_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.DANDELION))
 				.save(consumer, EDLoc("dye_yellow"));
 		MortarRecipeBuilder
@@ -5041,14 +5086,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("dye_yellow_three"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.SEA_PICKLE, SummerCitrus.LIME_PETAL_LITTER_ITEM),
-						new ItemStack(Items.LIME_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
+						new ItemStack(Items.LIME_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.SEA_PICKLE))
 				.save(consumer, EDLoc("dye_lime"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.PINK_TULIP, Items.PINK_PETALS, SummerCitrus.GRAPEFRUIT_PETAL_LITTER_ITEM),
-						new ItemStack(Items.PINK_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
+						new ItemStack(Items.PINK_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.PINK_TULIP))
 				.save(consumer, EDLoc("dye_pink"));
 		MortarRecipeBuilder
@@ -6116,6 +6159,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS);
 		for (Ingredient i : itemsIn)
 			b.addIngredient(i);
+
 		b.build(consumer, rc);
 
 //		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,

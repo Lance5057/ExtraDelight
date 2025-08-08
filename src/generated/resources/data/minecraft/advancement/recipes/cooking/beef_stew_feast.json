@@ -1,14 +1,9 @@
 {
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:false"
-    }
-  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/fish_stew"
+        "recipe": "minecraft:cooking/beef_stew_feast"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -20,7 +15,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/fish_stew"
+      "minecraft:cooking/beef_stew_feast"
     ]
   }
 }

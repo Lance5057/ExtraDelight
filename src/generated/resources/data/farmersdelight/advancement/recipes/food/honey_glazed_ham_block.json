@@ -8,7 +8,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:apple_pie"
+        "recipe": "farmersdelight:honey_glazed_ham_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -31,7 +31,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:apple_pie"
+      "farmersdelight:honey_glazed_ham_block"
     ]
   }
 }

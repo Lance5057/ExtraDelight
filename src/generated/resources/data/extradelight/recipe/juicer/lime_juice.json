@@ -1,7 +1,7 @@
 {
   "type": "extradelight:juicer",
   "fluidOut": {
-    "amount": 100,
+    "amount": 250,
     "id": "extradelight:lime_juice_fluid"
   },
   "ingredient": {
@@ -9,6 +9,6 @@
   },
   "result": {
     "count": 1,
-    "id": "minecraft:lime_dye"
+    "id": "minecraft:bone_meal"
   }
 }

@@ -8,19 +8,30 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/fish_stew"
+        "recipe": "farmersdelight:honey_cookie"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wheat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:wheat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wheat"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/fish_stew"
+      "farmersdelight:honey_cookie"
     ]
   }
 }
