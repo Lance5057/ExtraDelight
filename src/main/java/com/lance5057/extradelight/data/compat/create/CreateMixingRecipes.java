@@ -1444,7 +1444,7 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 //							.require(ExtraDelightFluids.ORANGE_JUICE.FLUID.get(), 250)),
 
 			MELON_FRUIT_SALAD_ITEM = create("melon_fruit_salad_mixing",
-					b -> b.output(new ItemStack(SummerCitrus.GRAPEFRUIT_BEETROOT_SALAD.get(), 1)).require(Items.BOWL)
+					b -> b.output(new ItemStack(SummerCitrus.MELON_FRUIT_SALAD_ITEM.get(), 1))
 							.require(Items.MELON).require(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE))
 							.require(Ingredient.of(ExtraDelightTags.PROCESSED_MELON))
 							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE))
@@ -1452,7 +1452,7 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 							.require(ExtraDelightFluids.LEMON_JUICE.FLUID.get(), 250)),
 
 			MELON_FRUIT_SALAD_ITEM_LIME = create("melon_fruit_salad_lime_mixing",
-					b -> b.output(new ItemStack(SummerCitrus.GRAPEFRUIT_BEETROOT_SALAD.get(), 1)).require(Items.BOWL)
+					b -> b.output(new ItemStack(SummerCitrus.MELON_FRUIT_SALAD_ITEM.get(), 1)).require(Items.BOWL)
 							.require(Items.MELON).require(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE))
 							.require(Ingredient.of(ExtraDelightTags.PROCESSED_MELON))
 							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE))

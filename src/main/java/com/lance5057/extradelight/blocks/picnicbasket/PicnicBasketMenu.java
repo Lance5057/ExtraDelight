@@ -11,8 +11,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.ShulkerBoxBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
 public class PicnicBasketMenu extends AbstractContainerMenu {
@@ -41,11 +43,16 @@ public class PicnicBasketMenu extends AbstractContainerMenu {
 				for (int column = 0; column < 4; ++column) {
 					this.addSlot(new HideableSlot(tileEntity.getItems(), (row * 4) + column,
 							inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize), true) {
-//						@Override
-//						public boolean mayPlace(ItemStack stack) {
-//							if(stack.is(PicnicBasketBlock))
-//							return false;
-//						}
+						@Override
+						public boolean mayPlace(ItemStack stack) {
+							if (stack.getItem() instanceof BlockItem bi) {
+								if (bi.getBlock() instanceof PicnicBasketBlock)
+									return false;
+								if (bi.getBlock() instanceof ShulkerBoxBlock)
+									return false;
+							}
+							return true;
+						}
 					});
 				}
 			}

@@ -1614,7 +1614,7 @@ public class SummerCitrus {
 				new Ingredient[] { Ingredient.of(LEMON_ZEST), Ingredient.of(LIME_ZEST), Ingredient.of(ORANGE_ZEST),
 						Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"candied_citrus_zest", consumer);
-		Recipes.pot(LEMON_POSSET.get(), 3, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+		Recipes.pot(LEMON_POSSET.get(), 3, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(LEMON_ZEST), Ingredient.of(CommonTags.FOODS_MILK),
 						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(LEMON_JUICE),
 						Ingredient.of(Items.SWEET_BERRIES) },

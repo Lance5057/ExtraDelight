@@ -2,9 +2,6 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "item": "minecraft:bowl"
-    },
-    {
       "item": "minecraft:melon"
     },
     {
@@ -30,7 +27,7 @@
   ],
   "results": [
     {
-      "id": "extradelight:grapefruit_beetroot_salad"
+      "id": "extradelight:melon_fruit_salad_item"
     }
   ]
 }
