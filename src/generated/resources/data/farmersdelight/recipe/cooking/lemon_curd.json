@@ -19,10 +19,10 @@
       "item": "extradelight:lemon_zest"
     },
     {
-      "tag": "c:egg/yolk"
+      "tag": "extradelight:egg_or_yolk"
     },
     {
-      "tag": "c:egg/yolk"
+      "tag": "extradelight:egg_or_yolk"
     }
   ],
   "recipe_book_tab": "meals",

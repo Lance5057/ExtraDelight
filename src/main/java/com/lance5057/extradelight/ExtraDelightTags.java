@@ -645,6 +645,9 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> CHILLING_ITEMS = modTag("chilling_items");
 	public static final TagKey<Item> CAKE_SLICE = neoforgeItemTag("foods/cake/slice");
+	public static final TagKey<Item> IS_MARMALADE_INGREDIENT = modTag("marmalade_ingredient");
+	public static final TagKey<Item> EGG_OR_YOLK = modTag("egg_or_yolk");
+	public static final TagKey<Item> ICE_CUBES = neoforgeItemTag("ice/cubes");
 
 	// Tough as Nails
 	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");
@@ -831,8 +834,4 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_LIME = neoforgeItemTag("storage_blocks_lime");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_ORANGE = neoforgeItemTag("storage_blocks_orange");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_GRAPEFRUIT = neoforgeItemTag("storage_blocks_grapefruit");
-
-	public static final TagKey<Item> IS_MARMALADE_INGREDIENT = modTag("marmalade_ingredient");
-	public static final TagKey<Item> EGG_YOLK = neoforgeItemTag("egg/yolk");
-	public static final TagKey<Item> ICE_CUBES = neoforgeItemTag("ice/cubes");
 }

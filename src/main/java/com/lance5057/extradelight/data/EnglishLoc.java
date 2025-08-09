@@ -101,13 +101,14 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.hazelnut", "Trees grow in forests.");
 		this.add("extradelight.jei.info.apple", "Trees grow in forests.");
 		this.add("extradelight.jei.info.garlic", "Found on mountain slopes.");
-		this.add("extradelight.jei.info.cucumber", "Found in hills.");
+		this.add("extradelight.jei.info.cucumber", "Found in hill biomes.");
 		this.add("extradelight.jei.info.soybean", "Found in anything temperate.");
 		this.add("extradelight.jei.info.yeast", "Use an empty glass bottle on an active yeast pot to obtain them.");
-		this.add("extradelight.jei.info.lemon", "Found in hills.");
+		this.add("extradelight.jei.info.lemon", "Found in hill biomes.");
 		this.add("extradelight.jei.info.lime", "Found in hot biomes.");
 		this.add("extradelight.jei.info.orange", "Found in wet biomes.");
 		this.add("extradelight.jei.info.grapefruit", "Found in jungle biomes.");
+		this.add("extradelight.jei.info.egg", "Right click an egg on a Mixing Bowl.");
 
 		this.add("extradelight.jei.info.evaporator.extra", "+ Extras");
 		this.add("extradelight.jei.info.evaporator.view", "Requires View"); // Combine with the one under
@@ -129,6 +130,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.chocolate_box_valid", "Valid items to put in Chocolate Box");
 		this.add("tag.item.extradelight.chocolate_truffle_filling", "Chocolate Truffle fillings");
 		this.add("tag.item.extradelight.corn_dim_confiscate", "Items confiscated when leaving the Cornfield");
+		this.add("tag.item.extradelight.egg_or_yolk", "Whole Egg or just Yolk");
 		this.add("tag.item.extradelight.frying_oil", "Frying Oil");
 		this.add("tag.item.extradelight.jelly", "Jelly");
 		this.add("tag.item.extradelight.makes_stock", "Makes Stock");
@@ -156,7 +158,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.riceball_filling", "Riceball fillings");
 		this.add("tag.item.extradelight.toast_or_bread_slice", "Bread Slice, regardless of toasting status");
 		this.add("tag.item.extradelight.toast_topping", "Toast toppings");
-		this.add("tag.item.extradelight.egg_yolk", "Whole Egg or just Yolk");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");

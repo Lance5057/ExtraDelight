@@ -13,6 +13,7 @@ import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
@@ -67,6 +68,7 @@ public class EDBlockTags extends BlockTagsProvider {
 
 				// Feasts in pans
 				ExtraDelightBlocks.LASAGNA.get(), ExtraDelightBlocks.HOTDISH.get(),
+				Fermentation.CHEESYMITE_SCROLL_BLOCK.get(),
 
 				// Feasts in pots
 				ExtraDelightBlocks.MACARONI_CHEESE.get(), ExtraDelightBlocks.CURRY.get(),
@@ -81,6 +83,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				Fermentation.PICKLED_ONIONS_BLOCK.get(), Fermentation.PICKLED_CARROTS_BLOCK.get(),
 				Fermentation.PICKLED_EGGS_BLOCK.get(), Fermentation.PICKLED_FISH_BLOCK.get(),
 				Fermentation.PICKLED_SAUSAGE_BLOCK.get(), Fermentation.PICKLED_GINGER_BLOCK.get(),
+				SummerCitrus.PRESERVED_LEMONS_BLOCK.get(), SummerCitrus.PICKLED_RINDS_BLOCK.get(),
 
 				ExtraDelightBlocks.SHEET_BLOCK.get(), ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
 				ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
@@ -122,6 +125,9 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.APPLE_CHEESECAKE.get(), ExtraDelightBlocks.COFFEE_CAKE.get(),
 				ExtraDelightBlocks.MILK_TART.get(), ExtraDelightBlocks.CHOCOLATE_CAKE.get(),
 				ExtraDelightBlocks.TARTE_TATIN.get(), Fermentation.STEAK_PICKLED_ONION_PIE.get(),
+				SummerCitrus.LEMON_MERINGUE_PIE.get(), SummerCitrus.KEY_LIME_PIE.get(),
+				SummerCitrus.LEMON_CUCUMBER_CAKE.get(), SummerCitrus.MELON_LAYER_CAKE.get(), SummerCitrus.PAVLOVA.get(),
+				SummerCitrus.KYIV_CAKE.get(), SummerCitrus.RAW_BAKED_ALASKA.get(), SummerCitrus.BAKED_ALASKA.get(),
 
 				// Feasts in bowls
 				ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(),
@@ -145,7 +151,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.MINT_LAMB.get(), ExtraDelightBlocks.CHARCUTERIE_BOARD.get(),
 				ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), ExtraDelightBlocks.MONKEY_BREAD.get(),
 				ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(), ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(),
-				Fermentation.SOY_GLAZED_SALMON_BLOCK.get(),
+				Fermentation.SOY_GLAZED_SALMON_BLOCK.get(), SummerCitrus.LEMONADE_TRAY.get(),
+				SummerCitrus.LIMEADE_TRAY.get(), SummerCitrus.ORANGEADE_TRAY.get(), SummerCitrus.BAKED_COD.get(),
 
 				// Jellies (also plated)
 				ExtraDelightBlocks.JELLY_WHITE.get(), ExtraDelightBlocks.JELLY_ORANGE.get(),
@@ -155,7 +162,10 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.JELLY_LIGHT_GREY.get(), ExtraDelightBlocks.JELLY_CYAN.get(),
 				ExtraDelightBlocks.JELLY_PURPLE.get(), ExtraDelightBlocks.JELLY_BLUE.get(),
 				ExtraDelightBlocks.JELLY_BROWN.get(), ExtraDelightBlocks.JELLY_GREEN.get(),
-				ExtraDelightBlocks.JELLY_RED.get(), ExtraDelightBlocks.JELLY_BLACK.get());
+				ExtraDelightBlocks.JELLY_RED.get(), ExtraDelightBlocks.JELLY_BLACK.get(),
+
+				SummerCitrus.MELON_FRUIT_SALAD.get()
+		);
 		AestheticBlocks.WALLPAPER_BLOCKS.forEach(this::makeMineableWithKnife);
 		AestheticBlocks.MOLDED_WALLPAPER_BLOCKS.forEach(this::makeMineableWithKnife);
 		AestheticBlocks.DRIED_CORN_FENCE.forEach(this::makeMineableWithAxe);
@@ -236,22 +246,54 @@ public class EDBlockTags extends BlockTagsProvider {
 				SummerCitrus.POTTED_ORANGE_SAPLING.get(), SummerCitrus.POTTED_GRAPEFRUIT_SAPLING.get());
 
 		// Dyed Tags
-		tag(Tags.Blocks.DYED_BLACK).add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_BLUE).add(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_BROWN).add(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_CYAN).add(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_GRAY).add(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_GREEN).add(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_LIGHT_BLUE).add(ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_LIGHT_GRAY).add(ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_LIME).add(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_MAGENTA).add(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_ORANGE).add(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_PINK).add(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_PURPLE).add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_RED).add(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_WHITE).add(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get());
-		tag(Tags.Blocks.DYED_YELLOW).add(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get());
+		tag(Tags.Blocks.DYED_BLACK).add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.BLACK.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.BLACK.getId()).get());
+		tag(Tags.Blocks.DYED_BLUE).add(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.BLUE.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.BLUE.getId()).get());
+		tag(Tags.Blocks.DYED_BROWN).add(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.BROWN.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.BROWN.getId()).get());
+		tag(Tags.Blocks.DYED_CYAN).add(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.CYAN.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.CYAN.getId()).get());
+		tag(Tags.Blocks.DYED_GRAY).add(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.GRAY.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.GRAY.getId()).get());
+		tag(Tags.Blocks.DYED_GREEN).add(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.GREEN.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.GREEN.getId()).get());
+		tag(Tags.Blocks.DYED_LIGHT_BLUE).add(ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.LIGHT_BLUE.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.LIGHT_BLUE.getId()).get());
+		tag(Tags.Blocks.DYED_LIGHT_GRAY).add(ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.LIGHT_GRAY.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.LIGHT_GRAY.getId()).get());
+		tag(Tags.Blocks.DYED_LIME).add(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.LIME.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.LIME.getId()).get());
+		tag(Tags.Blocks.DYED_MAGENTA).add(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.MAGENTA.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.MAGENTA.getId()).get());
+		tag(Tags.Blocks.DYED_ORANGE).add(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.ORANGE.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.ORANGE.getId()).get());
+		tag(Tags.Blocks.DYED_PINK).add(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.PINK.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.PINK.getId()).get());
+		tag(Tags.Blocks.DYED_PURPLE).add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.PURPLE.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.PURPLE.getId()).get());
+		tag(Tags.Blocks.DYED_RED).add(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.RED.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.RED.getId()).get());
+		tag(Tags.Blocks.DYED_WHITE).add(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.WHITE.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.WHITE.getId()).get());
+		tag(Tags.Blocks.DYED_YELLOW).add(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_BLOCKS.get(DyeColor.YELLOW.getId()).get(),
+				AestheticBlocks.GINGHAM_BLOCKS.get(DyeColor.YELLOW.getId()).get());
 
 		// Storage Blocks
 		tag(Tags.Blocks.STORAGE_BLOCKS).addTag(ExtraDelightTags.STORAGE_BLOCKS_FLOUR)

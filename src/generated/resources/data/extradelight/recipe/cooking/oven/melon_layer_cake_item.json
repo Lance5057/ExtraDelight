@@ -27,10 +27,18 @@
       "tag": "c:butter"
     },
     {
-      "tag": "c:frosting/red"
+      "tag": "c:frosting/pink"
     },
     {
-      "tag": "c:frosting/green"
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:frosting/green"
+        },
+        {
+          "tag": "c:frosting/lime"
+        }
+      ]
     },
     {
       "tag": "c:chocolate/chips"

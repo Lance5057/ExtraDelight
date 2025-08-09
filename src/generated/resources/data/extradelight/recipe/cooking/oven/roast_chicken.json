@@ -15,7 +15,15 @@
       "tag": "c:gravy"
     },
     {
-      "tag": "c:foods/bread"
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:foods/bread"
+        },
+        {
+          "tag": "c:bread/crumbs"
+        }
+      ]
     },
     {
       "tag": "extradelight:processed/carrot"

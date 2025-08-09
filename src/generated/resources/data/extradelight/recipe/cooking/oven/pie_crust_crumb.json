@@ -1,0 +1,52 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:foods/cookie"
+        },
+        {
+          "tag": "c:graham_cracker"
+        }
+      ]
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:foods/cookie"
+        },
+        {
+          "tag": "c:graham_cracker"
+        }
+      ]
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:foods/cookie"
+        },
+        {
+          "tag": "c:graham_cracker"
+        }
+      ]
+    },
+    {
+      "tag": "c:butter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:pie_crust"
+  }
+}

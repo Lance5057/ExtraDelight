@@ -16,26 +16,10 @@
   ],
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "tag": "c:eggs"
-        },
-        {
-          "item": "extradelight:egg_yolk"
-        }
-      ]
+      "tag": "extradelight:egg_or_yolk"
     },
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "tag": "c:eggs"
-        },
-        {
-          "item": "extradelight:egg_yolk"
-        }
-      ]
+      "tag": "extradelight:egg_or_yolk"
     }
   ],
   "result": {
