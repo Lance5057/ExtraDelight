@@ -58,6 +58,7 @@ import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -93,6 +94,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 	public static ResourceLocation CreateLoc(String texture) {
 		return ResourceLocation.fromNamespaceAndPath(Create.ID, texture);
+	}
+
+	public static ResourceLocation FDLoc(String texture) {
+		return ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, texture);
 	}
 
 	@Override
@@ -2284,6 +2289,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void craftingRecipes(RecipeOutput consumer) {
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.FRUIT_SALAD.get())
+				.requires(ExtraDelightTags.PROCESSED_APPLE).requires(ExtraDelightTags.PROCESSED_MELON)
+				.requires(ExtraDelightTags.PROCESSED_MELON).requires(ExtraDelightTags.PROCESSED_FRUIT)
+				.requires(ExtraDelightTags.PROCESSED_FRUIT).requires(ModItems.PUMPKIN_SLICE.get())
+				.requires(Items.GLASS_BOTTLE)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLOW_BERRIES))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MIXED_SALAD.get())
+				.requires(ExtraDelightTags.PROCESSED_CABBAGE).requires(ExtraDelightTags.PROCESSED_TOMATO)
+				.requires(ExtraDelightTags.PROCESSED_BEETROOT).requires(Items.BOWL)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BOWL)).save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
@@ -3901,12 +3918,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 	private void potRecipes(RecipeOutput consumer) {
 		pot(ModItems.BEEF_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(Items.BARRIER) }, "beef_stew",
-				consumer.withConditions(FalseCondition.INSTANCE));
+				new Ingredient[] { Ingredient.of(Items.BARRIER) }, consumer.withConditions(FalseCondition.INSTANCE));
 
 		pot(ModItems.FISH_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(Items.BARRIER) }, "fish_stew",
-				consumer.withConditions(FalseCondition.INSTANCE));
+				new Ingredient[] { Ingredient.of(Items.BARRIER) }, consumer.withConditions(FalseCondition.INSTANCE));
 
 		pot(ExtraDelightItems.CHOCOLATE_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.COCOA_POWDER), Ingredient.of(CommonTags.FOODS_MILK),
@@ -4396,7 +4411,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ModItems.HOT_COCOA.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.SWEETENER),
 						Ingredient.of(ExtraDelightTags.CHOCOLATE_SYRUP) },
-				"hot_cocoa", consumer);
+				consumer);
 
 		pot(ExtraDelightItems.XOCOLATL.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.GLASS_BOTTLE,
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.SWEETENER),
@@ -6160,19 +6175,19 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		for (Ingredient i : itemsIn)
 			b.addIngredient(i);
 
-		b.build(consumer, rc);
+		b.build(consumer, "farmersdelight:" + rc);
+	}
 
-//		ProcessingRecipeBuilder<MixingRecipe> p = new ProcessingRecipeBuilder<MixingRecipe>(MixingRecipe::new,
-//				CreateLoc(rc + "_create"));
-//
-//		p.output(output, count);
-//		for (Ingredient i : itemsIn)
-//			p.require(i);
-//
-//		if (container != null)
-//			p.require(container);
-//
-//		p.requiresHeat(HeatCondition.HEATED);
-//		p.build(consumer.withConditions(new ModLoadedCondition("create")));
+	public static void pot(ItemLike output, int count, int speed, float xp, ItemLike container, Ingredient[] itemsIn,
+			RecipeOutput consumer) {
+
+//		cookingPotRecipe(ItemLike mainResult, int count, int cookingTime, float experience)
+
+		CookingPotRecipeBuilder b = CookingPotRecipeBuilder.cookingPotRecipe(output, count, speed, xp, container)
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS);
+		for (Ingredient i : itemsIn)
+			b.addIngredient(i);
+
+		b.build(consumer);
 	}
 }

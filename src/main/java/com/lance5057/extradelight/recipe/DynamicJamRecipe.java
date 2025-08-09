@@ -45,23 +45,27 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 	@Override
 	public ItemStack getResultItem(HolderLookup.Provider provider) {
 		ItemStack stack = super.getResultItem(provider);
-//		if (stack.getItem() instanceof DynamicJam jam) {
-//
-//			ItemContainerContents comp = stack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
-//			if (comp != null) {
-//				comp..addItem(stack);
-//			} else
-//				ExtraDelight.logger.error("DynamicJam lost its component!");
-//		} else {
-//			ExtraDelight.logger.error("DynamicJamRecipe result not DynamicJam!");
-//		}
+		if (stack.getItem() instanceof DynamicJam jam) {
+			stack.set(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(List.of(graphic)));
+
+			List<ItemStack> stacks = new ArrayList<ItemStack>();
+			for (Ingredient i : this.getIngredients()) {
+				if (i.getItems().length > 0)
+					stacks.add(i.getItems()[0]);
+			}
+
+			stack.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(stacks));
+
+		} else {
+			ExtraDelight.logger.error("DynamicJamRecipe result not DynamicJam!");
+		}
 
 		return stack;
 	}
 
 	@Override
 	public ItemStack assemble(RecipeWrapper inv, HolderLookup.Provider provider) {
-		ItemStack stack = super.getResultItem(provider).copy();
+		ItemStack stack = this.getResultItem(provider).copy();
 		if (stack.getItem() instanceof DynamicJam) {
 
 			int nutrition = 0;
@@ -79,14 +83,12 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 						saturation += f.saturation();
 
 						effects.addAll(f.effects());
-					} else
-						ExtraDelight.logger
-								.error(s.getDescriptionId() + " doesn't have a food component! How did we get here?!");
+					}
 				}
 			}
 
-			stack.set(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(List.of(graphic)));
-			stack.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
+//			stack.set(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(List.of(graphic)));
+//			stack.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
 
 			FoodProperties food = new FoodProperties(nutrition, saturation / inv.size(), false, 1.6F,
 					java.util.Optional.empty(), effects);

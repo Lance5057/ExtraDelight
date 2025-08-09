@@ -9,7 +9,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
     },
     {
       "tag": "c:eggs"

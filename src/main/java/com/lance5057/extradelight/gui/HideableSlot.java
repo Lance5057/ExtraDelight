@@ -31,14 +31,4 @@ public class HideableSlot extends SlotItemHandler {
 		return active;
 	}
 
-//	@Override
-//	public boolean mayPlace(ItemStack stack) {
-//		if (active) {
-//			if (stack.isEmpty())
-//				return false;
-//			return getItemHandler().isItemValid(index, stack);
-//		}
-//		return false;
-//	}
-
 }

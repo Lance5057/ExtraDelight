@@ -6,6 +6,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 
@@ -832,4 +833,6 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_GRAPEFRUIT = neoforgeItemTag("storage_blocks_grapefruit");
 
 	public static final TagKey<Item> IS_MARMALADE_INGREDIENT = modTag("marmalade_ingredient");
+	public static final TagKey<Item> EGG_YOLK = neoforgeItemTag("egg/yolk");
+	public static final TagKey<Item> ICE_CUBES = neoforgeItemTag("ice/cubes");
 }

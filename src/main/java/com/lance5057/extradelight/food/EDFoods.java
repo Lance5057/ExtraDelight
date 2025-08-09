@@ -349,7 +349,7 @@ public class EDFoods {
 	public static final FoodProperties LIME = new FoodProperties.Builder().nutrition(1).saturationModifier(0.2f).effect(SOUR_PUCKER_FOUR, 1F).build();
 	public static final FoodProperties ORANGE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3f).effect(SOUR_PUCKER_TWO, 0.5F).build();
 	public static final FoodProperties GRAPEFRUIT = new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).effect(SOUR_PUCKER_ONE, 0.5F).build();
-	public static final FoodProperties ICE_CUBE = new FoodProperties.Builder().nutrition(0).saturationModifier(0f).effect(FIRE_RESISTANCE_BRIEF, 1F).build();
+	public static final FoodProperties ICE_CUBE = new FoodProperties.Builder().nutrition(0).saturationModifier(0f).effect(FIRE_RESISTANCE_BRIEF, 1F).alwaysEdible().build();
 	public static final FoodProperties MELON_RIND = new FoodProperties.Builder().nutrition(1).saturationModifier(0.2f).build();
 	public static final FoodProperties MERINGUE = new FoodProperties.Builder().nutrition(0).saturationModifier(0.4f).build();
 	public static final FoodProperties LEMON_CURD = new FoodProperties.Builder().nutrition(4).saturationModifier(0.6f).effect(SUNSHINE_ONE, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();

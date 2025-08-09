@@ -19,7 +19,7 @@
       "tag": "c:crops/coffee/ground"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
     }
   ],
   "result": {

@@ -14,6 +14,7 @@ import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.RawBakedAlaskaBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
@@ -1090,7 +1091,7 @@ public class SummerCitrus {
 				.unlockedBy("has_orangeade", InventoryChangeTrigger.TriggerInstance.hasItems(ORANGEADE.get()))
 				.save(consumer, ExtraDelight.modLoc("orangeade_tray"));
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, RAW_BAKED_ALASKA_ITEM.get()).pattern("sps").pattern("pip")
-				.pattern("ccc").define('s', Items.SUGAR).define('p', STIFF_PEAKS)
+				.pattern("ccc").define('s', ExtraDelightTags.SWEETENER).define('p', STIFF_PEAKS)
 				.define('i', ExtraDelightTags.ICE_CREAM).define('c', ExtraDelightTags.CAKE_SLICE)
 				.unlockedBy("has_peaks", InventoryChangeTrigger.TriggerInstance.hasItems(STIFF_PEAKS.get()))
 				.save(consumer, ExtraDelight.modLoc("baked_alaska"));
@@ -1136,6 +1137,111 @@ public class SummerCitrus {
 				.define('f', KYIV_CAKE_SLICE.get())
 				.unlockedBy("has_pav", InventoryChangeTrigger.TriggerInstance.hasItems(KYIV_CAKE_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("kyiv_cake_from_slice"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BLACK_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.BLACK.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_black"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BLUE_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.BLUE.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_blue"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BROWN_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.BROWN.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_brown"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CYAN_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.CYAN.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_cyan"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GREEN_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.GREEN.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_green"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, LIGHT_BLUE_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.LIGHT_BLUE.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_light_blue"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, LIGHT_GRAY_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.LIGHT_GRAY.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_light_gray"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, LIME_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.LIME.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_lime"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, MAGENTA_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.MAGENTA.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_magenta"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ORANGE_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.ORANGE.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_orange"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, PINK_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.PINK.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_pink"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, PURPLE_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.PURPLE.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_purple"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RED_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.RED.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_red"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, WHITE_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.WHITE.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_white"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, YELLOW_PICNIC_BASKET.get()).pattern("s").pattern("g")
+				.pattern("b").define('s', Items.STICK)
+				.define('g', AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.YELLOW.getId()))
+				.define('b', ModItems.BASKET.get())
+				.unlockedBy("has_basket", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASKET.get()))
+				.save(consumer, ExtraDelight.modLoc("picnic_basket_yellow"));
 
 		// Feasts
 		FeastRecipeBuilder.feast(Ingredient.of(), new ItemStack(LEMONADE.get()), LEMONADE_TRAY_ITEM.get())
@@ -1190,21 +1296,23 @@ public class SummerCitrus {
 		ChillerRecipeBuilder
 				.chill(CHOCOLATE_MOUSSE.toStack(2), Recipes.NORMAL_COOKING, Recipes.SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250))
-				.addIngredient(Ingredient.of(EGG_YOLK)).addIngredient(Ingredient.of(STIFF_PEAKS))
+				.addIngredient(Ingredient.of(ExtraDelightTags.EGG_YOLK)).addIngredient(Ingredient.of(STIFF_PEAKS))
 				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_SYRUP))
-				.addIngredient(Ingredient.of(Items.SUGAR)).build(consumer, "chocolate_mousse_chilling");
+				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).build(consumer, "chocolate_mousse_chilling");
 
 		// Cutting Board
-		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(LEMON.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), SLICED_LEMON.get(), 3)
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightTags.LEMON),
+				Ingredient.of(CommonTags.TOOLS_KNIFE), SLICED_LEMON.get(), 3)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_lemon_knife"));
-		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(LIME.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), SLICED_LIME.get(), 3)
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightTags.LIME),
+				Ingredient.of(CommonTags.TOOLS_KNIFE), SLICED_LIME.get(), 3)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_lime_knife"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ORANGE.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
-				SLICED_ORANGE.get(), 3).build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_orange_knife"));
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(GRAPEFRUIT.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+				.cuttingRecipe(Ingredient.of(ExtraDelightTags.ORANGE), Ingredient.of(CommonTags.TOOLS_KNIFE),
+						SLICED_ORANGE.get(), 3)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_orange_knife"));
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightTags.GRAPEFRUIT), Ingredient.of(CommonTags.TOOLS_KNIFE),
 						SLICED_GRAPEFRUIT.get(), 3)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_grapefruit_knife"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightTags.LEMON),
@@ -1287,21 +1395,24 @@ public class SummerCitrus {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.EGG_WHITE.FLUID, 250)) },
 				consumer, "stiff_peaks_mixing");
 		Recipes.mixing(new ItemStack(LEMONADE.get(), 4), Recipes.LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE, 4),
-				new Ingredient[] { Ingredient.of(Items.SUGAR), Ingredient.of(Items.SUGAR), Ingredient.of(Items.SUGAR),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.ICE_CUBES),
 						Ingredient.of(ExtraDelightTags.PROCESSED_LEMON),
 						Ingredient.of(ExtraDelightTags.PROCESSED_LEMON) },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 750)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.LEMON_JUICE.FLUID, 250)) },
 				consumer, "lemonade_mixing");
 		Recipes.mixing(new ItemStack(LIMEADE.get(), 4), Recipes.LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE, 4),
-				new Ingredient[] { Ingredient.of(Items.SUGAR), Ingredient.of(Items.SUGAR), Ingredient.of(Items.SUGAR),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.ICE_CUBES),
 						Ingredient.of(ExtraDelightTags.PROCESSED_LIME),
 						Ingredient.of(ExtraDelightTags.PROCESSED_LIME) },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 750)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.LIME_JUICE.FLUID, 250)) },
 				consumer, "limeade_mixing");
 		Recipes.mixing(new ItemStack(ORANGEADE.get(), 4), Recipes.LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE, 4),
-				new Ingredient[] { Ingredient.of(Items.SUGAR), Ingredient.of(Items.SUGAR), Ingredient.of(Items.SUGAR),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.ICE_CUBES),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE) },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 500)),
@@ -1323,13 +1434,14 @@ public class SummerCitrus {
 						Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER), Ingredient.of(ExtraDelightTags.MINT),
-						Ingredient.of(Items.SUGAR), Ingredient.of(ExtraDelightTags.FISH_SAUCE), },
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.FISH_SAUCE), },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.LIME_JUICE.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "thai_melon_salad_mixing");
 		Recipes.mixing(new ItemStack(ETON_MESS.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(MERINGUE), Ingredient.of(Items.SUGAR), Ingredient.of(MERINGUE),
+				new Ingredient[] { Ingredient.of(MERINGUE), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(MERINGUE),
 						DifferenceIngredient.of(Ingredient.of(Tags.Items.FOODS_BERRY),
 								Ingredient.of(Items.GLOW_BERRIES)),
 						Ingredient.of(LEMON_ZEST), Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE) },
@@ -1338,7 +1450,8 @@ public class SummerCitrus {
 				consumer, "eton_mess_mixing");
 		Recipes.mixing(new ItemStack(DALGONA_COFFEE.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
 				Ingredient.of(ExtraDelightItems.WHISK),
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.GROUND_COFFEE_BEANS), Ingredient.of(Items.SUGAR) },
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.GROUND_COFFEE_BEANS),
+						Ingredient.of(ExtraDelightTags.SWEETENER) },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 50)),
 						SizedFluidIngredient.of(new FluidStack(NeoForgeMod.MILK, 250)) },
 				consumer, "dalgona_coffee_mixing");
@@ -1370,28 +1483,29 @@ public class SummerCitrus {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(MERINGUE.get(), 6), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
-				.addIngredient(STIFF_PEAKS).addIngredient(Items.SUGAR).addIngredient(STIFF_PEAKS)
+				.addIngredient(STIFF_PEAKS).addIngredient(ExtraDelightTags.SWEETENER).addIngredient(STIFF_PEAKS)
 				.unlockedByAnyIngredient(STIFF_PEAKS).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(LEMON_MERINGUE_PIE_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
-				.addIngredient(STIFF_PEAKS).addIngredient(Items.SUGAR).addIngredient(STIFF_PEAKS)
+				.addIngredient(STIFF_PEAKS).addIngredient(ExtraDelightTags.SWEETENER).addIngredient(STIFF_PEAKS)
 				.addIngredient(LEMON_CURD).addIngredient(ModItems.PIE_CRUST.get()).addIngredient(LEMON_CURD)
 				.unlockedByAnyIngredient(LEMON).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(KEY_LIME_PIE_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
-				.addIngredient(EGG_YOLK).addIngredient(CommonTags.FOODS_MILK).addIngredient(LIME_JUICE)
-				.addIngredient(LIME_ZEST).addIngredient(Items.SUGAR).addIngredient(STIFF_PEAKS)
+				.addIngredient(ExtraDelightTags.EGG_YOLK).addIngredient(CommonTags.FOODS_MILK).addIngredient(LIME_JUICE)
+				.addIngredient(LIME_ZEST).addIngredient(ExtraDelightTags.SWEETENER).addIngredient(STIFF_PEAKS)
 				.addIngredient(ExtraDelightTags.PROCESSED_LIME).addIngredient(ExtraDelightTags.WHIPPED_CREAM)
 				.addIngredient(ModItems.PIE_CRUST.get()).unlockedByAnyIngredient(LIME).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(LEMON_CUCUMBER_CAKE_ITEM.get(), 1), Recipes.NORMAL_COOKING,
 						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
 				.addIngredient(ExtraDelightTags.PROCESSED_CUCUMBER).addIngredient(LEMON_ZEST).addIngredient(LEMON_JUICE)
-				.addIngredient(Items.SUGAR).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FROSTING_WHITE)
-				.addIngredient(ExtraDelightTags.PROCESSED_LEMON).unlockedByAnyIngredient(LEMON_ZEST).build(consumer);
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.FROSTING_WHITE).addIngredient(ExtraDelightTags.PROCESSED_LEMON)
+				.unlockedByAnyIngredient(LEMON_ZEST).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(BAKED_COD_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.TRAY.get()), true)
@@ -1402,15 +1516,17 @@ public class SummerCitrus {
 				.OvenRecipe(new ItemStack(MELON_LAYER_CAKE_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
 				.addIngredient(ModItems.MELON_JUICE.get()).addIngredient(CommonTags.FOODS_MILK)
-				.addIngredient(Items.SUGAR).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FROSTING_RED)
-				.addIngredient(ExtraDelightTags.FROSTING_GREEN).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
-				.unlockedByAnyIngredient(Items.MELON_SLICE).build(consumer);
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.FROSTING_RED).addIngredient(ExtraDelightTags.FROSTING_GREEN)
+				.addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS).unlockedByAnyIngredient(Items.MELON_SLICE)
+				.build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(JAFFA_CAKE.get(), 6), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), false)
-				.addIngredient(Items.SUGAR).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE)
 				.addIngredient(DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
 						new DynamicItemComponent(List.of("orange")), ExtraDelightItems.DYNAMIC_JAM.get()))
 				.addIngredient(ORANGE_ZEST).unlockedByAnyIngredient(ORANGE).build(consumer);
@@ -1418,8 +1534,9 @@ public class SummerCitrus {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(JAFFA_CAKE.get(), 6), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), false)
-				.addIngredient(Items.SUGAR).addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.FLOUR)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE)
 				.addIngredient(Ingredient.of(ExtraDelightItems.JELLY_ORANGE)).addIngredient(ORANGE_ZEST)
 				.unlockedByAnyIngredient(ORANGE).build(consumer, "jaffa_jelly");
 
@@ -1432,22 +1549,23 @@ public class SummerCitrus {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(LEMON_DELICIOUS.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(Items.BOWL), true)
-				.addIngredient(EGG_YOLK).addIngredient(ExtraDelightTags.BUTTER).addIngredient(LEMON_ZEST)
-				.addIngredient(LEMON_JUICE).addIngredient(CommonTags.FOODS_MILK).addIngredient(Items.SUGAR)
-				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(STIFF_PEAKS).unlockedByAnyIngredient(LEMON)
-				.build(consumer);
+				.addIngredient(ExtraDelightTags.EGG_YOLK).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(LEMON_ZEST).addIngredient(LEMON_JUICE).addIngredient(CommonTags.FOODS_MILK)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(STIFF_PEAKS).unlockedByAnyIngredient(LEMON).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(LIME_SOUFFLE.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(Items.BOWL), true)
-				.addIngredient(EGG_YOLK).addIngredient(ExtraDelightTags.BUTTER).addIngredient(LIME_ZEST)
-				.addIngredient(LIME_JUICE).addIngredient(CommonTags.FOODS_MILK).addIngredient(Items.SUGAR)
-				.addIngredient(STIFF_PEAKS).addIngredient(STIFF_PEAKS).unlockedByAnyIngredient(STIFF_PEAKS)
-				.build(consumer);
+				.addIngredient(ExtraDelightTags.EGG_YOLK).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(LIME_ZEST).addIngredient(LIME_JUICE).addIngredient(CommonTags.FOODS_MILK)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(STIFF_PEAKS).addIngredient(STIFF_PEAKS)
+				.unlockedByAnyIngredient(STIFF_PEAKS).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(CHEESE_SOUFFLE.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(Items.BOWL), true)
-				.addIngredient(EGG_YOLK).addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.CHEESE)
-				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(CommonTags.FOODS_MILK)
+				.addIngredient(ExtraDelightTags.EGG_YOLK).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightTags.CHEESE)
+				.addIngredient(CommonTags.FOODS_MILK)
 				.addIngredient(CompoundIngredient.of(Ingredient.of(ExtraDelightTags.CHILI_POWDER),
 						Ingredient.of(ExtraDelightItems.CURRY_POWDER)))
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(STIFF_PEAKS).addIngredient(STIFF_PEAKS)
@@ -1456,13 +1574,13 @@ public class SummerCitrus {
 				.OvenRecipe(new ItemStack(PAVLOVA_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
 				.addIngredient(STIFF_PEAKS).addIngredient(STIFF_PEAKS).addIngredient(STIFF_PEAKS)
-				.addIngredient(Items.SUGAR).addIngredient(Items.SUGAR).addIngredient(ExtraDelightTags.WHIPPED_CREAM)
-				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).addIngredient(ExtraDelightTags.PROCESSED_FRUIT)
-				.unlockedByAnyIngredient(STIFF_PEAKS).build(consumer);
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightTags.WHIPPED_CREAM).addIngredient(ExtraDelightTags.PROCESSED_FRUIT)
+				.addIngredient(ExtraDelightTags.PROCESSED_FRUIT).unlockedByAnyIngredient(STIFF_PEAKS).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(KYIV_CAKE_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
-				.addIngredient(STIFF_PEAKS).addIngredient(STIFF_PEAKS).addIngredient(Items.SUGAR)
+				.addIngredient(STIFF_PEAKS).addIngredient(STIFF_PEAKS).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.ROASTED_HAZELNUTS).addIngredient(ExtraDelightTags.FLOUR)
 				.addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ExtraDelightTags.CHOCOLATE_SYRUP).addIngredient(ExtraDelightTags.WHIPPED_CREAM)
@@ -1470,13 +1588,14 @@ public class SummerCitrus {
 
 		// Pot
 		Recipes.pot(LEMON_CURD.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(Items.SUGAR),
-						Ingredient.of(LEMON_JUICE), Ingredient.of(LEMON_ZEST), Ingredient.of(EGG_YOLK),
-						Ingredient.of(EGG_YOLK) },
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(LEMON_JUICE), Ingredient.of(LEMON_ZEST), Ingredient.of(ExtraDelightTags.EGG_YOLK),
+						Ingredient.of(ExtraDelightTags.EGG_YOLK) },
 				"lemon_curd", consumer);
 		Recipes.pot(ORANGE_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.CUBED_CHICKEN_RAW), Ingredient.of(Items.SUGAR),
-						Ingredient.of(ORANGE_JUICE, ORANGE_ZEST), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.CUBED_CHICKEN_RAW),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ORANGE_JUICE, ORANGE_ZEST),
+						Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC),
 						Ingredient.of(ExtraDelightTags.PROCESSED_GINGER) },
 				"orange_chicken", consumer);
@@ -1497,7 +1616,8 @@ public class SummerCitrus {
 				"candied_citrus_zest", consumer);
 		Recipes.pot(LEMON_POSSET.get(), 3, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(LEMON_ZEST), Ingredient.of(CommonTags.FOODS_MILK),
-						Ingredient.of(Items.SUGAR), Ingredient.of(LEMON_JUICE), Ingredient.of(Items.SWEET_BERRIES) },
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(LEMON_JUICE),
+						Ingredient.of(Items.SWEET_BERRIES) },
 				"lemon_posset", consumer);
 		Recipes.pot(MELON_LIME_GLAZED_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] {
@@ -1519,7 +1639,7 @@ public class SummerCitrus {
 		VatRecipeBuilder.pickle(new ItemStack(PICKLED_RINDS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
 				.requires(Ingredient.of(MELON_RIND)).requires(Ingredient.of(MELON_RIND))
 				.requires(Ingredient.of(MELON_RIND)).requires(Ingredient.of(MELON_RIND))
-				.requires(Ingredient.of(Items.SUGAR))
+				.requires(Ingredient.of(ExtraDelightTags.SWEETENER))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 250))
 				.requiresStage(
 						new VatRecipe.StageIngredient(Ingredient.of(ExtraDelightTags.SALT), hourTick * 12, false))

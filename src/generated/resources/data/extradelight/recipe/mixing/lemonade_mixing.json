@@ -16,13 +16,16 @@
   ],
   "ingredients": [
     {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:ice/cubes"
     },
     {
       "tag": "extradelight:processed/lemon"

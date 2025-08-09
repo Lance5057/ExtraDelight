@@ -12,7 +12,7 @@
       "item": "extradelight:stiff_peaks"
     },
     "s": {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
     }
   },
   "pattern": [

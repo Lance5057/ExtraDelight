@@ -9,7 +9,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "extradelight:egg_yolk"
+      "tag": "c:egg/yolk"
     },
     {
       "tag": "c:butter"

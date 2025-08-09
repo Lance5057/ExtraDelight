@@ -181,6 +181,7 @@ public class JEIPlugin implements IModPlugin {
 
 		List<ItemStack> hide = List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
 		registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hide);
+		
 
 	}
 

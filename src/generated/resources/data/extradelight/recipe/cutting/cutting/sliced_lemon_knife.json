@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "extradelight:lemon"
+      "tag": "c:crops/lemon"
     }
   ],
   "result": [

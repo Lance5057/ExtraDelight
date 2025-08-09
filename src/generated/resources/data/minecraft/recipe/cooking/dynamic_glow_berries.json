@@ -28,6 +28,57 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
+    "components": {
+      "extradelight:dynamic_food": {
+        "graphics": [
+          "glow_berries"
+        ]
+      },
+      "extradelight:itemstack_handler": [
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:glow_berries"
+          },
+          "slot": 0
+        },
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:glow_berries"
+          },
+          "slot": 1
+        },
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:glow_berries"
+          },
+          "slot": 2
+        },
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:sugar"
+          },
+          "slot": 3
+        },
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:sugar"
+          },
+          "slot": 4
+        },
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:sugar"
+          },
+          "slot": 5
+        }
+      ]
+    },
     "count": 1,
     "id": "extradelight:dynamic_jam"
   }

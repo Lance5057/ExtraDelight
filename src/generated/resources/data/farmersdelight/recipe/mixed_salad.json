@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/cabbage"
+    },
+    {
+      "tag": "extradelight:processed/tomato"
+    },
+    {
+      "tag": "extradelight:processed/beetroot"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:mixed_salad"
+  }
+}

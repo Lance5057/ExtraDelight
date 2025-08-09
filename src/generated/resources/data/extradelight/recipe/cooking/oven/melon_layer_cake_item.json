@@ -15,7 +15,7 @@
       "tag": "c:foods/milk"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
     },
     {
       "tag": "c:eggs"

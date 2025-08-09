@@ -75,20 +75,26 @@ public class DynamicJam extends Item implements IDynamic {
 		ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
 		DynamicItemComponent dyn = itemStack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
 
-		if (comp != null && dyn != null) {
-			if (comp.getSlots() > 0) {
-				if (comp.getStackInSlot(0).is(ExtraDelightTags.IS_MARMALADE_INGREDIENT))
-					return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),
-							Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
-							Component.translatable("extradelight.marmalade")));
-				else
-					return Component.translationArg(Component.translatable(this.getDescriptionId(itemStack),
-							Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
-							Component.translatable("extradelight.jam")));
+		if (dyn != null) {
+			if (comp != null) {
+				if (comp.getSlots() > 0) {
+					if (comp.getStackInSlot(0).is(ExtraDelightTags.IS_MARMALADE_INGREDIENT))
+						return Component.translationArg(Component.translatable("extradelight.dynamic.jam",
+								Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
+								Component.translatable("extradelight.marmalade")));
+					else
+						return Component.translationArg(Component.translatable("extradelight.dynamic.jam",
+								Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
+								Component.translatable("extradelight.jam")));
+				}
 			}
+
+			return Component.translationArg(Component.translatable("extradelight.dynamic.jam",
+					Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
+					Component.translatable("extradelight.jam")));
 		}
 
-		return Component.translatable("dynamic.jam");
+		return Component.translatable(getDescriptionId());
 	}
 
 }

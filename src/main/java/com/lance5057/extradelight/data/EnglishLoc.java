@@ -156,6 +156,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.riceball_filling", "Riceball fillings");
 		this.add("tag.item.extradelight.toast_or_bread_slice", "Bread Slice, regardless of toasting status");
 		this.add("tag.item.extradelight.toast_topping", "Toast toppings");
+		this.add("tag.item.extradelight.egg_yolk", "Whole Egg or just Yolk");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
@@ -1393,7 +1394,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.bottlefluid", "Decanting");
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
-		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "%1$s %2$s");
+		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "Dynamic Jam");
+		this.add("extradelight.dynamic.jam",  "%1$s %2$s");
 		this.add("extradelight.jam", "Jam");
 		this.add("extradelight.marmalade", "Marmalade");
 

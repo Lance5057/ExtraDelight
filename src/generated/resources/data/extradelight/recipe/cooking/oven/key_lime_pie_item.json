@@ -9,7 +9,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "extradelight:egg_yolk"
+      "tag": "c:egg/yolk"
     },
     {
       "tag": "c:foods/milk"
@@ -21,7 +21,7 @@
       "item": "extradelight:lime_zest"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
     },
     {
       "item": "extradelight:stiff_peaks"

@@ -5,6 +5,7 @@ import java.util.concurrent.CompletableFuture;
 import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.simibubi.create.api.data.recipe.MixingRecipeGen;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
 
@@ -1283,7 +1284,7 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 
 			HAZELNUT_SOUP = create("hazelnut_soup",
 					b -> b.output(new ItemStack(ExtraDelightItems.HAZELNUT_SOUP.get(), 2)).require(Items.BOWL)
-							.require(Ingredient.of(ExtraDelightTags.ROASTED_HAZELNUTS))
+							.require(Items.BOWL).require(Ingredient.of(ExtraDelightTags.ROASTED_HAZELNUTS))
 							.require(Ingredient.of(CommonTags.FOODS_MILK))
 							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
 							.require(Ingredient.of(ExtraDelightTags.PROCESSED_POTATO))
@@ -1291,7 +1292,8 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 							.require(Ingredient.of(CommonTags.FOODS_COOKED_BACON)).requiresHeat(HeatCondition.HEATED)),
 
 			ONION_SOUP = create("onion_soup", b -> b.output(new ItemStack(ExtraDelightItems.ONION_SOUP.get(), 3))
-					.require(Items.BOWL).require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
+					.require(Items.BOWL).require(Items.BOWL).require(Items.BOWL)
+					.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
 					.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
 					.require(Ingredient.of(ExtraDelightTags.BUTTER)).require(Ingredient.of(ExtraDelightTags.BROTH))
 					.require(Ingredient.of(ExtraDelightTags.BREAD_SLICE))
@@ -1344,5 +1346,116 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 							.require(Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC))
 							.require(Ingredient.of(ModItems.TOMATO_SAUCE.get()))
 							.require(Ingredient.of(ExtraDelightTags.PROCESSED_CHILI))
-							.require(Ingredient.of(ExtraDelightTags.COOKING_OIL)).requiresHeat(HeatCondition.HEATED));
+							.require(Ingredient.of(ExtraDelightTags.COOKING_OIL)).requiresHeat(HeatCondition.HEATED)),
+
+			STIFF_PEAKS = create("stiff_peaks_mixing", b -> b.output(new ItemStack(SummerCitrus.STIFF_PEAKS.get(), 1))
+					.require(Items.BOWL).require(ExtraDelightFluids.EGG_WHITE.FLUID.get(), 250)),
+
+//			LEMONADE = create("lemonade_mixing",
+//					b -> b.output(new ItemStack(SummerCitrus.LEMONADE.get(), 4)).require(Items.GLASS_BOTTLE)
+//							.require(Items.GLASS_BOTTLE).require(Items.GLASS_BOTTLE).require(Items.GLASS_BOTTLE)
+//							.require(Ingredient.of(ExtraDelightTags.SWEETENER))
+//							.require(Ingredient.of(ExtraDelightTags.SWEETENER))
+//							.require(Ingredient.of(ExtraDelightTags.SWEETENER))
+//							.require(Ingredient.of(ExtraDelightTags.ICE_CUBES))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_LEMON)).require(Fluids.WATER, 750)
+//							.require(ExtraDelightFluids.LEMON_JUICE.FLUID.get(), 250)),
+//
+//			LIMEADE = create("limeade_mixing",
+//					b -> b.output(new ItemStack(SummerCitrus.LIMEADE.get(), 4)).require(Items.GLASS_BOTTLE)
+//							.require(Items.GLASS_BOTTLE).require(Items.GLASS_BOTTLE).require(Items.GLASS_BOTTLE)
+//							.require(Ingredient.of(ExtraDelightTags.SWEETENER))
+//							.require(Ingredient.of(ExtraDelightTags.SWEETENER))
+//							.require(Ingredient.of(ExtraDelightTags.SWEETENER))
+//							.require(Ingredient.of(ExtraDelightTags.ICE_CUBES))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_LIME))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_LIME)).require(Fluids.WATER, 750)
+//							.require(ExtraDelightFluids.LEMON_JUICE.FLUID.get(), 250)),
+//
+//			ORANGEADE = create("orangeade_mixing",
+//					b -> b.output(new ItemStack(SummerCitrus.ORANGEADE.get(), 4)).require(Items.GLASS_BOTTLE)
+//							.require(Items.GLASS_BOTTLE).require(Items.GLASS_BOTTLE).require(Items.GLASS_BOTTLE)
+//							.require(Ingredient.of(ExtraDelightTags.SWEETENER))
+//							.require(Ingredient.of(ExtraDelightTags.SWEETENER))
+//							.require(Ingredient.of(ExtraDelightTags.SWEETENER))
+//							.require(Ingredient.of(ExtraDelightTags.ICE_CUBES))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE)).require(Fluids.WATER, 750)
+//							.require(ExtraDelightFluids.LEMON_JUICE.FLUID.get(), 250)),
+//
+//			MELON_GAZPACHO = create("melon_gazpacho_mixing",
+//					b -> b.output(new ItemStack(SummerCitrus.MELON_GAZPACHO.get(), 4)).require(Items.BOWL)
+//							.require(Items.BOWL).require(Items.BOWL).require(Items.BOWL)
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_MELON))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC))
+//							.require(Ingredient.of(ExtraDelightTags.MINT)).require(Ingredient.of(ExtraDelightTags.SALT))
+//							.require(Ingredient.of(ExtraDelightTags.BREAD_CRUMBS))
+//							.require(ExtraDelightFluids.OIL.FLUID.get(), 250)
+//							.require(ExtraDelightFluids.VINEGAR.FLUID.get(), 250)),
+//
+//			THAI_MELON_SALAD = create("thai_melon_salad_mixing", b -> b
+//					.output(new ItemStack(SummerCitrus.MELON_GAZPACHO.get(), 4)).require(Items.BOWL).require(Items.BOWL)
+//					.require(Items.BOWL).require(Items.BOWL).require(Ingredient.of(ExtraDelightTags.ROASTED_PEANUTS))
+//					.require(Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER))
+//					.require(Ingredient.of(ExtraDelightTags.PROCESSED_CUCUMBER))
+//					.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
+//					.require(Ingredient.of(ExtraDelightTags.PROCESSED_GINGER))
+//					.require(Ingredient.of(ExtraDelightTags.MINT)).require(Ingredient.of(ExtraDelightTags.SWEETENER))
+//					.require(Ingredient.of(ExtraDelightTags.FISH_SAUCE))
+//					.require(ExtraDelightFluids.LIME_JUICE.FLUID.get(), 250)
+//					.require(ExtraDelightFluids.VINEGAR.FLUID.get(), 250)),
+
+			ETON_MESS = create("eton_mess_mixing", b -> b.output(new ItemStack(SummerCitrus.ETON_MESS.get(), 1))
+					.require(Items.BOWL).require(Ingredient.of(SummerCitrus.MERINGUE))
+					.require(Ingredient.of(ExtraDelightTags.SWEETENER)).require(Ingredient.of(SummerCitrus.MERINGUE))
+					.require(DifferenceIngredient.of(Ingredient.of(Tags.Items.FOODS_BERRY),
+							Ingredient.of(Items.GLOW_BERRIES)))
+					.require(Ingredient.of(SummerCitrus.LEMON_ZEST))
+					.require(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE))
+					.require(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250)),
+
+			DALGONA_COFFEE = create("dalgona_coffee_mixing",
+					b -> b.output(new ItemStack(SummerCitrus.DALGONA_COFFEE.get(), 1)).require(Items.GLASS_BOTTLE)
+							.require(Ingredient.of(ExtraDelightTags.GROUND_COFFEE_BEANS))
+							.require(Ingredient.of(ExtraDelightTags.SWEETENER)).require(NeoForgeMod.MILK.get(), 250)
+							.require(Fluids.WATER, 50)),
+
+			GRAPEFRUIT_BEETROOT_SALAD = create("grapefruit_beetroot_salad_mixing",
+					b -> b.output(new ItemStack(SummerCitrus.GRAPEFRUIT_BEETROOT_SALAD.get(), 2)).require(Items.BOWL)
+							.require(Items.BOWL).require(Ingredient.of(ExtraDelightTags.PROCESSED_GRAPEFRUIT))
+							.require(Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT))
+							.require(Ingredient.of(ExtraDelightTags.SALT)).require(Items.HONEY_BOTTLE)
+							.require(ExtraDelightFluids.OIL.FLUID.get(), 250)),
+
+//			CITRUS_ONION_SALAD = create("citrus_onion_salad_mixing",
+//					b -> b.output(new ItemStack(SummerCitrus.GRAPEFRUIT_BEETROOT_SALAD.get(), 3)).require(Items.BOWL)
+//							.require(Items.BOWL).require(Items.BOWL)
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_GRAPEFRUIT))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE))
+//							.require(Ingredient.of(ExtraDelightTags.MINT))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ONION))
+//							.require(Ingredient.of(ExtraDelightTags.PROCESSED_LIME)).require(Items.HONEY_BOTTLE)
+//							.require(ExtraDelightFluids.OIL.FLUID.get(), 250)
+//							.require(ExtraDelightFluids.VINEGAR.FLUID.get(), 250)
+//							.require(ExtraDelightFluids.ORANGE_JUICE.FLUID.get(), 250)),
+
+			MELON_FRUIT_SALAD_ITEM = create("melon_fruit_salad_mixing",
+					b -> b.output(new ItemStack(SummerCitrus.GRAPEFRUIT_BEETROOT_SALAD.get(), 1)).require(Items.BOWL)
+							.require(Items.MELON).require(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE))
+							.require(Ingredient.of(ExtraDelightTags.PROCESSED_MELON))
+							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE))
+							.require(Ingredient.of(Tags.Items.FOODS_BERRY)).require(Items.HONEY_BOTTLE)
+							.require(ExtraDelightFluids.LEMON_JUICE.FLUID.get(), 250)),
+
+			MELON_FRUIT_SALAD_ITEM_LIME = create("melon_fruit_salad_lime_mixing",
+					b -> b.output(new ItemStack(SummerCitrus.GRAPEFRUIT_BEETROOT_SALAD.get(), 1)).require(Items.BOWL)
+							.require(Items.MELON).require(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE))
+							.require(Ingredient.of(ExtraDelightTags.PROCESSED_MELON))
+							.require(Ingredient.of(ExtraDelightTags.PROCESSED_ORANGE))
+							.require(Ingredient.of(Tags.Items.FOODS_BERRY)).require(Items.HONEY_BOTTLE)
+							.require(ExtraDelightFluids.LIME_JUICE.FLUID.get(), 250));
 }

@@ -13,7 +13,7 @@
   },
   "ingredients": [
     {
-      "item": "extradelight:egg_yolk"
+      "tag": "c:egg/yolk"
     },
     {
       "item": "extradelight:stiff_peaks"
@@ -22,7 +22,7 @@
       "tag": "c:liquid_chocolate"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "extradelight:sweetener"
     }
   ],
   "result": {

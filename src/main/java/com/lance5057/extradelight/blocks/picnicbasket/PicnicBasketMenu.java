@@ -34,13 +34,19 @@ public class PicnicBasketMenu extends AbstractContainerMenu {
 
 			int startX = 8;
 			int startY = 8;
-			int inputStartX = 8+45;
+			int inputStartX = 8 + 45;
 			int inputStartY = 8;
 			int borderSlotSize = 18;
 			for (int row = 0; row < 3; ++row) {
 				for (int column = 0; column < 4; ++column) {
 					this.addSlot(new HideableSlot(tileEntity.getItems(), (row * 4) + column,
-							inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize), true));
+							inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize), true) {
+//						@Override
+//						public boolean mayPlace(ItemStack stack) {
+//							if(stack.is(PicnicBasketBlock))
+//							return false;
+//						}
+					});
 				}
 			}
 
