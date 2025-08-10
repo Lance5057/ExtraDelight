@@ -121,6 +121,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.vat.days", "%s Days");
 
 		this.add("extradelight.jei.info.pickle_juice", "Drops from Pickle Jar items when emptied.");
+		this.add(ExtraDelight.MOD_ID + ".jei.info.baked_alaska", "Place and Ignite the Unbaked Alaska to cook!");
 
 		this.add("tag.item.extradelight.baking_trays", "Baking Trays");
 		this.add("tag.item.extradelight.broth", "Broth");
@@ -314,7 +315,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.butcher.name", "Certified Carnivore");
 		this.add(ExtraDelight.MOD_ID + ".advancement.butcher.desc", "Make every Butchercraft meal.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.juicer.name", "Main Squeeze");
 		this.add(ExtraDelight.MOD_ID + ".advancement.juicer.desc", "Make a Juicer.");
 
@@ -1396,7 +1397,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
 		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "Dynamic Jam");
-		this.add("extradelight.dynamic.jam",  "%1$s %2$s");
+		this.add("extradelight.dynamic.jam", "%1$s %2$s");
 		this.add("extradelight.jam", "Jam");
 		this.add("extradelight.marmalade", "Marmalade");
 
@@ -1419,7 +1420,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jam.grapefruit", "Grapefruit");
 		this.add("extradelight.jam.golden_apple", "Golden Apple");
 		this.add("extradelight.jam.orange", "Orange");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".tooltip.deprecated", "This item is deprecated! Right-click to convert!");
 
 		Fermentation.EngLoc(this);

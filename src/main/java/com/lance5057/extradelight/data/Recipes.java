@@ -1034,13 +1034,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("punch_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.PAPER), new ItemStack(ExtraDelightItems.BROWNIE.get()),
+				.feast(Ingredient.of(), new ItemStack(ExtraDelightItems.BROWNIE.get()),
 						ExtraDelightItems.BROWNIES_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.BROWNIES_BLOCK.get()))
 				.save(consumer, EDLoc("brownies_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.PAPER), new ItemStack(ExtraDelightItems.BLONDIE.get()),
+				.feast(Ingredient.of(), new ItemStack(ExtraDelightItems.BLONDIE.get()),
 						ExtraDelightItems.BLONDIES_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.BLONDIES_BLOCK.get()))
 				.save(consumer, EDLoc("blondies_feast"));
@@ -1058,13 +1058,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("sticky_toffee_pudding_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.PAPER), new ItemStack(ExtraDelightItems.CRISP_RICE_TREAT.get()),
+				.feast(Ingredient.of(), new ItemStack(ExtraDelightItems.CRISP_RICE_TREAT.get()),
 						ExtraDelightItems.CRISP_RICE_TREATS_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.CRISP_RICE_TREATS_BLOCK.get()))
 				.save(consumer, EDLoc("crisp_rice_treats_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.PAPER), new ItemStack(ExtraDelightItems.SCOTCHAROO.get()),
+				.feast(Ingredient.of(), new ItemStack(ExtraDelightItems.SCOTCHAROO.get()),
 						ExtraDelightItems.SCOTCHAROO_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.SCOTCHAROO_BLOCK.get()))
 				.save(consumer, EDLoc("scotcharoo_feast"));
@@ -1381,13 +1381,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("white_chili_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.PAPER), new ItemStack(ExtraDelightItems.MARSHMALLOW_SLICE.get()),
+				.feast(Ingredient.of(), new ItemStack(ExtraDelightItems.MARSHMALLOW_SLICE.get()),
 						ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.get())
 				.unlockedBy("has_feast", has(ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.get()))
 				.save(consumer, EDLoc("marshmallow_slice_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.PAPER), new ItemStack(ExtraDelightItems.BRUSCHETTA.get()),
+				.feast(Ingredient.of(), new ItemStack(ExtraDelightItems.BRUSCHETTA.get()),
 						ExtraDelightItems.BRUSCHETTA_FEAST.get())
 				.unlockedBy("has_feast", has(ExtraDelightItems.BRUSCHETTA_FEAST.get()))
 				.save(consumer, EDLoc("bruschetta_feast"));
@@ -3135,7 +3135,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		Recipes.bucket("hot_cocoa", consumer, ExtraDelightItems.HOT_COCOA_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ModItems.HOT_COCOA.get());
 		Recipes.bucket("jam", consumer, ExtraDelightItems.JAM_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
-				ExtraDelightItems.JAM.get());
+				ExtraDelightItems.DYNAMIC_JAM.get());
 		Recipes.bucket("ketchup", consumer, ExtraDelightItems.KETCHUP_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.KETCHUP.get());
 		Recipes.bucket("mayo", consumer, ExtraDelightItems.MAYO_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,

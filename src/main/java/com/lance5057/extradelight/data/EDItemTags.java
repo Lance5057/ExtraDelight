@@ -972,6 +972,11 @@ public class EDItemTags extends ItemTagsProvider {
 		for (DeferredItem<Item> i : EDItemGenerator.coldFood) {
 			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(i.get());
 		}
+
+//		tag(Tags.Items.DYED_BLACK).add(AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.BLACK.getId()).get(),
+//				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.BLACK.getId()).get());
+//		tag(Tags.Items.DYED_BLUE).add(AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.BLUE.getId()).get(),
+//				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.BLUE.getId()).get());
 	}
 
 	// Tough as Nails

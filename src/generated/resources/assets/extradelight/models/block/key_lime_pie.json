@@ -1,8 +1,0 @@
-{
-  "parent": "extradelight:block/pie",
-  "textures": {
-    "inner": "extradelight:block/key_lime_pie_inner",
-    "particle": "extradelight:block/key_lime_pie_top",
-    "top": "extradelight:block/key_lime_pie_top"
-  }
-}

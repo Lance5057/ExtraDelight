@@ -1,8 +1,6 @@
 {
   "type": "extradelight:feast",
-  "container": {
-    "item": "minecraft:paper"
-  },
+  "container": [],
   "out": {
     "id": "extradelight:blondies_block"
   },

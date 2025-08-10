@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-import com.lance5057.extradelight.modules.SummerCitrus;
 import org.apache.commons.lang3.text.WordUtils;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -14,7 +13,6 @@ import com.lance5057.extradelight.aesthetics.block.RibbonBlock;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollBlock;
 import com.lance5057.extradelight.blocks.StepStoolBlock;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlock;
-import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketBlock;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlock;
 import com.lance5057.extradelight.data.Recipes;
 import com.lance5057.extradelight.displays.cabinet.HalfCabinetBlock;
@@ -22,6 +20,7 @@ import com.lance5057.extradelight.displays.food.FoodDisplayBlock;
 import com.lance5057.extradelight.displays.knife.KnifeBlock;
 import com.lance5057.extradelight.displays.spice.SpiceRackBlock;
 import com.lance5057.extradelight.displays.wreath.WreathBlock;
+import com.lance5057.extradelight.modules.SummerCitrus;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.Direction;
@@ -765,8 +764,9 @@ public class AestheticBlocks {
 	}
 
 	static void leafRecipe(RecipeOutput consumer, Item leaves, EXTRA_LEAVES name) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, WREATHS.get(WOOD.values().length + name.ordinal() - 2)
-						.get()).pattern(" l ").pattern("l l").pattern(" l ").define('l', leaves)
+		ShapedRecipeBuilder
+				.shaped(RecipeCategory.DECORATIONS, WREATHS.get(WOOD.values().length + name.ordinal() - 2).get())
+				.pattern(" l ").pattern("l l").pattern(" l ").define('l', leaves)
 				.unlockedBy(name + "_wreath", InventoryChangeTrigger.TriggerInstance.hasItems(leaves)).save(consumer);
 
 	}

@@ -397,6 +397,13 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_LIME).add(SummerCitrus.LIME_CRATE.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ORANGE).add(SummerCitrus.ORANGE_CRATE.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT_CRATE.get());
+		
+		AestheticBlocks.GINGHAM_BLOCKS.forEach(b -> {
+			tag(BlockTags.DAMPENS_VIBRATIONS).add(b.get());
+		});
+		AestheticBlocks.GINGHAM_CARPET_BLOCKS.forEach(b -> {
+			tag(BlockTags.DAMPENS_VIBRATIONS).add(b.get());
+		});
 	}
 
 	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {
