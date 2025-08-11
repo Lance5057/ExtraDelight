@@ -1,5 +1,7 @@
 {
   "values": [
+    "#c:storage_blocks_cheese",
+    "#c:storage_blocks_butter",
     "#c:storage_blocks_flour",
     "#c:storage_blocks_corn_meal",
     "#c:storage_blocks_sugar",

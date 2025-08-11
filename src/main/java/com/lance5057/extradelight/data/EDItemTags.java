@@ -682,61 +682,110 @@ public class EDItemTags extends ItemTagsProvider {
 				SummerCitrus.MELON_LAYER_CAKE_SLICE.get(), SummerCitrus.KYIV_CAKE_SLICE.get());
 		tag(ExtraDelightTags.IS_MARMALADE_INGREDIENT).add(SummerCitrus.SLICED_GRAPEFRUIT.get(),
 				SummerCitrus.SLICED_LEMON.get(), SummerCitrus.SLICED_LIME.get(), SummerCitrus.SLICED_ORANGE.get());
-		tag(ExtraDelightTags.EGG_OR_YOLK).add(Items.EGG, SummerCitrus.EGG_YOLK.get());
+		tag(ExtraDelightTags.EGG_OR_YOLK).add(SummerCitrus.EGG_YOLK.get()).addTag(Tags.Items.EGGS);
 		tag(ExtraDelightTags.ICE_CUBES).add(SummerCitrus.ICE_CUBES.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.BLACK.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.BLACK.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.BLACK.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.BLACK.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.BLACK.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.BLACK.getId()).get());
 		tag(Tags.Items.DYED_BLUE).add(ExtraDelightItems.BLUE_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.BLUE.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.BLUE.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.BLUE.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.BLUE.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.BLUE.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.BLUE.getId()).get());
 		tag(Tags.Items.DYED_BROWN).add(ExtraDelightItems.BROWN_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.BROWN.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.BROWN.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.BROWN.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.BROWN.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.BROWN.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.BROWN.getId()).get());
 		tag(Tags.Items.DYED_CYAN).add(ExtraDelightItems.CYAN_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.CYAN.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.CYAN.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.CYAN.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.CYAN.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.CYAN.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.CYAN.getId()).get());
 		tag(Tags.Items.DYED_GRAY).add(ExtraDelightItems.GRAY_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.GRAY.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.GRAY.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.GRAY.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.GRAY.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.GRAY.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.GRAY.getId()).get());
 		tag(Tags.Items.DYED_GREEN).add(ExtraDelightItems.GREEN_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.GREEN.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.GREEN.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.GREEN.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.GREEN.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.GREEN.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.GREEN.getId()).get());
 		tag(Tags.Items.DYED_LIGHT_BLUE).add(ExtraDelightItems.LIGHT_BLUE_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get());
 		tag(Tags.Items.DYED_LIGHT_GRAY).add(ExtraDelightItems.LIGHT_GRAY_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get());
 		tag(Tags.Items.DYED_LIME).add(ExtraDelightItems.LIME_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.LIME.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.LIME.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.LIME.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.LIME.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.LIME.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.LIME.getId()).get());
 		tag(Tags.Items.DYED_MAGENTA).add(ExtraDelightItems.MAGENTA_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.MAGENTA.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.MAGENTA.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.MAGENTA.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.MAGENTA.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.MAGENTA.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.MAGENTA.getId()).get());
 		tag(Tags.Items.DYED_ORANGE).add(ExtraDelightItems.ORANGE_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.ORANGE.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.ORANGE.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.ORANGE.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.ORANGE.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.ORANGE.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.ORANGE.getId()).get());
 		tag(Tags.Items.DYED_PINK).add(ExtraDelightItems.PINK_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.PINK.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.PINK.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.PINK.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.PINK.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.PINK.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.PINK.getId()).get());
 		tag(Tags.Items.DYED_PURPLE).add(ExtraDelightItems.PURPLE_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.PURPLE.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.PURPLE.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.PURPLE.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.PURPLE.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.PURPLE.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.PURPLE.getId()).get());
 		tag(Tags.Items.DYED_RED).add(ExtraDelightItems.RED_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.RED.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.RED.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.RED.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.RED.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.RED.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.RED.getId()).get());
 		tag(Tags.Items.DYED_WHITE).add(ExtraDelightItems.WHITE_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.WHITE.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.WHITE.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.WHITE.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.WHITE.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.WHITE.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.WHITE.getId()).get());
 		tag(Tags.Items.DYED_YELLOW).add(ExtraDelightItems.YELLOW_CHOCOLATE_BOX.get(),
 				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.YELLOW.getId()).get(),
-				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.YELLOW.getId()).get());
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.YELLOW.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.YELLOW.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.YELLOW.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.YELLOW.getId()).get());
 
 		// Storage Blocks
-		tag(Tags.Items.STORAGE_BLOCKS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR)
+		tag(Tags.Items.STORAGE_BLOCKS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHEESE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BUTTER).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_MEAL)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SUGAR)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_ON_COB)
@@ -788,6 +837,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ORANGE)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT);
 
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHEESE).add(ExtraDelightItems.CHEESE_BLOCK_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BUTTER).add(ExtraDelightItems.BUTTER_BLOCK_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR).add(ExtraDelightItems.FLOUR_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_MEAL).add(ExtraDelightItems.CORNMEAL_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SUGAR).add(ExtraDelightItems.SUGAR_SACK.get());
@@ -972,11 +1023,6 @@ public class EDItemTags extends ItemTagsProvider {
 		for (DeferredItem<Item> i : EDItemGenerator.coldFood) {
 			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(i.get());
 		}
-
-//		tag(Tags.Items.DYED_BLACK).add(AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.BLACK.getId()).get(),
-//				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.BLACK.getId()).get());
-//		tag(Tags.Items.DYED_BLUE).add(AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.BLUE.getId()).get(),
-//				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.BLUE.getId()).get());
 	}
 
 	// Tough as Nails

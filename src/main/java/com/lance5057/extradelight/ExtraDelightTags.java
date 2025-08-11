@@ -695,6 +695,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> DRINKS = tanTag("drinks");
 
 	// Storage Blocks
+	public static final TagKey<Block> STORAGE_BLOCKS_CHEESE = neoforgeBlockTag("storage_blocks_cheese");
+	public static final TagKey<Block> STORAGE_BLOCKS_BUTTER = neoforgeBlockTag("storage_blocks_butter");
 	public static final TagKey<Block> STORAGE_BLOCKS_FLOUR = neoforgeBlockTag("storage_blocks_flour");
 	public static final TagKey<Block> STORAGE_BLOCKS_CORN_MEAL = neoforgeBlockTag("storage_blocks_corn_meal");
 	public static final TagKey<Block> STORAGE_BLOCKS_SUGAR = neoforgeBlockTag("storage_blocks_sugar");
@@ -762,6 +764,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Block> STORAGE_BLOCKS_ORANGE = neoforgeBlockTag("storage_blocks_orange");
 	public static final TagKey<Block> STORAGE_BLOCKS_GRAPEFRUIT = neoforgeBlockTag("storage_blocks_grapefruit");
 
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CHEESE = neoforgeItemTag("storage_blocks_cheese");
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BUTTER = neoforgeItemTag("storage_blocks_butter");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_FLOUR = neoforgeItemTag("storage_blocks_flour");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CORN_MEAL = neoforgeItemTag("storage_blocks_corn_meal");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_SUGAR = neoforgeItemTag("storage_blocks_sugar");
