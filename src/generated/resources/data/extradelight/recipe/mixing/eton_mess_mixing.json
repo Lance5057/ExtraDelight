@@ -2,7 +2,7 @@
   "type": "extradelight:mixing_bowl",
   "container": {
     "count": 1,
-    "id": "minecraft:bowl"
+    "id": "minecraft:glass_bottle"
   },
   "fluids": [
     {

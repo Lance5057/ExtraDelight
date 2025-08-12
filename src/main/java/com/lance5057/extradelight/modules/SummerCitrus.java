@@ -654,28 +654,28 @@ public class SummerCitrus {
 
 		BlockModels.fluid(bsp, EGG_WHITE_FLUID_BLOCK.get());
 
-//		bsp.getVariantBuilder(LEMON_MERINGUE_PIE.get()).forAllStates(state -> {
-//			int bites = state.getValue(PieBlock.BITES);
-//			String suffix = bites > 0 ? "_slice" + bites : "";
-//			return ConfiguredModel.builder().modelFile(bsp.models()
-//					.withExistingParent(BuiltInRegistries.BLOCK.getKey(LEMON_MERINGUE_PIE.get()).getPath() + suffix,
-//							bsp.modLoc("block/pie" + suffix))
-//					.texture("particle", bsp.modLoc("block/meringue_top"))
-//					.texture("top", bsp.modLoc("block/meringue_top"))
-//					.texture("inner", bsp.modLoc("block/lemon_meringue_pie_inner")))
-//					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
-//		});
-//		bsp.getVariantBuilder(KEY_LIME_PIE.get()).forAllStates(state -> {
-//			int bites = state.getValue(PieBlock.BITES);
-//			String suffix = bites > 0 ? "_slice" + bites : "";
-//			return ConfiguredModel.builder().modelFile(bsp.models()
-//					.withExistingParent(BuiltInRegistries.BLOCK.getKey(KEY_LIME_PIE.get()).getPath() + suffix,
-//							bsp.modLoc("block/pie" + suffix))
-//					.texture("particle", bsp.modLoc("block/key_lime_pie_top"))
-//					.texture("top", bsp.modLoc("block/key_lime_pie_top"))
-//					.texture("inner", bsp.modLoc("block/key_lime_pie_inner")))
-//					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
-//		});
+		bsp.getVariantBuilder(LEMON_MERINGUE_PIE.get()).forAllStates(state -> {
+			int bites = state.getValue(PieBlock.BITES);
+			String suffix = bites > 0 ? "_slice" + bites : "";
+			return ConfiguredModel.builder().modelFile(bsp.models()
+					.withExistingParent(BuiltInRegistries.BLOCK.getKey(LEMON_MERINGUE_PIE.get()).getPath() + suffix,
+							bsp.modLoc("block/pie" + suffix))
+					.texture("particle", bsp.modLoc("block/meringue_top"))
+					.texture("top", bsp.modLoc("block/meringue_top"))
+					.texture("inner", bsp.modLoc("block/lemon_meringue_pie_inner")))
+					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
+		});
+		bsp.getVariantBuilder(KEY_LIME_PIE.get()).forAllStates(state -> {
+			int bites = state.getValue(PieBlock.BITES);
+			String suffix = bites > 0 ? "_slice" + bites : "";
+			return ConfiguredModel.builder().modelFile(bsp.models()
+					.withExistingParent(BuiltInRegistries.BLOCK.getKey(KEY_LIME_PIE.get()).getPath() + suffix,
+							bsp.modLoc("block/pie" + suffix))
+					.texture("particle", bsp.modLoc("block/key_lime_pie_top"))
+					.texture("top", bsp.modLoc("block/key_lime_pie_top"))
+					.texture("inner", bsp.modLoc("block/key_lime_pie_inner")))
+					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
+		});
 		BlockModels.recipeFeastBlock(bsp, MELON_FRUIT_SALAD.get());
 		BlockModels.createCakeBlock(bsp, LEMON_CUCUMBER_CAKE.get(), "lemon_cucumber");
 		BlockModels.recipeFeastBlock(bsp, BAKED_COD.get(), "baked_cod");
@@ -1063,7 +1063,7 @@ public class SummerCitrus {
 				ORANGE_JUICE.get());
 		Recipes.bucket("grapefruit_juice", consumer, GRAPEFRUIT_JUICE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				GRAPEFRUIT_JUICE.get());
-		Recipes.bucket("egg_white", consumer, EGG_WHITE_FLUID_BUCKET.get(), Items.GLASS_BOTTLE, EGG_WHITE.get());
+		Recipes.bucket("egg_white", consumer, EGG_WHITE_FLUID_BUCKET.get(), Items.BOWL, EGG_WHITE.get());
 
 		Recipes.bundleItem9(Ingredient.of(ExtraDelightTags.LEMON), LEMON_CRATE_ITEM.get(), LEMON.get(), consumer,
 				"lemon");
@@ -1338,6 +1338,12 @@ public class SummerCitrus {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.ICE),
 				new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), ICE_CUBES.get(), 4)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "ice_cubes_axe"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BLUE_ICE),
+						new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), Items.PACKED_ICE, 9)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "blue_ice_axe"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.PACKED_ICE),
+						new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), Items.ICE, 9)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "packed_ice_axe"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(LEMON_MERINGUE_PIE_ITEM.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
 						LEMON_MERINGUE_PIE_SLICE.get(), 4)
@@ -1369,11 +1375,8 @@ public class SummerCitrus {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ORANGE_PETAL_LITTER_ITEM),
 				Ingredient.of(CommonTags.TOOLS_KNIFE), Items.ORANGE_DYE, 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "orange_petals"));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(GRAPEFRUIT_PETAL_LITTER_ITEM, Items.PINK_PETALS), // remove
-																												// PINK_PETALS
-																												// when
-																												// FD
-																												// adds
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(GRAPEFRUIT_PETAL_LITTER_ITEM, Items.PINK_PETALS),
+						// remove PINK_PETALS when FD adds
 				Ingredient.of(CommonTags.TOOLS_KNIFE), Items.PINK_DYE, 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "pink_petals"));
 
@@ -1446,7 +1449,7 @@ public class SummerCitrus {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.LIME_JUICE.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "thai_melon_salad_mixing");
-		Recipes.mixing(new ItemStack(ETON_MESS.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
+		Recipes.mixing(new ItemStack(ETON_MESS.get(), 1), Recipes.LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
 				new Ingredient[] { Ingredient.of(MERINGUE), Ingredient.of(ExtraDelightTags.SWEETENER),
 						Ingredient.of(MERINGUE),
 						DifferenceIngredient.of(Ingredient.of(Tags.Items.FOODS_BERRY),
@@ -1600,7 +1603,7 @@ public class SummerCitrus {
 						Ingredient.of(LEMON_JUICE), Ingredient.of(LEMON_ZEST), Ingredient.of(ExtraDelightTags.EGG_OR_YOLK),
 						Ingredient.of(ExtraDelightTags.EGG_OR_YOLK) },
 				"lemon_curd", consumer);
-		Recipes.pot(ORANGE_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, ModItems.COOKED_RICE.get(),
+		Recipes.pot(ORANGE_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.CUBED_CHICKEN_RAW),
 						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ORANGE_JUICE, ORANGE_ZEST),
 						Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS),
