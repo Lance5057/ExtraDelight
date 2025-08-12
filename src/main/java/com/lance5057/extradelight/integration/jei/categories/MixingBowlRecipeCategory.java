@@ -11,6 +11,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
+import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
@@ -27,6 +28,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.phys.Vec2;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecipe> {
@@ -94,11 +96,13 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 			off++;
 		}
 
-		if (recipe.getFluids().size() > 0)
-			builder.addSlot(RecipeIngredientRole.CATALYST, 1, 1)
-					.addIngredients(Ingredient.of(
-							BottleFluidRegistry.getBottleFromFluid(recipe.getFluids().getFirst().getFluids()[0]),
-							new ItemStack(recipe.getFluids().get(0).getFluids()[0].getFluid().getBucket())));
+		if (recipe.getFluids().size() > 0) {
+			IRecipeSlotBuilder slot = builder.addSlot(RecipeIngredientRole.CATALYST, 1, 1);
+			for (SizedFluidIngredient sfi : recipe.getFluids())
+				for (FluidStack fs : sfi.getFluids())
+					slot.addIngredients(Ingredient
+							.of(BottleFluidRegistry.getBottleFromFluid(fs), new ItemStack(fs.getFluid().getBucket())));
+		}
 	}
 
 	@Override
