@@ -93,8 +93,11 @@ public class JuicerBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 	}
 
 	public void insertItem(ItemStack stack) {
-		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
-		this.updateInventory();
+		Optional<RecipeHolder<JuicerRecipe>> recipeOptional = matchRecipe(stack);
+		recipeOptional.ifPresent(r -> {
+			BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
+			this.updateInventory();
+		});
 	}
 
 	public void extractItem(Player p) {
@@ -210,10 +213,11 @@ public class JuicerBlockEntity extends SyncedBlockEntity implements RecipeCrafti
 					ItemStack in = getInsertedItem();
 
 					for (int i = 0; i < in.getCount(); i++) {
+						if (this.level.random.nextInt(100) < recipe.percentChance) {
+							ItemStack it = recipe.getResultItem(this.level.registryAccess()).copy();
 
-						ItemStack it = recipe.getResultItem(this.level.registryAccess()).copy();
-
-						BlockEntityUtils.Inventory.dropItemInWorld(it, level, worldPosition);
+							BlockEntityUtils.Inventory.dropItemInWorld(it, level, worldPosition);
+						}
 //						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
 //								getBlockPos().getZ(), it));
 						tank.fill(recipe.getFluid(), FluidAction.EXECUTE);

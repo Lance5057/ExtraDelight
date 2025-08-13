@@ -100,6 +100,7 @@ import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredien
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
@@ -464,7 +465,7 @@ public class SummerCitrus {
 			.register("preserved_lemon_pasta", () -> new Item(bowlFoodItem(EDFoods.LEMON_PASTA))).advancementMeal()
 			.finish();
 	public static final DeferredItem<Item> CANDIED_CITRUS_ZEST = EDItemGenerator
-			.register("candied_citrus_zest", () -> new Item(bowlFoodItem(EDFoods.CANDIED_CITRUS_ZEST)))
+			.register("candied_citrus_zest", () -> new Item(new Item.Properties().food(EDFoods.CANDIED_CITRUS_ZEST)))
 			.advancementCandy().finish();
 	public static final DeferredItem<Item> LEMON_POSSET = EDItemGenerator
 			.register("lemon_posset", () -> new Item(bowlFoodItem(EDFoods.LEMON_POSSET))).advancementDessert().finish();
@@ -1286,7 +1287,7 @@ public class SummerCitrus {
 						InventoryChangeTrigger.TriggerInstance.hasItems(PICKLED_RINDS_BLOCK_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("pickled_rind_pull_feast"));
 		FeastRecipeBuilder
-				.feast(Ingredient.of(), new ItemStack(BAKED_ALASKA_SERVING.get()), BAKED_ALASKA_ITEM.get())
+				.feast(Ingredient.of(ModTags.KNIVES), new ItemStack(BAKED_ALASKA_SERVING.get()), BAKED_ALASKA_ITEM.get())
 				.unlockedBy("has_baked_alaska", InventoryChangeTrigger.TriggerInstance.hasItems(BAKED_ALASKA.get()))
 				.save(consumer, ExtraDelight.modLoc("baked_alaska_pull_feast"));
 
@@ -1383,19 +1384,19 @@ public class SummerCitrus {
 		// Juicer
 		JuicerRecipeBuilder
 				.squeeze(Ingredient.of(ExtraDelightTags.LEMON), new ItemStack(Items.YELLOW_DYE),
-						new FluidStack(ExtraDelightFluids.LEMON_JUICE.FLUID, 250))
+						new FluidStack(ExtraDelightFluids.LEMON_JUICE.FLUID, 250), 25)
 				.save(consumer, ExtraDelight.modLoc("lemon_juice"));
 		JuicerRecipeBuilder
 				.squeeze(Ingredient.of(ExtraDelightTags.LIME), new ItemStack(Items.LIME_DYE),
-						new FluidStack(ExtraDelightFluids.LIME_JUICE.FLUID, 250))
+						new FluidStack(ExtraDelightFluids.LIME_JUICE.FLUID, 250), 25)
 				.save(consumer, ExtraDelight.modLoc("lime_juice"));
 		JuicerRecipeBuilder
 				.squeeze(Ingredient.of(ExtraDelightTags.ORANGE), new ItemStack(Items.ORANGE_DYE),
-						new FluidStack(ExtraDelightFluids.ORANGE_JUICE.FLUID, 250))
+						new FluidStack(ExtraDelightFluids.ORANGE_JUICE.FLUID, 250), 25)
 				.save(consumer, ExtraDelight.modLoc("orange_juice"));
 		JuicerRecipeBuilder
 				.squeeze(Ingredient.of(ExtraDelightTags.GRAPEFRUIT), new ItemStack(Items.PINK_DYE),
-						new FluidStack(ExtraDelightFluids.GRAPEFRUIT_JUICE.FLUID, 250))
+						new FluidStack(ExtraDelightFluids.GRAPEFRUIT_JUICE.FLUID, 250), 25)
 				.save(consumer, ExtraDelight.modLoc("grapefruit_juice"));
 
 		// Mixing bowl

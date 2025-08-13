@@ -25,18 +25,20 @@ public class JuicerRecipeBuilder implements RecipeBuilder {
 	private final ItemStack result;
 	private final Ingredient ingredient;
 	private final FluidStack fluid;
+	private final int chance;
 	@Nullable
 	private String group;
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 
-	private JuicerRecipeBuilder(ItemStack pResult, Ingredient pIngredient, FluidStack fluidOut) {
+	private JuicerRecipeBuilder(ItemStack pResult, Ingredient pIngredient, FluidStack fluidOut, int chance) {
 		this.result = pResult;
 		this.ingredient = pIngredient;
 		this.fluid = fluidOut;
+		this.chance = chance;
 	}
 
-	public static JuicerRecipeBuilder squeeze(Ingredient pIngredient, ItemStack pResult, FluidStack fluidOut) {
-		return new JuicerRecipeBuilder(pResult, pIngredient, fluidOut);
+	public static JuicerRecipeBuilder squeeze(Ingredient pIngredient, ItemStack pResult, FluidStack fluidOut, int chance) {
+		return new JuicerRecipeBuilder(pResult, pIngredient, fluidOut, chance);
 	}
 
 	public JuicerRecipeBuilder unlockedBy(String criterionName, Criterion<?> criterionTrigger) {
@@ -63,7 +65,7 @@ public class JuicerRecipeBuilder implements RecipeBuilder {
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancementBuilder::addCriterion);
 
-		JuicerRecipe recipe = new JuicerRecipe("", this.ingredient, this.result, this.fluid);
+		JuicerRecipe recipe = new JuicerRecipe("", this.ingredient, this.result, chance, this.fluid);
 		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/juicer/")));
 	}
 }

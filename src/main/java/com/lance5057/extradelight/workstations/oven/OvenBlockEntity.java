@@ -329,9 +329,11 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			}
 			if (!slotStack.isEmpty())
 				slotStack.shrink(1);
-			if (recipe.value().shouldConsumeContainer())
-				containerInputStack.shrink(1);
+			
 		}
+		if (recipe.value().shouldConsumeContainer())
+			containerInputStack.shrink(1);
+		
 		return true;
 	}
 

@@ -133,28 +133,28 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	private void juicerRecipes(RecipeOutput consumer) {
 		JuicerRecipeBuilder
 				.squeeze(Ingredient.of(Items.GLOW_BERRIES), new ItemStack(Items.ORANGE_DYE),
-						new FluidStack(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID, 100))
+						new FluidStack(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID, 100), 25)
 				.save(consumer, EDLoc("glow_berries"));
 
 		JuicerRecipeBuilder
 				.squeeze(Ingredient.of(Items.SWEET_BERRIES), new ItemStack(Items.RED_DYE),
-						new FluidStack(ExtraDelightFluids.SWEET_BERRY_JUICE.FLUID, 100))
+						new FluidStack(ExtraDelightFluids.SWEET_BERRY_JUICE.FLUID, 100), 25)
 				.save(consumer, EDLoc("sweet_berries"));
 
 		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PROCESSED_TOMATO), new ItemStack(Items.RED_DYE),
-				new FluidStack(ExtraDelightFluids.TOMATO_JUICE.FLUID, 250)).save(consumer, EDLoc("tomato"));
+				new FluidStack(ExtraDelightFluids.TOMATO_JUICE.FLUID, 250), 25).save(consumer, EDLoc("tomato"));
 
 		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.CACTUS), new ItemStack(Items.GREEN_DYE),
-				new FluidStack(ExtraDelightFluids.CACTUS_JUICE.FLUID, 100)).save(consumer, EDLoc("cactus"));
+				new FluidStack(ExtraDelightFluids.CACTUS_JUICE.FLUID, 100), 25).save(consumer, EDLoc("cactus"));
 
 		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PROCESSED_MELON), new ItemStack(Items.PINK_DYE),
-				new FluidStack(ExtraDelightFluids.MELON_JUICE.FLUID, 100)).save(consumer, EDLoc("melon"));
+				new FluidStack(ExtraDelightFluids.MELON_JUICE.FLUID, 100), 25).save(consumer, EDLoc("melon"));
 
 		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PICKLED), new ItemStack(Items.BONE_MEAL),
-				new FluidStack(ExtraDelightFluids.PICKLE_JUICE.FLUID, 250)).save(consumer, EDLoc("pickle"));
+				new FluidStack(ExtraDelightFluids.PICKLE_JUICE.FLUID, 250), 25).save(consumer, EDLoc("pickle"));
 
 		JuicerRecipeBuilder.squeeze(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE), new ItemStack(Items.RED_DYE),
-				new FluidStack(ExtraDelightFluids.APPLE_CIDER.FLUID, 250)).save(consumer, EDLoc("apple"));
+				new FluidStack(ExtraDelightFluids.APPLE_CIDER.FLUID, 250), 25).save(consumer, EDLoc("apple"));
 	}
 
 	private void evaporatorRecipes(RecipeOutput consumer) {
@@ -2213,9 +2213,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		mixing(new ItemStack(ExtraDelightItems.AIOLI.get(), 1), LONG_GRIND, new ItemStack(Items.GLASS_BOTTLE),
 				Ingredient.of(ExtraDelightItems.WHISK),
-				new Ingredient[] {
-						Ingredient.of(ExtraDelightTags.EGG_OR_YOLK), Ingredient.of(ExtraDelightTags.EGG_OR_YOLK),
-						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.EGG_OR_YOLK),
+						Ingredient.of(ExtraDelightTags.EGG_OR_YOLK), Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
@@ -3586,6 +3585,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GOURMET_HOT_CHOCOLATE.get(), 1)
 				.requires(ModItems.HOT_COCOA.get()).requires(ExtraDelightTags.WHIPPED_CREAM)
 				.requires(ExtraDelightTags.COOKIE).requires(ExtraDelightTags.GROUND_CINNAMON)
+				.requires(ExtraDelightTags.MARSHMALLOW)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HOT_COCOA.get()))
 				.save(consumer, EDLoc("gourmet_hot_chocolate"));
 
@@ -5372,11 +5372,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.SHEPHERDS_PIE_BLOCK.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
-				.addIngredient(Items.BAKED_POTATO).addIngredient(CompoundIngredient.of(
-						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.BROTH)))
-				.addIngredient(Items.BAKED_POTATO).addIngredient(CompoundIngredient.of(
-						Ingredient.of(CommonTags.FOODS_COOKED_MUTTON), Ingredient.of(ExtraDelightTags.MUTTON_COOKED)))
-				.addIngredient(ModItems.TOMATO_SAUCE.get()).addIngredient(CompoundIngredient.of(
+				.addIngredient(Items.BAKED_POTATO)
+				.addIngredient(CompoundIngredient
+						.of(Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.BROTH)))
+				.addIngredient(Items.BAKED_POTATO)
+				.addIngredient(CompoundIngredient.of(Ingredient.of(CommonTags.FOODS_COOKED_MUTTON),
+						Ingredient.of(ExtraDelightTags.MUTTON_COOKED)))
+				.addIngredient(ModItems.TOMATO_SAUCE.get())
+				.addIngredient(CompoundIngredient.of(
 						Ingredient.of(CommonTags.FOODS_COOKED_MUTTON), Ingredient.of(ExtraDelightTags.MUTTON_COOKED)))
 				.addIngredient(ExtraDelightTags.PROCESSED_CARROT).addIngredient(ExtraDelightTags.PROCESSED_ONION)
 				.addIngredient(ExtraDelightTags.PROCESSED_CABBAGE)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
@@ -5522,10 +5525,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.TRAY.get()), false)
 				.addIngredient(ExtraDelightTags.PROCESSED_ONION).addIngredient(ExtraDelightTags.GRAVY)
 				.addIngredient(CompoundIngredient.of(Ingredient.of(Tags.Items.FOODS_BREAD),
-						Ingredient.of(ExtraDelightTags.BREAD_CRUMBS))).addIngredient(ExtraDelightTags.PROCESSED_CARROT)
-				.addIngredient(Items.CHICKEN).addIngredient(ExtraDelightTags.PROCESSED_POTATO)
-				.addIngredient(ExtraDelightTags.PROCESSED_CARROT).addIngredient(ExtraDelightTags.BUTTER)
-				.addIngredient(ExtraDelightTags.PROCESSED_POTATO)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
+						Ingredient.of(ExtraDelightTags.BREAD_CRUMBS)))
+				.addIngredient(ExtraDelightTags.PROCESSED_CARROT).addIngredient(Items.CHICKEN)
+				.addIngredient(ExtraDelightTags.PROCESSED_POTATO).addIngredient(
+						ExtraDelightTags.PROCESSED_CARROT)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.PROCESSED_POTATO)/*
+																										 * .setRecipeBookTab
+																										 * (
+																										 * OvenRecipeBookTab
+																										 * .MEALS)
+																										 */
 				.unlockedBy("roast_chicken", has(Items.CHICKEN)).save(consumer, EDLoc("roast_chicken"));
 
 		OvenRecipeBuilder
@@ -5564,8 +5573,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(CompoundIngredient.of(Ingredient.of(ExtraDelightTags.COOKIE),
 						Ingredient.of(ExtraDelightTags.GRAHAM_CRACKER)))
 				.addIngredient(CompoundIngredient.of(Ingredient.of(ExtraDelightTags.COOKIE),
-						Ingredient.of(ExtraDelightTags.GRAHAM_CRACKER))).addIngredient(ExtraDelightTags.BUTTER)
-				.unlockedBy("pie_crust", has(ExtraDelightTags.COOKIE)).save(consumer, EDLoc("pie_crust_crumb"));
+						Ingredient.of(ExtraDelightTags.GRAHAM_CRACKER)))
+				.addIngredient(ExtraDelightTags.BUTTER).unlockedBy("pie_crust", has(ExtraDelightTags.COOKIE))
+				.save(consumer, EDLoc("pie_crust_crumb"));
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.SWEET_BERRY_CHEESECAKE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,

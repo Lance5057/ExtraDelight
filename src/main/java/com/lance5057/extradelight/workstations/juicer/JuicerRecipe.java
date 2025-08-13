@@ -18,11 +18,13 @@ import net.neoforged.neoforge.fluids.FluidStack;
 
 public class JuicerRecipe extends SingleItemRecipe {
 	protected final FluidStack fluidOut;
+	protected final int percentChance;
 
-	public JuicerRecipe(String pGroup, Ingredient pIngredient, ItemStack pResult, FluidStack fluidResult) {
+	public JuicerRecipe(String pGroup, Ingredient pIngredient, ItemStack pResult, int chance, FluidStack fluidResult) {
 		super(ExtraDelightRecipes.JUICER.get(), ExtraDelightRecipes.JUICER_SERIALIZER.get(), pGroup, pIngredient,
 				pResult);
 		this.fluidOut = fluidResult;
+		this.percentChance = chance;
 	}
 
 	public FluidStack getFluid() {
@@ -31,6 +33,10 @@ public class JuicerRecipe extends SingleItemRecipe {
 
 	public Ingredient getInput() {
 		return this.ingredient;
+	}
+
+	public int getChance() {
+		return this.percentChance;
 	}
 
 	@Override
@@ -51,6 +57,7 @@ public class JuicerRecipe extends SingleItemRecipe {
 										.forGetter(p_301068_ -> p_301068_.ingredient),
 
 								ItemStack.OPTIONAL_CODEC.fieldOf("result").forGetter(r -> r.result),
+								Codec.INT.fieldOf("chance").forGetter(r -> r.percentChance),
 								FluidStack.OPTIONAL_CODEC.fieldOf("fluidOut").forGetter(JuicerRecipe::getFluid))
 						.apply(inst, JuicerRecipe::new));
 
@@ -58,14 +65,16 @@ public class JuicerRecipe extends SingleItemRecipe {
 			String s = pBuffer.readUtf();
 			Ingredient ingredient = Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer);
 			ItemStack itemstack = ItemStack.OPTIONAL_STREAM_CODEC.decode(pBuffer);
+			int chance = pBuffer.readInt();
 			FluidStack fluid = FluidStack.OPTIONAL_STREAM_CODEC.decode(pBuffer);
-			return new JuicerRecipe(s, ingredient, itemstack, fluid);
+			return new JuicerRecipe(s, ingredient, itemstack, chance, fluid);
 		}
 
 		public static void toNetwork(RegistryFriendlyByteBuf pBuffer, JuicerRecipe pRecipe) {
 			pBuffer.writeUtf(pRecipe.group);
 			Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, pRecipe.ingredient);
 			ItemStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.result);
+			pBuffer.writeInt(pRecipe.percentChance);
 			FluidStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.fluidOut);
 		}
 

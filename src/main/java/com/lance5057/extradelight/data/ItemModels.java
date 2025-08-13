@@ -1370,7 +1370,7 @@ public class ItemModels extends ItemModelProvider {
 	}
 
 	public static void forItem(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
-		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/handheld"), "layer0", tmp.modLoc("item/" + name));
+		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/generated"), "layer0", tmp.modLoc("item/" + name));
 	}
 
 	public void forItemModel(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
@@ -1380,7 +1380,7 @@ public class ItemModels extends ItemModelProvider {
 	}
 
 	public static void forBlockItemFlat(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
-		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/handheld"), "layer0", tmp.modLoc("block/" + name));
+		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/generated"), "layer0", tmp.modLoc("block/" + name));
 	}
 
 	public static void forBlockItem(ItemModelProvider tmp, DeferredItem<Item> item, String name) {

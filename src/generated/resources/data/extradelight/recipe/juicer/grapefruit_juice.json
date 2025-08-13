@@ -1,5 +1,6 @@
 {
   "type": "extradelight:juicer",
+  "chance": 25,
   "fluidOut": {
     "amount": 250,
     "id": "extradelight:grapefruit_juice_fluid"

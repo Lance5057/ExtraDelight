@@ -80,8 +80,10 @@ public class FruitLeafBlock extends AbstractFruitLeafBlock {
 					if (petalLitter != null)
 						if (p_222563_.getValue(AGE) == 2) {
 							BlockPos p = searchBelow(p_222565_, p_222564_, 5);
-							if (p != p_222565_)
+							if (p != p_222565_) {
 								p_222564_.setBlock(p, petalLitter.get().defaultBlockState(), UPDATE_ALL);
+
+							}
 						}
 					BlockState blockstate = p_222563_.setValue(AGE, Integer.valueOf(i + 1));
 					p_222564_.setBlock(p_222565_, blockstate, 2);
