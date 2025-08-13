@@ -1293,7 +1293,7 @@ public class SummerCitrus {
 		// Chiller
 		ChillerRecipeBuilder
 				.chill(GRAPEFRUIT_SORBET.toStack(), Recipes.NORMAL_COOKING, Recipes.SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.GRAPEFRUIT_JUICE.FLUID.get(), 250))
+						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.GRAPEFRUIT_JUICE.FLUID.get(), 250), true)
 				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).build(consumer, "grapefruit_sorbet_chilling");
 		ChillerRecipeBuilder
 				.chill(CHOCOLATE_ORANGE.toStack(), Recipes.FAST_COOKING, Recipes.SMALL_EXP,
@@ -1302,7 +1302,7 @@ public class SummerCitrus {
 				.addIngredient(Ingredient.of(ORANGE_ZEST)).build(consumer, "chocolate_orange_chilling");
 		ChillerRecipeBuilder
 				.chill(CHOCOLATE_MOUSSE.toStack(2), Recipes.NORMAL_COOKING, Recipes.SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250))
+						new ItemStack(Items.GLASS_BOTTLE, 2), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
 				.addIngredient(Ingredient.of(ExtraDelightTags.EGG_OR_YOLK)).addIngredient(Ingredient.of(STIFF_PEAKS))
 				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_SYRUP))
 				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).build(consumer, "chocolate_mousse_chilling");

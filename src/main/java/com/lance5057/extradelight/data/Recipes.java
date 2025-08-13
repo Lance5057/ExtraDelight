@@ -350,7 +350,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.MISSISSIPPI_MUD_PIE.toStack(1), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(ModItems.PIE_CRUST.get()),
-						new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), false)
+						new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
 				.addIngredient(ExtraDelightItems.CHOCOLATE_CUSTARD.get())
 				.addIngredient(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get())
 				.addIngredient(ExtraDelightTags.ROASTED_NUTS).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
@@ -359,22 +359,22 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.GRASSHOPPER_PIE.toStack(1), NORMAL_COOKING, SMALL_EXP,
 						new ItemStack(ModItems.PIE_CRUST.get()),
-						new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), false)
+						new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
 				.addIngredient(Tags.Items.DYES_LIME).addIngredient(ExtraDelightTags.MINT)
 				.addIngredient(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get())
 				.addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS).build(consumer, "grasshopper_pie");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.toStack(1), NORMAL_COOKING, SMALL_EXP,
-						ExtraDelightItems.PIE_DISH.toStack(),
-						new FluidStack(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), 250), false)
+						ExtraDelightItems.SQUARE_PAN.toStack(),
+						new FluidStack(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), 250), true)
 				.addIngredient(ExtraDelightTags.SUGAR_COOKIE).addIngredient(ExtraDelightTags.JAM)
 				.addIngredient(ExtraDelightTags.SUGAR_COOKIE).build(consumer, "marshmallow_slice");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.ROCKY_ROAD.toStack(4), NORMAL_COOKING, SMALL_EXP,
 						ExtraDelightItems.TRAY.toStack(),
-						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID, 250), false)
+						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID, 250))
 				.addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
 				.addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
 				.build(consumer, "rocky_road_blood");
@@ -382,7 +382,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.ROCKY_ROAD.toStack(4), NORMAL_COOKING, SMALL_EXP,
 						ExtraDelightItems.TRAY.toStack(),
-						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID, 250), false)
+						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID, 250))
 				.addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
 				.addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
 				.build(consumer, "rocky_road_dark");
@@ -390,7 +390,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.ROCKY_ROAD.toStack(4), NORMAL_COOKING, SMALL_EXP,
 						ExtraDelightItems.TRAY.toStack(),
-						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID, 250), false)
+						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID, 250))
 				.addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
 				.addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
 				.build(consumer, "rocky_road_milk");
@@ -398,7 +398,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.ROCKY_ROAD.toStack(4), NORMAL_COOKING, SMALL_EXP,
 						ExtraDelightItems.TRAY.toStack(),
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID, 250), false)
+						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID, 250))
 				.addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
 				.addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
 				.build(consumer, "rocky_road_white");

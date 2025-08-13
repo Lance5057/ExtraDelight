@@ -345,7 +345,8 @@ public class Fermentation {
 			.advancementMeal().servingToolTip().finish();
 	public static final DeferredItem<Item> STEAK_PICKLED_ONION_PIE_SLICE = EDItemGenerator
 			.register("steak_pickled_onion_pie_slice",
-					() -> new ToolTipConsumableItem(ExtraDelightItems.stack16FoodItem(EDFoods.BACON_EGG_PIE), true))
+					() -> new ToolTipConsumableItem(ExtraDelightItems.stack16FoodItem(
+							EDFoods.STEAK_PICKLED_ONION_PIE_SLICE), true))
 			.advancementButchercraft().servingToolTip().finish();
 	public static final DeferredBlock<Block> STEAK_PICKLED_ONION_PIE = ExtraDelightBlocks.BLOCKS.register(
 			"steak_pickled_onion_pie",
