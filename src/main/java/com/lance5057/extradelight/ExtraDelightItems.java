@@ -2954,7 +2954,7 @@ public class ExtraDelightItems {
 					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
 					.food(EDFoods.BUTTERED_TOAST)));
 	public static final DeferredItem<Item> DYNAMIC_JAM = ITEMS.register("dynamic_jam",
-			() -> new DynamicJam(new Item.Properties()
+			() -> new DynamicJam(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)
 					.food(EDFoods.JAM)));
 
 	// Jams

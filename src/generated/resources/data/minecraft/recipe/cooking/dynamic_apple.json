@@ -8,13 +8,13 @@
   "graphic": "apple",
   "ingredients": [
     {
-      "item": "minecraft:apple"
+      "tag": "extradelight:processed/apple"
     },
     {
-      "item": "minecraft:apple"
+      "tag": "extradelight:processed/apple"
     },
     {
-      "item": "minecraft:apple"
+      "tag": "extradelight:processed/apple"
     },
     {
       "item": "minecraft:sugar"
@@ -37,22 +37,31 @@
       "extradelight:itemstack_handler": [
         {
           "item": {
+            "components": {
+              "minecraft:custom_name": "\"Empty Tag: extradelight:processed/apple\""
+            },
             "count": 1,
-            "id": "minecraft:apple"
+            "id": "minecraft:barrier"
           },
           "slot": 0
         },
         {
           "item": {
+            "components": {
+              "minecraft:custom_name": "\"Empty Tag: extradelight:processed/apple\""
+            },
             "count": 1,
-            "id": "minecraft:apple"
+            "id": "minecraft:barrier"
           },
           "slot": 1
         },
         {
           "item": {
+            "components": {
+              "minecraft:custom_name": "\"Empty Tag: extradelight:processed/apple\""
+            },
             "count": 1,
-            "id": "minecraft:apple"
+            "id": "minecraft:barrier"
           },
           "slot": 2
         },

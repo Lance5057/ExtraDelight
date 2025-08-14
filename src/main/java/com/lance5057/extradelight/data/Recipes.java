@@ -4565,8 +4565,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_chorus");
 
 		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "apple")
-				.addIngredient(Ingredient.of(Items.APPLE)).addIngredient(Ingredient.of(Items.APPLE))
-				.addIngredient(Ingredient.of(Items.APPLE)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE)).addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE)).addIngredient(Ingredient.of(Items.SUGAR))
 				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_apple");
 
