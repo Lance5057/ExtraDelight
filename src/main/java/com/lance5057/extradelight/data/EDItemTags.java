@@ -484,7 +484,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.DRIED_CHILI).add(ExtraDelightItems.DRIED_CHILI.get());
 
 		tag(ExtraDelightTags.CHOCOLATE_BAR_FILLING).addTag(ExtraDelightTags.NUTS).addTag(ExtraDelightTags.ROASTED_NUTS)
-				.addTag(ExtraDelightTags.FRUIT).addTag(ExtraDelightTags.CHOCOLATE_CHIPS)
+				.addTag(ExtraDelightTags.PROCESSED_FRUIT).addTag(ExtraDelightTags.CHOCOLATE_CHIPS)
 				.addTag(ExtraDelightTags.PUFFED_RICE).addTag(ExtraDelightTags.CORN_FLAKES)
 				.addTag(ExtraDelightTags.CHILI_POWDER).addTag(ExtraDelightTags.TOFFEE).addTag(ExtraDelightTags.GUMMIES)
 				.addTag(ExtraDelightTags.PEANUT_BRITTLE).addTag(ExtraDelightTags.TRAIL_MIX)

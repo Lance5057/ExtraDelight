@@ -8,9 +8,14 @@
     {
       "item": "farmersdelight:canvas"
     },
-    {
-      "tag": "c:buckets/water"
-    },
+    [
+      {
+        "item": "minecraft:potion"
+      },
+      {
+        "tag": "c:buckets/water"
+      }
+    ],
     {
       "tag": "extradelight:sweetener"
     },

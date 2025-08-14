@@ -479,7 +479,7 @@ public class ExtraDelightItems {
 			.advancementIngredients().finish();
 
 	public static final DeferredItem<Item> SCRAMBLED_EGGS = EDItemGenerator
-			.register("scrambled_eggs", () -> new Item(foodItem(EDFoods.SCRAMBLED_EGGS).craftRemainder(Items.BOWL)))
+			.register("scrambled_eggs", () -> new Item(bowlFoodItem(EDFoods.SCRAMBLED_EGGS)))
 			.advancementMeal().finish();
 
 	public static final DeferredItem<Item> OMELETTE_MIX = EDItemGenerator

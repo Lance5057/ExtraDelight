@@ -127,7 +127,7 @@ public class SummerCitrus {
 					LEMON_SAPLING, Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> LEMON_JUICE = EDItemGenerator
 			.register("lemon_juice",
-					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 3, 100))
+					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16), 3, 100))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> LEMON_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"lemon_juice_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.LEMON_JUICE));
@@ -163,7 +163,7 @@ public class SummerCitrus {
 					LIME_SAPLING, Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> LIME_JUICE = EDItemGenerator
 			.register("lime_juice",
-					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 4, 100))
+					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16), 4, 100))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> LIME_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"lime_juice_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.LIME_JUICE));
@@ -202,7 +202,7 @@ public class SummerCitrus {
 					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> ORANGE_JUICE = EDItemGenerator
 			.register("orange_juice",
-					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 1, 50))
+					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16), 1, 50))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> ORANGE_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"orange_juice_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.ORANGE_JUICE));
@@ -242,7 +242,7 @@ public class SummerCitrus {
 					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> GRAPEFRUIT_JUICE = EDItemGenerator
 			.register("grapefruit_juice",
-					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE), 1, 50))
+					() -> new SourJuiceItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16), 1, 50))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> GRAPEFRUIT_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"grapefruit_juice_fluid_bucket",

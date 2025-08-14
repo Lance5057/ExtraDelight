@@ -2405,27 +2405,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.STONE_PRESSURE_PLATE))
 				.save(consumer, EDLoc("baking_stone"));
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.YEAST_POT.get())
-				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(Tags.Items.BUCKETS_WATER)
+				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(
+						CompoundIngredient.of(Ingredient.of(Items.POTION), Ingredient.of(Tags.Items.BUCKETS_WATER)))
 				.requires(ExtraDelightTags.SWEETENER)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
 				.save(consumer, EDLoc("yeast_pot"));
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.VINEGAR_POT.get())
-				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(Tags.Items.BUCKETS_WATER)
+				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(
+						CompoundIngredient.of(Ingredient.of(Items.POTION), Ingredient.of(Tags.Items.BUCKETS_WATER)))
 				.requires(ExtraDelightTags.SWEETENER).requires(Ingredient.of(ExtraDelightTags.FRUIT))
 				.requires(Ingredient.of(ExtraDelightTags.FRUIT))
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
 				.save(consumer, EDLoc("vinegar_pot"));
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.YEAST_POT.get())
-				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(Items.POTION)
-				.requires(ExtraDelightTags.SWEETENER)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
-				.save(consumer, EDLoc("yeast_pot_potion"));
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.VINEGAR_POT.get())
-				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(Items.POTION)
-				.requires(ExtraDelightTags.SWEETENER).requires(Ingredient.of(ExtraDelightTags.FRUIT))
-				.requires(Ingredient.of(ExtraDelightTags.FRUIT))
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
-				.save(consumer, EDLoc("vinegar_pot_potion"));
 
 		// Mortars
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MORTAR_STONE.get()).pattern("s s")
@@ -5529,12 +5520,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.PROCESSED_CARROT).addIngredient(Items.CHICKEN)
 				.addIngredient(ExtraDelightTags.PROCESSED_POTATO).addIngredient(
 						ExtraDelightTags.PROCESSED_CARROT)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.PROCESSED_POTATO)/*
-																										 * .setRecipeBookTab
-																										 * (
-																										 * OvenRecipeBookTab
-																										 * .MEALS)
-																										 */
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.PROCESSED_POTATO)
 				.unlockedBy("roast_chicken", has(Items.CHICKEN)).save(consumer, EDLoc("roast_chicken"));
 
 		OvenRecipeBuilder
