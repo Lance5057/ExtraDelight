@@ -1,4 +1,5 @@
 {
+	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"render_type": "cutout",
@@ -122,5 +123,11 @@
 				"down": {"uv": [16, 0, 0, 16], "texture": "#3"}
 			}
 		}
-	]
+	],
+	"display": {
+		"fixed": {
+			"translation": [0, 8, 0],
+			"scale": [1.5, 1.5, 1.5]
+		}
+	}
 }

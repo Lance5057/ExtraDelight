@@ -228,7 +228,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<RecipeFeastBlock> HASH_FEAST = BLOCKS.register("hash_block",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
-					true, bowl));
+					true, pan));
 	public static final DeferredBlock<RecipeFeastBlock> POT_ROAST_FEAST = BLOCKS.register("potroast_block",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, plate, Block.box(5.0D, 2.0D, 2.0D, 11.0D, 8.0D, 14.0D),

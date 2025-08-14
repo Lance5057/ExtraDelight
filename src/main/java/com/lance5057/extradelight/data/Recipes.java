@@ -2405,14 +2405,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.STONE_PRESSURE_PLATE))
 				.save(consumer, EDLoc("baking_stone"));
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.YEAST_POT.get())
-				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(
-						CompoundIngredient.of(Ingredient.of(Items.POTION), Ingredient.of(Tags.Items.BUCKETS_WATER)))
+				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1)
+				.requires(CompoundIngredient.of(Ingredient.of(Items.POTION), Ingredient.of(Tags.Items.BUCKETS_WATER)))
 				.requires(ExtraDelightTags.SWEETENER)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
 				.save(consumer, EDLoc("yeast_pot"));
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.VINEGAR_POT.get())
-				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1).requires(
-						CompoundIngredient.of(Ingredient.of(Items.POTION), Ingredient.of(Tags.Items.BUCKETS_WATER)))
+				.requires(Items.FLOWER_POT, 1).requires(ModItems.CANVAS.get(), 1)
+				.requires(CompoundIngredient.of(Ingredient.of(Items.POTION), Ingredient.of(Tags.Items.BUCKETS_WATER)))
 				.requires(ExtraDelightTags.SWEETENER).requires(Ingredient.of(ExtraDelightTags.FRUIT))
 				.requires(Ingredient.of(ExtraDelightTags.FRUIT))
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.FLOWER_POT))
@@ -4111,7 +4111,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"apple_sauce", consumer);
 
-		pot(ExtraDelightItems.HASH_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+		pot(ExtraDelightItems.HASH_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, ModItems.SKILLET.get(),
 				new Ingredient[] { Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()),
 						Ingredient.of(ExtraDelightItems.GRATED_POTATO.get()), Ingredient.of(CommonTags.CROPS_ONION),
 						Ingredient.of(ExtraDelightTags.FRYING_OIL), Ingredient.of(ExtraDelightTags.MEAT) },
@@ -4556,10 +4556,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_chorus");
 
 		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "apple")
-				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE)).addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE))
-				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_APPLE))
 				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
-				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_apple");
+				.addIngredient(Ingredient.of(Items.SUGAR)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_apple");
 
 		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "melon")
 				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_MELON))
@@ -5518,8 +5520,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(CompoundIngredient.of(Ingredient.of(Tags.Items.FOODS_BREAD),
 						Ingredient.of(ExtraDelightTags.BREAD_CRUMBS)))
 				.addIngredient(ExtraDelightTags.PROCESSED_CARROT).addIngredient(Items.CHICKEN)
-				.addIngredient(ExtraDelightTags.PROCESSED_POTATO).addIngredient(
-						ExtraDelightTags.PROCESSED_CARROT)
+				.addIngredient(ExtraDelightTags.PROCESSED_POTATO).addIngredient(ExtraDelightTags.PROCESSED_CARROT)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.PROCESSED_POTATO)
 				.unlockedBy("roast_chicken", has(Items.CHICKEN)).save(consumer, EDLoc("roast_chicken"));
 
