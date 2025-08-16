@@ -136,23 +136,25 @@ public class ExtraDelightClientEvents {
 				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS.stream()
 						.filter(i -> !i.getId().toString().contains("cherry")
 								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
-								&& !i.getId().toString().contains("azalea"))
+								&& !i.getId().toString().contains("azalea")
+								&& !i.getId().toString().contains("cinnamon"))
 						.toList()));
 	}
 
 	@SubscribeEvent
 	public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
 		event.register((state, tintIndex) -> FoliageColor.getDefaultColor(), ExtraDelightItems.APPLE_LEAVES.get(),
-				ExtraDelightItems.CINNAMON_LEAVES.get(), ExtraDelightItems.HAZELNUT_LEAVES.get(),
-				SummerCitrus.GRAPEFRUIT_LEAVES_ITEM.get(), SummerCitrus.LEMON_LEAVES_ITEM.get(),
-				SummerCitrus.LIME_LEAVES_ITEM.get(), SummerCitrus.ORANGE_LEAVES_ITEM.get());
+				ExtraDelightItems.HAZELNUT_LEAVES.get(), SummerCitrus.GRAPEFRUIT_LEAVES_ITEM.get(),
+				SummerCitrus.LEMON_LEAVES_ITEM.get(), SummerCitrus.LIME_LEAVES_ITEM.get(),
+				SummerCitrus.ORANGE_LEAVES_ITEM.get());
 
-		event.register((state, tintIndex) -> FoliageColor.getDefaultColor(),
-				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS.stream()
-						.filter(i -> !i.getId().toString().contains("cherry")
-								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
-								&& !i.getId().toString().contains("azalea"))
-						.toList()));
+//		event.register((state, tintIndex) -> FoliageColor.getDefaultColor(),
+//				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS.stream()
+//						.filter(i -> !i.getId().toString().contains("cherry")
+//								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
+//								&& !i.getId().toString().contains("azalea")
+//								&& !i.getId().toString().contains("cinnamon"))
+//						.toList()));
 	}
 
 	@SubscribeEvent(priority = EventPriority.LOWEST)

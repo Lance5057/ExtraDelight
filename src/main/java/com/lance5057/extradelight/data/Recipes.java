@@ -22,6 +22,7 @@ import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
+import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
@@ -77,6 +78,34 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	public Recipes(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries);
 	}
+	
+	public static final Ingredient ALL_JAM_AS_INGREDIENT = CompoundIngredient.of(
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("orange")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("lime")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("lemon")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("grapefruit")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("sweet_berries")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("glow_berries")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("apple")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("golden_apple")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("chorus_fruit")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("melon")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("carrot")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("mint")), ExtraDelightItems.DYNAMIC_JAM.get())
+
+	);
 
 	public static final int SMOKER_COOKING = 100; // 5 seconds
 	public static final int FURNACE_COOKING = 200; // 10 seconds
@@ -373,7 +402,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.chill(ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.toStack(1), NORMAL_COOKING, SMALL_EXP,
 						ExtraDelightItems.SQUARE_PAN.toStack(),
 						new FluidStack(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SUGAR_COOKIE).addIngredient(ExtraDelightTags.JAM)
+				.addIngredient(ExtraDelightTags.SUGAR_COOKIE)
+				.addIngredient(
+						CompoundIngredient.of(Ingredient.of(ExtraDelightTags.JAM), ALL_JAM_AS_INGREDIENT))
 				.addIngredient(ExtraDelightTags.SUGAR_COOKIE).build(consumer, "marshmallow_slice");
 
 		ChillerRecipeBuilder
@@ -3628,7 +3659,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.PEANUT_BUTTER_JELLY.get(), 1)
 				.requires(ExtraDelightTags.BREAD_SLICE).requires(ExtraDelightTags.NUT_BUTTER)
-				.requires(ExtraDelightTags.JAM).requires(ExtraDelightTags.BREAD_SLICE)
+				.requires(CompoundIngredient.of(Ingredient.of(ExtraDelightTags.JAM), ALL_JAM_AS_INGREDIENT))
+				.requires(ExtraDelightTags.BREAD_SLICE)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.JAM.get()))
 				.save(consumer, EDLoc("pbj"));
 
@@ -4666,34 +4698,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 	private void dynamicToast(RecipeOutput consumer) {
 		DynamicToastRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TOAST.toStack(), "dynamic")
-				.requires(Ingredient.of(ExtraDelightTags.TOAST))
-				.requires(CompoundIngredient.of(
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("orange")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("lime")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("lemon")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("grapefruit")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("sweet_berries")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("glow_berries")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("apple")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("golden_apple")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("chorus_fruit")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("melon")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("carrot")), ExtraDelightItems.DYNAMIC_JAM.get()),
-						DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-								new DynamicItemComponent(List.of("mint")), ExtraDelightItems.DYNAMIC_JAM.get())
-						
-						))
+				.requires(Ingredient.of(ExtraDelightTags.TOAST)).requires(ALL_JAM_AS_INGREDIENT)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TOAST.get()))
 				.save(consumer, EDLoc("dynamic_toast_dynamic_jam"));
 

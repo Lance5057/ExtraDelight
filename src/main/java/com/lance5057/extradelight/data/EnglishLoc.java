@@ -1398,9 +1398,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
 		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "Dynamic Jam");
 		this.add("extradelight.dynamic.jam", "%1$s %2$s");
-		this.add("extradelight.jam", "Jam");
-		this.add("extradelight.marmalade", "Marmalade");
-		this.add("extradelight.jelly", "Jelly");
+		
 
 		this.add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "Potted Cinnamon Sapling");
 		this.add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "Potted Hazelnut Sapling");
@@ -1410,18 +1408,21 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.WHISK.get(), "Whisk");
 		this.add(ExtraDelightBlocks.FRUIT_BOWL.get(), "Fruit Bowl");
 
-		this.add("extradelight.jam.melon", "Melon");
-		this.add("extradelight.jam.sweet_berries", "Sweet Berry");
-		this.add("extradelight.jam.glow_berries", "Glow Berry");
-		this.add("extradelight.jam.chorus_fruit", "Chorus Fruit");
-		this.add("extradelight.jam.apple", "Apple");
-		this.add("extradelight.jam.carrot", "Carrot");
-		this.add("extradelight.jam.lemon", "Lemon");
-		this.add("extradelight.jam.lime", "Lime");
-		this.add("extradelight.jam.grapefruit", "Grapefruit");
-		this.add("extradelight.jam.golden_apple", "Golden Apple");
-		this.add("extradelight.jam.orange", "Orange");
-		this.add("extradelight.jam.mint", "Mint");
+		this.add("extradelight.jam.melon", "Melon Jam");
+		this.add("extradelight.jam.sweet_berries", "Sweet Berry Jam");
+		this.add("extradelight.jam.glow_berries", "Glow Berry Jam");
+		this.add("extradelight.jam.chorus_fruit", "Chorus Fruit Jam");
+		this.add("extradelight.jam.apple", "Apple Jam");
+		this.add("extradelight.jam.carrot", "Carrot Jam");
+		this.add("extradelight.jam.lemon", "Lemon Marmalade");
+		this.add("extradelight.jam.lime", "Lime Marmalade");
+		this.add("extradelight.jam.grapefruit", "Grapefruit Marmalade");
+		this.add("extradelight.jam.golden_apple", "Golden Apple Jam");
+		this.add("extradelight.jam.orange", "Orange Marmalade");
+		this.add("extradelight.jam.mint", "Mint Jelly");
+		this.add("extradelight.jam", "Jam");
+		this.add("extradelight.marmalade", "Marmalade");
+		this.add("extradelight.jelly", "Jelly");
 
 		this.add(ExtraDelight.MOD_ID + ".tooltip.deprecated", "This item is deprecated! Right-click to convert!");
 

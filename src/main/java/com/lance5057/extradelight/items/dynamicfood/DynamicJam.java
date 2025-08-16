@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
+import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
@@ -15,6 +16,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemContainerContents;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.common.crafting.CompoundIngredient;
+import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 
 public class DynamicJam extends Item implements IDynamic {
 	public static final ResourceLocation base_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
@@ -72,30 +76,11 @@ public class DynamicJam extends Item implements IDynamic {
 
 	@Override
 	public Component getName(ItemStack itemStack) {
-		ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
 		DynamicItemComponent dyn = itemStack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
 
 		if (dyn != null) {
-			if (comp != null) {
-				if (comp.getSlots() > 0) {
-					if (comp.getStackInSlot(0).is(ExtraDelightTags.IS_MARMALADE_INGREDIENT))
-						return Component.translationArg(Component.translatable("extradelight.dynamic.jam",
-								Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
-								Component.translatable("extradelight.marmalade")));
-					else if (comp.getStackInSlot(0).is(ExtraDelightTags.IS_JELLY_INGREDIENT))
-						return Component.translationArg(Component.translatable("extradelight.dynamic.jam",
-								Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
-								Component.translatable("extradelight.jelly")));
-					else
-						return Component.translationArg(Component.translatable("extradelight.dynamic.jam",
-								Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
-								Component.translatable("extradelight.jam")));
-				}
-			}
+			return Component.translatable("extradelight.jam." + dyn.graphics().get(0));
 
-			return Component.translationArg(Component.translatable("extradelight.dynamic.jam",
-					Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
-					Component.translatable("extradelight.jam")));
 		}
 
 		return Component.translatable(getDescriptionId());
