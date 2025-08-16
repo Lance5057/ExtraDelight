@@ -82,6 +82,10 @@ public class DynamicJam extends Item implements IDynamic {
 						return Component.translationArg(Component.translatable("extradelight.dynamic.jam",
 								Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
 								Component.translatable("extradelight.marmalade")));
+					else if (comp.getStackInSlot(0).is(ExtraDelightTags.IS_JELLY_INGREDIENT))
+						return Component.translationArg(Component.translatable("extradelight.dynamic.jam",
+								Component.translatable("extradelight.jam." + dyn.graphics().get(0)),
+								Component.translatable("extradelight.jelly")));
 					else
 						return Component.translationArg(Component.translatable("extradelight.dynamic.jam",
 								Component.translatable("extradelight.jam." + dyn.graphics().get(0)),

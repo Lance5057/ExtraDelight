@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/mint_jelly"
+        "recipe": "minecraft:cooking/dynamic_mint"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -15,7 +15,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/mint_jelly"
+      "minecraft:cooking/dynamic_mint"
     ]
   }
 }

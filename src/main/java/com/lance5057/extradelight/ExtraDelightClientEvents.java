@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import java.util.Map;
+import java.util.stream.Stream;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRenderer;
@@ -117,6 +118,41 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JUICER.get(), JuicerRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.PICNIC_BASKET.get(), PicnicBasketRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.FRUIT_BOWL.get(), FruitBowlRenderer::new);
+	}
+
+	@SubscribeEvent
+	public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+		event.register(
+				(state, getter, pos, tintIndex) -> getter != null && pos != null
+						? BiomeColors.getAverageFoliageColor(getter, pos)
+						: FoliageColor.getDefaultColor(),
+				ExtraDelightBlocks.APPLE_LEAVES.get(), ExtraDelightBlocks.CINNAMON_LEAVES.get(),
+				ExtraDelightBlocks.HAZELNUT_LEAVES.get(), SummerCitrus.GRAPEFRUIT_LEAVES.get(),
+				SummerCitrus.LEMON_LEAVES.get(), SummerCitrus.LIME_LEAVES.get(), SummerCitrus.ORANGE_LEAVES.get());
+		event.register(
+				(state, getter, pos, tintIndex) -> getter != null && pos != null
+						? BiomeColors.getAverageFoliageColor(getter, pos)
+						: FoliageColor.getDefaultColor(),
+				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS.stream()
+						.filter(i -> !i.getId().toString().contains("cherry")
+								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
+								&& !i.getId().toString().contains("azalea"))
+						.toList()));
+	}
+
+	@SubscribeEvent
+	public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+		event.register((state, tintIndex) -> FoliageColor.getDefaultColor(), ExtraDelightItems.APPLE_LEAVES.get(),
+				ExtraDelightItems.CINNAMON_LEAVES.get(), ExtraDelightItems.HAZELNUT_LEAVES.get(),
+				SummerCitrus.GRAPEFRUIT_LEAVES_ITEM.get(), SummerCitrus.LEMON_LEAVES_ITEM.get(),
+				SummerCitrus.LIME_LEAVES_ITEM.get(), SummerCitrus.ORANGE_LEAVES_ITEM.get());
+
+		event.register((state, tintIndex) -> FoliageColor.getDefaultColor(),
+				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS.stream()
+						.filter(i -> !i.getId().toString().contains("cherry")
+								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
+								&& !i.getId().toString().contains("azalea"))
+						.toList()));
 	}
 
 	@SubscribeEvent(priority = EventPriority.LOWEST)

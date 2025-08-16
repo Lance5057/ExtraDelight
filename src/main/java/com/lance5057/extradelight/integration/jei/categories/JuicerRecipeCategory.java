@@ -4,12 +4,13 @@ import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.juicer.JuicerRecipe;
-import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
+import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
@@ -25,7 +26,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import vectorwing.farmersdelight.common.registry.ModIngredientTypes;
 
 public class JuicerRecipeCategory implements IRecipeCategory<JuicerRecipe> {
 	public static final RecipeType<JuicerRecipe> TYPE = RecipeType.create(ExtraDelight.MOD_ID, "juicer",
@@ -36,7 +36,7 @@ public class JuicerRecipeCategory implements IRecipeCategory<JuicerRecipe> {
 
 	public JuicerRecipeCategory(IGuiHelper guiHelper) {
 		background = guiHelper.createDrawable(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 181, 41, 36);
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 0, 181, 64, 36);
 		localizedName = Component.translatable("extradelight.jei.juicer");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ExtraDelightItems.JUICER.get()));
@@ -68,13 +68,19 @@ public class JuicerRecipeCategory implements IRecipeCategory<JuicerRecipe> {
 
 		builder.addSlot(RecipeIngredientRole.INPUT, 1, 10).addIngredients(input);
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 4, 1)
+		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 - 8, 1)
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid()))
 				.setFluidRenderer(recipe.getFluid().getAmount(), false, 16, 16);
-		
-		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 4, 19).addItemStack(recipe.getResultItem(null));
+
+		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 - 8, 19)
+				.addItemStack(recipe.getResultItem(null));
+
+		IRecipeSlotBuilder slot = builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 15, 1);
+		slot.addIngredients(
+				Ingredient.of(BottleFluidRegistry.getBottleFromFluidWithoutSize(recipe.getFluid().getFluid()),
+						new ItemStack(recipe.getFluid().getFluid().getBucket())));
 	}
-	
+
 	@Override
 	public void draw(JuicerRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX,
 			double mouseY) {
@@ -82,7 +88,7 @@ public class JuicerRecipeCategory implements IRecipeCategory<JuicerRecipe> {
 
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
-		guiGraphics.drawString(fontRenderer, recipe.getChance() + "%", this.getWidth() / 2 + 26, 24, 0xffffff);
+		guiGraphics.drawString(fontRenderer, recipe.getChance() + "%", this.getWidth() / 2 + 14, 24, 0xffffff);
 
 		RenderSystem.disableBlend();
 	}

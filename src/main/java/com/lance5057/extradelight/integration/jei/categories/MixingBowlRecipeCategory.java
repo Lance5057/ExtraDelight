@@ -100,8 +100,8 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 			IRecipeSlotBuilder slot = builder.addSlot(RecipeIngredientRole.CATALYST, 1, 1);
 			for (SizedFluidIngredient sfi : recipe.getFluids())
 				for (FluidStack fs : sfi.getFluids())
-					slot.addIngredients(Ingredient
-							.of(BottleFluidRegistry.getBottleFromFluid(fs), new ItemStack(fs.getFluid().getBucket())));
+					slot.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluidWithoutSize(fs.getFluid()),
+							new ItemStack(fs.getFluid().getBucket())));
 		}
 	}
 

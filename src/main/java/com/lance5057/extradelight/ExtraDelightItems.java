@@ -479,8 +479,8 @@ public class ExtraDelightItems {
 			.advancementIngredients().finish();
 
 	public static final DeferredItem<Item> SCRAMBLED_EGGS = EDItemGenerator
-			.register("scrambled_eggs", () -> new Item(bowlFoodItem(EDFoods.SCRAMBLED_EGGS)))
-			.advancementMeal().finish();
+			.register("scrambled_eggs", () -> new Item(bowlFoodItem(EDFoods.SCRAMBLED_EGGS))).advancementMeal()
+			.finish();
 
 	public static final DeferredItem<Item> OMELETTE_MIX = EDItemGenerator
 			.register("omelette_mix", () -> new Item(new Item.Properties().craftRemainder(Items.BOWL)))
@@ -1816,8 +1816,8 @@ public class ExtraDelightItems {
 			.register("cinnamon_popsicle", () -> new Item(foodItem(FoodValues.POPSICLE))).advancementDessert().finish();
 	public static final DeferredItem<Item> BEET_MINT_SALAD = EDItemGenerator
 			.register("beet_mint_salad", () -> new Item(foodItem(EDFoods.BEET_MINT))).advancementMeal().finish();
-	public static final DeferredItem<Item> MINT_JELLY = EDItemGenerator
-			.register("mint_jelly", () -> new Item(foodItem(EDFoods.JAM))).advancementIngredients().finish();
+//	public static final DeferredItem<Item> MINT_JELLY = EDItemGenerator
+//			.register("mint_jelly", () -> new Item(foodItem(EDFoods.JAM))).advancementIngredients().finish();
 	public static final DeferredItem<Item> CRACKERS = EDItemGenerator
 			.register("crackers", () -> new Item(foodItem(EDFoods.CRACKER))).advancementSnack().finish();
 	public static final DeferredItem<Item> CROQUE_MONSIEUR = EDItemGenerator
@@ -2954,8 +2954,7 @@ public class ExtraDelightItems {
 					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
 					.food(EDFoods.BUTTERED_TOAST)));
 	public static final DeferredItem<Item> DYNAMIC_JAM = ITEMS.register("dynamic_jam",
-			() -> new DynamicJam(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)
-					.food(EDFoods.JAM)));
+			() -> new DynamicJam(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.JAM)));
 
 	// Jams
 	public static final DeferredItem<Item> JAM = EDItemGenerator.register("jam", () -> new DeprecatedItem() {
@@ -3071,4 +3070,43 @@ public class ExtraDelightItems {
 				}
 
 			}).finish();
+	public static final DeferredItem<Item> MINT_JELLY = EDItemGenerator
+			.register("mint_jelly", () -> new DeprecatedItem() {
+
+				@Override
+				public ItemStack changeToStack(ItemStack stack) {
+					List<ItemStack> l = List.of(ExtraDelightItems.MINT.get().getDefaultInstance(),
+							ExtraDelightItems.MINT.get().getDefaultInstance(),
+							ExtraDelightItems.MINT.get().getDefaultInstance(), Items.SUGAR.getDefaultInstance(),
+							ExtraDelightItems.AGAR_AGAR.get().getDefaultInstance(), Items.SUGAR.getDefaultInstance());
+
+					ItemStack jam = new ItemStack(DYNAMIC_JAM.get(), stack.getCount());
+					jam.set(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(List.of("mint")));
+					jam.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
+
+					int nutrition = 0;
+					float saturation = 0;
+					List<FoodProperties.PossibleEffect> effects = new ArrayList<FoodProperties.PossibleEffect>();
+
+					for (ItemStack s : l)
+						if (s != null && !s.isEmpty()) {
+							if (s.has(DataComponents.FOOD)) {
+								FoodProperties f = s.get(DataComponents.FOOD);
+								nutrition += f.nutrition();
+								saturation += f.saturation();
+
+								effects.addAll(f.effects());
+							}
+						}
+
+					FoodProperties food = new FoodProperties(nutrition, saturation / l.size(), false, 1.6F,
+							java.util.Optional.empty(), effects);
+
+					stack.set(DataComponents.FOOD, food);
+
+					return jam;
+				}
+
+			}).finish();
+
 }

@@ -87,11 +87,6 @@ public class EDFoods {
 	public static final FoodProperties KETCHUP = new FoodProperties.Builder().nutrition(0).saturationModifier(0.3f).usingConvertsTo(Items.GLASS_BOTTLE).build();
 	public static final FoodProperties GRAVY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.7f).effect(REGENERATION_BRIEF, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();
 	public static final FoodProperties JAM = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).usingConvertsTo(Items.GLASS_BOTTLE).build();
-//	public static final FoodProperties GLOW_JAM = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).effect(GLOW_SHORT, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();
-//	public static final FoodProperties GOLDEN_JAM = new FoodProperties.Builder().nutrition(3).saturationModifier(1.2f).effect(GOLDEN_APPLE_1, 1F).effect(GOLDEN_APPLE_2, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();
-//	public static final FoodProperties JAM_BREAD = new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).build();
-//	public static final FoodProperties GLOW_JAM_BREAD = new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).effect(GLOW_SHORT, 1F).build();
-//	public static final FoodProperties GOLDEN_JAM_BREAD = new FoodProperties.Builder().nutrition(4).saturationModifier(1.2f).effect(GOLDEN_APPLE_1, 1F).effect(GOLDEN_APPLE_2, 1F).build();
 	public static final FoodProperties SCRAMBLED_EGGS = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4f).build();
 	public static final FoodProperties OMELETTE = new FoodProperties.Builder().nutrition(12).saturationModifier(0.8f).build();
 	public static final FoodProperties QUICHE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.8f).build();
@@ -379,4 +374,5 @@ public class EDFoods {
 	public static final FoodProperties MELON_LIME_CHICKEN = new FoodProperties.Builder().nutrition(11).saturationModifier(0.3f).effect(SUNSHINE_THREE, 1F).effect(NOURISHMENT_MEDIUM, 0F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties KYIV_CAKE_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_BRIEF, 1F).build();
 	public static final FoodProperties BAKED_ALASKA_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
+	public static final FoodProperties MELON_FRUIT_SALAD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.6f).effect(REGENERATION_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
 }

@@ -1001,16 +1001,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:mint_jelly": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:mint_jelly"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:miso_paste_item": {
       "conditions": {
         "items": [
@@ -1634,9 +1624,6 @@
     ],
     [
       "extradelight:corn_silk"
-    ],
-    [
-      "extradelight:mint_jelly"
     ],
     [
       "extradelight:frosting_light_blue"

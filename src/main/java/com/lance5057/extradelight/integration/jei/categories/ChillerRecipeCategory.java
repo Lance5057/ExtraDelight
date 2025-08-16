@@ -5,7 +5,6 @@ import java.util.List;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
-import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
 
@@ -21,7 +20,6 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
@@ -80,7 +78,7 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 		builder.addSlot(RecipeIngredientRole.OUTPUT, 107, 30).addIngredients(Ingredient.of(recipe.output));
 
 		builder.addSlot(RecipeIngredientRole.CATALYST, 1, 1)
-				.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluid(recipe.getFluid()),
+				.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluidWithoutSize(recipe.getFluid().getFluid()),
 						new ItemStack(recipe.getFluid().getFluid().getBucket())));
 
 		builder.addSlot(RecipeIngredientRole.CATALYST, 107, 9)

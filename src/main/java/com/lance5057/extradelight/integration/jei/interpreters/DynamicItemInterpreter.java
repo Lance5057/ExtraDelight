@@ -15,7 +15,7 @@ public class DynamicItemInterpreter implements ISubtypeInterpreter<ItemStack> {
 	public @Nullable Object getSubtypeData(ItemStack ingredient, UidContext context) {
 		DynamicItemComponent d = ingredient.get(ExtraDelightComponents.DYNAMIC_FOOD);
 		if (d == null)
-			return null;
+			return "sweet_berries";
 		return d.graphics().getFirst();
 	}
 
@@ -23,7 +23,7 @@ public class DynamicItemInterpreter implements ISubtypeInterpreter<ItemStack> {
 	public String getLegacyStringSubtypeInfo(ItemStack ingredient, UidContext context) {
 		DynamicItemComponent d = ingredient.get(ExtraDelightComponents.DYNAMIC_FOOD);
 		if (d == null)
-			return null;
+			return "sweet_berries";
 		return d.graphics().getFirst();
 	}
 

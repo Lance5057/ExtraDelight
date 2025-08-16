@@ -359,7 +359,7 @@ public class SummerCitrus {
 			.finish();
 	public static final DeferredItem<Item> MELON_FRUIT_SALAD_SERVING = EDItemGenerator
 			.register("melon_fruit_salad_serving",
-					() -> new ToolTipConsumableItem(ExtraDelightItems.stack16FoodItem(EDFoods.SHIRAZI_SALAD), true))
+					() -> new ToolTipConsumableItem(ExtraDelightItems.stack16FoodItem(EDFoods.MELON_FRUIT_SALAD), true))
 			.advancementDessert().servingToolTip().finish();
 	public static final DeferredBlock<RecipeFeastBlock> MELON_FRUIT_SALAD = ExtraDelightBlocks.BLOCKS.register(
 			"melon_fruit_salad",

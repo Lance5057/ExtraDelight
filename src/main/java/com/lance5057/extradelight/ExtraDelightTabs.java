@@ -39,6 +39,16 @@ public class ExtraDelightTabs {
 						makeJam(output, "chorus_fruit", Items.CHORUS_FRUIT);
 						makeJam(output, "melon", Items.MELON_SLICE);
 						makeJam(output, "carrot", Items.CARROT);
+
+						ItemStack s = new ItemStack(ExtraDelightItems.DYNAMIC_JAM.get());
+						s.set(ExtraDelightComponents.DYNAMIC_FOOD, new DynamicItemComponent(List.of("mint")));
+						s.set(ExtraDelightComponents.ITEMSTACK_HANDLER, ItemContainerContents.fromItems(List.of(
+								ExtraDelightItems.MINT.get().getDefaultInstance(),
+								ExtraDelightItems.MINT.get().getDefaultInstance(),
+								ExtraDelightItems.MINT.get().getDefaultInstance(), Items.SUGAR.getDefaultInstance(),
+								ExtraDelightItems.AGAR_AGAR.get().getDefaultInstance(),
+								Items.SUGAR.getDefaultInstance())));
+						output.accept(s);
 					}).build());
 
 	private static void makeJam(Output output, String graphic, Item item) {

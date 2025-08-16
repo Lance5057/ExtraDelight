@@ -680,10 +680,15 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CAKE_SLICE).add(ModItems.CAKE_SLICE.get(), ExtraDelightItems.COFFEE_CAKE_SLICE.get(),
 				ExtraDelightItems.CHOCOLATE_CAKE.get(), SummerCitrus.LEMON_CUCUMBER_CAKE_SLICE.get(),
 				SummerCitrus.MELON_LAYER_CAKE_SLICE.get(), SummerCitrus.KYIV_CAKE_SLICE.get());
-		tag(ExtraDelightTags.IS_MARMALADE_INGREDIENT).add(SummerCitrus.SLICED_GRAPEFRUIT.get(),
-				SummerCitrus.SLICED_LEMON.get(), SummerCitrus.SLICED_LIME.get(), SummerCitrus.SLICED_ORANGE.get());
+		tag(ExtraDelightTags.IS_MARMALADE_INGREDIENT)
+				.add(SummerCitrus.SLICED_GRAPEFRUIT.get(), SummerCitrus.SLICED_LEMON.get(),
+						SummerCitrus.SLICED_LIME.get(), SummerCitrus.SLICED_ORANGE.get())
+				.add(SummerCitrus.GRAPEFRUIT.get(), SummerCitrus.LEMON.get(), SummerCitrus.LIME.get(),
+						SummerCitrus.ORANGE.get());
 		tag(ExtraDelightTags.EGG_OR_YOLK).add(SummerCitrus.EGG_YOLK.get()).addTag(Tags.Items.EGGS);
 		tag(ExtraDelightTags.ICE_CUBES).add(SummerCitrus.ICE_CUBES.get());
+
+		tag(ExtraDelightTags.IS_JELLY_INGREDIENT).add(ExtraDelightItems.MINT.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(),
