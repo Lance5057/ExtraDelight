@@ -50,7 +50,9 @@ import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrower
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
@@ -89,6 +91,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
@@ -840,9 +843,13 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<WallSignBlock> FRUIT_WALL_SIGN = BLOCKS.register("fruit_wall_sign",
 			() -> new WallSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 
+	public static final DeferredBlock<Block> HAZELNUT_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register(
+			"hazelnut_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+
 	public static final DeferredBlock<FruitLeafBlock> HAZELNUT_LEAVES = BLOCKS.register("hazelnut_leaves",
 			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
-					ExtraDelightItems.HAZELNUTS_IN_SHELL));
+					ExtraDelightItems.HAZELNUTS_IN_SHELL, ExtraDelightBlocks.HAZELNUT_PETAL_LITTER,
+					ExtraDelightParticles.HAZELNUT_PETALS));
 	public static final DeferredBlock<SaplingBlock> HAZELNUT_SAPLING = BLOCKS.register("hazelnut_sapling",
 			() -> new SaplingBlock(ExtraDelightTreeGrowers.HAZELNUT,
 					Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
@@ -1057,8 +1064,12 @@ public class ExtraDelightBlocks {
 			() -> new Block(
 					Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
 
+	public static final DeferredBlock<Block> APPLE_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
+			.register("apple_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+
 	public static final DeferredBlock<VanillaFruitLeafBlock> APPLE_LEAVES = BLOCKS.register("apple_leaves",
-			() -> new VanillaFruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), Items.APPLE));
+			() -> new VanillaFruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), Items.APPLE,
+					APPLE_PETAL_LITTER));
 	public static final DeferredBlock<SaplingBlock> APPLE_SAPLING = BLOCKS.register("apple_sapling",
 			() -> new SaplingBlock(ExtraDelightTreeGrowers.APPLE,
 					Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
@@ -1193,4 +1204,5 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> POTTED_APPLE_SAPLING = BLOCKS.register("potted_apple_sapling",
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, APPLE_SAPLING,
 					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
+
 }

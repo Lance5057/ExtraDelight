@@ -1345,7 +1345,7 @@ public class ItemModels extends ItemModelProvider {
 				.customLoader(BlockStateItemGeometryLoader::builder);
 //		getBuilder(ExtraDelightItems.JUICER.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
 //				.customLoader(BlockStateItemGeometryLoader::builder);
-		
+
 		getBuilder(ExtraDelightItems.JUICER.getId().getPath()).parent(new ModelFile.ExistingModelFile(
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/juicer_item"), existingFileHelper));
 
@@ -1364,6 +1364,9 @@ public class ItemModels extends ItemModelProvider {
 				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 
+		forBlockItemFlat(this, ExtraDelightItems.APPLE_PETAL_LITTER_ITEM, "crops/fruit/apple/apple_leaves_budding");
+		forBlockItemFlat(this, ExtraDelightItems.HAZELNUT_PETAL_LITTER_ITEM, "crops/fruit/hazelnut/hazelnut_petals");
+
 		Fermentation.itemModels(this);
 		SummerCitrus.itemModels(this);
 		AestheticBlocks.itemModel(this);
@@ -1374,7 +1377,8 @@ public class ItemModels extends ItemModelProvider {
 	}
 
 	public void forItemModel(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
-		tmp.getBuilder(item.getId().getPath()+"_item").parent(new ModelFile.ExistingModelFile(tmp.modLoc("item/" + name), existingFileHelper));
+		tmp.getBuilder(item.getId().getPath() + "_item")
+				.parent(new ModelFile.ExistingModelFile(tmp.modLoc("item/" + name), existingFileHelper));
 //		getBuilder(item.getId().getPath()).parent(
 //				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/" + path)));
 	}

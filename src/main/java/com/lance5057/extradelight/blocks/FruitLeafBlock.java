@@ -1,12 +1,12 @@
 package com.lance5057.extradelight.blocks;
 
 import java.util.OptionalInt;
-
-import com.lance5057.extradelight.ExtraDelightParticles;
+import java.util.function.Supplier;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ParticleUtils;
@@ -34,6 +34,7 @@ public class FruitLeafBlock extends AbstractFruitLeafBlock {
 
 	private final DeferredItem<Item> fruit;
 	private final DeferredBlock<Block> petalLitter;
+	private final Supplier<SimpleParticleType> particle;
 
 	public FruitLeafBlock(Properties p_49795_, DeferredItem<Item> fruit) {
 		super(p_49795_);
@@ -41,14 +42,16 @@ public class FruitLeafBlock extends AbstractFruitLeafBlock {
 				.setValue(DISTANCE, Integer.valueOf(7)).setValue(PERSISTENT, false).setValue(STERILE, false));
 		this.fruit = fruit;
 		this.petalLitter = null;
+		this.particle = null;
 	}
 
-	public FruitLeafBlock(Properties p_49795_, DeferredItem<Item> fruit, DeferredBlock<Block> petalLitter) {
+	public FruitLeafBlock(Properties p_49795_, DeferredItem<Item> fruit, DeferredBlock<Block> petalLitter, Supplier<SimpleParticleType> hazelnutPetals) {
 		super(p_49795_);
 		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0))
 				.setValue(DISTANCE, Integer.valueOf(7)).setValue(PERSISTENT, false).setValue(STERILE, false));
 		this.fruit = fruit;
 		this.petalLitter = petalLitter;
+		this.particle = hazelnutPetals;
 	}
 
 	@Override
@@ -99,7 +102,8 @@ public class FruitLeafBlock extends AbstractFruitLeafBlock {
 			BlockPos bp = new BlockPos(pos.getX(), pos.getY() - i, pos.getZ());
 
 			if (level.getBlockState(bp).isSolid()) {
-				return bp.above();
+				if (level.getBlockState(bp.above()).isAir())
+					return bp.above();
 			}
 		}
 		return pos;
@@ -176,7 +180,7 @@ public class FruitLeafBlock extends AbstractFruitLeafBlock {
 					BlockState blockstate = p_221375_.getBlockState(blockpos);
 					if (!isFaceFull(blockstate.getCollisionShape(p_221375_, blockpos), Direction.UP)) {
 						ParticleUtils.spawnParticleBelow(p_221375_, p_221376_, p_221377_,
-								ExtraDelightParticles.PETALS.get());
+								particle.get());
 					}
 				}
 	}

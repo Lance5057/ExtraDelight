@@ -22,13 +22,13 @@ import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
-import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.recipe.FlourDoughRecipe;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
+import com.simibubi.create.AllFluids;
 import com.simibubi.create.Create;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -59,6 +59,7 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.FalseCondition;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
@@ -78,7 +79,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	public Recipes(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries);
 	}
-	
+
 	public static final Ingredient ALL_JAM_AS_INGREDIENT = CompoundIngredient.of(
 			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
 					new DynamicItemComponent(List.of("orange")), ExtraDelightItems.DYNAMIC_JAM.get()),
@@ -215,6 +216,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder.chill(ExtraDelightItems.BLOOD_CHOCOLATE_BAR.toStack(), FAST_COOKING, SMALL_EXP,
 				ExtraDelightItems.BAR_MOLD.toStack(),
 				new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250)).build(consumer);
+
+		ChillerRecipeBuilder
+				.chill(ExtraDelightItems.MILK_CHOCOLATE_BAR.toStack(), FAST_COOKING, SMALL_EXP,
+						ExtraDelightItems.BAR_MOLD.toStack(), new FluidStack(AllFluids.CHOCOLATE, 250))
+				.build(consumer.withConditions(new ModLoadedCondition("create")), "milk_chocolate_bar_create");
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.BLOOD_CHOCOLATE_FILLED_BAR.toStack(), FAST_COOKING, SMALL_EXP,
@@ -403,8 +409,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.SQUARE_PAN.toStack(),
 						new FluidStack(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), 250), true)
 				.addIngredient(ExtraDelightTags.SUGAR_COOKIE)
-				.addIngredient(
-						CompoundIngredient.of(Ingredient.of(ExtraDelightTags.JAM), ALL_JAM_AS_INGREDIENT))
+				.addIngredient(CompoundIngredient.of(Ingredient.of(ExtraDelightTags.JAM), ALL_JAM_AS_INGREDIENT))
 				.addIngredient(ExtraDelightTags.SUGAR_COOKIE).build(consumer, "marshmallow_slice");
 
 		ChillerRecipeBuilder
@@ -2673,11 +2678,15 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		// Omelette
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.OMELETTE_MIX.get())
-				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(ExtraDelightTags.PROCESSED_VEG), 2)
+				.requires(ExtraDelightItems.EGG_MIX.get(), 1)
+				.requires(CompoundIngredient.of(Ingredient.of(Tags.Items.FOODS_VEGETABLE),
+						Ingredient.of(ExtraDelightTags.PROCESSED_VEG)), 2)
 				.unlockedBy(getName(), has(Tags.Items.FOODS_VEGETABLE)).save(consumer, EDLoc("omelette_mix_veg"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.OMELETTE_MIX.get())
-				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(ExtraDelightTags.PROCESSED_VEG), 1)
+				.requires(ExtraDelightItems.EGG_MIX.get(), 1)
+				.requires(CompoundIngredient.of(Ingredient.of(Tags.Items.FOODS_VEGETABLE),
+						Ingredient.of(ExtraDelightTags.PROCESSED_VEG)), 1)
 				.requires(Ingredient.of(ExtraDelightTags.MEAT), 1)
 				.unlockedBy(getName(), has(Tags.Items.FOODS_VEGETABLE)).save(consumer, EDLoc("omelette_mix_mix"));
 
@@ -2690,7 +2699,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), has(ExtraDelightTags.CHEESE)).save(consumer, EDLoc("omelette_mix_cheese"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.OMELETTE_MIX.get())
-				.requires(ExtraDelightItems.EGG_MIX.get(), 1).requires(Ingredient.of(ExtraDelightTags.PROCESSED_VEG), 2)
+				.requires(ExtraDelightItems.EGG_MIX.get(), 1)
+				.requires(CompoundIngredient.of(Ingredient.of(Tags.Items.FOODS_VEGETABLE),
+						Ingredient.of(ExtraDelightTags.PROCESSED_VEG)), 2)
 				.requires(Ingredient.of(ExtraDelightTags.CHEESE), 1)
 				.unlockedBy(getName(), has(Tags.Items.FOODS_VEGETABLE))
 				.save(consumer, EDLoc("omelette_mix_veg_cheese"));

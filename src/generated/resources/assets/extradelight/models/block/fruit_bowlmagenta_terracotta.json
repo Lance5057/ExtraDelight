@@ -1,6 +1,7 @@
 {
   "parent": "extradelight:block/fruit_bowl",
   "textures": {
-    "0": "minecraft:block/magenta_terracotta"
+    "0": "minecraft:block/magenta_terracotta",
+    "particle": "minecraft:block/magenta_terracotta"
   }
 }

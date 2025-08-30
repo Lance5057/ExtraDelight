@@ -1,6 +1,7 @@
 {
   "parent": "extradelight:block/mortar",
   "textures": {
-    "0": "minecraft:block/andesite"
+    "0": "minecraft:block/andesite",
+    "particle": "minecraft:block/andesite"
   }
 }

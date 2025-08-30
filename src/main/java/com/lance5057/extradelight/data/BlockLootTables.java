@@ -667,6 +667,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(SummerCitrus.ORANGE_PETAL_LITTER.get());
 		this.dropSelf(SummerCitrus.LIME_PETAL_LITTER.get());
 		this.dropSelf(SummerCitrus.LEMON_PETAL_LITTER.get());
+		this.dropSelf(ExtraDelightBlocks.APPLE_PETAL_LITTER.get());
+		this.dropSelf(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get());
 		
 	}
 

@@ -16,6 +16,7 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightParticles;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
@@ -115,7 +116,8 @@ public class SummerCitrus {
 	public static final DeferredBlock<Block> LEMON_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
 			.register("lemon_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
 	public static final DeferredBlock<FruitLeafBlock> LEMON_LEAVES = ExtraDelightBlocks.BLOCKS.register("lemon_leaves",
-			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), LEMON, LEMON_PETAL_LITTER));
+			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), LEMON, LEMON_PETAL_LITTER,
+					ExtraDelightParticles.CITRUS_PETALS));
 	public static final DeferredItem<Item> LEMON_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
 			"lemon_petal_litter_item",
 			() -> new BlockItem(SummerCitrus.LEMON_PETAL_LITTER.get(), new Item.Properties()));
@@ -155,7 +157,8 @@ public class SummerCitrus {
 	public static final DeferredItem<Item> LIME_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
 			"lime_petal_litter_item", () -> new BlockItem(SummerCitrus.LIME_PETAL_LITTER.get(), new Item.Properties()));
 	public static final DeferredBlock<FruitLeafBlock> LIME_LEAVES = ExtraDelightBlocks.BLOCKS.register("lime_leaves",
-			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), LIME, LIME_PETAL_LITTER));
+			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), LIME, LIME_PETAL_LITTER,
+					ExtraDelightParticles.CITRUS_PETALS));
 	public static final DeferredItem<Item> LIME_LEAVES_ITEM = ExtraDelightItems.ITEMS.register("lime_leaves",
 			() -> new BlockItem(LIME_LEAVES.get(), new Item.Properties()));
 	public static final DeferredBlock<SaplingBlock> LIME_SAPLING = ExtraDelightBlocks.BLOCKS.register("lime_sapling",
@@ -191,9 +194,9 @@ public class SummerCitrus {
 	public static final DeferredItem<Item> ORANGE_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
 			"orange_petal_litter_item",
 			() -> new BlockItem(SummerCitrus.ORANGE_PETAL_LITTER.get(), new Item.Properties()));
-	public static final DeferredBlock<FruitLeafBlock> ORANGE_LEAVES = ExtraDelightBlocks.BLOCKS.register(
-			"orange_leaves",
-			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), ORANGE, ORANGE_PETAL_LITTER));
+	public static final DeferredBlock<FruitLeafBlock> ORANGE_LEAVES = ExtraDelightBlocks.BLOCKS
+			.register("orange_leaves", () -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
+					ORANGE, ORANGE_PETAL_LITTER, ExtraDelightParticles.CITRUS_PETALS));
 	public static final DeferredItem<Item> ORANGE_LEAVES_ITEM = ExtraDelightItems.ITEMS.register("orange_leaves",
 			() -> new BlockItem(ORANGE_LEAVES.get(), new Item.Properties()));
 	public static final DeferredBlock<SaplingBlock> ORANGE_SAPLING = ExtraDelightBlocks.BLOCKS
@@ -232,7 +235,7 @@ public class SummerCitrus {
 			() -> new BlockItem(SummerCitrus.GRAPEFRUIT_PETAL_LITTER.get(), new Item.Properties()));
 	public static final DeferredBlock<FruitLeafBlock> GRAPEFRUIT_LEAVES = ExtraDelightBlocks.BLOCKS
 			.register("grapefruit_leaves", () -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
-					GRAPEFRUIT, GRAPEFRUIT_PETAL_LITTER));
+					GRAPEFRUIT, GRAPEFRUIT_PETAL_LITTER, ExtraDelightParticles.CITRUS_PETALS));
 	public static final DeferredItem<Item> GRAPEFRUIT_LEAVES_ITEM = ExtraDelightItems.ITEMS
 			.register("grapefruit_leaves", () -> new BlockItem(GRAPEFRUIT_LEAVES.get(), new Item.Properties()));
 	public static final DeferredBlock<SaplingBlock> GRAPEFRUIT_SAPLING = ExtraDelightBlocks.BLOCKS

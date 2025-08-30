@@ -2,8 +2,6 @@ package com.lance5057.extradelight.blocks;
 
 import java.util.OptionalInt;
 
-import com.lance5057.extradelight.ExtraDelightParticles;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -76,6 +74,15 @@ public class VanillaFruitLeafBlock extends AbstractFruitLeafBlock {
 				if (i < 3 && p_222564_.getRawBrightness(p_222565_.above(), 0) >= 9
 						&& net.neoforged.neoforge.common.CommonHooks.canCropGrow(p_222564_, p_222565_, p_222563_,
 								p_222566_.nextInt(5) == 0)) {
+					if (petalLitter != null)
+						if (p_222563_.getValue(AGE) == 1) {
+							BlockPos p = searchBelow(p_222565_, p_222564_, 5);
+							if (p != p_222565_) {
+								p_222564_.setBlock(p, petalLitter.get().defaultBlockState(), UPDATE_ALL);
+
+							}
+						}
+					
 					BlockState blockstate = p_222563_.setValue(AGE, Integer.valueOf(i + 1));
 					p_222564_.setBlock(p_222565_, blockstate, 2);
 					p_222564_.gameEvent(GameEvent.BLOCK_CHANGE, p_222565_, GameEvent.Context.of(blockstate));
@@ -83,6 +90,18 @@ public class VanillaFruitLeafBlock extends AbstractFruitLeafBlock {
 				}
 			}
 		}
+	}
+	
+	BlockPos searchBelow(BlockPos pos, Level level, int limit) {
+		for (int i = 2; i < limit + 2; i++) {
+			BlockPos bp = new BlockPos(pos.getX(), pos.getY() - i, pos.getZ());
+
+			if (level.getBlockState(bp).isSolid()) {
+				if (level.getBlockState(bp.above()).isAir())
+					return bp.above();
+			}
+		}
+		return pos;
 	}
 
 	protected boolean decaying(BlockState p_221386_) {
@@ -155,8 +174,7 @@ public class VanillaFruitLeafBlock extends AbstractFruitLeafBlock {
 					BlockPos blockpos = p_221376_.below();
 					BlockState blockstate = p_221375_.getBlockState(blockpos);
 					if (!isFaceFull(blockstate.getCollisionShape(p_221375_, blockpos), Direction.UP)) {
-						ParticleUtils.spawnParticleBelow(p_221375_, p_221376_, p_221377_,
-								ExtraDelightParticles.PETALS.get());
+						ParticleUtils.spawnParticleBelow(p_221375_, p_221376_, p_221377_, ParticleTypes.CHERRY_LEAVES);
 					}
 				}
 	}

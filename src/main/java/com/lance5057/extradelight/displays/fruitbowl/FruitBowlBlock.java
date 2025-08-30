@@ -48,6 +48,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.items.IItemHandler;
 
 public class FruitBowlBlock extends Block implements EntityBlock, SimpleWaterloggedBlock, IStyleable {
@@ -82,7 +83,7 @@ public class FruitBowlBlock extends Block implements EntityBlock, SimpleWaterlog
 
 				if (player.getItemInHand(hand).isEmpty())
 					ent.extractItem(player);
-				else if (player.getItemInHand(hand).is(ExtraDelightTags.FRUIT))
+				else if (player.getItemInHand(hand).is(Tags.Items.FOODS_FRUIT) || player.getItemInHand(hand).is(ExtraDelightTags.FRUIT))
 					ent.insertItem(player.getItemInHand(hand));
 			}
 		}

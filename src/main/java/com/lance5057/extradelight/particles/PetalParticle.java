@@ -9,7 +9,6 @@ import net.minecraft.client.particle.TextureSheetParticle;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import vectorwing.farmersdelight.client.particle.StarParticle;
 
 @OnlyIn(Dist.CLIENT)
 public class PetalParticle extends TextureSheetParticle {
@@ -75,9 +74,8 @@ public class PetalParticle extends TextureSheetParticle {
 			}
 		}
 	}
-	
-	public static class Factory implements ParticleProvider<SimpleParticleType>
-	{
+
+	public static class Factory implements ParticleProvider<SimpleParticleType> {
 		private final SpriteSet spriteSet;
 
 		public Factory(SpriteSet sprite) {
@@ -85,7 +83,8 @@ public class PetalParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType typeIn, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType typeIn, ClientLevel level, double x, double y, double z,
+				double xSpeed, double ySpeed, double zSpeed) {
 			PetalParticle particle = new PetalParticle(level, x, y + 0.3D, z, spriteSet);
 			particle.pickSprite(this.spriteSet);
 			particle.setColor(1.0F, 1.0F, 1.0F);

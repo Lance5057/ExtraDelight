@@ -1,6 +1,7 @@
 {
   "parent": "extradelight:block/baking_stone",
   "textures": {
-    "0": "minecraft:block/prismarine"
+    "0": "minecraft:block/prismarine",
+    "particle": "minecraft:block/prismarine"
   }
 }

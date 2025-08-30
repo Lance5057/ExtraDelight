@@ -18,6 +18,13 @@ public class FoodDisplayScreen extends AbstractContainerScreen<FoodDisplayMenu> 
 	}
 
 	@Override
+	public void render(GuiGraphics gui, final int mouseX, final int mouseY, float partialTicks) {
+		super.render(gui, mouseX, mouseY, partialTicks);
+
+		this.renderTooltip(gui, mouseX, mouseY);
+	}
+	
+	@Override
 	protected void renderBg(GuiGraphics graphics, float pPartialTick, int pMouseX, int pMouseY) {
 		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 		if (this.minecraft == null)

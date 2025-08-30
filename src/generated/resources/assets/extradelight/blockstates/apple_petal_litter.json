@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "extradelight:block/apple_petal_litter"
+      },
+      {
+        "model": "extradelight:block/apple_petal_litter",
+        "y": 90
+      },
+      {
+        "model": "extradelight:block/apple_petal_litter",
+        "y": 180
+      },
+      {
+        "model": "extradelight:block/apple_petal_litter",
+        "y": 270
+      }
+    ]
+  }
+}

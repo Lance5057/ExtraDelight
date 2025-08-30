@@ -105,7 +105,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.KETCHUP).add(ExtraDelightItems.KETCHUP.get());
 		tag(ExtraDelightTags.BBQ_SAUCE).add(ExtraDelightItems.BBQ_SAUCE.get()).addOptionalTag(CompatTags.BBQSAUCE);
 
-		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
+		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get())
+				.addTag(CompatTags.BREAD_SLICE);
+		tag(CompatTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
 		tag(ExtraDelightTags.TOAST_OR_BREAD_SLICE).addTag(ExtraDelightTags.BREAD_SLICE).addTag(ExtraDelightTags.TOAST)
 				.addOptionalTag(CompatTags.BREAD_SLICES);

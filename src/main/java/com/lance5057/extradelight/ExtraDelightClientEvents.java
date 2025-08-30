@@ -159,7 +159,8 @@ public class ExtraDelightClientEvents {
 
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public static void registerParticles(RegisterParticleProvidersEvent event) {
-		Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.PETALS.get(), PetalParticle.Factory::new);
+		Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.CITRUS_PETALS.get(), PetalParticle.Factory::new);
+		Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.HAZELNUT_PETALS.get(), PetalParticle.Factory::new);
 	}
 
 	@SubscribeEvent
@@ -297,6 +298,7 @@ public class ExtraDelightClientEvents {
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.SHAPED_JAR.get(), r -> RecipeBookCategories.UNKNOWN);
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.TOOL_ON_BLOCK.get(), r -> RecipeBookCategories.UNKNOWN);
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.VAT.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.JUICER.get(), r -> RecipeBookCategories.UNKNOWN);
 	}
 
 }

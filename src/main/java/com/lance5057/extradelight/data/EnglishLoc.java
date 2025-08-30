@@ -1335,7 +1335,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MARSHMALLOW_SLICE.get(), "Piece of Marshmallow Slice");
 		this.add(ExtraDelightItems.ROCKY_ROAD.get(), "Rocky Road");
 		this.add(ExtraDelightItems.COFFEE_CHERRY_CRATE.get(), "Coffee Cherry Crate");
-		this.add(ExtraDelightItems.GREEN_COFFEE_BEAN_SACK.get(), "Green Coffee Bean Sack");
+		this.add(ExtraDelightItems.GREEN_COFFEE_BEAN_SACK.get(), "Green Coffee Sack");
 		this.add(ExtraDelightItems.COFFEE_BEAN_SACK.get(), "Coffee Bean Sack");
 		this.add(ExtraDelightItems.GROUND_COFFEE_SACK.get(), "Ground Coffee Sack");
 		this.add(ExtraDelightItems.AFFOGATO.get(), "Affogato");

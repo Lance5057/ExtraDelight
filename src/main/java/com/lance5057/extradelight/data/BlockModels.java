@@ -682,8 +682,48 @@ public class BlockModels extends BlockStateProvider {
 				"crops/fruit/hazelnut/hazelnut_sapling");
 		pottedBlock(this, ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "apple_sapling",
 				"crops/fruit/apple/apple_sapling");
-		
+
 		fruitBowlStyleBlock(this, ExtraDelightBlocks.FRUIT_BOWL.get());
+
+		getVariantBuilder(ExtraDelightBlocks.APPLE_PETAL_LITTER.get()).forAllStates(state -> {
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.carpet("apple_petal_litter", modLoc("block/crops/fruit/apple/apple_leaves_budding"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(models()
+							.carpet("apple_petal_litter", modLoc("block/crops/fruit/apple/apple_leaves_budding"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(models()
+							.carpet("apple_petal_litter", modLoc("block/crops/fruit/apple/apple_leaves_budding"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(models()
+							.carpet("apple_petal_litter", modLoc("block/crops/fruit/apple/apple_leaves_budding"))
+							.renderType("cutout"))
+					.rotationY(270).build();
+		});
+
+		getVariantBuilder(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get()).forAllStates(state -> {
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.carpet("hazelnut_petal_litter", modLoc("block/crops/fruit/hazelnut/hazelnut_petals"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(models()
+							.carpet("hazelnut_petal_litter", modLoc("block/crops/fruit/hazelnut/hazelnut_petals"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(models()
+							.carpet("hazelnut_petal_litter", modLoc("block/crops/fruit/hazelnut/hazelnut_petals"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(models()
+							.carpet("hazelnut_petal_litter", modLoc("block/crops/fruit/hazelnut/hazelnut_petals"))
+							.renderType("cutout"))
+					.rotationY(270).build();
+		});
 
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);
@@ -745,7 +785,9 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder()
 					.modelFile(bsp.models()
 							.withExistingParent("baking_stone" + suffix.toLowerCase(), bsp.modLoc("block/baking_stone"))
-							.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase())))
+							.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+							.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
+
 					.build();
 		});
 	}
@@ -759,7 +801,8 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder()
 					.modelFile(bsp.models()
 							.withExistingParent("mixing_bowl" + suffix.toLowerCase(), bsp.modLoc("block/mixing_bowl"))
-							.texture("1", bsp.mcLoc("block/" + suffix.toLowerCase())))
+							.texture("1", bsp.mcLoc("block/" + suffix.toLowerCase()))
+							.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
 					.build();
 		});
 	}
@@ -773,7 +816,8 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder()
 					.modelFile(bsp.models()
 							.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
-							.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase())))
+							.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+							.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
 					.build();
 		});
 	}
@@ -787,7 +831,8 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder()
 					.modelFile(
 							bsp.models().withExistingParent("mortar" + suffix.toLowerCase(), bsp.modLoc("block/mortar"))
-									.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase())))
+									.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+									.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
 					.build();
 		});
 	}

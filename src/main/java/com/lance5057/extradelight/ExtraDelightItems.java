@@ -2955,6 +2955,14 @@ public class ExtraDelightItems {
 					.food(EDFoods.BUTTERED_TOAST)));
 	public static final DeferredItem<Item> DYNAMIC_JAM = ITEMS.register("dynamic_jam",
 			() -> new DynamicJam(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.JAM)));
+	
+	public static final DeferredItem<Item> HAZELNUT_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"hazelnut_petal_litter_item",
+			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get(), new Item.Properties()));
+	
+	public static final DeferredItem<Item> APPLE_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
+			"apple_petal_litter_item",
+			() -> new BlockItem(ExtraDelightBlocks.APPLE_PETAL_LITTER.get(), new Item.Properties()));
 
 	// Jams
 	public static final DeferredItem<Item> JAM = EDItemGenerator.register("jam", () -> new DeprecatedItem() {
