@@ -134,7 +134,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.egg_or_yolk", "Whole Egg or just Yolk");
 		this.add("tag.item.extradelight.frying_oil", "Frying Oil");
 		this.add("tag.item.extradelight.jelly", "Jelly");
+		this.add("tag.item.extradelight.jelly_ingredient", "Jelly Ingredients");
 		this.add("tag.item.extradelight.makes_stock", "Makes Stock");
+		this.add("tag.item.extradelight.marmalade_ingredient", "Marmalade Ingredients");
 		this.add("tag.item.extradelight.processed.apple", "Processed Apple");
 		this.add("tag.item.extradelight.processed.beetroot", "Processed Beetroot");
 		this.add("tag.item.extradelight.processed.cabbage", "Processed Cabbage");
@@ -157,6 +159,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.processed.tomato", "Processed Tomato");
 		this.add("tag.item.extradelight.processed.vegetable", "Processed Vegetables");
 		this.add("tag.item.extradelight.riceball_filling", "Riceball fillings");
+		this.add("tag.item.extradelight.sweetener", "Sweeteners");
 		this.add("tag.item.extradelight.toast_or_bread_slice", "Bread Slice, regardless of toasting status");
 		this.add("tag.item.extradelight.toast_topping", "Toast toppings");
 
@@ -1397,12 +1400,13 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
 		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "Dynamic Jam");
-		this.add("extradelight.dynamic.jam", "%1$s %2$s");
-		
 
 		this.add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "Potted Cinnamon Sapling");
 		this.add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "Potted Hazelnut Sapling");
 		this.add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "Potted Apple Sapling");
+
+		this.add(ExtraDelightBlocks.APPLE_PETAL_LITTER.get(), "Apple Petals");
+		this.add(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get(), "Hazelnut Petals");
 
 		this.add(ExtraDelightItems.JUICER.get(), "Juicer");
 		this.add(ExtraDelightItems.WHISK.get(), "Whisk");
@@ -1420,9 +1424,6 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jam.golden_apple", "Golden Apple Jam");
 		this.add("extradelight.jam.orange", "Orange Marmalade");
 		this.add("extradelight.jam.mint", "Mint Jelly");
-		this.add("extradelight.jam", "Jam");
-		this.add("extradelight.marmalade", "Marmalade");
-		this.add("extradelight.jelly", "Jelly");
 
 		this.add(ExtraDelight.MOD_ID + ".tooltip.deprecated", "This item is deprecated! Right-click to convert!");
 
