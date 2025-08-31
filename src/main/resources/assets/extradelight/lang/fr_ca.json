@@ -827,7 +827,7 @@
   "dynamic.jam": "Confiture dynamique",
   "dynamic.toast": "Tartine dynamique",
   "effect.extradelight.pickled": "Vinaigré !",
-
+  "effect.extradelight.pickled.description": "Chance d'annuler un tick de poison.",
   "effect.extradelight.sour_pucker": "Sûrette!",
   "effect.extradelight.sour_pucker.description": "Réduit votre champ de vision!",
   "effect.extradelight.sunshine": "Rayon de soleil",
@@ -984,7 +984,7 @@
   "extradelight.jei.info.vat.lid.off": "Couvercle retiré",
   "extradelight.jei.info.vat.lid.on": "Couvercle posé !",
   "extradelight.jei.info.vat.stage": "Étape : %d",
-
+  "extradelight.jei.info.yeast": "Utilisez une bouteille vide sur un pot de levure active pour le mettre en bouteille.",
   "extradelight.jei.juicer": "Presser",
   "extradelight.jei.meltingpot": "Fonte",
   "extradelight.jei.mixingbowl": "Mélange",
@@ -1777,9 +1777,9 @@
   "tag.item.extradelight.egg_or_yolk": "Jaune d'oeuf ou oeuf entier",
   "tag.item.extradelight.frying_oil": "Huile à friture",
   "tag.item.extradelight.jelly": "Gelée",
-
+  "tag.item.extradelight.jelly_ingredient": "Ingrédient pour gelée",
   "tag.item.extradelight.makes_stock": "Préparer du bouillon",
-
+  "tag.item.extradelight.marmalade_ingredient": "Ingrédient pour marmelade",
   "tag.item.extradelight.processed.apple": "Pomme préparée",
   "tag.item.extradelight.processed.beetroot": "Betterave préparée",
   "tag.item.extradelight.processed.cabbage": "Chou préparé",
@@ -1802,7 +1802,7 @@
   "tag.item.extradelight.processed.tomato": "Tomate préparée",
   "tag.item.extradelight.processed.vegetable": "Légume préparé",
   "tag.item.extradelight.riceball_filling": "Garniture à boule de riz",
-
+  "tag.item.extradelight.sweetener": "Édulcorant",
   "tag.item.extradelight.toast_or_bread_slice": "Tranche de pain, rôtie ou non",
   "tag.item.extradelight.toast_topping": "Garniture à tartine",
   "tooltip.dynamic.ingredients": "Ingrédients",

@@ -1,12 +1,5 @@
 {
   "values": [
-    "extradelight:sliced_grapefruit",
-    "extradelight:sliced_lemon",
-    "extradelight:sliced_lime",
-    "extradelight:sliced_orange",
-    "extradelight:grapefruit",
-    "extradelight:lemon",
-    "extradelight:lime",
-    "extradelight:orange"
+    "#extradelight:processed/citrus"
   ]
 }

@@ -5,6 +5,10 @@
     {
       "id": "#c:bread_slices",
       "required": false
+    },
+    {
+      "id": "#c:foods/bread_slice",
+      "required": false
     }
   ]
 }

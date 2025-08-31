@@ -1741,7 +1741,7 @@ public class SummerCitrus {
 		lp.add(EGG_WHITE_FLUID_BUCKET.get(), "Egg White Bucket");
 		lp.add("fluid_type.extradelight.egg_white_fluid", "Egg White");
 		lp.add("block.extradelight.egg_white_fluid_block", "Egg White");
-		lp.add(STIFF_PEAKS.get(), "Eggs White Beaten to Stiff Peaks");
+		lp.add(STIFF_PEAKS.get(), "Egg Whites Beaten to Stiff Peaks");
 
 		lp.add(MELON_CHUNKS.get(), "Melon Chunks");
 		lp.add(MELON_RIND.get(), "Melon Rind");
