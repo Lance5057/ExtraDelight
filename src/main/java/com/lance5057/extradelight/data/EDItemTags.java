@@ -11,6 +11,7 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.EDItemGenerator;
+import com.simibubi.create.AllItems;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -420,7 +421,7 @@ public class EDItemTags extends ItemTagsProvider {
 				SummerCitrus.LIME_SAPLING_ITEM.get(), SummerCitrus.ORANGE_SAPLING_ITEM.get(),
 				SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
 
-		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BAR.get());
+		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BAR.get()).addOptional(AllItems.BAR_OF_CHOCOLATE.getId());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR_FILLED).add(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BLOCK).add(ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_CHIPS).add(ExtraDelightItems.MILK_CHOCOLATE_CHIPS.get());

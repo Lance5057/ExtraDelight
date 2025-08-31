@@ -29,6 +29,7 @@ import com.lance5057.extradelight.recipe.FlourDoughRecipe;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.simibubi.create.AllFluids;
+import com.simibubi.create.AllItems;
 import com.simibubi.create.Create;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -217,9 +218,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.BAR_MOLD.toStack(),
 				new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250)).build(consumer);
 
-		ChillerRecipeBuilder
-				.chill(ExtraDelightItems.MILK_CHOCOLATE_BAR.toStack(), FAST_COOKING, SMALL_EXP,
-						ExtraDelightItems.BAR_MOLD.toStack(), new FluidStack(AllFluids.CHOCOLATE, 250))
+		ChillerRecipeBuilder.chill(AllItems.BAR_OF_CHOCOLATE.asStack(), FAST_COOKING, SMALL_EXP,
+				ExtraDelightItems.BAR_MOLD.toStack(), new FluidStack(AllFluids.CHOCOLATE.getSource().getSource(), 250))
 				.build(consumer.withConditions(new ModLoadedCondition("create")), "milk_chocolate_bar_create");
 
 		ChillerRecipeBuilder

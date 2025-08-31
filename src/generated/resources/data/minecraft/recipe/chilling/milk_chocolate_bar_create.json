@@ -15,11 +15,11 @@
   "experience": 0.35,
   "fluid": {
     "amount": 250,
-    "id": "create:flowing_chocolate"
+    "id": "create:chocolate"
   },
   "ingredients": [],
   "result": {
     "count": 1,
-    "id": "extradelight:milk_chocolate_bar"
+    "id": "create:bar_of_chocolate"
   }
 }
