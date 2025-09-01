@@ -74,7 +74,9 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.COOKING_OIL).add(ExtraDelightItems.COOKING_OIL.get()).addOptionalTag(CompatTags.COOKINGOIL)
 				.addOptionalTag(CompatTags.OLIVE_OILS);
+		tag(CompatTags.COOKINGOIL).add(ExtraDelightItems.COOKING_OIL.get());
 		tag(ExtraDelightTags.FRYING_OIL).add(ExtraDelightItems.COOKING_OIL.get()).addOptionalTag(CompatTags.FRYINGOIL);
+		tag(CompatTags.FRYINGOIL).add(ExtraDelightItems.COOKING_OIL.get());
 		tag(ExtraDelightTags.VINEGAR).add(ExtraDelightItems.VINEGAR.get());
 
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
@@ -82,6 +84,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(Tags.Items.SLIME_BALLS).add(ExtraDelightItems.SEAWEED_PASTE.get());
 
 		tag(ExtraDelightTags.FLOUR).add(ExtraDelightItems.FLOUR.get()).addOptionalTag(CompatTags.FLOURS_WHEAT);
+		tag(CompatTags.FLOURS_WHEAT).add(ExtraDelightItems.FLOUR.get());
 
 		tag(ExtraDelightTags.JAM_GLOW_BERRY).add(ExtraDelightItems.GLOW_BERRY_JAM.get());
 		tag(ExtraDelightTags.JAM_FRUIT).add(ExtraDelightItems.JAM.get());
@@ -89,13 +92,16 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.JAM_MINT).add(ExtraDelightItems.MINT_JELLY.get());
 
 		tag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_FRUIT).addTag(ExtraDelightTags.JAM_MINT);
-		tag(ExtraDelightTags.JAM).addTag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_GOLDEN_APPLE)
-				.addTag(ExtraDelightTags.JAM_GLOW_BERRY).addOptionalTag(CompatTags.JELLIES);
+		tag(ExtraDelightTags.JAM).add(ExtraDelightItems.DYNAMIC_JAM.get()).addTag(ExtraDelightTags.JAM_MUNDANE)
+				.addTag(ExtraDelightTags.JAM_GOLDEN_APPLE).addTag(ExtraDelightTags.JAM_GLOW_BERRY)
+				.addOptionalTag(CompatTags.JELLIES);
+		tag(CompatTags.JELLIES).add(ExtraDelightItems.DYNAMIC_JAM.get());
 
 		tag(ExtraDelightTags.MEAT_COOKED).add(Items.COOKED_BEEF).add(Items.COOKED_CHICKEN).add(Items.COOKED_MUTTON)
 				.add(Items.COOKED_PORKCHOP).add(Items.COOKED_RABBIT);
 		tag(ExtraDelightTags.MEAT_RAW).add(Items.BEEF).add(Items.CHICKEN).add(Items.MUTTON).add(Items.PORKCHOP)
 				.add(Items.RABBIT).addOptionalTag(CompatTags.RAWMEATS);
+		tag(CompatTags.RAWMEATS).addTag(ExtraDelightTags.MEAT_RAW);
 		tag(ExtraDelightTags.MEAT).addTag(ExtraDelightTags.MEAT_COOKED).addTag(ExtraDelightTags.MEAT_RAW);
 		tag(ExtraDelightTags.BEEF_COOKED).add(Items.COOKED_BEEF);
 		tag(ExtraDelightTags.BEEF_RAW).add(Items.BEEF);
@@ -103,17 +109,23 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.SWEETENER).add(Items.HONEY_BOTTLE).add(Items.SUGAR);
 		tag(ExtraDelightTags.MAYO).add(ExtraDelightItems.MAYO.get()).addOptionalTag(CompatTags.MAYONAISE);
+		tag(CompatTags.MAYONAISE).add(ExtraDelightItems.MAYO.get());
 		tag(ExtraDelightTags.KETCHUP).add(ExtraDelightItems.KETCHUP.get());
 		tag(ExtraDelightTags.BBQ_SAUCE).add(ExtraDelightItems.BBQ_SAUCE.get()).addOptionalTag(CompatTags.BBQSAUCE);
+		tag(CompatTags.BBQSAUCE).add(ExtraDelightItems.BBQ_SAUCE.get());
 
 		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
-		tag(CompatTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
 		tag(ExtraDelightTags.TOAST_OR_BREAD_SLICE).addTag(ExtraDelightTags.BREAD_SLICE).addTag(ExtraDelightTags.TOAST)
 				.addOptionalTag(CompatTags.BREAD_SLICES).addOptionalTag(CompatTags.BREAD_SLICE);
+		tag(CompatTags.BREAD_SLICES).add(ExtraDelightItems.BREAD_SLICE.get(), ExtraDelightItems.TOAST.get());
+		tag(CompatTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get(), ExtraDelightItems.TOAST.get());
 
 		tag(ExtraDelightTags.CHEESE).add(ExtraDelightItems.CHEESE.get()).addOptionalTag(CompatTags.FOODS_CHEESE)
 				.addOptionalTag(CompatTags.CHEESES).addOptionalTag(CompatTags.CHEESE_WEDGE);
+		tag(CompatTags.FOODS_CHEESE).add(ExtraDelightItems.CHEESE.get());
+		tag(CompatTags.CHEESES).add(ExtraDelightItems.CHEESE.get());
+		tag(CompatTags.CHEESE_WEDGE).add(ExtraDelightItems.CHEESE.get());
 		tag(ExtraDelightTags.GROUND_BEEF_RAW).add(ModItems.MINCED_BEEF.get()).addOptionalTag(CompatTags.GROUNDBEEF);
 		tag(ExtraDelightTags.GROUND_BEEF_COOKED).add(ModItems.BEEF_PATTY.get());
 		tag(ExtraDelightTags.GROUND_PORK_RAW).addOptionalTag(CompatTags.GROUNDPORK);
@@ -310,9 +322,12 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CORN_ON_COB).add(ExtraDelightItems.CORN_ON_COB.get());
 		tag(ExtraDelightTags.CORN_KERNELS).add(ExtraDelightItems.CORN_SEEDS.get());
 		tag(ExtraDelightTags.CORN_MEAL).add(ExtraDelightItems.CORN_MEAL.get()).addOptionalTag(CompatTags.CORNMEAL);
+		tag(CompatTags.CORNMEAL).add(ExtraDelightItems.CORN_MEAL.get());
 		tag(ExtraDelightTags.COOKED_CACTUS).add(ExtraDelightItems.COOKED_CACTUS.get());
 		tag(ExtraDelightTags.GROUND_CINNAMON).add(ExtraDelightItems.GROUND_CINNAMON.get())
 				.addOptionalTag(CompatTags.DUSTS_CINNAMON).addOptionalTag(CompatTags.GROUNDCINNAMON);
+		tag(CompatTags.DUSTS_CINNAMON).add(ExtraDelightItems.GROUND_CINNAMON.get());
+		tag(CompatTags.GROUNDCINNAMON).add(ExtraDelightItems.GROUND_CINNAMON.get());
 		tag(ExtraDelightTags.MINT).add(ExtraDelightItems.MINT.get());
 		tag(ExtraDelightTags.WHIPPED_CREAM).add(ExtraDelightItems.WHIPPED_CREAM.get());
 		tag(ExtraDelightTags.FISH_FLAKES).add(ExtraDelightItems.FISH_FLAKES.get());
@@ -322,6 +337,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.DRIED_FRUIT).add(ExtraDelightItems.DRIED_FRUIT.get());
 		tag(ExtraDelightTags.BREAD_CRUMBS).add(ExtraDelightItems.BREAD_CRUMBS.get());
 		tag(ExtraDelightTags.POPCORN).add(ExtraDelightItems.POPCORN.get()).addOptionalTag(CompatTags.FOODS_POPCORN);
+		tag(CompatTags.FOODS_POPCORN).add(ExtraDelightItems.POPCORN.get());
 		tag(ExtraDelightTags.CINNAMON_STICK).add(ExtraDelightItems.CINNAMON_STICK.get());
 
 		tag(ExtraDelightTags.SUGAR_COOKIE_DOUGH).add(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get());
@@ -501,6 +517,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.MARSHMALLOW_FLUFF).add(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get());
 		tag(ExtraDelightTags.NUT_BUTTER).add(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get())
 				.addOptionalTag(CompatTags.NUTBUTTERS);
+		tag(CompatTags.NUTBUTTERS).add(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get());
 		tag(ExtraDelightTags.CHOCOLATE_SYRUP).add(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(),
 				ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE.get(),
 				ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get(),
@@ -522,8 +539,7 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.SUGAR_COOKIE).addTag(ExtraDelightTags.GINGERBREAD_COOKIE);
 		tag(ExtraDelightTags.COFFEE_CHERRIES).add(ExtraDelightItems.COFFEE_CHERRIES.get());
 		tag(ExtraDelightTags.GROUND_COFFEE_BEANS).add(ExtraDelightItems.GROUND_COFFEE.get());
-		tag(ExtraDelightTags.GREEN_COFFEE).add(ExtraDelightItems.GREEN_COFFEE.get())
-				.addOptionalTag(CompatTags.CROPS_COFFEEBEAN).addOptionalTag(CompatTags.CROPS_COFFEE_BEANS);
+		tag(ExtraDelightTags.GREEN_COFFEE).add(ExtraDelightItems.GREEN_COFFEE.get());
 		tag(ExtraDelightTags.PEANUTS_IN_SHELL).add(ExtraDelightItems.PEANUTS_IN_SHELL.get());
 
 		tag(ExtraDelightTags.TEA_INGREDIENTS).addTag(ExtraDelightTags.MINT).addTag(ExtraDelightTags.PROCESSED_GINGER)
@@ -537,7 +553,10 @@ public class EDItemTags extends ItemTagsProvider {
 				.add(ExtraDelightItems.HONEY_ICE_CREAM.get()).add(ExtraDelightItems.MINT_CHIP_ICE_CREAM.get())
 				.add(ExtraDelightItems.PUMPKIN_ICE_CREAM.get()).add(ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get());
 
-		tag(ExtraDelightTags.ROASTED_COFFEE_BEANS).add(ExtraDelightItems.COFFEE_BEANS.get());
+		tag(ExtraDelightTags.ROASTED_COFFEE_BEANS).add(ExtraDelightItems.COFFEE_BEANS.get())
+				.addOptionalTag(CompatTags.CROPS_COFFEEBEAN).addOptionalTag(CompatTags.CROPS_COFFEE_BEANS);
+		tag(CompatTags.CROPS_COFFEEBEAN).add(ExtraDelightItems.COFFEE_BEANS.get());
+		tag(CompatTags.CROPS_COFFEE_BEANS).add(ExtraDelightItems.COFFEE_BEANS.get());
 		tag(ExtraDelightTags.MALLOWROOT).add(ExtraDelightItems.MALLOW_ROOT.get());
 		tag(ExtraDelightTags.MALLOWROOT_POWDER).add(ExtraDelightItems.MALLOW_POWDER.get());
 		tag(ExtraDelightTags.MARSHMALLOW).add(ExtraDelightItems.MARSHMALLOW.get());
@@ -547,6 +566,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.COFFEE).add(ExtraDelightItems.COFFEE.get());
 		tag(ExtraDelightTags.CHILI).add(ExtraDelightItems.CHILI.get()).addOptionalTag(CompatTags.CHILI_PEPPER)
 				.addOptionalTag(CompatTags.CHILIPEPPER).addOptionalTag(CompatTags.CHILE_PEPPER);
+		tag(CompatTags.CHILI_PEPPER).add(ExtraDelightItems.CHILI.get());
+		tag(CompatTags.CHILIPEPPER).add(ExtraDelightItems.CHILI.get());
+		tag(CompatTags.CHILE_PEPPER).add(ExtraDelightItems.CHILI.get());
 
 		tag(Tags.Items.CROPS).add(ExtraDelightItems.GINGER.get(), ExtraDelightItems.MINT.get(),
 				ExtraDelightItems.CHILI.get(), ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.PEANUTS.get(),
@@ -589,11 +611,13 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.AIOLI).add(ExtraDelightItems.AIOLI.get());
 
 		tag(ExtraDelightTags.SALT).add(Fermentation.SALT.get()).addOptionalTag(CompatTags.DUSTS_SALT);
+		tag(CompatTags.DUSTS_SALT).add(Fermentation.SALT.get());
 
 		tag(ExtraDelightTags.CUCUMBER).add(Fermentation.CUCUMBER.get());
 		tag(ExtraDelightTags.PROCESSED_CUCUMBER)
 				.add(Fermentation.CUCUMBER.get(), Fermentation.SLICED_CUCUMBER_ITEM.get())
 				.addOptionalTag(CompatTags.CUCUMBERS);
+		tag(CompatTags.CUCUMBERS).add(Fermentation.CUCUMBER.get());
 		tag(ExtraDelightTags.SOYBEAN).add(Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.PROCESSED_CABBAGE).add(Fermentation.SHREDDED_CABBAGE_ITEM.get())
@@ -627,9 +651,12 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PICKLE_JUICE).add(Fermentation.PICKLE_JUICE.get());
 		tag(ExtraDelightTags.SOY_SAUCE).add(Fermentation.SOY_SAUCE_ITEM.get()).addOptionalTag(CompatTags.SOYSAUCE)
 				.addOptionalTag(CompatTags.SOY_SAUCES);
+		tag(CompatTags.SOYSAUCE).add(Fermentation.SOY_SAUCE_ITEM.get());
+		tag(CompatTags.SOY_SAUCES).add(Fermentation.SOY_SAUCE_ITEM.get());
 		tag(ExtraDelightTags.SAUERKRAUT).add(Fermentation.SAUERKRAUT_ITEM.get());
 		tag(ExtraDelightTags.KIMCHI).add(Fermentation.KIMCHI_ITEM.get());
 		tag(ExtraDelightTags.HOT_SAUCE).add(Fermentation.HOT_SAUCE_ITEM.get()).addOptionalTag(CompatTags.HOTSAUCE);
+		tag(CompatTags.HOTSAUCE).add(Fermentation.HOT_SAUCE_ITEM.get());
 		tag(ExtraDelightTags.MISO_PASTE).add(Fermentation.MISO_PASTE_ITEM.get());
 		tag(ExtraDelightTags.NATTO).add(Fermentation.NATTO_ITEM.get());
 		tag(ExtraDelightTags.FISH_SAUCE).add(Fermentation.FISH_SAUCE_ITEM.get());
@@ -639,6 +666,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.COOKED_SOYBEANS).add(Fermentation.COOKED_SOYBEANS_ITEM.get());
 		tag(ExtraDelightTags.SOY_MILK).add(Fermentation.SOY_MILK.get()).addOptionalTag(CompatTags.SOYMILK)
 				.addOptionalTag(CompatTags.SOY_MILKS);
+		tag(CompatTags.SOYMILK).add(Fermentation.SOY_MILK.get());
+		tag(CompatTags.SOY_MILKS).add(Fermentation.SOY_MILK.get());
 		tag(ExtraDelightTags.YEAST_SPREAD).add(Fermentation.YEAST_SPREAD.get());
 		tag(ExtraDelightTags.SALAMI_MIX).add(Fermentation.SALAMI_MIX.get());
 		tag(ExtraDelightTags.COOKED_WHEAT_SEEDS).add(Fermentation.COOKED_WHEAT_SEEDS.get());
