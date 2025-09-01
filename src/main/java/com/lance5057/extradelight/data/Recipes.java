@@ -2342,7 +2342,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
-				.save(consumer.withConditions(FalseCondition.INSTANCE));
+				.save(consumer.withConditions(FalseCondition.INSTANCE), FarmersDelight.MODID + ":wheat_dough_from_water");
+		
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
+		.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+		.save(consumer.withConditions(FalseCondition.INSTANCE), FarmersDelight.MODID + ":wheat_dough_from_egg");
+
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.PIE_CRUST.get(), 1)
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
