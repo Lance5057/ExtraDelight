@@ -106,12 +106,11 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.KETCHUP).add(ExtraDelightItems.KETCHUP.get());
 		tag(ExtraDelightTags.BBQ_SAUCE).add(ExtraDelightItems.BBQ_SAUCE.get()).addOptionalTag(CompatTags.BBQSAUCE);
 
-		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get())
-				.addTag(CompatTags.BREAD_SLICE);
+		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
 		tag(CompatTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
 		tag(ExtraDelightTags.TOAST_OR_BREAD_SLICE).addTag(ExtraDelightTags.BREAD_SLICE).addTag(ExtraDelightTags.TOAST)
-				.addOptionalTag(CompatTags.BREAD_SLICES);
+				.addOptionalTag(CompatTags.BREAD_SLICES).addOptionalTag(CompatTags.BREAD_SLICE);
 
 		tag(ExtraDelightTags.CHEESE).add(ExtraDelightItems.CHEESE.get()).addOptionalTag(CompatTags.FOODS_CHEESE)
 				.addOptionalTag(CompatTags.CHEESES).addOptionalTag(CompatTags.CHEESE_WEDGE);
@@ -683,11 +682,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CAKE_SLICE).add(ModItems.CAKE_SLICE.get(), ExtraDelightItems.COFFEE_CAKE_SLICE.get(),
 				ExtraDelightItems.CHOCOLATE_CAKE.get(), SummerCitrus.LEMON_CUCUMBER_CAKE_SLICE.get(),
 				SummerCitrus.MELON_LAYER_CAKE_SLICE.get(), SummerCitrus.KYIV_CAKE_SLICE.get());
-		tag(ExtraDelightTags.IS_MARMALADE_INGREDIENT)
-				.add(SummerCitrus.SLICED_GRAPEFRUIT.get(), SummerCitrus.SLICED_LEMON.get(),
-						SummerCitrus.SLICED_LIME.get(), SummerCitrus.SLICED_ORANGE.get())
-				.add(SummerCitrus.GRAPEFRUIT.get(), SummerCitrus.LEMON.get(), SummerCitrus.LIME.get(),
-						SummerCitrus.ORANGE.get());
+		tag(ExtraDelightTags.IS_MARMALADE_INGREDIENT).addTag(ExtraDelightTags.PROCESSED_CITRUS);
 		tag(ExtraDelightTags.EGG_OR_YOLK).add(SummerCitrus.EGG_YOLK.get()).addTag(Tags.Items.EGGS);
 		tag(ExtraDelightTags.ICE_CUBES).add(SummerCitrus.ICE_CUBES.get());
 
