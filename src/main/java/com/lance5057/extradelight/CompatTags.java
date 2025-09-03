@@ -32,7 +32,7 @@ public class CompatTags {
 	public static final TagKey<Item> BREAD_SLICE = neoforgeItemTag("foods/bread_slice"); // For Some Assembly Required
 	// Chili
 	public static final TagKey<Item> CHILI_PEPPER = neoforgeItemTag("crops/chili_pepper"); // For Expanded Delight
-	public static final TagKey<Item> CHILIPEPPER = neoforgeItemTag("crops/chili_pepper"); // For PHC
+	public static final TagKey<Item> CHILIPEPPER = neoforgeItemTag("crops/chilipepper"); // For PHC
 	public static final TagKey<Item> CHILE_PEPPER = neoforgeItemTag("crops/chile_pepper"); // For Croptopia
 	// Cornmeal
 	public static final TagKey<Item> CORNMEAL = neoforgeItemTag("cornmeal"); // For PHC
