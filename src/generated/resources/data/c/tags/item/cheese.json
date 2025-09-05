@@ -12,6 +12,10 @@
     {
       "id": "#brewinandchewin:foods/cheese_wedge",
       "required": false
+    },
+    {
+      "id": "#pizzadelight:ingredients/cheese_layer",
+      "required": false
     }
   ]
 }

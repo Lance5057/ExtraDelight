@@ -27,6 +27,7 @@ public class CompatTags {
 	public static final TagKey<Item> FOODS_CHEESE = neoforgeItemTag("foods/cheese"); // For Expanded Delight
 	public static final TagKey<Item> CHEESES = neoforgeItemTag("cheeses"); // For Croptopia
 	public static final TagKey<Item> CHEESE_WEDGE = otherModItemTag("brewinandchewin", "foods/cheese_wedge");
+	public static final TagKey<Item> CHEESE_LAYER = otherModItemTag("pizzadelight", "ingredients/cheese_layer");
 	// Sliced Bread
 	public static final TagKey<Item> BREAD_SLICES = neoforgeItemTag("bread_slices"); // For More Delight
 	public static final TagKey<Item> BREAD_SLICE = neoforgeItemTag("foods/bread_slice"); // For Some Assembly Required

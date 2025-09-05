@@ -122,10 +122,12 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(CompatTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get(), ExtraDelightItems.TOAST.get());
 
 		tag(ExtraDelightTags.CHEESE).add(ExtraDelightItems.CHEESE.get()).addOptionalTag(CompatTags.FOODS_CHEESE)
-				.addOptionalTag(CompatTags.CHEESES).addOptionalTag(CompatTags.CHEESE_WEDGE);
+				.addOptionalTag(CompatTags.CHEESES).addOptionalTag(CompatTags.CHEESE_WEDGE)
+				.addOptionalTag(CompatTags.CHEESE_LAYER);
 		tag(CompatTags.FOODS_CHEESE).add(ExtraDelightItems.CHEESE.get());
 		tag(CompatTags.CHEESES).add(ExtraDelightItems.CHEESE.get());
 		tag(CompatTags.CHEESE_WEDGE).add(ExtraDelightItems.CHEESE.get());
+		tag(CompatTags.CHEESE_LAYER).add(ExtraDelightItems.CHEESE.get());
 		tag(ExtraDelightTags.GROUND_BEEF_RAW).add(ModItems.MINCED_BEEF.get()).addOptionalTag(CompatTags.GROUNDBEEF);
 		tag(ExtraDelightTags.GROUND_BEEF_COOKED).add(ModItems.BEEF_PATTY.get());
 		tag(ExtraDelightTags.GROUND_PORK_RAW).addOptionalTag(CompatTags.GROUNDPORK);
