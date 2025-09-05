@@ -81,4 +81,10 @@ public class CompatTags {
 	public static final TagKey<Item> SOY_MILKS = neoforgeItemTag("soy_milks");
 	// Processed Cucumber
 	public static final TagKey<Item> CUCUMBERS = otherModItemTag("culturaldelights", "cucumbers"); // contains sliced as well
+	// Processed Tomato
+	public static final TagKey<Item> TOMATO_LAYER = otherModItemTag("pizzadelight", "ingredients/vegetables/tomato_layer");
+	// Processed Onion
+	public static final TagKey<Item> ONION_LAYER = otherModItemTag("pizzadelight", "ingredients/vegetables/onion_layer");
+	// Misc
+	public static final TagKey<Item> SLICED_INGREDIENTS = otherModItemTag("pizzadelight", "sliced_ingredients");
 }

@@ -153,7 +153,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ModItems.NOODLE_SOUP.get(), ModItems.PUMPKIN_SOUP.get(), ModItems.VEGETABLE_SOUP.get());
 
 		tag(ExtraDelightTags.PROCESSED_ONION).add(ExtraDelightItems.SLICED_ONION.get())
-				.addOptionalTag(CommonTags.CROPS_ONION.location());
+				.addOptionalTag(CommonTags.CROPS_ONION.location()).addTag(CompatTags.ONION_LAYER);
+		tag(CompatTags.ONION_LAYER).add(ExtraDelightItems.SLICED_ONION.get());
 
 		tag(ExtraDelightTags.SLICED_ONION).add(ExtraDelightItems.SLICED_ONION.get());
 
@@ -169,8 +170,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.GRATED_CARROT).add(ExtraDelightItems.GRATED_CARROT.get());
 
 		tag(ExtraDelightTags.PROCESSED_TOMATO).add(ExtraDelightItems.SLICED_TOMATO.get())
-				.addOptionalTag(CommonTags.CROPS_TOMATO.location());
+				.addOptionalTag(CommonTags.CROPS_TOMATO.location()).addTag(CompatTags.TOMATO_LAYER);
 		tag(ExtraDelightTags.SLICED_TOMATO).add(ExtraDelightItems.SLICED_TOMATO.get());
+		tag(CompatTags.TOMATO_LAYER).add(ExtraDelightItems.SLICED_TOMATO.get());
 
 		tag(ExtraDelightTags.PROCESSED_APPLE).addTag(ExtraDelightTags.FRUIT_APPLE)
 				.add(ExtraDelightItems.SLICED_APPLE.get());
@@ -718,6 +720,10 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.ICE_CUBES).add(SummerCitrus.ICE_CUBES.get());
 
 		tag(ExtraDelightTags.IS_JELLY_INGREDIENT).add(ExtraDelightItems.MINT.get());
+
+		tag(CompatTags.SLICED_INGREDIENTS).add(ExtraDelightItems.SLICED_ONION.get(),
+				ExtraDelightItems.SLICED_TOMATO.get(), ExtraDelightItems.CHEESE.get(),
+				ExtraDelightItems.SLICED_CHILI.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(),
