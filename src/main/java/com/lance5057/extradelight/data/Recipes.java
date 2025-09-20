@@ -2345,6 +2345,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer.withConditions(FalseCondition.INSTANCE),
 						FarmersDelight.MODID + ":wheat_dough_from_water");
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MELON_POPSICLE.get(), 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE));
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
 				.save(consumer.withConditions(FalseCondition.INSTANCE), FarmersDelight.MODID + ":wheat_dough_from_egg");
@@ -2377,9 +2381,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
 				.save(consumer.withConditions(FalseCondition.INSTANCE));
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MELON_POPSICLE.get(), 1)
-				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
-				.save(consumer.withConditions(FalseCondition.INSTANCE));
+//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MELON_POPSICLE.get(), 1)
+//				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+//				.save(consumer.withConditions(FalseCondition.INSTANCE));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.ROAST_CHICKEN_BLOCK.get(), 1)
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
@@ -2654,36 +2658,36 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("quiche_slice"));
 
 		// Popsicles
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FUDGE_POPSICLE.get()).pattern(" cm")
-				.pattern("isc").pattern("Si ").define('m', CommonTags.FOODS_MILK)
-				.define('c', ExtraDelightTags.COCOA_POWDER).define('s', ExtraDelightTags.SWEETENER)
-				.define('S', Items.STICK).define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
-				.save(consumer, EDLoc("fudge_popsicle"));
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.HONEY_POPSICLE.get()).pattern(" cm")
-				.pattern("imc").pattern("Si ").define('m', CommonTags.FOODS_MILK).define('c', Items.HONEY_BOTTLE)
-				.define('S', Items.STICK).define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
-				.save(consumer, EDLoc("honey_popsicle"));
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.GLOW_BERRY_POPSICLE.get()).pattern(" gg")
-				.pattern("igg").pattern("Si ").define('g', Items.GLOW_BERRIES).define('S', Items.STICK)
-				.define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
-				.save(consumer, EDLoc("glow_berry_popsicle"));
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.SWEET_BERRY_POPSICLE.get()).pattern(" gg")
-				.pattern("igg").pattern("Si ").define('g', Items.SWEET_BERRIES).define('S', Items.STICK)
-				.define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
-				.save(consumer, EDLoc("sweet_berry_popsicle"));
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.APPLE_POPSICLE.get()).pattern(" gg")
-				.pattern("igg").pattern("Si ").define('g', ExtraDelightTags.PROCESSED_APPLE).define('S', Items.STICK)
-				.define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
-				.save(consumer, EDLoc("apple_popsicle"));
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.FUDGE_POPSICLE.get()).pattern(" cm")
+//				.pattern("isc").pattern("Si ").define('m', CommonTags.FOODS_MILK)
+//				.define('c', ExtraDelightTags.COCOA_POWDER).define('s', ExtraDelightTags.SWEETENER)
+//				.define('S', Items.STICK).define('i', Items.ICE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+//				.save(consumer, EDLoc("fudge_popsicle"));
+//
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.HONEY_POPSICLE.get()).pattern(" cm")
+//				.pattern("imc").pattern("Si ").define('m', CommonTags.FOODS_MILK).define('c', Items.HONEY_BOTTLE)
+//				.define('S', Items.STICK).define('i', Items.ICE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+//				.save(consumer, EDLoc("honey_popsicle"));
+//
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.GLOW_BERRY_POPSICLE.get()).pattern(" gg")
+//				.pattern("igg").pattern("Si ").define('g', Items.GLOW_BERRIES).define('S', Items.STICK)
+//				.define('i', Items.ICE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+//				.save(consumer, EDLoc("glow_berry_popsicle"));
+//
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.SWEET_BERRY_POPSICLE.get()).pattern(" gg")
+//				.pattern("igg").pattern("Si ").define('g', Items.SWEET_BERRIES).define('S', Items.STICK)
+//				.define('i', Items.ICE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+//				.save(consumer, EDLoc("sweet_berry_popsicle"));
+//
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.APPLE_POPSICLE.get()).pattern(" gg")
+//				.pattern("igg").pattern("Si ").define('g', ExtraDelightTags.PROCESSED_APPLE).define('S', Items.STICK)
+//				.define('i', Items.ICE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+//				.save(consumer, EDLoc("apple_popsicle"));
 
 		// Omelette
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.OMELETTE_MIX.get())
@@ -2916,12 +2920,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(Items.BOWL).unlockedBy(getName(), has(ExtraDelightTags.POPCORN))
 				.save(consumer, EDLoc("caramel_popcorn"));
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CARAMEL_POPSICLE.get()).pattern(" cm")
-				.pattern("isc").pattern("Si ").define('m', CommonTags.FOODS_MILK)
-				.define('c', ExtraDelightItems.CARAMEL_SAUCE.get()).define('s', ExtraDelightTags.SWEETENER)
-				.define('S', Items.STICK).define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
-				.save(consumer, EDLoc("caramel_popsicle"));
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CARAMEL_POPSICLE.get()).pattern(" cm")
+//				.pattern("isc").pattern("Si ").define('m', CommonTags.FOODS_MILK)
+//				.define('c', ExtraDelightItems.CARAMEL_SAUCE.get()).define('s', ExtraDelightTags.SWEETENER)
+//				.define('S', Items.STICK).define('i', Items.ICE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+//				.save(consumer, EDLoc("caramel_popsicle"));
 
 		bundleItem9(Ingredient.of(ExtraDelightTags.FLOUR), ExtraDelightItems.FLOUR_SACK.get(),
 				ExtraDelightItems.FLOUR.get(), consumer, "flour");
@@ -3017,12 +3021,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		bundleItem4(Ingredient.of(ExtraDelightItems.CANDY_CANE_RED.get()), ExtraDelightItems.CANDY_CANE_RED_BLOCK.get(),
 				ExtraDelightItems.CANDY_CANE_RED.get(), consumer, "mint_candy_cane_red");
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_POPSICLE.get()).pattern(" cm")
-				.pattern("isc").pattern("Si ").define('m', CommonTags.FOODS_MILK)
-				.define('c', ExtraDelightTags.GROUND_CINNAMON).define('s', ExtraDelightTags.SWEETENER)
-				.define('S', Items.STICK).define('i', Items.ICE)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
-				.save(consumer, EDLoc("cinnamon_popsicle"));
+//		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CINNAMON_POPSICLE.get()).pattern(" cm")
+//				.pattern("isc").pattern("Si ").define('m', CommonTags.FOODS_MILK)
+//				.define('c', ExtraDelightTags.GROUND_CINNAMON).define('s', ExtraDelightTags.SWEETENER)
+//				.define('S', Items.STICK).define('i', Items.ICE)
+//				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ICE))
+//				.save(consumer, EDLoc("cinnamon_popsicle"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CROQUE_MONSIEUR.get()).pattern("bfm")
 				.pattern("tct").pattern(" h ").define('m', CommonTags.FOODS_MILK).define('b', ExtraDelightTags.BUTTER)
