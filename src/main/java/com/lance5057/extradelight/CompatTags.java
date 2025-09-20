@@ -1,9 +1,11 @@
 package com.lance5057.extradelight;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class CompatTags {
 
@@ -13,10 +15,22 @@ public class CompatTags {
 	public static TagKey<Item> otherModItemTag(String othermod, String tag) {
 		return ItemTags.create(ResourceLocation.fromNamespaceAndPath(othermod, tag));
 	}
+	public static TagKey<Block> otherModBlockTag(String othermod, String tag) {
+		return BlockTags.create(ResourceLocation.fromNamespaceAndPath(othermod, tag));
+	}
 
 	// Tags for other mod compat
 	// Make items stand up on Create belts
 	public static final TagKey<Item> UPRIGHT_ON_BELT = otherModItemTag("create", "upright_on_belt");
+	// Seasonal crops
+	public static final TagKey<Item> SERENE_SEASONS_AUTUMN_CROPS = otherModItemTag("sereneseasons", "autumn_crops");
+	public static final TagKey<Block> SERENE_SEASONS_AUTUMN_CROPS_BLOCK = otherModBlockTag("sereneseasons", "autumn_crops");
+	public static final TagKey<Item> SERENE_SEASONS_SPRING_CROPS = otherModItemTag("sereneseasons", "spring_crops");
+	public static final TagKey<Block> SERENE_SEASONS_SPRING_CROPS_BLOCK = otherModBlockTag("sereneseasons", "spring_crops");
+	public static final TagKey<Item> SERENE_SEASONS_SUMMER_CROPS = otherModItemTag("sereneseasons", "summer_crops");
+	public static final TagKey<Block> SERENE_SEASONS_SUMMER_CROPS_BLOCK = otherModBlockTag("sereneseasons", "summer_crops");
+	public static final TagKey<Item> SERENE_SEASONS_WINTER_CROPS = otherModItemTag("sereneseasons", "winter_crops");
+	public static final TagKey<Block> SERENE_SEASONS_WINTER_CROPS_BLOCK = otherModBlockTag("sereneseasons", "winter_crops");
 
 	// Foods
 	// Flour

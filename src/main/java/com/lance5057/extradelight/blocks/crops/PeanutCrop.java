@@ -41,7 +41,7 @@ public class PeanutCrop extends CropBlock {
 	}
 
 	protected ItemLike getBaseSeedId() {
-		return ExtraDelightItems.PEANUTS_IN_SHELL.get();
+		return ExtraDelightItems.PEANUTS.get();
 	}
 
 	/**

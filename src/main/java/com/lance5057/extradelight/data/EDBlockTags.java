@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 
 import javax.annotation.Nullable;
 
+import com.lance5057.extradelight.CompatTags;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
@@ -313,6 +314,33 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(),
 				SummerCitrus.POTTED_LEMON_SAPLING.get(), SummerCitrus.POTTED_LIME_SAPLING.get(),
 				SummerCitrus.POTTED_ORANGE_SAPLING.get(), SummerCitrus.POTTED_GRAPEFRUIT_SAPLING.get());
+
+		// Serene Seasons
+		tag(CompatTags.SERENE_SEASONS_SUMMER_CROPS_BLOCK).add(ExtraDelightBlocks.CINNAMON_SAPLING.get(),
+				ExtraDelightBlocks.GINGER_CROP.get(), ExtraDelightBlocks.MINT_CROP.get(),
+				ExtraDelightBlocks.CORN_BOTTOM.get(), ExtraDelightBlocks.CORN_TOP.get(),
+				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.CHILI_CROP.get(),
+				ExtraDelightBlocks.PEANUT_CROP.get(), ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
+				ExtraDelightBlocks.COFFEE_BUSH.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
+				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get(),
+				SummerCitrus.LIME_SAPLING.get(), SummerCitrus.ORANGE_SAPLING.get(),
+				SummerCitrus.GRAPEFRUIT_SAPLING.get());
+		tag(CompatTags.SERENE_SEASONS_AUTUMN_CROPS_BLOCK).add(ExtraDelightBlocks.MINT_CROP.get(),
+				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.CHILI_CROP.get(),
+				ExtraDelightBlocks.PEANUT_CROP.get(), ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
+				ExtraDelightBlocks.COFFEE_BUSH.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
+				Fermentation.SOYBEAN_CROP.get(), SummerCitrus.LIME_SAPLING.get(),
+				SummerCitrus.ORANGE_SAPLING.get(), SummerCitrus.GRAPEFRUIT_SAPLING.get());
+		tag(CompatTags.SERENE_SEASONS_WINTER_CROPS_BLOCK).add(ExtraDelightBlocks.GARLIC_CROP.get(),
+				SummerCitrus.LEMON_SAPLING.get(), SummerCitrus.ORANGE_SAPLING.get(),
+				SummerCitrus.GRAPEFRUIT_SAPLING.get());
+		tag(CompatTags.SERENE_SEASONS_SPRING_CROPS_BLOCK).add(ExtraDelightBlocks.CINNAMON_SAPLING.get(),
+				ExtraDelightBlocks.GINGER_CROP.get(), ExtraDelightBlocks.MINT_CROP.get(),
+				ExtraDelightBlocks.CORN_BOTTOM.get(), ExtraDelightBlocks.CORN_TOP.get(),
+				ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
+				ExtraDelightBlocks.COFFEE_BUSH.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
+				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get(),
+				SummerCitrus.LEMON_SAPLING.get(), SummerCitrus.LIME_SAPLING.get());
 
 		// Dyed Tags
 		tag(Tags.Blocks.DYED_BLACK).add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(),

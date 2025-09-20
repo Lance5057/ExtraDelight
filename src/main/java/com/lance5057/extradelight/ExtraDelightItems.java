@@ -2466,9 +2466,10 @@ public class ExtraDelightItems {
 			() -> new Item(foodItem(EDFoods.CHILI)));
 
 	public static final DeferredItem<Item> PEANUTS_IN_SHELL = ITEMS.register("peanuts_in_shell",
-			() -> new ItemNameBlockItem(ExtraDelightBlocks.PEANUT_CROP.get(), new Item.Properties()));
+			() -> new Item(new Item.Properties()));
 	public static final DeferredItem<Item> PEANUTS = EDItemGenerator
-			.register("peanuts", () -> new Item(foodItem(EDFoods.NUTS))).advancementIngredients().finish();
+			.register("peanuts", () -> new ItemNameBlockItem(ExtraDelightBlocks.PEANUT_CROP.get(),
+					foodItem(EDFoods.NUTS))).advancementIngredients().finish();
 	public static final DeferredItem<Item> ROASTED_PEANUTS = EDItemGenerator
 			.register("roasted_peanuts", () -> new Item(foodItem(EDFoods.ROASTED_NUTS))).advancementIngredients()
 			.finish();

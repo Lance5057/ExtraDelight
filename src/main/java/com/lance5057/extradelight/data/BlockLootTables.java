@@ -343,7 +343,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.hasBlockStateProperties(ExtraDelightBlocks.PEANUT_CROP.get())
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PeanutCrop.AGE, 5));
 		crop(ExtraDelightBlocks.PEANUT_CROP.get(), ExtraDelightItems.PEANUTS_IN_SHELL.get(),
-				ExtraDelightItems.PEANUTS_IN_SHELL.get(), peanut);
+				ExtraDelightItems.PEANUTS.get(), peanut);
 		this.dropOther(ExtraDelightBlocks.WILD_PEANUT.get(), ExtraDelightItems.PEANUTS_IN_SHELL.get());
 
 		LootItemCondition.Builder chili = LootItemBlockStatePropertyCondition

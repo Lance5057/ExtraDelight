@@ -579,7 +579,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.GARLIC.get(), Fermentation.CUCUMBER.get(), Fermentation.SOYBEANS.get());
 		tag(Tags.Items.TOOLS).addTag(ExtraDelightTags.SPOONS).addTag(ExtraDelightTags.PESTLES);
 		tag(Tags.Items.SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
-				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
+				ExtraDelightItems.PEANUTS.get(), Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.CUSTARD).add(ExtraDelightItems.APPLE_CUSTARD.get(),
 				ExtraDelightItems.CARAMEL_CUSTARD.get(), ExtraDelightItems.CHOCOLATE_CUSTARD.get(),
@@ -683,7 +683,7 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(),
 				ExtraDelightItems.GINGER_CUTTING.get(), ExtraDelightItems.CHILI_SEEDS.get(),
-				ExtraDelightItems.PEANUTS_IN_SHELL.get(), ExtraDelightItems.MALLOW_ROOT.get(),
+				ExtraDelightItems.PEANUTS.get(), ExtraDelightItems.MALLOW_ROOT.get(),
 				ExtraDelightItems.GARLIC_CLOVE.get(), Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.TOAST_TOPPING).add(ExtraDelightItems.BUTTER.get(),
@@ -724,6 +724,32 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(CompatTags.SLICED_INGREDIENTS).add(ExtraDelightItems.SLICED_ONION.get(),
 				ExtraDelightItems.SLICED_TOMATO.get(), ExtraDelightItems.CHEESE.get(),
 				ExtraDelightItems.SLICED_CHILI.get());
+
+		// Serene Seasons
+		tag(CompatTags.SERENE_SEASONS_SUMMER_CROPS).add(ExtraDelightItems.CINNAMON_SAPLING.get(),
+				ExtraDelightItems.GINGER_CUTTING.get(), ExtraDelightItems.MINT.get(),
+				ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.MALLOW_ROOT.get(),
+				ExtraDelightItems.CHILI_SEEDS.get(), ExtraDelightItems.PEANUTS.get(),
+				ExtraDelightItems.HAZELNUT_SAPLING.get(), ExtraDelightItems.COFFEE_CHERRIES.get(),
+				ExtraDelightItems.APPLE_SAPLING.get(), ExtraDelightItems.GARLIC_CLOVE.get(),
+				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get(), SummerCitrus.LIME_SAPLING_ITEM.get(),
+				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
+		tag(CompatTags.SERENE_SEASONS_AUTUMN_CROPS).add(ExtraDelightItems.MINT.get(),
+				ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				ExtraDelightItems.PEANUTS.get(), ExtraDelightItems.HAZELNUT_SAPLING.get(),
+				ExtraDelightItems.COFFEE_CHERRIES.get(), ExtraDelightItems.APPLE_SAPLING.get(),
+				Fermentation.SOYBEANS.get(), SummerCitrus.LIME_SAPLING_ITEM.get(),
+				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
+		tag(CompatTags.SERENE_SEASONS_WINTER_CROPS).add(ExtraDelightItems.GARLIC_CLOVE.get(),
+				SummerCitrus.LEMON_SAPLING_ITEM.get(), SummerCitrus.ORANGE_SAPLING_ITEM.get(),
+				SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
+		tag(CompatTags.SERENE_SEASONS_SPRING_CROPS).add(ExtraDelightItems.CINNAMON_SAPLING.get(),
+				ExtraDelightItems.GINGER_CUTTING.get(), ExtraDelightItems.MINT.get(),
+				ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				ExtraDelightItems.HAZELNUT_SAPLING.get(), ExtraDelightItems.COFFEE_CHERRIES.get(),
+				ExtraDelightItems.APPLE_SAPLING.get(), ExtraDelightItems.GARLIC_CLOVE.get(),
+				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get(), SummerCitrus.LEMON_SAPLING_ITEM.get(),
+				SummerCitrus.LIME_SAPLING_ITEM.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(),
