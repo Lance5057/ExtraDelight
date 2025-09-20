@@ -2342,12 +2342,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
-				.save(consumer.withConditions(FalseCondition.INSTANCE), FarmersDelight.MODID + ":wheat_dough_from_water");
-		
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
-		.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
-		.save(consumer.withConditions(FalseCondition.INSTANCE), FarmersDelight.MODID + ":wheat_dough_from_egg");
+				.save(consumer.withConditions(FalseCondition.INSTANCE),
+						FarmersDelight.MODID + ":wheat_dough_from_water");
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.WHEAT_DOUGH.get(), 3)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE), FarmersDelight.MODID + ":wheat_dough_from_egg");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.STICK, 1)
+				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
+				.save(consumer.withConditions(FalseCondition.INSTANCE), "corn_delight:cutting/corn");
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.PIE_CRUST.get(), 1)
 				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
@@ -6161,6 +6165,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
 				.addIngredient(Items.POTATO).addIngredient(Items.POTATO).addIngredient(Items.POTATO)
 				.addIngredient(Items.POTATO).addIngredient(ExtraDelightTags.FAT).unlockedByAnyIngredient(Items.POTATO)
+				.addIngredient(Items.BOWL).addIngredient(Items.BOWL).addIngredient(Items.BOWL).addIngredient(Items.BOWL)
 				.build(consumer);
 
 		OvenRecipeBuilder

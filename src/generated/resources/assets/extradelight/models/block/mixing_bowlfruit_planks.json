@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/mixing_bowl",
+  "textures": {
+    "1": "extradelight:block/fruit_planks",
+    "particle": "extradelight:block/fruit_planks"
+  }
+}

@@ -798,12 +798,16 @@ public class BlockModels extends BlockStateProvider {
 
 			String suffix = MixingBowlBlock.Styles.values()[servings] + "";
 
-			return ConfiguredModel.builder()
-					.modelFile(bsp.models()
-							.withExistingParent("mixing_bowl" + suffix.toLowerCase(), bsp.modLoc("block/mixing_bowl"))
-							.texture("1", bsp.mcLoc("block/" + suffix.toLowerCase()))
-							.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
-					.build();
+			if (suffix.contentEquals("CINNAMON_PLANKS") || suffix.contentEquals("FRUIT_PLANKS")) {
+				return ConfiguredModel.builder().modelFile(bsp.models()
+						.withExistingParent("mixing_bowl" + suffix.toLowerCase(), bsp.modLoc("block/mixing_bowl"))
+						.texture("1", bsp.modLoc("block/" + suffix.toLowerCase()))
+						.texture("particle", bsp.modLoc("block/" + suffix.toLowerCase()))).build();
+			} else
+				return ConfiguredModel.builder().modelFile(bsp.models()
+						.withExistingParent("mixing_bowl" + suffix.toLowerCase(), bsp.modLoc("block/mixing_bowl"))
+						.texture("1", bsp.mcLoc("block/" + suffix.toLowerCase()))
+						.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase()))).build();
 		});
 	}
 
@@ -813,12 +817,23 @@ public class BlockModels extends BlockStateProvider {
 
 			String suffix = FruitBowlBlock.Styles.values()[servings] + "";
 
-			return ConfiguredModel.builder()
-					.modelFile(bsp.models()
-							.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
-							.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
-							.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
-					.build();
+			if (suffix.contentEquals("CINNAMON_PLANKS") || suffix.contentEquals("FRUIT_PLANKS")) {
+				return ConfiguredModel.builder().modelFile(bsp.models()
+						.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+						.texture("0", bsp.modLoc("block/" + suffix.toLowerCase()))
+						.texture("particle", bsp.modLoc("block/" + suffix.toLowerCase()))).build();
+			} else
+				return ConfiguredModel.builder().modelFile(bsp.models()
+						.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+						.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+						.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase()))).build();
+			
+//			return ConfiguredModel.builder()
+//					.modelFile(bsp.models()
+//							.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+//							.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+//							.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
+//					.build();
 		});
 	}
 

@@ -183,8 +183,7 @@ public class TapBlock extends Block implements EntityBlock {
 				return ItemInteractionResult.SUCCESS;
 			}
 		}
-		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-
+		return ItemInteractionResult.CONSUME;
 	}
 
 }

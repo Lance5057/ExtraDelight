@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/fruit_bowl",
+  "textures": {
+    "0": "extradelight:block/cinnamon_planks",
+    "particle": "extradelight:block/cinnamon_planks"
+  }
+}
