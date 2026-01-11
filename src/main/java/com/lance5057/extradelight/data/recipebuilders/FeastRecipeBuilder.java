@@ -73,26 +73,12 @@ public class FeastRecipeBuilder implements RecipeBuilder {
 
 	@Override
 	public void save(RecipeOutput output, ResourceLocation id) {
-//		ResourceLocation saveID = ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(), "dynamic_feast/" + pRecipeId.getPath());
-//		this.ensureValid(saveID);
-//		this.advancement.parent(ResourceLocation.fromNamespaceAndPath("recipes/root"))
-//				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(saveID))
-//				.rewards(AdvancementRewards.Builder.recipe(saveID)).requirements(RequirementsStrategy.OR);
-//		pFinishedRecipeConsumer.accept(new FeastRecipeBuilder.Result(saveID, this.group == null ? "" : this.group,
-//				this.ingredient, this.result, this.block, this.advancement,
-//				ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
-//						"recipes/" + result.getItemCategory().getRecipeFolderName() + "/"
-//								 + pRecipeId.getPath()),
-//				this.serializer));
-
 		ResourceLocation recipeId = id.withPrefix("feast/");
 		Advancement.Builder advancementBuilder = output.advancement()
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancementBuilder::addCriterion);
 
-//		public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab, NonNullList<Ingredient> inputItems,
-//				ItemStack output, ItemStack container, float experience, int cookTime) {
 		FeastRecipe recipe = new FeastRecipe(group, this.block, this.ingredient, this.result);
 		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/feast/")));
 	}

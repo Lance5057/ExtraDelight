@@ -8,7 +8,9 @@ import javax.annotation.Nonnull;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.FancyTank;
@@ -24,6 +26,7 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -33,6 +36,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.util.Lazy;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
@@ -51,6 +55,8 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 	public static final int LIQUID_IN_SLOT = 10;
 	public static final int LIQUID_OUT_SLOT = 11;
 	public static final int GHOST_SLOT = 12;
+	public static final int GHOST_UTENSIL_SLOT = 13;
+	public static final int INVENTORY_SIZE = GHOST_UTENSIL_SLOT + 1;
 
 	@Override
 	public int getFluidInSlot() {
@@ -122,7 +128,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 //	}
 
 	private ItemStackHandler createHandler() {
-		return new ItemStackHandler(GHOST_SLOT + 1) {
+		return new ItemStackHandler(INVENTORY_SIZE) {
 
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
@@ -138,6 +144,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 											.drain(250, IFluidHandler.FluidAction.SIMULATE)).getCraftingRemainingItem())
 							|| stack.is(Items.GLASS_BOTTLE);
 				case GHOST_SLOT:
+				case GHOST_UTENSIL_SLOT:
 					return false;
 				default:
 					return true;
@@ -146,7 +153,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 
 			@Override
 			protected void onContentsChanged(int slot) {
-				if (slot != GHOST_SLOT) {
+				if (slot != GHOST_SLOT && slot != GHOST_UTENSIL_SLOT) {
 					zeroProgress();
 					updateInventory();
 				}
@@ -212,9 +219,11 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 		if (recipe.isPresent()) {
 			this.curRecipe = recipe.get().value();
 			this.items.setStackInSlot(GHOST_SLOT, curRecipe.getResultItem(this.level.registryAccess()).copy());
+			this.items.setStackInSlot(GHOST_UTENSIL_SLOT, curRecipe.getUtensil().getItems()[level.random.nextInt(curRecipe.getUtensil().getItems().length)]);
 		} else {
 			this.curRecipe = null;
 			this.items.setStackInSlot(GHOST_SLOT, ItemStack.EMPTY.copy());
+			this.items.setStackInSlot(GHOST_UTENSIL_SLOT, ItemStack.EMPTY.copy());
 		}
 	}
 
@@ -258,8 +267,8 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 		}
 		this.getFluidTank().readFromNBT(registries, nbt);
 		this.stirs = nbt.getInt("stirs");
-		if (nbt.contains("usedItem"))
-			ItemStack.parse(registries, nbt.getCompound("usedItem")).ifPresent(i -> containerItem = i);
+		if (nbt.contains("container"))
+			ItemStack.parse(registries, nbt.getCompound("container")).ifPresent(i -> containerItem = i);
 		this.complete = nbt.getBoolean("complete");
 	}
 
@@ -270,7 +279,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 		tag.putInt("stirs", this.stirs);
 
 		if (!containerItem.isEmpty())
-			tag.put("usedItem", containerItem.saveOptional(registries));
+			tag.put("container", containerItem.saveOptional(registries));
 		tag.putBoolean("complete", this.complete);
 
 		return tag;
@@ -340,10 +349,10 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 
 	}
 
-	public InteractionResult mix(Player player) {
+	public InteractionResult mix(Player player, ItemStack utensil) {
 
 //		Optional<RecipeHolder<MixingBowlRecipe>> recipeOptional = matchRecipe();
-		if (curRecipe != null) {
+		if (curRecipe != null && curRecipe.getUtensil().test(utensil)) {
 //			MixingBowlRecipe recipe = recipeOptional.get().value();
 
 			if (this.stirs < curRecipe.getStirs()) {
@@ -360,7 +369,7 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 
 				level.playSound(player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
 			} else {
-				this.containerItem = curRecipe.getUsedItem().copy();
+				this.containerItem = curRecipe.getContainer().copy();
 
 				ItemStack i = curRecipe.getResultItem(player.level().registryAccess()).copy();
 				int k = i.getCount();
@@ -377,9 +386,10 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 				complete = true;
 			}
 			this.updateInventory();
+			return InteractionResult.SUCCESS;
+		} else {
+			return InteractionResult.FAIL;
 		}
-
-		return InteractionResult.SUCCESS;
 	}
 
 	private void removeFluids(List<SizedFluidIngredient> list) {
@@ -400,6 +410,18 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 					player, level, worldPosition);
 
 		}
+	}
+
+	public ItemInteractionResult handleEgg(Player pPlayer, ItemStack stack) {
+		if (this.getFluidTank().fill(new FluidStack(ExtraDelightFluids.EGG_WHITE.FLUID, 250),
+				FluidAction.SIMULATE) == 250) {
+			BlockEntityUtils.Inventory.givePlayerItemStack(new ItemStack(SummerCitrus.EGG_YOLK.get()), pPlayer, level,
+					worldPosition);
+			this.getFluidTank().fill(new FluidStack(ExtraDelightFluids.EGG_WHITE.FLUID, 250), FluidAction.EXECUTE);
+			stack.shrink(1);
+			return ItemInteractionResult.SUCCESS;
+		}
+		return ItemInteractionResult.CONSUME;
 	}
 
 }

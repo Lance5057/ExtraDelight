@@ -95,11 +95,13 @@ public class VatRecipeCategory implements IRecipeCategory<VatRecipe> {
 			float f = ((float) recipe.getStageIngredients().get(i).time / (float) Fermentation.dayTick);
 			DecimalFormat df = new DecimalFormat("##.##");
 			if (f > 1 || f < 1)
-				guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.days", df.format(f)), 0,
-						67 + (i * 31), 0xFFFFFFFF);
+				guiGraphics.drawString(fontRenderer,
+						Component.translatable("extradelight.jei.info.vat.days", df.format(f)), 0, 67 + (i * 31),
+						0xFFFFFFFF);
 			else
-				guiGraphics.drawString(fontRenderer, Component.translatable("extradelight.jei.info.vat.day", df.format(f)), 0,
-						67 + (i * 31), 0xFFFFFFFF);
+				guiGraphics.drawString(fontRenderer,
+						Component.translatable("extradelight.jei.info.vat.day", df.format(f)), 0, 67 + (i * 31),
+						0xFFFFFFFF);
 		}
 
 		finish.draw(guiGraphics, 0, 46 + (recipe.getStages() * 31));
@@ -123,16 +125,13 @@ public class VatRecipeCategory implements IRecipeCategory<VatRecipe> {
 				.setFluidRenderer(1000, false, 16, 34);
 
 		builder.addSlot(RecipeIngredientRole.CATALYST, 1, 10)
-				.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluid(recipe.getFluid().getFluids()[0]),
+				.addIngredients(Ingredient.of(
+						BottleFluidRegistry.getBottleFromFluidWithoutSize(recipe.getFluid().getFluids()[0].getFluid()),
 						new ItemStack(recipe.getFluid().getFluids()[0].getFluid().getBucket())));
 
 		for (int i = 0; i < recipe.getStages(); i++) {
 			builder.addSlot(RecipeIngredientRole.CATALYST, 58, 59 + i * 31)
 					.addIngredients(recipe.getStageIngredients().get(i).ingredient);
-
-//			if (recipe.getStageIngredients().get(i).lid)
-//				builder.addSlot(RecipeIngredientRole.INPUT, 84, 59 + i * 31)
-//						.addIngredients(Ingredient.of(ExtraDelightItems.LID.get()));
 		}
 
 		builder.addSlot(RecipeIngredientRole.INPUT, 84, (recipe.getStages() * 31) + 62)

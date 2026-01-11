@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "extradelight:chiller",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:bar_mold"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "id": "create:chocolate"
+  },
+  "ingredients": [],
+  "result": {
+    "count": 1,
+    "id": "create:bar_of_chocolate"
+  }
+}

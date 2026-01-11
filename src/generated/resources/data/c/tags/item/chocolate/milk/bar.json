@@ -1,5 +1,9 @@
 {
   "values": [
-    "extradelight:milk_chocolate_bar"
+    "extradelight:milk_chocolate_bar",
+    {
+      "id": "create:bar_of_chocolate",
+      "required": false
+    }
   ]
 }

@@ -16,5 +16,8 @@
     "count": 1,
     "id": "extradelight:hot_wings"
   },
-  "stirs": 2
+  "stirs": 2,
+  "utensil": {
+    "tag": "c:spoons"
+  }
 }

@@ -2,6 +2,10 @@
   "values": [
     "extradelight:cinnamon_leaves",
     "extradelight:hazelnut_leaves",
-    "extradelight:apple_leaves"
+    "extradelight:apple_leaves",
+    "extradelight:lemon_leaves",
+    "extradelight:lime_leaves",
+    "extradelight:orange_leaves",
+    "extradelight:grapefruit_leaves"
   ]
 }

@@ -106,6 +106,7 @@ public class EDItemGenerator {
 		public int hydration;
 		public int poison;
 		public boolean isHot;
+		public boolean isCold;
 
 		public Drink(DeferredItem<Item> item2) {
 			this.item = item2;
@@ -128,6 +129,11 @@ public class EDItemGenerator {
 
 		public Drink isHot(boolean hot) {
 			isHot = hot;
+			return this;
+		}
+		
+		public Drink isCold(boolean cold) {
+			isCold = cold;
 			return this;
 		}
 

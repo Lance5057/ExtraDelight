@@ -1,0 +1,8 @@
+{
+  "parent": "extradelight:block/wreath",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "extradelight:block/crops/fruit/lime/lime_leaves",
+    "particle": "extradelight:block/crops/fruit/lime/lime_leaves"
+  }
+}

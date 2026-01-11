@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lemonade_tray": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lemonade_tray_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/lemonade_tray_pull_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lemonade_tray"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/lemonade_tray_pull_feast"
+    ]
+  }
+}

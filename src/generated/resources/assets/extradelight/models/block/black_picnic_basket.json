@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/picnic_basket",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "2": "extradelight:block/gingham/black"
+  }
+}

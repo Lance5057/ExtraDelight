@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:bottle_fluid",
+  "bottle": {
+    "item": "extradelight:egg_white"
+  },
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:egg_white_fluid"
+  }
+}

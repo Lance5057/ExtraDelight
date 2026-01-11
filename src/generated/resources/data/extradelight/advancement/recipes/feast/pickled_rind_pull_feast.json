@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pickle_jar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_rinds_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/pickled_rind_pull_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pickle_jar"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/pickled_rind_pull_feast"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_limeade_tray": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:limeade_tray_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/limeade_tray_pull_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_limeade_tray"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/limeade_tray_pull_feast"
+    ]
+  }
+}

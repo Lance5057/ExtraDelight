@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "citrus_onion_salad_mixing": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:citrus_onion_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/citrus_onion_salad_mixing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "citrus_onion_salad_mixing"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/citrus_onion_salad_mixing"
+    ]
+  }
+}

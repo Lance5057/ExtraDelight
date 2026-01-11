@@ -1,6 +1,7 @@
 package com.lance5057.extradelight;
 
 import java.util.Map;
+import java.util.stream.Stream;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRenderer;
@@ -11,12 +12,15 @@ import com.lance5057.extradelight.blocks.funnel.FunnelRenderer;
 import com.lance5057.extradelight.blocks.jar.JarRenderer;
 import com.lance5057.extradelight.blocks.jardisplay.JarDisplayRenderer;
 import com.lance5057.extradelight.blocks.keg.KegRenderer;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketRenderer;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketScreen;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkRenderer;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayScreen;
+import com.lance5057.extradelight.displays.fruitbowl.FruitBowlRenderer;
 import com.lance5057.extradelight.displays.knife.KnifeBlockRenderer;
 import com.lance5057.extradelight.displays.knife.KnifeBlockScreen;
 import com.lance5057.extradelight.displays.spice.SpiceRackRenderer;
@@ -27,10 +31,13 @@ import com.lance5057.extradelight.gui.StyleableScreen;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.items.jar.JarItemModel;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
+import com.lance5057.extradelight.particles.PetalParticle;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorRenderer;
+import com.lance5057.extradelight.workstations.juicer.JuicerRenderer;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotScreen;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlRenderer;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlScreen;
@@ -56,12 +63,14 @@ import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
@@ -84,6 +93,7 @@ public class ExtraDelightClientEvents {
 		event.register(ExtraDelightContainers.MELTING_POT_MENU.get(), MeltingPotScreen::new);
 		event.register(ExtraDelightContainers.CHILLER_MENU.get(), ChillerScreen::new);
 		event.register(ExtraDelightContainers.VAT_MENU.get(), VatScreen::new);
+		event.register(ExtraDelightContainers.PICNIC_BASKET_MENU.get(), PicnicBasketScreen::new);
 	}
 
 	public static void setTERenderers() {
@@ -105,6 +115,52 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR.get(), JarRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.EVAPORATOR.get(), EvaporatorRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR_DISPLAY.get(), JarDisplayRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.JUICER.get(), JuicerRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.PICNIC_BASKET.get(), PicnicBasketRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.FRUIT_BOWL.get(), FruitBowlRenderer::new);
+	}
+
+	@SubscribeEvent
+	public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+		event.register(
+				(state, getter, pos, tintIndex) -> getter != null && pos != null
+						? BiomeColors.getAverageFoliageColor(getter, pos)
+						: FoliageColor.getDefaultColor(),
+				ExtraDelightBlocks.APPLE_LEAVES.get(), ExtraDelightBlocks.CINNAMON_LEAVES.get(),
+				ExtraDelightBlocks.HAZELNUT_LEAVES.get(), SummerCitrus.GRAPEFRUIT_LEAVES.get(),
+				SummerCitrus.LEMON_LEAVES.get(), SummerCitrus.LIME_LEAVES.get(), SummerCitrus.ORANGE_LEAVES.get());
+		event.register(
+				(state, getter, pos, tintIndex) -> getter != null && pos != null
+						? BiomeColors.getAverageFoliageColor(getter, pos)
+						: FoliageColor.getDefaultColor(),
+				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS.stream()
+						.filter(i -> !i.getId().toString().contains("cherry")
+								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
+								&& !i.getId().toString().contains("azalea")
+								&& !i.getId().toString().contains("cinnamon"))
+						.toList()));
+	}
+
+	@SubscribeEvent
+	public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+		event.register((state, tintIndex) -> FoliageColor.getDefaultColor(), ExtraDelightItems.APPLE_LEAVES.get(),
+				ExtraDelightItems.HAZELNUT_LEAVES.get(), SummerCitrus.GRAPEFRUIT_LEAVES_ITEM.get(),
+				SummerCitrus.LEMON_LEAVES_ITEM.get(), SummerCitrus.LIME_LEAVES_ITEM.get(),
+				SummerCitrus.ORANGE_LEAVES_ITEM.get());
+
+//		event.register((state, tintIndex) -> FoliageColor.getDefaultColor(),
+//				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS.stream()
+//						.filter(i -> !i.getId().toString().contains("cherry")
+//								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
+//								&& !i.getId().toString().contains("azalea")
+//								&& !i.getId().toString().contains("cinnamon"))
+//						.toList()));
+	}
+
+	@SubscribeEvent(priority = EventPriority.LOWEST)
+	public static void registerParticles(RegisterParticleProvidersEvent event) {
+		Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.CITRUS_PETALS.get(), PetalParticle.Factory::new);
+		Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.HAZELNUT_PETALS.get(), PetalParticle.Factory::new);
 	}
 
 	@SubscribeEvent
@@ -213,6 +269,11 @@ public class ExtraDelightClientEvents {
 		applyFluidRenderType(ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK.get());
 		applyFluidRenderType(ExtraDelightBlocks.TEA_FLUID_BLOCK.get());
 		applyFluidRenderType(Fermentation.PICKLE_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(SummerCitrus.LEMON_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(SummerCitrus.LIME_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(SummerCitrus.ORANGE_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(SummerCitrus.GRAPEFRUIT_JUICE_FLUID_BLOCK.get());
+		applyFluidRenderType(SummerCitrus.EGG_WHITE_FLUID_BLOCK.get());
 	}
 
 	public static void applyFluidRenderType(LiquidBlock liquid) {
@@ -222,19 +283,22 @@ public class ExtraDelightClientEvents {
 
 	@SubscribeEvent
 	public static void onRegisterRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.BOTTLE_FLUID_REGISTRY.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.CHILLER.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.DOUGH_SHAPING.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.DRYING_RACK.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.DYNAMIC_TOAST.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.EVAPORATOR.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.FEAST.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MELTING_POT.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MIXING_BOWL.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MORTAR.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.OVEN.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.SHAPED_JAR.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.TOOL_ON_BLOCK.get(), r-> RecipeBookCategories.UNKNOWN);
-		event.registerRecipeCategoryFinder(ExtraDelightRecipes.VAT.get(), r-> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.BOTTLE_FLUID_REGISTRY.get(),
+				r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.CHILLER.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.DOUGH_SHAPING.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.DRYING_RACK.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.DYNAMIC_TOAST.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.EVAPORATOR.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.FEAST.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MELTING_POT.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MIXING_BOWL.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.MORTAR.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.OVEN.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.SHAPED_JAR.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.TOOL_ON_BLOCK.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.VAT.get(), r -> RecipeBookCategories.UNKNOWN);
+		event.registerRecipeCategoryFinder(ExtraDelightRecipes.JUICER.get(), r -> RecipeBookCategories.UNKNOWN);
 	}
+
 }

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:melon_layer_cake_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:melon_layer_cake_from_slice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cake"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:melon_layer_cake_from_slice"
+    ]
+  }
+}

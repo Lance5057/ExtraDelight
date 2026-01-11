@@ -9,7 +9,9 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.EDItemGenerator;
+import com.simibubi.create.AllItems;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -17,6 +19,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -65,11 +68,15 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.FRUIT_MELON).add(Items.MELON_SLICE);
 
 		tag(ExtraDelightTags.FRUIT).addTag(ExtraDelightTags.FRUIT_APPLE).addTag(ExtraDelightTags.FRUIT_GLOW_BERRY)
-				.addTag(ExtraDelightTags.FRUIT_SWEET_BERRY).addTag(ExtraDelightTags.FRUIT_MELON);
+				.addTag(ExtraDelightTags.FRUIT_SWEET_BERRY).addTag(ExtraDelightTags.FRUIT_MELON).add(Items.CHORUS_FRUIT)
+				.add(SummerCitrus.LEMON.get(), SummerCitrus.LIME.get(), SummerCitrus.ORANGE.get(),
+						SummerCitrus.GRAPEFRUIT.get());
 
-		tag(ExtraDelightTags.COOKING_OIL).add(ExtraDelightItems.COOKING_OIL.get())
-				.addOptionalTag(CompatTags.COOKINGOIL).addOptionalTag(CompatTags.OLIVE_OILS);
+		tag(ExtraDelightTags.COOKING_OIL).add(ExtraDelightItems.COOKING_OIL.get()).addOptionalTag(CompatTags.COOKINGOIL)
+				.addOptionalTag(CompatTags.OLIVE_OILS);
+		tag(CompatTags.COOKINGOIL).add(ExtraDelightItems.COOKING_OIL.get());
 		tag(ExtraDelightTags.FRYING_OIL).add(ExtraDelightItems.COOKING_OIL.get()).addOptionalTag(CompatTags.FRYINGOIL);
+		tag(CompatTags.FRYINGOIL).add(ExtraDelightItems.COOKING_OIL.get());
 		tag(ExtraDelightTags.VINEGAR).add(ExtraDelightItems.VINEGAR.get());
 
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
@@ -77,6 +84,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(Tags.Items.SLIME_BALLS).add(ExtraDelightItems.SEAWEED_PASTE.get());
 
 		tag(ExtraDelightTags.FLOUR).add(ExtraDelightItems.FLOUR.get()).addOptionalTag(CompatTags.FLOURS_WHEAT);
+		tag(CompatTags.FLOURS_WHEAT).add(ExtraDelightItems.FLOUR.get());
 
 		tag(ExtraDelightTags.JAM_GLOW_BERRY).add(ExtraDelightItems.GLOW_BERRY_JAM.get());
 		tag(ExtraDelightTags.JAM_FRUIT).add(ExtraDelightItems.JAM.get());
@@ -84,13 +92,16 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.JAM_MINT).add(ExtraDelightItems.MINT_JELLY.get());
 
 		tag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_FRUIT).addTag(ExtraDelightTags.JAM_MINT);
-		tag(ExtraDelightTags.JAM).addTag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_GOLDEN_APPLE)
-				.addTag(ExtraDelightTags.JAM_GLOW_BERRY).addOptionalTag(CompatTags.JELLIES);
+		tag(ExtraDelightTags.JAM).add(ExtraDelightItems.DYNAMIC_JAM.get()).addTag(ExtraDelightTags.JAM_MUNDANE)
+				.addTag(ExtraDelightTags.JAM_GOLDEN_APPLE).addTag(ExtraDelightTags.JAM_GLOW_BERRY)
+				.addOptionalTag(CompatTags.JELLIES);
+		tag(CompatTags.JELLIES).add(ExtraDelightItems.DYNAMIC_JAM.get());
 
 		tag(ExtraDelightTags.MEAT_COOKED).add(Items.COOKED_BEEF).add(Items.COOKED_CHICKEN).add(Items.COOKED_MUTTON)
 				.add(Items.COOKED_PORKCHOP).add(Items.COOKED_RABBIT);
 		tag(ExtraDelightTags.MEAT_RAW).add(Items.BEEF).add(Items.CHICKEN).add(Items.MUTTON).add(Items.PORKCHOP)
 				.add(Items.RABBIT).addOptionalTag(CompatTags.RAWMEATS);
+		tag(CompatTags.RAWMEATS).addTag(ExtraDelightTags.MEAT_RAW);
 		tag(ExtraDelightTags.MEAT).addTag(ExtraDelightTags.MEAT_COOKED).addTag(ExtraDelightTags.MEAT_RAW);
 		tag(ExtraDelightTags.BEEF_COOKED).add(Items.COOKED_BEEF);
 		tag(ExtraDelightTags.BEEF_RAW).add(Items.BEEF);
@@ -98,16 +109,25 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.SWEETENER).add(Items.HONEY_BOTTLE).add(Items.SUGAR);
 		tag(ExtraDelightTags.MAYO).add(ExtraDelightItems.MAYO.get()).addOptionalTag(CompatTags.MAYONAISE);
+		tag(CompatTags.MAYONAISE).add(ExtraDelightItems.MAYO.get());
 		tag(ExtraDelightTags.KETCHUP).add(ExtraDelightItems.KETCHUP.get());
 		tag(ExtraDelightTags.BBQ_SAUCE).add(ExtraDelightItems.BBQ_SAUCE.get()).addOptionalTag(CompatTags.BBQSAUCE);
+		tag(CompatTags.BBQSAUCE).add(ExtraDelightItems.BBQ_SAUCE.get());
 
 		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
 		tag(ExtraDelightTags.TOAST_OR_BREAD_SLICE).addTag(ExtraDelightTags.BREAD_SLICE).addTag(ExtraDelightTags.TOAST)
-				.addOptionalTag(CompatTags.BREAD_SLICES);
+				.addOptionalTag(CompatTags.BREAD_SLICES).addOptionalTag(CompatTags.BREAD_SLICE);
+		tag(CompatTags.BREAD_SLICES).add(ExtraDelightItems.BREAD_SLICE.get(), ExtraDelightItems.TOAST.get());
+		tag(CompatTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get(), ExtraDelightItems.TOAST.get());
 
 		tag(ExtraDelightTags.CHEESE).add(ExtraDelightItems.CHEESE.get()).addOptionalTag(CompatTags.FOODS_CHEESE)
-				.addOptionalTag(CompatTags.CHEESES).addOptionalTag(CompatTags.CHEESE_WEDGE);
+				.addOptionalTag(CompatTags.CHEESES).addOptionalTag(CompatTags.CHEESE_WEDGE)
+				.addOptionalTag(CompatTags.CHEESE_LAYER);
+		tag(CompatTags.FOODS_CHEESE).add(ExtraDelightItems.CHEESE.get());
+		tag(CompatTags.CHEESES).add(ExtraDelightItems.CHEESE.get());
+		tag(CompatTags.CHEESE_WEDGE).add(ExtraDelightItems.CHEESE.get());
+		tag(CompatTags.CHEESE_LAYER).add(ExtraDelightItems.CHEESE.get());
 		tag(ExtraDelightTags.GROUND_BEEF_RAW).add(ModItems.MINCED_BEEF.get()).addOptionalTag(CompatTags.GROUNDBEEF);
 		tag(ExtraDelightTags.GROUND_BEEF_COOKED).add(ModItems.BEEF_PATTY.get());
 		tag(ExtraDelightTags.GROUND_PORK_RAW).addOptionalTag(CompatTags.GROUNDPORK);
@@ -133,7 +153,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ModItems.NOODLE_SOUP.get(), ModItems.PUMPKIN_SOUP.get(), ModItems.VEGETABLE_SOUP.get());
 
 		tag(ExtraDelightTags.PROCESSED_ONION).add(ExtraDelightItems.SLICED_ONION.get())
-				.addOptionalTag(CommonTags.CROPS_ONION.location());
+				.addOptionalTag(CommonTags.CROPS_ONION.location()).addTag(CompatTags.ONION_LAYER);
+		tag(CompatTags.ONION_LAYER).add(ExtraDelightItems.SLICED_ONION.get());
 
 		tag(ExtraDelightTags.SLICED_ONION).add(ExtraDelightItems.SLICED_ONION.get());
 
@@ -149,8 +170,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.GRATED_CARROT).add(ExtraDelightItems.GRATED_CARROT.get());
 
 		tag(ExtraDelightTags.PROCESSED_TOMATO).add(ExtraDelightItems.SLICED_TOMATO.get())
-				.addOptionalTag(CommonTags.CROPS_TOMATO.location());
+				.addOptionalTag(CommonTags.CROPS_TOMATO.location()).addTag(CompatTags.TOMATO_LAYER);
 		tag(ExtraDelightTags.SLICED_TOMATO).add(ExtraDelightItems.SLICED_TOMATO.get());
+		tag(CompatTags.TOMATO_LAYER).add(ExtraDelightItems.SLICED_TOMATO.get());
 
 		tag(ExtraDelightTags.PROCESSED_APPLE).addTag(ExtraDelightTags.FRUIT_APPLE)
 				.add(ExtraDelightItems.SLICED_APPLE.get());
@@ -162,8 +184,9 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.PROCESSED_CABBAGE).addTag(ExtraDelightTags.PROCESSED_BEETROOT)
 				.addTag(ExtraDelightTags.PROCESSED_CUCUMBER);
 
-		tag(ExtraDelightTags.PROCESSED_FRUIT).addTag(ExtraDelightTags.PROCESSED_APPLE).add(Items.SWEET_BERRIES,
-				Items.GLOW_BERRIES, Items.MELON_SLICE);
+		tag(ExtraDelightTags.PROCESSED_FRUIT).addTag(ExtraDelightTags.PROCESSED_APPLE)
+				.add(Items.SWEET_BERRIES, Items.GLOW_BERRIES).addTag(ExtraDelightTags.PROCESSED_MELON)
+				.addTag(ExtraDelightTags.PROCESSED_CITRUS);
 		tag(ExtraDelightTags.PROCESSED_PRODUCE).addTag(ExtraDelightTags.PROCESSED_FRUIT)
 				.addTag(ExtraDelightTags.PROCESSED_VEG);
 
@@ -209,7 +232,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.CARAMEL_CANDY.get(), ExtraDelightItems.MINT_CANDY_BLUE.get(),
 				ExtraDelightItems.MINT_CANDY_GREEN.get(), ExtraDelightItems.MINT_CANDY_RED.get(),
 				ExtraDelightItems.CANDY_CANE_BLUE.get(), ExtraDelightItems.CANDY_CANE_RED.get(),
-				ExtraDelightItems.CANDY_CANE_GREEN.get(), ExtraDelightItems.CANDIED_GINGER.get());
+				ExtraDelightItems.CANDY_CANE_GREEN.get(), ExtraDelightItems.CANDIED_GINGER.get(),
+				SummerCitrus.CANDIED_CITRUS_ZEST.get());
 
 		tag(ExtraDelightTags.CANDY_BOWL_VALID).addTag(ExtraDelightTags.CANDY);
 		tag(ExtraDelightTags.CHOCOLATE_BOX_VALID).addTag(ExtraDelightTags.CANDY).addTag(ExtraDelightTags.CHOCOLATE_BAR)
@@ -302,9 +326,12 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CORN_ON_COB).add(ExtraDelightItems.CORN_ON_COB.get());
 		tag(ExtraDelightTags.CORN_KERNELS).add(ExtraDelightItems.CORN_SEEDS.get());
 		tag(ExtraDelightTags.CORN_MEAL).add(ExtraDelightItems.CORN_MEAL.get()).addOptionalTag(CompatTags.CORNMEAL);
+		tag(CompatTags.CORNMEAL).add(ExtraDelightItems.CORN_MEAL.get());
 		tag(ExtraDelightTags.COOKED_CACTUS).add(ExtraDelightItems.COOKED_CACTUS.get());
 		tag(ExtraDelightTags.GROUND_CINNAMON).add(ExtraDelightItems.GROUND_CINNAMON.get())
 				.addOptionalTag(CompatTags.DUSTS_CINNAMON).addOptionalTag(CompatTags.GROUNDCINNAMON);
+		tag(CompatTags.DUSTS_CINNAMON).add(ExtraDelightItems.GROUND_CINNAMON.get());
+		tag(CompatTags.GROUNDCINNAMON).add(ExtraDelightItems.GROUND_CINNAMON.get());
 		tag(ExtraDelightTags.MINT).add(ExtraDelightItems.MINT.get());
 		tag(ExtraDelightTags.WHIPPED_CREAM).add(ExtraDelightItems.WHIPPED_CREAM.get());
 		tag(ExtraDelightTags.FISH_FLAKES).add(ExtraDelightItems.FISH_FLAKES.get());
@@ -313,8 +340,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CROUTONS).add(ExtraDelightItems.CROUTONS.get());
 		tag(ExtraDelightTags.DRIED_FRUIT).add(ExtraDelightItems.DRIED_FRUIT.get());
 		tag(ExtraDelightTags.BREAD_CRUMBS).add(ExtraDelightItems.BREAD_CRUMBS.get());
-		tag(ExtraDelightTags.POPCORN).add(ExtraDelightItems.POPCORN.get())
-				.addOptionalTag(CompatTags.FOODS_POPCORN);
+		tag(ExtraDelightTags.POPCORN).add(ExtraDelightItems.POPCORN.get()).addOptionalTag(CompatTags.FOODS_POPCORN);
+		tag(CompatTags.FOODS_POPCORN).add(ExtraDelightItems.POPCORN.get());
 		tag(ExtraDelightTags.CINNAMON_STICK).add(ExtraDelightItems.CINNAMON_STICK.get());
 
 		tag(ExtraDelightTags.SUGAR_COOKIE_DOUGH).add(ExtraDelightItems.SUGAR_COOKIE_DOUGH.get());
@@ -409,9 +436,11 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.WHITE_CHOCOLATE_DOOR.get());
 		tag(ItemTags.WOODEN_DOORS).add(ExtraDelightItems.CINNAMON_DOOR.get(), ExtraDelightItems.FRUIT_DOOR.get());
 		tag(ItemTags.SAPLINGS).add(ExtraDelightItems.CINNAMON_SAPLING.get(), ExtraDelightItems.HAZELNUT_SAPLING.get(),
-				ExtraDelightItems.APPLE_SAPLING.get());
+				ExtraDelightItems.APPLE_SAPLING.get(), SummerCitrus.LEMON_SAPLING_ITEM.get(),
+				SummerCitrus.LIME_SAPLING_ITEM.get(), SummerCitrus.ORANGE_SAPLING_ITEM.get(),
+				SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
 
-		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BAR.get());
+		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BAR.get()).addOptional(AllItems.BAR_OF_CHOCOLATE.getId());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR_FILLED).add(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BLOCK).add(ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_CHIPS).add(ExtraDelightItems.MILK_CHOCOLATE_CHIPS.get());
@@ -477,7 +506,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.DRIED_CHILI).add(ExtraDelightItems.DRIED_CHILI.get());
 
 		tag(ExtraDelightTags.CHOCOLATE_BAR_FILLING).addTag(ExtraDelightTags.NUTS).addTag(ExtraDelightTags.ROASTED_NUTS)
-				.addTag(ExtraDelightTags.FRUIT).addTag(ExtraDelightTags.CHOCOLATE_CHIPS)
+				.addTag(ExtraDelightTags.PROCESSED_FRUIT).addTag(ExtraDelightTags.CHOCOLATE_CHIPS)
 				.addTag(ExtraDelightTags.PUFFED_RICE).addTag(ExtraDelightTags.CORN_FLAKES)
 				.addTag(ExtraDelightTags.CHILI_POWDER).addTag(ExtraDelightTags.TOFFEE).addTag(ExtraDelightTags.GUMMIES)
 				.addTag(ExtraDelightTags.PEANUT_BRITTLE).addTag(ExtraDelightTags.TRAIL_MIX)
@@ -492,6 +521,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.MARSHMALLOW_FLUFF).add(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get());
 		tag(ExtraDelightTags.NUT_BUTTER).add(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get())
 				.addOptionalTag(CompatTags.NUTBUTTERS);
+		tag(CompatTags.NUTBUTTERS).add(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get());
 		tag(ExtraDelightTags.CHOCOLATE_SYRUP).add(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(),
 				ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE.get(),
 				ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get(),
@@ -513,8 +543,7 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.SUGAR_COOKIE).addTag(ExtraDelightTags.GINGERBREAD_COOKIE);
 		tag(ExtraDelightTags.COFFEE_CHERRIES).add(ExtraDelightItems.COFFEE_CHERRIES.get());
 		tag(ExtraDelightTags.GROUND_COFFEE_BEANS).add(ExtraDelightItems.GROUND_COFFEE.get());
-		tag(ExtraDelightTags.GREEN_COFFEE).add(ExtraDelightItems.GREEN_COFFEE.get())
-				.addOptionalTag(CompatTags.CROPS_COFFEEBEAN).addOptionalTag(CompatTags.CROPS_COFFEE_BEANS);
+		tag(ExtraDelightTags.GREEN_COFFEE).add(ExtraDelightItems.GREEN_COFFEE.get());
 		tag(ExtraDelightTags.PEANUTS_IN_SHELL).add(ExtraDelightItems.PEANUTS_IN_SHELL.get());
 
 		tag(ExtraDelightTags.TEA_INGREDIENTS).addTag(ExtraDelightTags.MINT).addTag(ExtraDelightTags.PROCESSED_GINGER)
@@ -528,7 +557,10 @@ public class EDItemTags extends ItemTagsProvider {
 				.add(ExtraDelightItems.HONEY_ICE_CREAM.get()).add(ExtraDelightItems.MINT_CHIP_ICE_CREAM.get())
 				.add(ExtraDelightItems.PUMPKIN_ICE_CREAM.get()).add(ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get());
 
-		tag(ExtraDelightTags.ROASTED_COFFEE_BEANS).add(ExtraDelightItems.COFFEE_BEANS.get());
+		tag(ExtraDelightTags.ROASTED_COFFEE_BEANS).add(ExtraDelightItems.COFFEE_BEANS.get())
+				.addOptionalTag(CompatTags.CROPS_COFFEEBEAN).addOptionalTag(CompatTags.CROPS_COFFEE_BEANS);
+		tag(CompatTags.CROPS_COFFEEBEAN).add(ExtraDelightItems.COFFEE_BEANS.get());
+		tag(CompatTags.CROPS_COFFEE_BEANS).add(ExtraDelightItems.COFFEE_BEANS.get());
 		tag(ExtraDelightTags.MALLOWROOT).add(ExtraDelightItems.MALLOW_ROOT.get());
 		tag(ExtraDelightTags.MALLOWROOT_POWDER).add(ExtraDelightItems.MALLOW_POWDER.get());
 		tag(ExtraDelightTags.MARSHMALLOW).add(ExtraDelightItems.MARSHMALLOW.get());
@@ -538,13 +570,16 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.COFFEE).add(ExtraDelightItems.COFFEE.get());
 		tag(ExtraDelightTags.CHILI).add(ExtraDelightItems.CHILI.get()).addOptionalTag(CompatTags.CHILI_PEPPER)
 				.addOptionalTag(CompatTags.CHILIPEPPER).addOptionalTag(CompatTags.CHILE_PEPPER);
+		tag(CompatTags.CHILI_PEPPER).add(ExtraDelightItems.CHILI.get());
+		tag(CompatTags.CHILIPEPPER).add(ExtraDelightItems.CHILI.get());
+		tag(CompatTags.CHILE_PEPPER).add(ExtraDelightItems.CHILI.get());
 
 		tag(Tags.Items.CROPS).add(ExtraDelightItems.GINGER.get(), ExtraDelightItems.MINT.get(),
 				ExtraDelightItems.CHILI.get(), ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.PEANUTS.get(),
 				ExtraDelightItems.GARLIC.get(), Fermentation.CUCUMBER.get(), Fermentation.SOYBEANS.get());
 		tag(Tags.Items.TOOLS).addTag(ExtraDelightTags.SPOONS).addTag(ExtraDelightTags.PESTLES);
 		tag(Tags.Items.SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
-				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
+				ExtraDelightItems.PEANUTS.get(), Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.CUSTARD).add(ExtraDelightItems.APPLE_CUSTARD.get(),
 				ExtraDelightItems.CARAMEL_CUSTARD.get(), ExtraDelightItems.CHOCOLATE_CUSTARD.get(),
@@ -580,10 +615,13 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.AIOLI).add(ExtraDelightItems.AIOLI.get());
 
 		tag(ExtraDelightTags.SALT).add(Fermentation.SALT.get()).addOptionalTag(CompatTags.DUSTS_SALT);
+		tag(CompatTags.DUSTS_SALT).add(Fermentation.SALT.get());
 
 		tag(ExtraDelightTags.CUCUMBER).add(Fermentation.CUCUMBER.get());
-		tag(ExtraDelightTags.PROCESSED_CUCUMBER).add(Fermentation.CUCUMBER.get(),
-				Fermentation.SLICED_CUCUMBER_ITEM.get()).addOptionalTag(CompatTags.CUCUMBERS);
+		tag(ExtraDelightTags.PROCESSED_CUCUMBER)
+				.add(Fermentation.CUCUMBER.get(), Fermentation.SLICED_CUCUMBER_ITEM.get())
+				.addOptionalTag(CompatTags.CUCUMBERS);
+		tag(CompatTags.CUCUMBERS).add(Fermentation.CUCUMBER.get());
 		tag(ExtraDelightTags.SOYBEAN).add(Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.PROCESSED_CABBAGE).add(Fermentation.SHREDDED_CABBAGE_ITEM.get())
@@ -617,9 +655,12 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PICKLE_JUICE).add(Fermentation.PICKLE_JUICE.get());
 		tag(ExtraDelightTags.SOY_SAUCE).add(Fermentation.SOY_SAUCE_ITEM.get()).addOptionalTag(CompatTags.SOYSAUCE)
 				.addOptionalTag(CompatTags.SOY_SAUCES);
+		tag(CompatTags.SOYSAUCE).add(Fermentation.SOY_SAUCE_ITEM.get());
+		tag(CompatTags.SOY_SAUCES).add(Fermentation.SOY_SAUCE_ITEM.get());
 		tag(ExtraDelightTags.SAUERKRAUT).add(Fermentation.SAUERKRAUT_ITEM.get());
 		tag(ExtraDelightTags.KIMCHI).add(Fermentation.KIMCHI_ITEM.get());
 		tag(ExtraDelightTags.HOT_SAUCE).add(Fermentation.HOT_SAUCE_ITEM.get()).addOptionalTag(CompatTags.HOTSAUCE);
+		tag(CompatTags.HOTSAUCE).add(Fermentation.HOT_SAUCE_ITEM.get());
 		tag(ExtraDelightTags.MISO_PASTE).add(Fermentation.MISO_PASTE_ITEM.get());
 		tag(ExtraDelightTags.NATTO).add(Fermentation.NATTO_ITEM.get());
 		tag(ExtraDelightTags.FISH_SAUCE).add(Fermentation.FISH_SAUCE_ITEM.get());
@@ -629,6 +670,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.COOKED_SOYBEANS).add(Fermentation.COOKED_SOYBEANS_ITEM.get());
 		tag(ExtraDelightTags.SOY_MILK).add(Fermentation.SOY_MILK.get()).addOptionalTag(CompatTags.SOYMILK)
 				.addOptionalTag(CompatTags.SOY_MILKS);
+		tag(CompatTags.SOYMILK).add(Fermentation.SOY_MILK.get());
+		tag(CompatTags.SOY_MILKS).add(Fermentation.SOY_MILK.get());
 		tag(ExtraDelightTags.YEAST_SPREAD).add(Fermentation.YEAST_SPREAD.get());
 		tag(ExtraDelightTags.SALAMI_MIX).add(Fermentation.SALAMI_MIX.get());
 		tag(ExtraDelightTags.COOKED_WHEAT_SEEDS).add(Fermentation.COOKED_WHEAT_SEEDS.get());
@@ -636,40 +679,179 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI.get(),
 				Fermentation.CUCUMBER.get());
 
+		tag(CommonTags.FOODS_MILK).add(Fermentation.SOY_MILK.get());
+
 		tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(),
 				ExtraDelightItems.GINGER_CUTTING.get(), ExtraDelightItems.CHILI_SEEDS.get(),
-				ExtraDelightItems.PEANUTS_IN_SHELL.get(), ExtraDelightItems.MALLOW_ROOT.get(),
+				ExtraDelightItems.PEANUTS.get(), ExtraDelightItems.MALLOW_ROOT.get(),
 				ExtraDelightItems.GARLIC_CLOVE.get(), Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.TOAST_TOPPING).add(ExtraDelightItems.BUTTER.get(),
 				ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get(), ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get(),
 				ExtraDelightItems.JAM.get(), ExtraDelightItems.GLOW_BERRY_JAM.get(),
 				ExtraDelightItems.GOLDEN_APPLE_JAM.get(), ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(),
-				Fermentation.YEAST_SPREAD.get());
+				Fermentation.YEAST_SPREAD.get(), ExtraDelightItems.DYNAMIC_JAM.get());
 
 		tag(ExtraDelightTags.DOUGH).addOptionalTag(CommonTags.FOODS_DOUGH).addOptionalTag(CompatTags.DOUGHS);
 		tag(ExtraDelightTags.BROTH).add(ModItems.BONE_BROTH.get()).addOptionalTag(CompatTags.STOCK);
+		tag(ExtraDelightTags.RAW_PASTA).addOptionalTag(CommonTags.FOODS_PASTA);
+
+		tag(ExtraDelightTags.LEMON).add(SummerCitrus.LEMON.get());
+		tag(ExtraDelightTags.LIME).add(SummerCitrus.LIME.get());
+		tag(ExtraDelightTags.ORANGE).add(SummerCitrus.ORANGE.get());
+		tag(ExtraDelightTags.GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get());
+
+		tag(ExtraDelightTags.PROCESSED_LEMON).add(SummerCitrus.LEMON.get(), SummerCitrus.SLICED_LEMON.get());
+		tag(ExtraDelightTags.PROCESSED_LIME).add(SummerCitrus.LIME.get(), SummerCitrus.SLICED_LIME.get());
+		tag(ExtraDelightTags.PROCESSED_ORANGE).add(SummerCitrus.ORANGE.get(), SummerCitrus.SLICED_ORANGE.get());
+		tag(ExtraDelightTags.PROCESSED_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get(),
+				SummerCitrus.SLICED_GRAPEFRUIT.get());
+		tag(ExtraDelightTags.PROCESSED_CITRUS).addTag(ExtraDelightTags.PROCESSED_LEMON)
+				.addTag(ExtraDelightTags.PROCESSED_LIME).addTag(ExtraDelightTags.PROCESSED_ORANGE)
+				.addTag(ExtraDelightTags.PROCESSED_GRAPEFRUIT);
+		tag(ExtraDelightTags.PROCESSED_MELON).add(Items.MELON_SLICE, SummerCitrus.MELON_CHUNKS.get());
+		tag(ExtraDelightTags.CHILLING_ITEMS).add(Items.BLUE_ICE, Items.PACKED_ICE, Items.ICE, Items.SNOW_BLOCK,
+				Items.SNOWBALL, SummerCitrus.ICE_CUBES.get());
+		tag(ExtraDelightTags.CAKE_SLICE).add(ModItems.CAKE_SLICE.get(), ExtraDelightItems.COFFEE_CAKE_SLICE.get(),
+				ExtraDelightItems.CHOCOLATE_CAKE.get(), SummerCitrus.LEMON_CUCUMBER_CAKE_SLICE.get(),
+				SummerCitrus.MELON_LAYER_CAKE_SLICE.get(), SummerCitrus.KYIV_CAKE_SLICE.get());
+		tag(ExtraDelightTags.IS_MARMALADE_INGREDIENT).addTag(ExtraDelightTags.PROCESSED_CITRUS);
+		tag(ExtraDelightTags.EGG_OR_YOLK).add(SummerCitrus.EGG_YOLK.get()).addTag(Tags.Items.EGGS);
+		tag(ExtraDelightTags.ICE_CUBES).add(SummerCitrus.ICE_CUBES.get());
+
+		tag(ExtraDelightTags.IS_JELLY_INGREDIENT).add(ExtraDelightItems.MINT.get());
+
+		tag(CompatTags.SLICED_INGREDIENTS).add(ExtraDelightItems.SLICED_ONION.get(),
+				ExtraDelightItems.SLICED_TOMATO.get(), ExtraDelightItems.CHEESE.get(),
+				ExtraDelightItems.SLICED_CHILI.get());
+
+		// Serene Seasons
+		tag(CompatTags.SERENE_SEASONS_SUMMER_CROPS).add(ExtraDelightItems.CINNAMON_SAPLING.get(),
+				ExtraDelightItems.GINGER_CUTTING.get(), ExtraDelightItems.MINT.get(),
+				ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.MALLOW_ROOT.get(),
+				ExtraDelightItems.CHILI_SEEDS.get(), ExtraDelightItems.PEANUTS.get(),
+				ExtraDelightItems.HAZELNUT_SAPLING.get(), ExtraDelightItems.COFFEE_CHERRIES.get(),
+				ExtraDelightItems.APPLE_SAPLING.get(), ExtraDelightItems.GARLIC_CLOVE.get(),
+				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get(), SummerCitrus.LIME_SAPLING_ITEM.get(),
+				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
+		tag(CompatTags.SERENE_SEASONS_AUTUMN_CROPS).add(ExtraDelightItems.MINT.get(),
+				ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				ExtraDelightItems.PEANUTS.get(), ExtraDelightItems.HAZELNUT_SAPLING.get(),
+				ExtraDelightItems.COFFEE_CHERRIES.get(), ExtraDelightItems.APPLE_SAPLING.get(),
+				Fermentation.SOYBEANS.get(), SummerCitrus.LIME_SAPLING_ITEM.get(),
+				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
+		tag(CompatTags.SERENE_SEASONS_WINTER_CROPS).add(ExtraDelightItems.GARLIC_CLOVE.get(),
+				SummerCitrus.LEMON_SAPLING_ITEM.get(), SummerCitrus.ORANGE_SAPLING_ITEM.get(),
+				SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
+		tag(CompatTags.SERENE_SEASONS_SPRING_CROPS).add(ExtraDelightItems.CINNAMON_SAPLING.get(),
+				ExtraDelightItems.GINGER_CUTTING.get(), ExtraDelightItems.MINT.get(),
+				ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				ExtraDelightItems.HAZELNUT_SAPLING.get(), ExtraDelightItems.COFFEE_CHERRIES.get(),
+				ExtraDelightItems.APPLE_SAPLING.get(), ExtraDelightItems.GARLIC_CLOVE.get(),
+				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get(), SummerCitrus.LEMON_SAPLING_ITEM.get(),
+				SummerCitrus.LIME_SAPLING_ITEM.get());
 
 		// Dyed Tags
-		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_BLUE).add(ExtraDelightItems.BLUE_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_BROWN).add(ExtraDelightItems.BROWN_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_CYAN).add(ExtraDelightItems.CYAN_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_GRAY).add(ExtraDelightItems.GRAY_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_GREEN).add(ExtraDelightItems.GREEN_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_LIGHT_BLUE).add(ExtraDelightItems.LIGHT_BLUE_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_LIGHT_GRAY).add(ExtraDelightItems.LIGHT_GRAY_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_LIME).add(ExtraDelightItems.LIME_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_MAGENTA).add(ExtraDelightItems.MAGENTA_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_ORANGE).add(ExtraDelightItems.ORANGE_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_PINK).add(ExtraDelightItems.PINK_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_PURPLE).add(ExtraDelightItems.PURPLE_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_RED).add(ExtraDelightItems.RED_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_WHITE).add(ExtraDelightItems.WHITE_CHOCOLATE_BOX.get());
-		tag(Tags.Items.DYED_YELLOW).add(ExtraDelightItems.YELLOW_CHOCOLATE_BOX.get());
+		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.BLACK.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.BLACK.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.BLACK.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.BLACK.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.BLACK.getId()).get());
+		tag(Tags.Items.DYED_BLUE).add(ExtraDelightItems.BLUE_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.BLUE.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.BLUE.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.BLUE.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.BLUE.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.BLUE.getId()).get());
+		tag(Tags.Items.DYED_BROWN).add(ExtraDelightItems.BROWN_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.BROWN.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.BROWN.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.BROWN.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.BROWN.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.BROWN.getId()).get());
+		tag(Tags.Items.DYED_CYAN).add(ExtraDelightItems.CYAN_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.CYAN.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.CYAN.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.CYAN.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.CYAN.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.CYAN.getId()).get());
+		tag(Tags.Items.DYED_GRAY).add(ExtraDelightItems.GRAY_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.GRAY.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.GRAY.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.GRAY.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.GRAY.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.GRAY.getId()).get());
+		tag(Tags.Items.DYED_GREEN).add(ExtraDelightItems.GREEN_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.GREEN.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.GREEN.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.GREEN.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.GREEN.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.GREEN.getId()).get());
+		tag(Tags.Items.DYED_LIGHT_BLUE).add(ExtraDelightItems.LIGHT_BLUE_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.LIGHT_BLUE.getId()).get());
+		tag(Tags.Items.DYED_LIGHT_GRAY).add(ExtraDelightItems.LIGHT_GRAY_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.LIGHT_GRAY.getId()).get());
+		tag(Tags.Items.DYED_LIME).add(ExtraDelightItems.LIME_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.LIME.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.LIME.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.LIME.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.LIME.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.LIME.getId()).get());
+		tag(Tags.Items.DYED_MAGENTA).add(ExtraDelightItems.MAGENTA_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.MAGENTA.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.MAGENTA.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.MAGENTA.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.MAGENTA.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.MAGENTA.getId()).get());
+		tag(Tags.Items.DYED_ORANGE).add(ExtraDelightItems.ORANGE_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.ORANGE.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.ORANGE.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.ORANGE.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.ORANGE.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.ORANGE.getId()).get());
+		tag(Tags.Items.DYED_PINK).add(ExtraDelightItems.PINK_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.PINK.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.PINK.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.PINK.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.PINK.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.PINK.getId()).get());
+		tag(Tags.Items.DYED_PURPLE).add(ExtraDelightItems.PURPLE_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.PURPLE.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.PURPLE.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.PURPLE.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.PURPLE.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.PURPLE.getId()).get());
+		tag(Tags.Items.DYED_RED).add(ExtraDelightItems.RED_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.RED.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.RED.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.RED.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.RED.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.RED.getId()).get());
+		tag(Tags.Items.DYED_WHITE).add(ExtraDelightItems.WHITE_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.WHITE.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.WHITE.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.WHITE.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.WHITE.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.WHITE.getId()).get());
+		tag(Tags.Items.DYED_YELLOW).add(ExtraDelightItems.YELLOW_CHOCOLATE_BOX.get(),
+				AestheticBlocks.GINGHAM_CARPET_ITEMS.get(DyeColor.YELLOW.getId()).get(),
+				AestheticBlocks.GINGHAM_ITEMS.get(DyeColor.YELLOW.getId()).get(),
+				AestheticBlocks.MOLDED_WALLPAPER_ITEMS.get(DyeColor.YELLOW.getId()).get(),
+				AestheticBlocks.WALLPAPER_ITEMS.get(DyeColor.YELLOW.getId()).get(),
+				AestheticBlocks.BOW_ITEMS.get(DyeColor.YELLOW.getId()).get());
 
 		// Storage Blocks
-		tag(Tags.Items.STORAGE_BLOCKS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR)
+		tag(Tags.Items.STORAGE_BLOCKS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHEESE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BUTTER).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_MEAL)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SUGAR)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_ON_COB)
@@ -716,9 +898,13 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_KERNELS)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GARLIC)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CUCUMBER)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SOYBEANS)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SOYBEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LEMON).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LIME)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ORANGE)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT);
 
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHEESE).add(ExtraDelightItems.CHEESE_BLOCK_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BUTTER).add(ExtraDelightItems.BUTTER_BLOCK_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_FLOUR).add(ExtraDelightItems.FLOUR_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CORN_MEAL).add(ExtraDelightItems.CORNMEAL_SACK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SUGAR).add(ExtraDelightItems.SUGAR_SACK.get());
@@ -774,114 +960,123 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CUCUMBER).add(Fermentation.CUCUMBER_CRATE_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SOYBEANS).add(Fermentation.SOYBEAN_SACK_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT).add(Fermentation.SALT_BLOCK_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LEMON).add(SummerCitrus.LEMON_CRATE_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LIME).add(SummerCitrus.LIME_CRATE_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ORANGE).add(SummerCitrus.ORANGE_CRATE_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT_CRATE_ITEM.get());
 
 		tag(CompatTags.UPRIGHT_ON_BELT).add(ExtraDelightItems.COOKING_OIL.get(), ExtraDelightItems.VINEGAR.get(),
-						ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.GRAVY.get(),
-						ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.YEAST.get(),
-						ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.GLOW_BERRY_JUICE.get(),
-						ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.SWEET_BERRY_JUICE.get(),
-						ExtraDelightItems.TOMATO_JUICE.get(), ExtraDelightItems.CACTUS_JUICE.get(),
-						ExtraDelightItems.SEAWEED_SALAD.get(), ExtraDelightItems.WHIPPED_CREAM.get(),
-						ExtraDelightItems.EGG_MIX.get(), ExtraDelightItems.SCRAMBLED_EGGS.get(),
-						ExtraDelightItems.OMELETTE_MIX.get(), ExtraDelightItems.EGG_SALAD.get(),
-						ExtraDelightItems.FURIKAKE.get(), ExtraDelightItems.CURRY_POWDER.get(),
-						ExtraDelightItems.JAM.get(), ExtraDelightItems.GLOW_BERRY_JAM.get(),
-						ExtraDelightItems.GOLDEN_APPLE_JAM.get(), ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get(),
-						ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get(), ExtraDelightItems.CHEESECAKE_ITEM.get(),
-						ExtraDelightItems.HONEY_CHEESECAKE_ITEM.get(), ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get(),
-						ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get(), ExtraDelightItems.APPLE_CHEESECAKE_ITEM.get(),
-						ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM.get(), ExtraDelightItems.QUICHE.get(),
-						ExtraDelightItems.CARROT_SALAD.get(), ExtraDelightItems.APPLE_SAUCE.get(),
-						ExtraDelightItems.POTATO_SOUP.get(), ExtraDelightItems.TOMATO_SOUP.get(),
-						ExtraDelightItems.FISH_SOUP.get(), ExtraDelightItems.CARROT_SOUP.get(),
-						ExtraDelightItems.SALISBURY_STEAK.get(), ExtraDelightItems.MASHED_POTATO_GRAVY.get(),
-						ExtraDelightItems.PORK_STEW.get(), ExtraDelightItems.LAMB_STEW.get(),
-						ExtraDelightItems.CHICKEN_STEW.get(), ExtraDelightItems.CURRY.get(),
-						ExtraDelightItems.BEEF_STEW_RICE.get(), ExtraDelightItems.PORK_STEW_RICE.get(),
-						ExtraDelightItems.LAMB_STEW_RICE.get(), ExtraDelightItems.RABBIT_STEW_RICE.get(),
-						ExtraDelightItems.CHICKEN_STEW_RICE.get(), ExtraDelightItems.FISH_STEW_RICE.get(),
-						ExtraDelightItems.CURRY_RICE.get(), ExtraDelightItems.LIVER_ONIONS.get(),
-						ExtraDelightItems.OXTAIL_SOUP.get(), ExtraDelightItems.HASH.get(),
-						ExtraDelightItems.POT_ROAST.get(), ExtraDelightItems.MEAT_LOAF.get(),
-						ExtraDelightItems.BBQ_RIBS.get(), ExtraDelightItems.RACK_LAMB.get(),
-						ExtraDelightItems.STIRFRY.get(), ExtraDelightItems.BEEF_WELLINGTON.get(),
-						ExtraDelightItems.HAGGIS.get(), ExtraDelightItems.JELLY_WHITE.get(),
-						ExtraDelightItems.JELLY_ORANGE.get(), ExtraDelightItems.JELLY_MAGENTA.get(),
-						ExtraDelightItems.JELLY_LIGHT_BLUE.get(), ExtraDelightItems.JELLY_YELLOW.get(),
-						ExtraDelightItems.JELLY_LIME.get(), ExtraDelightItems.JELLY_PINK.get(),
-						ExtraDelightItems.JELLY_GREY.get(), ExtraDelightItems.JELLY_LIGHT_GREY.get(),
-						ExtraDelightItems.JELLY_CYAN.get(), ExtraDelightItems.JELLY_PURPLE.get(),
-						ExtraDelightItems.JELLY_BLUE.get(), ExtraDelightItems.JELLY_BROWN.get(),
-						ExtraDelightItems.JELLY_GREEN.get(), ExtraDelightItems.JELLY_RED.get(),
-						ExtraDelightItems.JELLY_BLACK.get(), ExtraDelightItems.BREADING_MISANPLAS.get(),
-						ExtraDelightItems.MACARONI_CHEESE.get(), ExtraDelightItems.LASAGNA.get(),
-						ExtraDelightItems.HOTDISH.get(), ExtraDelightItems.FURIKAKE_RICE.get(),
-						ExtraDelightItems.FISH_FLAKES.get(), ExtraDelightItems.MUSHROOM_RISOTTO.get(),
-						ExtraDelightItems.SALAD.get(), ExtraDelightItems.ALFREDO_SAUCE.get(),
-						ExtraDelightItems.PASTA_TOMATO.get(), ExtraDelightItems.PASTA_ALFREDO.get(),
-						ExtraDelightItems.CHICKEN_ALFREDO.get(), ExtraDelightItems.FISH_SALAD.get(),
-						ExtraDelightItems.COOKED_PASTA.get(), ExtraDelightItems.BUTTERED_PASTA.get(),
-						ExtraDelightItems.BAD_FOOD.get(), ExtraDelightItems.CACTUS_EGGS.get(),
-						ExtraDelightItems.CACTUS_SOUP.get(), ExtraDelightItems.CACTUS_SALAD.get(),
-						ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get(), ExtraDelightItems.TEA.get(),
-						ExtraDelightItems.STEWED_APPLES.get(), ExtraDelightItems.APPLE_FRITTERS.get(),
-						ExtraDelightItems.CARAMEL_POPCORN.get(), ExtraDelightItems.CORNBREAD.get(),
-						ExtraDelightItems.CARAMEL_SAUCE.get(), ExtraDelightItems.PUMPKIN_PIE_ITEM.get(),
-						ExtraDelightItems.CORN_PUDDING.get(), ExtraDelightItems.APPLE_CRISP.get(),
-						ExtraDelightItems.STUFFING.get(), ExtraDelightItems.POTATO_AU_GRATIN.get(),
-						ExtraDelightItems.ICE_CREAM.get(), ExtraDelightItems.CHOCOLATE_ICE_CREAM.get(),
-						ExtraDelightItems.GLOW_BERRY_ICE_CREAM.get(), ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get(),
-						ExtraDelightItems.PUMPKIN_ICE_CREAM.get(), ExtraDelightItems.HONEY_ICE_CREAM.get(),
-						ExtraDelightItems.APPLE_ICE_CREAM.get(), ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM.get(),
-						ExtraDelightItems.MINT_CHIP_ICE_CREAM.get(), ExtraDelightItems.FRENCH_TOAST.get(),
-						ExtraDelightItems.MILKSHAKE.get(), ExtraDelightItems.CHOCOLATE_MILKSHAKE.get(),
-						ExtraDelightItems.GLOW_BERRY_MILKSHAKE.get(), ExtraDelightItems.SWEET_BERRY_MILKSHAKE.get(),
-						ExtraDelightItems.PUMPKIN_MILKSHAKE.get(), ExtraDelightItems.HONEY_MILKSHAKE.get(),
-						ExtraDelightItems.APPLE_MILKSHAKE.get(), ExtraDelightItems.COOKIE_DOUGH_MILKSHAKE.get(),
-						ExtraDelightItems.MINT_CHIP_MILKSHAKE.get(), ExtraDelightItems.CHOCOLATE_MILK.get(),
-						ExtraDelightItems.EGGNOG.get(), ExtraDelightItems.GINGER_BEER.get(),
-						ExtraDelightItems.CONGEE.get(), ExtraDelightItems.LUGAW.get(),
-						ExtraDelightItems.BEET_MINT_SALAD.get(), ExtraDelightItems.MONKEY_BREAD.get(),
-						ExtraDelightItems.MINT_LAMB.get(), ExtraDelightItems.CHARCUTERIE_BOARD.get(),
-						ExtraDelightItems.CHRISTMAS_PUDDING.get(), ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE.get(),
-						ExtraDelightItems.HORCHATA.get(), ExtraDelightItems.MINT_JELLY.get(),
-						ExtraDelightItems.PUNCH.get(), ExtraDelightItems.XOCOLATL.get(),
-						ExtraDelightItems.GOURMET_HOT_CHOCOLATE.get(), ExtraDelightItems.COFFEE.get(),
-						ExtraDelightItems.CRISP_RICE_CEREAL.get(), ExtraDelightItems.BLACK_FOREST_TRIFLE.get(),
-						ExtraDelightItems.CORN_FLAKES_CEREAL.get(),
-						ExtraDelightItems.COFFEE_CAKE_FEAST.get(), ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get(),
-						ExtraDelightItems.COCOA_BUTTER_BOTTLE.get(), ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get(),
-						ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(), ExtraDelightItems.NUT_BUTTER_MILKSHAKE.get(),
-						ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get(), ExtraDelightItems.MISSISSIPPI_MUD_PIE.get(),
-						ExtraDelightItems.GRASSHOPPER_PIE.get(), ExtraDelightItems.AFFOGATO.get(),
-						ExtraDelightItems.MILK_TART_FEAST.get(), ExtraDelightItems.BACON_EGG_PIE.get(),
-						ExtraDelightItems.APPLE_SLAW.get(), ExtraDelightItems.PORK_AND_APPLES.get(),
-						ExtraDelightItems.STUFFED_APPLE.get(), ExtraDelightItems.STUFFED_APPLE_ICE_CREAM.get(),
-						ExtraDelightItems.MULLIGATAWNY_SOUP.get(), ExtraDelightItems.AEBLEFLAESK.get(),
-						ExtraDelightItems.CANDY_BAR_SALAD.get(), ExtraDelightItems.CHILI_CON_CARNE.get(),
-						ExtraDelightItems.WHITE_CHILI.get(), ExtraDelightItems.NUT_BUTTER_ICE_CREAM.get(),
-						ExtraDelightItems.NUT_BUTTER_MILKSHAKE.get(), ExtraDelightItems.HAZELNUT_SOUP.get(),
-						ExtraDelightItems.POTATO_SALAD.get(), ExtraDelightItems.ONION_SOUP.get(),
-						ExtraDelightItems.FAT_POTATOES.get(), ExtraDelightItems.PANFORTE.get(),
-						ExtraDelightItems.BORSCHT.get(), ExtraDelightItems.DEVILLED_SAUSAGES.get(),
-						ExtraDelightItems.AGLIO_E_OLIO.get(), ExtraDelightItems.PENNE_ALL_ARRABIATA.get())
-				.addTag(ExtraDelightTags.CONDIMENTS);
+				ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.GRAVY.get(),
+				ExtraDelightItems.DARK_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.YEAST.get(),
+				ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.GLOW_BERRY_JUICE.get(),
+				ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.SWEET_BERRY_JUICE.get(),
+				ExtraDelightItems.TOMATO_JUICE.get(), ExtraDelightItems.CACTUS_JUICE.get(),
+				ExtraDelightItems.SEAWEED_SALAD.get(), ExtraDelightItems.WHIPPED_CREAM.get(),
+				ExtraDelightItems.EGG_MIX.get(), ExtraDelightItems.SCRAMBLED_EGGS.get(),
+				ExtraDelightItems.OMELETTE_MIX.get(), ExtraDelightItems.EGG_SALAD.get(),
+				ExtraDelightItems.FURIKAKE.get(), ExtraDelightItems.CURRY_POWDER.get(), ExtraDelightItems.JAM.get(),
+				ExtraDelightItems.GLOW_BERRY_JAM.get(), ExtraDelightItems.GOLDEN_APPLE_JAM.get(),
+				ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get(), ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get(),
+				ExtraDelightItems.CHEESECAKE_ITEM.get(), ExtraDelightItems.HONEY_CHEESECAKE_ITEM.get(),
+				ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get(), ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get(),
+				ExtraDelightItems.APPLE_CHEESECAKE_ITEM.get(), ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM.get(),
+				ExtraDelightItems.QUICHE.get(), ExtraDelightItems.CARROT_SALAD.get(),
+				ExtraDelightItems.APPLE_SAUCE.get(), ExtraDelightItems.POTATO_SOUP.get(),
+				ExtraDelightItems.TOMATO_SOUP.get(), ExtraDelightItems.FISH_SOUP.get(),
+				ExtraDelightItems.CARROT_SOUP.get(), ExtraDelightItems.SALISBURY_STEAK.get(),
+				ExtraDelightItems.MASHED_POTATO_GRAVY.get(), ExtraDelightItems.PORK_STEW.get(),
+				ExtraDelightItems.LAMB_STEW.get(), ExtraDelightItems.CHICKEN_STEW.get(), ExtraDelightItems.CURRY.get(),
+				ExtraDelightItems.BEEF_STEW_RICE.get(), ExtraDelightItems.PORK_STEW_RICE.get(),
+				ExtraDelightItems.LAMB_STEW_RICE.get(), ExtraDelightItems.RABBIT_STEW_RICE.get(),
+				ExtraDelightItems.CHICKEN_STEW_RICE.get(), ExtraDelightItems.FISH_STEW_RICE.get(),
+				ExtraDelightItems.CURRY_RICE.get(), ExtraDelightItems.LIVER_ONIONS.get(),
+				ExtraDelightItems.OXTAIL_SOUP.get(), ExtraDelightItems.HASH.get(), ExtraDelightItems.POT_ROAST.get(),
+				ExtraDelightItems.MEAT_LOAF.get(), ExtraDelightItems.BBQ_RIBS.get(), ExtraDelightItems.RACK_LAMB.get(),
+				ExtraDelightItems.STIRFRY.get(), ExtraDelightItems.BEEF_WELLINGTON.get(),
+				ExtraDelightItems.HAGGIS.get(), ExtraDelightItems.JELLY_WHITE.get(),
+				ExtraDelightItems.JELLY_ORANGE.get(), ExtraDelightItems.JELLY_MAGENTA.get(),
+				ExtraDelightItems.JELLY_LIGHT_BLUE.get(), ExtraDelightItems.JELLY_YELLOW.get(),
+				ExtraDelightItems.JELLY_LIME.get(), ExtraDelightItems.JELLY_PINK.get(),
+				ExtraDelightItems.JELLY_GREY.get(), ExtraDelightItems.JELLY_LIGHT_GREY.get(),
+				ExtraDelightItems.JELLY_CYAN.get(), ExtraDelightItems.JELLY_PURPLE.get(),
+				ExtraDelightItems.JELLY_BLUE.get(), ExtraDelightItems.JELLY_BROWN.get(),
+				ExtraDelightItems.JELLY_GREEN.get(), ExtraDelightItems.JELLY_RED.get(),
+				ExtraDelightItems.JELLY_BLACK.get(), ExtraDelightItems.BREADING_MISANPLAS.get(),
+				ExtraDelightItems.MACARONI_CHEESE.get(), ExtraDelightItems.LASAGNA.get(),
+				ExtraDelightItems.HOTDISH.get(), ExtraDelightItems.FURIKAKE_RICE.get(),
+				ExtraDelightItems.FISH_FLAKES.get(), ExtraDelightItems.MUSHROOM_RISOTTO.get(),
+				ExtraDelightItems.SALAD.get(), ExtraDelightItems.ALFREDO_SAUCE.get(),
+				ExtraDelightItems.PASTA_TOMATO.get(), ExtraDelightItems.PASTA_ALFREDO.get(),
+				ExtraDelightItems.CHICKEN_ALFREDO.get(), ExtraDelightItems.FISH_SALAD.get(),
+				ExtraDelightItems.COOKED_PASTA.get(), ExtraDelightItems.BUTTERED_PASTA.get(),
+				ExtraDelightItems.BAD_FOOD.get(), ExtraDelightItems.CACTUS_EGGS.get(),
+				ExtraDelightItems.CACTUS_SOUP.get(), ExtraDelightItems.CACTUS_SALAD.get(),
+				ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get(), ExtraDelightItems.TEA.get(),
+				ExtraDelightItems.STEWED_APPLES.get(), ExtraDelightItems.APPLE_FRITTERS.get(),
+				ExtraDelightItems.CARAMEL_POPCORN.get(), ExtraDelightItems.CORNBREAD.get(),
+				ExtraDelightItems.CARAMEL_SAUCE.get(), ExtraDelightItems.PUMPKIN_PIE_ITEM.get(),
+				ExtraDelightItems.CORN_PUDDING.get(), ExtraDelightItems.APPLE_CRISP.get(),
+				ExtraDelightItems.STUFFING.get(), ExtraDelightItems.POTATO_AU_GRATIN.get(),
+				ExtraDelightItems.ICE_CREAM.get(), ExtraDelightItems.CHOCOLATE_ICE_CREAM.get(),
+				ExtraDelightItems.GLOW_BERRY_ICE_CREAM.get(), ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get(),
+				ExtraDelightItems.PUMPKIN_ICE_CREAM.get(), ExtraDelightItems.HONEY_ICE_CREAM.get(),
+				ExtraDelightItems.APPLE_ICE_CREAM.get(), ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM.get(),
+				ExtraDelightItems.MINT_CHIP_ICE_CREAM.get(), ExtraDelightItems.FRENCH_TOAST.get(),
+				ExtraDelightItems.MILKSHAKE.get(), ExtraDelightItems.CHOCOLATE_MILKSHAKE.get(),
+				ExtraDelightItems.GLOW_BERRY_MILKSHAKE.get(), ExtraDelightItems.SWEET_BERRY_MILKSHAKE.get(),
+				ExtraDelightItems.PUMPKIN_MILKSHAKE.get(), ExtraDelightItems.HONEY_MILKSHAKE.get(),
+				ExtraDelightItems.APPLE_MILKSHAKE.get(), ExtraDelightItems.COOKIE_DOUGH_MILKSHAKE.get(),
+				ExtraDelightItems.MINT_CHIP_MILKSHAKE.get(), ExtraDelightItems.CHOCOLATE_MILK.get(),
+				ExtraDelightItems.EGGNOG.get(), ExtraDelightItems.GINGER_BEER.get(), ExtraDelightItems.CONGEE.get(),
+				ExtraDelightItems.LUGAW.get(), ExtraDelightItems.BEET_MINT_SALAD.get(),
+				ExtraDelightItems.MONKEY_BREAD.get(), ExtraDelightItems.MINT_LAMB.get(),
+				ExtraDelightItems.CHARCUTERIE_BOARD.get(), ExtraDelightItems.CHRISTMAS_PUDDING.get(),
+				ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE.get(), ExtraDelightItems.HORCHATA.get(),
+				ExtraDelightItems.MINT_JELLY.get(), ExtraDelightItems.PUNCH.get(), ExtraDelightItems.XOCOLATL.get(),
+				ExtraDelightItems.GOURMET_HOT_CHOCOLATE.get(), ExtraDelightItems.COFFEE.get(),
+				ExtraDelightItems.CRISP_RICE_CEREAL.get(), ExtraDelightItems.BLACK_FOREST_TRIFLE.get(),
+				ExtraDelightItems.CORN_FLAKES_CEREAL.get(), ExtraDelightItems.COFFEE_CAKE_FEAST.get(),
+				ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get(), ExtraDelightItems.COCOA_BUTTER_BOTTLE.get(),
+				ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get(), ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(),
+				ExtraDelightItems.NUT_BUTTER_MILKSHAKE.get(), ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get(),
+				ExtraDelightItems.MISSISSIPPI_MUD_PIE.get(), ExtraDelightItems.GRASSHOPPER_PIE.get(),
+				ExtraDelightItems.AFFOGATO.get(), ExtraDelightItems.MILK_TART_FEAST.get(),
+				ExtraDelightItems.BACON_EGG_PIE.get(), ExtraDelightItems.APPLE_SLAW.get(),
+				ExtraDelightItems.PORK_AND_APPLES.get(), ExtraDelightItems.STUFFED_APPLE.get(),
+				ExtraDelightItems.STUFFED_APPLE_ICE_CREAM.get(), ExtraDelightItems.MULLIGATAWNY_SOUP.get(),
+				ExtraDelightItems.AEBLEFLAESK.get(), ExtraDelightItems.CANDY_BAR_SALAD.get(),
+				ExtraDelightItems.CHILI_CON_CARNE.get(), ExtraDelightItems.WHITE_CHILI.get(),
+				ExtraDelightItems.NUT_BUTTER_ICE_CREAM.get(), ExtraDelightItems.NUT_BUTTER_MILKSHAKE.get(),
+				ExtraDelightItems.HAZELNUT_SOUP.get(), ExtraDelightItems.POTATO_SALAD.get(),
+				ExtraDelightItems.ONION_SOUP.get(), ExtraDelightItems.FAT_POTATOES.get(),
+				ExtraDelightItems.PANFORTE.get(), ExtraDelightItems.BORSCHT.get(),
+				ExtraDelightItems.DEVILLED_SAUSAGES.get(), ExtraDelightItems.AGLIO_E_OLIO.get(),
+				ExtraDelightItems.PENNE_ALL_ARRABIATA.get()).addTag(ExtraDelightTags.CONDIMENTS);
 		tag(CompatTags.UPRIGHT_ON_BELT).add(Fermentation.SAUERKRAUT_ITEM.get(), Fermentation.KIMCHI_ITEM.get(),
-						Fermentation.MISO_PASTE_ITEM.get(),	Fermentation.FISH_SAUCE_ITEM.get(),
-						Fermentation.NATTO_ITEM.get(), Fermentation.SOAKED_SOYBEANS_ITEM.get(),
-						Fermentation.MASHED_SOYBEANS_ITEM.get(), Fermentation.SOY_MILK.get(),
-						Fermentation.GAZPACHO.get(), Fermentation.EDAMAME.get(),
-						Fermentation.BEEF_BULGOGI.get(), Fermentation.HONEY_CHILI_CHICKEN.get(),
-						Fermentation.CARAMEL_CHICKEN.get(), Fermentation.SOY_GLAZED_SALMON_ITEM.get(),
-						Fermentation.STEAK_PICKLED_ONION_PIE_ITEM.get(), Fermentation.SHIRAZI_SALAD.get(),
-						Fermentation.CUCUMBER_SALAD.get(), Fermentation.MISO_SOUP.get(),
-						Fermentation.NATTO_AND_RICE.get(), Fermentation.SAUERKRAUT_SOUP.get(),
-						Fermentation.YEAST_SPREAD.get(), Fermentation.PICKLE_JUICE.get(),
-						Fermentation.SAUERKRAUT_AND_SAUSAGE.get(), Fermentation.MORKOVCHA.get(),
-						Fermentation.ZUPA_OGORKOWA.get(), Fermentation.KIMCHI_FRIED_RICE.get(),
-						Fermentation.KONGJANG.get());
-		
-		tag(CommonTags.FOODS_MILK).add(Fermentation.SOY_MILK.get());
+				Fermentation.MISO_PASTE_ITEM.get(), Fermentation.FISH_SAUCE_ITEM.get(), Fermentation.NATTO_ITEM.get(),
+				Fermentation.SOAKED_SOYBEANS_ITEM.get(), Fermentation.MASHED_SOYBEANS_ITEM.get(),
+				Fermentation.SOY_MILK.get(), Fermentation.GAZPACHO.get(), Fermentation.EDAMAME.get(),
+				Fermentation.BEEF_BULGOGI.get(), Fermentation.HONEY_CHILI_CHICKEN.get(),
+				Fermentation.CARAMEL_CHICKEN.get(), Fermentation.SOY_GLAZED_SALMON_ITEM.get(),
+				Fermentation.STEAK_PICKLED_ONION_PIE_ITEM.get(), Fermentation.SHIRAZI_SALAD.get(),
+				Fermentation.CUCUMBER_SALAD.get(), Fermentation.MISO_SOUP.get(), Fermentation.NATTO_AND_RICE.get(),
+				Fermentation.SAUERKRAUT_SOUP.get(), Fermentation.YEAST_SPREAD.get(), Fermentation.PICKLE_JUICE.get(),
+				Fermentation.SAUERKRAUT_AND_SAUSAGE.get(), Fermentation.MORKOVCHA.get(),
+				Fermentation.ZUPA_OGORKOWA.get(), Fermentation.KIMCHI_FRIED_RICE.get(), Fermentation.KONGJANG.get(),
+				SummerCitrus.LEMON_JUICE.get(), SummerCitrus.LIME_JUICE.get(), SummerCitrus.ORANGE_JUICE.get(),
+				SummerCitrus.GRAPEFRUIT_JUICE.get(), SummerCitrus.STIFF_PEAKS.get(), SummerCitrus.EGG_WHITE.get(),
+				SummerCitrus.LEMON_CURD.get(), SummerCitrus.LEMON_MERINGUE_PIE_ITEM.get(),
+				SummerCitrus.KEY_LIME_PIE_ITEM.get(), SummerCitrus.LEMONADE.get(), SummerCitrus.LIMEADE.get(),
+				SummerCitrus.ORANGEADE.get(), SummerCitrus.MELON_GAZPACHO.get(), SummerCitrus.THAI_MELON_SALAD.get(),
+				SummerCitrus.DALGONA_COFFEE.get(), SummerCitrus.GRAPEFRUIT_BEETROOT_SALAD.get(),
+				SummerCitrus.CITRUS_ONION_SALAD.get(), SummerCitrus.MELON_FRUIT_SALAD_SERVING.get(),
+				SummerCitrus.LEMON_CUCUMBER_CAKE_ITEM.get(), SummerCitrus.BAKED_COD_SERVING.get(),
+				SummerCitrus.MELON_LAYER_CAKE_ITEM.get(), SummerCitrus.GRAPEFRUIT_SORBET.get(),
+				SummerCitrus.LEMON_DELICIOUS.get(), SummerCitrus.ORANGE_CHICKEN.get(),
+				SummerCitrus.MELON_RIND_STIRFRY.get(), SummerCitrus.LIME_SOUFFLE.get(),
+				SummerCitrus.CHEESE_SOUFFLE.get(), SummerCitrus.PRESERVED_LEMON_PASTA.get(),
+				SummerCitrus.MELON_LIME_GLAZED_CHICKEN.get(), SummerCitrus.KYIV_CAKE_ITEM.get(),
+				SummerCitrus.RAW_BAKED_ALASKA_ITEM.get(), SummerCitrus.BAKED_ALASKA_ITEM.get());
 
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);
@@ -900,6 +1095,12 @@ public class EDItemTags extends ItemTagsProvider {
 
 	public void parseTaNTag(EDItemGenerator.Drink d) {
 		tag(ExtraDelightTags.DRINKS).add(d.item.get());
+
+		if (d.isHot)
+			tag(ExtraDelightTags.HEATING_CONSUMED_ITEMS).add(d.item.get());
+
+		if (d.isCold)
+			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(d.item.get());
 
 		switch (d.thirst) {
 		case 1:

@@ -4,6 +4,7 @@
     {
       "id": "#c:crops/tomato",
       "required": false
-    }
+    },
+    "#pizzadelight:ingredients/vegetables/tomato_layer"
   ]
 }

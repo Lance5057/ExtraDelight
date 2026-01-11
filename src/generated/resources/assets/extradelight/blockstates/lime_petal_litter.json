@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "extradelight:block/lime_petal_litter"
+      },
+      {
+        "model": "extradelight:block/lime_petal_litter",
+        "y": 90
+      },
+      {
+        "model": "extradelight:block/lime_petal_litter",
+        "y": 180
+      },
+      {
+        "model": "extradelight:block/lime_petal_litter",
+        "y": 270
+      },
+      {
+        "model": "extradelight:block/lime_petal_litter_2"
+      },
+      {
+        "model": "extradelight:block/lime_petal_litter_2",
+        "y": 90
+      },
+      {
+        "model": "extradelight:block/lime_petal_litter_2",
+        "y": 180
+      },
+      {
+        "model": "extradelight:block/lime_petal_litter_2",
+        "y": 270
+      }
+    ]
+  }
+}

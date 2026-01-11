@@ -89,7 +89,7 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 				var item = stack.getFluid().getBucket().getDefaultInstance();
 				int oitr = Math.min(sz, getFluidTank().getFluidAmount(0) / FluidType.BUCKET_VOLUME);
 				int itr = oitr;
-				while (stack.getAmount() == FluidType.BUCKET_VOLUME && itr-- >= 0) {
+				while (inputItem.getItem() == Items.BUCKET && stack.getAmount() == FluidType.BUCKET_VOLUME && itr-- >= 0) {
 					getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
 					BlockEntityUtils.Inventory.dropItemInWorld(item.copy(), be.getLevel(), be.getBlockPos());
 					inputItem.shrink(1);

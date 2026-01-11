@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "dalgona_coffee_mixing": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:dalgona_coffee"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/dalgona_coffee_mixing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "dalgona_coffee_mixing"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/dalgona_coffee_mixing"
+    ]
+  }
+}

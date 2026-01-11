@@ -16,6 +16,13 @@ public class SpiceRackScreen extends AbstractContainerScreen<SpiceRackMenu> {
 	public SpiceRackScreen(SpiceRackMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
 		super(pMenu, pPlayerInventory, pTitle);
 	}
+	
+	@Override
+	public void render(GuiGraphics gui, final int mouseX, final int mouseY, float partialTicks) {
+		super.render(gui, mouseX, mouseY, partialTicks);
+
+		this.renderTooltip(gui, mouseX, mouseY);
+	}
 
 	@Override
 	protected void renderBg(GuiGraphics pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {

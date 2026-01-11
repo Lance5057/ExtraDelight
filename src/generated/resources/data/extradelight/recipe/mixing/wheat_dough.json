@@ -21,5 +21,8 @@
     "count": 3,
     "id": "farmersdelight:wheat_dough"
   },
-  "stirs": 8
+  "stirs": 8,
+  "utensil": {
+    "tag": "c:spoons"
+  }
 }

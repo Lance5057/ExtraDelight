@@ -1,0 +1,49 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:orange_juice_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/grapefruit"
+    },
+    {
+      "tag": "extradelight:processed/orange"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:mint"
+    },
+    {
+      "tag": "extradelight:processed/lime"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "id": "extradelight:citrus_onion_salad"
+  },
+  "stirs": 2,
+  "utensil": {
+    "tag": "c:spoons"
+  }
+}

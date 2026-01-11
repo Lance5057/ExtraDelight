@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_basket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:basket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:picnic_basket_gray"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_basket"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:picnic_basket_gray"
+    ]
+  }
+}

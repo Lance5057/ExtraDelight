@@ -1,5 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
   "fluids": [],
   "ingredients": [
     {
@@ -17,8 +21,7 @@
     "id": "farmersdelight:pasta_with_meatballs"
   },
   "stirs": 2,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
+  "utensil": {
+    "tag": "c:spoons"
   }
 }

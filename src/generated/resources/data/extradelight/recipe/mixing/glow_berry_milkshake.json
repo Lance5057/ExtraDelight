@@ -1,5 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
   "fluids": [
     {
       "amount": 250,
@@ -25,8 +29,7 @@
     "id": "extradelight:glow_berry_milkshake"
   },
   "stirs": 4,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:glass_bottle"
+  "utensil": {
+    "tag": "c:spoons"
   }
 }

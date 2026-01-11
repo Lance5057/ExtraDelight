@@ -1,0 +1,43 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:crops/hazelnut/cooked"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:liquid_chocolate"
+    },
+    {
+      "tag": "c:whipped_cream"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:kyiv_cake_item"
+  }
+}

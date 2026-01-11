@@ -1,0 +1,45 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:muffin_tin"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "item": "extradelight:dark_chocolate_syrup_bottle"
+    },
+    {
+      "type": "neoforge:components",
+      "components": {
+        "extradelight:dynamic_food": {
+          "graphics": [
+            "orange"
+          ]
+        }
+      },
+      "items": "extradelight:dynamic_jam"
+    },
+    {
+      "item": "extradelight:orange_zest"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "extradelight:jaffa_cake"
+  }
+}

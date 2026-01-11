@@ -3,6 +3,7 @@
     "#extradelight:processed/apple",
     "minecraft:sweet_berries",
     "minecraft:glow_berries",
-    "minecraft:melon_slice"
+    "#extradelight:processed/melon",
+    "#extradelight:processed/citrus"
   ]
 }

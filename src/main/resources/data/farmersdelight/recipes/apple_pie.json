@@ -1,4 +1,34 @@
 {
-  "type": "neoforge:conditional",
-  "recipes": [{"conditions": [{"type": "neoforge:false"}]}]
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:pie_crust"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:apple_pie"
+  }
 }

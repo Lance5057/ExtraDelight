@@ -1,0 +1,44 @@
+{
+  "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "extradelight:lemon_juice_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/lemon"
+    },
+    {
+      "tag": "extradelight:processed/lemon"
+    },
+    {
+      "tag": "extradelight:processed/lemon"
+    },
+    {
+      "tag": "extradelight:processed/lemon"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:preserved_lemons_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "tag": "c:salt"
+      },
+      "lid": false,
+      "time": 24000
+    },
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 168000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
+}

@@ -1,0 +1,94 @@
+package com.lance5057.extradelight.workstations.juicer;
+
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.SingleItemRecipe;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
+import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.fluids.FluidStack;
+
+public class JuicerRecipe extends SingleItemRecipe {
+	protected final FluidStack fluidOut;
+	protected final int percentChance;
+
+	public JuicerRecipe(String pGroup, Ingredient pIngredient, ItemStack pResult, int chance, FluidStack fluidResult) {
+		super(ExtraDelightRecipes.JUICER.get(), ExtraDelightRecipes.JUICER_SERIALIZER.get(), pGroup, pIngredient,
+				pResult);
+		this.fluidOut = fluidResult;
+		this.percentChance = chance;
+	}
+
+	public FluidStack getFluid() {
+		return fluidOut;
+	}
+
+	public Ingredient getInput() {
+		return this.ingredient;
+	}
+
+	public int getChance() {
+		return this.percentChance;
+	}
+
+	@Override
+	public boolean matches(SingleRecipeInput input, Level level) {
+		return this.ingredient.test(input.getItem(0));
+	}
+
+	public ItemStack getToastSymbol() {
+		return new ItemStack(ExtraDelightBlocks.JUICER.get());
+	}
+
+	public static class Serializer implements RecipeSerializer<JuicerRecipe> {
+		private static final MapCodec<JuicerRecipe> CODEC = RecordCodecBuilder
+				.mapCodec(inst -> inst
+						.group(Codec.STRING.optionalFieldOf("group", "").forGetter(JuicerRecipe::getGroup),
+
+								Ingredient.CODEC_NONEMPTY.fieldOf("ingredient")
+										.forGetter(p_301068_ -> p_301068_.ingredient),
+
+								ItemStack.OPTIONAL_CODEC.fieldOf("result").forGetter(r -> r.result),
+								Codec.INT.fieldOf("chance").forGetter(r -> r.percentChance),
+								FluidStack.OPTIONAL_CODEC.fieldOf("fluidOut").forGetter(JuicerRecipe::getFluid))
+						.apply(inst, JuicerRecipe::new));
+
+		public static JuicerRecipe fromNetwork(RegistryFriendlyByteBuf pBuffer) {
+			String s = pBuffer.readUtf();
+			Ingredient ingredient = Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer);
+			ItemStack itemstack = ItemStack.OPTIONAL_STREAM_CODEC.decode(pBuffer);
+			int chance = pBuffer.readInt();
+			FluidStack fluid = FluidStack.OPTIONAL_STREAM_CODEC.decode(pBuffer);
+			return new JuicerRecipe(s, ingredient, itemstack, chance, fluid);
+		}
+
+		public static void toNetwork(RegistryFriendlyByteBuf pBuffer, JuicerRecipe pRecipe) {
+			pBuffer.writeUtf(pRecipe.group);
+			Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, pRecipe.ingredient);
+			ItemStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.result);
+			pBuffer.writeInt(pRecipe.percentChance);
+			FluidStack.OPTIONAL_STREAM_CODEC.encode(pBuffer, pRecipe.fluidOut);
+		}
+
+		@Override
+		public MapCodec<JuicerRecipe> codec() {
+			return CODEC;
+		}
+
+		public static final StreamCodec<RegistryFriendlyByteBuf, JuicerRecipe> STREAM_CODEC = StreamCodec
+				.of(JuicerRecipe.Serializer::toNetwork, JuicerRecipe.Serializer::fromNetwork);
+
+		@Override
+		public StreamCodec<RegistryFriendlyByteBuf, JuicerRecipe> streamCodec() {
+			return STREAM_CODEC;
+		}
+	}
+}

@@ -22,5 +22,8 @@
     "count": 1,
     "id": "extradelight:sweet_berry_cookie_dough"
   },
-  "stirs": 4
+  "stirs": 4,
+  "utensil": {
+    "tag": "c:spoons"
+  }
 }

@@ -34,10 +34,13 @@ import com.lance5057.extradelight.blocks.keg.KegBlock;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
+import com.lance5057.extradelight.displays.fruitbowl.FruitBowlBlock;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
+import com.lance5057.extradelight.workstations.juicer.JuicerBlock;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
@@ -47,7 +50,9 @@ import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrower
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
@@ -60,6 +65,7 @@ import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.FireBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.HayBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -85,6 +91,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
@@ -151,12 +158,17 @@ public class ExtraDelightBlocks {
 		fire.setFlammable(ExtraDelightBlocks.MINT_CROP.get(), 1000, 1000);
 
 		fire.setFlammable(ExtraDelightBlocks.APPLE_LEAVES.get(), 30, 60);
+
+		fire.setFlammable(SummerCitrus.LEMON_LEAVES.get(), 30, 60);
+		fire.setFlammable(SummerCitrus.LIME_LEAVES.get(), 30, 60);
+		fire.setFlammable(SummerCitrus.ORANGE_LEAVES.get(), 30, 60);
+		fire.setFlammable(SummerCitrus.GRAPEFRUIT_LEAVES.get(), 30, 60);
 	}
 
 	public static final DeferredBlock<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);
 	public static final DeferredBlock<DryingRackBlock> DRYING_RACK = BLOCKS.register("drying_rack",
 			DryingRackBlock::new);
-	
+
 	public static final DeferredBlock<Block> DOUGH_SHAPING = BLOCKS.register("dough_shaping", DoughShapingBlock::new);
 	public static final DeferredBlock<Block> MIXING_BOWL = BLOCKS.register("mixing_bowl", MixingBowlBlock::new);
 
@@ -170,6 +182,12 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> VAT = BLOCKS.register("vat", VatBlock::new);
 	public static final DeferredBlock<Block> EVAPORATOR = BLOCKS.register("evaporator", EvaporatorBlock::new);
 	public static final DeferredBlock<LidBlock> LID = BLOCKS.register("lid", LidBlock::new);
+
+	public static final DeferredBlock<JuicerBlock> JUICER = BLOCKS.register("juicer",
+			() -> new JuicerBlock(Properties.ofFullCopy(Blocks.BARREL).noOcclusion()));
+
+	public static final DeferredBlock<Block> FRUIT_BOWL = BLOCKS.register("fruit_bowl",
+			() -> new FruitBowlBlock(Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
@@ -213,7 +231,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<RecipeFeastBlock> HASH_FEAST = BLOCKS.register("hash_block",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
-					true, bowl));
+					true, pan));
 	public static final DeferredBlock<RecipeFeastBlock> POT_ROAST_FEAST = BLOCKS.register("potroast_block",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, plate, Block.box(5.0D, 2.0D, 2.0D, 11.0D, 8.0D, 14.0D),
@@ -617,30 +635,30 @@ public class ExtraDelightBlocks {
 			() -> new TapBlock(Block.Properties.ofFullCopy(Blocks.STONE)));
 
 	public static final DeferredBlock<HorizontalPanBlock> SHEET_BLOCK = BLOCKS.register("sheet",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 1.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 1.0D, 15.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> TRAY_BLOCK = BLOCKS.register("tray",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> LOAF_PAN_BLOCK = BLOCKS.register("loaf_pan",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(4.0D, 0.0D, 2.0D, 12.0D, 4.0D, 14.0D), Block.box(2.0D, 0.0D, 4.0D, 14.0D, 4.0D, 12.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> PIE_DISH_BLOCK = BLOCKS.register("pie_dish",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 14.0D), Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 14.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> SQUARE_PAN_BLOCK = BLOCKS.register("square_pan",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D), Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D)));
 	public static final DeferredBlock<BakingStoneBlock> BAKING_STONE_BLOCK = BLOCKS.register("baking_stone",
-			() -> new BakingStoneBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+			() -> new BakingStoneBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.STONE)));
 	public static final DeferredBlock<HorizontalPanBlock> MUFFIN_TIN_BLOCK = BLOCKS.register("muffin_tray",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.STONE),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(3.5D, 0.0D, 1.5D, 12.5D, 2.0D, 14.5D), Block.box(1.5D, 0.0D, 3.5D, 14.5D, 2.0D, 12.5D)));
 	public static final DeferredBlock<HorizontalPanBlock> SERVING_POT_BLOCK = BLOCKS.register("serving_pot",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.LANTERN),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.LANTERN),
 					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> BAR_MOLD = BLOCKS.register("bar_mold",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
 
 	public static final DeferredBlock<BushStageFour> COFFEE_BUSH = ExtraDelightBlocks.BLOCKS.register("coffee_bush",
@@ -825,9 +843,13 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<WallSignBlock> FRUIT_WALL_SIGN = BLOCKS.register("fruit_wall_sign",
 			() -> new WallSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 
+	public static final DeferredBlock<Block> HAZELNUT_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register(
+			"hazelnut_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+
 	public static final DeferredBlock<FruitLeafBlock> HAZELNUT_LEAVES = BLOCKS.register("hazelnut_leaves",
 			() -> new FruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
-					ExtraDelightItems.HAZELNUTS_IN_SHELL));
+					ExtraDelightItems.HAZELNUTS_IN_SHELL, ExtraDelightBlocks.HAZELNUT_PETAL_LITTER,
+					ExtraDelightParticles.HAZELNUT_PETALS));
 	public static final DeferredBlock<SaplingBlock> HAZELNUT_SAPLING = BLOCKS.register("hazelnut_sapling",
 			() -> new SaplingBlock(ExtraDelightTreeGrowers.HAZELNUT,
 					Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
@@ -1042,8 +1064,12 @@ public class ExtraDelightBlocks {
 			() -> new Block(
 					Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
 
+	public static final DeferredBlock<Block> APPLE_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
+			.register("apple_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));
+
 	public static final DeferredBlock<VanillaFruitLeafBlock> APPLE_LEAVES = BLOCKS.register("apple_leaves",
-			() -> new VanillaFruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), Items.APPLE));
+			() -> new VanillaFruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), Items.APPLE,
+					APPLE_PETAL_LITTER));
 	public static final DeferredBlock<SaplingBlock> APPLE_SAPLING = BLOCKS.register("apple_sapling",
 			() -> new SaplingBlock(ExtraDelightTreeGrowers.APPLE,
 					Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
@@ -1170,9 +1196,13 @@ public class ExtraDelightBlocks {
 			Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_WHITE)));
 
 	public static final DeferredBlock<Block> POTTED_CINNAMON_SAPLING = BLOCKS.register("potted_cinnamon_sapling",
-			() -> new Block(Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
+			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CINNAMON_SAPLING,
+					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredBlock<Block> POTTED_HAZELNUT_SAPLING = BLOCKS.register("potted_hazelnut_sapling",
-			() -> new Block(Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
+			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HAZELNUT_SAPLING,
+					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
 	public static final DeferredBlock<Block> POTTED_APPLE_SAPLING = BLOCKS.register("potted_apple_sapling",
-			() -> new Block(Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
+			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, APPLE_SAPLING,
+					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
+
 }

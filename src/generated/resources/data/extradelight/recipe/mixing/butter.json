@@ -11,5 +11,8 @@
     "count": 1,
     "id": "extradelight:butter"
   },
-  "stirs": 8
+  "stirs": 8,
+  "utensil": {
+    "item": "extradelight:whisk"
+  }
 }

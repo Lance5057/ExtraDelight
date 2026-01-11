@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,style=0,waterlogged=false": {
+      "model": "extradelight:block/cosmetics/juicer/anvil",
+      "y": 270
+    },
+    "facing=east,style=0,waterlogged=true": {
+      "model": "extradelight:block/cosmetics/juicer/anvil",
+      "y": 270
+    },
+    "facing=east,style=1,waterlogged=false": {
+      "model": "extradelight:block/cosmetics/juicer/gold_block",
+      "y": 270
+    },
+    "facing=east,style=1,waterlogged=true": {
+      "model": "extradelight:block/cosmetics/juicer/gold_block",
+      "y": 270
+    },
+    "facing=north,style=0,waterlogged=false": {
+      "model": "extradelight:block/cosmetics/juicer/anvil",
+      "y": 180
+    },
+    "facing=north,style=0,waterlogged=true": {
+      "model": "extradelight:block/cosmetics/juicer/anvil",
+      "y": 180
+    },
+    "facing=north,style=1,waterlogged=false": {
+      "model": "extradelight:block/cosmetics/juicer/gold_block",
+      "y": 180
+    },
+    "facing=north,style=1,waterlogged=true": {
+      "model": "extradelight:block/cosmetics/juicer/gold_block",
+      "y": 180
+    },
+    "facing=south,style=0,waterlogged=false": {
+      "model": "extradelight:block/cosmetics/juicer/anvil"
+    },
+    "facing=south,style=0,waterlogged=true": {
+      "model": "extradelight:block/cosmetics/juicer/anvil"
+    },
+    "facing=south,style=1,waterlogged=false": {
+      "model": "extradelight:block/cosmetics/juicer/gold_block"
+    },
+    "facing=south,style=1,waterlogged=true": {
+      "model": "extradelight:block/cosmetics/juicer/gold_block"
+    },
+    "facing=west,style=0,waterlogged=false": {
+      "model": "extradelight:block/cosmetics/juicer/anvil",
+      "y": 90
+    },
+    "facing=west,style=0,waterlogged=true": {
+      "model": "extradelight:block/cosmetics/juicer/anvil",
+      "y": 90
+    },
+    "facing=west,style=1,waterlogged=false": {
+      "model": "extradelight:block/cosmetics/juicer/gold_block",
+      "y": 90
+    },
+    "facing=west,style=1,waterlogged=true": {
+      "model": "extradelight:block/cosmetics/juicer/gold_block",
+      "y": 90
+    }
+  }
+}

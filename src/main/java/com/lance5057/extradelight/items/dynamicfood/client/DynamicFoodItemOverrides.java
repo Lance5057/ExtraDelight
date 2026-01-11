@@ -13,6 +13,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 
 import net.minecraft.client.Minecraft;
@@ -40,8 +41,14 @@ public class DynamicFoodItemOverrides extends ItemOverrides {
 			Collection<ResourceLocation> resources = customizable.getPieces(pStack);
 			List<BakedModel> pieces = new ArrayList<BakedModel>();
 
-			for (ResourceLocation rc : resources)
-				pieces.add(Minecraft.getInstance().getModelManager().getModel(ModelResourceLocation.standalone(rc)));
+			for (ResourceLocation rc : resources) {
+				BakedModel bm = Minecraft.getInstance().getModelManager()
+						.getModel(ModelResourceLocation.standalone(rc));
+				if (bm == Minecraft.getInstance().getModelManager().getMissingModel())
+					bm = Minecraft.getInstance().getModelManager()
+							.getModel(ModelResourceLocation.standalone(DynamicJam.missing_model));
+				pieces.add(bm);
+			}
 
 			try {
 				return cache.get(pieces.size(), () -> {

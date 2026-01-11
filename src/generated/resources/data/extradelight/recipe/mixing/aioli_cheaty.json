@@ -1,5 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
   "fluids": [
     {
       "amount": 250,
@@ -16,8 +20,7 @@
     "id": "extradelight:aioli_jar_item"
   },
   "stirs": 8,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:glass_bottle"
+  "utensil": {
+    "item": "extradelight:whisk"
   }
 }

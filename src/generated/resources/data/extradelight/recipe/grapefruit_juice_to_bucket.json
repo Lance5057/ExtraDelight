@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:grapefruit_juice"
+    },
+    {
+      "item": "extradelight:grapefruit_juice"
+    },
+    {
+      "item": "extradelight:grapefruit_juice"
+    },
+    {
+      "item": "extradelight:grapefruit_juice"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:grapefruit_juice_fluid_bucket"
+  }
+}

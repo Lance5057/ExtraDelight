@@ -9,6 +9,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 import com.lance5057.extradelight.worldgen.placers.FoliagePlacerRegistry;
@@ -23,12 +24,11 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.5.10";
+	public static final String VERSION = "2.6.1";
 
 	public static ResourceLocation modLoc(String s) {
 		return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);
@@ -48,6 +48,7 @@ public class ExtraDelight {
 		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
 
 		Fermentation f = new Fermentation();
+		SummerCitrus s = new SummerCitrus();
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);
@@ -61,6 +62,9 @@ public class ExtraDelight {
 
 		ExtraDelightItems.ITEMS.register(modEventBus);
 		ExtraDelightTabs.TABS.register(modEventBus);
+		
+		ExtraDelightPaintings.PAINTING_VARIANTS.register(modEventBus);
+		ExtraDelightBanners.BANNER_PATTERNS.register(modEventBus);
 
 		ExtraDelightBlockEntities.TILES.register(modEventBus);
 		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
@@ -74,6 +78,8 @@ public class ExtraDelight {
 		ExtraDelightFeatures.FEATURES.register(modEventBus);
 
 		ExtraDelightMobEffects.register(modEventBus);
+		
+		ExtraDelightParticles.PARTICLE_TYPES.register(modEventBus);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {

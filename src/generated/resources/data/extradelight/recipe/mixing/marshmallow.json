@@ -24,5 +24,8 @@
     "count": 4,
     "id": "extradelight:marshmallow"
   },
-  "stirs": 4
+  "stirs": 4,
+  "utensil": {
+    "tag": "c:spoons"
+  }
 }

@@ -15,7 +15,7 @@
               }
             }
           ],
-          "name": "extradelight:peanuts_in_shell"
+          "name": "extradelight:peanuts"
         }
       ],
       "rolls": {
@@ -45,7 +45,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "extradelight:peanuts_in_shell"
+              "name": "extradelight:peanuts"
             }
           ]
         }

@@ -23,8 +23,11 @@ import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornProperties;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
+import com.lance5057.extradelight.displays.fruitbowl.FruitBowlBlock;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
+import com.lance5057.extradelight.workstations.juicer.JuicerBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.vat.VatBlock;
@@ -663,12 +666,68 @@ public class BlockModels extends BlockStateProvider {
 					.build();
 		});
 
+		getVariantBuilder(ExtraDelightBlocks.JUICER.get()).forAllStates(state -> {
+			int servings = state.getValue(JuicerBlock.STYLE);
+
+			String suffix = EvaporatorBlock.Styles.values()[servings].toString();
+
+			return ConfiguredModel.builder()
+					.modelFile(models().withExistingParent("block/cosmetics/juicer/" + suffix.toLowerCase(),
+							modLoc("block/juicer")))
+					.rotationY((int) state.getValue(JuicerBlock.FACING).toYRot()).build();
+		});
+
 		pottedBlock(this, ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "cinnamon_sapling", "cinnamon_sapling");
-		pottedBlock(this, ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "hazelnut_sapling", "crops/fruit/hazelnut/hazelnut_sapling");
-		pottedBlock(this, ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "apple_sapling", "crops/fruit/apple/apple_sapling");
+		pottedBlock(this, ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "hazelnut_sapling",
+				"crops/fruit/hazelnut/hazelnut_sapling");
+		pottedBlock(this, ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "apple_sapling",
+				"crops/fruit/apple/apple_sapling");
+
+		fruitBowlStyleBlock(this, ExtraDelightBlocks.FRUIT_BOWL.get());
+
+		getVariantBuilder(ExtraDelightBlocks.APPLE_PETAL_LITTER.get()).forAllStates(state -> {
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.carpet("apple_petal_litter", modLoc("block/crops/fruit/apple/apple_leaves_budding"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(models()
+							.carpet("apple_petal_litter", modLoc("block/crops/fruit/apple/apple_leaves_budding"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(models()
+							.carpet("apple_petal_litter", modLoc("block/crops/fruit/apple/apple_leaves_budding"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(models()
+							.carpet("apple_petal_litter", modLoc("block/crops/fruit/apple/apple_leaves_budding"))
+							.renderType("cutout"))
+					.rotationY(270).build();
+		});
+
+		getVariantBuilder(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get()).forAllStates(state -> {
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.carpet("hazelnut_petal_litter", modLoc("block/crops/fruit/hazelnut/hazelnut_petals"))
+							.renderType("cutout"))
+					.nextModel()
+					.modelFile(models()
+							.carpet("hazelnut_petal_litter", modLoc("block/crops/fruit/hazelnut/hazelnut_petals"))
+							.renderType("cutout"))
+					.rotationY(90).nextModel()
+					.modelFile(models()
+							.carpet("hazelnut_petal_litter", modLoc("block/crops/fruit/hazelnut/hazelnut_petals"))
+							.renderType("cutout"))
+					.rotationY(180).nextModel()
+					.modelFile(models()
+							.carpet("hazelnut_petal_litter", modLoc("block/crops/fruit/hazelnut/hazelnut_petals"))
+							.renderType("cutout"))
+					.rotationY(270).build();
+		});
 
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);
+		SummerCitrus.blockModels(this);
 	}
 
 	public static void fluid(BlockStateProvider bsp, LiquidBlock block) {
@@ -726,7 +785,9 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder()
 					.modelFile(bsp.models()
 							.withExistingParent("baking_stone" + suffix.toLowerCase(), bsp.modLoc("block/baking_stone"))
-							.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase())))
+							.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+							.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
+
 					.build();
 		});
 	}
@@ -737,11 +798,42 @@ public class BlockModels extends BlockStateProvider {
 
 			String suffix = MixingBowlBlock.Styles.values()[servings] + "";
 
-			return ConfiguredModel.builder()
-					.modelFile(bsp.models()
-							.withExistingParent("mixing_bowl" + suffix.toLowerCase(), bsp.modLoc("block/mixing_bowl"))
-							.texture("1", bsp.mcLoc("block/" + suffix.toLowerCase())))
-					.build();
+			if (suffix.contentEquals("CINNAMON_PLANKS") || suffix.contentEquals("FRUIT_PLANKS")) {
+				return ConfiguredModel.builder().modelFile(bsp.models()
+						.withExistingParent("mixing_bowl" + suffix.toLowerCase(), bsp.modLoc("block/mixing_bowl"))
+						.texture("1", bsp.modLoc("block/" + suffix.toLowerCase()))
+						.texture("particle", bsp.modLoc("block/" + suffix.toLowerCase()))).build();
+			} else
+				return ConfiguredModel.builder().modelFile(bsp.models()
+						.withExistingParent("mixing_bowl" + suffix.toLowerCase(), bsp.modLoc("block/mixing_bowl"))
+						.texture("1", bsp.mcLoc("block/" + suffix.toLowerCase()))
+						.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase()))).build();
+		});
+	}
+
+	public static void fruitBowlStyleBlock(BlockStateProvider bsp, Block block) {
+		bsp.getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(FruitBowlBlock.STYLE);
+
+			String suffix = FruitBowlBlock.Styles.values()[servings] + "";
+
+			if (suffix.contentEquals("CINNAMON_PLANKS") || suffix.contentEquals("FRUIT_PLANKS")) {
+				return ConfiguredModel.builder().modelFile(bsp.models()
+						.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+						.texture("0", bsp.modLoc("block/" + suffix.toLowerCase()))
+						.texture("particle", bsp.modLoc("block/" + suffix.toLowerCase()))).build();
+			} else
+				return ConfiguredModel.builder().modelFile(bsp.models()
+						.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+						.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+						.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase()))).build();
+			
+//			return ConfiguredModel.builder()
+//					.modelFile(bsp.models()
+//							.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+//							.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+//							.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
+//					.build();
 		});
 	}
 
@@ -754,7 +846,8 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder()
 					.modelFile(
 							bsp.models().withExistingParent("mortar" + suffix.toLowerCase(), bsp.modLoc("block/mortar"))
-									.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase())))
+									.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+									.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
 					.build();
 		});
 	}
@@ -833,7 +926,7 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	private static void createCakeBlock(BlockStateProvider bsp, Block block, String prefix) {
+	public static void createCakeBlock(BlockStateProvider bsp, Block block, String prefix) {
 		bsp.getVariantBuilder(block).forAllStates(state -> {
 			int bites = state.getValue(BlockStateProperties.BITES);
 			String suffix = bites > 0 ? "_slice" + bites : "";
@@ -1095,12 +1188,10 @@ public class BlockModels extends BlockStateProvider {
 
 	}
 
-	private static void pottedBlock(BlockStateProvider bsp, Block block, String name, String path) {
+	public static void pottedBlock(BlockStateProvider bsp, Block block, String name, String path) {
 		bsp.simpleBlock(block,
-				new ConfiguredModel(bsp.models()
-						.withExistingParent("potted_" + name, "block/flower_pot_cross")
-						.texture("plant", bsp.modLoc("block/" + path))
-						.renderType("cutout")));
+				new ConfiguredModel(bsp.models().withExistingParent("potted_" + name, "block/flower_pot_cross")
+						.texture("plant", bsp.modLoc("block/" + path)).renderType("cutout")));
 	}
 
 	private static void simpleCross(BlockStateProvider bsp, Block block) {

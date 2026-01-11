@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/fruit_bowl",
+  "textures": {
+    "0": "minecraft:block/purple_terracotta",
+    "particle": "minecraft:block/purple_terracotta"
+  }
+}

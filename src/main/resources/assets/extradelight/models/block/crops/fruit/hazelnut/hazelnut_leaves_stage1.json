@@ -1,16 +1,18 @@
 {
+	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"render_type": "cutout",
 	"textures": {
 		"0": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_budding",
 		"1": "extradelight:block/crops/fruit/hazelnut/hazelnut_crop",
+		"2": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves",
 		"particle": "extradelight:block/crops/fruit/hazelnut/hazelnut_leaves_budding"
 	},
 	"elements": [
 		{
-			"from": [0, 0, 0],
-			"to": [16, 16, 16],
+			"from": [-0.01, -0.01, -0.01],
+			"to": [16.01, 16.01, 16.01],
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
 				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
@@ -18,6 +20,18 @@
 				"west": {"uv": [0, 0, 16, 16], "texture": "#0"},
 				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
 				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "tintindex": 0},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2", "tintindex": 0},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2", "tintindex": 0},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2", "tintindex": 0},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2", "tintindex": 0}
 			}
 		},
 		{
@@ -283,65 +297,66 @@
 	],
 	"groups": [
 		0,
+		1,
 		{
 			"name": "group",
 			"origin": [0.5, 27.5, 2],
 			"color": 0,
-			"children": [1, 2]
+			"children": [2, 3]
 		},
 		{
 			"name": "group",
 			"origin": [0.5, 27.5, 2],
 			"color": 0,
-			"children": [3, 4]
+			"children": [4, 5]
 		},
 		{
 			"name": "group",
 			"origin": [0.5, 27.5, 2],
 			"color": 0,
-			"children": [5, 6]
+			"children": [6, 7]
 		},
 		{
 			"name": "group",
 			"origin": [0.5, 27.5, 2],
 			"color": 0,
-			"children": [7, 8]
+			"children": [8, 9]
 		},
 		{
 			"name": "group",
 			"origin": [0.5, 27.5, 2],
 			"color": 0,
-			"children": [9, 10]
+			"children": [10, 11]
 		},
 		{
 			"name": "group",
 			"origin": [0.5, 27.5, 2],
 			"color": 0,
-			"children": [11, 12]
+			"children": [12, 13]
 		},
 		{
 			"name": "group",
 			"origin": [0.5, 27.5, 2],
 			"color": 0,
-			"children": [13, 14]
+			"children": [14, 15]
 		},
 		{
 			"name": "group",
 			"origin": [0.5, 27.5, 2],
 			"color": 0,
-			"children": [15, 16]
+			"children": [16, 17]
 		},
 		{
 			"name": "group",
 			"origin": [0.5, 27.5, 2],
 			"color": 0,
-			"children": [17, 18]
+			"children": [18, 19]
 		},
 		{
 			"name": "group",
 			"origin": [0.5, 27.5, 2],
 			"color": 0,
-			"children": [19, 20]
+			"children": [20, 21]
 		}
 	]
 }

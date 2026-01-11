@@ -18,6 +18,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ComputeFovModifierEvent;
 import net.neoforged.neoforge.client.event.ViewportEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -59,14 +60,14 @@ public class ExtraDelightNeoForgeClientEvents {
 				tooltip.add(i);
 			}, flag);
 		}
-		
-		TooltipProvider tooltipProvider1 = stack.get(ExtraDelightComponents.DYNAMIC_FOOD.get());
 
-		if (tooltipProvider1 != null) {
-			tooltipProvider1.addToTooltip(ctx, i -> {
-				tooltip.add(i);
-			}, flag);
-		}
+//		TooltipProvider tooltipProvider1 = stack.get(ExtraDelightComponents.DYNAMIC_FOOD.get());
+//
+//		if (tooltipProvider1 != null) {
+//			tooltipProvider1.addToTooltip(ctx, i -> {
+//				tooltip.add(i);
+//			}, flag);
+//		}
 	}
 
 	@SubscribeEvent
@@ -93,5 +94,15 @@ public class ExtraDelightNeoForgeClientEvents {
 	public static Set<DeferredItem<Item>> servings = new HashSet<DeferredItem<Item>>();
 
 	public static Set<DeferredItem<Item>> butchercraft = new HashSet<DeferredItem<Item>>();
+
+	@SubscribeEvent
+	public static void puckerEffect(ComputeFovModifierEvent event) {
+		if (event.getPlayer().hasEffect(ExtraDelightMobEffects.SOUR_PUCKER)) {
+			int i = event.getPlayer().getEffect(ExtraDelightMobEffects.SOUR_PUCKER).getAmplifier() + 1;
+			float s = i * 0.25f;
+
+			event.setNewFovModifier(event.getFovModifier() - s);
+		}
+	}
 
 }

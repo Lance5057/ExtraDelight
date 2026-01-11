@@ -5,8 +5,9 @@ import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.modules.Fermentation;
 
+import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -24,6 +25,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add("tooltip.see_more", "Shift for more...");
 		this.add("dynamic.toast", "Dynamic Toast");
+		this.add("dynamic.jam", "Dynamic Jam");
 
 		this.add("farmersdelight.tooltip.oven.empty", "");
 		this.add("container.doughshaper", "Dough Shaping");
@@ -54,6 +56,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.chiller", "Chilling");
 		this.add("extradelight.jei.evaporator", "Evaporating");
 		this.add("extradelight.jei.vat", "Fermenting");
+		this.add("extradelight.jei.juicer", "Juicing");
 
 		this.add("farmersdelight.tooltip.glow_berry_juice", "Minor Instant Health, Glow");
 		this.add("farmersdelight.tooltip.sweet_berry_juice", "Minor Instant Health");
@@ -66,6 +69,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.tea", "Minor Instant Health, Comfort");
 		this.add("farmersdelight.tooltip.gourmet_hot_chocolate", "Removes all Harmful Effects");
 		this.add("farmersdelight.tooltip.coffee", "+20% Speed (3:00)");
+		this.add("farmersdelight.tooltip.xocolati", "Medium Fire Resist, Removes 1 Harmful Effect");
 
 		this.add("farmersdelight.tooltip.milkshake", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.chocolate_milkshake", "Instant Health");
@@ -97,9 +101,14 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.hazelnut", "Trees grow in forests.");
 		this.add("extradelight.jei.info.apple", "Trees grow in forests.");
 		this.add("extradelight.jei.info.garlic", "Found on mountain slopes.");
-		this.add("extradelight.jei.info.cucumber", "Found in hills.");
+		this.add("extradelight.jei.info.cucumber", "Found in hill biomes.");
 		this.add("extradelight.jei.info.soybean", "Found in anything temperate.");
 		this.add("extradelight.jei.info.yeast", "Use an empty glass bottle on an active yeast pot to obtain them.");
+		this.add("extradelight.jei.info.lemon", "Found in hill biomes.");
+		this.add("extradelight.jei.info.lime", "Found in hot biomes.");
+		this.add("extradelight.jei.info.orange", "Found in wet biomes.");
+		this.add("extradelight.jei.info.grapefruit", "Found in jungle biomes.");
+		this.add("extradelight.jei.info.egg", "Right click an egg on a Mixing Bowl.");
 
 		this.add("extradelight.jei.info.evaporator.extra", "+ Extras");
 		this.add("extradelight.jei.info.evaporator.view", "Requires View"); // Combine with the one under
@@ -112,33 +121,47 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.vat.days", "%s Days");
 
 		this.add("extradelight.jei.info.pickle_juice", "Drops from Pickle Jar items when emptied.");
+		this.add(ExtraDelight.MOD_ID + ".jei.info.baked_alaska", "Place and Ignite the Unbaked Alaska to cook!");
 
 		this.add("tag.item.extradelight.baking_trays", "Baking Trays");
 		this.add("tag.item.extradelight.broth", "Broth");
 		this.add("tag.item.extradelight.candy_bowl_valid", "Valid items to put in Candy Bowl");
+		this.add("tag.item.extradelight.chilling_items", "Items that will power the Chiller");
 		this.add("tag.item.extradelight.chocolate_bar_filling", "Chocolate Bar fillings");
 		this.add("tag.item.extradelight.chocolate_box_valid", "Valid items to put in Chocolate Box");
 		this.add("tag.item.extradelight.chocolate_truffle_filling", "Chocolate Truffle fillings");
 		this.add("tag.item.extradelight.corn_dim_confiscate", "Items confiscated when leaving the Cornfield");
+		this.add("tag.item.extradelight.egg_or_yolk", "Whole Egg or just Yolk");
 		this.add("tag.item.extradelight.frying_oil", "Frying Oil");
 		this.add("tag.item.extradelight.jelly", "Jelly");
+		this.add("tag.item.extradelight.jelly_ingredient", "Jelly Ingredients");
 		this.add("tag.item.extradelight.makes_stock", "Makes Stock");
+		this.add("tag.item.extradelight.marmalade_ingredient", "Marmalade Ingredients");
 		this.add("tag.item.extradelight.processed.apple", "Processed Apple");
 		this.add("tag.item.extradelight.processed.beetroot", "Processed Beetroot");
 		this.add("tag.item.extradelight.processed.cabbage", "Processed Cabbage");
 		this.add("tag.item.extradelight.processed.carrot", "Processed Carrot");
 		this.add("tag.item.extradelight.processed.chili", "Processed Chili");
+		this.add("tag.item.extradelight.processed.citrus", "Processed Citrus");
 		this.add("tag.item.extradelight.processed.cucumber", "Processed Cucumber");
 		this.add("tag.item.extradelight.processed.fruit", "Processed Fruit");
 		this.add("tag.item.extradelight.processed.garlic", "Processed Garlic");
 		this.add("tag.item.extradelight.processed.ginger", "Processed Ginger");
+		this.add("tag.item.extradelight.processed.grapefruit", "Processed Grapefruit");
+		this.add("tag.item.extradelight.processed.lemon", "Processed Lemon");
+		this.add("tag.item.extradelight.processed.lime", "Processed Lime");
+		this.add("tag.item.extradelight.processed.melon", "Processed Melon");
 		this.add("tag.item.extradelight.processed.onion", "Processed Onion");
+		this.add("tag.item.extradelight.processed.orange", "Processed Orange");
 		this.add("tag.item.extradelight.processed.pickled.cucumber", "Processed Pickled Cucumber");
 		this.add("tag.item.extradelight.processed.potato", "Processed Potato");
 		this.add("tag.item.extradelight.processed.produce", "Processed Fruit & Vegetables");
 		this.add("tag.item.extradelight.processed.tomato", "Processed Tomato");
 		this.add("tag.item.extradelight.processed.vegetable", "Processed Vegetables");
 		this.add("tag.item.extradelight.riceball_filling", "Riceball fillings");
+		this.add("tag.item.extradelight.sweetener", "Sweeteners");
+		this.add("tag.item.extradelight.toast_or_bread_slice", "Bread Slice, regardless of toasting status");
+		this.add("tag.item.extradelight.toast_topping", "Toast toppings");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
@@ -176,16 +199,16 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.name", "A Little Less Roughage");
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.desc", "Make some flour and make your bread less fibrous.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.vat.name", "A Real Crock of...");
 		this.add(ExtraDelight.MOD_ID + ".advancement.vat.desc", "Make a vat, harness the power of fermentation!");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.evaporator.name", "It's a Bit Dry");
 		this.add(ExtraDelight.MOD_ID + ".advancement.evaporator.desc", "Make an evaporator, become salty");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.pickle.name", "Hey Hey Hey!");
 		this.add(ExtraDelight.MOD_ID + ".advancement.pickle.desc", "Get a pickle, or maybe two");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.lid.name", "Put a Lid on it.");
 		this.add(ExtraDelight.MOD_ID + ".advancement.lid.desc", "Make a Lid for your vat, or your head");
 
@@ -295,6 +318,9 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.butcher.name", "Certified Carnivore");
 		this.add(ExtraDelight.MOD_ID + ".advancement.butcher.desc", "Make every Butchercraft meal.");
+
+		this.add(ExtraDelight.MOD_ID + ".advancement.juicer.name", "Main Squeeze");
+		this.add(ExtraDelight.MOD_ID + ".advancement.juicer.desc", "Make a Juicer.");
 
 		this.add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		this.add(ExtraDelightItems.CHEESECAKE_ITEM.get(), "Cheesecake");
@@ -1312,7 +1338,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MARSHMALLOW_SLICE.get(), "Piece of Marshmallow Slice");
 		this.add(ExtraDelightItems.ROCKY_ROAD.get(), "Rocky Road");
 		this.add(ExtraDelightItems.COFFEE_CHERRY_CRATE.get(), "Coffee Cherry Crate");
-		this.add(ExtraDelightItems.GREEN_COFFEE_BEAN_SACK.get(), "Green Coffee Bean Sack");
+		this.add(ExtraDelightItems.GREEN_COFFEE_BEAN_SACK.get(), "Green Coffee Sack");
 		this.add(ExtraDelightItems.COFFEE_BEAN_SACK.get(), "Coffee Bean Sack");
 		this.add(ExtraDelightItems.GROUND_COFFEE_SACK.get(), "Ground Coffee Sack");
 		this.add(ExtraDelightItems.AFFOGATO.get(), "Affogato");
@@ -1373,12 +1399,36 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.bottlefluid", "Decanting");
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
+		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "Dynamic Jam");
 
 		this.add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "Potted Cinnamon Sapling");
 		this.add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "Potted Hazelnut Sapling");
 		this.add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), "Potted Apple Sapling");
 
+		this.add(ExtraDelightBlocks.APPLE_PETAL_LITTER.get(), "Apple Petals");
+		this.add(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get(), "Hazelnut Petals");
+
+		this.add(ExtraDelightItems.JUICER.get(), "Juicer");
+		this.add(ExtraDelightItems.WHISK.get(), "Whisk");
+		this.add(ExtraDelightBlocks.FRUIT_BOWL.get(), "Fruit Bowl");
+
+		this.add("extradelight.jam.melon", "Melon Jam");
+		this.add("extradelight.jam.sweet_berries", "Sweet Berry Jam");
+		this.add("extradelight.jam.glow_berries", "Glow Berry Jam");
+		this.add("extradelight.jam.chorus_fruit", "Chorus Fruit Jam");
+		this.add("extradelight.jam.apple", "Apple Jam");
+		this.add("extradelight.jam.carrot", "Carrot Jam");
+		this.add("extradelight.jam.lemon", "Lemon Marmalade");
+		this.add("extradelight.jam.lime", "Lime Marmalade");
+		this.add("extradelight.jam.grapefruit", "Grapefruit Marmalade");
+		this.add("extradelight.jam.golden_apple", "Golden Apple Jam");
+		this.add("extradelight.jam.orange", "Orange Marmalade");
+		this.add("extradelight.jam.mint", "Mint Jelly");
+
+		this.add(ExtraDelight.MOD_ID + ".tooltip.deprecated", "This item is deprecated! Right-click to convert!");
+
 		Fermentation.EngLoc(this);
+		SummerCitrus.EngLoc(this);
 		AestheticBlocks.EngLoc(this);
 	}
 }

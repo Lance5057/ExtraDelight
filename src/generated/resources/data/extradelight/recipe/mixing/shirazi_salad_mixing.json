@@ -1,9 +1,17 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
   "fluids": [
     {
       "amount": 250,
       "fluid": "extradelight:oil_fluid"
+    },
+    {
+      "amount": 250,
+      "tag": "extradelight:lemon_or_lime_juice"
     }
   ],
   "ingredients": [
@@ -25,8 +33,7 @@
     "id": "extradelight:shirazi_salad"
   },
   "stirs": 2,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
+  "utensil": {
+    "tag": "c:spoons"
   }
 }

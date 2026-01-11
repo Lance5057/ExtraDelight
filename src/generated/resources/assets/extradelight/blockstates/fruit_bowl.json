@@ -1,0 +1,304 @@
+{
+  "variants": {
+    "style=0,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowloak_planks"
+    },
+    "style=0,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowloak_planks"
+    },
+    "style=1,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlspruce_planks"
+    },
+    "style=1,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlspruce_planks"
+    },
+    "style=10,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlcrimson_planks"
+    },
+    "style=10,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlcrimson_planks"
+    },
+    "style=11,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlcinnamon_planks"
+    },
+    "style=11,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlcinnamon_planks"
+    },
+    "style=12,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlfruit_planks"
+    },
+    "style=12,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlfruit_planks"
+    },
+    "style=13,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlglass"
+    },
+    "style=13,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlglass"
+    },
+    "style=14,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlstone"
+    },
+    "style=14,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlstone"
+    },
+    "style=15,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowliron_block"
+    },
+    "style=15,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowliron_block"
+    },
+    "style=16,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlgold_block"
+    },
+    "style=16,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlgold_block"
+    },
+    "style=17,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlterracotta"
+    },
+    "style=17,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlterracotta"
+    },
+    "style=18,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlwhite_terracotta"
+    },
+    "style=18,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlwhite_terracotta"
+    },
+    "style=19,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowllight_gray_terracotta"
+    },
+    "style=19,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowllight_gray_terracotta"
+    },
+    "style=2,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlbirch_planks"
+    },
+    "style=2,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlbirch_planks"
+    },
+    "style=20,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlgray_terracotta"
+    },
+    "style=20,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlgray_terracotta"
+    },
+    "style=21,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlblack_terracotta"
+    },
+    "style=21,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlblack_terracotta"
+    },
+    "style=22,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlbrown_terracotta"
+    },
+    "style=22,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlbrown_terracotta"
+    },
+    "style=23,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlred_terracotta"
+    },
+    "style=23,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlred_terracotta"
+    },
+    "style=24,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlorange_terracotta"
+    },
+    "style=24,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlorange_terracotta"
+    },
+    "style=25,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlyellow_terracotta"
+    },
+    "style=25,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlyellow_terracotta"
+    },
+    "style=26,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowllime_terracotta"
+    },
+    "style=26,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowllime_terracotta"
+    },
+    "style=27,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlgreen_terracotta"
+    },
+    "style=27,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlgreen_terracotta"
+    },
+    "style=28,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlcyan_terracotta"
+    },
+    "style=28,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlcyan_terracotta"
+    },
+    "style=29,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowllight_blue_terracotta"
+    },
+    "style=29,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowllight_blue_terracotta"
+    },
+    "style=3,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowldark_oak_planks"
+    },
+    "style=3,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowldark_oak_planks"
+    },
+    "style=30,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlblue_terracotta"
+    },
+    "style=30,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlblue_terracotta"
+    },
+    "style=31,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlmagenta_terracotta"
+    },
+    "style=31,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlmagenta_terracotta"
+    },
+    "style=32,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlpink_terracotta"
+    },
+    "style=32,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlpink_terracotta"
+    },
+    "style=33,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlpurple_terracotta"
+    },
+    "style=33,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlpurple_terracotta"
+    },
+    "style=34,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlwhite_glazed_terracotta"
+    },
+    "style=34,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlwhite_glazed_terracotta"
+    },
+    "style=35,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowllight_gray_glazed_terracotta"
+    },
+    "style=35,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowllight_gray_glazed_terracotta"
+    },
+    "style=36,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlgray_glazed_terracotta"
+    },
+    "style=36,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlgray_glazed_terracotta"
+    },
+    "style=37,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlblack_glazed_terracotta"
+    },
+    "style=37,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlblack_glazed_terracotta"
+    },
+    "style=38,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlbrown_glazed_terracotta"
+    },
+    "style=38,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlbrown_glazed_terracotta"
+    },
+    "style=39,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlred_glazed_terracotta"
+    },
+    "style=39,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlred_glazed_terracotta"
+    },
+    "style=4,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlacacia_planks"
+    },
+    "style=4,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlacacia_planks"
+    },
+    "style=40,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlorange_glazed_terracotta"
+    },
+    "style=40,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlorange_glazed_terracotta"
+    },
+    "style=41,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlyellow_glazed_terracotta"
+    },
+    "style=41,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlyellow_glazed_terracotta"
+    },
+    "style=42,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowllime_glazed_terracotta"
+    },
+    "style=42,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowllime_glazed_terracotta"
+    },
+    "style=43,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlgreen_glazed_terracotta"
+    },
+    "style=43,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlgreen_glazed_terracotta"
+    },
+    "style=44,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlcyan_glazed_terracotta"
+    },
+    "style=44,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlcyan_glazed_terracotta"
+    },
+    "style=45,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowllight_blue_glazed_terracotta"
+    },
+    "style=45,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowllight_blue_glazed_terracotta"
+    },
+    "style=46,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlblue_glazed_terracotta"
+    },
+    "style=46,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlblue_glazed_terracotta"
+    },
+    "style=47,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlmagenta_glazed_terracotta"
+    },
+    "style=47,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlmagenta_glazed_terracotta"
+    },
+    "style=48,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlpink_glazed_terracotta"
+    },
+    "style=48,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlpink_glazed_terracotta"
+    },
+    "style=49,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlpurple_glazed_terracotta"
+    },
+    "style=49,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlpurple_glazed_terracotta"
+    },
+    "style=5,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlmangrove_planks"
+    },
+    "style=5,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlmangrove_planks"
+    },
+    "style=6,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlbamboo_planks"
+    },
+    "style=6,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlbamboo_planks"
+    },
+    "style=7,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlcherry_planks"
+    },
+    "style=7,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlcherry_planks"
+    },
+    "style=8,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowljungle_planks"
+    },
+    "style=8,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowljungle_planks"
+    },
+    "style=9,waterlogged=false": {
+      "model": "extradelight:block/fruit_bowlwarped_planks"
+    },
+    "style=9,waterlogged=true": {
+      "model": "extradelight:block/fruit_bowlwarped_planks"
+    }
+  }
+}

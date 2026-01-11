@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/handheld",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "extradelight:item/sliced_ginger"
+    "layer0": "extradelight:item/crops/ginger/sliced_ginger"
   }
 }

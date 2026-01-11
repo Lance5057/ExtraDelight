@@ -1,0 +1,17 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "misc",
+  "graphic": "yeast_spread",
+  "ingredients": [
+    {
+      "tag": "c:toast"
+    },
+    {
+      "item": "extradelight:yeast_spread"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:dynamic_toast"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "item": "extradelight:lemon_meringue_pie_slice"
+    }
+  },
+  "pattern": [
+    "ff ",
+    "ff "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:lemon_meringue_pie_item"
+  }
+}

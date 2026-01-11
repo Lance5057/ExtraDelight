@@ -1,5 +1,11 @@
 {
   "values": [
+    "extradelight:tea",
+    "extradelight:eggnog",
+    "extradelight:xocolati",
+    "extradelight:gourmet_hot_chocolate",
+    "extradelight:coffee",
+    "extradelight:dalgona_coffee",
     "extradelight:gravy_boat_item",
     "extradelight:potato_soup",
     "extradelight:tomato_soup",
@@ -29,6 +35,7 @@
     "extradelight:white_chili",
     "extradelight:hazelnut_soup",
     "extradelight:onion_soup",
-    "extradelight:borscht"
+    "extradelight:borscht",
+    "extradelight:cheese_souffle"
   ]
 }

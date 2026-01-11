@@ -1,0 +1,23 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:muffin_tin"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "id": "extradelight:milk_chocolate_syrup_fluid"
+  },
+  "ingredients": [
+    {
+      "item": "extradelight:orange_zest"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:chocolate_orange"
+  }
+}

@@ -16,5 +16,8 @@
     "count": 8,
     "id": "extradelight:salami_mix"
   },
-  "stirs": 4
+  "stirs": 4,
+  "utensil": {
+    "tag": "c:spoons"
+  }
 }

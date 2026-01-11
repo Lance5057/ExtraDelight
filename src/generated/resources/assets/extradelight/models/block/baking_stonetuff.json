@@ -1,6 +1,7 @@
 {
   "parent": "extradelight:block/baking_stone",
   "textures": {
-    "0": "minecraft:block/tuff"
+    "0": "minecraft:block/tuff",
+    "particle": "minecraft:block/tuff"
   }
 }

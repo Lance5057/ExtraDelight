@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/lemonade_tray_stage2",
+  "textures": {
+    "4": "extradelight:item/limeade"
+  }
+}

@@ -1,5 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
   "fluids": [
     {
       "amount": 250,
@@ -25,8 +29,7 @@
     "id": "extradelight:aglio_e_olio"
   },
   "stirs": 2,
-  "usedItem": {
-    "count": 1,
-    "id": "minecraft:bowl"
+  "utensil": {
+    "tag": "c:spoons"
   }
 }

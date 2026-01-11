@@ -1,0 +1,45 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 4,
+    "id": "minecraft:glass_bottle"
+  },
+  "fluids": [
+    {
+      "amount": 750,
+      "fluid": "minecraft:water"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:lemon_juice_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:ice/cubes"
+    },
+    {
+      "tag": "extradelight:processed/lemon"
+    },
+    {
+      "tag": "extradelight:processed/lemon"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:lemonade"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "c:spoons"
+  }
+}

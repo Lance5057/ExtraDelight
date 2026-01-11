@@ -61,7 +61,7 @@ public class FoodDisplayRenderer implements BlockEntityRenderer<FoodDisplayEntit
 				if (i % 2 == 0)
 					pPoseStack.translate(0, 0.05, 0.05);
 
-				pPoseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(-45), 0, 0));
+				pPoseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(-45), (float) Math.toRadians(180), 0));
 				float uniscale = 0.65f;
 				pPoseStack.scale(uniscale, uniscale, uniscale);
 				itemRenderer.render(item, ItemDisplayContext.GROUND, false, pPoseStack, pBufferSource, pPackedLight,

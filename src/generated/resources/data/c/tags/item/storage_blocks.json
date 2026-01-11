@@ -1,5 +1,7 @@
 {
   "values": [
+    "#c:storage_blocks_cheese",
+    "#c:storage_blocks_butter",
     "#c:storage_blocks_flour",
     "#c:storage_blocks_corn_meal",
     "#c:storage_blocks_sugar",
@@ -49,6 +51,10 @@
     "#c:storage_blocks_garlic",
     "#c:storage_blocks_cucumber",
     "#c:storage_blocks_soybeans",
-    "#c:storage_blocks_salt"
+    "#c:storage_blocks_salt",
+    "#c:storage_blocks_lemon",
+    "#c:storage_blocks_lime",
+    "#c:storage_blocks_orange",
+    "#c:storage_blocks_grapefruit"
   ]
 }

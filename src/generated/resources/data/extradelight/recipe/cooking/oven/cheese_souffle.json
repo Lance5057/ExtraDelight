@@ -1,0 +1,51 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": true,
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:egg_or_yolk"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:chili/powder"
+        },
+        {
+          "item": "extradelight:curry_powder"
+        }
+      ]
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:cheese_souffle"
+  }
+}

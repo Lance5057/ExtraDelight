@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:kyiv_cake_item"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "extradelight:kyiv_cake_slice"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

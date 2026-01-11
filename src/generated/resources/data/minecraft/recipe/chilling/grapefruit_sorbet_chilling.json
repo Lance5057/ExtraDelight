@@ -1,0 +1,23 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": true,
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 800,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "id": "extradelight:grapefruit_juice_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:grapefruit_sorbet"
+  }
+}

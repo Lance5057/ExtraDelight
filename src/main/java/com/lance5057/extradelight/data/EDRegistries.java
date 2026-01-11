@@ -9,6 +9,7 @@ import java.util.concurrent.CompletableFuture;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightWorldGen;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeFeatures;
 import com.mojang.datafixers.util.Pair;
@@ -53,6 +54,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
+import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -84,16 +86,28 @@ public class EDRegistries {
 
 				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_APPLE_TREE,
 						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createAppleTree().build()));
+
+				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_LEMON_TREE,
+						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createLemonTree().build()));
+
+				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_LIME_TREE,
+						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createLimeTree().build()));
+
+				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_ORANGE_TREE,
+						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createOrangeTree().build()));
+
+				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_GRAPEFRUIT_TREE,
+						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createGrapefruitTree().build()));
 			}).add(Registries.PLACED_FEATURE, bootstrap -> {
 				HolderGetter<ConfiguredFeature<?, ?>> cfgs = bootstrap.lookup(Registries.CONFIGURED_FEATURE);
 				bootstrap.register(ExtraDelightWorldGen.PLACED_CORN_MAZE,
 						new PlacedFeature(cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_CORN_MAZE),
 								List.of(CountPlacement.of(1), InSquarePlacement.spread(),
-										PlacementUtils.HEIGHTMAP_WORLD_SURFACE)));
+										PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome())));
 				bootstrap.register(ExtraDelightWorldGen.PLACED_CORN_RAIL,
 						new PlacedFeature(cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_CORN_RAIL),
 								List.of(CountPlacement.of(1), InSquarePlacement.spread(),
-										PlacementUtils.HEIGHTMAP_WORLD_SURFACE)));
+										PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome())));
 
 				bootstrap.register(ExtraDelightWorldGen.PLACED_CINNAMON_TREE, new PlacedFeature(
 						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_CINNAMON_TREE),
@@ -106,6 +120,22 @@ public class EDRegistries {
 				bootstrap.register(ExtraDelightWorldGen.PLACED_APPLE_TREE, new PlacedFeature(
 						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_APPLE_TREE),
 						List.of(PlacementUtils.filteredByBlockSurvival(ExtraDelightBlocks.APPLE_SAPLING.get()))));
+
+				bootstrap.register(ExtraDelightWorldGen.PLACED_LEMON_TREE, new PlacedFeature(
+						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_LEMON_TREE),
+						List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.LEMON_SAPLING.get()))));
+
+				bootstrap.register(ExtraDelightWorldGen.PLACED_LIME_TREE, new PlacedFeature(
+						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_LIME_TREE),
+						List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.LIME_SAPLING.get()))));
+
+				bootstrap.register(ExtraDelightWorldGen.PLACED_ORANGE_TREE, new PlacedFeature(
+						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_ORANGE_TREE),
+						List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.ORANGE_SAPLING.get()))));
+
+				bootstrap.register(ExtraDelightWorldGen.PLACED_GRAPEFRUIT_TREE, new PlacedFeature(
+						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_GRAPEFRUIT_TREE),
+						List.of(PlacementUtils.filteredByBlockSurvival(SummerCitrus.GRAPEFRUIT_SAPLING.get()))));
 			}).add(Registries.BIOME, bootstrap -> {
 				HolderGetter<PlacedFeature> placedFeatures = bootstrap.lookup(Registries.PLACED_FEATURE);
 				bootstrap.register(ExtraDelightWorldGen.CORNFIELD_BIOME, new Biome.BiomeBuilder()

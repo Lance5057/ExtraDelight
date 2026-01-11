@@ -5,13 +5,13 @@ import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
+import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
@@ -28,6 +28,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.phys.Vec2;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecipe> {
@@ -68,8 +69,8 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, MixingBowlRecipe recipe, IFocusGroup focuses) {
 		List<Ingredient> input = recipe.getIngredients();
-		Ingredient pestle = Ingredient.of(ExtraDelightTags.SPOONS);
-		ItemStack used = recipe.getUsedItem();
+		Ingredient utensil = recipe.getUtensil();
+		ItemStack container = recipe.getContainer();
 		ItemStack output = recipe.getResultItem(Minecraft.getInstance().level.registryAccess());
 
 		int x = 0;
@@ -82,8 +83,8 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 				x = 0;
 			}
 		}
-		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 28, 12).addIngredients(pestle);
-		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 + 32, 52).addItemStack(used);
+		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 28, 12).addIngredients(utensil);
+		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 + 32, 52).addItemStack(container);
 
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 57, 29).addItemStack(output);
 
@@ -95,11 +96,13 @@ public class MixingBowlRecipeCategory implements IRecipeCategory<MixingBowlRecip
 			off++;
 		}
 
-		if (recipe.getFluids().size() > 0)
-			builder.addSlot(RecipeIngredientRole.CATALYST, 1, 1)
-					.addIngredients(Ingredient.of(
-							BottleFluidRegistry.getBottleFromFluid(recipe.getFluids().getFirst().getFluids()[0]),
-							new ItemStack(recipe.getFluids().get(0).getFluids()[0].getFluid().getBucket())));
+		if (recipe.getFluids().size() > 0) {
+			IRecipeSlotBuilder slot = builder.addSlot(RecipeIngredientRole.CATALYST, 1, 1);
+			for (SizedFluidIngredient sfi : recipe.getFluids())
+				for (FluidStack fs : sfi.getFluids())
+					slot.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluidWithoutSize(fs.getFluid()),
+							new ItemStack(fs.getFluid().getBucket())));
+		}
 	}
 
 	@Override

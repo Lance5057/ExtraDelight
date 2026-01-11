@@ -1,10 +1,10 @@
 package com.lance5057.extradelight.items.dynamicfood.api;
 
-import java.util.Collection;
+import java.util.List;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 public interface IDynamic {
-	Collection<ResourceLocation> getPieces(ItemStack itemStack);
+	List<ResourceLocation> getPieces(ItemStack itemStack);
 }

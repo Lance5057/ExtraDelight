@@ -1,6 +1,7 @@
 {
   "parent": "extradelight:block/mixing_bowl",
   "textures": {
-    "1": "minecraft:block/oak_planks"
+    "1": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/oak_planks"
   }
 }

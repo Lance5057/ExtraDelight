@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "on_fire=false": {
+      "model": "extradelight:block/baked_alaska_raw"
+    },
+    "on_fire=true": {
+      "model": "extradelight:block/baked_alaska_on_fire"
+    }
+  }
+}

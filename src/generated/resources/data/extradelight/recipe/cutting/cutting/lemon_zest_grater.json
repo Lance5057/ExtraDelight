@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "c:crops/lemon"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "extradelight:lemon_zest"
+      }
+    }
+  ],
+  "tool": {
+    "item": "extradelight:grater"
+  }
+}

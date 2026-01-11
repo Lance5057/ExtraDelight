@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/pie_crust_crumb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pie_crust": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:foods/cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "pie_crust"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/pie_crust_crumb"
+    ]
+  }
+}

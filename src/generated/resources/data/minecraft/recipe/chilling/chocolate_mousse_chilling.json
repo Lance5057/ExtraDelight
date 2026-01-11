@@ -1,0 +1,32 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": true,
+  "container": {
+    "count": 2,
+    "id": "minecraft:glass_bottle"
+  },
+  "cookingtime": 800,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "id": "extradelight:whipped_cream_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "extradelight:egg_or_yolk"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "tag": "c:liquid_chocolate"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "extradelight:chocolate_mousse"
+  }
+}

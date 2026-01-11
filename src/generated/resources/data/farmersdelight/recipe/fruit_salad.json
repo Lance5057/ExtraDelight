@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "tag": "extradelight:processed/fruit"
+    },
+    {
+      "tag": "extradelight:processed/fruit"
+    },
+    {
+      "item": "farmersdelight:pumpkin_slice"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:fruit_salad"
+  }
+}

@@ -6,6 +6,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 
@@ -25,6 +26,10 @@ public class ExtraDelightTags {
 
 	public static TagKey<Item> modTag(String tag) {
 		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("extradelight", tag));
+	}
+
+	public static TagKey<Fluid> modFluidTag(String tag) {
+		return FluidTags.create(ResourceLocation.fromNamespaceAndPath("extradelight", tag));
 	}
 
 	public static TagKey<Item> butcherTag(String tag) {
@@ -623,7 +628,27 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> DOUGH = neoforgeItemTag("dough");
 	public static final TagKey<Item> BROTH = modTag("broth");
+	public static final TagKey<Item> RAW_PASTA = neoforgeItemTag("pasta");
 
+	public static final TagKey<Item> LEMON = neoforgeItemTag("crops/lemon");
+	public static final TagKey<Item> LIME = neoforgeItemTag("crops/lime");
+	public static final TagKey<Item> ORANGE = neoforgeItemTag("crops/orange");
+	public static final TagKey<Item> GRAPEFRUIT = neoforgeItemTag("crops/grapefruit");
+
+	public static final TagKey<Fluid> LEMON_LIME = modFluidTag("lemon_or_lime_juice");
+	public static final TagKey<Item> PROCESSED_LEMON = modTag("processed/lemon");
+	public static final TagKey<Item> PROCESSED_LIME = modTag("processed/lime");
+	public static final TagKey<Item> PROCESSED_ORANGE = modTag("processed/orange");
+	public static final TagKey<Item> PROCESSED_GRAPEFRUIT = modTag("processed/grapefruit");
+	public static final TagKey<Item> PROCESSED_CITRUS = modTag("processed/citrus");
+	public static final TagKey<Item> PROCESSED_MELON = modTag("processed/melon");
+
+	public static final TagKey<Item> CHILLING_ITEMS = modTag("chilling_items");
+	public static final TagKey<Item> CAKE_SLICE = neoforgeItemTag("foods/cake/slice");
+	public static final TagKey<Item> IS_MARMALADE_INGREDIENT = modTag("marmalade_ingredient");
+	public static final TagKey<Item> IS_JELLY_INGREDIENT = modTag("jelly_ingredient");
+	public static final TagKey<Item> EGG_OR_YOLK = modTag("egg_or_yolk");
+	public static final TagKey<Item> ICE_CUBES = neoforgeItemTag("ice/cubes");
 
 	// Tough as Nails
 	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");
@@ -671,6 +696,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> DRINKS = tanTag("drinks");
 
 	// Storage Blocks
+	public static final TagKey<Block> STORAGE_BLOCKS_CHEESE = neoforgeBlockTag("storage_blocks_cheese");
+	public static final TagKey<Block> STORAGE_BLOCKS_BUTTER = neoforgeBlockTag("storage_blocks_butter");
 	public static final TagKey<Block> STORAGE_BLOCKS_FLOUR = neoforgeBlockTag("storage_blocks_flour");
 	public static final TagKey<Block> STORAGE_BLOCKS_CORN_MEAL = neoforgeBlockTag("storage_blocks_corn_meal");
 	public static final TagKey<Block> STORAGE_BLOCKS_SUGAR = neoforgeBlockTag("storage_blocks_sugar");
@@ -733,7 +760,13 @@ public class ExtraDelightTags {
 	public static final TagKey<Block> STORAGE_BLOCKS_CUCUMBER = neoforgeBlockTag("storage_blocks_cucumber");
 	public static final TagKey<Block> STORAGE_BLOCKS_SOYBEANS = neoforgeBlockTag("storage_blocks_soybeans");
 	public static final TagKey<Block> STORAGE_BLOCKS_SALT = neoforgeBlockTag("storage_blocks_salt");
+	public static final TagKey<Block> STORAGE_BLOCKS_LEMON = neoforgeBlockTag("storage_blocks_lemon");
+	public static final TagKey<Block> STORAGE_BLOCKS_LIME = neoforgeBlockTag("storage_blocks_lime");
+	public static final TagKey<Block> STORAGE_BLOCKS_ORANGE = neoforgeBlockTag("storage_blocks_orange");
+	public static final TagKey<Block> STORAGE_BLOCKS_GRAPEFRUIT = neoforgeBlockTag("storage_blocks_grapefruit");
 
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CHEESE = neoforgeItemTag("storage_blocks_cheese");
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BUTTER = neoforgeItemTag("storage_blocks_butter");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_FLOUR = neoforgeItemTag("storage_blocks_flour");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CORN_MEAL = neoforgeItemTag("storage_blocks_corn_meal");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_SUGAR = neoforgeItemTag("storage_blocks_sugar");
@@ -802,5 +835,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CUCUMBER = neoforgeItemTag("storage_blocks_cucumber");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_SOYBEANS = neoforgeItemTag("storage_blocks_soybeans");
 	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_SALT = neoforgeItemTag("storage_blocks_salt");
-
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_LEMON = neoforgeItemTag("storage_blocks_lemon");
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_LIME = neoforgeItemTag("storage_blocks_lime");
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_ORANGE = neoforgeItemTag("storage_blocks_orange");
+	public static final TagKey<Item> STORAGE_BLOCKS_ITEM_GRAPEFRUIT = neoforgeItemTag("storage_blocks_grapefruit");
 }

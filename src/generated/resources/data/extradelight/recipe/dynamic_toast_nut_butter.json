@@ -1,0 +1,17 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "misc",
+  "graphic": "nut_butter",
+  "ingredients": [
+    {
+      "tag": "c:toast"
+    },
+    {
+      "item": "extradelight:peanut_butter_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:dynamic_toast"
+  }
+}

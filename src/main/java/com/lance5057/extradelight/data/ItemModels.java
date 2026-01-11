@@ -7,6 +7,7 @@ import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.modules.Fermentation;
 
+import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -523,13 +524,13 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.CACTUS_JUICE, "cactus_juice");
 		forItem(this, ExtraDelightItems.STUFFED_CACTUS, "stuffed_cactus");
 
-		forItem(this, ExtraDelightItems.CORN_SEEDS, "crops/corn_seeds");
-		forItem(this, ExtraDelightItems.CORN_COB, "crops/corn_cob");
-		forItem(this, ExtraDelightItems.CORN_HUSK, "crops/corn_husk");
-		forItem(this, ExtraDelightItems.CORN_ON_COB, "crops/corn_on_cob");
-		forItem(this, ExtraDelightItems.CORN_SILK, "crops/corn_silk");
-		forItem(this, ExtraDelightItems.DRIED_CORN_HUSK, "crops/dried_corn_husk");
-		forItem(this, ExtraDelightItems.UNSHUCKED_CORN, "crops/unshucked_corn");
+		forItem(this, ExtraDelightItems.CORN_SEEDS, "crops/corn/corn_seeds");
+		forItem(this, ExtraDelightItems.CORN_COB, "crops/corn/corn_cob");
+		forItem(this, ExtraDelightItems.CORN_HUSK, "crops/corn/corn_husk");
+		forItem(this, ExtraDelightItems.CORN_ON_COB, "crops/corn/corn_on_cob");
+		forItem(this, ExtraDelightItems.CORN_SILK, "crops/corn/corn_silk");
+		forItem(this, ExtraDelightItems.DRIED_CORN_HUSK, "crops/corn/dried_corn_husk");
+		forItem(this, ExtraDelightItems.UNSHUCKED_CORN, "crops/corn/unshucked_corn");
 		forItem(this, ExtraDelightItems.CORN_MEAL, "cornmeal");
 
 		forItem(this, ExtraDelightItems.CORN_CHOWDER, "corn_chowder");
@@ -697,10 +698,10 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(this, ExtraDelightItems.SUGAR_COOKIE_BLOCK, "sugar_cookie_block");
 		forBlockItem(this, ExtraDelightItems.SWEET_BERRY_COOKIE_BLOCK, "sweet_berry_cookie_block");
 
-		forItem(this, ExtraDelightItems.GINGER, "ginger");
-		forItem(this, ExtraDelightItems.GINGER_CUTTING, "ginger_cutting");
-		forItem(this, ExtraDelightItems.PEELED_GINGER, "peeled_ginger");
-		forItem(this, ExtraDelightItems.SLICED_GINGER, "sliced_ginger");
+		forItem(this, ExtraDelightItems.GINGER, "crops/ginger/ginger");
+		forItem(this, ExtraDelightItems.GINGER_CUTTING, "crops/ginger/ginger_cutting");
+		forItem(this, ExtraDelightItems.PEELED_GINGER, "crops/ginger/peeled_ginger");
+		forItem(this, ExtraDelightItems.SLICED_GINGER, "crops/ginger/sliced_ginger");
 		forItem(this, ExtraDelightItems.GRATED_GINGER, "grated_ginger");
 		forItem(this, ExtraDelightItems.FROSTING_WHITE, "frosting_white");
 		forItem(this, ExtraDelightItems.FROSTING_ORANGE, "frosting_orange");
@@ -1266,7 +1267,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(this, ExtraDelightItems.ROASTED_PEANUT_SACK, "roasted_peanut_sack");
 		forBlockItem(this, ExtraDelightItems.SUGAR_SACK, "sugar_sack");
 
-		forItem(this, ExtraDelightItems.SLICED_CHILI, "sliced_chili_pepper");
+		forItem(this, ExtraDelightItems.SLICED_CHILI, "crops/chili/sliced_chili_pepper");
 		forItem(this, ExtraDelightItems.JALAPENO_STUFFED_POTATO, "jalapeno_stuffed_potato");
 		forItem(this, ExtraDelightItems.JALAPENO_POPPER, "jalapeno_popper");
 		forItem(this, ExtraDelightItems.CHILI_CHEESE_CORNBREAD_MUFFIN, "chili_cheese_cornbread_muffin");
@@ -1342,26 +1343,48 @@ public class ItemModels extends ItemModelProvider {
 		getBuilder(ExtraDelightItems.EVAPORATOR.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
+//		getBuilder(ExtraDelightItems.JUICER.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+//				.customLoader(BlockStateItemGeometryLoader::builder);
+
+		getBuilder(ExtraDelightItems.JUICER.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/juicer_item"), existingFileHelper));
+
+		getBuilder(ExtraDelightItems.WHISK.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/whisk_item"), existingFileHelper));
 
 		getBuilder(ExtraDelightItems.DYNAMIC_TOAST.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(DynamicFoodGeometryLoader::builder);
 
+		getBuilder(ExtraDelightItems.DYNAMIC_JAM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(DynamicFoodGeometryLoader::builder);
+
+		getBuilder(ExtraDelightItems.FRUIT_BOWL.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+
+		forBlockItemFlat(this, ExtraDelightItems.APPLE_PETAL_LITTER_ITEM, "crops/fruit/apple/apple_leaves_budding");
+		forBlockItemFlat(this, ExtraDelightItems.HAZELNUT_PETAL_LITTER_ITEM, "crops/fruit/hazelnut/hazelnut_petals");
+
 		Fermentation.itemModels(this);
+		SummerCitrus.itemModels(this);
 		AestheticBlocks.itemModel(this);
 	}
 
 	public static void forItem(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
-		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/handheld"), "layer0", tmp.modLoc("item/" + name));
+		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/generated"), "layer0", tmp.modLoc("item/" + name));
 	}
 
-	public void forItemModel(DeferredItem<Item> item, String path) {
-		getBuilder(item.getId().getPath()).parent(
-				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, path)));
+	public void forItemModel(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
+		tmp.getBuilder(item.getId().getPath() + "_item")
+				.parent(new ModelFile.ExistingModelFile(tmp.modLoc("item/" + name), existingFileHelper));
+//		getBuilder(item.getId().getPath()).parent(
+//				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/" + path)));
 	}
 
 	public static void forBlockItemFlat(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
-		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/handheld"), "layer0", tmp.modLoc("block/" + name));
+		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/generated"), "layer0", tmp.modLoc("block/" + name));
 	}
 
 	public static void forBlockItem(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
@@ -1373,6 +1396,10 @@ public class ItemModels extends ItemModelProvider {
 
 	public void forBlockItem(DeferredItem<Item> item, ResourceLocation modelLocation) {
 		getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation));
+	}
+
+	public static void forBlockItem(ItemModelProvider tmp, DeferredItem<Item> item, ResourceLocation modelLocation) {
+		tmp.getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation));
 	}
 
 	public void forBlockItem(DeferredItem<Item> item, ResourceLocation modelLocation, String key,

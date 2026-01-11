@@ -1,0 +1,17 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "misc",
+  "graphic": "butter",
+  "ingredients": [
+    {
+      "tag": "c:toast"
+    },
+    {
+      "tag": "c:butter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:dynamic_toast"
+  }
+}

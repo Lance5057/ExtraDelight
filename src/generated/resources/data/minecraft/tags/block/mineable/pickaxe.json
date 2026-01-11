@@ -2,8 +2,10 @@
   "values": [
     "extradelight:oven",
     "extradelight:mortar_stone",
+    "extradelight:juicer",
     "extradelight:lasagna_block",
     "extradelight:hotdish_block",
+    "extradelight:cheesymite_scroll_block",
     "extradelight:macaroni_cheese_block",
     "extradelight:curry_block",
     "extradelight:beef_stew_block",
@@ -23,6 +25,8 @@
     "extradelight:pickled_fish_block",
     "extradelight:pickled_sausage_block",
     "extradelight:pickled_ginger_block",
+    "extradelight:preserved_lemons_block",
+    "extradelight:pickled_rinds_block",
     "extradelight:sheet",
     "extradelight:loaf_pan",
     "extradelight:square_pan",
@@ -72,6 +76,17 @@
     "extradelight:white_chocolate_fence",
     "extradelight:white_chocolate_slab",
     "extradelight:white_chocolate_trapdoor",
-    "extradelight:white_chocolate_pillar"
+    "extradelight:white_chocolate_pillar",
+    "extradelight:cheese_block",
+    "extradelight:cheese_slab_block",
+    "extradelight:cheese_stairs_block",
+    "extradelight:butter_block",
+    "extradelight:butter_slab_block",
+    "extradelight:butter_stairs_block",
+    "extradelight:candy_cane_blue_block",
+    "extradelight:candy_cane_red_block",
+    "extradelight:candy_cane_green_block",
+    "extradelight:salt_block",
+    "extradelight:candy_bowl"
   ]
 }

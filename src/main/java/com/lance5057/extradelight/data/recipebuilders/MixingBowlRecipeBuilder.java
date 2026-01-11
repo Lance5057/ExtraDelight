@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 
 import net.minecraft.advancements.Advancement;
@@ -30,17 +31,23 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 	@Nullable
 	private String group;
 	final int stirs;
-	final ItemStack usedItem;
+	final ItemStack container;
+	final Ingredient utensil;
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 
-	public MixingBowlRecipeBuilder(ItemStack pResult, int stirs, ItemStack usedItem) {
+	public MixingBowlRecipeBuilder(ItemStack pResult, int stirs, ItemStack container, Ingredient utensil) {
 		this.stirs = stirs;
-		this.usedItem = usedItem;
+		this.container = container;
 		this.result = pResult;
+		this.utensil = utensil;
 	}
 
-	public static MixingBowlRecipeBuilder stir(ItemStack pResult, int grinds, ItemStack usedItem) {
-		return new MixingBowlRecipeBuilder(pResult, grinds, usedItem);
+	public static MixingBowlRecipeBuilder stir(ItemStack pResult, int grinds, ItemStack container) {
+		return new MixingBowlRecipeBuilder(pResult, grinds, container, Ingredient.of(ExtraDelightTags.SPOONS));
+	}
+
+	public static MixingBowlRecipeBuilder stir(ItemStack pResult, int grinds, ItemStack container, Ingredient utensil) {
+		return new MixingBowlRecipeBuilder(pResult, grinds, container, utensil);
 	}
 
 	public MixingBowlRecipeBuilder unlockedBy(String criterionName, Criterion<?> criterionTrigger) {
@@ -101,7 +108,7 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancementBuilder::addCriterion);
 		MixingBowlRecipe recipe = new MixingBowlRecipe("", this.ingredients, this.fluids, this.result, this.stirs,
-				this.usedItem);
+				this.container, this.utensil);
 		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/mixing/")));
 	}
 

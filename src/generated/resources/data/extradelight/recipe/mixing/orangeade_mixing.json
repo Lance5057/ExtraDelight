@@ -1,0 +1,45 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 4,
+    "id": "minecraft:glass_bottle"
+  },
+  "fluids": [
+    {
+      "amount": 500,
+      "fluid": "minecraft:water"
+    },
+    {
+      "amount": 500,
+      "fluid": "extradelight:orange_juice_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:ice/cubes"
+    },
+    {
+      "tag": "extradelight:processed/orange"
+    },
+    {
+      "tag": "extradelight:processed/orange"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:orangeade"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "c:spoons"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "type": "extradelight:dynamic_jam",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "experience": 1.0,
+  "graphic": "mint",
+  "ingredients": [
+    {
+      "tag": "c:mint"
+    },
+    {
+      "tag": "c:mint"
+    },
+    {
+      "tag": "c:mint"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "c:gelatin"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "components": {
+      "extradelight:dynamic_food": {
+        "graphics": [
+          "mint"
+        ]
+      },
+      "extradelight:itemstack_handler": [
+        {
+          "item": {
+            "components": {
+              "minecraft:custom_name": "\"Empty Tag: c:mint\""
+            },
+            "count": 1,
+            "id": "minecraft:barrier"
+          },
+          "slot": 0
+        },
+        {
+          "item": {
+            "components": {
+              "minecraft:custom_name": "\"Empty Tag: c:mint\""
+            },
+            "count": 1,
+            "id": "minecraft:barrier"
+          },
+          "slot": 1
+        },
+        {
+          "item": {
+            "components": {
+              "minecraft:custom_name": "\"Empty Tag: c:mint\""
+            },
+            "count": 1,
+            "id": "minecraft:barrier"
+          },
+          "slot": 2
+        },
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:sugar"
+          },
+          "slot": 3
+        },
+        {
+          "item": {
+            "components": {
+              "minecraft:custom_name": "\"Empty Tag: c:gelatin\""
+            },
+            "count": 1,
+            "id": "minecraft:barrier"
+          },
+          "slot": 4
+        },
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:sugar"
+          },
+          "slot": 5
+        }
+      ]
+    },
+    "count": 1,
+    "id": "extradelight:dynamic_jam"
+  }
+}

@@ -8,9 +8,148 @@
     {
       "tag": "c:nut_butter"
     },
-    {
-      "tag": "c:jams"
-    },
+    [
+      {
+        "tag": "c:jams"
+      },
+      {
+        "type": "neoforge:compound",
+        "children": [
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "orange"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "lime"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "lemon"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "grapefruit"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "sweet_berries"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "glow_berries"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "apple"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "golden_apple"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "chorus_fruit"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "melon"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "carrot"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "mint"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
+          }
+        ]
+      }
+    ],
     {
       "tag": "c:bread/sliced"
     }

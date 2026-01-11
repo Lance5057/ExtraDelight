@@ -27,5 +27,8 @@
     "count": 4,
     "id": "extradelight:nougat"
   },
-  "stirs": 4
+  "stirs": 4,
+  "utensil": {
+    "tag": "c:spoons"
+  }
 }

@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "farmersdelight:cooked_rice"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:melon_rind"
+    },
+    {
+      "tag": "extradelight:processed/carrot"
+    },
+    {
+      "tag": "c:fish_sauce"
+    },
+    {
+      "tag": "c:condiments/soy_sauce"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:melon_rind_stirfry"
+  }
+}

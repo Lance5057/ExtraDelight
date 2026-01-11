@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:pasta"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "tag": "c:cooking_oil"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    },
+    {
+      "tag": "c:cheese"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:aglio_e_olio"
+  }
+}

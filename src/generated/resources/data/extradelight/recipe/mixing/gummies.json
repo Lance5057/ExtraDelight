@@ -30,5 +30,8 @@
     "count": 4,
     "id": "extradelight:gummies"
   },
-  "stirs": 4
+  "stirs": 4,
+  "utensil": {
+    "tag": "c:spoons"
+  }
 }

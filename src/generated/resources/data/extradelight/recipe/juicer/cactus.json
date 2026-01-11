@@ -1,0 +1,15 @@
+{
+  "type": "extradelight:juicer",
+  "chance": 25,
+  "fluidOut": {
+    "amount": 100,
+    "id": "extradelight:cactus_juice_fluid"
+  },
+  "ingredient": {
+    "tag": "c:vegetable/cactus"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:green_dye"
+  }
+}

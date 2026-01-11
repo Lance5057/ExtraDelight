@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "extradelight:block/crates/oak_crate_bottom",
+    "east": "extradelight:block/lemon_crate_side",
+    "north": "extradelight:block/lemon_crate_side",
+    "particle": "extradelight:block/lemon_crate_top",
+    "south": "extradelight:block/lemon_crate_side",
+    "up": "extradelight:block/lemon_crate_top",
+    "west": "extradelight:block/lemon_crate_side"
+  }
+}

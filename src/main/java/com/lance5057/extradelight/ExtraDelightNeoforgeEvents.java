@@ -1,15 +1,21 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
+import com.lance5057.extradelight.util.BlockEntityUtils;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.BasicItemListing;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.event.entity.EntityEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
@@ -72,6 +78,14 @@ public class ExtraDelightNeoforgeEvents {
 				new ItemStack(ExtraDelightItems.CINNAMON_SAPLING.get(), 1), 2, 16, 0.05F));
 		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 5),
 				new ItemStack(ExtraDelightItems.HAZELNUT_SAPLING.get(), 1), 2, 16, 0.05F));
+		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 5),
+				new ItemStack(SummerCitrus.LEMON_SAPLING.get(), 1), 2, 16, 0.05F));
+		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 5),
+				new ItemStack(SummerCitrus.LIME_SAPLING.get(), 1), 2, 16, 0.05F));
+		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 5),
+				new ItemStack(SummerCitrus.ORANGE_SAPLING.get(), 1), 2, 16, 0.05F));
+		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 5),
+				new ItemStack(SummerCitrus.GRAPEFRUIT_SAPLING.get(), 1), 2, 16, 0.05F));
 
 		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 1),
 				new ItemStack(Fermentation.SOYBEANS.get(), 3), 2, 16, 0.05F));
@@ -92,4 +106,17 @@ public class ExtraDelightNeoforgeEvents {
 		event.getGenericTrades().add(new BasicItemListing(new ItemStack(Items.EMERALD, 3),
 				new ItemStack(ExtraDelightItems.GINGER.get(), 2), 2, 16, 0.05F));
 	}
+
+	@SubscribeEvent
+	public static void handleMelon(LivingEntityUseItemEvent.Finish event) {
+		Item food = event.getItem().getItem();
+		LivingEntity entity = event.getEntity();
+
+		if (entity instanceof Player p)
+			if (food.equals(Items.MELON_SLICE)) {
+				BlockEntityUtils.Inventory.givePlayerItemStack(new ItemStack(SummerCitrus.MELON_RIND.get()), p,
+						p.level(), p.blockPosition());
+			}
+	}
+
 }

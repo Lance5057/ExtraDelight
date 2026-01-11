@@ -1,0 +1,40 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:whipped_cream"
+    },
+    {
+      "tag": "extradelight:processed/fruit"
+    },
+    {
+      "tag": "extradelight:processed/fruit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:pavlova_item"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "fluids": [
+    {
+      "amount": 50,
+      "fluid": "minecraft:water"
+    },
+    {
+      "amount": 250,
+      "fluid": "minecraft:milk"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:crops/coffee/ground"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:dalgona_coffee"
+  },
+  "stirs": 8,
+  "utensil": {
+    "item": "extradelight:whisk"
+  }
+}

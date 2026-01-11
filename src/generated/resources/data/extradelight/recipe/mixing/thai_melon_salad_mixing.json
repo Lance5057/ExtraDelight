@@ -1,0 +1,51 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:lime_juice_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "tag": "c:crops/peanut/cooked"
+    },
+    {
+      "tag": "extradelight:processed/cucumber"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    },
+    {
+      "tag": "c:mint"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "c:fish_sauce"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:thai_melon_salad"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "c:spoons"
+  }
+}

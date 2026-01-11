@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "extradelight:processed/grapefruit"
+    },
+    {
+      "tag": "extradelight:processed/beetroot"
+    },
+    {
+      "tag": "c:salt"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "extradelight:grapefruit_beetroot_salad"
+    }
+  ]
+}

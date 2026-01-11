@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flower_pot_cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "plant": "extradelight:block/crops/fruit/lime/lime_sapling"
+  }
+}

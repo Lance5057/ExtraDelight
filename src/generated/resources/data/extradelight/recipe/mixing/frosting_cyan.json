@@ -21,5 +21,8 @@
     "count": 4,
     "id": "extradelight:frosting_cyan"
   },
-  "stirs": 2
+  "stirs": 2,
+  "utensil": {
+    "tag": "c:spoons"
+  }
 }

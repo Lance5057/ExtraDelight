@@ -1,0 +1,94 @@
+{
+  "type": "extradelight:dynamic_jam",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "experience": 1.0,
+  "graphic": "lime",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/lime"
+    },
+    {
+      "tag": "extradelight:processed/lime"
+    },
+    {
+      "tag": "extradelight:processed/lime"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "components": {
+      "extradelight:dynamic_food": {
+        "graphics": [
+          "lime"
+        ]
+      },
+      "extradelight:itemstack_handler": [
+        {
+          "item": {
+            "components": {
+              "minecraft:custom_name": "\"Empty Tag: extradelight:processed/lime\""
+            },
+            "count": 1,
+            "id": "minecraft:barrier"
+          },
+          "slot": 0
+        },
+        {
+          "item": {
+            "components": {
+              "minecraft:custom_name": "\"Empty Tag: extradelight:processed/lime\""
+            },
+            "count": 1,
+            "id": "minecraft:barrier"
+          },
+          "slot": 1
+        },
+        {
+          "item": {
+            "components": {
+              "minecraft:custom_name": "\"Empty Tag: extradelight:processed/lime\""
+            },
+            "count": 1,
+            "id": "minecraft:barrier"
+          },
+          "slot": 2
+        },
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:sugar"
+          },
+          "slot": 3
+        },
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:sugar"
+          },
+          "slot": 4
+        },
+        {
+          "item": {
+            "count": 1,
+            "id": "minecraft:sugar"
+          },
+          "slot": 5
+        }
+      ]
+    },
+    "count": 1,
+    "id": "extradelight:dynamic_jam"
+  }
+}

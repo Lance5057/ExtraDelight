@@ -1,7 +1,34 @@
 {
   "values": [
+    "extradelight:oak_wreath",
+    "extradelight:dark_oak_wreath",
+    "extradelight:spruce_wreath",
+    "extradelight:birch_wreath",
+    "extradelight:jungle_wreath",
+    "extradelight:acacia_wreath",
+    "extradelight:crimson_wreath",
+    "extradelight:warped_wreath",
+    "extradelight:mangrove_wreath",
+    "extradelight:cinnamon_wreath",
+    "extradelight:cherry_wreath",
+    "extradelight:azalea_wreath",
+    "extradelight:flowering_azalea_wreath",
+    "extradelight:hazelnut_wreath",
+    "extradelight:apple_wreath",
+    "extradelight:lemon_wreath",
+    "extradelight:lime_wreath",
+    "extradelight:orange_wreath",
+    "extradelight:grapefruit_wreath",
     "extradelight:cinnamon_leaves",
     "extradelight:hazelnut_leaves",
-    "extradelight:apple_leaves"
+    "extradelight:apple_leaves",
+    "extradelight:lemon_leaves",
+    "extradelight:lime_leaves",
+    "extradelight:orange_leaves",
+    "extradelight:grapefruit_leaves",
+    "extradelight:lemon_petal_litter",
+    "extradelight:lime_petal_litter",
+    "extradelight:orange_petal_litter",
+    "extradelight:grapefruit_petal_litter"
   ]
 }

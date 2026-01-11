@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "extradelight:meringue"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:meringue"
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "c:foods/berry"
+      },
+      "subtracted": {
+        "item": "minecraft:glow_berries"
+      }
+    },
+    {
+      "item": "extradelight:lemon_zest"
+    },
+    {
+      "tag": "extradelight:processed/orange"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
+    }
+  ],
+  "results": [
+    {
+      "id": "extradelight:eton_mess"
+    }
+  ]
+}

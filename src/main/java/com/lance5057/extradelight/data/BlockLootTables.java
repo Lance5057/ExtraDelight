@@ -28,6 +28,7 @@ import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
@@ -125,6 +126,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropOther(ExtraDelightBlocks.VAT.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.EVAPORATOR.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.FRUIT_BOWL.get(), Items.AIR);
 
 		this.dropSelf(ExtraDelightBlocks.FLOUR.get());
 //		this.dropSelf(ExtraDelightBlocks.COOKING_OIL.get());
@@ -341,7 +343,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.hasBlockStateProperties(ExtraDelightBlocks.PEANUT_CROP.get())
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PeanutCrop.AGE, 5));
 		crop(ExtraDelightBlocks.PEANUT_CROP.get(), ExtraDelightItems.PEANUTS_IN_SHELL.get(),
-				ExtraDelightItems.PEANUTS_IN_SHELL.get(), peanut);
+				ExtraDelightItems.PEANUTS.get(), peanut);
 		this.dropOther(ExtraDelightBlocks.WILD_PEANUT.get(), ExtraDelightItems.PEANUTS_IN_SHELL.get());
 
 		LootItemCondition.Builder chili = LootItemBlockStatePropertyCondition
@@ -441,24 +443,24 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.FUNNEL.get());
 
 //		this.add(Blocks.BLACK_SHULKER_BOX, p_248609_ -> this.createShulkerBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
+		this.add(ExtraDelightBlocks.WHITE_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.ORANGE_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.MAGENTA_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 		this.add(ExtraDelightBlocks.LIGHT_BLUE_CHOCOLATE_BOX.get(),
-				p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
+				p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.YELLOW_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.LIME_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.PINK_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.GRAY_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 		this.add(ExtraDelightBlocks.LIGHT_GRAY_CHOCOLATE_BOX.get(),
-				p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
-		this.add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
+				p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.CYAN_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.BLUE_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.BROWN_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.GREEN_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.RED_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 
 		feast(ExtraDelightBlocks.BROWNIES.get(), ExtraDelightItems.BROWNIES_BLOCK.get(),
 				ExtraDelightItems.SQUARE_PAN.get());
@@ -593,9 +595,81 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		feast(Fermentation.CHEESYMITE_SCROLL_BLOCK.get(), Fermentation.CHEESYMITE_SCROLL_BLOCK_ITEM.get(), Items.BOWL);
 
-		add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.CINNAMON_SAPLING.get()));
-		add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.HAZELNUT_SAPLING.get()));
-		add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(), createPotFlowerItemTable(ExtraDelightBlocks.APPLE_SAPLING.get()));
+		add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(),
+				createPotFlowerItemTable(ExtraDelightBlocks.CINNAMON_SAPLING.get()));
+		add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(),
+				createPotFlowerItemTable(ExtraDelightBlocks.HAZELNUT_SAPLING.get()));
+		add(ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(),
+				createPotFlowerItemTable(ExtraDelightBlocks.APPLE_SAPLING.get()));
+
+		this.createFruitLeavesDrop(SummerCitrus.LEMON_LEAVES.get(), SummerCitrus.LEMON_SAPLING.get(),
+				SummerCitrus.LEMON.get());
+		this.dropSelf(SummerCitrus.LEMON_SAPLING.get());
+		add(SummerCitrus.POTTED_LEMON_SAPLING.get(), createPotFlowerItemTable(SummerCitrus.LEMON_SAPLING.get()));
+		this.createFruitLeavesDrop(SummerCitrus.LIME_LEAVES.get(), SummerCitrus.LIME_SAPLING.get(),
+				SummerCitrus.LIME.get());
+		this.dropSelf(SummerCitrus.LIME_SAPLING.get());
+		add(SummerCitrus.POTTED_LIME_SAPLING.get(), createPotFlowerItemTable(SummerCitrus.LIME_SAPLING.get()));
+		this.createFruitLeavesDrop(SummerCitrus.ORANGE_LEAVES.get(), SummerCitrus.ORANGE_SAPLING.get(),
+				SummerCitrus.ORANGE.get());
+		this.dropSelf(SummerCitrus.ORANGE_SAPLING.get());
+		add(SummerCitrus.POTTED_ORANGE_SAPLING.get(), createPotFlowerItemTable(SummerCitrus.ORANGE_SAPLING.get()));
+		this.createFruitLeavesDrop(SummerCitrus.GRAPEFRUIT_LEAVES.get(), SummerCitrus.GRAPEFRUIT_SAPLING.get(),
+				SummerCitrus.GRAPEFRUIT.get());
+		this.dropSelf(SummerCitrus.GRAPEFRUIT_SAPLING.get());
+		add(SummerCitrus.POTTED_GRAPEFRUIT_SAPLING.get(),
+				createPotFlowerItemTable(SummerCitrus.GRAPEFRUIT_SAPLING.get()));
+		this.dropSelf(SummerCitrus.LEMON_CRATE.get());
+		this.dropSelf(SummerCitrus.LIME_CRATE.get());
+		this.dropSelf(SummerCitrus.ORANGE_CRATE.get());
+		this.dropSelf(SummerCitrus.GRAPEFRUIT_CRATE.get());
+		this.add(SummerCitrus.LEMON_MERINGUE_PIE.get(), noDrop());
+		this.add(SummerCitrus.KEY_LIME_PIE.get(), noDrop());
+		feast(SummerCitrus.MELON_FRUIT_SALAD.get(), SummerCitrus.MELON_FRUIT_SALAD_ITEM.get(),
+				SummerCitrus.MELON_RIND.get(), 4);
+		this.dropOther(SummerCitrus.LEMON_CUCUMBER_CAKE.get(), Items.AIR);
+		feast(SummerCitrus.BAKED_COD.get(), SummerCitrus.BAKED_COD_ITEM.get(), ExtraDelightItems.TRAY.get());
+		this.dropOther(SummerCitrus.MELON_LAYER_CAKE.get(), Items.AIR);
+		this.add(SummerCitrus.PAVLOVA.get(), noDrop());
+		feast(SummerCitrus.PRESERVED_LEMONS_BLOCK.get(), SummerCitrus.PRESERVED_LEMONS_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+		feast(SummerCitrus.PICKLED_RINDS_BLOCK.get(), SummerCitrus.PICKLED_RINDS_BLOCK_ITEM.get(),
+				Fermentation.PICKLE_JUICE.get());
+		this.add(SummerCitrus.KYIV_CAKE.get(), noDrop());
+		feast(SummerCitrus.BAKED_ALASKA.get(), SummerCitrus.BAKED_ALASKA_ITEM.get(), ExtraDelightItems.TRAY.get());
+
+		this.dropSelf(ExtraDelightBlocks.JUICER.get());
+
+		feast(SummerCitrus.LEMONADE_TRAY.get(), SummerCitrus.LEMONADE_TRAY_ITEM.get(), Items.GLASS_BOTTLE);
+		feast(SummerCitrus.LIMEADE_TRAY.get(), SummerCitrus.LIMEADE_TRAY_ITEM.get(), Items.GLASS_BOTTLE);
+		feast(SummerCitrus.ORANGEADE_TRAY.get(), SummerCitrus.ORANGEADE_TRAY_ITEM.get(), Items.GLASS_BOTTLE);
+
+		this.add(SummerCitrus.WHITE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.ORANGE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.MAGENTA_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.LIGHT_BLUE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.YELLOW_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.LIME_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.PINK_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.GRAY_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.LIGHT_GRAY_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.CYAN_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.BLUE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.BROWN_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.GREEN_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.RED_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.BLACK_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+		this.add(SummerCitrus.PURPLE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
+
+		this.dropSelf(SummerCitrus.RAW_BAKED_ALASKA.get());
+		
+		this.dropSelf(SummerCitrus.GRAPEFRUIT_PETAL_LITTER.get());
+		this.dropSelf(SummerCitrus.ORANGE_PETAL_LITTER.get());
+		this.dropSelf(SummerCitrus.LIME_PETAL_LITTER.get());
+		this.dropSelf(SummerCitrus.LEMON_PETAL_LITTER.get());
+		this.dropSelf(ExtraDelightBlocks.APPLE_PETAL_LITTER.get());
+		this.dropSelf(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get());
+		
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {
@@ -627,7 +701,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		});
 	}
 
-	protected LootTable.Builder createChocolateBoxDrop(Block block) {
+	protected LootTable.Builder createContainerItemDrop(Block block) {
 		return LootTable.lootTable()
 				.withPool(this.applyExplosionCondition(block,
 						LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
@@ -658,15 +732,18 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition,
 			float amount) {
-		this.add(pCropBlock, LootTable.lootTable()
-				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-						.add(LootItem.lootTableItem(pSeedsItem).when(pDropGrownCropCondition)))
-				.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(amount))
-						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)))
-				.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
-						.add(LootItem.lootTableItem(pGrownCropItem)
-								.apply(ApplyBonusCount.addBonusBinomialDistributionCount(
-								this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F, 1)))));
+		this.add(pCropBlock,
+				LootTable.lootTable()
+						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+								.add(LootItem.lootTableItem(pSeedsItem).when(pDropGrownCropCondition)))
+						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(amount))
+								.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)))
+						.withPool(
+								LootPool.lootPool().when(pDropGrownCropCondition)
+										.add(LootItem.lootTableItem(pGrownCropItem)
+												.apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+														this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F,
+														1)))));
 	}
 
 	void crop(CropBlock pCropBlock, ItemLike pGrownCropItem, ItemLike pSeedsItem, Builder pDropGrownCropCondition) {
@@ -676,9 +753,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.withPool(LootPool.lootPool()
 						.add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition)
 								.otherwise(LootItem.lootTableItem(pSeedsItem))))
-				.withPool(LootPool.lootPool().when(pDropGrownCropCondition)
-						.add(LootItem.lootTableItem(pGrownCropItem)
-								.apply(ApplyBonusCount.addBonusBinomialDistributionCount(
+				.withPool(LootPool.lootPool().when(pDropGrownCropCondition).add(
+						LootItem.lootTableItem(pGrownCropItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(
 								this.registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F, 1)))));
 	}
 
@@ -707,6 +783,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(RecipeFeastBlock.SERVINGS, 0));
 
 		this.add(block, LootTable.lootTable().withPool(LootPool.lootPool()
+				.add(LootItem.lootTableItem(lastDrop).when(feast0).otherwise(LootItem.lootTableItem(Items.AIR)))));
+	}
+
+	void feast(RecipeFeastBlock block, Item blockItem, Item lastDrop, int dropAmount) {
+		LootItemCondition.Builder feast0 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(RecipeFeastBlock.SERVINGS, 0));
+
+		this.add(block, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(dropAmount))
 				.add(LootItem.lootTableItem(lastDrop).when(feast0).otherwise(LootItem.lootTableItem(Items.AIR)))));
 	}
 

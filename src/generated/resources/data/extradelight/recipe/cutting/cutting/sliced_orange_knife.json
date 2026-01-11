@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "c:crops/orange"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 3,
+        "id": "extradelight:sliced_orange"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

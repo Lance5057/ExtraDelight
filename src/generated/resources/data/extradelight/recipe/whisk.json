@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "tag": "c:nuggets/iron"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " i ",
+    "iii",
+    " s "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:whisk"
+  }
+}

@@ -1,7 +1,15 @@
 {
   "type": "extradelight:bottle_fluid",
   "bottle": {
-    "item": "extradelight:jam"
+    "type": "neoforge:components",
+    "components": {
+      "extradelight:dynamic_food": {
+        "graphics": [
+          "sweet_berries"
+        ]
+      }
+    },
+    "items": "extradelight:dynamic_jam"
   },
   "fluid": {
     "amount": 250,

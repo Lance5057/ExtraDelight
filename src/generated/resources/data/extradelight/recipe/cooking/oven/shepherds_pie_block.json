@@ -12,28 +12,52 @@
       "item": "minecraft:baked_potato"
     },
     {
-      "tag": "c:foods/milk"
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:foods/milk"
+        },
+        {
+          "tag": "extradelight:broth"
+        }
+      ]
     },
     {
       "item": "minecraft:baked_potato"
     },
     {
-      "tag": "c:foods/cooked_mutton"
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:foods/cooked_mutton"
+        },
+        {
+          "tag": "c:mutton/cooked"
+        }
+      ]
     },
     {
-      "tag": "c:flour"
+      "item": "farmersdelight:tomato_sauce"
     },
     {
-      "tag": "c:foods/cooked_mutton"
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:foods/cooked_mutton"
+        },
+        {
+          "tag": "c:mutton/cooked"
+        }
+      ]
     },
     {
-      "tag": "extradelight:processed/vegetable"
+      "tag": "extradelight:processed/carrot"
     },
     {
-      "tag": "extradelight:processed/vegetable"
+      "tag": "extradelight:processed/onion"
     },
     {
-      "tag": "extradelight:processed/vegetable"
+      "tag": "extradelight:processed/cabbage"
     }
   ],
   "result": {

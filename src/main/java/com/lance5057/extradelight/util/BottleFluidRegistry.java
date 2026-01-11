@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.data.recipebuilders.BottleFluidRegistryRecipeBuilder;
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
 
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.world.item.ItemStack;
@@ -15,8 +18,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -40,6 +45,14 @@ public class BottleFluidRegistry {
 		return ItemStack.EMPTY;
 	}
 
+	public static ItemStack getBottleFromFluidWithoutSize(Fluid f) {
+		Optional<BottleFluid> b = registry.stream().filter(bf -> bf.fluid.test(new FluidStack(f, 1000))).findFirst();
+		if (b.isPresent()) {
+			return b.get().bottle.getItems()[0].copy();
+		}
+		return ItemStack.EMPTY;
+	}
+
 	public static FluidStack getFluidFromBottle(ItemStack i) {
 		Optional<BottleFluid> b = registry.stream().filter(bf -> bf.bottle.test(i)).findFirst();
 		if (b.isPresent()) {
@@ -50,7 +63,8 @@ public class BottleFluidRegistry {
 
 	public static void createRecipesForJEI(RecipeOutput consumer) {
 		registry.forEach(bf -> {
-			new BottleFluidRegistryRecipeBuilder(bf.bottle, bf.fluid).save(consumer, bf.fluid.getFluids()[0].getDescriptionId());
+			new BottleFluidRegistryRecipeBuilder(bf.bottle, bf.fluid).save(consumer,
+					bf.fluid.getFluids()[0].getDescriptionId());
 		});
 	}
 
@@ -88,34 +102,41 @@ public class BottleFluidRegistry {
 				SizedFluidIngredient.of(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.EGG_MIX.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.EGG_MIX.FLUID.get(), bottleMB));
+		register(Ingredient.of(SummerCitrus.EGG_WHITE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.EGG_WHITE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.GLOW_BERRY_JUICE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID.get(), bottleMB));
-		register(Ingredient.of(ExtraDelightItems.GLOW_BERRY_JAM.get()),
-				SizedFluidIngredient.of(ExtraDelightFluids.GLOW_JAM.FLUID.get(), bottleMB));
-		register(Ingredient.of(ExtraDelightItems.GOLDEN_APPLE_JAM.get()),
-				SizedFluidIngredient.of(ExtraDelightFluids.GOLDEN_JAM.FLUID.get(), bottleMB));
+		register(Ingredient.of(SummerCitrus.GRAPEFRUIT_JUICE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.GRAPEFRUIT_JUICE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.GRAVY.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.GRAVY.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.COCOA_NUT_BUTTER_SPREAD.FLUID.get(), bottleMB));
 		register(Ingredient.of(ModItems.HOT_COCOA.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.HOT_COCOA.FLUID.get(), bottleMB));
-		register(Ingredient.of(ExtraDelightItems.JAM.get()),
+		register(
+				DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+						new DynamicItemComponent(List.of("sweet_berries")), ExtraDelightItems.DYNAMIC_JAM.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.JAM.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.KETCHUP.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.KETCHUP.FLUID.get(), bottleMB));
+		register(Ingredient.of(SummerCitrus.LEMON_JUICE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.LEMON_JUICE.FLUID.get(), bottleMB));
+		register(Ingredient.of(SummerCitrus.LIME_JUICE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.LIME_JUICE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.MAYO.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.MAYO.FLUID.get(), bottleMB));
 		register(Ingredient.of(ModItems.MELON_JUICE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.MELON_JUICE.FLUID.get(), bottleMB));
-		register(Ingredient.of(ModItems.MILK_BOTTLE.get()),
-				SizedFluidIngredient.of(NeoForgeMod.MILK.get(), bottleMB));
+		register(Ingredient.of(ModItems.MILK_BOTTLE.get()), SizedFluidIngredient.of(NeoForgeMod.MILK.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.MILKSHAKE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.MILKSHAKE.FLUID.get(), bottleMB));
+		register(Ingredient.of(SummerCitrus.ORANGE_JUICE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.ORANGE_JUICE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.NUT_BUTTER.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.SWEET_BERRY_JUICE.get()),
@@ -133,7 +154,8 @@ public class BottleFluidRegistry {
 		register(Ingredient.of(Fermentation.PICKLE_JUICE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.PICKLE_JUICE.FLUID.get(), bottleMB));
 
-		// If we just use Items.POTION we get an item called Uncraftable Potion instead of Water Bottle
+		// If we just use Items.POTION we get an item called Uncraftable Potion instead
+		// of Water Bottle
 		register(Ingredient.of(PotionContents.createItemStack(Items.POTION, Potions.WATER)),
 				SizedFluidIngredient.of(Fluids.WATER, bottleMB));
 	}

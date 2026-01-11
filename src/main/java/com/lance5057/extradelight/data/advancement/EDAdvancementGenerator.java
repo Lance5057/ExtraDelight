@@ -142,7 +142,7 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.parent(start)
 				.addCriterion("vat", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.VAT.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":vat");
-		
+
 		AdvancementHolder lid = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.LID.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.lid.name"),
@@ -1665,6 +1665,17 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(
 								ItemPredicate.Builder.item().of(AestheticBlocks.COUNTER_CABINET_ITEMS.get(0)).build()))
 				.save(consumer, ExtraDelight.MOD_ID + ":counter");
+
+		AdvancementHolder juicer = Advancement.Builder.advancement()
+				.display(AestheticBlocks.COUNTER_CABINET_ITEMS.get(0),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.juicer.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.juicer.desc"), null,
+						AdvancementType.TASK, true, true, false)
+				.parent(start)
+				.addCriterion("juicer",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.JUICER.get())))
+				.save(consumer, ExtraDelight.MOD_ID + ":juicer");
 	}
 
 }

@@ -61,7 +61,7 @@ public class FeastRecipe implements Recipe<SimpleRecipeWrapper> {
 				.mapCodec(inst -> inst
 						.group(Codec.STRING.optionalFieldOf("group", "").forGetter(FeastRecipe::getGroup),
 								ItemStack.SINGLE_ITEM_CODEC.fieldOf("out").forGetter(r -> new ItemStack(r.feast)),
-								Ingredient.CODEC_NONEMPTY.fieldOf("container")
+								Ingredient.CODEC.fieldOf("container")
 										.forGetter(p_301068_ -> p_301068_.container),
 								ItemStack.CODEC.fieldOf("result").forGetter(r -> r.result))
 						.apply(inst, FeastRecipe::new));
