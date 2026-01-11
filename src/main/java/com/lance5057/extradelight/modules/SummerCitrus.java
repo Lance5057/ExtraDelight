@@ -1113,19 +1113,19 @@ public class SummerCitrus {
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.PINK_DYE, 1).requires(GRAPEFRUIT_PETAL_LITTER_ITEM)
 				.unlockedBy("has_petals", InventoryChangeTrigger.TriggerInstance.hasItems(GRAPEFRUIT_PETAL_LITTER_ITEM))
-				.save(consumer);
+				.save(consumer, ExtraDelight.modLoc("pink_dye_from_petals"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.YELLOW_DYE, 1).requires(LEMON_PETAL_LITTER_ITEM)
 				.unlockedBy("has_petals", InventoryChangeTrigger.TriggerInstance.hasItems(LEMON_PETAL_LITTER_ITEM))
-				.save(consumer);
+				.save(consumer, ExtraDelight.modLoc("yellow_dye_from_petals"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.LIME_DYE, 1).requires(LIME_PETAL_LITTER_ITEM)
 				.unlockedBy("has_petals", InventoryChangeTrigger.TriggerInstance.hasItems(LIME_PETAL_LITTER_ITEM))
-				.save(consumer);
+				.save(consumer, ExtraDelight.modLoc("lime_dye_from_petals"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.ORANGE_DYE, 1).requires(ORANGE_PETAL_LITTER_ITEM)
 				.unlockedBy("has_petals", InventoryChangeTrigger.TriggerInstance.hasItems(ORANGE_PETAL_LITTER_ITEM))
-				.save(consumer);
+				.save(consumer, ExtraDelight.modLoc("orange_dye_from_petals"));
 
 		// Cake/Pie reconstruction
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, LEMON_MERINGUE_PIE_ITEM.get()).pattern("ff ").pattern("ff ")

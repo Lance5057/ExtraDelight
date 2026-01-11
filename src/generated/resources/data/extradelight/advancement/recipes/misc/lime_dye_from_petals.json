@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "extradelight:lemon_petal_litter_item"
+            "items": "extradelight:lime_petal_litter_item"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:yellow_dye"
+        "recipe": "extradelight:lime_dye_from_petals"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:yellow_dye"
+      "extradelight:lime_dye_from_petals"
     ]
   }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pink_dye"
+        "recipe": "extradelight:pink_dye_from_petals"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pink_dye"
+      "extradelight:pink_dye_from_petals"
     ]
   }
 }
