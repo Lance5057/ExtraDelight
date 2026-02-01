@@ -39,7 +39,7 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 					BlockEntityUtils.Inventory.dropItemInWorld(Items.BUCKET.getDefaultInstance().copy(), be.getLevel(),
 							be.getBlockPos());
 
-					getItemHandler().getStackInSlot(getFluidInSlot()).shrink(1);
+					getItemHandler().extractItem(getFluidInSlot(), 1, false);
 					updateInventory();
 				}
 			} else if (inputItem.getCapability(Capabilities.FluidHandler.ITEM) != null) {
@@ -50,7 +50,7 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 				if (filled > 0) {
 					BlockEntityUtils.Inventory.dropItemInWorld(fluidHandlerItem.getContainer().copy(), be.getLevel(),
 							be.getBlockPos());
-					getItemHandler().getStackInSlot(getFluidInSlot()).shrink(1);
+					getItemHandler().extractItem(getFluidInSlot(), 1, false);
 					updateInventory();
 				}
 			} else {
@@ -72,7 +72,7 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 									be.getBlockPos());
 						}
 
-						getItemHandler().getStackInSlot(getFluidInSlot()).shrink(sz);
+						getItemHandler().extractItem(getFluidInSlot(), sz, false);
 						updateInventory();
 					}
 				}
