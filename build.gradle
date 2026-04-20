@@ -28,6 +28,10 @@ repositories {
     maven { url = "https://maven.theillusivec4.top/" } 
     maven { url = "https://maven.blamejared.com/" }
 	//flatDir { dirs '../Butchercraft/build/libs' }
+    maven {
+        name = "Greenhouse"
+        url = "https://maven.greenhouse.lgbt/snapshots"
+    }
 }
 
 
@@ -91,7 +95,8 @@ configurations {
 dependencies {
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
-	implementation "curse.maven:farmersdelight-398521:6917256"
+	//implementation "curse.maven:farmersdelight-398521:6917256"
+    implementation "vectorwing.farmersdelight:FarmersDelight:1.21.1-1.3.0-rc1"
 	//implementation "curse.maven:vampirism-become-a-vampire-233029:6164796"
 	//implementation name: 'butchercraft-2.6.3'
 

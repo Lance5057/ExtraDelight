@@ -700,7 +700,7 @@ public class AestheticBlocks {
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, KNIFE_BLOCKS.get(name.ordinal()).get()).pattern("wkw")
-				.define('w', slab).define('k', CommonTags.TOOLS_KNIFE)
+				.define('w', slab).define('k', CommonTags.Items.TOOLS_KNIFE)
 				.unlockedBy(name + "_knife_block", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
 				.save(consumer);
 
@@ -742,7 +742,7 @@ public class AestheticBlocks {
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, KNIFE_BLOCKS.get(name.ordinal()).get()).pattern("wkw")
-				.define('w', slab).define('k', CommonTags.TOOLS_KNIFE)
+				.define('w', slab).define('k', CommonTags.Items.TOOLS_KNIFE)
 				.unlockedBy(name + "_knife_block", InventoryChangeTrigger.TriggerInstance.hasItems(slab))
 				.save(consumer);
 

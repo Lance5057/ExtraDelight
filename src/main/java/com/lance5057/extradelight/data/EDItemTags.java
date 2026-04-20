@@ -153,7 +153,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ModItems.NOODLE_SOUP.get(), ModItems.PUMPKIN_SOUP.get(), ModItems.VEGETABLE_SOUP.get());
 
 		tag(ExtraDelightTags.PROCESSED_ONION).add(ExtraDelightItems.SLICED_ONION.get())
-				.addOptionalTag(CommonTags.CROPS_ONION.location()).addTag(CompatTags.ONION_LAYER);
+				.addOptionalTag(CommonTags.Items.CROPS_ONION.location()).addTag(CompatTags.ONION_LAYER);
 		tag(CompatTags.ONION_LAYER).add(ExtraDelightItems.SLICED_ONION.get());
 
 		tag(ExtraDelightTags.SLICED_ONION).add(ExtraDelightItems.SLICED_ONION.get());
@@ -170,7 +170,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.GRATED_CARROT).add(ExtraDelightItems.GRATED_CARROT.get());
 
 		tag(ExtraDelightTags.PROCESSED_TOMATO).add(ExtraDelightItems.SLICED_TOMATO.get())
-				.addOptionalTag(CommonTags.CROPS_TOMATO.location()).addTag(CompatTags.TOMATO_LAYER);
+				.addOptionalTag(CommonTags.Items.CROPS_TOMATO.location()).addTag(CompatTags.TOMATO_LAYER);
 		tag(ExtraDelightTags.SLICED_TOMATO).add(ExtraDelightItems.SLICED_TOMATO.get());
 		tag(CompatTags.TOMATO_LAYER).add(ExtraDelightItems.SLICED_TOMATO.get());
 
@@ -190,7 +190,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_PRODUCE).addTag(ExtraDelightTags.PROCESSED_FRUIT)
 				.addTag(ExtraDelightTags.PROCESSED_VEG);
 
-		tag(CommonTags.FOODS_COOKED_EGG).add(ExtraDelightItems.BOILED_EGG.get(),
+		tag(CommonTags.Items.FOODS_COOKED_EGG).add(ExtraDelightItems.BOILED_EGG.get(),
 				ExtraDelightItems.SCRAMBLED_EGGS.get());
 
 		tag(ExtraDelightTags.CACTUS).add(ExtraDelightItems.CACTUS.get());
@@ -625,7 +625,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.SOYBEAN).add(Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.PROCESSED_CABBAGE).add(Fermentation.SHREDDED_CABBAGE_ITEM.get())
-				.addOptionalTag(CommonTags.CROPS_CABBAGE.location());
+				.addOptionalTag(CommonTags.Items.CROPS_CABBAGE.location());
 		tag(ExtraDelightTags.PROCESSED_BEETROOT).add(Items.BEETROOT, Fermentation.SLICED_BEETROOT_ITEM.get());
 
 		tag(ExtraDelightTags.PICKLED_CUCUMBER).add(Fermentation.GHERKIN_ITEM.get());
@@ -641,7 +641,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.MISO_SOUP_INGREDIENTS).addTag(ExtraDelightTags.PROCESSED_CABBAGE)
 				.addTag(Tags.Items.MUSHROOMS).addTag(ExtraDelightTags.PROCESSED_CARROT)
 				.addTag(ExtraDelightTags.PROCESSED_POTATO).addTag(ExtraDelightTags.PROCESSED_ONION)
-				.addOptionalTag(CommonTags.FOODS_SAFE_RAW_FISH.location());
+				.addOptionalTag(CommonTags.Items.FOODS_SAFE_RAW_FISH.location());
 
 		tag(ExtraDelightTags.PICKLED).addTag(ExtraDelightTags.PICKLED_VEGETABLES).addTag(ExtraDelightTags.PICKLED_MEAT)
 				.addTag(ExtraDelightTags.PICKLED_EGGS);
@@ -679,7 +679,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI.get(),
 				Fermentation.CUCUMBER.get());
 
-		tag(CommonTags.FOODS_MILK).add(Fermentation.SOY_MILK.get());
+		tag(Tags.Items.DRINKS_MILK).add(Fermentation.SOY_MILK.get());
 
 		tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(),
 				ExtraDelightItems.GINGER_CUTTING.get(), ExtraDelightItems.CHILI_SEEDS.get(),
@@ -692,9 +692,9 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.GOLDEN_APPLE_JAM.get(), ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(),
 				Fermentation.YEAST_SPREAD.get(), ExtraDelightItems.DYNAMIC_JAM.get());
 
-		tag(ExtraDelightTags.DOUGH).addOptionalTag(CommonTags.FOODS_DOUGH).addOptionalTag(CompatTags.DOUGHS);
+		tag(ExtraDelightTags.DOUGH).addOptionalTag(CommonTags.Items.FOODS_DOUGH).addOptionalTag(CompatTags.DOUGHS);
 		tag(ExtraDelightTags.BROTH).add(ModItems.BONE_BROTH.get()).addOptionalTag(CompatTags.STOCK);
-		tag(ExtraDelightTags.RAW_PASTA).addOptionalTag(CommonTags.FOODS_PASTA);
+		tag(ExtraDelightTags.RAW_PASTA).addOptionalTag(CommonTags.Items.FOODS_PASTA);
 
 		tag(ExtraDelightTags.LEMON).add(SummerCitrus.LEMON.get());
 		tag(ExtraDelightTags.LIME).add(SummerCitrus.LIME.get());

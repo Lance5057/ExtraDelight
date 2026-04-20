@@ -102,7 +102,7 @@ public class ShuckableCorn extends Item {
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip,
 			TooltipFlag isAdvanced) {
-		if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+		if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get()) {
 			MutableComponent textEmpty = TextUtils
 					.getTranslation("tooltip." + BuiltInRegistries.ITEM.getKey(this).getPath());
 			tooltip.add(textEmpty.withStyle(ChatFormatting.GREEN));

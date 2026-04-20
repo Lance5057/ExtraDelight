@@ -659,7 +659,7 @@ public class Fermentation {
 				.save(consumer, ExtraDelight.modLoc("cucumber_seeds"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, KIWIBURGER.get(), 1).requires(Tags.Items.FOODS_BREAD)
-				.requires(ModItems.BEEF_PATTY.get()).requires(CommonTags.CROPS_CABBAGE)
+				.requires(ModItems.BEEF_PATTY.get()).requires(CommonTags.Items.CROPS_CABBAGE)
 				.requires(ExtraDelightTags.PROCESSED_TOMATO).requires(ExtraDelightTags.PROCESSED_ONION)
 				.requires(ExtraDelightTags.PICKLED_BEETROOT).requires(ModItems.FRIED_EGG.get())
 				.unlockedBy("has_beetroot", InventoryChangeTrigger.TriggerInstance.hasItems(PICKLED_BEET_ITEM.get()))
@@ -677,42 +677,42 @@ public class Fermentation {
 
 		// Cutting board
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(WILD_CUCUMBER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+				.cuttingRecipe(Ingredient.of(WILD_CUCUMBER.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE),
 						CUCUMBER_SEED.get(), 1)
 				.addResultWithChance(CUCUMBER.get(), 0.2f, 1).addResultWithChance(Items.GREEN_DYE, 0.1f, 1)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "wild_cucumber_knife"));
 
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(WILD_SOYBEAN.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+				.cuttingRecipe(Ingredient.of(WILD_SOYBEAN.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE),
 						SOYBEAN_POD.get(), 1)
 				.addResultWithChance(Items.YELLOW_DYE, 0.5f, 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "wild_soybean_knife"));
 
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(Items.BEETROOT), Ingredient.of(CommonTags.TOOLS_KNIFE),
+				.cuttingRecipe(Ingredient.of(Items.BEETROOT), Ingredient.of(CommonTags.Items.TOOLS_KNIFE),
 						SLICED_BEETROOT_ITEM.get(), 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_beetroot_knife"));
 
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(ModItems.CABBAGE_LEAF.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+				.cuttingRecipe(Ingredient.of(ModItems.CABBAGE_LEAF.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE),
 						SHREDDED_CABBAGE_ITEM.get(), 2)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "shredded_cabbage_knife"));
 
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(CUCUMBER.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+				.cuttingRecipe(Ingredient.of(CUCUMBER.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE),
 						SLICED_CUCUMBER_ITEM.get(), 3)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_cucumber_knife"));
 
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(SOYBEAN_POD.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(SOYBEAN_POD.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE),
 				SOYBEANS.get(), 3).build(consumer, ExtraDelight.modLoc("cutting/" + "shucked_soybeans_knife"));
 
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(GHERKIN_ITEM.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+				.cuttingRecipe(Ingredient.of(GHERKIN_ITEM.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE),
 						SLICED_GHERKIN_ITEM.get(), 3)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "sliced_gherkin_knife"));
 
 		CuttingBoardRecipeBuilder
-				.cuttingRecipe(Ingredient.of(STEAK_PICKLED_ONION_PIE_ITEM.get()), Ingredient.of(CommonTags.TOOLS_KNIFE),
+				.cuttingRecipe(Ingredient.of(STEAK_PICKLED_ONION_PIE_ITEM.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE),
 						STEAK_PICKLED_ONION_PIE_SLICE.get(), 4)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "steak_pickled_onion_pie_knife"));
 
@@ -852,8 +852,8 @@ public class Fermentation {
 				.OvenRecipe(new ItemStack(CHEESEBURGER_PICKLE.get(), 3), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
 				.addIngredient(ExtraDelightTags.GROUND_BEEF_RAW).addIngredient(ExtraDelightTags.CHEESE)
-				.addIngredient(ExtraDelightTags.GROUND_BEEF_RAW).addIngredient(CommonTags.FOODS_RAW_BACON)
-				.addIngredient(CommonTags.FOODS_RAW_BACON).addIngredient(CommonTags.FOODS_RAW_BACON)
+				.addIngredient(ExtraDelightTags.GROUND_BEEF_RAW).addIngredient(CommonTags.Items.FOODS_RAW_BACON)
+				.addIngredient(CommonTags.Items.FOODS_RAW_BACON).addIngredient(CommonTags.Items.FOODS_RAW_BACON)
 				.addIngredient(ExtraDelightTags.PICKLED_CUCUMBER).addIngredient(ExtraDelightTags.PICKLED_CUCUMBER)
 				.addIngredient(ExtraDelightTags.PICKLED_CUCUMBER).unlockedByAnyIngredient(GHERKIN_ITEM).build(consumer);
 
@@ -901,14 +901,14 @@ public class Fermentation {
 
 		Recipes.pot(SAUERKRAUT_SOUP.get(), 3, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.BROTH), Ingredient.of(ExtraDelightTags.SAUERKRAUT),
-						Ingredient.of(CommonTags.FOODS_RAW_BACON), Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
+						Ingredient.of(CommonTags.Items.FOODS_RAW_BACON), Ingredient.of(ExtraDelightTags.PROCESSED_CARROT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO) },
 				"sauerkraut_soup", consumer);
 
 		Recipes.pot(SAUERKRAUT_AND_SAUSAGE.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.SAUSAGE_RAW),
-						Ingredient.of(ExtraDelightTags.SAUERKRAUT), Ingredient.of(CommonTags.FOODS_RAW_BACON),
+						Ingredient.of(ExtraDelightTags.SAUERKRAUT), Ingredient.of(CommonTags.Items.FOODS_RAW_BACON),
 						Ingredient.of(Items.SUGAR), Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
 						Ingredient.of(ExtraDelightTags.PROCESSED_APPLE) },
 				"sauerkraut_and_sausage", consumer);
@@ -964,8 +964,8 @@ public class Fermentation {
 				.save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(PICKLED_ONIONS_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
-				.requires(Ingredient.of(CommonTags.CROPS_ONION)).requires(Ingredient.of(CommonTags.CROPS_ONION))
-				.requires(Ingredient.of(CommonTags.CROPS_ONION)).requires(Ingredient.of(CommonTags.CROPS_ONION))
+				.requires(Ingredient.of(CommonTags.Items.CROPS_ONION)).requires(Ingredient.of(CommonTags.Items.CROPS_ONION))
+				.requires(Ingredient.of(CommonTags.Items.CROPS_ONION)).requires(Ingredient.of(CommonTags.Items.CROPS_ONION))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 250))
 				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick, false))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
@@ -987,10 +987,10 @@ public class Fermentation {
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
 
 		VatRecipeBuilder.pickle(new ItemStack(PICKLED_FISH_BLOCK_ITEM.get()), new ItemStack(Items.GLASS_BOTTLE))
-				.requires(Ingredient.of(CommonTags.FOODS_SAFE_RAW_FISH))
-				.requires(Ingredient.of(CommonTags.FOODS_SAFE_RAW_FISH))
-				.requires(Ingredient.of(CommonTags.FOODS_SAFE_RAW_FISH))
-				.requires(Ingredient.of(CommonTags.FOODS_SAFE_RAW_FISH)).requires(Ingredient.of(Items.SUGAR))
+				.requires(Ingredient.of(CommonTags.Items.FOODS_SAFE_RAW_FISH))
+				.requires(Ingredient.of(CommonTags.Items.FOODS_SAFE_RAW_FISH))
+				.requires(Ingredient.of(CommonTags.Items.FOODS_SAFE_RAW_FISH))
+				.requires(Ingredient.of(CommonTags.Items.FOODS_SAFE_RAW_FISH)).requires(Ingredient.of(Items.SUGAR))
 				.requiresFluid(SizedFluidIngredient.of(ExtraDelightFluids.VINEGAR.FLUID.get(), 250))
 				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightTags.SALT), dayTick, false))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, true)).save(consumer);
@@ -1097,7 +1097,7 @@ public class Fermentation {
 		VatRecipeBuilder.pickle(new ItemStack(ExtraDelightItems.VINEGAR.get(), 4), new ItemStack(Items.GLASS_BOTTLE, 4))
 				.requires(CompoundIngredient.of(Ingredient.of(ExtraDelightTags.FRUIT),
 						Ingredient.of(Tags.Items.CROPS_SUGAR_CANE), Ingredient.of(Items.SUGAR),
-						Ingredient.of(Tags.Items.CROPS_WHEAT), Ingredient.of(CommonTags.CROPS_RICE)))
+						Ingredient.of(Tags.Items.CROPS_WHEAT), Ingredient.of(CommonTags.Items.CROPS_RICE)))
 				.requires(Ingredient.of(Items.SUGAR)).requiresFluid(SizedFluidIngredient.of(Fluids.WATER, 1000))
 				.requiresStage(new StageIngredient(Ingredient.of(ExtraDelightItems.YEAST), dayTick * 3, true))
 				.requiresStage(new StageIngredient(Ingredient.EMPTY, dayTick * 7, false)).save(consumer);
