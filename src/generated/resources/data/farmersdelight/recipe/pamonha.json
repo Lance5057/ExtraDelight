@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:seeds/corn"
+    },
+    {
+      "tag": "c:seeds/corn"
+    },
+    {
+      "tag": "c:drinks/milk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 2,
+    "id": "extradelight:pamonha"
+  }
+}

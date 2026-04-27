@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "extradelight:serving_pot"
+  },
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "extradelight:macaroni"
+    },
+    {
+      "item": "extradelight:macaroni"
+    },
+    {
+      "tag": "c:butter"
+    },
+    {
+      "tag": "c:drinks/milk"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "tag": "c:cheese"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:macaroni_cheese_feast"
+  }
+}
