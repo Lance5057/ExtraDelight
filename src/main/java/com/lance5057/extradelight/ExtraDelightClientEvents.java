@@ -1,7 +1,6 @@
 package com.lance5057.extradelight;
 
 import java.util.Map;
-import java.util.stream.Stream;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRenderer;
@@ -17,6 +16,7 @@ import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketScreen;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkRenderer;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
+import com.lance5057.extradelight.commands.ExtraDelightCommands;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayScreen;
@@ -74,10 +74,15 @@ import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
-
+	@SubscribeEvent
+	public static void registerCommands(RegisterCommandsEvent event) {
+		ExtraDelightCommands.register(event.getDispatcher(), event.getBuildContext());
+	}
+	
 	@SubscribeEvent
 	public static void registerClient(RegisterMenuScreensEvent event) {
 		event.register(ExtraDelightContainers.OVEN_MENU.get(), OvenScreen::new);

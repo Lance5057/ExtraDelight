@@ -838,10 +838,10 @@ public class ExtraDelightBlocks {
 //	public static final DeferredBlock<WallHangingSignBlock> FRUIT_WALL_HANGING_SIGN = BLOCKS.register(
 //			"fruit_wall_hanging_sign",
 //			() -> new WallHangingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
-	public static final DeferredBlock<StandingSignBlock> FRUIT_STANDING_SIGN = BLOCKS.register("fruit_standing_sign",
-			() -> new StandingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
-	public static final DeferredBlock<WallSignBlock> FRUIT_WALL_SIGN = BLOCKS.register("fruit_wall_sign",
-			() -> new WallSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+//	public static final DeferredBlock<StandingSignBlock> FRUIT_STANDING_SIGN = BLOCKS.register("fruit_standing_sign",
+//			() -> new StandingSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+//	public static final DeferredBlock<WallSignBlock> FRUIT_WALL_SIGN = BLOCKS.register("fruit_wall_sign",
+//			() -> new WallSignBlock(WoodType.OAK, Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 
 	public static final DeferredBlock<Block> HAZELNUT_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register(
 			"hazelnut_petal_litter", () -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES)));

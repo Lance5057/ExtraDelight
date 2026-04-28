@@ -295,8 +295,8 @@ public class BlockModels extends BlockStateProvider {
 		slabBlock(ExtraDelightBlocks.FRUIT_SLAB.get(), modLoc("block/fruit_planks"), modLoc("block/fruit_planks"));
 		buttonBlock(ExtraDelightBlocks.FRUIT_BUTTON.get(), modLoc("block/fruit_planks"));
 		pressurePlateBlock(ExtraDelightBlocks.FRUIT_PRESSURE_PLATE.get(), modLoc("block/fruit_planks"));
-		signBlock(ExtraDelightBlocks.FRUIT_STANDING_SIGN.get(), ExtraDelightBlocks.FRUIT_WALL_SIGN.get(),
-				modLoc("block/fruit_planks"));
+//		signBlock(ExtraDelightBlocks.FRUIT_STANDING_SIGN.get(), ExtraDelightBlocks.FRUIT_WALL_SIGN.get(),
+//				modLoc("block/fruit_planks"));
 
 		fruitLeafBlock(this, ExtraDelightBlocks.HAZELNUT_LEAVES.get(), "hazelnut");
 
