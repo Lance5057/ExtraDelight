@@ -270,8 +270,6 @@ public class ExtraDelightClientEvents {
 		applyFluidRenderType(ExtraDelightBlocks.MILKSHAKE_FLUID_BLOCK.get());
 		applyFluidRenderType(ExtraDelightBlocks.WHIPPED_CREAM_FLUID_BLOCK.get());
 		applyFluidRenderType(ExtraDelightBlocks.JAM_FLUID_BLOCK.get());
-		applyFluidRenderType(ExtraDelightBlocks.GOLDEN_JAM_FLUID_BLOCK.get());
-		applyFluidRenderType(ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK.get());
 		applyFluidRenderType(ExtraDelightBlocks.TEA_FLUID_BLOCK.get());
 		applyFluidRenderType(Fermentation.PICKLE_JUICE_FLUID_BLOCK.get());
 		applyFluidRenderType(SummerCitrus.LEMON_JUICE_FLUID_BLOCK.get());

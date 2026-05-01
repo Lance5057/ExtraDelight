@@ -425,7 +425,7 @@ public class SummerCitrus {
 			.register("lemon_delicious", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.LEMON_DELICIOUS), true))
 			.advancementDessert().finish();
 	public static final DeferredItem<Item> ORANGE_CHICKEN = EDItemGenerator
-			.register("orange_chicken", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.ORANGE_CHICKEN), true))
+			.register("orange_chicken", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.ORANGE_CHICKEN), true)).butchercraftToolTip()
 			.advancementButchercraft().finish();
 	public static final DeferredItem<Item> MELON_RIND_STIRFRY = EDItemGenerator
 			.register("melon_rind_stirfry",
@@ -489,7 +489,7 @@ public class SummerCitrus {
 	public static final DeferredItem<Item> MELON_LIME_GLAZED_CHICKEN = EDItemGenerator
 			.register("melon_lime_glazed_chicken",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.MELON_LIME_CHICKEN), true))
-			.advancementButchercraft().finish();
+			.advancementButchercraft().butchercraftToolTip().finish();
 	public static final DeferredItem<Item> KYIV_CAKE_SLICE = EDItemGenerator
 			.register("kyiv_cake_slice", () -> new ToolTipConsumableItem(foodItem(EDFoods.KYIV_CAKE_SLICE), true))
 			.advancementDessert().servingToolTip().finish();

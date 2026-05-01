@@ -3,11 +3,11 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:jam_to_bucket"
+        "recipe": "extradelight:sweet_berries_jam_from_bucket"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "jam": {
+    "sweet_berries_jam": {
       "conditions": {
         "items": [
           {
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "jam"
+      "sweet_berries_jam"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:jam_to_bucket"
+      "extradelight:sweet_berries_jam_from_bucket"
     ]
   }
 }

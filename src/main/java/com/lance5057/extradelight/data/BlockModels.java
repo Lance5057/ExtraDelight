@@ -524,8 +524,6 @@ public class BlockModels extends BlockStateProvider {
 		fluid(this, ExtraDelightBlocks.DARK_CHOCOLATE_SYRUP_FLUID_BLOCK.get());
 		fluid(this, ExtraDelightBlocks.EGG_MIX_FLUID_BLOCK.get());
 		fluid(this, ExtraDelightBlocks.GLOW_BERRY_JUICE_FLUID_BLOCK.get());
-		fluid(this, ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK.get());
-		fluid(this, ExtraDelightBlocks.GOLDEN_JAM_FLUID_BLOCK.get());
 		fluid(this, ExtraDelightBlocks.GRAVY_FLUID_BLOCK.get());
 		fluid(this, ExtraDelightBlocks.COCOA_NUT_BUTTER_SPREAD_FLUID_BLOCK.get());
 		fluid(this, ExtraDelightBlocks.HOT_COCOA_FLUID_BLOCK.get());

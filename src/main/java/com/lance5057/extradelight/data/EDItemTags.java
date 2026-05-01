@@ -86,15 +86,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.FLOUR).add(ExtraDelightItems.FLOUR.get()).addOptionalTag(CompatTags.FLOURS_WHEAT);
 		tag(CompatTags.FLOURS_WHEAT).add(ExtraDelightItems.FLOUR.get());
 
-		tag(ExtraDelightTags.JAM_GLOW_BERRY).add(ExtraDelightItems.GLOW_BERRY_JAM.get());
-		tag(ExtraDelightTags.JAM_FRUIT).add(ExtraDelightItems.JAM.get());
-		tag(ExtraDelightTags.JAM_GOLDEN_APPLE).add(ExtraDelightItems.GOLDEN_APPLE_JAM.get());
-		tag(ExtraDelightTags.JAM_MINT).add(ExtraDelightItems.MINT_JELLY.get());
-
-		tag(ExtraDelightTags.JAM_MUNDANE).addTag(ExtraDelightTags.JAM_FRUIT).addTag(ExtraDelightTags.JAM_MINT);
-		tag(ExtraDelightTags.JAM).add(ExtraDelightItems.DYNAMIC_JAM.get()).addTag(ExtraDelightTags.JAM_MUNDANE)
-				.addTag(ExtraDelightTags.JAM_GOLDEN_APPLE).addTag(ExtraDelightTags.JAM_GLOW_BERRY)
-				.addOptionalTag(CompatTags.JELLIES);
+		tag(ExtraDelightTags.JAM).add(ExtraDelightItems.DYNAMIC_JAM.get()).addOptionalTag(CompatTags.JELLIES);
 		tag(CompatTags.JELLIES).add(ExtraDelightItems.DYNAMIC_JAM.get());
 
 		tag(ExtraDelightTags.MEAT_COOKED).add(Items.COOKED_BEEF).add(Items.COOKED_CHICKEN).add(Items.COOKED_MUTTON)
@@ -440,7 +432,8 @@ public class EDItemTags extends ItemTagsProvider {
 				SummerCitrus.LIME_SAPLING_ITEM.get(), SummerCitrus.ORANGE_SAPLING_ITEM.get(),
 				SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
 
-		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BAR.get()).addOptional(AllItems.BAR_OF_CHOCOLATE.getId());
+		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BAR.get())
+				.addOptional(AllItems.BAR_OF_CHOCOLATE.getId());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR_FILLED).add(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BLOCK).add(ExtraDelightItems.MILK_CHOCOLATE_BLOCK.get());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_CHIPS).add(ExtraDelightItems.MILK_CHOCOLATE_CHIPS.get());
@@ -688,9 +681,8 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.TOAST_TOPPING).add(ExtraDelightItems.BUTTER.get(),
 				ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get(), ExtraDelightItems.HAZELNUT_SPREAD_BOTTLE.get(),
-				ExtraDelightItems.JAM.get(), ExtraDelightItems.GLOW_BERRY_JAM.get(),
-				ExtraDelightItems.GOLDEN_APPLE_JAM.get(), ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(),
-				Fermentation.YEAST_SPREAD.get(), ExtraDelightItems.DYNAMIC_JAM.get());
+				ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(), Fermentation.YEAST_SPREAD.get(),
+				ExtraDelightItems.DYNAMIC_JAM.get());
 
 		tag(ExtraDelightTags.DOUGH).addOptionalTag(CommonTags.Items.FOODS_DOUGH).addOptionalTag(CompatTags.DOUGHS);
 		tag(ExtraDelightTags.BROTH).add(ModItems.BONE_BROTH.get()).addOptionalTag(CompatTags.STOCK);
@@ -974,8 +966,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.SEAWEED_SALAD.get(), ExtraDelightItems.WHIPPED_CREAM.get(),
 				ExtraDelightItems.EGG_MIX.get(), ExtraDelightItems.SCRAMBLED_EGGS.get(),
 				ExtraDelightItems.OMELETTE_MIX.get(), ExtraDelightItems.EGG_SALAD.get(),
-				ExtraDelightItems.FURIKAKE.get(), ExtraDelightItems.CURRY_POWDER.get(), ExtraDelightItems.JAM.get(),
-				ExtraDelightItems.GLOW_BERRY_JAM.get(), ExtraDelightItems.GOLDEN_APPLE_JAM.get(),
+				ExtraDelightItems.FURIKAKE.get(), ExtraDelightItems.CURRY_POWDER.get(),
 				ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get(), ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get(),
 				ExtraDelightItems.CHEESECAKE_ITEM.get(), ExtraDelightItems.HONEY_CHEESECAKE_ITEM.get(),
 				ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.get(), ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.get(),
@@ -1032,7 +1023,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.MONKEY_BREAD.get(), ExtraDelightItems.MINT_LAMB.get(),
 				ExtraDelightItems.CHARCUTERIE_BOARD.get(), ExtraDelightItems.CHRISTMAS_PUDDING.get(),
 				ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE.get(), ExtraDelightItems.HORCHATA.get(),
-				ExtraDelightItems.MINT_JELLY.get(), ExtraDelightItems.PUNCH.get(), ExtraDelightItems.XOCOLATL.get(),
+				ExtraDelightItems.PUNCH.get(), ExtraDelightItems.XOCOLATL.get(),
 				ExtraDelightItems.GOURMET_HOT_CHOCOLATE.get(), ExtraDelightItems.COFFEE.get(),
 				ExtraDelightItems.CRISP_RICE_CEREAL.get(), ExtraDelightItems.BLACK_FOREST_TRIFLE.get(),
 				ExtraDelightItems.CORN_FLAKES_CEREAL.get(), ExtraDelightItems.COFFEE_CAKE_FEAST.get(),
