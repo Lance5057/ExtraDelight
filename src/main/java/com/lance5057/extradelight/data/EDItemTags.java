@@ -669,6 +669,11 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.SALAMI_MIX).add(Fermentation.SALAMI_MIX.get());
 		tag(ExtraDelightTags.COOKED_WHEAT_SEEDS).add(Fermentation.COOKED_WHEAT_SEEDS.get());
 
+		tag(ExtraDelightTags.JUICE).add(SummerCitrus.GRAPEFRUIT_JUICE.get(), SummerCitrus.LEMON_JUICE.get(),
+				SummerCitrus.LIME_JUICE.get(), SummerCitrus.ORANGE_JUICE.get(), ExtraDelightItems.CACTUS_JUICE.get(),
+				ExtraDelightItems.GLOW_BERRY_JUICE.get(), ExtraDelightItems.SWEET_BERRY_JUICE.get(),
+				ExtraDelightItems.TOMATO_JUICE.get(), ModItems.MELON_JUICE.get());
+
 		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI.get(),
 				Fermentation.CUCUMBER.get());
 
