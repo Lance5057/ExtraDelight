@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.FluidState;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.FluidUtil;
@@ -76,14 +78,16 @@ public class FunnelBlockEntity extends BlockEntity {
 	}
 
 	private static void pullFluidIn(Level level, BlockPos pos, FunnelBlockEntity funnel) {
-		BlockState state = level.getBlockState(pos.above());
+        BlockPos fluidPos=pos.above();
+		BlockState state = level.getBlockState(fluidPos);
 		Block block = state.getBlock();
+        FluidState fluidState = level.getFluidState(fluidPos);
 		if (funnel.fluid.isEmpty())
-			if (block instanceof LiquidBlock liquid) {
+			if (block instanceof LiquidBlock liquid && fluidState.isSource()) {
 				funnel.fluid.fill(new FluidStack(liquid.fluid, 1000), FluidAction.EXECUTE);
-				level.setBlock(pos.above(), Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+				level.setBlock(fluidPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
 			} else {
-				Optional<IFluidHandler> holder = FluidUtil.getFluidHandler(level, pos.above(), Direction.UP);
+				Optional<IFluidHandler> holder = FluidUtil.getFluidHandler(level, fluidPos, Direction.UP);
 				if (holder.isPresent()) {
 					IFluidHandler handler = holder.get();
 					FluidStack fluid = handler.drain(1000, FluidAction.EXECUTE);
