@@ -78,7 +78,7 @@ public class EDFoods {
 	public static final FoodProperties COOKIE_DOUGH = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).build();
 	public static final FoodProperties SLICED_ONION = new FoodProperties.Builder().nutrition(0).saturationModifier(0.4f).build();
 	public static final FoodProperties SLICED_TOMATO = new FoodProperties.Builder().nutrition(0).saturationModifier(0.3f).build();
-	public static final FoodProperties COOKED_CARROT = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6f).build();
+	public static final FoodProperties COOKED_CARROT = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).build();
 	public static final FoodProperties COOKED_APPLE = new FoodProperties.Builder().nutrition(8).saturationModifier(0.3f).build();
 	public static final FoodProperties SLICED_BREAD = new FoodProperties.Builder().nutrition(1).saturationModifier(0.6f).build();
 	public static final FoodProperties BREADING = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6f).build();
@@ -125,7 +125,7 @@ public class EDFoods {
 	public static final FoodProperties HASH = new FoodProperties.Builder().nutrition(3).saturationModifier(0.8f).effect(COMFORT_BRIEF, 1F).effect(NOURISHMENT_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties MEAT_LOAF = new FoodProperties.Builder().nutrition(5).saturationModifier(0.8f).effect(COMFORT_LONG, 1F).effect(NOURISHMENT_LONG, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties MEAT_LOAF_SANDWICH = new FoodProperties.Builder().nutrition(10).saturationModifier(0.8f).effect(COMFORT_LONG, 1F).effect(NOURISHMENT_LONG, 1F).build();
-	public static final FoodProperties MEAT_PIE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.8f).effect(COMFORT_MEDIUM, 1F).effect(COMFORT_MEDIUM, 1F).build();
+	public static final FoodProperties MEAT_PIE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.8f).effect(COMFORT_MEDIUM, 1F).build();
 	public static final FoodProperties PULLED_PORK_SERVING = new FoodProperties.Builder().nutrition(10).saturationModifier(0.8f).effect(NOURISHMENT_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties PULLED_PORK_SANDWICH = new FoodProperties.Builder().nutrition(15).saturationModifier(0.8f).effect(NOURISHMENT_MEDIUM, 1F).build();
 	public static final FoodProperties STIRFRY = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8f).effect(NOURISHMENT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();

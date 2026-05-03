@@ -58,29 +58,29 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.vat", "Fermenting");
 		this.add("extradelight.jei.juicer", "Juicing");
 
-		this.add("farmersdelight.tooltip.glow_berry_juice", "Minor Instant Health, Glow");
-		this.add("farmersdelight.tooltip.sweet_berry_juice", "Minor Instant Health");
-		this.add("farmersdelight.tooltip.tomato_juice", "Minor Instant Health");
-		this.add("farmersdelight.tooltip.eggnog", "Removes 1 Harmful Effect");
-		this.add("farmersdelight.tooltip.punch", "Minor Instant Health");
-		this.add("farmersdelight.tooltip.chocolate_milk", "Removes 1 Harmful Effect");
-		this.add("farmersdelight.tooltip.ginger_beer", "Minor Instant Health");
-		this.add("farmersdelight.tooltip.horchata", "Removes 1 Harmful Effect");
-		this.add("farmersdelight.tooltip.tea", "Minor Instant Health, Comfort");
-		this.add("farmersdelight.tooltip.gourmet_hot_chocolate", "Removes all Harmful Effects");
-		this.add("farmersdelight.tooltip.coffee", "+20% Speed (3:00)");
-		this.add("farmersdelight.tooltip.xocolati", "Medium Fire Resist, Removes 1 Harmful Effect");
+		this.add("tooltip.farmersdelight.glow_berry_juice", "Minor Instant Health, Glow");
+		this.add("tooltip.farmersdelight.sweet_berry_juice", "Minor Instant Health");
+		this.add("tooltip.farmersdelight.tomato_juice", "Minor Instant Health");
+		this.add("tooltip.farmersdelight.eggnog", "Removes 1 Harmful Effect");
+		this.add("tooltip.farmersdelight.punch", "Minor Instant Health");
+		this.add("tooltip.farmersdelight.chocolate_milk", "Removes 1 Harmful Effect");
+		this.add("tooltip.farmersdelight.ginger_beer", "Minor Instant Health");
+		this.add("tooltip.farmersdelight.horchata", "Removes 1 Harmful Effect");
+		this.add("tooltip.farmersdelight.tea", "Minor Instant Health, Comfort");
+		this.add("tooltip.farmersdelight.gourmet_hot_chocolate", "Removes all Harmful Effects");
+		this.add("tooltip.farmersdelight.coffee", "+20% Speed (3:00)");
+		this.add("tooltip.farmersdelight.xocolati", "Medium Fire Resist, Removes 1 Harmful Effect");
 
-		this.add("farmersdelight.tooltip.milkshake", "Minor Instant Health");
-		this.add("farmersdelight.tooltip.chocolate_milkshake", "Instant Health");
-		this.add("farmersdelight.tooltip.glow_berry_milkshake", "Instant Health, Glow");
-		this.add("farmersdelight.tooltip.sweet_berry_milkshake", "Instant Health");
-		this.add("farmersdelight.tooltip.pumpkin_milkshake", "Instant Health");
-		this.add("farmersdelight.tooltip.honey_milkshake", "Instant Health");
-		this.add("farmersdelight.tooltip.apple_milkshake", "Instant Health");
-		this.add("farmersdelight.tooltip.cookie_dough_milkshake", "Instant Health");
-		this.add("farmersdelight.tooltip.mint_chip_milkshake", "Instant Health");
-		this.add("farmersdelight.tooltip.nut_butter_milkshake", "Instant Health");
+		this.add("tooltip.farmersdelight.milkshake", "Minor Instant Health");
+		this.add("tooltip.farmersdelight.chocolate_milkshake", "Instant Health");
+		this.add("tooltip.farmersdelight.glow_berry_milkshake", "Instant Health, Glow");
+		this.add("tooltip.farmersdelight.sweet_berry_milkshake", "Instant Health");
+		this.add("tooltip.farmersdelight.pumpkin_milkshake", "Instant Health");
+		this.add("tooltip.farmersdelight.honey_milkshake", "Instant Health");
+		this.add("tooltip.farmersdelight.apple_milkshake", "Instant Health");
+		this.add("tooltip.farmersdelight.cookie_dough_milkshake", "Instant Health");
+		this.add("tooltip.farmersdelight.mint_chip_milkshake", "Instant Health");
+		this.add("tooltip.farmersdelight.nut_butter_milkshake", "Instant Health");
 
 		this.add("tooltip.dynamic.ingredients", "Ingredients");
 
