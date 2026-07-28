@@ -23,6 +23,7 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class EDBlockTags extends BlockTagsProvider {
@@ -125,7 +126,7 @@ public class EDBlockTags extends BlockTagsProvider {
 
 //		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.MINT_CROP.get());
 
-		tag(ModTags.MINEABLE_WITH_KNIFE).add(
+		tag(CommonTags.Blocks.MINEABLE_WITH_KNIFE).add(
 				// Pies and plain cake
 				ExtraDelightBlocks.SWEET_BERRY_PIE.get(), ExtraDelightBlocks.GLOW_BERRY_PIE.get(),
 				ExtraDelightBlocks.CHEESECAKE.get(), ExtraDelightBlocks.HONEY_CHEESECAKE.get(),
@@ -571,7 +572,7 @@ public class EDBlockTags extends BlockTagsProvider {
 	}
 
 	protected void makeMineableWithKnife(DeferredBlock<Block> blockDeferredBlock) {
-		tag(ModTags.MINEABLE_WITH_KNIFE).add(blockDeferredBlock.get());
+		tag(CommonTags.Blocks.MINEABLE_WITH_KNIFE).add(blockDeferredBlock.get());
 	}
 
 	protected void makeFence(DeferredBlock<Block> blockDeferredBlock) {

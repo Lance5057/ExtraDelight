@@ -20,9 +20,7 @@ public class ExtraDelightComponents {
 					.networkSynchronized(SimpleFluidContent.STREAM_CODEC));
 
 	public static final DeferredHolder<DataComponentType<?>, DataComponentType<ChillComponent>> CHILL = COMPONENTS
-			.registerComponentType("chill", builder -> builder.persistent(ChillComponent.CODEC)
-					// Note we use a unit stream codec here
-					.networkSynchronized(ChillComponent.UNIT_STREAM_CODEC));
+			.registerComponentType("chill", builder -> builder.persistent(ChillComponent.CODEC));
 
 	public static final DeferredHolder<DataComponentType<?>, DataComponentType<ItemContainerContents>> ITEMSTACK_HANDLER = COMPONENTS
 			.register("itemstack_handler",

@@ -221,11 +221,6 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.TOAST, "toast");
 		forItem(this, ExtraDelightItems.EGG_BASKET, "egg_in_the_basket");
 
-		// Jam
-		forItem(this, ExtraDelightItems.GLOW_BERRY_JAM, "glow_berry_jam");
-		forItem(this, ExtraDelightItems.JAM, "sweet_berry_jam");
-		forItem(this, ExtraDelightItems.GOLDEN_APPLE_JAM, "golden_apple_jam");
-
 		// Potato
 		forItem(this, ExtraDelightItems.POTATO_CHIPS, "potato_chips");
 		forItem(this, ExtraDelightItems.SLICED_POTATO, "sliced_potato");
@@ -820,7 +815,6 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.CINNAMON_POPSICLE, "cinnamon_popsicle");
 //		forItem(this, ExtraDelightItems.MINT_TEA, "mint_tea");
 		forItem(this, ExtraDelightItems.BEET_MINT_SALAD, "beet_mint_salad");
-		forItem(this, ExtraDelightItems.MINT_JELLY, "mint_jelly");
 		forItem(this, ExtraDelightItems.CRACKERS, "crackers");
 		forItem(this, ExtraDelightItems.CROQUE_MADAME, "croque_madame");
 		forItem(this, ExtraDelightItems.CROQUE_MONSIEUR, "croque_monsieur");
@@ -911,8 +905,6 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.CARAMEL_SAUCE_FLUID_BUCKET, "caramel_sauce_bucket");
 		forItem(this, ExtraDelightItems.EGG_MIX_FLUID_BUCKET, "egg_mix_bucket");
 		forItem(this, ExtraDelightItems.GLOW_BERRY_JUICE_FLUID_BUCKET, "glow_berry_juice_bucket");
-		forItem(this, ExtraDelightItems.GLOW_JAM_FLUID_BUCKET, "glow_jam_bucket");
-		forItem(this, ExtraDelightItems.GOLDEN_JAM_FLUID_BUCKET, "golden_jam_bucket");
 		forItem(this, ExtraDelightItems.GRAVY_FLUID_BUCKET, "gravy_bucket");
 		forItem(this, ExtraDelightItems.HOT_COCOA_FLUID_BUCKET, "hot_cocoa_bucket");
 		forItem(this, ExtraDelightItems.JAM_FLUID_BUCKET, "jam_bucket");

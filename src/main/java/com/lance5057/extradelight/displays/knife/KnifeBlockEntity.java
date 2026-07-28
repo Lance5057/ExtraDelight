@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 
 public class KnifeBlockEntity extends BlockEntity {
 
@@ -51,7 +51,7 @@ public class KnifeBlockEntity extends BlockEntity {
 
 			@Override
 			public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-				return stack.is(ModTags.KNIVES);
+				return stack.is(CommonTags.Items.TOOLS_KNIFE);
 			}
 		};
 

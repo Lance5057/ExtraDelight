@@ -21,13 +21,13 @@
       "tag": "extradelight:sweetener"
     },
     {
-      "tag": "c:foods/milk"
+      "tag": "c:drinks/milk"
     },
     {
       "item": "farmersdelight:pie_crust"
     },
     {
-      "tag": "c:foods/milk"
+      "tag": "c:drinks/milk"
     }
   ],
   "result": {

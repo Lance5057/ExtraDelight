@@ -390,9 +390,9 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.FRUIT_PRESSURE_PLATE.get());
 
 //		this.dropSelf(ExtraDelightBlocks.FRUIT_CEILING_HANGING_SIGN.get());
-		this.dropSelf(ExtraDelightBlocks.FRUIT_STANDING_SIGN.get());
+//		this.dropSelf(ExtraDelightBlocks.FRUIT_STANDING_SIGN.get());
 //		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_HANGING_SIGN.get());
-		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_SIGN.get());
+//		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_SIGN.get());
 
 		this.dropOther(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get(), Items.AIR);
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get());

@@ -9,7 +9,7 @@
   "heat_requirement": "heated",
   "ingredients": [
     {
-      "tag": "c:foods/milk"
+      "tag": "c:drinks/milk"
     },
     {
       "tag": "extradelight:broth"

@@ -1,0 +1,40 @@
+name: Version Request
+description: Template for version requests
+title: '[Version Request]: '
+labels:
+  - invalid
+  - wontfix
+body:
+  - type: checkboxes
+    attributes:
+      label: I have read the Extra Delight Curseforge or Modrinth page first
+      options:
+        - label: 'Yes'
+          required: true
+  - type: checkboxes
+    attributes:
+      label: I have searched closed Github issues on the Extra Delight repository
+      options:
+        - label: 'Yes'
+          required: true
+  - type: checkboxes
+    attributes:
+      label: >-
+        I have checked The Lance Nest discord Knowledge page and or used the
+        search function to see if this has been requested before
+      options:
+        - label: 'Yes'
+          required: true
+  - type: checkboxes
+    attributes:
+      label: >-
+        I am aware that Extra Delight requires Farmer's Delight to update to a
+        newer version first
+      options:
+        - label: 'Yes'
+          required: true
+  - type: markdown
+    attributes:
+      value: >-
+        This template was generated with [Issue Forms
+        Creator](https://issue-forms-creator.netlify.app)

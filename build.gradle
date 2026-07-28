@@ -15,19 +15,23 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
-	maven { url "https://maven.jaackson.me" }
+	//maven { url "https://maven.jaackson.me" }
 	maven { url "https://www.cursemaven.com" }
 	maven { url "https://dvs1.progwml6.com/files/maven/" }
-	maven { url "https://modmaven.k-4u.nl" }
-	maven { url "https://maven.tterrag.com/" }
-	maven { url 'https://www.jitpack.io' }
-	maven { url "https://maven.ryanliptak.com/" }
+	//maven { url "https://modmaven.k-4u.nl" }
+	//maven { url "https://maven.tterrag.com/" }
+	//maven { url 'https://www.jitpack.io' }
+	//maven { url "https://maven.ryanliptak.com/" }
 	maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
     maven { url = "https://mvn.devos.one/snapshots" } // Registrate
-    maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven" } 
-    maven { url = "https://maven.theillusivec4.top/" } 
+   // maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven" } 
+    //maven { url = "https://maven.theillusivec4.top/" } 
     maven { url = "https://maven.blamejared.com/" }
 	//flatDir { dirs '../Butchercraft/build/libs' }
+    maven {
+        name = "Greenhouse"
+        url = "https://maven.greenhouse.lgbt/snapshots"
+    }
 }
 
 
@@ -91,7 +95,8 @@ configurations {
 dependencies {
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
-	implementation "curse.maven:farmersdelight-398521:6917256"
+	implementation "curse.maven:farmersdelight-398521:8083481"
+    //implementation "vectorwing.farmersdelight:FarmersDelight:1.21.1-1.3.0-rc1"
 	//implementation "curse.maven:vampirism-become-a-vampire-233029:6164796"
 	//implementation name: 'butchercraft-2.6.3'
 
@@ -108,15 +113,15 @@ dependencies {
     runtimeOnly "dev.engine-room.flywheel:flywheel-neoforge-${flywheel_mc_version}:${flywheel_version}"
     implementation "com.tterrag.registrate:Registrate:${registrate_version}"
 	
-	compileOnly("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}:api")
-    runtimeOnly("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}")
+	//compileOnly("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}:api")
+    //runtimeOnly("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}")
     
     implementation("xyz.brassgoggledcoders:PatchouliProvider:1.21.1-1.0.11-Snapshot.5")
 	
 	compileOnly "vazkii.patchouli:Patchouli:1.21-87-NEOFORGE:api"
     runtimeOnly "vazkii.patchouli:Patchouli:1.21-87-NEOFORGE"
     
-    implementation('com.blamejared.crafttweaker:CraftTweaker-neoforge-1.21.1:21.0.27')
+    //implementation('com.blamejared.crafttweaker:CraftTweaker-neoforge-1.21.1:21.0.27')
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

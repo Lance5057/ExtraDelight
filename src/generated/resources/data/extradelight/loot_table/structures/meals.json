@@ -620,10 +620,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "extradelight:golden_apple_jam"
-        },
-        {
-          "type": "minecraft:item",
           "name": "extradelight:oxtail_soup"
         },
         {
