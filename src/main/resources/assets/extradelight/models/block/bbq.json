@@ -1,0 +1,47 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "block/blcok",
+	"textures": {
+		"1": "extradelight:block/ketchupbbq",
+		"particle": "extradelight:block/bottle"
+	},
+	"elements": [
+		{
+			"name": "label",
+			"from": [5.99, 2.99, 5.99],
+			"to": [10.01, 5.01, 10.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 1, 7]},
+			"faces": {
+				"north": {"uv": [3, 10, 7, 12], "texture": "#1"},
+				"east": {"uv": [3, 10, 7, 12], "texture": "#1"},
+				"south": {"uv": [3, 10, 7, 12], "texture": "#1"},
+				"west": {"uv": [3, 10, 7, 12], "texture": "#1"}
+			}
+		},
+		{
+			"name": "label",
+			"from": [7, 4, 5.9],
+			"to": [9, 6, 5.9],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 5, 5.9]},
+			"faces": {
+				"north": {"uv": [2, 14, 4, 16], "texture": "#1"},
+				"south": {"uv": [0, 14, 2, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "liquid",
+			"from": [6.2, 0.2, 6.2],
+			"to": [9.8, 6.8, 9.8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [4, 0, 8, 7], "texture": "#1"},
+				"east": {"uv": [4, 0, 8, 7], "texture": "#1"},
+				"south": {"uv": [4, 0, 8, 7], "texture": "#1"},
+				"west": {"uv": [4, 0, 8, 7], "texture": "#1"},
+				"up": {"uv": [4, 0, 8, 4], "texture": "#1"},
+				"down": {"uv": [4, 0, 8, 4], "texture": "#1"}
+			}
+		}
+	]
+}
