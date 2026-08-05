@@ -1,7 +1,7 @@
 {
-	"format_version": "1.21.11",
+	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
-	"parent": "block/blcok",
+	"render_type": "cutout",
 	"textures": {
 		"0": "extradelight:block/bottle",
 		"particle": "extradelight:block/bottle"

@@ -146,7 +146,7 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(this, ExtraDelightItems.YEAST, "yeast");
 		forItem(this, ExtraDelightItems.FLOUR, "flour");
-		forItem(this, ExtraDelightItems.COOKING_OIL, "cooking_oil");
+		forItemModel(this, ExtraDelightItems.COOKING_OIL, "oil");
 		forItem(this, ExtraDelightItems.SUNFLOWER_SEEDS, "sunflower_seeds");
 		forItem(this, ExtraDelightItems.GRAVY, "gravy");
 
@@ -211,10 +211,10 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.EGG_SALAD, "egg_salad");
 
 		// Condiments
-		forItem(this, ExtraDelightItems.KETCHUP, "ketchup");
-		forItem(this, ExtraDelightItems.BBQ_SAUCE, "bbq");
-		forItem(this, ExtraDelightItems.MAYO, "mayo");
-		forItem(this, ExtraDelightItems.VINEGAR, "vinegar");
+		forItemModel(this, ExtraDelightItems.KETCHUP, "ketchup");
+		forItemModel(this, ExtraDelightItems.BBQ_SAUCE, "bbq");
+		forItemModel(this, ExtraDelightItems.MAYO, "mayo");
+		forItemModel(this, ExtraDelightItems.VINEGAR, "vinegar");
 
 		// Bread
 		forItem(this, ExtraDelightItems.BREAD_SLICE, "bread_slice");
@@ -1369,7 +1369,7 @@ public class ItemModels extends ItemModelProvider {
 	}
 
 	public void forItemModel(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
-		tmp.getBuilder(item.getId().getPath() + "_item")
+		tmp.getBuilder(item.getId().getPath())
 				.parent(new ModelFile.ExistingModelFile(tmp.modLoc("item/" + name), existingFileHelper));
 //		getBuilder(item.getId().getPath()).parent(
 //				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/" + path)));

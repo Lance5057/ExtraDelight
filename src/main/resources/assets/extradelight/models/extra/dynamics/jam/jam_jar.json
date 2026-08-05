@@ -1,7 +1,6 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
-	"parent": "block/block",
 	"render_type": "cutout",
 	"textures": {
 		"1": "extradelight:block/glass_jar",
@@ -68,6 +67,7 @@
 		{
 			"name": "group",
 			"origin": [0, 0, 0],
+			"scope": 0,
 			"color": 0,
 			"children": [0, 1]
 		}

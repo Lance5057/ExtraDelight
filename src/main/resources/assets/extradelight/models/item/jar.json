@@ -1,5 +1,6 @@
 {
 	"parent": "builtin/entity",
+	"parent": "block/block",
 	"render_type": "cutout",
 	"textures": {
 		"1": "extradelight:block/glass_jar"
