@@ -6,8 +6,8 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.modules.Fermentation;
-
 import com.lance5057.extradelight.modules.SummerCitrus;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -17,6 +17,8 @@ import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredItem;
+import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ItemModels extends ItemModelProvider {
 
@@ -160,11 +162,11 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.TOMATO_JUICE, "tomato_juice");
 
 		// Custard
-		forItem(this, ExtraDelightItems.SWEET_BERRY_CUSTARD, "sweet_berry_custard");
-		forItem(this, ExtraDelightItems.CHOCOLATE_CUSTARD, "chocolate_custard");
-		forItem(this, ExtraDelightItems.PUMPKIN_CUSTARD, "pumpkin_custard");
-		forItem(this, ExtraDelightItems.HONEY_CUSTARD, "honey_custard");
-		forItem(this, ExtraDelightItems.APPLE_CUSTARD, "apple_custard");
+		forItemModel(this, ExtraDelightItems.SWEET_BERRY_CUSTARD, "custard/sweet_berry");
+		forItemModel(this, ExtraDelightItems.CHOCOLATE_CUSTARD, "custard/chocolate");
+		forItemModel(this, ExtraDelightItems.PUMPKIN_CUSTARD, "custard/pumpkin");
+		forItemModel(this, ExtraDelightItems.HONEY_CUSTARD, "custard/honey");
+		forItemModel(this, ExtraDelightItems.APPLE_CUSTARD, "custard/apple");
 
 		// Pie
 		forItem(this, ExtraDelightItems.SWEET_BERRY_PIE_SLICE, "sweet_berry_pie_slice");
@@ -547,7 +549,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.CARAMEL_POPCORN, "caramel_corn");
 		forItem(this, ExtraDelightItems.CARAMEL_CHEESECAKE_ITEM, "caramel_cheesecake");
 		forItem(this, ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE, "caramel_cheesecake_slice");
-		forItem(this, ExtraDelightItems.CARAMEL_CUSTARD, "caramel_custard");
+		forItemModel(this, ExtraDelightItems.CARAMEL_CUSTARD, "custard/caramel");
 		forItem(this, ExtraDelightItems.CARAMEL_POPSICLE, "caramel_popsicle");
 		forItem(this, ExtraDelightItems.PUMPKIN_PIE_ITEM, "pumpkin_pie");
 		forItem(this, ExtraDelightItems.PUMPKIN_PIE_SLICE, "pumpkin_pie_slice");
@@ -1269,7 +1271,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH, "nut_butter_cookie_dough");
 		forItem(this, ExtraDelightItems.NUT_BUTTER_ICE_CREAM, "nut_butter_ice_cream");
 		forItem(this, ExtraDelightItems.NUT_BUTTER_MILKSHAKE, "nut_butter_milkshake");
-		forItem(this, ExtraDelightItems.NUT_BUTTER_CUSTARD, "nut_butter_custard");
+		forItemModel(this, ExtraDelightItems.NUT_BUTTER_CUSTARD, "custard/nut_butter");
 		forItem(this, ExtraDelightItems.MISSISSIPPI_MUD_PIE_SLICE, "mississippi_mud_pie_slice");
 		forItem(this, ExtraDelightItems.HAZELNUT_SOUP, "hazelnut_soup");
 		forItem(this, ExtraDelightItems.MARSHMALLOW_SLICE, "marshmallow_slice");
@@ -1371,8 +1373,6 @@ public class ItemModels extends ItemModelProvider {
 	public void forItemModel(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
 		tmp.getBuilder(item.getId().getPath())
 				.parent(new ModelFile.ExistingModelFile(tmp.modLoc("item/" + name), existingFileHelper));
-//		getBuilder(item.getId().getPath()).parent(
-//				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/" + path)));
 	}
 
 	public static void forBlockItemFlat(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
