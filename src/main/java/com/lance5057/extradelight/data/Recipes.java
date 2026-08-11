@@ -105,7 +105,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
 					new DynamicItemComponent(List.of("carrot")), ExtraDelightItems.DYNAMIC_JAM.get()),
 			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-					new DynamicItemComponent(List.of("mint")), ExtraDelightItems.DYNAMIC_JAM.get())
+					new DynamicItemComponent(List.of("mint")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("strawberry")), ExtraDelightItems.DYNAMIC_JAM.get())
 
 	);
 
