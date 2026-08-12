@@ -10,7 +10,7 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
-import com.lance5057.extradelight.util.EDItemGenerator;
+import com.lance5057.extradelight.util.registration.types.ItemRegistration;
 import com.simibubi.create.AllItems;
 
 import net.minecraft.core.HolderLookup;
@@ -1074,138 +1074,138 @@ public class EDItemTags extends ItemTagsProvider {
 				SummerCitrus.MELON_LIME_GLAZED_CHICKEN.get(), SummerCitrus.KYIV_CAKE_ITEM.get(),
 				SummerCitrus.RAW_BAKED_ALASKA_ITEM.get(), SummerCitrus.BAKED_ALASKA_ITEM.get());
 
-		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
+		for (ItemRegistration.Drink d : ItemRegistration.drinks) {
 			parseTaNTag(d);
 		}
 
-		for (DeferredItem<Item> i : EDItemGenerator.hotFood) {
+		for (DeferredItem<Item> i : ItemRegistration.hotFood) {
 			tag(ExtraDelightTags.HEATING_CONSUMED_ITEMS).add(i.get());
 		}
 
-		for (DeferredItem<Item> i : EDItemGenerator.coldFood) {
+		for (DeferredItem<Item> i : ItemRegistration.coldFood) {
 			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(i.get());
 		}
 	}
 
 	// Tough as Nails
 
-	public void parseTaNTag(EDItemGenerator.Drink d) {
-		tag(ExtraDelightTags.DRINKS).add(d.item.get());
+	public void parseTaNTag(ItemRegistration.Drink d) {
+		tag(ExtraDelightTags.DRINKS).add(d.ITEM.get());
 
 		if (d.isHot)
-			tag(ExtraDelightTags.HEATING_CONSUMED_ITEMS).add(d.item.get());
+			tag(ExtraDelightTags.HEATING_CONSUMED_ITEMS).add(d.ITEM.get());
 
 		if (d.isCold)
-			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(d.item.get());
+			tag(ExtraDelightTags.COOLING_CONSUMED_ITEMS).add(d.ITEM.get());
 
 		switch (d.thirst) {
 		case 1:
-			tag(ExtraDelightTags.ONE_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.ONE_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 2:
-			tag(ExtraDelightTags.TWO_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.TWO_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 3:
-			tag(ExtraDelightTags.THREE_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.THREE_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 4:
-			tag(ExtraDelightTags.FOUR_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.FOUR_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 5:
-			tag(ExtraDelightTags.FIVE_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.FIVE_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 6:
-			tag(ExtraDelightTags.SIX_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.SIX_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 7:
-			tag(ExtraDelightTags.SEVEN_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.SEVEN_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 8:
-			tag(ExtraDelightTags.EIGHT_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.EIGHT_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 9:
-			tag(ExtraDelightTags.NINE_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.NINE_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 10:
-			tag(ExtraDelightTags.TEN_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.TEN_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 11:
-			tag(ExtraDelightTags.ELEVEN_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.ELEVEN_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 12:
-			tag(ExtraDelightTags.TWELVE_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.TWELVE_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 13:
-			tag(ExtraDelightTags.THIRTEEN_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.THIRTEEN_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 14:
-			tag(ExtraDelightTags.FOURTEEN_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.FOURTEEN_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 15:
-			tag(ExtraDelightTags.FIFTEEN_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.FIFTEEN_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 16:
-			tag(ExtraDelightTags.SIXTEEN_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.SIXTEEN_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 17:
-			tag(ExtraDelightTags.SEVENTEEN_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.SEVENTEEN_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 18:
-			tag(ExtraDelightTags.EIGHTEEN_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.EIGHTEEN_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 19:
-			tag(ExtraDelightTags.NINETEEN_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.NINETEEN_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		case 20:
-			tag(ExtraDelightTags.TWENTY_THIRST_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.TWENTY_THIRST_DRINKS).add(d.ITEM.get());
 			break;
 		}
 
 		switch (d.hydration) {
 		case 1:
-			tag(ExtraDelightTags.TEN_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.TEN_HYDRATION_DRINKS).add(d.ITEM.get());
 			break;
 		case 2:
-			tag(ExtraDelightTags.TWENTY_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.TWENTY_HYDRATION_DRINKS).add(d.ITEM.get());
 			break;
 		case 3:
-			tag(ExtraDelightTags.THIRTY_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.THIRTY_HYDRATION_DRINKS).add(d.ITEM.get());
 			break;
 		case 4:
-			tag(ExtraDelightTags.FORTY_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.FORTY_HYDRATION_DRINKS).add(d.ITEM.get());
 			break;
 		case 5:
-			tag(ExtraDelightTags.FIFTY_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.FIFTY_HYDRATION_DRINKS).add(d.ITEM.get());
 			break;
 		case 6:
-			tag(ExtraDelightTags.SIXTY_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.SIXTY_HYDRATION_DRINKS).add(d.ITEM.get());
 			break;
 		case 7:
-			tag(ExtraDelightTags.SEVENTY_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.SEVENTY_HYDRATION_DRINKS).add(d.ITEM.get());
 			break;
 		case 8:
-			tag(ExtraDelightTags.EIGHTY_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.EIGHTY_HYDRATION_DRINKS).add(d.ITEM.get());
 			break;
 		case 9:
-			tag(ExtraDelightTags.NINETY_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.NINETY_HYDRATION_DRINKS).add(d.ITEM.get());
 			break;
 		case 10:
-			tag(ExtraDelightTags.ONE_HUNDRED_HYDRATION_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.ONE_HUNDRED_HYDRATION_DRINKS).add(d.ITEM.get());
 			break;
 		}
 
 		switch (d.poison) {
 		case 25:
-			tag(ExtraDelightTags.TWENTY_FIVE_POISON_CHANCE_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.TWENTY_FIVE_POISON_CHANCE_DRINKS).add(d.ITEM.get());
 			break;
 		case 50:
-			tag(ExtraDelightTags.FIFTY_POISON_CHANCE_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.FIFTY_POISON_CHANCE_DRINKS).add(d.ITEM.get());
 			break;
 		case 75:
-			tag(ExtraDelightTags.SEVENTY_FIVE_POISON_CHANCE_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.SEVENTY_FIVE_POISON_CHANCE_DRINKS).add(d.ITEM.get());
 			break;
 		case 100:
-			tag(ExtraDelightTags.ONE_HUNDRED_POISON_CHANCE_DRINKS).add(d.item.get());
+			tag(ExtraDelightTags.ONE_HUNDRED_POISON_CHANCE_DRINKS).add(d.ITEM.get());
 			break;
 		}
 

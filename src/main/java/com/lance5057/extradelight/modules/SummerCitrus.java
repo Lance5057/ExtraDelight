@@ -42,7 +42,7 @@ import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XAdeDrink;
 import com.lance5057.extradelight.items.components.ChillComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
-import com.lance5057.extradelight.util.EDItemGenerator;
+import com.lance5057.extradelight.util.registration.types.ItemRegistration;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
 
@@ -110,7 +110,7 @@ import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
 public class SummerCitrus {
 	// Lemon
-	public static final DeferredItem<Item> LEMON = EDItemGenerator
+	public static final DeferredItem<Item> LEMON = ItemRegistration
 			.register("lemon", () -> new ToolTipConsumableItem(foodItem(EDFoods.LEMON), true)).advancementIngredients()
 			.finish();
 	public static final DeferredBlock<Block> LEMON_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
@@ -131,7 +131,7 @@ public class SummerCitrus {
 	public static final DeferredBlock<Block> POTTED_LEMON_SAPLING = ExtraDelightBlocks.BLOCKS
 			.register("potted_lemon_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
 					LEMON_SAPLING, Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
-	public static final DeferredItem<Item> LEMON_JUICE = EDItemGenerator
+	public static final DeferredItem<Item> LEMON_JUICE = ItemRegistration
 			.register("lemon_juice", () -> new SourJuiceItem(drinkItem(), 3, 100)).advancementIngredients().finish();
 	public static final DeferredItem<Item> LEMON_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"lemon_juice_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.LEMON_JUICE));
@@ -142,14 +142,14 @@ public class SummerCitrus {
 			() -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> LEMON_CRATE_ITEM = ExtraDelightItems.ITEMS.register("lemon_crate_item",
 			() -> new BlockItem(LEMON_CRATE.get(), new Item.Properties()));
-	public static final DeferredItem<Item> SLICED_LEMON = EDItemGenerator
+	public static final DeferredItem<Item> SLICED_LEMON = ItemRegistration
 			.register("sliced_lemon", () -> new Item(new Item.Properties().food(EDFoods.LEMON)))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> LEMON_ZEST = EDItemGenerator
+	public static final DeferredItem<Item> LEMON_ZEST = ItemRegistration
 			.register("lemon_zest", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
 	// Lime
-	public static final DeferredItem<Item> LIME = EDItemGenerator
+	public static final DeferredItem<Item> LIME = ItemRegistration
 			.register("lime", () -> new ToolTipConsumableItem(foodItem(EDFoods.LIME), true)).advancementIngredients()
 			.finish();
 	public static final DeferredBlock<Block> LIME_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register("lime_petal_litter",
@@ -168,7 +168,7 @@ public class SummerCitrus {
 	public static final DeferredBlock<Block> POTTED_LIME_SAPLING = ExtraDelightBlocks.BLOCKS
 			.register("potted_lime_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
 					LIME_SAPLING, Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
-	public static final DeferredItem<Item> LIME_JUICE = EDItemGenerator
+	public static final DeferredItem<Item> LIME_JUICE = ItemRegistration
 			.register("lime_juice", () -> new SourJuiceItem(drinkItem(), 4, 100)).advancementIngredients().finish();
 	public static final DeferredItem<Item> LIME_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"lime_juice_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.LIME_JUICE));
@@ -179,14 +179,14 @@ public class SummerCitrus {
 			() -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> LIME_CRATE_ITEM = ExtraDelightItems.ITEMS.register("lime_crate_item",
 			() -> new BlockItem(LIME_CRATE.get(), new Item.Properties()));
-	public static final DeferredItem<Item> SLICED_LIME = EDItemGenerator
+	public static final DeferredItem<Item> SLICED_LIME = ItemRegistration
 			.register("sliced_lime", () -> new Item(new Item.Properties().food(EDFoods.LIME))).advancementIngredients()
 			.finish();
-	public static final DeferredItem<Item> LIME_ZEST = EDItemGenerator
+	public static final DeferredItem<Item> LIME_ZEST = ItemRegistration
 			.register("lime_zest", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
 	// Orange
-	public static final DeferredItem<Item> ORANGE = EDItemGenerator
+	public static final DeferredItem<Item> ORANGE = ItemRegistration
 			.register("orange", () -> new ToolTipConsumableItem(foodItem(EDFoods.ORANGE), true))
 			.advancementIngredients().finish();
 	public static final DeferredBlock<Block> ORANGE_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
@@ -207,7 +207,7 @@ public class SummerCitrus {
 	public static final DeferredBlock<Block> POTTED_ORANGE_SAPLING = ExtraDelightBlocks.BLOCKS.register(
 			"potted_orange_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ORANGE_SAPLING,
 					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
-	public static final DeferredItem<Item> ORANGE_JUICE = EDItemGenerator
+	public static final DeferredItem<Item> ORANGE_JUICE = ItemRegistration
 			.register("orange_juice", () -> new SourJuiceItem(drinkItem(), 1, 50)).advancementIngredients().finish();
 	public static final DeferredItem<Item> ORANGE_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"orange_juice_fluid_bucket", () -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.ORANGE_JUICE));
@@ -218,14 +218,14 @@ public class SummerCitrus {
 			() -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> ORANGE_CRATE_ITEM = ExtraDelightItems.ITEMS.register("orange_crate_item",
 			() -> new BlockItem(ORANGE_CRATE.get(), new Item.Properties()));
-	public static final DeferredItem<Item> SLICED_ORANGE = EDItemGenerator
+	public static final DeferredItem<Item> SLICED_ORANGE = ItemRegistration
 			.register("sliced_orange", () -> new Item(new Item.Properties().food(EDFoods.ORANGE)))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> ORANGE_ZEST = EDItemGenerator
+	public static final DeferredItem<Item> ORANGE_ZEST = ItemRegistration
 			.register("orange_zest", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 
 	// Grapefruit
-	public static final DeferredItem<Item> GRAPEFRUIT = EDItemGenerator
+	public static final DeferredItem<Item> GRAPEFRUIT = ItemRegistration
 			.register("grapefruit", () -> new ToolTipConsumableItem(foodItem(EDFoods.GRAPEFRUIT), true))
 			.advancementIngredients().finish();
 	public static final DeferredBlock<Block> GRAPEFRUIT_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register(
@@ -247,7 +247,7 @@ public class SummerCitrus {
 			"potted_grapefruit_sapling",
 			() -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GRAPEFRUIT_SAPLING,
 					Block.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
-	public static final DeferredItem<Item> GRAPEFRUIT_JUICE = EDItemGenerator
+	public static final DeferredItem<Item> GRAPEFRUIT_JUICE = ItemRegistration
 			.register("grapefruit_juice", () -> new SourJuiceItem(drinkItem(), 1, 50)).advancementIngredients()
 			.finish();
 	public static final DeferredItem<Item> GRAPEFRUIT_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
@@ -261,15 +261,15 @@ public class SummerCitrus {
 			() -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.PLANT)));
 	public static final DeferredItem<Item> GRAPEFRUIT_CRATE_ITEM = ExtraDelightItems.ITEMS
 			.register("grapefruit_crate_item", () -> new BlockItem(GRAPEFRUIT_CRATE.get(), new Item.Properties()));
-	public static final DeferredItem<Item> SLICED_GRAPEFRUIT = EDItemGenerator
+	public static final DeferredItem<Item> SLICED_GRAPEFRUIT = ItemRegistration
 			.register("sliced_grapefruit", () -> new Item(new Item.Properties().food(EDFoods.GRAPEFRUIT)))
 			.advancementIngredients().finish();
 
 	// Egg separating
-	public static final DeferredItem<Item> EGG_YOLK = EDItemGenerator
+	public static final DeferredItem<Item> EGG_YOLK = ItemRegistration
 			.register("egg_yolk", () -> new Item(new Item.Properties().craftRemainder(Items.BONE_MEAL)))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> EGG_WHITE = EDItemGenerator
+	public static final DeferredItem<Item> EGG_WHITE = ItemRegistration
 			.register("egg_white", () -> new Item(new Item.Properties().craftRemainder(Items.BOWL)))
 			.advancementIngredients().finish();
 	public static final DeferredItem<Item> EGG_WHITE_FLUID_BUCKET = ExtraDelightItems.ITEMS
@@ -277,96 +277,96 @@ public class SummerCitrus {
 	public static final DeferredBlock<LiquidBlock> EGG_WHITE_FLUID_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("egg_white_fluid_block", () -> new LiquidBlock(ExtraDelightFluids.EGG_WHITE.FLUID.get(),
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
-	public static final DeferredItem<Item> STIFF_PEAKS = EDItemGenerator
+	public static final DeferredItem<Item> STIFF_PEAKS = ItemRegistration
 			.register("stiff_peaks", () -> new Item(new Item.Properties().craftRemainder(Items.BOWL)))
 			.advancementIngredients().finish();
 
 	// Watermelon
-	public static final DeferredItem<Item> MELON_CHUNKS = EDItemGenerator
+	public static final DeferredItem<Item> MELON_CHUNKS = ItemRegistration
 			.register("melon_chunks", () -> new Item(new Item.Properties())).advancementIngredients().finish();
-	public static final DeferredItem<Item> MELON_RIND = EDItemGenerator
+	public static final DeferredItem<Item> MELON_RIND = ItemRegistration
 			.register("melon_rind", () -> new Item(foodItem(EDFoods.MELON_RIND))).advancementIngredients().finish();
 
 	// The rest!
-	public static final DeferredItem<Item> ICE_CUBES = EDItemGenerator
+	public static final DeferredItem<Item> ICE_CUBES = ItemRegistration
 			.register("ice_cubes",
 					() -> new ToolTipConsumableItem(foodItem(EDFoods.ICE_CUBE)
 							.component(ExtraDelightComponents.CHILL.value(), new ChillComponent(25)), true))
 			.isColdFood().advancementIngredients().finish();
-	public static final DeferredItem<Item> MERINGUE = EDItemGenerator
+	public static final DeferredItem<Item> MERINGUE = ItemRegistration
 			.register("meringue", () -> new Item(foodItem(EDFoods.MERINGUE))).advancementIngredients().finish();
-	public static final DeferredItem<Item> LEMON_CURD = EDItemGenerator
+	public static final DeferredItem<Item> LEMON_CURD = ItemRegistration
 			.register("lemon_curd", () -> new ToolTipConsumableItem(bottleFoodItem(EDFoods.LEMON_CURD), true))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> LEMON_MERINGUE_PIE_SLICE = EDItemGenerator
+	public static final DeferredItem<Item> LEMON_MERINGUE_PIE_SLICE = ItemRegistration
 			.register("lemon_meringue_pie_slice",
 					() -> new ToolTipConsumableItem(foodItem(EDFoods.LEMON_MERINGUE_PIE_SLICE), true))
 			.advancementDessert().servingToolTip().finish();
 	public static final DeferredBlock<Block> LEMON_MERINGUE_PIE = ExtraDelightBlocks.BLOCKS.register(
 			"lemon_meringue_pie",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), LEMON_MERINGUE_PIE_SLICE));
-	public static final DeferredItem<Item> LEMON_MERINGUE_PIE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> LEMON_MERINGUE_PIE_ITEM = ItemRegistration
 			.register("lemon_meringue_pie_item", () -> new BlockItem(LEMON_MERINGUE_PIE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
-	public static final DeferredItem<Item> KEY_LIME_PIE_SLICE = EDItemGenerator
+	public static final DeferredItem<Item> KEY_LIME_PIE_SLICE = ItemRegistration
 			.register("key_lime_pie_slice", () -> new ToolTipConsumableItem(foodItem(EDFoods.KEY_LIME_PIE_SLICE), true))
 			.advancementDessert().servingToolTip().finish();
 	public static final DeferredBlock<Block> KEY_LIME_PIE = ExtraDelightBlocks.BLOCKS.register("key_lime_pie",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), KEY_LIME_PIE_SLICE));
-	public static final DeferredItem<Item> KEY_LIME_PIE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> KEY_LIME_PIE_ITEM = ItemRegistration
 			.register("key_lime_pie_item", () -> new BlockItem(KEY_LIME_PIE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
-	public static final DeferredItem<Item> LEMONADE = EDItemGenerator
+	public static final DeferredItem<Item> LEMONADE = ItemRegistration
 			.register("lemonade", () -> new XAdeDrink(drinkItem(), 2)).drink().setHydration(20).setThirst(8)
 			.setPoison(0).isCold(true).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LEMONADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"lemonade_tray",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_YELLOW), true,
 					plate));
-	public static final DeferredItem<Item> LEMONADE_TRAY_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> LEMONADE_TRAY_ITEM = ItemRegistration
 			.register("lemonade_tray_item", () -> new BlockItem(LEMONADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> LIMEADE = EDItemGenerator
+	public static final DeferredItem<Item> LIMEADE = ItemRegistration
 			.register("limeade", () -> new XAdeDrink(drinkItem(), 2)).drink().setHydration(20).setThirst(6).setPoison(0)
 			.isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> LIMEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"limeade_tray",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_GREEN), true,
 					plate));
-	public static final DeferredItem<Item> LIMEADE_TRAY_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> LIMEADE_TRAY_ITEM = ItemRegistration
 			.register("limeade_tray_item", () -> new BlockItem(LIMEADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> ORANGEADE = EDItemGenerator
+	public static final DeferredItem<Item> ORANGEADE = ItemRegistration
 			.register("orangeade", () -> new XAdeDrink(drinkItem(), 2)).drink().setHydration(20).setThirst(6)
 			.setPoison(0).isHot(false).finish();
 	public static final DeferredBlock<RecipeFeastBlock> ORANGEADE_TRAY = ExtraDelightBlocks.BLOCKS.register(
 			"orangeade_tray",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_ORANGE), true,
 					plate));
-	public static final DeferredItem<Item> ORANGEADE_TRAY_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> ORANGEADE_TRAY_ITEM = ItemRegistration
 			.register("orangeade_tray_item", () -> new BlockItem(ORANGEADE_TRAY.get(), new Item.Properties()))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> MELON_GAZPACHO = EDItemGenerator
+	public static final DeferredItem<Item> MELON_GAZPACHO = ItemRegistration
 			.register("melon_gazpacho", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.MELON_GAZPACHO), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> THAI_MELON_SALAD = EDItemGenerator
+	public static final DeferredItem<Item> THAI_MELON_SALAD = ItemRegistration
 			.register("thai_melon_salad", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.THAI_MELON_SALAD), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> ETON_MESS = EDItemGenerator
+	public static final DeferredItem<Item> ETON_MESS = ItemRegistration
 			.register("eton_mess", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.ICE_CREAM_SUNDAE), true))
 			.advancementDessert().finish();
-	public static final DeferredItem<Item> DALGONA_COFFEE = EDItemGenerator
+	public static final DeferredItem<Item> DALGONA_COFFEE = ItemRegistration
 			.register("dalgona_coffee", () -> new GourmetHotCocoa(drinkItem())).drink().setHydration(40).setThirst(4)
 			.isHot(true).setPoison(0).finish();
-	public static final DeferredItem<Item> GRAPEFRUIT_BEETROOT_SALAD = EDItemGenerator
+	public static final DeferredItem<Item> GRAPEFRUIT_BEETROOT_SALAD = ItemRegistration
 			.register("grapefruit_beetroot_salad",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.GRAPEFRUIT_BEET_SALAD), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> CITRUS_ONION_SALAD = EDItemGenerator
+	public static final DeferredItem<Item> CITRUS_ONION_SALAD = ItemRegistration
 			.register("citrus_onion_salad",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.CITRUS_ONION_SALAD), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> MELON_FRUIT_SALAD_SERVING = EDItemGenerator
+	public static final DeferredItem<Item> MELON_FRUIT_SALAD_SERVING = ItemRegistration
 			.register("melon_fruit_salad_serving",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.MELON_FRUIT_SALAD), true))
 			.advancementDessert().servingToolTip().finish();
@@ -374,15 +374,15 @@ public class SummerCitrus {
 			"melon_fruit_salad",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_GREEN),
 					true, bowl));
-	public static final DeferredItem<Item> MELON_FRUIT_SALAD_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> MELON_FRUIT_SALAD_ITEM = ItemRegistration
 			.register("melon_fruit_salad_item", () -> new BlockItem(MELON_FRUIT_SALAD.get(), new Item.Properties()))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> LEMON_CUCUMBER_CAKE_SLICE = EDItemGenerator
+	public static final DeferredItem<Item> LEMON_CUCUMBER_CAKE_SLICE = ItemRegistration
 			.register("lemon_cucumber_cake_slice", () -> new Item(foodItem(FoodValues.CAKE_SLICE))).advancementDessert()
 			.servingToolTip().finish();
 	public static final DeferredBlock<Block> LEMON_CUCUMBER_CAKE = ExtraDelightBlocks.BLOCKS
 			.register("lemon_cucumber_cake", () -> new CakeBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
-	public static final DeferredItem<Item> LEMON_CUCUMBER_CAKE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> LEMON_CUCUMBER_CAKE_ITEM = ItemRegistration
 			.register("lemon_cucumber_cake_item", () -> new BlockItem(LEMON_CUCUMBER_CAKE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
 	public static final DeferredBlock<RecipeFeastBlock> BAKED_COD = ExtraDelightBlocks.BLOCKS.register("baked_cod",
@@ -390,54 +390,54 @@ public class SummerCitrus {
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_ORANGE), true,
 					Block.box(0, 0, 0, 0, 0, 0), Block.box(-4.0D, 0.0D, 3.5D, 20.0D, 1.0D, 12.5D),
 					Block.box(3.5D, 0.0D, -4.0D, 12.5D, 1.0D, 20.0D)));
-	public static final DeferredItem<Item> BAKED_COD_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> BAKED_COD_ITEM = ItemRegistration
 			.register("baked_cod_item", () -> new BlockItem(BAKED_COD.get(), new Item.Properties())).advancementFeast()
 			.finish();
-	public static final DeferredItem<Item> BAKED_COD_SERVING = EDItemGenerator
+	public static final DeferredItem<Item> BAKED_COD_SERVING = ItemRegistration
 			.register("baked_cod_serving",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.BAKED_COD), true))
 			.advancementMeal().servingToolTip().finish();
-	public static final DeferredItem<Item> MELON_LAYER_CAKE_SLICE = EDItemGenerator
+	public static final DeferredItem<Item> MELON_LAYER_CAKE_SLICE = ItemRegistration
 			.register("melon_layer_cake_slice", () -> new Item(foodItem(FoodValues.CAKE_SLICE))).advancementDessert()
 			.servingToolTip().finish();
 	public static final DeferredBlock<Block> MELON_LAYER_CAKE = ExtraDelightBlocks.BLOCKS.register("melon_layer_cake",
 			() -> new CakeBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
-	public static final DeferredItem<Item> MELON_LAYER_CAKE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> MELON_LAYER_CAKE_ITEM = ItemRegistration
 			.register("melon_layer_cake_item", () -> new BlockItem(MELON_LAYER_CAKE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
-	public static final DeferredItem<Item> GRAPEFRUIT_SORBET = EDItemGenerator
+	public static final DeferredItem<Item> GRAPEFRUIT_SORBET = ItemRegistration
 			.register("grapefruit_sorbet",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.GRAPEFRUIT_SORBET), true))
 			.advancementDessert().isColdFood().finish();
-	public static final DeferredItem<Item> CHOCOLATE_ORANGE = EDItemGenerator
+	public static final DeferredItem<Item> CHOCOLATE_ORANGE = ItemRegistration
 			.register("chocolate_orange", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.CHOCOLATE_ORANGE), true))
 			.advancementCandy().finish();
-	public static final DeferredItem<Item> CHOCOLATE_MOUSSE = EDItemGenerator
+	public static final DeferredItem<Item> CHOCOLATE_MOUSSE = ItemRegistration
 			.register("chocolate_mousse", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.CHOCOLATE_MOUSSE), true))
 			.advancementDessert().finish();
-	public static final DeferredItem<Item> JAFFA_CAKE = EDItemGenerator
+	public static final DeferredItem<Item> JAFFA_CAKE = ItemRegistration
 			.register("jaffa_cake", () -> new Item(bowlFoodItem(EDFoods.JAFFA_CAKE))).advancementDessert().finish();
-	public static final DeferredItem<Item> GRILLED_GRAPEFRUIT = EDItemGenerator
+	public static final DeferredItem<Item> GRILLED_GRAPEFRUIT = ItemRegistration
 			.register("grilled_grapefruit",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.GRILLED_GRAPEFRUIT), true))
 			.advancementDessert().finish();
-	public static final DeferredItem<Item> LEMON_DELICIOUS = EDItemGenerator
+	public static final DeferredItem<Item> LEMON_DELICIOUS = ItemRegistration
 			.register("lemon_delicious", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.LEMON_DELICIOUS), true))
 			.advancementDessert().finish();
-	public static final DeferredItem<Item> ORANGE_CHICKEN = EDItemGenerator
+	public static final DeferredItem<Item> ORANGE_CHICKEN = ItemRegistration
 			.register("orange_chicken", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.ORANGE_CHICKEN), true)).butchercraftToolTip()
 			.advancementButchercraft().finish();
-	public static final DeferredItem<Item> MELON_RIND_STIRFRY = EDItemGenerator
+	public static final DeferredItem<Item> MELON_RIND_STIRFRY = ItemRegistration
 			.register("melon_rind_stirfry",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.MELON_RIND_STIRFRY), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> LIME_SOUFFLE = EDItemGenerator
+	public static final DeferredItem<Item> LIME_SOUFFLE = ItemRegistration
 			.register("lime_souffle", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.LIME_SOUFFLE), true))
 			.advancementDessert().finish();
-	public static final DeferredItem<Item> CHEESE_SOUFFLE = EDItemGenerator
+	public static final DeferredItem<Item> CHEESE_SOUFFLE = ItemRegistration
 			.register("cheese_souffle", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.CHEESE_SOUFFLE), true))
 			.advancementMeal().isHotFood().finish();
-	public static final DeferredItem<Item> PAVLOVA_SLICE = EDItemGenerator
+	public static final DeferredItem<Item> PAVLOVA_SLICE = ItemRegistration
 			.register("pavlova_slice", () -> new ToolTipConsumableItem(foodItem(EDFoods.PAVLOVA_SLICE), true))
 			.advancementDessert().servingToolTip().finish();
 	public static final DeferredBlock<PieBlock> PAVLOVA = ExtraDelightBlocks.BLOCKS.register("pavlova",
@@ -448,49 +448,49 @@ public class SummerCitrus {
 					return Block.box(3.0D, 0.0D, 3.0D, 13.0D, 3.0D, 13.0D);
 				}
 			});
-	public static final DeferredItem<Item> PAVLOVA_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PAVLOVA_ITEM = ItemRegistration
 			.register("pavlova_item", () -> new BlockItem(PAVLOVA.get(), new Item.Properties())).advancementFeast()
 			.feastToolTip().finish();
 	public static final DeferredBlock<JarSingularBlock> PRESERVED_LEMONS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("preserved_lemons_block", () -> new JarSingularBlock(BlockBehaviour.Properties
 					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final DeferredItem<Item> PRESERVED_LEMONS_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PRESERVED_LEMONS_BLOCK_ITEM = ItemRegistration
 			.register("preserved_lemons_block_item",
 					() -> new JarSingularItem(PRESERVED_LEMONS_BLOCK.get(),
 							new Item.Properties().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> PRESERVED_LEMON_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PRESERVED_LEMON_ITEM = ItemRegistration
 			.register("preserved_lemon_item",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.PRESERVED_LEMON), true))
 			.advancementSnack().servingToolTip().finish();
 	public static final DeferredBlock<JarSingularBlock> PICKLED_RINDS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_rinds_block", () -> new JarSingularBlock(BlockBehaviour.Properties
 					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final DeferredItem<Item> PICKLED_RINDS_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_RINDS_BLOCK_ITEM = ItemRegistration
 			.register("pickled_rinds_block_item",
 					() -> new JarSingularItem(PICKLED_RINDS_BLOCK.get(),
 							new Item.Properties().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> PICKLED_RIND_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_RIND_ITEM = ItemRegistration
 			.register("pickled_rind_item", () -> new Item(new Item.Properties().food(EDFoods.PICKLED_MELON_RIND)))
 			.advancementSnack().servingToolTip().finish();
-	public static final DeferredItem<Item> PRESERVED_LEMON_PASTA = EDItemGenerator
+	public static final DeferredItem<Item> PRESERVED_LEMON_PASTA = ItemRegistration
 			.register("preserved_lemon_pasta", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.LEMON_PASTA), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> CANDIED_CITRUS_ZEST = EDItemGenerator
+	public static final DeferredItem<Item> CANDIED_CITRUS_ZEST = ItemRegistration
 			.register("candied_citrus_zest",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.CANDIED_CITRUS_ZEST), true))
 			.advancementCandy().finish();
-	public static final DeferredItem<Item> LEMON_POSSET = EDItemGenerator
+	public static final DeferredItem<Item> LEMON_POSSET = ItemRegistration
 			.register("lemon_posset", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.LEMON_POSSET), true))
 			.advancementDessert().finish();
-	public static final DeferredItem<Item> MELON_LIME_GLAZED_CHICKEN = EDItemGenerator
+	public static final DeferredItem<Item> MELON_LIME_GLAZED_CHICKEN = ItemRegistration
 			.register("melon_lime_glazed_chicken",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.MELON_LIME_CHICKEN), true))
 			.advancementButchercraft().butchercraftToolTip().finish();
-	public static final DeferredItem<Item> KYIV_CAKE_SLICE = EDItemGenerator
+	public static final DeferredItem<Item> KYIV_CAKE_SLICE = ItemRegistration
 			.register("kyiv_cake_slice", () -> new ToolTipConsumableItem(foodItem(EDFoods.KYIV_CAKE_SLICE), true))
 			.advancementDessert().servingToolTip().finish();
 	public static final DeferredBlock<PieBlock> KYIV_CAKE = ExtraDelightBlocks.BLOCKS.register("kyiv_cake",
@@ -501,7 +501,7 @@ public class SummerCitrus {
 					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
 				}
 			});
-	public static final DeferredItem<Item> KYIV_CAKE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> KYIV_CAKE_ITEM = ItemRegistration
 			.register("kyiv_cake_item", () -> new BlockItem(KYIV_CAKE.get(), new Item.Properties())).advancementFeast()
 			.feastToolTip().finish();
 	public static final DeferredBlock<RawBakedAlaskaBlock> RAW_BAKED_ALASKA = ExtraDelightBlocks.BLOCKS
@@ -519,10 +519,10 @@ public class SummerCitrus {
 							.withStyle(ChatFormatting.GOLD));
 				}
 			});
-	public static final DeferredItem<Item> RAW_BAKED_ALASKA_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> RAW_BAKED_ALASKA_ITEM = ItemRegistration
 			.register("raw_baked_alaska_item", () -> new BlockItem(RAW_BAKED_ALASKA.get(), new Item.Properties()))
 			.finish();
-	public static final DeferredItem<Item> BAKED_ALASKA_SERVING = EDItemGenerator
+	public static final DeferredItem<Item> BAKED_ALASKA_SERVING = ItemRegistration
 			.register("baked_alaska_serving",
 					() -> new ToolTipConsumableItem(foodItem(EDFoods.BAKED_ALASKA_SLICE), true))
 			.advancementDessert().servingToolTip().finish();
@@ -531,7 +531,7 @@ public class SummerCitrus {
 					() -> new RecipeFeastBlock(
 							Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_WHITE), false,
 							plate));
-	public static final DeferredItem<Item> BAKED_ALASKA_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> BAKED_ALASKA_ITEM = ItemRegistration
 			.register("baked_alaska_item", () -> new BlockItem(BAKED_ALASKA.get(), new Item.Properties()))
 			.advancementFeast().finish();
 

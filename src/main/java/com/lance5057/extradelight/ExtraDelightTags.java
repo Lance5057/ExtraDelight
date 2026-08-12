@@ -644,6 +644,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> PROCESSED_MELON = modTag("processed/melon");
 
 	public static final TagKey<Item> CHILLING_ITEMS = modTag("chilling_items");
+	public static final TagKey<Item> CAKE = neoforgeItemTag("foods/cake");
 	public static final TagKey<Item> CAKE_SLICE = neoforgeItemTag("foods/cake/slice");
 	public static final TagKey<Item> IS_MARMALADE_INGREDIENT = modTag("marmalade_ingredient");
 	public static final TagKey<Item> IS_JELLY_INGREDIENT = modTag("jelly_ingredient");

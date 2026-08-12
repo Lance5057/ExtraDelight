@@ -36,7 +36,7 @@ import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.EffectDrinkItem;
 import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
-import com.lance5057.extradelight.util.EDItemGenerator;
+import com.lance5057.extradelight.util.registration.types.ItemRegistration;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe.StageIngredient;
 
 import net.minecraft.ChatFormatting;
@@ -102,10 +102,10 @@ public class Fermentation {
 	public static final DeferredItem<Item> WILD_SOYBEAN_ITEM = ExtraDelightItems.ITEMS.register("wild_soybean_item",
 			() -> new BlockItem(WILD_SOYBEAN.get(), new Item.Properties()));
 
-	public static final DeferredItem<Item> CUCUMBER = EDItemGenerator
+	public static final DeferredItem<Item> CUCUMBER = ItemRegistration
 			.register("cucumber", () -> new Item(new Item.Properties().food(EDFoods.CUCUMBER))).advancementIngredients()
 			.finish();
-	public static final DeferredItem<Item> SOYBEAN_POD = EDItemGenerator
+	public static final DeferredItem<Item> SOYBEAN_POD = ItemRegistration
 			.register("soybean_pod", () -> new ShuckableCorn(MiscLootTables.SOYBEANS, new Item.Properties()))
 			.advancementIngredients().finish();
 
@@ -114,7 +114,7 @@ public class Fermentation {
 	public static final DeferredItem<Item> SOYBEANS = ExtraDelightItems.ITEMS.register("soybeans",
 			() -> new ItemNameBlockItem(SOYBEAN_CROP.get(), new Item.Properties()));
 
-	public static final DeferredItem<Item> SALT = EDItemGenerator
+	public static final DeferredItem<Item> SALT = ItemRegistration
 			.register("salt", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 	public static final DeferredBlock<Block> SALT_BLOCK = ExtraDelightBlocks.BLOCKS.register("salt_block",
 			() -> new Block(Block.Properties.ofFullCopy(Blocks.REDSTONE_BLOCK).mapColor(MapColor.TERRACOTTA_WHITE)));
@@ -134,13 +134,13 @@ public class Fermentation {
 	public static final DeferredBlock<JarSingularBlock> GHERKINS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("gherkins_block", () -> new JarSingularBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
 					.strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final DeferredItem<Item> GHERKINS_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> GHERKINS_BLOCK_ITEM = ItemRegistration
 			.register("gherkins_block_item",
 					() -> new JarSingularItem(GHERKINS_BLOCK.get(),
 							stack1Item().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> GHERKIN_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> GHERKIN_ITEM = ItemRegistration
 			.register("gherkin_item",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.GHERKINS), true))
 			.advancementIngredients().servingToolTip().finish();
@@ -148,13 +148,13 @@ public class Fermentation {
 	public static final DeferredBlock<JarSingularBlock> PICKLED_BEETS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_beets_block", () -> new JarSingularBlock(BlockBehaviour.Properties
 					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final DeferredItem<Item> PICKLED_BEETS_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_BEETS_BLOCK_ITEM = ItemRegistration
 			.register("pickled_beets_block_item",
 					() -> new JarSingularItem(PICKLED_BEETS_BLOCK.get(),
 							stack1Item().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> PICKLED_BEET_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_BEET_ITEM = ItemRegistration
 			.register("pickled_beet_item",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.PICKLED_BEET), true))
 			.advancementIngredients().servingToolTip().finish();
@@ -162,13 +162,13 @@ public class Fermentation {
 	public static final DeferredBlock<JarSingularBlock> PICKLED_ONIONS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_onions_block", () -> new JarSingularBlock(BlockBehaviour.Properties
 					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final DeferredItem<Item> PICKLED_ONIONS_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_ONIONS_BLOCK_ITEM = ItemRegistration
 			.register("pickled_onions_block_item",
 					() -> new JarSingularItem(PICKLED_ONIONS_BLOCK.get(),
 							stack1Item().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> PICKLED_ONION_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_ONION_ITEM = ItemRegistration
 			.register("pickled_onion_item",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.PICKLED_ONION), true))
 			.advancementIngredients().servingToolTip().finish();
@@ -176,13 +176,13 @@ public class Fermentation {
 	public static final DeferredBlock<JarSingularBlock> PICKLED_CARROTS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_carrots_block", () -> new JarSingularBlock(BlockBehaviour.Properties
 					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final DeferredItem<Item> PICKLED_CARROTS_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_CARROTS_BLOCK_ITEM = ItemRegistration
 			.register("pickled_carrots_block_item",
 					() -> new JarSingularItem(PICKLED_CARROTS_BLOCK.get(),
 							stack1Item().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> PICKLED_CARROT_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_CARROT_ITEM = ItemRegistration
 			.register("pickled_carrot_item",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.PICKLED_CARROT), true))
 			.advancementSnack().servingToolTip().finish();
@@ -190,13 +190,13 @@ public class Fermentation {
 	public static final DeferredBlock<JarSingularBlock> PICKLED_EGGS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_eggs_block", () -> new JarSingularBlock(BlockBehaviour.Properties
 					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final DeferredItem<Item> PICKLED_EGGS_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_EGGS_BLOCK_ITEM = ItemRegistration
 			.register("pickled_eggs_block_item",
 					() -> new JarSingularItem(PICKLED_EGGS_BLOCK.get(),
 							stack1Item().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> PICKLED_EGG_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_EGG_ITEM = ItemRegistration
 			.register("pickled_egg_item",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.PICKLED_EGG), true))
 			.advancementSnack().servingToolTip().finish();
@@ -204,13 +204,13 @@ public class Fermentation {
 	public static final DeferredBlock<JarSingularBlock> PICKLED_FISH_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_fish_block", () -> new JarSingularBlock(BlockBehaviour.Properties
 					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final DeferredItem<Item> PICKLED_FISH_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_FISH_BLOCK_ITEM = ItemRegistration
 			.register("pickled_fish_block_item",
 					() -> new JarSingularItem(PICKLED_FISH_BLOCK.get(),
 							stack1Item().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> PICKLED_FISH_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_FISH_ITEM = ItemRegistration
 			.register("pickled_fish_item",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.PICKLED_FISH), true))
 			.advancementSnack().servingToolTip().finish();
@@ -218,13 +218,13 @@ public class Fermentation {
 	public static final DeferredBlock<JarSingularBlock> PICKLED_SAUSAGE_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_sausage_block", () -> new JarSingularBlock(BlockBehaviour.Properties
 					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final DeferredItem<Item> PICKLED_SAUSAGE_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_SAUSAGE_BLOCK_ITEM = ItemRegistration
 			.register("pickled_sausage_block_item",
 					() -> new JarSingularItem(PICKLED_SAUSAGE_BLOCK.get(),
 							stack1Item().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementButchercraft().finish();
-	public static final DeferredItem<Item> PICKLED_SAUSAGE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_SAUSAGE_ITEM = ItemRegistration
 			.register("pickled_sausage_item",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.PICKLED_SAUSAGE), true))
 			.advancementButchercraft().servingToolTip().finish();
@@ -232,14 +232,14 @@ public class Fermentation {
 	public static final DeferredBlock<JarSingularBlock> PICKLED_GINGER_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_ginger_block", () -> new JarSingularBlock(BlockBehaviour.Properties
 					.ofFullCopy(Blocks.GLASS).strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final DeferredItem<Item> PICKLED_GINGER_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> PICKLED_GINGER_BLOCK_ITEM = ItemRegistration
 			.register("pickled_ginger_block_item",
 					() -> new JarSingularItem(PICKLED_GINGER_BLOCK.get(),
 							stack1Item().component(DataComponents.BLOCK_STATE,
 									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
 			.advancementFeast().finish();
 
-	public static final DeferredItem<Item> PICKLE_JUICE = EDItemGenerator
+	public static final DeferredItem<Item> PICKLE_JUICE = ItemRegistration
 			.register("pickle_juice",
 					() -> new EffectDrinkItem(drinkItem(), true, true, 0,
 							new MobEffectInstance(ExtraDelightMobEffects.PICKLED, FoodValues.MEDIUM_DURATION, 1)))
@@ -250,52 +250,52 @@ public class Fermentation {
 			"pickle_juice_fluid_block", () -> new VinegarFluidBlock(ExtraDelightFluids.PICKLE_JUICE.FLUID.get(),
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
 
-	public static final DeferredItem<Item> SOY_SAUCE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> SOY_SAUCE_ITEM = ItemRegistration
 			.register("soy_sauce_item",
 					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.SOY_SAUCE)))
 			.advancementIngredients().finish();
 
-	public static final DeferredItem<Item> SAUERKRAUT_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> SAUERKRAUT_ITEM = ItemRegistration
 			.register("sauerkraut_item",
 					() -> new ToolTipConsumableItem(
 							new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.SAUERKRAUT), true))
 			.advancementIngredients().finish();
 
-	public static final DeferredItem<Item> KIMCHI_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> KIMCHI_ITEM = ItemRegistration
 			.register("kimchi_item",
 					() -> new ToolTipConsumableItem(
 							new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.KIMCHI), true))
 			.advancementIngredients().finish();
 
-	public static final DeferredItem<Item> HOT_SAUCE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> HOT_SAUCE_ITEM = ItemRegistration
 			.register("hot_sauce_item",
 					() -> new ToolTipConsumableItem(
 							new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.HOT_SAUCE), true))
 			.advancementIngredients().finish();
 
-	public static final DeferredItem<Item> MISO_PASTE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> MISO_PASTE_ITEM = ItemRegistration
 			.register("miso_paste_item",
 					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.MISO_PASTE)))
 			.advancementIngredients().finish();
 
-	public static final DeferredItem<Item> NATTO_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> NATTO_ITEM = ItemRegistration
 			.register("natto_item",
 					() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.NATTO)))
 			.advancementIngredients().finish();
 
-	public static final DeferredItem<Item> FISH_SAUCE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> FISH_SAUCE_ITEM = ItemRegistration
 			.register("fish_sauce_item",
 					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.FISH_SAUCE)))
 			.advancementIngredients().finish();
 
-	public static final DeferredItem<Item> SALAMI_MIX = EDItemGenerator
+	public static final DeferredItem<Item> SALAMI_MIX = ItemRegistration
 			.register("salami_mix", () -> new Item(new Item.Properties().food(EDFoods.SALAMI_MIX)))
 			.advancementIngredients().finish();
 
 	public static final DeferredBlock<Block> UNRIPE_SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("unripe_salami_block", () -> new UnripeSalamiBlock(
 					Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_PINK)));
-	public static final DeferredItem<Item> UNRIPE_SALAMI_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> UNRIPE_SALAMI_ITEM = ItemRegistration
 			.register("unripe_salami_item",
 					() -> new BlockItem(UNRIPE_SALAMI_BLOCK.get(), new Item.Properties().food(EDFoods.UNRIPE_SALAMI)))
 			.advancementIngredients().finish();
@@ -303,7 +303,7 @@ public class Fermentation {
 	public static final DeferredBlock<Block> SALAMI_BLOCK = ExtraDelightBlocks.BLOCKS.register("salami_block",
 			() -> new RipeSalamiBlock(
 					Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_RED)));
-	public static final DeferredItem<Item> SALAMI_ITEM = EDItemGenerator.register("salami_item",
+	public static final DeferredItem<Item> SALAMI_ITEM = ItemRegistration.register("salami_item",
 			() -> new BlockItem(SALAMI_BLOCK.get(), new Item.Properties().food(EDFoods.SALAMI)) {
 				@Override
 				public void appendHoverText(ItemStack stack, Item.TooltipContext context,
@@ -314,51 +314,51 @@ public class Fermentation {
 				}
 			}).advancementSnack().finish();
 
-	public static final DeferredItem<Item> SOAKED_SOYBEANS_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> SOAKED_SOYBEANS_ITEM = ItemRegistration
 			.register("soaked_soybeans_item",
 					() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.COOKED_SOYBEANS)))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> MASHED_SOYBEANS_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> MASHED_SOYBEANS_ITEM = ItemRegistration
 			.register("mashed_soybeans_item", () -> new Item(new Item.Properties().food(EDFoods.COOKED_SOYBEANS)))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> COOKED_SOYBEANS_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> COOKED_SOYBEANS_ITEM = ItemRegistration
 			.register("cooked_soybeans_item", () -> new Item(new Item.Properties().food(EDFoods.COOKED_SOYBEANS)))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> SOY_MILK = EDItemGenerator
+	public static final DeferredItem<Item> SOY_MILK = ItemRegistration
 			.register("soy_milk", () -> new MilkBottleItem(drinkItem())).advancementIngredients().finish();
 
-	public static final DeferredItem<Item> NAEM_MOO_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> NAEM_MOO_ITEM = ItemRegistration
 			.register("naem_moo_item",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.NAEM_MOO), true))
 			.advancementSnack().finish();
 
-	public static final DeferredItem<Item> SLICED_BEETROOT_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> SLICED_BEETROOT_ITEM = ItemRegistration
 			.register("sliced_beetroot_item", () -> new Item(new Item.Properties().food(Foods.BEETROOT)))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> SHREDDED_CABBAGE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> SHREDDED_CABBAGE_ITEM = ItemRegistration
 			.register("shredded_cabbage_item", () -> new Item(new Item.Properties().food(FoodValues.CABBAGE)))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> SLICED_CUCUMBER_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> SLICED_CUCUMBER_ITEM = ItemRegistration
 			.register("sliced_cucumber_item", () -> new Item(new Item.Properties().food(EDFoods.CUCUMBER)))
 			.advancementIngredients().finish();
-	public static final DeferredItem<Item> SLICED_GHERKIN_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> SLICED_GHERKIN_ITEM = ItemRegistration
 			.register("sliced_gherkin_item",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.GHERKINS), true))
 			.advancementIngredients().finish();
 
-	public static final DeferredItem<Item> GAZPACHO = EDItemGenerator
+	public static final DeferredItem<Item> GAZPACHO = ItemRegistration
 			.register("gazpacho", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.GAZPACHO), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> EDAMAME = EDItemGenerator
+	public static final DeferredItem<Item> EDAMAME = ItemRegistration
 			.register("edamame", () -> new Item(bowlFoodItem(EDFoods.EDAMAME))).advancementSnack().finish();
-	public static final DeferredItem<Item> BEEF_BULGOGI = EDItemGenerator
+	public static final DeferredItem<Item> BEEF_BULGOGI = ItemRegistration
 			.register("beef_bulgogi", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.BEEF_BULGOGI), true))
 			.advancementButchercraft().butchercraftToolTip().finish();
-	public static final DeferredItem<Item> HONEY_CHILI_CHICKEN = EDItemGenerator
+	public static final DeferredItem<Item> HONEY_CHILI_CHICKEN = ItemRegistration
 			.register("honey_chili_chicken",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.HONEY_CHILI_CHICKEN), true))
 			.advancementButchercraft().butchercraftToolTip().finish();
-	public static final DeferredItem<Item> CARAMEL_CHICKEN = EDItemGenerator
+	public static final DeferredItem<Item> CARAMEL_CHICKEN = ItemRegistration
 			.register("caramel_chicken", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.CARAMEL_CHICKEN), true))
 			.advancementButchercraft().butchercraftToolTip().finish();
 	public static final DeferredBlock<RecipeFeastBlock> SOY_GLAZED_SALMON_BLOCK = ExtraDelightBlocks.BLOCKS.register(
@@ -367,38 +367,38 @@ public class Fermentation {
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_ORANGE), true,
 					Block.box(0, 0, 0, 0, 0, 0), Block.box(-4.0D, 0.0D, 3.5D, 20.0D, 1.0D, 12.5D),
 					Block.box(3.5D, 0.0D, -4.0D, 12.5D, 1.0D, 20.0D)));
-	public static final DeferredItem<Item> SOY_GLAZED_SALMON_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> SOY_GLAZED_SALMON_BLOCK_ITEM = ItemRegistration
 			.register("soy_glazed_salmon_block_item", () -> new BlockItem(SOY_GLAZED_SALMON_BLOCK.get(), stack1Item()))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> SOY_GLAZED_SALMON_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> SOY_GLAZED_SALMON_ITEM = ItemRegistration
 			.register("soy_glazed_salmon_item",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.SOY_GLAZED_SALMON), true))
 			.advancementMeal().servingToolTip().finish();
-	public static final DeferredItem<Item> STEAK_PICKLED_ONION_PIE_SLICE = EDItemGenerator
+	public static final DeferredItem<Item> STEAK_PICKLED_ONION_PIE_SLICE = ItemRegistration
 			.register("steak_pickled_onion_pie_slice",
 					() -> new ToolTipConsumableItem(foodItem(EDFoods.STEAK_PICKLED_ONION_PIE_SLICE), true))
 			.advancementButchercraft().butchercraftToolTip().servingToolTip().finish();
 	public static final DeferredBlock<Block> STEAK_PICKLED_ONION_PIE = ExtraDelightBlocks.BLOCKS.register(
 			"steak_pickled_onion_pie",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), STEAK_PICKLED_ONION_PIE_SLICE));
-	public static final DeferredItem<Item> STEAK_PICKLED_ONION_PIE_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> STEAK_PICKLED_ONION_PIE_ITEM = ItemRegistration
 			.register("steak_pickled_onion_pie_item",
 					() -> new BlockItem(STEAK_PICKLED_ONION_PIE.get(), new Item.Properties()))
 			.advancementButchercraft().butchercraftToolTip().feastToolTip().finish();
-	public static final DeferredItem<Item> KIWIBURGER = EDItemGenerator
+	public static final DeferredItem<Item> KIWIBURGER = ItemRegistration
 			.register("kiwiburger",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.KIWIBURGER), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> SHIRAZI_SALAD = EDItemGenerator
+	public static final DeferredItem<Item> SHIRAZI_SALAD = ItemRegistration
 			.register("shirazi_salad", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.SHIRAZI_SALAD), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> CUCUMBER_SALAD = EDItemGenerator
+	public static final DeferredItem<Item> CUCUMBER_SALAD = ItemRegistration
 			.register("cucumber_salad", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.CUCUMBER_SALAD), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> MISO_SOUP = EDItemGenerator
+	public static final DeferredItem<Item> MISO_SOUP = ItemRegistration
 			.register("miso_soup", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.MISO_SOUP), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> NATTO_AND_RICE = EDItemGenerator
+	public static final DeferredItem<Item> NATTO_AND_RICE = ItemRegistration
 			.register("natto_and_rice", () -> new Item(new Item.Properties().food(EDFoods.NATTO_AND_RICE)) {
 				@Override
 				public void appendHoverText(ItemStack stack, Item.TooltipContext context,
@@ -408,14 +408,14 @@ public class Fermentation {
 							.withStyle(ChatFormatting.BLUE));
 				}
 			}).advancementMeal().finish();
-	public static final DeferredItem<Item> SAUERKRAUT_SOUP = EDItemGenerator
+	public static final DeferredItem<Item> SAUERKRAUT_SOUP = ItemRegistration
 			.register("sauerkraut_soup", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.SAUERKRAUT_SOUP), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> SAUERKRAUT_AND_SAUSAGE = EDItemGenerator
+	public static final DeferredItem<Item> SAUERKRAUT_AND_SAUSAGE = ItemRegistration
 			.register("sauerkraut_and_sausage",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.SAUERKRAUT_AND_SAUSAGE), true))
 			.advancementButchercraft().butchercraftToolTip().finish();
-	public static final DeferredItem<Item> YEAST_SPREAD = EDItemGenerator
+	public static final DeferredItem<Item> YEAST_SPREAD = ItemRegistration
 			.register("yeast_spread",
 					() -> new ToolTipConsumableItem(
 							new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.YEAST_SPREAD), true))
@@ -426,38 +426,38 @@ public class Fermentation {
 			() -> new RecipeFeastBlock(
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_ORANGE), true,
 					ExtraDelightBlocks.plate));
-	public static final DeferredItem<Item> CHEESYMITE_SCROLL_BLOCK_ITEM = EDItemGenerator
+	public static final DeferredItem<Item> CHEESYMITE_SCROLL_BLOCK_ITEM = ItemRegistration
 			.register("cheesymite_scroll_block_item", () -> new BlockItem(CHEESYMITE_SCROLL_BLOCK.get(), stack1Item()))
 			.advancementFeast().finish();
-	public static final DeferredItem<Item> CHEESYMITE_SCROLL_SERVING = EDItemGenerator.register("cheesymite_scroll",
+	public static final DeferredItem<Item> CHEESYMITE_SCROLL_SERVING = ItemRegistration.register("cheesymite_scroll",
 			() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.CHEESYMITE_SCROLL_SERVING), true))
 			.advancementSnack().servingToolTip().finish();
 
-	public static final DeferredItem<Item> MORKOVCHA = EDItemGenerator
+	public static final DeferredItem<Item> MORKOVCHA = ItemRegistration
 			.register("morkovcha", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.MORKOVCHA), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> ZUPA_OGORKOWA = EDItemGenerator
+	public static final DeferredItem<Item> ZUPA_OGORKOWA = ItemRegistration
 			.register("zupa_ogorkowa", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.ZUPA_OGORKOWA), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> KIMCHI_FRIED_RICE = EDItemGenerator
+	public static final DeferredItem<Item> KIMCHI_FRIED_RICE = ItemRegistration
 			.register("kimchi_fried_rice",
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.KIMCHI_FRIED_RICE), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> KONGJANG = EDItemGenerator
+	public static final DeferredItem<Item> KONGJANG = ItemRegistration
 			.register("kongjang", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.KONGJANG), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> CHEESEBURGER_PICKLE = EDItemGenerator
+	public static final DeferredItem<Item> CHEESEBURGER_PICKLE = ItemRegistration
 			.register("cheeseburger_pickle",
 					() -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.CHEESEBURGER_PICKLE), true))
 			.advancementSnack().finish();
-	public static final DeferredItem<Item> HOT_WINGS = EDItemGenerator
+	public static final DeferredItem<Item> HOT_WINGS = ItemRegistration
 			.register("hot_wings", () -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.HOT_WINGS), true)).butchercraftToolTip()
 			.advancementMeal().finish();
 
 	public static final DeferredBlock<Block> JAR_DISPLAY_BLOCK = ExtraDelightBlocks.BLOCKS.register("jar_display_block",
 			() -> new JarDisplayBlock(Block.Properties.ofFullCopy(Blocks.GLASS).strength(0.8F)));
 
-	public static final DeferredItem<Item> COOKED_WHEAT_SEEDS = EDItemGenerator
+	public static final DeferredItem<Item> COOKED_WHEAT_SEEDS = ItemRegistration
 			.register("cooked_wheat_seeds", () -> new Item(new Item.Properties().food(EDFoods.COOKED_WHEAT_SEEDS)))
 			.advancementIngredients().finish();
 
