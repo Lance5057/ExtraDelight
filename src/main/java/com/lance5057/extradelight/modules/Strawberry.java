@@ -5,6 +5,7 @@ import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.blocks.crops.CucumberCrop;
+import com.lance5057.extradelight.blocks.crops.StrawberryCrop;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.util.EDItemGenerator;
@@ -21,7 +22,7 @@ import vectorwing.farmersdelight.common.block.WildCropBlock;
 public class Strawberry {
 	//Blocks
 	public static final DeferredBlock<StrawberryCrop> STRAWBERRY_CROP = ExtraDelightBlocks.BLOCKS
-			.register("strawberry_crop", () -> new CucumberCrop(Block.Properties.ofFullCopy(Blocks.WHEAT)));
+			.register("strawberry_crop", () -> new StrawberryCrop(Block.Properties.ofFullCopy(Blocks.WHEAT)));
 
 	public static final DeferredBlock<Block> WILD_STRAWBERRY = ExtraDelightBlocks.BLOCKS.register("wild_strawberry",
 			() -> new WildCropBlock(MobEffects.HEAL, 6, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
