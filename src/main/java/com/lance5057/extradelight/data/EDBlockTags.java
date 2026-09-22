@@ -11,6 +11,7 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -325,13 +326,13 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.COFFEE_BUSH.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
 				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get(),
 				SummerCitrus.LIME_SAPLING.get(), SummerCitrus.ORANGE_SAPLING.get(),
-				SummerCitrus.GRAPEFRUIT_SAPLING.get());
+				SummerCitrus.GRAPEFRUIT_SAPLING.get(), Strawberry.STRAWBERRY_CROP.get());
 		tag(CompatTags.SERENE_SEASONS_AUTUMN_CROPS_BLOCK).add(ExtraDelightBlocks.MINT_CROP.get(),
 				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.CHILI_CROP.get(),
 				ExtraDelightBlocks.PEANUT_CROP.get(), ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
 				ExtraDelightBlocks.COFFEE_BUSH.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
 				Fermentation.SOYBEAN_CROP.get(), SummerCitrus.LIME_SAPLING.get(),
-				SummerCitrus.ORANGE_SAPLING.get(), SummerCitrus.GRAPEFRUIT_SAPLING.get());
+				SummerCitrus.ORANGE_SAPLING.get(), SummerCitrus.GRAPEFRUIT_SAPLING.get(), Strawberry.STRAWBERRY_CROP.get());
 		tag(CompatTags.SERENE_SEASONS_WINTER_CROPS_BLOCK).add(ExtraDelightBlocks.GARLIC_CROP.get(),
 				SummerCitrus.LEMON_SAPLING.get(), SummerCitrus.ORANGE_SAPLING.get(),
 				SummerCitrus.GRAPEFRUIT_SAPLING.get());
@@ -341,7 +342,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
 				ExtraDelightBlocks.COFFEE_BUSH.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
 				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get(),
-				SummerCitrus.LEMON_SAPLING.get(), SummerCitrus.LIME_SAPLING.get());
+				SummerCitrus.LEMON_SAPLING.get(), SummerCitrus.LIME_SAPLING.get(), Strawberry.STRAWBERRY_CROP.get());
 
 		// Dyed Tags
 		tag(Tags.Blocks.DYED_BLACK).add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(),
@@ -488,7 +489,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_LEMON)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_LIME)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ORANGE)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GRAPEFRUIT);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GRAPEFRUIT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_STRAWBERRY);
 
 		tag(ExtraDelightTags.STORAGE_BLOCKS_CHEESE).add(ExtraDelightBlocks.CHEESE_BLOCK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_BUTTER).add(ExtraDelightBlocks.BUTTER_BLOCK.get());
@@ -546,6 +548,7 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_LIME).add(SummerCitrus.LIME_CRATE.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ORANGE).add(SummerCitrus.ORANGE_CRATE.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT_CRATE.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_STRAWBERRY).add(Strawberry.STRAWBERRY_CRATE.get());
 		
 		AestheticBlocks.GINGHAM_BLOCKS.forEach(b -> {
 			tag(BlockTags.DAMPENS_VIBRATIONS).add(b.get());

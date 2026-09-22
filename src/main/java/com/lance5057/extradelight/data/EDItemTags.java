@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.extradelight.modules.Strawberry;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.CompatTags;
@@ -716,6 +717,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.EGG_OR_YOLK).add(SummerCitrus.EGG_YOLK.get()).addTag(Tags.Items.EGGS);
 		tag(ExtraDelightTags.ICE_CUBES).add(SummerCitrus.ICE_CUBES.get());
 
+		tag(ExtraDelightTags.PROCESSED_STRAWBERRY).add(Strawberry.STRAWBERRY.get(),
+				Strawberry.SLICED_STRAWBERRY.get());
+
 		tag(ExtraDelightTags.IS_JELLY_INGREDIENT).add(ExtraDelightItems.MINT.get());
 
 		tag(CompatTags.SLICED_INGREDIENTS).add(ExtraDelightItems.SLICED_ONION.get(),
@@ -730,13 +734,15 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.HAZELNUT_SAPLING.get(), ExtraDelightItems.COFFEE_CHERRIES.get(),
 				ExtraDelightItems.APPLE_SAPLING.get(), ExtraDelightItems.GARLIC_CLOVE.get(),
 				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get(), SummerCitrus.LIME_SAPLING_ITEM.get(),
-				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
+				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get(),
+				Strawberry.STRAWBERRY_SEED.get());
 		tag(CompatTags.SERENE_SEASONS_AUTUMN_CROPS).add(ExtraDelightItems.MINT.get(),
 				ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 				ExtraDelightItems.PEANUTS.get(), ExtraDelightItems.HAZELNUT_SAPLING.get(),
 				ExtraDelightItems.COFFEE_CHERRIES.get(), ExtraDelightItems.APPLE_SAPLING.get(),
 				Fermentation.SOYBEANS.get(), SummerCitrus.LIME_SAPLING_ITEM.get(),
-				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
+				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get(),
+				Strawberry.STRAWBERRY_SEED.get());
 		tag(CompatTags.SERENE_SEASONS_WINTER_CROPS).add(ExtraDelightItems.GARLIC_CLOVE.get(),
 				SummerCitrus.LEMON_SAPLING_ITEM.get(), SummerCitrus.ORANGE_SAPLING_ITEM.get(),
 				SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
@@ -746,7 +752,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.HAZELNUT_SAPLING.get(), ExtraDelightItems.COFFEE_CHERRIES.get(),
 				ExtraDelightItems.APPLE_SAPLING.get(), ExtraDelightItems.GARLIC_CLOVE.get(),
 				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get(), SummerCitrus.LEMON_SAPLING_ITEM.get(),
-				SummerCitrus.LIME_SAPLING_ITEM.get());
+				SummerCitrus.LIME_SAPLING_ITEM.get(), Strawberry.STRAWBERRY_SEED.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(),
@@ -898,7 +904,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SOYBEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LEMON).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LIME)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ORANGE)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_STRAWBERRY);
 
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHEESE).add(ExtraDelightItems.CHEESE_BLOCK_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BUTTER).add(ExtraDelightItems.BUTTER_BLOCK_ITEM.get());
@@ -961,6 +968,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LIME).add(SummerCitrus.LIME_CRATE_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ORANGE).add(SummerCitrus.ORANGE_CRATE_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT_CRATE_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_STRAWBERRY).add(Strawberry.STRAWBERRY_CRATE_ITEM.get());
 
 		tag(CompatTags.UPRIGHT_ON_BELT).add(ExtraDelightItems.COOKING_OIL.get(), ExtraDelightItems.VINEGAR.get(),
 				ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.GRAVY.get(),

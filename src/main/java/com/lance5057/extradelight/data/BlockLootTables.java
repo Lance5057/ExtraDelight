@@ -28,6 +28,7 @@ import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.SoybeanCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -669,6 +670,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(SummerCitrus.LEMON_PETAL_LITTER.get());
 		this.dropSelf(ExtraDelightBlocks.APPLE_PETAL_LITTER.get());
 		this.dropSelf(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get());
+
+		this.dropOther(Strawberry.WILD_STRAWBERRY.get(), Strawberry.STRAWBERRY.get());
+		this.createFruitBushDrop(Strawberry.STRAWBERRY_CROP.get(), Strawberry.STRAWBERRY.get());
+		this.dropSelf(Strawberry.STRAWBERRY_CRATE.get());
+		this.add(Strawberry.STRAWBERRY_CHEESECAKE.get(), noDrop());
+		feast(Strawberry.PINK_LEMONADE_TRAY.get(), Strawberry.PINK_LEMONADE_TRAY_ITEM.get(), Items.GLASS_BOTTLE);
 		
 	}
 

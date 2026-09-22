@@ -6,6 +6,7 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -1362,6 +1363,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItemFlat(this, ExtraDelightItems.HAZELNUT_PETAL_LITTER_ITEM, "crops/fruit/hazelnut/hazelnut_petals");
 
 		Fermentation.itemModels(this);
+		Strawberry.itemModels(this);
 		SummerCitrus.itemModels(this);
 		AestheticBlocks.itemModel(this);
 	}

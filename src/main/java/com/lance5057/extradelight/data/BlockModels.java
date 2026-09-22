@@ -25,6 +25,7 @@ import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.displays.fruitbowl.FruitBowlBlock;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
 import com.lance5057.extradelight.workstations.juicer.JuicerBlock;
@@ -725,6 +726,7 @@ public class BlockModels extends BlockStateProvider {
 
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);
+		Strawberry.blockModels(this);
 		SummerCitrus.blockModels(this);
 	}
 

@@ -2,6 +2,7 @@ package com.lance5057.extradelight;
 
 import java.util.Set;
 
+import com.lance5057.extradelight.modules.Strawberry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,6 +10,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
@@ -48,6 +50,7 @@ public class ExtraDelight {
 		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
 
 		Fermentation f = new Fermentation();
+		Strawberry t = new Strawberry();
 		SummerCitrus s = new SummerCitrus();
 
 		AestheticBlocks.setup();

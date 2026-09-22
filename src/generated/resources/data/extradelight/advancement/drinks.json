@@ -201,6 +201,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:pink_lemonade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pink_lemonade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pumpkin_milkshake": {
       "conditions": {
         "items": [
@@ -366,6 +376,9 @@
     ],
     [
       "extradelight:milkshake"
+    ],
+    [
+      "extradelight:pink_lemonade"
     ]
   ],
   "sends_telemetry_event": true

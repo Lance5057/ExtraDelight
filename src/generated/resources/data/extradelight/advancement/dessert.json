@@ -1011,6 +1011,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:strawberry_cheesecake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_cheesecake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_custard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_custard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:stuffed_apple": {
       "conditions": {
         "items": [
@@ -1137,6 +1157,9 @@
     ],
     [
       "extradelight:cinnamon_popsicle"
+    ],
+    [
+      "extradelight:strawberry_cheesecake_slice"
     ],
     [
       "extradelight:sweet_berry_pie_slice"
@@ -1296,6 +1319,9 @@
     ],
     [
       "extradelight:cookie_dough_ice_cream"
+    ],
+    [
+      "extradelight:strawberry_custard"
     ],
     [
       "extradelight:pavlova_slice"

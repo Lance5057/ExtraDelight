@@ -801,6 +801,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:pink_lemonade_tray_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pink_lemonade_tray_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pork_stew_feast": {
       "conditions": {
         "items": [
@@ -946,6 +956,16 @@
         "items": [
           {
             "items": "extradelight:stirfry_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_cheesecake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_cheesecake"
           }
         ]
       },
@@ -1108,6 +1128,9 @@
       "extradelight:punch_feast"
     ],
     [
+      "extradelight:strawberry_cheesecake"
+    ],
+    [
       "extradelight:panforte"
     ],
     [
@@ -1115,6 +1138,9 @@
     ],
     [
       "extradelight:marshmallow_slice_feast"
+    ],
+    [
+      "extradelight:pink_lemonade_tray_item"
     ],
     [
       "extradelight:christmas_pudding_feast"

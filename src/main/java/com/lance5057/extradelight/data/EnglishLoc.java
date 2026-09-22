@@ -7,6 +7,7 @@ import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -1422,6 +1423,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".tooltip.deprecated", "This item is deprecated! Right-click to convert!");
 
 		Fermentation.EngLoc(this);
+		Strawberry.EngLoc(this);
 		SummerCitrus.EngLoc(this);
 		AestheticBlocks.EngLoc(this);
 	}

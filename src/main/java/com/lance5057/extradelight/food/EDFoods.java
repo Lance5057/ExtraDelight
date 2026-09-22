@@ -375,4 +375,7 @@ public class EDFoods {
 	public static final FoodProperties KYIV_CAKE_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_BRIEF, 1F).build();
 	public static final FoodProperties BAKED_ALASKA_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
 	public static final FoodProperties MELON_FRUIT_SALAD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.6f).effect(REGENERATION_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
+
+	public static final FoodProperties STRAWBERRY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3f).build();
+	public static final FoodProperties DIPPED_STRAWBERRY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).effect(COMFORT_BRIEF, 1F).alwaysEdible().build();
 }

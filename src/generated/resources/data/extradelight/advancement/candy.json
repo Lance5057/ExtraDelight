@@ -311,6 +311,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:dark_chocolate_dipped_strawberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:dark_chocolate_dipped_strawberry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:dark_chocolate_dipped_sweet_berry": {
       "conditions": {
         "items": [
@@ -446,6 +456,16 @@
         "items": [
           {
             "items": "extradelight:milk_chocolate_dipped_marshmallow"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:milk_chocolate_dipped_strawberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:milk_chocolate_dipped_strawberry"
           }
         ]
       },
@@ -631,6 +651,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:white_chocolate_dipped_strawberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:white_chocolate_dipped_strawberry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:white_chocolate_dipped_sweet_berry": {
       "conditions": {
         "items": [
@@ -693,6 +723,9 @@
     ],
     [
       "extradelight:dark_chocolate_dipped_bacon"
+    ],
+    [
+      "extradelight:milk_chocolate_dipped_strawberry"
     ],
     [
       "extradelight:dark_chocolate_dipped_graham_cracker"
@@ -818,6 +851,9 @@
       "extradelight:candied_citrus_zest"
     ],
     [
+      "extradelight:dark_chocolate_dipped_strawberry"
+    ],
+    [
       "extradelight:caramel_candy"
     ],
     [
@@ -852,6 +888,9 @@
     ],
     [
       "extradelight:candy_yellow"
+    ],
+    [
+      "extradelight:white_chocolate_dipped_strawberry"
     ],
     [
       "extradelight:dark_chocolate_dipped_sweet_berry"

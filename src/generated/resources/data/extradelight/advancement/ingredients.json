@@ -1361,6 +1361,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:sliced_strawberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sliced_strawberry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sliced_tomato": {
       "conditions": {
         "items": [
@@ -1416,6 +1426,16 @@
         "items": [
           {
             "items": "extradelight:stiff_peaks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry"
           }
         ]
       },
@@ -1710,6 +1730,9 @@
       "extradelight:corn_flakes"
     ],
     [
+      "extradelight:strawberry"
+    ],
+    [
       "extradelight:orange_juice"
     ],
     [
@@ -1876,6 +1899,9 @@
     ],
     [
       "extradelight:frosting_yellow"
+    ],
+    [
+      "extradelight:sliced_strawberry"
     ],
     [
       "extradelight:egg_white"
