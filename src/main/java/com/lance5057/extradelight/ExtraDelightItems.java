@@ -2787,7 +2787,7 @@ public class ExtraDelightItems {
 			.register("chocolate_cookie_dough", () -> new Item(foodItem(EDFoods.COOKIE_DOUGH))).advancementIngredients()
 			.finish();
 	public static final DeferredItem<Item> CHOCOLATE_COOKIE = EDItemGenerator
-			.register("chocolate_cookie", () -> new Item(foodItem(FoodValues.COOKIES))).advancementDessert().finish();
+			.register("chocolate_cookie", () -> new Item(foodItem(FoodValues.COOKIES))).advancementCookie().finish();
 
 	public static final DeferredItem<Item> POTATO_SALAD = EDItemGenerator
 			.register("potato_salad", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.POTATO_SALAD), true))

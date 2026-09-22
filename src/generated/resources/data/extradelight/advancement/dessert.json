@@ -211,16 +211,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:chocolate_cookie": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:chocolate_cookie"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:chocolate_custard": {
       "conditions": {
         "items": [
@@ -1334,9 +1324,6 @@
     ],
     [
       "extradelight:muffin_ginger"
-    ],
-    [
-      "extradelight:chocolate_cookie"
     ],
     [
       "extradelight:candy_apple"

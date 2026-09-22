@@ -110,6 +110,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.orange", "Found in wet biomes.");
 		this.add("extradelight.jei.info.grapefruit", "Found in jungle biomes.");
 		this.add("extradelight.jei.info.egg", "Right click an egg on a Mixing Bowl.");
+		this.add("extradelight.jei.info.strawberry", "Found in forest biomes.");
 
 		this.add("extradelight.jei.info.evaporator.extra", "+ Extras");
 		this.add("extradelight.jei.info.evaporator.view", "Requires View"); // Combine with the one under
