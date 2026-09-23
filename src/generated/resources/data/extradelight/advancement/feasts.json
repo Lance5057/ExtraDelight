@@ -971,6 +971,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:strawberry_shortcake_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_shortcake_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:stuffed_apples_feast": {
       "conditions": {
         "items": [
@@ -1237,6 +1247,9 @@
     ],
     [
       "extradelight:bruschetta_feast"
+    ],
+    [
+      "extradelight:strawberry_shortcake_item"
     ],
     [
       "extradelight:jelly_white_block_item"

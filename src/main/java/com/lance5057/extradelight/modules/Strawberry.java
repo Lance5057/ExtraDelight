@@ -18,18 +18,25 @@ import com.lance5057.extradelight.items.XAdeDrink;
 import com.lance5057.extradelight.util.EDItemGenerator;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CakeBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
@@ -69,6 +76,21 @@ public class Strawberry {
 	public static final DeferredItem<Item> STRAWBERRY_CHEESECAKE_ITEM = EDItemGenerator
 			.register("strawberry_cheesecake",
 					() -> new BlockItem(STRAWBERRY_CHEESECAKE.get(), new Item.Properties()))
+			.advancementFeast().feastToolTip().finish();
+
+	public static final DeferredItem<Item> STRAWBERRY_SHORTCAKE_SLICE = EDItemGenerator
+			.register("strawberry_shortcake_slice", () -> new Item(foodItem(FoodValues.CAKE_SLICE))).advancementDessert()
+			.servingToolTip().finish();
+	public static final DeferredBlock<PieBlock> STRAWBERRY_SHORTCAKE = ExtraDelightBlocks.BLOCKS.register("strawberry_shortcake",
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), STRAWBERRY_SHORTCAKE_SLICE) {
+				@Override
+				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+										   CollisionContext context) {
+					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
+				}
+			});
+	public static final DeferredItem<Item> STRAWBERRY_SHORTCAKE_ITEM = EDItemGenerator
+			.register("strawberry_shortcake_item", () -> new BlockItem(STRAWBERRY_SHORTCAKE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
 
 	//Items
@@ -153,7 +175,18 @@ public class Strawberry {
 							.texture("inner", bsp.modLoc("block/strawberry_cheesecake_inner")))
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
+		bsp.getVariantBuilder(STRAWBERRY_SHORTCAKE.get()).forAllStates(state -> {
+			int bites = state.getValue(PieBlock.BITES);
+			String suffix = "_stage" + bites;
+
+			return ConfiguredModel.builder()
+					.modelFile(new ModelFile.ExistingModelFile(
+							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/strawberry_shortcake"  + suffix),
+							bsp.models().existingFileHelper))
+					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
+		});
 	}
+
 
 	public static void itemModels(ItemModelProvider tmp) {
 //		ItemModels.forBlockItemFlat(tmp, WILD_STRAWBERRY_ITEM, "crops/strawberry/wild_strawberry_stage_2");
@@ -167,8 +200,12 @@ public class Strawberry {
 		ItemModels.forItem(tmp, DARK_CHOCOLATE_DIPPED_STRAWBERRY, "dark_chocolate_strawberry");
 		ItemModels.forItem(tmp, MILK_CHOCOLATE_DIPPED_STRAWBERRY, "milk_chocolate_strawberry");
 		ItemModels.forItem(tmp, WHITE_CHOCOLATE_DIPPED_STRAWBERRY, "white_chocolate_strawberry");
-//		ItemModels.forItem(tmp, STRAWBERRY_CHEESECAKE_SLICE, "strawberry_cheesecake_slice");
-//		ItemModels.forItem(tmp, STRAWBERRY_CHEESECAKE_ITEM, "strawberry_cheesecake");
+		ItemModels.forItem(tmp, STRAWBERRY_CHEESECAKE_SLICE, "strawberry_cheesecake_slice");
+		ItemModels.forItem(tmp, STRAWBERRY_CHEESECAKE_ITEM, "strawberry_cheesecake");
+		tmp.getBuilder(STRAWBERRY_SHORTCAKE_ITEM.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
+		ItemModels.forItem(tmp, STRAWBERRY_SHORTCAKE_SLICE, "strawberry_shortcake_slice");
 	}
 
 	public static void Recipes(RecipeOutput consumer) {
@@ -179,6 +216,16 @@ public class Strawberry {
 				.requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_pink_lemonade", InventoryChangeTrigger.TriggerInstance.hasItems(PINK_LEMONADE.get()))
 				.save(consumer, ExtraDelight.modLoc("pink_lemonade_tray"));
+
+		// Cake/Pie Reconstruction
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, STRAWBERRY_CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
+				.define('f', STRAWBERRY_CHEESECAKE_SLICE.get())
+				.unlockedBy("has_cake", InventoryChangeTrigger.TriggerInstance.hasItems(STRAWBERRY_CHEESECAKE_ITEM.get()))
+				.save(consumer, ExtraDelight.modLoc("strawberry_cheesecake_slice"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, STRAWBERRY_SHORTCAKE_ITEM.get()).pattern("ff ").pattern("ff ")
+				.define('f', STRAWBERRY_SHORTCAKE_SLICE.get())
+				.unlockedBy("has_cake", InventoryChangeTrigger.TriggerInstance.hasItems(STRAWBERRY_SHORTCAKE_ITEM.get()))
+				.save(consumer, ExtraDelight.modLoc("strawberry_shortcake_slice"));
 
 		FeastRecipeBuilder.feast(Ingredient.of(), new ItemStack(PINK_LEMONADE.get()), PINK_LEMONADE_TRAY_ITEM.get())
 				.unlockedBy("has_pink_lemonade_tray",
@@ -205,5 +252,14 @@ public class Strawberry {
 		lp.add(PINK_LEMONADE.get(), "Pink Lemonade");
 		//lp.add("farmersdelight.tooltip.pink_lemonade", "Medium Fire Resist, Sunshine 2");
 		lp.add(PINK_LEMONADE_TRAY.get(), "Tray of Pink Lemonade");
+		lp.add(BLOOD_CHOCOLATE_DIPPED_STRAWBERRY.get(), "Blood Chocolate-Dipped Strawberry");
+		lp.add(DARK_CHOCOLATE_DIPPED_STRAWBERRY.get(), "Dark Chocolate-Dipped Strawberry");
+		lp.add(MILK_CHOCOLATE_DIPPED_STRAWBERRY.get(), "Milk Chocolate-Dipped Strawberry");
+		lp.add(WHITE_CHOCOLATE_DIPPED_STRAWBERRY.get(), "White Chocolate-Dipped Strawberry");
+		lp.add(STRAWBERRY_CHEESECAKE.get(), "Strawberry Cheesecake");
+		lp.add(STRAWBERRY_CHEESECAKE_SLICE.get(), "Slice of Strawberry Cheesecake");
+		lp.add(STRAWBERRY_SHORTCAKE.get(), "Strawberry Shortcake");
+		lp.add(STRAWBERRY_SHORTCAKE_SLICE.get(), "Slice of Strawberry Shortcake");
+		lp.add(STRAWBERRY_CUSTARD.get(), "Strawberry Custard");
 	}
 }
