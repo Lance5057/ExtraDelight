@@ -2,6 +2,7 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "cutout",
 	"textures": {
 		"0": "extradelight:block/big_strawberry",
 		"1": "extradelight:block/big_strawberry_top",

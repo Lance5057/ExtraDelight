@@ -971,6 +971,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:strawberry_cloud_cake_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_cloud_cake_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_pie_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_pie_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:strawberry_shortcake_item": {
       "conditions": {
         "items": [
@@ -1300,6 +1320,9 @@
       "extradelight:lamb_stew_feast"
     ],
     [
+      "extradelight:strawberry_pie_item"
+    ],
+    [
       "extradelight:lasanga_feast"
     ],
     [
@@ -1325,6 +1348,9 @@
     ],
     [
       "extradelight:soy_glazed_salmon_block_item"
+    ],
+    [
+      "extradelight:strawberry_cloud_cake_item"
     ],
     [
       "extradelight:lemon_cucumber_cake_item"

@@ -1011,11 +1011,41 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:strawberry_cloud_cake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_cloud_cake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:strawberry_custard": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:strawberry_custard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_pie_slice"
           }
         ]
       },
@@ -1231,6 +1261,9 @@
       "extradelight:caramel_custard"
     ],
     [
+      "extradelight:strawberry_cloud_cake_slice"
+    ],
+    [
       "extradelight:muffin_apple"
     ],
     [
@@ -1315,6 +1348,9 @@
       "extradelight:mississippi_mud_pie_slice"
     ],
     [
+      "extradelight:strawberry_ice_cream"
+    ],
+    [
       "extradelight:chocolate_ice_cream"
     ],
     [
@@ -1370,6 +1406,9 @@
     ],
     [
       "extradelight:jelly_purple"
+    ],
+    [
+      "extradelight:strawberry_pie_slice"
     ],
     [
       "extradelight:french_toast"

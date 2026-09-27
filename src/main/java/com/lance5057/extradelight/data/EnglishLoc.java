@@ -1420,6 +1420,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jam.golden_apple", "Golden Apple Jam");
 		this.add("extradelight.jam.orange", "Orange Marmalade");
 		this.add("extradelight.jam.mint", "Mint Jelly");
+		this.add("extradelight.jam.strawberry", "Strawberry Jam");
 
 		this.add(ExtraDelight.MOD_ID + ".tooltip.deprecated", "This item is deprecated! Right-click to convert!");
 

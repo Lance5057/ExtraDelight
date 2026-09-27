@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.extradelight.modules.Strawberry;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -160,8 +161,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		dynamicJamRecipes(consumer);
 		dynamicToast(consumer);
 
-		SummerCitrus.Recipes(consumer);
 		Fermentation.Recipes(consumer);
+		Strawberry.Recipes(consumer);
+		SummerCitrus.Recipes(consumer);
 		AestheticBlocks.Recipes(consumer);
 		BottleFluidRegistry.createRecipesForJEI(consumer);
 
@@ -4732,6 +4734,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Ingredient.of(ExtraDelightTags.MINT)).addIngredient(Ingredient.of(Items.SUGAR))
 				.addIngredient(Ingredient.of(ExtraDelightTags.GELATIN)).addIngredient(Ingredient.of(Items.SUGAR))
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_mint");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "strawberry")
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_strawberry");
 	}
 
 	private void dynamicToast(RecipeOutput consumer) {

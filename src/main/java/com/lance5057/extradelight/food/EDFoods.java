@@ -378,4 +378,5 @@ public class EDFoods {
 
 	public static final FoodProperties STRAWBERRY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3f).build();
 	public static final FoodProperties DIPPED_STRAWBERRY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).effect(COMFORT_BRIEF, 1F).alwaysEdible().build();
+	public static final FoodProperties STRAWBERRY_CLOUD_CAKE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
 }
