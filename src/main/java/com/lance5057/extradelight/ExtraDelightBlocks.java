@@ -48,6 +48,7 @@ import com.lance5057.extradelight.workstations.oven.OvenBlock;
 import com.lance5057.extradelight.workstations.vat.VatBlock;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
@@ -88,8 +89,10 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
+import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -110,6 +113,9 @@ public class ExtraDelightBlocks {
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ExtraDelight.MOD_ID);
 
 	public static void register(IEventBus modEventBus) {
+		if(!ModList.get().isLoaded("compendium"))
+			LanceNestAPI.BLOCKS.register(modEventBus);
+		
 		BLOCKS.register(modEventBus);
 
 	}

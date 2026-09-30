@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "lancenestapi:block/jar_display"
+    }
+  }
+}

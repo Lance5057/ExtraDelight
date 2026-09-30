@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import api.LanceNestAPI.src.util.rendering.animation.Transform;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -13,7 +14,6 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.items.IItemHandler;
@@ -26,8 +26,8 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 	public final static int NUM_SLOTS = 8;
 	private List<Transform> transforms = new ArrayList<Transform>();
 
-	public AdvancedDisplayBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState blockState) {
-		super(type, pos, blockState);
+	public AdvancedDisplayBlockEntity(BlockPos pos, BlockState blockState) {
+		super(LanceNestAPI.ADVANCED_DISPLAY_ENTITY.get(), pos, blockState);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -48,6 +48,10 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 				AdvancedDisplayBlockEntity.this.setChanged();
 			}
 		};
+	}
+
+	public IItemHandler getItems() {
+		return this.itemHandler.get();
 	}
 
 	@Override

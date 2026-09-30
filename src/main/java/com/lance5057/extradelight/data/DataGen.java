@@ -5,10 +5,12 @@ import java.util.concurrent.CompletableFuture;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.data.compat.create.CreateMixingRecipes;
 
+import api.LanceNestAPI.src.data.APIDataGen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -50,6 +52,9 @@ public class DataGen {
 				new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider));
 
 		generator.addProvider(event.includeClient(), new CreateMixingRecipes(output, lookupProvider, "create"));
+		
+		if(!ModList.get().isLoaded("compendium"))
+			APIDataGen.gatherData(event);
 
 	}
 }

@@ -16,11 +16,13 @@ import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 import com.lance5057.extradelight.worldgen.placers.FoliagePlacerRegistry;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -60,16 +62,18 @@ public class ExtraDelight {
 		ExtraDelightComponents.COMPONENTS.register(modEventBus);
 		ExtraDelightBlocks.register(modEventBus);
 		ExtraDelightFluids.register(modEventBus);
+		ExtraDelightItems.register(modEventBus);
 
 //		PieceTypes.PIECES.register(modEventBus);
 
-		ExtraDelightItems.ITEMS.register(modEventBus);
+		
 		ExtraDelightTabs.TABS.register(modEventBus);
 		
 		ExtraDelightPaintings.PAINTING_VARIANTS.register(modEventBus);
 		ExtraDelightBanners.BANNER_PATTERNS.register(modEventBus);
 
-		ExtraDelightBlockEntities.TILES.register(modEventBus);
+		ExtraDelightBlockEntities.register(modEventBus);
+		
 		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
 		ExtraDelightRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 		ExtraDelightContainers.MENU_TYPES.register(modEventBus);

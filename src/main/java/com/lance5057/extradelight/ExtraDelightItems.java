@@ -38,6 +38,7 @@ import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.EDItemGenerator;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import mezz.jei.api.recipe.RecipeType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
@@ -62,6 +63,8 @@ import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.EffectCure;
 import net.neoforged.neoforge.fluids.DispenseFluidContainer;
 import net.neoforged.neoforge.fluids.SimpleFluidContent;
@@ -2888,4 +2891,10 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> APPLE_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
 			"apple_petal_litter_item",
 			() -> new BlockItem(ExtraDelightBlocks.APPLE_PETAL_LITTER.get(), new Item.Properties()));
+
+	public static void register(IEventBus modEventBus) {
+		if(!ModList.get().isLoaded("compendium"))
+			LanceNestAPI.ITEMS.register(modEventBus);
+		ExtraDelightItems.ITEMS.register(modEventBus);
+	}
 }

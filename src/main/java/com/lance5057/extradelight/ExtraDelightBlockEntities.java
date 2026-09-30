@@ -30,8 +30,11 @@ import com.lance5057.extradelight.workstations.oven.OvenBlockEntity;
 import com.lance5057.extradelight.workstations.vat.VatBlockEntity;
 import com.llamalad7.mixinextras.lib.apache.commons.ArrayUtils;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -170,4 +173,10 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FruitBowlBlockEntity>> FRUIT_BOWL = TILES.register(
 			"fruit_bowl",
 			() -> BlockEntityType.Builder.of(FruitBowlBlockEntity::new, ExtraDelightBlocks.FRUIT_BOWL.get()).build(null));
+
+	public static void register(IEventBus modEventBus) {
+		if(!ModList.get().isLoaded("compendium"))
+			LanceNestAPI.TILES.register(modEventBus);
+		ExtraDelightBlockEntities.TILES.register(modEventBus);
+	}
 }
