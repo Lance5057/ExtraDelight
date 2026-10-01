@@ -17,6 +17,7 @@ import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 import com.lance5057.extradelight.worldgen.placers.FoliagePlacerRegistry;
 
 import api.LanceNestAPI.src.LanceNestAPI;
+import api.LanceNestAPI.src.LanceNestAPIClient;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.item.Item;
@@ -76,7 +77,7 @@ public class ExtraDelight {
 		
 		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
 		ExtraDelightRecipes.RECIPE_SERIALIZERS.register(modEventBus);
-		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
+		ExtraDelightContainers.register(modEventBus);
 		ExtraDelightLootModifiers.LOOT_MODIFIERS.register(modEventBus);
 
 		FoliagePlacerRegistry.PLACER.register(modEventBus);
@@ -93,6 +94,9 @@ public class ExtraDelight {
 
 		event.enqueueWork(() -> {
 			ExtraDelightClientEvents.setTERenderers();
+			if(!ModList.get().isLoaded("compendium"))
+				LanceNestAPIClient.setTERenderers();
+			
 			ExtraDelightClientEvents.doFluidRenderLayer();
 		});
 	}

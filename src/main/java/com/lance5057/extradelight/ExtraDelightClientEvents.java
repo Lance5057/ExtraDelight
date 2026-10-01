@@ -45,6 +45,7 @@ import com.lance5057.extradelight.workstations.mortar.MortarRenderer;
 import com.lance5057.extradelight.workstations.oven.OvenScreen;
 import com.lance5057.extradelight.workstations.vat.VatScreen;
 
+import api.LanceNestAPI.src.LanceNestAPIClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.color.block.BlockColor;
@@ -65,6 +66,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
@@ -99,6 +101,9 @@ public class ExtraDelightClientEvents {
 		event.register(ExtraDelightContainers.CHILLER_MENU.get(), ChillerScreen::new);
 		event.register(ExtraDelightContainers.VAT_MENU.get(), VatScreen::new);
 		event.register(ExtraDelightContainers.PICNIC_BASKET_MENU.get(), PicnicBasketScreen::new);
+		
+		if(!ModList.get().isLoaded("compendium"))
+			LanceNestAPIClient.registerClient(event);
 	}
 
 	public static void setTERenderers() {

@@ -17,9 +17,11 @@ import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlMenu;
 import com.lance5057.extradelight.workstations.oven.OvenMenu;
 import com.lance5057.extradelight.workstations.vat.VatMenu;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -64,6 +66,9 @@ public class ExtraDelightContainers {
 
 	public static void register(IEventBus modBus) {
 		MENU_TYPES.register(modBus);
+
+		if (!ModList.get().isLoaded("compendium"))
+			LanceNestAPI.MENU_TYPES.register(modBus);
 	}
 
 }

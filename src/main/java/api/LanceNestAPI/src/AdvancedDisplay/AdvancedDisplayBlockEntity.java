@@ -28,7 +28,10 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 
 	public AdvancedDisplayBlockEntity(BlockPos pos, BlockState blockState) {
 		super(LanceNestAPI.ADVANCED_DISPLAY_ENTITY.get(), pos, blockState);
-		// TODO Auto-generated constructor stub
+
+		for (int i = 0; i < NUM_SLOTS; i++) {
+			transforms.add(new Transform());
+		}
 	}
 
 	private ItemStackHandler createHandler() {
@@ -54,6 +57,10 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 		return this.itemHandler.get();
 	}
 
+	public Transform getItemTransform(int i) {
+		return this.transforms.get(i);
+	}
+
 	@Override
 	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
 		CompoundTag nbt = super.getUpdateTag(registries);
@@ -76,7 +83,7 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 	@Override
 	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
 		CompoundTag tag = pkt.getTag();
-		// InteractionHandle your Data
+
 		if (tag != null)
 			readNBT(tag, registries);
 	}
@@ -102,5 +109,9 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 	public void saveAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
 		super.saveAdditional(nbt, registries);
 		writeNBT(nbt, registries);
+	}
+
+	public String getDisplayName() {
+		return "screen.advanceddisplay.name";
 	}
 }

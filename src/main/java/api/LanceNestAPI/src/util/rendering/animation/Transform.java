@@ -8,10 +8,15 @@ public class Transform {
 	Vector3f scale;
 	Vector3f origin;
 
+	public Transform() {
+		this(0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0);
+	}
+
 	public Transform(Vector3f t, Vector3f r, Vector3f s, Vector3f o) {
 		this.translate = t;
 		this.rotation = r;
 		this.scale = s;
+		this.origin = o;
 	}
 
 	public Transform(float tx, float ty, float tz, float rx, float ry, float rz, float sx, float sy, float sz, float ox,
@@ -30,7 +35,7 @@ public class Transform {
 	public Vector3f getScaleVector() {
 		return scale;
 	}
-	
+
 	public Vector3f getOriginVector() {
 		return origin;
 	}
