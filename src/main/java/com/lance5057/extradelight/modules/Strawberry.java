@@ -5,7 +5,11 @@ import static com.lance5057.extradelight.ExtraDelightItems.drinkItem;
 import static com.lance5057.extradelight.ExtraDelightItems.stack1Item;
 import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 
-import com.lance5057.extradelight.*;
+import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightFluids;
+import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.StrawberryCrop;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
@@ -27,7 +31,11 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -65,13 +73,13 @@ public class Strawberry {
 
 	public static final DeferredBlock<Block> WILD_STRAWBERRY = ExtraDelightBlocks.BLOCKS.register("wild_strawberry",
 			() -> new WildCropBlock(MobEffects.HEAL, 6, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
-	public static final DeferredItem<Item> WILD_STRAWBERRY_ITEM = ExtraDelightItems.ITEMS.register("wild_strawberry_item",
-			() -> new BlockItem(WILD_STRAWBERRY.get(), new Item.Properties()));
+	public static final DeferredItem<Item> WILD_STRAWBERRY_ITEM = ExtraDelightItems.ITEMS
+			.register("wild_strawberry_item", () -> new BlockItem(WILD_STRAWBERRY.get(), new Item.Properties()));
 
 	public static final DeferredBlock<Block> STRAWBERRY_CRATE = ExtraDelightBlocks.BLOCKS.register("strawberry_crate",
 			() -> new Block(Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.PLANT)));
-	public static final DeferredItem<Item> STRAWBERRY_CRATE_ITEM = ExtraDelightItems.ITEMS.register("strawberry_crate_item",
-			() -> new BlockItem(STRAWBERRY_CRATE.get(), new Item.Properties()));
+	public static final DeferredItem<Item> STRAWBERRY_CRATE_ITEM = ExtraDelightItems.ITEMS
+			.register("strawberry_crate_item", () -> new BlockItem(STRAWBERRY_CRATE.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> SLICED_STRAWBERRY = EDItemGenerator
 			.register("sliced_strawberry", () -> new Item(new Item.Properties().food(EDFoods.STRAWBERRY)))
@@ -96,53 +104,54 @@ public class Strawberry {
 
 	// Cheesecake
 	public static final DeferredItem<Item> STRAWBERRY_CHEESECAKE_SLICE = EDItemGenerator
-			.register("strawberry_cheesecake_slice", () -> new Item(foodItem(FoodValues.PIE_SLICE))).advancementDessert()
-			.servingToolTip().finish();
-	public static final DeferredBlock<Block> STRAWBERRY_CHEESECAKE = ExtraDelightBlocks.BLOCKS.register("strawberry_cheesecake",
+			.register("strawberry_cheesecake_slice", () -> new Item(foodItem(FoodValues.PIE_SLICE)))
+			.advancementDessert().servingToolTip().finish();
+	public static final DeferredBlock<Block> STRAWBERRY_CHEESECAKE = ExtraDelightBlocks.BLOCKS.register(
+			"strawberry_cheesecake",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), STRAWBERRY_CHEESECAKE_SLICE));
 	public static final DeferredItem<Item> STRAWBERRY_CHEESECAKE_ITEM = EDItemGenerator
-			.register("strawberry_cheesecake",
-					() -> new BlockItem(STRAWBERRY_CHEESECAKE.get(), new Item.Properties()))
+			.register("strawberry_cheesecake", () -> new BlockItem(STRAWBERRY_CHEESECAKE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
 
 	// Shortcake
 	public static final DeferredItem<Item> STRAWBERRY_SHORTCAKE_SLICE = EDItemGenerator
-			.register("strawberry_shortcake_slice", () -> new Item(foodItem(FoodValues.CAKE_SLICE))).advancementDessert()
-			.servingToolTip().finish();
-	public static final DeferredBlock<PieBlock> STRAWBERRY_SHORTCAKE = ExtraDelightBlocks.BLOCKS.register("strawberry_shortcake",
+			.register("strawberry_shortcake_slice", () -> new Item(foodItem(FoodValues.CAKE_SLICE)))
+			.advancementDessert().servingToolTip().finish();
+	public static final DeferredBlock<PieBlock> STRAWBERRY_SHORTCAKE = ExtraDelightBlocks.BLOCKS.register(
+			"strawberry_shortcake",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), STRAWBERRY_SHORTCAKE_SLICE) {
 				@Override
 				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
-										   CollisionContext context) {
+						CollisionContext context) {
 					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
 				}
 			});
 	public static final DeferredItem<Item> STRAWBERRY_SHORTCAKE_ITEM = EDItemGenerator
-			.register("strawberry_shortcake_item", () -> new BlockItem(STRAWBERRY_SHORTCAKE.get(), new Item.Properties()))
+			.register("strawberry_shortcake_item",
+					() -> new BlockItem(STRAWBERRY_SHORTCAKE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
 
 	// Cloud Cake
-	public static final DeferredBlock<RecipeFeastBlock> STRAWBERRY_CLOUD_CAKE = ExtraDelightBlocks.BLOCKS
-			.register("strawberry_cloud_cake", () -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL)
-					.mapColor(MapColor.COLOR_PINK), true, ExtraDelightBlocks.pan));
+	public static final DeferredBlock<RecipeFeastBlock> STRAWBERRY_CLOUD_CAKE = ExtraDelightBlocks.BLOCKS.register(
+			"strawberry_cloud_cake",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_PINK),
+					true, ExtraDelightBlocks.pan));
 	public static final DeferredItem<Item> STRAWBERRY_CLOUD_CAKE_ITEM = EDItemGenerator
 			.register("strawberry_cloud_cake_item", () -> new BlockItem(STRAWBERRY_CLOUD_CAKE.get(), stack1Item()))
 			.advancementFeast().finish();
 	public static final DeferredItem<Item> STRAWBERRY_CLOUD_CAKE_SLICE = EDItemGenerator
-			.register("strawberry_cloud_cake_slice", () -> new ToolTipConsumableItem(foodItem(EDFoods.STRAWBERRY_CLOUD_CAKE), true))
+			.register("strawberry_cloud_cake_slice",
+					() -> new ToolTipConsumableItem(foodItem(EDFoods.STRAWBERRY_CLOUD_CAKE), true))
 			.advancementDessert().servingToolTip().finish();
 
 	// Pie
 	public static final DeferredItem<Item> STRAWBERRY_PIE_SLICE = EDItemGenerator
-			.register("strawberry_pie_slice",
-					() -> new ToolTipConsumableItem(foodItem(FoodValues.PIE_SLICE), true))
+			.register("strawberry_pie_slice", () -> new ToolTipConsumableItem(foodItem(FoodValues.PIE_SLICE), true))
 			.advancementDessert().servingToolTip().finish();
-	public static final DeferredBlock<Block> STRAWBERRY_PIE = ExtraDelightBlocks.BLOCKS.register(
-			"strawberry_pie",
+	public static final DeferredBlock<Block> STRAWBERRY_PIE = ExtraDelightBlocks.BLOCKS.register("strawberry_pie",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), STRAWBERRY_PIE_SLICE));
 	public static final DeferredItem<Item> STRAWBERRY_PIE_ITEM = EDItemGenerator
-			.register("strawberry_pie_item",
-					() -> new BlockItem(STRAWBERRY_PIE.get(), new Item.Properties()))
+			.register("strawberry_pie_item", () -> new BlockItem(STRAWBERRY_PIE.get(), new Item.Properties()))
 			.advancementFeast().feastToolTip().finish();
 
 	// Non-block stuff
@@ -174,7 +183,8 @@ public class Strawberry {
 	public static void blockModels(BlockStateProvider bsp) {
 //		BlockModels.cropCrossBlock(bsp, STRAWBERRY_CROP.get(), "strawberry", StrawberryCrop.AGE);
 //		bsp.simpleBlock(WILD_STRAWBERRY.get(), new ConfiguredModel(bsp.models()
-//				.cross("wild_strawberry", bsp.modLoc("block/crops/strawberry/wild_strawberry_2")).renderType("cutout")));
+//				.cross("wild_strawberry", bsp.modLoc("block/crops/strawberry/wild_strawberry")).renderType("cutout")));
+		BlockModels.bushStageFourBlock(bsp, STRAWBERRY_CROP.get(), "strawberry");
 		BlockModels.crateBlock(bsp, STRAWBERRY_CRATE.get(), "strawberry", "bamboo");
 		bsp.simpleBlock(STRAWBIGGY.get(), bsp.models().getExistingFile(bsp.modLoc("block/big_strawberry")));
 //		BlockModels.recipeFeastBlock(bsp, PINK_LEMONADE_TRAY.get());
@@ -200,31 +210,29 @@ public class Strawberry {
 			int bites = state.getValue(PieBlock.BITES);
 			String suffix = bites > 0 ? "_slice" + bites : "";
 			return ConfiguredModel.builder().modelFile(bsp.models()
-							.withExistingParent(
-									BuiltInRegistries.BLOCK.getKey(STRAWBERRY_CHEESECAKE.get()).getPath() + suffix,
-									bsp.modLoc("block/pie" + suffix))
-							.texture("particle", bsp.modLoc("block/strawberry_cheesecake_top"))
-							.texture("top", bsp.modLoc("block/strawberry_cheesecake_top"))
-							.texture("inner", bsp.modLoc("block/strawberry_cheesecake_inner")))
+					.withExistingParent(BuiltInRegistries.BLOCK.getKey(STRAWBERRY_CHEESECAKE.get()).getPath() + suffix,
+							bsp.modLoc("block/pie" + suffix))
+					.texture("particle", bsp.modLoc("block/strawberry_cheesecake_top"))
+					.texture("top", bsp.modLoc("block/strawberry_cheesecake_top"))
+					.texture("inner", bsp.modLoc("block/strawberry_cheesecake_inner")))
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
 		bsp.getVariantBuilder(STRAWBERRY_SHORTCAKE.get()).forAllStates(state -> {
 			int bites = state.getValue(PieBlock.BITES);
 			String suffix = "_stage" + bites;
 
-			return ConfiguredModel.builder()
-					.modelFile(new ModelFile.ExistingModelFile(
-							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/strawberry_shortcake"  + suffix),
-							bsp.models().existingFileHelper))
+			return ConfiguredModel.builder().modelFile(new ModelFile.ExistingModelFile(
+					ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/strawberry_shortcake" + suffix),
+					bsp.models().existingFileHelper))
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
 		BlockModels.recipeFeastBlock(bsp, STRAWBERRY_CLOUD_CAKE.get());
 		bsp.getVariantBuilder(STRAWBERRY_PIE.get()).forAllStates(state -> {
 			int bites = state.getValue(PieBlock.BITES);
 			String suffix = bites > 0 ? "_slice" + bites : "";
-			return ConfiguredModel.builder().modelFile(bsp.models()
-							.withExistingParent(
-									BuiltInRegistries.BLOCK.getKey(STRAWBERRY_PIE.get()).getPath() + suffix,
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models()
+							.withExistingParent(BuiltInRegistries.BLOCK.getKey(STRAWBERRY_PIE.get()).getPath() + suffix,
 									bsp.modLoc("block/pie" + suffix))
 							.texture("particle", bsp.modLoc("block/strawberry_pie_top"))
 							.texture("top", bsp.modLoc("block/strawberry_pie_top"))
@@ -232,7 +240,6 @@ public class Strawberry {
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}
-
 
 	public static void itemModels(ItemModelProvider tmp) {
 		ItemModels.forBlockItemFlat(tmp, WILD_STRAWBERRY_ITEM, "crops/strawberry/wild_strawberry");
@@ -267,11 +274,11 @@ public class Strawberry {
 
 	public static void Recipes(RecipeOutput consumer) {
 		// Vanilla Crafting
-		Recipes.bundleItem9(Ingredient.of(ExtraDelightTags.LEMON), STRAWBERRY_CRATE_ITEM.get(), STRAWBERRY.get(), consumer,
-				"strawberry");
+		Recipes.bundleItem9(Ingredient.of(ExtraDelightTags.LEMON), STRAWBERRY_CRATE_ITEM.get(), STRAWBERRY.get(),
+				consumer, "strawberry");
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, PINK_LEMONADE_TRAY_ITEM.get()).requires(PINK_LEMONADE.get(), 4)
-				.requires(Items.GLASS_BOTTLE)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, PINK_LEMONADE_TRAY_ITEM.get())
+				.requires(PINK_LEMONADE.get(), 4).requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_pink_lemonade", InventoryChangeTrigger.TriggerInstance.hasItems(PINK_LEMONADE.get()))
 				.save(consumer, ExtraDelight.modLoc("pink_lemonade_tray"));
 
@@ -281,18 +288,20 @@ public class Strawberry {
 		FeastRecipeBuilder
 				.feast(Ingredient.of(Items.BOWL), new ItemStack(STRAWBERRY_CLOUD_CAKE_SLICE.get()),
 						STRAWBERRY_CLOUD_CAKE_ITEM.get())
-				.unlockedBy("has_cloud_cake", InventoryChangeTrigger.TriggerInstance.hasItems(STRAWBERRY_CLOUD_CAKE_ITEM.get()))
+				.unlockedBy("has_cloud_cake",
+						InventoryChangeTrigger.TriggerInstance.hasItems(STRAWBERRY_CLOUD_CAKE_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("strawberry_cloud_cake_feast"));
-
 
 		// Cake/Pie Reconstruction
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, STRAWBERRY_CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
 				.define('f', STRAWBERRY_CHEESECAKE_SLICE.get())
-				.unlockedBy("has_cake", InventoryChangeTrigger.TriggerInstance.hasItems(STRAWBERRY_CHEESECAKE_ITEM.get()))
+				.unlockedBy("has_cake",
+						InventoryChangeTrigger.TriggerInstance.hasItems(STRAWBERRY_CHEESECAKE_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("strawberry_cheesecake_slice"));
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, STRAWBERRY_SHORTCAKE_ITEM.get()).pattern("ff ").pattern("ff ")
 				.define('f', STRAWBERRY_SHORTCAKE_SLICE.get())
-				.unlockedBy("has_cake", InventoryChangeTrigger.TriggerInstance.hasItems(STRAWBERRY_SHORTCAKE_ITEM.get()))
+				.unlockedBy("has_cake",
+						InventoryChangeTrigger.TriggerInstance.hasItems(STRAWBERRY_SHORTCAKE_ITEM.get()))
 				.save(consumer, ExtraDelight.modLoc("strawberry_shortcake_slice"));
 
 		FeastRecipeBuilder.feast(Ingredient.of(), new ItemStack(PINK_LEMONADE.get()), PINK_LEMONADE_TRAY_ITEM.get())
@@ -319,7 +328,8 @@ public class Strawberry {
 		lp.add(STRAWBIGGY.get(), "Strawbiggy");
 		lp.add(SLICED_STRAWBERRY.get(), "Sliced Strawberry");
 		lp.add(PINK_LEMONADE.get(), "Pink Lemonade");
-		//lp.add("farmersdelight.tooltip.pink_lemonade", "Medium Fire Resist, Sunshine 2");
+		// lp.add("farmersdelight.tooltip.pink_lemonade", "Medium Fire Resist, Sunshine
+		// 2");
 		lp.add(PINK_LEMONADE_TRAY.get(), "Tray of Pink Lemonade");
 		lp.add(STRAWBERRY_CHEESECAKE.get(), "Strawberry Cheesecake");
 		lp.add(STRAWBERRY_CHEESECAKE_SLICE.get(), "Slice of Strawberry Cheesecake");

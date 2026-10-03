@@ -13,9 +13,8 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
-public class FloatWidget {
+public class FloatWidget extends UIWidget {
 	private float f = 0;
-	Consumer<String> onChanged;
 
 	private static final WidgetSprites RIGHT_SMALL_BUTTON = new WidgetSprites(
 			ResourceLocation.fromNamespaceAndPath(LanceNestAPI.MOD_ID, "right_arrow"),
@@ -37,16 +36,10 @@ public class FloatWidget {
 	public ImageButton left_small_button;
 	public ImageButton left_big_button;
 
-	private boolean bigButtons;
-	private boolean background;
-	private Color backgroundColor;
-
-	private int posX = 0;
-	private int posY = 0;
-	private int width = 0;
+	protected boolean bigButtons;
 
 	public FloatWidget(Consumer<String> sup) {
-		this.onChanged = sup;
+		super(sup);
 	}
 
 	public void init(AbstractContainerScreen<?> screen, int x, int y, int w, Font font, Component msg,
@@ -61,19 +54,12 @@ public class FloatWidget {
 		this.width = w;
 
 		this.bigButtons = addBigButtons;
-		this.background = addBackground;
+		this.displayBackground = addBackground;
 		this.backgroundColor = backgroundColor;
 
 		box = screen.addRenderableWidget(new EditBox(font, 6 + x, y, w, 14, msg));
-
-		box.setFilter(s -> {
-			try {
-				Float.parseFloat(s);
-			} catch (NumberFormatException exception) {
-				return false;
-			}
-			return true;
-		});
+		this.set(f);
+		box.setFilter(s -> testFloat(s));
 		box.setResponder(onChanged);
 
 		right_small_button = screen.addRenderableWidget(
@@ -87,6 +73,15 @@ public class FloatWidget {
 			left_big_button = screen
 					.addRenderableWidget(new ImageButton(x - 19, y + 2, 11, 10, LEFT_BIG_BUTTON, (button) -> subBig()));
 		}
+	}
+
+	private boolean testFloat(String s) {
+		try {
+			Float.parseFloat(s);
+		} catch (NumberFormatException exception) {
+			return false;
+		}
+		return true;
 	}
 
 	public void hide(boolean h) {
@@ -142,7 +137,7 @@ public class FloatWidget {
 	}
 
 	protected void render(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
-		if (this.background) {
+		if (this.displayBackground) {
 			guiGraphics.fill(this.posX, this.posY, this.posX + this.width + 12, this.posY + 14,
 					this.backgroundColor.getRGB());
 		}

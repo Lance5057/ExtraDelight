@@ -45,20 +45,20 @@ public class AdvancedDisplayBlockRenderer implements BlockEntityRenderer<Advance
 				if (trans != null) {
 					poseStack.pushPose();
 
-					Vector3f origin = trans.getOriginVector();
+					Vector3f origin = trans.getOrigin();
 					if (origin != null)
 						poseStack.translate(origin.x, origin.y, origin.z);
 
-					Vector3f rot = trans.getRotationVector();
+					Vector3f rot = trans.getRotation();
 					if (rot != null)
 						poseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(rot.x),
 								(float) Math.toRadians(rot.y), (float) Math.toRadians(rot.z)));
 
-					Vector3f pos = trans.getTranslateVector();
+					Vector3f pos = trans.getTranslate();
 					if (pos != null)
 						poseStack.translate(pos.x, pos.y, pos.z);
 
-					Vector3f scale = trans.getScaleVector();
+					Vector3f scale = trans.getScale();
 					if (scale != null)
 						poseStack.scale(scale.x, scale.y, scale.z);
 

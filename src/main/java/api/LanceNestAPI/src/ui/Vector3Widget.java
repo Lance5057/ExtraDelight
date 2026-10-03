@@ -1,6 +1,7 @@
 package api.LanceNestAPI.src.ui;
 
 import java.awt.Color;
+import java.util.function.Consumer;
 
 import org.joml.Vector3f;
 
@@ -24,26 +25,38 @@ public class Vector3Widget {
 
 	private String name = "";
 
-//	Consumer<String> onChanged;
-//
-	public Vector3Widget() {
+	protected Consumer<Vector3f> onChanged;
+
+	public Vector3Widget(Consumer<Vector3f> sup) {
+		this(new Vector3f(), sup);
+	}
+
+	public Vector3Widget(Vector3f start, Consumer<Vector3f> sup) {
+		this.vector = start;
+		this.onChanged = sup;
 		x = new FloatWidget(s -> {
 			if (!s.isEmpty())
 				vector.x = Float.parseFloat(s);
 			else
 				vector.x = 0;
+
+			this.onChanged.accept(vector);
 		});
 		y = new FloatWidget(s -> {
 			if (!s.isEmpty())
 				vector.y = Float.parseFloat(s);
 			else
 				vector.y = 0;
+
+			this.onChanged.accept(vector);
 		});
 		z = new FloatWidget(s -> {
 			if (!s.isEmpty())
 				vector.z = Float.parseFloat(s);
 			else
 				vector.z = 0;
+
+			this.onChanged.accept(vector);
 		});
 	}
 
@@ -56,9 +69,13 @@ public class Vector3Widget {
 		this.posX = posX;
 		this.posY = posY;
 
-		x.init(screen, posX, posY, 10, font, Component.literal("0"), false, true, Color.RED);
-		y.init(screen, posX + 22, posY, 10, font, Component.literal("0"), false, true, Color.GREEN);
-		z.init(screen, posX + 44, posY, 10, font, Component.literal("0"), false, true, Color.BLUE);
+		x.init(screen, posX, posY, 30, font, Component.literal("0"), false, true, Color.RED);
+		y.init(screen, posX + 42, posY, 30, font, Component.literal("0"), false, true, Color.GREEN);
+		z.init(screen, posX + 84, posY, 30, font, Component.literal("0"), false, true, Color.BLUE);
+
+		x.set(vector.x);
+		y.set(vector.y);
+		z.set(vector.z);
 
 		this.background = doBackground;
 		this.backgroundColor = backgroundColor;
@@ -90,7 +107,7 @@ public class Vector3Widget {
 	public void render(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY, Font font) {
 		if (this.background) {
 			guiGraphics.drawString(font, name, posX + 3, posY - 11, Color.WHITE.getRGB());
-			guiGraphics.fill(this.posX, this.posY - 14, this.posX + 66, this.posY + 14, this.backgroundColor.getRGB());
+			guiGraphics.fill(this.posX, this.posY - 14, this.posX + 126, this.posY + 14, this.backgroundColor.getRGB());
 		}
 
 		x.render(guiGraphics, partialTick, mouseX, mouseY);

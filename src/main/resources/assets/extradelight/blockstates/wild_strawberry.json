@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+			{ "model": "extradelight:block/crops/strawberry/wild_strawberry_0" },
+			{ "model": "extradelight:block/crops/strawberry/wild_strawberry_1" },
+			{ "model": "extradelight:block/crops/strawberry/wild_strawberry_2" }
+		]
+  }
+}
