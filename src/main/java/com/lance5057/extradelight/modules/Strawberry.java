@@ -55,6 +55,7 @@ import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import vectorwing.farmersdelight.common.FoodValues;
+import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
@@ -189,23 +190,22 @@ public class Strawberry {
 		bsp.simpleBlock(STRAWBIGGY.get(), bsp.models().getExistingFile(bsp.modLoc("block/big_strawberry")));
 //		BlockModels.recipeFeastBlock(bsp, PINK_LEMONADE_TRAY.get());
 
-//		bsp.getVariantBuilder(PINK_LEMONADE_TRAY.get()).forAllStates(state -> {
-//			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
-//
-//			String suffix = "_stage" + (PINK_LEMONADE_TRAY.get().getMaxServings() - servings);
-//
-//			if (servings == 0) {
-//				suffix = PINK_LEMONADE_TRAY.get().hasLeftovers ? "_leftover" : "_stage3";
-//			}
-//
-//			return ConfiguredModel.builder()
-//					.modelFile(bsp.models()
-//							.withExistingParent("block/pink_lemonade_tray" + suffix,
-//									ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-//											"block/lemonade_tray" + suffix))
-//							.texture("4", bsp.modLoc("item/pink_lemonade")))
-//					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
-//		});
+		bsp.getVariantBuilder(PINK_LEMONADE_TRAY.get()).forAllStates(state -> {
+			int servings = state.getValue(RecipeFeastBlock.SERVINGS);
+
+			String suffix = "_stage" + (PINK_LEMONADE_TRAY.get().getMaxServings() - servings);
+
+			if (servings == 0) {
+				suffix = PINK_LEMONADE_TRAY.get().hasLeftovers ? "_leftover" : "_stage3";
+			}
+
+			return ConfiguredModel.builder().modelFile(bsp.models()
+					.withExistingParent("block/pink_lemonade_tray" + suffix,
+							ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/lemonade_tray" + suffix))
+					.texture("4", bsp.modLoc("item/strawberry_lemonade")))
+					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
+		});
+
 		bsp.getVariantBuilder(STRAWBERRY_CHEESECAKE.get()).forAllStates(state -> {
 			int bites = state.getValue(PieBlock.BITES);
 			String suffix = bites > 0 ? "_slice" + bites : "";
@@ -250,8 +250,8 @@ public class Strawberry {
 		ItemModels.forBlockItem(tmp, STRAWBIGGY_ITEM,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/big_strawberry"));
 		ItemModels.forItem(tmp, PINK_LEMONADE, "strawberry_lemonade");
-//		tmp.getBuilder(PINK_LEMONADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
-//				.customLoader(BlockStateItemGeometryLoader::builder);
+		tmp.getBuilder(PINK_LEMONADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(BlockStateItemGeometryLoader::builder);
 		ItemModels.forItem(tmp, STRAWBERRY_CHEESECAKE_SLICE, "strawberry_cheesecake_slice");
 		ItemModels.forItem(tmp, STRAWBERRY_CHEESECAKE_ITEM, "strawberry_cheesecake");
 		tmp.getBuilder(STRAWBERRY_SHORTCAKE_ITEM.getId().getPath())
@@ -264,8 +264,8 @@ public class Strawberry {
 		ItemModels.forItem(tmp, STRAWBERRY_CLOUD_CAKE_SLICE, "strawberry_cloud_cake");
 		ItemModels.forItem(tmp, STRAWBERRY_PIE_SLICE, "strawberry_pie_slice");
 		ItemModels.forItem(tmp, STRAWBERRY_PIE_ITEM, "strawberry_pie");
-//		ItemModels.forItem(tmp, STRAWBERRY_CUSTARD, "strawberry_custard");
-//		ItemModels.forItem(tmp, STRAWBERRY_ICE_CREAM, "strawberry_ice_cream");
+		ItemModels.forItem(tmp, STRAWBERRY_CUSTARD, "strawberry_custard");
+		ItemModels.forItem(tmp, STRAWBERRY_ICE_CREAM, "strawberry_ice_cream");
 		ItemModels.forItem(tmp, BLOOD_CHOCOLATE_DIPPED_STRAWBERRY, "blood_chocolate_strawberry");
 		ItemModels.forItem(tmp, DARK_CHOCOLATE_DIPPED_STRAWBERRY, "dark_chocolate_strawberry");
 		ItemModels.forItem(tmp, MILK_CHOCOLATE_DIPPED_STRAWBERRY, "milk_chocolate_strawberry");
