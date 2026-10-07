@@ -10,6 +10,7 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.data.recipebuilders.BottleFluidRegistryRecipeBuilder;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 
 import net.minecraft.data.recipes.RecipeOutput;
@@ -139,6 +140,8 @@ public class BottleFluidRegistry {
 				SizedFluidIngredient.of(ExtraDelightFluids.ORANGE_JUICE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.NUT_BUTTER.FLUID.get(), bottleMB));
+		register(Ingredient.of(Strawberry.STRAWBERRY_JUICE.get()),
+				SizedFluidIngredient.of(ExtraDelightFluids.STRAWBERRY_JUICE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.SWEET_BERRY_JUICE.get()),
 				SizedFluidIngredient.of(ExtraDelightFluids.SWEET_BERRY_JUICE.FLUID.get(), bottleMB));
 		register(Ingredient.of(ExtraDelightItems.TEA.get()),

@@ -1,0 +1,6 @@
+{
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "texture": "minecraft:block/water_still"
+  }
+}

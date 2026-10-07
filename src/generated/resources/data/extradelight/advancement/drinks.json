@@ -231,6 +231,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:strawberry_milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_milkshake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_milkshake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sweet_berry_juice": {
       "conditions": {
         "items": [
@@ -318,6 +338,9 @@
       "extradelight:nut_butter_milkshake"
     ],
     [
+      "extradelight:strawberry_milkshake"
+    ],
+    [
       "extradelight:tea"
     ],
     [
@@ -373,6 +396,9 @@
     ],
     [
       "extradelight:cactus_juice"
+    ],
+    [
+      "extradelight:strawberry_milk"
     ],
     [
       "extradelight:milkshake"
