@@ -4,6 +4,7 @@ import com.lance5057.extradelight.fluids.BasicFluid;
 import com.lance5057.extradelight.fluids.FluidRegistration;
 import com.lance5057.extradelight.modules.Fermentation;
 
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.Fluid;
@@ -245,6 +246,11 @@ public class ExtraDelightFluids {
 							.motionScale(0.0023333333333333335D))
 					.setNearDistance(-15),
 			SummerCitrus.EGG_WHITE_FLUID_BLOCK, SummerCitrus.EGG_WHITE_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
+
+	public static FluidRegistration STRAWBERRY_JUICE = new FluidRegistration("strawberry_juice",
+			() -> new BasicFluid(0xffde1a00, 0xffde1a00,
+					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),
+			Strawberry.STRAWBERRY_JUICE_FLUID_BLOCK, Strawberry.STRAWBERRY_JUICE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);
 
 	public static void register(IEventBus modBus) {
 		FLUID_TYPES.register(modBus);

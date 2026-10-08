@@ -1041,11 +1041,31 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:strawberry_mousse": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_mousse"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:strawberry_pie_slice": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:strawberry_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_popsicle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_popsicle"
           }
         ]
       },
@@ -1324,6 +1344,9 @@
       "extradelight:jelly_blue"
     ],
     [
+      "extradelight:strawberry_popsicle"
+    ],
+    [
       "extradelight:pumpkin_ice_cream"
     ],
     [
@@ -1445,6 +1468,9 @@
     ],
     [
       "extradelight:jelly_light_grey"
+    ],
+    [
+      "extradelight:strawberry_mousse"
     ],
     [
       "extradelight:stuffed_apple_ice_cream"

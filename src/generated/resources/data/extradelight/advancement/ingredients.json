@@ -1441,6 +1441,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:strawberry_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sugar_cookie_dough": {
       "conditions": {
         "items": [
@@ -1943,6 +1963,9 @@
       "extradelight:grated_carrot"
     ],
     [
+      "extradelight:strawberry_juice"
+    ],
+    [
       "extradelight:vinegar"
     ],
     [
@@ -1986,6 +2009,9 @@
     ],
     [
       "extradelight:sliced_gherkin_item"
+    ],
+    [
+      "extradelight:strawberry_syrup_bottle"
     ],
     [
       "extradelight:cocoa_powder"
