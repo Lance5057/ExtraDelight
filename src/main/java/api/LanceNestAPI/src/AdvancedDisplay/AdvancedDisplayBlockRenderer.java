@@ -54,7 +54,7 @@ public class AdvancedDisplayBlockRenderer implements BlockEntityRenderer<Advance
 						poseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(rot.x),
 								(float) Math.toRadians(rot.y), (float) Math.toRadians(rot.z)));
 
-					Vector3f pos = trans.getTranslate();
+					Vector3f pos = trans.getPosition();
 					if (pos != null)
 						poseStack.translate(pos.x, pos.y, pos.z);
 

@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.function.Consumer;
 
 import api.LanceNestAPI.src.LanceNestAPI;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
@@ -13,7 +14,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
-public class IntWidget extends UIWidget {
+public class IntWidget extends UIWidget<Integer> {
 	public int f = 0;
 
 	private boolean isLimited = false;
@@ -31,7 +32,7 @@ public class IntWidget extends UIWidget {
 	public ImageButton right_small_button;
 	public ImageButton left_small_button;
 
-	public IntWidget(Consumer<String> sup) {
+	public IntWidget(Consumer<Integer> sup) {
 		super(sup);
 	}
 
@@ -42,12 +43,13 @@ public class IntWidget extends UIWidget {
 		return this;
 	}
 
-	public void init(AbstractContainerScreen<?> screen, int posX, int posY, int w, Font font, String name) {
-		init(screen, posX, posY, posY, font, null, false, null, name);
+	public void init(AbstractContainerScreen<?> screen, int posX, int posY, int w, Font font, String name, int start) {
+		init(screen, posX, posY, posY, font, null, false, null, name, start);
 	}
 
 	public void init(AbstractContainerScreen<?> screen, int x, int y, int w, Font font, Component msg,
-			boolean doBackground, Color backgroundColor, String name) {
+			boolean doBackground, Color backgroundColor, String name, int start) {
+		this.f = start;
 		this.posX = x;
 		this.posY = y;
 		this.width = w;
@@ -55,7 +57,7 @@ public class IntWidget extends UIWidget {
 		box = screen.addRenderableWidget(new EditBox(font, 6 + x, y, w, 14, msg));
 		set(f);
 		box.setFilter(s -> filter(s));
-		box.setResponder(onChanged);
+		box.setResponder(s -> toEditbox(s, onChanged));
 
 		right_small_button = screen.addRenderableWidget(
 				new ImageButton(w + x + 6, y + 2, 6, 10, RIGHT_SMALL_BUTTON, (button) -> addSmall()));
@@ -116,5 +118,10 @@ public class IntWidget extends UIWidget {
 			guiGraphics.fill(this.posX, this.posY, this.posX + this.width + 12, this.posY + 14,
 					this.backgroundColor.getRGB());
 		}
+	}
+
+	@Override
+	protected void toEditbox(String s, Consumer<Integer> c) {
+		c.accept(Integer.parseInt(s));
 	}
 }

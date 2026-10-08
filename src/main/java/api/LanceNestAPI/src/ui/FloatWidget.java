@@ -1,6 +1,5 @@
 package api.LanceNestAPI.src.ui;
 
-import java.awt.Color;
 import java.util.function.Consumer;
 
 import api.LanceNestAPI.src.LanceNestAPI;
@@ -9,11 +8,12 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.WidgetSprites;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
-public class FloatWidget extends UIWidget {
+public class FloatWidget extends UIWidget<Float> {
 	private float f = 0;
 
 	private static final WidgetSprites RIGHT_SMALL_BUTTON = new WidgetSprites(
@@ -38,41 +38,39 @@ public class FloatWidget extends UIWidget {
 
 	protected boolean bigButtons;
 
-	public FloatWidget(Consumer<String> sup) {
+	public FloatWidget(Consumer<Float> sup) {
 		super(sup);
 	}
 
-	public void init(AbstractContainerScreen<?> screen, int x, int y, int w, Font font, Component msg,
-			boolean addBigButtons) {
-		this.init(screen, x, y, w, font, msg, addBigButtons, false, null);
+	protected void toEditbox(String s, Consumer<Float> c) {
+		c.accept(Float.parseFloat(s));
 	}
 
-	public void init(AbstractContainerScreen<?> screen, int x, int y, int w, Font font, Component msg,
-			boolean addBigButtons, boolean addBackground, Color backgroundColor) {
+	public void init(AbstractContainerScreen<?> screen, int x, int y, int characters, Font font, Component msg,
+			boolean addBigButtons) {
+
 		this.posX = x;
 		this.posY = y;
-		this.width = w;
+		this.width = characters * 7;
 
 		this.bigButtons = addBigButtons;
-		this.displayBackground = addBackground;
-		this.backgroundColor = backgroundColor;
 
-		box = screen.addRenderableWidget(new EditBox(font, 6 + x, y, w, 14, msg));
+		box = screen.addRenderableWidget(new EditBox(font, 6 + x, y, width, 14, msg));
 		this.set(f);
 		box.setFilter(s -> testFloat(s));
-		box.setResponder(onChanged);
+		box.setResponder(s -> toEditbox(s, onChanged));
 
 		right_small_button = screen.addRenderableWidget(
-				new ImageButton(w + x + 6, y + 2, 6, 10, RIGHT_SMALL_BUTTON, (button) -> addSmall()));
+				new ImageButton(width + x + 6, y + 2, 6, 10, RIGHT_SMALL_BUTTON, (button) -> add()));
 		left_small_button = screen
-				.addRenderableWidget(new ImageButton(x, y + 2, 6, 10, LEFT_SMALL_BUTTON, (button) -> subSmall()));
+				.addRenderableWidget(new ImageButton(x, y + 2, 6, 10, LEFT_SMALL_BUTTON, (button) -> sub()));
 
-		if (bigButtons) {
-			right_big_button = screen.addRenderableWidget(
-					new ImageButton(41 + 7 + x, y + 2, 11, 10, RIGHT_BIG_BUTTON, (button) -> addBig()));
-			left_big_button = screen
-					.addRenderableWidget(new ImageButton(x - 19, y + 2, 11, 10, LEFT_BIG_BUTTON, (button) -> subBig()));
-		}
+//		if (bigButtons) {
+//			right_big_button = screen.addRenderableWidget(
+//					new ImageButton(41 + 7 + x, y + 2, 11, 10, RIGHT_BIG_BUTTON, (button) -> addBig()));
+//			left_big_button = screen
+//					.addRenderableWidget(new ImageButton(x - 19, y + 2, 11, 10, LEFT_BIG_BUTTON, (button) -> subBig()));
+//		}
 	}
 
 	private boolean testFloat(String s) {
@@ -120,26 +118,47 @@ public class FloatWidget extends UIWidget {
 
 	}
 
-	void addSmall() {
-		box.setValue(String.format("%.1f", get() + 0.1f));
+	void add() {
+		float i = 0.1f;
+
+		if (Screen.hasShiftDown())
+			i = 1f;
+		else if (Screen.hasAltDown())
+			i = 0.01f;
+		if (Screen.hasControlDown())
+			i *= 10;
+
+		i += get();
+		if (this.isLimited)
+			if (i > this.upperLimit)
+				i = this.upperLimit;
+
+		box.setValue(String.format("%.2f", i));
 	}
 
-	void subSmall() {
-		box.setValue(String.format("%.1f", get() - 0.1f));
-	}
+	void sub() {
+		float i = 0.1f;
 
-	void addBig() {
-		box.setValue(String.format("%.1f", get() + 1f));
-	}
+		if (Screen.hasShiftDown())
+			i = 1f;
+		else if (Screen.hasAltDown())
+			i = 0.01f;
+		if (Screen.hasControlDown())
+			i *= 10;
 
-	void subBig() {
-		box.setValue(String.format("%.1f", get() - 1f));
+		i = get() - i;
+		if (this.isLimited)
+			if (i < this.lowerLimit)
+				i = this.lowerLimit;
+
+		box.setValue(String.format("%-1.2f", i));
 	}
 
 	protected void render(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
 		if (this.displayBackground) {
-			guiGraphics.fill(this.posX, this.posY, this.posX + this.width + 12, this.posY + 14,
-					this.backgroundColor.getRGB());
+			UIUtil.drawOutlineRect(guiGraphics, this.posX, this.posY, this.width + 12, 14, outlineColor,
+					backgroundColor);
+
 		}
 	}
 }

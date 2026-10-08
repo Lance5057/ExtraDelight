@@ -44,11 +44,7 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 
 			@Override
 			protected void onContentsChanged(int slot) {
-				AdvancedDisplayBlockEntity.this.requestModelDataUpdate();
-				AdvancedDisplayBlockEntity.this.getLevel().sendBlockUpdated(
-						AdvancedDisplayBlockEntity.this.getBlockPos(), AdvancedDisplayBlockEntity.this.getBlockState(),
-						AdvancedDisplayBlockEntity.this.getBlockState(), Block.UPDATE_CLIENTS);
-				AdvancedDisplayBlockEntity.this.setChanged();
+				AdvancedDisplayBlockEntity.update(AdvancedDisplayBlockEntity.this);
 			}
 		};
 	}
@@ -59,6 +55,10 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 
 	public Transform getItemTransform(int i) {
 		return this.transforms.get(i);
+	}
+
+	public void setItemTransform(int i, Transform t) {
+		this.transforms.set(i, t);
 	}
 
 	@Override
@@ -77,11 +77,13 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
+		this.requestModelDataUpdate();
 		return ClientboundBlockEntityDataPacket.create(this);
 	}
 
 	@Override
 	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
+		setChanged();
 		CompoundTag tag = pkt.getTag();
 
 		if (tag != null)
@@ -92,10 +94,26 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 		if (nbt.contains(TAG)) {
 			items.deserializeNBT(registries, nbt.getCompound(TAG));
 		}
+
+		if (nbt.contains("transforms")) {
+			CompoundTag t = nbt.getCompound("transforms");
+			for (int i = 0; i < NUM_SLOTS; i++) {
+				transforms.add(i, Transform.readNBT(t.getCompound("transform_" + i)));
+			}
+		}
 	}
 
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
 		tag.put(TAG, items.serializeNBT(registries));
+
+		CompoundTag t = new CompoundTag();
+		for (int i = 0; i < NUM_SLOTS; i++) {
+			if (transforms.get(i) != null)
+				t.put("transform_" + i, Transform.writeNBT(transforms.get(i)));
+		}
+
+		tag.put("transforms", t);
+
 		return tag;
 	}
 
@@ -113,5 +131,12 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 
 	public String getDisplayName() {
 		return "screen.advanceddisplay.name";
+	}
+
+	public static void update(AdvancedDisplayBlockEntity e) {
+		e.requestModelDataUpdate();
+		e.getLevel().sendBlockUpdated(e.getBlockPos(), e.getBlockState(),
+				e.getBlockState(), Block.UPDATE_ALL);
+		e.setChanged();
 	}
 }
