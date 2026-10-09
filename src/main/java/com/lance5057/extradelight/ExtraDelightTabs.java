@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 
 import api.LanceNestAPI.src.LanceNestAPI;
@@ -45,6 +46,7 @@ public class ExtraDelightTabs {
 						makeJam(output, "chorus_fruit", Items.CHORUS_FRUIT);
 						makeJam(output, "melon", Items.MELON_SLICE);
 						makeJam(output, "carrot", Items.CARROT);
+						makeJam(output, "strawberry", Strawberry.STRAWBERRY.get());
 
 						ItemStack s = new ItemStack(ExtraDelightItems.DYNAMIC_JAM.get());
 						s.set(ExtraDelightComponents.DYNAMIC_FOOD, new DynamicItemComponent(List.of("mint")));
