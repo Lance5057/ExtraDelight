@@ -678,7 +678,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		feast(Strawberry.PINK_LEMONADE_TRAY.get(), Strawberry.PINK_LEMONADE_TRAY_ITEM.get(), Items.GLASS_BOTTLE);
 		this.add(Strawberry.STRAWBERRY_CHEESECAKE.get(), noDrop());
 		this.add(Strawberry.STRAWBERRY_SHORTCAKE.get(), noDrop());
-		this.add(Strawberry.STRAWBERRY_CLOUD_CAKE.get(), noDrop());
+		feast(Strawberry.STRAWBERRY_CLOUD_CAKE.get(), Strawberry.STRAWBERRY_CLOUD_CAKE_ITEM.get(),
+				ExtraDelightItems.TRAY.get());
 		this.add(Strawberry.STRAWBERRY_PIE.get(), noDrop());
 		
 	}

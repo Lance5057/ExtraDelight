@@ -1,0 +1,32 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": true,
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 800,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "id": "minecraft:milk"
+  },
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "item": "extradelight:strawberry"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:strawberry_ice_cream"
+  }
+}

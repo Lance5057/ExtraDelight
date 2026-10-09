@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_pasta"
+    },
+    {
+      "tag": "extradelight:processed/strawberry"
+    },
+    {
+      "tag": "extradelight:processed/strawberry"
+    },
+    {
+      "tag": "c:drinks/milk"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:strawberry_pasta"
+  }
+}

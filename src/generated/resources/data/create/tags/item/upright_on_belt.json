@@ -235,6 +235,9 @@
     "extradelight:kyiv_cake_item",
     "extradelight:raw_baked_alaska_item",
     "extradelight:baked_alaska_item",
-    "extradelight:strawberry_cheesecake"
+    "extradelight:strawberry_cheesecake",
+    "extradelight:strawberry_milkshake",
+    "extradelight:strawberry_pie_item",
+    "extradelight:strawberry_ice_cream"
   ]
 }

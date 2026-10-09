@@ -1,0 +1,35 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "minecraft:milk"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "item": "extradelight:strawberry"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:strawberry_milkshake"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "c:spoons"
+  }
+}

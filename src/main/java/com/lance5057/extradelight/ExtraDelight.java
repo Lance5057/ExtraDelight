@@ -53,8 +53,8 @@ public class ExtraDelight {
 		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
 
 		Fermentation f = new Fermentation();
-		Strawberry t = new Strawberry();
 		SummerCitrus s = new SummerCitrus();
+		Strawberry t = new Strawberry();
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);

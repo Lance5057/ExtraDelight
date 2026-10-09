@@ -1,7 +1,7 @@
 {
   "values": [
-    "extradelight:pink_lemonade",
     "extradelight:lemonade",
+    "extradelight:pink_lemonade",
     "extradelight:glow_berry_popsicle",
     "extradelight:sweet_berry_popsicle",
     "extradelight:fudge_popsicle",
@@ -20,6 +20,7 @@
     "extradelight:ice_cream_sundae",
     "extradelight:affogato",
     "extradelight:ice_cubes",
-    "extradelight:grapefruit_sorbet"
+    "extradelight:grapefruit_sorbet",
+    "extradelight:strawberry_popsicle"
   ]
 }

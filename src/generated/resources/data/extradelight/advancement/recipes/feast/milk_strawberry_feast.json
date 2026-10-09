@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cake": {
+    "has_fondue": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:strawberry_shortcake_item"
+            "items": "extradelight:milk_chocolate_fondue_block"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:strawberry_shortcake_slice"
+        "recipe": "extradelight:feast/milk_strawberry_feast"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cake"
+      "has_fondue"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:strawberry_shortcake_slice"
+      "extradelight:feast/milk_strawberry_feast"
     ]
   }
 }

@@ -1,0 +1,34 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "tag": "c:drinks/milk"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    },
+    {
+      "tag": "c:drinks/milk"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:strawberry_cheesecake"
+  }
+}

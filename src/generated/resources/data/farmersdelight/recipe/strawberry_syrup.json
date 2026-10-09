@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "item": "extradelight:strawberry"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:strawberry_syrup_bottle"
+  }
+}

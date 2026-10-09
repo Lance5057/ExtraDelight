@@ -1251,6 +1251,36 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:strawberrry_fields_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberrry_fields_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_beet_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_beet_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_pasta"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:stuffed_cactus": {
       "conditions": {
         "items": [
@@ -1484,7 +1514,13 @@
       "extradelight:egg_salad_sandwich"
     ],
     [
+      "extradelight:strawberry_beet_salad"
+    ],
+    [
       "extradelight:salisbury_steak"
+    ],
+    [
+      "extradelight:strawberry_pasta"
     ],
     [
       "extradelight:salad"
@@ -1686,6 +1722,9 @@
     ],
     [
       "extradelight:bacon_cheeseburger"
+    ],
+    [
+      "extradelight:strawberrry_fields_salad"
     ],
     [
       "extradelight:chicken_stew"

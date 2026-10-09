@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "f": {
-      "item": "extradelight:strawberry_shortcake_slice"
+    "x": {
+      "item": "extradelight:strawberry"
     }
   },
   "pattern": [
-    "ff ",
-    "ff "
+    "xx",
+    "xx"
   ],
   "result": {
     "count": 1,
-    "id": "extradelight:strawberry_shortcake_item"
+    "id": "extradelight:strawbiggy_item"
   }
 }
