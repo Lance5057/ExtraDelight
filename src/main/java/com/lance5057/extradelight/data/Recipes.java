@@ -3,7 +3,6 @@ package com.lance5057.extradelight.data;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import com.lance5057.extradelight.modules.Strawberry;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelight;
@@ -14,8 +13,6 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.DynamicJamRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.DynamicToastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.JuicerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
@@ -23,8 +20,12 @@ import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
+import com.lance5057.extradelight.data.recipebuilders.dynamics.DynamicJamRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.dynamics.DynamicSkewerRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.dynamics.DynamicToastRecipeBuilder;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.recipe.FlourDoughRecipe;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
@@ -3944,6 +3945,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		bundleItem9(Ingredient.of(ExtraDelightItems.GARLIC), ExtraDelightItems.GARLIC_CRATE.get(),
 				ExtraDelightItems.GARLIC.get(), consumer, "garlic");
+
+		DynamicSkewerRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_SKEWER.toStack())
+				.requires(Ingredient.of(Items.STICK)).requires(ExtraDelightTags.SKEWER_INGREDIENT_SWEET)
+				.requires(ExtraDelightTags.SKEWER_INGREDIENT_SWEET).requires(ExtraDelightTags.SKEWER_INGREDIENT_SWEET)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
+				.save(consumer, EDLoc("dynamic_skewer"));
 
 	}
 

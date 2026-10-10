@@ -3,7 +3,6 @@ package com.lance5057.extradelight;
 import static vectorwing.farmersdelight.common.registry.ModItems.bowlFoodItem;
 import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -16,7 +15,6 @@ import com.lance5057.extradelight.items.CactusJuiceItem;
 import com.lance5057.extradelight.items.CoffeeItem;
 import com.lance5057.extradelight.items.CornSilkTeaItem;
 import com.lance5057.extradelight.items.CorncobPipe;
-import com.lance5057.extradelight.items.DeprecatedItem;
 import com.lance5057.extradelight.items.FrostingItem;
 import com.lance5057.extradelight.items.GarlicCureDrinkableItem;
 import com.lance5057.extradelight.items.GarlicCureItem;
@@ -31,8 +29,8 @@ import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
 import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
+import com.lance5057.extradelight.items.dynamicfood.DynamicSkewer;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
-import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.jar.JarItem;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
@@ -2884,6 +2882,11 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> DYNAMIC_JAM = ITEMS.register("dynamic_jam",
 			() -> new DynamicJam(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.JAM)));
 
+	public static final DeferredItem<Item> DYNAMIC_SKEWER = ITEMS.register("dynamic_skewer",
+			() -> new DynamicSkewer(new Item.Properties()
+					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
+					.food(EDFoods.APPLE_CHIPS)));
+
 	public static final DeferredItem<Item> HAZELNUT_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
 			"hazelnut_petal_litter_item",
 			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get(), new Item.Properties()));
@@ -2893,7 +2896,7 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.APPLE_PETAL_LITTER.get(), new Item.Properties()));
 
 	public static void register(IEventBus modEventBus) {
-		if(!ModList.get().isLoaded("compendium"))
+		if (!ModList.get().isLoaded("compendium"))
 			LanceNestAPI.ITEMS.register(modEventBus);
 		ExtraDelightItems.ITEMS.register(modEventBus);
 	}

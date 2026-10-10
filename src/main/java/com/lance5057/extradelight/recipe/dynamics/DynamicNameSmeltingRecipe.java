@@ -12,11 +12,11 @@
 //import net.minecraft.world.item.crafting.CookingBookCategory;
 //import net.minecraft.world.item.crafting.Ingredient;
 //import net.minecraft.world.item.crafting.RecipeSerializer;
-//import net.minecraft.world.item.crafting.SmokingRecipe;
+//import net.minecraft.world.item.crafting.SmeltingRecipe;
 //
-//public class DynamicNameCookingRecipe extends SmokingRecipe {
+//public class DynamicNameSmeltingRecipe extends SmeltingRecipe {
 //
-//	public DynamicNameCookingRecipe(String p_250200_, CookingBookCategory p_251114_, Ingredient p_250340_,
+//	public DynamicNameSmeltingRecipe(String p_250200_, CookingBookCategory p_251114_, Ingredient p_250340_,
 //			ItemStack p_250306_, float p_249577_, int p_250030_) {
 //		super(p_250200_, p_251114_, p_250340_, p_250306_, p_249577_, p_250030_);
 //	}
@@ -35,10 +35,10 @@
 //		return stack;
 //	}
 //
-//	public static class Serializer implements RecipeSerializer<DynamicNameCookingRecipe> {
-//		private static final Codec<DynamicNameCookingRecipe> CODEC = RecordCodecBuilder.create(inst -> inst.group(
+//	public static class Serializer implements RecipeSerializer<DynamicNameSmeltingRecipe> {
+//		private static final Codec<DynamicNameSmeltingRecipe> CODEC = RecordCodecBuilder.create(inst -> inst.group(
 //				ExtraCodecs.strictOptionalField(Codec.STRING, "group", "")
-//						.forGetter(DynamicNameCookingRecipe::getGroup),
+//						.forGetter(DynamicNameSmeltingRecipe::getGroup),
 //				CookingBookCategory.CODEC.fieldOf("category").forGetter(r -> r.category()),
 //				Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(p_301068_ -> p_301068_.ingredient),
 //
@@ -46,18 +46,18 @@
 //				ExtraCodecs.strictOptionalField(Codec.FLOAT, "experience", 1f).forGetter(r -> r.getExperience()),
 //				ExtraCodecs.strictOptionalField(Codec.INT, "time", 1).forGetter(r -> r.getCookingTime())
 //
-//		).apply(inst, DynamicNameCookingRecipe::new));
+//		).apply(inst, DynamicNameSmeltingRecipe::new));
 //
-//		public DynamicNameCookingRecipe fromNetwork(FriendlyByteBuf pBuffer) {
+//		public DynamicNameSmeltingRecipe fromNetwork(FriendlyByteBuf pBuffer) {
 //			String s = pBuffer.readUtf();
 //			Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
 //			ItemStack itemstack = pBuffer.readItem();
 //			float f = pBuffer.readFloat();
 //			int i = pBuffer.readVarInt();
-//			return new DynamicNameCookingRecipe(s, CookingBookCategory.MISC, ingredient, itemstack, f, i);
+//			return new DynamicNameSmeltingRecipe(s, CookingBookCategory.MISC, ingredient, itemstack, f, i);
 //		}
 //
-//		public void toNetwork(FriendlyByteBuf pBuffer, DynamicNameCookingRecipe pRecipe) {
+//		public void toNetwork(FriendlyByteBuf pBuffer, DynamicNameSmeltingRecipe pRecipe) {
 //			pBuffer.writeUtf(pRecipe.group);
 //			pRecipe.ingredient.toNetwork(pBuffer);
 //			pBuffer.writeItem(pRecipe.result);
@@ -66,8 +66,10 @@
 //		}
 //
 //		@Override
-//		public Codec<DynamicNameCookingRecipe> codec() {
+//		public Codec<DynamicNameSmeltingRecipe> codec() {
 //			return CODEC;
 //		}
 //	}
 //}
+
+

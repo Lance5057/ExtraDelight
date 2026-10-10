@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.data.recipebuilders;
+package com.lance5057.extradelight.data.recipebuilders.dynamics;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.recipe.DynamicJamRecipe;
+import com.lance5057.extradelight.recipe.dynamics.DynamicJamRecipe;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.advancements.Advancement;

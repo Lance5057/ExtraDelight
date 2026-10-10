@@ -1359,6 +1359,10 @@ public class ItemModels extends ItemModelProvider {
 				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 
+		getBuilder(ExtraDelightItems.DYNAMIC_SKEWER.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(DynamicFoodGeometryLoader::builder);
+
 		forBlockItemFlat(this, ExtraDelightItems.APPLE_PETAL_LITTER_ITEM, "crops/fruit/apple/apple_leaves_budding");
 		forBlockItemFlat(this, ExtraDelightItems.HAZELNUT_PETAL_LITTER_ITEM, "crops/fruit/hazelnut/hazelnut_petals");
 

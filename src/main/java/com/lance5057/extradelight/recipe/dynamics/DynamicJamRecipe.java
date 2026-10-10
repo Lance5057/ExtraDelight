@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.recipe;
+package com.lance5057.extradelight.recipe.dynamics;
 
 import java.util.ArrayList;
 import java.util.List;

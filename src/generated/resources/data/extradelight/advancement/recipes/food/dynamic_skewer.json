@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cake": {
+    "Recipes": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:strawberry_shortcake_item"
+            "items": "minecraft:stick"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:strawberry_shortcake_slice"
+        "recipe": "extradelight:dynamic_skewer"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cake"
+      "Recipes"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelight:strawberry_shortcake_slice"
+      "extradelight:dynamic_skewer"
     ]
   }
 }

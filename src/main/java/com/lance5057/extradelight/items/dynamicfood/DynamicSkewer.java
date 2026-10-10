@@ -19,9 +19,9 @@ import net.minecraft.world.item.component.ItemContainerContents;
 
 public class DynamicSkewer extends Item implements IDynamic {
 	static final ResourceLocation base_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-			"extra/dynamics/toast/toast");
+			"extra/dynamics/skewer/stick");
 	static final ResourceLocation missing_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-			"extra/dynamics/toast/empty_toast");
+			"extra/dynamics/skewer/stick");
 
 	public DynamicSkewer(Properties properties) {
 		super(properties);
@@ -44,12 +44,15 @@ public class DynamicSkewer extends Item implements IDynamic {
 
 					int count = 0;
 					for (ItemStack s : items.nonEmptyItems()) {
-						if (!s.is(ExtraDelightTags.TOAST)) {
-							if (s.getItem() instanceof IDynamic id) {
-								DynamicItemComponent dyn = s.get(ExtraDelightComponents.DYNAMIC_FOOD.get());
-								rc = ExtraDelight.modLoc(str + "dynamic_skewer/" + dyn.graphics().get(count));
-							} else
-								rc = ExtraDelight.modLoc(str + comp.graphics().get(count));
+						if (!s.is(Items.STICK)) {
+//							if (s.getItem() instanceof IDynamic id) {
+//								DynamicItemComponent dyn = s.get(ExtraDelightComponents.DYNAMIC_FOOD.get());
+//								rc = ExtraDelight.modLoc(str + "dynamic_skewer/" + dyn.graphics().get(count));
+//							} else
+
+							String s2 = comp.graphics().get(count);
+							s2 = s2.substring(s2.lastIndexOf('.')+1);
+							rc = ExtraDelight.modLoc(str + s2 + "_" + (count));
 
 							i.add(rc);
 							count++;

@@ -720,8 +720,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.ICE_CUBES).add(SummerCitrus.ICE_CUBES.get());
 
 		tag(ExtraDelightTags.STRAWBERRY).add(Strawberry.STRAWBERRY.get());
-		tag(ExtraDelightTags.PROCESSED_STRAWBERRY).add(Strawberry.STRAWBERRY.get(),
-				Strawberry.SLICED_STRAWBERRY.get());
+		tag(ExtraDelightTags.PROCESSED_STRAWBERRY).add(Strawberry.STRAWBERRY.get(), Strawberry.SLICED_STRAWBERRY.get());
 
 		tag(ExtraDelightTags.IS_JELLY_INGREDIENT).add(ExtraDelightItems.MINT.get());
 
@@ -1086,6 +1085,9 @@ public class EDItemTags extends ItemTagsProvider {
 				SummerCitrus.RAW_BAKED_ALASKA_ITEM.get(), SummerCitrus.BAKED_ALASKA_ITEM.get(),
 				Strawberry.STRAWBERRY_CHEESECAKE_ITEM.get(), Strawberry.STRAWBERRY_MILKSHAKE.get(),
 				Strawberry.STRAWBERRY_PIE_ITEM.get(), Strawberry.STRAWBERRY_ICE_CREAM.get());
+
+		tag(ExtraDelightTags.SKEWER_INGREDIENT_SWEET).add(Items.SWEET_BERRIES, Items.GLOW_BERRIES,
+				SummerCitrus.MELON_CHUNKS.get(), Strawberry.STRAWBERRY.get());
 
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);

@@ -1,4 +1,4 @@
-package com.lance5057.extradelight.data.recipebuilders;
+package com.lance5057.extradelight.data.recipebuilders.dynamics;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.lance5057.extradelight.recipe.DynamicToastRecipe;
+import com.lance5057.extradelight.recipe.dynamics.DynamicToastRecipe;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
