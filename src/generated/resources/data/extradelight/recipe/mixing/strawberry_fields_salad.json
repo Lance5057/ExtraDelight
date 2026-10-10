@@ -1,0 +1,48 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:foods/leafy_green"
+    },
+    {
+      "tag": "extradelight:processed/strawberry"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "item": "farmersdelight:bacon"
+    },
+    {
+      "tag": "c:nuts"
+    },
+    {
+      "tag": "c:foods/cooked_chicken"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "extradelight:strawberrry_fields_salad"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "c:spoons"
+  }
+}

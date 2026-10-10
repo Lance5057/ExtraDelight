@@ -651,7 +651,8 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> STRAWBERRY = neoforgeItemTag("crops/strawberry");
 	public static final TagKey<Item> PROCESSED_STRAWBERRY = modTag("processed/strawberry");
-	
+	public static final TagKey<Item> LEAFY_GREEN = neoforgeItemTag("foods/leafy_green");
+
 	public static final TagKey<Item> JUICE = neoforgeItemTag("juice");
 
 	// Tough as Nails

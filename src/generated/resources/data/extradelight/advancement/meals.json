@@ -1141,6 +1141,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:roasted_beetroot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roasted_beetroot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:roasted_carrot": {
       "conditions": {
         "items": [
@@ -1261,11 +1271,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:strawberry_beet_salad": {
+    "extradelight:strawberry_beetroot_salad": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:strawberry_beet_salad"
+            "items": "extradelight:strawberry_beetroot_salad"
           }
         ]
       },
@@ -1514,9 +1524,6 @@
       "extradelight:egg_salad_sandwich"
     ],
     [
-      "extradelight:strawberry_beet_salad"
-    ],
-    [
       "extradelight:salisbury_steak"
     ],
     [
@@ -1560,6 +1567,9 @@
     ],
     [
       "extradelight:fish_salad_sandwich"
+    ],
+    [
+      "extradelight:roasted_beetroot"
     ],
     [
       "extradelight:lamb_stew"
@@ -1740,6 +1750,9 @@
     ],
     [
       "extradelight:gazpacho"
+    ],
+    [
+      "extradelight:strawberry_beetroot_salad"
     ],
     [
       "extradelight:congee"

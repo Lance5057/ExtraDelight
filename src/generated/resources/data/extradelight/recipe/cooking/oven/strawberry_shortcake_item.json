@@ -1,0 +1,43 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "id": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:whipped_cream"
+    },
+    {
+      "tag": "c:crops/strawberry"
+    },
+    {
+      "tag": "c:whipped_cream"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:drinks/milk"
+    },
+    {
+      "tag": "c:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:processed/strawberry"
+    },
+    {
+      "tag": "c:butter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:strawberry_shortcake_item"
+  }
+}

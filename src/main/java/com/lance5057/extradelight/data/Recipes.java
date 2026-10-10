@@ -2110,8 +2110,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, "frosting_yellow");
 
 		mixing(new ItemStack(ExtraDelightItems.BEET_MINT_SALAD.get(), 2), STANDARD_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT),
-						Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT), Ingredient.of(ExtraDelightTags.MINT),
+				new Ingredient[] { Ingredient.of(Strawberry.ROASTED_BEETROOT),
+						Ingredient.of(Strawberry.ROASTED_BEETROOT), Ingredient.of(ExtraDelightTags.MINT),
 						Ingredient.of(ExtraDelightTags.SWEETENER) },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },

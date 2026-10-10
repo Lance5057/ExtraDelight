@@ -1485,7 +1485,7 @@ public class SummerCitrus {
 				consumer, "dalgona_coffee_mixing");
 		Recipes.mixing(new ItemStack(GRAPEFRUIT_BEETROOT_SALAD.get(), 2), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GRAPEFRUIT),
-						Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT), Ingredient.of(ExtraDelightTags.SALT),
+						Ingredient.of(Strawberry.ROASTED_BEETROOT), Ingredient.of(ExtraDelightTags.SALT),
 						Ingredient.of(Items.HONEY_BOTTLE) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },

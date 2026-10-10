@@ -181,6 +181,9 @@ public class Strawberry {
 			.advancementFeast().feastToolTip().finish();
 
 	// Non-block stuff
+	public static final DeferredItem<Item> ROASTED_BEETROOT = EDItemGenerator
+			.register("roasted_beetroot", () -> new Item(foodItem(EDFoods.COOKED_CARROT))).advancementMeal().finish();
+
 	public static final DeferredItem<Item> STRAWBERRY_CUSTARD = EDItemGenerator
 			.register("strawberry_custard", () -> new Item(ExtraDelightItems.bottleFoodItem(EDFoods.CUSTARD)))
 			.advancementDessert().finish();
@@ -212,10 +215,10 @@ public class Strawberry {
 
 	public static final DeferredItem<Item> STRAWBERRY_PASTA = EDItemGenerator
 			.register("strawberry_pasta", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.PASTA_ALFREDO), true))
-			.advancementMeal().finish();
+			.advancementMeal().advancementDessert().finish();
 
-	public static final DeferredItem<Item> STRAWBERRY_BEET_SALAD = EDItemGenerator
-			.register("strawberry_beet_salad", () -> new Item(foodItem(EDFoods.BEET_MINT))).advancementMeal().finish();
+	public static final DeferredItem<Item> STRAWBERRY_BEETROOT_SALAD = EDItemGenerator
+			.register("strawberry_beetroot_salad", () -> new Item(foodItem(EDFoods.BEET_MINT))).advancementMeal().finish();
 
 	public static final DeferredItem<Item> STRAWBERRY_FIELDS_SALAD = EDItemGenerator
 			.register("strawberrry_fields_salad", () -> new Item(bowlFoodItem(EDFoods.CARROT_SALAD))).advancementMeal().finish();
@@ -306,7 +309,7 @@ public class Strawberry {
 		ItemModels.forBlockItem(tmp, STRAWBIGGY_ITEM,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/big_strawberry"));
 		ItemModels.forItem(tmp, STRAWBERRY_JUICE, "strawberry_juice");
-//		ItemModels.forItem(tmp, STRAWBERRY_JUICE_FLUID_BUCKET, "strawberry_juice_bucket");
+		ItemModels.forItem(tmp, STRAWBERRY_JUICE_FLUID_BUCKET, "strawberry_juice_bucket");
 		ItemModels.forItem(tmp, PINK_LEMONADE, "strawberry_lemonade");
 		tmp.getBuilder(PINK_LEMONADE_TRAY_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
@@ -322,6 +325,7 @@ public class Strawberry {
 		ItemModels.forItem(tmp, STRAWBERRY_CLOUD_CAKE_SLICE, "strawberry_cloud_cake");
 		ItemModels.forItem(tmp, STRAWBERRY_PIE_SLICE, "strawberry_pie_slice");
 		ItemModels.forItem(tmp, STRAWBERRY_PIE_ITEM, "strawberry_pie");
+//		ItemModels.forItem(tmp, ROASTED_BEETROOT, "roasted_beetroot");
 		ItemModels.forItem(tmp, STRAWBERRY_CUSTARD, "strawberry_custard");
 		ItemModels.forItem(tmp, STRAWBERRY_ICE_CREAM, "strawberry_ice_cream");
 		ItemModels.forItem(tmp, STRAWBERRY_POPSICLE, "strawberry_popsicle");
@@ -329,8 +333,8 @@ public class Strawberry {
 		ItemModels.forItem(tmp, STRAWBERRY_MILKSHAKE, "strawberry_milkshake");
 		ItemModels.forItem(tmp, STRAWBERRY_MOUSSE, "strawberry_mousse");
 		ItemModels.forItem(tmp, STRAWBERRY_SYRUP_BOTTLE, "strawberry_syrup_bottle");
-//		ItemModels.forItem(tmp, STRAWBERRY_PASTA, "strawberry_pasta");
-//		ItemModels.forItem(tmp, STRAWBERRY_BEET_SALAD, "strawberry_beet_salad");
+		ItemModels.forItem(tmp, STRAWBERRY_PASTA, "pasta_strawberry");
+//		ItemModels.forItem(tmp, STRAWBERRY_BEETROOT_SALAD, "strawberry_beet_salad");
 //		ItemModels.forItem(tmp, STRAWBERRY_FIELDS_SALAD, "strawberry_fields_salad");
 		ItemModels.forItem(tmp, BLOOD_CHOCOLATE_DIPPED_STRAWBERRY, "blood_chocolate_strawberry");
 		ItemModels.forItem(tmp, DARK_CHOCOLATE_DIPPED_STRAWBERRY, "dark_chocolate_strawberry");
@@ -345,6 +349,10 @@ public class Strawberry {
 				consumer, "strawberry");
 		Recipes.bundleItem4(Ingredient.of(STRAWBERRY.get()), STRAWBIGGY_ITEM.get(), STRAWBERRY.get(),
 				consumer, "strawbiggy");
+
+		Recipes.vanillaCooking(Ingredient.of(Items.BEETROOT), ROASTED_BEETROOT.get(), consumer, "roasted_beetroot");
+		Recipes.bulkBake(ROASTED_BEETROOT.get(), Ingredient.of(Items.BEETROOT), consumer,
+				ExtraDelightItems.SHEET.get(), "beetroot");
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, PINK_LEMONADE_TRAY_ITEM.get())
 				.requires(PINK_LEMONADE.get(), 4).requires(Items.GLASS_BOTTLE)
@@ -482,20 +490,45 @@ public class Strawberry {
 						Ingredient.of(STRAWBERRY), Ingredient.of(STRAWBERRY), },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(NeoForgeMod.MILK, 250)) }, consumer,
 				"strawberry_milkshake");
+		Recipes.mixing(new ItemStack(STRAWBERRY_BEETROOT_SALAD.get(), 2), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ROASTED_BEETROOT), Ingredient.of(ROASTED_BEETROOT),
+						Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY), Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
+						Ingredient.of(ExtraDelightTags.CHEESE), Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Fermentation.SALT) },
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)),
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
+				consumer, "strawberry_beetroot_salad");
+		Recipes.mixing(new ItemStack(STRAWBERRY_FIELDS_SALAD.get(), 2), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.LEAFY_GREEN),	Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.CHEESE),
+						Ingredient.of(ModItems.BACON.get()), Ingredient.of(ExtraDelightTags.NUTS),
+						Ingredient.of(CommonTags.Items.FOODS_COOKED_CHICKEN) },
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)),
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
+				consumer, "strawberry_fields_salad");
 
 		// Oven
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(STRAWBERRY_CHEESECAKE_ITEM.get(), 1), Recipes.NORMAL_COOKING,
 						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
-				.addIngredient(STRAWBERRY, 3).addIngredient(Ingredient.of(Tags.Items.DRINKS_MILK))
-				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Ingredient.of(Tags.Items.DRINKS_MILK))
+				.addIngredient(STRAWBERRY, 3).addIngredient(Tags.Items.DRINKS_MILK)
+				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Tags.Items.DRINKS_MILK)
 				.unlockedByAnyIngredient(ExtraDelightItems.CHEESE.get()).build(consumer);
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(STRAWBERRY_SHORTCAKE_ITEM.get(), 1), Recipes.NORMAL_COOKING,
+						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get()), false)
+				.addIngredient(ExtraDelightTags.WHIPPED_CREAM).addIngredient(ExtraDelightTags.STRAWBERRY)
+				.addIngredient(ExtraDelightTags.WHIPPED_CREAM).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(Tags.Items.DRINKS_MILK).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.PROCESSED_STRAWBERRY)
+				.addIngredient(ExtraDelightTags.BUTTER).unlockedByAnyIngredient(STRAWBERRY).build(consumer);
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(STRAWBERRY_PIE_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
 				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(STRAWBERRY, 3)
-				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).addIngredient(ModItems.PIE_CRUST.get(), 1)
-				.addIngredient(Ingredient.of(ExtraDelightTags.SWEETENER)).unlockedByAnyIngredient(STRAWBERRY)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ModItems.PIE_CRUST.get())
+				.addIngredient(ExtraDelightTags.SWEETENER).unlockedByAnyIngredient(STRAWBERRY)
 				.build(consumer);
 
 		// Pot
@@ -534,6 +567,7 @@ public class Strawberry {
 		lp.add(STRAWBERRY_CLOUD_CAKE_SLICE.get(), "Slice of Strawberry Cloud Cake");
 		lp.add(STRAWBERRY_PIE.get(), "Strawberry Pie");
 		lp.add(STRAWBERRY_PIE_SLICE.get(), "Slice of Strawberry Pie");
+		lp.add(ROASTED_BEETROOT.get(), "Roasted Beetroot");
 		lp.add(STRAWBERRY_CUSTARD.get(), "Strawberry Custard");
 		lp.add(STRAWBERRY_ICE_CREAM.get(), "Strawberry Ice Cream");
 		lp.add(STRAWBERRY_POPSICLE.get(), "Strawberry Popsicle");
@@ -543,7 +577,7 @@ public class Strawberry {
 		lp.add(STRAWBERRY_MOUSSE.get(), "Strawberry Mousse");
 		lp.add(STRAWBERRY_SYRUP_BOTTLE.get(), "Strawberry Syrup");
 		lp.add(STRAWBERRY_PASTA.get(), "Makaron z Truskawkami");
-		lp.add(STRAWBERRY_BEET_SALAD.get(), "Strawberry and Beet Salad");
+		lp.add(STRAWBERRY_BEETROOT_SALAD.get(), "Strawberry and Beetroot Salad");
 		lp.add(STRAWBERRY_FIELDS_SALAD.get(), "Strawberry Fields Salad");
 		lp.add(BLOOD_CHOCOLATE_DIPPED_STRAWBERRY.get(), "Blood Chocolate-Dipped Strawberry");
 		lp.add(DARK_CHOCOLATE_DIPPED_STRAWBERRY.get(), "Dark Chocolate-Dipped Strawberry");

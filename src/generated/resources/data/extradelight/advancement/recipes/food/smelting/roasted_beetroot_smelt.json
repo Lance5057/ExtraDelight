@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smelting/roasted_beetroot_smelt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_beetroot_smelting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roasted_beetroot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "roasted_beetroot_smelting"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smelting/roasted_beetroot_smelt"
+    ]
+  }
+}

@@ -1051,6 +1051,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:strawberry_pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_pasta"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:strawberry_pie_slice": {
       "conditions": {
         "items": [
@@ -1300,6 +1310,9 @@
     ],
     [
       "extradelight:sweet_berry_ice_cream"
+    ],
+    [
+      "extradelight:strawberry_pasta"
     ],
     [
       "extradelight:rocky_road"
