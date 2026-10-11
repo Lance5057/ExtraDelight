@@ -102,6 +102,9 @@ public class TapBlock extends Block implements EntityBlock {
 			return this.defaultBlockState().setValue(FACING, direction).setValue(GROUND, true);
 		}
 
+		if(p_54041_.getClickedFace() == Direction.DOWN)
+			return null;
+
 		Direction direction = p_54041_.getClickedFace();
 		return this.defaultBlockState().setValue(FACING, direction).setValue(GROUND, false);
 	}
