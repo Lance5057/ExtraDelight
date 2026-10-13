@@ -49,13 +49,15 @@ public class DynamicSkewer extends Item implements IDynamic {
 //								DynamicItemComponent dyn = s.get(ExtraDelightComponents.DYNAMIC_FOOD.get());
 //								rc = ExtraDelight.modLoc(str + "dynamic_skewer/" + dyn.graphics().get(count));
 //							} else
-
-							String s2 = comp.graphics().get(count);
-							s2 = s2.substring(s2.lastIndexOf('.')+1);
-							rc = ExtraDelight.modLoc(str + s2 + "_" + (count));
+							if (comp.graphics().size() > count) {
+								String s2 = comp.graphics().get(count);
+								s2 = s2.substring(s2.lastIndexOf('.') + 1);
+								rc = ExtraDelight.modLoc(str + s2 + "_" + (count));
+							}
 
 							i.add(rc);
 							count++;
+
 						}
 					}
 				} else

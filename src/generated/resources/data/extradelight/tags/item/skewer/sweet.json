@@ -3,6 +3,11 @@
     "minecraft:sweet_berries",
     "minecraft:glow_berries",
     "extradelight:melon_chunks",
-    "extradelight:strawberry"
+    "extradelight:strawberry",
+    "extradelight:sliced_grapefruit",
+    "extradelight:sliced_lime",
+    "extradelight:sliced_lemon",
+    "extradelight:sliced_orange",
+    "extradelight:sliced_apple"
   ]
 }

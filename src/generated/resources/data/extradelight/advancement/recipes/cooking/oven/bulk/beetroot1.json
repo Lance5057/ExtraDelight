@@ -1,19 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-<<<<<<<< HEAD:src/generated/resources/data/extradelight/advancement/recipes/food/dynamic_skewer.json
-    "Recipes": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:stick"
-========
     "beetroot": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:sheet"
->>>>>>>> 54f7822e (Much more strawb.):src/generated/resources/data/extradelight/advancement/recipes/cooking/oven/bulk/beetroot1.json
           }
         ]
       },
@@ -21,11 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-<<<<<<<< HEAD:src/generated/resources/data/extradelight/advancement/recipes/food/dynamic_skewer.json
-        "recipe": "extradelight:dynamic_skewer"
-========
         "recipe": "extradelight:cooking/oven/oven/bulk/beetroot1"
->>>>>>>> 54f7822e (Much more strawb.):src/generated/resources/data/extradelight/advancement/recipes/cooking/oven/bulk/beetroot1.json
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -33,20 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-<<<<<<<< HEAD:src/generated/resources/data/extradelight/advancement/recipes/food/dynamic_skewer.json
-      "Recipes"
-========
       "beetroot"
->>>>>>>> 54f7822e (Much more strawb.):src/generated/resources/data/extradelight/advancement/recipes/cooking/oven/bulk/beetroot1.json
     ]
   ],
   "rewards": {
     "recipes": [
-<<<<<<<< HEAD:src/generated/resources/data/extradelight/advancement/recipes/food/dynamic_skewer.json
-      "extradelight:dynamic_skewer"
-========
       "extradelight:cooking/oven/oven/bulk/beetroot1"
->>>>>>>> 54f7822e (Much more strawb.):src/generated/resources/data/extradelight/advancement/recipes/cooking/oven/bulk/beetroot1.json
     ]
   }
 }

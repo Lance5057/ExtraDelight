@@ -283,7 +283,7 @@ public class SummerCitrus {
 
 	// Watermelon
 	public static final DeferredItem<Item> MELON_CHUNKS = EDItemGenerator
-			.register("melon_chunks", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("melon_chunks", () -> new Item(foodItem(EDFoods.MELON_RIND))).advancementIngredients().finish();
 	public static final DeferredItem<Item> MELON_RIND = EDItemGenerator
 			.register("melon_rind", () -> new Item(foodItem(EDFoods.MELON_RIND))).advancementIngredients().finish();
 
