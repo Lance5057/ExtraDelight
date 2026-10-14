@@ -12,7 +12,7 @@ import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
-import com.lance5057.extradelight.blocks.crops.StrawberryCrop;
+import com.lance5057.extradelight.blocks.crops.strawberry.StrawberryCrop;
 import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.data.BlockModels;
@@ -244,7 +244,7 @@ public class Strawberry {
 //		BlockModels.cropCrossBlock(bsp, STRAWBERRY_CROP.get(), "strawberry", StrawberryCrop.AGE);
 //		bsp.simpleBlock(WILD_STRAWBERRY.get(), new ConfiguredModel(bsp.models()
 //				.cross("wild_strawberry", bsp.modLoc("block/crops/strawberry/wild_strawberry")).renderType("cutout")));
-		BlockModels.bushStageFourBlock(bsp, STRAWBERRY_CROP.get(), "strawberry");
+//		BlockModels.bushStageFourBlock(bsp, STRAWBERRY_CROP.get(), "strawberry");
 		BlockModels.crateBlock(bsp, STRAWBERRY_CRATE.get(), "strawberry", "bamboo");
 		bsp.simpleBlock(STRAWBIGGY.get(), bsp.models().getExistingFile(bsp.modLoc("block/big_strawberry")));
 		BlockModels.fluid(bsp, STRAWBERRY_JUICE_FLUID_BLOCK.get());

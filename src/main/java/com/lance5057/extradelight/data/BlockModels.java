@@ -22,6 +22,8 @@ import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornProperties;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+import com.lance5057.extradelight.blocks.crops.strawberry.RunnerConnect;
+import com.lance5057.extradelight.blocks.crops.strawberry.StrawberryCrop;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.displays.fruitbowl.FruitBowlBlock;
 import com.lance5057.extradelight.modules.Fermentation;
@@ -46,6 +48,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
@@ -724,6 +727,42 @@ public class BlockModels extends BlockStateProvider {
 					.rotationY(270).build();
 		});
 
+		MultiPartBlockStateBuilder builder = this.getMultipartBuilder(Strawberry.STRAWBERRY_CROP.get());
+		
+		String crop = "block/crops/strawberry/strawberry_bush_stage";
+		String runner = "block/crops/strawberry/strawberry_runner_stage";
+		
+		for(int i = 0; i < 4; i++)
+		{
+			for(RunnerConnect r : RunnerConnect.values())
+			{
+				if(r == RunnerConnect.NONE) {
+					builder.part()
+					.modelFile(this.models().getExistingFile(this.modLoc(crop+i)))
+					.addModel()
+					.condition(StrawberryCrop.AGE, i)
+					.condition(StrawberryCrop.CONNECTED, RunnerConnect.NONE)
+					.end();
+				}
+				else
+				{
+					builder.part()
+					.modelFile(this.models().getExistingFile(this.modLoc(crop+i)))
+					.addModel()
+					.condition(StrawberryCrop.AGE, i)
+					.condition(StrawberryCrop.CONNECTED, r)
+					.end();
+					
+					builder.part()
+					.modelFile(this.models().getExistingFile(this.modLoc(runner+i))).rotationY(r.getYRotation())
+					.addModel()
+					.condition(StrawberryCrop.AGE, i)
+					.condition(StrawberryCrop.CONNECTED, r)
+					.end();
+				}
+			}
+		}
+
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);
 		Strawberry.blockModels(this);
@@ -818,16 +857,20 @@ public class BlockModels extends BlockStateProvider {
 			String suffix = FruitBowlBlock.Styles.values()[servings] + "";
 
 			if (suffix.contentEquals("CINNAMON_PLANKS") || suffix.contentEquals("FRUIT_PLANKS")) {
-				return ConfiguredModel.builder().modelFile(bsp.models()
-						.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
-						.texture("0", bsp.modLoc("block/" + suffix.toLowerCase()))
-						.texture("particle", bsp.modLoc("block/" + suffix.toLowerCase()))).build();
+				return ConfiguredModel.builder()
+						.modelFile(bsp.models()
+								.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+								.texture("0", bsp.modLoc("block/" + suffix.toLowerCase()))
+								.texture("particle", bsp.modLoc("block/" + suffix.toLowerCase())))
+						.build();
 			} else
-				return ConfiguredModel.builder().modelFile(bsp.models()
-						.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
-						.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
-						.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase()))).build();
-			
+				return ConfiguredModel.builder()
+						.modelFile(bsp.models()
+								.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+								.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+								.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
+						.build();
+
 //			return ConfiguredModel.builder()
 //					.modelFile(bsp.models()
 //							.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))

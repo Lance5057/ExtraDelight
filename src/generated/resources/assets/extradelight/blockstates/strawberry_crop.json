@@ -1,16 +1,340 @@
 {
-  "variants": {
-    "age=0": {
-      "model": "extradelight:block/strawberry_bush_stage0"
+  "multipart": [
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage0"
+      },
+      "when": {
+        "age": "0",
+        "connect": "none"
+      }
     },
-    "age=1": {
-      "model": "extradelight:block/strawberry_bush_stage1"
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage0"
+      },
+      "when": {
+        "age": "0",
+        "connect": "north"
+      }
     },
-    "age=2": {
-      "model": "extradelight:block/strawberry_bush_stage2"
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage0"
+      },
+      "when": {
+        "age": "0",
+        "connect": "north"
+      }
     },
-    "age=3": {
-      "model": "extradelight:block/strawberry_bush_stage3"
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage0"
+      },
+      "when": {
+        "age": "0",
+        "connect": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage0",
+        "y": 180
+      },
+      "when": {
+        "age": "0",
+        "connect": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage0"
+      },
+      "when": {
+        "age": "0",
+        "connect": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage0",
+        "y": 270
+      },
+      "when": {
+        "age": "0",
+        "connect": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage0"
+      },
+      "when": {
+        "age": "0",
+        "connect": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage0",
+        "y": 90
+      },
+      "when": {
+        "age": "0",
+        "connect": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage1"
+      },
+      "when": {
+        "age": "1",
+        "connect": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage1"
+      },
+      "when": {
+        "age": "1",
+        "connect": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage1"
+      },
+      "when": {
+        "age": "1",
+        "connect": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage1"
+      },
+      "when": {
+        "age": "1",
+        "connect": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage1",
+        "y": 180
+      },
+      "when": {
+        "age": "1",
+        "connect": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage1"
+      },
+      "when": {
+        "age": "1",
+        "connect": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage1",
+        "y": 270
+      },
+      "when": {
+        "age": "1",
+        "connect": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage1"
+      },
+      "when": {
+        "age": "1",
+        "connect": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage1",
+        "y": 90
+      },
+      "when": {
+        "age": "1",
+        "connect": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage2"
+      },
+      "when": {
+        "age": "2",
+        "connect": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage2"
+      },
+      "when": {
+        "age": "2",
+        "connect": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage2"
+      },
+      "when": {
+        "age": "2",
+        "connect": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage2"
+      },
+      "when": {
+        "age": "2",
+        "connect": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage2",
+        "y": 180
+      },
+      "when": {
+        "age": "2",
+        "connect": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage2"
+      },
+      "when": {
+        "age": "2",
+        "connect": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage2",
+        "y": 270
+      },
+      "when": {
+        "age": "2",
+        "connect": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage2"
+      },
+      "when": {
+        "age": "2",
+        "connect": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage2",
+        "y": 90
+      },
+      "when": {
+        "age": "2",
+        "connect": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage3"
+      },
+      "when": {
+        "age": "3",
+        "connect": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage3"
+      },
+      "when": {
+        "age": "3",
+        "connect": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage3"
+      },
+      "when": {
+        "age": "3",
+        "connect": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage3"
+      },
+      "when": {
+        "age": "3",
+        "connect": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage3",
+        "y": 180
+      },
+      "when": {
+        "age": "3",
+        "connect": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage3"
+      },
+      "when": {
+        "age": "3",
+        "connect": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage3",
+        "y": 270
+      },
+      "when": {
+        "age": "3",
+        "connect": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_bush_stage3"
+      },
+      "when": {
+        "age": "3",
+        "connect": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "extradelight:block/crops/strawberry/strawberry_runner_stage3",
+        "y": 90
+      },
+      "when": {
+        "age": "3",
+        "connect": "east"
+      }
     }
-  }
+  ]
 }
