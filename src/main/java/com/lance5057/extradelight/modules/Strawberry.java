@@ -325,7 +325,7 @@ public class Strawberry {
 		ItemModels.forItem(tmp, STRAWBERRY_CLOUD_CAKE_SLICE, "strawberry_cloud_cake");
 		ItemModels.forItem(tmp, STRAWBERRY_PIE_SLICE, "strawberry_pie_slice");
 		ItemModels.forItem(tmp, STRAWBERRY_PIE_ITEM, "strawberry_pie");
-//		ItemModels.forItem(tmp, ROASTED_BEETROOT, "roasted_beetroot");
+		ItemModels.forItem(tmp, ROASTED_BEETROOT, "roasted_beetroot");
 		ItemModels.forItem(tmp, STRAWBERRY_CUSTARD, "strawberry_custard");
 		ItemModels.forItem(tmp, STRAWBERRY_ICE_CREAM, "strawberry_ice_cream");
 		ItemModels.forItem(tmp, STRAWBERRY_POPSICLE, "strawberry_popsicle");
@@ -334,8 +334,8 @@ public class Strawberry {
 		ItemModels.forItem(tmp, STRAWBERRY_MOUSSE, "strawberry_mousse");
 		ItemModels.forItem(tmp, STRAWBERRY_SYRUP_BOTTLE, "strawberry_syrup_bottle");
 		ItemModels.forItem(tmp, STRAWBERRY_PASTA, "pasta_strawberry");
-//		ItemModels.forItem(tmp, STRAWBERRY_BEETROOT_SALAD, "strawberry_beet_salad");
-//		ItemModels.forItem(tmp, STRAWBERRY_FIELDS_SALAD, "strawberry_fields_salad");
+		ItemModels.forItem(tmp, STRAWBERRY_BEETROOT_SALAD, "strawberry_beet_salad");
+		ItemModels.forItem(tmp, STRAWBERRY_FIELDS_SALAD, "strawberry_fields_salad");
 		ItemModels.forItem(tmp, BLOOD_CHOCOLATE_DIPPED_STRAWBERRY, "blood_chocolate_strawberry");
 		ItemModels.forItem(tmp, DARK_CHOCOLATE_DIPPED_STRAWBERRY, "dark_chocolate_strawberry");
 		ItemModels.forItem(tmp, MILK_CHOCOLATE_DIPPED_STRAWBERRY, "milk_chocolate_strawberry");
@@ -550,7 +550,7 @@ public class Strawberry {
 		lp.add(STRAWBERRY.get(), "Strawberry");
 		lp.add(STRAWBERRY_CRATE.get(), "Strawberry Crate");
 		lp.add(SLICED_STRAWBERRY.get(), "Sliced Strawberry");
-		lp.add(STRAWBIGGY.get(), "Strawbiggy");
+		lp.add(STRAWBIGGY.get(), "Big Strawberry");
 		lp.add(STRAWBERRY_JUICE.get(), "Strawberry Juice");
 //		lp.add("farmersdelight.tooltip.strawberry_juice", "Minor Instant Health");
 		lp.add(STRAWBERRY_JUICE_FLUID_BUCKET.get(), "Strawberry Juice Bucket");
