@@ -80,15 +80,14 @@ public class Transform {
 
 		return c;
 	}
-	
-	public String toString()
-	{
-		return String.format("{ %s, %s, %s, %s }", vecToString(position), vecToString(rotation), vecToString(scale), vecToString(origin));
+
+	public String toString() {
+		return String.format("%s %s %s %s", vecToString(position), vecToString(rotation), vecToString(scale),
+				vecToString(origin));
 	}
-	
-	String vecToString(Vector3f v)
-	{
-		return String.format("[ %f, %f, %f ]", v.x, v.y, v.z);
+
+	String vecToString(Vector3f v) {
+		return String.format("%-1.2f,%-1.2f,%-1.2f", v.x, v.y, v.z);
 	}
 
 }

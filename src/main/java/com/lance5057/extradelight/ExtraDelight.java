@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.armor.EDArmorMaterial;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
@@ -64,6 +65,7 @@ public class ExtraDelight {
 		ExtraDelightBlocks.register(modEventBus);
 		ExtraDelightFluids.register(modEventBus);
 		ExtraDelightItems.register(modEventBus);
+		EDArmorMaterial.register(modEventBus);
 
 //		PieceTypes.PIECES.register(modEventBus);
 

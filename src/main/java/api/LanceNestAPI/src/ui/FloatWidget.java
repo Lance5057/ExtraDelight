@@ -133,7 +133,7 @@ public class FloatWidget extends UIWidget<Float> {
 			if (i > this.upperLimit)
 				i = this.upperLimit;
 
-		box.setValue(String.format("%.2f", i));
+		box.setValue(String.format("%-1.2f", i));
 	}
 
 	void sub() {
