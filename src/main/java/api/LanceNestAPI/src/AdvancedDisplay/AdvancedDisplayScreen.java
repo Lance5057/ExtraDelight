@@ -4,7 +4,12 @@ import java.awt.Color;
 
 import org.joml.Vector3f;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+
+import api.LanceNestAPI.src.LanceNestAPI;
 import api.LanceNestAPI.src.network.AdvancedDisplaySetPacket;
+import api.LanceNestAPI.src.ui.HideableSlot;
+import api.LanceNestAPI.src.ui.HideableSlotItemHandler;
 import api.LanceNestAPI.src.ui.IntWidget;
 import api.LanceNestAPI.src.ui.Vector3Widget;
 import api.LanceNestAPI.src.util.ClipboardUtil;
@@ -14,13 +19,18 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.network.PacketDistributor;
 
 public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDisplayMenu> {
+	private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation
+			.fromNamespaceAndPath(LanceNestAPI.MOD_ID, "textures/gui/display.png");
 
 	int i = 0;
 	IntWidget index;
@@ -36,7 +46,9 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 
 	public Button copy_button_all;
 	public Button paste_button_all;
-	public Button delete_button_all;
+
+	private boolean isInventory = true;
+	public Button switchBetween;
 
 	Transform getTransform() {
 		return new Transform(pos.get(), rot.get(), scale.get(), origin.get());
@@ -111,35 +123,43 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 
 		Transform t = menu.tileEntity.getItemTransform(0);
 
-		index.init(this, leftPos + x, topPos, y, font, title, true, Color.DARK_GRAY, "Current", 0);
+		index.init(this, 0, topPos, y, font, title, true, Color.DARK_GRAY, "widget.current", 0);
 
-		origin.init(this, leftPos + x, topPos + 28, font, "Origin", t.getOrigin());
-		rot.init(this, leftPos + x, topPos + 56, font, "Rotation", t.getRotation());
-		pos.init(this, leftPos + x, topPos + 84, font, "Position", t.getPosition());
-		scale.init(this, leftPos + x, topPos + 112, font, "Scale", t.getScale());
+		origin.init(this, 0, topPos + 28, font, "widget.origin", t.getOrigin());
+		rot.init(this, 0, topPos + 56, font, "widget.rotation", t.getRotation());
+		pos.init(this, 0, topPos + 84, font, "widget.position", t.getPosition());
+		scale.init(this, 0, topPos + 112, font, "widget.scale", t.getScale());
 
 		copy_button_current = this.addRenderableWidget(Button
-				.builder(Component.translatable("button.widget.copy"), p -> ClipboardUtil.copyTransform(getTransform()))
-				.pos(leftPos + x, topPos + 127).size(47, 16)
-				.tooltip(Tooltip.create(Component.translatable("tooltip.widget.copy"))).build());
+				.builder(Component.translatable("button.widget.transform.copy"),
+						p -> ClipboardUtil.copyTransform(getTransform()))
+				.pos(0, topPos + 127).size(47, 16)
+				.tooltip(Tooltip.create(Component.translatable("tooltip.widget.transform.copy"))).build());
 		paste_button_current = this.addRenderableWidget(Button
-				.builder(Component.translatable("button.widget.paste"),
+				.builder(Component.translatable("button.widget.transform.paste"),
 						p -> setTransform(ClipboardUtil.pasteTransform()))
-				.pos(leftPos + x + 47, topPos + 127).size(47, 16)
-				.tooltip(Tooltip.create(Component.translatable("tooltip.widget.paste"))).build());
-		delete_button_current = this.addRenderableWidget(
-				Button.builder(Component.translatable("button.widget.delete"), p -> setTransform(new Transform()))
-						.pos(leftPos + x + 94, topPos + 127).size(47, 16)
-						.tooltip(Tooltip.create(Component.translatable("tooltip.widget.delete"))).build());
+				.pos(0 + 47, topPos + 127).size(47, 16)
+				.tooltip(Tooltip.create(Component.translatable("tooltip.widget.transform.paste"))).build());
+		delete_button_current = this.addRenderableWidget(Button
+				.builder(Component.translatable("button.widget.transform.delete"), p -> setTransform(new Transform()))
+				.pos(0 + 94, topPos + 127).size(47, 16)
+				.tooltip(Tooltip.create(Component.translatable("tooltip.widget.transform.delete"))).build());
 
-		copy_button_all = this
-				.addRenderableWidget(Button.builder(Component.translatable("button.widget.copy.all"), p -> copyAll())
-						.pos(leftPos + x, topPos + 143).size(70, 16)
-						.tooltip(Tooltip.create(Component.translatable("tooltip.widget.copy.all"))).build());
-		paste_button_all = this
-				.addRenderableWidget(Button.builder(Component.translatable("button.widget.paste.all"), p -> pasteAll())
-						.pos(leftPos + x + 71, topPos + 143).size(70, 16)
-						.tooltip(Tooltip.create(Component.translatable("tooltip.widget.paste.all"))).build());
+		copy_button_all = this.addRenderableWidget(
+				Button.builder(Component.translatable("button.widget.transform.copy.all"), p -> copyAll())
+						.pos(0, topPos + 143).size(70, 16)
+						.tooltip(Tooltip.create(Component.translatable("tooltip.widget.transform.copy.all"))).build());
+		paste_button_all = this.addRenderableWidget(
+				Button.builder(Component.translatable("button.widget.transform.paste.all"), p -> pasteAll())
+						.pos(0 + 71, topPos + 143).size(70, 16)
+						.tooltip(Tooltip.create(Component.translatable("tooltip.widget.transform.paste.all"))).build());
+
+		switchBetween = this.addRenderableWidget(Button
+				.builder(Component.translatable("button.widget.advanced_display.switch"), p -> hide(!isInventory))
+				.pos(0, topPos + 159).size(141, 16)
+				.tooltip(Tooltip.create(Component.translatable("tooltip.widget.advanced_display.switch"))).build());
+
+		this.hide(true);
 	}
 
 	private void copyAll() {
@@ -158,25 +178,66 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 	}
 
 	private void pasteAll() {
+		Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.VILLAGER_NO, 1, 1));
+	}
 
+	public void hide(boolean h) {
+		index.hide(h);
+
+		pos.hide(h);
+		rot.hide(h);
+		scale.hide(h);
+		origin.hide(h);
+
+		copy_button_current.visible = !h;
+		paste_button_current.visible = !h;
+		delete_button_current.visible = !h;
+
+		copy_button_all.visible = !h;
+		paste_button_all.visible = !h;
+
+		isInventory = h;
+
+		this.menu.slots.forEach(s -> {
+			if (s instanceof HideableSlot slot) {
+				slot.setActive(h);
+			} else if (s instanceof HideableSlotItemHandler slot) {
+				slot.setActive(h);
+			}
+		});
+	}
+
+	@Override
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+//		guiGraphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, 4210752, false);
+//		guiGraphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY,
+//				4210752, false);
 	}
 
 	@Override
 	protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
-		index.render(guiGraphics, partialTick, mouseY, mouseY);
-		pos.render(guiGraphics, partialTick, mouseX, mouseY, font);
-		rot.render(guiGraphics, partialTick, mouseX, mouseY, font);
-		scale.render(guiGraphics, partialTick, mouseX, mouseY, font);
-		origin.render(guiGraphics, partialTick, mouseX, mouseY, font);
+		if (!isInventory) {
+			index.render(guiGraphics, partialTick, mouseY, mouseY);
+			pos.render(guiGraphics, partialTick, mouseX, mouseY, font);
+			rot.render(guiGraphics, partialTick, mouseX, mouseY, font);
+			scale.render(guiGraphics, partialTick, mouseX, mouseY, font);
+			origin.render(guiGraphics, partialTick, mouseX, mouseY, font);
+		} else {
+			RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
+			guiGraphics.blit(BACKGROUND_TEXTURE, this.leftPos, this.topPos + 60, 0, 0, 175, 90);
+			guiGraphics.blit(BACKGROUND_TEXTURE, this.leftPos + 44, this.topPos + 18, 0, 90, 86, 46);
+		}
 	}
 
 	@Override
 	public void renderBackground(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-//	        this.renderTransparentBackground(guiGraphics);
-		this.renderBg(guiGraphics, partialTick, mouseX, mouseY);
+		if (!isInventory) {
+			guiGraphics.drawString(font, this.menu.slots.get(index.get()).getItem().getDisplayName(), 30,
+					this.topPos + 3, Color.white.getRGB());
+		} else
+			this.renderTransparentBackground(guiGraphics);
 
-		guiGraphics.drawString(font, this.menu.slots.get(index.get()).getItem().getDisplayName(), this.leftPos - 110,
-				this.topPos + 3, Color.white.getRGB());
+		this.renderBg(guiGraphics, partialTick, mouseX, mouseY);
 	}
 
 	public void setPos(int j, BlockPos pos2) {

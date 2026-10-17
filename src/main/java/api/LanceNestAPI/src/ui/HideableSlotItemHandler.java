@@ -1,18 +1,18 @@
-package com.lance5057.extradelight.gui;
+package api.LanceNestAPI.src.ui;
 
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
-public class HideableSlot extends SlotItemHandler {
+public class HideableSlotItemHandler extends SlotItemHandler {
 
 	private boolean active = true;
 
-	public HideableSlot(IItemHandler itemHandler, int index, int xPosition, int yPosition, boolean startShown) {
+	public HideableSlotItemHandler(IItemHandler itemHandler, int index, int xPosition, int yPosition, boolean startShown) {
 		super(itemHandler, index, xPosition, yPosition);
 		active = startShown;
 	}
 
-	public HideableSlot setActive(boolean active) {
+	public HideableSlotItemHandler setActive(boolean active) {
 		this.active = active;
 		return this;
 	}

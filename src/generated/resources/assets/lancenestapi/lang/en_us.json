@@ -1,0 +1,22 @@
+{
+  "button.widget.advanced_display.switch": "Switch Screens",
+  "button.widget.transform.copy": "Copy",
+  "button.widget.transform.copy.all": "Copy All",
+  "button.widget.transform.delete": "Reset",
+  "button.widget.transform.paste": "Paste",
+  "button.widget.transform.paste.all": "Paste All",
+  "tooltip.widget.advanced_display.switch": "Switch between Editor and Inventory",
+  "tooltip.widget.transform.copy": "Copy to Clipboard",
+  "tooltip.widget.transform.copy.all": "Copy All Transforms to Clipboard",
+  "tooltip.widget.transform.delete": "Reset to Default",
+  "tooltip.widget.transform.paste": "Paste from Clipboard",
+  "tooltip.widget.transform.paste.all": "Paste All Transforms from Clipboard",
+  "tooltip.widget.vector.copy": "Copy Vector to Clipboard",
+  "tooltip.widget.vector.delete": "Reset Vector to Default",
+  "tooltip.widget.vector.paste": "Paste Vector from Clipboard",
+  "widget.current": "Current",
+  "widget.origin": "Pivot Point",
+  "widget.position": "Position",
+  "widget.rotation": "Rotation",
+  "widget.scale": "Scale"
+}

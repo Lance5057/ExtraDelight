@@ -5,6 +5,7 @@ import org.joml.Vector3f;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import api.LanceNestAPI.src.util.rendering.animation.Transform;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -74,10 +75,10 @@ public class AdvancedDisplayBlockRenderer implements BlockEntityRenderer<Advance
 			poseStack.pushPose();
 			poseStack.translate(0.5f, 0, 0.5f);
 			poseStack.mulPose(new Quaternionf().rotateXYZ(0, (float) Math.toRadians(90), 0));
-			poseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(90), 0, 0));
-			BakedModel bakedmodel = itemRenderer.getModel(Items.BARRIER.getDefaultInstance(), blockEntity.getLevel(),
+			poseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(90), 0, 0)); 
+			BakedModel bakedmodel = itemRenderer.getModel(LanceNestAPI.ADVANCED_DISPLAY_ITEM.get().getDefaultInstance(), blockEntity.getLevel(),
 					null, 0);
-			itemRenderer.render(Items.BARRIER.getDefaultInstance(), ItemDisplayContext.FIXED, false, poseStack,
+			itemRenderer.render(LanceNestAPI.ADVANCED_DISPLAY_ITEM.get().getDefaultInstance(), ItemDisplayContext.FIXED, false, poseStack,
 					bufferSource, packedLight, packedOverlay, bakedmodel);
 			poseStack.popPose();
 		}

@@ -3,10 +3,11 @@ package api.LanceNestAPI.src.AdvancedDisplay;
 import java.util.Objects;
 
 import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.gui.HideableSlot;
 
 import api.LanceNestAPI.src.LanceNestAPI;
 import api.LanceNestAPI.src.network.AdvancedDisplaySyncPacket;
+import api.LanceNestAPI.src.ui.HideableSlot;
+import api.LanceNestAPI.src.ui.HideableSlotItemHandler;
 import api.LanceNestAPI.src.util.rendering.animation.Transform;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -17,7 +18,6 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
 public class AdvancedDisplayMenu extends AbstractContainerMenu {
@@ -41,12 +41,12 @@ public class AdvancedDisplayMenu extends AbstractContainerMenu {
 			// Ingredient Slots - 2 Rows x 3 Columns
 			int startX = 8;
 			int startY = 8;
-			int inputStartX = 8;
-			int inputStartY = 8;
+			int inputStartX = 52;
+			int inputStartY = 26;
 			int borderSlotSize = 18;
 			for (int row = 0; row < 2; ++row) {
 				for (int column = 0; column < 4; ++column) {
-					this.addSlot(new HideableSlot(tileEntity.getItems(), (row * 4) + column,
+					this.addSlot(new HideableSlotItemHandler(tileEntity.getItems(), (row * 4) + column,
 							inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize), true));
 				}
 			}
@@ -57,14 +57,14 @@ public class AdvancedDisplayMenu extends AbstractContainerMenu {
 			int startPlayerInvY = startY * 4 + 36;
 			for (int row = 0; row < 3; ++row) {
 				for (int column = 0; column < 9; ++column) {
-					this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, startX + (column * borderSlotSize),
-							startPlayerInvY + (row * borderSlotSize)));
+					this.addSlot(new HideableSlot(playerInventory, 9 + (row * 9) + column, startX + (column * borderSlotSize),
+							startPlayerInvY + (row * borderSlotSize), true));
 				}
 			}
 
 			// Hotbar
 			for (int column = 0; column < 9; ++column) {
-				this.addSlot(new Slot(playerInventory, column, startX + (column * borderSlotSize), 126));
+				this.addSlot(new HideableSlot(playerInventory, column, startX + (column * borderSlotSize), 126, true));
 			}
 		}
 	}

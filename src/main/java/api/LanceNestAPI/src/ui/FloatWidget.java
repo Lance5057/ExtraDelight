@@ -38,6 +38,8 @@ public class FloatWidget extends UIWidget<Float> {
 
 	protected boolean bigButtons;
 
+	public boolean hidden = false;
+
 	public FloatWidget(Consumer<Float> sup) {
 		super(sup);
 	}
@@ -91,6 +93,8 @@ public class FloatWidget extends UIWidget<Float> {
 			right_big_button.visible = !h;
 			left_big_button.visible = !h;
 		}
+		
+		this.hidden = h;
 	}
 
 	public void set(float f) {
@@ -155,10 +159,12 @@ public class FloatWidget extends UIWidget<Float> {
 	}
 
 	protected void render(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
-		if (this.displayBackground) {
-			UIUtil.drawOutlineRect(guiGraphics, this.posX, this.posY, this.width + 12, 14, outlineColor,
-					backgroundColor);
+		if (!hidden) {
+			if (this.displayBackground) {
+				UIUtil.drawOutlineRect(guiGraphics, this.posX, this.posY, this.width + 12, 14, outlineColor,
+						backgroundColor);
 
+			}
 		}
 	}
 }
