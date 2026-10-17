@@ -376,6 +376,11 @@ public class Strawberry {
 		Recipes.bulkBake(ROASTED_BEETROOT.get(), Ingredient.of(Items.BEETROOT), consumer, ExtraDelightItems.SHEET.get(),
 				"beetroot");
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, STRAWBERRY_HAT.get()).pattern("rsr").pattern("r r")
+				.define('s', STRAWBERRY_SEED).define('r', Items.RED_WOOL)
+				.unlockedBy("has_peaks", InventoryChangeTrigger.TriggerInstance.hasItems(STRAWBERRY_SEED.get()))
+				.save(consumer, ExtraDelight.modLoc("strawberry_hat"));
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, PINK_LEMONADE_TRAY_ITEM.get())
 				.requires(PINK_LEMONADE.get(), 4).requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_pink_lemonade", InventoryChangeTrigger.TriggerInstance.hasItems(PINK_LEMONADE.get()))
@@ -570,7 +575,7 @@ public class Strawberry {
 	public static void EngLoc(LanguageProvider lp) {
 		lp.add(STRAWBERRY_CROP.get(), "Strawberries");
 		lp.add(WILD_STRAWBERRY.get(), "Wild Strawberry");
-		lp.add(STRAWBERRY_SEED.get(), "Strawberry Seeds");
+		lp.add(STRAWBERRY_SEED.get(), "Strawberry Runner");
 		lp.add(STRAWBERRY.get(), "Strawberry");
 		lp.add(STRAWBERRY_CRATE.get(), "Strawberry Crate");
 		lp.add(SLICED_STRAWBERRY.get(), "Sliced Strawberry");
@@ -607,5 +612,6 @@ public class Strawberry {
 		lp.add(DARK_CHOCOLATE_DIPPED_STRAWBERRY.get(), "Dark Chocolate-Dipped Strawberry");
 		lp.add(MILK_CHOCOLATE_DIPPED_STRAWBERRY.get(), "Milk Chocolate-Dipped Strawberry");
 		lp.add(WHITE_CHOCOLATE_DIPPED_STRAWBERRY.get(), "White Chocolate-Dipped Strawberry");
+		lp.add(STRAWBERRY_HAT.get(), "Strawberry Hat");
 	}
 }

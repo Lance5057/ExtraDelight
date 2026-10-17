@@ -27,6 +27,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tooltip.see_more", "Shift for more...");
 		this.add("dynamic.toast", "Dynamic Toast");
 		this.add("dynamic.jam", "Dynamic Jam");
+		this.add("dynamic.skewer", "Dynamic Skewer");
 
 		this.add("farmersdelight.tooltip.oven.empty", "");
 		this.add("container.doughshaper", "Dough Shaping");
@@ -1396,6 +1397,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
 		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "Dynamic Jam");
+		this.add(ExtraDelightItems.DYNAMIC_SKEWER.get(), "Sweet Skewer");
 
 		this.add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "Potted Cinnamon Sapling");
 		this.add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "Potted Hazelnut Sapling");
