@@ -24,4 +24,8 @@ public class ExtraDelightPaintings {
 	public static DeferredHolder<PaintingVariant, PaintingVariant> BIG_GRAPEFRUIT_SLICE = PAINTING_VARIANTS.register(
 			"big_grapefruit_slice",
 			() -> new PaintingVariant(1, 1, ExtraDelight.modLoc("textures/painting/big_grapefruit_slice.png")));
+	
+	public static DeferredHolder<PaintingVariant, PaintingVariant> STRAWBERRY = PAINTING_VARIANTS.register(
+			"strawberry",
+			() -> new PaintingVariant(1, 1, ExtraDelight.modLoc("textures/painting/strawberry.png")));
 }

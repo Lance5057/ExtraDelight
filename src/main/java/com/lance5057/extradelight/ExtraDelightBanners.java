@@ -13,11 +13,18 @@ public class ExtraDelightBanners {
 	public static final TagKey<BannerPattern> CITRUS_PATTERN_TAG = TagKey.create(Registries.BANNER_PATTERN,
 			ExtraDelight.modLoc("citrus"));
 
-	public static final DeferredHolder<BannerPattern, BannerPattern> CITRUS_PITH = BANNER_PATTERNS.register("banner_pattern_citrus_pith",
-			() -> new BannerPattern(ExtraDelight.modLoc("banner_pattern_citrus_pith"),
+	public static final TagKey<BannerPattern> STRAWBERRY_PATTERN_TAG = TagKey.create(Registries.BANNER_PATTERN,
+			ExtraDelight.modLoc("strawberry"));
+
+	public static final DeferredHolder<BannerPattern, BannerPattern> CITRUS_PITH = BANNER_PATTERNS.register(
+			"banner_pattern_citrus_pith", () -> new BannerPattern(ExtraDelight.modLoc("banner_pattern_citrus_pith"),
 					"block.minecraft.banner.extradelight.banner_pattern_citrus_pith"));
-	
-	public static final DeferredHolder<BannerPattern, BannerPattern> CITRUS_FRUIT = BANNER_PATTERNS.register("banner_pattern_citrus_fruit",
-			() -> new BannerPattern(ExtraDelight.modLoc("banner_pattern_citrus_fruit"),
+
+	public static final DeferredHolder<BannerPattern, BannerPattern> CITRUS_FRUIT = BANNER_PATTERNS.register(
+			"banner_pattern_citrus_fruit", () -> new BannerPattern(ExtraDelight.modLoc("banner_pattern_citrus_fruit"),
 					"block.minecraft.banner.extradelight.banner_pattern_citrus_fruit"));
+
+	public static final DeferredHolder<BannerPattern, BannerPattern> STRAWBERRY = BANNER_PATTERNS.register(
+			"banner_pattern_strawberry", () -> new BannerPattern(ExtraDelight.modLoc("banner_pattern_strawberry"),
+					"block.minecraft.banner.extradelight.banner_pattern_strawberry"));
 }

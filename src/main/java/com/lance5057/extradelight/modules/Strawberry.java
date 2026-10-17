@@ -7,6 +7,7 @@ import static vectorwing.farmersdelight.common.registry.ModItems.bowlFoodItem;
 import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBanners;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -41,6 +42,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.BannerPatternItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -251,6 +253,10 @@ public class Strawberry {
 	public static final DeferredItem<Item> STRAWBERRY_HAT = ExtraDelightItems.ITEMS.register("strawberry_hat",
 			() -> new ArmorItem(EDArmorMaterial.STRAWBERRY, ArmorItem.Type.HELMET,
 					new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(5))));
+
+	public static final DeferredItem<Item> STRAWBERRY_PATTERN_ITEM = ExtraDelightItems.ITEMS.register(
+			"strawberry_banner_item",
+			() -> new BannerPatternItem(ExtraDelightBanners.STRAWBERRY_PATTERN_TAG, stack1Item()));
 
 	public static void blockModels(BlockStateProvider bsp) {
 //		BlockModels.cropCrossBlock(bsp, STRAWBERRY_CROP.get(), "strawberry", StrawberryCrop.AGE);
