@@ -361,6 +361,7 @@ public class Strawberry {
 		ItemModels.forItem(tmp, WHITE_CHOCOLATE_DIPPED_STRAWBERRY, "white_chocolate_strawberry");
 
 		ItemModels.forItem(tmp, STRAWBERRY_HAT, "strawberry_hat");
+//		ItemModels.forItem(tmp, STRAWBERRY_PATTERN_ITEM, "banner_pattern_strawberry");
 	}
 
 	public static void Recipes(RecipeOutput consumer) {
@@ -613,5 +614,8 @@ public class Strawberry {
 		lp.add(MILK_CHOCOLATE_DIPPED_STRAWBERRY.get(), "Milk Chocolate-Dipped Strawberry");
 		lp.add(WHITE_CHOCOLATE_DIPPED_STRAWBERRY.get(), "White Chocolate-Dipped Strawberry");
 		lp.add(STRAWBERRY_HAT.get(), "Strawberry Hat");
+		lp.add(STRAWBERRY_PATTERN_ITEM.get(), "Banner Pattern");
+		lp.add("painting.extradelight.strawberry.title", "Strawberry");
+		lp.add("painting.extradelight.strawberry.author", "Lance5057");
 	}
 }
