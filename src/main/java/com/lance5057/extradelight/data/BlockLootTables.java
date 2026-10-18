@@ -671,8 +671,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.APPLE_PETAL_LITTER.get());
 		this.dropSelf(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get());
 
-		this.dropOther(Strawberry.WILD_STRAWBERRY.get(), Strawberry.STRAWBERRY.get());
-		this.createFruitBushDrop(Strawberry.STRAWBERRY_CROP.get(), Strawberry.STRAWBERRY.get());
+		this.dropOther(Strawberry.WILD_STRAWBERRY.get(), Strawberry.STRAWBERRY_SEED.get());
+		this.createFruitBushDrop(Strawberry.STRAWBERRY_CROP.get(), Strawberry.STRAWBERRY.get(), Strawberry.STRAWBERRY_SEED.get());
 		this.dropSelf(Strawberry.STRAWBERRY_CRATE.get());
 		this.dropSelf(Strawberry.STRAWBIGGY.get());
 		feast(Strawberry.PINK_LEMONADE_TRAY.get(), Strawberry.PINK_LEMONADE_TRAY_ITEM.get(), Items.GLASS_BOTTLE);
@@ -699,6 +699,20 @@ public class BlockLootTables extends BlockLootSubProvider {
 												.hasProperty(BushStageFour.AGE, 2)))
 								.add(LootItem.lootTableItem(fruit))
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+								.apply(ApplyBonusCount
+										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
+	}
+
+	protected void createFruitBushDrop(Block bush, Item fruit, Item seed) {
+		this.add(bush,
+				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable()
+						.withPool(LootPool.lootPool()
+								.add(LootItem.lootTableItem(seed)))
+						.withPool(LootPool.lootPool()
+								.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(bush).setProperties(
+										StatePropertiesPredicate.Builder.properties().hasProperty(BushStageFour.AGE, 3)))
+								.add(LootItem.lootTableItem(fruit))
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
 								.apply(ApplyBonusCount
 										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
 	}

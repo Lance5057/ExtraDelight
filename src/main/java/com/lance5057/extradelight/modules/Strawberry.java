@@ -615,6 +615,22 @@ public class Strawberry {
 		lp.add(WHITE_CHOCOLATE_DIPPED_STRAWBERRY.get(), "White Chocolate-Dipped Strawberry");
 		lp.add(STRAWBERRY_HAT.get(), "Strawberry Hat");
 		lp.add(STRAWBERRY_PATTERN_ITEM.get(), "Banner Pattern");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.black", "Black Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.blue", "Blue Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.brown", "Brown Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.cyan", "Cyan Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.gray", "Gray Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.green", "Green Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.light_blue", "Light Blue Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.light_gray", "Light Gray Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.lime", "Lime Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.magenta", "Magenta Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.orange", "Orange Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.pink", "Pink Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.purple", "Purple Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.red", "Red Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.white", "White Strawberry");
+		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.yellow", "Yellow Strawberry");
 		lp.add("painting.extradelight.strawberry.title", "Strawberry");
 		lp.add("painting.extradelight.strawberry.author", "Lance5057");
 	}
