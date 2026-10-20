@@ -14,6 +14,7 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.armor.EDArmorMaterial;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.SimpleDirectionalBlock;
 import com.lance5057.extradelight.blocks.crops.strawberry.StrawberryCrop;
 import com.lance5057.extradelight.blocks.fluids.VinegarFluidBlock;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
@@ -52,6 +53,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
@@ -107,7 +109,7 @@ public class Strawberry {
 			.advancementIngredients().finish();
 
 	public static final DeferredBlock<Block> STRAWBIGGY = ExtraDelightBlocks.BLOCKS.register("strawbiggy",
-			() -> new Block(Block.Properties.ofFullCopy(Blocks.MOSS_BLOCK).mapColor(MapColor.COLOR_RED)));
+			() -> new SimpleDirectionalBlock(Block.Properties.ofFullCopy(Blocks.MOSS_BLOCK).mapColor(MapColor.COLOR_RED).sound(SoundType.HONEY_BLOCK)));
 	public static final DeferredItem<Item> STRAWBIGGY_ITEM = ExtraDelightItems.ITEMS.register("strawbiggy_item",
 			() -> new BlockItem(STRAWBIGGY.get(), new Item.Properties()));
 
@@ -264,7 +266,9 @@ public class Strawberry {
 //				.cross("wild_strawberry", bsp.modLoc("block/crops/strawberry/wild_strawberry")).renderType("cutout")));
 //		BlockModels.bushStageFourBlock(bsp, STRAWBERRY_CROP.get(), "strawberry");
 		BlockModels.crateBlock(bsp, STRAWBERRY_CRATE.get(), "strawberry", "bamboo");
-		bsp.simpleBlock(STRAWBIGGY.get(), bsp.models().getExistingFile(bsp.modLoc("block/big_strawberry")));
+		
+		bsp.directionalBlock(STRAWBIGGY.get(), bsp.models().getExistingFile(bsp.modLoc("block/big_strawberry")));
+//		bsp.simpleBlock(STRAWBIGGY.get(), bsp.models().getExistingFile(bsp.modLoc("block/big_strawberry")));
 		BlockModels.fluid(bsp, STRAWBERRY_JUICE_FLUID_BLOCK.get());
 
 		bsp.getVariantBuilder(PINK_LEMONADE_TRAY.get()).forAllStates(state -> {

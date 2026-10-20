@@ -1,7 +1,30 @@
 {
   "variants": {
-    "": {
+    "facing=down": {
+      "model": "extradelight:block/big_strawberry",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "extradelight:block/big_strawberry",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "extradelight:block/big_strawberry",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "extradelight:block/big_strawberry",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
       "model": "extradelight:block/big_strawberry"
+    },
+    "facing=west": {
+      "model": "extradelight:block/big_strawberry",
+      "x": 90,
+      "y": 270
     }
   }
 }
