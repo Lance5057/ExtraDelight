@@ -92,7 +92,7 @@ public class Vector3Widget extends UIWidget<Vector3f> {
 				.tooltip(Tooltip.create(Component.translatable("tooltip.widget.vector.delete"))).build());
 	}
 
-	protected Vector3f defaultVector() {
+	public Vector3f defaultVector() {
 		return new Vector3f(0, 0, 0);
 	}
 

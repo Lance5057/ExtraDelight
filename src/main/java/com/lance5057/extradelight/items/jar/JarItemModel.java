@@ -55,18 +55,18 @@ public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 		if (stack.is(ExtraDelightItems.JAR.get())) {
 			ps.pushPose();
 
-			if (displayContext == ItemDisplayContext.GUI) {
-
-				ps.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(30), (float) Math.toRadians(225), 0));
-				ps.translate(-0.05f, 1.0f, -1.9f);
-				ps.scale(1.25f, 1.25f, 1.25f);
-			} else if (displayContext == ItemDisplayContext.FIRST_PERSON_LEFT_HAND
-					|| displayContext == ItemDisplayContext.FIRST_PERSON_RIGHT_HAND) {
-				ps.translate(0, 0.35, -0.17f);
-			} else {
-				ps.translate(0, 0.25f, 0f);
-
-			}
+//			if (displayContext == ItemDisplayContext.GUI) {
+//
+////				ps.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(30), (float) Math.toRadians(225), 0));
+////				ps.translate(-0.05f, -0.5f, -1.9f);
+////				ps.scale(1.25f, 1.25f, 1.25f);
+//			} else if (displayContext == ItemDisplayContext.FIRST_PERSON_LEFT_HAND
+//					|| displayContext == ItemDisplayContext.FIRST_PERSON_RIGHT_HAND) {
+//				ps.translate(0, 0.35, -0.17f);
+//			} else {
+//				ps.translate(0, 0.25f, 0f);
+//
+//			}
 
 			bm.render(ps, mbs, texture -> RenderType.entityCutout(texture), packedLight, overlay, 0, ModelData.EMPTY);
 

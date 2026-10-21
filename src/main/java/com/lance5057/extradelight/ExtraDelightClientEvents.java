@@ -256,7 +256,7 @@ public class ExtraDelightClientEvents {
 			public BlockEntityWithoutLevelRenderer getCustomRenderer() {
 				return JarItemModel.getInstance();
 			}
-		}, ExtraDelightItems.JAR.asItem());
+		}, ExtraDelightItems.JAR);
 
 		event.registerItem(new IClientItemExtensions() {
 			@Override

@@ -100,7 +100,7 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 					new AdvancedDisplaySetPacket(this.menu.containerId, this.index.get(), getTransform()));
 		}) {
 			@Override
-			protected Vector3f defaultVector() {
+			public Vector3f defaultVector() {
 				return new Vector3f(1, 1, 1);
 			}
 		};
@@ -109,7 +109,12 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 			menu.tileEntity.getItemTransform(i).setOrigin(v);
 			PacketDistributor.sendToServer(
 					new AdvancedDisplaySetPacket(this.menu.containerId, this.index.get(), getTransform()));
-		});
+		}) {
+			@Override
+			public Vector3f defaultVector() {
+				return new Vector3f(0.5f, 0.5f, 0.5f);
+			}
+		};
 		origin.addBackground(Color.DARK_GRAY, Color.GRAY);
 
 	}
@@ -141,7 +146,9 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 				.pos(0 + 47, topPos + 127).size(47, 16)
 				.tooltip(Tooltip.create(Component.translatable("tooltip.widget.transform.paste"))).build());
 		delete_button_current = this.addRenderableWidget(Button
-				.builder(Component.translatable("button.widget.transform.delete"), p -> setTransform(new Transform()))
+				.builder(Component.translatable("button.widget.transform.delete"),
+						p -> setTransform(new Transform(pos.defaultVector(), rot.defaultVector(), scale.defaultVector(),
+								origin.defaultVector())))
 				.pos(0 + 94, topPos + 127).size(47, 16)
 				.tooltip(Tooltip.create(Component.translatable("tooltip.widget.transform.delete"))).build());
 
@@ -165,12 +172,12 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 	private void copyAll() {
 		String s = "";
 
-		for (int i = 0; i < AdvancedDisplayBlockEntity.NUM_SLOTS; i++) {
+		for (int i = 0; i < AdvancedDisplayBlockEntity.NUM_SLOTS + 1; i++) {
 
 			Transform t = this.menu.tileEntity.getItemTransform(i);
 
-			if (i < AdvancedDisplayBlockEntity.NUM_SLOTS - 1)
-				s += t.toString() + ".";
+			if (i < AdvancedDisplayBlockEntity.NUM_SLOTS)
+				s += t.toString() + "-";
 
 		}
 
@@ -178,7 +185,17 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 	}
 
 	private void pasteAll() {
-		Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.VILLAGER_NO, 1, 1));
+		String s = Minecraft.getInstance().keyboardHandler.getClipboard();
+		String[] t = s.split("-");
+
+		if (t.length >= 8)
+			for (int i = 0; i < AdvancedDisplayBlockEntity.NUM_SLOTS; i++) {
+				Transform tr = ClipboardUtil.pasteTransform(t[i]);
+
+				this.menu.tileEntity.setItemTransform(i, tr);
+			}
+		else
+			Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.VILLAGER_NO, 1, 1));
 	}
 
 	public void hide(boolean h) {

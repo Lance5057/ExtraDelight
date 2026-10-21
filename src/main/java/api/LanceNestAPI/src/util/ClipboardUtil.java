@@ -56,10 +56,14 @@ public class ClipboardUtil {
 	public static Transform pasteTransform() {
 		String s = Minecraft.getInstance().keyboardHandler.getClipboard();
 
+		return pasteTransform(s);
+	}
+
+	public static Transform pasteTransform(String s) {
 		String[] f = s.split(" ");
 
 		if (f.length < 4) {
-			ExtraDelight.logger.error("Failed to paste Vector3f");
+			ExtraDelight.logger.error("Failed to paste Transform");
 			Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.VILLAGER_NO, 1, 1));
 			return new Transform();
 		}

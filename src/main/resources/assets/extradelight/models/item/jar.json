@@ -1,6 +1,7 @@
 {
+	"format_version": "26.3",
+	"credit": "Made with Blockbench",
 	"parent": "builtin/entity",
-	"parent": "block/block",
 	"render_type": "cutout",
 	"textures": {
 		"1": "extradelight:block/glass_jar"
@@ -33,10 +34,40 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 2, -3]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 2, -3]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 6.75, -3]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, 6.75, -3]
+		},
+		"ground": {
+			"translation": [0, 4, 0]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"translation": [0, 4.25, 0],
+			"scale": [1.25, 1.25, 1.25]
+		},
+		"head": {
+			"translation": [0, 12.25, 0],
+			"scale": [2.5, 2.5, 2.5]
+		},
+		"fixed": {
+			"translation": [0, 4, 0]
+		}
+	},
 	"groups": [
 		{
 			"name": "group",
 			"origin": [0, 0, 0],
+			"scope": 0,
 			"color": 0,
 			"children": [0, 1]
 		}
