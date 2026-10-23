@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/thin_block",
-	"render_type": "cutout",
+	"render_type": "translucent",
 	"textures": {
 		"1": "extradelight:block/flour_dust",
 		"2": "block/oak_planks",

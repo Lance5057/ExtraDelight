@@ -17,6 +17,9 @@ public class ExtraDelightConfig {
 	
 	public static final String CATEGORY_SPOOKY = "spooky";
 	public static ModConfigSpec.BooleanValue ALL_YEAR;
+	
+	public static final String CATEGORY_BALANCE = "balance";
+	public static ModConfigSpec.BooleanValue INFINITE_SINK;
 
 	static {
 		ModConfigSpec.Builder Builder = new ModConfigSpec.Builder();
@@ -40,6 +43,10 @@ public class ExtraDelightConfig {
 		
 		Builder.comment("Spooky Things").push(CATEGORY_SPOOKY);
 		ALL_YEAR = Builder.comment("All Year Spooky").define("allYearSpooky", false);
+		Builder.pop();
+		
+		Builder.comment("Balance").push(CATEGORY_BALANCE);
+		INFINITE_SINK = Builder.comment("Should the sink/tap give infinite water?").define("infiniteSink", true);
 		Builder.pop();
 
 		spec = Builder.build();

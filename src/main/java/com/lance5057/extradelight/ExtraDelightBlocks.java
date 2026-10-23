@@ -50,13 +50,14 @@ import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrower
 
 import api.LanceNestAPI.src.LanceNestAPI;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -76,9 +77,7 @@ import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
-import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
@@ -92,9 +91,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
-import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
@@ -113,9 +110,9 @@ public class ExtraDelightBlocks {
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ExtraDelight.MOD_ID);
 
 	public static void register(IEventBus modEventBus) {
-		if(!ModList.get().isLoaded("compendium"))
+		if (!ModList.get().isLoaded("compendium"))
 			LanceNestAPI.BLOCKS.register(modEventBus);
-		
+
 		BLOCKS.register(modEventBus);
 
 	}
@@ -196,7 +193,15 @@ public class ExtraDelightBlocks {
 			() -> new FruitBowlBlock(Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
-			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
+			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()) {
+		@Override
+		public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+			if (Math.abs(entity.getDeltaMovement().x) > 0 || Math.abs(entity.getDeltaMovement().z) > 0)
+//				for (int i = 0; i < 2; i++)
+				level.addParticle(ParticleTypes.DUST_PLUME, entity.position().x + level.random.nextFloat() - 0.5f,
+						entity.position().y, entity.position().z + level.random.nextFloat() - 0.5f, 0, 0, 0);
+		}
+	});
 //	public static final DeferredBlock<Block> COOKING_OIL = BLOCKS.register("cooking_oil",
 //			() -> new CarpetBlock(Properties.ofFullCopy(Blocks.YELLOW_CARPET).strength(0.1F, 0.0F)
 //					.sound(SoundType.SLIME_BLOCK).noOcclusion().friction(0.98f)));

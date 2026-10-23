@@ -10,6 +10,7 @@ import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
 import com.lance5057.extradelight.recipe.dynamics.DynamicJamRecipe;
 import com.lance5057.extradelight.recipe.dynamics.DynamicSkewerRecipe;
 import com.lance5057.extradelight.recipe.dynamics.DynamicToastRecipe;
+import com.lance5057.extradelight.recipe.dynamics.TanghuluRecipe;
 import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRecipe;
@@ -57,6 +58,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("dynamic_jam"));
 	public static final Supplier<RecipeType<DynamicJamRecipe>> DYNAMIC_SKEWER = RECIPE_TYPES.register("dynamic_skewer",
 			() -> registerRecipeType("dynamic_skewer"));
+	public static final Supplier<RecipeType<TanghuluRecipe>> TANGHULU = RECIPE_TYPES.register("tanghulu",
+			() -> registerRecipeType("tanghulu"));
 //	public static final Supplier<RecipeType<DynamicSandwichRecipe>> DYNAMIC_SANDWICH = RECIPE_TYPES
 //			.register("dynamic_sandwich", () -> registerRecipeType("dynamic_sandwich"));
 	public static final Supplier<RecipeType<DynamicToastRecipe>> DYNAMIC_TOAST = RECIPE_TYPES.register("dynamic_toast",
@@ -135,6 +138,8 @@ public class ExtraDelightRecipes {
 			.register("bottle_fluid", BottleFluidRegistryRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> JUICER_SERIALIZER = RECIPE_SERIALIZERS.register("juicer",
 			JuicerRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> TANGHULU_SERIALIZER = RECIPE_SERIALIZERS.register("tanghulu",
+			TanghuluRecipe.Serializer::new);
 
 	public static final Supplier<SimpleCraftingRecipeSerializer<?>> DOUGH = RECIPE_SERIALIZERS.register("flour_dough",
 			() -> new SimpleCraftingRecipeSerializer<>(FlourDoughRecipe::new));

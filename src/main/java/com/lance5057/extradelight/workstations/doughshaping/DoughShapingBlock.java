@@ -4,11 +4,13 @@ import javax.annotation.Nullable;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
@@ -27,6 +29,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -69,6 +72,14 @@ public class DoughShapingBlock extends Block {
 
 	public boolean useShapeForLightOcclusion(BlockState pState) {
 		return true;
+	}
+
+	@Override
+	public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+		if (Math.abs(entity.getDeltaMovement().x) > 0 || Math.abs(entity.getDeltaMovement().z)	 > 0)
+//			for (int i = 0; i < 2; i++)
+				level.addParticle(ParticleTypes.DUST_PLUME, entity.position().x + level.random.nextFloat() - 0.5f,
+						entity.position().y, entity.position().z + level.random.nextFloat() - 0.5f, 0, 0, 0);
 	}
 
 	/**

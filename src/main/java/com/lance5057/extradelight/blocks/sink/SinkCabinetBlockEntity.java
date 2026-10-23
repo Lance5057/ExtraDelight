@@ -3,6 +3,7 @@ package com.lance5057.extradelight.blocks.sink;
 import javax.annotation.Nonnull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightConfig;
 import com.lance5057.extradelight.capabilities.WellFluidCapability;
 
 import net.minecraft.core.BlockPos;
@@ -20,12 +21,13 @@ import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.fluids.FluidActionResult;
 import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class SinkCabinetBlockEntity extends BlockEntity {
 
-	WellFluidCapability water = new WellFluidCapability(Fluids.WATER);
+	IFluidHandler water;
 	private final Lazy<IFluidHandler> fluidHandler = Lazy.of(() -> water);
 
 	public static final String TAG = "inv";
@@ -36,6 +38,13 @@ public class SinkCabinetBlockEntity extends BlockEntity {
 
 	public SinkCabinetBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ExtraDelightBlockEntities.SINK_BLOCK.get(), pPos, pState);
+
+		if (ExtraDelightConfig.INFINITE_SINK.isFalse()) {
+			FluidTank f = new FluidTank(16000);
+			f.setValidator(s -> s.getFluidType() == Fluids.WATER.getFluidType());
+			water = f;
+		} else
+			water = new WellFluidCapability(Fluids.WATER);
 	}
 
 	public IFluidHandler getFluidHandler() {
@@ -96,12 +105,17 @@ public class SinkCabinetBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt, HolderLookup.Provider registries) {
+		if (water instanceof FluidTank f)
+			f.readFromNBT(registries, nbt);
+
 		if (nbt.contains(TAG)) {
 			items.deserializeNBT(registries, nbt.getCompound(TAG));
 		}
 	}
 
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
+		if (water instanceof FluidTank f)
+			f.writeToNBT(registries, tag);
 		tag.put(TAG, items.serializeNBT(registries));
 		return tag;
 	}
