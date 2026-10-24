@@ -87,7 +87,7 @@ public class EDFoods {
 	public static final FoodProperties KETCHUP = new FoodProperties.Builder().nutrition(0).saturationModifier(0.3f).usingConvertsTo(Items.GLASS_BOTTLE).build();
 	public static final FoodProperties GRAVY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.7f).effect(REGENERATION_BRIEF, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();
 	public static final FoodProperties JAM = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).usingConvertsTo(Items.GLASS_BOTTLE).build();
-	public static final FoodProperties SCRAMBLED_EGGS = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4f).build();
+	public static final FoodProperties SCRAMBLED_EGGS = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4f).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties OMELETTE = new FoodProperties.Builder().nutrition(12).saturationModifier(0.8f).build();
 	public static final FoodProperties QUICHE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.8f).build();
 	public static final FoodProperties EGG_BASKET = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).build();
@@ -236,7 +236,7 @@ public class EDFoods {
 	public static final FoodProperties BLONDIE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
 	public static final FoodProperties FUDGE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).effect(COMFORT_BRIEF, 1F).build();
 	public static final FoodProperties STICKY_TOFFEE_PUDDING = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
-	public static final FoodProperties CEREAL = new FoodProperties.Builder().nutrition(8).saturationModifier(0.4f).effect(REGENERATION_BRIEF, 1F).effect(ABSORPTION_SHORT, 1F).build();
+	public static final FoodProperties CEREAL = new FoodProperties.Builder().nutrition(8).saturationModifier(0.4f).effect(REGENERATION_BRIEF, 1F).effect(ABSORPTION_SHORT, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties PUFFED_RICE_TREAT = new FoodProperties.Builder().nutrition(2).saturationModifier(0.4f).effect(COMFORT_BRIEF, 1F).build();
 	public static final FoodProperties SCOTCHAROO = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
 	public static final FoodProperties BLACK_FOREST_TRIFLE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1f).effect(COMFORT_MEDIUM, 1F).build();

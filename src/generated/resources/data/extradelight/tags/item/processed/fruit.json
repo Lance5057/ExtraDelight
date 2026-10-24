@@ -1,8 +1,7 @@
 {
   "values": [
     "#extradelight:processed/apple",
-    "minecraft:sweet_berries",
-    "minecraft:glow_berries",
+    "#c:foods/berry",
     "#extradelight:processed/melon",
     "#extradelight:processed/citrus",
     "#extradelight:processed/strawberry"

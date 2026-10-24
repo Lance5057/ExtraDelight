@@ -113,6 +113,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.egg", "Right click an egg on a Mixing Bowl.");
 		this.add("extradelight.jei.info.strawberry", "Found in forest biomes.");
 
+		this.add("extradelight.jei.info.curry_powder", "Found in chests.");
+
 		this.add("extradelight.jei.info.evaporator.extra", "+ Extras");
 		this.add("extradelight.jei.info.evaporator.view", "Requires View"); // Combine with the one under
 		this.add("extradelight.jei.info.evaporator.sky", "of Sky!");
@@ -1387,7 +1389,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.HANGING_GARLIC.get(), "Hanging Garlic");
 		this.add(ExtraDelightItems.AGLIO_E_OLIO.get(), "Spaghetti Aglio e Olio");
 		this.add(ExtraDelightItems.PENNE.get(), "Penne");
-		this.add(ExtraDelightItems.PENNE_ALL_ARRABIATA.get(), "Penne all'Arrabiatta");
+		this.add(ExtraDelightItems.PENNE_ALL_ARRABIATA.get(), "Penne all'Arrabbiata");
 		this.add(ExtraDelightItems.GARLIC_CRATE.get(), "Garlic Crate");
 
 		this.add(ExtraDelightItems.VAT.get(), "Fermentation Vat");

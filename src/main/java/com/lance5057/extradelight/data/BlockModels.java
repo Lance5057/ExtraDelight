@@ -177,16 +177,20 @@ public class BlockModels extends BlockStateProvider {
 										"block/chocolate_trapdoor_bottom"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+
 						.renderType("cutout"),
 				models().withExistingParent("cinnamon_trapdoor_top",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_top"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
 						.renderType("cutout"),
 				models().withExistingParent("cinnamon_trapdoor_open",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_open"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
 						.renderType("cutout"),
 				true);
 		doorBlockWithRenderType(ExtraDelightBlocks.CINNAMON_DOOR.get(),
@@ -324,15 +328,21 @@ public class BlockModels extends BlockStateProvider {
 										"block/chocolate_trapdoor_bottom"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-										"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
+										"block/cosmetics/chocolate/dark_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
 				models().withExistingParent("dark_chocolate_trapdoor_top",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_top"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-										"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
+										"block/cosmetics/chocolate/dark_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
 				models().withExistingParent("dark_chocolate_trapdoor_open",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_open"))
 						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/dark_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 								"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
 				true);
 		slabBlock(ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(), modLoc("block/dark_chocolate_slab_double"),
@@ -365,15 +375,21 @@ public class BlockModels extends BlockStateProvider {
 										"block/chocolate_trapdoor_bottom"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-										"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
+										"block/cosmetics/chocolate/milk_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
 				models().withExistingParent("milk_chocolate_trapdoor_top",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_top"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-										"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
+										"block/cosmetics/chocolate/milk_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
 				models().withExistingParent("milk_chocolate_trapdoor_open",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_open"))
 						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/milk_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 								"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
 				true);
 		slabBlock(ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(), modLoc("block/milk_chocolate_slab_double"),
@@ -406,15 +422,21 @@ public class BlockModels extends BlockStateProvider {
 										"block/chocolate_trapdoor_bottom"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-										"block/cosmetics/chocolate/white_chocolate_trapdoor")),
+										"block/cosmetics/chocolate/white_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/white_chocolate_trapdoor")),
 				models().withExistingParent("white_chocolate_trapdoor_top",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_top"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-										"block/cosmetics/chocolate/white_chocolate_trapdoor")),
+										"block/cosmetics/chocolate/white_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/white_chocolate_trapdoor")),
 				models().withExistingParent("white_chocolate_trapdoor_open",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_open"))
 						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/white_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 								"block/cosmetics/chocolate/white_chocolate_trapdoor")),
 				true);
 		slabBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get(), modLoc("block/white_chocolate_slab_double"),
@@ -447,15 +469,21 @@ public class BlockModels extends BlockStateProvider {
 										"block/chocolate_trapdoor_bottom"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-										"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
+										"block/cosmetics/chocolate/blood_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
 				models().withExistingParent("blood_chocolate_trapdoor_top",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_top"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-										"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
+										"block/cosmetics/chocolate/blood_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
 				models().withExistingParent("blood_chocolate_trapdoor_open",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_open"))
 						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+								"block/cosmetics/chocolate/blood_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 								"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
 				true);
 		slabBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(), modLoc("block/blood_chocolate_slab_double"),

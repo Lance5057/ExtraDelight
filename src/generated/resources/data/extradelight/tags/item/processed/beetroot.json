@@ -1,6 +1,6 @@
 {
   "values": [
-    "minecraft:beetroot",
+    "#c:crops/beetroot",
     "extradelight:sliced_beetroot_item"
   ]
 }

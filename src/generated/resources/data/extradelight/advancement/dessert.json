@@ -41,6 +41,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:apple_fritters": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:apple_fritters"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:apple_ice_cream": {
       "conditions": {
         "items": [
@@ -991,6 +1001,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:stewed_apples": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:stewed_apples"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sticky_toffee_pudding_slice": {
       "conditions": {
         "items": [
@@ -1294,6 +1314,9 @@
       "extradelight:strawberry_cloud_cake_slice"
     ],
     [
+      "extradelight:apple_fritters"
+    ],
+    [
       "extradelight:muffin_apple"
     ],
     [
@@ -1367,6 +1390,9 @@
     ],
     [
       "extradelight:grapefruit_sorbet"
+    ],
+    [
+      "extradelight:stewed_apples"
     ],
     [
       "extradelight:glow_berry_ice_cream"

@@ -343,7 +343,7 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<Item> SEAWEED_CRISPS = EDItemGenerator
 			.register("seaweed_crisps", () -> new ToolTipConsumableItem(foodItem(EDFoods.SEAWEED_CRISPS), true))
-			.advancementMeal().finish();
+			.advancementSnack().finish();
 	public static final DeferredItem<Item> SEAWEED_SALAD = EDItemGenerator
 			.register("seaweed_salad", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.SEAWEED_SALAD), true))
 			.advancementMeal().finish();
@@ -1110,10 +1110,10 @@ public class ExtraDelightItems {
 			.drink().setHydration(20).setThirst(4).setPoison(0).isHot(true).finish();
 	public static final DeferredItem<Item> STEWED_APPLES = EDItemGenerator
 			.register("stewed_apples", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.STEWED_APPLES), true))
-			.advancementMeal().finish();
+			.advancementDessert().finish();
 	public static final DeferredItem<Item> APPLE_FRITTERS = EDItemGenerator
 			.register("apple_fritters", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.APPLE_FRITTERS), true))
-			.advancementMeal().finish();
+			.advancementDessert().finish();
 	public static final DeferredItem<Item> CARAMEL_SAUCE = EDItemGenerator
 			.register("caramel_sauce", () -> new Item(bottleFoodItem(EDFoods.CARAMEL_SAUCE))).advancementIngredients()
 			.finish();

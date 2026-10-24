@@ -61,7 +61,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.MAKES_STOCK).add(Items.BONE)
 				.add(Items.BEEF, Items.COOKED_BEEF, Items.PORKCHOP, Items.COOKED_PORKCHOP, Items.CHICKEN,
 						Items.COOKED_CHICKEN, Items.COD, Items.COOKED_COD, Items.SALMON, Items.COOKED_SALMON)
-				.addOptionalTag(ResourceLocation.fromNamespaceAndPath("forge", "vegetables"));
+				.addTag(Tags.Items.FOODS_VEGETABLE);
 
 		tag(ExtraDelightTags.FRUIT_APPLE).add(Items.APPLE);
 		tag(ExtraDelightTags.FRUIT_GLOW_BERRY).add(Items.GLOW_BERRIES);
@@ -178,7 +178,7 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.PROCESSED_CUCUMBER);
 
 		tag(ExtraDelightTags.PROCESSED_FRUIT).addTag(ExtraDelightTags.PROCESSED_APPLE)
-				.add(Items.SWEET_BERRIES, Items.GLOW_BERRIES).addTag(ExtraDelightTags.PROCESSED_MELON)
+				.addTag(Tags.Items.FOODS_BERRY).addTag(ExtraDelightTags.PROCESSED_MELON)
 				.addTag(ExtraDelightTags.PROCESSED_CITRUS).addTag(ExtraDelightTags.PROCESSED_STRAWBERRY);
 		tag(ExtraDelightTags.PROCESSED_PRODUCE).addTag(ExtraDelightTags.PROCESSED_FRUIT)
 				.addTag(ExtraDelightTags.PROCESSED_VEG);
@@ -240,7 +240,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.GRATED_GINGER).add(ExtraDelightItems.GRATED_GINGER.get());
 		tag(ExtraDelightTags.SLICED_GINGER).add(ExtraDelightItems.SLICED_GINGER.get());
 		tag(ExtraDelightTags.PROCESSED_GINGER).addTag(ExtraDelightTags.GRATED_GINGER)
-				.addTag(ExtraDelightTags.SLICED_GINGER);
+				.addTag(ExtraDelightTags.SLICED_GINGER).addTag(ExtraDelightTags.GINGER);
 
 		tag(ExtraDelightTags.CAN_BE_SALTED).add(ExtraDelightItems.BACON_CHEESEBURGER.get(),
 				ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get(), ExtraDelightItems.BACON_EGG_SANDWICH.get(),
@@ -505,8 +505,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.PUFFED_RICE).addTag(ExtraDelightTags.CORN_FLAKES)
 				.addTag(ExtraDelightTags.CHILI_POWDER).addTag(ExtraDelightTags.TOFFEE).addTag(ExtraDelightTags.GUMMIES)
 				.addTag(ExtraDelightTags.PEANUT_BRITTLE).addTag(ExtraDelightTags.TRAIL_MIX)
-				.addTag(ExtraDelightTags.MINT).addTag(ExtraDelightTags.CANDY).addTag(ExtraDelightTags.PROCESSED_FRUIT)
-				.addTag(ExtraDelightTags.DRIED_FRUIT).addTag(ExtraDelightTags.DRIED_CHILI);
+				.addTag(ExtraDelightTags.MINT).addTag(ExtraDelightTags.CANDY).addTag(ExtraDelightTags.DRIED_FRUIT)
+				.addTag(ExtraDelightTags.DRIED_CHILI);
 		tag(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING).addTag(ExtraDelightTags.FROSTING).addTag(ExtraDelightTags.FUDGE)
 				.addTag(ExtraDelightTags.NOUGAT).addTag(ExtraDelightTags.WHIPPED_CREAM).addTag(ExtraDelightTags.JAM);
 
@@ -616,15 +616,15 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(CompatTags.DUSTS_SALT).add(Fermentation.SALT.get());
 
 		tag(ExtraDelightTags.CUCUMBER).add(Fermentation.CUCUMBER.get());
-		tag(ExtraDelightTags.PROCESSED_CUCUMBER)
-				.add(Fermentation.CUCUMBER.get(), Fermentation.SLICED_CUCUMBER_ITEM.get())
+		tag(ExtraDelightTags.PROCESSED_CUCUMBER).addTag(ExtraDelightTags.CUCUMBER)
+				.add(Fermentation.SLICED_CUCUMBER_ITEM.get())
 				.addOptionalTag(CompatTags.CUCUMBERS);
 		tag(CompatTags.CUCUMBERS).add(Fermentation.CUCUMBER.get());
 		tag(ExtraDelightTags.SOYBEAN).add(Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.PROCESSED_CABBAGE).add(Fermentation.SHREDDED_CABBAGE_ITEM.get())
 				.addOptionalTag(CommonTags.Items.CROPS_CABBAGE.location());
-		tag(ExtraDelightTags.PROCESSED_BEETROOT).add(Items.BEETROOT, Fermentation.SLICED_BEETROOT_ITEM.get());
+		tag(ExtraDelightTags.PROCESSED_BEETROOT).addTag(Tags.Items.CROPS_BEETROOT).add(Fermentation.SLICED_BEETROOT_ITEM.get());
 
 		tag(ExtraDelightTags.PICKLED_CUCUMBER).add(Fermentation.GHERKIN_ITEM.get());
 		tag(ExtraDelightTags.PICKLED_CUCUMBER_SLICED).add(Fermentation.SLICED_GHERKIN_ITEM.get());
@@ -703,15 +703,14 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.ORANGE).add(SummerCitrus.ORANGE.get());
 		tag(ExtraDelightTags.GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get());
 
-		tag(ExtraDelightTags.PROCESSED_LEMON).add(SummerCitrus.LEMON.get(), SummerCitrus.SLICED_LEMON.get());
-		tag(ExtraDelightTags.PROCESSED_LIME).add(SummerCitrus.LIME.get(), SummerCitrus.SLICED_LIME.get());
-		tag(ExtraDelightTags.PROCESSED_ORANGE).add(SummerCitrus.ORANGE.get(), SummerCitrus.SLICED_ORANGE.get());
-		tag(ExtraDelightTags.PROCESSED_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get(),
-				SummerCitrus.SLICED_GRAPEFRUIT.get());
+		tag(ExtraDelightTags.PROCESSED_LEMON).addTag(ExtraDelightTags.LEMON).add(SummerCitrus.SLICED_LEMON.get());
+		tag(ExtraDelightTags.PROCESSED_LIME).addTag(ExtraDelightTags.LIME).add(SummerCitrus.SLICED_LIME.get());
+		tag(ExtraDelightTags.PROCESSED_ORANGE).addTag(ExtraDelightTags.ORANGE).add(SummerCitrus.SLICED_ORANGE.get());
+		tag(ExtraDelightTags.PROCESSED_GRAPEFRUIT).addTag(ExtraDelightTags.GRAPEFRUIT).add(SummerCitrus.SLICED_GRAPEFRUIT.get());
 		tag(ExtraDelightTags.PROCESSED_CITRUS).addTag(ExtraDelightTags.PROCESSED_LEMON)
 				.addTag(ExtraDelightTags.PROCESSED_LIME).addTag(ExtraDelightTags.PROCESSED_ORANGE)
 				.addTag(ExtraDelightTags.PROCESSED_GRAPEFRUIT);
-		tag(ExtraDelightTags.PROCESSED_MELON).add(Items.MELON_SLICE, SummerCitrus.MELON_CHUNKS.get());
+		tag(ExtraDelightTags.PROCESSED_MELON).addTag(ExtraDelightTags.FRUIT_MELON).add(SummerCitrus.MELON_CHUNKS.get());
 		tag(ExtraDelightTags.CHILLING_ITEMS).add(Items.BLUE_ICE, Items.PACKED_ICE, Items.ICE, Items.SNOW_BLOCK,
 				Items.SNOWBALL, SummerCitrus.ICE_CUBES.get());
 		tag(ExtraDelightTags.CAKE_SLICE).add(ModItems.CAKE_SLICE.get(), ExtraDelightItems.COFFEE_CAKE_SLICE.get(),
@@ -723,7 +722,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.ICE_CUBES).add(SummerCitrus.ICE_CUBES.get());
 
 		tag(ExtraDelightTags.STRAWBERRY).add(Strawberry.STRAWBERRY.get());
-		tag(ExtraDelightTags.PROCESSED_STRAWBERRY).add(Strawberry.STRAWBERRY.get(), Strawberry.SLICED_STRAWBERRY.get());
+		tag(ExtraDelightTags.PROCESSED_STRAWBERRY).addTag(ExtraDelightTags.STRAWBERRY).add(Strawberry.SLICED_STRAWBERRY.get());
 
 		tag(ExtraDelightTags.IS_JELLY_INGREDIENT).add(ExtraDelightItems.MINT.get());
 

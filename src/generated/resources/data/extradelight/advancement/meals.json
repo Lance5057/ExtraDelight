@@ -21,16 +21,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:apple_fritters": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:apple_fritters"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:apple_slaw": {
       "conditions": {
         "items": [
@@ -1201,16 +1191,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:seaweed_crisps": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:seaweed_crisps"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:seaweed_salad": {
       "conditions": {
         "items": [
@@ -1236,16 +1216,6 @@
         "items": [
           {
             "items": "extradelight:soy_glazed_salmon_item"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "extradelight:stewed_apples": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:stewed_apples"
           }
         ]
       },
@@ -1506,9 +1476,6 @@
       "extradelight:mulligatawny_soup"
     ],
     [
-      "extradelight:seaweed_crisps"
-    ],
-    [
       "extradelight:fish_cakes"
     ],
     [
@@ -1516,9 +1483,6 @@
     ],
     [
       "extradelight:cornbread"
-    ],
-    [
-      "extradelight:apple_fritters"
     ],
     [
       "extradelight:egg_salad_sandwich"
@@ -1582,9 +1546,6 @@
     ],
     [
       "extradelight:omelette"
-    ],
-    [
-      "extradelight:stewed_apples"
     ],
     [
       "extradelight:miso_soup"
