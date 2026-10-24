@@ -1,0 +1,18 @@
+{
+  "type": "extradelight:tanghulu",
+  "cookingtime": 1,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:dynamic_skewer"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:tanghulu"
+  }
+}

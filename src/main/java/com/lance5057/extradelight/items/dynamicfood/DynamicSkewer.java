@@ -10,6 +10,7 @@ import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -40,7 +41,7 @@ public class DynamicSkewer extends Item implements IDynamic {
 			{
 				if (comp.graphics().size() > 0) {
 					ResourceLocation rc = missing_model;
-					String str = "extra/dynamics/skewer/";
+					String str = getResourceString();
 
 					int count = 0;
 					for (ItemStack s : items.nonEmptyItems()) {
@@ -68,6 +69,10 @@ public class DynamicSkewer extends Item implements IDynamic {
 
 //		i.add(bm);
 		return i;
+	}
+
+	protected String getResourceString() {
+		return "extra/dynamics/skewer/";
 	}
 
 	@Override
@@ -107,6 +112,10 @@ public class DynamicSkewer extends Item implements IDynamic {
 			}
 		}
 
+		return componentName();
+	}
+
+	public MutableComponent componentName() {
 		return Component.translatable("dynamic.skewer");
 	}
 

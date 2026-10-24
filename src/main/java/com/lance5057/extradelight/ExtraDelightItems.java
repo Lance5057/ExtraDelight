@@ -30,6 +30,7 @@ import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
 import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
 import com.lance5057.extradelight.items.dynamicfood.DynamicSkewer;
+import com.lance5057.extradelight.items.dynamicfood.DynamicTanghulu;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
 import com.lance5057.extradelight.items.jar.JarItem;
 import com.lance5057.extradelight.modules.Fermentation;
@@ -2884,6 +2885,11 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<Item> DYNAMIC_SKEWER = ITEMS.register("dynamic_skewer",
 			() -> new DynamicSkewer(new Item.Properties()
+					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
+					.food(EDFoods.APPLE_CHIPS)));
+	
+	public static final DeferredItem<Item> TANGHULU = ITEMS.register("tanghulu",
+			() -> new DynamicTanghulu(new Item.Properties()
 					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
 					.food(EDFoods.APPLE_CHIPS)));
 

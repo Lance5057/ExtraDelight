@@ -19,6 +19,7 @@ import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.TanghuluRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
 import com.lance5057.extradelight.data.recipebuilders.dynamics.DynamicJamRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.dynamics.DynamicSkewerRecipeBuilder;
@@ -4649,6 +4650,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.PROCESSED_GARLIC), Ingredient.of(ModItems.TOMATO_SAUCE.get()),
 						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				"penne_all_arrabbiata", consumer);
+
+		TanghuluRecipeBuilder.cookingPotRecipe(1, 1, 1, null).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.addIngredient(ExtraDelightItems.DYNAMIC_SKEWER.get()).addIngredient(Items.SUGAR).save(consumer);
 
 	}
 

@@ -17,6 +17,7 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
@@ -37,16 +38,20 @@ public class TanghuluRecipe extends CookingPotRecipe {
 
 		ItemStack skewer = getSkewer(inv);
 		if (!skewer.isEmpty()) {
-			if (skewer.has(ExtraDelightComponents.DYNAMIC_FOOD)) {
-				DynamicItemComponent d = skewer.get(ExtraDelightComponents.DYNAMIC_FOOD);
-				if (skewer.has(DataComponents.FOOD)) {
-					FoodProperties f = skewer.get(DataComponents.FOOD);
+			if (skewer.has(ExtraDelightComponents.ITEMSTACK_HANDLER)) {
+				ItemContainerContents i = skewer.get(ExtraDelightComponents.ITEMSTACK_HANDLER);
+				if (skewer.has(ExtraDelightComponents.DYNAMIC_FOOD)) {
+					DynamicItemComponent d = skewer.get(ExtraDelightComponents.DYNAMIC_FOOD);
+					if (skewer.has(DataComponents.FOOD)) {
+						FoodProperties f = skewer.get(DataComponents.FOOD);
 
-					FoodProperties food = new FoodProperties(f.nutrition() + 1, f.saturation() + 0.1f, f.canAlwaysEat(),
-							f.eatSeconds(), f.usingConvertsTo(), f.effects());
+						FoodProperties food = new FoodProperties(f.nutrition() + 1, f.saturation() + 0.1f,
+								f.canAlwaysEat(), f.eatSeconds(), f.usingConvertsTo(), f.effects());
 
-					stack.set(DataComponents.FOOD, food);
-					stack.set(ExtraDelightComponents.DYNAMIC_FOOD, d);
+						stack.set(DataComponents.FOOD, food);
+						stack.set(ExtraDelightComponents.DYNAMIC_FOOD, d);
+						stack.set(ExtraDelightComponents.ITEMSTACK_HANDLER, i);
+					}
 				}
 			}
 		}
