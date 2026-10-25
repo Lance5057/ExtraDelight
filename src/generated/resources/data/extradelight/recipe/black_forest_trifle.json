@@ -6,18 +6,29 @@
       "item": "minecraft:bowl"
     },
     "c": {
-      "item": "extradelight:chocolate_cake_block"
+      "item": "extradelight:chocolate_cake"
     },
+    "j": [
+      {
+        "item": "extradelight:jelly_red"
+      },
+      {
+        "item": "extradelight:jelly_pink"
+      }
+    ],
     "s": {
       "item": "minecraft:sweet_berries"
+    },
+    "t": {
+      "item": "extradelight:chocolate_custard"
     },
     "w": {
       "tag": "c:whipped_cream"
     }
   },
   "pattern": [
-    " w ",
-    "scs",
+    "sws",
+    "tcj",
     " b "
   ],
   "result": {

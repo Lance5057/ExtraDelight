@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:bowl"
+    },
+    "c": {
+      "item": "extradelight:chocolate_cake"
+    },
+    "j": {
+      "type": "neoforge:components",
+      "components": {
+        "extradelight:dynamic_food": {
+          "graphics": [
+            "sweet_berries"
+          ]
+        }
+      },
+      "items": "extradelight:dynamic_jam"
+    },
+    "s": {
+      "item": "minecraft:sweet_berries"
+    },
+    "t": {
+      "item": "extradelight:chocolate_custard"
+    },
+    "w": {
+      "tag": "c:whipped_cream"
+    }
+  },
+  "pattern": [
+    "sws",
+    "tcj",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:black_forest_trifle_block"
+  }
+}

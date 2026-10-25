@@ -1165,7 +1165,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("blood_bacon_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(ExtraDelightItems.COFFEE_BEANS),
+				.feast(Ingredient.of(ExtraDelightTags.ROASTED_COFFEE_BEANS),
 						new ItemStack(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN.get()),
 						ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK.get()))
@@ -1214,7 +1214,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("dark_bacon_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(ExtraDelightItems.COFFEE_BEANS),
+				.feast(Ingredient.of(ExtraDelightTags.ROASTED_COFFEE_BEANS),
 						new ItemStack(ExtraDelightItems.DARK_CHOCOLATE_DIPPED_COFFEE_BEAN.get()),
 						ExtraDelightItems.DARK_CHOCOLATE_FONDUE_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.DARK_CHOCOLATE_FONDUE_BLOCK.get()))
@@ -1263,7 +1263,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("milk_bacon_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(ExtraDelightItems.COFFEE_BEANS),
+				.feast(Ingredient.of(ExtraDelightTags.ROASTED_COFFEE_BEANS),
 						new ItemStack(ExtraDelightItems.MILK_CHOCOLATE_DIPPED_COFFEE_BEAN.get()),
 						ExtraDelightItems.MILK_CHOCOLATE_FONDUE_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.MILK_CHOCOLATE_FONDUE_BLOCK.get()))
@@ -1312,7 +1312,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("white_bacon_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(ExtraDelightItems.COFFEE_BEANS),
+				.feast(Ingredient.of(ExtraDelightTags.ROASTED_COFFEE_BEANS),
 						new ItemStack(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_COFFEE_BEAN.get()),
 						ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK.get()))
@@ -3697,12 +3697,23 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("pbj"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK.get(), 1)
-				.pattern(" w ").pattern("scs").pattern(" b ").define('b', Items.BOWL)
-				.define('w', ExtraDelightTags.WHIPPED_CREAM).define('c', ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get())
-				.define('s', Items.SWEET_BERRIES)
+				.pattern("sws").pattern("tcj").pattern(" b ").define('b', Items.BOWL)
+				.define('w', ExtraDelightTags.WHIPPED_CREAM).define('c', ExtraDelightItems.CHOCOLATE_CAKE.get())
+				.define('s', Items.SWEET_BERRIES).define('t', ExtraDelightItems.CHOCOLATE_CUSTARD.get())
+				.define('j', CompoundIngredient.of(Ingredient.of(ExtraDelightItems.JELLY_RED),
+						Ingredient.of(ExtraDelightItems.JELLY_PINK)))
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHOCOLATE_CAKE))
 				.save(consumer, EDLoc("black_forest_trifle"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK.get(), 1)
+				.pattern("sws").pattern("tcj").pattern(" b ").define('b', Items.BOWL)
+				.define('w', ExtraDelightTags.WHIPPED_CREAM).define('c', ExtraDelightItems.CHOCOLATE_CAKE.get())
+				.define('s', Items.SWEET_BERRIES).define('t', ExtraDelightItems.CHOCOLATE_CUSTARD.get())
+				.define('j', DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+						new DynamicItemComponent(List.of("sweet_berries")), ExtraDelightItems.DYNAMIC_JAM.get()))
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHOCOLATE_CAKE))
+				.save(consumer, EDLoc("black_forest_trifle_jam"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.ICE_CREAM_SUNDAE.get(), 1)
 				.requires(ExtraDelightTags.ICE_CREAM).requires(ExtraDelightTags.CHOCOLATE_SYRUP)
@@ -5394,14 +5405,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get(), 1), CookingRecipes.SLOW_COOKING,
-						MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(ExtraDelightTags.RIBS_RAW).addIngredient(ExtraDelightTags.RIBS_RAW)
 				.addIngredient(ExtraDelightTags.RIBS_RAW).addIngredient(ExtraDelightTags.RIBS_RAW)
 				.addIngredient(ExtraDelightTags.BBQ_SAUCE).build(consumer, "bbq_ribs_feast");
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), 1), SLOW_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(ExtraDelightTags.MUTTON_RIBS).addIngredient(ExtraDelightTags.COOKING_OIL)
 				.addIngredient(ExtraDelightTags.MUTTON_RIBS).addIngredient(ExtraDelightTags.MUTTON_RIBS)
 				.addIngredient(ExtraDelightTags.PROCESSED_ONION).addIngredient(ExtraDelightTags.MUTTON_RIBS)
@@ -5411,7 +5422,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get(), 1), SLOW_COOKING,
-						MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BEEF_ROAST)
 				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ExtraDelightTags.DOUGH).addIngredient(ExtraDelightTags.LIVER)
@@ -5421,7 +5432,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.HAGGIS_FEAST_ITEM.get(), 1), SLOW_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(ExtraDelightTags.OFFAL).addIngredient(ExtraDelightTags.OFFAL)
 				.addIngredient(ExtraDelightTags.OFFAL).addIngredient(ExtraDelightTags.LUNG)
 				.addIngredient(ExtraDelightTags.STOMACH).addIngredient(ExtraDelightTags.SCRAP_MEAT)
@@ -5639,7 +5650,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.ROAST_CHICKEN_BLOCK.get(), 1), SLOW_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(ExtraDelightTags.PROCESSED_ONION).addIngredient(ExtraDelightTags.GRAVY)
 				.addIngredient(CompoundIngredient.of(Ingredient.of(Tags.Items.FOODS_BREAD),
 						Ingredient.of(ExtraDelightTags.BREAD_CRUMBS)))
@@ -5650,7 +5661,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.HONEY_GLAZED_HAM_BLOCK.get(), 1), SLOW_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY).addIngredient(Items.HONEY_BOTTLE)
 				.addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY).addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY)
 				.addIngredient(ModItems.HAM.get()).addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY)
@@ -6021,7 +6032,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.MINT_LAMB_FEAST.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(Items.MUTTON, 4).addIngredient(ExtraDelightTags.MINT)
 				.addIngredient(ExtraDelightTags.BREAD_CRUMBS).addIngredient(ExtraDelightTags.COOKING_OIL)
 				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(Items.MUTTON).build(consumer);

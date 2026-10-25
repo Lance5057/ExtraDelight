@@ -842,7 +842,7 @@ public class Fermentation {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(CHEESYMITE_SCROLL_BLOCK_ITEM.get(), 1), Recipes.NORMAL_COOKING,
-						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
+						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), true)
 				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightTags.CHEESE)
 				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightTags.DOUGH)
 				.addIngredient(ExtraDelightTags.YEAST_SPREAD).addIngredient(ExtraDelightTags.DOUGH)
