@@ -60,8 +60,8 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 public class BlockLootTables extends BlockLootSubProvider {
 	private final Set<Block> generatedLootTables = new HashSet<>();
 
-	private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[] { 0.05F * 2, 0.0625F * 2, 0.083333336F * 2,
-			0.1F * 2 };
+	private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[] { 0.05F * 8, 0.0625F * 8, 0.083333336F * 8,
+			0.1F * 8 };
 	private static final float[] NORMAL_LEAVES_STICK_CHANCES = new float[] { 0.02F, 0.022222223F, 0.025F, 0.033333335F,
 			0.1F };
 

@@ -22,7 +22,7 @@ public class DynamicSkewer extends Item implements IDynamic {
 	static final ResourceLocation base_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"extra/dynamics/skewer/stick");
 	static final ResourceLocation missing_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-			"extra/dynamics/skewer/stick");
+			"extra/dynamics/skewer/default");
 
 	public DynamicSkewer(Properties properties) {
 		super(properties);

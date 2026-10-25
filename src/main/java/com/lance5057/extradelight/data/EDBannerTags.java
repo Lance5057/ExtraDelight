@@ -25,6 +25,10 @@ public class EDBannerTags extends TagsProvider<BannerPattern> {
 
 	@Override
 	protected void addTags(HolderLookup.Provider provider) {
-//		this.tag(ExtraDelightBanners.CITRUS_RIND_BANNER_PATTERN).add(ExtraDelightBanners.CITRUS_RIND);
+		this.tag(ExtraDelightBanners.CITRUS_PATTERN_TAG).add(ExtraDelightBanners.CITRUS_PITH)
+				.add(ExtraDelightBanners.CITRUS_FRUIT);
+		this.tag(ExtraDelightBanners.STRAWBERRY_PATTERN_TAG).add(ExtraDelightBanners.STRAWBERRY_FILL)
+				.add(ExtraDelightBanners.STRAWBERRY_OUTLINE).add(ExtraDelightBanners.STRAWBERRY_LEAVES_FILL)
+				.add(ExtraDelightBanners.STRAWBERRY_LEAVES_OUTLINE);
 	}
 }

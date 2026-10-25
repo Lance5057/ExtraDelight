@@ -2,7 +2,8 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "item/melon_slice"
+		"1": "item/melon_slice",
+		"particle": "extradelight:item/dynamics/skewer/sugar_glaze"
 	},
 	"elements": [
 		{

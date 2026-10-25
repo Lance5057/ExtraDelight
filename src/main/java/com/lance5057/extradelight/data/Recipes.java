@@ -4651,8 +4651,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				"penne_all_arrabbiata", consumer);
 
-		TanghuluRecipeBuilder.cookingPotRecipe(1, 1, 1, null).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-				.addIngredient(ExtraDelightItems.DYNAMIC_SKEWER.get()).addIngredient(Items.SUGAR).save(consumer);
+		TanghuluRecipeBuilder.cookingPotRecipe(1, CookingRecipes.FAST_COOKING, 1, null)
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).addIngredient(ExtraDelightItems.DYNAMIC_SKEWER.get())
+				.addIngredient(Items.SUGAR).save(consumer);
 
 	}
 

@@ -78,7 +78,7 @@ public class EDFoods {
 	public static final FoodProperties COOKIE_DOUGH = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).build();
 	public static final FoodProperties SLICED_ONION = new FoodProperties.Builder().nutrition(0).saturationModifier(0.4f).build();
 	public static final FoodProperties SLICED_TOMATO = new FoodProperties.Builder().nutrition(0).saturationModifier(0.3f).build();
-	public static final FoodProperties COOKED_CARROT = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).build();
+	public static final FoodProperties COOKED_CARROT = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6f).build();
 	public static final FoodProperties COOKED_APPLE = new FoodProperties.Builder().nutrition(8).saturationModifier(0.3f).build();
 	public static final FoodProperties SLICED_BREAD = new FoodProperties.Builder().nutrition(1).saturationModifier(0.6f).build();
 	public static final FoodProperties BREADING = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6f).build();
@@ -87,7 +87,12 @@ public class EDFoods {
 	public static final FoodProperties KETCHUP = new FoodProperties.Builder().nutrition(0).saturationModifier(0.3f).usingConvertsTo(Items.GLASS_BOTTLE).build();
 	public static final FoodProperties GRAVY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.7f).effect(REGENERATION_BRIEF, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();
 	public static final FoodProperties JAM = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).usingConvertsTo(Items.GLASS_BOTTLE).build();
-	public static final FoodProperties SCRAMBLED_EGGS = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4f).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties GLOW_JAM = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).effect(GLOW_SHORT, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();
+	public static final FoodProperties GOLDEN_JAM = new FoodProperties.Builder().nutrition(3).saturationModifier(1.2f).effect(GOLDEN_APPLE_1, 1F).effect(GOLDEN_APPLE_2, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();
+	public static final FoodProperties JAM_BREAD = new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).build();
+	public static final FoodProperties GLOW_JAM_BREAD = new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).effect(GLOW_SHORT, 1F).build();
+	public static final FoodProperties GOLDEN_JAM_BREAD = new FoodProperties.Builder().nutrition(4).saturationModifier(1.2f).effect(GOLDEN_APPLE_1, 1F).effect(GOLDEN_APPLE_2, 1F).build();
+	public static final FoodProperties SCRAMBLED_EGGS = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4f).build();
 	public static final FoodProperties OMELETTE = new FoodProperties.Builder().nutrition(12).saturationModifier(0.8f).build();
 	public static final FoodProperties QUICHE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.8f).build();
 	public static final FoodProperties EGG_BASKET = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).build();
@@ -125,7 +130,7 @@ public class EDFoods {
 	public static final FoodProperties HASH = new FoodProperties.Builder().nutrition(3).saturationModifier(0.8f).effect(COMFORT_BRIEF, 1F).effect(NOURISHMENT_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties MEAT_LOAF = new FoodProperties.Builder().nutrition(5).saturationModifier(0.8f).effect(COMFORT_LONG, 1F).effect(NOURISHMENT_LONG, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties MEAT_LOAF_SANDWICH = new FoodProperties.Builder().nutrition(10).saturationModifier(0.8f).effect(COMFORT_LONG, 1F).effect(NOURISHMENT_LONG, 1F).build();
-	public static final FoodProperties MEAT_PIE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.8f).effect(COMFORT_MEDIUM, 1F).build();
+	public static final FoodProperties MEAT_PIE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.8f).effect(COMFORT_MEDIUM, 1F).effect(COMFORT_MEDIUM, 1F).build();
 	public static final FoodProperties PULLED_PORK_SERVING = new FoodProperties.Builder().nutrition(10).saturationModifier(0.8f).effect(NOURISHMENT_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties PULLED_PORK_SANDWICH = new FoodProperties.Builder().nutrition(15).saturationModifier(0.8f).effect(NOURISHMENT_MEDIUM, 1F).build();
 	public static final FoodProperties STIRFRY = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8f).effect(NOURISHMENT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
@@ -202,7 +207,7 @@ public class EDFoods {
 	public static final FoodProperties MUFFIN = new FoodProperties.Builder().nutrition(1).saturationModifier(0.6f).build();
 	public static final FoodProperties FILLED_BREAD = new FoodProperties.Builder().nutrition(9).saturationModifier(0.6f).build();
 	public static final FoodProperties PICKLED_GINGER = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).effect(PICKLED_ONE, 1F).alwaysEdible().build();
-	public static final FoodProperties BEET_MINT = new FoodProperties.Builder().nutrition(4).saturationModifier(0.6f).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties BEET_MINT = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties CRACKER = new FoodProperties.Builder().nutrition(0).saturationModifier(0.6f).alwaysEdible().build();
 	public static final FoodProperties CROQUE_MONSIEUR = new FoodProperties.Builder().nutrition(9).saturationModifier(0.8f).effect(COMFORT_BRIEF, 1F).effect(NOURISHMENT_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties CROQUE_MADAME = new FoodProperties.Builder().nutrition(13).saturationModifier(0.8f).effect(COMFORT_MEDIUM, 1F).effect(NOURISHMENT_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
@@ -236,10 +241,10 @@ public class EDFoods {
 	public static final FoodProperties BLONDIE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
 	public static final FoodProperties FUDGE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).effect(COMFORT_BRIEF, 1F).build();
 	public static final FoodProperties STICKY_TOFFEE_PUDDING = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
-	public static final FoodProperties CEREAL = new FoodProperties.Builder().nutrition(8).saturationModifier(0.4f).effect(REGENERATION_BRIEF, 1F).effect(ABSORPTION_SHORT, 1F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties CEREAL = new FoodProperties.Builder().nutrition(8).saturationModifier(0.4f).effect(REGENERATION_BRIEF, 1F).effect(ABSORPTION_SHORT, 1F).build();
 	public static final FoodProperties PUFFED_RICE_TREAT = new FoodProperties.Builder().nutrition(2).saturationModifier(0.4f).effect(COMFORT_BRIEF, 1F).build();
 	public static final FoodProperties SCOTCHAROO = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
-	public static final FoodProperties BLACK_FOREST_TRIFLE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1f).effect(COMFORT_MEDIUM, 1F).build();
+	public static final FoodProperties BLACK_FOREST_TRIFLE = new FoodProperties.Builder().nutrition(7).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();	
 	public static final FoodProperties DIPPED_SWEET_BERRY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).effect(COMFORT_BRIEF, 1F).alwaysEdible().build();
 	public static final FoodProperties DIPPED_GLOW_BERRY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).effect(COMFORT_BRIEF, 1F).effect(GLOW_SHORT, 1F).alwaysEdible().build();
 	public static final FoodProperties DIPPED_APPLE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.3f).effect(COMFORT_BRIEF, 1F).alwaysEdible().build();
@@ -344,7 +349,7 @@ public class EDFoods {
 	public static final FoodProperties LIME = new FoodProperties.Builder().nutrition(1).saturationModifier(0.2f).effect(SOUR_PUCKER_FOUR, 1F).build();
 	public static final FoodProperties ORANGE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3f).effect(SOUR_PUCKER_TWO, 0.5F).build();
 	public static final FoodProperties GRAPEFRUIT = new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).effect(SOUR_PUCKER_ONE, 0.5F).build();
-	public static final FoodProperties ICE_CUBE = new FoodProperties.Builder().nutrition(0).saturationModifier(0f).effect(FIRE_RESISTANCE_BRIEF, 1F).alwaysEdible().build();
+	public static final FoodProperties ICE_CUBE = new FoodProperties.Builder().nutrition(0).saturationModifier(0f).effect(FIRE_RESISTANCE_BRIEF, 1F).build();
 	public static final FoodProperties MELON_RIND = new FoodProperties.Builder().nutrition(1).saturationModifier(0.2f).build();
 	public static final FoodProperties MERINGUE = new FoodProperties.Builder().nutrition(0).saturationModifier(0.4f).build();
 	public static final FoodProperties LEMON_CURD = new FoodProperties.Builder().nutrition(4).saturationModifier(0.6f).effect(SUNSHINE_ONE, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();
@@ -352,7 +357,7 @@ public class EDFoods {
 	public static final FoodProperties KEY_LIME_PIE_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.4f).effect(SUNSHINE_TWO, 1F).effect(COMFORT_BRIEF, 0F).build();
 	public static final FoodProperties MELON_GAZPACHO = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(NOURISHMENT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties THAI_MELON_SALAD = new FoodProperties.Builder().nutrition(2).saturationModifier(0.4f).effect(NOURISHMENT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
-	public static final FoodProperties GRAPEFRUIT_BEET_SALAD = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).effect(NOURISHMENT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties GRAPEFRUIT_BEET_SALAD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).effect(NOURISHMENT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties CITRUS_ONION_SALAD = new FoodProperties.Builder().nutrition(5).saturationModifier(0.4f).effect(NOURISHMENT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties BAKED_COD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.3f).effect(NOURISHMENT_MEDIUM, 1F).effect(COMFORT_BRIEF, 0F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties GRAPEFRUIT_SORBET = new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).effect(COMFORT_MEDIUM, 1F).effect(SUNSHINE_TWO, 0F).usingConvertsTo(Items.BOWL).build();
@@ -375,8 +380,13 @@ public class EDFoods {
 	public static final FoodProperties KYIV_CAKE_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_BRIEF, 1F).build();
 	public static final FoodProperties BAKED_ALASKA_SLICE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
 	public static final FoodProperties MELON_FRUIT_SALAD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.6f).effect(REGENERATION_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
-
-	public static final FoodProperties STRAWBERRY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3f).build();
+//	public static final FoodProperties  = new FoodProperties.Builder().nutrition(0).saturationModifier(0f).build();
+	public static final FoodProperties STRAWBERRY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).build();
+	public static final FoodProperties ROASTED_BEET = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).build();
+	public static final FoodProperties STRAWBERRY_CLOUD_CAKE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3f).effect(NOURISHMENT_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties STRAWBERRY_MOUSSE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4f).effect(NOURISHMENT_BRIEF, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();
+	public static final FoodProperties STRAWBERRY_PASTA = new FoodProperties.Builder().nutrition(8).saturationModifier(0.3f).effect(NOURISHMENT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties STRAWBERRY_BEETROOT_SALAD = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).effect(NOURISHMENT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties STRAWBERRY_FIELDS_SALAD = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).effect(NOURISHMENT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties DIPPED_STRAWBERRY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).effect(COMFORT_BRIEF, 1F).alwaysEdible().build();
-	public static final FoodProperties STRAWBERRY_CLOUD_CAKE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).effect(COMFORT_MEDIUM, 1F).build();
 }

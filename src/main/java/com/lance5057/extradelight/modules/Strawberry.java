@@ -109,7 +109,8 @@ public class Strawberry {
 			.advancementIngredients().finish();
 
 	public static final DeferredBlock<Block> STRAWBIGGY = ExtraDelightBlocks.BLOCKS.register("strawbiggy",
-			() -> new SimpleDirectionalBlock(Block.Properties.ofFullCopy(Blocks.MOSS_BLOCK).mapColor(MapColor.COLOR_RED).sound(SoundType.HONEY_BLOCK)));
+			() -> new SimpleDirectionalBlock(Block.Properties.ofFullCopy(Blocks.MOSS_BLOCK).mapColor(MapColor.COLOR_RED)
+					.sound(SoundType.HONEY_BLOCK)));
 	public static final DeferredItem<Item> STRAWBIGGY_ITEM = ExtraDelightItems.ITEMS.register("strawbiggy_item",
 			() -> new BlockItem(STRAWBIGGY.get(), new Item.Properties()));
 
@@ -191,7 +192,7 @@ public class Strawberry {
 
 	// Non-block stuff
 	public static final DeferredItem<Item> ROASTED_BEETROOT = EDItemGenerator
-			.register("roasted_beetroot", () -> new Item(foodItem(EDFoods.COOKED_CARROT))).advancementMeal().finish();
+			.register("roasted_beetroot", () -> new Item(foodItem(EDFoods.ROASTED_BEET))).advancementMeal().finish();
 
 	public static final DeferredItem<Item> STRAWBERRY_CUSTARD = EDItemGenerator
 			.register("strawberry_custard", () -> new Item(ExtraDelightItems.bottleFoodItem(EDFoods.CUSTARD)))
@@ -215,7 +216,7 @@ public class Strawberry {
 
 	public static final DeferredItem<Item> STRAWBERRY_MOUSSE = EDItemGenerator
 			.register("strawberry_mousse",
-					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.CHOCOLATE_MOUSSE), true))
+					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.STRAWBERRY_MOUSSE), true))
 			.advancementDessert().finish();
 
 	public static final DeferredItem<Item> STRAWBERRY_SYRUP_BOTTLE = EDItemGenerator
@@ -224,16 +225,16 @@ public class Strawberry {
 			.advancementIngredients().finish();
 
 	public static final DeferredItem<Item> STRAWBERRY_PASTA = EDItemGenerator
-			.register("strawberry_pasta", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.PASTA_ALFREDO), true))
+			.register("strawberry_pasta", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.STRAWBERRY_PASTA), true))
 			.advancementMeal().advancementDessert().finish();
 
 	public static final DeferredItem<Item> STRAWBERRY_BEETROOT_SALAD = EDItemGenerator
-			.register("strawberry_beetroot_salad", () -> new Item(foodItem(EDFoods.BEET_MINT))).advancementMeal()
-			.finish();
+			.register("strawberry_beetroot_salad", () -> new Item(foodItem(EDFoods.STRAWBERRY_BEETROOT_SALAD)))
+			.advancementMeal().finish();
 
 	public static final DeferredItem<Item> STRAWBERRY_FIELDS_SALAD = EDItemGenerator
-			.register("strawberrry_fields_salad", () -> new Item(bowlFoodItem(EDFoods.CARROT_SALAD))).advancementMeal()
-			.finish();
+			.register("strawberrry_fields_salad", () -> new Item(bowlFoodItem(EDFoods.STRAWBERRY_FIELDS_SALAD)))
+			.advancementMeal().finish();
 
 	public static final DeferredItem<Item> BLOOD_CHOCOLATE_DIPPED_STRAWBERRY = EDItemGenerator
 			.register("blood_chocolate_dipped_strawberry",
@@ -266,7 +267,7 @@ public class Strawberry {
 //				.cross("wild_strawberry", bsp.modLoc("block/crops/strawberry/wild_strawberry")).renderType("cutout")));
 //		BlockModels.bushStageFourBlock(bsp, STRAWBERRY_CROP.get(), "strawberry");
 		BlockModels.crateBlock(bsp, STRAWBERRY_CRATE.get(), "strawberry", "bamboo");
-		
+
 		bsp.directionalBlock(STRAWBIGGY.get(), bsp.models().getExistingFile(bsp.modLoc("block/big_strawberry")));
 //		bsp.simpleBlock(STRAWBIGGY.get(), bsp.models().getExistingFile(bsp.modLoc("block/big_strawberry")));
 		BlockModels.fluid(bsp, STRAWBERRY_JUICE_FLUID_BLOCK.get());
@@ -365,7 +366,7 @@ public class Strawberry {
 		ItemModels.forItem(tmp, WHITE_CHOCOLATE_DIPPED_STRAWBERRY, "white_chocolate_strawberry");
 
 		ItemModels.forItem(tmp, STRAWBERRY_HAT, "strawberry_hat");
-//		ItemModels.forItem(tmp, STRAWBERRY_PATTERN_ITEM, "banner_pattern_strawberry");
+		ItemModels.forItem(tmp, STRAWBERRY_PATTERN_ITEM, "strawberry_banner_pattern");
 	}
 
 	public static void Recipes(RecipeOutput consumer) {
