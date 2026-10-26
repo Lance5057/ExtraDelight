@@ -6,6 +6,8 @@ import static com.lance5057.extradelight.ExtraDelightItems.stack1Item;
 import static vectorwing.farmersdelight.common.registry.ModItems.bowlFoodItem;
 import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 
+import org.apache.commons.lang3.text.WordUtils;
+
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBanners;
 import com.lance5057.extradelight.ExtraDelightBlocks;
@@ -41,11 +43,19 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.BannerPatternItem;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -64,11 +74,9 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
-import org.apache.commons.lang3.text.WordUtils;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
-import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.item.HotCocoaItem;
 import vectorwing.farmersdelight.common.item.MelonJuiceItem;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
@@ -90,7 +98,7 @@ public class Strawberry {
 			.advancementIngredients().finish();
 
 	public static final DeferredBlock<Block> WILD_STRAWBERRY = ExtraDelightBlocks.BLOCKS.register("wild_strawberry",
-			() -> new WildCropBlock(MobEffects.HEAL, 6, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
+			() -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
 	public static final DeferredItem<Item> WILD_STRAWBERRY_ITEM = ExtraDelightItems.ITEMS
 			.register("wild_strawberry_item", () -> new BlockItem(WILD_STRAWBERRY.get(), new Item.Properties()));
 
