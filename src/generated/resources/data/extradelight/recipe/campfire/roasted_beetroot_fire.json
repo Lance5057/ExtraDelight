@@ -4,7 +4,7 @@
   "cookingtime": 600,
   "experience": 1.0,
   "ingredient": {
-    "item": "minecraft:beetroot"
+    "tag": "c:crops/beetroot"
   },
   "result": {
     "count": 1,

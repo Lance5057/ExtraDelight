@@ -1,5 +1,9 @@
 {
   "values": [
-    "extradelight:butter"
+    "extradelight:butter",
+    {
+      "id": "#c:foods/butter",
+      "required": false
+    }
   ]
 }

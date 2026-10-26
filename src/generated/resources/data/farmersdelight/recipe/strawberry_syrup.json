@@ -7,16 +7,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "extradelight:strawberry"
+      "tag": "c:crops/strawberry"
     },
     {
-      "item": "extradelight:strawberry"
+      "tag": "c:crops/strawberry"
     },
     {
-      "item": "extradelight:strawberry"
+      "tag": "c:crops/strawberry"
     },
     {
-      "item": "extradelight:strawberry"
+      "tag": "c:crops/strawberry"
     },
     {
       "tag": "extradelight:sweetener"

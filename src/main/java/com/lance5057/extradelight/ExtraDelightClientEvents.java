@@ -156,7 +156,9 @@ public class ExtraDelightClientEvents {
 						.filter(i -> !i.getId().toString().contains("cherry")
 								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
 								&& !i.getId().toString().contains("azalea")
-								&& !i.getId().toString().contains("cinnamon"))
+								&& !i.getId().toString().contains("cinnamon")
+								&& !i.getId().toString().contains("spruce")
+								&& !i.getId().toString().contains("birch"))
 						.toList()));
 	}
 

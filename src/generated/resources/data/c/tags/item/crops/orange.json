@@ -1,5 +1,9 @@
 {
   "values": [
-    "extradelight:orange"
+    "extradelight:orange",
+    {
+      "id": "#c:foods/fruits/orange",
+      "required": false
+    }
   ]
 }

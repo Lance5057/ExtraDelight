@@ -87,7 +87,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.FLOUR).add(ExtraDelightItems.FLOUR.get()).addOptionalTag(CompatTags.FLOURS_WHEAT);
 		tag(CompatTags.FLOURS_WHEAT).add(ExtraDelightItems.FLOUR.get());
 
-		tag(ExtraDelightTags.JAM).add(ExtraDelightItems.DYNAMIC_JAM.get()).addOptionalTag(CompatTags.JELLIES);
+		tag(ExtraDelightTags.JAM).add(ExtraDelightItems.DYNAMIC_JAM.get()).addOptionalTag(CompatTags.JELLIES)
+				.addOptionalTag(CompatTags.JAM);
+		tag(CompatTags.JAM).add(ExtraDelightItems.DYNAMIC_JAM.get());
 		tag(CompatTags.JELLIES).add(ExtraDelightItems.DYNAMIC_JAM.get());
 
 		tag(ExtraDelightTags.MEAT_COOKED).add(Items.COOKED_BEEF).add(Items.COOKED_CHICKEN).add(Items.COOKED_MUTTON)
@@ -131,7 +133,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.GROUND_RABBIT_RAW);
 		tag(ExtraDelightTags.GROUND_MEAT_COOKED).addTag(ExtraDelightTags.GROUND_BEEF_COOKED);
 		tag(ExtraDelightTags.GELATIN).add(ExtraDelightItems.AGAR_AGAR.get());
-		tag(ExtraDelightTags.BUTTER).add(ExtraDelightItems.BUTTER.get());
+		tag(ExtraDelightTags.BUTTER).add(ExtraDelightItems.BUTTER.get()).addOptionalTag(CompatTags.BUTTER);
+		tag(CompatTags.BUTTER).addTag(ExtraDelightTags.BUTTER);
 		tag(ExtraDelightTags.GRAVY).add(ExtraDelightItems.GRAVY.get());
 		tag(ExtraDelightTags.CONDIMENTS).addTag(ExtraDelightTags.KETCHUP).addTag(ExtraDelightTags.BBQ_SAUCE)
 				.addTag(ExtraDelightTags.MAYO).addTag(ExtraDelightTags.HOT_SAUCE).addTag(ExtraDelightTags.SOY_SAUCE)
@@ -698,9 +701,11 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.BROTH).add(ModItems.BONE_BROTH.get()).addOptionalTag(CompatTags.STOCK);
 		tag(ExtraDelightTags.RAW_PASTA).addOptionalTag(CommonTags.Items.FOODS_PASTA);
 
-		tag(ExtraDelightTags.LEMON).add(SummerCitrus.LEMON.get());
+		tag(ExtraDelightTags.LEMON).add(SummerCitrus.LEMON.get()).addOptionalTag(CompatTags.LEMON);
+		tag(CompatTags.LEMON).addTag(ExtraDelightTags.LEMON);
 		tag(ExtraDelightTags.LIME).add(SummerCitrus.LIME.get());
-		tag(ExtraDelightTags.ORANGE).add(SummerCitrus.ORANGE.get());
+		tag(ExtraDelightTags.ORANGE).add(SummerCitrus.ORANGE.get()).addOptionalTag(CompatTags.ORANGE);
+		tag(CompatTags.ORANGE).addTag(ExtraDelightTags.ORANGE);
 		tag(ExtraDelightTags.GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get());
 
 		tag(ExtraDelightTags.PROCESSED_LEMON).addTag(ExtraDelightTags.LEMON).add(SummerCitrus.SLICED_LEMON.get());

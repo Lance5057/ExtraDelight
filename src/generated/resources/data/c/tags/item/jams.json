@@ -4,6 +4,10 @@
     {
       "id": "#c:jellies",
       "required": false
+    },
+    {
+      "id": "#fruitsdelight:jam",
+      "required": false
     }
   ]
 }

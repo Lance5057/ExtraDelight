@@ -31,10 +31,10 @@
       "tag": "c:cheese"
     },
     {
-      "item": "minecraft:honey_bottle"
+      "tag": "c:drinks/honey"
     },
     {
-      "item": "extradelight:salt"
+      "tag": "c:salt"
     }
   ],
   "result": {

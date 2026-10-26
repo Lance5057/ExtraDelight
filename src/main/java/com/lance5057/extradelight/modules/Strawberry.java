@@ -41,13 +41,7 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.BannerPatternItem;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -70,6 +64,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
+import org.apache.commons.lang3.text.WordUtils;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
@@ -262,14 +257,9 @@ public class Strawberry {
 			() -> new BannerPatternItem(ExtraDelightBanners.STRAWBERRY_PATTERN_TAG, stack1Item()));
 
 	public static void blockModels(BlockStateProvider bsp) {
-//		BlockModels.cropCrossBlock(bsp, STRAWBERRY_CROP.get(), "strawberry", StrawberryCrop.AGE);
-//		bsp.simpleBlock(WILD_STRAWBERRY.get(), new ConfiguredModel(bsp.models()
-//				.cross("wild_strawberry", bsp.modLoc("block/crops/strawberry/wild_strawberry")).renderType("cutout")));
-//		BlockModels.bushStageFourBlock(bsp, STRAWBERRY_CROP.get(), "strawberry");
 		BlockModels.crateBlock(bsp, STRAWBERRY_CRATE.get(), "strawberry", "bamboo");
 
 		bsp.directionalBlock(STRAWBIGGY.get(), bsp.models().getExistingFile(bsp.modLoc("block/big_strawberry")));
-//		bsp.simpleBlock(STRAWBIGGY.get(), bsp.models().getExistingFile(bsp.modLoc("block/big_strawberry")));
 		BlockModels.fluid(bsp, STRAWBERRY_JUICE_FLUID_BLOCK.get());
 
 		bsp.getVariantBuilder(PINK_LEMONADE_TRAY.get()).forAllStates(state -> {
@@ -378,8 +368,8 @@ public class Strawberry {
 		Recipes.bundleItem4(Ingredient.of(STRAWBERRY.get()), STRAWBIGGY_ITEM.get(), STRAWBERRY.get(), consumer,
 				"strawbiggy");
 
-		Recipes.vanillaCooking(Ingredient.of(Items.BEETROOT), ROASTED_BEETROOT.get(), consumer, "roasted_beetroot");
-		Recipes.bulkBake(ROASTED_BEETROOT.get(), Ingredient.of(Items.BEETROOT), consumer, ExtraDelightItems.SHEET.get(),
+		Recipes.vanillaCooking(Ingredient.of(Tags.Items.CROPS_BEETROOT), ROASTED_BEETROOT.get(), consumer, "roasted_beetroot");
+		Recipes.bulkBake(ROASTED_BEETROOT.get(), Ingredient.of(Tags.Items.CROPS_BEETROOT), consumer, ExtraDelightItems.SHEET.get(),
 				"beetroot");
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, STRAWBERRY_HAT.get()).pattern("rsr").pattern("r r")
@@ -429,8 +419,9 @@ public class Strawberry {
 		ChillerRecipeBuilder
 				.chill(new ItemStack(STRAWBERRY_ICE_CREAM.get(), 1), Recipes.NORMAL_COOKING, Recipes.SMALL_EXP,
 						new ItemStack(Items.BOWL), new FluidStack(NeoForgeMod.MILK, 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(STRAWBERRY).addIngredient(STRAWBERRY)
-				.addIngredient(STRAWBERRY).build(consumer, "strawberry_ice_cream");
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.STRAWBERRY)
+				.addIngredient(ExtraDelightTags.STRAWBERRY).addIngredient(ExtraDelightTags.STRAWBERRY)
+				.build(consumer, "strawberry_ice_cream");
 		ChillerRecipeBuilder.chill(STRAWBERRY_POPSICLE.toStack(4), Recipes.NORMAL_COOKING, Recipes.SMALL_EXP,
 				new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.STRAWBERRY_JUICE.FLUID, 250), true)
 				.build(consumer, "strawberry_popsicle_chiller");
@@ -515,20 +506,23 @@ public class Strawberry {
 						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.ICE_CUBES),
 						Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY),
 						Ingredient.of(ExtraDelightTags.PROCESSED_LEMON) },
-				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 750)),
-						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.LEMON_JUICE.FLUID, 250)) },
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 500)),
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.LEMON_JUICE.FLUID, 250)),
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.STRAWBERRY_JUICE.FLUID, 250))
+				},
 				consumer, "pink_lemonade_mixing");
 		Recipes.mixing(new ItemStack(STRAWBERRY_MILKSHAKE.get(), 1), Recipes.STANDARD_GRIND,
 				new ItemStack(Items.GLASS_BOTTLE),
-				new Ingredient[] { Ingredient.of(ExtraDelightItems.ICE_CREAM.get()), Ingredient.of(STRAWBERRY),
-						Ingredient.of(STRAWBERRY), Ingredient.of(STRAWBERRY), },
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.ICE_CREAM.get()), Ingredient.of(ExtraDelightTags.STRAWBERRY),
+						Ingredient.of(ExtraDelightTags.STRAWBERRY), Ingredient.of(ExtraDelightTags.STRAWBERRY), },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(NeoForgeMod.MILK, 250)) }, consumer,
 				"strawberry_milkshake");
 		Recipes.mixing(new ItemStack(STRAWBERRY_BEETROOT_SALAD.get(), 2), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ROASTED_BEETROOT), Ingredient.of(ROASTED_BEETROOT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.CHEESE),
-						Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Fermentation.SALT) },
+						Ingredient.of(Tags.Items.DRINKS_HONEY), Ingredient.of(ExtraDelightTags.SALT) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
@@ -548,7 +542,7 @@ public class Strawberry {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(STRAWBERRY_CHEESECAKE_ITEM.get(), 1), Recipes.NORMAL_COOKING,
 						Recipes.MEDIUM_EXP, new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
-				.addIngredient(STRAWBERRY, 3).addIngredient(Tags.Items.DRINKS_MILK)
+				.addIngredient(ExtraDelightTags.STRAWBERRY, 3).addIngredient(Tags.Items.DRINKS_MILK)
 				.addIngredient(ModItems.PIE_CRUST.get(), 1).addIngredient(Tags.Items.DRINKS_MILK)
 				.unlockedByAnyIngredient(ExtraDelightItems.CHEESE.get()).build(consumer);
 		OvenRecipeBuilder
@@ -562,19 +556,19 @@ public class Strawberry {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(STRAWBERRY_PIE_ITEM.get(), 1), Recipes.NORMAL_COOKING, Recipes.MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
-				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(STRAWBERRY, 3)
+				.addIngredient(ExtraDelightTags.FLOUR, 3).addIngredient(ExtraDelightTags.STRAWBERRY, 3)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ModItems.PIE_CRUST.get())
 				.addIngredient(ExtraDelightTags.SWEETENER).unlockedByAnyIngredient(STRAWBERRY).build(consumer);
 
 		// Pot
 		Recipes.pot(STRAWBERRY_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(STRAWBERRY), Ingredient.of(Tags.Items.DRINKS_MILK),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.STRAWBERRY), Ingredient.of(Tags.Items.DRINKS_MILK),
 						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"strawberry_custard", consumer);
 		Recipes.pot(STRAWBERRY_SYRUP_BOTTLE.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(STRAWBERRY), Ingredient.of(STRAWBERRY), Ingredient.of(STRAWBERRY),
-						Ingredient.of(STRAWBERRY), Ingredient.of(ExtraDelightTags.SWEETENER),
-						Ingredient.of(ExtraDelightTags.SWEETENER) },
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.STRAWBERRY), Ingredient.of(ExtraDelightTags.STRAWBERRY),
+						Ingredient.of(ExtraDelightTags.STRAWBERRY),	Ingredient.of(ExtraDelightTags.STRAWBERRY),
+						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"strawberry_syrup", consumer);
 	}
 
@@ -622,70 +616,14 @@ public class Strawberry {
 		lp.add(STRAWBERRY_HAT.get(), "Strawberry Hat");
 		lp.add(STRAWBERRY_PATTERN_ITEM.get(), "Banner Pattern");
 		lp.add("item.extradelight.strawberry_banner_item.desc", "Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.black", "Black Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.blue", "Blue Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.brown", "Brown Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.cyan", "Cyan Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.gray", "Gray Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.green", "Green Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.light_blue", "Light Blue Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.light_gray", "Light Gray Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.lime", "Lime Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.magenta", "Magenta Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.orange", "Orange Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.pink", "Pink Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.purple", "Purple Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.red", "Red Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.white", "White Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry.yellow", "Yellow Strawberry");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.black", "Black Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.blue", "Blue Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.brown", "Brown Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.cyan", "Cyan Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.gray", "Gray Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.green", "Green Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.light_blue", "Light Blue Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.light_gray", "Light Gray Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.lime", "Lime Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.magenta", "Magenta Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.orange", "Orange Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.pink", "Pink Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.purple", "Purple Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.red", "Red Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.white", "White Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill.yellow", "Yellow Strawberry Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.black", "Black Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.blue", "Blue Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.brown", "Brown Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.cyan", "Cyan Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.gray", "Gray Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.green", "Green Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.light_blue", "Light Blue Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.light_gray", "Light Gray Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.lime", "Lime Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.magenta", "Magenta Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.orange", "Orange Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.pink", "Pink Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.purple", "Purple Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.red", "Red Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.white", "White Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves.yellow", "Yellow Strawberry Leaves");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.black", "Black Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.blue", "Blue Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.brown", "Brown Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.cyan", "Cyan Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.gray", "Gray Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.green", "Green Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.light_blue", "Light Blue Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.light_gray", "Light Gray Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.lime", "Lime Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.magenta", "Magenta Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.orange", "Orange Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.pink", "Pink Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.purple", "Purple Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.red", "Red Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.white", "White Strawberry Leaves Fill");
-		lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill.yellow", "Yellow Strawberry Leaves Fill");
+		for (DyeColor d : DyeColor.values()) {
+			String w = d.toString();
+			w = WordUtils.capitalize(w.replace('_', ' '));
+			lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry." + d, w + " Strawberry");
+			lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill." + d, w + " Strawberry Fill");
+			lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves." + d, w + " Strawberry Leaves");
+			lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill." + d, w + " Strawberry Leaves Fill");
+		}
 		lp.add("painting.extradelight.strawberry.title", "Strawberry");
 		lp.add("painting.extradelight.strawberry.author", "Lance5057");
 	}

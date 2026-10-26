@@ -6,12 +6,16 @@
   },
   "fluids": [
     {
-      "amount": 750,
+      "amount": 500,
       "fluid": "minecraft:water"
     },
     {
       "amount": 250,
       "fluid": "extradelight:lemon_juice_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:strawberry_juice_fluid"
     }
   ],
   "ingredients": [

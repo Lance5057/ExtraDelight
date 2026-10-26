@@ -16,13 +16,13 @@
       "tag": "extradelight:sweetener"
     },
     {
-      "item": "extradelight:strawberry"
+      "tag": "c:crops/strawberry"
     },
     {
-      "item": "extradelight:strawberry"
+      "tag": "c:crops/strawberry"
     },
     {
-      "item": "extradelight:strawberry"
+      "tag": "c:crops/strawberry"
     }
   ],
   "result": {
