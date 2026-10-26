@@ -350,7 +350,7 @@ public class Strawberry {
 		ItemModels.forItem(tmp, STRAWBERRY_PIE_SLICE, "strawberry_pie_slice");
 		ItemModels.forItem(tmp, STRAWBERRY_PIE_ITEM, "strawberry_pie");
 		ItemModels.forItem(tmp, ROASTED_BEETROOT, "roasted_beetroot");
-		ItemModels.forItem(tmp, STRAWBERRY_CUSTARD, "strawberry_custard");
+		ItemModels.forItemModel(tmp, STRAWBERRY_CUSTARD, "custard/strawberry", tmp.existingFileHelper);
 		ItemModels.forItem(tmp, STRAWBERRY_ICE_CREAM, "strawberry_ice_cream");
 		ItemModels.forItem(tmp, STRAWBERRY_POPSICLE, "strawberry_popsicle");
 		ItemModels.forItem(tmp, STRAWBERRY_MILK, "strawberry_milk");

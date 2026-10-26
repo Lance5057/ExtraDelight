@@ -19,7 +19,7 @@ public class APIDataGen {
 		generator.addProvider(event.includeClient(), new ItemModels(output, helper));
 		generator.addProvider(true, new BlockModels(output, helper));
 
-//		generator.addProvider(event.includeServer(), new Recipes(output, lookupProvider));
+//		generator.addProvider(event.includeServer(), new APIRecipes(output, lookupProvider));
 		generator.addProvider(event.includeClient(), new EnglishLoc(output));
 	}
 }

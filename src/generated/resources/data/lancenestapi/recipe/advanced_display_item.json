@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "minecraft:copper_ingot"
+    },
+    "i": {
+      "item": "minecraft:item_frame"
+    }
+  },
+  "pattern": [
+    " c ",
+    "cic",
+    " c "
+  ],
+  "result": {
+    "count": 1,
+    "id": "lancenestapi:advanced_display_item"
+  }
+}

@@ -175,9 +175,9 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 		for (int i = 0; i < AdvancedDisplayBlockEntity.NUM_SLOTS + 1; i++) {
 
 			Transform t = this.menu.tileEntity.getItemTransform(i);
-
-			if (i < AdvancedDisplayBlockEntity.NUM_SLOTS)
-				s += t.toString() + "-";
+			s += t.toString();
+			if (i < AdvancedDisplayBlockEntity.NUM_SLOTS - 1)
+				s += "-";
 
 		}
 

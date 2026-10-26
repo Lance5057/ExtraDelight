@@ -47,21 +47,21 @@ public class Vector3Widget extends UIWidget<Vector3f> {
 
 			this.onChanged.accept(vector);
 		});
-		x.addBackground(Color.RED, Color.MAGENTA);
+		x.addBackground(Color.RED, new Color(0x550000));
 
 		y = new FloatWidget(s -> {
 			vector.y = s;
 
 			this.onChanged.accept(vector);
 		});
-		y.addBackground(Color.GREEN, Color.CYAN);
+		y.addBackground(Color.GREEN, new Color(0x005500));
 
 		z = new FloatWidget(s -> {
 			vector.z = s;
 
 			this.onChanged.accept(vector);
 		});
-		z.addBackground(Color.BLUE, Color.lightGray);
+		z.addBackground(Color.BLUE, new Color(0x000055));
 
 	}
 

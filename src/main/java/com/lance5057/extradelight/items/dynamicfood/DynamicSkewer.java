@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
-import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 
@@ -28,6 +27,10 @@ public class DynamicSkewer extends Item implements IDynamic {
 		super(properties);
 	}
 
+	public ResourceLocation getMissingModel() {
+		return missing_model;
+	}
+
 	@Override
 	public List<ResourceLocation> getPieces(ItemStack itemStack) {
 
@@ -40,7 +43,7 @@ public class DynamicSkewer extends Item implements IDynamic {
 		if (comp != null && items != null) {
 			{
 				if (comp.graphics().size() > 0) {
-					ResourceLocation rc = missing_model;
+					ResourceLocation rc = getMissingModel();
 					String str = getResourceString();
 
 					int count = 0;
@@ -62,10 +65,10 @@ public class DynamicSkewer extends Item implements IDynamic {
 						}
 					}
 				} else
-					i.add(missing_model);
+					i.add(getMissingModel());
 			}
 		} else
-			i.add(missing_model);
+			i.add(getMissingModel());
 
 //		i.add(bm);
 		return i;

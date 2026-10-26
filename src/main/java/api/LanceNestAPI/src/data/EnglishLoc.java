@@ -38,6 +38,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("widget.rotation", "Rotation");
 		this.add("widget.position", "Position");
 		this.add("widget.scale", "Scale");
+
+		this.add(LanceNestAPI.ADVANCED_DISPLAY_BLOCK.get(), "Advanced Item Display");
 	}
 
 }

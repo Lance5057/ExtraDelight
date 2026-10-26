@@ -35,6 +35,7 @@ import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.Create;
 
+import api.LanceNestAPI.src.data.APIRecipes;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -58,6 +59,7 @@ import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluids;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
@@ -170,6 +172,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		BottleFluidRegistry.createRecipesForJEI(consumer);
 
 		SpecialRecipeBuilder.special(FlourDoughRecipe::new).save(consumer, "flour_dough");
+
+		if (!ModList.get().isLoaded("compendium"))
+			APIRecipes.buildRecipes(consumer);
 	}
 
 	private void juicerRecipes(RecipeOutput consumer) {
@@ -3700,8 +3705,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern("sws").pattern("tcj").pattern(" b ").define('b', Items.BOWL)
 				.define('w', ExtraDelightTags.WHIPPED_CREAM).define('c', ExtraDelightItems.CHOCOLATE_CAKE.get())
 				.define('s', Items.SWEET_BERRIES).define('t', ExtraDelightItems.CHOCOLATE_CUSTARD.get())
-				.define('j', CompoundIngredient.of(Ingredient.of(ExtraDelightItems.JELLY_RED),
-						Ingredient.of(ExtraDelightItems.JELLY_PINK)))
+				.define('j',
+						CompoundIngredient.of(Ingredient.of(ExtraDelightItems.JELLY_RED),
+								Ingredient.of(ExtraDelightItems.JELLY_PINK)))
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHOCOLATE_CAKE))
 				.save(consumer, EDLoc("black_forest_trifle"));

@@ -144,7 +144,7 @@ public class AdvancedDisplayMenu extends AbstractContainerMenu {
 			BlockEntity state = level.getBlockEntity(pos);
 			if (state instanceof AdvancedDisplayBlockEntity adbe) {
 				adbe.setItemTransform(i, t);
-				ExtraDelight.logger.debug(t.toString());
+//				ExtraDelight.logger.debug(t.toString());
 				AdvancedDisplayBlockEntity.update(adbe);
 			}
 		});
