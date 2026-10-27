@@ -162,9 +162,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.processed.pickled.cucumber", "Processed Pickled Cucumber");
 		this.add("tag.item.extradelight.processed.potato", "Processed Potato");
 		this.add("tag.item.extradelight.processed.produce", "Processed Fruit & Vegetables");
+		this.add("tag.item.extradelight.processed.strawberry", "Processed Strawberry");
 		this.add("tag.item.extradelight.processed.tomato", "Processed Tomato");
 		this.add("tag.item.extradelight.processed.vegetable", "Processed Vegetables");
 		this.add("tag.item.extradelight.riceball_filling", "Riceball fillings");
+		this.add("tag.item.extradelight.skewer.sweet", "Sweet Skewer Ingredients");
 		this.add("tag.item.extradelight.sweetener", "Sweeteners");
 		this.add("tag.item.extradelight.toast_or_bread_slice", "Bread Slice, regardless of toasting status");
 		this.add("tag.item.extradelight.toast_topping", "Toast toppings");

@@ -399,6 +399,10 @@ public class Strawberry {
 				.requires(ExtraDelightTags.SWEETENER).requires(Items.BOWL, 1)
 				.unlockedBy("has_milk", InventoryChangeTrigger.TriggerInstance.hasItems(Items.MILK_BUCKET))
 				.save(consumer, ExtraDelight.modLoc("strawberry_pasta"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, STRAWBERRY_PATTERN_ITEM.get())
+				.requires(ExtraDelightTags.PROCESSED_STRAWBERRY).requires(Items.PAPER)
+				.unlockedBy("has_paper", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
+				.save(consumer, ExtraDelight.modLoc("strawberry_pattern"));
 
 		// Cake/Pie Reconstruction
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, STRAWBERRY_CHEESECAKE_ITEM.get()).pattern("ff ").pattern("ff ")
@@ -526,6 +530,11 @@ public class Strawberry {
 						Ingredient.of(ExtraDelightTags.STRAWBERRY), Ingredient.of(ExtraDelightTags.STRAWBERRY), },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(NeoForgeMod.MILK, 250)) }, consumer,
 				"strawberry_milkshake");
+		Recipes.mixing(new ItemStack(STRAWBERRY_MILKSHAKE.get(), 1), Recipes.STANDARD_GRIND,
+				new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(STRAWBERRY_ICE_CREAM.get()) },
+				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(NeoForgeMod.MILK, 250)) }, consumer,
+				"strawberry_milkshake_ice_cream");
 		Recipes.mixing(new ItemStack(STRAWBERRY_BEETROOT_SALAD.get(), 2), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ROASTED_BEETROOT), Ingredient.of(ROASTED_BEETROOT),
 						Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY),
