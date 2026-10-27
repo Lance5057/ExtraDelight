@@ -543,6 +543,16 @@ public class BlockModels extends BlockStateProvider {
 
 		simpleBlock(ExtraDelightBlocks.JAR.get(),
 				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/jar")));
+		simpleBlock(ExtraDelightBlocks.COPPER_JAR.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/copper_jar")));
+		simpleBlock(ExtraDelightBlocks.IRON_JAR.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/iron_jar")));
+		simpleBlock(ExtraDelightBlocks.GOLD_JAR.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gold_jar")));
+		simpleBlock(ExtraDelightBlocks.DIAMOND_JAR.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/diamond_jar")));
+		simpleBlock(ExtraDelightBlocks.NETHERITE_JAR.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/netherite_jar")));
 
 		fluid(this, ExtraDelightBlocks.APPLE_CIDER_FLUID_BLOCK.get());
 		fluid(this, ExtraDelightBlocks.BBQ_FLUID_BLOCK.get());

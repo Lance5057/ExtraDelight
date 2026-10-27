@@ -365,6 +365,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.WILD_MALLOW_ROOT.get(), ExtraDelightItems.MALLOW_ROOT.get());
 
 		this.dropSelf(ExtraDelightBlocks.KEG.get());
+		this.dropSelf(ExtraDelightBlocks.COPPER_KEG.get());
+		this.dropSelf(ExtraDelightBlocks.IRON_KEG.get());
+		this.dropSelf(ExtraDelightBlocks.GOLD_KEG.get());
+		this.dropSelf(ExtraDelightBlocks.DIAMOND_KEG.get());
+		this.dropSelf(ExtraDelightBlocks.NETHERITE_KEG.get());
 
 		this.dropOther(ExtraDelightBlocks.SHEET_BLOCK.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.TRAY_BLOCK.get(), Items.AIR);
@@ -494,6 +499,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.GOLDEN_CARROT_CRATE.get());
 
 		this.add(ExtraDelightBlocks.JAR.get(), p_248609_ -> this.createJarDrop(p_248609_));
+		this.add(ExtraDelightBlocks.COPPER_JAR.get(), p_248609_ -> this.createJarDrop(p_248609_));
+		this.add(ExtraDelightBlocks.IRON_JAR.get(), p_248609_ -> this.createJarDrop(p_248609_));
+		this.add(ExtraDelightBlocks.GOLD_JAR.get(), p_248609_ -> this.createJarDrop(p_248609_));
+		this.add(ExtraDelightBlocks.DIAMOND_JAR.get(), p_248609_ -> this.createJarDrop(p_248609_));
+		this.add(ExtraDelightBlocks.NETHERITE_JAR.get(), p_248609_ -> this.createJarDrop(p_248609_));
 
 		this.createFruitLeavesDrop(ExtraDelightBlocks.APPLE_LEAVES.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
 				Items.APPLE);

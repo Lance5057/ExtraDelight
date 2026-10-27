@@ -783,9 +783,31 @@ public class ExtraDelightBlocks {
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
 
 	public static final DeferredBlock<KegBlock> KEG = BLOCKS.register("keg_block",
-			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 8));
+	public static final DeferredBlock<KegBlock> COPPER_KEG = BLOCKS.register("copper_keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 16));
+	public static final DeferredBlock<KegBlock> IRON_KEG = BLOCKS.register("iron_keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 32));
+	public static final DeferredBlock<KegBlock> GOLD_KEG = BLOCKS.register("gold_keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 64));
+	public static final DeferredBlock<KegBlock> DIAMOND_KEG = BLOCKS.register("diamond_keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 128));
+	public static final DeferredBlock<KegBlock> NETHERITE_KEG = BLOCKS.register("netherite_keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 256));
+	
+	
 	public static final DeferredBlock<JarBlock> JAR = BLOCKS.register("jar",
-			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 1));
+	public static final DeferredBlock<JarBlock> COPPER_JAR = BLOCKS.register("copper_jar",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 2));
+	public static final DeferredBlock<JarBlock> IRON_JAR = BLOCKS.register("iron_jar",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 4));
+	public static final DeferredBlock<JarBlock> GOLD_JAR = BLOCKS.register("gold_jar",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 8));
+	public static final DeferredBlock<JarBlock> DIAMOND_JAR = BLOCKS.register("diamond_jar",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 16));
+	public static final DeferredBlock<JarBlock> NETHERITE_JAR = BLOCKS.register("netherite_jar",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 32));
 
 	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_FRUIT_LOG = BLOCKS.register("stripped_fruit_log",
 			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));

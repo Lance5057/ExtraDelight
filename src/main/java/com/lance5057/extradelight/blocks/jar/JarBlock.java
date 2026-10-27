@@ -29,9 +29,13 @@ import net.neoforged.neoforge.fluids.SimpleFluidContent;
 
 public class JarBlock extends Block implements EntityBlock {
 	protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 9.0D, 11.0D);
+	public final int sizeInBuckets;
 
-	public JarBlock(Properties properties) {
+	public JarBlock(Properties properties, int sizeInBuckets) {
+		
 		super(properties);
+		
+		this.sizeInBuckets = sizeInBuckets;
 	}
 
 	@Override

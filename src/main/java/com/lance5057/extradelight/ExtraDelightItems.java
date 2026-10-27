@@ -277,9 +277,45 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<Item> KEG = ITEMS.register("keg_item",
 			() -> new BlockItem(ExtraDelightBlocks.KEG.get(), new Item.Properties()));
+	public static final DeferredItem<Item> COPPER_KEG = ITEMS.register("copper_keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.COPPER_KEG.get(), new Item.Properties()));
+	public static final DeferredItem<Item> IRON_KEG = ITEMS.register("iron_keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.IRON_KEG.get(), new Item.Properties()));
+	public static final DeferredItem<Item> GOLD_KEG = ITEMS.register("gold_keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.GOLD_KEG.get(), new Item.Properties()));
+	public static final DeferredItem<Item> DIAMOND_KEG = ITEMS.register("diamond_keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.DIAMOND_KEG.get(), new Item.Properties()));
+	public static final DeferredItem<Item> NETHERITE_KEG = ITEMS.register("netherite_keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.NETHERITE_KEG.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new JarItem(ExtraDelightBlocks.JAR.get(),
-			new Item.Properties().component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1)));
+			new Item.Properties().component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+			""));
+	public static final DeferredItem<Item> COPPER_JAR = ITEMS
+			.register("copper_jar",
+					() -> new JarItem(ExtraDelightBlocks.COPPER_JAR.get(), new Item.Properties()
+							.component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+							"copper"));
+	public static final DeferredItem<Item> IRON_JAR = ITEMS
+			.register("iron_jar",
+					() -> new JarItem(ExtraDelightBlocks.IRON_JAR.get(), new Item.Properties()
+							.component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+							"iron"));
+	public static final DeferredItem<Item> GOLD_JAR = ITEMS
+			.register("gold_jar",
+					() -> new JarItem(ExtraDelightBlocks.GOLD_JAR.get(), new Item.Properties()
+							.component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+							"gold"));
+	public static final DeferredItem<Item> DIAMOND_JAR = ITEMS
+			.register("diamond_jar",
+					() -> new JarItem(ExtraDelightBlocks.DIAMOND_JAR.get(), new Item.Properties()
+							.component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+							"diamond"));
+	public static final DeferredItem<Item> NETHERITE_JAR = ITEMS
+			.register("netherite_jar",
+					() -> new JarItem(ExtraDelightBlocks.NETHERITE_JAR.get(), new Item.Properties()
+							.component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+							"netherite"));
 
 	public static final DeferredItem<Item> WHISK = ITEMS.register("whisk",
 			() -> new SwordItem(Tiers.WOOD, new Item.Properties()));
@@ -2887,7 +2923,7 @@ public class ExtraDelightItems {
 			() -> new DynamicSkewer(new Item.Properties()
 					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
 					.food(EDFoods.APPLE_CHIPS)));
-	
+
 	public static final DeferredItem<Item> TANGHULU = ITEMS.register("tanghulu",
 			() -> new DynamicTanghulu(new Item.Properties()
 					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)

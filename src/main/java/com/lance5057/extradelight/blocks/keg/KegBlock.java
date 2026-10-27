@@ -13,9 +13,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class KegBlock extends RotatedPillarBlock implements EntityBlock {
+	public final int sizeInBuckets;
 
-	public KegBlock(Properties p_49795_) {
+	public KegBlock(Properties p_49795_, int sizeInBuckets) {
+
 		super(p_49795_);
+		this.sizeInBuckets = sizeInBuckets;
 	}
 
 	@Override

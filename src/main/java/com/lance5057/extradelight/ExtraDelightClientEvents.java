@@ -157,8 +157,7 @@ public class ExtraDelightClientEvents {
 								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
 								&& !i.getId().toString().contains("azalea")
 								&& !i.getId().toString().contains("cinnamon")
-								&& !i.getId().toString().contains("spruce")
-								&& !i.getId().toString().contains("birch"))
+								&& !i.getId().toString().contains("spruce") && !i.getId().toString().contains("birch"))
 						.toList()));
 	}
 
@@ -258,7 +257,8 @@ public class ExtraDelightClientEvents {
 			public BlockEntityWithoutLevelRenderer getCustomRenderer() {
 				return JarItemModel.getInstance();
 			}
-		}, ExtraDelightItems.JAR);
+		}, ExtraDelightItems.JAR, ExtraDelightItems.COPPER_JAR, ExtraDelightItems.DIAMOND_JAR,
+				ExtraDelightItems.GOLD_JAR, ExtraDelightItems.IRON_JAR, ExtraDelightItems.NETHERITE_JAR);
 
 		event.registerItem(new IClientItemExtensions() {
 			@Override

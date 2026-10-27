@@ -2,12 +2,11 @@ package com.lance5057.extradelight.items.jar;
 
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
-import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
-import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.blocks.jar.JarBlock;
 import com.lance5057.extradelight.util.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -33,9 +32,6 @@ import net.neoforged.neoforge.fluids.SimpleFluidContent;
 
 public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 	private static JarItemModel instance;
-	ModelResourceLocation rc = ModelResourceLocation
-			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/jar"));
-	IRenderable<ModelData> bm = BakedModelRenderable.of(rc).withModelDataContext();
 
 	public JarItemModel(BlockEntityRenderDispatcher blockEntityRenderDispatcher, EntityModelSet entityModelSet) {
 		super(blockEntityRenderDispatcher, entityModelSet);
@@ -52,7 +48,16 @@ public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 	@Override
 	public void renderByItem(ItemStack stack, ItemDisplayContext displayContext, PoseStack ps, MultiBufferSource mbs,
 			int packedLight, int overlay) {
-		if (stack.is(ExtraDelightItems.JAR.get())) {
+		if (stack.getItem() instanceof JarItem jar) {
+			String s = "extra/" + jar.upgrade + "_jar";
+			if (jar.upgrade.isEmpty()) {
+				s = "extra/jar";
+			}
+
+			ModelResourceLocation rc = ModelResourceLocation
+					.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, s));
+			IRenderable<ModelData> bm = BakedModelRenderable.of(rc).withModelDataContext();
+
 			ps.pushPose();
 
 //			if (displayContext == ItemDisplayContext.GUI) {
@@ -75,6 +80,7 @@ public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 			Matrix3f matrix3f = ps.last().normal();
 
 			SimpleFluidContent f = stack.get(ExtraDelightComponents.FLUID.get());
+
 			if (f != null && !f.isEmpty()) {
 //				ps.pushPose();
 
@@ -83,9 +89,9 @@ public class JarItemModel extends BlockEntityWithoutLevelRenderer {
 				IClientFluidTypeExtensions fluidTypeExtensions = IClientFluidTypeExtensions.of(fluid);
 
 //				
-				RenderUtil.buildCubeAll(new Vector3f(5.75f / 16f, 0.5f / 16f, 5.75f / 16f),
-						new Vector3f(5f / 16f, ((float) f.getAmount() / 1000f) * (6f / 16f), 5f / 16f), vertexConsumer,
-						mat, matrix3f, fluidTypeExtensions.getTintColor(fluidStack),
+				RenderUtil.buildCubeAll(new Vector3f(5.75f / 16f, 0.5f / 16f, 5.75f / 16f), new Vector3f(5f / 16f,
+						((float) f.getAmount() / (((JarBlock) jar.getBlock()).sizeInBuckets * 1000)) * (6f / 16f), 5f / 16f),
+						vertexConsumer, mat, matrix3f, fluidTypeExtensions.getTintColor(fluidStack),
 						RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), packedLight, overlay, ps);
 //				ps.popPose();
 			}
