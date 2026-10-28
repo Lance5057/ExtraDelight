@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "c:storage_blocks/diamond"
+    },
+    "k": {
+      "item": "extradelight:gold_keg_item"
+    },
+    "n": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    " n ",
+    " k ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:diamond_keg_item"
+  }
+}

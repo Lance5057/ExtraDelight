@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "e": {
+      "item": "minecraft:ender_pearl"
+    },
+    "i": {
+      "tag": "c:ingots/iron"
+    },
+    "j": {
+      "item": "extradelight:copper_jar"
+    }
+  },
+  "pattern": [
+    " e ",
+    "iji",
+    " i "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:iron_jar"
+  }
+}

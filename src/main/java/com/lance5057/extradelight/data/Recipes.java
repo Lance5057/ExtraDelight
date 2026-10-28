@@ -3224,6 +3224,32 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(Items.BARREL, 1)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BARREL))
 				.save(consumer, EDLoc("keg"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.COPPER_KEG.get(), 1).pattern(" e ").pattern(" k ")
+				.pattern(" b ").define('e', Items.SPIDER_EYE).define('b', Tags.Items.STORAGE_BLOCKS_COPPER)
+				.define('k', ExtraDelightItems.KEG)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.KEG))
+				.save(consumer, EDLoc("copper_keg"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.IRON_KEG.get(), 1).pattern(" e ").pattern(" k ")
+				.pattern(" b ").define('e', Items.ENDER_PEARL).define('b', Tags.Items.STORAGE_BLOCKS_IRON)
+				.define('k', ExtraDelightItems.COPPER_KEG)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COPPER_KEG))
+				.save(consumer, EDLoc("iron_keg"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.GOLD_KEG.get(), 1).pattern(" e ").pattern(" k ")
+				.pattern(" b ").define('e', Items.ENDER_EYE).define('b', Tags.Items.STORAGE_BLOCKS_GOLD)
+				.define('k', ExtraDelightItems.IRON_KEG)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.IRON_KEG))
+				.save(consumer, EDLoc("gold_keg"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DIAMOND_KEG.get(), 1).pattern(" n ").pattern(" k ")
+				.pattern(" b ").define('n', Items.NETHER_STAR).define('b', Tags.Items.STORAGE_BLOCKS_DIAMOND)
+				.define('k', ExtraDelightItems.GOLD_KEG)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GOLD_KEG))
+				.save(consumer, EDLoc("diamond_keg"));
+		SmithingTransformRecipeBuilder
+				.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+						Ingredient.of(ExtraDelightItems.DIAMOND_KEG.get()), Ingredient.of(Items.NETHERITE_BLOCK),
+						RecipeCategory.FOOD, ExtraDelightItems.NETHERITE_KEG.get())
+				.unlocks("has_netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
+				.save(consumer, ExtraDelight.MOD_ID + ":netherite_keg_smithing");
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.FUNNEL.get(), 1).pattern("c c").pattern("ckc")
 				.pattern(" c ").define('k', ExtraDelightItems.KEG.get()).define('c', Items.COPPER_INGOT)
@@ -3768,6 +3794,33 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern(" g ").define('s', ItemTags.WOODEN_SLABS).define('g', Tags.Items.GLASS_BLOCKS)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLASS))
 				.save(consumer, EDLoc("jar"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.COPPER_JAR.get(), 1).pattern(" e ").pattern("iji")
+				.pattern(" i ").define('e', Items.SPIDER_EYE).define('i', Tags.Items.INGOTS_COPPER)
+				.define('j', ExtraDelightItems.JAR)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.JAR))
+				.save(consumer, EDLoc("copper_jar"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.IRON_JAR.get(), 1).pattern(" e ").pattern("iji")
+				.pattern(" i ").define('e', Items.ENDER_PEARL).define('i', Tags.Items.INGOTS_IRON)
+				.define('j', ExtraDelightItems.COPPER_JAR)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COPPER_JAR))
+				.save(consumer, EDLoc("iron_jar"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.GOLD_JAR.get(), 1).pattern(" e ").pattern("iji")
+				.pattern(" i ").define('e', Items.ENDER_EYE).define('i', Tags.Items.INGOTS_GOLD)
+				.define('j', ExtraDelightItems.IRON_JAR)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.IRON_JAR))
+				.save(consumer, EDLoc("gold_jar"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DIAMOND_JAR.get(), 1).pattern(" n ").pattern("djd")
+				.pattern(" d ").define('n', Items.NETHER_STAR).define('d', Tags.Items.GEMS_DIAMOND)
+				.define('j', ExtraDelightItems.GOLD_JAR)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GOLD_JAR))
+				.save(consumer, EDLoc("diamond_jar"));
+		SmithingTransformRecipeBuilder
+				.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+						Ingredient.of(ExtraDelightItems.DIAMOND_JAR.get()), Ingredient.of(Items.NETHERITE_INGOT),
+						RecipeCategory.FOOD, ExtraDelightItems.NETHERITE_JAR.get())
+				.unlocks("has_netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
+				.save(consumer, ExtraDelight.MOD_ID + ":netherite_jar_smithing");
+
 
 		Recipes.bucket("cocoa_butter", consumer, ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.COCOA_BUTTER_BOTTLE);

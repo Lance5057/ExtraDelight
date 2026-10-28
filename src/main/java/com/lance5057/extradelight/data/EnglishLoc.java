@@ -1022,6 +1022,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("block.extradelight.whipped_cream_fluid_block", "Whipped Cream");
 
 		this.add(ExtraDelightItems.KEG.get(), "Keg");
+		this.add(ExtraDelightItems.COPPER_KEG.get(), "Copper Keg");
+		this.add(ExtraDelightItems.IRON_KEG.get(), "Iron Keg");
+		this.add(ExtraDelightItems.GOLD_KEG.get(), "Gold Keg");
+		this.add(ExtraDelightItems.DIAMOND_KEG.get(), "Diamond Keg");
+		this.add(ExtraDelightItems.NETHERITE_KEG.get(), "Netherite Keg");
 
 		this.add(ExtraDelightItems.FRUIT_LOG.get(), "Fruit Log");
 		this.add(ExtraDelightItems.STRIPPED_FRUIT_LOG.get(), "Stripped Fruit Log");
@@ -1038,6 +1043,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.CHILI_SEEDS.get(), "Chili Seeds");
 		this.add(ExtraDelightItems.CHILI.get(), "Chili");
 		this.add(ExtraDelightItems.JAR.get(), "Jar");
+		this.add(ExtraDelightItems.COPPER_JAR.get(), "Copper Jar");
+		this.add(ExtraDelightItems.IRON_JAR.get(), "Iron Jar");
+		this.add(ExtraDelightItems.GOLD_JAR.get(), "Gold Jar");
+		this.add(ExtraDelightItems.DIAMOND_JAR.get(), "Diamond Jar");
+		this.add(ExtraDelightItems.NETHERITE_JAR.get(), "Netherite Jar");
 		this.add(ExtraDelightItems.MELTING_POT.get(), "Melting Pot");
 		this.add(ExtraDelightItems.CHILLER.get(), "Chiller");
 		this.add(ExtraDelightItems.BAR_MOLD.get(), "Bar Mold");
