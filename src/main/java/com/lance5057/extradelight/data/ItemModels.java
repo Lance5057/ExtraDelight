@@ -879,6 +879,11 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.COFFEE_CHERRIES, "crops/coffee/coffee_cherries");
 
 		forBlockItem(ExtraDelightItems.KEG, modLoc("block/keg_vertical"));
+		forBlockItem(ExtraDelightItems.COPPER_KEG, modLoc("block/copper_keg_vertical"));
+		forBlockItem(ExtraDelightItems.IRON_KEG, modLoc("block/iron_keg_vertical"));
+		forBlockItem(ExtraDelightItems.GOLD_KEG, modLoc("block/gold_keg_vertical"));
+		forBlockItem(ExtraDelightItems.DIAMOND_KEG, modLoc("block/diamond_keg_vertical"));
+		forBlockItem(ExtraDelightItems.NETHERITE_KEG, modLoc("block/netherite_keg_vertical"));
 
 		forBlockItem(this, ExtraDelightItems.STRIPPED_FRUIT_LOG, "stripped_fruit_log");
 		forBlockItem(this, ExtraDelightItems.FRUIT_LOG, "fruit_log");

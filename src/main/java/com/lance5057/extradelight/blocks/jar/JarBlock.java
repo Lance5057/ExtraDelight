@@ -84,7 +84,7 @@ public class JarBlock extends Block implements EntityBlock {
 			}
 
 		}
-		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+		return ItemInteractionResult.SUCCESS;
 	}
 
 	@Override

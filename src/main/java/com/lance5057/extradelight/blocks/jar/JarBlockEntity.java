@@ -83,10 +83,12 @@ public class JarBlockEntity extends BlockEntity {
 
 			if (!i.isEmpty()) {
 				if (this.getTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
-					this.getTank().drain(250, FluidAction.EXECUTE);
 					BlockEntityUtils.Inventory.givePlayerItemStack(
 							BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid()).copy(), player, level,
 							worldPosition);
+					
+					this.getTank().drain(250, FluidAction.EXECUTE);
+					
 					player.getItemInHand(hand).shrink(1);
 					return true;
 				}

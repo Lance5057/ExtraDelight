@@ -20,6 +20,7 @@ public class ExtraDelightConfig {
 	
 	public static final String CATEGORY_BALANCE = "balance";
 	public static ModConfigSpec.BooleanValue INFINITE_SINK;
+	public static ModConfigSpec.BooleanValue ENABLE_FOOD_LOOT;
 
 	static {
 		ModConfigSpec.Builder Builder = new ModConfigSpec.Builder();
@@ -47,6 +48,7 @@ public class ExtraDelightConfig {
 		
 		Builder.comment("Balance").push(CATEGORY_BALANCE);
 		INFINITE_SINK = Builder.comment("Should the sink/tap give infinite water?").define("infiniteSink", true);
+		ENABLE_FOOD_LOOT = Builder.comment("Should food spawn in loot tables?").define("spawnFoodLoot", true);
 		Builder.pop();
 
 		spec = Builder.build();

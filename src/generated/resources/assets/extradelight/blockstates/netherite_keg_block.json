@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "extradelight:block/netherite_keg_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "extradelight:block/netherite_keg_vertical"
+    },
+    "axis=z": {
+      "model": "extradelight:block/netherite_keg_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -86,14 +86,16 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 			PacketDistributor.sendToServer(
 					new AdvancedDisplaySetPacket(this.menu.containerId, this.index.get(), getTransform()));
 		});
-		pos.addLimits(new Vector3f(1.2f, 1.2f, 1.2f), new Vector3f(-0.2f, -0.2f, -0.2f));
+		pos.addLimits(new Vector3f(0.5f, 0.5f, 0.5f), new Vector3f(-0.5f, -0.5f, -0.5f));
 		pos.addBackground(Color.DARK_GRAY, Color.GRAY);
+
 		rot = new Vector3Widget(v -> {
 			menu.tileEntity.getItemTransform(i).setRotation(v);
 			PacketDistributor.sendToServer(
 					new AdvancedDisplaySetPacket(this.menu.containerId, this.index.get(), getTransform()));
 		});
 		rot.addBackground(Color.DARK_GRAY, Color.GRAY);
+
 		scale = new Vector3Widget(new Vector3f(1, 1, 1), v -> {
 			menu.tileEntity.getItemTransform(i).setScale(v);
 			PacketDistributor.sendToServer(
@@ -104,7 +106,9 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 				return new Vector3f(1, 1, 1);
 			}
 		};
+		scale.addLimits(new Vector3f(2f, 2f, 2f), new Vector3f(0.1f, 0.1f, 0.1f));
 		scale.addBackground(Color.DARK_GRAY, Color.GRAY);
+
 		origin = new Vector3Widget(v -> {
 			menu.tileEntity.getItemTransform(i).setOrigin(v);
 			PacketDistributor.sendToServer(
@@ -115,6 +119,7 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 				return new Vector3f(0.5f, 0.5f, 0.5f);
 			}
 		};
+		origin.addLimits(new Vector3f(1.2f, 1.2f, 1.2f), new Vector3f(-0.2f, -0.2f, -0.2f));
 		origin.addBackground(Color.DARK_GRAY, Color.GRAY);
 
 	}

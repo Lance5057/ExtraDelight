@@ -75,6 +75,12 @@ public class Vector3Widget extends UIWidget<Vector3f> {
 		y.init(screen, posX + 47, posY, 5, font, Component.literal("0"), false);
 		z.init(screen, posX + 94, posY, 5, font, Component.literal("0"), false);
 
+		if (isLimited) {
+			x.addLimits(upperLimit.x, lowerLimit.x);
+			y.addLimits(upperLimit.y, lowerLimit.y);
+			z.addLimits(upperLimit.z, lowerLimit.z);
+		}
+
 		x.set(vector.x);
 		y.set(vector.y);
 		z.set(vector.z);
@@ -109,7 +115,7 @@ public class Vector3Widget extends UIWidget<Vector3f> {
 	}
 
 	public void set(Vector3f f) {
-		this.vector = new Vector3f(f);
+		this.vector = withLimit(f);
 		x.set(f.x);
 		y.set(f.y);
 		z.set(f.z);
@@ -122,6 +128,17 @@ public class Vector3Widget extends UIWidget<Vector3f> {
 		v.y = y.get();
 		v.z = z.get();
 
+		return v;
+	}
+
+	private Vector3f withLimit(Vector3f v) {
+		if (isLimited) {
+			Vector3f v2 = new Vector3f();
+			v2.x = Math.clamp(v.x, lowerLimit.x, upperLimit.x);
+			v2.y = Math.clamp(v.y, lowerLimit.y, upperLimit.y);
+			v2.z = Math.clamp(v.z, lowerLimit.z, upperLimit.z);
+			return v2;
+		}
 		return v;
 	}
 

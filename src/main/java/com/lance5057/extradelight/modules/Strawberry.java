@@ -119,8 +119,7 @@ public class Strawberry {
 
 	// Juice
 	public static final DeferredItem<Item> STRAWBERRY_JUICE = EDItemGenerator
-			.register("strawberry_juice", () -> new MelonJuiceItem(drinkItem())).advancementIngredients()
-			.finish();
+			.register("strawberry_juice", () -> new MelonJuiceItem(drinkItem())).advancementIngredients().finish();
 	public static final DeferredItem<Item> STRAWBERRY_JUICE_FLUID_BUCKET = ExtraDelightItems.ITEMS.register(
 			"strawberry_juice_fluid_bucket",
 			() -> ExtraDelightItems.stack1bucketItem(ExtraDelightFluids.STRAWBERRY_JUICE));
@@ -376,9 +375,10 @@ public class Strawberry {
 		Recipes.bundleItem4(Ingredient.of(STRAWBERRY.get()), STRAWBIGGY_ITEM.get(), STRAWBERRY.get(), consumer,
 				"strawbiggy");
 
-		Recipes.vanillaCooking(Ingredient.of(Tags.Items.CROPS_BEETROOT), ROASTED_BEETROOT.get(), consumer, "roasted_beetroot");
-		Recipes.bulkBake(ROASTED_BEETROOT.get(), Ingredient.of(Tags.Items.CROPS_BEETROOT), consumer, ExtraDelightItems.SHEET.get(),
-				"beetroot");
+		Recipes.vanillaCooking(Ingredient.of(Tags.Items.CROPS_BEETROOT), ROASTED_BEETROOT.get(), consumer,
+				"roasted_beetroot");
+		Recipes.bulkBake(ROASTED_BEETROOT.get(), Ingredient.of(Tags.Items.CROPS_BEETROOT), consumer,
+				ExtraDelightItems.SHEET.get(), "beetroot");
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, STRAWBERRY_HAT.get()).pattern("rsr").pattern("r r")
 				.define('s', STRAWBERRY_SEED).define('r', Items.RED_WOOL)
@@ -464,6 +464,12 @@ public class Strawberry {
 						Ingredient.of(CommonTags.Items.TOOLS_KNIFE), STRAWBERRY_SHORTCAKE_SLICE.get(), 7)
 				.build(consumer, ExtraDelight.modLoc("cutting/" + "strawberry_shortcake_knife"));
 
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(WILD_STRAWBERRY.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE),
+						STRAWBERRY_SEED.get(), 1)
+				.addResultWithChance(STRAWBERRY.get(), 0.2f, 1).addResultWithChance(Items.RED_DYE, 0.1f, 1)
+				.build(consumer, ExtraDelight.modLoc("cutting/" + "wild_strawberry_knife"));
+
 		// Feasts
 		FeastRecipeBuilder
 				.feast(Ingredient.of(Items.BOWL), new ItemStack(STRAWBERRY_CLOUD_CAKE_SLICE.get()),
@@ -518,21 +524,19 @@ public class Strawberry {
 						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.ICE_CUBES),
 						Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY),
 						Ingredient.of(ExtraDelightTags.PROCESSED_LEMON) },
-				new SizedFluidIngredient[] {
-						SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 500)),
+				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(Fluids.WATER, 500)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.LEMON_JUICE.FLUID, 250)),
-						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.STRAWBERRY_JUICE.FLUID, 250))
-				},
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.STRAWBERRY_JUICE.FLUID, 250)) },
 				consumer, "pink_lemonade_mixing");
 		Recipes.mixing(new ItemStack(STRAWBERRY_MILKSHAKE.get(), 1), Recipes.STANDARD_GRIND,
 				new ItemStack(Items.GLASS_BOTTLE),
-				new Ingredient[] { Ingredient.of(ExtraDelightItems.ICE_CREAM.get()), Ingredient.of(ExtraDelightTags.STRAWBERRY),
-						Ingredient.of(ExtraDelightTags.STRAWBERRY), Ingredient.of(ExtraDelightTags.STRAWBERRY), },
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.ICE_CREAM.get()),
+						Ingredient.of(ExtraDelightTags.STRAWBERRY), Ingredient.of(ExtraDelightTags.STRAWBERRY),
+						Ingredient.of(ExtraDelightTags.STRAWBERRY), },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(NeoForgeMod.MILK, 250)) }, consumer,
 				"strawberry_milkshake");
 		Recipes.mixing(new ItemStack(STRAWBERRY_MILKSHAKE.get(), 1), Recipes.STANDARD_GRIND,
-				new ItemStack(Items.GLASS_BOTTLE),
-				new Ingredient[] { Ingredient.of(STRAWBERRY_ICE_CREAM.get()) },
+				new ItemStack(Items.GLASS_BOTTLE), new Ingredient[] { Ingredient.of(STRAWBERRY_ICE_CREAM.get()) },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(NeoForgeMod.MILK, 250)) }, consumer,
 				"strawberry_milkshake_ice_cream");
 		Recipes.mixing(new ItemStack(STRAWBERRY_BEETROOT_SALAD.get(), 2), Recipes.LONG_GRIND, new ItemStack(Items.BOWL),
@@ -583,9 +587,10 @@ public class Strawberry {
 						Ingredient.of(Tags.Items.EGGS), Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"strawberry_custard", consumer);
 		Recipes.pot(STRAWBERRY_SYRUP_BOTTLE.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.STRAWBERRY), Ingredient.of(ExtraDelightTags.STRAWBERRY),
-						Ingredient.of(ExtraDelightTags.STRAWBERRY),	Ingredient.of(ExtraDelightTags.STRAWBERRY),
-						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.STRAWBERRY),
+						Ingredient.of(ExtraDelightTags.STRAWBERRY), Ingredient.of(ExtraDelightTags.STRAWBERRY),
+						Ingredient.of(ExtraDelightTags.STRAWBERRY), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"strawberry_syrup", consumer);
 	}
 
@@ -638,8 +643,10 @@ public class Strawberry {
 			w = WordUtils.capitalize(w.replace('_', ' '));
 			lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry." + d, w + " Strawberry");
 			lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_fill." + d, w + " Strawberry Fill");
-			lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves." + d, w + " Strawberry Leaves");
-			lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill." + d, w + " Strawberry Leaves Fill");
+			lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves." + d,
+					w + " Strawberry Leaves");
+			lp.add("block.minecraft.banner.extradelight.banner_pattern_strawberry_leaves_fill." + d,
+					w + " Strawberry Leaves Fill");
 		}
 		lp.add("painting.extradelight.strawberry.title", "Strawberry");
 		lp.add("painting.extradelight.strawberry.author", "Lance5057");

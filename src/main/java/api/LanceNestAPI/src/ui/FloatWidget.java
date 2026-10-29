@@ -93,11 +93,13 @@ public class FloatWidget extends UIWidget<Float> {
 			right_big_button.visible = !h;
 			left_big_button.visible = !h;
 		}
-		
+
 		this.hidden = h;
 	}
 
 	public void set(float f) {
+		if (isLimited)
+			f = Math.clamp(f, lowerLimit, upperLimit);
 		box.setValue(Float.toString(f));
 	}
 
@@ -133,9 +135,8 @@ public class FloatWidget extends UIWidget<Float> {
 			i *= 10;
 
 		i += get();
-		if (this.isLimited)
-			if (i > this.upperLimit)
-				i = this.upperLimit;
+		if (isLimited)
+			i = Math.clamp(i, lowerLimit, upperLimit);
 
 		box.setValue(String.format("%-1.1f", i));
 	}
@@ -151,9 +152,8 @@ public class FloatWidget extends UIWidget<Float> {
 			i *= 10;
 
 		i = get() - i;
-		if (this.isLimited)
-			if (i < this.lowerLimit)
-				i = this.lowerLimit;
+		if (isLimited)
+			i = Math.clamp(i, lowerLimit, upperLimit);
 
 		box.setValue(String.format("%-1.1f", i));
 	}

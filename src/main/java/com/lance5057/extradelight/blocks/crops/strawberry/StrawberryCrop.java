@@ -21,7 +21,7 @@ public class StrawberryCrop extends BushStageFour {
 
 	public StrawberryCrop(Properties properties) {
 		super(Block.box(3.0, 0.0, 3.0, 13.0, 8.0, 13.0), Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0),
-				Strawberry.STRAWBERRY, properties);
+				Strawberry.STRAWBERRY_SEED, properties);
 
 		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0).setValue(CONNECTED, RunnerConnect.NONE)
 				.setValue(GENERATION, 0));

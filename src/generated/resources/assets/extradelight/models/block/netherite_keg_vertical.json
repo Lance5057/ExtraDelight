@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "extradelight:block/netherite_keg_bottom",
+    "front": "extradelight:block/netherite_keg_side",
+    "side": "extradelight:block/netherite_keg_side",
+    "top": "extradelight:block/netherite_keg_top"
+  }
+}
