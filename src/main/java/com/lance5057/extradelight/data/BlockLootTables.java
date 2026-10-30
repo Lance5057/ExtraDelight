@@ -167,12 +167,15 @@ public class BlockLootTables extends BlockLootSubProvider {
 		feast(ExtraDelightBlocks.POT_ROAST_FEAST.get(), ExtraDelightItems.POT_ROAST_FEAST_ITEM.get(), Items.AIR);
 		feast(ExtraDelightBlocks.MEATLOAF_FEAST.get(), ExtraDelightItems.MEAT_LOAF_FEAST.get(), Items.AIR);
 
-		feast(ExtraDelightBlocks.BBQ_RIBS_FEAST.get(), ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get(), ExtraDelightItems.TRAY.get());
+		feast(ExtraDelightBlocks.BBQ_RIBS_FEAST.get(), ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get(),
+				ExtraDelightItems.TRAY.get());
 		feast(ExtraDelightBlocks.PULLED_PORK_FEAST.get(), ExtraDelightItems.PULLED_PORK_FEAST_ITEM.get(), Items.BOWL);
 
-		feast(ExtraDelightBlocks.RACK_LAMB.get(), ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), ExtraDelightItems.TRAY.get());
+		feast(ExtraDelightBlocks.RACK_LAMB.get(), ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(),
+				ExtraDelightItems.TRAY.get());
 		feast(ExtraDelightBlocks.STIRFRY.get(), ExtraDelightItems.STIRFRY_FEAST_ITEM.get(), Items.BOWL);
-		feast(ExtraDelightBlocks.BEEF_WELLINGTON.get(), ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get(), ExtraDelightItems.TRAY.get());
+		feast(ExtraDelightBlocks.BEEF_WELLINGTON.get(), ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get(),
+				ExtraDelightItems.TRAY.get());
 		feast(ExtraDelightBlocks.HAGGIS.get(), ExtraDelightItems.HAGGIS_FEAST_ITEM.get(), ExtraDelightItems.TRAY.get());
 
 		feast(ExtraDelightBlocks.JELLY_WHITE.get(), ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get(), Items.BOWL);
@@ -270,8 +273,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.CINNAMON_PRESSURE_PLATE.get());
 
 		this.add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), (p_124100_) -> {
-			return createLeavesDrops(p_124100_, ExtraDelightBlocks.CINNAMON_SAPLING.get(),
-					HIGH_LEAVES_SAPLING_CHANCES);
+			return createLeavesDrops(p_124100_, ExtraDelightBlocks.CINNAMON_SAPLING.get(), HIGH_LEAVES_SAPLING_CHANCES);
 		});
 
 		this.createFruitLeavesDrop(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
@@ -321,7 +323,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 				ExtraDelightItems.SQUARE_PAN.get());
 		feast(ExtraDelightBlocks.MONKEY_BREAD.get(), ExtraDelightItems.MONKEY_BREAD_FEAST.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.COFFEE_CAKE.get(), Items.AIR);
-		feast(ExtraDelightBlocks.MINT_LAMB.get(), ExtraDelightItems.MINT_LAMB_FEAST.get(), ExtraDelightItems.TRAY.get());
+		feast(ExtraDelightBlocks.MINT_LAMB.get(), ExtraDelightItems.MINT_LAMB_FEAST.get(),
+				ExtraDelightItems.TRAY.get());
 		feast(ExtraDelightBlocks.CHARCUTERIE_BOARD.get(), ExtraDelightItems.CHARCUTERIE_BOARD_FEAST.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.MILK_TART.get(), Items.AIR);
 		feast(ExtraDelightBlocks.PUNCH.get(), ExtraDelightItems.PUNCH_FEAST.get(), Items.BOWL);
@@ -606,7 +609,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(Fermentation.JAR_DISPLAY_BLOCK.get(), noDrop());
 		this.dropSelf(Fermentation.SALT_BLOCK.get());
 
-		feast(Fermentation.CHEESYMITE_SCROLL_BLOCK.get(), Fermentation.CHEESYMITE_SCROLL_BLOCK_ITEM.get(), ExtraDelightItems.SQUARE_PAN.get());
+		feast(Fermentation.CHEESYMITE_SCROLL_BLOCK.get(), Fermentation.CHEESYMITE_SCROLL_BLOCK_ITEM.get(),
+				ExtraDelightItems.SQUARE_PAN.get());
 
 		add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(),
 				createPotFlowerItemTable(ExtraDelightBlocks.CINNAMON_SAPLING.get()));
@@ -675,7 +679,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(SummerCitrus.PURPLE_PICNIC_BASKET.get(), p_248609_ -> this.createContainerItemDrop(p_248609_));
 
 		this.dropSelf(SummerCitrus.RAW_BAKED_ALASKA.get());
-		
+
 		this.dropSelf(SummerCitrus.GRAPEFRUIT_PETAL_LITTER.get());
 		this.dropSelf(SummerCitrus.ORANGE_PETAL_LITTER.get());
 		this.dropSelf(SummerCitrus.LIME_PETAL_LITTER.get());
@@ -684,7 +688,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get());
 
 		this.dropOther(Strawberry.WILD_STRAWBERRY.get(), Strawberry.STRAWBERRY_SEED.get());
-		this.createFruitBushDrop(Strawberry.STRAWBERRY_CROP.get(), Strawberry.STRAWBERRY.get(), Strawberry.STRAWBERRY_SEED.get());
+		this.createFruitBushDrop(Strawberry.STRAWBERRY_CROP.get(), Strawberry.STRAWBERRY.get(),
+				Strawberry.STRAWBERRY_SEED.get());
 		this.dropSelf(Strawberry.STRAWBERRY_CRATE.get());
 		this.dropSelf(Strawberry.STRAWBIGGY.get());
 		feast(Strawberry.PINK_LEMONADE_TRAY.get(), Strawberry.PINK_LEMONADE_TRAY_ITEM.get(), Items.GLASS_BOTTLE);
@@ -693,7 +698,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		feast(Strawberry.STRAWBERRY_CLOUD_CAKE.get(), Strawberry.STRAWBERRY_CLOUD_CAKE_ITEM.get(),
 				ExtraDelightItems.TRAY.get());
 		this.add(Strawberry.STRAWBERRY_PIE.get(), noDrop());
-		
+
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {
@@ -716,17 +721,15 @@ public class BlockLootTables extends BlockLootSubProvider {
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit, Item seed) {
-		this.add(bush,
-				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable()
-						.withPool(LootPool.lootPool()
-								.add(LootItem.lootTableItem(seed)))
-						.withPool(LootPool.lootPool()
-								.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(bush).setProperties(
-										StatePropertiesPredicate.Builder.properties().hasProperty(BushStageFour.AGE, 3)))
-								.add(LootItem.lootTableItem(fruit))
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
-								.apply(ApplyBonusCount
-										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
+		this.add(bush, p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable()
+				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(seed)))
+				.withPool(LootPool.lootPool()
+						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(bush).setProperties(
+								StatePropertiesPredicate.Builder.properties().hasProperty(BushStageFour.AGE, 3)))
+						.add(LootItem.lootTableItem(fruit))
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
+						.apply(ApplyBonusCount
+								.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
 	}
 
 	protected void createFruitLeavesDrop(Block leaves, Block sapling, Item fruit) {

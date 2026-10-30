@@ -198,6 +198,7 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 				Transform tr = ClipboardUtil.pasteTransform(t[i]);
 
 				this.menu.tileEntity.setItemTransform(i, tr);
+				AdvancedDisplayBlockEntity.update(this.menu.tileEntity);
 			}
 		else
 			Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.VILLAGER_NO, 1, 1));

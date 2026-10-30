@@ -82,8 +82,8 @@ public class Transform {
 	}
 
 	public String toString() {
-		return String.format("%s %s %s %s", vecToString(position), vecToString(rotation), vecToString(scale),
-				vecToString(origin));
+		return String.format("%s %s %s %s", vecToString(origin), vecToString(rotation), vecToString(scale),
+				vecToString(position));
 	}
 
 	String vecToString(Vector3f v) {

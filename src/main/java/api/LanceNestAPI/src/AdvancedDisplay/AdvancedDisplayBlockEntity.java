@@ -30,7 +30,7 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 		super(LanceNestAPI.ADVANCED_DISPLAY_ENTITY.get(), pos, blockState);
 
 		for (int i = 0; i < NUM_SLOTS; i++) {
-			transforms.add(new Transform(0.5f, 0.5f, 0.5f, 0, 0, 0, 1, 1, 1, 0, 0, 0));
+			transforms.add(new Transform(0, 0, 0, 0, 0, 0, 1, 1, 1, 0.5f, 0.5f, 0.5f));
 		}
 	}
 

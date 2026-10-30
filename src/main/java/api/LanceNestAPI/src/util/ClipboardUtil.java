@@ -66,15 +66,15 @@ public class ClipboardUtil {
 			ExtraDelight.logger.error("Failed to paste Transform");
 			Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.VILLAGER_NO, 1, 1));
 			return new Transform();
+		} else {
+			Transform t = new Transform();
+
+			t.setOrigin(vector3fFromString(f[0]));
+			t.setRotation(vector3fFromString(f[1]));
+			t.setScale(vector3fFromString(f[2]));
+			t.setPosition(vector3fFromString(f[3]));
+
+			return t;
 		}
-
-		Transform t = new Transform();
-
-		t.setOrigin(vector3fFromString(f[0]));
-		t.setRotation(vector3fFromString(f[1]));
-		t.setScale(vector3fFromString(f[2]));
-		t.setPosition(vector3fFromString(f[3]));
-
-		return t;
 	}
 }
