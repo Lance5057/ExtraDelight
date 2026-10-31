@@ -5,7 +5,7 @@ license="CC BY-NC-SA 4.0 Deed "
 modId="extradelight" #mandatory
 version="2.6.5" #mandatory
 displayName="Extra Delight" #mandatory
-authors="Lance5057, Alan199921, DivineAspect, Skysom, FreneticScribbler, Lanse505, Belathus, RoyalJelly, ParadigmOne, Robynster" #optional
+authors="Lance5057, Alan199921, DivineAspect, Skysom, FreneticScribbler, Lanse505, Belathus, RoyalJelly, ParadigmOne, Robynster, Willowdabirb" #optional
 
 description='''A new more involved way to craft'''
 [[dependencies.extradelight]] #optional

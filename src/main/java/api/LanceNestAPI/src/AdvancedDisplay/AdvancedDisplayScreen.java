@@ -177,12 +177,12 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 	private void copyAll() {
 		String s = "";
 
-		for (int i = 0; i < AdvancedDisplayBlockEntity.NUM_SLOTS + 1; i++) {
+		for (int i = 0; i < AdvancedDisplayBlockEntity.NUM_SLOTS; i++) {
 
 			Transform t = this.menu.tileEntity.getItemTransform(i);
 			s += t.toString();
 			if (i < AdvancedDisplayBlockEntity.NUM_SLOTS - 1)
-				s += "-";
+				s += "_";
 
 		}
 
@@ -191,10 +191,10 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 
 	private void pasteAll() {
 		String s = Minecraft.getInstance().keyboardHandler.getClipboard();
-		String[] t = s.split("-");
+		String[] t = s.split("_");
 
 		if (t.length >= 8)
-			for (int i = 0; i < AdvancedDisplayBlockEntity.NUM_SLOTS; i++) {
+			for (int i = 0; i < AdvancedDisplayBlockEntity.NUM_SLOTS-1; i++) {
 				Transform tr = ClipboardUtil.pasteTransform(t[i]);
 
 				this.menu.tileEntity.setItemTransform(i, tr);
