@@ -2,6 +2,9 @@ package api.LanceNestAPI.src.util;
 
 import org.joml.Vector3f;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+
 import api.LanceNestAPI.src.util.rendering.animation.Transform;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.nbt.CompoundTag;
@@ -65,4 +68,17 @@ public class NBTUtil {
 			VECTORF.encode(buf, t.getOrigin());
 		}
 	};
+
+	public static final Codec<Vector3f> VECTOR_CODEC = RecordCodecBuilder
+			.create(inst -> inst.group(Codec.FLOAT.fieldOf("x").forGetter(Vector3f::x),
+					Codec.FLOAT.fieldOf("y").forGetter(Vector3f::y), Codec.FLOAT.fieldOf("z").forGetter(Vector3f::z))
+					.apply(inst, Vector3f::new));
+
+	public static final Codec<Transform> TRANSFORM_CODEC = RecordCodecBuilder
+			.create(inst -> inst
+					.group(VECTOR_CODEC.fieldOf("origin").forGetter(Transform::getOrigin),
+							VECTOR_CODEC.fieldOf("rotation").forGetter(Transform::getRotation),
+							VECTOR_CODEC.fieldOf("scale").forGetter(Transform::getScale),
+							VECTOR_CODEC.fieldOf("position").forGetter(Transform::getPosition))
+					.apply(inst, Transform::new));
 }

@@ -1,8 +1,7 @@
 package api.LanceNestAPI.src.AdvancedDisplay;
 
+import java.util.List;
 import java.util.Objects;
-
-import com.lance5057.extradelight.ExtraDelight;
 
 import api.LanceNestAPI.src.LanceNestAPI;
 import api.LanceNestAPI.src.network.AdvancedDisplaySyncPacket;
@@ -57,8 +56,8 @@ public class AdvancedDisplayMenu extends AbstractContainerMenu {
 			int startPlayerInvY = startY * 4 + 36;
 			for (int row = 0; row < 3; ++row) {
 				for (int column = 0; column < 9; ++column) {
-					this.addSlot(new HideableSlot(playerInventory, 9 + (row * 9) + column, startX + (column * borderSlotSize),
-							startPlayerInvY + (row * borderSlotSize), true));
+					this.addSlot(new HideableSlot(playerInventory, 9 + (row * 9) + column,
+							startX + (column * borderSlotSize), startPlayerInvY + (row * borderSlotSize), true));
 				}
 			}
 
@@ -139,11 +138,12 @@ public class AdvancedDisplayMenu extends AbstractContainerMenu {
 					.send(new AdvancedDisplaySyncPacket(this.containerId, index, this.tileEntity.getBlockPos()));
 	}
 
-	public void set(int i, Transform t) {
+	public void set(List<Transform> t) {
 		this.canInteractWithCallable.execute((level, pos) -> {
 			BlockEntity state = level.getBlockEntity(pos);
 			if (state instanceof AdvancedDisplayBlockEntity adbe) {
-				adbe.setItemTransform(i, t);
+				for (int i = 0; i < t.size(); i++)
+					adbe.setItemTransform(i, t.get(i));
 //				ExtraDelight.logger.debug(t.toString());
 				AdvancedDisplayBlockEntity.update(adbe);
 			}

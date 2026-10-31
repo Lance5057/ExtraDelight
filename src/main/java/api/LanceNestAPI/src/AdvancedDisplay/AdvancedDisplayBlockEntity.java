@@ -26,6 +26,10 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 	public final static int NUM_SLOTS = 8;
 	private List<Transform> transforms = new ArrayList<Transform>();
 
+	public List<Transform> getTransforms() {
+		return transforms;
+	}
+
 	public AdvancedDisplayBlockEntity(BlockPos pos, BlockState blockState) {
 		super(LanceNestAPI.ADVANCED_DISPLAY_ENTITY.get(), pos, blockState);
 
@@ -97,8 +101,9 @@ public class AdvancedDisplayBlockEntity extends BlockEntity {
 
 		if (nbt.contains("transforms")) {
 			CompoundTag t = nbt.getCompound("transforms");
+//			transforms.clear();
 			for (int i = 0; i < NUM_SLOTS; i++) {
-				transforms.add(i, Transform.readNBT(t.getCompound("transform_" + i)));
+				transforms.set(i, Transform.readNBT(t.getCompound("transform_" + i)));
 			}
 		}
 	}

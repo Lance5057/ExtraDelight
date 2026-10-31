@@ -83,23 +83,23 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 
 		pos = new Vector3Widget(v -> {
 			menu.tileEntity.getItemTransform(i).setPosition(v);
-			PacketDistributor.sendToServer(
-					new AdvancedDisplaySetPacket(this.menu.containerId, this.index.get(), getTransform()));
+			PacketDistributor
+					.sendToServer(sendSetPacket(menu));
 		});
 		pos.addLimits(new Vector3f(0.5f, 0.5f, 0.5f), new Vector3f(-0.5f, -0.5f, -0.5f));
 		pos.addBackground(Color.DARK_GRAY, Color.GRAY);
 
 		rot = new Vector3Widget(v -> {
 			menu.tileEntity.getItemTransform(i).setRotation(v);
-			PacketDistributor.sendToServer(
-					new AdvancedDisplaySetPacket(this.menu.containerId, this.index.get(), getTransform()));
+			PacketDistributor
+					.sendToServer(sendSetPacket(menu));
 		});
 		rot.addBackground(Color.DARK_GRAY, Color.GRAY);
 
 		scale = new Vector3Widget(new Vector3f(1, 1, 1), v -> {
 			menu.tileEntity.getItemTransform(i).setScale(v);
-			PacketDistributor.sendToServer(
-					new AdvancedDisplaySetPacket(this.menu.containerId, this.index.get(), getTransform()));
+			PacketDistributor
+					.sendToServer(sendSetPacket(menu));
 		}) {
 			@Override
 			public Vector3f defaultVector() {
@@ -111,8 +111,8 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 
 		origin = new Vector3Widget(v -> {
 			menu.tileEntity.getItemTransform(i).setOrigin(v);
-			PacketDistributor.sendToServer(
-					new AdvancedDisplaySetPacket(this.menu.containerId, this.index.get(), getTransform()));
+			PacketDistributor
+					.sendToServer(sendSetPacket(menu));
 		}) {
 			@Override
 			public Vector3f defaultVector() {
@@ -122,6 +122,10 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 		origin.addLimits(new Vector3f(1.2f, 1.2f, 1.2f), new Vector3f(-0.2f, -0.2f, -0.2f));
 		origin.addBackground(Color.DARK_GRAY, Color.GRAY);
 
+	}
+
+	private AdvancedDisplaySetPacket sendSetPacket(AdvancedDisplayMenu menu) {
+		return new AdvancedDisplaySetPacket(this.menu.containerId, menu.tileEntity.getTransforms());
 	}
 
 	@Override
@@ -194,7 +198,7 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 		String[] t = s.split("_");
 
 		if (t.length >= 8)
-			for (int i = 0; i < AdvancedDisplayBlockEntity.NUM_SLOTS-1; i++) {
+			for (int i = 0; i < AdvancedDisplayBlockEntity.NUM_SLOTS - 1; i++) {
 				Transform tr = ClipboardUtil.pasteTransform(t[i]);
 
 				this.menu.tileEntity.setItemTransform(i, tr);
