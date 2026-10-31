@@ -149,7 +149,7 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(this, ExtraDelightItems.YEAST, "yeast");
 		forItem(this, ExtraDelightItems.FLOUR, "flour");
-		forItemModel(this, ExtraDelightItems.COOKING_OIL, "oil", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.COOKING_OIL, "oil_model", existingFileHelper);
 		forItem(this, ExtraDelightItems.SUNFLOWER_SEEDS, "sunflower_seeds");
 		forItem(this, ExtraDelightItems.GRAVY, "gravy");
 
@@ -214,10 +214,10 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.EGG_SALAD, "egg_salad");
 
 		// Condiments
-//		forItemModel(this, ExtraDelightItems.KETCHUP, "ketchup", existingFileHelper);
-//		forItemModel(this, ExtraDelightItems.BBQ_SAUCE, "bbq", existingFileHelper);
-//		forItemModel(this, ExtraDelightItems.MAYO, "mayo", existingFileHelper);
-//		forItemModel(this, ExtraDelightItems.VINEGAR, "vinegar", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.KETCHUP, "ketchup_model", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.BBQ_SAUCE, "bbq_model", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.MAYO, "mayo_model", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.VINEGAR, "vinegar_model", existingFileHelper);
 
 		// Bread
 		forItem(this, ExtraDelightItems.BREAD_SLICE, "bread_slice");

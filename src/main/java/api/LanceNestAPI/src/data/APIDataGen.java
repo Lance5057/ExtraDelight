@@ -21,5 +21,7 @@ public class APIDataGen {
 
 //		generator.addProvider(event.includeServer(), new APIRecipes(output, lookupProvider));
 		generator.addProvider(event.includeClient(), new EnglishLoc(output));
+		
+//		generator.addProvider(true, new AllLootTables(output, lookupProvider));
 	}
 }

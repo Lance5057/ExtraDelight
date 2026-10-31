@@ -31,6 +31,7 @@ import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
@@ -699,6 +700,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 				ExtraDelightItems.TRAY.get());
 		this.add(Strawberry.STRAWBERRY_PIE.get(), noDrop());
 
+		this.dropSelf(LanceNestAPI.ADVANCED_DISPLAY_BLOCK.get());
 	}
 
 	protected void createFruitBushDrop(Block bush, Item fruit) {
@@ -767,6 +769,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		Collection<Block> l = new ArrayList<Block>();
 		l.addAll(ExtraDelightBlocks.BLOCKS.getEntries().stream().map(r -> r.get()).toList());
 		l.addAll(AestheticBlocks.BLOCKS.getEntries().stream().map(r -> r.get()).toList());
+		l.addAll(LanceNestAPI.BLOCKS.getEntries().stream().map(r -> r.get()).toList());
 //		l.addAll(ButchercraftAddon.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
 		return l;
 	}
