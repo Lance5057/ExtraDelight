@@ -1,7 +1,9 @@
 package com.lance5057.extradelight.workstations.oven.recipes;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.items.dynamicfood.DynamicContainerFeastItem;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -18,11 +20,14 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.util.RecipeMatcher;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
+import vectorwing.farmersdelight.common.item.component.ItemStackWrapper;
+import vectorwing.farmersdelight.common.registry.ModDataComponents;
 
 public class OvenRecipe implements Recipe<RecipeWrapper> {
 	public static final int INPUT_SLOTS = 9;
+    public static final int CONTAINER_SLOT = 10;
 
-	private final String group;
+    private final String group;
 //	private final OvenRecipeBookTab tab;
 	private final NonNullList<Ingredient> inputItems;
 	public final ItemStack output;
@@ -82,8 +87,12 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 	}
 
 	@Override
-	public ItemStack assemble(RecipeWrapper input, Provider registries) {
-		return this.output.copy();
+	public ItemStack assemble(RecipeWrapper recipeWrapper, Provider registries) {
+		ItemStack result = output.copy();
+        if(result.getItem() instanceof DynamicContainerFeastItem && !recipeWrapper.getItem(CONTAINER_SLOT).isEmpty()){
+            result.set(ModDataComponents.CONTAINER.get(), new ItemStackWrapper(recipeWrapper.getItem(CONTAINER_SLOT).copyWithCount(1)));
+        }
+        return result;
 	}
 
 	public float getExperience() {
