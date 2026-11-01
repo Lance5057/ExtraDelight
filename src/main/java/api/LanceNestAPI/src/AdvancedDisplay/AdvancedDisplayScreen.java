@@ -119,7 +119,7 @@ public class AdvancedDisplayScreen extends AbstractContainerScreen<AdvancedDispl
 				return new Vector3f(0.5f, 0.5f, 0.5f);
 			}
 		};
-		origin.addLimits(new Vector3f(1.2f, 1.2f, 1.2f), new Vector3f(-0.2f, -0.2f, -0.2f));
+		origin.addLimits(new Vector3f(1.5f, 1.5f, 1.5f), new Vector3f(-1.5f, -1.5f, -1.5f));
 		origin.addBackground(Color.DARK_GRAY, Color.GRAY);
 
 	}
