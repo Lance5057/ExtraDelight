@@ -129,7 +129,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 	}
 
 	public static void cookingTick(Level level, BlockPos pos, BlockState state, OvenBlockEntity Oven) {
-		boolean isHeated = Oven.isHeated(level, pos);
+		boolean isHeated = Oven.isHeated(level, pos) && !state.getValue(OvenBlock.WATERLOGGED);
 		boolean didInventoryChange = false;
 		Optional<RecipeHolder<OvenRecipe>> recipe = Oven.getMatchingRecipe(new RecipeWrapper(Oven.inventory));
 
@@ -329,11 +329,11 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			}
 			if (!slotStack.isEmpty())
 				slotStack.shrink(1);
-			
+
 		}
 		if (recipe.value().shouldConsumeContainer())
 			containerInputStack.shrink(1);
-		
+
 		return true;
 	}
 

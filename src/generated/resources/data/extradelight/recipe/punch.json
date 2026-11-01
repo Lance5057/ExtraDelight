@@ -8,6 +8,9 @@
     "f": {
       "tag": "extradelight:processed/fruit"
     },
+    "j": {
+      "tag": "c:juice"
+    },
     "s": {
       "tag": "extradelight:sweetener"
     },
@@ -16,9 +19,9 @@
     }
   },
   "pattern": [
-    "fff",
+    "jjj",
     "sws",
-    " b "
+    "fbf"
   ],
   "result": {
     "count": 1,

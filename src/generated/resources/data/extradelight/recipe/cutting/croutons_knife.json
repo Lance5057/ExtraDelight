@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "c:toast"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "extradelight:croutons"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

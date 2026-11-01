@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "extradelight:serving_pot"
+  },
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:drinks/milk"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "c:foods/cooked_chicken"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:white_chili_feast"
+  }
+}

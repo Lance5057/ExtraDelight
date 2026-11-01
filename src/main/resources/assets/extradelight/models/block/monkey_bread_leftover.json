@@ -3,20 +3,21 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"5": "farmersdelight:block/tray_top",
-		"particle": "farmersdelight:block/tray_top"
+		"0": "farmersdelight:block/tray",
+		"1": "farmersdelight:block/tray_bottom",
+		"particle": "farmersdelight:block/tray"
 	},
 	"elements": [
 		{
 			"from": [1, 0, 1],
-			"to": [15, 1, 15],
+			"to": [15, 2, 15],
 			"faces": {
-				"north": {"uv": [1, 14, 15, 15], "texture": "#5"},
-				"east": {"uv": [1, 14, 15, 15], "texture": "#5"},
-				"south": {"uv": [1, 14, 15, 15], "texture": "#5"},
-				"west": {"uv": [1, 14, 15, 15], "texture": "#5"},
-				"up": {"uv": [1, 1, 15, 15], "texture": "#5"},
-				"down": {"uv": [1, 1, 15, 15], "texture": "#5"}
+				"north": {"uv": [1, 14, 15, 16], "texture": "#0"},
+				"east": {"uv": [1, 14, 15, 16], "texture": "#0"},
+				"south": {"uv": [1, 14, 15, 16], "texture": "#0"},
+				"west": {"uv": [1, 14, 15, 16], "texture": "#0"},
+				"up": {"uv": [1, 0, 15, 14], "texture": "#0"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#1"}
 			}
 		}
 	],

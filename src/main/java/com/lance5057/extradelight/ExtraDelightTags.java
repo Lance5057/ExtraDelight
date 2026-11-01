@@ -649,6 +649,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> IS_JELLY_INGREDIENT = modTag("jelly_ingredient");
 	public static final TagKey<Item> EGG_OR_YOLK = modTag("egg_or_yolk");
 	public static final TagKey<Item> ICE_CUBES = neoforgeItemTag("ice/cubes");
+	
+	public static final TagKey<Item> JUICE = neoforgeItemTag("juice");
 
 	// Tough as Nails
 	public static final TagKey<Item> COOLING_CONSUMED_ITEMS = tanTag("cooling_consumed_items");

@@ -139,21 +139,6 @@ public class ExtraDelightFluids {
 					.setNearDistance(-1000),
 			ExtraDelightBlocks.JAM_FLUID_BLOCK, ExtraDelightItems.JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
 
-	public static FluidRegistration GOLDEN_JAM = new FluidRegistration("golden_jam",
-			() -> new BasicFluid("golden_jam", 0xffffffff, 0x00f2c000,
-					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
-							.motionScale(0.0023333333333333335D))
-					.setNearDistance(-1000),
-			ExtraDelightBlocks.GOLDEN_JAM_FLUID_BLOCK, ExtraDelightItems.GOLDEN_JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS,
-			3);
-
-	public static FluidRegistration GLOW_JAM = new FluidRegistration("glow_jam",
-			() -> new BasicFluid("glow_jam", 0xffffffff, 0x00f18b00,
-					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).density(3000).viscosity(6000)
-							.motionScale(0.0023333333333333335D))
-					.setNearDistance(-1000),
-			ExtraDelightBlocks.GLOW_JAM_FLUID_BLOCK, ExtraDelightItems.GLOW_JAM_FLUID_BUCKET, FLUID_TYPES, FLUIDS, 3);
-
 	public static FluidRegistration TEA = new FluidRegistration("tea",
 			() -> new BasicFluid(0xff562d0f, 0xff562d0f,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(true)),

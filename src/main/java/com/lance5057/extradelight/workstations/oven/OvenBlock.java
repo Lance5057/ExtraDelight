@@ -118,7 +118,7 @@ public class OvenBlock extends Block implements EntityBlock, SimpleWaterloggedBl
 	}
 
 	private OvenSupport getTrayState(LevelAccessor level, BlockPos pos) {
-		if (level.getBlockState(pos.below()).is(ModTags.TRAY_HEAT_SOURCES)) {
+		if (level.getBlockState(pos.below()).is(ModTags.Blocks.TRAY_HEAT_SOURCES)) {
 			return OvenSupport.TRAY;
 		}
 		return OvenSupport.NONE;

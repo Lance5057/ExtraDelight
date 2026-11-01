@@ -15,7 +15,7 @@
       "type": "neoforge:compound",
       "children": [
         {
-          "tag": "c:foods/milk"
+          "tag": "c:drinks/milk"
         },
         {
           "tag": "extradelight:broth"

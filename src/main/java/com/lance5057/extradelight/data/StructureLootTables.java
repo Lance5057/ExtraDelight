@@ -213,7 +213,6 @@ public class StructureLootTables implements LootTableSubProvider {
 				.add(LootItem.lootTableItem(ExtraDelightItems.STUFFED_CACTUS.get()).setWeight(RARE))
 
 				.add(LootItem.lootTableItem(ExtraDelightItems.CURRY_RICE.get()).setWeight(LEGENDARY))
-				.add(LootItem.lootTableItem(ExtraDelightItems.GOLDEN_APPLE_JAM.get()).setWeight(LEGENDARY))
 				.add(LootItem.lootTableItem(ExtraDelightItems.OXTAIL_SOUP.get()).setWeight(LEGENDARY))
 
 				// Feasts

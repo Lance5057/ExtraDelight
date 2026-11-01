@@ -12,13 +12,13 @@
       "tag": "c:cocoa/powder"
     },
     {
-      "tag": "c:foods/milk"
+      "tag": "c:drinks/milk"
     },
     {
       "item": "farmersdelight:pie_crust"
     },
     {
-      "tag": "c:foods/milk"
+      "tag": "c:drinks/milk"
     }
   ],
   "result": {

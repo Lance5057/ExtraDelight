@@ -75,7 +75,7 @@ public class JuicerRecipeCategory implements IRecipeCategory<JuicerRecipe> {
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 - 8, 19)
 				.addItemStack(recipe.getResultItem(null));
 
-		IRecipeSlotBuilder slot = builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 15, 1);
+		IRecipeSlotBuilder slot = builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 15, 1);
 		slot.addIngredients(
 				Ingredient.of(BottleFluidRegistry.getBottleFromFluidWithoutSize(recipe.getFluid().getFluid()),
 						new ItemStack(recipe.getFluid().getFluid().getBucket())));

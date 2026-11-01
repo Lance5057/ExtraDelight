@@ -12,10 +12,10 @@
       "item": "minecraft:glass_bottle"
     },
     {
-      "tag": "c:foods/tomato"
+      "tag": "c:crops/onion"
     },
     {
-      "tag": "c:foods/onion"
+      "tag": "c:crops/onion"
     },
     {
       "tag": "extradelight:sweetener"

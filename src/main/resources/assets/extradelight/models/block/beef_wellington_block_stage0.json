@@ -3,8 +3,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"0": "farmersdelight:block/tray_bottom",
-		"1": "farmersdelight:block/tray_top",
+		"1": "farmersdelight:block/tray",
 		"2": "extradelight:block/beefwellington",
 		"particle": "extradelight:block/beefwellington"
 	},
@@ -14,12 +13,12 @@
 			"from": [1, 0, 1],
 			"to": [15, 2, 15],
 			"faces": {
-				"north": {"uv": [1, 11, 15, 13], "texture": "#0"},
-				"east": {"uv": [1, 11, 15, 13], "texture": "#0"},
-				"south": {"uv": [1, 11, 15, 13], "texture": "#0"},
-				"west": {"uv": [1, 11, 15, 13], "texture": "#0"},
-				"up": {"uv": [1, 1, 15, 15], "texture": "#1"},
-				"down": {"uv": [1, 1, 15, 15], "texture": "#0", "cullface": "down"}
+				"north": {"uv": [1, 14, 15, 16], "texture": "#1"},
+				"east": {"uv": [1, 14, 15, 16], "texture": "#1"},
+				"south": {"uv": [1, 14, 15, 16], "texture": "#1"},
+				"west": {"uv": [1, 14, 15, 16], "texture": "#1"},
+				"up": {"uv": [1, 0, 15, 14], "texture": "#1"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#1", "cullface": "down"}
 			}
 		},
 		{
