@@ -28,6 +28,7 @@ import com.lance5057.extradelight.items.OffsetSpatulaItem;
 import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
+import com.lance5057.extradelight.items.dynamicfood.DynamicContainerFeastItem;
 import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
 import com.lance5057.extradelight.items.dynamicfood.DynamicSkewer;
 import com.lance5057.extradelight.items.dynamicfood.DynamicTanghulu;
