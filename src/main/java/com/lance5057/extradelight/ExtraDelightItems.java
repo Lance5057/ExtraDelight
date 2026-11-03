@@ -2663,19 +2663,10 @@ public class ExtraDelightItems {
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.MULLIGATAWNY_SOUP), true))
 			.advancementMeal().isHotFood().finish();
 
-	public static final DeferredItem<Item> TARTE_TATIN_IN_PAN = EDItemGenerator.register("tarte_tatin_in_pan",
-			() -> new SolidBucketItem(ExtraDelightBlocks.TARTE_TATIN.get(), SoundEvents.DYE_USE, stack1Item()) {
-				@Override
-				public InteractionResult useOn(UseOnContext context) {
-					InteractionResult interactionresult = super.useOn(context);
-					Player player = context.getPlayer();
-					if (interactionresult.consumesAction() && player != null) {
-						player.setItemInHand(context.getHand(), new ItemStack(ModItems.SKILLET.get()));
-					}
-
-					return interactionresult;
-				}
-			}).advancementFeast().finish();
+	public static final DeferredItem<Item> TARTE_TATIN_IN_PAN = EDItemGenerator
+			.register("tarte_tatin_in_pan", () -> new DynamicContainerFeastItem(ExtraDelightBlocks.TARTE_TATIN.get(),
+					SoundEvents.DYE_USE, stack1Item().craftRemainder(ModItems.SKILLET.get())))
+			.advancementFeast().finish();
 
 	public static final DeferredItem<Item> TARTE_TATIN = EDItemGenerator
 			.register("tarte_tatin", () -> new BlockItem(ExtraDelightBlocks.TARTE_TATIN.get(), stack1Item()))
