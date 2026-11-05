@@ -1150,7 +1150,7 @@ public class Fermentation {
 		lp.add(PICKLED_SAUSAGE_ITEM.get(), "Pickled Sausage");
 		lp.add(PICKLED_GINGER_BLOCK.get(), "Jar of Pickled Ginger");
 		lp.add(PICKLE_JUICE.get(), "Pickle Juice");
-		lp.add("farmersdelight.tooltip.pickle_juice", "Pickled! II");
+		lp.add("tooltip.farmersdelight.pickle_juice", "Pickled! II");
 		lp.add(PICKLE_JUICE_FLUID_BUCKET.get(), "Pickle Juice Bucket");
 		lp.add("fluid_type.extradelight.pickle_juice_fluid", "Pickle Juice");
 		lp.add("block.extradelight.pickle_juice_fluid_block", "Pickle Juice");
@@ -1168,7 +1168,7 @@ public class Fermentation {
 		lp.add(MASHED_SOYBEANS_ITEM.get(), "Mashed Soybeans");
 		lp.add(COOKED_SOYBEANS_ITEM.get(), "Cooked Soybeans");
 		lp.add(SOY_MILK.get(), "Soy Milk");
-		lp.add("farmersdelight.tooltip.soy_milk", "Clears 1 Effect");
+		lp.add("tooltip.farmersdelight.soy_milk", "Clears 1 Effect");
 		lp.add(NAEM_MOO_ITEM.get(), "Naem Moo");
 		lp.add(SLICED_BEETROOT_ITEM.get(), "Sliced Beetroot");
 		lp.add(SHREDDED_CABBAGE_ITEM.get(), "Shredded Cabbage");
