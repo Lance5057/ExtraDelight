@@ -8,6 +8,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -70,5 +72,25 @@ public class StrawberryCrop extends BushStageFour {
 			}
 
 		}
+	}
+
+	@Override
+	protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+		BlockPos blockpos = pos.below();
+		BlockState belowBlockState = level.getBlockState(blockpos);
+		net.neoforged.neoforge.common.util.TriState soilDecision = belowBlockState.canSustainPlant(level, blockpos,
+				Direction.UP, state);
+		if (!soilDecision.isDefault())
+			return soilDecision.isTrue();
+		return this.mayPlaceOn(belowBlockState, level, blockpos);
+	}
+
+	@Override
+	protected boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+		return state.getFluidState().isEmpty();
+	}
+
+	protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+		return state.is(BlockTags.DIRT) || state.getBlock() instanceof net.minecraft.world.level.block.FarmBlock;
 	}
 }
