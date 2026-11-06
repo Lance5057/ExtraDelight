@@ -35,12 +35,14 @@ import com.lance5057.extradelight.util.EDItemGenerator;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.ArmorItem;
@@ -53,6 +55,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CarpetBlock;
@@ -98,7 +101,24 @@ public class Strawberry {
 			.advancementIngredients().finish();
 
 	public static final DeferredBlock<Block> WILD_STRAWBERRY = ExtraDelightBlocks.BLOCKS.register("wild_strawberry",
-			() -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
+			() -> new CarpetBlock(Block.Properties.ofFullCopy(Blocks.TALL_GRASS)) {
+
+				protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+					return state.is(BlockTags.DIRT)
+							|| state.getBlock() instanceof net.minecraft.world.level.block.FarmBlock;
+				}
+
+				@Override
+				protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+					BlockPos blockpos = pos.below();
+					BlockState belowBlockState = level.getBlockState(blockpos);
+					net.neoforged.neoforge.common.util.TriState soilDecision = belowBlockState.canSustainPlant(level,
+							blockpos, Direction.UP, state);
+					if (!soilDecision.isDefault())
+						return soilDecision.isTrue();
+					return this.mayPlaceOn(belowBlockState, level, blockpos);
+				}
+			});
 	public static final DeferredItem<Item> WILD_STRAWBERRY_ITEM = ExtraDelightItems.ITEMS
 			.register("wild_strawberry_item", () -> new BlockItem(WILD_STRAWBERRY.get(), new Item.Properties()));
 
