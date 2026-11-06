@@ -688,7 +688,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.APPLE_PETAL_LITTER.get());
 		this.dropSelf(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get());
 
-		this.dropOther(Strawberry.WILD_STRAWBERRY.get(), Strawberry.STRAWBERRY.get());
+		this.dropOther(Strawberry.WILD_STRAWBERRY.get(), Strawberry.STRAWBERRY_SEED.get());
 		this.createFruitBushDrop(Strawberry.STRAWBERRY_CROP.get(), Strawberry.STRAWBERRY.get(),
 				Strawberry.STRAWBERRY_SEED.get());
 		this.dropSelf(Strawberry.STRAWBERRY_CRATE.get());
