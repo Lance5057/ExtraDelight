@@ -1,34 +1,94 @@
 {
   "values": {
+    "extradelight:apple_cheesecake": {
+      "chance": 1.0
+    },
+    "extradelight:apple_cheesecake_slice": {
+      "chance": 0.85
+    },
+    "extradelight:apple_cookie": {
+      "chance": 0.85
+    },
+    "extradelight:apple_cookie_block_item": {
+      "chance": 1.0
+    },
+    "extradelight:apple_cookie_dough": {
+      "chance": 0.65
+    },
     "extradelight:apple_leaves": {
-      "chance": 0.2
+      "chance": 0.3
+    },
+    "extradelight:bacon_egg_pie": {
+      "chance": 1.0
+    },
+    "extradelight:bacon_egg_pie_slice": {
+      "chance": 0.85
     },
     "extradelight:bad_food": {
       "chance": 1.0
     },
     "extradelight:bread_slice": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:cactus": {
-      "chance": 0.2
+      "chance": 0.3
+    },
+    "extradelight:caramel_cheescake_slice": {
+      "chance": 0.85
+    },
+    "extradelight:caramel_cheesecake_item": {
+      "chance": 1.0
+    },
+    "extradelight:cheesecake": {
+      "chance": 1.0
+    },
+    "extradelight:cheesecake_slice": {
+      "chance": 0.85
     },
     "extradelight:chili": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:chili_seeds": {
-      "chance": 0.2
+      "chance": 0.3
+    },
+    "extradelight:chocolate_cake": {
+      "chance": 0.85
+    },
+    "extradelight:chocolate_cake_block": {
+      "chance": 1.0
+    },
+    "extradelight:chocolate_cheesecake": {
+      "chance": 1.0
+    },
+    "extradelight:chocolate_cheesecake_slice": {
+      "chance": 0.85
+    },
+    "extradelight:chocolate_cookie": {
+      "chance": 0.85
+    },
+    "extradelight:chocolate_cookie_block": {
+      "chance": 1.0
+    },
+    "extradelight:chocolate_cookie_dough": {
+      "chance": 0.65
     },
     "extradelight:cinnamon_bark": {
       "chance": 0.2
     },
     "extradelight:cinnamon_leaves": {
-      "chance": 0.2
+      "chance": 0.3
     },
     "extradelight:cinnamon_sapling": {
-      "chance": 0.2
+      "chance": 0.3
+    },
+    "extradelight:coffe_cake_feast": {
+      "chance": 1.0
+    },
+    "extradelight:coffee_cake_slice": {
+      "chance": 0.85
     },
     "extradelight:coffee_cherries": {
-      "chance": 0.2
+      "chance": 0.3
     },
     "extradelight:corn_cob": {
       "chance": 0.2
@@ -46,16 +106,16 @@
       "chance": 0.2
     },
     "extradelight:corn_seeds": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:corn_silk": {
       "chance": 0.2
     },
     "extradelight:cucumber": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:cucumber_seed": {
-      "chance": 0.2
+      "chance": 0.3
     },
     "extradelight:dried_corn_husk": {
       "chance": 0.2
@@ -64,133 +124,349 @@
       "chance": 0.85
     },
     "extradelight:garlic": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:garlic_clove": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:ginger": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:ginger_cutting": {
       "chance": 0.2
     },
+    "extradelight:gingerbread_cookie": {
+      "chance": 0.85
+    },
+    "extradelight:gingerbread_cookie_block_item": {
+      "chance": 1.0
+    },
+    "extradelight:gingerbread_cookie_dough": {
+      "chance": 0.65
+    },
+    "extradelight:glow_berry_cheesecake": {
+      "chance": 1.0
+    },
+    "extradelight:glow_berry_cheesecake_slice": {
+      "chance": 0.85
+    },
+    "extradelight:glow_berry_cookie": {
+      "chance": 0.85
+    },
+    "extradelight:glow_berry_cookie_block_item": {
+      "chance": 1.0
+    },
+    "extradelight:glow_berry_cookie_dough": {
+      "chance": 0.65
+    },
+    "extradelight:glow_berry_pie": {
+      "chance": 1.0
+    },
+    "extradelight:glow_berry_pie_slice": {
+      "chance": 0.85
+    },
+    "extradelight:grapefruit": {
+      "chance": 0.65
+    },
     "extradelight:grapefruit_leaves": {
-      "chance": 0.2
+      "chance": 0.3
     },
     "extradelight:grapefruit_sapling": {
-      "chance": 0.2
+      "chance": 0.3
+    },
+    "extradelight:grasshopper_pie": {
+      "chance": 1.0
+    },
+    "extradelight:grasshopper_pie_slice": {
+      "chance": 0.85
     },
     "extradelight:hazelnut_leaves": {
-      "chance": 0.2
+      "chance": 0.3
     },
     "extradelight:hazelnut_sapling": {
-      "chance": 0.2
+      "chance": 0.3
     },
     "extradelight:hazelnuts": {
-      "chance": 0.2
+      "chance": 0.3
     },
     "extradelight:hazelnuts_in_shell": {
-      "chance": 0.2
+      "chance": 0.4
+    },
+    "extradelight:honey_cheesecake": {
+      "chance": 1.0
+    },
+    "extradelight:honey_cheesecake_slice": {
+      "chance": 0.85
+    },
+    "extradelight:key_lime_pie_item": {
+      "chance": 1.0
+    },
+    "extradelight:key_lime_pie_slice": {
+      "chance": 0.85
+    },
+    "extradelight:kyiv_cake_item": {
+      "chance": 1.0
+    },
+    "extradelight:kyiv_cake_slice": {
+      "chance": 0.85
+    },
+    "extradelight:lemon": {
+      "chance": 0.65
+    },
+    "extradelight:lemon_cucumber_cake_item": {
+      "chance": 1.0
+    },
+    "extradelight:lemon_cucumber_cake_slice": {
+      "chance": 0.85
     },
     "extradelight:lemon_leaves": {
-      "chance": 0.2
+      "chance": 0.3
+    },
+    "extradelight:lemon_meringue_pie_item": {
+      "chance": 1.0
+    },
+    "extradelight:lemon_meringue_pie_slice": {
+      "chance": 0.85
     },
     "extradelight:lemon_sapling": {
-      "chance": 0.2
+      "chance": 0.3
+    },
+    "extradelight:lime": {
+      "chance": 0.65
     },
     "extradelight:lime_leaves": {
-      "chance": 0.2
+      "chance": 0.3
     },
     "extradelight:lime_sapling": {
-      "chance": 0.2
+      "chance": 0.3
     },
     "extradelight:mallow_root": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:marshmallow": {
       "chance": 0.2
     },
+    "extradelight:meat_pie_block_item": {
+      "chance": 1.0
+    },
+    "extradelight:meat_pie_slice": {
+      "chance": 0.85
+    },
     "extradelight:melon_chunks": {
       "chance": 0.2
+    },
+    "extradelight:melon_layer_cake_item": {
+      "chance": 1.0
+    },
+    "extradelight:melon_layer_cake_slice": {
+      "chance": 0.85
     },
     "extradelight:melon_rind": {
       "chance": 0.2
     },
+    "extradelight:milk_tart_feast": {
+      "chance": 1.0
+    },
+    "extradelight:milk_tart_slice": {
+      "chance": 0.85
+    },
     "extradelight:mint": {
       "chance": 0.2
     },
+    "extradelight:mississippi_mud_pie": {
+      "chance": 1.0
+    },
+    "extradelight:mississippi_mud_pie_slice": {
+      "chance": 0.85
+    },
+    "extradelight:nut_butter_cookie": {
+      "chance": 0.85
+    },
+    "extradelight:nut_butter_cookie_block": {
+      "chance": 1.0
+    },
+    "extradelight:nut_butter_cookie_dough": {
+      "chance": 0.65
+    },
+    "extradelight:orange": {
+      "chance": 0.65
+    },
     "extradelight:orange_leaves": {
-      "chance": 0.2
+      "chance": 0.3
     },
     "extradelight:orange_sapling": {
-      "chance": 0.2
+      "chance": 0.3
+    },
+    "extradelight:panforte": {
+      "chance": 1.0
+    },
+    "extradelight:panforte_slice": {
+      "chance": 0.85
+    },
+    "extradelight:pavlova_item": {
+      "chance": 1.0
+    },
+    "extradelight:pavlova_slice": {
+      "chance": 0.85
     },
     "extradelight:peanuts": {
       "chance": 0.2
     },
     "extradelight:peanuts_in_shell": {
-      "chance": 0.2
+      "chance": 0.4
+    },
+    "extradelight:pumpkin_cheesecake": {
+      "chance": 1.0
+    },
+    "extradelight:pumpkin_cheesecake_slice": {
+      "chance": 0.85
+    },
+    "extradelight:pumpkin_cookie": {
+      "chance": 0.85
+    },
+    "extradelight:pumpkin_cookie_block_item": {
+      "chance": 1.0
+    },
+    "extradelight:pumpkin_cookie_dough": {
+      "chance": 0.65
+    },
+    "extradelight:pumpkin_pie_item": {
+      "chance": 1.0
+    },
+    "extradelight:pumpkin_pie_slice": {
+      "chance": 0.85
+    },
+    "extradelight:pumpkin_roll": {
+      "chance": 0.85
+    },
+    "extradelight:pumpkin_roll_feast": {
+      "chance": 1.0
+    },
+    "extradelight:quiche": {
+      "chance": 1.0
+    },
+    "extradelight:quiche_slice": {
+      "chance": 0.85
     },
     "extradelight:sliced_apple": {
-      "chance": 0.2
+      "chance": 0.5
+    },
+    "extradelight:sliced_chili": {
+      "chance": 0.5
     },
     "extradelight:sliced_cucumber_item": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:sliced_ginger": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:sliced_grapefruit": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:sliced_lemon": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:sliced_lime": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:sliced_onion": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:sliced_orange": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:sliced_potato": {
+      "chance": 0.5
+    },
+    "extradelight:sliced_strawberry": {
       "chance": 0.2
     },
     "extradelight:sliced_tomato": {
-      "chance": 0.2
+      "chance": 0.5
     },
     "extradelight:soybean_pod": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:soybeans": {
-      "chance": 0.2
+      "chance": 0.5
+    },
+    "extradelight:steak_pickled_onion_pie_item": {
+      "chance": 1.0
+    },
+    "extradelight:steak_pickled_onion_pie_slice": {
+      "chance": 0.85
+    },
+    "extradelight:strawberry": {
+      "chance": 0.3
+    },
+    "extradelight:strawberry_cheesecake": {
+      "chance": 1.0
+    },
+    "extradelight:strawberry_cheesecake_slice": {
+      "chance": 0.85
+    },
+    "extradelight:strawberry_pie_item": {
+      "chance": 1.0
+    },
+    "extradelight:strawberry_pie_slice": {
+      "chance": 0.85
+    },
+    "extradelight:strawberry_seed": {
+      "chance": 0.3
+    },
+    "extradelight:strawberry_shortcake_item": {
+      "chance": 1.0
+    },
+    "extradelight:strawberry_shortcake_slice": {
+      "chance": 0.85
+    },
+    "extradelight:sugar_cookie": {
+      "chance": 0.85
+    },
+    "extradelight:sugar_cookie_block_item": {
+      "chance": 1.0
+    },
+    "extradelight:sugar_cookie_dough": {
+      "chance": 0.65
+    },
+    "extradelight:sweet_berry_pie": {
+      "chance": 1.0
+    },
+    "extradelight:sweet_berry_pie_slice": {
+      "chance": 0.85
+    },
+    "extradelight:tarte_tatin": {
+      "chance": 1.0
+    },
+    "extradelight:tarte_tatin_slice": {
+      "chance": 0.85
     },
     "extradelight:unshucked_corn": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:wild_chili_block": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:wild_cucumber_item": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:wild_garlic_block": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:wild_ginger": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:wild_mallow_root_block": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:wild_peanut_block": {
-      "chance": 0.2
+      "chance": 0.65
     },
     "extradelight:wild_soybean_item": {
-      "chance": 0.2
+      "chance": 0.65
+    },
+    "extradelight:wild_strawberry_item": {
+      "chance": 0.65
     }
   }
 }
