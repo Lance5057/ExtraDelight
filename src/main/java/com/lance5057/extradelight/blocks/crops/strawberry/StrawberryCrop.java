@@ -19,7 +19,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 public class StrawberryCrop extends BushStageFour {
 
 	public static final EnumProperty<RunnerConnect> CONNECTED = EnumProperty.create("connect", RunnerConnect.class);
-	public static final IntegerProperty GENERATION = IntegerProperty.create("generation", 0, 3);
+	public static final IntegerProperty GENERATION = IntegerProperty.create("generation", 0, 30);
 
 	public StrawberryCrop(Properties properties) {
 		super(Block.box(3.0, 0.0, 3.0, 13.0, 8.0, 13.0), Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0),
@@ -50,7 +50,7 @@ public class StrawberryCrop extends BushStageFour {
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
 		super.randomTick(state, level, pos, rand);
 
-		if (state.getValue(GENERATION) < 3) {
+		if (state.getValue(GENERATION) < 30) {
 			if (state.getValue(AGE) > 1) {
 //				if (rand.nextInt() % 1 == 0) {
 				Direction d = Direction.getRandom(rand);
@@ -62,7 +62,8 @@ public class StrawberryCrop extends BushStageFour {
 						if (level.getBlockState(b.below()).is(BlockTags.DIRT)) {
 							BlockState runner = defaultBlockState()
 									.setValue(CONNECTED, RunnerConnect.valueOf(d.getOpposite().name()))
-									.setValue(GENERATION, state.getValue(GENERATION) + 1);
+									.setValue(GENERATION,
+											Math.min(state.getValue(GENERATION) + level.random.nextInt(10), 30));
 
 							level.setBlock(b, runner, UPDATE_ALL);
 						}
