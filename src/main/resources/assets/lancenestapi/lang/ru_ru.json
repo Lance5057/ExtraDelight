@@ -1,0 +1,23 @@
+{
+  "block.lancenestapi.advanced_display_block": "Продвинутая витрина предметов",
+  "button.widget.advanced_display.switch": "Переключить экраны",
+  "button.widget.transform.copy": "Копировать",
+  "button.widget.transform.copy.all": "Копировать всё",
+  "button.widget.transform.delete": "Сбросить",
+  "button.widget.transform.paste": "Вставить",
+  "button.widget.transform.paste.all": "Вставить всё",
+  "tooltip.widget.advanced_display.switch": "Переключение между редактором и инвентарём",
+  "tooltip.widget.transform.copy": "Копировать в буфер обмена",
+  "tooltip.widget.transform.copy.all": "Копировать все трансформации в буфер обмена",
+  "tooltip.widget.transform.delete": "Сбросить до значений по умолчанию",
+  "tooltip.widget.transform.paste": "Вставить из буфера обмена",
+  "tooltip.widget.transform.paste.all": "Вставить все трансформации из буфера обмена",
+  "tooltip.widget.vector.copy": "Копировать вектор в буфер обмена",
+  "tooltip.widget.vector.delete": "Сбросить вектор до значения по умолчанию",
+  "tooltip.widget.vector.paste": "Вставить вектор из буфера обмена",
+  "widget.current": "Текущее",
+  "widget.origin": "Точка опоры",
+  "widget.position": "Позиция",
+  "widget.rotation": "Поворот",
+  "widget.scale": "Масштаб"
+}
