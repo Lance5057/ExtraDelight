@@ -3,8 +3,8 @@ package com.lance5057.extradelight.blocks.countercabinet;
 import java.util.Objects;
 
 import com.lance5057.extradelight.ExtraDelightContainers;
-import com.lance5057.extradelight.gui.HideableSlot;
 
+import api.LanceNestAPI.src.ui.HideableSlotItemHandler;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -40,12 +40,12 @@ public class CounterCabinetMenu extends AbstractContainerMenu {
 			int borderSlotSize = 18;
 			for (int row = 0; row < 3; ++row) {
 				for (int column = 0; column < 9; ++column) {
-					this.addSlot(new HideableSlot(tileEntity.getItemHandler(), (row * 9) + column,
+					this.addSlot(new HideableSlotItemHandler(tileEntity.getItemHandler(), (row * 9) + column,
 							inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize), true));
 				}
 			}
 
-			this.addSlot(new HideableSlot(tileEntity.getItemHandler(), 27, 80, 36, true).setActive(false));
+			this.addSlot(new HideableSlotItemHandler(tileEntity.getItemHandler(), 27, 80, 36, true).setActive(false));
 
 //			inputStartX = 113;
 //			for (int row = 0; row < 3; ++row) {
@@ -136,7 +136,7 @@ public class CounterCabinetMenu extends AbstractContainerMenu {
 
 	public void switchTabs() {
 		this.slots.forEach(s -> {
-			if (s instanceof HideableSlot h)
+			if (s instanceof HideableSlotItemHandler h)
 				h.toggleActive();
 		});
 	}

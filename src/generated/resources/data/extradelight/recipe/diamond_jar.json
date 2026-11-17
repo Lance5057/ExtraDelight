@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "tag": "c:gems/diamond"
+    },
+    "j": {
+      "item": "extradelight:gold_jar"
+    },
+    "n": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    " n ",
+    "djd",
+    " d "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:diamond_jar"
+  }
+}

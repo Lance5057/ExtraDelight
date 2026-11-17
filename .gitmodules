@@ -1,0 +1,3 @@
+[submodule "LanceNestAPI"]
+	path = src/java/api/LanceNestAPI
+	url = https://github.com/Lance5057/LanceNestAPI.git

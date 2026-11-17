@@ -30,9 +30,12 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class JarItem extends BlockItem implements IDisplayInteractable {
+	public final String upgrade;
 
-	public JarItem(JarBlock jarBlock, Properties p_41383_) {
+	public JarItem(JarBlock jarBlock, Properties p_41383_, String upgrade) {
+	
 		super(jarBlock, p_41383_);
+		this.upgrade = upgrade;
 	}
 
 	@Override

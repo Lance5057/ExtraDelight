@@ -1,6 +1,6 @@
 {
   "values": [
-    "minecraft:melon_slice",
+    "#c:fruit/melon",
     "extradelight:melon_chunks"
   ]
 }

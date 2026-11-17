@@ -376,11 +376,23 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 					if (stack.has(ExtraDelightComponents.CHILL.get()))
 						return true;
 					return false;
-//				case GHOST_SLOT:
-//					return false;
 				default:
 					return true;
 				}
+			}
+			
+//			@Override
+//			public ItemStack extractItem(int slot, int amount, boolean simulate) {
+//				if(slot == OUTPUT_SLOT)
+//					return super.extractItem(slot, amount, simulate);
+//				return ItemStack.EMPTY;
+//			}
+			
+			@Override
+		    public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+				if(slot != OUTPUT_SLOT)
+					return super.insertItem(slot, stack, simulate);
+				return stack;
 			}
 		};
 	}

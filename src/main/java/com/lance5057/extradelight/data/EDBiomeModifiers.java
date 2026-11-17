@@ -281,5 +281,18 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "grapefruit_tree")),
 						new BiomeModifiers.AddFeaturesBiomeModifier(jungle, grapefruitTreeHolderSet,
 								GenerationStep.Decoration.VEGETAL_DECORATION));
+
+				// Strawberry
+				HolderSet.Direct<PlacedFeature> wildStrawberryHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
+						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_STRAWBERRY.get(),
+								new WildConfig(2, 3, 2, 5, 64))),
+						List.of(RarityFilter.onAverageOnceEvery(40), InSquarePlacement.spread(),
+								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+								BiomeFilter.biome()))));
+
+				context.register(
+						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "patch_wild_strawberry")),
+						new BiomeModifiers.AddFeaturesBiomeModifier(forest, wildStrawberryHolderSet,
+								GenerationStep.Decoration.VEGETAL_DECORATION));
 			});
 }

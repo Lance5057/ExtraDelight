@@ -3,8 +3,8 @@ package com.lance5057.extradelight.blocks.picnicbasket;
 import java.util.Objects;
 
 import com.lance5057.extradelight.ExtraDelightContainers;
-import com.lance5057.extradelight.gui.HideableSlot;
 
+import api.LanceNestAPI.src.ui.HideableSlotItemHandler;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -41,7 +41,7 @@ public class PicnicBasketMenu extends AbstractContainerMenu {
 			int borderSlotSize = 18;
 			for (int row = 0; row < 3; ++row) {
 				for (int column = 0; column < 4; ++column) {
-					this.addSlot(new HideableSlot(tileEntity.getItems(), (row * 4) + column,
+					this.addSlot(new HideableSlotItemHandler(tileEntity.getItems(), (row * 4) + column,
 							inputStartX + (column * borderSlotSize), inputStartY + (row * borderSlotSize), true) {
 						@Override
 						public boolean mayPlace(ItemStack stack) {

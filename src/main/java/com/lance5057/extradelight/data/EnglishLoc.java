@@ -7,6 +7,7 @@ import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -26,6 +27,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tooltip.see_more", "Shift for more...");
 		this.add("dynamic.toast", "Dynamic Toast");
 		this.add("dynamic.jam", "Dynamic Jam");
+		this.add("dynamic.skewer", "Dynamic Skewer");
+		this.add("dynamic.tanghulu", "Dynamic Tanghulu");
 
 		this.add("farmersdelight.tooltip.oven.empty", "");
 		this.add("container.doughshaper", "Dough Shaping");
@@ -109,6 +112,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.orange", "Found in wet biomes.");
 		this.add("extradelight.jei.info.grapefruit", "Found in jungle biomes.");
 		this.add("extradelight.jei.info.egg", "Right click an egg on a Mixing Bowl.");
+		this.add("extradelight.jei.info.strawberry", "Found in forest biomes.");
+
+		this.add("extradelight.jei.info.curry_powder", "Found in chests.");
 
 		this.add("extradelight.jei.info.evaporator.extra", "+ Extras");
 		this.add("extradelight.jei.info.evaporator.view", "Requires View"); // Combine with the one under
@@ -156,9 +162,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("tag.item.extradelight.processed.pickled.cucumber", "Processed Pickled Cucumber");
 		this.add("tag.item.extradelight.processed.potato", "Processed Potato");
 		this.add("tag.item.extradelight.processed.produce", "Processed Fruit & Vegetables");
+		this.add("tag.item.extradelight.processed.strawberry", "Processed Strawberry");
 		this.add("tag.item.extradelight.processed.tomato", "Processed Tomato");
 		this.add("tag.item.extradelight.processed.vegetable", "Processed Vegetables");
 		this.add("tag.item.extradelight.riceball_filling", "Riceball fillings");
+		this.add("tag.item.extradelight.skewer.sweet", "Sweet Skewer Ingredients");
 		this.add("tag.item.extradelight.sweetener", "Sweeteners");
 		this.add("tag.item.extradelight.toast_or_bread_slice", "Bread Slice, regardless of toasting status");
 		this.add("tag.item.extradelight.toast_topping", "Toast toppings");
@@ -1014,6 +1022,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("block.extradelight.whipped_cream_fluid_block", "Whipped Cream");
 
 		this.add(ExtraDelightItems.KEG.get(), "Keg");
+		this.add(ExtraDelightItems.COPPER_KEG.get(), "Copper Keg");
+		this.add(ExtraDelightItems.IRON_KEG.get(), "Iron Keg");
+		this.add(ExtraDelightItems.GOLD_KEG.get(), "Gold Keg");
+		this.add(ExtraDelightItems.DIAMOND_KEG.get(), "Diamond Keg");
+		this.add(ExtraDelightItems.NETHERITE_KEG.get(), "Netherite Keg");
 
 		this.add(ExtraDelightItems.FRUIT_LOG.get(), "Fruit Log");
 		this.add(ExtraDelightItems.STRIPPED_FRUIT_LOG.get(), "Stripped Fruit Log");
@@ -1030,6 +1043,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.CHILI_SEEDS.get(), "Chili Seeds");
 		this.add(ExtraDelightItems.CHILI.get(), "Chili");
 		this.add(ExtraDelightItems.JAR.get(), "Jar");
+		this.add(ExtraDelightItems.COPPER_JAR.get(), "Copper Jar");
+		this.add(ExtraDelightItems.IRON_JAR.get(), "Iron Jar");
+		this.add(ExtraDelightItems.GOLD_JAR.get(), "Gold Jar");
+		this.add(ExtraDelightItems.DIAMOND_JAR.get(), "Diamond Jar");
+		this.add(ExtraDelightItems.NETHERITE_JAR.get(), "Netherite Jar");
 		this.add(ExtraDelightItems.MELTING_POT.get(), "Melting Pot");
 		this.add(ExtraDelightItems.CHILLER.get(), "Chiller");
 		this.add(ExtraDelightItems.BAR_MOLD.get(), "Bar Mold");
@@ -1384,7 +1402,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.HANGING_GARLIC.get(), "Hanging Garlic");
 		this.add(ExtraDelightItems.AGLIO_E_OLIO.get(), "Spaghetti Aglio e Olio");
 		this.add(ExtraDelightItems.PENNE.get(), "Penne");
-		this.add(ExtraDelightItems.PENNE_ALL_ARRABIATA.get(), "Penne all'Arrabiatta");
+		this.add(ExtraDelightItems.PENNE_ALL_ARRABIATA.get(), "Penne all'Arrabbiata");
 		this.add(ExtraDelightItems.GARLIC_CRATE.get(), "Garlic Crate");
 
 		this.add(ExtraDelightItems.VAT.get(), "Fermentation Vat");
@@ -1394,6 +1412,8 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.DYNAMIC_TOAST.get(), "%s on Toast");
 		this.add(ExtraDelightItems.DYNAMIC_JAM.get(), "Dynamic Jam");
+		this.add(ExtraDelightItems.DYNAMIC_SKEWER.get(), "Sweet Skewer");
+		this.add(ExtraDelightItems.TANGHULU.get(), "Tanghulu");
 
 		this.add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(), "Potted Cinnamon Sapling");
 		this.add(ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), "Potted Hazelnut Sapling");
@@ -1418,10 +1438,12 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jam.golden_apple", "Golden Apple Jam");
 		this.add("extradelight.jam.orange", "Orange Marmalade");
 		this.add("extradelight.jam.mint", "Mint Jelly");
+		this.add("extradelight.jam.strawberry", "Strawberry Jam");
 
 		this.add(ExtraDelight.MOD_ID + ".tooltip.deprecated", "This item is deprecated! Right-click to convert!");
 
 		Fermentation.EngLoc(this);
+		Strawberry.EngLoc(this);
 		SummerCitrus.EngLoc(this);
 		AestheticBlocks.EngLoc(this);
 	}

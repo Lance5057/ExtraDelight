@@ -21,16 +21,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:apple_fritters": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:apple_fritters"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:apple_slaw": {
       "conditions": {
         "items": [
@@ -1141,6 +1131,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:roasted_beetroot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roasted_beetroot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:roasted_carrot": {
       "conditions": {
         "items": [
@@ -1191,16 +1191,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:seaweed_crisps": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:seaweed_crisps"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:seaweed_salad": {
       "conditions": {
         "items": [
@@ -1231,21 +1221,41 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:stewed_apples": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:stewed_apples"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:stirfry": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:stirfry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberrry_fields_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberrry_fields_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_beetroot_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_beetroot_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_pasta"
           }
         ]
       },
@@ -1466,9 +1476,6 @@
       "extradelight:mulligatawny_soup"
     ],
     [
-      "extradelight:seaweed_crisps"
-    ],
-    [
       "extradelight:fish_cakes"
     ],
     [
@@ -1478,13 +1485,13 @@
       "extradelight:cornbread"
     ],
     [
-      "extradelight:apple_fritters"
-    ],
-    [
       "extradelight:egg_salad_sandwich"
     ],
     [
       "extradelight:salisbury_steak"
+    ],
+    [
+      "extradelight:strawberry_pasta"
     ],
     [
       "extradelight:salad"
@@ -1526,6 +1533,9 @@
       "extradelight:fish_salad_sandwich"
     ],
     [
+      "extradelight:roasted_beetroot"
+    ],
+    [
       "extradelight:lamb_stew"
     ],
     [
@@ -1536,9 +1546,6 @@
     ],
     [
       "extradelight:omelette"
-    ],
-    [
-      "extradelight:stewed_apples"
     ],
     [
       "extradelight:miso_soup"
@@ -1688,6 +1695,9 @@
       "extradelight:bacon_cheeseburger"
     ],
     [
+      "extradelight:strawberrry_fields_salad"
+    ],
+    [
       "extradelight:chicken_stew"
     ],
     [
@@ -1701,6 +1711,9 @@
     ],
     [
       "extradelight:gazpacho"
+    ],
+    [
+      "extradelight:strawberry_beetroot_salad"
     ],
     [
       "extradelight:congee"

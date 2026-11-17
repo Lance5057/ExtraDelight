@@ -6,8 +6,9 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.modules.Fermentation;
-
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -17,6 +18,8 @@ import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredItem;
+import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ItemModels extends ItemModelProvider {
 
@@ -146,7 +149,7 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(this, ExtraDelightItems.YEAST, "yeast");
 		forItem(this, ExtraDelightItems.FLOUR, "flour");
-		forItem(this, ExtraDelightItems.COOKING_OIL, "cooking_oil");
+		forItemModel(this, ExtraDelightItems.COOKING_OIL, "oil_model", existingFileHelper);
 		forItem(this, ExtraDelightItems.SUNFLOWER_SEEDS, "sunflower_seeds");
 		forItem(this, ExtraDelightItems.GRAVY, "gravy");
 
@@ -160,11 +163,11 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.TOMATO_JUICE, "tomato_juice");
 
 		// Custard
-		forItem(this, ExtraDelightItems.SWEET_BERRY_CUSTARD, "sweet_berry_custard");
-		forItem(this, ExtraDelightItems.CHOCOLATE_CUSTARD, "chocolate_custard");
-		forItem(this, ExtraDelightItems.PUMPKIN_CUSTARD, "pumpkin_custard");
-		forItem(this, ExtraDelightItems.HONEY_CUSTARD, "honey_custard");
-		forItem(this, ExtraDelightItems.APPLE_CUSTARD, "apple_custard");
+		forItemModel(this, ExtraDelightItems.SWEET_BERRY_CUSTARD, "custard/sweet_berry", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.CHOCOLATE_CUSTARD, "custard/chocolate", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.PUMPKIN_CUSTARD, "custard/pumpkin", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.HONEY_CUSTARD, "custard/honey", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.APPLE_CUSTARD, "custard/apple", existingFileHelper);
 
 		// Pie
 		forItem(this, ExtraDelightItems.SWEET_BERRY_PIE_SLICE, "sweet_berry_pie_slice");
@@ -211,10 +214,10 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.EGG_SALAD, "egg_salad");
 
 		// Condiments
-		forItem(this, ExtraDelightItems.KETCHUP, "ketchup");
-		forItem(this, ExtraDelightItems.BBQ_SAUCE, "bbq");
-		forItem(this, ExtraDelightItems.MAYO, "mayo");
-		forItem(this, ExtraDelightItems.VINEGAR, "vinegar");
+		forItemModel(this, ExtraDelightItems.KETCHUP, "ketchup_model", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.BBQ_SAUCE, "bbq_model", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.MAYO, "mayo_model", existingFileHelper);
+		forItemModel(this, ExtraDelightItems.VINEGAR, "vinegar_model", existingFileHelper);
 
 		// Bread
 		forItem(this, ExtraDelightItems.BREAD_SLICE, "bread_slice");
@@ -547,7 +550,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.CARAMEL_POPCORN, "caramel_corn");
 		forItem(this, ExtraDelightItems.CARAMEL_CHEESECAKE_ITEM, "caramel_cheesecake");
 		forItem(this, ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE, "caramel_cheesecake_slice");
-		forItem(this, ExtraDelightItems.CARAMEL_CUSTARD, "caramel_custard");
+		forItemModel(this, ExtraDelightItems.CARAMEL_CUSTARD, "custard/caramel", existingFileHelper);
 		forItem(this, ExtraDelightItems.CARAMEL_POPSICLE, "caramel_popsicle");
 		forItem(this, ExtraDelightItems.PUMPKIN_PIE_ITEM, "pumpkin_pie");
 		forItem(this, ExtraDelightItems.PUMPKIN_PIE_SLICE, "pumpkin_pie_slice");
@@ -876,6 +879,11 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.COFFEE_CHERRIES, "crops/coffee/coffee_cherries");
 
 		forBlockItem(ExtraDelightItems.KEG, modLoc("block/keg_vertical"));
+		forBlockItem(ExtraDelightItems.COPPER_KEG, modLoc("block/copper_keg_vertical"));
+		forBlockItem(ExtraDelightItems.IRON_KEG, modLoc("block/iron_keg_vertical"));
+		forBlockItem(ExtraDelightItems.GOLD_KEG, modLoc("block/gold_keg_vertical"));
+		forBlockItem(ExtraDelightItems.DIAMOND_KEG, modLoc("block/diamond_keg_vertical"));
+		forBlockItem(ExtraDelightItems.NETHERITE_KEG, modLoc("block/netherite_keg_vertical"));
 
 		forBlockItem(this, ExtraDelightItems.STRIPPED_FRUIT_LOG, "stripped_fruit_log");
 		forBlockItem(this, ExtraDelightItems.FRUIT_LOG, "fruit_log");
@@ -1269,7 +1277,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(this, ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH, "nut_butter_cookie_dough");
 		forItem(this, ExtraDelightItems.NUT_BUTTER_ICE_CREAM, "nut_butter_ice_cream");
 		forItem(this, ExtraDelightItems.NUT_BUTTER_MILKSHAKE, "nut_butter_milkshake");
-		forItem(this, ExtraDelightItems.NUT_BUTTER_CUSTARD, "nut_butter_custard");
+		forItemModel(this, ExtraDelightItems.NUT_BUTTER_CUSTARD, "custard/nut_butter", existingFileHelper);
 		forItem(this, ExtraDelightItems.MISSISSIPPI_MUD_PIE_SLICE, "mississippi_mud_pie_slice");
 		forItem(this, ExtraDelightItems.HAZELNUT_SOUP, "hazelnut_soup");
 		forItem(this, ExtraDelightItems.MARSHMALLOW_SLICE, "marshmallow_slice");
@@ -1356,10 +1364,18 @@ public class ItemModels extends ItemModelProvider {
 				.parent(new ModelFile.UncheckedModelFile("block/block"))
 				.customLoader(BlockStateItemGeometryLoader::builder);
 
+		getBuilder(ExtraDelightItems.DYNAMIC_SKEWER.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(DynamicFoodGeometryLoader::builder);
+
+		getBuilder(ExtraDelightItems.TANGHULU.getId().getPath()).parent(new ModelFile.UncheckedModelFile("block/block"))
+				.customLoader(DynamicFoodGeometryLoader::builder);
+
 		forBlockItemFlat(this, ExtraDelightItems.APPLE_PETAL_LITTER_ITEM, "crops/fruit/apple/apple_leaves_budding");
 		forBlockItemFlat(this, ExtraDelightItems.HAZELNUT_PETAL_LITTER_ITEM, "crops/fruit/hazelnut/hazelnut_petals");
 
 		Fermentation.itemModels(this);
+		Strawberry.itemModels(this);
 		SummerCitrus.itemModels(this);
 		AestheticBlocks.itemModel(this);
 	}
@@ -1368,11 +1384,10 @@ public class ItemModels extends ItemModelProvider {
 		tmp.singleTexture(item.getId().getPath(), tmp.mcLoc("item/generated"), "layer0", tmp.modLoc("item/" + name));
 	}
 
-	public void forItemModel(ItemModelProvider tmp, DeferredItem<Item> item, String name) {
-		tmp.getBuilder(item.getId().getPath() + "_item")
+	public static void forItemModel(ItemModelProvider tmp, DeferredItem<Item> item, String name,
+			ExistingFileHelper existingFileHelper) {
+		tmp.getBuilder(item.getId().getPath())
 				.parent(new ModelFile.ExistingModelFile(tmp.modLoc("item/" + name), existingFileHelper));
-//		getBuilder(item.getId().getPath()).parent(
-//				new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/" + path)));
 	}
 
 	public static void forBlockItemFlat(ItemModelProvider tmp, DeferredItem<Item> item, String name) {

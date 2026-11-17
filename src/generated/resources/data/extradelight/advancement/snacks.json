@@ -241,6 +241,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:seaweed_crisps": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:seaweed_crisps"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sunflower_seeds": {
       "conditions": {
         "items": [
@@ -297,6 +307,9 @@
     ],
     [
       "extradelight:pickled_egg_item"
+    ],
+    [
+      "extradelight:seaweed_crisps"
     ],
     [
       "extradelight:boiled_egg"

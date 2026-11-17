@@ -149,7 +149,7 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 	public DyeColor getColor() {
 		return this.color;
 	}
-	
+
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());

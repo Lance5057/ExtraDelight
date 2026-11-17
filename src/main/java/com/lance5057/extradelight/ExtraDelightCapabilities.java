@@ -69,9 +69,25 @@ public class ExtraDelightCapabilities {
 				(o, d) -> o.getTank());
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.JAR.get(),
 				(o, d) -> o.getTank());
+
 		event.registerItem(Capabilities.FluidHandler.ITEM,
 				(o, d) -> new FluidHandlerItemStack(ExtraDelightComponents.FLUID, o, 1000),
 				ExtraDelightItems.JAR.get());
+		event.registerItem(Capabilities.FluidHandler.ITEM,
+				(o, d) -> new FluidHandlerItemStack(ExtraDelightComponents.FLUID, o, 2000),
+				ExtraDelightItems.COPPER_JAR.get());
+		event.registerItem(Capabilities.FluidHandler.ITEM,
+				(o, d) -> new FluidHandlerItemStack(ExtraDelightComponents.FLUID, o, 4000),
+				ExtraDelightItems.IRON_JAR.get());
+		event.registerItem(Capabilities.FluidHandler.ITEM,
+				(o, d) -> new FluidHandlerItemStack(ExtraDelightComponents.FLUID, o, 8000),
+				ExtraDelightItems.GOLD_JAR.get());
+		event.registerItem(Capabilities.FluidHandler.ITEM,
+				(o, d) -> new FluidHandlerItemStack(ExtraDelightComponents.FLUID, o, 16000),
+				ExtraDelightItems.DIAMOND_JAR.get());
+		event.registerItem(Capabilities.FluidHandler.ITEM,
+				(o, d) -> new FluidHandlerItemStack(ExtraDelightComponents.FLUID, o, 32000),
+				ExtraDelightItems.NETHERITE_JAR.get());
 
 		event.registerItem(Capabilities.ItemHandler.ITEM,
 				(stack, context) -> new ComponentItemHandler(stack, ExtraDelightComponents.ITEMSTACK_HANDLER.get(), 8),

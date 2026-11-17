@@ -5,7 +5,9 @@ import java.util.concurrent.CompletableFuture;
 import com.lance5057.extradelight.ExtraDelightItems;
 
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -21,88 +23,168 @@ public class DataMapGen extends DataMapProvider {
 	}
 
 	@Override
-	protected void gather() {
-		Builder<Compostable, Item> compostables = this.builder(NeoForgeDataMaps.COMPOSTABLES);
+	protected void gather(HolderLookup.Provider provider) {
+		builder(NeoForgeDataMaps.COMPOSTABLES)
+				.add(ExtraDelightItems.CORN_COB.get().asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(ExtraDelightItems.CORN_COB_BUNDLE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.CORN_HUSK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(ExtraDelightItems.CORN_HUSK_BUNDLE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.CORN_ON_COB.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(ExtraDelightItems.CORN_SEEDS.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(ExtraDelightItems.CORN_SILK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(ExtraDelightItems.DRIED_CORN_HUSK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.asItem().builtInRegistryHolder(),	new Compostable(0.85f), false)
+				.add(ExtraDelightItems.UNSHUCKED_CORN.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.BAD_FOOD.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.CACTUS.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(ExtraDelightItems.SLICED_APPLE.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(ExtraDelightItems.SLICED_GINGER.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(ExtraDelightItems.SLICED_ONION.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(ExtraDelightItems.SLICED_POTATO.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(ExtraDelightItems.SLICED_TOMATO.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(ExtraDelightItems.BREAD_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(ExtraDelightItems.GINGER.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.GINGER_CUTTING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(ExtraDelightItems.MINT.asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(ExtraDelightItems.COFFEE_CHERRIES.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(ExtraDelightItems.CINNAMON_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(ExtraDelightItems.CINNAMON_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(ExtraDelightItems.CINNAMON_BARK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(ExtraDelightItems.HAZELNUT_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(ExtraDelightItems.HAZELNUT_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(ExtraDelightItems.HAZELNUTS.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(ExtraDelightItems.HAZELNUTS_IN_SHELL.asItem().builtInRegistryHolder(), new Compostable(0.4f), false)
+				.add(ExtraDelightItems.MARSHMALLOW.asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(ExtraDelightItems.MALLOW_ROOT.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.PEANUTS_IN_SHELL.asItem().builtInRegistryHolder(), new Compostable(0.4f), false)
+				.add(ExtraDelightItems.PEANUTS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(ExtraDelightItems.CHILI.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.CHILI_SEEDS.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(ExtraDelightItems.SLICED_CHILI.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(ExtraDelightItems.WILD_CHILI_BLOCK.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK.asItem().builtInRegistryHolder(),	new Compostable(0.65f), false)
+				.add(ExtraDelightItems.WILD_GINGER.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.WILD_PEANUT_BLOCK.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.APPLE_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(ExtraDelightItems.WILD_GARLIC_BLOCK.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.GARLIC.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.GARLIC_CLOVE.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
 
-		compostables.add(ExtraDelightItems.CORN_COB.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.CORN_COB_BUNDLE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false);
-		compostables.add(ExtraDelightItems.CORN_HUSK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.CORN_HUSK_BUNDLE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false);
-		compostables.add(ExtraDelightItems.CORN_ON_COB.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.CORN_SEEDS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.CORN_SILK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.DRIED_CORN_HUSK.asItem().builtInRegistryHolder(), new Compostable(0.2f),
-				false);
-		compostables.add(ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.asItem().builtInRegistryHolder(),
-				new Compostable(0.85f), false);
-		compostables.add(ExtraDelightItems.UNSHUCKED_CORN.asItem().builtInRegistryHolder(), new Compostable(0.2f),
-				false);
-		compostables.add(ExtraDelightItems.BAD_FOOD.asItem().builtInRegistryHolder(), new Compostable(1f), false);
-		compostables.add(ExtraDelightItems.CACTUS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.SLICED_APPLE.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.SLICED_GINGER.asItem().builtInRegistryHolder(), new Compostable(0.2f),
-				false);
-		compostables.add(ExtraDelightItems.SLICED_ONION.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.SLICED_POTATO.asItem().builtInRegistryHolder(), new Compostable(0.2f),
-				false);
-		compostables.add(ExtraDelightItems.SLICED_TOMATO.asItem().builtInRegistryHolder(), new Compostable(0.2f),
-				false);
-		compostables.add(ExtraDelightItems.BREAD_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.GINGER.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.GINGER_CUTTING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.MINT.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.COFFEE_CHERRIES.asItem().builtInRegistryHolder(), new Compostable(0.2f),
-				false);
-		compostables.add(ExtraDelightItems.CINNAMON_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.CINNAMON_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.CINNAMON_BARK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.HAZELNUT_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.HAZELNUT_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.HAZELNUTS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.HAZELNUTS_IN_SHELL.asItem().builtInRegistryHolder(), new Compostable(0.2f),
-				false);
-		compostables.add(ExtraDelightItems.MARSHMALLOW.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.MALLOW_ROOT.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.PEANUTS_IN_SHELL.asItem().builtInRegistryHolder(), new Compostable(0.2f),
-				false);
-		compostables.add(ExtraDelightItems.PEANUTS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.CHILI.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.CHILI_SEEDS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+				.add(ExtraDelightItems.PUMPKIN_COOKIE_BLOCK.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.PUMPKIN_COOKIE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.SUGAR_COOKIE_BLOCK.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.SUGAR_COOKIE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.SUGAR_COOKIE_DOUGH.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.GLOW_BERRY_COOKIE_BLOCK.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.GLOW_BERRY_COOKIE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.APPLE_COOKIE_BLOCK.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.APPLE_COOKIE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.APPLE_COOKIE_DOUGH.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.GINGERBREAD_COOKIE_BLOCK.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.GINGERBREAD_COOKIE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.NUT_BUTTER_COOKIE_BLOCK.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.NUT_BUTTER_COOKIE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.CHOCOLATE_COOKIE_BLOCK.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.CHOCOLATE_COOKIE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.CHOCOLATE_COOKIE_DOUGH.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(ExtraDelightItems.SWEET_BERRY_PIE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.SWEET_BERRY_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.GLOW_BERRY_PIE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.GLOW_BERRY_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.CHEESECAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.CHEESECAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.HONEY_CHEESECAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.HONEY_CHEESECAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.CHOCOLATE_CHEESECAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.PUMPKIN_CHEESECAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.GLOW_BERRY_CHEESECAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.APPLE_CHEESECAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.APPLE_CHEESECAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.QUICHE.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.QUICHE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.MEAT_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.CARAMEL_CHEESECAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.PUMPKIN_PIE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.PUMPKIN_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.COFFEE_CAKE_FEAST.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.COFFEE_CAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.PUMPKIN_ROLL_FEAST.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.PUMPKIN_ROLL.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.MILK_TART_FEAST.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.MILK_TART_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.CHOCOLATE_CAKE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.TARTE_TATIN.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.TARTE_TATIN_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.MISSISSIPPI_MUD_PIE.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.MISSISSIPPI_MUD_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.GRASSHOPPER_PIE.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.GRASSHOPPER_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.BACON_EGG_PIE.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.BACON_EGG_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(ExtraDelightItems.PANFORTE.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(ExtraDelightItems.PANFORTE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
 
-		compostables.add(ExtraDelightItems.WILD_CHILI_BLOCK.asItem().builtInRegistryHolder(), new Compostable(0.2f),
-				false);
-		compostables.add(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK.asItem().builtInRegistryHolder(),
-				new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.WILD_GINGER.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.WILD_PEANUT_BLOCK.asItem().builtInRegistryHolder(), new Compostable(0.2f),
-				false);
-		compostables.add(ExtraDelightItems.APPLE_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.WILD_GARLIC_BLOCK.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.GARLIC.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(ExtraDelightItems.GARLIC_CLOVE.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+				.add(Fermentation.WILD_CUCUMBER.asItem().builtInRegistryHolder(), new Compostable(0.65f),false)
+				.add(Fermentation.CUCUMBER.asItem().builtInRegistryHolder(), new Compostable(0.65f),false)
+				.add(Fermentation.CUCUMBER_SEED.asItem().builtInRegistryHolder(), new Compostable(0.3f),false)
+				.add(Fermentation.SLICED_CUCUMBER_ITEM.asItem().builtInRegistryHolder(), new Compostable(0.5f),false)
+				.add(Fermentation.WILD_SOYBEAN.asItem().builtInRegistryHolder(), new Compostable(0.65f),false)
+				.add(Fermentation.SOYBEAN_POD.asItem().builtInRegistryHolder(), new Compostable(0.65f),false)
+				.add(Fermentation.SOYBEANS.asItem().builtInRegistryHolder(), new Compostable(0.5f),false)
+				.add(Fermentation.STEAK_PICKLED_ONION_PIE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(Fermentation.STEAK_PICKLED_ONION_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
 
-		compostables.add(Fermentation.WILD_CUCUMBER.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
-		compostables.add(Fermentation.CUCUMBER.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
-		compostables.add(Fermentation.CUCUMBER_SEED.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
-		compostables.add(Fermentation.SLICED_CUCUMBER_ITEM.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
-		compostables.add(Fermentation.WILD_SOYBEAN.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
-		compostables.add(Fermentation.SOYBEAN_POD.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
-		compostables.add(Fermentation.SOYBEANS.asItem().builtInRegistryHolder(), new Compostable(0.2f),false);
+				.add(SummerCitrus.LEMON.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(SummerCitrus.LEMON_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(SummerCitrus.LEMON_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(SummerCitrus.SLICED_LEMON.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(SummerCitrus.LIME.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(SummerCitrus.LIME_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(SummerCitrus.LIME_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(SummerCitrus.SLICED_LIME.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(SummerCitrus.ORANGE.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(SummerCitrus.ORANGE_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(SummerCitrus.ORANGE_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(SummerCitrus.SLICED_ORANGE.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(SummerCitrus.GRAPEFRUIT.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(SummerCitrus.GRAPEFRUIT_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(SummerCitrus.GRAPEFRUIT_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(SummerCitrus.SLICED_GRAPEFRUIT.asItem().builtInRegistryHolder(), new Compostable(0.5f), false)
+				.add(SummerCitrus.MELON_CHUNKS.asItem().builtInRegistryHolder(), new Compostable(0.4f), false)
+				.add(SummerCitrus.MELON_RIND.asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(SummerCitrus.LEMON_MERINGUE_PIE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(SummerCitrus.LEMON_MERINGUE_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(SummerCitrus.KEY_LIME_PIE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(SummerCitrus.KEY_LIME_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(SummerCitrus.LEMON_CUCUMBER_CAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(SummerCitrus.LEMON_CUCUMBER_CAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(SummerCitrus.MELON_LAYER_CAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(SummerCitrus.MELON_LAYER_CAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(SummerCitrus.PAVLOVA_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(SummerCitrus.PAVLOVA_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(SummerCitrus.KYIV_CAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(SummerCitrus.KYIV_CAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
 
-		compostables.add(SummerCitrus.LEMON_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.LEMON_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.SLICED_LEMON.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.LIME_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.LIME_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.SLICED_LIME.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.ORANGE_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.ORANGE_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.SLICED_ORANGE.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.GRAPEFRUIT_LEAVES.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.GRAPEFRUIT_SAPLING.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.SLICED_GRAPEFRUIT.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.MELON_CHUNKS.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
-		compostables.add(SummerCitrus.MELON_RIND.asItem().builtInRegistryHolder(), new Compostable(0.2f), false);
+				.add(Strawberry.STRAWBERRY.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(Strawberry.STRAWBERRY_SEED.asItem().builtInRegistryHolder(), new Compostable(0.3f), false)
+				.add(Strawberry.SLICED_STRAWBERRY.asItem().builtInRegistryHolder(), new Compostable(0.2f), false)
+				.add(Strawberry.WILD_STRAWBERRY.asItem().builtInRegistryHolder(), new Compostable(0.65f), false)
+				.add(Strawberry.STRAWBERRY_CHEESECAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(Strawberry.STRAWBERRY_CHEESECAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(Strawberry.STRAWBERRY_SHORTCAKE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(Strawberry.STRAWBERRY_SHORTCAKE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false)
+				.add(Strawberry.STRAWBERRY_PIE_ITEM.asItem().builtInRegistryHolder(), new Compostable(1f), false)
+				.add(Strawberry.STRAWBERRY_PIE_SLICE.asItem().builtInRegistryHolder(), new Compostable(0.85f), false);
 	}
 
 }

@@ -94,11 +94,12 @@ public class MixingBowlBlockEntity extends BlockEntity implements IFancyTankHand
 				var level = MixingBowlBlockEntity.this.getLevel();
 				if (level == null)
 					return;
+				MixingBowlBlockEntity.this.setupRecipe();
 				MixingBowlBlockEntity.this.requestModelDataUpdate();
 				level.sendBlockUpdated(MixingBowlBlockEntity.this.getBlockPos(),
 						MixingBowlBlockEntity.this.getBlockState(), MixingBowlBlockEntity.this.getBlockState(),
 						Block.UPDATE_ALL);
-				MixingBowlBlockEntity.this.setChanged();
+				MixingBowlBlockEntity.this.setChanged();		
 			}
 		};
 

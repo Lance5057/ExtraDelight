@@ -1,0 +1,26 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": true,
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 0.35,
+  "fluid": {},
+  "ingredients": [
+    {
+      "tag": "c:gelatin"
+    },
+    {
+      "item": "extradelight:apple_sauce"
+    },
+    {
+      "tag": "extradelight:processed/strawberry"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:strawberry_cloud_cake_item"
+  }
+}

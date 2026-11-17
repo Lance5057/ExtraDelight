@@ -11,6 +11,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:chocolate_cookie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chocolate_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:gingerbread_alex": {
       "conditions": {
         "items": [
@@ -283,6 +293,9 @@
     ],
     [
       "extradelight:gingerbread_villager"
+    ],
+    [
+      "extradelight:chocolate_cookie"
     ],
     [
       "extradelight:sugar_cookie"

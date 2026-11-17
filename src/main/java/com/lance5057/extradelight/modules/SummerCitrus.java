@@ -97,6 +97,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
+import org.apache.commons.lang3.text.WordUtils;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
@@ -283,7 +284,7 @@ public class SummerCitrus {
 
 	// Watermelon
 	public static final DeferredItem<Item> MELON_CHUNKS = EDItemGenerator
-			.register("melon_chunks", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("melon_chunks", () -> new Item(foodItem(EDFoods.MELON_RIND))).advancementIngredients().finish();
 	public static final DeferredItem<Item> MELON_RIND = EDItemGenerator
 			.register("melon_rind", () -> new Item(foodItem(EDFoods.MELON_RIND))).advancementIngredients().finish();
 
@@ -1485,7 +1486,7 @@ public class SummerCitrus {
 				consumer, "dalgona_coffee_mixing");
 		Recipes.mixing(new ItemStack(GRAPEFRUIT_BEETROOT_SALAD.get(), 2), Recipes.FAST_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_GRAPEFRUIT),
-						Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT), Ingredient.of(ExtraDelightTags.SALT),
+						Ingredient.of(Strawberry.ROASTED_BEETROOT), Ingredient.of(ExtraDelightTags.SALT),
 						Ingredient.of(Items.HONEY_BOTTLE) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)) },
@@ -1687,7 +1688,7 @@ public class SummerCitrus {
 		lp.add(LEMON_SAPLING.get(), "Lemon Sapling");
 		lp.add(POTTED_LEMON_SAPLING.get(), "Potted Lemon Sapling");
 		lp.add(LEMON_JUICE.get(), "Lemon Juice");
-		lp.add("farmersdelight.tooltip.lemon_juice", "Minor Instant Health");
+		lp.add("tooltip.farmersdelight.lemon_juice", "Minor Instant Health");
 		lp.add(LEMON_JUICE_FLUID_BUCKET.get(), "Lemon Juice Bucket");
 		lp.add("fluid_type.extradelight.lemon_juice_fluid", "Lemon Juice");
 		lp.add("block.extradelight.lemon_juice_fluid_block", "Lemon Juice");
@@ -1701,7 +1702,7 @@ public class SummerCitrus {
 		lp.add(LIME_SAPLING.get(), "Lime Sapling");
 		lp.add(POTTED_LIME_SAPLING.get(), "Potted Lime Sapling");
 		lp.add(LIME_JUICE.get(), "Lime Juice");
-		lp.add("farmersdelight.tooltip.lime_juice", "Minor Instant Health");
+		lp.add("tooltip.farmersdelight.lime_juice", "Minor Instant Health");
 		lp.add(LIME_JUICE_FLUID_BUCKET.get(), "Lime Juice Bucket");
 		lp.add("fluid_type.extradelight.lime_juice_fluid", "Lime Juice");
 		lp.add("block.extradelight.lime_juice_fluid_block", "Lime Juice");
@@ -1715,7 +1716,7 @@ public class SummerCitrus {
 		lp.add(ORANGE_SAPLING.get(), "Orange Sapling");
 		lp.add(POTTED_ORANGE_SAPLING.get(), "Potted Orange Sapling");
 		lp.add(ORANGE_JUICE.get(), "Orange Juice");
-		lp.add("farmersdelight.tooltip.orange_juice", "Minor Instant Health");
+		lp.add("tooltip.farmersdelight.orange_juice", "Minor Instant Health");
 		lp.add(ORANGE_JUICE_FLUID_BUCKET.get(), "Orange Juice Bucket");
 		lp.add("fluid_type.extradelight.orange_juice_fluid", "Orange Juice");
 		lp.add("block.extradelight.orange_juice_fluid_block", "Orange Juice");
@@ -1729,7 +1730,7 @@ public class SummerCitrus {
 		lp.add(GRAPEFRUIT_SAPLING.get(), "Grapefruit Sapling");
 		lp.add(POTTED_GRAPEFRUIT_SAPLING.get(), "Potted Grapefruit Sapling");
 		lp.add(GRAPEFRUIT_JUICE.get(), "Grapefruit Juice");
-		lp.add("farmersdelight.tooltip.grapefruit_juice", "Minor Instant Health");
+		lp.add("tooltip.farmersdelight.grapefruit_juice", "Minor Instant Health");
 		lp.add(GRAPEFRUIT_JUICE_FLUID_BUCKET.get(), "Grapefruit Juice Bucket");
 		lp.add("fluid_type.extradelight.grapefruit_juice_fluid", "Grapefruit Juice");
 		lp.add("block.extradelight.grapefruit_juice_fluid_block", "Grapefruit Juice");
@@ -1754,19 +1755,19 @@ public class SummerCitrus {
 		lp.add(KEY_LIME_PIE.get(), "Key Lime Pie");
 		lp.add(KEY_LIME_PIE_SLICE.get(), "Slice of Key Lime Pie");
 		lp.add(LEMONADE.get(), "Lemonade");
-		lp.add("farmersdelight.tooltip.lemonade", "Medium Fire Resist, Sunshine 2");
+		lp.add("tooltip.farmersdelight.lemonade", "Medium Fire Resist, Sunshine 2");
 		lp.add(LEMONADE_TRAY.get(), "Tray of Lemonade");
 		lp.add(LIMEADE.get(), "Limeade");
-		lp.add("farmersdelight.tooltip.limeade", "Medium Fire Resist, Sunshine 2");
+		lp.add("tooltip.farmersdelight.limeade", "Medium Fire Resist, Sunshine 2");
 		lp.add(LIMEADE_TRAY.get(), "Tray of Limeade");
 		lp.add(ORANGEADE.get(), "Orangeade");
-		lp.add("farmersdelight.tooltip.orangeade", "Medium Fire Resist, Sunshine 2");
+		lp.add("tooltip.farmersdelight.orangeade", "Medium Fire Resist, Sunshine 2");
 		lp.add(ORANGEADE_TRAY.get(), "Tray of Orangeade");
 		lp.add(MELON_GAZPACHO.get(), "Melon Gazpacho");
 		lp.add(THAI_MELON_SALAD.get(), "Thai Melon Salad");
 		lp.add(ETON_MESS.get(), "Eton Mess");
 		lp.add(DALGONA_COFFEE.get(), "Dalgona Coffee");
-		lp.add("farmersdelight.tooltip.dalgona_coffee", "Removes all Harmful Effects");
+		lp.add("tooltip.farmersdelight.dalgona_coffee", "Removes all Harmful Effects");
 		lp.add(GRAPEFRUIT_BEETROOT_SALAD.get(), "Grapefruit and Beetroot Salad");
 		lp.add(CITRUS_ONION_SALAD.get(), "Citrus, Onion and Mint Salad");
 		lp.add(MELON_FRUIT_SALAD.get(), "Melon Fruit Salad");
@@ -1823,6 +1824,12 @@ public class SummerCitrus {
 
 		lp.add(CITRUS_PATTERN_ITEM.get(), "Banner Pattern");
 		lp.add("item.extradelight.citrus_rind_banner_item.desc", "Citrus");
+		for (DyeColor d : DyeColor.values()) {
+			String w = d.toString();
+			w = WordUtils.capitalize(w.replace('_', ' '));
+			lp.add("block.minecraft.banner.extradelight.banner_pattern_citrus_fruit." + d, w +" Citrus Fruit");
+			lp.add("block.minecraft.banner.extradelight.banner_pattern_citrus_pith." + d, w + " Citrus Pith");
+		}
 		lp.add("painting.extradelight.big_lemon_slice.title", "Big Lemon Slice");
 		lp.add("painting.extradelight.big_lemon_slice.author", "Lance5057");
 		lp.add("painting.extradelight.big_lime_slice.title", "Big Lime Slice");

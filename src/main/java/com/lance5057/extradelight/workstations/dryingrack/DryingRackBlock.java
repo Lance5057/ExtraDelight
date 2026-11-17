@@ -8,6 +8,8 @@ import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -23,6 +25,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.items.IItemHandler;
 
 public class DryingRackBlock extends Block implements EntityBlock {
@@ -37,6 +40,38 @@ public class DryingRackBlock extends Block implements EntityBlock {
 	@Override
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
+	}
+
+	@Override
+	public void updateEntityAfterFallOn(BlockGetter pLevel, Entity pEntity) {
+		if (pEntity.isSuppressingBounce()) {
+			super.updateEntityAfterFallOn(pLevel, pEntity);
+		} else {
+
+		}
+
+	}
+
+	@Override
+	public void fallOn(Level pLevel, BlockState pState, BlockPos pPos, Entity pEntity, float pFallDistance) {
+		if (pEntity.isSuppressingBounce()) {
+			super.fallOn(pLevel, pState, pPos, pEntity, pFallDistance);
+
+			this.bounceUp(pEntity);
+		} else {
+			pEntity.causeFallDamage(pFallDistance, 0.0F, pLevel.damageSources().fall());
+			this.bounceUp(pEntity);
+		}
+
+	}
+
+	private void bounceUp(Entity pEntity) {
+		Vec3 vec3 = pEntity.getDeltaMovement();
+		if (vec3.y < 0.0D) {
+			double d0 = pEntity instanceof LivingEntity ? 1.0D : 0.8D;
+			pEntity.setDeltaMovement(vec3.x, -vec3.y * d0, vec3.z);
+		}
+
 	}
 
 	@Nonnull

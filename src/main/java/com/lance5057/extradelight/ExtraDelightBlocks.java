@@ -48,14 +48,16 @@ import com.lance5057.extradelight.workstations.oven.OvenBlock;
 import com.lance5057.extradelight.workstations.vat.VatBlock;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -75,9 +77,7 @@ import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
-import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
@@ -88,10 +88,10 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
@@ -110,6 +110,9 @@ public class ExtraDelightBlocks {
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ExtraDelight.MOD_ID);
 
 	public static void register(IEventBus modEventBus) {
+		if (!ModList.get().isLoaded("compendium"))
+			LanceNestAPI.BLOCKS.register(modEventBus);
+
 		BLOCKS.register(modEventBus);
 
 	}
@@ -190,7 +193,15 @@ public class ExtraDelightBlocks {
 			() -> new FruitBowlBlock(Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
-			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
+			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()) {
+		@Override
+		public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+			if (Math.abs(entity.getDeltaMovement().x) > 0 || Math.abs(entity.getDeltaMovement().z) > 0)
+//				for (int i = 0; i < 2; i++)
+				level.addParticle(ParticleTypes.DUST_PLUME, entity.position().x + level.random.nextFloat() - 0.5f,
+						entity.position().y, entity.position().z + level.random.nextFloat() - 0.5f, 0, 0, 0);
+		}
+	});
 //	public static final DeferredBlock<Block> COOKING_OIL = BLOCKS.register("cooking_oil",
 //			() -> new CarpetBlock(Properties.ofFullCopy(Blocks.YELLOW_CARPET).strength(0.1F, 0.0F)
 //					.sound(SoundType.SLIME_BLOCK).noOcclusion().friction(0.98f)));
@@ -772,9 +783,31 @@ public class ExtraDelightBlocks {
 					.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable().liquid()));
 
 	public static final DeferredBlock<KegBlock> KEG = BLOCKS.register("keg_block",
-			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)));
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 8));
+	public static final DeferredBlock<KegBlock> COPPER_KEG = BLOCKS.register("copper_keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 16));
+	public static final DeferredBlock<KegBlock> IRON_KEG = BLOCKS.register("iron_keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 32));
+	public static final DeferredBlock<KegBlock> GOLD_KEG = BLOCKS.register("gold_keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 64));
+	public static final DeferredBlock<KegBlock> DIAMOND_KEG = BLOCKS.register("diamond_keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 128));
+	public static final DeferredBlock<KegBlock> NETHERITE_KEG = BLOCKS.register("netherite_keg_block",
+			() -> new KegBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL), 256));
+	
+	
 	public static final DeferredBlock<JarBlock> JAR = BLOCKS.register("jar",
-			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 1));
+	public static final DeferredBlock<JarBlock> COPPER_JAR = BLOCKS.register("copper_jar",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 2));
+	public static final DeferredBlock<JarBlock> IRON_JAR = BLOCKS.register("iron_jar",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 4));
+	public static final DeferredBlock<JarBlock> GOLD_JAR = BLOCKS.register("gold_jar",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 8));
+	public static final DeferredBlock<JarBlock> DIAMOND_JAR = BLOCKS.register("diamond_jar",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 16));
+	public static final DeferredBlock<JarBlock> NETHERITE_JAR = BLOCKS.register("netherite_jar",
+			() -> new JarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS), 32));
 
 	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_FRUIT_LOG = BLOCKS.register("stripped_fruit_log",
 			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));

@@ -1,5 +1,9 @@
 {
   "values": [
-    "extradelight:lemon"
+    "extradelight:lemon",
+    {
+      "id": "#c:foods/fruits/lemon",
+      "required": false
+    }
   ]
 }

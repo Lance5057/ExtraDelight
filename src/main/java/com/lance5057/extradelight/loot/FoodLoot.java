@@ -3,6 +3,7 @@ package com.lance5057.extradelight.loot;
 import java.util.function.Supplier;
 
 import com.google.common.base.Suppliers;
+import com.lance5057.extradelight.ExtraDelightConfig;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
@@ -21,10 +22,11 @@ public class FoodLoot extends LootModifier {
 //			inst -> codecStart(inst).and(ResourceKey ResourceLocation.CODEC.fieldOf("loot_table").forGetter(m -> m.lootTableID))
 //					.apply(inst, FoodLoot::new)));
 
-	public static final Supplier<MapCodec<FoodLoot>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(instance -> instance
-			.group(IGlobalLootModifier.LOOT_CONDITIONS_CODEC.fieldOf("conditions").forGetter(glm -> glm.conditions),
+	public static final Supplier<MapCodec<FoodLoot>> CODEC = Suppliers
+			.memoize(() -> RecordCodecBuilder.mapCodec(instance -> instance.group(
+					IGlobalLootModifier.LOOT_CONDITIONS_CODEC.fieldOf("conditions").forGetter(glm -> glm.conditions),
 					ResourceKey.codec(Registries.LOOT_TABLE).fieldOf("loot_table").forGetter(FoodLoot::lootTableID))
-			.apply(instance, FoodLoot::new)));
+					.apply(instance, FoodLoot::new)));
 
 	private final ResourceKey<LootTable> lootTableID;
 
@@ -40,14 +42,12 @@ public class FoodLoot extends LootModifier {
 	@Override
 	protected ObjectArrayList<ItemStack> doApply(final ObjectArrayList<ItemStack> generatedLoot,
 			final LootContext context) {
-		context.getResolver().get(Registries.LOOT_TABLE, this.lootTableID).ifPresent(extraTable -> {
-			// Don't run loot modifiers for subtables;
-			// the added loot will be modifiable by downstream loot modifiers modifying the
-			// target table,
-			// so if we modify it here then it could get modified twice.
-			extraTable.value().getRandomItemsRaw(context,
-					LootTable.createStackSplitter(context.getLevel(), generatedLoot::add));
-		});
+		if (ExtraDelightConfig.ENABLE_FOOD_LOOT.isTrue()) {
+			context.getResolver().get(Registries.LOOT_TABLE, this.lootTableID).ifPresent(extraTable -> {
+				extraTable.value().getRandomItemsRaw(context,
+						LootTable.createStackSplitter(context.getLevel(), generatedLoot::add));
+			});
+		}
 		return generatedLoot;
 	}
 

@@ -1,0 +1,30 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "cutout",
+	"textures": {
+		"0": "extradelight:block/crops/strawberry/strawberry",
+		"particle": "extradelight:block/crops/strawberry/strawberry"
+	},
+	"elements": [
+		{
+			"from": [8, 0, -4],
+			"to": [8, 6, 4],
+			"rotation": {"angle": -45, "axis": "z", "origin": [8, 0, -6]},
+			"faces": {
+				"east": {"uv": [0, 8, 6, 0], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [0, 0, 6, 8], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 0, -4],
+			"to": [8, 6, 4],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 0, -6]},
+			"faces": {
+				"east": {"uv": [0, 0, 6, 8], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [0, 8, 6, 0], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}

@@ -13,17 +13,20 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.DynamicJamRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.DynamicToastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.JuicerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.TanghuluRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
+import com.lance5057.extradelight.data.recipebuilders.dynamics.DynamicJamRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.dynamics.DynamicSkewerRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.dynamics.DynamicToastRecipeBuilder;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.recipe.FlourDoughRecipe;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
@@ -32,6 +35,7 @@ import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.Create;
 
+import api.LanceNestAPI.src.data.APIRecipes;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -55,6 +59,7 @@ import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluids;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
@@ -105,7 +110,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
 					new DynamicItemComponent(List.of("carrot")), ExtraDelightItems.DYNAMIC_JAM.get()),
 			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
-					new DynamicItemComponent(List.of("mint")), ExtraDelightItems.DYNAMIC_JAM.get())
+					new DynamicItemComponent(List.of("mint")), ExtraDelightItems.DYNAMIC_JAM.get()),
+			DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+					new DynamicItemComponent(List.of("strawberry")), ExtraDelightItems.DYNAMIC_JAM.get())
 
 	);
 
@@ -158,12 +165,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		dynamicJamRecipes(consumer);
 		dynamicToast(consumer);
 
-		SummerCitrus.Recipes(consumer);
 		Fermentation.Recipes(consumer);
+		Strawberry.Recipes(consumer);
+		SummerCitrus.Recipes(consumer);
 		AestheticBlocks.Recipes(consumer);
 		BottleFluidRegistry.createRecipesForJEI(consumer);
 
 		SpecialRecipeBuilder.special(FlourDoughRecipe::new).save(consumer, "flour_dough");
+
+		if (!ModList.get().isLoaded("compendium"))
+			APIRecipes.buildRecipes(consumer);
 	}
 
 	private void juicerRecipes(RecipeOutput consumer) {
@@ -1159,7 +1170,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("blood_bacon_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(ExtraDelightItems.COFFEE_BEANS),
+				.feast(Ingredient.of(ExtraDelightTags.ROASTED_COFFEE_BEANS),
 						new ItemStack(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN.get()),
 						ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK.get()))
@@ -1208,7 +1219,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("dark_bacon_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(ExtraDelightItems.COFFEE_BEANS),
+				.feast(Ingredient.of(ExtraDelightTags.ROASTED_COFFEE_BEANS),
 						new ItemStack(ExtraDelightItems.DARK_CHOCOLATE_DIPPED_COFFEE_BEAN.get()),
 						ExtraDelightItems.DARK_CHOCOLATE_FONDUE_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.DARK_CHOCOLATE_FONDUE_BLOCK.get()))
@@ -1257,7 +1268,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("milk_bacon_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(ExtraDelightItems.COFFEE_BEANS),
+				.feast(Ingredient.of(ExtraDelightTags.ROASTED_COFFEE_BEANS),
 						new ItemStack(ExtraDelightItems.MILK_CHOCOLATE_DIPPED_COFFEE_BEAN.get()),
 						ExtraDelightItems.MILK_CHOCOLATE_FONDUE_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.MILK_CHOCOLATE_FONDUE_BLOCK.get()))
@@ -1306,7 +1317,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("white_bacon_feast"));
 
 		FeastRecipeBuilder
-				.feast(Ingredient.of(ExtraDelightItems.COFFEE_BEANS),
+				.feast(Ingredient.of(ExtraDelightTags.ROASTED_COFFEE_BEANS),
 						new ItemStack(ExtraDelightItems.WHITE_CHOCOLATE_DIPPED_COFFEE_BEAN.get()),
 						ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.WHITE_CHOCOLATE_FONDUE_BLOCK.get()))
@@ -2105,8 +2116,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, "frosting_yellow");
 
 		mixing(new ItemStack(ExtraDelightItems.BEET_MINT_SALAD.get(), 2), STANDARD_GRIND, new ItemStack(Items.BOWL),
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT),
-						Ingredient.of(ExtraDelightTags.PROCESSED_BEETROOT), Ingredient.of(ExtraDelightTags.MINT),
+				new Ingredient[] { Ingredient.of(Strawberry.ROASTED_BEETROOT),
+						Ingredient.of(Strawberry.ROASTED_BEETROOT), Ingredient.of(ExtraDelightTags.MINT),
 						Ingredient.of(ExtraDelightTags.SWEETENER) },
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.OIL.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
@@ -3213,6 +3224,32 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(Items.BARREL, 1)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BARREL))
 				.save(consumer, EDLoc("keg"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.COPPER_KEG.get(), 1).pattern(" e ").pattern(" k ")
+				.pattern(" b ").define('e', Items.SPIDER_EYE).define('b', Tags.Items.STORAGE_BLOCKS_COPPER)
+				.define('k', ExtraDelightItems.KEG)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.KEG))
+				.save(consumer, EDLoc("copper_keg"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.IRON_KEG.get(), 1).pattern(" e ").pattern(" k ")
+				.pattern(" b ").define('e', Items.ENDER_PEARL).define('b', Tags.Items.STORAGE_BLOCKS_IRON)
+				.define('k', ExtraDelightItems.COPPER_KEG)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COPPER_KEG))
+				.save(consumer, EDLoc("iron_keg"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.GOLD_KEG.get(), 1).pattern(" e ").pattern(" k ")
+				.pattern(" b ").define('e', Items.ENDER_EYE).define('b', Tags.Items.STORAGE_BLOCKS_GOLD)
+				.define('k', ExtraDelightItems.IRON_KEG)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.IRON_KEG))
+				.save(consumer, EDLoc("gold_keg"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DIAMOND_KEG.get(), 1).pattern(" n ").pattern(" k ")
+				.pattern(" b ").define('n', Items.NETHER_STAR).define('b', Tags.Items.STORAGE_BLOCKS_DIAMOND)
+				.define('k', ExtraDelightItems.GOLD_KEG)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GOLD_KEG))
+				.save(consumer, EDLoc("diamond_keg"));
+		SmithingTransformRecipeBuilder
+				.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+						Ingredient.of(ExtraDelightItems.DIAMOND_KEG.get()), Ingredient.of(Items.NETHERITE_BLOCK),
+						RecipeCategory.FOOD, ExtraDelightItems.NETHERITE_KEG.get())
+				.unlocks("has_netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
+				.save(consumer, ExtraDelight.MOD_ID + ":netherite_keg_smithing");
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.FUNNEL.get(), 1).pattern("c c").pattern("ckc")
 				.pattern(" c ").define('k', ExtraDelightItems.KEG.get()).define('c', Items.COPPER_INGOT)
@@ -3691,12 +3728,24 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("pbj"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK.get(), 1)
-				.pattern(" w ").pattern("scs").pattern(" b ").define('b', Items.BOWL)
-				.define('w', ExtraDelightTags.WHIPPED_CREAM).define('c', ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get())
-				.define('s', Items.SWEET_BERRIES)
+				.pattern("sws").pattern("tcj").pattern(" b ").define('b', Items.BOWL)
+				.define('w', ExtraDelightTags.WHIPPED_CREAM).define('c', ExtraDelightItems.CHOCOLATE_CAKE.get())
+				.define('s', Items.SWEET_BERRIES).define('t', ExtraDelightItems.CHOCOLATE_CUSTARD.get())
+				.define('j',
+						CompoundIngredient.of(Ingredient.of(ExtraDelightItems.JELLY_RED),
+								Ingredient.of(ExtraDelightItems.JELLY_PINK)))
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHOCOLATE_CAKE))
 				.save(consumer, EDLoc("black_forest_trifle"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.BLACK_FOREST_TRIFLE_BLOCK.get(), 1)
+				.pattern("sws").pattern("tcj").pattern(" b ").define('b', Items.BOWL)
+				.define('w', ExtraDelightTags.WHIPPED_CREAM).define('c', ExtraDelightItems.CHOCOLATE_CAKE.get())
+				.define('s', Items.SWEET_BERRIES).define('t', ExtraDelightItems.CHOCOLATE_CUSTARD.get())
+				.define('j', DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
+						new DynamicItemComponent(List.of("sweet_berries")), ExtraDelightItems.DYNAMIC_JAM.get()))
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHOCOLATE_CAKE))
+				.save(consumer, EDLoc("black_forest_trifle_jam"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.ICE_CREAM_SUNDAE.get(), 1)
 				.requires(ExtraDelightTags.ICE_CREAM).requires(ExtraDelightTags.CHOCOLATE_SYRUP)
@@ -3745,6 +3794,33 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.pattern(" g ").define('s', ItemTags.WOODEN_SLABS).define('g', Tags.Items.GLASS_BLOCKS)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLASS))
 				.save(consumer, EDLoc("jar"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.COPPER_JAR.get(), 1).pattern(" e ").pattern("iji")
+				.pattern(" i ").define('e', Items.SPIDER_EYE).define('i', Tags.Items.INGOTS_COPPER)
+				.define('j', ExtraDelightItems.JAR)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.JAR))
+				.save(consumer, EDLoc("copper_jar"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.IRON_JAR.get(), 1).pattern(" e ").pattern("iji")
+				.pattern(" i ").define('e', Items.ENDER_PEARL).define('i', Tags.Items.INGOTS_IRON)
+				.define('j', ExtraDelightItems.COPPER_JAR)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COPPER_JAR))
+				.save(consumer, EDLoc("iron_jar"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.GOLD_JAR.get(), 1).pattern(" e ").pattern("iji")
+				.pattern(" i ").define('e', Items.ENDER_EYE).define('i', Tags.Items.INGOTS_GOLD)
+				.define('j', ExtraDelightItems.IRON_JAR)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.IRON_JAR))
+				.save(consumer, EDLoc("gold_jar"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DIAMOND_JAR.get(), 1).pattern(" n ").pattern("djd")
+				.pattern(" d ").define('n', Items.NETHER_STAR).define('d', Tags.Items.GEMS_DIAMOND)
+				.define('j', ExtraDelightItems.GOLD_JAR)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GOLD_JAR))
+				.save(consumer, EDLoc("diamond_jar"));
+		SmithingTransformRecipeBuilder
+				.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+						Ingredient.of(ExtraDelightItems.DIAMOND_JAR.get()), Ingredient.of(Items.NETHERITE_INGOT),
+						RecipeCategory.FOOD, ExtraDelightItems.NETHERITE_JAR.get())
+				.unlocks("has_netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
+				.save(consumer, ExtraDelight.MOD_ID + ":netherite_jar_smithing");
+
 
 		Recipes.bucket("cocoa_butter", consumer, ExtraDelightItems.COCOA_BUTTER_FLUID_BUCKET.get(), Items.GLASS_BOTTLE,
 				ExtraDelightItems.COCOA_BUTTER_BOTTLE);
@@ -3940,6 +4016,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		bundleItem9(Ingredient.of(ExtraDelightItems.GARLIC), ExtraDelightItems.GARLIC_CRATE.get(),
 				ExtraDelightItems.GARLIC.get(), consumer, "garlic");
+
+		DynamicSkewerRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_SKEWER.toStack())
+				.requires(Ingredient.of(Items.STICK)).requires(ExtraDelightTags.SKEWER_INGREDIENT_SWEET)
+				.requires(ExtraDelightTags.SKEWER_INGREDIENT_SWEET).requires(ExtraDelightTags.SKEWER_INGREDIENT_SWEET)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
+				.save(consumer, EDLoc("dynamic_skewer"));
 
 	}
 
@@ -4639,6 +4721,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.PROCESSED_CHILI), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				"penne_all_arrabbiata", consumer);
 
+		TanghuluRecipeBuilder.cookingPotRecipe(1, CookingRecipes.FAST_COOKING, 1, null)
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).addIngredient(ExtraDelightItems.DYNAMIC_SKEWER.get())
+				.addIngredient(Items.SUGAR).save(consumer);
+
 	}
 
 	private void dynamicJamRecipes(RecipeOutput consumer) {
@@ -4730,6 +4816,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(Ingredient.of(ExtraDelightTags.MINT)).addIngredient(Ingredient.of(Items.SUGAR))
 				.addIngredient(Ingredient.of(ExtraDelightTags.GELATIN)).addIngredient(Ingredient.of(Items.SUGAR))
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(consumer, "dynamic_mint");
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(1, CookingRecipes.NORMAL_COOKING, 1, Items.GLASS_BOTTLE, "strawberry")
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY))
+				.addIngredient(Ingredient.of(ExtraDelightTags.PROCESSED_STRAWBERRY))
+				.addIngredient(Ingredient.of(Items.SUGAR)).addIngredient(Ingredient.of(Items.SUGAR))
+				.addIngredient(Ingredient.of(Items.SUGAR)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer, "dynamic_strawberry");
 	}
 
 	private void dynamicToast(RecipeOutput consumer) {
@@ -5370,14 +5464,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get(), 1), CookingRecipes.SLOW_COOKING,
-						MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(ExtraDelightTags.RIBS_RAW).addIngredient(ExtraDelightTags.RIBS_RAW)
 				.addIngredient(ExtraDelightTags.RIBS_RAW).addIngredient(ExtraDelightTags.RIBS_RAW)
 				.addIngredient(ExtraDelightTags.BBQ_SAUCE).build(consumer, "bbq_ribs_feast");
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get(), 1), SLOW_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(ExtraDelightTags.MUTTON_RIBS).addIngredient(ExtraDelightTags.COOKING_OIL)
 				.addIngredient(ExtraDelightTags.MUTTON_RIBS).addIngredient(ExtraDelightTags.MUTTON_RIBS)
 				.addIngredient(ExtraDelightTags.PROCESSED_ONION).addIngredient(ExtraDelightTags.MUTTON_RIBS)
@@ -5387,7 +5481,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get(), 1), SLOW_COOKING,
-						MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						MEDIUM_EXP, new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BEEF_ROAST)
 				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ExtraDelightTags.DOUGH).addIngredient(ExtraDelightTags.LIVER)
@@ -5397,7 +5491,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.HAGGIS_FEAST_ITEM.get(), 1), SLOW_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(ExtraDelightTags.OFFAL).addIngredient(ExtraDelightTags.OFFAL)
 				.addIngredient(ExtraDelightTags.OFFAL).addIngredient(ExtraDelightTags.LUNG)
 				.addIngredient(ExtraDelightTags.STOMACH).addIngredient(ExtraDelightTags.SCRAP_MEAT)
@@ -5615,7 +5709,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.ROAST_CHICKEN_BLOCK.get(), 1), SLOW_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(ExtraDelightTags.PROCESSED_ONION).addIngredient(ExtraDelightTags.GRAVY)
 				.addIngredient(CompoundIngredient.of(Ingredient.of(Tags.Items.FOODS_BREAD),
 						Ingredient.of(ExtraDelightTags.BREAD_CRUMBS)))
@@ -5626,7 +5720,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.HONEY_GLAZED_HAM_BLOCK.get(), 1), SLOW_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY).addIngredient(Items.HONEY_BOTTLE)
 				.addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY).addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY)
 				.addIngredient(ModItems.HAM.get()).addIngredient(ExtraDelightTags.FRUIT_SWEET_BERRY)
@@ -5997,7 +6091,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.MINT_LAMB_FEAST.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()), false)
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
 				.addIngredient(Items.MUTTON, 4).addIngredient(ExtraDelightTags.MINT)
 				.addIngredient(ExtraDelightTags.BREAD_CRUMBS).addIngredient(ExtraDelightTags.COOKING_OIL)
 				/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByAnyIngredient(Items.MUTTON).build(consumer);

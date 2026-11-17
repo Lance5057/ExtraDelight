@@ -2,6 +2,7 @@
   "parent": "extradelight:block/chocolate_trapdoor_top",
   "render_type": "minecraft:cutout",
   "textures": {
+    "particle": "extradelight:block/cinnamon_trapdoor",
     "texture": "extradelight:block/cinnamon_trapdoor"
   }
 }

@@ -3,7 +3,6 @@ package com.lance5057.extradelight;
 import static vectorwing.farmersdelight.common.registry.ModItems.bowlFoodItem;
 import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -16,7 +15,6 @@ import com.lance5057.extradelight.items.CactusJuiceItem;
 import com.lance5057.extradelight.items.CoffeeItem;
 import com.lance5057.extradelight.items.CornSilkTeaItem;
 import com.lance5057.extradelight.items.CorncobPipe;
-import com.lance5057.extradelight.items.DeprecatedItem;
 import com.lance5057.extradelight.items.FrostingItem;
 import com.lance5057.extradelight.items.GarlicCureDrinkableItem;
 import com.lance5057.extradelight.items.GarlicCureItem;
@@ -32,13 +30,15 @@ import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
 import com.lance5057.extradelight.items.dynamicfood.DynamicContainerFeastItem;
 import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
+import com.lance5057.extradelight.items.dynamicfood.DynamicSkewer;
+import com.lance5057.extradelight.items.dynamicfood.DynamicTanghulu;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
-import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.jar.JarItem;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.util.EDItemGenerator;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import mezz.jei.api.recipe.RecipeType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
@@ -63,6 +63,8 @@ import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.EffectCure;
 import net.neoforged.neoforge.fluids.DispenseFluidContainer;
 import net.neoforged.neoforge.fluids.SimpleFluidContent;
@@ -276,9 +278,45 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<Item> KEG = ITEMS.register("keg_item",
 			() -> new BlockItem(ExtraDelightBlocks.KEG.get(), new Item.Properties()));
+	public static final DeferredItem<Item> COPPER_KEG = ITEMS.register("copper_keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.COPPER_KEG.get(), new Item.Properties()));
+	public static final DeferredItem<Item> IRON_KEG = ITEMS.register("iron_keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.IRON_KEG.get(), new Item.Properties()));
+	public static final DeferredItem<Item> GOLD_KEG = ITEMS.register("gold_keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.GOLD_KEG.get(), new Item.Properties()));
+	public static final DeferredItem<Item> DIAMOND_KEG = ITEMS.register("diamond_keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.DIAMOND_KEG.get(), new Item.Properties()));
+	public static final DeferredItem<Item> NETHERITE_KEG = ITEMS.register("netherite_keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.NETHERITE_KEG.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new JarItem(ExtraDelightBlocks.JAR.get(),
-			new Item.Properties().component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1)));
+			new Item.Properties().component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+			""));
+	public static final DeferredItem<Item> COPPER_JAR = ITEMS
+			.register("copper_jar",
+					() -> new JarItem(ExtraDelightBlocks.COPPER_JAR.get(), new Item.Properties()
+							.component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+							"copper"));
+	public static final DeferredItem<Item> IRON_JAR = ITEMS
+			.register("iron_jar",
+					() -> new JarItem(ExtraDelightBlocks.IRON_JAR.get(), new Item.Properties()
+							.component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+							"iron"));
+	public static final DeferredItem<Item> GOLD_JAR = ITEMS
+			.register("gold_jar",
+					() -> new JarItem(ExtraDelightBlocks.GOLD_JAR.get(), new Item.Properties()
+							.component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+							"gold"));
+	public static final DeferredItem<Item> DIAMOND_JAR = ITEMS
+			.register("diamond_jar",
+					() -> new JarItem(ExtraDelightBlocks.DIAMOND_JAR.get(), new Item.Properties()
+							.component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+							"diamond"));
+	public static final DeferredItem<Item> NETHERITE_JAR = ITEMS
+			.register("netherite_jar",
+					() -> new JarItem(ExtraDelightBlocks.NETHERITE_JAR.get(), new Item.Properties()
+							.component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1),
+							"netherite"));
 
 	public static final DeferredItem<Item> WHISK = ITEMS.register("whisk",
 			() -> new SwordItem(Tiers.WOOD, new Item.Properties()));
@@ -342,7 +380,7 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<Item> SEAWEED_CRISPS = EDItemGenerator
 			.register("seaweed_crisps", () -> new ToolTipConsumableItem(foodItem(EDFoods.SEAWEED_CRISPS), true))
-			.advancementMeal().finish();
+			.advancementSnack().finish();
 	public static final DeferredItem<Item> SEAWEED_SALAD = EDItemGenerator
 			.register("seaweed_salad", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.SEAWEED_SALAD), true))
 			.advancementMeal().finish();
@@ -1109,10 +1147,10 @@ public class ExtraDelightItems {
 			.drink().setHydration(20).setThirst(4).setPoison(0).isHot(true).finish();
 	public static final DeferredItem<Item> STEWED_APPLES = EDItemGenerator
 			.register("stewed_apples", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.STEWED_APPLES), true))
-			.advancementMeal().finish();
+			.advancementDessert().finish();
 	public static final DeferredItem<Item> APPLE_FRITTERS = EDItemGenerator
 			.register("apple_fritters", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.APPLE_FRITTERS), true))
-			.advancementMeal().finish();
+			.advancementDessert().finish();
 	public static final DeferredItem<Item> CARAMEL_SAUCE = EDItemGenerator
 			.register("caramel_sauce", () -> new Item(bottleFoodItem(EDFoods.CARAMEL_SAUCE))).advancementIngredients()
 			.finish();
@@ -2625,19 +2663,10 @@ public class ExtraDelightItems {
 					() -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.MULLIGATAWNY_SOUP), true))
 			.advancementMeal().isHotFood().finish();
 
-	public static final DeferredItem<Item> TARTE_TATIN_IN_PAN = EDItemGenerator.register("tarte_tatin_in_pan",
-			() -> new SolidBucketItem(ExtraDelightBlocks.TARTE_TATIN.get(), SoundEvents.DYE_USE, stack1Item()) {
-				@Override
-				public InteractionResult useOn(UseOnContext context) {
-					InteractionResult interactionresult = super.useOn(context);
-					Player player = context.getPlayer();
-					if (interactionresult.consumesAction() && player != null) {
-						player.setItemInHand(context.getHand(), new ItemStack(ModItems.SKILLET.get()));
-					}
-
-					return interactionresult;
-				}
-			}).advancementFeast().finish();
+	public static final DeferredItem<Item> TARTE_TATIN_IN_PAN = EDItemGenerator
+			.register("tarte_tatin_in_pan", () -> new DynamicContainerFeastItem(ExtraDelightBlocks.TARTE_TATIN.get(),
+					SoundEvents.DYE_USE, stack1Item().craftRemainder(ModItems.SKILLET.get())))
+			.advancementFeast().finish();
 
 	public static final DeferredItem<Item> TARTE_TATIN = EDItemGenerator
 			.register("tarte_tatin", () -> new BlockItem(ExtraDelightBlocks.TARTE_TATIN.get(), stack1Item()))
@@ -2788,7 +2817,7 @@ public class ExtraDelightItems {
 			.register("chocolate_cookie_dough", () -> new Item(foodItem(EDFoods.COOKIE_DOUGH))).advancementIngredients()
 			.finish();
 	public static final DeferredItem<Item> CHOCOLATE_COOKIE = EDItemGenerator
-			.register("chocolate_cookie", () -> new Item(foodItem(FoodValues.COOKIES))).advancementDessert().finish();
+			.register("chocolate_cookie", () -> new Item(foodItem(FoodValues.COOKIES))).advancementCookie().finish();
 
 	public static final DeferredItem<Item> POTATO_SALAD = EDItemGenerator
 			.register("potato_salad", () -> new ToolTipConsumableItem(bowlFoodItem(EDFoods.POTATO_SALAD), true))
@@ -2882,6 +2911,16 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> DYNAMIC_JAM = ITEMS.register("dynamic_jam",
 			() -> new DynamicJam(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.JAM)));
 
+	public static final DeferredItem<Item> DYNAMIC_SKEWER = ITEMS.register("dynamic_skewer",
+			() -> new DynamicSkewer(new Item.Properties()
+					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
+					.food(EDFoods.APPLE_CHIPS)));
+
+	public static final DeferredItem<Item> TANGHULU = ITEMS.register("tanghulu",
+			() -> new DynamicTanghulu(new Item.Properties()
+					.component(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.EMPTY)
+					.food(EDFoods.APPLE_CHIPS)));
+
 	public static final DeferredItem<Item> HAZELNUT_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
 			"hazelnut_petal_litter_item",
 			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_PETAL_LITTER.get(), new Item.Properties()));
@@ -2889,4 +2928,10 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> APPLE_PETAL_LITTER_ITEM = ExtraDelightItems.ITEMS.register(
 			"apple_petal_litter_item",
 			() -> new BlockItem(ExtraDelightBlocks.APPLE_PETAL_LITTER.get(), new Item.Properties()));
+
+	public static void register(IEventBus modEventBus) {
+		if (!ModList.get().isLoaded("compendium"))
+			LanceNestAPI.ITEMS.register(modEventBus);
+		ExtraDelightItems.ITEMS.register(modEventBus);
+	}
 }

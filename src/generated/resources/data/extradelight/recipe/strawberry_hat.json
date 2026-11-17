@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "r": {
+      "item": "minecraft:red_wool"
+    },
+    "s": {
+      "item": "extradelight:strawberry_seed"
+    }
+  },
+  "pattern": [
+    "rsr",
+    "r r"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:strawberry_hat"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "type": "extradelight:oven",
-  "consumeContainer": false,
+  "consumeContainer": true,
   "container": {
     "count": 1,
     "id": "extradelight:square_pan"

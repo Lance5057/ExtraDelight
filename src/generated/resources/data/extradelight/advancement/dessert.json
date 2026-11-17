@@ -41,6 +41,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:apple_fritters": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:apple_fritters"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:apple_ice_cream": {
       "conditions": {
         "items": [
@@ -206,16 +216,6 @@
         "items": [
           {
             "items": "extradelight:chocolate_cheesecake_slice"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "extradelight:chocolate_cookie": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:chocolate_cookie"
           }
         ]
       },
@@ -1001,11 +1001,111 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:stewed_apples": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:stewed_apples"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:sticky_toffee_pudding_slice": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:sticky_toffee_pudding_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_cheesecake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_cheesecake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_cloud_cake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_cloud_cake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_custard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_custard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_mousse": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_mousse"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_pasta"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_popsicle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_popsicle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_shortcake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_shortcake_slice"
           }
         ]
       },
@@ -1139,10 +1239,16 @@
       "extradelight:cinnamon_popsicle"
     ],
     [
+      "extradelight:strawberry_cheesecake_slice"
+    ],
+    [
       "extradelight:sweet_berry_pie_slice"
     ],
     [
       "extradelight:crisp_rice_treat"
+    ],
+    [
+      "extradelight:strawberry_shortcake_slice"
     ],
     [
       "extradelight:affogato"
@@ -1205,6 +1311,12 @@
       "extradelight:caramel_custard"
     ],
     [
+      "extradelight:strawberry_cloud_cake_slice"
+    ],
+    [
+      "extradelight:apple_fritters"
+    ],
+    [
       "extradelight:muffin_apple"
     ],
     [
@@ -1221,6 +1333,9 @@
     ],
     [
       "extradelight:sweet_berry_ice_cream"
+    ],
+    [
+      "extradelight:strawberry_pasta"
     ],
     [
       "extradelight:rocky_road"
@@ -1265,6 +1380,9 @@
       "extradelight:jelly_blue"
     ],
     [
+      "extradelight:strawberry_popsicle"
+    ],
+    [
       "extradelight:pumpkin_ice_cream"
     ],
     [
@@ -1272,6 +1390,9 @@
     ],
     [
       "extradelight:grapefruit_sorbet"
+    ],
+    [
+      "extradelight:stewed_apples"
     ],
     [
       "extradelight:glow_berry_ice_cream"
@@ -1289,6 +1410,9 @@
       "extradelight:mississippi_mud_pie_slice"
     ],
     [
+      "extradelight:strawberry_ice_cream"
+    ],
+    [
       "extradelight:chocolate_ice_cream"
     ],
     [
@@ -1296,6 +1420,9 @@
     ],
     [
       "extradelight:cookie_dough_ice_cream"
+    ],
+    [
+      "extradelight:strawberry_custard"
     ],
     [
       "extradelight:pavlova_slice"
@@ -1308,9 +1435,6 @@
     ],
     [
       "extradelight:muffin_ginger"
-    ],
-    [
-      "extradelight:chocolate_cookie"
     ],
     [
       "extradelight:candy_apple"
@@ -1344,6 +1468,9 @@
     ],
     [
       "extradelight:jelly_purple"
+    ],
+    [
+      "extradelight:strawberry_pie_slice"
     ],
     [
       "extradelight:french_toast"
@@ -1380,6 +1507,9 @@
     ],
     [
       "extradelight:jelly_light_grey"
+    ],
+    [
+      "extradelight:strawberry_mousse"
     ],
     [
       "extradelight:stuffed_apple_ice_cream"

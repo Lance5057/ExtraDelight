@@ -97,7 +97,7 @@ public class TapBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext p_54041_) {
-		if (p_54041_.getClickedFace().getOpposite() == Direction.DOWN) {
+		if (p_54041_.getClickedFace().getOpposite() == Direction.DOWN || p_54041_.getClickedFace().getOpposite() == Direction.UP) {
 			Direction direction = p_54041_.getHorizontalDirection().getOpposite();
 			return this.defaultBlockState().setValue(FACING, direction).setValue(GROUND, true);
 		}

@@ -1,6 +1,6 @@
 {
   "values": [
-    "extradelight:cucumber",
+    "#c:crops/cucumber",
     "extradelight:sliced_cucumber_item",
     {
       "id": "#culturaldelights:cucumbers",

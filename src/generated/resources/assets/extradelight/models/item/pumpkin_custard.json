@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "extradelight:item/pumpkin_custard"
-  }
+  "parent": "extradelight:item/custard/pumpkin"
 }

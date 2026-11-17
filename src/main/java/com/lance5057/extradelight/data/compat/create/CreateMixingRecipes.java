@@ -1281,7 +1281,7 @@ public class CreateMixingRecipes extends MixingRecipeGen {
 							.require(Ingredient.of(ExtraDelightTags.GROUND_COFFEE_BEANS))
 							.requiresHeat(HeatCondition.HEATED).withCondition(new ModLoadedCondition("create"))),
 
-			TEA = create("tea",
+			TEA = create("tea_ed",
 					b -> b.output(new ItemStack(ExtraDelightItems.TEA.get(), 1)).require(Items.GLASS_BOTTLE)
 							.require(Ingredient.of(ExtraDelightTags.TEA_INGREDIENTS))
 							.require(Ingredient.of(ExtraDelightTags.TEA_INGREDIENTS))

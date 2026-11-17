@@ -11,9 +11,6 @@
     "minecraft:cooked_cod",
     "minecraft:salmon",
     "minecraft:cooked_salmon",
-    {
-      "id": "#forge:vegetables",
-      "required": false
-    }
+    "#c:foods/vegetable"
   ]
 }

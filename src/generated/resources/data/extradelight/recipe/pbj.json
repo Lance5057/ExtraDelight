@@ -146,6 +146,17 @@
               }
             },
             "items": "extradelight:dynamic_jam"
+          },
+          {
+            "type": "neoforge:components",
+            "components": {
+              "extradelight:dynamic_food": {
+                "graphics": [
+                  "strawberry"
+                ]
+              }
+            },
+            "items": "extradelight:dynamic_jam"
           }
         ]
       }

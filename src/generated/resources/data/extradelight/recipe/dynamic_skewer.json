@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:dynamic_skewer",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "tag": "extradelight:skewer/sweet"
+    },
+    {
+      "tag": "extradelight:skewer/sweet"
+    },
+    {
+      "tag": "extradelight:skewer/sweet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:dynamic_skewer"
+  }
+}

@@ -37,7 +37,7 @@ public class BushStageFour extends BushBlock implements BonemealableBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 	private final VoxelShape SAPLING_SHAPE;
 	private final VoxelShape MID_GROWTH_SHAPE;
-	private final DeferredItem<Item> fruit;
+	protected final DeferredItem<Item> fruit;
 
 	@Override
 	public MapCodec<BushStageFour> codec() {

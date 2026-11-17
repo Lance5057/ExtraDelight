@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:strawbiggy_item"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:strawberry"
+  }
+}

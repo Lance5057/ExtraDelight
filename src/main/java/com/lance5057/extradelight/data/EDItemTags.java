@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.extradelight.modules.Strawberry;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.CompatTags;
@@ -60,7 +61,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.MAKES_STOCK).add(Items.BONE)
 				.add(Items.BEEF, Items.COOKED_BEEF, Items.PORKCHOP, Items.COOKED_PORKCHOP, Items.CHICKEN,
 						Items.COOKED_CHICKEN, Items.COD, Items.COOKED_COD, Items.SALMON, Items.COOKED_SALMON)
-				.addOptionalTag(ResourceLocation.fromNamespaceAndPath("forge", "vegetables"));
+				.addTag(Tags.Items.FOODS_VEGETABLE);
 
 		tag(ExtraDelightTags.FRUIT_APPLE).add(Items.APPLE);
 		tag(ExtraDelightTags.FRUIT_GLOW_BERRY).add(Items.GLOW_BERRIES);
@@ -70,7 +71,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.FRUIT).addTag(ExtraDelightTags.FRUIT_APPLE).addTag(ExtraDelightTags.FRUIT_GLOW_BERRY)
 				.addTag(ExtraDelightTags.FRUIT_SWEET_BERRY).addTag(ExtraDelightTags.FRUIT_MELON).add(Items.CHORUS_FRUIT)
 				.add(SummerCitrus.LEMON.get(), SummerCitrus.LIME.get(), SummerCitrus.ORANGE.get(),
-						SummerCitrus.GRAPEFRUIT.get());
+						SummerCitrus.GRAPEFRUIT.get(), Strawberry.STRAWBERRY.get());
 
 		tag(ExtraDelightTags.COOKING_OIL).add(ExtraDelightItems.COOKING_OIL.get()).addOptionalTag(CompatTags.COOKINGOIL)
 				.addOptionalTag(CompatTags.OLIVE_OILS);
@@ -86,7 +87,9 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.FLOUR).add(ExtraDelightItems.FLOUR.get()).addOptionalTag(CompatTags.FLOURS_WHEAT);
 		tag(CompatTags.FLOURS_WHEAT).add(ExtraDelightItems.FLOUR.get());
 
-		tag(ExtraDelightTags.JAM).add(ExtraDelightItems.DYNAMIC_JAM.get()).addOptionalTag(CompatTags.JELLIES);
+		tag(ExtraDelightTags.JAM).add(ExtraDelightItems.DYNAMIC_JAM.get()).addOptionalTag(CompatTags.JELLIES)
+				.addOptionalTag(CompatTags.JAM);
+		tag(CompatTags.JAM).add(ExtraDelightItems.DYNAMIC_JAM.get());
 		tag(CompatTags.JELLIES).add(ExtraDelightItems.DYNAMIC_JAM.get());
 
 		tag(ExtraDelightTags.MEAT_COOKED).add(Items.COOKED_BEEF).add(Items.COOKED_CHICKEN).add(Items.COOKED_MUTTON)
@@ -130,7 +133,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.GROUND_RABBIT_RAW);
 		tag(ExtraDelightTags.GROUND_MEAT_COOKED).addTag(ExtraDelightTags.GROUND_BEEF_COOKED);
 		tag(ExtraDelightTags.GELATIN).add(ExtraDelightItems.AGAR_AGAR.get());
-		tag(ExtraDelightTags.BUTTER).add(ExtraDelightItems.BUTTER.get());
+		tag(ExtraDelightTags.BUTTER).add(ExtraDelightItems.BUTTER.get()).addOptionalTag(CompatTags.BUTTER);
+		tag(CompatTags.BUTTER).addTag(ExtraDelightTags.BUTTER);
 		tag(ExtraDelightTags.GRAVY).add(ExtraDelightItems.GRAVY.get());
 		tag(ExtraDelightTags.CONDIMENTS).addTag(ExtraDelightTags.KETCHUP).addTag(ExtraDelightTags.BBQ_SAUCE)
 				.addTag(ExtraDelightTags.MAYO).addTag(ExtraDelightTags.HOT_SAUCE).addTag(ExtraDelightTags.SOY_SAUCE)
@@ -177,8 +181,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.PROCESSED_CUCUMBER);
 
 		tag(ExtraDelightTags.PROCESSED_FRUIT).addTag(ExtraDelightTags.PROCESSED_APPLE)
-				.add(Items.SWEET_BERRIES, Items.GLOW_BERRIES).addTag(ExtraDelightTags.PROCESSED_MELON)
-				.addTag(ExtraDelightTags.PROCESSED_CITRUS);
+				.addTag(Tags.Items.FOODS_BERRY).addTag(ExtraDelightTags.PROCESSED_MELON)
+				.addTag(ExtraDelightTags.PROCESSED_CITRUS).addTag(ExtraDelightTags.PROCESSED_STRAWBERRY);
 		tag(ExtraDelightTags.PROCESSED_PRODUCE).addTag(ExtraDelightTags.PROCESSED_FRUIT)
 				.addTag(ExtraDelightTags.PROCESSED_VEG);
 
@@ -239,7 +243,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.GRATED_GINGER).add(ExtraDelightItems.GRATED_GINGER.get());
 		tag(ExtraDelightTags.SLICED_GINGER).add(ExtraDelightItems.SLICED_GINGER.get());
 		tag(ExtraDelightTags.PROCESSED_GINGER).addTag(ExtraDelightTags.GRATED_GINGER)
-				.addTag(ExtraDelightTags.SLICED_GINGER);
+				.addTag(ExtraDelightTags.SLICED_GINGER).addTag(ExtraDelightTags.GINGER);
 
 		tag(ExtraDelightTags.CAN_BE_SALTED).add(ExtraDelightItems.BACON_CHEESEBURGER.get(),
 				ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get(), ExtraDelightItems.BACON_EGG_SANDWICH.get(),
@@ -312,7 +316,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.HAZELNUT_SOUP.get(), ExtraDelightItems.POTATO_SALAD.get(),
 				ExtraDelightItems.ONION_SOUP.get(), ExtraDelightItems.BACON_EGG_PIE_SLICE.get(),
 				ExtraDelightItems.ONION_BHAJI.get(), ExtraDelightItems.FAT_POTATOES.get(),
-				ExtraDelightItems.CURRYWURST.get(), ExtraDelightItems.BORSCHT.get(), ExtraDelightItems.PAMONHA.get());
+				ExtraDelightItems.CURRYWURST.get(), ExtraDelightItems.BORSCHT.get(), ExtraDelightItems.PAMONHA.get(),
+				Strawberry.ROASTED_BEETROOT.get());
 
 		tag(ExtraDelightTags.CORN).add(ExtraDelightItems.CORN_ON_COB.get());
 		tag(ExtraDelightTags.CORN_ON_COB).add(ExtraDelightItems.CORN_ON_COB.get());
@@ -503,8 +508,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.PUFFED_RICE).addTag(ExtraDelightTags.CORN_FLAKES)
 				.addTag(ExtraDelightTags.CHILI_POWDER).addTag(ExtraDelightTags.TOFFEE).addTag(ExtraDelightTags.GUMMIES)
 				.addTag(ExtraDelightTags.PEANUT_BRITTLE).addTag(ExtraDelightTags.TRAIL_MIX)
-				.addTag(ExtraDelightTags.MINT).addTag(ExtraDelightTags.CANDY).addTag(ExtraDelightTags.PROCESSED_FRUIT)
-				.addTag(ExtraDelightTags.DRIED_FRUIT).addTag(ExtraDelightTags.DRIED_CHILI);
+				.addTag(ExtraDelightTags.MINT).addTag(ExtraDelightTags.CANDY).addTag(ExtraDelightTags.DRIED_FRUIT)
+				.addTag(ExtraDelightTags.DRIED_CHILI);
 		tag(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING).addTag(ExtraDelightTags.FROSTING).addTag(ExtraDelightTags.FUDGE)
 				.addTag(ExtraDelightTags.NOUGAT).addTag(ExtraDelightTags.WHIPPED_CREAM).addTag(ExtraDelightTags.JAM);
 
@@ -548,7 +553,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.add(ExtraDelightItems.APPLE_ICE_CREAM.get()).add(ExtraDelightItems.CHOCOLATE_ICE_CREAM.get())
 				.add(ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM.get()).add(ExtraDelightItems.GLOW_BERRY_ICE_CREAM.get())
 				.add(ExtraDelightItems.HONEY_ICE_CREAM.get()).add(ExtraDelightItems.MINT_CHIP_ICE_CREAM.get())
-				.add(ExtraDelightItems.PUMPKIN_ICE_CREAM.get()).add(ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get());
+				.add(ExtraDelightItems.PUMPKIN_ICE_CREAM.get()).add(ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get())
+				.add(Strawberry.STRAWBERRY_ICE_CREAM.get());
 
 		tag(ExtraDelightTags.ROASTED_COFFEE_BEANS).add(ExtraDelightItems.COFFEE_BEANS.get())
 				.addOptionalTag(CompatTags.CROPS_COFFEEBEAN).addOptionalTag(CompatTags.CROPS_COFFEE_BEANS);
@@ -569,7 +575,8 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(Tags.Items.CROPS).add(ExtraDelightItems.GINGER.get(), ExtraDelightItems.MINT.get(),
 				ExtraDelightItems.CHILI.get(), ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.PEANUTS.get(),
-				ExtraDelightItems.GARLIC.get(), Fermentation.CUCUMBER.get(), Fermentation.SOYBEANS.get());
+				ExtraDelightItems.GARLIC.get(), Fermentation.CUCUMBER.get(), Fermentation.SOYBEANS.get(),
+				Strawberry.STRAWBERRY.get());
 		tag(Tags.Items.TOOLS).addTag(ExtraDelightTags.SPOONS).addTag(ExtraDelightTags.PESTLES);
 		tag(Tags.Items.SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 				ExtraDelightItems.PEANUTS.get(), Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get());
@@ -577,7 +584,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CUSTARD).add(ExtraDelightItems.APPLE_CUSTARD.get(),
 				ExtraDelightItems.CARAMEL_CUSTARD.get(), ExtraDelightItems.CHOCOLATE_CUSTARD.get(),
 				ModItems.GLOW_BERRY_CUSTARD.get(), ExtraDelightItems.HONEY_CUSTARD.get(),
-				ExtraDelightItems.PUMPKIN_CUSTARD.get(), ExtraDelightItems.SWEET_BERRY_CUSTARD.get());
+				ExtraDelightItems.PUMPKIN_CUSTARD.get(), ExtraDelightItems.SWEET_BERRY_CUSTARD.get(),
+				Strawberry.STRAWBERRY_CUSTARD.get());
 
 		tag(ExtraDelightTags.COCOA_POWDER).add(ExtraDelightItems.COCOA_POWDER.get());
 
@@ -611,15 +619,15 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(CompatTags.DUSTS_SALT).add(Fermentation.SALT.get());
 
 		tag(ExtraDelightTags.CUCUMBER).add(Fermentation.CUCUMBER.get());
-		tag(ExtraDelightTags.PROCESSED_CUCUMBER)
-				.add(Fermentation.CUCUMBER.get(), Fermentation.SLICED_CUCUMBER_ITEM.get())
+		tag(ExtraDelightTags.PROCESSED_CUCUMBER).addTag(ExtraDelightTags.CUCUMBER)
+				.add(Fermentation.SLICED_CUCUMBER_ITEM.get())
 				.addOptionalTag(CompatTags.CUCUMBERS);
 		tag(CompatTags.CUCUMBERS).add(Fermentation.CUCUMBER.get());
 		tag(ExtraDelightTags.SOYBEAN).add(Fermentation.SOYBEANS.get());
 
 		tag(ExtraDelightTags.PROCESSED_CABBAGE).add(Fermentation.SHREDDED_CABBAGE_ITEM.get())
 				.addOptionalTag(CommonTags.Items.CROPS_CABBAGE.location());
-		tag(ExtraDelightTags.PROCESSED_BEETROOT).add(Items.BEETROOT, Fermentation.SLICED_BEETROOT_ITEM.get());
+		tag(ExtraDelightTags.PROCESSED_BEETROOT).addTag(Tags.Items.CROPS_BEETROOT).add(Fermentation.SLICED_BEETROOT_ITEM.get());
 
 		tag(ExtraDelightTags.PICKLED_CUCUMBER).add(Fermentation.GHERKIN_ITEM.get());
 		tag(ExtraDelightTags.PICKLED_CUCUMBER_SLICED).add(Fermentation.SLICED_GHERKIN_ITEM.get());
@@ -672,7 +680,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.JUICE).add(SummerCitrus.GRAPEFRUIT_JUICE.get(), SummerCitrus.LEMON_JUICE.get(),
 				SummerCitrus.LIME_JUICE.get(), SummerCitrus.ORANGE_JUICE.get(), ExtraDelightItems.CACTUS_JUICE.get(),
 				ExtraDelightItems.GLOW_BERRY_JUICE.get(), ExtraDelightItems.SWEET_BERRY_JUICE.get(),
-				ExtraDelightItems.TOMATO_JUICE.get(), ModItems.MELON_JUICE.get());
+				ExtraDelightItems.TOMATO_JUICE.get(), ModItems.MELON_JUICE.get(), Strawberry.STRAWBERRY_JUICE.get());
 
 		tag(Tags.Items.FOODS_VEGETABLE).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI.get(),
 				Fermentation.CUCUMBER.get());
@@ -693,28 +701,33 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.BROTH).add(ModItems.BONE_BROTH.get()).addOptionalTag(CompatTags.STOCK);
 		tag(ExtraDelightTags.RAW_PASTA).addOptionalTag(CommonTags.Items.FOODS_PASTA);
 
-		tag(ExtraDelightTags.LEMON).add(SummerCitrus.LEMON.get());
+		tag(ExtraDelightTags.LEMON).add(SummerCitrus.LEMON.get()).addOptionalTag(CompatTags.LEMON);
+		tag(CompatTags.LEMON).addTag(ExtraDelightTags.LEMON);
 		tag(ExtraDelightTags.LIME).add(SummerCitrus.LIME.get());
-		tag(ExtraDelightTags.ORANGE).add(SummerCitrus.ORANGE.get());
+		tag(ExtraDelightTags.ORANGE).add(SummerCitrus.ORANGE.get()).addOptionalTag(CompatTags.ORANGE);
+		tag(CompatTags.ORANGE).addTag(ExtraDelightTags.ORANGE);
 		tag(ExtraDelightTags.GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get());
 
-		tag(ExtraDelightTags.PROCESSED_LEMON).add(SummerCitrus.LEMON.get(), SummerCitrus.SLICED_LEMON.get());
-		tag(ExtraDelightTags.PROCESSED_LIME).add(SummerCitrus.LIME.get(), SummerCitrus.SLICED_LIME.get());
-		tag(ExtraDelightTags.PROCESSED_ORANGE).add(SummerCitrus.ORANGE.get(), SummerCitrus.SLICED_ORANGE.get());
-		tag(ExtraDelightTags.PROCESSED_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT.get(),
-				SummerCitrus.SLICED_GRAPEFRUIT.get());
+		tag(ExtraDelightTags.PROCESSED_LEMON).addTag(ExtraDelightTags.LEMON).add(SummerCitrus.SLICED_LEMON.get());
+		tag(ExtraDelightTags.PROCESSED_LIME).addTag(ExtraDelightTags.LIME).add(SummerCitrus.SLICED_LIME.get());
+		tag(ExtraDelightTags.PROCESSED_ORANGE).addTag(ExtraDelightTags.ORANGE).add(SummerCitrus.SLICED_ORANGE.get());
+		tag(ExtraDelightTags.PROCESSED_GRAPEFRUIT).addTag(ExtraDelightTags.GRAPEFRUIT).add(SummerCitrus.SLICED_GRAPEFRUIT.get());
 		tag(ExtraDelightTags.PROCESSED_CITRUS).addTag(ExtraDelightTags.PROCESSED_LEMON)
 				.addTag(ExtraDelightTags.PROCESSED_LIME).addTag(ExtraDelightTags.PROCESSED_ORANGE)
 				.addTag(ExtraDelightTags.PROCESSED_GRAPEFRUIT);
-		tag(ExtraDelightTags.PROCESSED_MELON).add(Items.MELON_SLICE, SummerCitrus.MELON_CHUNKS.get());
+		tag(ExtraDelightTags.PROCESSED_MELON).addTag(ExtraDelightTags.FRUIT_MELON).add(SummerCitrus.MELON_CHUNKS.get());
 		tag(ExtraDelightTags.CHILLING_ITEMS).add(Items.BLUE_ICE, Items.PACKED_ICE, Items.ICE, Items.SNOW_BLOCK,
 				Items.SNOWBALL, SummerCitrus.ICE_CUBES.get());
 		tag(ExtraDelightTags.CAKE_SLICE).add(ModItems.CAKE_SLICE.get(), ExtraDelightItems.COFFEE_CAKE_SLICE.get(),
 				ExtraDelightItems.CHOCOLATE_CAKE.get(), SummerCitrus.LEMON_CUCUMBER_CAKE_SLICE.get(),
-				SummerCitrus.MELON_LAYER_CAKE_SLICE.get(), SummerCitrus.KYIV_CAKE_SLICE.get());
+				SummerCitrus.MELON_LAYER_CAKE_SLICE.get(), SummerCitrus.KYIV_CAKE_SLICE.get(),
+				Strawberry.STRAWBERRY_SHORTCAKE_SLICE.get());
 		tag(ExtraDelightTags.IS_MARMALADE_INGREDIENT).addTag(ExtraDelightTags.PROCESSED_CITRUS);
 		tag(ExtraDelightTags.EGG_OR_YOLK).add(SummerCitrus.EGG_YOLK.get()).addTag(Tags.Items.EGGS);
 		tag(ExtraDelightTags.ICE_CUBES).add(SummerCitrus.ICE_CUBES.get());
+
+		tag(ExtraDelightTags.STRAWBERRY).add(Strawberry.STRAWBERRY.get());
+		tag(ExtraDelightTags.PROCESSED_STRAWBERRY).addTag(ExtraDelightTags.STRAWBERRY).add(Strawberry.SLICED_STRAWBERRY.get());
 
 		tag(ExtraDelightTags.IS_JELLY_INGREDIENT).add(ExtraDelightItems.MINT.get());
 
@@ -730,13 +743,15 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.HAZELNUT_SAPLING.get(), ExtraDelightItems.COFFEE_CHERRIES.get(),
 				ExtraDelightItems.APPLE_SAPLING.get(), ExtraDelightItems.GARLIC_CLOVE.get(),
 				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get(), SummerCitrus.LIME_SAPLING_ITEM.get(),
-				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
+				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get(),
+				Strawberry.STRAWBERRY_SEED.get());
 		tag(CompatTags.SERENE_SEASONS_AUTUMN_CROPS).add(ExtraDelightItems.MINT.get(),
 				ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 				ExtraDelightItems.PEANUTS.get(), ExtraDelightItems.HAZELNUT_SAPLING.get(),
 				ExtraDelightItems.COFFEE_CHERRIES.get(), ExtraDelightItems.APPLE_SAPLING.get(),
 				Fermentation.SOYBEANS.get(), SummerCitrus.LIME_SAPLING_ITEM.get(),
-				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
+				SummerCitrus.ORANGE_SAPLING_ITEM.get(), SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get(),
+				Strawberry.STRAWBERRY_SEED.get());
 		tag(CompatTags.SERENE_SEASONS_WINTER_CROPS).add(ExtraDelightItems.GARLIC_CLOVE.get(),
 				SummerCitrus.LEMON_SAPLING_ITEM.get(), SummerCitrus.ORANGE_SAPLING_ITEM.get(),
 				SummerCitrus.GRAPEFRUIT_SAPLING_ITEM.get());
@@ -746,7 +761,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.HAZELNUT_SAPLING.get(), ExtraDelightItems.COFFEE_CHERRIES.get(),
 				ExtraDelightItems.APPLE_SAPLING.get(), ExtraDelightItems.GARLIC_CLOVE.get(),
 				Fermentation.CUCUMBER_SEED.get(), Fermentation.SOYBEANS.get(), SummerCitrus.LEMON_SAPLING_ITEM.get(),
-				SummerCitrus.LIME_SAPLING_ITEM.get());
+				SummerCitrus.LIME_SAPLING_ITEM.get(), Strawberry.STRAWBERRY_SEED.get());
 
 		// Dyed Tags
 		tag(Tags.Items.DYED_BLACK).add(ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(),
@@ -898,7 +913,8 @@ public class EDItemTags extends ItemTagsProvider {
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SOYBEANS).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_SALT)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LEMON).addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LIME)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ORANGE)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_STRAWBERRY);
 
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_CHEESE).add(ExtraDelightItems.CHEESE_BLOCK_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_BUTTER).add(ExtraDelightItems.BUTTER_BLOCK_ITEM.get());
@@ -961,6 +977,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_LIME).add(SummerCitrus.LIME_CRATE_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_ORANGE).add(SummerCitrus.ORANGE_CRATE_ITEM.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT_CRATE_ITEM.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_ITEM_STRAWBERRY).add(Strawberry.STRAWBERRY_CRATE_ITEM.get());
 
 		tag(CompatTags.UPRIGHT_ON_BELT).add(ExtraDelightItems.COOKING_OIL.get(), ExtraDelightItems.VINEGAR.get(),
 				ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get(), ExtraDelightItems.GRAVY.get(),
@@ -1072,7 +1089,17 @@ public class EDItemTags extends ItemTagsProvider {
 				SummerCitrus.MELON_RIND_STIRFRY.get(), SummerCitrus.LIME_SOUFFLE.get(),
 				SummerCitrus.CHEESE_SOUFFLE.get(), SummerCitrus.PRESERVED_LEMON_PASTA.get(),
 				SummerCitrus.MELON_LIME_GLAZED_CHICKEN.get(), SummerCitrus.KYIV_CAKE_ITEM.get(),
-				SummerCitrus.RAW_BAKED_ALASKA_ITEM.get(), SummerCitrus.BAKED_ALASKA_ITEM.get());
+				SummerCitrus.RAW_BAKED_ALASKA_ITEM.get(), SummerCitrus.BAKED_ALASKA_ITEM.get(),
+				Strawberry.STRAWBERRY_CHEESECAKE_ITEM.get(), Strawberry.STRAWBERRY_MILKSHAKE.get(),
+				Strawberry.STRAWBERRY_PIE_ITEM.get(), Strawberry.STRAWBERRY_ICE_CREAM.get(),
+				Strawberry.STRAWBERRY_MILK.get(), Strawberry.STRAWBERRY_SYRUP_BOTTLE.get(),
+				Strawberry.STRAWBERRY_JUICE.get(), Strawberry.STRAWBERRY_PASTA.get(),
+				Strawberry.STRAWBERRY_BEETROOT_SALAD.get(), Strawberry.STRAWBERRY_FIELDS_SALAD.get());
+
+		tag(ExtraDelightTags.SKEWER_INGREDIENT_SWEET).add(Items.SWEET_BERRIES, Items.GLOW_BERRIES,
+				SummerCitrus.MELON_CHUNKS.get(), Strawberry.STRAWBERRY.get(), SummerCitrus.SLICED_GRAPEFRUIT.get(),
+				SummerCitrus.SLICED_LIME.get(), SummerCitrus.SLICED_LEMON.get(),
+				SummerCitrus.SLICED_ORANGE.get(), ExtraDelightItems.SLICED_APPLE.get(), ExtraDelightItems.MARSHMALLOW.get());
 
 		for (EDItemGenerator.Drink d : EDItemGenerator.drinks) {
 			parseTaNTag(d);

@@ -37,6 +37,8 @@ public class CompatTags {
 	public static final TagKey<Item> FLOURS_WHEAT = neoforgeItemTag("flours/wheat"); // For Create
 	// Dough
 	public static final TagKey<Item> DOUGHS = neoforgeItemTag("doughs"); // For Create & Croptopia
+	//Butter
+	public static final TagKey<Item> BUTTER = neoforgeItemTag("foods/butter"); // For Vanilla Delight
 	// Cheese
 	public static final TagKey<Item> FOODS_CHEESE = neoforgeItemTag("foods/cheese"); // For Expanded Delight
 	public static final TagKey<Item> CHEESES = neoforgeItemTag("cheeses"); // For Croptopia
@@ -83,6 +85,11 @@ public class CompatTags {
 	public static final TagKey<Item> FOODS_POPCORN = neoforgeItemTag("foods/popcorn"); // For Corn Delight & Cultural Delights
 	// Jam/Jelly
 	public static final TagKey<Item> JELLIES = neoforgeItemTag("jellies"); // For PHC
+	public static final TagKey<Item> JAM = otherModItemTag("fruitsdelight", "jam");
+	// Lemon
+	public static final TagKey<Item> LEMON = neoforgeItemTag("foods/fruits/lemon"); // For Fruits Delight
+	// Orange
+	public static final TagKey<Item> ORANGE = neoforgeItemTag("foods/fruits/orange"); // For Fruits Delight
 	// Nut Butters
 	public static final TagKey<Item> NUTBUTTERS = neoforgeItemTag("nutbutters"); // For PHC
 	// Soy Sauce

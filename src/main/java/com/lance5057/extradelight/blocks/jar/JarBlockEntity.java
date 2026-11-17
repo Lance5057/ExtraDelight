@@ -4,6 +4,7 @@ import javax.annotation.Nonnull;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightComponents;
+import com.lance5057.extradelight.blocks.keg.KegBlock;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 
@@ -36,11 +37,14 @@ public class JarBlockEntity extends BlockEntity {
 	}
 
 	public JarBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
+
 		super(ExtraDelightBlockEntities.JAR.get(), p_155229_, p_155230_);
+
 	}
 
 	private FluidTank createFluidHandler() {
-		FluidTank tank = new FluidTank(FluidType.BUCKET_VOLUME) {
+		FluidTank tank = new FluidTank(
+				FluidType.BUCKET_VOLUME * ((JarBlock) this.getBlockState().getBlock()).sizeInBuckets) {
 			@Override
 			protected void onContentsChanged() {
 				JarBlockEntity.this.requestModelDataUpdate();
@@ -72,17 +76,19 @@ public class JarBlockEntity extends BlockEntity {
 	public boolean use(Player player, InteractionHand hand) {
 		ItemStack i = BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid()).getCraftingRemainingItem()
 				.copy();
-		if(this.getTank().getFluid().is(Fluids.WATER))
+		if (this.getTank().getFluid().is(Fluids.WATER))
 			i = Items.GLASS_BOTTLE.getDefaultInstance();
 		ItemStack i2 = player.getItemInHand(hand);
 		if (ItemStack.isSameItem(i2, i)) {
 
 			if (!i.isEmpty()) {
 				if (this.getTank().drain(250, FluidAction.SIMULATE).getAmount() == 250) {
-					this.getTank().drain(250, FluidAction.EXECUTE);
 					BlockEntityUtils.Inventory.givePlayerItemStack(
 							BottleFluidRegistry.getBottleFromFluid(this.getTank().getFluid()).copy(), player, level,
 							worldPosition);
+					
+					this.getTank().drain(250, FluidAction.EXECUTE);
+					
 					player.getItemInHand(hand).shrink(1);
 					return true;
 				}

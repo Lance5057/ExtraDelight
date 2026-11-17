@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/strawberry_beetroot_salad"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "strawberry_beetroot_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_beetroot_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "strawberry_beetroot_salad"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/strawberry_beetroot_salad"
+    ]
+  }
+}

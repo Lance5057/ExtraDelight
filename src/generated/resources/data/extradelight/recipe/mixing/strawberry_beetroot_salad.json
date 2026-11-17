@@ -1,0 +1,48 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "extradelight:roasted_beetroot"
+    },
+    {
+      "item": "extradelight:roasted_beetroot"
+    },
+    {
+      "tag": "extradelight:processed/strawberry"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:cheese"
+    },
+    {
+      "tag": "c:drinks/honey"
+    },
+    {
+      "tag": "c:salt"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "extradelight:strawberry_beetroot_salad"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "c:spoons"
+  }
+}

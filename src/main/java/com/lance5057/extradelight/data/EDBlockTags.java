@@ -11,6 +11,7 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -70,7 +71,7 @@ public class EDBlockTags extends BlockTagsProvider {
 
 				// Feasts in pans
 				ExtraDelightBlocks.LASAGNA.get(), ExtraDelightBlocks.HOTDISH.get(),
-				Fermentation.CHEESYMITE_SCROLL_BLOCK.get(),
+				Fermentation.CHEESYMITE_SCROLL_BLOCK.get(), Strawberry.STRAWBERRY_CLOUD_CAKE.get(),
 
 				// Feasts in pots
 				ExtraDelightBlocks.MACARONI_CHEESE.get(), ExtraDelightBlocks.CURRY.get(),
@@ -140,6 +141,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				SummerCitrus.LEMON_MERINGUE_PIE.get(), SummerCitrus.KEY_LIME_PIE.get(),
 				SummerCitrus.LEMON_CUCUMBER_CAKE.get(), SummerCitrus.MELON_LAYER_CAKE.get(), SummerCitrus.PAVLOVA.get(),
 				SummerCitrus.KYIV_CAKE.get(), SummerCitrus.RAW_BAKED_ALASKA.get(), SummerCitrus.BAKED_ALASKA.get(),
+				Strawberry.STRAWBERRY_PIE.get(), Strawberry.STRAWBERRY_CHEESECAKE.get(),
+				Strawberry.STRAWBERRY_SHORTCAKE.get(),
 
 				// Feasts in bowls
 				ExtraDelightBlocks.SALISBURY_STEAK_FEAST.get(), ExtraDelightBlocks.MASHED_POTATO_GRAVY.get(),
@@ -165,6 +168,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(), ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(),
 				Fermentation.SOY_GLAZED_SALMON_BLOCK.get(), SummerCitrus.LEMONADE_TRAY.get(),
 				SummerCitrus.LIMEADE_TRAY.get(), SummerCitrus.ORANGEADE_TRAY.get(), SummerCitrus.BAKED_COD.get(),
+				Strawberry.PINK_LEMONADE_TRAY.get(),
 
 				// Jellies (also plated)
 				ExtraDelightBlocks.JELLY_WHITE.get(), ExtraDelightBlocks.JELLY_ORANGE.get(),
@@ -216,7 +220,8 @@ public class EDBlockTags extends BlockTagsProvider {
 
 		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.WILD_GINGER.get(), ExtraDelightBlocks.WILD_PEANUT.get(),
 				ExtraDelightBlocks.WILD_CHILI.get(), ExtraDelightBlocks.WILD_MALLOW_ROOT.get(),
-				ExtraDelightBlocks.WILD_GARLIC.get(), Fermentation.WILD_CUCUMBER.get(), Fermentation.WILD_SOYBEAN.get());
+				ExtraDelightBlocks.WILD_GARLIC.get(), Fermentation.WILD_CUCUMBER.get(), Fermentation.WILD_SOYBEAN.get(),
+				Strawberry.WILD_STRAWBERRY.get());
 
 		tag(BlockTags.MINEABLE_WITH_HOE).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(),
 				ExtraDelightBlocks.HAZELNUT_LEAVES.get(), ExtraDelightBlocks.APPLE_LEAVES.get(),
@@ -251,7 +256,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CHILI_CRATE.get(), ExtraDelightBlocks.MALLOW_ROOT_CRATE.get(),
 				ExtraDelightBlocks.COFFEE_CHERRY_CRATE.get(), ExtraDelightBlocks.GARLIC_CRATE.get(),
 				Fermentation.CUCUMBER_CRATE.get(), SummerCitrus.LEMON_CRATE.get(), SummerCitrus.LIME_CRATE.get(),
-				SummerCitrus.ORANGE_CRATE.get(), SummerCitrus.GRAPEFRUIT_CRATE.get(),
+				SummerCitrus.ORANGE_CRATE.get(), SummerCitrus.GRAPEFRUIT_CRATE.get(), Strawberry.STRAWBERRY_CRATE.get(),
 				// Other misc storage blocks
 				ExtraDelightBlocks.RAW_CINNAMON_BLOCK.get(), ExtraDelightBlocks.CINNAMON_STICK_BLOCK.get(),
 
@@ -309,7 +314,8 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.BEE_GROWABLES).add(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightBlocks.CORN_BOTTOM.get(),
 				ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightBlocks.GINGER_CROP.get(),
 				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get(),
-				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get());
+				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get(),
+				Strawberry.STRAWBERRY_CROP.get());
 
 		tag(BlockTags.FLOWER_POTS).add(ExtraDelightBlocks.POTTED_CINNAMON_SAPLING.get(),
 				ExtraDelightBlocks.POTTED_HAZELNUT_SAPLING.get(), ExtraDelightBlocks.POTTED_APPLE_SAPLING.get(),
@@ -325,13 +331,13 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.COFFEE_BUSH.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
 				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get(),
 				SummerCitrus.LIME_SAPLING.get(), SummerCitrus.ORANGE_SAPLING.get(),
-				SummerCitrus.GRAPEFRUIT_SAPLING.get());
+				SummerCitrus.GRAPEFRUIT_SAPLING.get(), Strawberry.STRAWBERRY_CROP.get());
 		tag(CompatTags.SERENE_SEASONS_AUTUMN_CROPS_BLOCK).add(ExtraDelightBlocks.MINT_CROP.get(),
 				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.CHILI_CROP.get(),
 				ExtraDelightBlocks.PEANUT_CROP.get(), ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
 				ExtraDelightBlocks.COFFEE_BUSH.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
 				Fermentation.SOYBEAN_CROP.get(), SummerCitrus.LIME_SAPLING.get(),
-				SummerCitrus.ORANGE_SAPLING.get(), SummerCitrus.GRAPEFRUIT_SAPLING.get());
+				SummerCitrus.ORANGE_SAPLING.get(), SummerCitrus.GRAPEFRUIT_SAPLING.get(), Strawberry.STRAWBERRY_CROP.get());
 		tag(CompatTags.SERENE_SEASONS_WINTER_CROPS_BLOCK).add(ExtraDelightBlocks.GARLIC_CROP.get(),
 				SummerCitrus.LEMON_SAPLING.get(), SummerCitrus.ORANGE_SAPLING.get(),
 				SummerCitrus.GRAPEFRUIT_SAPLING.get());
@@ -341,7 +347,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
 				ExtraDelightBlocks.COFFEE_BUSH.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
 				ExtraDelightBlocks.GARLIC_CROP.get(), Fermentation.CUCUMBER_CROP.get(), Fermentation.SOYBEAN_CROP.get(),
-				SummerCitrus.LEMON_SAPLING.get(), SummerCitrus.LIME_SAPLING.get());
+				SummerCitrus.LEMON_SAPLING.get(), SummerCitrus.LIME_SAPLING.get(), Strawberry.STRAWBERRY_CROP.get());
 
 		// Dyed Tags
 		tag(Tags.Blocks.DYED_BLACK).add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(),
@@ -488,7 +494,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_LEMON)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_LIME)
 				.addTag(ExtraDelightTags.STORAGE_BLOCKS_ORANGE)
-				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GRAPEFRUIT);
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_GRAPEFRUIT)
+				.addTag(ExtraDelightTags.STORAGE_BLOCKS_STRAWBERRY);
 
 		tag(ExtraDelightTags.STORAGE_BLOCKS_CHEESE).add(ExtraDelightBlocks.CHEESE_BLOCK.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_BUTTER).add(ExtraDelightBlocks.BUTTER_BLOCK.get());
@@ -546,6 +553,7 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(ExtraDelightTags.STORAGE_BLOCKS_LIME).add(SummerCitrus.LIME_CRATE.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_ORANGE).add(SummerCitrus.ORANGE_CRATE.get());
 		tag(ExtraDelightTags.STORAGE_BLOCKS_GRAPEFRUIT).add(SummerCitrus.GRAPEFRUIT_CRATE.get());
+		tag(ExtraDelightTags.STORAGE_BLOCKS_STRAWBERRY).add(Strawberry.STRAWBERRY_CRATE.get());
 		
 		AestheticBlocks.GINGHAM_BLOCKS.forEach(b -> {
 			tag(BlockTags.DAMPENS_VIBRATIONS).add(b.get());

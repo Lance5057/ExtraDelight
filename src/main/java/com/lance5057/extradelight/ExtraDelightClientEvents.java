@@ -16,6 +16,7 @@ import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketScreen;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkRenderer;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
+import com.lance5057.extradelight.client.models.StrawberryHatModel;
 import com.lance5057.extradelight.commands.ExtraDelightCommands;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
@@ -31,6 +32,7 @@ import com.lance5057.extradelight.gui.StyleableScreen;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.items.jar.JarItemModel;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.particles.PetalParticle;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
@@ -45,11 +47,15 @@ import com.lance5057.extradelight.workstations.mortar.MortarRenderer;
 import com.lance5057.extradelight.workstations.oven.OvenScreen;
 import com.lance5057.extradelight.workstations.vat.VatScreen;
 
+import api.LanceNestAPI.src.LanceNestAPIClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.EntityModelSet;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -58,14 +64,19 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
@@ -82,7 +93,7 @@ public class ExtraDelightClientEvents {
 	public static void registerCommands(RegisterCommandsEvent event) {
 		ExtraDelightCommands.register(event.getDispatcher(), event.getBuildContext());
 	}
-	
+
 	@SubscribeEvent
 	public static void registerClient(RegisterMenuScreensEvent event) {
 		event.register(ExtraDelightContainers.OVEN_MENU.get(), OvenScreen::new);
@@ -99,6 +110,9 @@ public class ExtraDelightClientEvents {
 		event.register(ExtraDelightContainers.CHILLER_MENU.get(), ChillerScreen::new);
 		event.register(ExtraDelightContainers.VAT_MENU.get(), VatScreen::new);
 		event.register(ExtraDelightContainers.PICNIC_BASKET_MENU.get(), PicnicBasketScreen::new);
+
+		if (!ModList.get().isLoaded("compendium"))
+			LanceNestAPIClient.registerClient(event);
 	}
 
 	public static void setTERenderers() {
@@ -142,7 +156,8 @@ public class ExtraDelightClientEvents {
 						.filter(i -> !i.getId().toString().contains("cherry")
 								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
 								&& !i.getId().toString().contains("azalea")
-								&& !i.getId().toString().contains("cinnamon"))
+								&& !i.getId().toString().contains("cinnamon")
+								&& !i.getId().toString().contains("spruce") && !i.getId().toString().contains("birch"))
 						.toList()));
 	}
 
@@ -164,8 +179,10 @@ public class ExtraDelightClientEvents {
 
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public static void registerParticles(RegisterParticleProvidersEvent event) {
-		Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.CITRUS_PETALS.get(), PetalParticle.Factory::new);
-		Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.HAZELNUT_PETALS.get(), PetalParticle.Factory::new);
+		Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.CITRUS_PETALS.get(),
+				PetalParticle.Factory::new);
+		Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.HAZELNUT_PETALS.get(),
+				PetalParticle.Factory::new);
 	}
 
 	@SubscribeEvent
@@ -240,8 +257,18 @@ public class ExtraDelightClientEvents {
 			public BlockEntityWithoutLevelRenderer getCustomRenderer() {
 				return JarItemModel.getInstance();
 			}
-		}, ExtraDelightItems.JAR.asItem());
+		}, ExtraDelightItems.JAR, ExtraDelightItems.COPPER_JAR, ExtraDelightItems.DIAMOND_JAR,
+				ExtraDelightItems.GOLD_JAR, ExtraDelightItems.IRON_JAR, ExtraDelightItems.NETHERITE_JAR);
 
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
+					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+				EntityModelSet models = Minecraft.getInstance().getEntityModels();
+				ModelPart root = models.bakeLayer(StrawberryHatModel.LAYER_LOCATION);
+				return new StrawberryHatModel(root);
+			}
+		}, Strawberry.STRAWBERRY_HAT);
 	}
 
 	@SubscribeEvent
@@ -304,4 +331,8 @@ public class ExtraDelightClientEvents {
 		event.registerRecipeCategoryFinder(ExtraDelightRecipes.JUICER.get(), r -> RecipeBookCategories.UNKNOWN);
 	}
 
+	@SubscribeEvent
+	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(StrawberryHatModel.LAYER_LOCATION, () -> StrawberryHatModel.createBodyLayer());
+	}
 }

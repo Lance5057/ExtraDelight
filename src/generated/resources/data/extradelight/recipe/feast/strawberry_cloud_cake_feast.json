@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "id": "extradelight:strawberry_cloud_cake_item"
+  },
+  "result": {
+    "count": 1,
+    "id": "extradelight:strawberry_cloud_cake_slice"
+  }
+}

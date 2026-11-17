@@ -16,10 +16,10 @@
   ],
   "ingredients": [
     {
-      "tag": "extradelight:processed/beetroot"
+      "item": "extradelight:roasted_beetroot"
     },
     {
-      "tag": "extradelight:processed/beetroot"
+      "item": "extradelight:roasted_beetroot"
     },
     {
       "tag": "c:mint"

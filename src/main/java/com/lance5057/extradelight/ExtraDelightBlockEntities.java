@@ -30,8 +30,11 @@ import com.lance5057.extradelight.workstations.oven.OvenBlockEntity;
 import com.lance5057.extradelight.workstations.vat.VatBlockEntity;
 import com.llamalad7.mixinextras.lib.apache.commons.ArrayUtils;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -115,8 +118,13 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TapBlockEntity>> TAP = TILES.register("tap",
 			() -> BlockEntityType.Builder.of(TapBlockEntity::new, ExtraDelightBlocks.TAP.get()).build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KegBlockEntity>> KEG = TILES.register("keg",
-			() -> BlockEntityType.Builder.of(KegBlockEntity::new, ExtraDelightBlocks.KEG.get()).build(null));
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KegBlockEntity>> KEG = TILES
+			.register("keg",
+					() -> BlockEntityType.Builder
+							.of(KegBlockEntity::new, ExtraDelightBlocks.KEG.get(), ExtraDelightBlocks.COPPER_KEG.get(),
+									ExtraDelightBlocks.DIAMOND_KEG.get(), ExtraDelightBlocks.GOLD_KEG.get(),
+									ExtraDelightBlocks.IRON_KEG.get(), ExtraDelightBlocks.NETHERITE_KEG.get())
+							.build(null));
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MeltingPotBlockEntity>> MELTING_POT = TILES
 			.register("melting_pot", () -> BlockEntityType.Builder
@@ -142,8 +150,13 @@ public class ExtraDelightBlockEntities {
 					ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get())
 					.build(null));
 
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JarBlockEntity>> JAR = TILES.register("jar",
-			() -> BlockEntityType.Builder.of(JarBlockEntity::new, ExtraDelightBlocks.JAR.get()).build(null));
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JarBlockEntity>> JAR = TILES
+			.register("jar",
+					() -> BlockEntityType.Builder
+							.of(JarBlockEntity::new, ExtraDelightBlocks.JAR.get(), ExtraDelightBlocks.COPPER_JAR.get(),
+									ExtraDelightBlocks.DIAMOND_JAR.get(), ExtraDelightBlocks.GOLD_JAR.get(),
+									ExtraDelightBlocks.IRON_JAR.get(), ExtraDelightBlocks.NETHERITE_JAR.get())
+							.build(null));
 
 	public static void addCabinets(BlockEntityTypeAddBlocksEvent event) {
 		event.modify(ModBlockEntityTypes.CABINET.get(), ExtraDelightBlocks.CINNAMON_CABINET.get(),
@@ -166,8 +179,14 @@ public class ExtraDelightBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JuicerBlockEntity>> JUICER = TILES.register(
 			"juicer",
 			() -> BlockEntityType.Builder.of(JuicerBlockEntity::new, ExtraDelightBlocks.JUICER.get()).build(null));
-	
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FruitBowlBlockEntity>> FRUIT_BOWL = TILES.register(
-			"fruit_bowl",
-			() -> BlockEntityType.Builder.of(FruitBowlBlockEntity::new, ExtraDelightBlocks.FRUIT_BOWL.get()).build(null));
+
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FruitBowlBlockEntity>> FRUIT_BOWL = TILES
+			.register("fruit_bowl", () -> BlockEntityType.Builder
+					.of(FruitBowlBlockEntity::new, ExtraDelightBlocks.FRUIT_BOWL.get()).build(null));
+
+	public static void register(IEventBus modEventBus) {
+		if (!ModList.get().isLoaded("compendium"))
+			LanceNestAPI.TILES.register(modEventBus);
+		ExtraDelightBlockEntities.TILES.register(modEventBus);
+	}
 }

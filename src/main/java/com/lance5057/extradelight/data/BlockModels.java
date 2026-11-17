@@ -22,9 +22,12 @@ import com.lance5057.extradelight.blocks.crops.PeanutCrop;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornProperties;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
+import com.lance5057.extradelight.blocks.crops.strawberry.RunnerConnect;
+import com.lance5057.extradelight.blocks.crops.strawberry.StrawberryCrop;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.displays.fruitbowl.FruitBowlBlock;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
 import com.lance5057.extradelight.workstations.juicer.JuicerBlock;
@@ -45,6 +48,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
@@ -173,15 +177,22 @@ public class BlockModels extends BlockStateProvider {
 										"block/chocolate_trapdoor_bottom"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+						.texture("particle",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+
 						.renderType("cutout"),
 				models().withExistingParent("cinnamon_trapdoor_top",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_top"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+						.texture("particle",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
 						.renderType("cutout"),
 				models().withExistingParent("cinnamon_trapdoor_open",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_open"))
 						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
+						.texture("particle",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/cinnamon_trapdoor"))
 						.renderType("cutout"),
 				true);
@@ -264,6 +275,46 @@ public class BlockModels extends BlockStateProvider {
 				models().orientableWithBottom("keg_horizontal", modLoc("block/keg_side"), modLoc("block/keg_side"),
 						modLoc("block/keg_bottom"), modLoc("block/keg_top")).renderType("cutout"));
 
+		axisBlock(ExtraDelightBlocks.COPPER_KEG.get(),
+				models().orientableWithBottom("copper_keg_vertical", modLoc("block/copper_keg_side"),
+						modLoc("block/copper_keg_side"), modLoc("block/copper_keg_bottom"),
+						modLoc("block/copper_keg_top")).renderType("cutout"),
+				models().orientableWithBottom("copper_keg_horizontal", modLoc("block/copper_keg_side"),
+						modLoc("block/copper_keg_side"), modLoc("block/copper_keg_bottom"),
+						modLoc("block/copper_keg_top")).renderType("cutout"));
+
+		axisBlock(ExtraDelightBlocks.IRON_KEG.get(),
+				models().orientableWithBottom("iron_keg_vertical", modLoc("block/iron_keg_side"),
+						modLoc("block/iron_keg_side"), modLoc("block/iron_keg_bottom"), modLoc("block/iron_keg_top"))
+						.renderType("cutout"),
+				models().orientableWithBottom("iron_keg_horizontal", modLoc("block/iron_keg_side"),
+						modLoc("block/iron_keg_side"), modLoc("block/iron_keg_bottom"), modLoc("block/iron_keg_top"))
+						.renderType("cutout"));
+
+		axisBlock(ExtraDelightBlocks.GOLD_KEG.get(),
+				models().orientableWithBottom("gold_keg_vertical", modLoc("block/gold_keg_side"),
+						modLoc("block/gold_keg_side"), modLoc("block/gold_keg_bottom"), modLoc("block/gold_keg_top"))
+						.renderType("cutout"),
+				models().orientableWithBottom("gold_keg_horizontal", modLoc("block/gold_keg_side"),
+						modLoc("block/gold_keg_side"), modLoc("block/gold_keg_bottom"), modLoc("block/gold_keg_top"))
+						.renderType("cutout"));
+
+		axisBlock(ExtraDelightBlocks.DIAMOND_KEG.get(),
+				models().orientableWithBottom("diamond_keg_vertical", modLoc("block/diamond_keg_side"),
+						modLoc("block/diamond_keg_side"), modLoc("block/diamond_keg_bottom"),
+						modLoc("block/diamond_keg_top")).renderType("cutout"),
+				models().orientableWithBottom("diamond_keg_horizontal", modLoc("block/diamond_keg_side"),
+						modLoc("block/diamond_keg_side"), modLoc("block/diamond_keg_bottom"),
+						modLoc("block/diamond_keg_top")).renderType("cutout"));
+
+		axisBlock(ExtraDelightBlocks.NETHERITE_KEG.get(),
+				models().orientableWithBottom("netherite_keg_vertical", modLoc("block/netherite_keg_side"),
+						modLoc("block/netherite_keg_side"), modLoc("block/netherite_keg_bottom"),
+						modLoc("block/netherite_keg_top")).renderType("cutout"),
+				models().orientableWithBottom("netherite_keg_horizontal", modLoc("block/netherite_keg_side"),
+						modLoc("block/netherite_keg_side"), modLoc("block/netherite_keg_bottom"),
+						modLoc("block/netherite_keg_top")).renderType("cutout"));
+
 		panBlock(this, ExtraDelightBlocks.SHEET_BLOCK.get(), "sheet");
 		panBlock(this, ExtraDelightBlocks.TRAY_BLOCK.get(), "tray");
 		panBlock(this, ExtraDelightBlocks.LOAF_PAN_BLOCK.get(), "loaf_pan");
@@ -320,15 +371,24 @@ public class BlockModels extends BlockStateProvider {
 										"block/chocolate_trapdoor_bottom"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/dark_chocolate_trapdoor"))
+						.texture("particle",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 										"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
 				models().withExistingParent("dark_chocolate_trapdoor_top",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_top"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/dark_chocolate_trapdoor"))
+						.texture("particle",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 										"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
 				models().withExistingParent("dark_chocolate_trapdoor_open",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_open"))
-						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/dark_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 								"block/cosmetics/chocolate/dark_chocolate_trapdoor")),
 				true);
 		slabBlock(ExtraDelightBlocks.DARK_CHOCOLATE_SLAB.get(), modLoc("block/dark_chocolate_slab_double"),
@@ -361,15 +421,24 @@ public class BlockModels extends BlockStateProvider {
 										"block/chocolate_trapdoor_bottom"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/milk_chocolate_trapdoor"))
+						.texture("particle",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 										"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
 				models().withExistingParent("milk_chocolate_trapdoor_top",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_top"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/milk_chocolate_trapdoor"))
+						.texture("particle",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 										"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
 				models().withExistingParent("milk_chocolate_trapdoor_open",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_open"))
-						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/milk_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 								"block/cosmetics/chocolate/milk_chocolate_trapdoor")),
 				true);
 		slabBlock(ExtraDelightBlocks.MILK_CHOCOLATE_SLAB.get(), modLoc("block/milk_chocolate_slab_double"),
@@ -402,15 +471,24 @@ public class BlockModels extends BlockStateProvider {
 										"block/chocolate_trapdoor_bottom"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/white_chocolate_trapdoor"))
+						.texture("particle",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 										"block/cosmetics/chocolate/white_chocolate_trapdoor")),
 				models().withExistingParent("white_chocolate_trapdoor_top",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_top"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/white_chocolate_trapdoor"))
+						.texture("particle",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 										"block/cosmetics/chocolate/white_chocolate_trapdoor")),
 				models().withExistingParent("white_chocolate_trapdoor_open",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_open"))
-						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/white_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 								"block/cosmetics/chocolate/white_chocolate_trapdoor")),
 				true);
 		slabBlock(ExtraDelightBlocks.WHITE_CHOCOLATE_SLAB.get(), modLoc("block/white_chocolate_slab_double"),
@@ -443,15 +521,24 @@ public class BlockModels extends BlockStateProvider {
 										"block/chocolate_trapdoor_bottom"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/blood_chocolate_trapdoor"))
+						.texture("particle",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 										"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
 				models().withExistingParent("blood_chocolate_trapdoor_top",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_top"))
 						.texture("texture",
 								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/blood_chocolate_trapdoor"))
+						.texture("particle",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 										"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
 				models().withExistingParent("blood_chocolate_trapdoor_open",
 						ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/chocolate_trapdoor_open"))
-						.texture("texture", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+						.texture("texture",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/cosmetics/chocolate/blood_chocolate_trapdoor"))
+						.texture("particle", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 								"block/cosmetics/chocolate/blood_chocolate_trapdoor")),
 				true);
 		slabBlock(ExtraDelightBlocks.BLOOD_CHOCOLATE_SLAB.get(), modLoc("block/blood_chocolate_slab_double"),
@@ -511,6 +598,16 @@ public class BlockModels extends BlockStateProvider {
 
 		simpleBlock(ExtraDelightBlocks.JAR.get(),
 				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/jar")));
+		simpleBlock(ExtraDelightBlocks.COPPER_JAR.get(), models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/copper_jar")));
+		simpleBlock(ExtraDelightBlocks.IRON_JAR.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/iron_jar")));
+		simpleBlock(ExtraDelightBlocks.GOLD_JAR.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/gold_jar")));
+		simpleBlock(ExtraDelightBlocks.DIAMOND_JAR.get(), models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/diamond_jar")));
+		simpleBlock(ExtraDelightBlocks.NETHERITE_JAR.get(), models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/netherite_jar")));
 
 		fluid(this, ExtraDelightBlocks.APPLE_CIDER_FLUID_BLOCK.get());
 		fluid(this, ExtraDelightBlocks.BBQ_FLUID_BLOCK.get());
@@ -723,8 +820,31 @@ public class BlockModels extends BlockStateProvider {
 					.rotationY(270).build();
 		});
 
+		MultiPartBlockStateBuilder builder = this.getMultipartBuilder(Strawberry.STRAWBERRY_CROP.get());
+
+		String crop = "block/crops/strawberry/strawberry_bush_stage";
+		String runner = "block/crops/strawberry/strawberry_runner_stage";
+
+		for (int i = 0; i < 4; i++) {
+			for (RunnerConnect r : RunnerConnect.values()) {
+				if (r == RunnerConnect.NONE) {
+					builder.part().modelFile(this.models().getExistingFile(this.modLoc(crop + i))).addModel()
+							.condition(StrawberryCrop.AGE, i).condition(StrawberryCrop.CONNECTED, RunnerConnect.NONE)
+							.end();
+				} else {
+					builder.part().modelFile(this.models().getExistingFile(this.modLoc(crop + i))).addModel()
+							.condition(StrawberryCrop.AGE, i).condition(StrawberryCrop.CONNECTED, r).end();
+
+					builder.part().modelFile(this.models().getExistingFile(this.modLoc(runner + i)))
+							.rotationY(r.getYRotation()).addModel().condition(StrawberryCrop.AGE, i)
+							.condition(StrawberryCrop.CONNECTED, r).end();
+				}
+			}
+		}
+
 		AestheticBlocks.blockModel(this);
 		Fermentation.blockModels(this);
+		Strawberry.blockModels(this);
 		SummerCitrus.blockModels(this);
 	}
 
@@ -816,16 +936,20 @@ public class BlockModels extends BlockStateProvider {
 			String suffix = FruitBowlBlock.Styles.values()[servings] + "";
 
 			if (suffix.contentEquals("CINNAMON_PLANKS") || suffix.contentEquals("FRUIT_PLANKS")) {
-				return ConfiguredModel.builder().modelFile(bsp.models()
-						.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
-						.texture("0", bsp.modLoc("block/" + suffix.toLowerCase()))
-						.texture("particle", bsp.modLoc("block/" + suffix.toLowerCase()))).build();
+				return ConfiguredModel.builder()
+						.modelFile(bsp.models()
+								.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+								.texture("0", bsp.modLoc("block/" + suffix.toLowerCase()))
+								.texture("particle", bsp.modLoc("block/" + suffix.toLowerCase())))
+						.build();
 			} else
-				return ConfiguredModel.builder().modelFile(bsp.models()
-						.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
-						.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
-						.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase()))).build();
-			
+				return ConfiguredModel.builder()
+						.modelFile(bsp.models()
+								.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))
+								.texture("0", bsp.mcLoc("block/" + suffix.toLowerCase()))
+								.texture("particle", bsp.mcLoc("block/" + suffix.toLowerCase())))
+						.build();
+
 //			return ConfiguredModel.builder()
 //					.modelFile(bsp.models()
 //							.withExistingParent("fruit_bowl" + suffix.toLowerCase(), bsp.modLoc("block/fruit_bowl"))

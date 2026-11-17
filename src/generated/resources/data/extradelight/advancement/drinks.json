@@ -201,6 +201,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:pink_lemonade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pink_lemonade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pumpkin_milkshake": {
       "conditions": {
         "items": [
@@ -216,6 +226,26 @@
         "items": [
           {
             "items": "extradelight:punch"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:strawberry_milkshake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:strawberry_milkshake"
           }
         ]
       },
@@ -308,6 +338,9 @@
       "extradelight:nut_butter_milkshake"
     ],
     [
+      "extradelight:strawberry_milkshake"
+    ],
+    [
       "extradelight:tea"
     ],
     [
@@ -365,7 +398,13 @@
       "extradelight:cactus_juice"
     ],
     [
+      "extradelight:strawberry_milk"
+    ],
+    [
       "extradelight:milkshake"
+    ],
+    [
+      "extradelight:pink_lemonade"
     ]
   ],
   "sends_telemetry_event": true

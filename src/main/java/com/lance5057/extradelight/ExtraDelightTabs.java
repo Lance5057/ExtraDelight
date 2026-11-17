@@ -4,8 +4,10 @@ import java.util.List;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
+import com.lance5057.extradelight.modules.Strawberry;
 import com.lance5057.extradelight.modules.SummerCitrus;
 
+import api.LanceNestAPI.src.LanceNestAPI;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -14,6 +16,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.ItemContainerContents;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -25,6 +28,10 @@ public class ExtraDelightTabs {
 			() -> CreativeModeTab.builder().title(Component.translatable("itemGroup.extradelight.tab"))
 					.icon(() -> new ItemStack(ExtraDelightItems.WOODEN_SPOON.get()))
 					.displayItems((parameters, output) -> {
+						if (!ModList.get().isLoaded("compendium"))
+							for (DeferredHolder<Item, ? extends Item> i : LanceNestAPI.ITEMS.getEntries())
+								output.accept(i.get());
+
 						for (DeferredHolder<Item, ? extends Item> i : ExtraDelightItems.ITEMS.getEntries())
 							if (i != ExtraDelightItems.EASTER_EGG && i != ExtraDelightItems.DYNAMIC_JAM)
 								output.accept(i.get());
@@ -39,6 +46,7 @@ public class ExtraDelightTabs {
 						makeJam(output, "chorus_fruit", Items.CHORUS_FRUIT);
 						makeJam(output, "melon", Items.MELON_SLICE);
 						makeJam(output, "carrot", Items.CARROT);
+						makeJam(output, "strawberry", Strawberry.STRAWBERRY.get());
 
 						ItemStack s = new ItemStack(ExtraDelightItems.DYNAMIC_JAM.get());
 						s.set(ExtraDelightComponents.DYNAMIC_FOOD, new DynamicItemComponent(List.of("mint")));

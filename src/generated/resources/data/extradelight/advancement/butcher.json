@@ -131,6 +131,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:blood_chocolate_dipped_strawberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:blood_chocolate_dipped_strawberry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:blood_chocolate_dipped_sweet_berry": {
       "conditions": {
         "items": [
@@ -570,6 +580,9 @@
     ],
     [
       "extradelight:sausage_roll"
+    ],
+    [
+      "extradelight:blood_chocolate_dipped_strawberry"
     ],
     [
       "extradelight:pulled_pork_sandwich"

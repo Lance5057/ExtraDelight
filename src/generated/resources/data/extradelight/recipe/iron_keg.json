@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "c:storage_blocks/iron"
+    },
+    "e": {
+      "item": "minecraft:ender_pearl"
+    },
+    "k": {
+      "item": "extradelight:copper_keg_item"
+    }
+  },
+  "pattern": [
+    " e ",
+    " k ",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:iron_keg_item"
+  }
+}
