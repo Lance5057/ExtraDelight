@@ -6,6 +6,7 @@ import javax.annotation.Nonnull;
 
 import org.jetbrains.annotations.NotNull;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightRecipes;
@@ -208,7 +209,7 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 
 					chiller.fluid.drain(recipeholder.value().getFluid(), FluidAction.EXECUTE);
 
-					chiller.inventory.insertItem(OUTPUT_SLOT, result, false);
+					chiller.inventory.insertItem(OUTPUT_SLOT, result.copy(), false);
 					chiller.cookTime = 0;
 				}
 			} else {
@@ -390,9 +391,9 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 			
 			@Override
 		    public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
-				if(slot != OUTPUT_SLOT)
+//				if(slot != OUTPUT_SLOT)
 					return super.insertItem(slot, stack, simulate);
-				return stack;
+//				return stack;
 			}
 		};
 	}

@@ -60,9 +60,7 @@ public class DynamicSkewerRecipe extends ShapelessRecipe {
 
 						effects.addAll(f.effects());
 						graphics.add(s.getItem().getDescriptionId());
-					} else
-						ExtraDelight.logger
-								.error(s.getDescriptionId() + " doesn't have a food component! How did we get here?!");
+					}
 				}
 
 			stack.set(ExtraDelightComponents.DYNAMIC_FOOD.get(), new DynamicItemComponent(graphics));
